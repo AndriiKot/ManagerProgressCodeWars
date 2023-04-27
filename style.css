@@ -1,0 +1,31 @@
+﻿*{
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: rgb(24, 25, 24);
+  align-items: center;
+  justify-content: center;
+}
+
+.box-animation{
+  --size: 80vh;
+  height: var(--size);
+  width: var(--size);
+  -webkit-box-reflect: right -100% linear-gradient(transparent,rgba(0,0,0,.4)); /* тень */
+  animation: animation_line 1s linear 0.1s  infinite reverse;
+  border-radius: 50%;
+}
+
+@keyframes animation_line
+{
+  0%
+  {
+    background-position: 0% ;
+  }
+  100%
+  {
+    background-position: var(--size);
+  }
+}
