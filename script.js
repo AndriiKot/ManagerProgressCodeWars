@@ -21,6 +21,11 @@ for (;procent_width_line <= max_procent_width_line;i++){
   procent_width_line += step_procent_width_line;
 }
 
+function A(color = '#00cc99') {
+  return color
+}
+console.log(typeof A());
+
 let final_str = `linear-gradient(${deg}deg,${str})` //
 
 
