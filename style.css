@@ -3,7 +3,6 @@
   box-sizing: border-box; }
 
 body {
-  color: red;
   display: flex;
   min-height: 100vh;
   background-color: #181918;
@@ -30,6 +29,33 @@ body {
   width: var(--sizeEnterColor);
   border-radius: 50%;
   position: absolute; }
+
+.red {
+  background-color: red;
+  left: 0;
+  top: 0; }
+
+.blue {
+  background-color: blue;
+  left: 0;
+  top: var(--positionEnterColor); }
+
+.green {
+  background-color: green;
+  left: 0;
+  top: calc(var(--positionEnterColor) * 2); }
+
+:root {
+  --sizeEnterColor: 10vh;
+  --marginTop: 1.5%;
+  --positionEnterColor: calc(var(--sizeEnterColor) + var(--marginTop)); }
+
+.color {
+  height: var(--sizeEnterColor);
+  width: var(--sizeEnterColor);
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer; }
 
 .red {
   background-color: red;

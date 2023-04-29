@@ -21,11 +21,6 @@ for (;procent_width_line <= max_procent_width_line;i++){
   procent_width_line += step_procent_width_line;
 }
 
-function A(color = '#00cc99') {
-  return color
-}
-console.log(typeof A());
-
 let final_str = `linear-gradient(${deg}deg,${str})` //
 
 
@@ -43,6 +38,20 @@ element.style.background = final_str
       final_str = final_str.slice(0,final_str.length-1)+')'
       element.style.background = final_str
   }
+
+  // demo barSelectorColors
+  const colors = document.querySelectorAll('.color')
+  console.log(colors)
+
+  function f() {
+    this.style.background = 'pink'
+    console.log(this)
+  }
+
+  colors.forEach(color => {
+    color.addEventListener('click',f)
+  })
+  // demo barSelectorColors
 
 
   
