@@ -10,16 +10,22 @@ const max_procent_width_line = 100;   // максимальное допусти
 const step_procent_width_line = 30;   // ширина видемой и прозрачной линии
 
 let str = '';                         
-let i = 0
+let i = 0;
 
-for (;procent_width_line <= max_procent_width_line;i++){
- const a = `${color_start} ${procent_width_line}%`
- const b = `${color_end} ${procent_width_line}%`
- const compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
-  
-  str += compon_str +','
-  procent_width_line += step_procent_width_line;
-}
+function createStrAnimationline(color_start,color_end,procent_width_line,step_procent_width_line){
+  for (;procent_width_line <= max_procent_width_line;i++){
+   const a = `${color_start} ${procent_width_line}%`
+   const b = `${color_end} ${procent_width_line}%`
+   const compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
+
+    str += compon_str +','
+    procent_width_line += step_procent_width_line;
+  };
+return str
+};
+
+createStrAnimationline(color_start,color_end,procent_width_line,step_procent_width_line);
+
 
 let final_str = `linear-gradient(${deg}deg,${str})` //
 
@@ -37,7 +43,7 @@ element.style.background = final_str
       final_str = `linear-gradient(${deg}deg,${str}`
       final_str = final_str.slice(0,final_str.length-1)+')'
       element.style.background = final_str
-  }
+    }
 
   // demo barSelectorColors
   const colors = document.querySelectorAll('.color')
