@@ -17,8 +17,8 @@ function createStrAnimationline(
   proc = procent_width_line,
   step_width = step_procent_width_line){
     for (;procent_width_line <= max_procent_width_line;i++){
-     const a = `${color_start} ${procent_width_line}%`
-     const b = `${color_end} ${procent_width_line}%`
+     const a = `${color1} ${procent_width_line}%`
+     const b = `${color2} ${procent_width_line}%`
      const compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
      str += compon_str +','
      procent_width_line += step_procent_width_line;
@@ -45,12 +45,11 @@ let final_str = `linear-gradient(${deg}deg,${str})`
     
   // demo barSelectorColors 
   const colors = document.querySelectorAll('.color')
-  console.log(colors)
 
-  function f() {
-   // this.style.background = 'pink'
-    console.log(this);
-    console.dir(this.getComputedStyle());
+  function f(event) {
+    console.dir(typeof(event.currentTarget.classList[1]));
+    let color_ = event.currentTarget.classList[1];
+    createStrAnimationline(color);
   }
 
   colors.forEach(color => {
