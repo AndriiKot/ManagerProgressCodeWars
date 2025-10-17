@@ -1,85 +1,51 @@
-Отлично 👍 — ты очень чётко описал идею проекта!
-Я немного исправлю формулировки, уберу опечатки и добавлю пару важных деталей, чтобы описание звучало как полноценное техническое резюме npm-пакета 👇
+
+# Codewars Progress Manager
+
+An **npm package** that automatically synchronizes a [Codewars](https://www.codewars.com) user profile with a GitHub repository.  
+It allows developers to **track their Codewars progress directly in GitHub**, without any manual effort.
 
 ---
 
-## 🧩 Описание проекта
+## ⚙️ How It Works
 
-Это **npm-пакет**, который автоматически синхронизирует профиль пользователя [Codewars](https://www.codewars.com) с его репозиторием на **GitHub**.
-Он предназначен для того, чтобы разработчик мог **вести историю своего прогресса на Codewars прямо в GitHub**, без ручных действий.
+1. **Scheduled Checks via GitHub Actions**  
+   A GitHub Actions workflow runs periodically (e.g., daily) to fetch the user profile from the Codewars API (`/api/v1/users/:username`).  
+   This detects changes in user stats such as `honor` or completed kata count.
 
----
+2. **Optimized Change Detection with Hashing**  
+   A `_hash` is generated from the profile data using Node's `crypto` module.  
+   If the hash matches the previously saved one, no update is performed, saving unnecessary work.
 
-## ⚙️ Основная логика работы
+3. **Storing Changes in SQLite**  
+   Updated profiles are stored with:
+   * current profile data
+   * solved kata details
+   * last update timestamp  
+   SQLite is used as a lightweight embedded database requiring no server setup.
 
-1. **Периодическая проверка через GitHub Actions**
-   Раз в день GitHub Actions запускает процесс, который отправляет запрос к Codewars API (`/api/v1/users/:username`).
-   Это позволяет проверить, изменился ли профиль пользователя (например, изменился `honor`, количество решённых ката и т.п.).
+4. **Automatic Kata File Generation**  
+   For each new kata, a folder is created with the kata name.  
+   Inside, a `README.md` is generated with kata description from the Codewars API (`/code-challenges/:idOrSlug`).
 
-2. **Оптимизация проверки через хеш**
-   Для ускорения сравнения используется модуль `crypto`:
-   создаётся хеш (`_hash`) на основе данных пользователя.
-   Если текущий хеш совпадает с сохранённым — изменений нет, обновление пропускается.
+5. **Extracting User Solutions**  
+   **Puppeteer** automates logging into Codewars and scrapes the user's solution code for each kata.
 
-3. **Сохранение изменений в базу данных SQLite**
-   При обнаружении изменений сохраняются:
+6. **GitHub Synchronization**  
+   Changes are automatically committed and pushed to the repository, keeping it in sync with Codewars.
 
-   * текущее состояние профиля пользователя;
-   * информация о решённых ката;
-   * дата обновления.
-     SQLite выбрана как лёгкое встроенное решение, не требующее сервера.
-
-4. **Автоматическое создание файлов с ката**
-   Для каждой новой ката создаётся папка с названием задачи.
-   Внутри генерируется `README.md` с описанием ката, полученным через Codewars API (`/code-challenges/:idOrSlug`).
-
-5. **Извлечение собственного решения пользователя**
-   С помощью **Puppeteer** выполняется автоматический вход на сайт Codewars под аккаунтом пользователя.
-   Затем скрипт парсит страницу ката и извлекает собственное решение (код).
-
-6. **Синхронизация с GitHub**
-   После обновления данных и добавления новых ката, изменения коммитятся и пушатся обратно в репозиторий GitHub.
-   Таким образом, репозиторий всегда отражает актуальное состояние профиля Codewars.
+7. **Kata Progress Visualization**  
+   Generates **interactive charts** using [Vega-Lite](https://vega.github.io/vega-lite/) for visualizing progress by language, rank, or completion date.
 
 ---
 
-## 💡 Дополнительные возможности (можно добавить позже)
+## 💡 Optional Features (Future)
 
-* Кэширование данных профиля в `.cache/codewars/` для уменьшения количества запросов к API.
-* Настраиваемая частота обновления (например, 1 раз в 12 часов).
-* Генерация статистики в Markdown (например, таблица решённых ката по языкам).
-* Отправка уведомлений (например, через GitHub Issues или Telegram-бота) при изменении ранга.
-
----
-
-## 📦 Пример структуры проекта
-
-```
-/src/
-  api/
-    codewarsApi.js
-  services/
-    hash/
-    database/
-    puppeteer/
-  utils/
-  index.js
-
-/cache/
-  codewars/
-    AndriiKot.hash.json
-
-/data/
-  codewars/
-    katas/
-      multiply/
-        README.md
-
-/.github/
-  workflows/
-    sync.yml  ← GitHub Actions скрипт
-```
+* Profile caching in `.cache/codewars/` to reduce API requests.
+* Configurable update frequency (e.g., every 12 hours).
+* Markdown-based progress statistics tables.
+* Notifications via GitHub Issues or Telegram when rank changes.
 
 ---
 
-Хочешь, я помогу написать короткое **описание для README.md** твоего npm-пакета на английском, в стиле открытых проектов на GitHub (чтобы выглядело профессионально и можно было сразу вставить в репозиторий)?
+## 📦 Project Structure
+
