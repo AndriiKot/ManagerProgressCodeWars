@@ -1,24 +1,29 @@
-import crypto from 'node:crypto';
+import crypto from "node:crypto";
 
 /**
- * Генерирует sha256 хеш из строки
+ * Generates a SHA-256 hash from a string
+ *
+ * @param {string} inputStr - The string to hash
+ * @returns {string} - The SHA-256 hash of the input string
  */
-export const sha256 = (str) =>
-  crypto.createHash('sha256').update(str, 'utf8').digest('hex');
-
-/**
- * Преобразует объект в детерминированную строку для хеширования
- * Сортирует ключи, оставляет только значимые поля
- */
-export const serializeForHash = (obj, fields = null) => {
-  let data = obj;
-  if (fields) {
-    // выбираем только нужные поля
-    data = {};
-    for (const field of fields) {
-      if (obj[field] !== undefined) data[field] = obj[field];
-    }
-  }
-  return JSON.stringify(data, Object.keys(data).sort());
+export const generateSha256Hash = (inputStr) => {
+  const hash = crypto.createHash("sha256");
+  hash.update(inputStr, "utf8");
+  return hash.digest("hex");
 };
 
+/**
+ * Serializes an object into a deterministic string for hashing
+ *
+ * @param {Object} obj - The object to serialize
+ * @param {string[]} fields - Optional list of fields to include in the serialized string
+ * @returns {string} - The serialized string
+ */
+export const serializeObjectForHash = (obj, fields = []) => {
+  const data = fields.reduce((result, field) => {
+    if (obj[field] !== undefined) result[field] = obj[field];
+    return result;
+  }, {});
+
+  return JSON.stringify(data, Object.keys(data).sort());
+};

@@ -1,23 +1,37 @@
-import { sha256, serializeForHash } from './cryptoUtils.js';
-import { USER_FIELDS, CHALLENGE_FIELDS } from './fieldSelectors.js';
-import { saveHash, loadHash } from './storage.js';
+import { generateSha256Hash, serializeObjectForHash } from "./cryptoUtils.js";
+import { saveHash, loadHash } from "./storage.js";
 
 /**
- * Вычисляет хеш для объекта с выборкой полей
+ * ComputesHash
+ *
+ * Computes a SHA-256 hash for an object with
+ * optional field selection
+ *
+ * @param {Object} obj - the object to hash
+ * @param {string[]} fields - the fields to include in the hash
+ * @returns {string} - the computed hash
  */
-export const computeHash = (obj, fields = null) => {
-  const serialized = serializeForHash(obj, fields);
-  return sha256(serialized);
+export const computeHash = (obj, fields = []) => {
+  const serialized = serializeObjectForHash(obj, fields);
+  return generateSha256Hash(serialized);
 };
 
 /**
- * Проверяет, изменился ли объект
+ * Checks if an object has changed
+ *
+ * Computes a new hash for the object and compares it
+ * with the stored hash. If the hashes are different,
+ * the new hash is stored and true is returned.
+ *
+ * @param {string} name - the name of the object to check
+ * @param {Object} obj - the object to hash
+ * @param {string[]} fields - the fields to include in the hash
+ * @returns {boolean} - true if the object has changed, false otherwise
  */
-export const hasChanged = (name, obj, fields = null) => {
+export const hasChanged = (name, obj, fields = []) => {
   const newHash = computeHash(obj, fields);
   const oldHash = loadHash(name);
-  const changed = newHash !== oldHash;
-  if (changed) saveHash(name, newHash);
-  return changed;
+  const hasChanged = newHash !== oldHash;
+  if (hasChanged) saveHash(name, newHash);
+  return hasChanged;
 };
-

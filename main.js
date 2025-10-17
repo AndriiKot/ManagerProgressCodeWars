@@ -6,7 +6,10 @@ const filePath = "./user_cache.json";
 const userName = "AndriiKot";
 
 const hashObject = (obj) =>
-  crypto.createHash("sha256").update(JSON.stringify(obj)).digest("hex");
+  crypto
+    .createHash("generateSha256Hash")
+    .update(JSON.stringify(obj))
+    .digest("hex");
 
 const fetchUserProfile = async (userNameOrId) => {
   const response = await fetch(getProfile(userNameOrId));
