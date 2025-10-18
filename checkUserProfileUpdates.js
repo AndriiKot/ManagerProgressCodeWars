@@ -1,20 +1,7 @@
 import { getProfile } from "./api/codewarsAPI.js";
 import { USER_NAME } from "./config.js";
 import storage from "./services/hash/storage.js";
-
-/**
- * Defines profile fields schema and mapping to storage
- * - key: storage field name
- * - path: path inside profileData
- * - useCryptoHash: whether to use storage.hasChanged
- */
-const PROFILE_SCHEMA = {
-  Ranks: { path: "ranks", useCryptoHash: true },
-  Position: { path: "leaderboardPosition", useCryptoHash: false },
-  AuthoredKatas: { path: "codeChallenges.totalAuthored", useCryptoHash: false },
-  Honor: { path: "honor", useCryptoHash: false },
-  UniquesKatas: { path: "codeChallenges.totalCompleted", useCryptoHash: false },
-};
+import { PROFILE_SCHEMA } from "./schemas/profileSchema.js";
 
 /**
  * Get nested property from object using dot notation path
@@ -36,7 +23,7 @@ export const checkUserProfileUpdates = async () => {
     const value = getNested(profileData, path);
 
     if (useCryptoHash) {
-      result[`new${key}`] = storage.hasChanged(key, value);
+      result[`new${key}`] = storage.hasCryptoHashChanged(key, value);
     } else {
       const oldValue = storage[`load${key}`]();
       const changed = oldValue !== value;

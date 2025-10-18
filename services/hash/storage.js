@@ -2,37 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { USER_CACHE_DIR, USER_NAME } from "../../config.js";
 import { generateSha256Hash, serializeObjectForHash } from "./cryptoUtils.js";
+import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 
-/**
- * Define cache structure and rules
- */
-const CACHE_SCHEMAS = {
-  Ranks: {
-    file: () => `user-ranks-${USER_NAME}.hash.json`,
-    field: "CryptoHash",
-    useCryptoHash: true,
-  },
-  Position: {
-    file: () => `user-position-${USER_NAME}.json`,
-    field: "leaderboardPosition",
-  },
-  AuthoredKatas: {
-    file: () => `user-authored-katas-${USER_NAME}.json`,
-    field: "totalAuthored",
-  },
-  Honor: {
-    file: () => `user-honor-${USER_NAME}.json`,
-    field: "honor",
-  },
-  UniquesKatas: {
-    file: () => `user-uniques-katas-${USER_NAME}.json`,
-    field: "totalCompleted",
-  },
-};
-
-/**
- * Ensure that cache directory exists
- */
 const ensureDir = () => {
   if (!fs.existsSync(USER_CACHE_DIR)) {
     fs.mkdirSync(USER_CACHE_DIR, { recursive: true });
@@ -64,7 +35,7 @@ const loadData = (fileName) => {
 /**
  * Check if object has changed (for entries with useCryptoHash)
  */
-const hasChanged = (key, obj) => {
+const hasCryptoHashChanged = (key, obj) => {
   const schema = CACHE_SCHEMAS[key];
   if (!schema?.useCryptoHash) {
     throw new Error(
@@ -97,8 +68,8 @@ const storage = Object.fromEntries(
 );
 
 /**
- * Add a universal hasChanged() API for crypto-based schemas
+ * Add a universal hasCryptoHashChanged() API for crypto-based schemas
  */
-storage.hasChanged = hasChanged;
+storage.hasCryptoHashChanged = hasCryptoHashChanged;
 
 export default storage;
