@@ -32,10 +32,9 @@ const saveData = ({ dir, fileName, data }) => {
  * @param {string} fileName
  * @returns {any|null} Parsed JSON or null if file does not exist
  */
-const loadData = (fileName) => {
-  const filePath = path.join(USER_CACHE_DIR, fileName);
-  return fs.existsSync(filePath)
-    ? JSON.parse(fs.readFileSync(filePath, "utf8"))
+const loadData = (pathToFile) => {
+  return fs.existsSync(pathToFile)
+    ? JSON.parse(fs.readFileSync(pathToFile, "utf8"))
     : null;
 };
 
@@ -63,7 +62,7 @@ const generateCryptoHash = (key, obj) => {
  */
 const checkCryptoHashChanged = (key, obj) => {
   const schema = CACHE_SCHEMAS[key];
-  const cachedData = loadData(schema.file()) ?? {};
+  const cachedData = loadData(path.join(USER_CACHE_DIR, schema.userDir(),schema.file())) ?? {};
   const oldHash = cachedData?.[schema.field] ?? null;
 
   const newHash = generateCryptoHash(key, obj);
@@ -74,19 +73,20 @@ const checkCryptoHashChanged = (key, obj) => {
  * Build main storage API
  */
 const storage = Object.fromEntries(
-  Object.entries(CACHE_SCHEMAS).flatMap(([key, { dir, file, field }]) => [
+  Object.entries(CACHE_SCHEMAS).flatMap(([key, { userDir, file, field }]) => [
     [
       `save${key}`,
       (value) =>
         saveData({
-          dir: path.join(USER_CACHE_DIR, dir()),
+          dir: path.join(USER_CACHE_DIR, userDir()),
           fileName: file(),
           data: { [field]: value },
         }),
     ],
     [
       `load${key}`,
-      () => loadData(`${USER_CACHE_DIR}/${dir()}/${file()}`)?.[field] ?? null,
+      () =>
+        loadData(`${USER_CACHE_DIR}/${userDir()}/${file()}`)?.[field] ?? null,
     ],
   ])
 );
