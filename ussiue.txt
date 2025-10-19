@@ -1,0 +1,27 @@
+{
+  newRanks: true,
+  newPosition: true,
+  newAuthoredKatas: true,
+  newHonor: true,
+  newUniquesKatas: true
+}
+
+
+1. поле newPosition, newHonor, не зовисемые
+  если у них значения true то должна произойти запись их значения и в хешь(в хешь уже сделано)
+  и в  базу
+
+2. Если newAuthoredKatas true, то  идет запись в хешь эту уже сделано, и оброщение к апи
+код варс по адресу export const getAuthoredChallenges = (username) =>
+    `https://www.codewars.com/api/v1/users/${username}/code-challenges/authored`;
+
+3. Если newUniquesKatas or newRanks (true должно происходить ленивая проверка сначала поля newUniquesKatas если false то проверять
+newRanks), то  идет запись в хешь эту уже сделано, и оброщение к апи
+код варс по адресу export const getUniqueChallenges = (username) =>
+    `https://www.codewars.com/api/v1/users/${username}/code-challenges/uniques` или
+
+    Пока только сделай схему где будут переключатели или стейт машину с заглушками без образение к базе
+    даных а просто с логированием в консоль
+
+
+
