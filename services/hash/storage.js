@@ -1,9 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import { USER_CACHE_DIR, USER_NAME } from "../../config.js";
+import { USER_CACHE_DIR } from "../../config.js";
 import { generateSha256Hash, serializeObjectForHash } from "./cryptoUtils.js";
 import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 
+/**
+ * Ensure cache directory exists
+ */
 const ensureDir = () => {
   if (!fs.existsSync(USER_CACHE_DIR)) {
     fs.mkdirSync(USER_CACHE_DIR, { recursive: true });
@@ -12,6 +15,8 @@ const ensureDir = () => {
 
 /**
  * Save data to cache file
+ * @param {string} fileName
+ * @param {any} data
  */
 const saveData = (fileName, data) => {
   ensureDir();
@@ -24,6 +29,8 @@ const saveData = (fileName, data) => {
 
 /**
  * Load data from cache file
+ * @param {string} fileName
+ * @returns {any|null} Parsed JSON or null if file does not exist
  */
 const loadData = (fileName) => {
   const filePath = path.join(USER_CACHE_DIR, fileName);
@@ -33,32 +40,38 @@ const loadData = (fileName) => {
 };
 
 /**
- * Check if object has changed (for entries with useCryptoHash)
+ * Generate SHA256 hash for an object (pure function, does not write)
+ * @param {string} key - schema key
+ * @param {any} obj - object to hash
+ * @returns {string} SHA256 hash
  */
-const hasCryptoHashChanged = (key, obj) => {
+const generateCryptoHash = (key, obj) => {
   const schema = CACHE_SCHEMAS[key];
   if (!schema?.useCryptoHash) {
-    throw new Error(
-      `"${key}" does not support hashing (missing useCryptoHash: true).`
-    );
+    throw new Error(`"${key}" does not support hashing (useCryptoHash: true)`);
   }
 
   const serialized = serializeObjectForHash(obj);
-  const newHash = generateSha256Hash(serialized);
-  const oldData = loadData(schema.file());
-  const oldHash = oldData?.[schema.field] ?? null;
-
-  const changed = newHash !== oldHash;
-
-  if (changed) {
-    saveData(schema.file(), { [schema.field]: newHash });
-  }
-
-  return changed;
+  return generateSha256Hash(serialized);
 };
 
 /**
- * Build the main storage API
+ * Check if a hashed object has changed (pure function)
+ * @param {string} key
+ * @param {any} obj
+ * @returns {boolean} true if object has changed
+ */
+const checkCryptoHashChanged = (key, obj) => {
+  const schema = CACHE_SCHEMAS[key];
+  const cachedData = loadData(schema.file()) ?? {};
+  const oldHash = cachedData?.[schema.field] ?? null;
+
+  const newHash = generateCryptoHash(key, obj);
+  return newHash !== oldHash;
+};
+
+/**
+ * Build main storage API
  */
 const storage = Object.fromEntries(
   Object.entries(CACHE_SCHEMAS).flatMap(([key, { file, field }]) => [
@@ -67,9 +80,7 @@ const storage = Object.fromEntries(
   ])
 );
 
-/**
- * Add a universal hasCryptoHashChanged() API for crypto-based schemas
- */
-storage.hasCryptoHashChanged = hasCryptoHashChanged;
+storage.generateCryptoHash = generateCryptoHash;
+storage.checkCryptoHashChanged = checkCryptoHashChanged;
 
 export default storage;
