@@ -35,7 +35,10 @@ export const FIELD_HANDLERS = Object.freeze({
     actions.saveHashField("Ranks", getCompletedChallenges)(username, value),
   Position: actions.saveNormal("Position"),
   Honor: actions.saveNormal("Honor"),
-  AuthoredKatas: actions.saveApi("AuthoredKatas", getAuthoredChallenges),
+  AuthoredKatasCount: actions.saveApi(
+    "AuthoredKatasCount",
+    getAuthoredChallenges
+  ),
 });
 
 export const applyUserProfileUpdates = async (username, updates) => {

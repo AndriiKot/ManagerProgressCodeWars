@@ -7,9 +7,9 @@ import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 /**
  * Ensure cache directory exists
  */
-const ensureDir = () => {
-  if (!fs.existsSync(USER_CACHE_DIR)) {
-    fs.mkdirSync(USER_CACHE_DIR, { recursive: true });
+const ensureDir = (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
 };
 
@@ -18,10 +18,10 @@ const ensureDir = () => {
  * @param {string} fileName
  * @param {any} data
  */
-const saveData = (fileName, data) => {
-  ensureDir();
+const saveData = ({ dir, fileName, data }) => {
+  ensureDir(dir);
   fs.writeFileSync(
-    path.join(USER_CACHE_DIR, fileName),
+    path.join(dir, fileName),
     JSON.stringify(data, null, 2),
     "utf8"
   );
@@ -74,9 +74,20 @@ const checkCryptoHashChanged = (key, obj) => {
  * Build main storage API
  */
 const storage = Object.fromEntries(
-  Object.entries(CACHE_SCHEMAS).flatMap(([key, { file, field }]) => [
-    [`save${key}`, (value) => saveData(file(), { [field]: value })],
-    [`load${key}`, () => loadData(file())?.[field] ?? null],
+  Object.entries(CACHE_SCHEMAS).flatMap(([key, { dir, file, field }]) => [
+    [
+      `save${key}`,
+      (value) =>
+        saveData({
+          dir: path.join(USER_CACHE_DIR, dir()),
+          fileName: file(),
+          data: { [field]: value },
+        }),
+    ],
+    [
+      `load${key}`,
+      () => loadData(`${USER_CACHE_DIR}/${dir()}/${file()}`)?.[field] ?? null,
+    ],
   ])
 );
 
