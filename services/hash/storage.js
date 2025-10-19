@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { USER_CACHE_DIR } from "../../config.js";
+import { CACHE_DIR_CODEWARS } from "../../config.js";
 import { generateSha256Hash, serializeObjectForHash } from "./cryptoUtils.js";
 import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 
@@ -62,7 +62,9 @@ const generateCryptoHash = (key, obj) => {
  */
 const checkCryptoHashChanged = (key, obj) => {
   const schema = CACHE_SCHEMAS[key];
-  const cachedData = loadData(path.join(USER_CACHE_DIR, schema.userDir(),schema.file())) ?? {};
+  const cachedData =
+    loadData(path.join(CACHE_DIR_CODEWARS, schema.userDir(), schema.file())) ??
+    {};
   const oldHash = cachedData?.[schema.field] ?? null;
 
   const newHash = generateCryptoHash(key, obj);
@@ -78,7 +80,7 @@ const storage = Object.fromEntries(
       `save${key}`,
       (value) =>
         saveData({
-          dir: path.join(USER_CACHE_DIR, userDir()),
+          dir: path.join(CACHE_DIR_CODEWARS, userDir()),
           fileName: file(),
           data: { [field]: value },
         }),
@@ -86,7 +88,8 @@ const storage = Object.fromEntries(
     [
       `load${key}`,
       () =>
-        loadData(`${USER_CACHE_DIR}/${userDir()}/${file()}`)?.[field] ?? null,
+        loadData(`${CACHE_DIR_CODEWARS}/${userDir()}/${file()}`)?.[field] ??
+        null,
     ],
   ])
 );

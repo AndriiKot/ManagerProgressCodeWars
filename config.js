@@ -1,2 +1,2 @@
 export const USER_NAME = "AndriiKot";
-export const USER_CACHE_DIR = `cache/codewars/`;
+export const CACHE_DIR_CODEWARS = `cache/codewars/`;
