@@ -83,23 +83,19 @@ const loadData = (pathToFile) => {
 };
 
 const oldHashes = loadData(path.join("diff", "code-challenges-hashes-1.json"));
-const newHashes = loadData(path.join("diff", "code-challenges-hashes-3.json"));
+const newHashes = loadData(path.join("diff", "code-challenges-hashes-4.json"));
 
-const pagesWithDiff = [];
-if (oldHashes.length === newHashes.length) {
-  for (let i = -1; i >= -oldHashes.length; i--) {
-    if (oldHashes.at(i) !== newHashes.at(i)) {
-      pagesWithDiff.push(i);
-    }
-  }
-} else {
+const compareHashes = ({ oldHashes, newHashes }) => {
+  const pagesWithDiff = [];
+
   const steps = Math.max(oldHashes.length, newHashes.length);
   for (let i = -1; i >= -steps; i--) {
     if (oldHashes.at(i) !== newHashes.at(i)) {
       pagesWithDiff.push(i);
     }
   }
-}
+  return pagesWithDiff;
+};
 
-console.log(pagesWithDiff);
+console.log(compareHashes({ oldHashes, newHashes }));
 // !!! TESTING ONLY !!!
