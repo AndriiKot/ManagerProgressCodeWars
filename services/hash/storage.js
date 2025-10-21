@@ -1,23 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { CACHE_DIR_CODEWARS } from "../../config.js";
-import { generateSha256Hash, serializeObjectForHash } from "./cryptoUtils.js";
+import { generateCryptoHash } from "./cryptoUtils.js";
 import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 
-/**
- * Ensure cache directory exists
- */
 const ensureDir = (dir) => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 };
 
-/**
- * Save data to cache file
- * @param {string} fileName
- * @param {any} data
- */
 const saveData = ({ dir, fileName, data }) => {
   ensureDir(dir);
   fs.writeFileSync(
@@ -27,47 +19,29 @@ const saveData = ({ dir, fileName, data }) => {
   );
 };
 
-/**
- * Load data from cache file
- * @param {string} fileName
- * @returns {any|null} Parsed JSON or null if file does not exist
- */
 const loadData = (pathToFile) => {
   return fs.existsSync(pathToFile)
     ? JSON.parse(fs.readFileSync(pathToFile, "utf8"))
     : null;
 };
 
-/**
- * Generate SHA256 hash for an object (pure function, does not write)
- * @param {string} key - schema key
- * @param {any} obj - object to hash
- * @returns {string} SHA256 hash
- */
-const generateCryptoHash = (key, obj) => {
+const generateSchemaHash = (key, raw) => {
   const schema = CACHE_SCHEMAS[key];
   if (!schema?.useCryptoHash) {
     throw new Error(`"${key}" does not support hashing (useCryptoHash: true)`);
   }
 
-  const serialized = serializeObjectForHash(obj);
-  return generateSha256Hash(serialized);
+  return generateCryptoHash(raw);
 };
 
-/**
- * Check if a hashed object has changed (pure function)
- * @param {string} key
- * @param {any} obj
- * @returns {boolean} true if object has changed
- */
-const checkCryptoHashChanged = (key, obj) => {
+const checkCryptoHashChanged = (key, raw) => {
   const schema = CACHE_SCHEMAS[key];
   const cachedData =
     loadData(path.join(CACHE_DIR_CODEWARS, schema.userDir(), schema.file())) ??
     {};
   const oldHash = cachedData?.[schema.field] ?? null;
 
-  const newHash = generateCryptoHash(key, obj);
+  const newHash = generateSchemaHash(key, raw);
   return newHash !== oldHash;
 };
 
@@ -82,7 +56,7 @@ const storage = Object.fromEntries(
         saveData({
           dir: path.join(CACHE_DIR_CODEWARS, userDir()),
           fileName: file(),
-          data: { [field]: value },
+          data: field ? { [field]: value } : [value],
         }),
     ],
     [
@@ -94,7 +68,7 @@ const storage = Object.fromEntries(
   ])
 );
 
-storage.generateCryptoHash = generateCryptoHash;
+storage.generateSchemaHash = generateSchemaHash;
 storage.checkCryptoHashChanged = checkCryptoHashChanged;
 
 export default storage;

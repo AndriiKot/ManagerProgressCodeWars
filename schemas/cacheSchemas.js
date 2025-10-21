@@ -3,28 +3,38 @@ import { USER_NAME } from "../config.js";
 export const CACHE_SCHEMAS = {
   Ranks: {
     userDir: () => `${USER_NAME}`,
-    file: () => `user-ranks-${USER_NAME}.hash.json`,
+    file: () => `ranks.json`,
     field: "CryptoHash",
     useCryptoHash: true,
   },
   Position: {
     userDir: () => `${USER_NAME}`,
-    file: () => `user-position-${USER_NAME}.json`,
+    file: () => `position.json`,
     field: "leaderboardPosition",
   },
   AuthoredKatasCount: {
     userDir: () => `${USER_NAME}`,
-    file: () => `user-authored-katas-count-${USER_NAME}.json`,
+    file: () => `authored-katas-count.json`,
     field: "totalAuthored",
   },
   Honor: {
     userDir: () => `${USER_NAME}`,
-    file: () => `user-honor-${USER_NAME}.json`,
+    file: () => `honor.json`,
     field: "honor",
   },
   UniquesKatas: {
     userDir: () => `${USER_NAME}`,
-    file: () => `user-uniques-katas-${USER_NAME}.json`,
+    file: () => `uniques-katas-count.json`,
     field: "totalCompleted",
+  },
+  PagesCodeChallenges: {
+    userDir: () => `${USER_NAME}`,
+    file: () => `pages-code-challenges.json`,
+    useCryptoHash: true,
+  },
+  KatasCodeChallenges: {
+    userDir: () => `${USER_NAME}`,
+    file: () => `katas-code-challenges.json`,
+    useCryptoHash: true,
   },
 };
