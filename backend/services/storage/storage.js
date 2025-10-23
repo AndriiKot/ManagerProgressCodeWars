@@ -1,4 +1,4 @@
-import { access, mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { generateCryptoHash } from "./cryptoUtils.js";
 import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
@@ -18,7 +18,7 @@ export const writeStructureAsJson = async ({
 }) => {
   if (typeof dataObject !== "object" || dataObject === null) {
     throw new TypeError(
-      `Data must be an object or array, but recieved type "${typeof dataObjec}"`
+      `Data must be an object or array, but recieved type "${typeof dataObject}"`
     );
   }
 
@@ -34,7 +34,7 @@ export const loadJSONtoStructure = async (pathToFile) => {
   let result = null;
 
   try {
-    await access(pathToFile, constants.F_OK);
+    await access(pathToFile);
     const raw = await readFile(pathToFile, "utf-8");
     result = JSON.parse(raw);
   } catch (err) {
@@ -45,7 +45,9 @@ export const loadJSONtoStructure = async (pathToFile) => {
 };
 
 export const storage = (schema) => {
-  const { file, CachePath: dir = "./cache" } = schema ?? {};
+  const dir = CACHE_SCHEMAS.Path || "./cache";
+  const file = schema.file;
+
   if (!file) throw new Error("Schema must include a 'file' property");
 
   const filePath = join(dir, file);
@@ -60,14 +62,6 @@ export const storage = (schema) => {
     load: () => loadJSONtoStructure(filePath),
   };
 };
-// const generateSchemaHash = (key, raw) => {
-//   const schema = CACHE_SCHEMAS[key];
-//   if (!schema?.useCryptoHash) {
-//     throw new Error(`"${key}" does not support hashing (useCryptoHash: true)`);
-//   }
-
-//   return generateCryptoHash(raw);
-// };
 
 // const checkCryptoHashChanged = (key, raw) => {
 //   const schema = CACHE_SCHEMAS[key];
