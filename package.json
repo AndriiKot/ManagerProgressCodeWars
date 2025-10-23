@@ -4,15 +4,14 @@
   "private": true,
   "main": "backend/index.js",
   "type": "module",
+  "imports": {
+    "#shared": "./shared/index.js",
+    "#schemas": "./shared/schemas/index.js",
+    "#utils": "./shared/utils/index.js",
+    "#config": "./config.js"
+  },
   "scripts": {
     "start": "node backend/index.js",
     "test": "node --test"
-  },
-  "author": "Andrii Kot",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }

@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import { deepFreeze } from "../utils/deepFreeze.js";
+import { deepFreeze } from "#utils";
 
 export const makeCodewarsCacheSchemas = (basePath) => {
   return deepFreeze({

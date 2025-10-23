@@ -1,6 +1,6 @@
 import { access, mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { generateCryptoHash } from "./cryptoUtils.js";
+import { generateCryptoHash } from "../hash/index.js";
 import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
 
 export const ensureDir = async (directoryPath) => {
