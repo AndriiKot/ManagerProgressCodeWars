@@ -1,6 +1,6 @@
 import { getUserProfileDiff } from "./getUserProfileDiff.js";
 import { applyUserProfileUpdates } from "./applyUserProfileUpdates.js";
-import { USER_NAME } from "./config.js";
+import { USER_NAME } from "#config.js";
 
 (async () => {
   console.log("🔍 Checking user profile updates...");

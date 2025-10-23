@@ -1,6 +1,6 @@
 'use strict';
 
-import { retryApiRequest } from "../utils/retryApiRequest.js";
+import { retryApiRequest } from "#api-utils";
 import { API_CODEWARS_URL } from "./urls.js";
 
 const { Users_API, List_Completed_Challenges, List_Authored_Challenges, Code_Challenges_API } = API_CODEWARS_URL;

@@ -1,1 +1,1 @@
-import { generateCryptoHash } from './generateCryptoHash.js';
+export { generateCryptoHash } from './generateCryptoHash.js';

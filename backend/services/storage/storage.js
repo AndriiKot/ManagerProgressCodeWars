@@ -1,7 +1,8 @@
 import { access, mkdir, writeFile, readFile } from "node:fs/promises";
-import { join } from "node:path";
-import { generateCryptoHash } from "../hash/index.js";
-import { CACHE_SCHEMAS } from "../../schemas/cacheSchemas.js";
+import { join, dirname } from "node:path";
+
+import { generateCryptoHash } from "#hash";
+import { CODEWARS_CACHE_SCHEMAS } from "./codewarsCacheSchemas.js";
 
 export const ensureDir = async (directoryPath) => {
   try {
@@ -12,8 +13,7 @@ export const ensureDir = async (directoryPath) => {
 };
 
 export const writeStructureAsJson = async ({
-  directory,
-  fileName,
+  filePath,
   dataObject,
 }) => {
   if (typeof dataObject !== "object" || dataObject === null) {
@@ -22,9 +22,9 @@ export const writeStructureAsJson = async ({
     );
   }
 
+  const directory = dirname(filePath);
   await ensureDir(directory);
 
-  const filePath = join(directory, fileName);
   const jsonData = JSON.stringify(dataObject, null, 2);
 
   await writeFile(filePath, jsonData, "utf8");
@@ -45,21 +45,18 @@ export const loadJSONtoStructure = async (pathToFile) => {
 };
 
 export const storage = (schema) => {
-  const dir = CACHE_SCHEMAS.Path || "./cache";
   const file = schema.file;
 
   if (!file) throw new Error("Schema must include a 'file' property");
 
-  const filePath = join(dir, file);
 
   return {
     save: (data) =>
       writeStructureAsJson({
-        directory: dir,
-        fileName: file,
+        filePath: file,
         dataObject: data,
       }),
-    load: () => loadJSONtoStructure(filePath),
+    load: () => loadJSONtoStructure(file),
   };
 };
 

@@ -5,10 +5,22 @@
   "main": "backend/index.js",
   "type": "module",
   "imports": {
+    "#config": "./config.js",
     "#shared": "./shared/index.js",
     "#schemas": "./shared/schemas/index.js",
-    "#utils": "./shared/utils/index.js",
-    "#config": "./config.js"
+    "#shared-utils": "./shared/utils/index.js",
+
+    "#backend": "./backend/index.js",
+
+    "#api": "./backend/services/api/index.js",
+    "#api-codewars": "./backend/services/api/codewars/index.js",
+    "#api-utils": "./backend/services/api/utils/index.js",
+
+    "#hash": "./backend/services/hash/index.js",
+    "#storage": "./backend/services/storage/storage.js",
+
+    "#jobs": "./backend/jobs/index.js",
+    "#logger": "./backend/jobs/logger.js"
   },
   "scripts": {
     "start": "node backend/index.js",
