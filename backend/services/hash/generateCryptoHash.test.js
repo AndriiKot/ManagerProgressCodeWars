@@ -1,14 +1,20 @@
+import assert from "node:assert";
 import { generateCryptoHash } from "./generateCryptoHash.js";
 
-const assert = (desc, cond) => {
-  if (cond) console.log(`✅ ${desc}`);
-  else console.error(`❌ ${desc}`);
-};
+console.log("=== Running generateCryptoHash tests ===");
 
-const obj1 = { a: 1, b: 2 };
-const obj2 = { b: 2, a: 1 };
-assert("object key order does not affect hash", generateCryptoHash(obj1) === generateCryptoHash(obj2));
+try {
+  const hash1 = generateCryptoHash({ a: 1, b: 2 });
+  const hash2 = generateCryptoHash({ b: 2, a: 1 });
+  const hash3 = generateCryptoHash([1, 2, 3]);
+  const hash4 = generateCryptoHash("hello");
+  const hash5 = generateCryptoHash(42);
 
-const arr = [1,2,3];
-assert("array hash is string", typeof generateCryptoHash(arr) === "string");
+  assert.strictEqual(hash1, hash2, "Hashes for objects with same keys/values should match");
+  assert.notStrictEqual(hash1, hash3, "Object and array should produce different hashes");
+  assert.notStrictEqual(hash4, hash5, "String and number should produce different hashes");
 
+  console.log("✅ All generateCryptoHash tests passed!");
+} catch (err) {
+  console.error("❌ Test failed:", err.message);
+}

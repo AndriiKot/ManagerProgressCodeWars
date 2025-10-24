@@ -4,7 +4,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CodewarsAPI } from './codewarsAPI.js';
 
-// --- Мок fetch ---
 global.fetch = async (url) => {
   return {
     ok: true,
