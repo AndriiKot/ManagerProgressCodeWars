@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * Makes a GET request and returns unified result.
+ * @param {string} url - Target URL to fetch from.
+ * @returns {Promise<{success: boolean, data: any, error: string | null}>}
+ */
 export const apiRequest = async (url) => {
   try {
     const res = await fetch(url);
