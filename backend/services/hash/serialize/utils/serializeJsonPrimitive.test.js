@@ -29,6 +29,13 @@ try {
     '{"__type":"object","value":null}'
   );
 
+
+
+   assert.strictEqual(
+     serializeJsonPrimitive('42'),
+     '{"__type":"string","value":"42"}'
+   );
+
   console.log("✅ All serializeJsonPrimitive tests passed!");
 } catch (err) {
   console.error("❌ Test failed:", err.message);
