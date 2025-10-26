@@ -1,1 +1,1 @@
-export { makeCodewarsCacheSchemas } from './makeCodewarsCacheSchemas.js';
+export { CodewarsProfileCacheSchemas } from './codewarsProfileCacheSchemas.js';

@@ -1,6 +1,7 @@
 "use strict";
 
 import { fetchApiJson } from "./fetchApiJson.js";
+import { deepFreeze } from "#shared-utils";
 
 /**
  * @typedef {string|number|boolean|null|JsonObject|JsonArray} JsonValue
@@ -40,9 +41,9 @@ export const retryFetchApiRequest = async (
     console.warn(`Attempt ${i + 1} failed for ${url}: ${result.error}`);
     if (i < retries - 1) await new Promise((r) => setTimeout(r, delayMs));
   }
-  return {
+  return deepFreeze({
     success: false,
     data: null,
     error: `All ${retries} attempts failed for ${url}`,
-  };
+  });
 };
