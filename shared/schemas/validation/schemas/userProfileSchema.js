@@ -2,7 +2,7 @@ import { createLanguageSchema } from './languageSchema.js';
 
 export const userProfileSchema = {
   type: 'object',
-  required: ['id', 'username', 'honor', 'ranks', 'codeChallenges'],
+  required: ['id', 'username', 'honor', 'ranks', 'codeChallenges', 'leaderboardPosition'],
   properties: {
     id: { type: 'string' },
     username: { type: 'string' },
@@ -38,7 +38,8 @@ export const userProfileSchema = {
             name: { 
               type: 'string',
               enum: [
-                '1 dan', '2 dan', '3 dan', '4 dan', '5 dan', '6 dan', '7 dan', '8 dan'
+                '8 kyu', '7 kyu', '6 kyu', '5 kyu', '4 kyu', '3 kyu', '2 kyu', '1 kyu',
+                '1 dan', '2 dan', '3 dan',
               ], 
             },
             color: { type: 'string' },

@@ -8,7 +8,6 @@ export function validateSchema(schema, data, options = {}) {
   const errors = [];
 
   function validateObject(objSchema, objData, path = '') {
-    // Проверка типа корневого объекта
     if (objSchema.type && !checkType(objData, objSchema.type)) {
       errors.push({
         path: path || 'root',
@@ -17,7 +16,6 @@ export function validateSchema(schema, data, options = {}) {
       return;
     }
 
-    // Проверка обязательных полей
     if (objSchema.required && Array.isArray(objSchema.required)) {
       for (const field of objSchema.required) {
         if (!(field in objData)) {
@@ -33,7 +31,6 @@ export function validateSchema(schema, data, options = {}) {
 
     const validatedKeys = new Set();
 
-    // 1. Проверка определенных в схеме свойств
     if (objSchema.properties) {
       for (const [key, propSchema] of Object.entries(objSchema.properties)) {
         validatedKeys.add(key);
@@ -42,7 +39,6 @@ export function validateSchema(schema, data, options = {}) {
         if (key in objData) {
           const value = objData[key];
 
-          // Проверка типа значения
           if (propSchema.type && !checkType(value, propSchema.type)) {
             errors.push({
               path: currentPath,
@@ -51,7 +47,6 @@ export function validateSchema(schema, data, options = {}) {
             continue;
           }
 
-          // Проверка enum для строк
           if (propSchema.enum && propSchema.type === 'string' && !propSchema.enum.includes(value)) {
             errors.push({
               path: currentPath,
@@ -60,18 +55,15 @@ export function validateSchema(schema, data, options = {}) {
             continue;
           }
 
-          // Дополнительные проверки для чисел
           if (propSchema.type === 'number' || propSchema.type === 'integer') {
             const numberErrors = validateNumber(value, propSchema, currentPath);
             errors.push(...numberErrors);
           }
 
-          // Рекурсивная проверка вложенных объектов
           if (recursive && propSchema.type === 'object') {
             validateObject(propSchema, value, currentPath);
           }
           
-          // Проверка массива
           if (recursive && propSchema.type === 'array' && propSchema.items) {
             validateArray(propSchema, value, currentPath);
           }
@@ -84,7 +76,6 @@ export function validateSchema(schema, data, options = {}) {
       }
     }
 
-    // 2. Проверка additionalProperties (динамических полей)
     if (objSchema.additionalProperties && typeof objSchema.additionalProperties === 'object') {
       for (const key of Object.keys(objData)) {
         if (!validatedKeys.has(key)) {
@@ -93,7 +84,6 @@ export function validateSchema(schema, data, options = {}) {
           const value = objData[key];
           const additionalSchema = objSchema.additionalProperties;
           
-          // Проверка типа динамического поля
           if (additionalSchema.type && !checkType(value, additionalSchema.type)) {
             errors.push({
               path: currentPath,
@@ -102,7 +92,6 @@ export function validateSchema(schema, data, options = {}) {
             continue;
           }
 
-          // Проверка enum для additionalProperties
           if (additionalSchema.enum && additionalSchema.type === 'string' && !additionalSchema.enum.includes(value)) {
             errors.push({
               path: currentPath,
@@ -111,13 +100,11 @@ export function validateSchema(schema, data, options = {}) {
             continue;
           }
 
-          // Дополнительные проверки для чисел
           if (additionalSchema.type === 'number' || additionalSchema.type === 'integer') {
             const numberErrors = validateNumber(value, additionalSchema, currentPath);
             errors.push(...numberErrors);
           }
 
-          // Рекурсивная проверка динамических объектов
           if (recursive && additionalSchema.type === 'object') {
             validateObject(additionalSchema, value, currentPath);
           }
@@ -125,7 +112,6 @@ export function validateSchema(schema, data, options = {}) {
       }
     }
 
-    // 3. Strict проверка
     if (strict && !objSchema.additionalProperties) {
       for (const key of Object.keys(objData)) {
         if (!validatedKeys.has(key)) {
@@ -169,7 +155,6 @@ export function validateSchema(schema, data, options = {}) {
     }
   }
 
-  // Вспомогательные функции
   function checkType(value, expectedType) {
     switch (expectedType) {
       case 'integer':
