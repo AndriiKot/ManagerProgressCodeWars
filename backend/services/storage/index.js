@@ -1,12 +1,28 @@
 import { join } from 'node:path';
+import { USER_NAME } from '#config';    
 import { loadJSONtoStructure, writeJSONtoStructure } from "#storage-cache";
 import { saveToDB } from "./db/saveToDB.js";
 import { CodewarsAPI } from '#api';
-import { CodewarsProfileCacheSchemas } from "#schemas";
+import { CodewarsProfileCacheSchemas, validateWithRankCheck, userProfileSchema } from "#schemas";
 import { generateCryptoHash } from "#hash";
 
 const { getUserProfile, getAllPagesCompletedChallenges } = CodewarsAPI;
 
+const userDataObject = await getUserProfile(USER_NAME);
+const { success, data } = userDataObject;
+
+if (success) {
+   const validationData = validateWithRankCheck(userProfileSchema, data, {
+     recursive: true,
+     strict: true,
+   })
+  console.log(validationData);
+  if (validationData.isValid) {
+    console.log("HI!");
+
+  }
+}
+/*
 export const getValueByPath = (obj, path) =>
   path.split(".").reduce((acc, key) => acc?.[key], obj);
 
@@ -93,3 +109,4 @@ export const storage = async (schema) => {
 
 storage(CodewarsProfileCacheSchemas);
 
+ */
