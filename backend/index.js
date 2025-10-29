@@ -1,6 +1,7 @@
 import { USER_NAME } from '#config';    
 import { CodewarsAPI } from '#api';
 import { userProfileSchema, validateWithRankCheck } from "#schemas";
+import { Storage } from '#storage';
 
 
 (async () => {
@@ -16,6 +17,7 @@ import { userProfileSchema, validateWithRankCheck } from "#schemas";
 
     if (validationResult.isValid) {
       console.log(`user profile ${USER_NAME} data is valid!`);
+      await Storage.update({ user: USER_NAME, data: profileData });
     }
   }
 })();
