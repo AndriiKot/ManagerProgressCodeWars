@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { USER_NAME } from '#config';    
+import { USER_NAME, CACHE_DIR_CODEWARS } from '#config';    
 import { loadJSONtoStructure, writeJSONtoStructure } from "#storage-cache";
 import { CodewarsAPI } from '#api';
 import { CodewarsProfileCacheSchemas, validateWithRankCheck, userProfileSchema } from "#schemas";
@@ -18,6 +18,9 @@ if (isProfileSuccess) {
 
   if (validationResult.isValid) {
     console.log(`User profile ${USER_NAME} data is valid`);
+    const pathHash = join(CACHE_DIR_CODEWARS, USER_NAME, 'userProfile.hash.json');
+    const newFullHashUser = generateCryptoHash(profileData);
+    
     
     const profileHash = {};
     for(const fieldName in CodewarsProfileCacheSchemas) {
