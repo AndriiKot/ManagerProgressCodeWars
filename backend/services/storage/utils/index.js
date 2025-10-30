@@ -1,2 +1,2 @@
-export * from './loadJSONtoStructure.js';
-export * from './writeJSONtoStructure.js';
+export * from './loadJSONAsObject.js';
+export * from './writeObjectToJSON.js';

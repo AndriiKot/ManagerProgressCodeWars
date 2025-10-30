@@ -1,6 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 
-export const loadJSONtoStructure = async (filePath) => {
+export const loadJSONAsObject = async (filePath) => {
   try {
     await access(filePath);
     const raw = await readFile(filePath, "utf-8");

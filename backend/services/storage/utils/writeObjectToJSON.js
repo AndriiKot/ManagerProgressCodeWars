@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 
-export const writeJSONtoStructure = async ({ filePath, dataObject }) => {
+export const writeObjectToJSON = async ({ filePath, dataObject }) => {
   try {
     const dir = dirname(filePath);
     await mkdir(dir, { recursive: true });
