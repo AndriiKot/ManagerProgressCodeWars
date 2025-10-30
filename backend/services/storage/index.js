@@ -25,6 +25,3 @@ export const Storage = {
   },
 
 };
-
-const testWrite = await Storage.write({ filePath: './storage-test.json', data: { "name": "Andrii", "age": 39 }});
-const testLoas = await Storage.load('./storage-test.json');

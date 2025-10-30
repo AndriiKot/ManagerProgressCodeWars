@@ -2,6 +2,14 @@ import { join } from "node:path";
 import { deepFreeze } from "#shared-utils";
 
 export const CodewarsProfileCacheSchemas = deepFreeze({
+  Honor: {
+    field: "honor",
+    useCryptoHash: false,
+  },
+  Clan: {
+    field: "clan",
+    useCryptoHash: false,
+  },
   Ranks: {
     field: "ranks",
     useCryptoHash: true,
@@ -16,10 +24,6 @@ export const CodewarsProfileCacheSchemas = deepFreeze({
   },
   UniquesKatas: {
     field: "codeChallenges.totalCompleted",
-    useCryptoHash: false,
-  },
-  Honor: {
-    field: "honor",
     useCryptoHash: false,
   },
 });
