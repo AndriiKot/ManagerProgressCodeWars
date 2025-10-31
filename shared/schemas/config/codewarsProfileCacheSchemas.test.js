@@ -7,38 +7,50 @@ const testCodewarsProfileCacheSchemas = () => {
     if (!condition) throw new Error(message);
   };
 
-  const expectedKeys = [
-    "Ranks",
-    "Position",
-    "AuthoredKatasCount",
-    "UniquesKatas",
-    "Honor",
-  ];
-
+  assert(Object.isFrozen(schemas), "Schemas object is not frozen");
+  assert(Array.isArray(schemas.fields), "'fields' must be an array");
   assert(
-    JSON.stringify(Object.keys(schemas)) === JSON.stringify(expectedKeys),
-    "testCodewarsProfileCacheSchemas: Keys do not match expected keys"
+    JSON.stringify(schemas.fields) ===
+      JSON.stringify([
+        "honor",
+        "clan",
+        "leaderboardPosition",
+        "codeChallenges.totalAuthored",
+        "codeChallenges.totalCompleted",
+      ]),
+    "'fields' content does not match expected values"
   );
 
-  assert(Object.isFrozen(schemas), "Schemas object is not frozen");
-  for (const key of expectedKeys) {
-    assert(
-      Object.isFrozen(schemas[key]),
-      `Schemas sub-object '${key}' is not frozen`
-    );
-  }
+  assert(
+    typeof schemas.fieldsUseHash === "object" && schemas.fieldsUseHash !== null,
+    "'fieldsUseHash' must be an object"
+  );
 
-  assert(schemas.Ranks.field === "ranks", "Ranks field incorrect");
-  assert(schemas.Position.field === "leaderboardPosition", "Position field incorrect");
-  assert(schemas.AuthoredKatasCount.field === "codeChallenges.totalAuthored", "AuthoredKatasCount field incorrect");
-  assert(schemas.UniquesKatas.field === "codeChallenges.totalCompleted", "UniquesKatas field incorrect");
-  assert(schemas.Honor.field === "honor", "Honor field incorrect");
+  assert("0" in schemas.fieldsUseHash && "1" in schemas.fieldsUseHash, "'fieldsUseHash' must have keys '0' and '1'");
 
-  assert(schemas.Ranks.useCryptoHash === true, "Ranks useCryptoHash should be true");
-  assert(schemas.Position.useCryptoHash === false, "Position useCryptoHash should be false");
-  assert(schemas.AuthoredKatasCount.useCryptoHash === false, "AuthoredKatasCount useCryptoHash should be false");
-  assert(schemas.UniquesKatas.useCryptoHash === false, "UniquesKatas useCryptoHash should be false");
-  assert(schemas.Honor.useCryptoHash === false, "Honor useCryptoHash should be false");
+  const level0 = schemas.fieldsUseHash[0];
+  const level1 = schemas.fieldsUseHash[1];
+
+  assert(level0 && typeof level0 === "object", "fieldsUseHash[0] must be object or set");
+  assert(level1 && typeof level1 === "object", "fieldsUseHash[1] must be object or set");
+
+  const level0Expected = ["ranks"];
+  const level1Expected = ["ranks.overall", "ranks.languages"];
+
+  assert(
+    JSON.stringify(Object.values(level0)) === JSON.stringify(level0Expected) ||
+      JSON.stringify(Object.keys(level0)) === JSON.stringify(level0Expected),
+    "fieldsUseHash[0] does not match expected fields"
+  );
+
+  assert(
+    JSON.stringify(Object.values(level1)) === JSON.stringify(level1Expected) ||
+      JSON.stringify(Object.keys(level1)) === JSON.stringify(level1Expected),
+    "fieldsUseHash[1] does not match expected fields"
+  );
+
+  assert(Object.isFrozen(schemas.fields), "'fields' array is not frozen");
+  assert(Object.isFrozen(schemas.fieldsUseHash), "'fieldsUseHash' object is not frozen");
 
   console.log("✅ testCodewarsProfileCacheSchemas passed");
 };
