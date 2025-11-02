@@ -43,7 +43,6 @@ export const Storage = {
       }
       return acc;
     }, delta);
-    console.log(updateResult);
     
     // level 3 RanksCryptoHash comprable 
     const { ranks: newRanks } = data;
@@ -56,9 +55,32 @@ export const Storage = {
    
     deltaHash["hash-fields"].ranks = newRanksHash;
 
-    // level 4 ranks.overall and ranks.languages parallel
+    // level 4-1 ranks.overall 
+    const overall = 'ranks.overall';
+    const newOverall = generateCryptoHash(getValueByPath(data, overall));
+    const oldOverall = oldUserProfileHash["hash-fields"][overall];
+
+    if (newOverall === oldOverall) {
+      return updateResult;
+    };
+
+    delta[overall] = getValueByPath(data, overall);
+    deltaHash["hash-fields"][overall] = newOverall;
+  
+    // level 4-2 ranks.languages parallel 
+    const languages = 'ranks.languages';
+    const newLanguages = generateCryptoHash(getValueByPath(data, languages));
+    const oldLanguages = oldUserProfileHash["hash-fields"][languages];
     
-               
+    if (newLanguages === oldLanguages) {
+      return updateResult;
+    }; 
+
+    delta[languages] = getValueByPath(data, languages);
+    deltaHash["hash-fields"][languages] = newLanguages;
+  
+    console.dir(updateResult, { depth: null });
+                   
   },
 
   async load(pathFile) {
