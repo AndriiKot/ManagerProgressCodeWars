@@ -50,12 +50,15 @@ export const Storage = {
     const newRanksHash = generateCryptoHash(newRanks);
     const { "hash-fields": { ranks: oldRanksHash }  } = oldUserProfileHash;
 
-    if (newRanksHash === oldRanksHash) {
+    if(newRanksHash === oldRanksHash) {
       return updateResult;
     };
-        
+   
+    deltaHash["hash-fields"].ranks = newRanksHash;
+
+    // level 4 ranks.overall and ranks.languages parallel
     
-        
+               
   },
 
   async load(pathFile) {
