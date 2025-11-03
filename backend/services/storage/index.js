@@ -2,7 +2,7 @@ import { join } from 'node:path';
 import { CACHE_DIR_CODEWARS, DATA_DIR_CODEWARS } from '#config';
 import { loadJSONAsObject, writeObjectToJSON } from './utils/index.js';
 import { generateCryptoHash } from '#hash';
-import { ProfileCacheSchemas, ProfileSimpleFields } from "#schemas";
+import { ProfileSimpleFields } from "#schemas";
 import { getValueByPath } from "#shared-utils";
 
 export const Storage = {
@@ -32,7 +32,6 @@ export const Storage = {
 
 
     // level 2 simple fileds comparable don`t use crypto hash
-    // const { fields , fieldsUseHash } = CodewarsProfileCacheSchemas;
     ProfileSimpleFields.reduce((acc, curr) => {
        const newValue = getValueByPath(data, curr);
        const oldValue = getValueByPath(oldUserData,curr);
@@ -42,18 +41,17 @@ export const Storage = {
        return acc;
      }, delta);
 
-     console.log(updateResult);
 
-    // // level 3 RanksCryptoHash comprable
-    // const { ranks: newRanks } = data;
-    // const newRanksHash = generateCryptoHash(newRanks);
-    // const { "hash-fields": { ranks: oldRanksHash }  } = oldUserProfileHash;
+    //  level 3 RanksCryptoHash comprable
+     const { ranks: newRanks } = data;
+     const newRanksHash = generateCryptoHash(newRanks);
+     const { ranks: oldRanksHash } = oldUserCache;
 
-    // if(newRanksHash === oldRanksHash) {
-    //   return updateResult;
-    // };
+     if(newRanksHash === oldRanksHash) {
+       return updateResult;
+     };
 
-    // deltaHash["hash-fields"].ranks = newRanksHash;
+     deltaHash.ranks = newRanksHash;
 
     // // level 4-1 ranks.overall
     // const overallPath = 'ranks.overall';
