@@ -1,16 +1,8 @@
-import { join } from "node:path";
-import { deepFreeze } from "#shared-utils";
+import { deepFreezeArray } from "#shared-utils";
 
-export const CodewarsProfileCacheSchemas = deepFreeze({
-  fields: [
-    "honor",
-    "clan",
-    "leaderboardPosition",
-    "codeChallenges.totalAuthored",
-    "codeChallenges.totalCompleted",
-  ],
-  fieldsUseHash: [
-    ["ranks"],
-    ["ranks.overall", "ranks.languages"],
-  ],
-});
+export const CodewarsProfileCacheSchemas = deepFreezeArray([
+  "fullHash",
+  "ranks",
+  "ranks.overall",
+  "ranks.languages",
+]);

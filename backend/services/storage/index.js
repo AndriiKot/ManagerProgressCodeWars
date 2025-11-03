@@ -7,8 +7,11 @@ import { getValueByPath } from "#shared-utils";
 
 export const Storage = {
   async update({ user, data }) {
-    const userCache = join(CACHE_DIR_CODEWARS, user);
-    const userData =  join(DATA_DIR_CODEWARS, user);
+    const userCache = join(CACHE_DIR_CODEWARS, user, 'userProfile.hash.json');
+    const userData =  join(DATA_DIR_CODEWARS, user, 'userProfile.json');
+    console.log(await loadJSONAsObject(userCache));
+    console.dir(await loadJSONAsObject(userData), { depth: null });
+/*
     const delta = {};
     const deltaHash = { fullHash: '', fields: {}, "hash-fields": {} };
     const updateResult = {
@@ -56,16 +59,21 @@ export const Storage = {
     deltaHash["hash-fields"].ranks = newRanksHash;
 
     // level 4-1 ranks.overall 
-    const overall = 'ranks.overall';
-    const newOverall = generateCryptoHash(getValueByPath(data, overall));
-    const oldOverall = oldUserProfileHash["hash-fields"][overall];
+    const overallPath = 'ranks.overall';
+    const overallData = getValueByPath(data, overallPath);
+    const newOverall = generateCryptoHash(overallData);
+    const oldOverall = oldUserProfileHash["hash-fields"][overallPath];
 
     if (newOverall === oldOverall) {
       return updateResult;
     };
 
-    delta[overall] = getValueByPath(data, overall);
-    deltaHash["hash-fields"][overall] = newOverall;
+    for(const key in overallData) {
+      if (overallData[key] 
+    }
+
+    deltaHash["hash-fields"][overallPath] = newOverall;
+
   
     // level 4-2 ranks.languages parallel 
     const languages = 'ranks.languages';
@@ -76,7 +84,6 @@ export const Storage = {
       return updateResult;
     }; 
 
-    delta[languages] = getValueByPath(data, languages);
     deltaHash["hash-fields"][languages] = newLanguages;
   
     console.dir(updateResult, { depth: null });
@@ -92,5 +99,5 @@ export const Storage = {
     console.log('write Object to json');
     writeObjectToJSON({ filePath, dataObject: data });
   },
-
-};
+*/
+}};
