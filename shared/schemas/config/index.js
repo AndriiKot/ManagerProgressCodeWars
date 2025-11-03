@@ -1,1 +1,2 @@
-export { CodewarsProfileCacheSchemas } from './codewarsProfileCacheSchemas.js';
+export { ProfileCacheSchemas } from './profileCacheSchemas.js';
+export { ProfileSimpleFields } from './profileSimpleFields.js';

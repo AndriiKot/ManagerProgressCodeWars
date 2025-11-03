@@ -2,7 +2,7 @@ import { join } from 'node:path';
 import { CACHE_DIR_CODEWARS, DATA_DIR_CODEWARS } from '#config';
 import { loadJSONAsObject, writeObjectToJSON } from './utils/index.js';
 import { generateCryptoHash } from '#hash';
-import { CodewarsProfileCacheSchemas } from "#schemas";
+import { ProfileCacheSchemas, ProfileSimpleFields } from "#schemas";
 import { getValueByPath } from "#shared-utils";
 
 export const Storage = {
@@ -30,21 +30,19 @@ export const Storage = {
       deltaHash.fullHash = newUserProfileHash;
     };
 
-    console.log(updateResult);
 
     // level 2 simple fileds comparable don`t use crypto hash
     // const { fields , fieldsUseHash } = CodewarsProfileCacheSchemas;
+    ProfileSimpleFields.reduce((acc, curr) => {
+       const newValue = getValueByPath(data, curr);
+       const oldValue = getValueByPath(oldUserData,curr);
+       if (newValue !== oldValue) {
+         delta[curr] = newValue;
+       }
+       return acc;
+     }, delta);
 
-    // fields.reduce((acc, curr) => {
-    //   const newValue = getValueByPath(data, curr);
-    //   const oldValue = oldUserProfileHash.fields[curr];
-    //   if (newValue !== oldValue) {
-    //     delta[curr] = newValue;
-    //     deltaHash.fields[curr] = newValue;
-    //     updateResult.hash.change = true;
-    //   }
-    //   return acc;
-    // }, delta);
+     console.log(updateResult);
 
     // // level 3 RanksCryptoHash comprable
     // const { ranks: newRanks } = data;

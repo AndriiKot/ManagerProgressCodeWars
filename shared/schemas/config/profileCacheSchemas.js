@@ -1,6 +1,6 @@
 import { deepFreezeArray } from "#shared-utils";
 
-export const CodewarsProfileCacheSchemas = deepFreezeArray([
+export const ProfileCacheSchemas = deepFreezeArray([
   "fullHash",
   "ranks",
   "ranks.overall",
