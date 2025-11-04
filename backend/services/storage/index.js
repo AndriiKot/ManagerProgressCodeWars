@@ -32,7 +32,7 @@ export const Storage = {
 
 
     // level 2 simple fileds comparable don`t use crypto hash
-    ProfileSimpleFields.reduce((acc, curr) => {
+     ProfileSimpleFields.reduce((acc, curr) => {
        const newValue = getValueByPath(data, curr);
        const oldValue = getValueByPath(oldUserData,curr);
        if (newValue !== oldValue) {
@@ -53,15 +53,15 @@ export const Storage = {
 
      deltaHash.ranks = newRanksHash;
 
-    // // level 4-1 ranks.overall
-    // const overallPath = 'ranks.overall';
-    // const overallData = getValueByPath(data, overallPath);
-    // const newOverall = generateCryptoHash(overallData);
-    // const oldOverall = oldUserProfileHash["hash-fields"][overallPath];
+     // level 5-1 ranks.overall
+     const overallPath = 'ranks.overall';
+     const overallData = getValueByPath(data, overallPath);
+     const newOverallHash = generateCryptoHash(overallData);
+     const oldOverallHash = oldUserCache[overallPath];
 
-    // if (newOverall === oldOverall) {
-    //   return updateResult;
-    // };
+     if (newOverall === oldOverall) {
+       return updateResult;
+     };
 
     // for(const key in overallData) {
     //   if (overallData[key]
