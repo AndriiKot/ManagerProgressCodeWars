@@ -7,14 +7,18 @@ import { getValueByPath } from "#shared-utils";
 
 export const Storage = {
   async update({ user, data }) {
-    const oldUserCache = await this.load(join(CACHE_DIR_CODEWARS, user, 'userProfile.hash.json'));
-    const oldUserData = await this.load(join(DATA_DIR_CODEWARS, user, 'userProfile.json'));
+    const pathToCache = join(CACHE_DIR_CODEWARS, user, 'userProfile.hash.json');
+    const pathToData = join(DATA_DIR_CODEWARS, user, 'userProfile.json');
+    const oldUserCache = await this.load(pathToCache);
+    const oldUserData = await this.load(pathToData);
 
     const delta = {};
     const deltaHash = {};
     const updateResult = {
-      data: { change: false, delta },
-      hash: { change: false, deltaHash },
+      user,
+      change: false,
+      data: { delta },
+      hash: { deltaHash },
     };
 
     const newUserProfileHash = generateCryptoHash(data);
@@ -25,8 +29,7 @@ export const Storage = {
     if (newUserProfileHash === oldUserProfileHash) {
       return updateResult;
     } else {
-      updateResult.hash.change = true;
-      updateResult.data.change = true;
+      updateResult.change = true;
       deltaHash.fullHash = newUserProfileHash;
     };
 
@@ -53,7 +56,7 @@ export const Storage = {
 
      deltaHash.ranks = newRanksHash;
 
-     // level 5-1 ranks.overall
+     // level 5 ranks.overall
      const overallPath = 'ranks.overall';
      const overallData = getValueByPath(data, overallPath);
      const newOverallHash = generateCryptoHash(overallData);
@@ -71,33 +74,53 @@ export const Storage = {
       delta[path] = newValue;
     }
 
-    console.log(updateResult);
+     // level 6-1  ranks.languages
+     const languagesPath = 'ranks.languages';
+     const languagesData = getValueByPath(data, languagesPath);
+     const newLanguagesHash = generateCryptoHash(languagesData);
+     const oldLanguagesHash = oldUserCache[languagesPath];
 
-    // deltaHash["hash-fields"][overallPath] = newOverall;
+     if (newLanguagesHash === oldLanguagesHash) {
+       return updateResult;
+     };
 
+    // level 6-2 hash ranks.languages
+    const dataLanguages = [];
 
-    // // level 4-2 ranks.languages parallel
-    // const languages = 'ranks.languages';
-    // const newLanguages = generateCryptoHash(getValueByPath(data, languages));
-    // const oldLanguages = oldUserProfileHash["hash-fields"][languages];
+    for(const key in languagesData) {
+      const path = `${languagesPath}.${key}`;
+      const newHash = generateCryptoHash(languagesData[key]);
+      const oldHash = oldUserCache[path];
+      if(newHash === oldHash) continue;
+      deltaHash[path] = newHash;
+      dataLanguages.push(path);
+    }
 
-    // if (newLanguages === oldLanguages) {
-    //   return updateResult;
-    // };
+    for(const category of dataLanguages) {
+      const oldData = getValueByPath(oldUserData, category);
+      const newData = getValueByPath(data, category);
+      for(const field in newData) {
+        const path = `${category}.${field}`;
+        const oldData = getValueByPath(oldUserData, path);
+        const newData = getValueByPath(data, path);
+        if (oldData === newData) continue;
+        delta[path] = newData;
+      }
+    };
 
-    // deltaHash["hash-fields"][languages] = newLanguages;
+    if(updateResult.change) {
+      this.write({ filePath: pathToCache, data: updateResult.hash.deltaHash });
+      this.write({ filePath: pathToData, data: data });
+    }
 
-    // console.dir(updateResult, { depth: null });
-
+    return updateResult;
   },
 
   async load(pathFile) {
-    console.log('load json as object');
     return await loadJSONAsObject(pathFile);
   },
 
   async write({ filePath, data }) {
-    console.log('write Object to json');
     writeObjectToJSON({ filePath, dataObject: data });
   },
 
