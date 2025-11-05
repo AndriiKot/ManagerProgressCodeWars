@@ -59,13 +59,19 @@ export const Storage = {
      const newOverallHash = generateCryptoHash(overallData);
      const oldOverallHash = oldUserCache[overallPath];
 
-     if (newOverall === oldOverall) {
+     if (newOverallHash === oldOverallHash) {
        return updateResult;
      };
 
-    // for(const key in overallData) {
-    //   if (overallData[key]
-    // }
+    for(const key in overallData) {
+      const path = `${overallPath}.${key}`;
+      const oldValue = getValueByPath(oldUserData, path);
+      const newValue = overallData[key];
+      if(newValue === oldValue) continue;
+      delta[path] = newValue;
+    }
+
+    console.log(updateResult);
 
     // deltaHash["hash-fields"][overallPath] = newOverall;
 
