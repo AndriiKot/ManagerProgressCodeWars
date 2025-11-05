@@ -109,7 +109,7 @@ export const Storage = {
     };
 
     if(updateResult.change) {
-      this.write({ filePath: pathToCache, data: updateResult.hash.deltaHash });
+      this.write({ filePath: pathToCache, data: { ...oldUserCache, ...updateResult.hash.deltaHash }});
       this.write({ filePath: pathToData, data: data });
     }
 
