@@ -23,6 +23,7 @@ export const Storage = {
 
     const newUserProfileHash = generateCryptoHash(data);
     const oldUserProfileHash  = oldUserCache.fullHash;
+    console.log(oldUserProfileHash);
 
 
     // level 1 fulHash userProfile comparable
@@ -66,13 +67,15 @@ export const Storage = {
        return updateResult;
      };
 
-    for(const key in overallData) {
-      const path = `${overallPath}.${key}`;
-      const oldValue = getValueByPath(oldUserData, path);
-      const newValue = overallData[key];
-      if(newValue === oldValue) continue;
-      delta[path] = newValue;
-    }
+     deltaHash[overallPath] = newOverallHash;     
+
+     for(const key in overallData) {
+       const path = `${overallPath}.${key}`;
+       const oldValue = getValueByPath(oldUserData, path);
+       const newValue = overallData[key];
+       if(newValue === oldValue) continue;
+       delta[path] = newValue;
+     }
 
      // level 6-1  ranks.languages
      const languagesPath = 'ranks.languages';
@@ -83,6 +86,8 @@ export const Storage = {
      if (newLanguagesHash === oldLanguagesHash) {
        return updateResult;
      };
+
+     deltaHash[languagesPath] = newLanguagesHash;
 
     // level 6-2 hash ranks.languages
     const dataLanguages = [];
@@ -112,7 +117,7 @@ export const Storage = {
       this.write({ filePath: pathToCache, data: { ...oldUserCache, ...updateResult.hash.deltaHash }});
       this.write({ filePath: pathToData, data: data });
     }
-
+    console.log(updateResult);
     return updateResult;
   },
 
