@@ -4,6 +4,10 @@ import { loadJSONAsObject, writeObjectToJSON } from './utils/index.js';
 import { generateCryptoHash } from '#hash';
 import { ProfileSimpleFields } from "#schemas";
 import { getValueByPath } from "#shared-utils";
+import { CodewarsAPI } from '#api';
+
+const { getAllPagesCompletedChallenges } = CodewarsAPI;
+
 
 export const Storage = {
   async updateUserProfile({ user, data }) {
@@ -11,7 +15,7 @@ export const Storage = {
     const pathToData = join(DATA_DIR_CODEWARS, user, 'userProfile.json');
     const oldUserCache = await this.load(pathToCache);
     const oldUserData = await this.load(pathToData);
-
+ 
     const delta = {};
     const deltaHash = {};
     const updateResult = {
@@ -123,7 +127,34 @@ export const Storage = {
   },
 
   async updateUserCodeChallenges({ user }) {
-    console.log(user);
+    const pathToCache = join(CACHE_DIR_CODEWARS, user, 'code-challenges/code-challenges.hash.json');
+    const pathToData = join(
+    const oldCodeChallenges = await this.load(pathToCache);
+
+    const delta = {};
+    const deltaHash = {};
+    const updateResult = {
+      user,
+      change: false,
+      data: { delta },
+      hash: { deltaHash },
+      oldCache: oldCodeChallenges,
+      pathToCache,
+    };
+
+
+    const pages = await getAllPagesCompletedChallenges(user);
+    pages.forEach((page, index, arr) => { 
+      const oldHash = oldCodeChallenges[index];
+      const newHash = generateCryptoHash(page);
+      if(newHash !== oldHash) {
+        updateResult.change = true;
+        deltaHash[index] = newHash;
+      };
+
+    });
+    console.log(updateResult);
+    return updateResult;
   },
 
   async update({ user, data }) {
@@ -135,6 +166,8 @@ export const Storage = {
     }
     if(updateUserProfile.ranksChange) {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(updateUserProfile);
+      const { pathToCache, oldCache, hash: { deltaHash} } = updateUserCodeChallenges;
+      this.write({ filePath: pathToCache, data: { ...oldCache, ...deltaHash }});
     };
   },
 
