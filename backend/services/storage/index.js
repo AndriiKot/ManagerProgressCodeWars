@@ -6,7 +6,7 @@ import { ProfileSimpleFields } from "#schemas";
 import { getValueByPath } from "#shared-utils";
 
 export const Storage = {
-  async update({ user, data }) {
+  async updateUserProfile({ user, data }) {
     const pathToCache = join(CACHE_DIR_CODEWARS, user, 'userProfile.hash.json');
     const pathToData = join(DATA_DIR_CODEWARS, user, 'userProfile.json');
     const oldUserCache = await this.load(pathToCache);
@@ -19,11 +19,15 @@ export const Storage = {
       change: false,
       data: { delta },
       hash: { deltaHash },
+      oldData: oldUserData,
+      oldCache: oldUserCache,
+      pathToCache,
+      pathToData,
+      ranksChange: true,
     };
 
     const newUserProfileHash = generateCryptoHash(data);
     const oldUserProfileHash  = oldUserCache.fullHash;
-    console.log(oldUserProfileHash);
 
 
     // level 1 fulHash userProfile comparable
@@ -56,6 +60,8 @@ export const Storage = {
      };
 
      deltaHash.ranks = newRanksHash;
+     updateResult.updateResult = true;
+     
 
      // level 5 ranks.overall
      const overallPath = 'ranks.overall';
@@ -113,12 +119,23 @@ export const Storage = {
       }
     };
 
-    if(updateResult.change) {
-      this.write({ filePath: pathToCache, data: { ...oldUserCache, ...updateResult.hash.deltaHash }});
+    return updateResult;
+  },
+
+  async updateUserCodeChallenges({ user }) {
+    console.log(user);
+  },
+
+  async update({ user, data }) {
+    const updateUserProfile = await this.updateUserProfile({ user, data });
+    if(updateUserProfile.change) {
+      const { pathToCache, pathToData, oldCache, hash: { deltaHash}  } = updateUserProfile;
+      this.write({ filePath: pathToCache, data: { ...oldCache, ...deltaHash }});
       this.write({ filePath: pathToData, data: data });
     }
-    console.log(updateResult);
-    return updateResult;
+    if(updateUserProfile.ranksChange) {
+      const updateUserCodeChallenges = await this.updateUserCodeChallenges(updateUserProfile);
+    };
   },
 
   async load(pathFile) {
