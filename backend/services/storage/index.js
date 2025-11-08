@@ -128,7 +128,8 @@ export const Storage = {
 
   async updateUserCodeChallenges({ user }) {
     const pathToCache = join(CACHE_DIR_CODEWARS, user, 'code-challenges/code-challenges.hash.json');
-    const pathToData = join(
+    const pathToPages = join(DATA_DIR_CODEWARS, user, 'code-challenges/pages/');
+
     const oldCodeChallenges = await this.load(pathToCache);
 
     const delta = {};
@@ -140,6 +141,7 @@ export const Storage = {
       hash: { deltaHash },
       oldCache: oldCodeChallenges,
       pathToCache,
+      pathToPages,
     };
 
 
@@ -150,10 +152,11 @@ export const Storage = {
       if(newHash !== oldHash) {
         updateResult.change = true;
         deltaHash[index] = newHash;
+        delta[index] = page;
       };
 
     });
-    console.log(updateResult);
+    console.log(updateResult, { depth: 3 });
     return updateResult;
   },
 
@@ -166,9 +169,22 @@ export const Storage = {
     }
     if(updateUserProfile.ranksChange) {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(updateUserProfile);
-      const { pathToCache, oldCache, hash: { deltaHash} } = updateUserCodeChallenges;
+      const { pathToCache, oldCache, pathToPages, data: { delta }, hash: { deltaHash} } = updateUserCodeChallenges;
       this.write({ filePath: pathToCache, data: { ...oldCache, ...deltaHash }});
+      this.savePages({ filePath: pathToPages, data: delta });
     };
+  },
+
+  async savePages({ filePath, data }) {
+    const tasks = [];
+    //console.log(data);
+    for (const key in data) {
+      const page = data[key];
+      const pagePath = join(filePath, `${key}.json`);
+      tasks.push(this.write({ filePath: pagePath, data: page }));
+   }
+
+   await Promise.all(tasks);
   },
 
   async load(pathFile) {
