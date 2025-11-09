@@ -128,9 +128,29 @@ export const Storage = {
   },
 
   async updateUserAuthored({ user }) {
-    console.log(user);
-    console.log('updateUserAuthored');
-    console.log(await getAuthoredChallenges(user));
+    const pathToCache = join(CACHE_DIR_CODEWARS, user, 'userAuthored.hash.json');
+    const pathToData = join(DATA_DIR_CODEWARS, user, 'userAuthored.json'); 
+   
+    const oldAuthoredCache = await this.load(pathToCache);
+    const oldAuthoredData = await this.load(pathToData);
+
+    const newAuthoredData = await getAuthoredChallenges(user);
+   
+    const newCountTasks = newAuthoredData.data.data.length;
+
+
+    const changeFullHash = ({ newData, oldData}) => {
+      const newHash = generateCryptoHash(newData.data);
+      return newHash === oldData.fullHash;  
+    };
+
+    const change = changeFullHash({ newData:  newAuthoredData.data, oldData: oldAuthoredData }); 
+    console.log(change); 
+    
+    if (oldAuthoredCache.countAuthoredTasks === newCountTasks ) {
+      return;
+    };
+    console.log('newFullHash not aqual oldFullHash');
   }, 
 
   async updateUserCodeChallenges({ user }) {
