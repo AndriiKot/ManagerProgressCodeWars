@@ -6,7 +6,7 @@ import { ProfileSimpleFields } from "#schemas";
 import { getValueByPath } from "#shared-utils";
 import { CodewarsAPI } from '#api';
 
-const { getAllPagesCompletedChallenges } = CodewarsAPI;
+const { getAllPagesCompletedChallenges, getAuthoredChallenges } = CodewarsAPI;
 
 
 export const Storage = {
@@ -27,7 +27,8 @@ export const Storage = {
       oldCache: oldUserCache,
       pathToCache,
       pathToData,
-      ranksChange: true,
+      ranksChange: true,       // from test default value must be 'false'
+      authoredChange: true,    // from test default value must be 'false'
     };
 
     const newUserProfileHash = generateCryptoHash(data);
@@ -126,6 +127,12 @@ export const Storage = {
     return updateResult;
   },
 
+  async updateUserAuthored({ user }) {
+    console.log(user);
+    console.log('updateUserAuthored');
+    console.log(await getAuthoredChallenges(user));
+  }, 
+
   async updateUserCodeChallenges({ user }) {
     const pathToCache = join(CACHE_DIR_CODEWARS, user, 'code-challenges/code-challenges.hash.json');
     const pathToPages = join(DATA_DIR_CODEWARS, user, 'code-challenges/pages/');
@@ -147,7 +154,6 @@ export const Storage = {
 
     const pages = await getAllPagesCompletedChallenges(user);
     pages.forEach((page, index, arr) => {
-      console.log(page); 
       const oldHash = oldCodeChallenges[index];
       const newHash = generateCryptoHash(page);
       if(newHash !== oldHash) {
@@ -157,7 +163,6 @@ export const Storage = {
       };
 
     });
-    console.log(updateResult, { depth: 3 });
     return updateResult;
   },
 
@@ -167,6 +172,9 @@ export const Storage = {
       const { pathToCache, pathToData, oldCache, hash: { deltaHash}  } = updateUserProfile;
       this.write({ filePath: pathToCache, data: { ...oldCache, ...deltaHash }});
       this.write({ filePath: pathToData, data: data });
+    }
+    if(updateUserProfile.authoredChange) {
+      await this.updateUserAuthored(updateUserProfile);
     }
     if(updateUserProfile.ranksChange) {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(updateUserProfile);
@@ -178,7 +186,6 @@ export const Storage = {
 
   async savePages({ filePath, data }) {
     const tasks = [];
-    //console.log(data);
     for (const key in data) {
       const page = data[key];
       const pagePath = join(filePath, `${key}.json`);
