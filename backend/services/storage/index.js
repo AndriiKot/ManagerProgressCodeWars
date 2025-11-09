@@ -146,7 +146,8 @@ export const Storage = {
 
 
     const pages = await getAllPagesCompletedChallenges(user);
-    pages.forEach((page, index, arr) => { 
+    pages.forEach((page, index, arr) => {
+      console.log(page); 
       const oldHash = oldCodeChallenges[index];
       const newHash = generateCryptoHash(page);
       if(newHash !== oldHash) {
@@ -171,7 +172,7 @@ export const Storage = {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(updateUserProfile);
       const { pathToCache, oldCache, pathToPages, data: { delta }, hash: { deltaHash} } = updateUserCodeChallenges;
       this.write({ filePath: pathToCache, data: { ...oldCache, ...deltaHash }});
-      this.savePages({ filePath: pathToPages, data: delta });
+      //this.savePages({ filePath: pathToPages, data: delta });
     };
   },
 
