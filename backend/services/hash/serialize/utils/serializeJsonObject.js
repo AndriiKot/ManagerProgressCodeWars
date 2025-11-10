@@ -10,13 +10,13 @@
  * @returns {string} A JSON string representing the serialized object with sorted keys.
  *
  * @example
- * serializeJsonObject({ b: 2, a: 1 }); 
+ * serializeJsonObject({ b: 2, a: 1 });
  * // '{"a":1,"b":2}'
  *
- * serializeJsonObject({ b: { y: 2, x: 1 }, a: 1 }); 
+ * serializeJsonObject({ b: { y: 2, x: 1 }, a: 1 });
  * // '{"a":1,"b":{"y":2,"x":1}}'  // Nested keys are not sorted
  *
- * serializeJsonObject({ a: 1, b: null, c: [1, 2] }); 
+ * serializeJsonObject({ a: 1, b: null, c: [1, 2] });
  * // '{"a":1,"b":null,"c":[1,2]}'
  */
 export const serializeJsonObject = (obj) => {

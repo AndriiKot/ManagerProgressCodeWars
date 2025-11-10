@@ -1,11 +1,7 @@
-import { deepFreezeArray } from "./deepFreezeArray.js";
-import { deepFreeze } from "./deepFreeze.js";
+import { deepFreezeArray } from './deepFreezeArray.js';
+import { deepFreeze } from './deepFreeze.js';
 
-const testArr = [
-  1,
-  { a: 2, b: { c: 3 } },
-  [4, 5, { d: 6 }]
-];
+const testArr = [1, { a: 2, b: { c: 3 } }, [4, 5, { d: 6 }]];
 
 deepFreezeArray(testArr);
 

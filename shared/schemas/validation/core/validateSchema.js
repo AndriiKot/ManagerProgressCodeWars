@@ -1,27 +1,25 @@
 export const validateSchema = (schema, data, options = {}) => {
-  const {
-    recursive = true,
-    strict = false,
-    customValidators = [],
-  } = options;
+  const { recursive = true, strict = false, customValidators = [] } = options;
 
   const errors = [];
 
   const checkType = (value, expectedType) => {
     switch (expectedType) {
-      case "integer":
+      case 'integer':
         return Number.isInteger(value);
-      case "number":
-        return typeof value === "number";
-      case "string":
-        return typeof value === "string";
-      case "boolean":
-        return typeof value === "boolean";
-      case "array":
+      case 'number':
+        return typeof value === 'number';
+      case 'string':
+        return typeof value === 'string';
+      case 'boolean':
+        return typeof value === 'boolean';
+      case 'array':
         return Array.isArray(value);
-      case "object":
-        return typeof value === "object" && value !== null && !Array.isArray(value);
-      case "null":
+      case 'object':
+        return (
+          typeof value === 'object' && value !== null && !Array.isArray(value)
+        );
+      case 'null':
         return value === null;
       default:
         return typeof value === expectedType;
@@ -29,9 +27,11 @@ export const validateSchema = (schema, data, options = {}) => {
   };
 
   const getTypeErrorMessage = (expectedType, value) => {
-    const actualType = Array.isArray(value) ? "array" : typeof value;
-    return expectedType === "integer"
-      ? `Expected integer, got ${actualType}${Number.isInteger(value) ? "" : " (not integer)"}`
+    const actualType = Array.isArray(value) ? 'array' : typeof value;
+    return expectedType === 'integer'
+      ? `Expected integer, got ${actualType}${
+          Number.isInteger(value) ? '' : ' (not integer)'
+        }`
       : `Expected type '${expectedType}', got '${actualType}'`;
   };
 
@@ -81,7 +81,7 @@ export const validateSchema = (schema, data, options = {}) => {
     arrData.forEach((element, i) => {
       const elementPath = `${path}[${i}]`;
 
-      if (arrSchema.items.type === "object" && recursive) {
+      if (arrSchema.items.type === 'object' && recursive) {
         validateObject(arrSchema.items, element, elementPath);
       } else {
         if (!checkType(element, arrSchema.items.type)) {
@@ -91,18 +91,22 @@ export const validateSchema = (schema, data, options = {}) => {
           });
         }
 
-        if (["number", "integer"].includes(arrSchema.items.type)) {
-          const numberErrors = validateNumber(element, arrSchema.items, elementPath);
+        if (['number', 'integer'].includes(arrSchema.items.type)) {
+          const numberErrors = validateNumber(
+            element,
+            arrSchema.items,
+            elementPath,
+          );
           errors.push(...numberErrors);
         }
       }
     });
   };
 
-  const validateObject = (objSchema, objData, path = "") => {
+  const validateObject = (objSchema, objData, path = '') => {
     if (objSchema.type && !checkType(objData, objSchema.type)) {
       errors.push({
-        path: path || "root",
+        path: path || 'root',
         message: getTypeErrorMessage(objSchema.type, objData),
       });
       return;
@@ -119,7 +123,7 @@ export const validateSchema = (schema, data, options = {}) => {
       }
     }
 
-    if (!objData || typeof objData !== "object") return;
+    if (!objData || typeof objData !== 'object') return;
 
     const validatedKeys = new Set();
 
@@ -139,24 +143,30 @@ export const validateSchema = (schema, data, options = {}) => {
             continue;
           }
 
-          if (propSchema.enum && propSchema.type === "string" && !propSchema.enum.includes(value)) {
+          if (
+            propSchema.enum &&
+            propSchema.type === 'string' &&
+            !propSchema.enum.includes(value)
+          ) {
             errors.push({
               path: currentPath,
-              message: `Value '${value}' is not one of: ${propSchema.enum.join(", ")}`,
+              message: `Value '${value}' is not one of: ${propSchema.enum.join(
+                ', ',
+              )}`,
             });
             continue;
           }
 
-          if (["number", "integer"].includes(propSchema.type)) {
+          if (['number', 'integer'].includes(propSchema.type)) {
             const numberErrors = validateNumber(value, propSchema, currentPath);
             errors.push(...numberErrors);
           }
 
-          if (recursive && propSchema.type === "object") {
+          if (recursive && propSchema.type === 'object') {
             validateObject(propSchema, value, currentPath);
           }
 
-          if (recursive && propSchema.type === "array" && propSchema.items) {
+          if (recursive && propSchema.type === 'array' && propSchema.items) {
             validateArray(propSchema, value, currentPath);
           }
         } else if (propSchema.required) {
@@ -168,7 +178,10 @@ export const validateSchema = (schema, data, options = {}) => {
       }
     }
 
-    if (objSchema.additionalProperties && typeof objSchema.additionalProperties === "object") {
+    if (
+      objSchema.additionalProperties &&
+      typeof objSchema.additionalProperties === 'object'
+    ) {
       for (const key of Object.keys(objData)) {
         if (!validatedKeys.has(key)) {
           validatedKeys.add(key);
@@ -176,7 +189,10 @@ export const validateSchema = (schema, data, options = {}) => {
           const value = objData[key];
           const additionalSchema = objSchema.additionalProperties;
 
-          if (additionalSchema.type && !checkType(value, additionalSchema.type)) {
+          if (
+            additionalSchema.type &&
+            !checkType(value, additionalSchema.type)
+          ) {
             errors.push({
               path: currentPath,
               message: getTypeErrorMessage(additionalSchema.type, value),
@@ -184,20 +200,30 @@ export const validateSchema = (schema, data, options = {}) => {
             continue;
           }
 
-          if (additionalSchema.enum && additionalSchema.type === "string" && !additionalSchema.enum.includes(value)) {
+          if (
+            additionalSchema.enum &&
+            additionalSchema.type === 'string' &&
+            !additionalSchema.enum.includes(value)
+          ) {
             errors.push({
               path: currentPath,
-              message: `Value '${value}' is not one of: ${additionalSchema.enum.join(", ")}`,
+              message: `Value '${value}' is not one of: ${additionalSchema.enum.join(
+                ', ',
+              )}`,
             });
             continue;
           }
 
-          if (["number", "integer"].includes(additionalSchema.type)) {
-            const numberErrors = validateNumber(value, additionalSchema, currentPath);
+          if (['number', 'integer'].includes(additionalSchema.type)) {
+            const numberErrors = validateNumber(
+              value,
+              additionalSchema,
+              currentPath,
+            );
             errors.push(...numberErrors);
           }
 
-          if (recursive && additionalSchema.type === "object") {
+          if (recursive && additionalSchema.type === 'object') {
             validateObject(additionalSchema, value, currentPath);
           }
         }
@@ -216,8 +242,8 @@ export const validateSchema = (schema, data, options = {}) => {
     }
   };
 
-  if (schema.type === "array") {
-    validateArray(schema, data, "root");
+  if (schema.type === 'array') {
+    validateArray(schema, data, 'root');
   } else {
     validateObject(schema, data);
   }

@@ -18,7 +18,7 @@ test('CodewarsAPI', async (t) => {
     assert.deepStrictEqual(res, {
       success: true,
       data: { mocked: `https://www.codewars.com/api/v1/users/${user}` },
-      error: null
+      error: null,
     });
   });
 
@@ -28,8 +28,10 @@ test('CodewarsAPI', async (t) => {
     const res = await CodewarsAPI.getCompletedChallenges(user, page);
     assert.deepStrictEqual(res, {
       success: true,
-      data: { mocked: `https://www.codewars.com/api/v1/users/${user}/code-challenges/completed?page=${page}` },
-      error: null
+      data: {
+        mocked: `https://www.codewars.com/api/v1/users/${user}/code-challenges/completed?page=${page}`,
+      },
+      error: null,
     });
   });
 
@@ -38,8 +40,10 @@ test('CodewarsAPI', async (t) => {
     const res = await CodewarsAPI.getAuthoredChallenges(user);
     assert.deepStrictEqual(res, {
       success: true,
-      data: { mocked: `https://www.codewars.com/api/v1/users/${user}/code-challenges/authored` },
-      error: null
+      data: {
+        mocked: `https://www.codewars.com/api/v1/users/${user}/code-challenges/authored`,
+      },
+      error: null,
     });
   });
 
@@ -48,8 +52,10 @@ test('CodewarsAPI', async (t) => {
     const res = await CodewarsAPI.getChallenge(idOrSlug);
     assert.deepStrictEqual(res, {
       success: true,
-      data: { mocked: `https://www.codewars.com/api/v1/code-challenges/${idOrSlug}` },
-      error: null
+      data: {
+        mocked: `https://www.codewars.com/api/v1/code-challenges/${idOrSlug}`,
+      },
+      error: null,
     });
   });
 });

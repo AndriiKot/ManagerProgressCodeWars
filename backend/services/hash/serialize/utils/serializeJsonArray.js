@@ -9,13 +9,13 @@
  * @returns {string} A JSON string representing the serialized array.
  *
  * @example
- * serializeJsonArray([1, 2, 3]); 
+ * serializeJsonArray([1, 2, 3]);
  * // "[1,2,3]"
  *
- * serializeJsonArray([{ a: 1 }, { b: 2 }]); 
+ * serializeJsonArray([{ a: 1 }, { b: 2 }]);
  * // '[{"a":1},{"b":2}]'
  *
- * serializeJsonArray([true, null, ["nested", 42]]); 
+ * serializeJsonArray([true, null, ["nested", 42]]);
  * // '[true,null,["nested",42]]'
  */
 export const serializeJsonArray = (arr) => JSON.stringify(arr);

@@ -1,5 +1,5 @@
-import { serializeValidJSON } from "./serialize/index.js";
-import { generateSha256Hash } from "./generateSha256Hash.js";
+import { serializeValidJSON } from './serialize/index.js';
+import { generateSha256Hash } from './generateSha256Hash.js';
 
 /**
  * Generate a SHA-256 hash of valid JSON data.

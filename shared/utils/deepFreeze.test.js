@@ -1,14 +1,14 @@
-import { deepFreeze } from "./deepFreeze.js";
+import { deepFreeze } from './deepFreeze.js';
 
 const testObj = {
   a: 1,
   b: {
     c: 2,
     d: {
-      e: 3
-    }
+      e: 3,
+    },
   },
-  f: [1, 2, { g: 4 }]
+  f: [1, 2, { g: 4 }],
 };
 
 deepFreeze(testObj);
@@ -38,4 +38,3 @@ try {
 }
 
 console.log(JSON.stringify(testObj, null, 2));
-

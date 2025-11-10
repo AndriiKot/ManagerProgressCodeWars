@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-import { retryFetchApiRequest } from "#api-utils";
-import { API_CODEWARS_URL } from "./urls.js";
+import { retryFetchApiRequest } from '#api-utils';
+import { API_CODEWARS_URL } from './urls.js';
 
 const {
   Users_API,
@@ -16,13 +16,13 @@ export const CodewarsAPI = {
     retryFetchApiRequest(List_Completed_Challenges(user, pageNumber)),
   getAllPagesCompletedChallenges: async (user) => {
     const firstPage = await retryFetchApiRequest(
-      List_Completed_Challenges(user, 0)
+      List_Completed_Challenges(user, 0),
     );
     let pages = [];
     if (firstPage.success) {
       const countPages = firstPage.data.totalPages;
       const urls = Array.from({ length: countPages }, (_, i) =>
-        List_Completed_Challenges(user, i)
+        List_Completed_Challenges(user, i),
       );
       pages = await Promise.all(urls.map((url) => retryFetchApiRequest(url)));
     } else {

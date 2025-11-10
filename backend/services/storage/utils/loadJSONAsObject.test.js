@@ -18,4 +18,3 @@ const runTest = async () => {
 
   console.log('All tests passed ✅');
 };
-

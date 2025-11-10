@@ -1,4 +1,4 @@
-import crypto from "node:crypto";
+import crypto from 'node:crypto';
 
 /**
  * Generate a SHA-256 hash from a string.
@@ -14,7 +14,7 @@ import crypto from "node:crypto";
  * console.log(hash); // e.g., "a948904f2f0f479b8f8197694b30184b0d2e42f..."
  */
 export const generateSha256Hash = (str) => {
-  const hash = crypto.createHash("sha256");
-  hash.update(str, "utf8");
-  return hash.digest("hex");
+  const hash = crypto.createHash('sha256');
+  hash.update(str, 'utf8');
+  return hash.digest('hex');
 };

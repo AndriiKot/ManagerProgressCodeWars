@@ -3,7 +3,7 @@ import { createCodewarsRankValidator } from '#schemas';
 
 export function validateWithRankCheck(schema, data, options = {}) {
   const baseResult = validateSchema(schema, data, options);
-  
+
   if (!baseResult.isValid) {
     return baseResult;
   }
@@ -23,6 +23,6 @@ export function validateWithRankCheck(schema, data, options = {}) {
 
   return {
     isValid: errors.length === 0,
-    errors
+    errors,
   };
 }

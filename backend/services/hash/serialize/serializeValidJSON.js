@@ -1,4 +1,8 @@
-import { serializeJsonArray, serializeJsonObject, serializeJsonPrimitive } from './utils/index.js';
+import {
+  serializeJsonArray,
+  serializeJsonObject,
+  serializeJsonPrimitive,
+} from './utils/index.js';
 
 /**
  * Serialize a value that comes from valid JSON (as received from API).
@@ -8,6 +12,6 @@ import { serializeJsonArray, serializeJsonObject, serializeJsonPrimitive } from 
  */
 export const serializeValidJSON = (raw) => {
   if (Array.isArray(raw)) return serializeJsonArray(raw);
-  if (typeof raw === "object" && raw !== null) return serializeJsonObject(raw);
+  if (typeof raw === 'object' && raw !== null) return serializeJsonObject(raw);
   return serializeJsonPrimitive(raw);
 };

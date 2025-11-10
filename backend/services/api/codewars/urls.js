@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 export const API_CODEWARS_URL = {
   Users_API: (username) => `https://www.codewars.com/api/v1/users/${username}`,
