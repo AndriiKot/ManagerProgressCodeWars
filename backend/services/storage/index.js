@@ -28,8 +28,10 @@ const updateState = (user) => ({
   Profile: createUpdateSection(),
   Authored: createUpdateSection(),
   CodeChallenges: createUpdateSection(),
+  change: false,
   ranksChange: false,
   authoredChange: false,
+  challengesCahnge: false,
 });
 
 export const Storage = {
@@ -150,7 +152,7 @@ export const Storage = {
     return state;
   },
 
-  async updateUserAuthored({ user }) {
+  async updateUserAuthored({ user, state }) {
     const pathToCache = join(
       CACHE_DIR_CODEWARS,
       user,
@@ -163,23 +165,21 @@ export const Storage = {
 
     const newAuthoredData = await getAuthoredChallenges(user);
 
-    const newCountTasks = newAuthoredData.data.data.length;
+    const { Authored: { data: { delta }}} = state;
+    const { Authored: { hash: { deltaHash }}} = state;
 
-    const changeFullHash = ({ newData, oldData }) => {
-      const newHash = generateCryptoHash(newData.data);
-      return newHash === oldData.fullHash;
-    };
-
-    const change = changeFullHash({
-      newData: newAuthoredData.data,
-      oldData: oldAuthoredData,
-    });
-    console.log(change);
-
-    if (oldAuthoredCache.countAuthoredTasks === newCountTasks) {
-      return;
-    }
+    const newFullHash = generateCryptoHash(newAuthoredData.data);
+    const oldFullHash = oldAuthoredCache.fullHash;
+    console.dir({ newFullHash, oldFullHash });
+    if (newFullHash === oldFullHash) return;
+    
+    state.authoredChange = true;
+    state.Authored.change = true;
+    deltaHash.fullHash = newFullHash; 
+    
     console.log('newFullHash not aqual oldFullHash');
+    console.dir({ delta, deltaHash });
+    // return state;
   },
 
   async updateUserCodeChallenges({ user }) {
@@ -227,16 +227,18 @@ export const Storage = {
         oldCache,
         hash: { deltaHash },
       } = updateUserProfile.Profile;
+
       this.write({
         filePath: pathToCache,
         data: { ...oldCache, ...deltaHash },
       });
+
       this.write({ filePath: pathToData, data: data });
     }
-    /*
-    if (updateUserProfile.authoredChange) {
-      await this.updateUserAuthored(updateUserProfile);
-    }
+    
+    const updateUserAuthored = await this.updateUserAuthored({ user, state });
+    console.log(updateUserAuthored);
+    /*    
     if (updateUserProfile.ranksChange) {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(
         updateUserProfile,
