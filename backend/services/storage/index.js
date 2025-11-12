@@ -153,33 +153,63 @@ export const Storage = {
   },
 
   async updateUserAuthored({ user, state }) {
+    const { Authored } = state;
+
+    const {
+      data: { delta },
+      hash: { deltaHash },
+    } = Authored;
+
     const pathToCache = join(
       CACHE_DIR_CODEWARS,
       user,
       'userAuthored.hash.json',
     );
+
     const pathToData = join(DATA_DIR_CODEWARS, user, 'userAuthored.json');
 
-    const oldAuthoredCache = await this.load(pathToCache);
-    const oldAuthoredData = await this.load(pathToData);
+    const oldCache = await this.load(pathToCache);
+    const oldData = await this.load(pathToData);
 
-    const newAuthoredData = await getAuthoredChallenges(user);
+    Object.assign(Authored, {
+      pathToCache: pathToCache,
+      pathToData: pathToData,
+      oldCache: oldCache,
+      oldData: oldData,
+    });
 
-    const { Authored: { data: { delta }}} = state;
-    const { Authored: { hash: { deltaHash }}} = state;
+    const newData = await getAuthoredChallenges(user);
 
-    const newFullHash = generateCryptoHash(newAuthoredData.data);
-    const oldFullHash = oldAuthoredCache.fullHash;
-    console.dir({ newFullHash, oldFullHash });
-    if (newFullHash === oldFullHash) return;
-    
+    const newFullHash = generateCryptoHash(newData.data);
+    const oldFullHash = oldCache.fullHash;
+    if (newFullHash === oldFullHash) return state;
+
     state.authoredChange = true;
     state.Authored.change = true;
-    deltaHash.fullHash = newFullHash; 
-    
-    console.log('newFullHash not aqual oldFullHash');
-    console.dir({ delta, deltaHash });
-    // return state;
+    deltaHash.fullHash = newFullHash;
+
+    const katas = newData.data.data;
+    katas.forEach((kata, i, arr) => {
+      const { id } = kata;
+      const newHash = generateCryptoHash(id);
+      const oldHash = oldCache[id];
+      if (newHash === oldHash) return;
+      if (oldHash === undefined) {
+        delta[id] = { action: 'inserted' };
+      } else {
+        delta[id] = { action: 'update' };
+      }
+      deltaHash[id] = newHash;
+    });
+
+    // check delete katas;
+    const oldKatas = oldData;
+    const ids = katas.map((kata) => kata.id);
+    for (const id in oldKatas) {
+      if (ids.includes(id)) continue;
+      delta[id] = { action: 'deleted' };
+    }
+    return state;
   },
 
   async updateUserCodeChallenges({ user }) {
@@ -218,15 +248,15 @@ export const Storage = {
   },
 
   async update({ user, data, state = updateState(user) }) {
-    const updateUserProfile = await this.updateUserProfile({ user, data, state });
+    const { Profile } = await this.updateUserProfile({ user, data, state });
 
-    if (updateUserProfile.Profile.change) {
+    if (Profile.change) {
       const {
         pathToCache,
         pathToData,
         oldCache,
         hash: { deltaHash },
-      } = updateUserProfile.Profile;
+      } = Profile;
 
       this.write({
         filePath: pathToCache,
@@ -235,10 +265,23 @@ export const Storage = {
 
       this.write({ filePath: pathToData, data: data });
     }
-    
-    const updateUserAuthored = await this.updateUserAuthored({ user, state });
-    console.log(updateUserAuthored);
-    /*    
+
+    const { Authored } = await this.updateUserAuthored({ user, state });
+    if (Authored.change) {
+      const {
+        pathToCache,
+        pathToData,
+        oldCache,
+        hash: { deltaHash },
+      } = Authored;
+
+      this.write({
+        filePath: pathToCache,
+        data: { ...oldCache, ...deltaHash },
+      });
+    }
+
+    /*
     if (updateUserProfile.ranksChange) {
       const updateUserCodeChallenges = await this.updateUserCodeChallenges(
         updateUserProfile,
