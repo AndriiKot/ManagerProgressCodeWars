@@ -16,41 +16,57 @@ test('userProfileSchema validates correct data', () => {
         rank: 2,
         name: '2 dan',
         color: 'black',
-        score: 5000
+        score: 5000,
       },
       languages: {
         javascript: {
           rank: -2,
           name: '2 kyu',
           color: 'purple',
-          score: 6801
+          score: 6801,
         },
         ruby: {
           rank: -1,
           name: '1 kyu',
           color: 'red',
-          score: 28600
-        }
-      }
+          score: 28600,
+        },
+      },
     },
     codeChallenges: {
       totalAuthored: 2,
-      totalCompleted: 4377
-    }
+      totalCompleted: 4377,
+    },
   };
 
-  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
+  const result = validateSchema({
+    schema: userProfileSchema,
+    data,
+    options: { strict: true },
+  });
   assert.strictEqual(result.isValid, true);
   assert.deepStrictEqual(result.errors, []);
 });
 
 test('userProfileSchema fails with missing required fields', () => {
   const data = { username: 'Krillan', honor: 1000 };
-  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
+  const result = validateSchema({
+    schema: userProfileSchema,
+    data,
+    options: { strict: true },
+  });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'id' is missing")));
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'ranks' is missing")));
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'id' is missing"),
+    ),
+  );
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'ranks' is missing"),
+    ),
+  );
 });
 
 test('userProfileSchema fails with invalid enum values', () => {
@@ -62,27 +78,31 @@ test('userProfileSchema fails with invalid enum values', () => {
     ranks: {
       overall: {
         rank: 2,
-        name: '10 kyu', 
+        name: '10 kyu',
         color: 'black',
-        score: 5000
+        score: 5000,
       },
       languages: {
         javascript: {
           rank: -2,
           name: '2 kyu',
           color: 'purple',
-          score: 6801
-        }
-      }
+          score: 6801,
+        },
+      },
     },
     codeChallenges: {
       totalAuthored: 2,
-      totalCompleted: 4377
-    }
+      totalCompleted: 4377,
+    },
   };
 
-  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
+  const result = validateSchema({
+    schema: userProfileSchema,
+    data,
+    options: { strict: true },
+  });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.path === 'ranks.overall.name'));
+  assert.ok(result.errors.some((e) => e.path === 'ranks.overall.name'));
 });

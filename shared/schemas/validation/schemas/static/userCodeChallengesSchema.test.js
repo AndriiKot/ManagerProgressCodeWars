@@ -46,9 +46,21 @@ test('userCodeChallengesSchema fails with missing required fields', () => {
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'slug' is missing")));
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'completedLanguages' is missing")));
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'completedAt' is missing")));
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'slug' is missing"),
+    ),
+  );
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'completedLanguages' is missing"),
+    ),
+  );
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'completedAt' is missing"),
+    ),
+  );
 });
 
 test('userCodeChallengesSchema fails with extra fields when additionalProperties=false', () => {
@@ -74,7 +86,11 @@ test('userCodeChallengesSchema fails with extra fields when additionalProperties
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.message.includes("Unexpected field 'extraField'")));
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Unexpected field 'extraField'"),
+    ),
+  );
 });
 
 test('userCodeChallengesSchema fails with invalid types', () => {
@@ -99,8 +115,8 @@ test('userCodeChallengesSchema fails with invalid types', () => {
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.path === 'data[0].id'));
-  assert.ok(result.errors.some(e => e.path === 'data[0].completedLanguages'));
+  assert.ok(result.errors.some((e) => e.path === 'data[0].id'));
+  assert.ok(result.errors.some((e) => e.path === 'data[0].completedLanguages'));
 });
 
 test('userCodeChallengesSchema fails with invalid date format', () => {
@@ -125,5 +141,11 @@ test('userCodeChallengesSchema fails with invalid date format', () => {
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.path === 'data[0].completedAt' && e.message.includes('valid ISO 8601 date-time')));
+  assert.ok(
+    result.errors.some(
+      (e) =>
+        e.path === 'data[0].completedAt' &&
+        e.message.includes('valid ISO 8601 date-time'),
+    ),
+  );
 });

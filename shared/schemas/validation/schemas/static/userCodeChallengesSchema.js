@@ -2,11 +2,11 @@ export const userCodeChallengesSchema = {
   type: 'object',
   required: ['totalPages', 'totalItems', 'data'],
   properties: {
-    totalPages: { 
+    totalPages: {
       type: 'integer',
-      minimum: 0, 
+      minimum: 0,
     },
-    totalItems: { 
+    totalItems: {
       type: 'integer',
       minimum: 0,
     },

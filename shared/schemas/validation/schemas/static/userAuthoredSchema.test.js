@@ -12,15 +12,15 @@ test('userAuthoredSchema validates correct data', () => {
         rank: 5,
         rankName: '5 kyu',
         tags: ['Puzzles', 'Games'],
-        languages: ['javascript', 'python']
-      }
-    ]
+        languages: ['javascript', 'python'],
+      },
+    ],
   };
 
   const result = validateSchema({
     schema: userAuthoredSchema,
     data,
-    options: { strict: true } 
+    options: { strict: true },
   });
 
   assert.strictEqual(result.isValid, true);
@@ -32,20 +32,28 @@ test('userAuthoredSchema fails with missing required fields', () => {
     data: [
       {
         id: '123',
-        name: 'Test'
-      }
-    ]
+        name: 'Test',
+      },
+    ],
   };
 
   const result = validateSchema({
     schema: userAuthoredSchema,
     data,
-    options: { strict: true }
+    options: { strict: true },
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'rank' is missing")));
-  assert.ok(result.errors.some(e => e.message.includes("Required field 'tags' is missing")));
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'rank' is missing"),
+    ),
+  );
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Required field 'tags' is missing"),
+    ),
+  );
 });
 
 test('userAuthoredSchema fails with extra fields when additionalProperties=false', () => {
@@ -59,19 +67,23 @@ test('userAuthoredSchema fails with extra fields when additionalProperties=false
         rankName: '1 kyu',
         tags: ['JS'],
         languages: ['javascript'],
-        extraField: 'not allowed' 
-      }
-    ]
+        extraField: 'not allowed',
+      },
+    ],
   };
 
   const result = validateSchema({
     schema: userAuthoredSchema,
     data,
-    options: { strict: true }
+    options: { strict: true },
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.message.includes("Unexpected field 'extraField'")));
+  assert.ok(
+    result.errors.some((e) =>
+      e.message.includes("Unexpected field 'extraField'"),
+    ),
+  );
 });
 
 test('userAuthoredSchema fails with invalid types', () => {
@@ -81,20 +93,20 @@ test('userAuthoredSchema fails with invalid types', () => {
         id: '123',
         name: 'Test',
         description: 'desc',
-        rank: { wrong: 'type' }, 
+        rank: { wrong: 'type' },
         rankName: '1 kyu',
         tags: ['JS'],
-        languages: ['javascript']
-      }
-    ]
+        languages: ['javascript'],
+      },
+    ],
   };
 
   const result = validateSchema({
     schema: userAuthoredSchema,
     data,
-    options: { strict: true }
+    options: { strict: true },
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some(e => e.path === 'data[0].rank'));
+  assert.ok(result.errors.some((e) => e.path === 'data[0].rank'));
 });
