@@ -1,18 +1,26 @@
 import { CodewarsAPI } from '#api';
-import { validateSchema } from '#schemas';
-
-const { getAuthoredChallenges } = CodewarsAPI;
-
 
 export const userAuthoredSchema = {
   type: 'object',
   required: ['data'],
   properties: {
-    data: { type: 'array' },
+    data: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['id', 'name', 'description', 'rank', 'rankName', 'tags', 'languages'],
+        properties: {
+          id: { type: 'string' },
+          name: { type: 'string' },
+          description: { type: 'string' },
+          rank: { type: ['integer', 'null'] },       
+          rankName: { type: ['string', 'null'] },    
+          tags: { type: 'array', items: { type: 'string' } },
+          languages: { type: 'array', items: { type: 'string' } },
+        },
+        additionalProperties: false,
+      },
+    },
   },
 };
-
-const { data } = await getAuthoredChallenges('Krillan');
-
-console.log(data);
 

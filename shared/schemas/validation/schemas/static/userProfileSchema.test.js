@@ -39,14 +39,15 @@ test('userProfileSchema validates correct data', () => {
     }
   };
 
-  const result = validateSchema(userProfileSchema, data);
+  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
   assert.strictEqual(result.isValid, true);
   assert.deepStrictEqual(result.errors, []);
 });
 
 test('userProfileSchema fails with missing required fields', () => {
   const data = { username: 'Krillan', honor: 1000 };
-  const result = validateSchema(userProfileSchema, data);
+  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
+
   assert.strictEqual(result.isValid, false);
   assert.ok(result.errors.some(e => e.message.includes("Required field 'id' is missing")));
   assert.ok(result.errors.some(e => e.message.includes("Required field 'ranks' is missing")));
@@ -61,7 +62,7 @@ test('userProfileSchema fails with invalid enum values', () => {
     ranks: {
       overall: {
         rank: 2,
-        name: '10 kyu', // ❌ недопустимое значение
+        name: '10 kyu', 
         color: 'black',
         score: 5000
       },
@@ -80,7 +81,8 @@ test('userProfileSchema fails with invalid enum values', () => {
     }
   };
 
-  const result = validateSchema(userProfileSchema, data);
+  const result = validateSchema({ schema: userProfileSchema, data, options: { strict: true } });
+
   assert.strictEqual(result.isValid, false);
   assert.ok(result.errors.some(e => e.path === 'ranks.overall.name'));
 });
