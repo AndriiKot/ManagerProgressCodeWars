@@ -184,6 +184,7 @@ export const Storage = {
     const oldFullHash = oldCache.fullHash;
     if (newFullHash === oldFullHash) return state;
 
+    state.change = true;
     state.authoredChange = true;
     state.Authored.change = true;
     deltaHash.fullHash = newFullHash;
@@ -195,9 +196,9 @@ export const Storage = {
       const oldHash = oldCache[id];
       if (newHash === oldHash) return;
       if (oldHash === undefined) {
-        delta[id] = { action: 'inserted' };
+        delta[id] = { action: 'inserted', data: kata };
       } else {
-        delta[id] = { action: 'update' };
+        delta[id] = { action: 'update', data: kata };
       }
       deltaHash[id] = newHash;
     });
@@ -207,6 +208,7 @@ export const Storage = {
     const ids = katas.map((kata) => kata.id);
     for (const id in oldKatas) {
       if (ids.includes(id)) continue;
+      delete oldKatas[id];
       delta[id] = { action: 'deleted' };
     }
     return state;
@@ -300,6 +302,7 @@ export const Storage = {
       //this.savePages({ filePath: pathToPages, data: delta });
     }
     */
+    console.dir({ state }, { depth: null });
   },
 
   async savePages({ filePath, data }) {

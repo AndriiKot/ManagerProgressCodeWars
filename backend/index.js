@@ -11,14 +11,14 @@ import { Storage } from '#storage';
   );
 
   if (isProfileSuccess) {
-    const validationResult = validateWithRankCheck(
-      userProfileSchema,
-      profileData,
-      {
+    const validationResult = validateWithRankCheck({
+      schema: userProfileSchema,
+      data: profileData,
+      options: {
         recursive: true,
         strict: true,
       },
-    );
+    });
 
     if (validationResult.isValid) {
       console.log(`user profile ${USER_NAME} data is valid!`);

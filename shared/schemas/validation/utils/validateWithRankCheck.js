@@ -1,8 +1,8 @@
 import { validateSchema } from '#schemas';
 import { createCodewarsRankValidator } from '#schemas';
 
-export function validateWithRankCheck(schema, data, options = {}) {
-  const baseResult = validateSchema(schema, data, options);
+export function validateWithRankCheck({ schema, data, options = {}}) {
+  const baseResult = validateSchema({ schema, data, options });
 
   if (!baseResult.isValid) {
     return baseResult;

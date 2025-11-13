@@ -1,4 +1,4 @@
-export const validateSchema = (schema, data, options = {}) => {
+export const validateSchema = ({ schema, data, options = {}}) => {
   const { recursive = true, strict = false, customValidators = [] } = options;
 
   const errors = [];
