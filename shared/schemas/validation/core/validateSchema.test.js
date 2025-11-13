@@ -15,43 +15,42 @@ const baseSchema = {
 
 test('valid data passes validation', () => {
   const data = { id: 'abc', honor: 10, rank: 3, score: 50.5 };
-  const result = validateSchema(baseSchema, data);
+  const result = validateSchema({ schema: baseSchema, data });
   assert.strictEqual(result.isValid, true);
   assert.deepStrictEqual(result.errors, []);
 });
 
 test('missing required field', () => {
   const data = { honor: 10 };
-  const result = validateSchema(baseSchema, data);
+  const result = validateSchema({ schema: baseSchema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /Required field 'id' is missing/);
 });
 
 test('invalid data type', () => {
   const data = { id: 123, honor: 10 };
-  const result = validateSchema(baseSchema, data);
+  const result = validateSchema({ schema: baseSchema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /Expected type 'string'/);
 });
 
 test('positive check — negative number', () => {
   const data = { id: 'abc', honor: -5 };
-  const result = validateSchema(baseSchema, data);
+  const result = validateSchema({ schema: baseSchema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /Expected positive number/);
 });
 
 test('minimum check — value below minimum', () => {
   const data = { id: 'abc', honor: 5, score: -10 };
-  const result = validateSchema(baseSchema, data);
+  const result = validateSchema({ schema: baseSchema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /less than minimum/);
 });
 
 test('strict mode — unexpected fields', () => {
-  const schema = { ...baseSchema, strict: true };
   const data = { id: 'abc', honor: 10, extra: 'oops' };
-  const result = validateSchema(schema, data, { strict: true });
+  const result = validateSchema({ schema: baseSchema, data, options: { strict: true } });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /Unexpected field/);
 });
@@ -80,7 +79,7 @@ test('recursive validation of nested objects', () => {
     },
   };
 
-  const result = validateSchema(schema, data);
+  const result = validateSchema({ schema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /Expected negative number/);
 });
@@ -97,7 +96,7 @@ test('array of objects validation', () => {
   };
 
   const data = [{ score: 10 }, { score: -5 }];
-  const result = validateSchema(schema, data);
+  const result = validateSchema({ schema, data });
   assert.strictEqual(result.isValid, false);
   assert.match(result.errors[0].message, /less than minimum/);
 });

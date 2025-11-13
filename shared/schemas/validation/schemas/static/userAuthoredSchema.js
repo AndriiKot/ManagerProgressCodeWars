@@ -1,5 +1,3 @@
-import { CodewarsAPI } from '#api';
-
 export const userAuthoredSchema = {
   type: 'object',
   required: ['data'],
