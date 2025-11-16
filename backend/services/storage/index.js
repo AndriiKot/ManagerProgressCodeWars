@@ -125,46 +125,35 @@ export const Storage = {
 
   async updateUserAuthored({ user, state }) {
     const { Authored } = state;
-
     const {
       data: { delta },
       hash: { deltaHash },
     } = Authored;
 
-    const pathToCache = join(
-      CACHE_DIR_CODEWARS,
+    await prepareSection(Authored, {
       user,
-      'userAuthored.hash.json',
-    );
-
-    const pathToData = join(DATA_DIR_CODEWARS, user, 'userAuthored.json');
-
-    const oldCache = await this.load(pathToCache);
-    const oldData = await this.load(pathToData);
-
-    Object.assign(Authored, {
-      pathToCache: pathToCache,
-      pathToData: pathToData,
-      oldCache: oldCache,
-      oldData: oldData,
+      cacheName: 'userAuthored.hash.json',
+      dataName: 'userAuthored.json',
+      load: this.load.bind(this),
     });
 
     const newData = await getAuthoredChallenges(user);
 
     const newFullHash = generateCryptoHash(newData.data);
-    const oldFullHash = oldCache.fullHash;
+    const oldFullHash = Authored.oldCache.fullHash;
+
     if (newFullHash === oldFullHash) return state;
 
     state.change = true;
     state.authoredChange = true;
-    state.Authored.change = true;
+    Authored.change = true;
     deltaHash.fullHash = newFullHash;
 
     const katas = newData.data.data;
-    katas.forEach((kata, i, arr) => {
+    katas.forEach((kata) => {
       const { id } = kata;
       const newHash = generateCryptoHash(id);
-      const oldHash = oldCache[id];
+      const oldHash = Authored.oldCache[id];
       if (newHash === oldHash) return;
       if (oldHash === undefined) {
         delta[id] = { action: 'insert', data: kata };
@@ -174,50 +163,62 @@ export const Storage = {
       deltaHash[id] = newHash;
     });
 
-    // check delete katas;
-    const oldKatas = oldData;
+    // check delete katas
+    const oldKatas = Authored.oldData;
     const ids = katas.map((kata) => kata.id);
     for (const id in oldKatas) {
       if (ids.includes(id)) continue;
       delete oldKatas[id];
       delta[id] = { action: 'delete' };
     }
+
     return state;
   },
 
-  async updateUserCodeChallenges({ user }) {
-    const pathToCache = join(
-      CACHE_DIR_CODEWARS,
-      user,
-      'code-challenges/code-challenges.hash.json',
-    );
-    const pathToPages = join(DATA_DIR_CODEWARS, user, 'code-challenges/pages/');
+  async updateUserCodeChallenges({ user, state }) {
+    const { CodeChallenges } = state;
 
-    const oldCodeChallenges = await this.load(pathToCache);
-
-    const delta = {};
-    const deltaHash = {};
-    const updateResult = {
-      user,
-      change: false,
+    const {
       data: { delta },
       hash: { deltaHash },
-      oldCache: oldCodeChallenges,
-      pathToCache,
-      pathToPages,
-    };
+    } = CodeChallenges;
+
+    await prepareSection(CodeChallenges, {
+      user,
+      cacheName: 'code-challenges/code-challenges.hash.json',
+      dataName: 'code-challenges/pages/',
+      load: this.load.bind(this),
+    });
 
     const pages = await getAllPagesCompletedChallenges(user);
-    pages.forEach((page, index, arr) => {
-      const oldHash = oldCodeChallenges[index];
+
+    const newFullHash = generateCryptoHash(pages);
+    const oldFullHash = CodeChallenges.oldCache.fullHash;
+
+    if (newFullHash === oldFullHash) return state;
+
+    state.change = true;
+    CodeChallenges.change = true;
+    deltaHash.fullHash = newFullHash;
+
+    pages.forEach((page, index) => {
       const newHash = generateCryptoHash(page);
-      if (newHash !== oldHash) {
-        updateResult.change = true;
-        deltaHash[index] = newHash;
-        delta[index] = page;
-      }
+      const oldHash = CodeChallenges.oldCache[index];
+      if (newHash === oldHash) return;
+
+      deltaHash[index] = newHash;
+      delta[index] = page;
     });
-    return updateResult;
+
+    const oldPages = CodeChallenges.oldData;
+    const indices = pages.map((_, i) => i.toString());
+    for (const key in oldPages) {
+      if (indices.includes(key)) continue;
+      delete oldPages[key];
+      delta[key] = { action: 'delete' };
+    }
+
+    return state;
   },
 
   async update({ user, data, state = createState(user) }) {
