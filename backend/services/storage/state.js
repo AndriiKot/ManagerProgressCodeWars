@@ -1,23 +1,42 @@
 'use strict';
 
-export const createUpdateSection = ({
+const VALID_ACTIONS = Object.freeze(
+  new Set(['insert', 'update', 'delete'])
+);
+
+const createUpdateSection = ({
   oldData = null,
   oldCache = null,
   pathToCache = '',
   pathToData = '',
 } = {}) => {
-  const delta = new Map();
+  const delta = Object.create(null);
+  const deltaHash = Object.create(null);
 
-  const addDeltaEntry = (key, initialData = null) => {
-    const entry = { action: '', data: initialData };
-    delta.set(key, entry);
-    return entry;
+  const addDeltaEntry = (key, action = 'insert', data = null) => {
+    if (!VALID_ACTIONS.has(action)) {
+      throw new Error(
+        `Invalid action: "${action}". Valid actions are: ${[...VALID_ACTIONS].join(', ')}`
+      );
+    }
+
+    delta[key] = { action, data };
+  };
+
+  const addDeltaHashEntry = (key, hash) => {
+    deltaHash[key] = hash;
   };
 
   return {
-    change: false,              
-    data: { delta, addDeltaEntry },
-    hash: { deltaHash: {} },     
+    change: false,
+    data: {
+      delta,
+      addDeltaEntry,
+    },
+    hash: {
+      deltaHash,
+      addDeltaHashEntry,
+    },
     oldData,
     oldCache,
     pathToCache,
@@ -25,7 +44,7 @@ export const createUpdateSection = ({
   };
 };
 
-export const updateState = (user) => ({
+export const createState = (user) => ({
   User: user,
   Profile: createUpdateSection(),
   Authored: createUpdateSection(),

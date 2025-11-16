@@ -5,34 +5,10 @@ import { generateCryptoHash } from '#hash';
 import { ProfileSimpleFields } from '#schemas';
 import { getValueByPath } from '#shared-utils';
 import { CodewarsAPI } from '#api';
+import { createState } from './state.js';
 
 const { getAllPagesCompletedChallenges, getAuthoredChallenges } = CodewarsAPI;
 
-const createUpdateSection = ({
-  oldData = null,
-  oldCache = null,
-  pathToCache = '',
-  pathToData = '',
-} = {}) => ({
-  change: false,
-  data: { delta: {} },
-  hash: { deltaHash: {} },
-  oldData,
-  oldCache,
-  pathToCache,
-  pathToData,
-});
-
-const updateState = (user) => ({
-  User: user,
-  Profile: createUpdateSection(),
-  Authored: createUpdateSection(),
-  CodeChallenges: createUpdateSection(),
-  change: false,
-  ranksChange: false,
-  authoredChange: false,
-  challengesCahnge: false,
-});
 
 export const Storage = {
   async updateUserProfile({ user, data, state }) {
@@ -196,7 +172,7 @@ export const Storage = {
       const oldHash = oldCache[id];
       if (newHash === oldHash) return;
       if (oldHash === undefined) {
-        delta[id] = { action: 'inserted', data: kata };
+        delta[id] = { action: 'insert', data: kata };
       } else {
         delta[id] = { action: 'update', data: kata };
       }
@@ -209,7 +185,7 @@ export const Storage = {
     for (const id in oldKatas) {
       if (ids.includes(id)) continue;
       delete oldKatas[id];
-      delta[id] = { action: 'deleted' };
+      delta[id] = { action: 'delete' };
     }
     return state;
   },
@@ -249,7 +225,7 @@ export const Storage = {
     return updateResult;
   },
 
-  async update({ user, data, state = updateState(user) }) {
+  async update({ user, data, state = createState(user) }) {
     const { Profile } = await this.updateUserProfile({ user, data, state });
 
     if (Profile.change) {
