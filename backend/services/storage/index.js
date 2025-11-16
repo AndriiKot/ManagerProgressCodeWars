@@ -1,6 +1,10 @@
 import { join } from 'node:path';
 import { CACHE_DIR_CODEWARS, DATA_DIR_CODEWARS } from '#config';
-import { loadJSONAsObject, writeObjectToJSON, prepareSection } from './utils/index.js';
+import {
+  loadJSONAsObject,
+  writeObjectToJSON,
+  prepareSection,
+} from './utils/index.js';
 import { generateCryptoHash } from '#hash';
 import { ProfileSimpleFields } from '#schemas';
 import { getValueByPath } from '#shared-utils';
@@ -8,7 +12,6 @@ import { CodewarsAPI } from '#api';
 import { createState } from './state.js';
 
 const { getAllPagesCompletedChallenges, getAuthoredChallenges } = CodewarsAPI;
-
 
 export const Storage = {
   async updateUserProfile({ user, data, state }) {
@@ -24,19 +27,17 @@ export const Storage = {
       },
     } = state;
 
-  await prepareSection(Profile, {
-    user,
-    cacheName: 'userProfile.hash.json',
-    dataName: 'userProfile.json',
-    load: this.load.bind(this),
-  });
- 
+    await prepareSection(Profile, {
+      user,
+      cacheName: 'userProfile.hash.json',
+      dataName: 'userProfile.json',
+      load: this.load.bind(this),
+    });
 
-    
     const newUserProfileHash = generateCryptoHash(data);
     const oldUserProfileHash = Profile.oldCache.fullHash;
 
-    // level 1 fulHash userProfile comparable
+    // level 1 fullHash
     if (newUserProfileHash === oldUserProfileHash) {
       return state;
     } else {
@@ -44,81 +45,78 @@ export const Storage = {
       deltaHash.fullHash = newUserProfileHash;
     }
 
-    // level 2 simple fileds comparable don`t use crypto hash
+    // level 2 simple fields
     ProfileSimpleFields.reduce((acc, curr) => {
       const newValue = getValueByPath(data, curr);
-      const oldValue = getValueByPath(oldUserData, curr);
+      const oldValue = getValueByPath(Profile.oldData, curr);
       if (newValue !== oldValue) {
         delta[curr] = newValue;
       }
       return acc;
     }, delta);
 
-    //  level 3 RanksCryptoHash comprable
+    // level 3 ranks hash
     const { ranks: newRanks } = data;
     const newRanksHash = generateCryptoHash(newRanks);
-    const { ranks: oldRanksHash } = oldUserCache;
+    const { ranks: oldRanksHash } = Profile.oldCache;
 
-    if (newRanksHash === oldRanksHash) {
-      return state;
+    if (newRanksHash !== oldRanksHash) {
+      deltaHash.ranks = newRanksHash;
+      state.ranksChange = true;
     }
-
-    deltaHash.ranks = newRanksHash;
-    state.ranksChange = true;
 
     // level 5 ranks.overall
     const overallPath = 'ranks.overall';
     const overallData = getValueByPath(data, overallPath);
     const newOverallHash = generateCryptoHash(overallData);
-    const oldOverallHash = oldUserCache[overallPath];
+    const oldOverallHash = getValueByPath(Profile.oldCache, overallPath);
 
-    if (newOverallHash === oldOverallHash) {
-      return state;
+    if (newOverallHash !== oldOverallHash) {
+      deltaHash[overallPath] = newOverallHash;
+
+      for (const key in overallData) {
+        const path = `${overallPath}.${key}`;
+        const oldValue = getValueByPath(Profile.oldData, path);
+        const newValue = overallData[key];
+        if (newValue !== oldValue) {
+          delta[path] = newValue;
+        }
+      }
     }
 
-    deltaHash[overallPath] = newOverallHash;
-
-    for (const key in overallData) {
-      const path = `${overallPath}.${key}`;
-      const oldValue = getValueByPath(oldUserData, path);
-      const newValue = overallData[key];
-      if (newValue === oldValue) continue;
-      delta[path] = newValue;
-    }
-
-    // level 6-1  ranks.languages
+    // level 6-1 ranks.languages
     const languagesPath = 'ranks.languages';
     const languagesData = getValueByPath(data, languagesPath);
     const newLanguagesHash = generateCryptoHash(languagesData);
-    const oldLanguagesHash = oldUserCache[languagesPath];
+    const oldLanguagesHash = getValueByPath(Profile.oldCache, languagesPath);
 
-    if (newLanguagesHash === oldLanguagesHash) {
-      return state;
-    }
+    if (newLanguagesHash !== oldLanguagesHash) {
+      deltaHash[languagesPath] = newLanguagesHash;
 
-    deltaHash[languagesPath] = newLanguagesHash;
+      // level 6-2 hash ranks.languages
+      const dataLanguages = [];
 
-    // level 6-2 hash ranks.languages
-    const dataLanguages = [];
+      for (const key in languagesData) {
+        const path = `${languagesPath}.${key}`;
+        const newHash = generateCryptoHash(languagesData[key]);
+        const oldHash = getValueByPath(Profile.oldCache, path);
+        if (newHash !== oldHash) {
+          deltaHash[path] = newHash;
+          dataLanguages.push(path);
+        }
+      }
 
-    for (const key in languagesData) {
-      const path = `${languagesPath}.${key}`;
-      const newHash = generateCryptoHash(languagesData[key]);
-      const oldHash = oldUserCache[path];
-      if (newHash === oldHash) continue;
-      deltaHash[path] = newHash;
-      dataLanguages.push(path);
-    }
-
-    for (const category of dataLanguages) {
-      const oldData = getValueByPath(oldUserData, category);
-      const newData = getValueByPath(data, category);
-      for (const field in newData) {
-        const path = `${category}.${field}`;
-        const oldData = getValueByPath(oldUserData, path);
-        const newData = getValueByPath(data, path);
-        if (oldData === newData) continue;
-        delta[path] = newData;
+      for (const category of dataLanguages) {
+        const oldCategoryData = getValueByPath(Profile.oldData, category);
+        const newCategoryData = getValueByPath(data, category);
+        for (const field in newCategoryData) {
+          const path = `${category}.${field}`;
+          const oldValue = oldCategoryData[field];
+          const newValue = newCategoryData[field];
+          if (newValue !== oldValue) {
+            delta[path] = newValue;
+          }
+        }
       }
     }
 

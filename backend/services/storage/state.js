@@ -1,8 +1,6 @@
 'use strict';
 
-const VALID_ACTIONS = Object.freeze(
-  new Set(['insert', 'update', 'delete'])
-);
+const VALID_ACTIONS = Object.freeze(new Set(['insert', 'update', 'delete']));
 
 const createUpdateSection = ({
   oldData = null,
@@ -16,7 +14,9 @@ const createUpdateSection = ({
   const addDeltaEntry = (key, action = 'insert', data = null) => {
     if (!VALID_ACTIONS.has(action)) {
       throw new Error(
-        `Invalid action: "${action}". Valid actions are: ${[...VALID_ACTIONS].join(', ')}`
+        `Invalid action: "${action}". Valid actions are: ${[
+          ...VALID_ACTIONS,
+        ].join(', ')}`,
       );
     }
 
