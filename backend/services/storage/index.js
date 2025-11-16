@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import { CACHE_DIR_CODEWARS, DATA_DIR_CODEWARS } from '#config';
-import { loadJSONAsObject, writeObjectToJSON } from './utils/index.js';
+import { loadJSONAsObject, writeObjectToJSON, prepareSection } from './utils/index.js';
 import { generateCryptoHash } from '#hash';
 import { ProfileSimpleFields } from '#schemas';
 import { getValueByPath } from '#shared-utils';
@@ -24,20 +24,17 @@ export const Storage = {
       },
     } = state;
 
-    const pathToCache = join(CACHE_DIR_CODEWARS, user, 'userProfile.hash.json');
-    const pathToData = join(DATA_DIR_CODEWARS, user, 'userProfile.json');
-    const oldUserCache = await this.load(pathToCache);
-    const oldUserData = await this.load(pathToData);
+  await prepareSection(Profile, {
+    user,
+    cacheName: 'userProfile.hash.json',
+    dataName: 'userProfile.json',
+    load: this.load.bind(this),
+  });
+ 
 
-    Object.assign(state.Profile, {
-      oldData: oldUserData,
-      oldCache: oldUserCache,
-      pathToCache,
-      pathToData,
-    });
-
+    
     const newUserProfileHash = generateCryptoHash(data);
-    const oldUserProfileHash = oldUserCache.fullHash;
+    const oldUserProfileHash = Profile.oldCache.fullHash;
 
     // level 1 fulHash userProfile comparable
     if (newUserProfileHash === oldUserProfileHash) {
