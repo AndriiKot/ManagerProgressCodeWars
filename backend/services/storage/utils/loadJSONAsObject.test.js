@@ -1,3 +1,5 @@
+'use strict';
+
 import { loadJSONAsObject } from './loadJSONAsObject.js';
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';

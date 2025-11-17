@@ -1,3 +1,5 @@
+'use strict';
+
 import { join } from 'node:path';
 import { CACHE_DIR_CODEWARS, DATA_DIR_CODEWARS } from '#config';
 

@@ -1,3 +1,5 @@
+'use strict';
+
 import { access, readFile } from 'node:fs/promises';
 
 export const loadJSONAsObject = async (filePath) => {

@@ -1,3 +1,5 @@
+'use strict';
+
 import { writeObjectToJSON } from './writeObjectToJSON.js';
 import { readFile, unlink, rmdir } from 'node:fs/promises';
 import { join } from 'node:path';
