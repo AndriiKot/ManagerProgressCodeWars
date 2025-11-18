@@ -12,3 +12,5 @@ export const CACHE_DIR_CODEWARS = join(
   'codewars',
 );
 export const DATA_DIR_CODEWARS = join(__dirname, 'backend', 'data', 'codewars');
+
+export const DB = join(__dirname, 'db');
