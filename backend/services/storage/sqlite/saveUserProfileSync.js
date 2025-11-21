@@ -1,7 +1,6 @@
 'use strict';
-import { DatabaseSync } from 'node:sqlite';
 
-export function saveUserProfileSync(db, profile) {
+export const saveUserProfileSync = (db, profile) => {
   const {
     id: codewars_id,
     username,
@@ -9,11 +8,8 @@ export function saveUserProfileSync(db, profile) {
     honor,
     clan,
     leaderboardPosition,
-    codeChallenges
+    codeChallenges: { totalCompleted, totalAuthored } = {},
   } = profile;
-
-  const totalCompleted = codeChallenges?.totalCompleted ?? 0;
-  const totalAuthored = codeChallenges?.totalAuthored ?? 0;
 
   const stmt = db.prepare(`
     INSERT INTO users (
@@ -41,13 +37,13 @@ export function saveUserProfileSync(db, profile) {
   stmt.run(
     username,
     name ?? null,
-    honor ?? 0,
+    honor ?? null,
     clan ?? null,
     leaderboardPosition ?? null,
-    totalCompleted,
-    totalAuthored,
+    totalCompleted ?? null,
+    totalAuthored ?? null,
     codewars_id ?? null
   );
 
   return db.prepare('SELECT id FROM users WHERE username = ?').get(username).id;
-}
+};
