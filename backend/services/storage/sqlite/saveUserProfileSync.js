@@ -9,7 +9,11 @@ export function saveUserProfileSync(db, profile) {
     honor,
     clan,
     leaderboardPosition,
+    codeChallenges
   } = profile;
+
+  const totalCompleted = codeChallenges?.totalCompleted ?? 0;
+  const totalAuthored = codeChallenges?.totalAuthored ?? 0;
 
   const stmt = db.prepare(`
     INSERT INTO users (
@@ -18,14 +22,18 @@ export function saveUserProfileSync(db, profile) {
       honor,
       clan,
       leaderboard_position,
+      total_completed,
+      total_authored,
       codewars_id
     )
-    VALUES (?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(username) DO UPDATE SET
       name = COALESCE(excluded.name, users.name),
       honor = COALESCE(excluded.honor, users.honor),
       clan = COALESCE(excluded.clan, users.clan),
       leaderboard_position = COALESCE(excluded.leaderboard_position, users.leaderboard_position),
+      total_completed = COALESCE(excluded.total_completed, users.total_completed),
+      total_authored = COALESCE(excluded.total_authored, users.total_authored),
       codewars_id = COALESCE(excluded.codewars_id, users.codewars_id),
       updated_at = CURRENT_TIMESTAMP
   `);
@@ -33,9 +41,11 @@ export function saveUserProfileSync(db, profile) {
   stmt.run(
     username,
     name ?? null,
-    honor ?? null,
-    clan ?? null,                     
+    honor ?? 0,
+    clan ?? null,
     leaderboardPosition ?? null,
+    totalCompleted,
+    totalAuthored,
     codewars_id ?? null
   );
 

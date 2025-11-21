@@ -8,8 +8,10 @@ CREATE TABLE IF NOT EXISTS users (
     honor INTEGER DEFAULT 0,
     clan TEXT,
     leaderboard_position INTEGER,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total_completed INTEGER DEFAULT 0,
+    total_authored INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     codewars_id TEXT UNIQUE
 );
 -- ===========================
