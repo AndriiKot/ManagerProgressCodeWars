@@ -8,14 +8,20 @@ export function saveUserProfileSync(db, profile) {
     INSERT INTO users (username, name, honor, clan, leaderboard_position)
     VALUES (?, ?, ?, ?, ?)
     ON CONFLICT(username) DO UPDATE SET
-      name = excluded.name,
-      honor = excluded.honor,
-      clan = excluded.clan,
-      leaderboard_position = excluded.leaderboard_position,
+      name = COALESCE(excluded.name, name),
+      honor = COALESCE(excluded.honor, honor),
+      clan = COALESCE(excluded.clan, clan),
+      leaderboard_position = COALESCE(excluded.leaderboard_position, leaderboard_position),
       updated_at = CURRENT_TIMESTAMP
   `);
 
-  stmt.run(username, name ?? null, honor ?? 0, clan ?? null, leaderboardPosition ?? null);
+  stmt.run(
+    username,
+    name ?? null,
+    honor ?? null,
+    clan ?? null,
+    leaderboardPosition ?? null
+  );
 
   const row = db.prepare('SELECT id FROM users WHERE username = ?').get(username);
   return row.id;
