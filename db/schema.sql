@@ -9,9 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
     clan TEXT,
     leaderboard_position INTEGER,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    codewars_id TEXT UNIQUE
 );
-
 -- ===========================
 -- Таблица рангов
 -- ===========================
