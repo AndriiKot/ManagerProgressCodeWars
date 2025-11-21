@@ -76,9 +76,14 @@ CREATE TABLE IF NOT EXISTS user_ranks (
     rank_id INTEGER NOT NULL REFERENCES ranks(id),
     score INTEGER DEFAULT 0,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE(user_id, scope, language)
-);
 
+    UNIQUE(user_id, scope, language),
+
+    CHECK (
+        (scope = 'overall' AND language = '') OR
+        (scope = 'language' AND language <> '')
+    )
+);
 -- ===========================
 -- Таблица challenge_tags
 -- ===========================
