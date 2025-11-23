@@ -121,6 +121,13 @@ CREATE TABLE IF NOT EXISTS completed_challenges (
     UNIQUE(user_id, challenge_id) ON CONFLICT REPLACE
 );
 
+CREATE TABLE IF NOT EXISTS completed_challenge_languages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    completed_challenge_id INTEGER NOT NULL REFERENCES completed_challenges(id) ON DELETE CASCADE,
+    language TEXT NOT NULL,
+    UNIQUE(completed_challenge_id, language)
+);
+
 -- ===========================
 -- Таблица authored_challenges
 -- ===========================
