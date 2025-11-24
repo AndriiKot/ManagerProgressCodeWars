@@ -1,9 +1,8 @@
 import { DatabaseSync } from 'node:sqlite';
 
-export const saveCompletedChallenge = (userId, challenge) => {
-
+export const saveCompletedChallenge = (db, userId, challenge) => {
   const challengeStmt = db.prepare(`
-    INSERT OR REPLACE INTO completed_challenges
+    INSERT OR IGNORE INTO completed_challenges
       (user_id, challenge_id, completed_at)
     VALUES (?, ?, ?)
   `);
@@ -14,11 +13,16 @@ export const saveCompletedChallenge = (userId, challenge) => {
     VALUES (?, ?)
   `);
 
-  const result = challengeStmt.run(userId, challenge.id, challenge.completedAt);
-  const completedChallengeId = result.lastInsertRowid;
+  challengeStmt.run(userId, challenge.id, challenge.completedAt);
+
+  const row = db.prepare(`
+    SELECT id FROM completed_challenges
+    WHERE user_id = ? AND challenge_id = ?
+  `).get(userId, challenge.id);
+
+  const completedChallengeId = row.id;
 
   for (const lang of challenge.completedLanguages) {
     langStmt.run(completedChallengeId, lang);
   }
-}
-
+};

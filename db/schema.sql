@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS user_skills (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     skill TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, skill)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS user_ranks (
     language TEXT,
     rank_id INTEGER NOT NULL REFERENCES ranks(id),
     score INTEGER DEFAULT 0,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
 
     UNIQUE(user_id, scope, language),
 
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS challenges (
     vote_score INTEGER DEFAULT 0,
     published_at TEXT,
     approved_at TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(rank_id) REFERENCES ranks(id)
 );
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS challenge_tags (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
     tag TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(challenge_id, tag)
 );
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS challenge_languages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
     language TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(challenge_id, language)
 );
 
@@ -116,8 +116,8 @@ CREATE TABLE IF NOT EXISTS completed_challenges (
     challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
     completed_at TEXT NOT NULL,
     languages_json TEXT CHECK (json_valid(languages_json) OR languages_json IS NULL),
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, challenge_id) ON CONFLICT REPLACE
 );
 
@@ -135,8 +135,8 @@ CREATE TABLE IF NOT EXISTS authored_challenges (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, challenge_id)
 );
 
