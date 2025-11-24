@@ -51,10 +51,10 @@ export const saveChallengeSync = (db, challenge) => {
     id, name, slug, description, category, rankId,
     createdBy?.username ?? null,
     approvedBy?.username ?? null,
-    totalAttempts ?? 0,
-    totalCompleted ?? 0,
-    totalStars ?? 0,
-    voteScore ?? 0,
+    totalAttempts ?? null,
+    totalCompleted ?? null,
+    totalStars ?? null,
+    voteScore ?? null,
     publishedAt ?? null,
     approvedAt ?? null
   );
