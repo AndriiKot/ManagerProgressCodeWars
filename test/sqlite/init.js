@@ -7,9 +7,7 @@ import { DB } from '#config';
 import { prepareDatabase } from '#db';
 
 
-const DB_FILE = join(DB, 'database.sqlite');
+const DB_FILE = join('./', 'database-test.sqlite');
 const DB_SCHEMAS = join(DB, 'schema.sql');
 
-export const initDatabase = () => {
-  return prepareDatabase(DB_FILE, DB_SCHEMAS); 
-};
+prepareDatabase(DB_FILE, DB_SCHEMAS); 
