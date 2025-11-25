@@ -10,4 +10,6 @@ import { prepareDatabase } from '#db';
 const DB_FILE = join('./', 'database-test.sqlite');
 const DB_SCHEMAS = join(DB, 'schema.sql');
 
-prepareDatabase(DB_FILE, DB_SCHEMAS); 
+export const initTestDatabase = () => {
+  return prepareDatabase(DB_FILE, DB_SCHEMAS);
+};

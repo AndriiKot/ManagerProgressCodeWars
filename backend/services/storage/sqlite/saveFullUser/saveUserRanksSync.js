@@ -2,7 +2,7 @@
 import { DatabaseSync } from 'node:sqlite';
 
 export const saveUserRanksSync = (db, userId, ranksData) => {
-  const userRow = db.prepare('SELECT id FROM users WHERE codewars_id = ?').get(userId);
+  const userRow = db.prepare('SELECT id FROM users WHERE id = ?').get(userId);
   if (!userRow) throw new Error(`User with id ${userId} not found`);
   const user_id = userRow.id;
 
