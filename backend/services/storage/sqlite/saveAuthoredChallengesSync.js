@@ -1,6 +1,7 @@
 'use strict';
 
-export const saveAuthoredChallengesSync = (db, userId, authoredList = []) => {
+export const saveAuthoredChallengesSync = (db, userId, profile = {}) => {
+  const authoredList = profile.data ?? []; 
   if (authoredList.length) {
 
     const insertStmt = db.prepare(`
