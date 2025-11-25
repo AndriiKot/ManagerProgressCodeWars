@@ -1,0 +1,16 @@
+'use strict';
+
+import { validateApiResource } from '#codewars';
+import { validateWithRankCheck, userProfileSchema } from '#shared';
+import { CodewarsAPI } from '#api';
+
+const { getUserProfile } = CodewarsAPI;
+
+export const fetchUserProfile = async (username) => {
+  return validateApiResource({
+    apiFn: getUserProfile,
+    apiArgs: [username],
+    schema: userProfileSchema,
+    validateFn: validateWithRankCheck,   
+  });
+};
