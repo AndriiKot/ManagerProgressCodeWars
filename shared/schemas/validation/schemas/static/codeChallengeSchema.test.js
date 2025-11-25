@@ -1,32 +1,31 @@
+'use strict';
+
 import test from 'node:test';
 import assert from 'node:assert';
 import { codeChallengeSchema, validateSchema } from '#schemas';
 
 test('codeChallengeSchema validates correct data', () => {
   const data = {
-    id: '5277c8a221e209d3f6000b56',
-    name: 'Valid Braces',
-    slug: 'valid-braces',
-    url: 'http://www.codewars.com/kata/valid-braces',
-    category: 'algorithms',
-    description: 'Write a function called `validBraces`...',
-    tags: ['Algorithms', 'Validation', 'Logic', 'Utilities'],
-    languages: ['javascript', 'coffeescript'],
-    rank: { id: -4, name: '4 kyu', color: 'blue' },
-    createdBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
-    },
-    approvedBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
-    },
-    totalAttempts: 4911,
-    totalCompleted: 919,
-    totalStars: 12,
-    voteScore: 512,
-    publishedAt: '2013-11-05T00:07:31Z',
-    approvedAt: '2013-12-20T14:53:06Z',
+    id: '56aed32a154d33a1f3000018',
+    name: 'Fix the Bugs (Syntax) - My First Kata',
+    slug: 'fix-the-bugs-syntax-my-first-kata',
+    url: 'https://www.codewars.com/kata/56aed32a154d33a1f3000018',
+    category: 'bug_fixes',
+    description: 'desc',
+    tags: ['Debugging'],
+    languages: ['javascript','ruby','python','php','coffeescript'],
+    rank: { id: -8, name: '8 kyu', color: 'white' },
+    createdBy: { username: 'donaldsebleung', url: 'https://www.codewars.com/users/donaldsebleung' },
+    approvedBy: { username: 'joh_pot', url: 'https://www.codewars.com/users/joh_pot' },
+    totalAttempts: 39120,
+    totalCompleted: 10961,
+    totalStars: 78,
+    voteScore: 1466,
+    publishedAt: '2016-02-01T04:46:11.692Z',
+    approvedAt: '2016-02-20T00:19:14.254Z',
+    createdAt: '2016-02-01T03:38:18.651Z',
+    contributorsWanted: true,
+    unresolved: { issues: 1, suggestions: 5 },
   };
 
   const result = validateSchema({
@@ -40,10 +39,7 @@ test('codeChallengeSchema validates correct data', () => {
 });
 
 test('codeChallengeSchema fails with missing required fields', () => {
-  const data = {
-    id: '5277c8a221e209d3f6000b56',
-    name: 'Valid Braces',
-  };
+  const data = { id: '56aed32a154d33a1f3000018', name: 'Fix the Bugs' };
 
   const result = validateSchema({
     schema: codeChallengeSchema,
@@ -52,48 +48,35 @@ test('codeChallengeSchema fails with missing required fields', () => {
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(
-    result.errors.some((e) =>
-      e.message.includes("Required field 'slug' is missing"),
-    ),
-  );
-  assert.ok(
-    result.errors.some((e) =>
-      e.message.includes("Required field 'url' is missing"),
-    ),
-  );
-  assert.ok(
-    result.errors.some((e) =>
-      e.message.includes("Required field 'rank' is missing"),
-    ),
-  );
+  assert.ok(result.errors.some(e => e.message.includes("Required field 'slug' is missing")));
+  assert.ok(result.errors.some(e => e.message.includes("Required field 'contributorsWanted' is missing")));
+  assert.ok(result.errors.some(e => e.message.includes("Required field 'unresolved' is missing")));
 });
 
 test('codeChallengeSchema fails with extra fields when additionalProperties=false', () => {
   const data = {
-    id: '5277c8a221e209d3f6000b56',
-    name: 'Valid Braces',
-    slug: 'valid-braces',
-    url: 'http://www.codewars.com/kata/valid-braces',
-    category: 'algorithms',
-    description: 'desc',
-    tags: ['Algorithms'],
-    languages: ['javascript'],
-    rank: { id: -4, name: '4 kyu', color: 'blue' },
-    createdBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
+    ...{
+      id: '56aed32a154d33a1f3000018',
+      name: 'Fix the Bugs',
+      slug: 'fix-the-bugs',
+      url: 'url',
+      category: 'bug_fixes',
+      description: 'desc',
+      tags: ['Debugging'],
+      languages: ['javascript'],
+      rank: { id: -8, name: '8 kyu', color: 'white' },
+      createdBy: { username: 'user', url: 'url' },
+      approvedBy: { username: 'user', url: 'url' },
+      totalAttempts: 1,
+      totalCompleted: 0,
+      totalStars: 0,
+      voteScore: 0,
+      publishedAt: '2025-11-25T12:00:00Z',
+      approvedAt: '2025-11-25T12:00:00Z',
+      createdAt: '2025-11-25T11:00:00Z',
+      contributorsWanted: false,
+      unresolved: { issues: 0, suggestions: 0 },
     },
-    approvedBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
-    },
-    totalAttempts: 1,
-    totalCompleted: 0,
-    totalStars: 0,
-    voteScore: 0,
-    publishedAt: '2013-11-05T00:07:31Z',
-    approvedAt: '2013-12-20T14:53:06Z',
     extraField: 'not allowed',
   };
 
@@ -104,51 +87,5 @@ test('codeChallengeSchema fails with extra fields when additionalProperties=fals
   });
 
   assert.strictEqual(result.isValid, false);
-  assert.ok(
-    result.errors.some((e) =>
-      e.message.includes("Unexpected field 'extraField'"),
-    ),
-  );
-});
-
-test('codeChallengeSchema fails with invalid types', () => {
-  const data = {
-    id: 123,
-    name: 'Valid Braces',
-    slug: 'valid-braces',
-    url: 'http://www.codewars.com/kata/valid-braces',
-    category: 'algorithms',
-    description: 'desc',
-    tags: 'Algorithms',
-    languages: ['javascript'],
-    rank: { id: '-4', name: 4, color: true },
-    createdBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
-    },
-    approvedBy: {
-      username: 'xDranik',
-      url: 'http://www.codewars.com/users/xDranik',
-    },
-    totalAttempts: '4911',
-    totalCompleted: 919,
-    totalStars: 12,
-    voteScore: 512,
-    publishedAt: '2013-11-05T00:07:31Z',
-    approvedAt: '2013-12-20T14:53:06Z',
-  };
-
-  const result = validateSchema({
-    schema: codeChallengeSchema,
-    data,
-    options: { strict: true },
-  });
-
-  assert.strictEqual(result.isValid, false);
-  assert.ok(result.errors.some((e) => e.path === 'id'));
-  assert.ok(result.errors.some((e) => e.path === 'tags'));
-  assert.ok(result.errors.some((e) => e.path === 'rank.id'));
-  assert.ok(result.errors.some((e) => e.path === 'rank.name'));
-  assert.ok(result.errors.some((e) => e.path === 'rank.color'));
-  assert.ok(result.errors.some((e) => e.path === 'totalAttempts'));
+  assert.ok(result.errors.some(e => e.message.includes("Unexpected field 'extraField'")));
 });

@@ -1,3 +1,5 @@
+'use strict';
+
 export const codeChallengeSchema = {
   type: 'object',
   required: [
@@ -18,6 +20,9 @@ export const codeChallengeSchema = {
     'voteScore',
     'publishedAt',
     'approvedAt',
+    'createdAt',          
+    'contributorsWanted', 
+    'unresolved',         
   ],
   properties: {
     id: { type: 'string' },
@@ -26,14 +31,8 @@ export const codeChallengeSchema = {
     url: { type: 'string' },
     category: { type: 'string' },
     description: { type: 'string' },
-    tags: {
-      type: 'array',
-      items: { type: 'string' },
-    },
-    languages: {
-      type: 'array',
-      items: { type: 'string' },
-    },
+    tags: { type: 'array', items: { type: 'string' } },
+    languages: { type: 'array', items: { type: 'string' } },
     rank: {
       type: 'object',
       required: ['id', 'name', 'color'],
@@ -47,19 +46,13 @@ export const codeChallengeSchema = {
     createdBy: {
       type: 'object',
       required: ['username', 'url'],
-      properties: {
-        username: { type: 'string' },
-        url: { type: 'string' },
-      },
+      properties: { username: { type: 'string' }, url: { type: 'string' } },
       additionalProperties: false,
     },
     approvedBy: {
       type: 'object',
       required: ['username', 'url'],
-      properties: {
-        username: { type: 'string' },
-        url: { type: 'string' },
-      },
+      properties: { username: { type: 'string' }, url: { type: 'string' } },
       additionalProperties: false,
     },
     totalAttempts: { type: 'integer', minimum: 0 },
@@ -68,6 +61,17 @@ export const codeChallengeSchema = {
     voteScore: { type: 'integer' },
     publishedAt: { type: 'string', format: 'date-time' },
     approvedAt: { type: 'string', format: 'date-time' },
+    createdAt: { type: 'string', format: 'date-time' }, 
+    contributorsWanted: { type: 'boolean' },            
+    unresolved: {                                       
+      type: 'object',
+      required: ['issues', 'suggestions'],
+      properties: {
+        issues: { type: 'integer' },
+        suggestions: { type: 'integer' },
+      },
+      additionalProperties: false,
+    },
   },
-  additionalProperties: false,
+  additionalProperties: false, 
 };
