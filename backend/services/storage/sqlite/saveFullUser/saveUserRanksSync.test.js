@@ -42,7 +42,7 @@ function runTests() {
         (-5, '5 kyu', 'yellow');
     `);
 
-    db.prepare(`INSERT INTO users (username, codewars_id) VALUES (?, ?)`).run('User1', 'U123');
+    db.prepare(`INSERT INTO users (username) VALUES (?)`).run('User1');
 
     console.log('=== Insert overall + languages ===');
     const data1 = {
@@ -52,19 +52,19 @@ function runTests() {
         sql: { rank: -5, score: 300 }
       }
     };
-    saveUserRanksSync(db, 'U123', data1);
+    saveUserRanksSync(db, 1, data1);
 
     const rows1 = db.prepare(`SELECT scope, language, rank_id, score FROM user_ranks ORDER BY scope, language`).all();
     console.log('Rows:', rows1);
 
     console.log('=== Update overall rank ===');
-    saveUserRanksSync(db, 'U123', { overall: { rank: -5, score: 2500 } });
+    saveUserRanksSync(db, 1, { overall: { rank: -5, score: 2500 } });
     const overall2 = db.prepare(`SELECT rank_id, score FROM user_ranks WHERE scope='overall'`).get();
     console.log('Row:', overall2);
 
     console.log('=== Test missing user ===');
     try {
-      saveUserRanksSync(db, 'NO_SUCH_USER', { overall: { rank: -4, score: 100 } });
+      saveUserRanksSync(db, 999, { overall: { rank: -4, score: 100 } });
     } catch (err) {
       console.log('✅ Error thrown:', err.message);
     }
