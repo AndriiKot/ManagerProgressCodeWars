@@ -10,16 +10,19 @@ import {
 
 const { dir, log } = console;
 
-/*
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const { data: { totalPages: count }} = await fetchUserCodeChallenges(USER_NAME, 0);
+
 
 const promises = Array.from({ length: count }, (_, i) => {
     return fetchUserCodeChallenges(USER_NAME, i);
 });
 
+/*
 const pagesData = await Promise.all(promises);
 
-const allChallenges = pagesData.flatMap(page => page.data.data);
+const allChallenges = pagesData.flatMap(page => page.data.data);            
 const ids = allChallenges.flatMap(obj => obj.id);
 
 const testChallenge = await fetchCodeChallenge('5899dc03bc95b1bf1b0000ad');
