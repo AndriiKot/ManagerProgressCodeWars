@@ -11,7 +11,7 @@
     "test:backend": "npm --prefix packages/backend run test",
     "test:frontend": "npm --prefix packages/frontend run test",
     "test:shared": "npm --prefix packages/shared run test",
-    "test:integration": "node test/runSyncUserData.test.js && node test/fullFlow.test.js",
+    "test:integration": "node test/index.js",
     "test:all": "npm run test:backend && npm run test:frontend && npm run test:shared && npm run test:integration"
   }
 }
