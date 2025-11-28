@@ -1,4 +1,4 @@
-import { deepFreeze } from '#shared-utils';
+import { deepFreeze } from '#utils';
 
 export const deepFreezeArray = (arr) => {
   if (!Array.isArray(arr)) {

@@ -2,10 +2,15 @@
   "name": "shared",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Shared test running\""
   },
+  "imports": {
+     "#schemas": "./schemas/index.js",
+     "#utils": "./utils/index.js"
+   },
   "dependencies": {},
   "devDependencies": {}
 }

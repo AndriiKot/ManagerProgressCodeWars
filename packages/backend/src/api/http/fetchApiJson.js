@@ -1,8 +1,13 @@
 "use strict";
 
-import { deepFreeze } from "#shared-utils";
+import { SHARED } from '#config';
+
+const sharedPath = `${SHARED}`;
 
 export const fetchApiJson = async (url) => {
+  // динамически импортируем deepFreeze
+  const { deepFreeze } = await import(sharedPath);
+
   try {
     const res = await fetch(url);
     if (res.ok) {

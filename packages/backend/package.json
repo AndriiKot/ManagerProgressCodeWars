@@ -2,12 +2,15 @@
   "name": "backend",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "dev": "node src/index.js",
-    "test": "echo \"Backend tests running\""
+    "test": "node --test"
+  },
+  "imports": {
+    "#config": "./src/config.js"
   },
   "dependencies": {},
   "devDependencies": {}
 }
-

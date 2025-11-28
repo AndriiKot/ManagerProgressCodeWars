@@ -1,4 +1,4 @@
-import { createLanguageSchema } from '#schemas-validation-dynamic';
+import { createLanguageSchema } from '#schemas';
 
 export const userProfileSchema = {
   type: 'object',
