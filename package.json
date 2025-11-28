@@ -1,27 +1,17 @@
 {
-  "name": "manager-progress-codewars",
+  "name": "codewars-bot",
   "version": "1.0.0",
   "private": true,
-  "main": "backend/index.js",
-  "type": "module",
-  "imports": {
-    "#config": "./config.js",
-    "#shared": "./shared/index.js",
-    "#db": "./db/index.js",
-    "#sqlite": "./backend/services/storage/sqlite/index.js",
-    "#schemas": "./shared/schemas/index.js",
-    "#schemas-validation-dynamic": "./shared/schemas/validation/schemas/dynamic/index.js",
-    "#shared-utils": "./shared/utils/index.js",
-    "#backend": "./backend/index.js",
-    "#api": "./backend/services/api/index.js",
-    "#hash": "./backend/services/hash/index.js",
-    "#storage": "./backend/services/storage/index.js",
-    "#codewars": "./backend/codewars/index.js",
-    "#jobs": "./backend/jobs/index.js",
-    "#logger": "./backend/jobs/logger.js"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "start": "node backend/index.js",
-    "test": "node --test"
+    "dev:backend": "npm --prefix packages/backend run dev",
+    "dev:frontend": "npm --prefix packages/frontend run dev",
+    "test:backend": "npm --prefix packages/backend run test",
+    "test:frontend": "npm --prefix packages/frontend run test",
+    "test:shared": "npm --prefix packages/shared run test",
+    "test:integration": "node test/runSyncUserData.test.js && node test/fullFlow.test.js",
+    "test:all": "npm run test:backend && npm run test:frontend && npm run test:shared && npm run test:integration"
   }
 }
