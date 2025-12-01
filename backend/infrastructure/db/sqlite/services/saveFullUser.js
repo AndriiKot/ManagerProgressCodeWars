@@ -1,8 +1,9 @@
 'use strict';
 
-import { saveUserProfileSync } from './saveUserProfileSync.js';
-import { saveUserRanksSync } from './saveUserRanksSync.js';
-import { saveUserSkillsSync } from './saveUserSkillsSync.js';
+import { sqlite } from '#db';
+
+const { saveUserProfileSync, saveUserRanksSync, saveUserSkillsSync } = sqlite;
+
 
 export const saveFullUser = (db, profile) => {
   const userId = saveUserProfileSync(db, profile);

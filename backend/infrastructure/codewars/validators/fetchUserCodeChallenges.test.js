@@ -2,12 +2,12 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateApiResource } from '#codewars';
+import { validateApiResource } from './validateApiResource.js';
 
 test('returns valid result when API succeeds and validation passes', async () => {
   const apiFn = async () => ({
     success: true,
-    data: { name: 'Example Challenge', difficulty: '8kyu' },
+    data: { name: 'Andrii' },
     error: null,
   });
 
@@ -18,14 +18,14 @@ test('returns valid result when API succeeds and validation passes', async () =>
 
   const result = await validateApiResource({
     apiFn,
-    apiArgs: ['example-slug'],
+    apiArgs: [],
     schema: {},
     validateFn,
   });
 
   assert.equal(result.isValid, true);
   assert.equal(result.validationErrors, null);
-  assert.deepEqual(result.data, { name: 'Example Challenge', difficulty: '8kyu' });
+  assert.deepEqual(result.data, { name: 'Andrii' });
 });
 
 test('returns error when API fails', async () => {
@@ -37,7 +37,7 @@ test('returns error when API fails', async () => {
 
   const result = await validateApiResource({
     apiFn,
-    apiArgs: ['example-slug'],
+    apiArgs: [],
     schema: {},
   });
 
@@ -48,22 +48,22 @@ test('returns error when API fails', async () => {
 test('returns validation errors when validation fails', async () => {
   const apiFn = async () => ({
     success: true,
-    data: { name: 'Example Challenge', difficulty: '8kyu' },
+    data: { name: 'Andrii' },
     error: null,
   });
 
   const validateFn = () => ({
     isValid: false,
-    errors: ['invalid challenge data'],
+    errors: ['rank invalid'],
   });
 
   const result = await validateApiResource({
     apiFn,
-    apiArgs: ['example-slug'],
+    apiArgs: [],
     schema: {},
     validateFn,
   });
 
   assert.equal(result.isValid, false);
-  assert.deepEqual(result.validationErrors, ['invalid challenge data']);
+  assert.deepEqual(result.validationErrors, ['rank invalid']);
 });

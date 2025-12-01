@@ -1,6 +1,6 @@
 'use strict';
 
-import { validateApiResource } from '#codewars';
+import { validateApiResource } from './validateApiResource.js';
 import { validateWithRankCheck, userProfileSchema } from '#shared';
 import { CodewarsAPI } from '#api';
 

@@ -2,7 +2,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateApiResource } from '#codewars';
+import { validateApiResource } from './validateApiResource.js';
 
 test('returns valid result when API succeeds and validation passes', async () => {
   const apiFn = async () => ({

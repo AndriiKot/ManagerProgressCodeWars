@@ -1,6 +1,6 @@
 'use strict';
 
-import { retryFetchApiRequest } from '#api';
+import { retryFetchApiRequest } from './utils/index.js';
 import { API_CODEWARS_URL } from './urls.js';
 
 const {
