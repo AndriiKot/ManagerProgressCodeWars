@@ -1,6 +1,6 @@
 {
   "name": "manager-progress-codewars",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "main": "backend/index.js",
   "type": "module",
@@ -8,17 +8,12 @@
     "#config": "./config.js",
     "#shared": "./shared/index.js",
     "#db": "./backend/infrastructure/db/index.js",
-    "#sqlite": "./backend/sqlite/index.js",
+    "#storage": "./backend/services/storage/index.js",
     "#schemas": "./shared/schemas/index.js",
     "#schemas-validation-dynamic": "./shared/schemas/validation/schemas/dynamic/index.js",
     "#shared-utils": "./shared/utils/index.js",
-    "#backend": "./backend/index.js",
     "#api": "./backend/infrastructure/index.js",
-    "#hash": "./backend/services/hash/index.js",
-    "#storage": "./backend/services/storage/index.js",
-    "#codewars": "./backend/codewars/index.js",
-    "#jobs": "./backend/jobs/index.js",
-    "#logger": "./backend/jobs/logger.js"
+    "#hash": "./backend/services/hash/index.js"
   },
   "scripts": {
     "start": "node backend/index.js",
