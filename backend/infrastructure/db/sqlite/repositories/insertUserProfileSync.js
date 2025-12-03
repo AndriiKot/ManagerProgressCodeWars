@@ -1,6 +1,6 @@
 'use strict';
 
-export const saveUserProfileSync = (db, profile) => {
+export const insertUserProfileSync = (db, profile) => {
   const {
     id: codewars_id,
     username,

@@ -1,6 +1,6 @@
 'use strict';
 
-export const saveChallengeSync = (db, challenge) => {
+export const insertChallengeSync = (db, challenge) => {
   const {
     id,
     name,

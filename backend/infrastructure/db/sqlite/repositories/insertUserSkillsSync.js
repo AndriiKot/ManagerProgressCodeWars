@@ -1,6 +1,6 @@
 'use strict';
 
-export const saveUserSkillsSync = (db, userId, skills) => {
+export const insertUserSkillsSync = (db, userId, skills) => {
   if (skills.length) {
     const stmt = db.prepare(`
       INSERT OR IGNORE INTO user_skills (user_id, skill)

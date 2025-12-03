@@ -1,7 +1,7 @@
 'use strict';
 
 import { DatabaseSync } from 'node:sqlite';
-import { saveAuthoredChallengesSync } from './saveAuthoredChallengesSync.js';
+import { insertAuthoredChallengeSync } from './insertAuthoredChallengeSync.js';
 
 function runTests() {
   const db = new DatabaseSync(':memory:');
@@ -36,7 +36,7 @@ function runTests() {
       { id: 'ccc333' }
     ];
 
-    saveAuthoredChallengesSync(db, userId, authored1);
+    insertAuthoredChallengeSync(db, userId, authored1);
 
     const rows1 = db.prepare('SELECT challenge_id FROM authored_challenges ORDER BY challenge_id').all();
     console.log('--- Insert multiple ---', rows1);
@@ -49,7 +49,7 @@ function runTests() {
       { id: 'ddd444' }  // new
     ];
 
-    saveAuthoredChallengesSync(db, userId, authored2);
+    insertAuthoredChallengeSync(db, userId, authored2);
 
     const rows2 = db.prepare('SELECT challenge_id FROM authored_challenges ORDER BY challenge_id').all();
     console.log('--- Insert duplicates ---', rows2);
@@ -57,7 +57,7 @@ function runTests() {
     console.assert(rows2.length === 4 && rows2.some(r => r.challenge_id === 'ddd444'), '❌ Duplicate insert failed');
 
     // ====== TEST 3: EMPTY ARRAY ======
-    saveAuthoredChallengesSync(db, userId, []);
+    insertAuthoredChallengeSync(db, userId, []);
 
     const rows3 = db.prepare('SELECT COUNT(*) AS c FROM authored_challenges').get();
     console.log('--- Empty insert ---', rows3);
@@ -74,7 +74,7 @@ function runTests() {
     ];
 
     try {
-      saveAuthoredChallengesSync(db, userId, badData);
+      insertAuthoredChallengeSync(db, userId, badData);
     } catch (e) {
       errorThrown = true;
       console.log('Expected error:', e.message);

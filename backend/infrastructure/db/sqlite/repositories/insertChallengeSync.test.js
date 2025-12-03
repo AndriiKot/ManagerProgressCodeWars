@@ -1,7 +1,7 @@
 'use strict';
 
 import { DatabaseSync } from 'node:sqlite';
-import { saveChallengeSync } from './saveChallengeSync.js';
+import { insertChallengeSync } from './insertChallengeSync.js';
 
 function runTests() {
   const db = new DatabaseSync(':memory:');
@@ -71,7 +71,7 @@ function runTests() {
       tags: ["Puzzles", "Games", "OOP"]
     };
 
-    const id1 = saveChallengeSync(db, challenge1);
+    const id1 = insertChallengeSync(db, challenge1);
     const row1 = db.prepare('SELECT * FROM challenges WHERE id = ?').get(id1);
 
     console.log('--- Insert ---');
@@ -90,7 +90,7 @@ function runTests() {
     }
 
     const challenge2 = { ...challenge1, name: "Updated name", description: "Updated desc" };
-    const id2 = saveChallengeSync(db, challenge2);
+    const id2 = insertChallengeSync(db, challenge2);
     const row2 = db.prepare('SELECT * FROM challenges WHERE id = ?').get(id2);
 
     console.log('--- Update ---');
@@ -103,7 +103,7 @@ function runTests() {
     }
 
     const challenge3 = { ...challenge1, tags: ["Games", "NewTag"], languages: ["python", "Dart"] };
-    saveChallengeSync(db, challenge3);
+    insertChallengeSync(db, challenge3);
 
     const tags3 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag').all(id1).map(r => r.tag);
     const langs3 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language').all(id1).map(r => r.language);

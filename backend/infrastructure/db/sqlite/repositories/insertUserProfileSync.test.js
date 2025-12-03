@@ -1,6 +1,6 @@
 'use strict';
 import { DatabaseSync } from 'node:sqlite';
-import { saveUserProfileSync } from './saveUserProfileSync.js';
+import { insertUserProfileSync } from './insertUserProfileSync.js';
 
 function runTests() {
   const db = new DatabaseSync(':memory:');
@@ -35,7 +35,7 @@ function runTests() {
       }
     };
 
-    let id1 = saveUserProfileSync(db, profile1);
+    let id1 = insertUserProfileSync(db, profile1);
     let row1 = db.prepare('SELECT * FROM users WHERE id = ?').get(id1);
 
     console.log('--- Insert ---');
@@ -67,7 +67,7 @@ function runTests() {
       }
     };
 
-    let id2 = saveUserProfileSync(db, profile2);
+    let id2 = insertUserProfileSync(db, profile2);
     let row2 = db.prepare('SELECT * FROM users WHERE id = ?').get(id2);
 
     console.log('--- Update ---');
@@ -101,7 +101,7 @@ function runTests() {
       }
     };
 
-    let id3 = saveUserProfileSync(db, profile3);
+    let id3 = insertUserProfileSync(db, profile3);
     let row3 = db.prepare('SELECT * FROM users WHERE id = ?').get(id3);
 
     console.log('--- Update with nulls (COALESCE test) ---');
@@ -134,7 +134,7 @@ function runTests() {
       }
     };
 
-    let id4 = saveUserProfileSync(db, profile4);
+    let id4 = insertUserProfileSync(db, profile4);
     let row4 = db.prepare('SELECT * FROM users WHERE id = ?').get(id4);
 
     console.log('--- New user insert ---');

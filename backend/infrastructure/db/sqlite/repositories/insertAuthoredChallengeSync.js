@@ -1,6 +1,6 @@
 'use strict';
 
-export const saveAuthoredChallengesSync = (db, userId, profile = {}) => {
+export const insertAuthoredChallengeSync = (db, userId, profile = {}) => {
   const authoredList = profile.data ?? []; 
   if (authoredList.length) {
 

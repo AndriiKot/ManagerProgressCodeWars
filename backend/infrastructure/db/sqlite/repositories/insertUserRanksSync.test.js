@@ -1,6 +1,6 @@
 'use strict';
 import { DatabaseSync } from 'node:sqlite';
-import { saveUserRanksSync } from './saveUserRanksSync.js';
+import { insertUserRanksSync } from './insertUserRanksSync.js';
 
 function runTests() {
   const db = new DatabaseSync(':memory:');
@@ -52,19 +52,19 @@ function runTests() {
         sql: { rank: -5, score: 300 }
       }
     };
-    saveUserRanksSync(db, 1, data1);
+    insertUserRanksSync(db, 1, data1);
 
     const rows1 = db.prepare(`SELECT scope, language, rank_id, score FROM user_ranks ORDER BY scope, language`).all();
     console.log('Rows:', rows1);
 
     console.log('=== Update overall rank ===');
-    saveUserRanksSync(db, 1, { overall: { rank: -5, score: 2500 } });
+    insertUserRanksSync(db, 1, { overall: { rank: -5, score: 2500 } });
     const overall2 = db.prepare(`SELECT rank_id, score FROM user_ranks WHERE scope='overall'`).get();
     console.log('Row:', overall2);
 
     console.log('=== Test missing user ===');
     try {
-      saveUserRanksSync(db, 999, { overall: { rank: -4, score: 100 } });
+      insertUserRanksSync(db, 999, { overall: { rank: -4, score: 100 } });
     } catch (err) {
       console.log('✅ Error thrown:', err.message);
     }

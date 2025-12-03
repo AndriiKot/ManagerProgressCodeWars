@@ -1,6 +1,6 @@
 import { DatabaseSync } from 'node:sqlite';
 
-export const saveCompletedChallenge = (db, userId, challenge) => {
+export const insertCompletedChallengeSync = (db, userId, challenge) => {
   const challengeStmt = db.prepare(`
     INSERT OR IGNORE INTO completed_challenges
       (user_id, challenge_id, completed_at)

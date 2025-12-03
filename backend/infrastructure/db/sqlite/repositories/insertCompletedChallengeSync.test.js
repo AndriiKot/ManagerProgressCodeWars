@@ -1,7 +1,7 @@
 'use strict';
 
 import { DatabaseSync } from 'node:sqlite';
-import { saveCompletedChallenge } from './saveCompletedChallenge.js';
+import { insertCompletedChallengeSync } from './insertCompletedChallengeSync.js';
 
 function runTests() {
   const db = new DatabaseSync(':memory:');
@@ -63,7 +63,7 @@ function runTests() {
     };
 
     console.log('--- Insert first completed challenge ---');
-    saveCompletedChallenge(db, userId, completedChallenge);
+    insertCompletedChallengeSync(db, userId, completedChallenge);
 
     const row = db.prepare('SELECT * FROM completed_challenges WHERE user_id = ? AND challenge_id = ?')
                   .get(userId, challengeId);
@@ -85,7 +85,7 @@ function runTests() {
 
     // Проверка уникальности
     console.log('--- Insert duplicate ---');
-    saveCompletedChallenge(db, userId, completedChallenge);
+    insertCompletedChallengeSync(db, userId, completedChallenge);
 
     const langsAfter = db.prepare('SELECT language FROM completed_challenge_languages WHERE completed_challenge_id = ? ORDER BY language')
                          .all(row.id)
