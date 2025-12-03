@@ -1,1 +1,2 @@
-export * from './codewarsAPI.js';
+export * from './api/index.js';
+export * from './validators/index.js';
