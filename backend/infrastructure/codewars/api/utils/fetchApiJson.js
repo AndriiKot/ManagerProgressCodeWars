@@ -1,23 +1,19 @@
 "use strict";
 
-import { deepFreeze } from "#shared-utils";
+import { ApiResponse } from "#contracts";
 
 export const fetchApiJson = async (url) => {
   try {
     const res = await fetch(url);
+
     if (res.ok) {
       const data = await res.json();
-      return deepFreeze({ success: true, url, data, error: null });
+      return ApiResponse.ok(url, data);
     } else {
-      return deepFreeze({
-        success: false,
-        url,
-        data: null,
-        error: `HTTP ${res.status}: ${res.statusText}`,
-      });
+      return ApiResponse.fail(url, `HTTP ${res.status}: ${res.statusText}`); 
     }
   } catch (err) {
     console.error(`Cannot fetch from ${url}: ${err.message}`);
-    return deepFreeze({ success: false, url, data: null, error: err.message });
+    return ApiResponse.fail(url, err.message); 
   }
 };
