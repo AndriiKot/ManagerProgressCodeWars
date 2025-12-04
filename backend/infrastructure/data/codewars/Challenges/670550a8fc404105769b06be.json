@@ -1,0 +1,41 @@
+{
+  "id": "670550a8fc404105769b06be",
+  "name": "Quadratic Funding",
+  "slug": "quadratic-funding",
+  "category": "algorithms",
+  "publishedAt": "2024-10-09T09:23:39.319Z",
+  "approvedAt": "2024-11-01T14:36:47.348Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/670550a8fc404105769b06be",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-10-08T15:32:57.032Z",
+  "createdBy": {
+    "username": "anter69",
+    "url": "https://www.codewars.com/users/anter69"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "[Quadratic funding](https://finematics.com/quadratic-funding-explained/) is way to distribute funds based on [quadratic voting](https://en.wikipedia.org/wiki/Quadratic_voting). In other words, it's a type of crowd-funding, which prefers projects that are backed by more people, even if their individual contribution is small.\n\nThe funding requires a *matching pool* (e.g. a public fund or donation by companies) and donations by individual supporters.\n\nThe math behind is the following: the received funding is proportional to the square of the sum of the square roots of the individual donations (`$ c_i $`). So the *weight* of a project is: `$ ( \\sum \\sqrt{c_i} ) ^2 $`\n\nSee the examples below for more explanation.\n\n\n# Task\n\nYou will receive a list containing the lists of `donations` per project, and the amount of the matching `pool`. Your task is to calculate and return the list of fundings `received` by the projects, *rounded to the nearest integer.*\n\n**Notes:**\n* there will be always at least 2 projects, and all amounts will be positive integers\n* do not round the square roots or the weights, only the results\n\nYou may use [this calculator](https://qf.gitcoin.co/) to check the tests and/or your results.\n\n\n# Examples\n\nLet's see a simple example, including 2 projects:\n\n```ruby\nProject A\n- donations : 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 (10x 1)\n- sum of square roots : √1 + √1 + √1 + ... = 10\n- square of this sum  : 10^2 = 100     # weight\n\nProject B\n- donations : 10\n- sum of square roots : √10 = 3.16...\n- square of this sum  : 3.16^2 = 10    # weight\n\navailable funds : 20                   # matching pool\n\ntotal weights : 100 + 10 = 110\n\nfunding received (rounded)\n- Project A : 20 * 100/110 = 18\n- Project B : 20 *  10/110 =  2\n```\n\nAnother example, from the link at the top:\n\n```ruby\nProject A\n- donations : 5x 200\n- weight : 70.71^2 = 5000\n\nProject B\n- donations : 2x 500\n- weight : 44.72^2 = 2000\n\nProject C\n- donations : 20x 50\n- weight : 141.42^2 = 20000\n\nmatching pool : 10000\n\nfunding received (rounded)\n- Project A : 1852\n- Project B :  741\n- Project C : 7407\n```\n\n---\n\n### My other katas\n\nIf you enjoyed this kata then please try [my other katas](https://www.codewars.com/users/anter69/authored)\n\n\n#### *Translations are welcome!*",
+  "totalAttempts": 349,
+  "totalCompleted": 160,
+  "totalStars": 3,
+  "voteScore": 57,
+  "tags": [
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

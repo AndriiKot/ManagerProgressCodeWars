@@ -1,0 +1,40 @@
+{
+  "id": "649409f78673b33921e59889",
+  "name": "Employees and managers: part 4 (Cycle Detection)",
+  "slug": "employees-and-managers-part-4-cycle-detection",
+  "category": "reference",
+  "publishedAt": "2023-06-22T08:44:57.322Z",
+  "approvedAt": "2023-06-28T09:27:25.815Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/649409f78673b33921e59889",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-22T08:44:39.888Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You have been provided with a PostgreSQL database that contains an `employees` table. The `employees` table has the following structure:\n\n* `id`: an integer column that uniquely identifies each employee.\n* `name`: a text column that contains the name of the employee.\n* `manager_id`: an integer column that identifies the manager of each employee. The `manager_id` corresponds to an `id` in the same employees table. This means that our table has a recursive relationship with itself - an employee can be a manager to other employees. It is nullable: top managers do not have managers above them.\n\nThe table might contain anomalies: a person could be their own manager either directly or indirectly through a cycle of management relationships.\n\nFor example, employee A manages employee B, employee B manages employee C, and employee C manages employee A, creating a cycle.\n\nYour task is to find all employees who are their own managers, either directly (i.e., the `manager_id` equals their `id`) or indirectly through a cycle of management relationships.\n\nThe result should contain the following columns:\n\n* `id`: This column represents the unique identifier of each employee that is part of a cycle. \n* `name`: This column represents the name of the employee that is part of a cycle. \n* `cycle`: This column represents the cycle of management relationships for each employee that is part of a cycle. The cycle is represented as an array of ids, starting and ending with the id of the employee that is their own manager. \n\nThe result should be ordered by the employee id in ascending order.\n\nGood luck!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>id</th><th>name</th><th>cycle</th></tr><tr><td>4</td><td>Manager4</td><td>{4,5,6,4}</td></tr><tr><td>5</td><td>Manager5</td><td>{5,6,4,5}</td></tr><tr><td>6</td><td>Manager6</td><td>{6,4,5,6}</td></tr></table>",
+  "totalAttempts": 474,
+  "totalCompleted": 60,
+  "totalStars": 3,
+  "voteScore": 27,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "6115701cc3626a0032453126",
+  "name": "Competition results (code golf)",
+  "slug": "competition-results-code-golf",
+  "category": "algorithms",
+  "publishedAt": "2021-08-12T20:25:02.218Z",
+  "approvedAt": "2024-01-09T12:26:04.424Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6115701cc3626a0032453126",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2021-08-12T19:01:48.486Z",
+  "createdBy": {
+    "username": "FArekkusu",
+    "url": "https://www.codewars.com/users/FArekkusu"
+  },
+  "approvedBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "description": "## Task\n\nGiven a table which holds information about the number of points received by each participant across a set of competitions, you have to present these records with some additional competition-specific statistics:\n\n* `rank` - current participant's rank based on their points\n* `next_behind` - how many points is the current participant behind the next better participant\n* `total_behind` - how many points is the current participant behind the leader\n* `diff_from_avg` - difference between the number of points received by the current participant and the average number of points received by all of the participants\n\nOn top of that, this kata is a code golf - your solution can be at most `240` characters long.\n\n## Notes\n\n* Multiple participants will never have the same number of points in a single competition\n* `next_behind` and `total_behind` should equal `0` when the current pariticipant has a `rank` of `1`\n* The resulting rows should be sorted by `competition_id` and `rank`\n\n___\n\n## Input table\n\n```\n-----------------------------------\n|  Table  |     Column     | Type |\n|---------+----------------+------|\n| results | competition_id | int  |\n|         | participant_id | int  |\n|         | points         | int  |\n-----------------------------------\n```\n\n## Output table\n\n```\n----------------------------\n|     Column     |  Type   |\n|----------------+---------|\n| competition_id | int     |\n| participant_id | int     |\n| points         | int     |\n| rank           | int     |\n| next_behind    | int     |\n| total_behind   | int     |\n| diff_from_avg  | numeric |\n----------------------------\n```\n\n___\n\n## Example output\n\n```\ncompetition_id | participant_id | points | rank | next_behind | total_behind | diff_from_avg\n---------------+----------------+--------+------+-------------+--------------+--------------\n       1       |        1       |   80   |   1  |       0     |       0      |       30\n       1       |        2       |   55   |   2  |      25     |      25      |        5\n       1       |        3       |   15   |   3  |      40     |      65      |      -35\n       2       |        2       |   60   |   1  |       0     |       0      |       20\n       2       |        1       |   33   |   2  |      27     |      27      |       -7\n       2       |        3       |   27   |   3  |       6     |      33      |      -13\n```",
+  "totalAttempts": 2836,
+  "totalCompleted": 87,
+  "totalStars": 21,
+  "voteScore": 32,
+  "tags": [
+    "Algorithms",
+    "Restricted",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}
