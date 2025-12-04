@@ -1,0 +1,43 @@
+{
+  "id": "59c0b9d4cb7fb4dd41000962",
+  "name": "Simple Fun #347: Bulb Maze I",
+  "slug": "simple-fun-number-347-bulb-maze-i",
+  "category": "reference",
+  "publishedAt": "2017-09-19T07:38:52.689Z",
+  "approvedAt": "2017-10-11T10:41:47.310Z",
+  "languages": [
+    "javascript",
+    "c",
+    "nasm",
+    "csharp",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/59c0b9d4cb7fb4dd41000962",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-09-19T06:31:49.004Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "ZED.CWT",
+    "url": "https://www.codewars.com/users/ZED.CWT"
+  },
+  "description": "## Description\n\nYou are fleeing from enemies through a maze. You need to reach the exit through many rooms that are laid out in a straight line.\n\nSome rooms have a light bulb. If the light bulb is lit when you enter the room, the enemy will see you and you will be caught. In other words, you can only walk in the darkness.\n\nFortunately, the status of these bulbs (on/off) is switched automatically every minute. So you have a chance to go through the maze, if the lightbulbs are turned off at the right time.\n\nYou have to be constantly on the move, otherwise the enemy will catch up to you.\n\n## Specifications\n\nThe rooms are represented by a string, e.g. `\"xo oxox\"`. \n\n* `'x'` means there is a bulb in the room, and its initial status is `off`\n* `'o'` means there is a bulb in the room, and its initial status is `on`\n* `' '`(space) means a room without bulb, it is always dark.\n\nYour task is to determine if you can go through the maze. Return `true` if you can, `false` otherwise.\n\n## Notes\n- Your initial position is at the leftmost room; the exit position is at the rightmost.\n- Your moving speed is 1 minute per room. You have to keep moving constantly, i.e. you cannot wait for the next room to become dark.\n- You have to start moving immediately.\n\n\n## Examples\n\nFor `\"xo oxox\"`, the output should be `true`:\n\n```\nstep 0 :  xo oxox\n          ^ <--------You are here\nstep 1 :  ox xoxo\n           ^ <--------You are here\nstep 2 :  xo oxox\n            ^ <--------You are here\nstep 3 :  ox xoxo\n             ^ <--------You are here\nstep 4 :  xo oxox\n              ^ <--------You are here\nstep 5 :  ox xoxo\n               ^ <--------You are here\nstep 6 :  xo oxox\n                ^ <--------You are here\nstep 7 :  ox xoxo\n                 ^ <--------You've go through the maze :)\n```\n\nFor `\"xo  oxox\"`, the output should be `false`:\n\n```\nstep 0 :  xo  oxox\n          ^ <--------You are here\nstep 1 :  ox  xoxo\n           ^ <--------You are here\nstep 2 :  xo  oxox\n            ^ <--------You are here\nstep 3 :  ox  xoxo\n             ^ <--------You are here\nstep 4 :  xo  oxox\n              ^ <--------You were caught by the enemy :(\n```\n\nHappy Coding `^_^`",
+  "totalAttempts": 2193,
+  "totalCompleted": 787,
+  "totalStars": 22,
+  "voteScore": 159,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}
