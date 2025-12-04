@@ -1,4 +1,4 @@
-import { deepFreezeArray } from '#shared-utils';
+import { deepFreezeArray } from '#utils';
 
 export const ProfileSimpleFields = deepFreezeArray([
   'honor',
