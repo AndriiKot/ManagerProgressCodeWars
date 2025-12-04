@@ -1,5 +1,4 @@
-import { validateSchema } from '#schemas';
-import { createCodewarsRankValidator } from '#schemas';
+import { validateSchema, createCodewarsRankValidator } from '#schemas';
 
 export function validateWithRankCheck({ schema, data, options = {} }) {
   const baseResult = validateSchema({ schema, data, options });

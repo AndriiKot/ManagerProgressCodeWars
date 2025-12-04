@@ -82,23 +82,34 @@ const validResponse = {
   },
 };
 
+// Тест на неправильные пары рангов
 test('validateWithRankCheck detects incorrect rank-name pairs', () => {
-  const result = validateWithRankCheck({}, invalidResponse);
+  const result = validateWithRankCheck({
+    schema: { type: 'object' }, // передаём корректный объект схемы
+    data: invalidResponse
+  });
+
   assert.strictEqual(result.isValid, false);
   assert.ok(result.errors.length > 0);
+
   console.log('❌ Validation errors found:');
   for (const err of result.errors) {
     console.log(`  ${err.path}: ${err.message}`);
   }
+
   assert.ok(
     result.errors.some((e) => e.path.startsWith('ranks.')),
-    'Expected at least one rank-related error',
+    'Expected at least one rank-related error'
   );
 });
 
+// Тест на корректные пары рангов
 test('validateWithRankCheck passes for valid rank-name pairs', () => {
-  const result = validateWithRankCheck({}, validResponse);
-  console.log(result.errors);
+  const result = validateWithRankCheck({
+    schema: { type: 'object' }, // передаём корректный объект схемы
+    data: validResponse
+  });
+
   assert.strictEqual(result.isValid, true, 'Expected data to be valid');
   assert.deepStrictEqual(result.errors, []);
 });
