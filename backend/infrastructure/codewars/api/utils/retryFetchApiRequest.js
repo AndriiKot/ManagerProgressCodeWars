@@ -17,6 +17,7 @@ export const retryFetchApiRequest = async (
   }
   return deepFreeze({
     success: false,
+    url,
     data: null,
     error: `All ${retries} attempts failed for ${url}`,
   });
