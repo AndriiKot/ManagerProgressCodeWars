@@ -1,0 +1,40 @@
+{
+  "id": "62cb487e43b37a5829ab5752",
+  "name": "Google Dorking - Validating Queries",
+  "slug": "google-dorking-validating-queries",
+  "category": "reference",
+  "publishedAt": "2022-07-10T23:26:04.732Z",
+  "approvedAt": "2022-08-16T05:25:17.897Z",
+  "languages": [
+    "python",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62cb487e43b37a5829ab5752",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-07-10T21:45:34.223Z",
+  "createdBy": {
+    "username": "chr3st5an",
+    "url": "https://www.codewars.com/users/chr3st5an"
+  },
+  "approvedBy": {
+    "username": "khanhtranngoccva",
+    "url": "https://www.codewars.com/users/khanhtranngoccva"
+  },
+  "description": "# Description\n\n---\n\nThe term \"google dorking\" describes the process of using \nfilters (also called \"operators\") in google search \nqueries which limit the search results according to the \nused filters. It's a technique often used by \"hackers\" \nin order to find valuable information about a target. \n*But thats not what we do here*\n\nThe syntax of most filters looks as following: `<filter>:<value>`\n\nHence, a complete search query could look like\n\n```\nintext:kyu site:codewars.com \n```\n\nIf you enter the above query into Googles search bar, your results\nare limited to **codewars.com** and every result page should\ncontain the word **kyu**.\n\n*Pretty useful, huh?*\n\n---\n\n## Task\n\nA coder friend of yours gave you some queries which -he promises- will\nreturn interesting results. But some of the queries contain outdated \nfilters which don't work anymore. Hence, you decide to code a function\nnamed `is_valid` (`isValid` for js) which takes in a search query of \ntype `str` and validates that every filter within the query is up-to-date. \nIf only one filter is invalid, then the entire query is invalid.\n\n---\n\n## Preloaded\n\n~~~if:python\n\n`FILTERS` - A tuple of **valid** search filters\n\n~~~\n\n~~~if:javascript\n\n`FILTERS` - An array of **valid** search filters\n\n~~~\n\n---\n\n## Note\n\n- A search query will contain `0 < n < 100` filters\n\n~~~if:python\n\n- Your function should return `True` for valid and `False` for invalid\n\n~~~\n\n~~~if-not:python\n\n- Your function should return `true` for valid and `false` for invalid\n\n~~~\n\n- Each filter follows the `<filter-name>:<value>` syntax\n\n  - Filters are seperated by a space (\\s) \n \n- You only need to check if the filter-name is valid\n\n  - For a filter-name to be valid, the FILTERS array must contain this filter-name.\n  \n---\n\n## Fun Fact\n\n```\nintext:\"google dorking\" site:codewars.com\n```\n\nEntering the above query into Googles search bar will give you a link to this kata! (this link used to be the only result of this query until the approval of this kata, since then the query has also showed pages that have this kata in the ```similar katas``` section)\n\n---\n\n*Good Luck :)*",
+  "totalAttempts": 1254,
+  "totalCompleted": 404,
+  "totalStars": 12,
+  "voteScore": 135,
+  "tags": [
+    "Regular Expressions"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

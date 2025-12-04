@@ -1,0 +1,41 @@
+{
+  "id": "6614e1e887f83d3ad409571e",
+  "name": "Employee Weekend Work: Counting Unique Weekends and Total Days Worked",
+  "slug": "employee-weekend-work-counting-unique-weekends-and-total-days-worked",
+  "category": "reference",
+  "publishedAt": "2024-04-09T06:38:51.351Z",
+  "approvedAt": "2024-06-21T15:12:54.255Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6614e1e887f83d3ad409571e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-09T06:36:24.835Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "You are a Data Analyst at a medium-sized retail company, known for its dynamic work schedule. The management is interested in understanding the weekend work patterns of their employees to make informed decisions about staffing and employee incentives. Your task is to analyze the employee attendance data for the year 2023, focusing on weekends.\n\nWrite an SQL query to analyze weekend attendance of employees in the year 2023. Your query should identify how many unique weekends each employee worked and the total number of weekend days they worked. Consider a weekend to include both Saturday and Sunday, and count consecutive Saturday and Sunday as one weekend.\n\nWe have `employee_attendance` table:\n\n* `employee_id` (integer): ID of the employee.\n* `attendance_date` (date): The date on which the employee worked.\n\nExpected Output:\n\n1) `employee_id`: ID of the employee.\n2) `weekends_worked`: Number of unique weekends during which the employee worked at least once.\n3) `total_weekend_days_worked`: Total number of individual weekend days (Saturdays and Sundays) the employee worked.\n\nSorting: Descending order of `weekends_worked`, and then by `total_weekend_days_worked` in desccending order, and finally by `employee_id` - also in descending order.\n\nNote: In the provided `employee_attendance` data, each employee is recorded only once per date, ensuring no duplicate dates or double shifts for the same employee. This unique entry per employee per day must be considered in your analysis.\n\nFor this sample data:\n\n```\n| employee_id | attendance_date |\n+-------------+-----------------+\n|           1 |      2023-01-07 |\n|           1 |      2023-01-08 |\n|           1 |      2023-01-14 |\n|           1 |      2023-01-22 |\n|           1 |      2023-02-04 |\n|           1 |      2023-02-05 |\n|           2 |      2023-01-14 |\n|           2 |      2023-01-21 |\n|           2 |      2023-01-22 |\n|           2 |      2023-02-11 |\n|           3 |      2023-01-08 |\n|           4 |      2023-02-04 |\n```\n\nthe expected output is the following:\n\n<table><!----><tr><th>employee_id</th><th>weekends_worked</th><th>total_weekend_days_worked</th></tr><tr><td>1</td><td>4</td><td>6</td></tr><tr><td>2</td><td>3</td><td>4</td></tr><tr><td>3</td><td>1</td><td>1</td></tr><tr><td>4</td><td>1</td><td>1</td></tr></table>\n\nGLHF!\n\n",
+  "totalAttempts": 1827,
+  "totalCompleted": 208,
+  "totalStars": 12,
+  "voteScore": 49,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Date Time"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

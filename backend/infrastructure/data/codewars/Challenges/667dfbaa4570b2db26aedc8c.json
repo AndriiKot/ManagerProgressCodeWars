@@ -1,0 +1,42 @@
+{
+  "id": "667dfbaa4570b2db26aedc8c",
+  "name": "Clothes size number converter",
+  "slug": "clothes-size-number-converter",
+  "category": "reference",
+  "publishedAt": "2024-06-27T23:56:59.292Z",
+  "approvedAt": "2024-07-07T08:49:59.891Z",
+  "languages": [
+    "python",
+    "javascript",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/667dfbaa4570b2db26aedc8c",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-06-27T23:54:18.747Z",
+  "createdBy": {
+    "username": "kirillzhosul",
+    "url": "https://www.codewars.com/users/kirillzhosul"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "## Description\n\nYou have clothes international size as text (`xs`, `s`, `xxl`).  \nYour goal is to return European number size as a number from that size.\n\nNotice that there is arbitrary amount of *modifiers* (`x`), excluding `m` size, and input can be any string.\n\n## Linearity\n\nBase size for *medium (`m`)* is `38`.  \n(then, *small (`s`)* is `36`, and *large (`l`)* is `40`)\n\nThe scale is linear; modifier `x` continues that by adding or subtracting `2` from resulting size.\n\n(For sizes where `x` modifier makes total size negative, treat that as OK, and return negative size)\n\n## Invalid cases\n\nFunction should handle wrong/invalid sizes.\n\nValid input has any base size (`s`/`m`/`l`) and any amount of modifiers (`x`) before base size (like `xxl`).  \nNotice that you cannot apply modifier for `m` size, consider that case as invalid!  \nAnything else is disallowed and should be considered as invalid (`None` for Python, `0, false` for Go, `null` for JavaScript).\n\nInvalid examples: `xxx`, `sss`, `xm`, `other string`\n\n## Valid Examples\n\n`xs`: 34  \n`s`: 36  \n`m`: 38  \n`l`: 40  \n`xl`: 42  ",
+  "totalAttempts": 4394,
+  "totalCompleted": 934,
+  "totalStars": 22,
+  "voteScore": 156,
+  "tags": [
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}
