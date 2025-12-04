@@ -1,0 +1,41 @@
+{
+  "id": "66a7a26b47cb2b55796f0d81",
+  "name": "Counting Interview Failures Without Using COUNT()",
+  "slug": "counting-interview-failures-without-using-count",
+  "category": "reference",
+  "publishedAt": "2024-07-29T14:10:08.522Z",
+  "approvedAt": "2024-07-31T20:02:34.052Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/66a7a26b47cb2b55796f0d81",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-07-29T14:08:43.127Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "We have a PostgreSQL DB table `interview_failures`. This table contains information about various unfortunate reasons candidates failed their interviews:\n\n* `candidate_name` (varchar): name of the candidate\n* `failure_reason` (varchar):\treason for the interview failure\n* `interview_date` (date):\tDate of the interview\n\nYou need to find the total number of interview failures grouped by the `failure_reason` in the `interview_failures` table without using the `COUNT()` function or relying on any auto-incrementing `id` column.\n\nThe result set should contain the following columns:\n\n1) `failure_reason` (varchar): reason for the interview failure\n2) `cnt` (int): count of the employees who failed because of that reason.\n\nOrder the results by `cnt` in descending order. If the count is the same for multiple reasons, order them alphabetically by the reason.\n\nFor this sample data: \n\n```\n| candidate_name  | failure_reason                                          | interview_date |\n|-----------------|---------------------------------------------------------|----------------|\n| John Doe        | Tried to debug with print statements on a whiteboard    | 2023-01-10     |\n| Jane Smith      | Confused HTML with a programming language               | 2023-02-14     |\n| Bob Brown       | Pasted Stack Overflow code without understanding it     | 2023-03-01     |\n| Alice Green     | Used \"sudo\" in a Java program                           | 2023-04-01     |\n| Charlie Black   | Thought Git was a type of food                          | 2023-05-05     |\n| Dave White      | Wrote an infinite loop in a live coding test            | 2023-06-15     |\n| Eve Blue        | Claimed to be fluent in binary but spoke in octal       | 2023-07-20     |\n| Alice Smith     | Claimed to be a Python expert but couldn't write a loop | 2023-05-01     |\n| Jane Smith      | Tried to fix a bug live and crashed the system          | 2023-03-14     |\n| Dave Brown      | Claimed to be a Python expert but couldn't write a loop | 2023-06-15     |\n| Stephen Fry     | Didn't know the difference between inner and left joins | 2023-06-19     |\n\n```\n\nthe desired output is the following:\n\n\n<table><!----><tr><th>failure_reason</th><th>cnt</th></tr><tr><td>Claimed to be a Python expert but couldn't write a loop</td><td>2</td></tr><tr><td>Claimed to be fluent in binary but spoke in octal</td><td>1</td></tr><tr><td>Confused HTML with a programming language</td><td>1</td></tr><tr><td>Didn't know the difference between inner and left joins</td><td>1</td></tr><tr><td>Pasted Stack Overflow code without understanding it</td><td>1</td></tr><tr><td>Thought Git was a type of food</td><td>1</td></tr><tr><td>Tried to debug with print statements on a whiteboard</td><td>1</td></tr><tr><td>Tried to fix a bug live and crashed the system</td><td>1</td></tr><tr><td>Used \"sudo\" in a Java program</td><td>1</td></tr><tr><td>Wrote an infinite loop in a live coding test</td><td>1</td></tr></table>\n\nGLHF!\n",
+  "totalAttempts": 1147,
+  "totalCompleted": 394,
+  "totalStars": 10,
+  "voteScore": 64,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Restricted"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

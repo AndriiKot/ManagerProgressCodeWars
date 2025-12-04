@@ -1,0 +1,40 @@
+{
+  "id": "653a7ed9239c300246fe854c",
+  "name": " Finding Groups with Matching Employees",
+  "slug": "finding-groups-with-matching-employees",
+  "category": "reference",
+  "publishedAt": "2023-10-27T09:44:32.498Z",
+  "approvedAt": "2023-11-04T20:43:57.477Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/653a7ed9239c300246fe854c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-10-26T14:59:37.181Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "\nWrite a parameterized PostgreSQL query to find groups with the exact same set of employees as a specified group.\n\nSchema (`groups` table):\n\n* `employee_id` (integer): identifier for each employee.\n* `group_name` (varchar): The name of the group.\n\nTask Instructions:\n\n1) Create a prepared SQL statement named `find_groups_with_matching_employees`.\n2) The statement should take a group name as its parameter (of type text). Use $1 as a placeholder for this parameter.\n3) Return groups that have the same exact set of employees as the group specified in the parameter.\n4) The result should contain the columns `group_name` and `employees` (which is an ordered array of employee IDs. IDs are sorted in ascending order).\n5) The result should be ordered by `group_name` in ascending order.\n\nFor this sample data: \n\n```\n employee_id | group_name \n-------------+------------\n    1        | a1         \n    2        | a1         \n    1        | b1         \n    2        | b1         \n    3        | c1         \n    4        | d1   \n```    \n\nFor the `EXECUTE find_groups_with_matching_employees('a1')`, the expected result would be:    \n\n```\n group_name | employees \n------------+-----------\n b1         | {1,2}     \n``` \n\nGLHF!\n \n           \n                    \n           ",
+  "totalAttempts": 293,
+  "totalCompleted": 82,
+  "totalStars": 8,
+  "voteScore": 35,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

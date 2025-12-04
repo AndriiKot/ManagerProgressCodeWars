@@ -1,0 +1,40 @@
+{
+  "id": "661537f087f83d460a095961",
+  "name": "Analysis of Consecutive Stock Price Increases",
+  "slug": "analysis-of-consecutive-stock-price-increases",
+  "category": "reference",
+  "publishedAt": "2024-04-09T15:28:23.946Z",
+  "approvedAt": "2024-07-31T20:14:07.930Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/661537f087f83d460a095961",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-09T12:43:28.484Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the dynamic world of stock trading, understanding market trends is crucial for both seasoned investors and finance students. To this end, a financial analyst at a leading investment firm is tasked with analyzing historical stock data. The focus of the study is to identify patterns of consistent growth in stock prices, specifically the lengths of periods during which a stock's price increases consecutively. This analysis is intended to help understand market behaviors and inform future investment strategies.\n\nYou have access to a historical stock prices database that records daily stock prices. For this SQL analysis task, the focus is exclusively on the stock data from the year 2023. The query and subsequent analysis will need to consider only records from this specific year, ensuring that the insights and patterns identified are relevant to the 2023 market conditions. The data is stored in a PostgreSQL database with the following schema:\n\n`stocks`:\n\n* `id` (int): Primary Key, Integer\n* `trade_date` (date): Date of the stock record\n* `price` (float): Price of the stock on the given trade date\n\nUsing SQL, you need to write a query to find the longest periods of consecutive days from 2023 year during which the stock price has strictly risen. Along with the lengths of these periods, the query should also identify the starting and ending dates of these periods, as well as the prices at the start and end of each period.\n\nThe query should factor in gaps in the data (such as weekends or holidays) and consider them as periods where the price remained unchanged.\n\nData Gaps Handling:\n\n1) If a rising trend is observed before a gap and continues after the gap, the entire period (including the gap) is considered a single continuous streak of price increase.\n2) Gaps should not break the continuity of a rising trend if the price resumes increasing after the gap.\n\nDefining Price Rise Periods:\n\n* A new period of price rise starts only after the last rising trend has ceased (i.e., after a day when the price either drops or remains the same).\n* The day of the price drop is not included in the new rising period. This means if there's a fall in the stock price, any subsequent increase must continue for more than one trading day to be considered as the start of a new rising streak. This logic helps in focusing on sustained price increases rather than short-term fluctuations, making the analysis more relevant for understanding meaningful market trends.\n* The first record in the dataset will be considered as part of a rising sequence if there is no previous price data available. This ensures the inclusion of the initial record in the analysis when the dataset begins with an increasing stock price trend.\n\nThe result should contain the following columns:\n\n1) `trading_days_length`: The number of consecutive days the stock price has increased. We need to exclude 1 day length periods from the result. Also this count does not include non-trading days (like weekends) if the price continues to rise after these days.\n2) `start_date`: The starting date of the consecutive price increase period.\n3) `end_date`: The ending date of the consecutive price increase period. It may extend to cover non-trading days following the last trading day of the increase.\n4) `start_price`: The stock price at the beginning of the consecutive price increase period.\n5) `end_price`: The stock price at the end of the consecutive price increase period.\n\nOrdering: along with ordering the results by the `length` of the consecutive price increase periods in descending order, there's an additional criterion: the `start_date` of these periods, also in descending order.\n\nNote: For the analysis, it is assumed that the dataset contains no duplicate records for the same date. Each trading date in the `stocks` table is unique, ensuring that there are no two records for the same date. \n\nFor this sample data: \n\n```\ntrade_date    | price\n--------------|-------\n2023-01-01    | 100.0   # Sunday\n2023-01-02    | 101.0   # Monday\n2023-01-04    | 102.0   # Wednesday\n2023-01-05    | 103.0   # Thursday\n# Gap - 2023-01-06 (Friday)\n# Gap - 2023-01-07 (Saturday)\n# Gap - 2023-01-08 (Sunday)\n2023-01-09    | 104.0   # Monday\n2023-01-10    | 103.0   # Price drops on Tuesday\n2023-01-11    | 103.5   # Wednesday\n# Another price rise period starts\n2023-01-12    | 104.0   # Thursday\n2023-01-13    | 105.0   # Friday\n```\n\nthe output is the following: \n\n```\n| trading_days_length | start_date |  end_date  | start_price | end_price |\n+---------------------+------------+------------+-------------+-----------+\n|        5            | 2023-01-01 | 2023-01-09 |     100     |    104    |\n+---------------------+------------+-------------+------------+-----------+\n|        3            | 2023-01-11 | 2023-01-13 |    103.5    |    105    |\n```\n\n\nThe first row represents a period of 5 consecutive days where the stock price was rising, starting from January 1st to January 9th. The period includes a gap (January 6th-8th), and the price drop occurred on January 10th.\nThe second row shows a 3-day period of rising stock price, from January 11th to January 13th. This period started after the price drop on January 10th.\n\nGLHF!\n",
+  "totalAttempts": 1374,
+  "totalCompleted": 94,
+  "totalStars": 8,
+  "voteScore": 25,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

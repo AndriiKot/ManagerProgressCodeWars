@@ -1,0 +1,41 @@
+{
+  "id": "573b79da301a2d48060001f7",
+  "name": "Regex Match Generator: Alternation",
+  "slug": "regex-match-generator-alternation",
+  "category": "reference",
+  "publishedAt": "2016-05-17T20:34:36.190Z",
+  "approvedAt": "2018-07-12T12:11:27.299Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/573b79da301a2d48060001f7",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-05-17T20:06:50.826Z",
+  "createdBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "approvedBy": {
+    "username": "e.mihaylin",
+    "url": "https://www.codewars.com/users/e.mihaylin"
+  },
+  "description": "## Intro\n\nIn regular expression, there is a meta-character called alternation, written as `|`. This meta-character behaves like an OR operator that matches either of the sides. \n\nFor example: `abc|123` will match either \"abc\" or \"123\". \nThey can also match empty string.\n\n## Task\n```if:python\nWrite a function called `regex_matches(regex)`. Given a compiled regex pattern, return a list of all possible matches. \n```\n```if:javascript\nWrite a function called `regexMatches(regex)`. Given a regex pattern, return a list of all possible matches. \n```\n\n## Examples\n\n```python\npattern1 = re.compile(\"abc|123\")\nregex_matches(pattern1) # -> should output [\"abc\", \"123\"]\n\npattern2 = re.compile(\"abc|def|ghi\")\nregex_matches(pattern2) # -> should output [\"abc\", \"def\", \"ghi\"]\n\npattern3 = re.compile(\"1|2|3|4|5\")\nregex_matches(pattern3) # -> should output [\"1\", \"2\", \"3\", \"4\", \"5\"]\n```\n\n```javascript\nlet pattern1 = = /abc|123/\nregexMatches(pattern1) # -> should output [\"abc\", \"123\"]\n\nlet pattern2 = = /abc|def|ghi/\nregexMatches(pattern2) # -> should output [\"abc\", \"def\", \"ghi\"]\n\nlet pattern3 = = /1|2|3|4|5/\nregexMatches(pattern3) # -> should output [\"1\", \"2\", \"3\", \"4\", \"5\"]\n\nlet pattern4 = = /a/\nregexMatches(pattern3) # -> should output [\"a\"]\n\nlet pattern5 = = /|empty/\nregexMatches(pattern3) # -> should output [\"\", \"empty\"]\n```\n\n## Hint\n\n```if:python\nYou can use `regex.pattern` to get the string representation of the regex. \n```\n\n```if:javascript\nYou can use `regex.source` to get the string representation of the regex.\n```\n## Input\n\nThe regex pattern will only consist of digits, lowercase letters, and the alternation meta-character `|`. \nThe alternation can be at the very start or at the very end.",
+  "totalAttempts": 1673,
+  "totalCompleted": 302,
+  "totalStars": 12,
+  "voteScore": 85,
+  "tags": [
+    "Strings",
+    "Regular Expressions",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

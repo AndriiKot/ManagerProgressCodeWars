@@ -1,0 +1,42 @@
+{
+  "id": "664e4f5b12b1b20182ea3e3a",
+  "name": "British vs Slovakian postcodes",
+  "slug": "british-vs-slovakian-postcodes",
+  "category": "reference",
+  "publishedAt": "2024-05-22T22:50:53.084Z",
+  "approvedAt": "2024-06-03T08:41:41.689Z",
+  "languages": [
+    "python",
+    "rust",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/664e4f5b12b1b20182ea3e3a",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-05-22T20:02:35.279Z",
+  "createdBy": {
+    "username": "glovastefan",
+    "url": "https://www.codewars.com/users/glovastefan"
+  },
+  "approvedBy": {
+    "username": "XoRMiAS",
+    "url": "https://www.codewars.com/users/XoRMiAS"
+  },
+  "description": "# Task\n\nWrite a function called `which_postcode`/`whichPostcode` that takes  a string, and determines whether it represents a British or Slovakian postcode. If the string is a valid British postcode, return `\"GB\"`. If it's a valid Slovakian postcode, return `\"SK\"`. If the input is neither a valid British nor a valid Slovakian postcode, return `\"Not valid\"`.  \n\nLeading and trailing spaces should be ignored, but if there are spaces in wrong place in the middle of the postcode, then it is invalid.  \n\nThe input will always be a valid British postcode, a valid Slovakian postcode or an invalid postcode.  \n\n# British Postcodes\nTo be considered valid, a British postcode must follow the rules below:  \n- Consists a mix of letters and numbers, seperated to two segments by a single space. \n- First segment must start with either 1 or 2 letters, followed by 1 or 2 numbers. Example: `G4`, `G40`, `DN4` or `DN11` \n- Second segment must start with a digit, followed by 2 letters. Example: `1AB`  \n\nBritish postcodes are not case-sensitive, so `Se21 7aA` is a valid postcode.  \n\n# Slovakian Postcodes  \n- Consists of 5 numbers, where the first 3 are seperated by a space from the last 2 numbers. Example: `123 45`.  \n\n## Examples  \n### Valid British postcodes:  \n- `  G4 7AH`\n- `G12 8NU   ` \n- `Dn1 1aA` \n- `SE21 7AA`  \n\n### Valid Slovakian postcodes:  \n- ` 040 01` \n- `810 08  `  \n- `984 59`\n\n### Invalid postcodes:  \n- `0765 820` - Should only have 3 numbers in the first segment, 2 numbers in the second segment\n- `SE 21 7AA` - Should only contain 2 segments\n- `070  08` - Should have single space separating the two segments, not double space",
+  "totalAttempts": 2186,
+  "totalCompleted": 452,
+  "totalStars": 9,
+  "voteScore": 102,
+  "tags": [
+    "Regular Expressions",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

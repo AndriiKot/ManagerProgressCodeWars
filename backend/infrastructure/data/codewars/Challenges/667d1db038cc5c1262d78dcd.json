@@ -1,0 +1,40 @@
+{
+  "id": "667d1db038cc5c1262d78dcd",
+  "name": "Identifying Peak Hours for Angry Customer Calls",
+  "slug": "identifying-peak-hours-for-angry-customer-calls",
+  "category": "reference",
+  "publishedAt": "2024-06-27T09:13:04.139Z",
+  "approvedAt": "2024-07-31T20:01:52.631Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/667d1db038cc5c1262d78dcd",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-06-27T08:07:12.430Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Ispired by a comment of one user, \n\n<i>When I worked as a pharmacy tech, I spent a lot of time calling insurance companies and waiting on hold while the world burned around me. One time I got impatient with the voice recognition bot because it kept hearing background noise and made selections impossible so I started cursing it out.\n\nTurns out if you say the F-word a few times in a short span, the bot recognizes you as an angry customer and will switch you to a representative real quick. I did this multiple times to a lot of strange looks from my coworkers until I explained the hack. </i>\n\nfrom an interesting [thread](https://www.reddit.com/r/AskReddit/comments/1dowjna/whats_a_hack_in_your_industry_that_customers/) on Reddit.\n\n### Specs:\n\nYou are working with a PostgreSQL database that tracks interactions with a voice recognition bot for a customer service line. The database has logs of customer interactions, including timestamps, transcriptions of what was said, and the status of the call (whether it was handled by the bot or transferred to a human representative).\n\nWe have `calls` table:\n\n* `call_id` (int, primary key): Unique identifier for each call.\n* `timestamp` (timestamp): The date and time the call was received.\n* `status` (varchar): The status of the call ('bot_handled', 'transferred_to_rep').\n\nand `transcriptions` table:\n\n* `transcription_id` (int, primary key): Unique identifier for each transcription.\n* `call_id` (int, foreign key referencing `calls(call_id)`): Identifier for the call associated with this transcription.\n* `content` (text): The text transcription of what the customer said during the call.\n\nDetermine the peak hours (hour of the day) when calls were transferred to a human representative due to customers using the `F-word` three or more times in a single transcription.\n\nYou need to:\n\n1) Extract Words from Transcriptions:\n\n    * The query should account for punctuation marks. Words can be wrapped in punctuation (e.g., \"F-word! You are liar, F-word bot!\").\n    * Note that due to software errors, there might be multiple spaces in the transcription. Therefore, you should handle splitting words even if there are multiple spaces.\n    \n2) Count F-Words:\n\n    * Identify calls where the customer used the `F-word` three or more times in a single transcription. Note that all slurs are transcribed exactly as `F-word` (case sensitivity is not an issue). \n\n3) Filter by Status:\n\n    * Only consider calls with the status `transferred_to_rep`.\n    \n    \n4) Get Peak Times:\n\n    * Determine the peak hours (0-23) when these calls occurred.\n    \n    \nThe result set should contain the following columns:\n\n1) `call_hour` (int): The hour of the day when the calls occurred (0-23).\n2) `angry_call_count` (int): The number of calls transferred to a human representative due to customers using the F-word three or more times.\n\nThe results are ordered by the number of angry calls (`angry_call_count`) in descending order to highlight the peak hours. In case of a tie, the results are further ordered by the hour of the day (`call_hour`) in ascending order.\n\nNote: The voice recognition software ensures that slurs are transcribed exactly as \"F-word\" without concatenation or unusual punctuation, so situations like \"F-word_F-word\" are impossible. \n\nFor this sample data:\n\n```\ncalls:\n| call_id |      timestamp      |      status       |\n+---------+---------------------+-------------------+\n|    1    | 2024-06-26 14:00:00 | transferred_to_rep|\n|    2    | 2024-06-26 15:00:00 | transferred_to_rep|\n|    3    | 2024-06-26 15:00:00 | transferred_to_rep|\n|    4    | 2024-06-26 16:00:00 |    bot_handled    |\n|    5    | 2024-06-26 16:00:00 | transferred_to_rep|\n|    6    | 2024-06-26 16:30:00 | transferred_to_rep|\n```\n\n```\ntranscriptions:\n| transcription_id| call_id |                 content                      |\n+-----------------+---------+----------------------------------------------+\n|        1        |    1    | F-word   F-word. You are a liar, F-word bot! |\n|        2        |    2    | Hello. F-word. F-word! F-word.               |\n|        3        |    3    | This is a test.                              |\n|        4        |    4    | No bad words here.                           |\n|        5        |    5    | F-word, F-word,  F-word!                     |\n|        6        |    6    | F-word, F-word; F-word! F-word: F-word?      |\n```\n\nthe desired output is the following: \n\n```\n| call_hour | angry_call_count |\n+-----------+------------------+\n|     16    |        2         |\n|     14    |        1         |\n|     15    |        1         |\n```\n\nGLHF!\n\n    \n\n\n",
+  "totalAttempts": 849,
+  "totalCompleted": 179,
+  "totalStars": 10,
+  "voteScore": 53,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

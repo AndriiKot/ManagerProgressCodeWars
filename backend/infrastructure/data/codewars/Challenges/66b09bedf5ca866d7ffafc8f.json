@@ -1,0 +1,40 @@
+{
+  "id": "66b09bedf5ca866d7ffafc8f",
+  "name": " Daily Hospital Admissions and Discharges Report",
+  "slug": "daily-hospital-admissions-and-discharges-report",
+  "category": "reference",
+  "publishedAt": "2024-08-05T09:31:33.016Z",
+  "approvedAt": "2024-08-06T10:58:07.630Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/66b09bedf5ca866d7ffafc8f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-08-05T09:31:26.043Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In a hospital, the management team closely monitors patient admissions and discharges to ensure they have the right capacity and resources available at all times.  The management wants to create a daily report to understand the hospital's patient flow, which includes the number of admissions, the number of discharges, the net change in patient count for each day, and the cumulative net change over time. This information will help them make critical decisions about staffing, resource allocation, and overall hospital management.\n\nWe have `admissions` table:\n\n1) `entry_id` (int): primary key\n2) `join_date` (datetime): Date and time when the patient was admitted.\n3) `name` (varchar): Name of the patient.\n\nand `exits` table:\n\n1) `entry_id` (int): primary key\n2) `exit_date` (datetime): Date and time when the patient was discharged.\n3) `name` (varchar): Name of the patient.\n\n\nWrite a SQL query to generate a daily report that includes the number of admissions, the number of discharges, the net change in patient count for each day, and the cumulative net change over time.\n\nResult should have the following columns:\n\n1) `date` (varchar): The date of the event.\n2) `joins` (int): The number of admissions on that date.\n3) `exits` (int): The number of discharges on that date.\n4) `net` (int): The net change in patient count (joins - exits) for that date.\n5) `cumulative_net` (int): The cumulative net change in patient count up to that date.\n\nDo not include dates that have neither admissions nor discharges. The report should be sorted by the date column in ascending order.\n\nfor this sample data: \n\n```\nadmissions: \n\n| entry_id | join_date           | name    |\n+----------+---------------------+---------+\n|       26 | 2024-01-01 08:15:00 | James   |\n|       29 | 2024-01-01 09:30:00 | Jan     |\n|       27 | 2024-01-01 10:45:00 | Chris   |\n|       28 | 2024-01-01 12:00:00 | Mary    |\n|       22 | 2024-01-02 11:15:00 | Anna    |\n|       21 | 2024-01-02 13:30:00 | Andy    |\n|       24 | 2024-01-02 15:45:00 | Bob     |\n|       20 | 2024-01-04 08:00:00 | Alice   |\n|       23 | 2024-01-04 10:00:00 | Chris   |\n|       25 | 2024-01-04 12:00:00 | Happy   |\n|       30 | 2024-01-06 13:00:00 | Charles |\n```\n\n```\nexits:\n\n| entry_id | exit_date           | name     |\n+----------+---------------------+----------+\n|      322 | 2024-01-01 07:00:00 | Kay      |\n|      344 | 2024-01-01 08:30:00 | Agnes    |\n|      920 | 2024-01-02 09:00:00 | Andre    |\n|      728 | 2024-01-02 14:00:00 | Mark     |\n|      583 | 2024-01-03 08:00:00 | Alsta    |\n|      726 | 2024-01-03 10:00:00 | Bull     |\n|      816 | 2024-01-03 12:00:00 | Jane     |\n|      274 | 2024-01-04 09:00:00 | Jack     |\n|      723 | 2024-01-04 11:00:00 | Anna     |\n|      716 | 2024-01-04 13:00:00 | Bill     |\n```\n\n\nexpected output is the following: \n\n```\n| date                | joins | exits | net | cumulative_net|\n+---------------------+-------+-------+-----+---------------+\n| 2024-01-01          |     4 |     2 |   2 |             2 |\n| 2024-01-02          |     3 |     2 |   1 |             3 |\n| 2024-01-03          |     0 |     3 |  -3 |             0 |\n| 2024-01-04          |     3 |     3 |   0 |             0 |\n| 2024-01-06          |     1 |     0 |   0 |             1 |\n```\n\nGLHF!",
+  "totalAttempts": 2102,
+  "totalCompleted": 320,
+  "totalStars": 15,
+  "voteScore": 52,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}
