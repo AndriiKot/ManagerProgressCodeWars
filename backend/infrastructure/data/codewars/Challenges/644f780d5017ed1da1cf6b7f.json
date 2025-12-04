@@ -1,0 +1,40 @@
+{
+  "id": "644f780d5017ed1da1cf6b7f",
+  "name": "Time difference between consecutive transactions for a specific customer",
+  "slug": "time-difference-between-consecutive-transactions-for-a-specific-customer",
+  "category": "reference",
+  "publishedAt": "2023-05-01T08:29:33.522Z",
+  "approvedAt": "2023-05-31T07:40:00.196Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/644f780d5017ed1da1cf6b7f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-05-01T08:27:57.928Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Given a table `rental` in the DVD rental database, write a SQL query to calculate the time since the previous rental for each rental transaction made by customers with IDs 1 and 2. The result should include the rental ID, customer ID, rental date, and time since the previous rental in days, hours, and minutes.\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* The final result should be sorted by customer ID and rental date in ascending order.\n* you should not bother about the formatting of `time_since_previous_rental` - simple subtracting of the dates will provide the correct output\n* `rental_date` should be desplayed as a text in the ISO 8601 format (for example `2005-02-26 19:42:04`)\n\nGood luck!\n\n### Schema\n(not all columns - only part of the domain required to solve this kata)\n\n#### `customer` table:\n```\nColumn       | Type     | Modifiers\n------------ +----------+----------\ncustomer_id  | integer  | not null\nfirst_name   | varchar  | not null\nlast_name    | varchar  | not null\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\nrental_date  | timestamp | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\nrental_id    | customer_id  | rental_date          | time_since_previous_rental\n-------------+--------------+----------------------+----------------------------------------------\n   5851      | 1            | 2005-02-26 19:42:04  |  <null>\n   8399      | 1            | 2005-03-19 04:20:14  |  20 days 08:38:10\n...\n```",
+  "totalAttempts": 797,
+  "totalCompleted": 192,
+  "totalStars": 11,
+  "voteScore": 49,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "677af3cd6b3257de9c5de49e",
+  "name": "Find Inventory Changes Between Two Dates",
+  "slug": "find-inventory-changes-between-two-dates",
+  "category": "reference",
+  "publishedAt": "2025-01-05T21:22:08.175Z",
+  "approvedAt": "2025-01-12T17:40:17.256Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/677af3cd6b3257de9c5de49e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2025-01-05T21:04:13.619Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In a retail or warehouse environment, it’s crucial to track changes in product availability over time. The inventory system records the state of inventory for every product and size combination on specific business-relevant days, such as stock-taking days or major operational dates. These records include all products and sizes, whether or not their availability has changed.\n\nWe have `inventory` table with the following structure:\n\n* `id` (int): primary key\n* `product_id` (int): identifier for the product.\n* `product_size` (varchar):\tSize of the product (e.g., \"S\", \"M\", \"L\").\n* `inventory_date` (date): Date when the inventory record was submitted\n\nYour task is to write a parametrized SQL query that identifies:\n\n1) Products and sizes that were present on the earlier date but are no longer available on the later date (i.e., they were removed).\n2) Products and sizes that were not available on the earlier date but became available on the later date (i.e., they were added).\n\nThe query should:\n\n1) Accept two dates ($1 and $2) as parameters.\n2) Identify inventory changes between the two dates:\n    * \"added\": Present on the later date ($2) but not on the earlier date ($1).\n    * \"removed\": Present on the earlier date ($1) but not on the later date ($2).   \n3) Sort the results by `product_id` in descending order and then by `product_size` in ascending order in case of a tie\n\nResultant columns:\n\n1) `product_id` (int)\n2) `product_size`\t(varchar)\n3) `change_type` (varchar): either `added` or `removed`.\n\nNotes: \n\n* The two dates provided as input will always be different. It is illogical to compare inventory for the same date, as no changes can occur within a single day.\n* The earlier date will always be passed as the first parameter. The later date will always be passed as the second parameter. You do not need to handle cases where the dates are swapped, as the application layer guarantees the correct order.\n* The system records the inventory state for all products and sizes every necessary for business days. As a result, there are no partial updates or missing days for a product in the dataset. Your query should therefore only analyze the records for the two specified dates. Records between these dates should not be included in the analysis because they are irrelevant to comparing the state of the inventory on the given dates.\n\nFor this sample data:\n\n```\n| product_id | product_size | inventory_date |\n+------------+--------------+----------------+\n| 1234       | S            | 2025-02-11     |\n| 1234       | M            | 2025-02-11     |\n| 9999       | L            | 2025-02-11     |\n| 1234       | S            | 2025-02-13     |\n| 1234       | M            | 2025-02-13     |\n| 5555       | XL           | 2025-02-13     |\n```\n\nExecution of the parametrized query (`EXECUTE find_inventory_changes('2025-02-11', '2025-02-13');`) will provide the following result:\n\n```\n| product_id | product_size | change_type |\n+------------+--------------+-------------+\n| 9999       | L            | removed     |\n| 5555       | XL           | added       |\n```\n\nProduct 9999 (L): Present on 2025-02-11 but missing on 2025-02-13. Labeled as removed.\n\nProduct 5555 (XL): Not present on 2025-02-11 but added on 2025-02-13. Labeled as added.\n\nGLHF!\n",
+  "totalAttempts": 732,
+  "totalCompleted": 126,
+  "totalStars": 12,
+  "voteScore": 28,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

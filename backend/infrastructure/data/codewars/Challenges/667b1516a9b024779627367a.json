@@ -1,0 +1,41 @@
+{
+  "id": "667b1516a9b024779627367a",
+  "name": "Examining Traffic Data to Track Criminal Conduits",
+  "slug": "examining-traffic-data-to-track-criminal-conduits",
+  "category": "reference",
+  "publishedAt": "2024-06-26T14:49:47.094Z",
+  "approvedAt": "2024-07-31T20:03:35.908Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/667b1516a9b024779627367a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-06-25T19:05:58.485Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the city, a series of vehicle-related incidents have occurred at various intersections, suspected to be orchestrated by a known criminal syndicate using specific vehicle types. The police department has installed high-tech surveillance cameras at several key traffic lights to monitor and record all vehicles passing through these intersections. Each camera logs the date, time, vehicle type, and traffic light ID of every vehicle that passes.\n\nDetectives are particularly interested in certain vehicle types that are believed to be involved in these crimes, such as `black bmw`. Analyzing patterns in the appearance of these vehicles at specific traffic lights could provide crucial leads in solving these cases.\n\nYou are tasked with querying the `traffic_observations` database table from key traffic light to help identify potential vehicles of interest that appear immediately before and after sightings of `black bmw` at specific traffic lights. This analysis will assist detectives in understanding possible accomplices or patterns in the criminal activities.\n\n`traffic_observations`:\n\n* `id` (int):\tprimary key\n* `datetime` (timestamp):\tdate and time the vehicle was observed\n* `type`\t(varchar):\tType of vehicle (e.g., 'red ford')\n* `traffic_light_id`(int): Identifier of the traffic light observed at\n\nThe query should retrieve the types of the nearest vehicles (one immediately before and one immediately after) around each `black bmw` sighting at `traffic_light_id = 1`. It should not consider vehicles observed at different traffic lights or at non-adjacent times. The focus is strictly on the timestamps around each 'black bmw' sighting, ensuring that only the closest preceding and following vehicles are considered.\n\nData Output:\n\n1) `type_neighbour`: Type of the neighboring vehicle (e.g., 'red ford', 'yellow ford').\n2) `count`: Number of times each type appears as a neighbor (before or after) to a 'black bmw'.\n\nOrder the results by `count` in descending order to prioritize the most frequently occurring neighboring vehicle types.  In case of a tie in the counts, order the results alphabetically in ascending order by `type_neighbour`.\n\n### Important notes: \n\n1) If the same type of vehicle appears around multiple 'black bmw' sightings, it will be counted for each proximity event. In other words, there is a double count in scenarios where the same vehicle type appears consecutively around different 'black bmw' sightings.\n2) It is assumed that no two vehicles can have the exact same timestamp at the same traffic light. \n3) When analyzing traffic data, you might find 'black bmw' vehicles appearing back-to-back at the same traffic light. Treat these consecutive 'black bmw' sightings just like any other sighting. \n\n\nFor this sample data: \n\n```  \n| id | datetime            | type           | traffic_light_id |\n|----|---------------------|----------------|------------------|\n|  1 | 2004-04-12 09:59:00 | red ford       |                2 |\n|  2 | 2004-04-12 10:00:00 | black bmw      |                1 |\n|  3 | 2004-04-12 10:11:00 | red ford       |                1 |\n|  4 | 2004-04-12 10:30:00 | yellow ford    |                1 |\n|  5 | 2004-04-12 11:01:00 | black bmw      |                1 |\n|  6 | 2004-04-12 11:09:00 | red ford       |                1 |\n|  7 | 2004-04-12 11:18:00 | green mercedes |                1 |\n|  8 | 2004-04-12 11:20:00 | black bmw      |                2 |\n|  9 | 2004-04-12 11:44:00 | white renault  |                2 |\n| 10 | 2004-04-12 11:46:00 | red renault    |                1 |\n```\n\nthe desired output is the following:\n\n```\n| type_neighbour | count |\n|----------------|-------|\n| red ford       |     2 |\n| yellow ford    |     1 |\n```\n\nHere is how we arrive at the desired output:\n\n* For ID 2 (10:00 'black bmw' at light 1):\n\n    * The closest vehicle before is none (since this is the first 'black bmw' at light 1 and there are no earlier entries for light 1 on that day).\n    * The closest vehicle after is 'red ford' at 10:11.\n\n* For ID 5 (11:01 'black bmw' at light 1):\n\n    * The closest vehicle before is 'yellow ford' at 10:30.\n    * The closest vehicle after is 'red ford' at 11:09.\n    \n    \nSo, counting the types that are immediately before and after:\n\n  * 'red ford' appears twice (once after the first 'black bmw' and once after the second).\n  * 'yellow ford' appears once (before the second 'black bmw').\n  \nGLHF!   \n\n",
+  "totalAttempts": 923,
+  "totalCompleted": 130,
+  "totalStars": 4,
+  "voteScore": 43,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Date Time"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

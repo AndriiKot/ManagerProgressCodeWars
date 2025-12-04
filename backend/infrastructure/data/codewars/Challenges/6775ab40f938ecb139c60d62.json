@@ -1,0 +1,40 @@
+{
+  "id": "6775ab40f938ecb139c60d62",
+  "name": "Finding Products Matching All Selected Tags: Parameterized Version",
+  "slug": "finding-products-matching-all-selected-tags-parameterized-version",
+  "category": "reference",
+  "publishedAt": "2025-01-01T20:54:25.754Z",
+  "approvedAt": "2025-01-02T12:39:45.612Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6775ab40f938ecb139c60d62",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2025-01-01T20:53:20.172Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "4500zenja1",
+    "url": "https://www.codewars.com/users/4500zenja1"
+  },
+  "description": "Imagine you are managing an e-commerce platform. It offers a diverse range of products, each tagged with various attributes to help customers filter and find items that match their preferences. These tags could represent categories, features, styles, or any other relevant attributes.\n\nYou want to implement a feature that allows customers to filter products by selecting multiple tags. Specifically, when a customer selects several tags, the platform should display only those products that are associated with all the selected tags. This ensures that the search results precisely match the customer's combined tag preferences.\n\nWe have a `product_tags` table: \n\n* `product_id` (int):\tUnique identifier for each product\n* `tag`\t(varchar): Tag associated with the product\n\nThe table may contain duplicate rows where the same product is associated with the same tag multiple times. \n\nFor this task, write a parametrized SQL query that returns `product_id` values from a `product_tags` table, where the product is tagged with all of the tags specified in a dynamic array. The query must be implemented as a prepared statement and must order the results by `product_id` in descending order.\n\nSpecs:\n\n* Implement the query as a prepared statement called `find_products_by_tags`.\n* The query must accept a single parameter: a dynamic array of tags `(text[])`. Use `$1` as a placeholder for this parameter. \n\n\nFor this sample data:\n\n```\n| product_id | tag         |\n+------------+-------------+\n|    101     | Electronics |\n|    101     | Gadgets     |\n|    102     | Home        |\n|    103     | Electronics |\n|    103     | Accessories |\n|    104     | Kitchen     |\n|    105     | Electronics |\n|    105     | Gadgets     |\n|    105     | Accessories |\n|    106     | Gadgets     |\n|    106     | Accessories |\n```\n\nExecution of the parametrized query (`EXECUTE find_products_by_tags('{Electronics,Gadgets}`) will provide the following result:\n\n\n```\n| product_id |\n+------------+\n|    105     |\n|    101     |\n```\n\nGLHF!",
+  "totalAttempts": 164,
+  "totalCompleted": 81,
+  "totalStars": 7,
+  "voteScore": 32,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

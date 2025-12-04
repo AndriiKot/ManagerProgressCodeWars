@@ -1,0 +1,40 @@
+{
+  "id": "64db54b53b93ae00199bb904",
+  "name": "Identify and Exclude Reversed Fuel Transactions",
+  "slug": "identify-and-exclude-reversed-fuel-transactions",
+  "category": "reference",
+  "publishedAt": "2023-08-15T14:15:21.689Z",
+  "approvedAt": "2023-08-17T08:36:04.751Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64db54b53b93ae00199bb904",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-08-15T10:34:29.774Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You work in a fuel distribution company that uses an application to record fuel transactions. Sometimes transactions are logged incorrectly and are reversed out in the system. These reversal transactions are marked with a 'Y' in the `is_reversal` column and will always have the exact negative `quantity` of the transaction they are reversing. Due to the dynamic nature of logging, a reversal transaction won't always be immediately subsequent to the transaction it reverses but will always be chronologically after it. \n\nA valid pair consists of one transaction with a positive quantity and another subsequent transaction with a) an equivalent negative quantity (reversal) b) of the same fuel type\n\nThe objective is to pinpoint and remove these paired transactions from the dataset, ensuring that the reversal corresponds to the transaction it's closest to based on the `transaction_datetime`.\n\nTable Schema (`fuel_transactions`):\n\n* `transaction_id` (integer) - primary key, a unique identifier for each transaction.\n* `transaction_datetime` (datetime) - The timestamp when the transaction was made.\n* `quantity` (float) - The quantity of the fuel transaction. Can be negative for reversals.\n* `fuel_type` (varchar(50)) - The type of fuel for the transaction (e.g., DSL, GAS).\n* `is_reversal` (char(1)) - Indicates if the transaction is a reversal (Y for Yes, N for No).\n\n\nSample Data: \n\n```\n| transaction_id | transaction_datetime    | quantity | fuel_type | is_reversal |\n|----------------|-------------------------|----------|-----------|-------------|\n|       1        |    2023-04-25 14:30:00  |   23.3   |    DSL    |      N      |\n|       2        |    2023-04-27 09:20:00  |   14.9   |    GAS    |      N      |\n|       3        |    2023-05-01 10:15:00  |  -23.3   |    DSL    |      Y      |\n|       4        |    2023-05-01 12:05:00  |   23.3   |    DSL    |      N      |\n|       5        |    2023-05-01 14:40:00  |   23.3   |    DSL    |      N      |\n|       6        |    2023-05-01 16:00:00  |   23.3   |    DSL    |      N      |\n|       7        |    2023-05-02 10:10:00  |   23.3   |    DSL    |      N      |\n|       8        |    2023-05-02 10:30:00  |  -23.3   |    DSL    |      Y      |\n```\n\nExpected Output from the Sample Data:\n\n```\n| transaction_id | transaction_datetime    | quantity | fuel_type | is_reversal |\n|----------------|-------------------------|----------|-----------|-------------|\n|       2        |    2023-05-01 10:15:00  |   14.9   |    GAS    |      N      |\n|       4        |    2023-05-01 14:40:00  |   23.3   |    DSL    |      N      |\n|       5        |    2023-04-27 09:20:00  |   23.3   |    DSL    |      N      |\n|       6        |    2023-05-01 16:00:00  |   23.3   |    DSL    |      N      |\n```\n\n* Transactions with IDs 1 and 3 are a reversal pair, with 1 being the closest positive value in time to 3.\n* Transactions with IDs 7 and 8 form another reversal pair, as 7 is the closest positive value in time to 8.\n* The other transactions are uninvolved in reversals and are thus featured in the expected outcome.\n\nThe result set should return all the columns from `fuel_transactions` and should be ordered by `transaction_datetime` in ascending chronological order.\n\nNotes:\n\n1) It is guaranteed that each transaction has unique `transaction_datetime` and in ascending chronological order.\n2) There can be multiple transactions of the same fuel type and quantity before a reversal takes place. In such cases, the reversal is paired with the most recent transaction before the reversal.\n3) It is guaranteed that original transaction always can be found if there is a reversal transaction. (pairs always can be formed)\n4) It is guaranteed that there are no nested pairs like 'N1 N2 N3 Y3 Y2 Y1' with the same with the same `fuel_type` and `quantity`\n\nGLHF!",
+  "totalAttempts": 865,
+  "totalCompleted": 98,
+  "totalStars": 5,
+  "voteScore": 35,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

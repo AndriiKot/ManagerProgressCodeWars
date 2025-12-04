@@ -1,0 +1,40 @@
+{
+  "id": "677854ee17c7b76184c1471c",
+  "name": "Identifying Mutual Likes in a Dating App",
+  "slug": "identifying-mutual-likes-in-a-dating-app",
+  "category": "reference",
+  "publishedAt": "2025-01-03T21:23:23.496Z",
+  "approvedAt": "2025-01-04T13:40:46.138Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/677854ee17c7b76184c1471c",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2025-01-03T21:21:50.764Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Imagine you are working for a dating app. Users of the app can \"like\" other users, and these interactions are stored in a database table called `user_likes`. The app's key feature is matching users when there is a mutual like, meaning both users have liked each other.\n\n`user_likes` table has the following structure:\n\n* `id` (int): primary key \n* `liker_id` (int): The ID of the user who sent the like.\n* `liked_id` (int): The ID of the user who received the like.\n\nYour task is to write a query to identify mutual likes from the `user_likes` table. A mutual like exists when:\n 1) User A likes User B, and\n 2) User B likes User A\n\nAdditionally, you must ensure that each pair is reported only once, regardless of the order in which the users liked each other. You should always assign the smaller ID to the first column and the larger ID to the second column.\n\nOutput Columns:\n\n1) `user1_id`: The smaller ID in the pair\n2) `user2_id`: The larger ID in the pair.\n\nOutput should be sorted firstly by `user1_id` and secondy `user2_id`: both in ascending order.\n\nNotes: \n\n* Self-likes (e.g., a user liking themselves) are not logical in the context of a dating app and do not exist in the system.\n* It is possible to have duplicates recorded multiple times. Your query must handle this and ensure that each match is returned only once.\n\nFor this sample data:\n\n```\n| liker_id  | liked_id |\n+-----------+----------+\n| 101       | 202      |\n| 202       | 101      |\n| 303       | 404      |\n| 303       | 505      |\n```\n\nthe expected result is the following: \n\n```\n| user1_id | user2_id |\n+----------+----------+\n| 101      | 202      |\n```\n\nGLHF!\n\n\n",
+  "totalAttempts": 1205,
+  "totalCompleted": 337,
+  "totalStars": 13,
+  "voteScore": 53,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

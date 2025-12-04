@@ -1,0 +1,45 @@
+{
+  "id": "5f5daf1a209a64001183af9b",
+  "name": "Pack Some Chocolates",
+  "slug": "pack-some-chocolates",
+  "category": "reference",
+  "publishedAt": "2020-09-13T05:34:00.593Z",
+  "approvedAt": "2021-01-27T18:13:19.796Z",
+  "languages": [
+    "python",
+    "javascript",
+    "c",
+    "haskell",
+    "cobol",
+    "rust",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/5f5daf1a209a64001183af9b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-09-13T05:33:14.849Z",
+  "createdBy": {
+    "username": "kgashok",
+    "url": "https://www.codewars.com/users/kgashok"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "# Make Chocolates\n\nHalloween is around the corner and we have to distribute chocolates. We need to assemble a parcel of `goal` grams of chocolates. The `goal` can be assumed to be always a positive integer value. \n\n  - There are small chocolates (2 grams each) and big chocolates (5 grams each)\n  - To reach the goal, the chocolates (big and small) must be used as-is, meaning, the chocolates cannot be broken into smaller pieces\n  - Maximize the use of big chocolates that are available to achieve the desired goal. And only then should you proceed to use the small chocolates. \n    - NOTE: \"Maximize\" does not imply you have to use all the available big chocolates before using the small chocolates\n    - For example, consider the goal of `6`, and `big=1`, `small=3`. Using the existing one big chocolate, it is _not_ possible to achieve the remainder of the weight of 1. Therefore, avoid using the big chocolate. Use the existing 3 small chocolates and achieve the goal.\n\nDetermine the number of small chocolates that are required to achieve the desired parcel weight. \n\nWrite a function `make_chocolates` that will accept three integer values as arguments, in the following order:\n  -  `small` -> number of small chocolates available\n  -  `big` -> number of big chocolates available\n  -  `goal` -> the desired weight of the final parcel\n\nThe function should return the number of small chocolates required to achieve the `goal`. The function should return `-1` only if the goal cannot be achieved by any possible combination of big chocolates and small chocolates.\n\n\n## Example\n    make_chocolates (4, 1, 13) => 4  \n    make_chocolates (4, 1, 14) => -1  \n    make_chocolates (2, 1, 7) => 1  \n    \n    # using the big chocolate prevents goal \n    # accomplishment, therefore don't use it!\n    make_chocolates (3, 1, 6) => 3  \n",
+  "totalAttempts": 11321,
+  "totalCompleted": 1035,
+  "totalStars": 62,
+  "voteScore": 246,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

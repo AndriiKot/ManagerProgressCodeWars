@@ -1,0 +1,40 @@
+{
+  "id": "650c1599e07084005c4465ef",
+  "name": "Calculate Total Downtime for Machines",
+  "slug": "calculate-total-downtime-for-machines",
+  "category": "reference",
+  "publishedAt": "2023-09-21T11:11:47.542Z",
+  "approvedAt": "2023-09-22T11:41:01.473Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/650c1599e07084005c4465ef",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-09-21T10:06:17.224Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Given a table with machine processes, write a SQL query to calculate the total downtime for each machine between its processes.\n\n`process_times`:\n\n* `id` (integer) - Primary key\n* `machine_id` (integer) - Identifier for the machine.\n* `load_id` (integer) - Identifier for the load/process on the machine.\n* `start_time` (datetime) - The start time of the process.\n* `end_time` (datetime) - The end time of the process.\n\n\nBased on this sample data: \n\n```\n| machine_id | load_id | start_time          | end_time            |\n+------------+---------+---------------------+---------------------|\n| 220        | 25      | 2023-06-24 04:29:00 | 2023-06-25 04:42:38 |\n| 187        | 23      | 2023-06-22 14:41:00 | 2023-06-24 00:34:32 |\n| 187        | 18      | 2023-06-20 11:57:00 | 2023-06-20 23:53:51 |\n| 187        | 17      | 2023-06-18 11:57:00 | 2023-06-19 13:23:25 |\n```\nThe expected output is:\n\n```\n| machine_id | total_down_time |\n+------------+-----------------|\n| 187        | 61:20:44        |\n```\n\n1) `machine_id` (integer) - Identifier for the machine.\n2) `total_down_time` (text) - Total downtime for the machine in the format \"HH:MM:SS\".\n\n### Instructions:\n\n1) The total downtime for each machine is the sum of the time intervals between the end of a process and the start of the next one. Note that intervals for a given machine do not overlap.\n2) Exclude machines with only one process or where the processes do not have any downtime between them.\n3) Return the results sorted by their `machine_id` in descending order.\n\nGLHF!\n",
+  "totalAttempts": 1569,
+  "totalCompleted": 110,
+  "totalStars": 11,
+  "voteScore": 40,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "6479b3a881616a003732a726",
+  "name": "Users' pets and JSON data: Part 2",
+  "slug": "users-pets-and-json-data-part-2",
+  "category": "reference",
+  "publishedAt": "2023-06-02T09:21:10.368Z",
+  "approvedAt": "2023-06-10T18:28:00.114Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6479b3a881616a003732a726",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-02T09:17:28.406Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You have been provided with a PostgreSQL table named `users`. This table includes a `jsonb` column, `info`, which holds JSON data. Here is a simplified schema of the table:\n\n* `id`: primary key, integer.\n* `info`: JSON column which includes:\n   *  `name`: a string (user's name).\n   *  `pets`: an array of JSON objects (each object represents a pet and has a `name` field and `type` field).\n   \nIn this task, you need to extract and analyze the initial letters of the pet names to find the most popular ones. The query should return a list of the initial letters, the count of pets starting with each letter, and the names of the users who own pets whose names start with each letter. \n\nHowever, there are additional conditions to consider:\n\n* Each user should only be listed once per initial letter in the aggregation. If a user owns multiple pets with names starting with the same letter, each of these pets should be included in the `pet_count`.\n* When listing user names, they should be presented as a comma-separated string, ordered by the user's ID in ascending order.\n* The results should be sorted by the count of pets in descending order, and for equal counts, by the initial letter in ascending alphabetical order.   \n\nThe output of your query should be a table with three columns:\n\n* `first_letter`: The initial letter of pet names.\n* `pet_count`: The count of pets whose names start with first_letter.\n* `user_names`: A comma-separated list of names of users who own pets whose names start with first_letter, ordered by user's ID in ascending order.\n\nGood Luck!\n\n### Desired Output\n\nThe desired output should look like this:\n```\nfirst_letter  | pet_count  | user_names                          |\n--------------+------------+-------------------------------------|\n  A           | 56         | Diann Zieme Sr., Daysi Grimes, ...  |\n  D           | 45         | Daysi Grimes, Noel Rau, ....        |\n...\n```\n",
+  "totalAttempts": 1927,
+  "totalCompleted": 120,
+  "totalStars": 15,
+  "voteScore": 37,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

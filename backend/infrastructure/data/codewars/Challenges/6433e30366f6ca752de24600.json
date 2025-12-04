@@ -1,0 +1,41 @@
+{
+  "id": "6433e30366f6ca752de24600",
+  "name": "Lost Popularity",
+  "slug": "lost-popularity",
+  "category": "reference",
+  "publishedAt": "2023-04-10T10:22:52.511Z",
+  "approvedAt": "2023-06-05T06:38:32.822Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6433e30366f6ca752de24600",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-10T10:20:51.427Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dileader",
+    "url": "https://www.codewars.com/users/dileader"
+  },
+  "description": "Return the list of films that have not been rented out at all in the past month, but have been rented at least 10 times in total. Include the film_id, title of the film and in the brackets, its rating, rental count, and the date of the most recent rental. Since the business is in America, please use American date notation (for example, 'April 09, 2023').\n\n##### Notes:\n\n* Sort by count of rented films from higher to lower. If two or more films have the same amount of rentals then sort by last rental date in descending order, if even last rental dates are the same - then by film title alphabetically.\n* \"in the past month\" -  [interval](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-interval/) inclusive of 1 month from `CURRENT_DATE`. We are not taking time part of today into account for this task\n* \"sort by last rental date\" means by final text presentation, not the date itself.\n\n\n### Schema\n(not all columns - part of the domain required to solve this kata)\n\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\n```\n\n#### `film` table:\n```\nColumn           | Type     | Modifiers\n-----------------+----------+----------\nfilm_id          | integer  | not null\ntitle            | varchar  | not null\nrating           | varchar  | not null\n\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ninventory_id | integer   | not null\nrental_date  | timestamp | not null\n```\n### Desired Output\n\nThe desired output should look like this:\n\n```\nfilm_id | film_title         | rental_count | last_rental_date\n--------+----------------+------------------+------------------\n   32   | Chinatown (G)      | 23           | January 31, 2023\n   14   | The Terminator (R) | 17           | March 01, 2023\n...\n```",
+  "totalAttempts": 1883,
+  "totalCompleted": 216,
+  "totalStars": 16,
+  "voteScore": 48,
+  "tags": [
+    "Databases",
+    "Fundamentals",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

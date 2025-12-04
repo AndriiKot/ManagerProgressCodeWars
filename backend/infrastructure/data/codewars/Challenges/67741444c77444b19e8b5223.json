@@ -1,0 +1,40 @@
+{
+  "id": "67741444c77444b19e8b5223",
+  "name": "Finding Products Matching All Selected Tags",
+  "slug": "finding-products-matching-all-selected-tags",
+  "category": "reference",
+  "publishedAt": "2024-12-31T15:58:17.708Z",
+  "approvedAt": "2025-01-01T11:33:54.677Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/67741444c77444b19e8b5223",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-12-31T15:56:52.404Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Imagine you are managing an e-commerce platform. It offers a diverse range of products, each tagged with various attributes to help customers filter and find items that match their preferences. These tags could represent categories, features, styles, or any other relevant attributes.\n\nYou want to implement a feature that allows customers to filter products by selecting multiple tags. Specifically, when a customer selects several tags, the platform should display only those products that are associated with all the selected tags. This ensures that the search results precisely match the customer's combined tag preferences.\n\nWe have a `product_tags` table: \n\n* `product_id` (int):\tUnique identifier for each product\n* `tag`\t(varchar): Tag associated with the product\n\nThe table may contain duplicate rows where the same product is associated with the same tag multiple times. \n\nFor our task, we want to find products that are tagged with both `Electronics` and `Gadgets`. The query should return `product_id` values in desc order for products that are associated with both of these tags.\n\nfor this sample data:\n\n```\n| product_id | tag         |\n+------------+-------------+\n|    101     | Electronics |\n|    101     | Gadgets     |\n|    102     | Home        |\n|    103     | Electronics |\n|    103     | Accessories |\n|    104     | Kitchen     |\n|    105     | Electronics |\n|    105     | Gadgets     |\n|    105     | Accessories |\n|    106     | Gadgets     |\n|    106     | Accessories |\n```\n\nthe expected result is the following:\n\n\n```\n| product_id |\n+------------+\n|    105     |\n|    101     |\n```\n\nGLHF!\n",
+  "totalAttempts": 1115,
+  "totalCompleted": 407,
+  "totalStars": 11,
+  "voteScore": 61,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}
