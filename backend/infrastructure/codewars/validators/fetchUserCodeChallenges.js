@@ -1,7 +1,7 @@
 'use strict';
 
 import { validateApiResource } from './validateApiResource.js';
-import { validateSchema, userCodeChallengesSchema } from '#shared';
+import { validateSchema, userCodeChallengesSchema } from '#schemas';
 import { CodewarsAPI } from '#api';
 
 const { getCompletedChallenges } = CodewarsAPI;
