@@ -1,5 +1,5 @@
 import { prepareSection, loadJSONAsObject } from '#storage';
-import { getValueByPath } from '#shared-utils';
+import { getValueByPath } from '#utils';
 import { generateCryptoHash } from '#hash';
 import { createState } from '../state.js';
 import { userProfileSchema, validateWithRankCheck, ProfileSimpleFields } from '#schemas';

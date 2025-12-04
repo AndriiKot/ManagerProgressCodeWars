@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { USER_NAME } from '#config';
-import { runLimited } from '#shared-utils';
+import { runLimited } from '#utils';
 import {
   fetchUserProfile,
   fetchUserCodeChallenges,
@@ -39,7 +39,7 @@ function fetchWithDelay(fn, ...args) {
   return async () => {
     try {
       const res = await fn(...args);
-      await delay(500);        // задержка после каждого запроса
+      await delay(500); // задержка после каждого запроса
       return res;
     } catch (err) {
       logErrorToFile(err, { fn: fn.name, args });
@@ -64,14 +64,14 @@ const pageNumbers = Array.from({ length: count }, (_, i) => i);
 const pagesData = await runLimited(
   5, // ← ограничение по параллелизму
   pageNumbers,
-  (page) => fetchWithDelay(fetchUserCodeChallenges, USER_NAME, page)()
+  (page) => fetchWithDelay(fetchUserCodeChallenges, USER_NAME, page)(),
 );
 
 // -------------------------------
 // 3) Собираем все ID katas
 // -------------------------------
-const ids = pagesData.flatMap((page) =>
-  page?.data?.data?.map((ch) => ch.id) ?? []
+const ids = pagesData.flatMap(
+  (page) => page?.data?.data?.map((ch) => ch.id) ?? [],
 );
 
 console.log(`Всего kata ids: ${ids.length}`);
@@ -79,15 +79,12 @@ console.log(`Всего kata ids: ${ids.length}`);
 // -------------------------------
 // 4) Загружаем данные по КАЖДОМУ kata
 // -------------------------------
-const challengesData = await runLimited(
-  5,
-  ids,
-  (id) => fetchWithDelay(fetchCodeChallenge, id)()
+const challengesData = await runLimited(5, ids, (id) =>
+  fetchWithDelay(fetchCodeChallenge, id)(),
 );
 
 // лог для проверки
 console.log('Загружено хинтов:', challengesData.length);
-
 
 /*
 async function backoffFetch(fn, args, attempt = 1) {
