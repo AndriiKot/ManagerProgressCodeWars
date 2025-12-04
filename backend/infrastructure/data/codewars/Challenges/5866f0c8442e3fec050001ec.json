@@ -1,0 +1,39 @@
+{
+  "id": "5866f0c8442e3fec050001ec",
+  "name": "All Star Code Challenge #30",
+  "slug": "all-star-code-challenge-number-30",
+  "category": "reference",
+  "publishedAt": "2016-12-31T23:37:28.320Z",
+  "approvedAt": "2017-03-14T19:02:38.196Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5866f0c8442e3fec050001ec",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-12-30T23:42:00.706Z",
+  "createdBy": {
+    "username": "shaddyjr",
+    "url": "https://www.codewars.com/users/shaddyjr"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "**This Kata is intended as a small challenge for my students**\n\nAll Star Code Challenge #30\n\nAll of Raj's once loner friends are now happily in a relationship. Even Sheldon! However, instead of getting his own girlfriend, he wants things to go back to the way they were - just guys with no one in a relationship.\n\nCreate a function called manCave() that accepts an array of Member objects as an argument. If a member in the array has \"Raj\" as a name, remove all females from the array and convert the status of all males to \"Single\". The function should return an array with these (now modified) member objects (no girls).\n\n```javascript\nvar Member = function(name,gender,status= \"In a relationship\"){\n  this.name = name;\n  this.gender=gender;\n  this.status=status;\n}\n\nvar squad = [new Member(\"Leonard\",\"male\",\"Married\"),\n  new Member(\"Penny\", \"female\",\"Married\"),\n  new Member(\"Howard\",\"male\",\"Married\"),\n  new Member(\"Bernadette\", \"female\",\"Married\"),\n  new Member(\"Sheldon\",\"male\",\"In a relationship\"),\n  new Member(\"Amy\",\"female\",\"In a relationship\"),\n  new Member(\"Raj\",\"male\",\"Single\")]\n  \nmanCave(squad);\n//[ Member { name: 'Leonard', gender:\"male\", status: 'Single' },\n//  Member { name: 'Howard', gender:\"male\", status: 'Single' },\n//  Member { name: 'Sheldon', gender:\"male\", status: 'Single' },\n//  Member { name: 'Raj', gender:\"male\", status: 'Single' } ]\n\nsquad[0][\"status\"]==\"Single\" // => true\n```\n\nNote:  \nIf \"Raj\" is not in the group, the function should return the input array (unmodified).  \nAssume the input array will have properly formatted Member objects and do not need to be checked.",
+  "totalAttempts": 765,
+  "totalCompleted": 215,
+  "totalStars": 3,
+  "voteScore": 85,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}
