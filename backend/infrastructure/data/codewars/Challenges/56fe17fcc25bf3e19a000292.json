@@ -1,0 +1,80 @@
+{
+  "id": "56fe17fcc25bf3e19a000292",
+  "name": "Disguised sequences (II)",
+  "slug": "disguised-sequences-ii",
+  "category": "reference",
+  "publishedAt": "2016-04-01T06:41:09.153Z",
+  "approvedAt": "2016-11-09T19:42:07.855Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "java",
+    "csharp",
+    "clojure",
+    "haskell",
+    "cpp",
+    "php",
+    "typescript",
+    "elixir",
+    "crystal",
+    "fsharp",
+    "c",
+    "ocaml",
+    "rust",
+    "swift",
+    "go",
+    "shell",
+    "r",
+    "nim",
+    "kotlin",
+    "objc",
+    "fortran",
+    "nasm",
+    "julia",
+    "scala",
+    "powershell",
+    "racket",
+    "forth",
+    "factor",
+    "haxe",
+    "pascal",
+    "lua",
+    "perl",
+    "d",
+    "cobol",
+    "erlang",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/56fe17fcc25bf3e19a000292",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-04-01T06:41:00.828Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "Let us define two sums `v(n, p)` and `u(n, p)`:\n\n```math\nv(n,p) = \\sum_{k=0}^n (-1)^k \\times p \\times 4^{n-k} \\times {2n - k \\choose k}\n```\n\n```math\nu(n,p) = \\sum_{k=0}^n (-1)^k \\times p \\times 4^{n-k} \\times {2n - k + 1 \\choose k}\n```\n\n#### Task:\n- 1) Calculate `v(n, p)` and `u(n, p)` with two brute-force functions `v1(n, p)` and `u1(n, p)`.\n- 2) Try `v1(n, p)` and `u1(n, p)` for small values of `n` and `p` and guess the results of `u(n, p)` and `v(n, p)`\n- 3) Using 2) write `v_eff(n, p)` and `u_eff(n, p)` (or vEff(n, p) and uEff(n, p) or v-eff(n, p) and u-eff(n, p)) to efficiently calculate `v` and `u` for bigger values of `n` and `p`.\n     \n-- (This third part is not tested in \n     \n     JS, CS, TS, C++, C, PHP, Crystal, Rust, Swift, R, Nim, Fortran, NASM, Haxe, Pascal, Lua since there you don't have big integers to control your guess in part 2. See note below for \"Shell\").\n     \n#### Examples:\n```\nv1(12, 70) --> 1750\nu1(13, 18) --> 252\n```\n#### Extra points:-)\n For the mathy ones: find a relation between `v(n, p)`, `v(n-1, p)` and `u(n-1, p)` :-)\n \n#### Notes\n\n- Erlang, Prolog: only uEff(u_eff) and vEff(v_eff) are tested.\n\n- Factor: only ueff and veff are tested.\n\n- Forth: only ueff and veff are tested with small numbers.\n\n- Shell: only `v1(n, p)`is tested (use the solution you find for `v_eff(n, p)`.\n\n- If you have found `u_eff(n, p)` and `v_eff(n, p)` you can use them to calculate `u(n, p)` and `v(n, p)`.\n\n- You could see: <https://en.wikipedia.org/wiki/Binomial_coefficient> for a refresh about `binomial coefficients`.",
+  "totalAttempts": 5043,
+  "totalCompleted": 717,
+  "totalStars": 85,
+  "voteScore": 133,
+  "tags": [
+    "Puzzles",
+    "Discrete Mathematics",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

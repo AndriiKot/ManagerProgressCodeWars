@@ -1,0 +1,44 @@
+{
+  "id": "654cdf611d68c91228af27f1",
+  "name": "Elevator Action!",
+  "slug": "elevator-action",
+  "category": "games",
+  "publishedAt": "2023-11-10T07:48:43.579Z",
+  "approvedAt": "2024-02-23T11:18:20.262Z",
+  "languages": [
+    "ruby",
+    "javascript",
+    "python",
+    "clojure",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/654cdf611d68c91228af27f1",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-11-09T13:32:17.770Z",
+  "createdBy": {
+    "username": "ITSOES",
+    "url": "https://www.codewars.com/users/ITSOES"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You're an elevator.\n\nPeople on each floor get on you in the order they are queued as long as you're stopped on their floor.\n\nYour doors are one-person wide. No one can board you when someone else is departing or vice versa.\n\nYou must **stop** at each floor you pass that you can drop off and/or pick up passengers. Conversely, you don't stop if you're not changing passengers.\n\nYou can't switch directions while holding passengers.\n\nPeople won't get on you if you're not going in the direction they want to go.\n\nDuring a stop, all passengers who can get off gets off BEFORE any new passengers could get on.\n\nWhen you're empty (at any point), you must go TOWARD the next person in the queue, taking anyone going in that direction along your path if you're capable.\n\nWhen you're empty AND you're on the same floor as the next person in the queue, you must now go in the direction they want to go.\n\nYou must **stop** to open your doors, even if you haven't moved a floor. You begin each day with closed doors.\n\nUp to 5 people can be on you at a time.\n\nGiven a `starting_floor` and a `queue` of people represented by `from` the floor they're on `to` the floor they want to go, return the order of stops you will take this day.\n\n----\n\n## Example\n\nGiven this `queue`:\n\n```clojure\n(def queue [\n  { :from 3 :to 2 } ;; Al\n  { :from 5 :to 2 } ;; Betty\n  { :from 2 :to 1 } ;; Charles\n  { :from 2 :to 5 } ;; Dan\n  { :from 4 :to 3 } ;; Ed\n])\n```\n```go\nqueue := []Person{\n  {From: 3, To: 2}, // Al\n  {From: 5, To: 2}, // Betty\n  {From: 2, To: 1}, // Charles\n  {From: 2, To: 5}, // Dan\n  {From: 4, To: 3}, // Ed\n}\n```\n```javascript\nconst queue = [\n  { from: 3, to: 2 }, // Al\n  { from: 5, to: 2 }, // Betty\n  { from: 2, to: 1 }, // Charles\n  { from: 2, to: 5 }, // Dan\n  { from: 4, to: 3 }, // Ed\n];\n```\n```python\nqueue = [\n  { \"from\": 3, \"to\": 2 }, # Al\n  { \"from\": 5, \"to\": 2 }, # Betty\n  { \"from\": 2, \"to\": 1 }, # Charles\n  { \"from\": 2, \"to\": 5 }, # Dan\n  { \"from\": 4, \"to\": 3 }, # Ed\n]\n```\n```ruby\nqueue = [\n  { from: 3, to: 2 }, # Al\n  { from: 5, to: 2 }, # Betty\n  { from: 2, to: 1 }, # Charles\n  { from: 2, to: 5 }, # Dan\n  { from: 4, to: 3 }, # Ed\n]\n```\n\nthen\n\n```clojure\n(def starting-floor 1)\n(order starting-floor queue)\n```\n```go\nstartingFloor := 1\nOrder(startingFloor, queue)\n```\n```javascript\nconst startingFloor = 1;\norder(startingFloor, queue);\n```\n```python\nstarting_floor = 1\norder(starting_floor, queue)\n```\n```ruby\nstarting_floor = 1\norder(starting_floor, queue)\n```\nshould return:\n```clojure\n[2 5 4 3 2 1]\n```\n```go\n[]int{2, 5, 4, 3, 2, 1}\n```\n```ruby\n[2, 5, 4, 3, 2, 1]\n```\n```python\n[2, 5, 4, 3, 2, 1]\n```\n```javascript\n[2, 5, 4, 3, 2, 1]\n```\n### Explanation\n\nYou start on floor 1. Al is the first to queue for the elevator so you make your way toward him traveling **UP**.\n\nGoing up a floor, you notice Charles and Dan on floor 2, however only Dan wants to go up so your first stop is `2` to pick up Dan.\n\nGoing up to floor 3, you have now reached Al, but unfortunately for him, he wants to go down, and you can't switch directions until you drop off Dan. You promise to get Al later, so you pass him for now.\n\nWith no one else going up on your path, your second stop is `5` to drop off Dan. Now that you're empty, you move toward Al again who is now below you. Since you begin traveling **DOWN**, Betty, who's also on floor 5, joins you.\n\nYou stop on `4` to pick up Ed who is also going down.\n\nYou stop on `3` to drop off Ed. Meanwhile, you finally pick up Al.\n\nYou stop on `2` to drop off Al and Betty. You finally pick up Charles.\n\nYou stop on `1` to drop off Charles, the last person to transport.\n\n---\n\n# Final Note\n\nThe building you operate in may have ANY arbitrarily large number of stories (or basements) that people will want to travel between. For a given day, you should not expect more than 500 people to ride you.",
+  "totalAttempts": 1314,
+  "totalCompleted": 70,
+  "totalStars": 38,
+  "voteScore": 33,
+  "tags": [
+    "Algorithms",
+    "Performance"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "5c4cb8fc3cf185147a5bdd02",
+  "name": "Larger Product or Sum",
+  "slug": "larger-product-or-sum",
+  "category": "reference",
+  "publishedAt": "2019-01-26T23:18:12.015Z",
+  "approvedAt": "2019-08-25T11:30:16.516Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "rust",
+    "python",
+    "julia"
+  ],
+  "url": "https://www.codewars.com/kata/5c4cb8fc3cf185147a5bdd02",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2019-01-26T19:46:04.841Z",
+  "createdBy": {
+    "username": "adrnel",
+    "url": "https://www.codewars.com/users/adrnel"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "## Description\n\nFor this Kata you will be given an array of numbers and another number `n`.\nYou have to find the **sum** of the `n`  largest numbers of the array and the **product** of the `n` smallest numbers of the array, and compare the two.\n\nIf the sum of the `n` largest numbers is higher, return `\"sum\"`  \nIf the product of the `n` smallest numbers is higher, return `\"product\"`  \nIf the 2 values are equal, return `\"same\"`\n\n**Note** The array will never be empty and `n` will always be smaller than the length of the array.\n\n## Example\n\n```javascript\nsumOrProduct([10, 41, 8, 16, 20, 36, 9, 13, 20], 3) // => \"product\"\n```\n```haskell\nproductOrSum [10, 41, 8, 16, 20, 36, 9, 13, 20] 3 -> Product\n```\n```rust\nsum_or_product(&[10, 41, 8, 16, 20, 36, 9, 13, 20], 3) // => \"product\"\n```\n```python\nsum_or_product([10, 41, 8, 16, 20, 36, 9, 13, 20], 3) # => \"product\"\n```\n```julia\nsumorproduct([10, 41, 8, 16, 20, 36, 9, 13, 20], 3) # => \"product\"\n```\n\n## Explanation\n\nThe sum of the 3 highest numbers is `41 + 36 + 20 = 97`\n\nThe product of the lowest 3 numbers is `8 x 9 x 10 = 720`\n\nThe product of the 3 lowest numbers is higher than the sum of the 3 highest numbers so the function returns `\"product\"`\n\n~~~if:haskell\n## Note\n\nThe return datatype has been Preloaded for you. It is\n\n    data ProductOrSum = Product | Same | Sum deriving (Eq,Ord,Enum,Bounded,Show)\n~~~",
+  "totalAttempts": 9287,
+  "totalCompleted": 3029,
+  "totalStars": 26,
+  "voteScore": 501,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

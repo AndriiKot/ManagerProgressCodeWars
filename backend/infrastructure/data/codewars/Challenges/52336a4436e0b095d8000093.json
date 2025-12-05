@@ -1,0 +1,38 @@
+{
+  "id": "52336a4436e0b095d8000093",
+  "name": "MergeSort \"merge\" function",
+  "slug": "mergesort-merge-function",
+  "category": "reference",
+  "publishedAt": "2013-09-13T19:42:29.776Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript",
+    "haskell",
+    "clojure",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/52336a4436e0b095d8000093",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-09-13T19:40:52.858Z",
+  "createdBy": {
+    "username": "bkimmel",
+    "url": "https://www.codewars.com/users/bkimmel"
+  },
+  "description": "In this excercise, we will implement the \"merge\" function from MergeSort. \n\nMergeSort is often taught in Computer Science as the canonical example of the \"Divide and Conquer\" algorithm.  The strategy of MergeSort is both simple and profound, leveraging two simple-to-prove mathematical facts (1. That every list of 1 element is \"sorted\" ... and 2. It is much easier to combine two already-sorted lists into 1 sorted list than it is to sort a big list all at once) to yield an algorithm with a worst-case complexity of O(n log n).\n\nBasically, MergeSort works like this:\n1. If we get a list of size 1, then it's already sorted: we're done.  Just return that value.\n2. Otherwise; break the list you have to sort in half:\n2a. MergeSort the first half.\n2b. MergeSort the second half.\n2c. \"Merge\" the two sorted lists for 2a and 2b together.  Voila: sorted.\n\n2c is where the MergeSort \"merge\" function comes in.  It takes two already-sorted lists (arrays, in this example) and returns one large sorted list.\n\nThe name of the function in this example is \"mergesorted\".  It should return a big sorted array from two smaller sorted arrays:\ne.g.\n\nmergesorted([1,2],[3,4]) //should: [1,2,3,4]\n\nmergesorted([1,2],[3]) //should: [1,2,3]\n\nmergesorted([1],[2, 3]) //should: [1,2,3]",
+  "totalAttempts": 16304,
+  "totalCompleted": 2676,
+  "totalStars": 92,
+  "voteScore": 242,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 1
+  }
+}

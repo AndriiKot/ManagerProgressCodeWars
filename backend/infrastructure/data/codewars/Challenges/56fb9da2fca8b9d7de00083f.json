@@ -1,0 +1,43 @@
+{
+  "id": "56fb9da2fca8b9d7de00083f",
+  "name": "Find the Most Probable Sum Value or Values, in Rolling N-dice of n Sides",
+  "slug": "find-the-most-probable-sum-value-or-values-in-rolling-n-dice-of-n-sides",
+  "category": "reference",
+  "publishedAt": "2016-03-30T10:02:33.908Z",
+  "approvedAt": "2017-03-14T00:44:01.656Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/56fb9da2fca8b9d7de00083f",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-03-30T09:34:26.257Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": "<a href=\"http://imgur.com/h75nn5H\"><img src=\"http://i.imgur.com/h75nn5H.png?1\" title=\"source: imgur.com\" /></a>\n\nThis kata was thaught to continue with the topic of ```Tracking Hits for Different Sum Values for Different Kinds of Dice``` see at:http://www.codewars.com/kata/56f852635d7c12fb610013d7\n\nIn that kata we show the different sum values obtained rolling ```3``` tetrahedral dice. There is a table that shows how values ```7``` and ```8``` are the most probable sum values to obtain, having the highest probability of all, ```0.1875```.\n\nLooking the image, if we take dice from a row(up to 7 elements) we will have the same type dice (different colours)\n\nThe probability is obtained doing the quotient between the total different combinations and total of cases.\n```\nprobability(tetraedral_dice, 3, sum) = different_combinations_for_sum / total cases = 12 /(4*4*4) = 0.1875\n```\nThe function ```most_prob_sum()``` will receive two arguments:\n\n- a string with the type dice, one the following ones:\n```\n'tetrahedral', 'cubic', 'octahedral', 'ninesides', 'tensides', 'dodecahedral', 'icosahedral'.\n```\n- a number ```n```, that is the amount of rolled dice.\n\nThe corresponding range for each die are :\n```\n'tetrahedral'      [1, 4]\n'cubic'            [1, 6]\n'octahedral'       [1, 8]\n'ninesides'        [1, 9]\n'tensides'         [1, 10]\n'dodecahedral'     [1, 12]\n'icosahedral'      [1, 20]\n```\n\nLet's see the output of the function with the given example:\n```python\nmost_prob_sum('tetrahedral', 3) == [[7, 8], 0.1875]\n```\n\n```javascript\nmostProbSum('tetrahedral', 3) ---> [[7, 8], 0.1875]\n```\nWe need a list with two terms, the first one: a sorted list with the most probable sum value(s) and the second one: the maximum probability value.\n\nFor this kata we will have more challenging tests than the previous one,so we will need an optimized version for the solution.\n\nMore example cases are given in the Example Test Cases box.\n\nDo not round the results for the probability value.\n\nEnjoy it!",
+  "totalAttempts": 696,
+  "totalCompleted": 208,
+  "totalStars": 30,
+  "voteScore": 55,
+  "tags": [
+    "Algorithms",
+    "Mathematics",
+    "Statistics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

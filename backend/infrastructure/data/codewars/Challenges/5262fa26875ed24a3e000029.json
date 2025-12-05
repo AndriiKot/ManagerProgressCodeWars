@@ -1,0 +1,36 @@
+{
+  "id": "5262fa26875ed24a3e000029",
+  "name": "Javascript filter - 2",
+  "slug": "javascript-filter-2",
+  "category": "reference",
+  "publishedAt": "2013-10-19T21:31:18.820Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5262fa26875ed24a3e000029",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-10-19T21:31:20.612Z",
+  "createdBy": {
+    "username": "ineiti",
+    "url": "https://www.codewars.com/users/ineiti"
+  },
+  "description": "A friend of yours is developing an application for a hotel. You should write a function that returns all names of the people on a given floor. Every floor has 6 rooms, and all rooms are numbered in a consecutive way.\n\nThe function has the following signature:\n\n```\nfunction roomMates( rooms, floor ){}\n```\n\nThe argument *rooms* holds all clients in an array, where the index (starts at 0) corresponds to the room-number and holds the name of the client.\n\nA room is empty if the name at the corresponding array index is the empty string.\n\n*floor* is an integer and denotes the floor whose names need to be returned. Floors are numbered starting at 1.\n\nYour task is to return the names of all occupants on a given floor.\n\n### Example\n\n```\nrooms = [ \"Jill\", \"Jackson\", \"Jan\", \"Eve\", \"\", \"John\", \"Jimmy\", \"Tom\", \"\", \"Duke\" ]\n```\n\n<table style=\"width:100%\">\n  <tr>\n    <th>Floor</th>\n    <th>Index/Room No.<th>\n    <th>Name</th>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>0</td>\n    <td>Jill</td>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>1</td>\n    <td>Jackson</td>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>2</td>\n    <td>Jan</td>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>3</td>\n    <td>Eve</td>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>4</td>\n    <td>(empty)</td>\n  </tr>\n  <tr>\n    <td>1</td>\n    <td>5</td>\n    <td>John</td>\n  </tr>\n    <tr>\n    <td>2</td>\n    <td>6</td>\n    <td>Jimmy</td>\n  </tr>\n    <tr>\n    <td>2</td>\n    <td>7</td>\n    <td>Tom</td>\n  </tr>\n    <tr>\n    <td>2</td>\n    <td>8</td>\n    <td>(empty)</td>\n  </tr>\n  <tr>\n    <td>2</td>\n    <td>9</td>\n    <td>Duke</td>\n  </tr>\n</table>\n\n`function roomMates( rooms, 1 )` should return `[\"Jill\", \"Jackson\", \"Jan\", \"Eve\", \"John\"]`, and\n`function roomMates( rooms, 2 )` should return `[\"Jimmy\", \"Tom\", \"Duke\"]`.\n\n<hr>\n\nHint: the filter-method of Javascript is handy here, which returns each element of the array for which the filter-method returns true. The second argument gives the index you're looking at:\n\nhttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter",
+  "totalAttempts": 8321,
+  "totalCompleted": 1563,
+  "totalStars": 43,
+  "voteScore": 125,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

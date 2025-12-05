@@ -1,0 +1,41 @@
+{
+  "id": "582001237a3a630ce8000a41",
+  "name": "Using Window Functions To Get Top N per Group",
+  "slug": "using-window-functions-to-get-top-n-per-group",
+  "category": "reference",
+  "publishedAt": "2016-11-07T05:48:52.140Z",
+  "approvedAt": "2017-06-14T06:24:35.783Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/582001237a3a630ce8000a41",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-07T04:20:51.918Z",
+  "createdBy": {
+    "username": "pmatseykanets",
+    "url": "https://www.codewars.com/users/pmatseykanets"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "### Description\n\nGiven the schema presented below write a query, which uses a **window function**, that returns two most viewed posts for every category.\n\nOrder the result set by:\n\n1. category name alphabetically\n2. number of post views largest to lowest\n3. post id lowest to largest    \n\n    \n##### Note:\n\n* Some categories may have less than two or no posts at all.\n* Two or more posts within the category can be tied by (have the same) the number of views. Use post id as a tie breaker - a post with a lower id gets a higher rank.\n\n### Schema\n\n#### categories\n\n```\n Column     | Type                        | Modifiers\n------------+-----------------------------+----------\nid          | integer                     | not null\ncategory    | character varying(255)      | not null\n```\n\n#### posts\n\n```\n Column     | Type                        | Modifiers\n------------+-----------------------------+----------\nid          | integer                     | not null\ncategory_id | integer                     | not null\ntitle       | character varying(255)      | not null\nviews       | integer                     | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\ncategory_id | category | title                             | views | post_id\n------------+----------+-----------------------------------+-------+--------\n5           | art      | Most viewed post about Art        | 9234  | 234\n5           | art      | Second most viewed post about Art | 9234  | 712\n2           | business | NULL                              | NULL  | NULL\n7           | sport    | Most viewed post about Sport      | 10    | 126\n...\n\n```\n\n* `category_id` - category id\n* `category` - category name\n* `title` - post title\n* `views` - the number of post views\n* `post_id` - post id\n",
+  "totalAttempts": 28489,
+  "totalCompleted": 3069,
+  "totalStars": 183,
+  "voteScore": 337,
+  "tags": [
+    "SQL",
+    "Fundamentals",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 2
+  }
+}

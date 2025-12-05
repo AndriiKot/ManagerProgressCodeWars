@@ -1,0 +1,45 @@
+{
+  "id": "58558673b6b0e5a16b000028",
+  "name": "Boardgame Fight Resolve",
+  "slug": "boardgame-fight-resolve",
+  "category": "algorithms",
+  "publishedAt": "2016-12-17T18:50:57.769Z",
+  "approvedAt": "2019-07-21T15:51:52.539Z",
+  "languages": [
+    "cpp",
+    "c",
+    "javascript",
+    "python",
+    "nasm"
+  ],
+  "url": "https://www.codewars.com/kata/58558673b6b0e5a16b000028",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-12-17T18:39:48.194Z",
+  "createdBy": {
+    "username": "Brysen",
+    "url": "https://www.codewars.com/users/Brysen"
+  },
+  "approvedBy": {
+    "username": "daniloxxv",
+    "url": "https://www.codewars.com/users/daniloxxv"
+  },
+  "description": "You are making your very own boardgame. The game is played by two opposing players, featuring a 6 x 6 tile system, with the players taking turns to move their pieces (similar to chess). The design is finished, now it's time to actually write and implement the features. Being the good programmer you are, you carefully plan the procedure and break the program down into smaller managable sections. You decide to start coding the logic for resolving \"fights\" when two pieces engage in combat on a tile. \n\nYour boardgame features four unique pieces: \n\n<em>Swordsman, Knight, Archer</em> and <em>Pikeman</em>\n\nEach piece has unique movement and has advantages and weaknesses in combat against one of the other pieces. \n\n<h2><u>Task</u></h2>\n\nYou must write a function ```fightResolve``` that takes the defending and attacking piece as input parameters, and returns the winning piece. It may be the case that both the defending and attacking piece belong to the same player, after which you must return an error value to indicate an illegal move. \n\nIn C++, C and NASM, the pieces will be represented as ```chars```. Values will be case-sensitive to display ownership. Let the following char values represent each piece from their respective player.\n\n<b>Player 1: </b> ```p```= Pikeman, ```k```= Knight, ```a```= Archer, ```s```= Swordsman \n\n<b>Player 2: </b> ```P```= Pikeman, ```K```= Knight, ```A```= Archer, ```S```= Swordsman \n\nThe outcome of the fight between two pieces depends on which piece attacks, the type of the attacking piece and the type of the defending piece. <b>Archers</b> always win against <b>swordsmens</b>, <b>swordsmen</b> always win against <b>pikemen</b>, <b>pikemen</b> always win against <b>knights</b> and <b>knights</b> always win against <b>archers</b>. If a matchup occurs that was not previously mentioned (for example Archers vs Pikemen) the attacker will always win. This table represents the winner of each possible engagement between an attacker and a defender.\n<br>\n<style>\ntd, th, tr {\n    \tborder: 1px solid #FFFFFF;\n}\n</style>\n<table style=width:48px>\n  <tr>\n    <th>(Attacker→)\n    <br>(Defender↓)</th>\n    <th>Archer</th>\n    <th>Pikeman</th>\n    <th>Swordsman</th>\n    <th>Knight</th>\n  </tr>\n  <tr>\n    <td><b>Knight</b></td>\n    <td>Defender</td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n  </tr>\n  <tr>\n    <td><b>Swordsman</b></td>\n    <td>Attacker</td>\n    <td>Defender</td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n  </tr>\n   <tr>\n    <td><b>Archer</b></td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n    <td>Defender</td>\n    <td>Attacker</td>\n  </tr>\n   <tr>\n    <td><b>Pikeman</b></td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n    <td>Attacker</td>\n    <td>Defender</td>\n  </tr>\n</table>\n\n<br>\nIf two pieces from the same player engage in combat, i.e <code>P vs S</code> or <code>k vs a</code>, the function must return -1 to signify and illegal move. Otherwise assume that no other illegal values will be passed.\n\n<h2><u>Examples</u></h2>\n\nFunction prototype: <code>fightResolve(defender, attacker)</code> \n\n<code>1. fightResolve('a', 'P')</code> outputs <code>'P'</code>. No interaction defined between Pikemen and Archer. Pikemen is the winner here because it is the attacking piece.\n\n<code>2. fightResolve('k', 'A')</code> outputs <code>'k'</code>. Knights always defeat archers, even if Archer is the attacking piece here.\n\n<code>3. fightResolve('S', 'A')</code> outputs <code>-1</code>. Friendly units don't fight. Return -1 to indicate error.\n\n<h2><u>Notes</u></h2>\n\nIf you find the task too easy, try to solve it in the most elegant and efficient way. There are many solutions. Good luck!\n\n\n",
+  "totalAttempts": 3415,
+  "totalCompleted": 920,
+  "totalStars": 41,
+  "voteScore": 194,
+  "tags": [
+    "Logic",
+    "Algorithms",
+    "Games"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

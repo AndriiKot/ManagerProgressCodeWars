@@ -1,0 +1,41 @@
+{
+  "id": "55f4ad47ada1dd22f1000088",
+  "name": "Simple  Barcode Scanner",
+  "slug": "simple-barcode-scanner",
+  "category": "algorithms",
+  "publishedAt": "2015-09-18T18:56:54.115Z",
+  "approvedAt": "2020-04-04T20:41:15.325Z",
+  "languages": [
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/55f4ad47ada1dd22f1000088",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-09-12T22:55:03.202Z",
+  "createdBy": {
+    "username": "furbrain",
+    "url": "https://www.codewars.com/users/furbrain"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "Many items that are available for sale have a barcode somewhere on them - this allows them to be scanned at a checkout.\n\nYour task is to create an algorithm to convert a series of ones and zeroes from the scanner into an Universal Product Code (UPC). You can learn more about UPC from [Wikipedia](https://en.wikipedia.org/wiki/Universal_Product_Code). We will be using the UPC-A formatting.\n\n\n## Specifications\n\nEach barcode follows the pattern: `SLLLLLLMRRRRRRE`\n\n`S`, `M` and `E` are guard bars (start, middle, end). These are constants.\n\n`L` and `R` are digits. They are 7 modules wide and are variables. They can be of 1 of 10 patterns.\n\nEach item is described using the pattern below. The number indicates how many modules wide, the letter is the colour of the bar: `W` for white and `B` for black.\n\nThe guard bars:\n\n```\nS: 1B1W1B\nM: 1W1B1W1B1W\nE: 1B1W1B\n```\nThese are the `L` digits: \n```\n0: 3W2B1W1B\n1: 2W2B2W1B\n2: 2W1B2W2B\n3: 1W4B1W1B\n4: 1W1B3W2B\n5: 1W2B3W1B\t\n6: 1W1B1W4B\n7: 1W3B1W2B\n8: 1W2B1W3B\n9: 3W1B1W2B\n```\n\nYou will be provided with a preloaded dictionary `DIGITS` which contains the above information (`L` digits and guard bar patterns).\n\n`R` digits are the inverse of `L` digits, e.g.:\n```\n0: 3B2W1B1W\n```\n\n## Your task\nYour function will receive a string consisting of ones (black) and zeroes (white), and should return the UPC as a string. Each one or zero will correspond to one *module* of width. **Only valid barcodes will be supplied**, and they will always be presented from left to right. They will start with the first black line of the guard bars.\n\n## Example\n```python\n\"10101110110110111000101100010110101111011011101010111001011100101110010111001011011001000010101\"\n=> \"789968000023\"\n\nbecause:\n\"101 0111011 0110111 0001011 0001011 0101111 0110111 01010 1110010 1110010 1110010 1110010 1101100 1000010 101\"\n\" S     7       8       9       9       6       8      M      0       0       0       0       2       3     E \"\n```",
+  "totalAttempts": 1086,
+  "totalCompleted": 267,
+  "totalStars": 26,
+  "voteScore": 81,
+  "tags": [
+    "Regular Expressions",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "645130c5680d5d006581ffe8",
+  "name": "Exploring the Pareto Principle",
+  "slug": "exploring-the-pareto-principle",
+  "category": "reference",
+  "publishedAt": "2023-05-02T17:07:06.269Z",
+  "approvedAt": "2023-07-06T17:11:18.190Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/645130c5680d5d006581ffe8",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-05-02T15:48:21.915Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the task, you need to calculate whether a Pareto principle is observed for a DVD rentals, which states that 20% of customers will be responsible for approximately 80% of the rentals. You need to write a query that would identify the top 20% of customers based on the number of rentals they had made, and then calculate the percentage of total rentals they accounted for. In the task you need to: \n\n* calculate the total number of rentals across all customers.\n* identify the top 20% of customers by rentals.\n* calculate the number of rentals by these top 20% of customers.\n* Finally, to calculate the percentage of rentals by the top 20% of customers compared to the total number of rentals.\n\nIn your query you need to return three pieces of information:\n\n* `top_20%_rentals_count`: The total number of rentals made by the top 20% of customers.\n* `total_rentals_count`: The total number of rentals made by all customers.\n* `percentage_of_top_20%`: The percentage of total rentals made by the top 20% of customers. Should be of `numeric` type, rounded to 2 decimal places\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* Static dump won't provide belieavable percentage, but random test has been written to correlate with Pareto principle\n* What is meant by `top 20% of customers`? If there are 1000 customers in total, we would first order them by the number of rentals they have made, and then take the top 200 customers in terms of number of rentals. These 200 customers would be considered the \"top 20%\" of customers.\n* What we want to achieve is to cut off exactly 20% of customers regardless of tie. If 20 % is not the whole number - for example, for 599 customers it would be `119.8` - then we need to take upper bound, `120`, not `119` \n\n\nGood luck!\n\n### Schema\n(not all columns - only part of the domain required to solve this kata)\n\n#### `customer` table:\n```\nColumn       | Type     | Modifiers\n------------ +----------+----------\ncustomer_id  | integer  | not null\nfirst_name   | varchar  | not null\nlast_name    | varchar  | not null\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\ntop_20%_rentals_count   | total_rentals_count  | \tpercentage_of_top_20%    \n-----------------------+----------------------+--------------------------+\n  7756                 | 10000                |   0.776e2                |\n```  \n  \n\n\n\n\n",
+  "totalAttempts": 2441,
+  "totalCompleted": 135,
+  "totalStars": 7,
+  "voteScore": 27,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

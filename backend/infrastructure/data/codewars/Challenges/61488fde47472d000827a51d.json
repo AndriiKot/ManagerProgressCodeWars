@@ -1,0 +1,47 @@
+{
+  "id": "61488fde47472d000827a51d",
+  "name": "Is this a valid Chess960 position?",
+  "slug": "is-this-a-valid-chess960-position",
+  "category": "reference",
+  "publishedAt": "2021-09-20T13:43:30.121Z",
+  "approvedAt": "2022-10-05T20:51:25.764Z",
+  "languages": [
+    "scala",
+    "javascript",
+    "python",
+    "factor",
+    "ruby",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/61488fde47472d000827a51d",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2021-09-20T13:42:54.132Z",
+  "createdBy": {
+    "username": "LegendaryFartMaster",
+    "url": "https://www.codewars.com/users/LegendaryFartMaster"
+  },
+  "approvedBy": {
+    "username": "Chris_Rands",
+    "url": "https://www.codewars.com/users/Chris_Rands"
+  },
+  "description": "[Fischer random chess](https://en.wikipedia.org/wiki/Fischer_random_chess), also known as Chess960, is a variant of chess, invented by Bobby Fischer on June 19, 1996.\n\nThe rules are the same as regular chess, but the starting position is randomized according to the **randomization rules** (see below). Note that prior knowledge of chess is not required to solve this kata, however some basic knowledge like piece distribution, initial setup, ranks vs files etc. is assumed. [Here](https://en.wikipedia.org/wiki/Chess#Setup) is a quick refresher.\n\n\n**Randomization Rules**\n 1) The 2nd and 7th rank stay the same as in a normal game, filled with pawns.\n 2) All the remaining white pieces must be on the 1st rank, and black pieces on the 8th rank.\n 3) The two bishops must start on differently colored squares.\n 4) The rooks must be located on either side of the king; in other words, the king must be placed on a square between the two rooks.\n 5) The queen and knights can be located on any remaining square in the rank. \n \nBoth White and Black share the same starting position, drawn at random, in accordance to these rules.\n\nSide note: in accordance with these rules, there are a total of 960 possible starting positions, hence the name of the variant.\n\n**Representation of position**\n\nFor the purpose of this kata:\n - Rooks are abbreviated as `R`\n - Knights are abbreviated as `N`\n - Bishops are abbreviated as `B`\n - Queen is abbreviated as `Q`\n - King is abbreviated as `K`\n \nSince black mirrors white's setup, it is enough to list White's position to fully describe the position. Furthermore, only the first rank needs to be defined, as the second rank is filled with pawns regardless of situation.\n \nA starting position is represented by an 8 character long `String`. Each character in the `String` denotes a specific piece, in order from left-to-right.\n\nAn example starting position would be:\n `RNBQKBNR`\n\n\n## Your task\n\nGiven a string representation, determine whether it represents a valid Chess960 starting position. Note that the input is guaranteed to represent one king, one queen, two rooks, two bishops and two knights, in some order. You do not have to validate for missing pieces or extra pieces.\n",
+  "totalAttempts": 2224,
+  "totalCompleted": 728,
+  "totalStars": 34,
+  "voteScore": 158,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Games",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

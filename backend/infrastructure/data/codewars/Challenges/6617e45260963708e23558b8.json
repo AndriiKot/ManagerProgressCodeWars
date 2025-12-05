@@ -1,0 +1,41 @@
+{
+  "id": "6617e45260963708e23558b8",
+  "name": "Timely Product Prices and Customer Reviews at the Point of Sale",
+  "slug": "timely-product-prices-and-customer-reviews-at-the-point-of-sale",
+  "category": "reference",
+  "publishedAt": "2024-04-11T14:11:43.580Z",
+  "approvedAt": "2024-04-14T16:26:44.398Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6617e45260963708e23558b8",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-11T13:23:31.014Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "In a retail database system, we have three main tables: `sales`, `product_prices`, and `customer_reviews`. The `sales` table logs each sale's time and related product ID. `product_prices` records the history of product prices, and `customer_reviews` captures customer ratings for products over time. We need a query to analyze the price and customer sentiment at the time of each sale.\n\n`sales`:\n* `id`(int): primary key. \n* `sale_time`(datetime): timestamp of the sale\n* `product_id`(int): id of a product that is being sold\n\n`product_prices`:\n* `id`(int): primary key. \n* `price_time` (datetime): timestamp of the price record\n* `product_id` (int): id of a product price of which is considered\n* `price` (float)\n\n`customer_reviews`: \n\n* `id`(int): primary key. \n* `review_time` (datetime): timestamp of the review record\n* `product_id` (int): id of a product review of which is considered\n* `review_rating` (int) - the rating that was provided by a customer\n\nWrite an SQL query to fetch the time of each sale, the most recent product price, and the most recent customer review rating at or before the time of the sale. The results should be ordered first by the time of the sale and then by the sale ID if multiple sales occur at the same time.\n\nReturned Columns:\n\n1) `sale_time` (text): The timestamp of each sale, cast to text. It represents when each sale occurred in the sales table.\n2) `product_id` (int): Id of the product that is being sold.\n2) `price` (float): The most recent product price from the `product_prices` table at or before the sale \n3) `review_rating` (int, nullable): The most recent review rating from the `customer_reviews` table at or before the `sale_time`. This column represents customer latest sentiment towards the product at the time of sale.\n\nQuery should order the results by `sale_time` in descending order and then by `sales.id` also in descending order to handle sales that occur at the same timestamp.\n\nIt's possible that a sale occurs for a product that does not have a corresponding price record in the `product_prices` table at or before the sale time. In such cases, the query should exclude these sales from the results. On the other hand, the `customer_reviews` table may not always have a review for every product at the time of sale. If a review is unavailable, the query should include these sales but display `null` for the `review_rating` column.\n\nFor this sample data:\n\n```\nsales:\n\n| id | sale_time           | product_id |\n|----|---------------------|------------|\n| 1  | 2024-04-11 12:00:00 | 1          |\n| 2  | 2024-04-11 12:10:00 | 2          |\n```\n```\nproduct_prices: \n\n| id | price_time          | product_id | price |\n|----|---------------------|------------|-------|\n| 1  | 2024-04-11 11:55:00 | 1          | 10.99 |\n| 2  | 2024-04-11 11:50:00 | 2          | 20.99 |\n```\n\n```\ncustomer_reviews: \n\n| id | review_time         | product_id | review_rating |\n|----|---------------------|------------|---------------|\n| 1  | 2024-04-11 11:53:00 | 1          | 5             |\n| 2  | 2024-04-11 11:48:00 | 2          | 4             |\n```\n\nthe desired output is the following:\n\n```\n| sale_time           | product_id | price | review_rating |\n|---------------------|------------|-------|---------------|\n| 2024-04-11 12:10:00 |   2        | 20.9  |       4       |\n| 2024-04-11 12:00:00 |   1        | 10.99 |       5       |\n```\n\nGLHF!\n\n",
+  "totalAttempts": 2681,
+  "totalCompleted": 105,
+  "totalStars": 10,
+  "voteScore": 37,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Date Time"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

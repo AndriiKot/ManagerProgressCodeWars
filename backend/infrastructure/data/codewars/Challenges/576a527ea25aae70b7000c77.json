@@ -1,0 +1,44 @@
+{
+  "id": "576a527ea25aae70b7000c77",
+  "name": "Statistics in Kata 2: AND case - Ball bags",
+  "slug": "statistics-in-kata-2-and-case-ball-bags",
+  "category": "reference",
+  "publishedAt": "2016-06-24T12:24:11.887Z",
+  "approvedAt": "2016-08-24T08:09:56.922Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/576a527ea25aae70b7000c77",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-06-22T08:55:26.637Z",
+  "createdBy": {
+    "username": "powderham",
+    "url": "https://www.codewars.com/users/powderham"
+  },
+  "approvedBy": {
+    "username": "suic",
+    "url": "https://www.codewars.com/users/suic"
+  },
+  "description": "In the previous <a title=\"Kata\" href=\"https://www.codewars.com/kata/575eac1f484486d4600000b2\">Kata</a> we discussed the OR case.\n\nWe will now discuss the AND case, where rather than calculating the probablility for either of two (or more) possible results, we will calculate the probability of receiving <i>all</i> of the viewed outcomes.\n\nFor example, if we want to know the probability of receiving head OR tails in two tosses of a coin, as in the last Kata we add the two probabilities together. However if we want to know the probability of receiving head AND tails, in that order, we have to work differently.\n\nThe probability of an AND event is calculated by the following rule:\n\n`P(A ∩ B) = P(A | B) * P(B)`\n\nor\n\n`P(B ∩ A) = P(B | A) * P(A)`\n\nThat is, the probability of A and B both occuring is equal to the probability of A given B occuring times the probability of B occuring or vice versa. \nIf the events are independent, like in the case of tossing a coin, the probability of A occuring if B has occured is equal to the probability of A occuring by itself. In this case, the probability can be written as the below:\n\n`P(A ∩ B) = P(A) * P(B)`\n\nor\n\n`P(B ∩ A) = P(B) * P(A)`\n\nApplying to the heads and tails case:\n\n`P(H ∩ T) = 0.5 * 0.5`\n\nor\n\n`P(H ∩ T) = 0.5 * 0.5`\n\n<u>The task:</u>\n\nYou are given a random bag of 10 balls containing 4 colours. `Red`, `Green`, `Yellow` and `Blue`. You will also be given a sequence of 2 balls of any colour e.g. `Green` and `Red` or `Yellow` and `Yellow`. \n\nYou have to return the probability of pulling a ball at random out of the bag and it matching the first colour and then pulling a ball at random out of the bag and it matching the second colour.\n\nYou will be given a boolean value of `true` or `false` which indicates whether the balls that is taken out in the first draw is replaced in to the bag for the second draw. Hint: this will determine whether the events are independent or not.\n\nYou will receive two arrays and a boolean value. The first array contains the colours of the balls in the bag and the second contains the colour of the two balls you have to receive. As per above the final boolean value will indicate whether the balls are being replaced `true` or not `false`.\n\nDo not mutate your inputs and do not round results.\n\ne.g. `[[\"y\",\"r\",\"g\",\"b\",\"b\",\"y\",\"r\",\"g\",\"r\",\"r\"],[\"r\",\"b\"],false]`\n\n\n<u>Other Kata in this series:</u>\n\n<li><a title=\"Statistics in Kata 1: OR case - Unfair dice\" href=\"https://www.codewars.com/kata/575eac1f484486d4600000b2\">Statistics in Kata 1: OR case - Unfair dice</a></li>\n\n  \n  ",
+  "totalAttempts": 1331,
+  "totalCompleted": 193,
+  "totalStars": 14,
+  "voteScore": 49,
+  "tags": [
+    "Statistics",
+    "Probability",
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

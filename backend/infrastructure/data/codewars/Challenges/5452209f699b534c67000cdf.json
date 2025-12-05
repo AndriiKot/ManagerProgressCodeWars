@@ -1,0 +1,40 @@
+{
+  "id": "5452209f699b534c67000cdf",
+  "name": "Super power frequency function",
+  "slug": "super-power-frequency-function",
+  "category": "algorithms",
+  "publishedAt": "2014-10-30T12:16:45.156Z",
+  "approvedAt": "2017-07-02T12:30:19.411Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5452209f699b534c67000cdf",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-10-30T11:27:28.089Z",
+  "createdBy": {
+    "username": "surtich",
+    "url": "https://www.codewars.com/users/surtich"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Implement the `frequency(arr, options)` function.\n\nThe function takes an array and calculates the frequency of each value of the array sorted naturally.\n\nFor example:\n\n```javascript\nfrequency(['Peter', 'Anna', 'Rose', 'Peter', 'Peter', 'Anna']); //[[\"Anna\", 2], [\"Peter\", 3], [\"Rose\", 1]]\nfrequency([1, 10, 12, 2, 1, 10, 2, 2]); //[[1, 2], [2, 3], [10, 2], [12, 1]]\n```\n\nOptionally, the function can take the sorting criteria. For example, to sort alphabetically:\n\n```javascript\nfunction alphabeticalCompare(value1, value2) {\n  if (String(value1) < String(value2)) {\n    return -1;\n  } else if (String(value1) > String(value2)) {\n    return 1;\n  } else {\n    return 0;\n  }\n}\n\nfrequency([1, 10, 12, 2, 1, 10, 2, 2], {compareTo: alphabeticalCompare}); //[[1, 2], [10, 2], [12, 1], [2, 3]]\n```\n\nThe comparison function also receives the frequencies of each value. For example, to sort by descending frequency:\n\n```javascript\nfunction frequencyCompare(value1, value2, freq1, freq2) {\n  return freq2 - freq1;\n}\n\nfrequency(['Peter', 'Anna', 'Rose', 'Peter', 'Peter', 'Anna'], {compareTo: frequencyCompare}); //[[\"Peter\", 3], [\"Anna\", 2], [\"Rose\", 1]]\n```\n\nFinally the function can receive the grouping criteria. For example:\n\n```javascript\nfunction isEven(number) {\n  return number % 2 === 0;\n}\n\nfunction parity(number) {\n  return isEven(number) ? 'even' : 'odd';\n}\n\nfrequency([1, 2, 3, 4, 5, 6, 7], {criteria: parity}); //[[\"even\", 3], [\"odd\", 4]]\n```\n\nObviously you can combine both:\n\n```javascript\nfunction profession(person) {\n  return person.profession;\n}\n\nvar persons = [\n  {name: 'Peter', profession: 'teacher'},\n  {name: 'Michael', profession: 'teacher'},\n  {name: 'Anna', profession: 'scientific'},\n  {name: 'Rose', profession: 'scientific'},\n  {name: 'Anna', profession: 'scientific'},\n  {name: 'Anna', profession: 'politician'}\n];\n\nfrequency(persons, {criteria: profession, compareTo: frequencyCompare}); //[[\"scientific\", 3], [\"teacher\", 2], [\"politician\", 1]]\n```",
+  "totalAttempts": 3211,
+  "totalCompleted": 219,
+  "totalStars": 26,
+  "voteScore": 63,
+  "tags": [
+    "Functional Programming",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

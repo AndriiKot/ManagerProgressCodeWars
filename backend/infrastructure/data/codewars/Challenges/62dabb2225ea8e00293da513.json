@@ -1,0 +1,41 @@
+{
+  "id": "62dabb2225ea8e00293da513",
+  "name": "Find Parallel Octaves",
+  "slug": "find-parallel-octaves",
+  "category": "reference",
+  "publishedAt": "2022-07-22T16:19:18.370Z",
+  "approvedAt": "2022-08-12T21:38:38.194Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/62dabb2225ea8e00293da513",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-07-22T14:58:42.915Z",
+  "createdBy": {
+    "username": "Simple Rick",
+    "url": "https://www.codewars.com/users/Simple%20Rick"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You've sent your students home for the weekend with an assignemnt. \nThe assignment is to write a 4 part ```harmony``` consisting of 4 chords.\n----\nScale:\n----\n\nThe major scale has 7 notes:\n\n```\"do re mi fa sol la ti\"```\n\n----\nChord:\n----\n\nFor this assignment a chord may consist of any 4 notes from the major scale. Example:\n\nexample chord = ```'do re fa sol'```\n\n----\nHarmony:\n----\n\nEach ```harmony``` consists of 4 chords:\n\n```harmony = [chordOne, chordTwo, chordThree, chordFour]```\n\n-----\nOctave:\n-----\n\nWhen two singers are singing the same note like below (```do```) the interval between them is called an octave:\n\n```       |\nv         v\ndo re mi do \n^         ^\n\n\n```\n\n----\nParallel Octave:\n-----\n\nA parallel octave occurs when two singers *move* from one chord to the next staying one octave apart. For example: \n```\ndo mi sol do        \nv          v    < Parallel octave\nti re fa  ti\n```\n\nThis ```harmony``` contains a parallel octave because the bass and soprano are both singing ```'do'``` on the first chord, and then on the second chord they both move to ```'ti'```. In other words they stay one octave apart from eacthother as they move from one chord to the next.\n\nA parallel octave does NOT occur when two singers stay one octave apart but do not *move* or change notes from one chord to the next. For example:\n```\ndo re mi do\n|         |     < NOT a parallel octave\ndo re mi do     \n```\n\n\n-----\nYour Task\n-----\n You want to write a function to detect whether the harmony contains any parallel octaves. If it contains parallel octaves return \"Fail\" otherwise return \"Pass\". \n\n\n-----\nExamples\n-----\n\n\n```\nharmony = [\n  'do re mi fa' ,\n  'mi fa sol do' ,\n  'fa ti fa ti' ,\n    |     |             < NOT a parallel octave\n  'fa do fa mi' , \n  ]\n  \n  \n  \n ``` \n \nThis student should ```'Pass'``` because the bass and alto are singing octaves on the 3rd and 4th chord```'fa'``` but they do not *move*.\n\n\n```\nharmony = [\n  'mi re  mi fa' ,\n    |      |          < Parallel octave\n    v      v\n  'sol fa sol do',\n    |      |          < Parallel octave\n    v      v\n  'fa ti  fa  ti' ,\n  'fa do  fa  mi' , \n  ]\n```\nThis student should ```'Fail'``` because the bass and alto stay one  octave apart on the first and second chord and they move to another note together. ```mi``` -> ```sol```\n\nThere is also another parallel octave as they move from the second to third chord. ```sol```->```fa```\n\n\n\n```\nharmony = [\n 'mi mi mi mi' ,\n 'fa mi do re' ,\n 'ti ti ti ti' ,\n 'fa mi do re' ,          No parallel octaves\n ]\n```\n This student should ```'Pass'``` because there are no parallel octaves in this harmony. \n\n\n\n\n\n\n",
+  "totalAttempts": 769,
+  "totalCompleted": 167,
+  "totalStars": 20,
+  "voteScore": 46,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

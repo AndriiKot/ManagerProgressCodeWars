@@ -1,0 +1,41 @@
+{
+  "id": "643972e66905c60034803a1f",
+  "name": "Rentals by Date Range",
+  "slug": "rentals-by-date-range",
+  "category": "reference",
+  "publishedAt": "2023-04-14T16:26:30.105Z",
+  "approvedAt": "2023-05-20T06:57:44.406Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/643972e66905c60034803a1f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-14T15:36:06.948Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "The owner of a DVD rental store is curious to know which dates in May and June 2005 had the most rentals. Write a query to generate a list of dates between May 24th and June 2nd (inclusive), 2005 and counts the number of rentals on each date.\nThe query should return a result set with two columns: `date` and `rentals`. The `date` column should be formatted as 'YYYY-MM-DD'. The `rentals` column should contain the number of rentals that occurred on that date.\n\n\n##### Notes:\n\n*  If there are no rentals, you need to display `0` for that day, not to avoid that day \n*  The result set should be sorted by date in ascending order\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests. \n\n### Schema\n\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\ninventory_id | integer   | not null\nrental_date  | timestamp | not null\nreturn_date  | timestamp | \n```\n### Desired Output\n\nThe desired output should look like this:\n\n```\ndate         |  rentals\n-------------+---------------+\n2005-05-24   | 38            |\n2005-05-25   | 29            | \n...\n```\n",
+  "totalAttempts": 1083,
+  "totalCompleted": 169,
+  "totalStars": 5,
+  "voteScore": 40,
+  "tags": [
+    "Databases",
+    "SQL",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "5e4e8f5a72d9550032953717",
+  "name": "List of all Rationals",
+  "slug": "list-of-all-rationals",
+  "category": "reference",
+  "publishedAt": "2020-02-20T21:44:06.303Z",
+  "approvedAt": "2020-02-21T01:58:53.933Z",
+  "languages": [
+    "haskell",
+    "fsharp",
+    "javascript",
+    "python",
+    "ruby",
+    "coffeescript",
+    "php",
+    "typescript",
+    "kotlin",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/5e4e8f5a72d9550032953717",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2020-02-20T13:53:31.031Z",
+  "createdBy": {
+    "username": "Paul Robertson",
+    "url": "https://www.codewars.com/users/Paul%20Robertson"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Here's a way to construct a list containing every positive rational number:\n\nBuild a binary tree where each node is a rational and the root is `1/1`, with the following rules for creating the nodes below:\n\n* The value of the left-hand node below `a/b` is `a/a+b`\n* The value of the right-hand node below `a/b` is `a+b/b`\n\nSo the tree will look like this:\n\n```\n                       1/1\n                  /           \\ \n            1/2                  2/1\n           /    \\              /     \\\n       1/3        3/2        2/3       3/1\n      /   \\      /   \\      /   \\     /   \\\n   1/4    4/3  3/5   5/2  2/5   5/3  3/4   4/1\n\n ...\n```` \n\nNow traverse the tree, breadth first, to get a list of rationals.\n\n```\n[ 1/1, 1/2, 2/1, 1/3, 3/2, 2/3, 3/1, 1/4, 4/3, 3/5, 5/2, .. ]\n```\n\nEvery positive rational will occur, in its reduced form, exactly once in the list, at a finite index.\n\n```if:haskell,fsharp,\nIn the kata, we will use tuples of type `(Integer, Integer)` to represent rationals, where `(a, b)` represents `a / b`\n```\n```if:lambdacalc,\nIn the kata, we will use tuples of type `Pair Number Number` to represent rationals, where `Pair a b` represents `a / b`\n```\n```if:javascript,\nIn the kata, we will use tuples of type `[ Number, Number ]` to represent rationals, where `[a,b]` represents `a / b`\n```\n```if:typescript,coffeescript,\nIn the kata, we will use tuples of type `[number, number]` to represent rationals, where `[a, b]` represents `a / b`\n```\n```if:python,\nIn the kata, we will use tuples of type `(int, int)` to represent rationals, where `(a, b)` represents `a / b`\n```\n```if:kotlin,\nIn the kata, we will use `Pair`s of type `Pair<Int, Int>` to represent rationals, where `Pair(a, b)` represents `a / b`\n```\n```if:php,\nIn the kata, we will use tuples of type `[int, int]` to represent rationals, where `[a, b]` represents `a / b`\n```\n```if:ruby,\nIn the kata, we will use arrays of type `[Integer, Integer]` to represent rationals, where `[a, b]` represents `a / b`\n```\n\nUse this method to create an infinite list of tuples:\n\n```haskell\nallRationals :: [(Integer, Integer)]\n```\n```lambdacalc\nall-rationals : Stream (Pair Number Number)\n```\n```javascript\nfunction* allRationals() => [Number,Number] // forever\n```\n```coffeescript\nallRationals = -> # generator of [Number, Number]s\n```\n```typescript\nfunction* allRationals(): IterableIterator<[number, number]>\n```\n```python\ndef all_rationals() -> Generator[(int, int)]:\n```\n```php\nfunction allRationals() // : Generator<[int, int]> (generic types aren't supported in PHP)\n```\n```ruby\nclass AllRationals < Enumerator # Enumerator of [Integers, Integers]s\n```\n```kotlin\nfun allRationals(): Iterator<Pair<Int, Int>>\n```\n\nmatching the list described above:\n\n```haskell\nallRationals = [ (1,1), (1,2), (2,1), (1,3), (3,2), .. ]\n```\n```lambdacalc\nall-rationals = « Pair 1 1 » Pair 1 2 » Pair 2 1 » Pair 1 3 » Pair 3 2 » .. »\n\nexport deconstructors head, tail for your Stream encoding,\nand deconstructors fst, snd for your Pair encoding.\n\nuse purity \"LetRec\", numEncoding \"BinaryScott\"\n```\n```javascript\nallRationals => [ [1,1], [1,2], [2,1], [1,3], [3,2], .. ]\n```\n```python\nall_rationals => [(1, 1), (1, 2), (2, 1), (1, 3), (3, 2), ...]\n```\n```ruby\nAllRationals.new => [[1, 1], [1, 2], [2, 1], [1, 3], [3, 2], ...]\n```\n```php\nallRationals() => [[1, 1], [1, 2], [2, 1], [1, 3], [3, 2], ...]\n```\n```coffeescript\nallRationals() => [[1, 1], [1, 2], [2, 1], [1, 3], [3, 2], ...]\n```\n```typescript\nallRationals() => [[1, 1], [1, 2], [2, 1], [1, 3], [3, 2], ...]\n```\n```kotlin\nallRationals().asSequence().take(..).toList() => listOf(Pair(1, 1), Pair(1, 2), Pair(2, 1), Pair(1, 3), Pair(3, 2), ...)\n```\n",
+  "totalAttempts": 1575,
+  "totalCompleted": 619,
+  "totalStars": 56,
+  "voteScore": 131,
+  "tags": [
+    "Mathematics",
+    "Lists",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

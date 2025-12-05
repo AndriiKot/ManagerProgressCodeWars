@@ -1,0 +1,38 @@
+{
+  "id": "5267e5827526ea15d8000708",
+  "name": "Pete, the baker (part 2)",
+  "slug": "pete-the-baker-part-2",
+  "category": "algorithms",
+  "publishedAt": "2013-10-23T19:23:29.272Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5267e5827526ea15d8000708",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-10-23T15:04:35.062Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "description": "Pete is now mixing the cake mixture. He has the recipe, containing the required ingredients for one cake. He also might have added some of the ingredients already, but something is missing. Can you help him to find out, what he has to add to the mixture?\n\nRequirements:\n\n* Pete only wants to bake whole cakes. And ingredients, that were added once to the mixture, can't be removed from that. That means: if he already added the amount of flour for 2.8 cakes, he needs to add at least the amount of flour for 0.2 cakes, in order to have enough flour for 3 cakes.\n* If Pete already added all ingredients for an integer amount of cakes, you don't need to add anything, just return an empty hash then.\n* If Pete didn't add any ingredients at all, you need to add all ingredients for exactly one cake.\n* For simplicity we ignore all units and just concentrate on the numbers. E.g. 250g of flour is simply 250 (units) of flour and 1 lb of sugar is also simply 1 (unit) of sugar.\n* Ingredients, which don't have to be added to the mixture (missing amount = 0), must not be present in the result.\n\nExamples:\n\n```javascript\nvar recipe = {flour: 200, eggs: 1, sugar: 100};\n\ngetMissingIngredients(recipe, {flour: 50, eggs: 1}); // must return {flour: 150, sugar: 100}\ngetMissingIngredients(recipe, {}); // must return {flour: 200, eggs: 1, sugar: 100}\ngetMissingIngredients(recipe, {flour: 500, sugar: 200}); // must return {flour: 100, eggs: 3, sugar: 100}\n```\n\n```coffeescript\nrecipe = {flour: 200, eggs: 1, sugar: 100};\n\ngetMissingIngredients(recipe, {flour: 50, eggs: 1});     # must return {flour: 150, sugar: 100}\ngetMissingIngredients(recipe, {});                       # must return {flour: 200, eggs: 1, sugar: 100}\ngetMissingIngredients(recipe, {flour: 500, sugar: 200}); # must return {flour: 100, eggs: 3, sugar: 100}\n```",
+  "totalAttempts": 9748,
+  "totalCompleted": 1428,
+  "totalStars": 98,
+  "voteScore": 204,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

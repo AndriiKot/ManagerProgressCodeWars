@@ -1,0 +1,42 @@
+{
+  "id": "5416f1834c24604c46000696",
+  "name": "Cycle Detection: greedy algorithm",
+  "slug": "cycle-detection-greedy-algorithm",
+  "category": "algorithms",
+  "publishedAt": "2014-09-16T13:54:47.413Z",
+  "approvedAt": "2014-11-06T15:29:41.349Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5416f1834c24604c46000696",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-09-15T14:02:43.666Z",
+  "createdBy": {
+    "username": "user3482173",
+    "url": "https://www.codewars.com/users/user3482173"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "In computer science, cycle detection is the algorithmic problem of finding a cycle in a sequence of iterated function values.\n\nFor any function `$f$`, and any initial value `$x_0$` in S, the sequence of iterated function values\n\n ```math\n x_0, x_1 = f(x_0), \\dots ,x_i = f(x_{i-1}), \\dots\n ```\n\nmay eventually use the same value twice under some assumptions: S finite, f periodic ... etc. So there will be some `$i \\neq j$` such that `$x_i = x_j$`. Once this happens, the sequence must continue by repeating the cycle of values from `$x_i $` to `$x_{j−1}$`. Cycle detection is the problem of finding `$i$` and `$j$`, given `$ƒ$` and `$x_0$`. Let `$\\mu$` be the smallest index such that the value associated will reappears and `$\\lambda$` the smallest value such that `$x_{\\mu} = x_{\\lambda + \\mu}$`, `$\\lambda$` is the loop length.\n\nExample:\n\nConsider the sequence: \n```\n2, 0, 6, 3, 1, 6, 3, 1, 6, 3, 1, ....\n```\n\nThe cycle in this value sequence is 6, 3, 1.\n`$\\mu$` is 2 (first 6)\n`$\\lambda$` is 3 (length of the sequence or difference between position of consecutive 6).\n\nThe goal of this kata is to build a function that will return [`$\\mu$`,`$\\lambda$`] when given a short sequence. Simple loops will be sufficient. The sequence will be given in the form of an array. All array will be valid sequence associated with deterministic function. It means that the sequence will repeat itself when a value is reached a second time. (So you treat two cases: non repeating `[1,2,3,4]` and repeating `[1,2,1,2]`, no hybrid cases like `[1,2,1,4]`). If there is no repetition you should return `[]`. \n\n---\n\nThis kata is followed by [Cycle Detection: Floyd's The Tortoise and the The Hare](https://www.codewars.com/kata/5416f1b54c24607e4c00069f)\n",
+  "totalAttempts": 3526,
+  "totalCompleted": 688,
+  "totalStars": 63,
+  "voteScore": 107,
+  "tags": [
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "5d376cdc9bcee7001fcb84c0",
+  "name": "Odd Ones Out!",
+  "slug": "odd-ones-out",
+  "category": "reference",
+  "publishedAt": "2019-07-23T21:31:26.505Z",
+  "approvedAt": "2019-07-31T09:17:12.317Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby",
+    "haskell",
+    "php",
+    "dart",
+    "elixir",
+    "typescript",
+    "julia",
+    "coffeescript",
+    "crystal",
+    "r",
+    "reason",
+    "racket",
+    "factor",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/5d376cdc9bcee7001fcb84c0",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2019-07-23T20:23:56.210Z",
+  "createdBy": {
+    "username": "megawatt",
+    "url": "https://www.codewars.com/users/megawatt"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "The town sheriff dislikes odd numbers and wants all odd numbered families out of town! In town crowds can form and individuals are often mixed with other people and families. However you can distinguish the family they belong to by the number on the shirts they wear. As the sheriff's assistant it's your job to find all the odd numbered families and remove them from the town!\n~~~if-not:cpp\nChallenge: You are given a list of numbers. The numbers each repeat a certain number of times. Remove all numbers that repeat an odd number of times while keeping everything else the same.\n~~~\n~~~if:cpp\nChallenge: You are given a vector of numbers. The numbers each repeat a certain number of times. Remove all numbers that repeat an odd number of times while keeping everything else the same.\n~~~\n```python\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```julia\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```php\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```ruby\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```crystal\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```elixir\nodd_ones_out([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```javascript\noddOnesOut([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```typescript\noddOnesOut([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```dart\noddOnesOut([1, 2, 3, 1, 3, 3]) = [1, 1]\n```\n```reason\noddOnesOut([| 1, 2, 3, 1, 3, 3 |]) = [| 1, 1 |]\n```\n```haskell\noddOnesOut [1, 2, 3, 1, 3, 3] = [1, 1]\n```\n```r\noddOnesOut(c(1, 2, 3, 1, 3, 3)) = c(1, 1)\n```\n```racket\n(odd-ones-out '(1 2 3 1 3 3)) ; '(1 1)\n```\n```factor\n{ 1 2 3 1 3 3 } odd-ones-out ! { 1 1 }\n```\n```cpp\noddOnesOut({1, 2, 3, 1, 3, 3}) = {1, 1}\n```\nIn the above example:\n- the number 1 appears twice\n- the number 2 appears once\n- the number 3 appears three times\n\n`2` and `3` both appear an odd number of times, so they are removed from the list. The final result is: `[1,1]`\n\nHere are more examples:\n```cpp\noddOnesOut({1, 1, 2, 2, 3, 3, 3}) = {1, 1, 2, 2}\noddOnesOut({26, 23, 24, 17, 23, 24, 23, 26}) = {26, 24, 24, 26}\noddOnesOut({1, 2, 3}) = {}\noddOnesOut({1}) = {}\n```\n```python\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```ruby\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```elixir\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```crystal\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```julia\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```php\nodd_ones_out([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\nodd_ones_out([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\nodd_ones_out([1, 2, 3]) = []\nodd_ones_out([1]) = []\n```\n```javascript\noddOnesOut([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\noddOnesOut([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\noddOnesOut([1, 2, 3]) = []\noddOnesOut([1]) = []\n```\n```reason\noddOnesOut([| 1, 1, 2, 2, 3, 3, 3 |]) = [| 1, 1, 2, 2 |]\noddOnesOut([| 26, 23, 24, 17, 23, 24, 23, 26 |]) = [| 26, 24, 24, 26 |]\noddOnesOut([| 1, 2, 3 |]) = [| |]\noddOnesOut([| 1 |]) = [| |]\n```\n```typescript\noddOnesOut([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\noddOnesOut([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\noddOnesOut([1, 2, 3]) = []\noddOnesOut([1]) = []\n```\n```dart\noddOnesOut([1, 1, 2, 2, 3, 3, 3]) = [1, 1, 2, 2]\noddOnesOut([26, 23, 24, 17, 23, 24, 23, 26]) = [26, 24, 24, 26]\noddOnesOut([1, 2, 3]) = []\noddOnesOut([1]) = []\n```\n```haskell\noddOnesOut [1, 1, 2, 2, 3, 3, 3] = [1, 1, 2, 2]\noddOnesOut [26, 23, 24, 17, 23, 24, 23, 26] = [26, 24, 24, 26]\noddOnesOut [1, 2, 3] = []\noddOnesOut [1] = []\n```\n```r\noddOnesOut(c(1, 1, 2, 2, 3, 3, 3)) = c(1, 1, 2, 2)\noddOnesOut(c(26, 23, 24, 17, 23, 24, 23, 26)) = c(26, 24, 24, 26)\noddOnesOut(c(1, 2, 3)) = c()\noddOnesOut(c(1)) = c()\n```\n```racket\n(odd-ones-out '(1 1 2 2 3 3 3)) ; '(1 1 2 2)\n(odd-ones-out '(26 23 24 17 23 24 23 26)) ; '(26 24 24 26)\n(odd-ones-out '(1 2 3)) ; '()\n(odd-ones-out '(1)) ; '()\n```\n```factor\n{ 1 1 2 2 3 3 3 } odd-ones-out ! { 1 1 2 2 }\n{ 26 23 24 17 23 24 23 26 } odd-ones-out ! { 26 24 24 26 }\n{ 1 2 3 } odd-ones-out ! { }\n{ 1 } odd-ones-out ! { }\n```\n\nAre you up to the challenge?\n",
+  "totalAttempts": 14229,
+  "totalCompleted": 5917,
+  "totalStars": 90,
+  "voteScore": 651,
+  "tags": [
+    "Fundamentals",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

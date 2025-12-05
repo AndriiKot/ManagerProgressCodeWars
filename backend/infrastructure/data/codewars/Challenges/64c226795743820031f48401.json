@@ -1,0 +1,40 @@
+{
+  "id": "64c226795743820031f48401",
+  "name": "Sorting Madness: part 2",
+  "slug": "sorting-madness-part-2",
+  "category": "reference",
+  "publishedAt": "2023-07-27T08:10:36.892Z",
+  "approvedAt": "2023-07-28T08:10:23.538Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64c226795743820031f48401",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-07-27T08:10:33.908Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given a table named `orders` in a PostgreSQL database, which stores order details for an e-commerce application. `order_id` is the primary key and `product_id` represents the product ordered.\n\nA sample set of data is as follows:\n\n```\n| order_id | product_id |\n|----------|------------|\n|    1     |     8      |\n|    2     |     3      |\n|    3     |     12     |\n|    4     |     8      |\n|    5     |     7      |\n|    6     |     8      |\n|    7     |     3      |\n|    8     |     1      |\n```\n\nYour task is to write a PostgreSQL query that retrieves the orders in ascending order by `order_id`. However, there's a specific ordering condition - if there are multiple orders for the same product (`product_id` has duplicates), those orders should appear first. Within these groups and the remaining orders, they should be sorted by the smallest `order_id` of the group and then by `order_id`.\n\nSo thus the expected output of running this query with the provided sample data would be:\n\n```\n| order_id | product_id |\n|----------|------------|\n|    1     |     8      |\n|    4     |     8      |\n|    6     |     8      |\n|    2     |     3      |\n|    7     |     3      |\n|    3     |     12     |\n|    5     |     7      |\n|    8     |     1      |\n```\n\nLet's break this down:\n\n1) We need to group orders with the same `product_id` together: This is the reason why all orders for `product_id`=8 are together, and all orders for `product_id`=3 are together in the output. The groups are then positioned above the orders that have unique product_ids (1, 7, 12).\n\n2) Sort by the smallest `order_id` of each group: This is why the group of orders for `product_id`=8 comes before the group of orders for `product_id`=3. Within the group for product_id 8, the smallest order_id is 1, and within the group for product_id 3, the smallest order_id is 2. Therefore, the group with the smallest `order_id` (`product_id`=8) comes first.\n\n3)  Then we need to sort by `order_id` in ascending order within each group and the remaining orders.\n\nGLHF!",
+  "totalAttempts": 1072,
+  "totalCompleted": 93,
+  "totalStars": 10,
+  "voteScore": 37,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

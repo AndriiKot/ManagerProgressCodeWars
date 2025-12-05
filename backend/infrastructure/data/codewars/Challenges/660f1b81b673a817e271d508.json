@@ -1,0 +1,41 @@
+{
+  "id": "660f1b81b673a817e271d508",
+  "name": "User Kata Stats",
+  "slug": "user-kata-stats",
+  "category": "reference",
+  "publishedAt": "2024-04-05T13:32:39.717Z",
+  "approvedAt": "2024-04-08T02:26:06.961Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/660f1b81b673a817e271d508",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2024-04-04T21:28:33.975Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "lachesism",
+    "url": "https://www.codewars.com/users/lachesism"
+  },
+  "description": "# Task\n\nWe are interested in displaying kata stats about each eligible language for each user. Write a query to fetch the requested data in the correct format. See more details about the database model further in the description.\n\n### Columns\n\nThe query should include the following columns:\n\n- `user`: the name of the user (varchar)\n- `language`: the name of the programming language (varchar)\n- `total`: the number of katas with a translation in the associated language ( = eligible katas)\n- `not_trained`: the number of eligible katas the user did not train on in the associated language\n- `not_submitted`: the number of eligible katas the user trained on but not submitted to in the associated language\n- `not_completed`: the number of eligible katas the user submitted to but not managed to complete at least once in the associated language\n- `completed`: the number of eligible katas the user submitted to and managed to complete at least once in the associated language\n\n### Rows\n\nThe query should output a row for each unique combination of a user and an eligible language for that user. A language is eligible for a user, if either one of the conditions below is met:\n- the language is a preferred language of the user\n- the user has trained on at least one kata in the language\n\nYou should be able to verify for each row that:\n`total = not_trained + not_submitted + not_completed + completed`\n\n### Sorting\n\nOrder the rows by user name ascending, then by language name ascending.\n\n### Query results \n\n```\n\n|  user  | language | total | not_trained | not_submitted | not_completed | completed |\n+--------+----------+-------+-------------+---------------+---------------+-----------+\n| Alice  | C        | 6     | 2           | 1             | 1             | 2         |\n| Alice  | Haskell  | 2     | 0           | 0             | 1             | 1         |\n...\n\n```\n\n---\n\n### Database Model\n\nThe database stores user information in table `users`, programming languages in table `languages`, kata information in table `katas`, information about translations in table `translations` and information about submissions in table `submissions`. The preferred languages of each user are stored in table `user_languages`.\n\nThe following `action` is stored in the log table `journals`:\n- `'TRAIN'`: when a user trains on a kata (on a specific translation)\n- `'SUBMIT'`: when a user submits a solution\n\nThe following `result` is stored in table `submissions`:\n- `'FAILED'`: when a submission does not pass the kata\n- `'COMPLETED'`: when a submission passes the kata\n\n#### Schema\n\n<code>users</code>\n- <code>user_id</code> (int, primary key): a unique identifier for the user\n- <code>name</code> (varchar): a unique name for the user\n\n<code>languages</code>\n- <code>language_id</code> (int, primary key): a unique identifier for the language\n- <code>name</code> (varchar): a unique name for the language\n\n<code>user_languages</code>\n- <code>user_language_id</code> (int, primary key): a unique identifier for the user language\n- <code>user_id</code> (int): foreign key to `users.user_id`\n- <code>language_id</code> (int): foreign key to `languages.language_id`\n\n<code>katas</code>\n- <code>kata_id</code> (int, primary key): a unique identifier for the kata\n- <code>title</code> (varchar): a unique title for the kata\n\n<code>translations</code>\n- <code>translation_id</code> (int, primary key): a unique identifier for the translation\n- <code>kata_id</code> (int): foreign key to `katas.kata_id`\n- <code>language_id</code> (int): foreign key to `languages.language_id`\n\n<code>journals</code>\n- <code>journal_id</code> (int, primary key): a unique identifier for the journal\n- <code>translation_id</code> (int): foreign key to `translations.translation_id`\n- <code>user_id</code> (int): foreign key to `users.user_id`\n- <code>timestamp</code> (timestamp): the timestamp of the action\n- <code>action</code> (varchar): the action (`'TRAIN'`, `'SUBMIT'`)\n\n<code>submissions</code>\n- <code>submission_id</code> (int, primary key): a unique identifier for the submission\n- <code>journal_id</code> (int): foreign key to `journals.journal_id`\n- <code>result</code> (varchar): the result (`'FAILED'`, `'COMPLETED'`)\n\n#### Constraints\n\n- All kata's have a translation in at least 1 language\n- At most one translation per language per kata is possible\n- All users have at least 1 preferred language\n- Each time a user hits the \"Train\" button, a log entry is added in `journals`\n- Each time a user submits a solution, a log entry is added in `journals` and a record is added in `submissions`\n- A user can hit the \"Train\" button as much as they like, regardless of earlier submissions or button clicks\n- A user can submit multiple times in succession, without hitting the \"Train\" button in between\n- A user always hits the \"Train\" button at least once before submitting their first solution to a translation\n- A user can solve kata's in any language, not just in their preferred languages\n- Take performance of your query into account\n\n---\n\nGood luck, have fun!\n\n\n",
+  "totalAttempts": 1568,
+  "totalCompleted": 111,
+  "totalStars": 21,
+  "voteScore": 28,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

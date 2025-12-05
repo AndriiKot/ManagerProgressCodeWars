@@ -1,0 +1,46 @@
+{
+  "id": "58224b5334c53a4294000b5a",
+  "name": "Map and  Filter to Get a Special Sequence of Integers",
+  "slug": "map-and-filter-to-get-a-special-sequence-of-integers",
+  "category": "reference",
+  "publishedAt": "2016-11-09T03:32:11.023Z",
+  "approvedAt": "2017-11-06T06:47:17.594Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/58224b5334c53a4294000b5a",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-08T22:01:55.388Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "We have an integer```n```, with a certain number of digits```k```, `$d_1d_2\\dots d_k$`.\n\nWe have a function, ```f()``` that produces a certain number ```n'```from ```n```, such that,```f(n) ---> n'``` \n\n```math\nf(n) = \\pm d_1^{|d_1-d_2|} \\pm d_2^{|d_2-d_3|} \\pm \\dots \\pm d_{k-1}^{|d_{k-1}-d_k|} + d_k\n```\n\nIf the difference is such that, `$d_{k-1}-d_k \\gt 0$` , the operator will be ```-``` and on the other hand if the difference is such that: `$d_{k-1}-d_k \\leq 0$`, the operator will be ```+```.\n\nLet's see an example with the number ```186599```.\n```math\nf(186599)=1^{|1-8|}-8^{|8-6|}-6^{|6-5|}+5^{|5-9|}+9^{|9-9|}+9=1-64-6+625+1+1=566\n```\n\nThe number ```100``` is the first integer in having the value of the above function equals to ```0```, in other way ```f(100) = 0```.\n```math\nf(100) = -1^{|1-0|} + 0^{|0-0|}+0 = -1^1+0^0+0=-1+1+0=0\n```\n\n(Yes, we consider here that 0<sup>0</sup> is equals to 1, following the output that give most programming languages)\n\nThe first terms of this special sequence of numbers are:\n```\n100, 101, 110, 121, 132, 143, 154, 165,...\n```\nThe function ```prev_next()``` (in javascript: ```prevNext()```)will receive a certain integer ```n``` and will output the highest possible number of this sequence under ```n``` and the smallest possible number of this sequence higher than ```n```.\n\nFor example \n```python\nprev_next(150) == [143, 154]\n```\n\nIf a number is part of this sequence will output three values, istself and the next previous and next one:\n```python\nprev_next(154) == [143, 154, 165]\n```\nIf there are no numbers below the given number, the function will output the next number of the sequence.\n```python\nprev_next(99) == [100]\nprev_next(100) == [100, 101]\n```\nFeatures of the random tests:\n```\nNumbers of tests = 100\nn, such that, 100 ≤ n < 1000000\n```\nEnjoy it!",
+  "totalAttempts": 700,
+  "totalCompleted": 137,
+  "totalStars": 25,
+  "voteScore": 43,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "65b76f1f8d67ab00659b572d",
+  "name": " Finding Batch Temperature Fluctuations in Manufacturing Processes",
+  "slug": "finding-batch-temperature-fluctuations-in-manufacturing-processes",
+  "category": "reference",
+  "publishedAt": "2024-01-29T11:09:05.476Z",
+  "approvedAt": "2024-02-01T10:36:27.705Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65b76f1f8d67ab00659b572d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-01-29T09:25:51.035Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are working with a dataset from a manufacturing process. Each row in the dataset represents a stage in the process of a batch. Each batch starts with an event labeled 'Start' and includes various stages with different temperature readings. Your task is to calculate the maximum temperature fluctuation within each batch.\n\nThe dataset is stored in a table named `assembly_log`. The table has the following columns:\n\n* `id` (int, primary key): A unique identifier for each row. It is assumed that rows are added in increasing order of `id`\n* `process_id` (int): Identifier for the process.\n* `event` (string): Type of event, which can be 'Start', various stage names, or 'Ignore'.\n* `value` (integer, representing degrees): Temperature reading at each stage.\n\nWrite an SQL query to calculate the maximum temperature fluctuation for each batch in each process. A batch is defined as a sequence of events starting with a 'Start' event and ending just before the next 'Start' event. Ignore any events labeled as 'Ignore'. Subsequent events following a 'Start' event within a batch can be random, including various stages or 'Ignore' events. However, the initiation of each new batch must be marked by a 'Start' event.\n\nRequirements:\n\n1) Identify each batch using the 'Start' events. Batches are specific to each `process_id`.\n2) For each batch, calculate the temperature fluctuation. This is the difference between the maximum and minimum temperature (value) readings in that batch.\n3) Do not include temperature readings from events labeled as 'Ignore' in your calculations.\n\nThe output should include columns for `process_id`, `batch_id`, and `temperature_fluctuation`. `batch_id` is a sequential number you will assign to each batch for identification, starting from 1 for each `process_id`.\n\nSort the results by `process_id` and then by `batch_id` - both in ascending order.\n\nFor this sample data:\n\n```\n| id | process_id | event   | value |\n|----|------------|---------|-------|\n| 1  | 1          | Start   | 20    |\n| 2  | 1          | Stage A | 22    |\n| 3  | 1          | Stage B | 25    |\n| 4  | 1          | Ignore  | 30    |\n| 5  | 1          | Start   | 24    |\n| 6  | 1          | Stage A | 26    |\n| 7  | 1          | Stage B | 28    |\n| 8  | 2          | Start   | 18    |\n| 9  | 2          | Stage A | 19    |\n| 10 | 2          | Stage B | 21    |\n| 11 | 2          | Stage C | 23    |\n| 12 | 2          | Stage D | 22    |\n```\n\nExpected output is the following:\n\n```\n| process_id | batch_id | temperature_fluctuation |\n|------------|----------|-------------------------|\n| 1          | 1        | 5                       |\n| 1          | 2        | 4                       |\n| 2          | 1        | 5                       |\n```\n\nGLHF!\n",
+  "totalAttempts": 606,
+  "totalCompleted": 92,
+  "totalStars": 4,
+  "voteScore": 33,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

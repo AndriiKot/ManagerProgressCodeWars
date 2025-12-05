@@ -1,0 +1,55 @@
+{
+  "id": "5d26721d48430e0016914faa",
+  "name": "The PaperFold sequence",
+  "slug": "the-paperfold-sequence",
+  "category": "algorithms",
+  "publishedAt": "2019-07-10T23:28:38.636Z",
+  "approvedAt": "2021-01-11T18:47:50.968Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "java",
+    "python",
+    "kotlin",
+    "ruby",
+    "php",
+    "coffeescript",
+    "go",
+    "clojure",
+    "typescript",
+    "csharp",
+    "fsharp",
+    "lambdacalc",
+    "prolog",
+    "scala",
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/5d26721d48430e0016914faa",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-07-10T23:17:49.644Z",
+  "createdBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "[Wikipedia](https://en.wikipedia.org/wiki/Regular_paperfolding_sequence): The **regular paperfolding sequence**, also known as the **dragon curve sequence**, is an infinite automatic sequence of `0`s and `1`s defined as the **limit** of inserting an alternating sequence of `1`s and `0`s around and between the terms of the previous sequence:\n\n<span style=\"color:red\">1</span>\n\n<span style=\"color:royalblue\">1</span>\n<span style=\"color:red\">1</span>\n<span style=\"color:royalblue\">0</span>\n\n1\n<span style=\"color:royalblue\">1</span>\n0\n<span style=\"color:red\">1</span>\n1\n<span style=\"color:royalblue\">0</span>\n0\n\n<span style=\"color:mediumpurple\">1</span>\n1\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:royalblue\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n0\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:red\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n1\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:royalblue\">0</span>\n<span style=\"color:mediumpurple\">1</span>\n0\n<span style=\"color:mediumpurple\">0</span>\n\n\n...\n\nNote how each intermediate sequence is a prefix of the next.\n\n```if:javascript,coffeescript,typescript,php,\nDefine a generator function `paperFold` that sequentially generates the values of this sequence:\n```\n```if:python,\nDefine a generator function `paper_fold` that sequentially generates the values of this sequence:\n```\n```if:ruby,\nDefine a class `PaperFold`, instantiating an `Enumerator`, which yields the values of this sequence:\n```\n```if:haskell,\nDefine a list `paperFold` that contains the values of this sequence:\n```\n```if:lambdacalc,\nDefine a stream `paperFold` that contains the values of this sequence:\n```\n```if:fsharp,\nDefine a lazy sequence `paperFold` that contains the values of this sequence:\n```\n```if:clojure,\nDefine a sequence `paper-fold` that contains the values of this sequence:\n```\n```if:java,go,csharp,\nDefine a generator `PaperFold` that sequentially generates the values of this sequence:\n```\n```if:kotlin,\nDefine a generator `paperFold` that sequentially generates the values of this sequence:\n```\n```if:scala,\nDefine a function `paperFold` which returns an `Iterator[Int]` that sequentially generates the values of this sequence:\n```\n```if:lua\nDefine a function `paper_fold` which returns an iterator that sequentially generates the values of this sequence:\n```\n\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n<span style=\"color:green\">0</span>\n1\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:green\">0</span>\n<span style=\"color:royalblue\">1</span>\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n<span style=\"color:green\">0</span>\n0\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:green\">0</span>\n<span style=\"color:red\">1</span>\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n<span style=\"color:green\">0</span>\n1\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:green\">0</span>\n<span style=\"color:royalblue\">0</span>\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">1</span>\n<span style=\"color:green\">0</span>\n0\n<span style=\"color:green\">1</span>\n<span style=\"color:mediumpurple\">0</span>\n<span style=\"color:green\">0</span>\n...\n\nIt will be tested for up to `1 000 000` values.\n\n~~~if:lambdacalc\n( Actually, in Lambda Calculus, it will not be tested beyond `10 000` values. )\n\n### Encodings\n\nUse `numEncoding Church`. Define your own `Stream` ( infinite list ); provide deconstructors  \n`head : Stream a -> a` and `tail : Stream a -> Stream a`.\n~~~",
+  "totalAttempts": 4741,
+  "totalCompleted": 934,
+  "totalStars": 134,
+  "voteScore": 191,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

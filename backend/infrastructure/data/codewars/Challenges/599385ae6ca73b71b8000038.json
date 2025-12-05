@@ -1,0 +1,46 @@
+{
+  "id": "599385ae6ca73b71b8000038",
+  "name": "Ant Bridge",
+  "slug": "ant-bridge",
+  "category": "algorithms",
+  "publishedAt": "2017-08-20T08:59:42.748Z",
+  "approvedAt": "2017-08-30T22:43:01.927Z",
+  "languages": [
+    "java",
+    "python",
+    "javascript",
+    "ruby",
+    "csharp",
+    "cobol",
+    "rust",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/599385ae6ca73b71b8000038",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-08-15T23:37:18.757Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "lechevalier",
+    "url": "https://www.codewars.com/users/lechevalier"
+  },
+  "description": "<img src=\"https://static1.squarespace.com/static/56a1a14b05caa7ee9f26f47d/t/5719c5d91d07c0bcdda31d01/1464935309584/ant_bridge_TS.jpg\"/>\n\n# Background\n\nMy pet bridge-maker ants are marching across a terrain from left to right.\n\nIf they encounter a gap, the first one stops and then next one climbs over him, then the next, and the next, until a bridge is formed across the gap. \n\nWhat clever little things they are!\n\nNow all the other ants can walk over the ant-bridge.\n\nWhen the last ant is across, the ant-bridge dismantles itself similar to how it was constructed.\n\nThis process repeats as many times as necessary (there may be more than one gap to cross) until all the ants reach the right hand side.\n\n# Kata Task\n\nMy little ants are marching across the terrain from left-to-right in the order ```A``` then ```B``` then ```C```...\n\nWhat order do they exit on the right hand side?\n\n# Notes\n\n* ```-``` = solid ground\n* ```.``` = a gap\n* The number of ants may differ but there are always enough ants to bridge the gaps\n* The terrain never starts or ends with a gap\n* Ants cannot pass other ants except by going over ant-bridges\n* If there is ever ambiguity which ant should move, then the ant at the **back** moves first\n\n# Example\n\n## Input\n* ants = ````GFEDCBA````\n* terrain = ```------------...-----------```\n\n## Output\n* result = ```EDCBAGF```\n\n## Details\n\n<table>\n<tr><td>Ants moving left to right.<td><pre>\nGFEDCBA\n------------...-----------\n</pre>\n<tr><td>The first one arrives at a gap.<td><pre>\nGFEDCB     A\n------------...-----------\n</pre>\n<tr><td>They start to bridge over the gap...<td><pre>\nGFED       ABC\n------------...-----------\n</pre>\n<tr><td>...until the ant-bridge is completed!<td><pre>\nGF         ABCDE\n------------...-----------\n</pre>\n<tr><td>And then the remaining ants can walk across the bridge.<td><pre>\n               F\nG          ABCDE\n------------...-----------\n</pre>\n<tr><td>And when no more ants need to cross...<td><pre>\n           ABCDE        GF\n------------...-----------\n</pre>\n<tr><td>... the bridge dismantles itself one ant at a time....<td><pre>                \n             CDE      BAGF\n------------...-----------\n</pre>\n<tr><td>...until all ants get to the other side<td><pre>                \n                   EDCBAGF\n------------...-----------\n</pre>\n<tr><td><td>\n</table>\n\n",
+  "totalAttempts": 15247,
+  "totalCompleted": 613,
+  "totalStars": 140,
+  "voteScore": 133,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

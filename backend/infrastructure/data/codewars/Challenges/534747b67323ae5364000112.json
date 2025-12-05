@@ -1,0 +1,40 @@
+{
+  "id": "534747b67323ae5364000112",
+  "name": "NSA Phone Tapping",
+  "slug": "nsa-phone-tapping",
+  "category": "reference",
+  "publishedAt": "2014-04-11T01:39:14.214Z",
+  "approvedAt": "2014-06-11T19:53:59.169Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/534747b67323ae5364000112",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-04-11T01:39:02.969Z",
+  "createdBy": {
+    "username": "dnolan",
+    "url": "https://www.codewars.com/users/dnolan"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "### [BACKGROUND]\n\nYou have always been a hacker. Even as a child. Exposing glitches and cheats in your favorite video games, changing records on the school network, the whole nine yards. Nothing was out of your reach. Until one day you became too cocky. You were caught hacking a government website. Now, you're looking at facing the next few years behind bars. Lucky for you that you're a brilliant hacker and the government knows it. They're willing to cut you a deal: Help the NSA tap phones around the world and we'll let you go. \n\n### [INSTRUCTION]\n\nFirst, we'll have to define some people. To do that we'll need a `Person` constructor. Each instance of `Person` will have a minimum of three exposed properties: `name`, `text`, and `call`. \n\nThe property `name` will be a simple string representing the name of the `Person` instance.\n\nThe method `call` will take in 2 parameters: `cellphone` and `callee`. The `cellphone` will be a simple object with two properties `owner` and `number`. `owner` will be a reference to a person and `number` will be a a string representing the phone number. The `callee` parameter will also hold a reference to a person.  \n\nA simple example of a call will look like:\n\n```javascript\nconst dan = new Person(\"Dan\");\nconst alex = new Person(\"Alex\");\nconst phone = {owner : dan, number: \"202-555-0199\"};\ndan.call(phone, alex); \n```\n\nThe method `text` will be very similar to the `call` method, but instead of taking one `callee` it can have any number of recipients (all of which will be instances of `Person`). \n\nBorrowing from the variables declared previously, texting could look like this:\n\n```javascript\nconst mark = new Person(\"Mark\");\ndan.text(phone, alex, mark); \n```\n\nThe NSA needs you to record every phone call and every text that every person makes. The `NSA` object will need one exposed method `log`. This method will take one parameter: an instance of `Person`. It will return the log kept on that person in the following format:\n\n`[CALLER] called/texted [CALLEE] from [PHONE OWNER]'s phone([PHONE NUMBER])` \n\nEach record will be seperated by a line break `\\n`. So a sample record would look something like this: \n\n```\nDan called Erin from Dan's phone(202-555-0149)\nDan texted Anthony from Anthony's phone(202-555-0199)\nDan texted Alex from Dan's phone(202-555-0149)\n```\n\nNewlines should only be added between each record, so if there's only one record don't add a newline.\n\nIf there are no entries for the person, the `log` method will simply return `No Entries`. \n\nOh, and every so often the NSA is accused of spying on civilians (crazy, right?). Be sure to erase each individual record after we read that particular one from the log. Good luck!",
+  "totalAttempts": 5359,
+  "totalCompleted": 344,
+  "totalStars": 74,
+  "voteScore": 77,
+  "tags": [
+    "Fundamentals",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

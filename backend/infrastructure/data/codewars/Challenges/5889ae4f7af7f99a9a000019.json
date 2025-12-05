@@ -1,0 +1,43 @@
+{
+  "id": "5889ae4f7af7f99a9a000019",
+  "name": "Simple Fun #62: Draw Rectangle",
+  "slug": "simple-fun-number-62-draw-rectangle",
+  "category": "games",
+  "publishedAt": "2017-01-26T08:16:40.734Z",
+  "approvedAt": "2017-03-13T04:32:52.309Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "ruby",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5889ae4f7af7f99a9a000019",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-01-26T08:07:43.718Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": "# Task\n You are implementing a command-line version of the Paint app. Since the command line doesn't support colors, you are using different characters to represent pixels. Your current goal is to support rectangle x1 y1 x2 y2 operation, which draws a rectangle that has an upper left corner at (x1, y1) and a lower right corner at (x2, y2). Here the x-axis points from left to right, and the y-axis points from top to bottom.\n\n Given the initial `canvas` state and the array that represents the coordinates of the two corners, return the canvas state after the operation is applied. For the details about how rectangles are painted, see the example.\n\n# Example\n\n For\n```c\ncanvas = [['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],\n          ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],\n          ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],\n          ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'],\n          ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']]\nand rectangle = [1, 1, 4, 3]\n```\nthe output should be\n```c\n[['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'],\n ['a', '*', '-', '-', '*', 'a', 'a', 'a'],\n ['a', '|', 'a', 'a', '|', 'a', 'a', 'a'],\n ['b', '*', '-', '-', '*', 'b', 'b', 'b'],\n ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']]\n```\nNote that rectangle sides are depicted as -s and |s, asterisks (*) stand for its corners and all of the other \"pixels\" remain the same. Color in the example is used only for illustration.\n\n# Input/Output\n\n\n - `[input]` 2D string array `canvas`\n\n   A non-empty rectangular matrix of characters.\n\n   Constraints: `2 ≤ canvas.length ≤ 10, 2 ≤ canvas[0].length ≤ 10.`\n\n\n - `[input]` integer array `rectangle`\n\n   Array of four integers - [x1, y1, x2, y2].\n\n   Constraints: `0 ≤ x1 < x2 < canvas[i].length, 0 ≤ y1 < y2 < canvas.length.`\n\n\n - `[output]` 2D string array",
+  "totalAttempts": 974,
+  "totalCompleted": 388,
+  "totalStars": 8,
+  "voteScore": 114,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

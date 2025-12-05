@@ -1,0 +1,43 @@
+{
+  "id": "56919e637b2b971492000036",
+  "name": "PatternCraft  - Adapter",
+  "slug": "patterncraft-adapter",
+  "category": "reference",
+  "publishedAt": "2016-01-10T00:42:29.772Z",
+  "approvedAt": "2016-03-10T05:37:50.709Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "coffeescript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/56919e637b2b971492000036",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-01-09T23:57:23.933Z",
+  "createdBy": {
+    "username": "brunolm",
+    "url": "https://www.codewars.com/users/brunolm"
+  },
+  "approvedBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "description": "The [Adapter Design Pattern](https://www.youtube.com/watch?v=hvpXKZhNINc) can be used, for example in the StarCraft game, to insert an external character in the game.\n\nThe pattern consists in having a wrapper class that will adapt the code from the external source.\n\n## Your Task\n\nThe adapter receives an instance of the object that it is going to adapt and handles it in a way that works with our application.\n\nIn this example we have the pre-loaded classes:\n\n```javascript\nclass Marine {\n  attack(target) {\n    target.health -= 6;\n  }\n}\n\nclass Zealot {\n  attack(target) {\n    target.health -= 8;\n  }\n}\n\nclass Zergling {\n  attack(target) {\n    target.health -= 5;\n  }\n}\n\nclass Mario {\n  jumpAttack() {\n    console.log('Mamamia!');\n    return 3;\n  }\n}\n```\n```csharp\npublic class Target\n{\n    public int Health { get; set; }\n}\npublic interface IUnit\n{\n    void Attack(Target target);\n}\n\npublic class Marine : IUnit\n{\n    public void Attack(Target target)\n    {\n        target.Health -= 6;\n    }\n}\n\npublic class Zealot : IUnit\n{\n    public void Attack(Target target)\n    {\n        target.Health -= 8;\n    }\n}\n\npublic class Zergling : IUnit\n{\n    public void Attack(Target target)\n    {\n        target.Health -= 5;\n    }\n}\n\npublic class Mario\n{\n    public int jumpAttack()\n    {\n        Console.WriteLine(\"Mamamia!\");\n        return 3;\n    }\n}\n```\n```coffeescript\nclass Marine\n  attack: (target) ->\n    target.health -= 6\n\nclass Zealot\n  attack: (target) ->\n    target.health -= 8\n\nclass Zergling\n  attack: (target) ->\n    target.health -= 5\n\nclass Mario\n  jumpAttack: () ->\n    console.log 'Mamamia!'\n    3\n```\n```python\nclass Target:\n    def __init__(self, health):\n        self.health = health\n\nclass Marine:\n    @staticmethod\n    def attack(target):\n        target.health -= 6\n    \nclass Zealot:\n    @staticmethod\n    def attack(target):\n        target.health -= 8\n\nclass Zergling:\n    @staticmethod\n    def attack(target):\n        target.health -= 5\n    \nclass Mario:\n    @staticmethod\n    def jump_attack():\n        print('Mamamia!')\n        return 3\n```\n\nComplete the code so that we can create a `MarioAdapter` that can attack as other units do.\n\n**Note** to calculate how much damage `mario` is going to do you have to call the `jumpAttack` method (`jump_attack` in Python).\n\n\n## Resources\n\n  - [PatternCraft > Adapter](https://www.youtube.com/watch?v=hvpXKZhNINc)\n  - [SourceMaking > Adapter](https://sourcemaking.com/design_patterns/adapter)\n  - [Wikipedia > Adapter](https://en.wikipedia.org/wiki/Adapter_pattern)\n\n# PatternCraft series\n\n  - [State Pattern](http://www.codewars.com/kata/patterncraft-state/)\n  - [Strategy Pattern](http://www.codewars.com/kata/patterncraft-strategy/)\n  - [Visitor Pattern](http://www.codewars.com/kata/patterncraft-visitor/)\n  - [Decorator Pattern](http://www.codewars.com/kata/patterncraft-decorator/)\n  - **Adapter Pattern**\n  - [Command Pattern](http://www.codewars.com/kata/patterncraft-command/)\n\nThe original [PatternCraft series (by John Lindquist)](https://www.youtube.com/playlist?list=PL8B19C3040F6381A2) is a collection of Youtube videos that explains some of the design patterns and how they are used (or could be) on StarCraft.\n",
+  "totalAttempts": 16348,
+  "totalCompleted": 4500,
+  "totalStars": 68,
+  "voteScore": 217,
+  "tags": [
+    "Design Patterns",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

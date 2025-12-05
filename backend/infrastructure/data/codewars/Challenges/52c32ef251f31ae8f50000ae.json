@@ -1,0 +1,44 @@
+{
+  "id": "52c32ef251f31ae8f50000ae",
+  "name": "Differential Averaging",
+  "slug": "differential-averaging",
+  "category": "algorithms",
+  "publishedAt": "2014-01-25T17:26:18.976Z",
+  "approvedAt": "2014-01-31T00:21:06.261Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "cpp",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/52c32ef251f31ae8f50000ae",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2013-12-31T20:54:10.090Z",
+  "createdBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Say you have a ratings system. People can rate a page, and the average is displayed on the page for everyone to see.\n\nOne way of storing such a running average is to keep the the current average as well as the total rating that all users have submitted and with how many people rated it, so that the average can be calculated and updated when a new rating has been made.\n\nThere are a couple of minor problems with this: first, you're keeping 3 columns instead of 1, which isn't ideal. Second is, if you're not careful, the number could get too large and get less and less accurate as the data format tries to keep up.\n\nSo what you need to do is this: write a function that takes the `current` average, the current number of ratings (data `points`) made, and a new value to `add` to the average; then return the new value. That way, you only need 2 columns in your database, and the number will not get crazy large over time.\n\nTo be clear:\n\n```\ncurrent = 0.5\npoints = 2\nadd = 1\n\n--> 0.6666666666666666666666666666666666 // (2/3)\n```\n\nThere are also plenty of examples in the example tests.",
+  "totalAttempts": 3248,
+  "totalCompleted": 1626,
+  "totalStars": 24,
+  "voteScore": 176,
+  "tags": [
+    "Mathematics",
+    "Algebra",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

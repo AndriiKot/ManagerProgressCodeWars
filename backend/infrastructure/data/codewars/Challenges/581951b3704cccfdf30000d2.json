@@ -1,0 +1,43 @@
+{
+  "id": "581951b3704cccfdf30000d2",
+  "name": "Split Without Loss",
+  "slug": "split-without-loss",
+  "category": "reference",
+  "publishedAt": "2016-11-02T03:06:01.128Z",
+  "approvedAt": "2016-12-12T08:08:18.778Z",
+  "languages": [
+    "ruby",
+    "crystal",
+    "python",
+    "javascript",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/581951b3704cccfdf30000d2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-02T02:38:43.147Z",
+  "createdBy": {
+    "username": "narayanswa30663",
+    "url": "https://www.codewars.com/users/narayanswa30663"
+  },
+  "approvedBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "description": "Most languages have a `split` function that lets you turn a string like `“hello world”` into an array like`[“hello”, “world”]`. But what if we don't want to lose the separator? Something like `[“hello”, “ world”]`.\n\n#### Task:\n\nYour job is to implement a function, (`split_without_loss` in Ruby/Crystal, and `splitWithoutLoss` in JavaScript/CoffeeScript), that takes two arguments, `str` (`s` in Python), and `split_p`, and returns the string, split by `split_p`, but with the separator intact. There will be one '|' marker in `split_p`. `str` or `s` will never have a '|' in it. All the text before the marker is moved to the first string of the split, while all the text that is after it is moved to the second one. **Empty strings must be removed from the output, and the input should NOT be modified.**\n\nWhen tests such as `(str = \"aaaa\", split_p = \"|aa\")` are entered, do not split the string on overlapping regions. For this example, return `[\"aa\", \"aa\"]`, not `[\"aa\", \"aa\", \"aa\"]`.\n\n#### Examples (see example test cases for more):\n\n```ruby\nsplit_without_loss(\"hello world!\", \" |\") #=> [\"hello \", \"world!\"]\nsplit_without_loss(\"hello world!\", \"o|rl\") #=> [\"hello wo\", \"rld!\"]\nsplit_without_loss(\"hello world!\", \"h|ello world!\") #=> [\"h\", \"ello world!\"]\nsplit_without_loss(\"hello world! hello world!\", \" |\")\n                  #=> [\"hello \", \"world! \", \"hello \", \"world!\"]\nsplit_without_loss(\"hello world! hello world!\", \"o|rl\")\n                  #=> [\"hello wo\", \"rld! hello wo\", \"rld!\"]\nsplit_without_loss(\"hello  hello  hello\", \" | \")\n                  #=> [\"hello \", \" hello \", \" hello\"]\nsplit_without_loss(\" hello world\", \" |\")\n                  #=> [\" \", \"hello \", \"world\"]\nsplit_without_loss(\"  hello hello hello\", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello\"]\nsplit_without_loss(\"  hello hello hello  \", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello \", \" \"]\nsplit_without_loss(\"  hello hello hello\", \"| \")\n                  #=> [\" \", \" hello\", \" hello\", \" hello\"]\n```\n```python\nsplit_without_loss(\"hello world!\", \" |\") #=> [\"hello \", \"world!\"]\nsplit_without_loss(\"hello world!\", \"o|rl\") #=> [\"hello wo\", \"rld!\"]\nsplit_without_loss(\"hello world!\", \"h|ello world!\") #=> [\"h\", \"ello world!\"]\nsplit_without_loss(\"hello world! hello world!\", \" |\")\n                  #=> [\"hello \", \"world! \", \"hello \", \"world!\"]\nsplit_without_loss(\"hello world! hello world!\", \"o|rl\")\n                  #=> [\"hello wo\", \"rld! hello wo\", \"rld!\"]\nsplit_without_loss(\"hello  hello  hello\", \" | \")\n                  #=> [\"hello \", \" hello \", \" hello\"]\nsplit_without_loss(\" hello world\", \" |\")\n                  #=> [\" \", \"hello \", \"world\"]\nsplit_without_loss(\"  hello hello hello\", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello\"]\nsplit_without_loss(\"  hello hello hello  \", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello \", \" \"]\nsplit_without_loss(\"  hello hello hello\", \"| \")\n                  #=> [\" \", \" hello\", \" hello\", \" hello\"]\n```\n```crystal\nsplit_without_loss(\"hello world!\", \" |\") #=> [\"hello \", \"world!\"]\nsplit_without_loss(\"hello world!\", \"o|rl\") #=> [\"hello wo\", \"rld!\"]\nsplit_without_loss(\"hello world!\", \"h|ello world!\") #=> [\"h\", \"ello world!\"]\nsplit_without_loss(\"hello world! hello world!\", \" |\")\n                  #=> [\"hello \", \"world! \", \"hello \", \"world!\"]\nsplit_without_loss(\"hello world! hello world!\", \"o|rl\")\n                  #=> [\"hello wo\", \"rld! hello wo\", \"rld!\"]\nsplit_without_loss(\"hello  hello  hello\", \" | \")\n                  #=> [\"hello \", \" hello \", \" hello\"]\nsplit_without_loss(\" hello world\", \" |\")\n                  #=> [\" \", \"hello \", \"world\"]\nsplit_without_loss(\"  hello hello hello\", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello\"]\nsplit_without_loss(\"  hello hello hello  \", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello \", \" \"]\nsplit_without_loss(\"  hello hello hello\", \"| \")\n                  #=> [\" \", \" hello\", \" hello\", \" hello\"]\n```\n```javascript\nsplitWithoutLoss(\"hello world!\", \" |\") #=> [\"hello \", \"world!\"]\nsplitWithoutLoss(\"hello world!\", \"o|rl\") #=> [\"hello wo\", \"rld!\"]\nsplitWithoutLoss(\"hello world!\", \"h|ello world!\") #=> [\"h\", \"ello world!\"]\nsplitWithoutLoss(\"hello world! hello world!\", \" |\")\n                  #=> [\"hello \", \"world! \", \"hello \", \"world!\"]\nsplitWithoutLoss(\"hello world! hello world!\", \"o|rl\")\n                  #=> [\"hello wo\", \"rld! hello wo\", \"rld!\"]\nsplitWithoutLoss(\"hello  hello  hello\", \" | \")\n                  #=> [\"hello \", \" hello \", \" hello\"]\nsplitWithoutLoss(\" hello world\", \" |\")\n                  #=> [\" \", \"hello \", \"world\"]\nsplitWithoutLoss(\"  hello hello hello\", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello\"]\nsplitWithoutLoss(\"  hello hello hello  \", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello \", \" \"]\nsplitWithoutLoss(\"  hello hello hello\", \"| \")\n                  #=> [\" \", \" hello\", \" hello\", \" hello\"]\n```\n```coffeescript\nsplitWithoutLoss(\"hello world!\", \" |\") #=> [\"hello \", \"world!\"]\nsplitWithoutLoss(\"hello world!\", \"o|rl\") #=> [\"hello wo\", \"rld!\"]\nsplitWithoutLoss(\"hello world!\", \"h|ello world!\") #=> [\"h\", \"ello world!\"]\nsplitWithoutLoss(\"hello world! hello world!\", \" |\")\n                  #=> [\"hello \", \"world! \", \"hello \", \"world!\"]\nsplitWithoutLoss(\"hello world! hello world!\", \"o|rl\")\n                  #=> [\"hello wo\", \"rld! hello wo\", \"rld!\"]\nsplitWithoutLoss(\"hello  hello  hello\", \" | \")\n                  #=> [\"hello \", \" hello \", \" hello\"]\nsplitWithoutLoss(\" hello world\", \" |\")\n                  #=> [\" \", \"hello \", \"world\"]\nsplitWithoutLoss(\"  hello hello hello\", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello\"]\nsplitWithoutLoss(\"  hello hello hello  \", \" |\")\n                  #=> [\" \", \" \", \"hello \", \"hello \", \"hello \", \" \"]\nsplitWithoutLoss(\"  hello hello hello\", \"| \")\n                  #=> [\" \", \" hello\", \" hello\", \" hello\"]\n```\n\n\nAlso check out my other creations — [Identify Case](https://www.codewars.com/kata/identify-case), [Adding Fractions](https://www.codewars.com/kata/adding-fractions),\n[Random Integers](https://www.codewars.com/kata/random-integers), [Implement String#transpose](https://www.codewars.com/kata/implement-string-number-transpose), [Implement Array#transpose!](https://www.codewars.com/kata/implement-array-number-transpose), [Arrays and Procs #1](https://www.codewars.com/kata/arrays-and-procs-number-1), and [Arrays and Procs #2](https://www.codewars.com/kata/arrays-and-procs-number-2)\n\nIf you notice any issues/bugs/missing test cases whatsoever, do not hesitate to report an issue or suggestion. Enjoy!\n\n",
+  "totalAttempts": 1221,
+  "totalCompleted": 253,
+  "totalStars": 32,
+  "voteScore": 82,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

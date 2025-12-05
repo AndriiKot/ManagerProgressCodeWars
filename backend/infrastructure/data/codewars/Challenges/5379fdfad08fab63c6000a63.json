@@ -1,0 +1,46 @@
+{
+  "id": "5379fdfad08fab63c6000a63",
+  "name": "Simple CSS selector comparison",
+  "slug": "simple-css-selector-comparison",
+  "category": "algorithms",
+  "publishedAt": "2014-05-19T15:35:32.143Z",
+  "approvedAt": "2014-08-08T01:32:19.268Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python",
+    "typescript",
+    "php",
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/5379fdfad08fab63c6000a63",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-05-19T12:50:02.920Z",
+  "createdBy": {
+    "username": "SagePtr",
+    "url": "https://www.codewars.com/users/SagePtr"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language. A style sheet consists of a list of rules. Each rule or rule-set consists of one or more selectors, and a declaration block. Selector describes which element it matches.\n\nSometimes element is matched to multiple selectors. In this case, element inherits multiple styles, from each rule it matches. Rules can override each other. To solve this problem, each selector has its own 'specificity' - e.g. weight. The selector with greater specificity overrides the other selector.\n\nYour task is to calculate the weights of two selectors and determine which of them will beat the other one.\n\n# Examples \n```\n\"body p\",  \"div\"     --->  return \"body p\"\n\".class\",  \"#id\"     --->  return \"#id\"\n\"div.big\", \".small\"  --->  return \"div.big\"\n\".big\",    \".small\"  --->  return \".small\" (because it appears later)\n```\n\nFor simplicity, all selectors in test cases are CSS1-compatible, test cases don't include pseudoclasses, pseudoelements, attribute selectors, etc. Below is an explanation on how to weight two selectors. You can read more about specificity [here](https://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/).\n\nThe simplest selector type is `tagname` selector. It writes as a simple  alphanumeric identifier: eg `body`, `div`, `h1`, etc. It has the least weight. If selectors have multiple elements - the selector with more elements win. For example, `body p` beats `div`, because it refers to 2 (nested) elements rather than 1.\n\nAnother simple selector is `.class` selector. It begins with dot and refer to element with specific `class` attribute. Class selectors can also be applied to tagname selectors, so `div.red` refer to `<div class=\"red\">` element. They can be grouped, for example, `.red.striped`. Class selector beats tagname selector.\n\nThe most weighted selector type in stylesheet is `#id` selector. It begins with hash sign and refer to element with specific `id` attribute. It can also be standalone, or applied to an element. Id selector beats both selector types.\n\nAnd the least weighted selector is `*`, which has no specificity and can be beat by any other selector.\n\nSelectors can be combined, for example, `body #menu ul li.active` refers to `li` element with `class=\"active\"`, placed inside `ul` element, placed inside element width `id=\"menu\"`, placed inside `body`.\n\nSpecificity calculation is simple. \n\n- Selector with more #id selectors wins.\n- If both are same, the winner is selector with more .class selectors.\n- If both are same, selector with more elements wins.\n- If all of above values are same, the winner is selector that appear last.\n\nFor example, let's represent the number of ``#id`` , ``.class``, ``tagname`` selectors as array (in order from worst to best):\n\n|Selector|Specificity (#id,.class,tagname)|\n|--------|--------------------------------|\n| * |0, 0, 0|\n| span | 0, 0, 1 |\n| body p | 0, 0, 2 |\n| .green | 0, 1, 0 |\n| apple.yellow | 0, 1, 1 |\n| div.menu li | 0, 1, 2 |\n| .red .orange | 0, 2, 0 |\n| div.big .first | 0, 2, 1 |\n| #john | 1, 0, 0 |\n| div#john | 1, 0, 1 |\n| body #john span | 1, 0, 2 |\n| menu .item #checkout.active | 1, 2, 1 |\n| #foo div#bar.red .none | 2, 2, 1 |\n",
+  "totalAttempts": 11661,
+  "totalCompleted": 1289,
+  "totalStars": 179,
+  "voteScore": 132,
+  "tags": [
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "65ba28c12c779b5863c20f6f",
+  "name": "Market Insight: Latest Periods of Stable Prices",
+  "slug": "market-insight-latest-periods-of-stable-prices",
+  "category": "reference",
+  "publishedAt": "2024-02-01T12:26:48.933Z",
+  "approvedAt": "2024-02-10T14:09:40.259Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65ba28c12c779b5863c20f6f",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-01-31T11:02:25.613Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the bustling world of retail, keeping track of product prices over time is crucial for market analysis. As a data analyst in a retail company, you've been tasked with analyzing the price stability of various items. Your goal is to identify items whose prices have remained constant for the longest period up to the present day, which could indicate a stable market demand or effective pricing strategies.\n\nObjective: The primary goal is to determine the most recent period during which the price of each item has remained unchanged, up to the present day. This analysis focuses on identifying the stability of item prices in the most current context, rather than over the entire historical data.\n\nA period of price stability is defined as a sequence of consecutive days where the price of an item remains unchanged. Even if the price remains constant for even one day, it is considered a period of price stability. There is no minimum number of days required for a period to qualify as stable.\n\nThe database contains a table named `prices` with the following schema:\n\n* `id` (int): primary key\n* `item` (string): The name of the item that is being sold\n* `date` (date): The date when the price was recorded, in the format 'YYYY-MM-DD'.\n* `price` (int): The price of the item on that date.\n\nWrite a SQL query that fulfills the following requirements:\n\n* Identify Price Stability: The query should identify the latest consecutive period for each item where its price has not changed.\n* Calculate Days Elapsed: For each item, the query should calculate the number of days that have elapsed since the beginning of the latest constant-price period up to the current date.\n* Return Required Information: The query should return the following columns for each relevant item:\n    1) `item`: The item identifier.\n    2) `price`: The stable price during the identified period.\n    3) `days_elapsed`: The number of days from `current_date` since the price has been stable.\n    4) `start_date`: The starting date of the most recent period of price stability.\n* Ordering of Results: Results should be ordered by `days_elapsed` in the descending order and the `item` in ascending alpabetical order in the case of a tie.\n\n##### Notes:\n\n1) Unique Combination of Date and Item: Each record in the prices table represents a unique combination of date and item. This means that for any given date, there can be only one price entry per item.\n2) Non-Chronological Data Insertion: The data in the prices table can be inserted in a non-chronological order. This implies that records are not necessarily added to the table in the sequence of their dates, and the dataset may contain backdated entries.\n3) Date Gaps: The dataset may have gaps between dates for any given item. Not every item needs to have a price record for each consecutive day. In cases where there are gaps between dates for a given item, it is assumed that the price remains unchanged from the last recorded date until the next recorded date. Thus, date gaps are treated as periods of continued price stability from the last known price.\n4) Current Date Gap: There may be a gap between the most recent date of any given item and the current date. The latest available data for an item might not be from today or yesterday.\n\nFor this sample data (where `today` refers to the current date and `today - n` represents the date n days before today):\n\n```\n| Item |    Date    | Price |\n+------+------------+-------+\n|  A   | today - 6  |   3   |\n|  B   | today - 6  |  23   |\n|  C   | today - 6  |  10   |\n|  A   | today - 5  |   4   |\n|  B   | today - 5  |  25   |\n|  C   | today - 5  |  11   |\n|  A   | today - 4  |   3   |\n|  B   | today - 4  |  22   |\n|  C   | today - 4  |   8   |\n|  A   | today - 3  |   3   |\n|  B   | today - 3  |  26   |\n|  C   | today - 3  |   9   |\n|  A   | today - 2  |   3   |\n|  B   | today - 2  |  24   |\n|  C   | today - 2  |   9   |\n|  A   | today - 1  |   3   |\n|  B   | today - 1  |  24   |\n|  C   | today - 1  |   9   |\n```\n\nThe desired output should look like this:\n\n<table><!----><tr><th>item</th><th>price</th><th>days_elapsed</th><th>start_date</th></tr><tr><td>A</td><td>3</td><td>4</td><td>2024-01-28</td></tr><tr><td>C</td><td>9</td><td>3</td><td>2024-01-29</td></tr><tr><td>B</td><td>24</td><td>2</td><td>2024-01-30</td></tr></table>\n\nGLHF!\n\n",
+  "totalAttempts": 1031,
+  "totalCompleted": 90,
+  "totalStars": 11,
+  "voteScore": 31,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

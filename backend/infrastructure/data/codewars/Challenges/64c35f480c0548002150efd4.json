@@ -1,0 +1,41 @@
+{
+  "id": "64c35f480c0548002150efd4",
+  "name": "Refactoring SQL Queries: part 1 (removing UNION)",
+  "slug": "refactoring-sql-queries-part-1-removing-union",
+  "category": "reference",
+  "publishedAt": "2023-07-28T06:57:11.717Z",
+  "approvedAt": "2023-07-28T20:57:18.262Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64c35f480c0548002150efd4",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-07-28T06:25:12.455Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "As a newly hired developer at a startup, you've been tasked with refactoring the existing codebase. As usually happens in startups, the initial code has been written by a bunch of students that were doing it for free. Sinking more and more into depression as you study the code, you stumbled upon this gem:\n\n```sql\nSELECT * FROM (\n  SELECT DISTINCT city_name FROM stations WHERE city_name LIKE 'A%'\n  UNION\n  SELECT DISTINCT city_name FROM stations WHERE city_name LIKE 'E%'\n  UNION\n  SELECT DISTINCT city_name FROM stations WHERE city_name LIKE 'I%'\n  UNION\n  SELECT DISTINCT city_name FROM stations WHERE city_name LIKE 'O%'\n  UNION\n  SELECT DISTINCT city_name FROM stations WHERE city_name LIKE 'U%'\n) AS subquery\nORDER BY city_name ASC;\n```\nYou need to do the refactoring of the above query without using the `UNION` operator.\n\nThe schema of `stations` table is following:\n\n* `id` (integer): primary key\n* `city_name` (string): the name of the city\n\nGLHF!\n",
+  "totalAttempts": 775,
+  "totalCompleted": 384,
+  "totalStars": 3,
+  "voteScore": 55,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Refactoring"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

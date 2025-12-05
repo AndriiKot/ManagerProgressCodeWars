@@ -1,0 +1,40 @@
+{
+  "id": "6458b73ce9a6e0005832997f",
+  "name": "Filtering Films by Special Features in PostgreSQL: Part 4",
+  "slug": "filtering-films-by-special-features-in-postgresql-part-4",
+  "category": "reference",
+  "publishedAt": "2023-05-08T08:49:40.651Z",
+  "approvedAt": "2023-05-18T18:59:36.274Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6458b73ce9a6e0005832997f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-05-08T08:47:57.041Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Write a PostgreSQL query that selects `film_id`, the `title` and `special_features` columns from the film table in the DVD rental database, and returns all films that have the most popular feature as one of their features. By \"most popular\" is meant that it appears most frequently among all the special features amidst all films of `film` table \n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* The result should be ordered by title alphabetically, if title is the same - then by film_id in asc order.\n*  let's assume that there are no ties for the most frequent special feature\n* in `special_features` there are no duplicates - all values are unique\n\n### Schema:\n\n#### `film` table:\n```\nColumn            | Type      | Modifiers\n------------------+-----------+-----------\nfilm_id           | integer   | not null\ntitle             | varchar   | not null\ndescription       | text      | not null\nrelease_year      | integer   | not null\nlanguage_id       | integer   | not null \nrental_duration   | integer   | not null\nrental_rate       | numeric   | not null\nlength            | integer   | not null\nreplacement_cost  | numeric   | not null\nrating            | varchar   | not null\nlast_update       | timestamp | not null\nspecial_features  | text[]    | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n```\nfilm_id | title                             | special_features                       |\n--------+-----------------------------------+----------------------------------------|\n   32   | A Shawshank Redemption            | {Trailers, Deleted Scenes}             | \n   14   | Monty Python and the Holy Grail   | {Trailers, Deleted Scenes}             |\n...\n```",
+  "totalAttempts": 811,
+  "totalCompleted": 230,
+  "totalStars": 12,
+  "voteScore": 67,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

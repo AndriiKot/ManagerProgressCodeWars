@@ -1,0 +1,41 @@
+{
+  "id": "642d3e2c6555a30d83798f54",
+  "name": "Top Five Movie Categories Rented At Each Store ",
+  "slug": "top-five-movie-categories-rented-at-each-store",
+  "category": "reference",
+  "publishedAt": "2023-04-05T09:29:49.000Z",
+  "approvedAt": "2023-05-04T17:44:12.838Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/642d3e2c6555a30d83798f54",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-05T09:23:56.946Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In this task, you need to write a query to find the top (most rented) five movie categories at each store. \nThe result set should be sorted first by store ID, and then by number of rentals in descending order. You are not restricted by technique so you can use window functions, lateral joins etc. \n\n##### Notes:\n\n* Sometimes two or more categories within the store can be tied by (have the same) the number of rentals. Then a category which in alphabetical order occurs earlier gets a higher rank.\n* By `top 5` is meant `top five movie category at each store`, not `data of \"top five move category across all stores\" for each store`.\n* Let's assume that there will be no categories with `0` rentals so thus this case should not be covered.\n\n\n### Schema\n\n\n#### `store` table:\n```\nColumn           | Type          | Modifiers\n-----------------+---------------+----------\nstore_id         | smallint      | not null\n```\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\nstore_id     | smallint  | not null\n```\n\n#### `rental` table:\n```\nColumn | Type | Modifiers\n--------------+---------------+----------\nrental_id    | integer   | not null\nrental_date  | timestamp | not null\ninventory_id | integer   | not null\n```\n#### `film_category` table:\n```\nColumn      | Type      | Modifiers\n------------+---------- +----------\nfilm_id     | smallint  | not null\ncategory_id | smallint  | not null\n````\n#### `category` table:\n```\nColumn      | Type      | Modifiers\n------------+-----------+----------\ncategory_id | smallint  | not null\nname        | text      | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\nstore_id    | category  | num_rentals\n------------+-----------+----------\n1           | Sports    | 745\n1           | Drama     | 699 \n...\n```\n\n* `store_id` - ID of the store\n* `category` - name of the category\n* `num_rentals` - number of rentals\n\n\n\n",
+  "totalAttempts": 2314,
+  "totalCompleted": 504,
+  "totalStars": 24,
+  "voteScore": 65,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

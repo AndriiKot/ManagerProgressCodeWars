@@ -1,0 +1,48 @@
+{
+  "id": "52ec24228a515e620b0005ef",
+  "name": "Explosive Sum",
+  "slug": "explosive-sum",
+  "category": "reference",
+  "publishedAt": "2014-01-31T23:26:34.749Z",
+  "approvedAt": "2014-09-12T14:30:54.265Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "ruby",
+    "python",
+    "cpp",
+    "go",
+    "rust",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/52ec24228a515e620b0005ef",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2014-01-31T22:31:04.628Z",
+  "createdBy": {
+    "username": "surtich",
+    "url": "https://www.codewars.com/users/surtich"
+  },
+  "approvedBy": {
+    "username": "xcthulhu",
+    "url": "https://www.codewars.com/users/xcthulhu"
+  },
+  "description": "# How many ways can you make the sum of a number?\n\nFrom wikipedia: https://en.wikipedia.org/wiki/Partition_(number_theory)\n\n>In number theory and combinatorics, a partition of a positive integer *n*, also called an *integer partition*, is a way of writing n as a sum of positive integers. Two sums that differ only in the order of their summands are considered the same partition. If order matters, the sum becomes a composition. For example, 4 can be partitioned in five distinct ways:\n```\n4\n3 + 1\n2 + 2\n2 + 1 + 1\n1 + 1 + 1 + 1\n```\n\n## Examples\n\n### Basic\n\n```javascript\nsum(1) // 1\nsum(2) // 2  -> 1+1 , 2\nsum(3) // 3 -> 1+1+1, 1+2, 3\nsum(4) // 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nsum(5) // 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nsum(10) // 42\n```\n```haskell\nexplosiveSum  1   -- 1\nexplosiveSum 2   -- 2 -> 1+1 , 2\nexplosiveSum 3   -- 3 -> 1+1+1, 1+2, 3\nexplosiveSum 4   -- 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nexplosiveSum 5   -- 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nexplosiveSum 10  -- 42\n```\n```ruby\nexp_sum(1) # 1\nexp_sum(2) # 2  -> 1+1 , 2\nexp_sum(3) # 3 -> 1+1+1, 1+2, 3\nexp_sum(4) # 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nexp_sum(5) # 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nexp_sum(10) # 42\n```\n```python\nexp_sum(1) # 1\nexp_sum(2) # 2  -> 1+1 , 2\nexp_sum(3) # 3 -> 1+1+1, 1+2, 3\nexp_sum(4) # 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nexp_sum(5) # 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nexp_sum(10) # 42\n```\n```cpp\nexp_sum(1) // 1\nexp_sum(2) // 2  -> 1+1 , 2\nexp_sum(3) // 3 -> 1+1+1, 1+2, 3\nexp_sum(4) // 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nexp_sum(5) // 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nexp_sum(10) // 42\n```\n```go\nExpSum(1) // 1\nExpSum(2) // 2 -> 1+1 , 2\nExpSum(3) // 3 -> 1+1+1, 1+2, 3\nExpSum(4) // 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nExpSum(5) // 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nExpSum(10) // 42\n```\n```rust\nexp_sum(1) // 1\nexp_sum(2) // 2  -> 1+1 , 2\nexp_sum(3) // 3 -> 1+1+1, 1+2, 3\nexp_sum(4) // 5 -> 1+1+1+1, 1+1+2, 1+3, 2+2, 4\nexp_sum(5) // 7 -> 1+1+1+1+1, 1+1+1+2, 1+1+3, 1+2+2, 1+4, 5, 2+3\n\nexp_sum(10) // 42\n```\n\n### Explosive\n\n```javascript\nsum(50) // 204226\nsum(80) // 15796476\nsum(100) // 190569292\n```\n```haskell\nexplosiveSum  50 --    204226\nexplosiveSum  80 --  15796476\nexplosiveSum 100 -- 190569292\n```\n```ruby\nexp_sum(50) # 204226\nexp_sum(80) # 15796476\nexp_sum(100) # 190569292\n```\n```python\nexp_sum(50) # 204226\nexp_sum(80) # 15796476\nexp_sum(100) # 190569292\n```\n```cpp\nexp_sum(50) // 204226\nexp_sum(80) // 15796476\nexp_sum(100) // 190569292\n```\n```go\nExpSum(50) // 204226\nExpSum(80) // 15796476\nExpSum(100) // 190569292\n```\n```rust\nexp_sum(50) // 204226\nexp_sum(80) // 15796476\nexp_sum(100) // 190569292\n```\n\nSee [here](http://www.numericana.com/data/partition.htm) for more examples.\n",
+  "totalAttempts": 44411,
+  "totalCompleted": 9586,
+  "totalStars": 1753,
+  "voteScore": 793,
+  "tags": [
+    "Algorithms",
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 2
+  }
+}

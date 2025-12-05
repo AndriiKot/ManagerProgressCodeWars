@@ -1,0 +1,46 @@
+{
+  "id": "54a2e93b22d236498400134b",
+  "name": "Multi-tap Keypad Text Entry on an Old Mobile Phone",
+  "slug": "multi-tap-keypad-text-entry-on-an-old-mobile-phone",
+  "category": "reference",
+  "publishedAt": "2014-12-30T18:31:16.786Z",
+  "approvedAt": "2015-04-26T17:04:44.450Z",
+  "languages": [
+    "haskell",
+    "ruby",
+    "javascript",
+    "python",
+    "java",
+    "shell",
+    "scala",
+    "groovy"
+  ],
+  "url": "https://www.codewars.com/kata/54a2e93b22d236498400134b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-12-30T18:04:44.070Z",
+  "createdBy": {
+    "username": "mroth",
+    "url": "https://www.codewars.com/users/mroth"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Prior to having fancy iPhones, teenagers would wear out their thumbs sending SMS\nmessages on candybar-shaped feature phones with 3x4 numeric keypads.\n\n    ------- ------- -------\n    |     | | ABC | | DEF |\n    |  1  | |  2  | |  3  |\n    ------- ------- -------\n    ------- ------- -------\n    | GHI | | JKL | | MNO |\n    |  4  | |  5  | |  6  |\n    ------- ------- -------\n    ------- ------- -------\n    |PQRS | | TUV | | WXYZ|\n    |  7  | |  8  | |  9  |\n    ------- ------- -------\n    ------- ------- -------\n    |  *  | |space| |  #  |\n    |     | |  0  | |     |\n    ------- ------- -------\n\nPrior to the development of T9 systems (predictive text entry), the method to type words was called \"multi-tap\" and involved pressing a button repeatedly to cycle through all its possible values, in order. For example:\n\n* Pressing the button `7` repeatedly will cycle through the letters `P -> Q -> R -> S -> 7 -> P -> ...`.\n* Pressing the button `0` is cycling through `SPACE -> 0 -> SPACE -> 0 -> ...`.\n* Buttons with a single symbol on it just type this symbol.\n\nA character is \"locked in\" and inserted into the message once the user presses a different key or pauses for a short period of time (thus, no extra button presses are required beyond what is needed for each letter individually). For example:\n\n* To type a letter `\"R\"` you would press the `7` key three times (as the screen display for the current character cycles through `P->Q->R->S->7`).\n* To type in a digit `3`, you would press the button `3` four times.\n* To type in the message `\"ABC\"`, you would press the button `2` once, wait a second, then press the button `2` twice to enter the letter `B`, then pause for another second, and press the button `2` three times, to enter the letter `C`. You would have to press the button `2` six times in total.\n\nIn order to send the message `\"WHERE DO U WANT 2 MEET L8R\"` a teen would have to actually do 47 button presses.  No wonder they abbreviated...\n\nFor this assignment, write code that can calculate the amount of button presses required for any phrase, with the following requirements:\n- Punctuation can be ignored for this exercise.\n- Likewise, the phone doesn't distinguish between upper and lowercase characters (but you should allow your module to accept input in either form, for convenience).\n- Tested phrases contain letters (`A-Z` and `a-z`), digits (`0-9`), and special characters `#` and `*`.\n",
+  "totalAttempts": 97786,
+  "totalCompleted": 13648,
+  "totalStars": 754,
+  "voteScore": 1285,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

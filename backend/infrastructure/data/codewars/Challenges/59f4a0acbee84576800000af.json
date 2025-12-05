@@ -1,0 +1,69 @@
+{
+  "id": "59f4a0acbee84576800000af",
+  "name": "Positions Average",
+  "slug": "positions-average",
+  "category": "reference",
+  "publishedAt": "2017-10-28T15:28:17.075Z",
+  "approvedAt": "2018-09-03T18:13:56.811Z",
+  "languages": [
+    "shell",
+    "python",
+    "javascript",
+    "java",
+    "csharp",
+    "cpp",
+    "julia",
+    "c",
+    "scala",
+    "ruby",
+    "r",
+    "powershell",
+    "go",
+    "nim",
+    "php",
+    "rust",
+    "clojure",
+    "racket",
+    "typescript",
+    "fsharp",
+    "vb",
+    "kotlin",
+    "groovy",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d",
+    "erlang",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/59f4a0acbee84576800000af",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-28T15:22:20.729Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "description": "Suppose you have 4 numbers: `0, 9, 6, 4` and 3 strings composed with them:\n```\ns1 = \"6900690040\"\ns2 = \"4690606946\"\ns3 = \"9990494604\"\n```\n\nCompare `s1` and `s2` to see how many positions they have in common:\n`0` at index 3, `6` at index 4, `4` at index 8 : 3 common positions out of ten.\n\nCompare `s1` and `s3` to see how many positions they have in common:\n`9` at index 1, `0` at index 3, `9` at index 5 : 3  common positions out of ten.\n\nCompare `s2` and `s3`. We find 2 common positions out of ten.\n\nSo for the 3 strings we have 8 common positions out of 30 ie 0.2666... or 26.666...%\n\nGiven `n` substrings (n >= 2) in a string `s` our function `pos_average` will calculate the average percentage of positions that are the same\nbetween the `(n * (n-1)) / 2` sets of substrings taken amongst the given `n` substrings. It can happen that some substrings are duplicate but since their ranks are not the same in `s` they are considered as different substrings.\n\nThe function returns the percentage formatted as a float with 10 decimals but the result is tested at 1e.-9 (see function assertFuzzy in the tests).\n\n#### Example:\nGiven string s = \"444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490\"\ncomposing a set of n = 10 substrings (hence 45 combinations), `pos_average` returns `29.2592592593`.\n\nIn a set the `n` substrings will have the same length ( > 0 ).\n\n#### Notes\n- You can see other examples in the \"Sample tests\".\n",
+  "totalAttempts": 17537,
+  "totalCompleted": 3965,
+  "totalStars": 252,
+  "voteScore": 489,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

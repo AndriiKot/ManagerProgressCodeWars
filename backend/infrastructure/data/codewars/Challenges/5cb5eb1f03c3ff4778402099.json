@@ -1,0 +1,51 @@
+{
+  "id": "5cb5eb1f03c3ff4778402099",
+  "name": "Four Letter Words ~ Mutations",
+  "slug": "four-letter-words-mutations",
+  "category": "algorithms",
+  "publishedAt": "2019-08-15T00:15:07.530Z",
+  "approvedAt": "2019-09-11T18:12:43.224Z",
+  "languages": [
+    "c",
+    "python",
+    "javascript",
+    "csharp",
+    "java",
+    "cpp",
+    "coffeescript",
+    "typescript",
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/5cb5eb1f03c3ff4778402099",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-04-16T14:47:59.994Z",
+  "createdBy": {
+    "username": "rowcased",
+    "url": "https://www.codewars.com/users/rowcased"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Our Setup\n\nAlice and Bob work in an office. When the workload is light and the boss isn't looking, they sometimes play simple word games for fun. This is one of those days!\n\n## Today's Game\n\nAlice and Bob are playing what they like to call _Mutations_, where they take turns trying to \"think up\" a new four-letter word (made up of four unique letters) that is identical to the prior word except for only one letter. They just keep on going until their memories fail out.\n\n## Their Words\n\nAlice and Bob have memories of the same size, each able to recall `10` to `2000` different four-letter words. Memory words and initial game word are randomly taken from the same list of `4000` (unique, four-letter, lowercased) words, any of which may appear in both memories.\n\nThe expression to \"think up\" a new word means that for their turn, the player must submit as their response word the first valid, unused word that appears in their memory (by lowest array index), as their memories are ordered from the most \"memorable\" words to the least.\n\n## The Rules\n* a valid response word must contain four _unique_ letters\n* `1` letter is replaced while the other `3` stay in position\n* it must be the lowest indexed valid word in that memory\n* this word cannot have already been used during the game\n* the final player to provide a valid word will win the game\n* if `1st` player fails `1st` turn, `2nd` can win with one word\n* when _both_ players fail the initial word, there is no winner\n\n## Your Task\nTo determine the winner!\n\n## Some Examples\n\n`alice = plat,rend,bear,soar,mare,pare,flap,neat,clan,pore`\n\n`bob   = boar,clap,farm,lend,near,peat,pure,more,plan,soap`\n\n1) In the case of `word = \"send\"` and `first = 0`:\n* Alice responds to `send` with `rend`\n* Bob   responds to `rend` with `lend`\n* Alice has no valid response to `lend`\n* Bob   wins the game.\n\n2) In the case of `word = \"flip\"` and `first = 1`:\n* Bob   has no valid response to `flip`\n* Alice responds to `flip` with `flap`\n* Alice wins the game.\n\n3) In the case of `word = \"calm\"` and `first = 1`:\n* Bob   has no valid response to `calm`\n* Alice has no valid response to `calm`\n* Neither wins the game.\n\n4) In the case of `word = \"more\"` and `first = 1`:\n* Bob   has no valid response to `more` **\n* Alice responds to `more` with `mare`\n* Alice wins the game.\n\n5) In the case of `word = \"maze\"` and `first = 0`:\n* Alice responds to `maze` with `mare`\n* Bob   responds to `mare` with `more` **\n* Alice responds to `more` with `pore`\n* Bob   responds to `pore` with `pure`\n* Alice responds to `pure` with `pare`\n* Bob   has no valid response to `pare`\n* Alice wins the game.\n\n\\** Note that in these last two cases, Bob cannot use `mere` because it has two `e`'s.\n\n## Input\n* alice ~ a(n) `array/list/tuple/vector`  (`10` <= size <= `2000`) of four-letter words\n* bob ~ a(n) `array/list/tuple/vector`  (`10` <= size <= `2000`) of four-letter words\n* word ~ the initial four-letter challenge word of the game\n* first ~ an integer (either `0` for Alice or `1` for Bob)\n\n## Output\n* `0` if `Alice` wins\n* `1` if `Bob` wins\n* `-1` if both fail\n\n## Enjoy!\n...and please consider one of the following kata to solve next:\n* [Crossword Puzzle! (2x2)](https://www.codewars.com/kata/5c658c2dd1574532507da30b)\n* [Interlocking Binary Pairs](https://www.codewars.com/kata/628e3ee2e1daf90030239e8a)\n* [Setting Places for the Dead](https://www.codewars.com/kata/6646c0c08b97085ca216d346)\n* [Four Letter Words ~ Anagrams](https://www.codewars.com/kata/5cb5ebc403c3ff477840393a/discuss#66ed61991c50f3905fb9adbd)\n* [Shuffle an Integer](https://www.codewars.com/kata/6467a353f81b1f0031004eb8)\n* [Minimum Percentage of Visitors that Ate All Foods](https://www.codewars.com/kata/657e578bdc80170abd4dca79)\n* [Is Sator Square?](https://www.codewars.com/kata/5cb7baa989b1c50014a53333)\n* [Playing With Toy Blocks ~ Can you build a 4x4 square?](https://www.codewars.com/kata/5cab471da732b30018968071)",
+  "totalAttempts": 15734,
+  "totalCompleted": 801,
+  "totalStars": 154,
+  "voteScore": 165,
+  "tags": [
+    "Strings",
+    "Arrays",
+    "Games",
+    "Parsing",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

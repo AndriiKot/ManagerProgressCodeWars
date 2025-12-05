@@ -1,0 +1,46 @@
+{
+  "id": "5902bc7aba39542b4a00003d",
+  "name": "The Hunger Games - Zoo Disaster!",
+  "slug": "the-hunger-games-zoo-disaster",
+  "category": "reference",
+  "publishedAt": "2017-06-07T10:51:35.155Z",
+  "approvedAt": "2017-06-08T20:09:33.004Z",
+  "languages": [
+    "java",
+    "javascript",
+    "python",
+    "haskell",
+    "csharp",
+    "cobol",
+    "go",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5902bc7aba39542b4a00003d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-04-28T03:52:26.547Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "<img src=\"https://i.imgur.com/ta6gv1i.png?1\" title=\"source: imgur.com\" />\n\n# Story\n\nA freak power outage at the zoo has caused all of the electric cage doors to malfunction and swing open...\n\nAll the animals are out and some of them are eating each other!\n\n# <span style='color:red'>It's a Zoo Disaster!</span>\n\nHere is a list of zoo animals, and what they can eat\n\n* antelope eats grass\n* big-fish eats little-fish\n* bug eats leaves\n* bear eats big-fish\n* bear eats bug\n* bear eats chicken\n* bear eats cow\n* bear eats leaves\n* bear eats sheep\n* chicken eats bug\n* cow eats grass\n* fox eats chicken\n* fox eats sheep\n* giraffe eats leaves\n* lion eats antelope\n* lion eats cow\n* panda eats leaves\n* sheep eats grass\n\n# Kata Task\n\n### INPUT\nA comma-separated string representing all the things at the zoo\n\n### TASK\nFigure out who eats whom until no more eating is possible.\n\n### OUTPUT \n\nA list of strings (refer to the example below) where:\n* The first element is the initial zoo (same as INPUT)\n* The last element is a comma-separated string of what the zoo looks like when all the eating has finished\n* All other elements (2nd to last-1) are of the form ```X eats Y``` describing what happened\n\n\n# Notes\n\n* Animals can only eat things beside them\n\n* Animals always eat to their **LEFT** before eating to their **RIGHT**\n\n* Always the **LEFTMOST** animal capable of eating will eat before any others\n\n* Any other things you may find at the zoo (which are not listed above) do not eat anything and are not edible\n\n\n# Example\n\n*Input*\n\n```\"fox,bug,chicken,grass,sheep\"```\n\n*Working*\n<table>\n<tr><td>1<td>fox can't eat bug<td><pre>\"fox,bug,chicken,grass,sheep\"</pre></tr>\n<tr><td>2<td>bug can't eat anything<td><pre>\"fox,bug,chicken,grass,sheep\"</pre></tr>\n<tr><td>3<td><span style='color:red'>chicken eats bug</span><td><pre>\"fox,chicken,grass,sheep\"</pre></tr>\n<tr><td>4<td><span style='color:red'>fox eats chicken</span><td><pre>\"fox,grass,sheep\"</pre></tr>\n<tr><td>5<td>fox can't eat grass<td><pre>\"fox,grass,sheep\"</pre></tr>\n<tr><td>6<td>grass can't eat anything<td><pre>\"fox,grass,sheep\"</pre></tr>\n<tr><td>7<td><span style='color:red'>sheep eats grass</span><td><pre>\"fox,sheep\"</pre></tr>\n<tr><td>8<td><span style='color:red'>fox eats sheep</span><td><pre>\"fox\"</pre></tr>\n</table>\n\n*Output*\n\n```[\"fox,bug,chicken,grass,sheep\", \"chicken eats bug\", \"fox eats chicken\", \"sheep eats grass\", \"fox eats sheep\", \"fox\"]```\n\n\n\n\n",
+  "totalAttempts": 33626,
+  "totalCompleted": 2846,
+  "totalStars": 522,
+  "voteScore": 549,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

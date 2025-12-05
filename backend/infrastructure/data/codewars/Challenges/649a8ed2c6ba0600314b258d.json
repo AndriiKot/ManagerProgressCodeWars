@@ -1,0 +1,40 @@
+{
+  "id": "649a8ed2c6ba0600314b258d",
+  "name": " Successful Film Stars Analysis",
+  "slug": "successful-film-stars-analysis",
+  "category": "reference",
+  "publishedAt": "2023-06-27T07:26:01.056Z",
+  "approvedAt": "2023-08-08T10:35:37.787Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/649a8ed2c6ba0600314b258d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-27T07:25:06.753Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst working for a film production company. Your company is looking to find potential actors for their next big project. The company has a particular interest in actors who have a consistent track record of starring in commercially successful films.\n\nWrite an SQL query to find actors who have starred in a significant number of films (20 or more) and `all` of their films have enjoyed a certain level of commercial success, indicated by the films being rented 7 or more times - we want to exclude any actors who have ever starred in a film that was rented less than 7 times. You need also to take into consideration films without rentals at all: actors who starred in such films should be excluded from the results as per the task's requirements.\n\nYour SQL query should return a list of actors who satisfy the conditions specified above. For each actor, the output should include the following coluns:\n\n* `actor_id` - ID of the actor in the DB\n* `full_name` -  Full name of the actor (formatted as 'first_name last_name')\n* `film_count` - The number of films they have starred in\n\nThe resulting list of actors should be ordered by the number of films they have starred in (in descending order). In the case of a tie, the actors should be ordered by their actor ID (in ascending order).\n\n##### Notes:\n\n* for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests. \n* When counting the number of films an actor has starred in, we need to ensure we're counting unique films\n\n\n### Schema\n(not all columns - part of the domain required to solve this kata)\n\n#### `film` table:\n```\nColumn           | Type     | Modifiers\n-----------------+----------+----------\nfilm_id          | integer  | not null\n```\n\n#### `film_actor` table:\n```\nColumn   | Type     | Modifiers\n---------+----------+----------\nid       | integer  | not null\nfilm_id  | integer  | not null\nactor_id | integer  | not null\n````\n#### `actor` table:\n```\nColumn      | Type      | Modifiers\n------------+-----------+----------\nactor_id    | integer   | not null\nfirst_name  | varchar   | not null\nlast_name   | varchar   | not null\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ninventory_id | integer   | not null\n```\n\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>actor_id</th><th>full_name</th><th>film_count</th></tr><tr><td>39</td><td>Rayford Russel</td><td>23</td></tr><tr><td>240</td><td>Alfonso Kertzmann</td><td>23</td></tr><tr><td>220</td><td>Jennette Gibson</td><td>21</td></tr></table>\n...\n\n\n\n\n\n\n\n\n\n",
+  "totalAttempts": 2278,
+  "totalCompleted": 155,
+  "totalStars": 20,
+  "voteScore": 32,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

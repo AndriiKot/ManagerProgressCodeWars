@@ -1,0 +1,48 @@
+{
+  "id": "58583922c1d5b415b00000ff",
+  "name": "Street Fighter 2 - Character Selection - Part 2",
+  "slug": "street-fighter-2-character-selection-part-2",
+  "category": "reference",
+  "publishedAt": "2016-12-20T01:18:46.899Z",
+  "approvedAt": "2016-12-31T02:12:37.089Z",
+  "languages": [
+    "python",
+    "javascript",
+    "typescript",
+    "java",
+    "swift",
+    "ruby",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/58583922c1d5b415b00000ff",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-12-19T19:46:42.308Z",
+  "createdBy": {
+    "username": "mmalkavian",
+    "url": "https://www.codewars.com/users/mmalkavian"
+  },
+  "approvedBy": {
+    "username": "damjan",
+    "url": "https://www.codewars.com/users/damjan"
+  },
+  "description": "This is the rightful continuation to this easier Kata [**here**](https://www.codewars.com/kata/5853213063adbd1b9b0000be) and some rules are the same with few substantial alterations.\n\nThis time we have to deal with a situation like Super Street Fighter 2 Selection Screen:\n\n![alt text](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.vizzed.com%2Fvizzedboard%2Fretro%2Fuser_screenshots%2Fsaves40%2F409292%2FGENESIS--Super%2520Street%2520Fighter%2520II%2520%2520The%2520New%2520Challengers_Jul2%252019_26_37.png&f=1 \"Super Street Fighter 2 Character Selection\")\n\nAs you may see, we now have 16 characters on 3 rows. You might think: let's make an array of 3 arrays! But that's not enough. \n\n## Empty space\n\nThe first character of the first row (Ryu) is not aligned with the first of the second row (Balrog) but with the second (Ken) and the same goes with the other side; therefore we need to introduce something new, like an offset: the **Empty Space**.\n\nThe empty space, represented as empty string `\"\"`, will allow us to keep the grid aligned and rectangular, with spaces that won't be selectable.\nIn this case we need 2 empty spaces (3 rows x 6 columns = 18 slots, 18 slots - 16 characters = 2 empty spaces). Like this:\n```\n|        | Ryu    | E.Honda  | Blanka  | Guile   |         |\n| Balrog | Ken    | Chun Li  | Zangief | Dhalsim | Sagat   |\n| Vega   | T.Hawk | Fei Long | Deejay  | Cammy   | M.Bison |\n```\nThe moves of the selection cursor are the same as before: rotate horizontally but stop vertically.\nWhen you find empty spaces (1 or more) you need to skip them if you approach them horizontally and get to the next selectable slot with the next fighter on the left or right; and if you approach them vertically you need to just stop and stay where you are.\n\nExample: if you are on Ryu and move left, you must get to Guile; if you are on Balrog and move up, you must stay on Balrog.\n\nNotice: I might put empty spaces *right in the middle* and the rectangular grids can be any size, not only 3x6, deal with this too.\n\n## What's new\n\nSo, let's resume what are the **new issues** in this harder version of the Kata:\n\n- The initial position might be any non-empty slot in the grid (given as input).\n- The characters grid (also given as input) might have any rectangular layout, not only 3 rows.\n- The grid might contain empty spaces, both on the borders or right in the middle.\n\n## Input\n\n~~~if-not:rust\n- Fighters grid;\n- Initial position;\n- List of moves.\n\nThe third input parameter is still the list of moves (all valid ones: left, right, up or down).\n~~~\n\n~~~if:rust\n- Fighters grid\n- Initial position as `Position`\n- List of moves as `Direction`\n\nThe `preloaded` module contains the following code:\n\n```rust\n#[derive(Debug, Copy, Clone, PartialEq)]\npub enum Direction {\n    Up,\n    Down,\n    Left,\n    Right,\n}\n\n#[derive(Debug, Copy, Clone)]\npub struct Position {\n    pub x: usize,\n    pub y: usize,\n}\n\nimpl Position {\n    pub fn new(x: usize, y: usize) -> Self {\n        Self { x, y }\n    }\n}\n```\n~~~\n\n## Output\n\nThe output is the same as before: the list of characters that have been hovered by the selection cursor after each move, successful or not.\n\nHopefully test cases will complete my explanation.\n\n",
+  "totalAttempts": 13399,
+  "totalCompleted": 2094,
+  "totalStars": 280,
+  "voteScore": 412,
+  "tags": [
+    "Arrays",
+    "Lists",
+    "Fundamentals",
+    "Graph Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

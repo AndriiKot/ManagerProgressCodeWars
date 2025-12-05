@@ -1,0 +1,40 @@
+{
+  "id": "64a2a3d22bcea0046163eba8",
+  "name": "The Most Active Students",
+  "slug": "the-most-active-students",
+  "category": "reference",
+  "publishedAt": "2023-07-03T13:26:25.054Z",
+  "approvedAt": "2023-07-31T19:46:15.099Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64a2a3d22bcea0046163eba8",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-03T10:32:50.154Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In a prestigious UK university, students take different courses each term. A student's performance in a course is evaluated by a score.\n\nAs part of a yearly review, the university's administration wants to identify the most active students in the first term in the academic year 2022, which is called the \"Michaelmas term\". They're interested not just in the students' highest scores, but primarily in the total number of unique courses a student has taken during the term.\n\nYou have access to two tables: students and courses.\n\n`students`: \n```\n| id  | name     | email               |\n|-----|----------|---------------------|\n| 1   | John     | john@example.com    |\n| 2   | Sarah    | sarah@example.com   |\n| 3   | Robert   | robert@example.com  |\n...\n```\n`courses`: \n```\n| id  | student_id | course_name | score |  course_date |\n|-----|------------|-------------|-------|--------------|\n| 1   | 1          | Math        | 90    | 2022-10-01   |\n| 2   | 1          | Science     | 85    | 2022-10-15   |\n| 3   | 1          | Physics     | 92    | 2023-01-10   | \n| 4   | 1          | Literature  | 80    | 2023-04-05   |\n...\n```\nThe students table has records of the students' id, name, and email. The courses table keeps a record of each course's id, the student_id of the student who took the course, the course name, the student's score in the course, and the date when the course was completed.\n\nThe output of the query should return the following columns:\n\n* `student_id`: The ID of the student.\n* `name`: The name of the student.\n* `num_courses`: The total count of unique courses that the student has taken during the term.\n* `highest_scored_course`:  The course name and its score where the student achieved their highest score. It should be in the format \"Course name (Score)\". In the event of a tie (same score), choose the course with the latest date. If there's still a tie, choose the course that comes first alphabetically.\n* `course_list`: A string that consists of all the courses taken by the student with their respective dates and scores, separated by commas. The list of all courses should be in the format \"Course name (Date - Score)\", ordered by course date (from earlier to later) and then course name (in ascending order) in case of ties.\n\nOrder the result first by `num_courses` in descending order, then by the highest score in descending order, and, the the case of a tie even by the number of courses and the highest score  - by `student_id` in ascending order.\n\nOnly the top 20 students based on the order criteria should be returned.\n\nGLHF!\n\n##### Notes:\n\n* Only consider courses completed between 1st October 2022 and 31st December 2022.\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>student_id</th><th>name</th><th>num_courses</th><th>highest_scored_course</th><th>course_list</th></tr><tr><td>10</td><td>Zackary Nader</td><td>7</td><td>Course 7 (90)</td><td>Course 2 (2022-12-15 - 65), Course 4 (2022-12-15 - 75)...</td></tr><tr><td>12</td><td>Gov. Reginald Boyle</td><td>7</td><td>Course 7 (90)</td><td>Course 1 (2022-12-15 - 60), Course 5 (2022-12-15 - 80), ...</td></tr><tr><td>15</td><td>Fr. Ileana Will</td><td>7</td><td>Course 7 (90)</td><td>Course 1 (2022-12-15 - 60), Course 5 (2022-12-15 - 80)...</td></tr></table>",
+  "totalAttempts": 2933,
+  "totalCompleted": 174,
+  "totalStars": 18,
+  "voteScore": 43,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

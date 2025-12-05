@@ -1,0 +1,41 @@
+{
+  "id": "64366d8cb6eeb20017fa2534",
+  "name": "Unlocking the Popularity Secrets of Children's Films: Analyzing Rentals",
+  "slug": "unlocking-the-popularity-secrets-of-childrens-films-analyzing-rentals",
+  "category": "reference",
+  "publishedAt": "2023-04-12T08:42:43.492Z",
+  "approvedAt": "2023-05-20T06:58:02.945Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64366d8cb6eeb20017fa2534",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-12T08:36:28.496Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You work for a video rental store that has a large collection of films, including a wide selection of children's films. The store wants to analyze the popularity of its children's films in order to make better decisions about which films to stock and promote. To do this, you have been tasked with analyzing rental data in the store's Postgres database.\n\nYour task is to write an SQL query that analyzes the popularity of children's films based on their rental history. The query should display a list of all children's films, along with their popularity level and rental count. The popularity level should be based on the number of `unique` customers who have rented each film, and should be divided into four categories: \"not popular\" (<= 5 rentals), \"slightly popular\" (<= 15 rentals), \"moderately popular\" (<=30 rentals), and \"very popular\" (> 30 rentals). The rental count should reflect the total number of times each film has been rented.\n\n The query should display the following columns:\n\n* film_id: The unique identifier of the film.\n* popularity: A string that shows the popularity level of the film, as described above. It should be in the format `[film_title] is [popularity according to quantity of rentals]`\n* rental_count: The total number of times the film has been rented.\n\n##### Notes:\n\n* for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests. \n\n* `children's films` meaning that they belong to `Children` category\n\n* We need to ensure that films with no rentals are to be ignored from the result set\n\n* We need to ensure that each customer is counted only once per film, even if they have rented the same film multiple times (this applies both for `popularity` and `rental_count` columns).\n\n* List should be sorted by quantaty of rentals from higher to lower and if number of rentals is the same - then by title of film alphabetically\n\nGood luck!\n\n### Schema\n\n#### `film` table:\n```\nColumn           | Type     | Modifiers\n-----------------+----------+----------\nfilm_id          | integer  | not null\ntitle            | varchar  | not null\ndescription      | text     | not null\nrating           | varchar  | not null\n```\n\n#### `film_category` table:\n```\nColumn      | Type      | Modifiers\n------------+---------- +----------\nfilm_id     | smallint  | not null\ncategory_id | smallint  | not null\n````\n#### `category` table:\n```\nColumn      | Type      | Modifiers\n------------+-----------+----------\ncategory_id | smallint  | not null\nname        | text      | not null\n```\n\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\ninventory_id | integer   | not null\nrental_date  | timestamp | not null\nreturn_date  | timestamp | \n```\n\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\nstore_id     | smallint  | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n```\nfilm_id | popularity                              | rental_count |\n--------+-----------------------------------------+---------------\n   32   | Robbers Joon is very popular            | 31           | \n   14   | Invasion Cyclone is moderately popular  | 28           |\n...\n```\n\n\n\n\n\n\n\n\n",
+  "totalAttempts": 894,
+  "totalCompleted": 180,
+  "totalStars": 8,
+  "voteScore": 41,
+  "tags": [
+    "Databases",
+    "Fundamentals",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64eddd65592aaa0058f5da7c",
+  "name": "Next Greater Or Equal Ordered Quantities for Specified Thresholds",
+  "slug": "next-greater-or-equal-ordered-quantities-for-specified-thresholds",
+  "category": "reference",
+  "publishedAt": "2023-08-29T11:59:38.464Z",
+  "approvedAt": "2023-09-20T18:32:49.652Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64eddd65592aaa0058f5da7c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-08-29T11:58:30.046Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "The sales and order processing department is interested in monitoring quantities of products that have been ordered. This is crucial for understanding customer preferences and for future procurement decisions. The department has established certain threshold quantities for various orders (in `inventory_thresholds` table). Your task is to identify the next greater or equal ordered quantity (`next_ge_quantity`) for each of these threshold values and to provide the corresponding product name (`product_name`).\n\n`product_orders`:\n\n* `order_id` (integer) - The identifier for the order.\n* `quantity` (integer) - The quantity of the product ordered.\n* `product_name` (string) - The name of the product.\n\n`inventory_thresholds`:\n\n* `order_id` (integer) - The identifier for the order, corresponding to `order_id` in `product_orders`.\n* `threshold_quantity` (integer) - The quantity threshold for which inventory levels are being monitored.\n\nThe SQL query should produce the following columns:\n\n1) `order_id` - from `inventory_thresholds`\n2) `threshold_quantity` - from `inventory_thresholds`\n3) `next_ge_quantity` - The next greater or equal quantity from `product_orders` for the corresponding `order_id`.\n4) `product_name` - The product_name corresponding to `next_ge_quantity` from `product_orders`.\n\nNotes:\n\n* The query should handle scenarios where the `next_ge_quantity` and `product_name` do not exist, and in such cases, return NULL.\n* The result should be ordered by `order_id` (ascending) from `inventory_thresholds` table and then by `threshold_quantity` from the same table also in ascending order\n*  In the `product_orders` and `inventory_thresholds` tables, it is guaranteed that the combination of `order_id` and `quantity` is unique. Duplicates are not possible.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>order_id</th><th>threshold_quantity</th><th>next_ge_quantity</th><th>product_name</th></tr><tr><td>1</td><td>11</td><td>20</td><td>val02</td></tr><tr><td>1</td><td>28</td><td>30</td><td>val03</td></tr><tr><td>2</td><td>9</td><td>10</td><td>val06</td></tr><tr><td>2</td><td>50</td><td>50</td><td>val10</td></tr><tr><td>2</td><td>51</td><td></td><td></td></tr><tr><td>4</td><td>11</td><td></td><td></td></tr><tr><td>5</td><td>1</td><td>100</td><td>val14</td></tr><tr><td>5</td><td>150</td><td>150</td><td>val15</td></tr><tr><td>5</td><td>151</td><td>1000</td><td>val16</td></tr></table>\n\n\n",
+  "totalAttempts": 318,
+  "totalCompleted": 66,
+  "totalStars": 5,
+  "voteScore": 34,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

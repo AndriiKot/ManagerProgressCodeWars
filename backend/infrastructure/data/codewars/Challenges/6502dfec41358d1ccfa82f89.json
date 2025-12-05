@@ -1,0 +1,40 @@
+{
+  "id": "6502dfec41358d1ccfa82f89",
+  "name": "Sorting Madness: part 4",
+  "slug": "sorting-madness-part-4",
+  "category": "reference",
+  "publishedAt": "2023-09-15T10:42:16.559Z",
+  "approvedAt": "2023-09-20T08:35:50.317Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6502dfec41358d1ccfa82f89",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-09-14T10:26:52.221Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "We have a table `recipe_priority` the following schema: \n\n* `id` (integer) - primary key\n* `group_id` (integer) - Identifier for grouping recipes, can have duplicate values\n* `recipe` (varchar) - Name or code representing the recipe, can have duplicate values within the same group\n* `priority` (integer) - Numerical value indicating the priority of a recipe within a group\n\nWrite an SQL query that sorts rows from this table based on the following hierarchy of importance:\n\n1) Group ID: Sort by group in ascending order.\n2) Max Priority within Group and Recipe: Sort by the highest priority associated with each recipe within each group in descending order.\n3) Recipe: Sort by recipe name in ascending alphabetical order.\n4) Priority: Sort by individual row priority in descending order.\n5) ID: Sort by id in desc order to break ties.\n\n\nSample Data: \n\n```\nid | group_id| recipe | priority |\n---+---------+--------+----------+\n1  |    1    |   B    |   500    |\n2  |    1    |   B    |   100    |\n3  |    1    |   A    |   500    |\n4  |    1    |   A    |   200    |\n5  |    2    |   C    |   300    |\n6  |    2    |   C    |   300    |\n7  |    2    |   D    |   600    |\n```\n\nAfter sorting, the rows should appear in the following order:\n\n```\nid | group_id | recipe | priority\n--------------|--------|\n3  |   1      | A      | 500  (max priority tie, but 'A' comes before 'B')\n4  |   1      | A      | 200\n1  |   1      | B      | 500  (max priority tie, but 'B' comes after 'A')\n2  |   1      | B      | 100\n7  |   2      | D      | 600\n6  |   2      | C      | 300  (id is larger)\n5  |   2      | C      | 300  (id is smaller)\n```\n\nGLHF!",
+  "totalAttempts": 601,
+  "totalCompleted": 172,
+  "totalStars": 6,
+  "voteScore": 41,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

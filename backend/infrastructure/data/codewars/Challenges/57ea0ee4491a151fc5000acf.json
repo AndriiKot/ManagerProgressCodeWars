@@ -1,0 +1,43 @@
+{
+  "id": "57ea0ee4491a151fc5000acf",
+  "name": "So Easy: Charge time calculation",
+  "slug": "so-easy-charge-time-calculation",
+  "category": "games",
+  "publishedAt": "2016-09-27T06:36:02.480Z",
+  "approvedAt": "2016-12-10T15:11:44.065Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "crystal",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/57ea0ee4491a151fc5000acf",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-09-27T06:17:09.181Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "gabbek",
+    "url": "https://www.codewars.com/users/gabbek"
+  },
+  "description": "## Task\nTo charge your mobile phone battery, do you know how much time it takes from 0% to 100%? It depends on your cell phone battery capacity and the power of the charger. A rough calculation method is:\n\n```\n0% --> 85%  (fast charge)\n(battery capacity(mAh) * 85%) / power of the charger(mA)\n\n85% --> 95% (decreasing charge)\n(battery capacity(mAh) * 10%) / (power of the charger(mA) * 50%)\n\n95% --> 100% (trickle charge)\n(battery capacity(mAh) * 5%) / (power of the charger(mA) * 20%)\n```\nFor example: Your battery capacity is 1000 mAh and you use a charger 500 mA,  to charge your mobile phone battery from 0% to 100% needs time:\n\n```\n0% --> 85%  (fast charge) 1.7 (hour)\n\n85% --> 95% (decreasing charge) 0.4 (hour)\n\n95% --> 100% (trickle charge) 0.5 (hour)\n\ntotal times = 1.7 + 0.4 + 0.5 = 2.6 (hour)\n```\n\n Complete function `calculateTime` that accepts two arguments `battery` and `charger`, return how many hours can charge the battery from 0% to 100%. The result should be a number, round to 2 decimal places (In Haskell, no need to round it).\n",
+  "totalAttempts": 5545,
+  "totalCompleted": 1079,
+  "totalStars": 16,
+  "voteScore": 172,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

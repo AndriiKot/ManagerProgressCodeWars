@@ -1,0 +1,46 @@
+{
+  "id": "5828713ed04efde70e000346",
+  "name": "Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages",
+  "slug": "coding-meetup-number-5-higher-order-functions-series-prepare-the-count-of-languages",
+  "category": "algorithms",
+  "publishedAt": "2016-11-13T13:57:21.981Z",
+  "approvedAt": "2016-11-14T11:43:13.164Z",
+  "languages": [
+    "javascript",
+    "php",
+    "python",
+    "cobol"
+  ],
+  "url": "https://www.codewars.com/kata/5828713ed04efde70e000346",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-11-13T13:57:18.600Z",
+  "createdBy": {
+    "username": "PiotrBerebecki",
+    "url": "https://www.codewars.com/users/PiotrBerebecki"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "You will be given an array of objects (associative arrays in PHP, table in COBOL, dictionaries in Python) representing data about developers who have signed up to attend the next coding meetup that you are organising.\n\nYour task is to return an **object (associative array in PHP, table in COBOL, dictionary in Python) which includes the count of each coding language represented at the meetup**.\n\nFor example, given the following input array:\n\n```javascript\nvar list1 = [\n  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },\n  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },\n  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },\n  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },\n];\n```\n\n```python\nlist1 = [\n    { 'firstName': 'Noah', 'lastName': 'M.', 'country': 'Switzerland', 'continent': 'Europe', 'age': 19, 'language': 'C' },\n    { 'firstName': 'Anna', 'lastName': 'R.', 'country': 'Liechtenstein', 'continent': 'Europe', 'age': 52, 'language': 'JavaScript' },\n    { 'firstName': 'Ramon', 'lastName': 'R.', 'country': 'Paraguay', 'continent': 'Americas', 'age': 29, 'language': 'Ruby' },\n    { 'firstName': 'George', 'lastName': 'B.', 'country': 'England', 'continent': 'Europe', 'age': 81, 'language': 'C' },\n    ]\n```\n```php\n$list1 = [\n  [\n    \"first_name\" => \"Noah\",\n    \"last_name\" => \"M.\",\n    \"country\" => \"Switzerland\",\n    \"continent\" => \"Europe\",\n    \"age\" => 19,\n    \"language\" => \"C\"\n  ],\n  [\n    \"first_name\" => \"Anna\",\n    \"last_name\" => \"R.\",\n    \"country\" => \"Liechtenstein\",\n    \"continent\" => \"Europe\",\n    \"age\" => 52,\n    \"language\" => \"JavaScript\"\n  ],\n  [\n    \"first_name\" => \"Ramon\",\n    \"last_name\" => \"R.\",\n    \"country\" => \"Paraguay\",\n    \"continent\" => \"Americas\",\n    \"age\" => 29,\n    \"language\" => \"Ruby\"\n  ],\n  [\n    \"first_name\" => \"George\",\n    \"last_name\" => \"B.\",\n    \"country\" => \"England\",\n    \"continent\" => \"Europe\",\n    \"age\" => 81,\n    \"language\" => \"C\"\n  ]\n];\n```\n```cobol\n       01  List.\n          03  ListLength      pic 9(3) value 4.\n          03  dev1.\n              05 FirstName    pic a(9)  value 'Noah'.\n              05 LastName     pic x(2)  value 'M.'.\n              05 Country      pic a(24) value 'Switzerland'.\n              05 Continent    pic a(8)  value 'Europe'.\n              05 Age          pic 9(3)  value 19.\n              05 Language     pic a(10) value 'C'.\n          03  dev2.\n              05 FirstName    pic a(9)  value 'Anna'.\n              05 LastName     pic x(2)  value 'R.'.\n              05 Country      pic a(24) value 'Liechtenstein'.\n              05 Continent    pic a(8)  value 'Europe'.\n              05 Age          pic 9(3)  value 32.\n              05 Language     pic a(10) value 'JavaScript'.\n          03  dev3.\n              05 FirstName    pic a(9)  value 'Ramon'.\n              05 LastName     pic x(2)  value 'R.'.\n              05 Country      pic a(24) value 'Paraguay'.\n              05 Continent    pic a(8)  value 'Americas'.\n              05 Age          pic 9(3)  value 99.\n              05 Language     pic a(10) value 'Ruby'.\n          03  dev4.\n              05 FirstName    pic a(9)  value 'George'.\n              05 LastName     pic x(2)  value 'B.'.\n              05 Country      pic a(24) value 'England'.\n              05 Continent    pic a(8)  value 'Europe'.\n              05 Age          pic 9(3)  value 21.\n              05 Language     pic a(10) value 'C'.\n```\n\n\nyour function should return the following object (associative array in PHP, table in COBOL):\n\n```javascript\n{ C: 2, JavaScript: 1, Ruby: 1 }\n```\n\n```python\n{ 'C': 2, 'JavaScript': 1, 'Ruby': 1 }\n```\n\n```php\n[\n  \"C\" => 2,\n  \"JavaScript\" => 1,\n  \"Ruby\" => 1\n]\n```\n```cobol\n      [['C', 2], ['JavaScript': 1], ['Ruby': 1]]\n```\n\n\nNotes:\n\n - The order of the languages in the object does not matter. \n - The count value should be a valid number.\n - The input array will always be valid and formatted as in the example above.\n<br>\n<br>\n<br>\n<br>\n<br>\n\nThis kata is part of the **Coding Meetup** series which includes a number of short and easy to follow katas which have been designed to allow mastering the use of higher-order functions. In JavaScript this includes methods like: `forEach, filter, map, reduce, some, every, find, findIndex`. Other approaches to solving the katas are of course possible.\n\nHere is the full list of the katas in the **Coding Meetup** series:\n\n<a href=\"http://www.codewars.com/kata/coding-meetup-number-1-higher-order-functions-series-count-the-number-of-javascript-developers-coming-from-europe\">Coding Meetup #1 - Higher-Order Functions Series - Count the number of JavaScript developers coming from Europe</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-2-higher-order-functions-series-greet-developers\">Coding Meetup #2 - Higher-Order Functions Series - Greet developers</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-3-higher-order-functions-series-is-ruby-coming\">Coding Meetup #3 - Higher-Order Functions Series - Is Ruby coming?</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-4-higher-order-functions-series-find-the-first-python-developer\">Coding Meetup #4 - Higher-Order Functions Series - Find the first Python developer</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-5-higher-order-functions-series-prepare-the-count-of-languages\">Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-6-higher-order-functions-series-can-they-code-in-the-same-language\">Coding Meetup #6 - Higher-Order Functions Series - Can they code in the same language?</a>\n\n<a href=\"http://www.codewars.com/kata/coding-meetup-number-7-higher-order-functions-series-find-the-most-senior-developer\">Coding Meetup #7 - Higher-Order Functions Series - Find the most senior developer</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-8-higher-order-functions-series-will-all-continents-be-represented\">Coding Meetup #8 - Higher-Order Functions Series - Will all continents be represented?</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-9-higher-order-functions-series-is-the-meetup-age-diverse\">Coding Meetup #9 - Higher-Order Functions Series - Is the meetup age-diverse?</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-10-higher-order-functions-series-create-usernames\">Coding Meetup #10 - Higher-Order Functions Series - Create usernames</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-11-higher-order-functions-series-find-the-average-age\">Coding Meetup #11 - Higher-Order Functions Series - Find the average age</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-12-higher-order-functions-series-find-github-admins\">Coding Meetup #12 - Higher-Order Functions Series - Find GitHub admins</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-13-higher-order-functions-series-is-the-meetup-language-diverse\">Coding Meetup #13 - Higher-Order Functions Series - Is the meetup language-diverse?</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-14-higher-order-functions-series-order-the-food\">Coding Meetup #14 - Higher-Order Functions Series - Order the food</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-15-higher-order-functions-series-find-the-odd-names\">Coding Meetup #15 - Higher-Order Functions Series - Find the odd names</a>\n\n<a href=\"https://www.codewars.com/kata/coding-meetup-number-16-higher-order-functions-series-ask-for-missing-details\">Coding Meetup #16 - Higher-Order Functions Series - Ask for missing details</a>",
+  "totalAttempts": 22900,
+  "totalCompleted": 8476,
+  "totalStars": 132,
+  "voteScore": 1176,
+  "tags": [
+    "Functional Programming",
+    "Data Structures",
+    "Arrays",
+    "Fundamentals",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

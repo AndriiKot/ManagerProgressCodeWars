@@ -1,0 +1,42 @@
+{
+  "id": "567b22d9ba0e6b8c2400001e",
+  "name": "Magic The Gathering #2: Mana",
+  "slug": "magic-the-gathering-number-2-mana",
+  "category": "reference",
+  "publishedAt": "2015-12-23T22:40:25.378Z",
+  "approvedAt": "2017-04-28T14:49:45.471Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/567b22d9ba0e6b8c2400001e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-23T22:40:31.717Z",
+  "createdBy": {
+    "username": "NateBrady23",
+    "url": "https://www.codewars.com/users/NateBrady23"
+  },
+  "approvedBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "description": "Magic The Gathering is a collectible card game that features wizards battling against each other with spells and creature summons. The game itself can be quite complicated to learn. In this series of katas, we'll be solving some of the situations that arise during gameplay. You won't need any prior knowledge of the game to solve these contrived problems, as I will provide you with enough information.\n\nIn Magic, each spell you cast has a cost associated with it. Those costs are represented like so:\n\n````\n\"B\" -> One black mana\n\"G\" -> One green mana\n\"R\" -> One red mana\n\"U\" -> One blue mana\n\"W\" -> One white mana\n\"1\" -> One colorless mana\n\"2\" -> Two colorless mana\n\"3BBG\" -> Three colorless mana, two black mana, one green mana\n````\n\nYour mana pool will be one string that contains all of your available mana like so:\n````\n\"10WWWRRRRR\" -> Means you have 10 colorless mana, 3 white mana and 5 red mana to work with.\n````\nThe caveat is, any left over colored mana, can be used as colorless mana. So if you have a spell that costs \"1B\" and your mana pool has \"UB\" you can cast that spell, since the \"U\" can be used as a colorless mana.\n\nWith this knowlege, write a function canCast() that takes in a string for your mana pool and then any number of spells' casting costs. Return true if you have enough mana to cast the spell, false otherwise.\n\nExamples:\n````javascript\ncanCast(\"BBRR\",\"BR\") -> true\ncanCast(\"BBRR\",\"BR\",\"BR\") -> true\ncanCast(\"4R\",\"3R\") -> true\ncanCast(\"2\", \"R\") -> false\ncanCast(\"RR\", \"2\") -> true\n````\n````coffeescript\ncanCast(\"BBRR\",\"BR\") # true\ncanCast(\"BBRR\",\"BR\",\"BR\") # true\ncanCast(\"4R\",\"3R\") # true\ncanCast(\"2\", \"R\") # false\ncanCast(\"RR\", \"2\") # true\n````\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other Magic The Gathering katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-1-creatures'><span style='color:#00C5CD'>Magic The Gathering #1:</span> Creatures</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-2-mana'><span style='color:#00C5CD'>Magic The Gathering #2:</span> Mana</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-3-spell-stack'><span style='color:#00C5CD'>Magic The Gathering #3:</span> Spell Stack</a><br />\n\n</div>\n",
+  "totalAttempts": 6568,
+  "totalCompleted": 223,
+  "totalStars": 32,
+  "voteScore": 82,
+  "tags": [
+    "Algorithms",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 2
+  }
+}

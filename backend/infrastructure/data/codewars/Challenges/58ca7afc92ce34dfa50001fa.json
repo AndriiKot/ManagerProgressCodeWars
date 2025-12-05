@@ -1,0 +1,43 @@
+{
+  "id": "58ca7afc92ce34dfa50001fa",
+  "name": "Geohashing",
+  "slug": "geohashing",
+  "category": "reference",
+  "publishedAt": "2017-03-16T15:12:31.789Z",
+  "approvedAt": "2017-09-03T15:49:20.256Z",
+  "languages": [
+    "javascript",
+    "python",
+    "csharp",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/58ca7afc92ce34dfa50001fa",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-03-16T11:46:04.294Z",
+  "createdBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "approvedBy": {
+    "username": "Axure",
+    "url": "https://www.codewars.com/users/Axure"
+  },
+  "description": "Implement [the Geohashing algorithm](https://xkcd.com/426/) proposed by xkcd.\n\n![the Geohashing algorithm](https://imgs.xkcd.com/comics/geohashing.png)\n\nSpecifically, given the the Dow opening and a date in date object (optional), return the geohashing coordinates, using the following steps (adapted from [explainxkcd](https://www.explainxkcd.com/wiki/index.php/426:_Geohashing), slightly modified):\n\n1. Take the provided date and convert it in the format `yyyy-mm-dd-` at UTC time, then append the most recent opening value for the Dow Jones Industrial Average (supplied as an argument). Dow opening provided will always be accurate to 2 decimal places, but if it has less than 2 decimal digits, pad 0s on the right (`12345 => 12345.00`). If no dates are provided, use current time instead.\n2. Pass this string through the MD5 algorithm, and output as a hexademical value.\n3. Divide the hash value into two 16 character halves, treat each half as base-16 decimal expansions (by appending `0.` in the front, and convert them back to base 10, rounded to 6 decimal places. \n4. Return the result coordinates as an array.\n\nAn example case straight out from the comic is provided:\n<pre><code>Date: 2005-05-26, Dow opening: 10458.68\nyyyy-mm-dd-dow: 2005-05-26-10458.68\nMD5: db9318c2259923d08b672cb305440f97 => db9318c2259923d0 | 8b672cb305440f97\nCoordinates (HEX): [0.db9318c2259923d0, 0.8b672cb305440f97]\nCoordinates (DEC): [0.857713, 0.544543]</code></pre>\n\nNote: You don't have to worry about the 30W Time Zone Rule.",
+  "totalAttempts": 1915,
+  "totalCompleted": 164,
+  "totalStars": 39,
+  "voteScore": 72,
+  "tags": [
+    "Algorithms",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64ae84cc9957c3003159fbe1",
+  "name": "Calculating Daily Registrations and 8-Day Running Averages",
+  "slug": "calculating-daily-registrations-and-8-day-running-averages",
+  "category": "reference",
+  "publishedAt": "2023-07-12T10:47:47.064Z",
+  "approvedAt": "2023-08-08T10:30:34.855Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64ae84cc9957c3003159fbe1",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-12T10:47:40.573Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Imagine that you are a data analyst for a fast-growing tech startup that has an online platform with users signing up daily. You have been tasked with monitoring user sign-up activity to help inform business decisions and planning.\n\nYou have access to a `users` table in a PostgreSQL database. This table is updated in real-time as new users sign up for the platform. Here's a brief overview of the relevant columns in the users table:\n\n* `id` (integer): A unique identifier for each record in the table. Each unique user registration generates a new record with a unique ID.\n* `user_name` (varchar): The username chosen by the user when they registered.\n* `registered_at` (timestamp): The date and time when the user completed the registration process.\n\nYour task is to write an SQL query that generates a report showing the daily number of user registrations and an 8-day running average of registrations, including the current day and the preceding 7 days. This report should include all dates between the earliest and latest registration date in the database, inclusive. If there were no registrations on a given date, the daily number of registrations should be reported as 0 for that date.\n\nThe result set should include the following columns:\n\n* `date` (date): The calendar date. This should include all dates from the earliest to the latest registration date in the database.\n* `sign_ups` (integer): The number of users who registered on the given date. If no users registered on a date, this should be 0.\n* `avg_signups` (numeric): The 8-day running average of sign_ups, including the current row and the 7 preceding rows (total of 8 days). If there are fewer than 8 days of data available (for example, for the first few dates in the table), the average should be calculated over the available number of days. Should be of `numeric` type, rounded to 2 decimal places for neatness\n\nFor example, if today is Monday, July 24, 2023, and you're calculating the avg_signups for this day, the average should include the sign_ups for Monday, July 24, 2023, as well as the sign_ups for each of the 7 preceding days (Sunday, July 23 back to Monday, July 17, 2023). The average will be calculated over these 8 days.\n\nIf any of these days had no registrations (for example, if there were no registrations on Wednesday, July 19, 2023), the sign_ups for that day should be treated as 0 when calculating the avg_signups\n\nThe results should be ordered by `date` in ascending order.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>date</th><th>sign_ups</th><th>avg_signups</th></tr><tr><td>2023-07-01</td><td>10</td><td>0.1e2</td></tr><tr><td>2023-07-02</td><td>20</td><td>0.15e2</td></tr><tr><td>2023-07-03</td><td>30</td><td>0.2e2</td></tr></table>\n...\n",
+  "totalAttempts": 533,
+  "totalCompleted": 100,
+  "totalStars": 8,
+  "voteScore": 36,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "5df754981f177f0032259090",
+  "name": "A floating-point system",
+  "slug": "a-floating-point-system",
+  "category": "reference",
+  "publishedAt": "2019-12-16T10:00:31.867Z",
+  "approvedAt": "2019-12-17T09:07:59.809Z",
+  "languages": [
+    "java",
+    "kotlin",
+    "shell",
+    "ruby",
+    "python",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5df754981f177f0032259090",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-12-16T09:55:36.767Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "SQSCWQ",
+    "url": "https://www.codewars.com/users/SQSCWQ"
+  },
+  "description": "A ﬂoating-point number can be represented as `mantissa * radix ^ exponent` (^ is raising radix to power exponent).\nIn this kata we will be given a positive floating-point number `aNumber` and we want to decompose it into a positive integer `mantissa` \ncomposed of a given number of digits (called `digitsNumber`) and of an `exponent`.\n#### Example: \n\n`aNumber = 0.06`\n\nIf the number of digits asked for the `mantissa` is `digitsNumber = 10`\none can write \n``` \naNumber : 6000000000 * 10 ^ -11\n``` \n\nthe exponent in this example est `-11`.\n#### Task\n\nThe function `mantExp(aNumber, digitsNumber)` will return `aNumber` in the form of a string: \"mantissaPexponent\" (concatenation of \"mantissa\", \"P\", \"exponent\"). So:\n### Examples:\n```\nmantExp(0.06, 10) returns \"6000000000P-11\".\nmantExp(72.0, 12)   returns \"720000000000P-10\"\nmantExp(1.0, 5) returns \"10000P-4\"\nmantExp(123456.0, 4) returns \"1234P2\"\n```\n#### Notes: \n- In some languages `aNumber` could be given in the form of a string:\n```\nmantExp(\"0.06\", 10) returns \"6000000000P-11\".\n```\n- 1 <= digitsNumber <= 15\n- 0 < aNumber < 5.0 ^ 128\n- Please ask before translating\n",
+  "totalAttempts": 3086,
+  "totalCompleted": 235,
+  "totalStars": 28,
+  "voteScore": 51,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "55832eda1430b01275000059",
+  "name": "Roman numerals, Zeroes and Fractions",
+  "slug": "roman-numerals-zeroes-and-fractions",
+  "category": "algorithms",
+  "publishedAt": "2015-06-18T21:29:47.790Z",
+  "approvedAt": "2017-11-10T06:19:09.540Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/55832eda1430b01275000059",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-06-18T20:49:30.789Z",
+  "createdBy": {
+    "username": "ChristianECooper",
+    "url": "https://www.codewars.com/users/ChristianECooper"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "We all know about Roman Numerals, and if not, here's a nice [introduction kata](http://www.codewars.com/kata/5580d8dc8e4ee9ffcb000050). And if you were anything like me, you 'knew' that the numerals were not used for zeroes or fractions; but not so!\n\nI learned something new today: the [Romans did use fractions](https://en.wikipedia.org/wiki/Roman_numerals#Special_values) and there was even a glyph used to indicate zero.\n\nSo in this kata, we will be implementing Roman numerals and fractions.\n\nAlthough the Romans used base 10 for their counting of units, they used base 12 for their fractions. The system used dots to represent twelfths, and an `S` to represent a half like so:\n\n* <sup>1</sup>/<sub>12</sub> = `.`\n* <sup>2</sup>/<sub>12</sub> = `:`\n* <sup>3</sup>/<sub>12</sub> = `:.`\n* <sup>4</sup>/<sub>12</sub> = `::`\n* <sup>5</sup>/<sub>12</sub> = `:.:`\n* <sup>6</sup>/<sub>12</sub> = `S`\n* <sup>7</sup>/<sub>12</sub> = `S.`\n* <sup>8</sup>/<sub>12</sub> = `S:`\n* <sup>9</sup>/<sub>12</sub> = `S:.`\n* <sup>10</sup>/<sub>12</sub> = `S::`\n* <sup>11</sup>/<sub>12</sub> = `S:.:`\n* <sup>12</sup>/<sub>12</sub> = `I` (as usual)\n\nFurther, zero was represented by `N`\n\n\n## Kata\n\nComplete the method that takes two parameters: an integer component in the range 0 to 5000 inclusive, and an optional fractional component in the range 0 to 11 inclusive.\n\nYou must return a string with the encoded value. Any input values outside the ranges given above should return `\"NaR\"` (i.e. \"Not a Roman\" :-)\n\n\n## Examples\n\n```python\nroman_fractions(-12)     #=> \"NaR\"\nroman_fractions(0, -1)   #=> \"NaR\"\nroman_fractions(0, 12)   #=> \"NaR\"\nroman_fractions(0)       #=> \"N\"\nroman_fractions(0, 3)    #=> \":.\"\nroman_fractions(1)       #=> \"I\"\nroman_fractions(1, 0)    #=> \"I\"\nroman_fractions(1, 5)    #=> \"I:.:\"\nroman_fractions(1, 9)    #=> \"IS:.\"\nroman_fractions(1632, 2) #=> \"MDCXXXII:\"\nroman_fractions(5000)    #=> \"MMMMM\"\nroman_fractions(5001)    #=> \"NaR\"\n```\n\n\n",
+  "totalAttempts": 2640,
+  "totalCompleted": 352,
+  "totalStars": 33,
+  "voteScore": 94,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

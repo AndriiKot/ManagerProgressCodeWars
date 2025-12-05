@@ -1,0 +1,40 @@
+{
+  "id": "520d623fdf58c68c6f00013e",
+  "name": "BatchItemProcessor",
+  "slug": "batchitemprocessor",
+  "category": "algorithms",
+  "publishedAt": "2013-08-16T00:48:27.378Z",
+  "approvedAt": "2014-09-14T18:04:14.538Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/520d623fdf58c68c6f00013e",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2013-08-15T23:20:31.528Z",
+  "createdBy": {
+    "username": "lunitik",
+    "url": "https://www.codewars.com/users/lunitik"
+  },
+  "approvedBy": {
+    "username": "xcthulhu",
+    "url": "https://www.codewars.com/users/xcthulhu"
+  },
+  "description": "#### The Task\nCreate a Processor class that will take in an array of items and perform an action on each item, but only if the item was not already processed.\nThe idea is that this class will be useful for processing multiple batches of items while ensuring that each item only gets processed once, even if the item is included in multiple batches. \n\n#### The processor will support the following methods: \n\n* **process_items** - will be called with an enumerable as its argument and requires a block. The block passed in is used to process the item, which will only be called if the processor determines that the item should in fact be processed. The item passed into the block will be whatever the item being processed is. So if a hash is being processed, the item will be the hash.\n* **processed_items** - returns an array of processed items. \n* **identify** - The purpose of this method is to allow different object instances that represent the same data to be treated as the same. If called, it will determine which hash key to use as the identifying value (if a hash is provided) or which method to use (if a non-hash item is provided). It accepts a symbol or string argument that determines the hash key/method name to be used to identify an item. If this method is not called then the item/hash instances will be compared to each other directly. \n* **should_process** - The purpose of this method is to configure an optional callback method that will be used to determine if an item should be processed. This optional callback would return true if the item should be processed, otherwise it will return false. When this method is used, the callback passed to it will be used in conjunction with the built-in \"has this item already been processed?\" logic. \n* **reset** - If called will reset the processed item state, allowing items to be reprocessed again. \n\n#### Examples:\n\n```ruby\nprocessor = BatchItemProcessor.new\nprocessor.process_items([1,2,3,4]) do |item|\n  # will process 1, 2, 3 and 4\nend\n\nprocessor.process_items([3,4,5,6]) do |item|\n  # will process 5 and 6\nend\n\nprocessor.reset #reset the processed items state so that we can do it all over again\n\nprocessor.process_items([{'id' => 1}, {'id' => 1, 'name' => 'example'}]) do |item|\n  # will process both items\nend\n\nprocessor.reset\nprocessor.identify('id')\nprocessor.process_items([{'id' => 1}, {'id' => 1, 'name' => 'example'}, {'id' => 2}]) do |item|\n  # will process the first and last item. \n  # the 2nd item will be skipped since identity was called and its id matches the first item.\nend\n\nprocessor.process_items([{'id' => 2}, {'id' => 3}]) do |item|\n  # will only process {'id' => 3}. \n  # item will equal the original item ({'id' => 3}), not just the id\nend\n\nprocessor.reset\n\n# now we are going to use the processor to only process items with values that are even. We do not want to process the same value twice\nprocessor.identify(:value)\nprocessor.should_process do |item|\n  item[:value] % 2 == 0\nend\n\nprocessor.process_items([{value: 2}, {value: 3}]) do |item|\n  # will only process {value: 2},\nend\n\nprocessor.process_items([{value: 2}, {value: 6}]) do |item|\n  # will only process {value: 6} since {value: 2} has already been processed\nend\n\n# here we show how the processor will behave when identify is used on non-hash items.  \nclass Example\n  attr_reader :name\n  def initialize(name)\n    @name = name\n  end\nend\n\na = Example.new('a')\nb = Example.new('b')\n\nprocessor = BatchItemProcessor.new\nprocessor.identify(:name)\nprocessor.process_items([a, b]) do |item|\n  # will process both items\n  # item will == one of the example instances, not one of the name values\nend\n\nprocessor.process_items([Example.new('a')]) do |item|\n  # will not process anything, an item with the name 'a' has already been processed\nend\n\n```",
+  "totalAttempts": 5186,
+  "totalCompleted": 262,
+  "totalStars": 53,
+  "voteScore": 38,
+  "tags": [
+    "Memoization",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "52fefe6cb0091856db00030e",
+  "name": "Mongodb ObjectID",
+  "slug": "mongodb-objectid",
+  "category": "reference",
+  "publishedAt": "2014-02-15T05:43:08.837Z",
+  "approvedAt": "2014-11-14T22:05:16.025Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/52fefe6cb0091856db00030e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-02-15T05:43:11.287Z",
+  "createdBy": {
+    "username": "user9027523",
+    "url": "https://www.codewars.com/users/user9027523"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "MongoDB is a noSQL database which uses the concept of a document, rather than a table as in SQL. Its popularity is growing.\n\nAs in any database, you can create, read, update, and delete elements. But in constrast to SQL, when you create an element, a new field `_id` is created. This field is unique and contains some information about the time the element was created, id of the process that created it, and so on. More information can be found in the [MongoDB documentation](http://docs.mongodb.org/manual/reference/object-id/) (which you have to read in order to implement this Kata).\n\nSo let us implement the following helper which will have 2 methods:\n - one which verifies that the string is a valid Mongo ID string, and\n - one which finds the timestamp from a MongoID string\n\n*Note:*\n\nIf you take a close look at a Codewars URL, you will notice each kata's id (the `XXX` in `http://www.codewars.com/dojo/katas/XXX/train/javascript`) is really similar to MongoDB's ids, which brings us to the conjecture that this is the database powering Codewars.\n\n\n## Examples\n\nThe verification method will return `true` if an element provided is a valid Mongo string and `false` otherwise:\n\n```javascript\nMongo.isValid('507f1f77bcf86cd799439011')  // true\nMongo.isValid('507f1f77bcf86cz799439011')  // false\nMongo.isValid('507f1f77bcf86cd79943901')   // false\nMongo.isValid('111111111111111111111111')  // true\nMongo.isValid(111111111111111111111111)    // false\nMongo.isValid('507f1f77bcf86cD799439011')  // false (we arbitrarily only allow lowercase letters)\n```\n```python\nMongo.is_valid('507f1f77bcf86cd799439011')  # True\nMongo.is_valid('507f1f77bcf86cz799439011')  # False\nMongo.is_valid('507f1f77bcf86cd79943901')   # False\nMongo.is_valid('111111111111111111111111')  # True\nMongo.is_valid(111111111111111111111111)    # False\nMongo.is_valid('507f1f77bcf86cD799439011')  # False (we arbitrarily only allow lowercase letters)\n```\n```ruby\nMongo.is_valid('507f1f77bcf86cd799439011')  # true\nMongo.is_valid('507f1f77bcf86cz799439011')  # false\nMongo.is_valid('507f1f77bcf86cd79943901')   # false\nMongo.is_valid('111111111111111111111111')  # true\nMongo.is_valid(111111111111111111111111)    # false\nMongo.is_valid('507f1f77bcf86cD799439011')  # false (we arbitrarily only allow lowercase letters)\n```\n\nThe timestamp method will return a date/time object from the timestamp of the Mongo string and false otherwise:\n\n```javascript\n// Mongo.getTimestamp should return a Date object\n\nMongo.getTimestamp('507f1f77bcf86cd799439011')  // Wed Oct 17 2012 21:13:27 GMT-0700 (Pacific Daylight Time)\nMongo.getTimestamp('507f1f77bcf86cz799439011')  // false\nMongo.getTimestamp('507f1f77bcf86cd79943901')   // false\nMongo.getTimestamp('111111111111111111111111')  // Sun Jan 28 1979 00:25:53 GMT-0800 (Pacific Standard Time)\nMongo.getTimestamp(111111111111111111111111)    // false\n```\n```python\n# Mongo.get_timestamp should return a datetime object\n\nMongo.get_timestamp('507f1f77bcf86cd799439011')  # Wed Oct 17 2012 21:13:27 GMT-0700 (Pacific Daylight Time)\nMongo.get_timestamp('507f1f77bcf86cz799439011')  # False\nMongo.get_timestamp('507f1f77bcf86cd79943901')   # False\nMongo.get_timestamp('111111111111111111111111')  # Sun Jan 28 1979 00:25:53 GMT-0800 (Pacific Standard Time)\nMongo.get_timestamp(111111111111111111111111)    # False\n```\n```ruby\n# Mongo.get_timestamp should return a datetime object\n\nMongo.get_timestamp('507f1f77bcf86cd799439011')  # Wed Oct 17 2012 21:13:27 GMT-0700 (Pacific Daylight Time)\nMongo.get_timestamp('507f1f77bcf86cz799439011')  # false\nMongo.get_timestamp('507f1f77bcf86cd79943901')   # false\nMongo.get_timestamp('111111111111111111111111')  # Sun Jan 28 1979 00:25:53 GMT-0800 (Pacific Standard Time)\nMongo.get_timestamp(111111111111111111111111)    # false\n```\n\nWhen you will implement this correctly, you will not only get some points, but also would be able to check creation time of all the kata here :-)",
+  "totalAttempts": 20552,
+  "totalCompleted": 1646,
+  "totalStars": 183,
+  "voteScore": 185,
+  "tags": [
+    "MongoDB",
+    "Regular Expressions",
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

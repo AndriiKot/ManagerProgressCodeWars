@@ -1,0 +1,46 @@
+{
+  "id": "590300eb378a9282ba000095",
+  "name": "Hungry Hippos",
+  "slug": "hungry-hippos",
+  "category": "reference",
+  "publishedAt": "2017-04-28T10:31:12.937Z",
+  "approvedAt": "2017-05-01T16:58:09.334Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "csharp",
+    "php",
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/590300eb378a9282ba000095",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-04-28T08:44:27.252Z",
+  "createdBy": {
+    "username": "adrian.eyre",
+    "url": "https://www.codewars.com/users/adrian.eyre"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "# Introduction\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">Hungry Hungry Hippos is a tabletop game made for 2–4 players, produced by Hasbro, under the brand of its subsidiary, Milton Bradley. The idea for the game was published in 1967 by toy inventor Fred Kroll and it was introduced in 1978. The objective of the game is for each player to collect as many marbles as possible with their 'hippo' (a toy hippo model). (Source <a href=\"https://en.wikipedia.org/wiki/Hungry_Hungry_Hippos\">Wikipedia</a>)\n</pre>\n\n<center><img src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/hippo.jpg\" alt=\"Squares\"></center>\n\n# Task\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\nYour task is to write a simple class called <font color=\"#A1A85E\">Game</font> that checks how many times a hippo has to leap into the centre of the arena to collect some food. You will be given an integer array called <font color=\"#A1A85E\">board</font> that defines where all the food can be found. You have to return an integer for the amount of leaps a hippo has to do to eat all of the food.\n</pre>\n\n# Rules\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\n1.&nbsp; The <font color=\"#A1A85E\">board</font> array contains 0’s for spaces and 1’s for food\n\n2.&nbsp; The <font color=\"#A1A85E\">board</font> is n x n in size, where n is between 5 and 50.\n\n3.&nbsp; One leap consists of food items that are either <font color=\"#A1A85E\">horizontally</font> or <font color=\"#A1A85E\">vertically</font> connected to each other. If they are not connected, then another leap is needed.\n</pre>\n\n# Returns\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\nReturn an integer for the amount of leaps needed to collect all of the food.\n</pre>\n\n# Example\n## Initialise\n```ruby\nboard = [[1,1,0,0,0],\n         [1,1,0,0,0],\n         [0,0,0,0,0],\n         [0,0,0,1,1],\n         [0,0,0,1,1]]\n\ngame = Game.new(board)\ngame.play()\n```\n```python\nboard = [[1,1,0,0,0],\n         [1,1,0,0,0],\n         [0,0,0,0,0],\n         [0,0,0,1,1],\n         [0,0,0,1,1]]\n\ngame = Game(board)\ngame.play()\n```\n```javascript\nboard = [[1,1,0,0,0],\n         [1,1,0,0,0],\n         [0,0,0,0,0],\n         [0,0,0,1,1],\n         [0,0,0,1,1]]\n\ngame = new Game(board)\ngame.play()\n```\n```csharp\nint[,] board = { { 1, 1, 0, 0, 0 },\n                 { 1, 1, 0, 0, 0 },\n                 { 0, 0, 0, 0, 0 },\n                 { 0, 0, 0, 1, 1 },\n                 { 0, 0, 0, 1, 1 } };\nGame game = new Game(board);\ngame.play();\n```\n## Result\nThere are 2 blocks of food connected horizontally or vertically so you must return 2.<br>\n<img src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/hippo.png\"><br>\nGood luck and enjoy!\n\n# Kata Series\nIf you enjoyed this, then please try one of my other Katas. Any feedback, translations and grading of beta Katas are greatly appreciated. Thank you.\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58663693b359c4a6560001d6\" target=\"_blank\">Maze Runner</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58693bbfd7da144164000d05\" target=\"_blank\">Scooby Doo Puzzle</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/7KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586a1af1c66d18ad81000134\" target=\"_blank\">Driving License</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586c0909c1923fdb89002031\" target=\"_blank\">Connect 4</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586e6d4cb98de09e3800014f\" target=\"_blank\">Vending Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/587136ba2eefcb92a9000027\" target=\"_blank\">Snakes and Ladders</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58a848258a6909dd35000003\" target=\"_blank\">Mastermind</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58b2c5de4cf8b90723000051\" target=\"_blank\">Guess Who?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58ce88427e6c3f41c2000087\" target=\"_blank\">Am I safe to drive?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58f5c63f1e26ecda7e000029\" target=\"_blank\">Mexican Wave</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58fdcc51b4f81a0b1e00003e\" target=\"_blank\">Pigs in a Pen</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/590300eb378a9282ba000095\" target=\"_blank\">Hungry Hippos</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/5904be220881cb68be00007d\" target=\"_blank\">Plenty of Fish in the Pond</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/590adadea658017d90000039\" target=\"_blank\">Fruit Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/591eab1d192fe0435e000014\" target=\"_blank\">Car Park Escape</a></span>",
+  "totalAttempts": 2458,
+  "totalCompleted": 573,
+  "totalStars": 96,
+  "voteScore": 129,
+  "tags": [
+    "Games",
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

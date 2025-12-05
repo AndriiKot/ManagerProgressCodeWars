@@ -1,0 +1,40 @@
+{
+  "id": "535e88e608035176670014b8",
+  "name": "Name That Integer",
+  "slug": "name-that-integer",
+  "category": "reference",
+  "publishedAt": "2014-04-28T20:57:48.471Z",
+  "approvedAt": "2014-11-05T06:57:46.645Z",
+  "languages": [
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/535e88e608035176670014b8",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-04-28T16:59:19.038Z",
+  "createdBy": {
+    "username": "hencethus",
+    "url": "https://www.codewars.com/users/hencethus"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "# Ruby\nWrite a method <code>detect_int</code> that returns the first positive integer for which an arbitrary number of lambdas returns true. If no arguments are passed in, then <code>detect_int</code> should return <code>1</code>.\n\nFor example:\n```ruby\nlam1 = lambda { |x| x > 9 }\nlam2 = lambda { |x| x**0.5 % 1 == 0 }\n\ndetect_int             # => 1\ndetect_int lam1        # => 10\ndetect_int lam2        # => 1\ndetect_int lam1, lam2  # => 16\n```\n```javascript\nlam1 = x => x > 9\nlam2 = x => x**0.5 % 1 == 0\n\ndetect_int()             // => 1\ndetect_int(lam1)         // => 10\ndetect_int(lam2)         // => 1\ndetect_int(lam1,lam2)    // => 16\n```\n\nThe testing rubric will ___never___ ask for a number that does not exist, like:\n\n```ruby\ndetect_int(lambda { |x| x.odd? }, lambda { |x| x.even? })      // => !??\n```\n```javascript\ndetect_int(n=>n%2==1, n=>n%2==0)      // => !??\n```\n\n```if:ruby\nNote that loops constructed using the <code>loop { block }</code> syntax are limited to 5000 iterations, but solutions will not be constrained to integers less than 5000.\n```\n\nFor examples, see the example test cases.",
+  "totalAttempts": 4335,
+  "totalCompleted": 729,
+  "totalStars": 20,
+  "voteScore": 104,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

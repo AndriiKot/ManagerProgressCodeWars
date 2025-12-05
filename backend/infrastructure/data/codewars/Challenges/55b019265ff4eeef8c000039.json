@@ -1,0 +1,47 @@
+{
+  "id": "55b019265ff4eeef8c000039",
+  "name": "Logical Disjunctions",
+  "slug": "logical-disjunctions",
+  "category": "algorithms",
+  "publishedAt": "2015-07-25T16:03:46.022Z",
+  "approvedAt": "2016-12-15T20:36:06.411Z",
+  "languages": [
+    "csharp",
+    "javascript",
+    "crystal",
+    "python",
+    "ruby",
+    "scala",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/55b019265ff4eeef8c000039",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-07-22T22:28:54.855Z",
+  "createdBy": {
+    "username": "justlemons",
+    "url": "https://www.codewars.com/users/justlemons"
+  },
+  "approvedBy": {
+    "username": "suic",
+    "url": "https://www.codewars.com/users/suic"
+  },
+  "description": "<h3>Introduction to Disjunctions</h3>\n\n<p>In logic and mathematics, a disjunction is an operation on 2 or more propositions.  A disjunction is true if and only if 1 or more of its operands is true.  In programming, we typically denote a disjunction using \"||\", but in logic we typically use \"v\".</p>\n\n<p>Example of disjunction:</p>\n\n<pre><code>p = 1 > 2 = false\nq = 2 < 3 = true\ntherefore p v q is true</code></pre>\n\n<p>In a programming language, we might write this as:</p>\n\n<pre><code>var p = 1 &gt; 2;        // false\nvar q = 2 &lt; 3;        // true\nvar result = p || q;  // true</code></pre>\n\n<p>The above example demonstrates an inclusive disjunction (meaning it includes cases where both operands are true). Disjunctions can also be exclusive. An exclusive disjunction is typically represented by \"⊻\" and is true if and only if both operands have opposite values.</p>\n\n<pre><code>p = 1 < 2 = true\nq = 2 < 3 = true\ntherefore p ⊻ q is false</code></pre>\n\n<p>This can become confusing when dealing with more than 2 operands.</p>\n\n<pre><code>r = 3 < 4 = true\np ⊻ q ⊻ r = ???</code></pre>\n\n<p>We handle these situations by evaluating the expression from left to right.</p>\n\n<pre><code>p ⊻ q = false\n(p ⊻ q) ⊻ r = true</code></pre>\n\n<h3>Directions:</h3>\n\n<p>For this kata, your task is to implement a function that performs a disjunction operation on 2 or more propositions.</p>\n\n<ul>\n  <li>Should take a boolean array as its first parameter and a single boolean as its second parameter, which, if true, should indicate that the disjunction should be exclusive as opposed to inclusive.</li>\n  <li>Should return true or false.</li>\n</ul>",
+  "totalAttempts": 1808,
+  "totalCompleted": 504,
+  "totalStars": 12,
+  "voteScore": 134,
+  "tags": [
+    "Logic",
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

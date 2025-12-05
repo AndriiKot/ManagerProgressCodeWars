@@ -1,0 +1,47 @@
+{
+  "id": "544047f0cf362503e000036e",
+  "name": "Find heavy ball - level: novice",
+  "slug": "find-heavy-ball-level-novice",
+  "category": "games",
+  "publishedAt": "2014-10-16T22:43:53.271Z",
+  "approvedAt": "2015-07-04T12:28:15.879Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "crystal",
+    "cpp",
+    "ocaml",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/544047f0cf362503e000036e",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2014-10-16T22:34:24.394Z",
+  "createdBy": {
+    "username": "tiriana",
+    "url": "https://www.codewars.com/users/tiriana"
+  },
+  "approvedBy": {
+    "username": "MMMAAANNN",
+    "url": "https://www.codewars.com/users/MMMAAANNN"
+  },
+  "description": "There are 8 balls numbered from 0 to 7. \nSeven of them have the same weight. One is heavier. Your task is to find its number.\n\nYour function ```findBall``` will receive single argument - ```scales``` object. The ```scales``` object contains an internally stored array of 8 elements (indexes 0-7), each having the same value except one, which is greater. It also has a public method named ```getWeight(left, right)``` which takes two arrays of indexes and returns -1, 0, or 1 based on the accumulation of the values found at the indexes passed are heavier, equal, or lighter.\n\n```getWeight``` returns:\n\n```-1``` if **left** pan is heavier\n\n```1``` if **right** pan is heavier\n\n```0``` if both pans weight the same\n\nExamples of ```scales.getWeight()``` usage:\n\n```scales.getWeight([3], [7])``` returns ```-1``` if ball 3 is heavier than ball 7, ```1``` if ball 7 is heavier, or ```0``` i these balls have the same weight.\n\n```scales.getWeight([3, 4], [5, 2])``` returns ```-1``` if weight of balls 3 and 4 is heavier than weight of balls 5 and 2 etc.\n\nSo where's the catch, you may ask. Well - the scales is very old. You can use it only **4 TIMES** before the scale breaks.\n\n``` if:python,ruby,crystal,c\n**Note** - Use `scales.get_weight()` in the Python, Crystal, Ruby And C versions.\n```\n``` if:ocaml\n**Note** - Use `scales#get_weight` in the OCaml version.\n```\n```if:c\n**Note** - in C you should also pass the length of the arrays to `scales.get_weight()`.\n```\n\nToo easy ? Try higher levels:\n\n* [conqueror](http://www.codewars.com/kata/54404a06cf36258b08000364)\n* [master](http://www.codewars.com/kata/544034f426bc6adda200000e)",
+  "totalAttempts": 7380,
+  "totalCompleted": 1573,
+  "totalStars": 50,
+  "voteScore": 235,
+  "tags": [
+    "Puzzles",
+    "Logic",
+    "Riddles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 4
+  }
+}

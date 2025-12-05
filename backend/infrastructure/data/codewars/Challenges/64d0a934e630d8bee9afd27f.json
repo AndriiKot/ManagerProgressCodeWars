@@ -1,0 +1,40 @@
+{
+  "id": "64d0a934e630d8bee9afd27f",
+  "name": " Extracting and Comparing Raising Bids for Products",
+  "slug": "extracting-and-comparing-raising-bids-for-products",
+  "category": "reference",
+  "publishedAt": "2023-08-07T09:49:42.447Z",
+  "approvedAt": "2023-08-08T07:13:14.565Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64d0a934e630d8bee9afd27f",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-08-07T08:20:04.287Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given a PostgreSQL table named `bids` that stores bids made on different products. It is guaranteed that each bid for product has unique timestamp and in ascending chronological order.  However, not all bids raise the price; some may be lower than (or be the same as) previous bids. The table has the following schema:\n\n* `bid_id` (integer) - Unique identifier for the bid.\n* `product_id` (integer) - Identifier for the product the bid was placed on.\n* `date` (timestamp) - The date and time the bid was made.\n* `price` (integer) - The price of the bid.\n\nYour task is to create a query that fetches all the bids that raised the price on a product, i.e., the bids where the price is strictly higher than the highest price seen so far for that product. Lower bids must be filtered out. Additionally, the result must include 2 extra columns, `bid_number` and `times_higher`.\n\nColumns in the resultant dataset:\n\n1) `product_id` (integer) - Identifier for the product the bid was placed on.\n2) `bid_number` (integer) - a sequence number that represents the number of the bid that raised the price. It starts from 1 for the first bid and increments for each bid that raises the price.\n3) `date` (text) - The date and time the bid was made.\n4) `price` (integer) - The price of the bid.\n5) `times_higher` (numeric) - For the row with the highest bid for a product, this column shows how many times the highest price is higher than the initial price (the price of the first bid made) for the product. The value should be of numeric type and rounded to 2 decimal places. This value should be NULL for all rows except the one with the highest bid for a product.\n\nResult should be ordered by `product_id` and `bid_number` - both in ascending order.\n\nGLHF!\n\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>product_id</th><th>bid_number</th><th>date</th><th>price</th><th>times_higher</th></tr><tr><td>12202</td><td>1</td><td>2023-09-08 13:41:45</td><td>120</td><td></td></tr><tr><td>12202</td><td>2</td><td>2023-09-08 13:54:11</td><td>170</td><td></td></tr><tr><td>12202</td><td>3</td><td>2023-09-08 14:05:37</td><td>210</td><td></td></tr><tr><td>12202</td><td>4</td><td>2023-09-08 14:20:00</td><td>220</td><td>0.183e1</td></tr><tr><td>17394</td><td>1</td><td>2023-09-08 13:43:32</td><td>250</td><td></td></tr><tr><td>17394</td><td>2</td><td>2023-09-08 14:40:00</td><td>350</td><td>0.14e1</td></tr></table>\n\n\n\n\n\n\n\n\n\n\n",
+  "totalAttempts": 1527,
+  "totalCompleted": 99,
+  "totalStars": 7,
+  "voteScore": 40,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

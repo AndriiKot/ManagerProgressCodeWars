@@ -1,0 +1,46 @@
+{
+  "id": "554dc2b88fbafd2e95000125",
+  "name": "[Geometry A-2]: Length of a vector",
+  "slug": "geometry-a-2-length-of-a-vector",
+  "category": "reference",
+  "publishedAt": "2015-05-09T08:33:12.727Z",
+  "approvedAt": "2015-05-14T00:15:47.325Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby",
+    "coffeescript",
+    "csharp",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/554dc2b88fbafd2e95000125",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-05-09T08:18:00.642Z",
+  "createdBy": {
+    "username": "MMMAAANNN",
+    "url": "https://www.codewars.com/users/MMMAAANNN"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "For a given 2D vector described by cartesian coordinates of its initial point and terminal point in the following format:\n\n~~~if-not:csharp\n```\n[[x1, y1], [x2, y2]]\n```\n~~~\n~~~if:csharp\n```csharp\n// Argument will be passed as a Vector2\n\npublic struct Vector2\n{\n  public Point2 Head;\n  public Point2 Tail;\n  \n  public Vector2(Point2 tail, Point2 head)\n  {\n    this.Tail = tail;\n    this.Head = head;\n  }\n  \n  public Point2 this[int i]\n  {\n    get\n    {\n      return new Point2[] {this.Tail, this.Head}[i];\n    }\n  }\n}\n\npublic struct Point2\n{\n  public double X;\n  public double Y;\n  \n  public Point2(double x, double y)\n  {\n    this.X = x;\n    this.Y = y;\n  }\n  \n  public double this[int i]\n  {\n    get\n    {\n      return new double[] {this.X, this.Y}[i];\n    }\n  }\n}\n```\n~~~\n\nYour function must return the vector's length represented as a floating point number.  \nError must be within 1e-7.\n\nCoordinates can be integers or floating point numbers.",
+  "totalAttempts": 6031,
+  "totalCompleted": 2891,
+  "totalStars": 34,
+  "voteScore": 303,
+  "tags": [
+    "Geometry",
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

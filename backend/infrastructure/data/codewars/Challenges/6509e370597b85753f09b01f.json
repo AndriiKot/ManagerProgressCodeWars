@@ -1,0 +1,40 @@
+{
+  "id": "6509e370597b85753f09b01f",
+  "name": "Parameterized SQL:  Section Access Control",
+  "slug": "parameterized-sql-section-access-control",
+  "category": "reference",
+  "publishedAt": "2023-09-20T06:35:13.707Z",
+  "approvedAt": "2023-09-23T20:20:46.537Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6509e370597b85753f09b01f",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-09-19T18:07:44.135Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Your task is to write a parameterized PostgreSQL query to fetch the accessible sections based on a given user ID. The query should only return sections to which the user has access. The result set should contain the columns `id` and `section_name` and should be ordered by `id` in ascending order.\n\n`section_access` schema:\n\n* `id` (integer) - A unique identifier for each row.\n* `section_name` (varchar) - The name of the section.\n* `user_access` (varchar) - A comma-separated string of user IDs who have access to this section.\n\nWrite a prepared SQL statement named `find_sections` that takes a user ID as a parameter (of integer type). Use `$1` as a placeholder for the user ID parameter. \n\nFor this sample data: \n\n```\n| id | section_name | user_access |\n+----+--------------+-------------+\n|  1 | editNews     | 1,13,15     |\n|  2 | deleteNews   | 2,13,14     |\n|  3 | createNews   | 1,2,3       |\n```\n\nThe expected result for `EXECUTE find_sections(1)` would be:\n\n```\n| id | section_name |\n+----+--------------+\n|  1 | editNews     |\n|  3 | createNews   |\n```\n\nGLHF!\n\n",
+  "totalAttempts": 615,
+  "totalCompleted": 190,
+  "totalStars": 10,
+  "voteScore": 43,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

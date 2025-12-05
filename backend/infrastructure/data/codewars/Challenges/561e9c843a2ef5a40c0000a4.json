@@ -1,0 +1,75 @@
+{
+  "id": "561e9c843a2ef5a40c0000a4",
+  "name": "Gap in Primes",
+  "slug": "gap-in-primes",
+  "category": "reference",
+  "publishedAt": "2015-10-14T18:18:55.101Z",
+  "approvedAt": "2015-12-06T23:43:29.580Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "csharp",
+    "java",
+    "haskell",
+    "clojure",
+    "cpp",
+    "php",
+    "crystal",
+    "c",
+    "typescript",
+    "rust",
+    "swift",
+    "go",
+    "shell",
+    "fsharp",
+    "r",
+    "ocaml",
+    "kotlin",
+    "scala",
+    "julia",
+    "powershell",
+    "nim",
+    "reason",
+    "racket",
+    "forth",
+    "fortran",
+    "dart",
+    "prolog",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "cobol",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/561e9c843a2ef5a40c0000a4",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-10-14T18:18:44.721Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "The prime numbers are not regularly spaced. For example from `2` to `3` the gap is `1`.\nFrom `3` to `5` the gap is `2`. From `7` to `11` it is `4`.\nBetween 2 and 50 we have the following pairs of 2-gaps primes:\n`3-5, 5-7, 11-13, 17-19, 29-31, 41-43`\n\nA prime gap of length n is a run of n-1 consecutive composite numbers between two **successive** primes (see: http://mathworld.wolfram.com/PrimeGaps.html).\n\nWe will write a function gap with parameters:\n\n- `g` (integer >= 2) which indicates the gap we are looking for\n\n- `m` (integer > 2) which gives the start of the search (m inclusive)\n\n- `n` (integer >= m) which gives the end of the search (n inclusive)\n\nIn the example above `gap(2, 3, 50)` will return `[3, 5] or (3, 5) or {3, 5}` which is the first pair between 3 and 50 with a 2-gap.\n\nSo this function should return the **first** pair of two prime numbers spaced with a gap of `g` between the limits `m`, `n` if these numbers exist otherwise `nil or null or None or Nothing (or ... depending on the language). \n```\nIn such a case (no pair of prime numbers with a gap of `g`)\nIn C: return [0, 0]\nIn C++, Lua, COBOL: return `{0, 0}`. \nIn F#: return `[||]`. \nIn Kotlin, Dart and Prolog: return `[]`.\nIn Pascal: return Type TGap (0, 0).\n\n```\n#### Examples:\n- \n`gap(2, 5, 7) --> [5, 7] or (5, 7) or {5, 7}`\n\n- `gap(2, 5, 5) --> nil. In C++ {0, 0}. In F# [||]. In Kotlin, Dart and Prolog return `[]`\n\n- `gap(4, 130, 200) --> [163, 167] or (163, 167) or {163, 167}`\n\n([193, 197] is also such a 4-gap primes between 130 and 200 but it's not the first pair)\n\n- `gap(6,100,110) --> nil or {0, 0} or ...` : between 100 and 110 we have `101, 103, 107, 109` but `101-107`is not a 6-gap because there is `103`in between and `103-109`is not a 6-gap because there is `107`in between.\n\n- You can see more examples of return in Sample Tests.\n\n#### Note for Go\nFor Go: nil slice is expected when there are no gap between m and n.\nExample: gap(11,30000,100000) --> nil\n\n#### Ref\nhttps://en.wikipedia.org/wiki/Prime_gap\n\n",
+  "totalAttempts": 121792,
+  "totalCompleted": 22353,
+  "totalStars": 1659,
+  "voteScore": 1952,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

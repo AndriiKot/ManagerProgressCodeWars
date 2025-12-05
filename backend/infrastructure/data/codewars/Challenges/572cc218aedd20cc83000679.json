@@ -1,0 +1,40 @@
+{
+  "id": "572cc218aedd20cc83000679",
+  "name": "Let's flat them out",
+  "slug": "lets-flat-them-out",
+  "category": "algorithms",
+  "publishedAt": "2016-05-06T16:11:16.561Z",
+  "approvedAt": "2016-07-06T18:11:30.351Z",
+  "languages": [
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/572cc218aedd20cc83000679",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-05-06T16:11:04.821Z",
+  "createdBy": {
+    "username": "Wittybit",
+    "url": "https://www.codewars.com/users/Wittybit"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "### Story\n\nSometimes we are faced with problems when we have a big nested dictionary with which it's hard to work. Now, we need to solve this problem by writing a function that will flatten a given dictionary.\n\n### Info\n\nPython dictionaries are a convenient data type to store and process configurations. They allow you to store data by keys to create nested structures. You are given a dictionary where the keys are strings and the values are strings or dictionaries. The goal is flatten the dictionary, but save the structures in the keys. The result should be a dictionary without the nested dictionaries. The keys should contain paths that contain the parent keys from the original dictionary. The keys in the path are separated by a `/`. If a value is an empty dictionary, then it should be replaced by an empty string `\"\"`.\n\n### Examples\n\n```python\n{\n    \"name\": {\n        \"first\": \"One\",\n        \"last\": \"Drone\"\n    },\n    \"job\": \"scout\",\n    \"recent\": {},\n    \"additional\": {\n        \"place\": {\n            \"zone\": \"1\",\n            \"cell\": \"2\"\n        }\n    }\n}\n```\nThe result will be:\n```python\n{\"name/first\": \"One\",           #one parent\n \"name/last\": \"Drone\",\n \"job\": \"scout\",                #root key\n \"recent\": \"\",                  #empty dict\n \"additional/place/zone\": \"1\",  #third level\n \"additional/place/cell\": \"2\"}\n```\n\n***`Input: An original dictionary as a dict.`***\n\n***`Output: The flattened dictionary as a dict.`***\n\n***`Precondition:\nKeys in a dictionary are non-empty strings.\nValues in a dictionary are strings or dicts.\nroot_dictionary != {}`***\n\n```python\nflatten({\"key\": \"value\"}) == {\"key\": \"value\"}\nflatten({\"key\": {\"deeper\": {\"more\": {\"enough\": \"value\"}}}}) == {\"key/deeper/more/enough\": \"value\"}\nflatten({\"empty\": {}}) == {\"empty\": \"\"}\n```",
+  "totalAttempts": 594,
+  "totalCompleted": 197,
+  "totalStars": 30,
+  "voteScore": 80,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

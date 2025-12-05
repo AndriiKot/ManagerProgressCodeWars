@@ -1,0 +1,42 @@
+{
+  "id": "58956f5ff780edf4a70000a2",
+  "name": "Simple Fun #86: is Information Consistent?",
+  "slug": "simple-fun-number-86-is-information-consistent",
+  "category": "games",
+  "publishedAt": "2017-02-04T06:18:27.126Z",
+  "approvedAt": "2017-03-13T05:56:45.186Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/58956f5ff780edf4a70000a2",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-02-04T06:06:28.266Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": "## Task\n Court is in session. We got a group of witnesses who have all taken an oath to tell the truth. The prosecutor is pointing at the defendants one by one and asking each witnesses a simple question - \"guilty or not?\". The witnesses are allowed to respond in one of the following three ways:\n```\nI am sure he/she is guilty.\nI am sure he/she is innocent.\nI have no idea.\n```\nThe prosecutor has a hunch that one of the witnesses might not be telling the truth so she decides to cross-check all of their testimonies and see if the information gathered is consistent, i.e. there are no two witnesses A and B and a defendant C such that A says C is guilty while B says C is innocent.\n\n## Example\n\n For\n```\nevidences =  [[ 0, 1, 0, 1], \n               [-1, 1, 0, 0], \n               [-1, 0, 0, 1]]\n               \n```\nthe output should be `true`;\n\n For\n```\nevidences =  [[ 1, 0], \n               [-1, 0], \n               [ 1, 1],\n               [ 1, 1]]  \n```\nthe output should be `false`.\n\n# Input/Output\n\n\n - `[input]` 2D integer array `evidences`\n\n    2-dimensional array of integers representing the set of testimonials. evidences[i][j] is the testimonial of the ith witness on the jth defendant. -1 means `\"innocent\"`, 0 means `\"no idea\"`, and 1 means `\"guilty\"`.\n\n    Constraints:\n\n    `2 ≤ evidences.length ≤ 5,`\n\n    `2 ≤ evidences[0].length ≤ 10.`\n\n\n - `[output]` a boolean value\n\n    `true` if the evidence is consistent, `false` otherwise.",
+  "totalAttempts": 611,
+  "totalCompleted": 284,
+  "totalStars": 5,
+  "voteScore": 115,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

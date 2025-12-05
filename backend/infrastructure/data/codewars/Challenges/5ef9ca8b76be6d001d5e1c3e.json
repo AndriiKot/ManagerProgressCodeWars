@@ -1,0 +1,62 @@
+{
+  "id": "5ef9ca8b76be6d001d5e1c3e",
+  "name": "Error correction #1 - Hamming Code",
+  "slug": "error-correction-number-1-hamming-code",
+  "category": "algorithms",
+  "publishedAt": "2020-08-06T09:41:28.331Z",
+  "approvedAt": "2020-08-27T06:56:24.072Z",
+  "languages": [
+    "javascript",
+    "python",
+    "php",
+    "typescript",
+    "java",
+    "csharp",
+    "julia",
+    "coffeescript",
+    "rust",
+    "ruby",
+    "c",
+    "cpp",
+    "kotlin",
+    "go",
+    "dart",
+    "groovy",
+    "powershell",
+    "haskell",
+    "lua",
+    "clojure",
+    "nasm",
+    "d",
+    "shell"
+  ],
+  "url": "https://www.codewars.com/kata/5ef9ca8b76be6d001d5e1c3e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-06-29T11:03:39.855Z",
+  "createdBy": {
+    "username": "zLuki",
+    "url": "https://www.codewars.com/users/zLuki"
+  },
+  "approvedBy": {
+    "username": "user9644768",
+    "url": "https://www.codewars.com/users/user9644768"
+  },
+  "description": "*Translations appreciated*\n\n## Background information\n\nThe Hamming Code is used to correct errors, so-called bit flips, in data transmissions. Later in the description follows a detailed explanation of how it works. <br>\nIn this Kata we will implement the Hamming Code with bit length 3; this has some advantages and disadvantages:\n- **[ + ]** It's simple to implement\n- **[ + ]** Compared to other versions of hamming code, we can correct more mistakes\n- **[ - ]** The size of the input triples\n\n\n## Task 1: Encode function\n\nImplement the encode function, using the following steps:\n* convert every letter of the text to its ASCII value; (ASCII value of space is 32)\n* convert ASCII values to 8-bit binary;\n* triple every bit;\n* concatenate the result;\n\nFor example:\n```c\ninput: \"hey\"\n--> 104, 101, 121                  // ASCII values\n--> 01101000, 01100101, 01111001   // binary\n--> 000111111000111000000000 000111111000000111000111 000111111111111000000111  // tripled\n--> \"000111111000111000000000000111111000000111000111000111111111111000000111\"  // concatenated\n```\n\n## Task 2: Decode function:\n\nCheck if any errors happened and correct them. Errors will be only bit flips, and not a loss of bits:\n\n- ```111``` --> ```101``` : this can and will happen\n- ```111``` --> ```11``` : this cannot happen\n\n**Note**: the length of the input string is also always divisible by 24 so that you can convert it to an ASCII value.\n\nSteps:\n\n* Split the input into groups of three characters;\n* Check if an error occurred: replace each group with the character that occurs most often, e.g. `010` --> `0`, `110` --> `1`, etc;\n* Take each group of 8 characters and convert that binary number;\n* Convert the binary values to decimal (ASCII);\n* Convert the ASCII values to characters and concatenate the result\n\nFor example:\n```c\ninput: \"100111111000111001000010000111111000000111001111000111110110111000010111\"\n--> 100, 111, 111, 000, 111, 001, ...  // triples\n-->  0,   1,   1,   0,   1,   0,  ...  // corrected bits\n--> 01101000, 01100101, 01111001       // bytes\n--> 104, 101, 121                      // ASCII values\n--> \"hey\"\n```\n\n~~~if:shell\n<br>\nIn <b>bash</b> you get two arguments, first one is \"encode\" or \"decode\" whether you should encode or decode and the second argument is the plain text or the encoded bits.  \n<br>\n~~~\n\nIf you liked this kata, please try out some of my other katas:\n<br>\n<a href=\"https://www.codewars.com/kata/5efae11e2d12df00331f91a6\" target=\"_blank\">Crack the PIN</a>\n<br>\n<a href=\"https://www.codewars.com/kata/5ef9c85dc41b4e000f9a645f\" target=\"_blank\">Decode the QR-Code</a>\n<br>\n<a href=\"https://www.codewars.com/kata/5f0795c6e45bc600247ab794\" target=\"_blank\">Hack the NSA</a>\n",
+  "totalAttempts": 12195,
+  "totalCompleted": 3682,
+  "totalStars": 304,
+  "voteScore": 634,
+  "tags": [
+    "Algorithms",
+    "Bits"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

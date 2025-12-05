@@ -1,0 +1,46 @@
+{
+  "id": "55e61967663140aafb0001d6",
+  "name": "Primes in the Last Digits of Huge Numbers",
+  "slug": "primes-in-the-last-digits-of-huge-numbers",
+  "category": "reference",
+  "publishedAt": "2015-09-01T23:12:16.602Z",
+  "approvedAt": "2018-01-25T14:00:55.690Z",
+  "languages": [
+    "python",
+    "ruby",
+    "rust",
+    "d",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/55e61967663140aafb0001d6",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-09-01T21:32:23.565Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "We have the following sequence:\n```python\nf(0) = 0\nf(1) = 1\nf(2) = 1\nf(3) = 2\nf(4) = 4;\nf(n) = f(n-1) + f(n-2) - f(n-3) + f(n-4) - f(n-5);\n```\nThe first term of the sequence that has its last nine digits forms a prime number is the value, 8480150779 (total of 10 digits), and corresponds to the 92-th term, because 480150779 is prime. We can follow this observation in the next terms of the sequence and see the behaviour.\n```python\nn-th term   k-th lastDig prime         term value   total digits   last9Digit    isPrime(last9Digit)\n   92             1                     8480150779        10        480150779         True\n\n   98             2                    35922495169        11        922495169         True\n\n  110             3                   644603021049        12        603021049         True\n\n  122             4                 11566931883761        14        931883761         True\n\n  134             5                207560170886697        15        170886697         True\n```\nCreate a function kth_lastDigPrime(), that receives the value of k as an argument and outputs, the ordinal number that corresponds to the term value and the number formed by the last nine digits.\nLet's see some cases:\n```python\nk_thlastDigPrime(1)--------> [92, 480150779]\n\nk_thlastDigPrime(2)--------> [98, 922495169]\n\nk_thlastDigPrime(5)--------> [134, 170886697]\n```\n\n(Advise: Use a fast primality test, Miller Rabin test or similar)\n\nHappy coding!\n\n\n\n",
+  "totalAttempts": 832,
+  "totalCompleted": 146,
+  "totalStars": 20,
+  "voteScore": 51,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Algorithms",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

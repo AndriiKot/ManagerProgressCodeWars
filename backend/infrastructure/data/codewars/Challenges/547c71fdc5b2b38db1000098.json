@@ -1,0 +1,43 @@
+{
+  "id": "547c71fdc5b2b38db1000098",
+  "name": "\"this\" is a problem ",
+  "slug": "this-is-a-problem",
+  "category": "reference",
+  "publishedAt": "2014-12-01T13:49:49.037Z",
+  "approvedAt": "2014-12-27T23:17:22.434Z",
+  "languages": [
+    "javascript",
+    "java",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/547c71fdc5b2b38db1000098",
+  "rank": {
+    "id": -8,
+    "name": "8 kyu",
+    "color": "white"
+  },
+  "createdAt": "2014-12-01T13:49:54.222Z",
+  "createdBy": {
+    "username": "priyankaherur",
+    "url": "https://www.codewars.com/users/priyankaherur"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "We want to create a constructor function 'NameMe', which takes first name and last name as parameters. The function combines the first and last names and saves the value in \"name\" property.\n\nWe already implemented that function, but when we actually run the code, the \"name\" property is accessible, but the \"firstName\" and \"lastName\" is not accessible. All the properties should be accessible. Can you find what's wrong with it?\nA test fixture is also available\n```javascript\nfunction NameMe(first, last) {\n    this.firstName = first;\n    this.lastName = last;\n    return {name: this.firstName + ' ' + this.lastName};\n}\n\nvar n = new NameMe('John', 'Doe');\nn.firstName //Expected: John\nn.lastName //Expected: Doe\nn.name //Expected: John Doe\n\n```\n\n```java\npublic class NameMe {\n    private String firstName;\n    private String lastName;\n    private String fullName;\n\n    public NameMe(String first, String last) {\n        this.firstName = first;\n        this.lastName = last;\n   }\n }\n\nNameMe nameMe = new NameMe(\"John\", \"Doe\");\nnameMe.getFirstName(); //Expected: John\nnameMe.getLastName(); //Expected: Doe\nnameMe.getFullName(); //Expected: John Doe\n\n\n```",
+  "totalAttempts": 39553,
+  "totalCompleted": 12791,
+  "totalStars": 134,
+  "voteScore": 665,
+  "tags": [
+    "Fundamentals",
+    "Language Features",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 1
+  }
+}

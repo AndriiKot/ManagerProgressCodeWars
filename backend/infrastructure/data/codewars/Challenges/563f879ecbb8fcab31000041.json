@@ -1,0 +1,48 @@
+{
+  "id": "563f879ecbb8fcab31000041",
+  "name": "First-Class Function Factory",
+  "slug": "first-class-function-factory",
+  "category": "reference",
+  "publishedAt": "2015-11-08T18:46:24.180Z",
+  "approvedAt": "2015-11-14T23:34:07.764Z",
+  "languages": [
+    "javascript",
+    "python",
+    "coffeescript",
+    "haskell",
+    "csharp",
+    "clojure",
+    "factor",
+    "ocaml"
+  ],
+  "url": "https://www.codewars.com/kata/563f879ecbb8fcab31000041",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-11-08T17:34:22.711Z",
+  "createdBy": {
+    "username": "otajor",
+    "url": "https://www.codewars.com/users/otajor"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "Write a function, `factory`, that takes a number as its parameter and returns another function.\n\nThe returned function should take an array of numbers as its parameter, and return an array of those numbers *multiplied by the number that was passed into the first function*.\n\nIn the example below, 5 is the number passed into the first function. So it returns a function that takes an array and multiplies all elements in it by five.\n\nTranslations and comments (and upvotes) welcome!\n\n## Example\n```javascript\nvar fives = factory(5);       // returns a function - fives\nvar myArray = [1, 2, 3];\nfives(myArray);               //returns [5, 10, 15];\n```\n```python\nfives = factory(5)          # returns a function - fives\nmy_array = [1, 2, 3]\nfives(my_array)             # returns [5, 10, 15]\n```\n```coffeescript\nfives = factory(5)          # returns a function - fives\nmyArray = [1, 2, 3]\nfives(myArray)             # returns [5, 10, 15]\n```\n```haskell\nlet fives = factory 5      -- returns a function - fives\nfives [1, 2, 3]            -- returns [5, 10, 15]\n```\n```csharp\nFunc<int[],int[]> fives = FunctionFactory.factory(5);    // returns a function - fives\nint[] myArray = new int[]{1, 2, 3};\nfives(myArray);                  //returns [5, 10, 15];\n```\n```clojure\n(let [fives (factory 5)]      ; returns a function - fives\n  (fives [1 2 3]))            ; returns [5 10 15]\n```\n```factor\n{ 1 2 3 }\n5 factory              ! returns a quotation\ncall( seq -- newseq )  ! returns { 5 10 15 }\n```\n```ocaml\nlet fives = factory 5;; (* returns a function  *)\nfives [1; 2; 3];;       (* returns [5; 10; 15] *)\n```",
+  "totalAttempts": 12685,
+  "totalCompleted": 7762,
+  "totalStars": 91,
+  "voteScore": 563,
+  "tags": [
+    "Fundamentals",
+    "Functional Programming",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

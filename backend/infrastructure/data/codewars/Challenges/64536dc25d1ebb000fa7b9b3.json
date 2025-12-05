@@ -1,0 +1,40 @@
+{
+  "id": "64536dc25d1ebb000fa7b9b3",
+  "name": "Filtering Films by Special Features in PostgreSQL: Part 2",
+  "slug": "filtering-films-by-special-features-in-postgresql-part-2",
+  "category": "reference",
+  "publishedAt": "2023-05-04T08:34:06.987Z",
+  "approvedAt": "2023-05-06T20:24:45.509Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64536dc25d1ebb000fa7b9b3",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-05-04T08:33:06.181Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Write a PostgreSQL query that selects `film_id`, the `title` and `special_features` columns from the film table in the DVD rental database, and returns only the films that have `only` \"Trailers\" and \"Deleted Scenes\" as their special features. `special_features` is the `text[]` type. It represents a one-dimensional array of values, where each value is of the text data type.\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* The result should be order by title alphabetically, if title is the same - then by film_id in asc order.\n\n### Schema:\n\n#### `film` table:\n```\nColumn            | Type      | Modifiers\n------------------+-----------+-----------\nfilm_id           | integer   | not null\ntitle             | varchar   | not null\ndescription       | text      | not null\nrelease_year      | integer   | not null\nlanguage_id       | integer   | not null \nrental_duration   | integer   | not null\nrental_rate       | numeric   | not null\nlength            | integer   | not null\nreplacement_cost  | numeric   | not null\nrating            | varchar   | not null\nlast_update       | timestamp | not null\nspecial_features  | text[]    | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n```\nfilm_id | title                             | special_features                       |\n--------+-----------------------------------+----------------------------------------|\n   32   | A Shawshank Redemption            | {Trailers, Deleted Scenes}             | \n   14   | Monty Python and the Holy Grail   | {Trailers, Deleted Scenes}             |\n...\n```",
+  "totalAttempts": 2708,
+  "totalCompleted": 552,
+  "totalStars": 10,
+  "voteScore": 82,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

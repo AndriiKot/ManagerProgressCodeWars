@@ -1,0 +1,41 @@
+{
+  "id": "5689cd3df0315aaa23000004",
+  "name": "Magic The Gathering #3: Spell Stack",
+  "slug": "magic-the-gathering-number-3-spell-stack",
+  "category": "reference",
+  "publishedAt": "2016-01-04T02:29:43.766Z",
+  "approvedAt": "2019-07-16T17:21:26.214Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5689cd3df0315aaa23000004",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-01-04T01:39:11.402Z",
+  "createdBy": {
+    "username": "NateBrady23",
+    "url": "https://www.codewars.com/users/NateBrady23"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Magic The Gathering is a collectible card game that features wizards battling against each other with spells and creature summons. The game itself can be quite complicated to learn. In this series of katas, we'll be solving some of the situations that arise during gameplay. You won't need any prior knowledge of the game to solve these contrived problems, as I will provide you with enough information.\n\nIn magic, spells utilize a stack. The last spell onto the stack, is generally the first one to be cast (LIFO - Last-In, First-Out). The spell stack was created to give players the chance to respond to a spell before it actually resolves and manifests itself in the game. Spells have 2 speeds, instant and sorcery. If a spell is of type instant, it can be cast at any time and in response to other spells. If a spell is a sorcery, it may only be cast if the stack is empty. Here are some examples:\n\n````\nThe stack is empty.\nPlayer 1 casts Lightning Bolt (instant).\nStack -> ['Lightning Bolt']\nPlayer 2 casts Giant Growth (instant).\nStack -> ['Lightning Bolt', 'Giant Growth']\nBoth players agree that they are done casting spells.\nGiant Growth resolves.\nStack -> ['Lightning Bolt']\nLightning Bolt resolves.\nStack -> []\n````\n\nCreate a method of the Magic object called spellStack() that when called without an argument returns and removes a spell from the stack in the correct order. When passed a spell object, the spell should be added to the stack and the length of the stack should be returned. Remember: A sorcery may only be cast when the stack is empty. An instant may be cast at any time. If a sorcery is being put on the stack when it's not empty, or if you're trying to cast a spell when the stack is empty, spellStack should throw an error. Spells will be passed as an object with the keys name and type:\n\n```javascript\nspellStack({'name':'Lightning Bolt', 'type':'instant'}) -> 1 // Adds lightning bolt to the stack and returns the length of the stack\nspellStack() -> {'name':'Lightning Bolt', 'type':'instant'} // Removes lightning bolt from the stack and returns it\n```\n\n```coffeescript\nspellStack({'name':'Lightning Bolt', 'type':'instant'}) # 1 (Adds lightning bolt to the stack and returns the length of the stack)\nspellStack() # {'name':'Lightning Bolt', 'type':'instant'} (Removes lightning bolt from the stack and returns it)\n```\n\n```ruby\nspellStack({'name' => 'Lightning Bolt', 'type' => 'instant'}) -> 1 # Adds lightning bolt to the stack and returns the length of the stack\nspellStack() -> {'name' => 'Lightning Bolt', 'type' => 'instant'}  # Removes lightning bolt from the stack and returns it\n```\n\nEnjoy and happy casting!\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other Magic The Gathering katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-1-creatures'><span style='color:#00C5CD'>Magic The Gathering #1:</span> Creatures</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-2-mana'><span style='color:#00C5CD'>Magic The Gathering #2:</span> Mana</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-3-spell-stack'><span style='color:#00C5CD'>Magic The Gathering #3:</span> Spell Stack</a><br />\n\n</div>\n",
+  "totalAttempts": 632,
+  "totalCompleted": 183,
+  "totalStars": 17,
+  "voteScore": 80,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

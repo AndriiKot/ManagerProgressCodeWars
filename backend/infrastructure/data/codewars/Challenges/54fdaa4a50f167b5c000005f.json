@@ -1,0 +1,42 @@
+{
+  "id": "54fdaa4a50f167b5c000005f",
+  "name": "Unexpected parsing",
+  "slug": "unexpected-parsing",
+  "category": "bug_fixes",
+  "publishedAt": "2015-03-09T14:12:26.542Z",
+  "approvedAt": "2015-11-17T16:46:53.319Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/54fdaa4a50f167b5c000005f",
+  "rank": {
+    "id": -8,
+    "name": "8 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-03-09T14:12:37.703Z",
+  "createdBy": {
+    "username": "Uraza",
+    "url": "https://www.codewars.com/users/Uraza"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Here is a piece of code:\n```javascript\nfunction getStatus(isBusy) {\n  var msg = (isBusy ? \"busy\" : \"available\");\n  return \n  {\n    status: msg\n  }\n}\n```\n\n```python\ndef get_status(is_busy):\n    status = \"busy\" if is_busy else \"available\"\n    return status\n```\n\n```ruby\ndef get_status(is_busy)\n    status = is_busy ? \"busy\" : \"available\"\n    return status\nend\n```\n\n```java\npublic class Kata {\n\n    public static HashMap <String, String> getStatus(boolean isBusy) {\n        HashMap<String, String> status;\n      \n        if (isBusy) {\n          status = \"busy\";\n        } else {\n          status = \"available\";\n        }\n\n        return status;\n    }\n}\n```\n\n\n## Expected Behaviour\nFunction should return a dictionary/Object/Hash with `\"status\"` as a key, whose value can : `\"busy\"` or `\"available\"` depending on the truth value of the argument `is_busy`.\n\nBut as you will see after clicking `RUN` or `ATTEMPT` this code has several bugs, please fix them.\n\n",
+  "totalAttempts": 39927,
+  "totalCompleted": 13914,
+  "totalStars": 133,
+  "voteScore": 1262,
+  "tags": [
+    "Debugging"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

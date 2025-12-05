@@ -1,0 +1,43 @@
+{
+  "id": "545c4f7682e55d3c6e0011a1",
+  "name": "Find heavy ball - level: ubermaster",
+  "slug": "find-heavy-ball-level-ubermaster",
+  "category": "games",
+  "publishedAt": "2014-11-07T07:23:13.357Z",
+  "approvedAt": "2015-07-04T12:54:43.218Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ocaml"
+  ],
+  "url": "https://www.codewars.com/kata/545c4f7682e55d3c6e0011a1",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-11-07T04:49:58.212Z",
+  "createdBy": {
+    "username": "bellmyer",
+    "url": "https://www.codewars.com/users/bellmyer"
+  },
+  "approvedBy": {
+    "username": "MMMAAANNN",
+    "url": "https://www.codewars.com/users/MMMAAANNN"
+  },
+  "description": "There are a **n** balls numbered from 0 to **n-1** (0,1,2,3,etc). Most of them have the same weight, but one is heavier. Your task is to find it.\n\nYour function will receive two arguments - a `scales` object, and a ball count. The `scales` object has only one method:\n\n```javascript\n    getWeight(left, right)\n```\n```python\n    get_weight(left, right)\n```\n```ocaml\n    get_weight left right\n```\n\nwhere `left` and `right` are arrays (or lists, vectors ...) of numbers of balls to put on left and right pan respectively.\n\nIf the method returns `-1` - left pan is heavier\n\nIf the method returns `1` - right pan is heavier\n\nIf the method returns `0` - both pans weigh the same\n\nSo what makes this the \"ubermaster\" version of this kata? First, it's not restricted to 8 balls as in the previous versions - your solution has to work for 8-500 balls. \n\nSecond, you can't use the scale any more than mathematically necessary. Here's a chart:\n\n    ball count | uses\n    -----------------\n             1 |    0\n           2-3 |    1\n           4-9 |    2\n         10-27 |    3\n         28-81 |    4\n        82-243 |    5\n       244-500 |    6\n\nToo hard? Try lower levels by [tiriana](http://www.codewars.com/users/tiriana):\n\n* [novice](http://www.codewars.com/kata/544047f0cf362503e000036e)\n* [conqueror](http://www.codewars.com/kata/54404a06cf36258b08000364)\n* [master](http://www.codewars.com/kata/find-heavy-ball-level-master)",
+  "totalAttempts": 18256,
+  "totalCompleted": 611,
+  "totalStars": 61,
+  "voteScore": 139,
+  "tags": [
+    "Algorithms",
+    "Logic",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 5
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64acfdf6dddc25fe18dfba71",
+  "name": " Deal Activity Analysis",
+  "slug": "deal-activity-analysis",
+  "category": "reference",
+  "publishedAt": "2023-07-11T07:46:35.200Z",
+  "approvedAt": "2023-07-28T21:28:07.837Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64acfdf6dddc25fe18dfba71",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-07-11T07:00:06.963Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst at a thriving startup that facilitates investments into high-potential business deals. Each deal is listed on your platform with a unique deal ID and deal name. Investors, each with a unique account ID, log in to peruse these deals and explore related documents to make informed investment decisions.\n\nThe startup is experiencing a high growth phase, and the management team is interested in understanding investor engagement with the platform. Specifically, they want to know which deals are actively being viewed by investors and when was the last time any investor logged in to explore a specific deal.\n\nThe schema that is needed to find this out consists of two tables:\n\n* `deals`: Contains columns `deal_id` and `deal_name`.\n* `deal_login_fact`: Contains columns `deal_id`, `account_id`, and `occurred_at`. The `occurred_at` column is a timestamp indicating when an investor logged in to view a deal.\n\nWrite a SQL query that retrieves information about deals, where deals are only included if there has been at least one login by an investor to read documents related to the deal. The query should include the following information in the result set:\n\n* `deal_id`\n* `deal_name`\n* `is_active` boolean that is true  if there has been at least one login within the last 90 days and false otherwise.\n* `last_login` string that represents the number of days and hours since the last login for each deal, in the format \"X days and Y hours ago\". Even for durations of exactly 1 day or 1 hour, it should be displayed as \"1 days\" or \"1 hours\" (we are not bothering about single form).\n\nThe results should be ordered by `deal_id` in descending order.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>deal_id</th><th>deal_name</th><th>is_active</th><th>last_login</th></tr><tr><td>33</td><td>Rustic Silk Watch</td><td>false</td><td>90 days and 0 hours ago</td></tr><tr><td>32</td><td>Lightweight Leather Gloves</td><td>true</td><td>89 days and 23 hours ago</td></tr><tr><td>30</td><td>Ergonomic Iron Shoes</td><td>true</td><td>57 days and 23 hours ago</td></tr></table>\n...\n\n\n\n\n\n",
+  "totalAttempts": 795,
+  "totalCompleted": 136,
+  "totalStars": 6,
+  "voteScore": 36,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

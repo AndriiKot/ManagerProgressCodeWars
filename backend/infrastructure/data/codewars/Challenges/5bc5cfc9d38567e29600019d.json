@@ -1,0 +1,42 @@
+{
+  "id": "5bc5cfc9d38567e29600019d",
+  "name": "Data Analysis Following Migration",
+  "slug": "data-analysis-following-migration",
+  "category": "algorithms",
+  "publishedAt": "2018-10-23T15:20:27.247Z",
+  "approvedAt": "2018-12-16T16:42:03.780Z",
+  "languages": [
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5bc5cfc9d38567e29600019d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-10-16T11:47:21.206Z",
+  "createdBy": {
+    "username": "anter69",
+    "url": "https://www.codewars.com/users/anter69"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "### Story\n\nYour company migrated the last 20 years of it's *very important data* to a new platform, in multiple phases. However, something went wrong: some of the essential time-stamps were messed up! It looks like that some servers were set to use the `dd/mm/yyyy` date format, while others were using the `mm/dd/yyyy` format during the migration. Unfortunately, the original database got corrupted in the process and there are no backups available... Now it's up to you to assess the damage.\n\n\n### Task\n\nYou will receive a list of records as strings in the form of `[start_date, end_date]` given in the ISO `yyyy-mm-dd` format, and your task is to count how many of these records are: \n* **correct**: there can be nothing wrong with the dates, the month/day cannot be mixed up, or it would not make a valid timestamp in any other way; e.g. `[\"2015-04-04\", \"2015-05-13\"]`\n* **recoverable**: invalid in its current form, but the original timestamp can be recovered, because there is only one valid combination possible; e.g. `[\"2011-10-08\", \"2011-08-14\"]`\n* **uncertain**: the original timestamp cannot be retrieved, because one or both dates are ambiguous and may generate multiple valid results, or can generate only invalid results; e.g. `[\"2002-02-07\", \"2002-12-10\"]`\n\n**Note:** the original records always defined a *non-negative* duration (i.e. `start_date ≤ end_date`)\n\nReturn your findings in an array: `[ correct_count, recoverable_count, uncertain_count ]`\n\n\n### Examples\n\n```ruby\n[\"2015-04-04\", \"2015-05-13\"]  -->  correct     # nothing (could be) wrong here\n[\"2013-06-18\", \"2013-08-05\"]  -->  correct     # end date is ambiguous, but this is\n                                               # the only possible valid version\n[\"2001-02-07\", \"2001-03-01\"]  -->  correct     # both dates are ambiguous, but this is\n                                               # the only possible valid version\n[\"2011-10-08\", \"2011-08-14\"]  -->  recoverable # start date is wrong, but can be corrected\n                                               # because there is only one valid version possible\n[\"2009-08-21\", \"2009-04-12\"]  -->  recoverable # end date is wrong, but can be corrected\n                                               # because there is only one valid version possible\n[\"1996-01-24\", \"1996-03-09\"]  -->  uncertain   # end date is ambiguous (could also be 1996-09-03)\n[\"2000-10-09\", \"2000-11-20\"]  -->  uncertain   # start date is ambiguous (could also be 2000-09-10)\n[\"2002-02-07\", \"2002-12-10\"]  -->  uncertain   # both dates are ambiguous, and there are\n                                               # multiple possible valid versions\n```\n\n---\n\n### My other katas\n\nIf you enjoyed this kata then please try [my other katas](https://www.codewars.com/users/anter69/authored)! :-)\n\n#### *Translations are welcome!*",
+  "totalAttempts": 2175,
+  "totalCompleted": 110,
+  "totalStars": 34,
+  "voteScore": 42,
+  "tags": [
+    "Date Time",
+    "Algorithms",
+    "Data Science"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "5a26073ce1ce0e3c01000023",
+  "name": "Traffic Jam",
+  "slug": "traffic-jam",
+  "category": "algorithms",
+  "publishedAt": "2018-02-06T04:21:08.478Z",
+  "approvedAt": "2018-02-07T06:21:42.023Z",
+  "languages": [
+    "java",
+    "javascript",
+    "python",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/5a26073ce1ce0e3c01000023",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-12-05T02:41:00.290Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "adrian.eyre",
+    "url": "https://www.codewars.com/users/adrian.eyre"
+  },
+  "description": "# Story\n\nWell, here I am stuck in another traffic jam.\n\n\n*<span style='color:orange'>Damn all those courteous people!</span>*\n\nCars are trying to enter the main road from side-streets somewhere ahead of me and people keep letting them cut in.\n\nEach time somebody is let in the effect ripples back down the road, so pretty soon I am not moving at all.\n\n(Sigh... late again...)\n\n<hr/>\n\n## Visually\n\nThe diagram below shows lots of cars all attempting to go North.\n* the `a`,`b`,`c`... cars are on the main road with me (`X`)\n* the `B` cars and `C` cars are merging from side streets\n\n\n<pre style='font-size:15px;line-height:15px'>\n          |  a  |   \n          |  b  | <span style='color:orange'>↑</span>  \n  --------+  c  |  \n     BBBBBB  d  |   \n  --------+  e  |  \n          |  f  | <span style='color:orange'>↑</span>\n          |  g  |   \n  --------+  h  |\n      CCCCC  i  |\n  --------+  j  | <span style='color:orange'>↑</span>\n          |  k  |\n          |  l  |\n          |  m  |\n          |  <span style='font-weight:bold;background:black;color:green'>X</span>  | \n           \n</pre>\n\nThis can be represented as\n\n* `mainRoad` = `\"abcdefghijklmX\"`\n* `sideStreets` = `[\"\",\"\",\"\",\"BBBBBB\",\"\",\"\",\"\",\"\",\"CCCCC\"]`\n\n# Kata Task\n\nAssume every car on the main road will \"give way\" to 1 car entering from each side street.\n\nReturn a string representing the cars (up to and including me) in the order they exit off the top of the diagram.\n\n## Notes\n\n* My car is the only `X`, and I am always on the main road\n* Other cars may be any alpha-numeric character (except `X` of course)\n* There are no \"gaps\" between cars\n* Assume side streets are always on the left (as in the diagram)\n* The `sideStreets` array length may vary but is never more than the length of the main road\n* A pre-loaded `Util.display(mainRoad,sideStreets)` method is provided which may help to visualise the data\n * (Util.Display for C#)\n\n## Example\nHere are the first few iterations of my example, showing that I am hardly moving at all...\n\n<table border=\"1\">\n<tr><th>Initial<th>Iter 1<th>Iter 2<th>Iter 3<th>Iter 4<th>Iter 5<th>Iter 6<th>Iter 7</tr>\n<tr>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n      a   \n      b\n      c  \n<span style='color:red'>BBBBBB</span>d   \n      e  \n      f\n      g   \n      h\n <span style='color:orange'>CCCCC</span>i\n      j\n      k\n      l\n      m\n      <span style='font-weight:bold;background:black;color:green'>X</span> \n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n      b   \n      c\n      d \n <span style='color:red'>BBBBBB</span>   \n      e  \n      f\n      g   \n      h\n <span style='color:orange'>CCCCC</span>i\n      j\n      k\n      l\n      m\n      <span style='font-weight:bold;background:black;color:green'>X</span>\n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n      c   \n      d\n      <span style='color:red'>B</span>\n <span style='color:red'>BBBBB</span>e\n      f  \n      g\n      h   \n      i\n  <span style='color:orange'>CCCCC</span>\n      j\n      k\n      l\n      m\n      <span style='font-weight:bold;background:black;color:green'>X</span>\n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n       d\n       <span style='color:red'>B</span>\n       e\n   <span style='color:red'>BBBBB</span>\n       f\n       g\n       h\n       i\n   <span style='color:orange'>CCCCC</span>\n       j\n       k\n       l\n       m\n       <span style='font-weight:bold;background:black;color:green'>X</span>\n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n     <span style='color:red'>B</span>\n     e\n     <span style='color:red'>B</span>\n <span style='color:red'>BBBB</span>f\n     g\n     h\n     i\n     <span style='color:orange'>C</span>\n <span style='color:orange'>CCCC</span>j\n     k\n     l\n     m\n     <span style='font-weight:bold;background:black;color:green'>X</span>\n    \n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n     e\n     <span style='color:red'>B</span>\n     f\n  <span style='color:red'>BBBB</span>\n     g\n     h\n     i\n     <span style='color:orange'>C</span>\n <span style='color:orange'>CCCC</span>j\n     k\n     l\n     m\n     <span style='font-weight:bold;background:black;color:green'>X</span>\n\n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n     <span style='color:red'>B</span>\n     f\n     <span style='color:red'>B</span>\n  <span style='color:red'>BBB</span>g\n     h\n     i\n     <span style='color:orange'>C</span>\n     j\n  <span style='color:orange'>CCCC</span>\n     k\n     l\n     m\n     <span style='font-weight:bold;background:black;color:green'>X</span>\n\n</pre>\n<td>\n<pre style='font-size:15px;line-height:15px'>\n     f\n     <span style='color:red'>B</span>\n     g\n   <span style='color:red'>BBB</span>\n     h\n     i\n     <span style='color:orange'>C</span>\n     j\n  <span style='color:orange'>CCCC</span>\n     k\n     l\n     m\n     <span style='font-weight:bold;background:black;color:green'>X</span>\n\n</pre>\n</table>\n\n<hr>\n\n:-) \n\nDM",
+  "totalAttempts": 3357,
+  "totalCompleted": 214,
+  "totalStars": 70,
+  "voteScore": 75,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

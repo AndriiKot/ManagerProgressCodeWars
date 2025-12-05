@@ -1,0 +1,46 @@
+{
+  "id": "57a98e8172292d977b000079",
+  "name": "LOTTO 6 aus 49 - 6 of 49",
+  "slug": "lotto-6-aus-49-6-of-49",
+  "category": "algorithms",
+  "publishedAt": "2016-08-09T09:54:03.551Z",
+  "approvedAt": "2016-08-18T12:11:21.049Z",
+  "languages": [
+    "csharp",
+    "cpp",
+    "javascript",
+    "python",
+    "ruby",
+    "java",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/57a98e8172292d977b000079",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-08-09T08:04:17.758Z",
+  "createdBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "In Germany we have \"LOTTO 6 aus 49\". That means that 6 of 49 numbers are drawn as winning combination.<br>\nThere is also a \"Superzahl\", an additional number, which can increase your winning category.\n\nIn this kata you have to write two methods.\n\n```csharp\npublic static int[] NumberGenerator()\n\npublic static int CheckForWinningCategory(int[] checkCombination, int[] winningCombination)\n```\n```java\npublic static int[] numberGenerator()\n\npublic static int checkForWinningCategory(int[] checkCombination, int[] winningCombination)\n```\n```javascript\nfunction numberGenerator()\n\nfunction checkForWinningCategory(checkCombination, winningCombination)\n```\n```coffeescript\nnumberGenerator = () -> \n\ncheckForWinningCategory = (checkCombination, winningCombination) ->\n```\n```cpp\nstd::vector<int> numberGenerator()\n\nint checkForWinningCategory(std::vector<int> checkCombination, std::vector<int> winningCombination)\n```\n```ruby\ndef number_generator\n\ndef check_for_winning_category(your_numbers, winning_numbers)\n```\n```python\ndef number_generator():\n\ndef check_for_winning_category(your_numbers, winning_numbers):\n```\n\nThe first method is for drawing the lottery numbers.<br>\nYou have to create an array with 7 random numbers. 6 from these are from 1 - 49.<br>Of course every number may only occur once.<br>And the 7th number is the \"Superzahl\". A number from 0 - 9. This number is independent from the first six numbers.<br>\nThe first 6 numbers have to be in ascending order.\n\nA result could be:<br>\n4, 9, 17, 22, 25, 35, 0<br>\nOr:<br>\n4, 18, 22, 34, 41, 44, 4\n\nThe second method should check a given number against the winning combination and have to return the winning category:<br>\n\n```\n1  - 6 numbers and Superzahl match\n2  - 6 numbers match\n3  - 5 numbers and Superzahl match\n4  - 5 numbers match\n5  - 4 numbers and Superzahl match\n6  - 4 numbers match\n7  - 3 numbers and Superzahl match\n8  - 3 numbers match\n9  - 2 numbers and Superzahl match\n-1 - if the numbers do not match any of the rules above\n```\n<br><br>\nHave fun coding it and please don't forget to vote and rank this kata! :-) <br>\n<br>\nI have created other katas. Have a look if you like coding and challenges.",
+  "totalAttempts": 4634,
+  "totalCompleted": 527,
+  "totalStars": 35,
+  "voteScore": 141,
+  "tags": [
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "5a420163b6cfd7cde5000077",
+  "name": "Ranking NBA teams",
+  "slug": "ranking-nba-teams",
+  "category": "reference",
+  "publishedAt": "2017-12-26T08:00:02.480Z",
+  "approvedAt": "2018-01-06T09:43:34.539Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "java",
+    "csharp",
+    "coffeescript",
+    "clojure",
+    "groovy",
+    "r",
+    "powershell",
+    "go",
+    "nim",
+    "php",
+    "rust",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/5a420163b6cfd7cde5000077",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-12-26T07:59:31.487Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "You are given a string with results of NBA teams (see the data in \"Sample Tests\") separated by commas e.g:\n\nr = \n`Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta Hawks 112,Indiana Pacers 103 Memphis Grizzlies 112,\n Los Angeles Clippers 100 Boston Celtics 120`.\n\nA team name is composed of one, two or more words built with letters or digits: `Atlanta Hawks`, `Philadelphia 76ers`...\n\nGiven a string of results and the name of a team (parameter : to_find) your function `nba_cup (or nbaCup or ...) ` will return as a string\n\n- the name of the team followed by `:` and\n- the number of matches won by the team\n- the number of draws\n- the number of matches lost by the team\n- the total number of points scored by the team\n- the total number of points conceded by the team\n\nand finally a kind of marks in our ranking system\n\n- a team marks `3` if it is a win\n- a team marks `1` if it is a draw\n- a team marks `0` if it is a loss.\n\nThe return format is:\n\n```\n\"Team Name:W=nb of wins;D=nb of draws;L=nb of losses;Scored=nb;Conceded=nb;Points=nb\"\n```\n\n#### Remarks:\nThe team name `\"\"` returns `\"\"`.\n\nIf a team name can't be found in the given string of results you will return `\"Team Name:This team didn't play!\"` (See examples below).\n\nThe scores must be integers. If a score is a float number (`abc.xyz...`) you will return:\n\"Error(float number):the concerned string\"\n\n\n#### Examples:\n```\nnba_cup(r, \"Los Angeles Clippers\") -> \"Los Angeles Clippers:W=1;D=0;L=1;Scored=204;Conceded=208;Points=3\"\n\nnba_cup(r, \"Boston Celtics\") -> \"Boston Celtics:W=1;D=0;L=0;Scored=120;Conceded=100;Points=3\"\n\nnba_cup(r, \"\") -> \"\"\n\nnba_cup(r, \"Boston Celt\") -> \"Boston Celt:This team didn't play!\"\n\nr0=\"New York Knicks 101.12 Atlanta Hawks 112\"\nnba_cup(r0, \"Atlanta Hawks\") -> \"Error(float number):New York Knicks 101.12 Atlanta Hawks 112\"\n```",
+  "totalAttempts": 23749,
+  "totalCompleted": 1460,
+  "totalStars": 180,
+  "voteScore": 207,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 6
+  }
+}

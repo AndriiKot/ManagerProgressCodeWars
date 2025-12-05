@@ -1,0 +1,49 @@
+{
+  "id": "54592a5052756d5c5d0009c3",
+  "name": "Head, Tail, Init and Last",
+  "slug": "head-tail-init-and-last",
+  "category": "reference",
+  "publishedAt": "2014-11-05T19:30:46.236Z",
+  "approvedAt": "2014-11-07T15:32:41.087Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "python",
+    "ruby",
+    "clojure",
+    "haskell",
+    "csharp",
+    "typescript",
+    "ocaml"
+  ],
+  "url": "https://www.codewars.com/kata/54592a5052756d5c5d0009c3",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2014-11-04T19:34:40.440Z",
+  "createdBy": {
+    "username": "user578387",
+    "url": "https://www.codewars.com/users/user578387"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Haskell has some useful functions for dealing with lists:\n\n```haskell\n$ ghci\nGHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help\nλ head [1,2,3,4,5]\n1\nλ tail [1,2,3,4,5]\n[2,3,4,5]\nλ init [1,2,3,4,5]\n[1,2,3,4]\nλ last [1,2,3,4,5]\n5\n```\n\nYour job is to implement these functions in your given language. Make sure it doesn't edit the array; that would cause problems! Here's a cheat sheet:\n\n```haskell\n| HEAD | <----------- TAIL ------------> |\n[  1,  2,  3,  4,  5,  6,  7,  8,  9,  10]\n| <----------- INIT ------------> | LAST |\n\nhead [x] = x\ntail [x] = []\ninit [x] = []\nlast [x] = x\n```\nHere's how I expect the functions to be called in your language:\n\n```coffeescript\nhead [1,2,3,4,5] => 1\ntail [1,2,3,4,5] => [2,3,4,5]\n```\n```javascript\nhead([1,2,3,4,5]); => 1\ntail([1,2,3,4,5]); => [2,3,4,5]\n```\n```typescript\nhead([1,2,3,4,5]); => 1\ntail([1,2,3,4,5]); => [2,3,4,5]\n```\n```python\nhead([1,2,3,4,5]) => 1\ntail([1,2,3,4,5]) => [2,3,4,5]\n```\n```ruby\nhead [1,2,3,4,5] => 1\ntail [1,2,3,4,5] => [2,3,4,5]\n```\n```clojure\n(head [1,2,3,4,5]) => 1\n(tail [1,2,3,4,5]) => [2,3,4,5]\n```\n```haskell\nhead [1,2,3,4,5] => 1\ntail [1,2,3,4,5] => [2,3,4,5]\n```\n```csharp\nnew List<int> {1, 2, 3, 4, 5}.Head() => 1\nnew List<int> {1, 2, 3, 4, 5}.Tail() => new List<int> {2, 3, 4, 5}\n```\n```ocaml\nhead [1; 2; 3; 4; 5] -> 1\ntail [1; 2; 3; 4; 5] -> [2; 3; 4; 5]\n```\n\n---\n\n_Most tests consist of 100 randomly generated arrays, each with four tests, one for each operation. There are 400 tests overall. No empty arrays will be given. Haskell has QuickCheck tests_\n\n```if:clojure\n__PLEASE NOTE:__ Clojure's `last` function shall be called `last_` to prevent name clashes.\n```\n```if:csharp\n__PLEASE NOTE:__ C#'s `Last` function shall be called `Last_` to prevent name clashes.\n```",
+  "totalAttempts": 61391,
+  "totalCompleted": 17885,
+  "totalStars": 97,
+  "voteScore": 997,
+  "tags": [
+    "Arrays",
+    "Lists",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 3
+  }
+}

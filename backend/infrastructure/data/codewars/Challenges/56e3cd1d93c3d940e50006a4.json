@@ -1,0 +1,70 @@
+{
+  "id": "56e3cd1d93c3d940e50006a4",
+  "name": "How Green Is My Valley?",
+  "slug": "how-green-is-my-valley",
+  "category": "reference",
+  "publishedAt": "2016-03-12T08:02:48.388Z",
+  "approvedAt": "2016-03-20T20:41:30.111Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "java",
+    "csharp",
+    "haskell",
+    "clojure",
+    "elixir",
+    "cpp",
+    "php",
+    "typescript",
+    "crystal",
+    "fsharp",
+    "c",
+    "shell",
+    "ocaml",
+    "kotlin",
+    "julia",
+    "r",
+    "go",
+    "nim",
+    "rust",
+    "racket",
+    "reason",
+    "vb",
+    "scala",
+    "pascal",
+    "perl",
+    "cobol",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-03-12T08:02:38.184Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "description": "-  Input : an array of integers.\n-  Output : this array, but sorted in such a way that there are two wings:\n -  the left wing with numbers decreasing, \n -  the right wing with numbers increasing. \n -  the two wings have the same length. If the length of the array is odd\n   the wings are around the bottom, if the length is even the bottom is\n   considered to be part of the right wing.\n\n -  each integer `l` of the left wing must be greater or equal to its counterpart `r` in the right wing, the\n   difference `l - r` being as small as possible.\n   In other words the right wing must be nearly as steep as the left wing.\n\nThe function is `make_valley or makeValley or make-valley`.\n\n```\na = [79, 35, 54, 19, 35, 25]\nmake_valley(a) --> [79, 35, 25, *19*, 35, 54]\nThe bottom is 19, left wing is [79, 35, 25], right wing is [*19*, 35, 54].\n79..................54\n    35..........35\n        25. \n          ..19\n\na = [67, 93, 100, -16, 65, 97, 92]\nmake_valley(a) --> [100, 93, 67, *-16*, 65, 92, 97]\nThe bottom is -16, left wing [100, 93, 67] and right wing [65, 92, 97] have same length.\n100.........................97\n    93..........\n               .........92\n        67......\n               .....65\n            -16     \n\na = [66, 55, 100, 68, 46, -82, 12, 72, 12, 38]\nmake_valley(a) --> [100, 68, 55, 38, 12, *-82*, 12, 46, 66, 72]\nThe bottom is -82, left wing is [100, 68, 55, 38, 12]], right wing is [*-82*, 12, 46, 66, 72].\n\na = [14,14,14,14,7,14]\nmake_valley(a) => [14, 14, 14, *7*, 14, 14]\n\na = [14,14,14,14,14]\nmake_valley(a) => [14, 14, *14*, 14, 14]\n```\n#### A counter-example:\n```\na = [17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]\nA solution could be [17, 17, 15, 14, 8, 1, 4, 4, 5, 7, 7]\nbut the right wing [4, 4, 5, 7, 7] is much flatter than the left one \n[17, 17, 15, 14, 8].\n\nSumming the differences between left and right wing:\n(17-7)+(17-7)+(15-5)+(14-4)+(8-4) = 44\n\nConsider the following solution:\n[17, 15, 8, 7, 4, 1, 4, 5, 7, 14, 17]\nSumming the differences between left and right wing:\n(17-17)+(15-14)+(8-7)+(7-5)+(4-4) = 4\nThe right wing is nearly as steep as the right one.\n```\n",
+  "totalAttempts": 22404,
+  "totalCompleted": 5686,
+  "totalStars": 259,
+  "voteScore": 670,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "5b216555a454c8eaa2000019",
+  "name": "Has the Largest Product Horizontal or Vertical Direction? Find it!!",
+  "slug": "has-the-largest-product-horizontal-or-vertical-direction-find-it",
+  "category": "reference",
+  "publishedAt": "2018-06-13T18:55:05.154Z",
+  "approvedAt": "2018-06-14T05:28:35.490Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5b216555a454c8eaa2000019",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-06-13T18:41:25.802Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "You will be given a matrix of ```m``` rows and ```n``` columns like:\n\n<a href=\"http://imgur.com/0w2EWQb\"><img src=\"http://i.imgur.com/0w2EWQb.png?2\" title=\"source: imgur.com\" /></a>\n\nThe matrix has some ```aij``` equals to ```0``` at different locations ```i, j``` and the others, all positive.\n\nYour task will be to find the maximum possible product in all the rows and in all the columns of contiguous elements (horizontally or vertically).\nThe products should be result of at least two adjacent elements in vertical or horizontal direction.\n\nLet's see an example:\n```\nmatrix = [[2, 1, 4, 1], [0, 4, 8, 1], [1, 0, 10, 0]]\n```\nThe horizontal and vertical products of contiguous elements different than ```0``` will be:\n```\nlocation        numbers         product      direction (H = horizontal, V = vertical)\nrow 1            [2, 1]            2             H\nrow 1            [1, 4]            4             H\nrow 1            [4, 1]            4             H\nrow 1          [2, 1, 4]           8             H\nrow 1         [2, 1, 4, 1]         8             H\nrow 2            [4, 8]           32             H\nrow 2            [8, 1]            8             H\nrow 2          [4, 8, 1]          32             H\ncolumn 2         [1, 4]            4             V\ncolumn 3         [4, 8]           32             V\ncolumn 3         [8, 10]          80             V\ncolumn 3       [4, 8, 10]        320             V <---- maximum product\ncolumn 4         [1, 1]            1             V\n```\nSo, the function that calculates the maximum possible product will work in the following way:\n```python\nhighest_prod([[2, 1, 4, 1], [0, 4, 8, 1], [1, 0, 10, 0]]) == 320 \n```\n\n```javascript\nhighest_prod([[2, 1, 4, 1], [0, 4, 8, 1], [1, 0, 10, 0]]) == 320 \n```\n\nIf the abundance of zeroes in the matrix is very high, the result can be zero, although the matrix may have some numbers different than zero.\n\n```python\nhighest_prod([[2, 0, 4, 0], [0, 0, 0, 0], [1, 0, 10, 0]]) == 0\n```\n```javascript\nhighestProd([[2, 0, 4, 0], [0, 0, 0, 0], [1, 0, 10, 0]]) == 0\n```\nYou will find more cases in the Example Test Cases box.\n\n\n\nEnjoy it!!",
+  "totalAttempts": 936,
+  "totalCompleted": 136,
+  "totalStars": 10,
+  "voteScore": 44,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Algebra",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

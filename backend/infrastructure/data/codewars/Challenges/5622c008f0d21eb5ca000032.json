@@ -1,0 +1,50 @@
+{
+  "id": "5622c008f0d21eb5ca000032",
+  "name": "Primitive Pythagorean Triples",
+  "slug": "primitive-pythagorean-triples",
+  "category": "reference",
+  "publishedAt": "2015-10-18T08:14:06.435Z",
+  "approvedAt": "2018-11-09T05:38:17.354Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "d",
+    "go",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5622c008f0d21eb5ca000032",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-10-17T21:39:20.951Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "Pythagoras(569-500 B.C.E.) discovered the relation ```a² + b² = c²``` for rectangle triangles,```a, b and c``` are the side values of these special triangles. A rectangle triangle has an angle of 90°. In the following animated image you can see a rectangle triangle with the side values of (a, b, c) = (3, 4, 5)\nThe pink square has an area equals to 9 (a² = 3²), the green square an area equals to 16 (b² = 4²) and the square with pink and green an area of 25 (c² = 5²)\nAdding the pink area to the green one, we obtain ```9 + 16 = 25```\n\n<a href=\"http://imgur.com/d0minUx\"><img src=\"http://i.imgur.com/d0minUx.gif\" title=\"source: imgur.com\" /></a>\n\nA Pythagorean Triple ```(a, b, c)``` is such that ```a ≤ b < c```, the three are integers, and ```a² + b² = c²```.\n\nA Primitive Pythagorean Triple has another additional property: a, b and c are co-primes.  Two numbers are co-primes when the Greatest Common Divisor of every pair of the triple is 1. So ```G.C.D.(a, b) = 1```, ```G.C.D.(b, c) = 1``` and  ```G.C.D.(a, c) = 1```\n\nJust to visualize the primitives triples, we may see them, each one represented like a rectangle triangle displayed in a 2D arrengement done by Adam Cunningham and John Ringland (March 2012):\n\n<a href=\"http://imgur.com/1E5w7g3\"><img src=\"http://i.imgur.com/1E5w7g3.jpg?1\" title=\"source: imgur.com\" /></a>\n\nThe perimeter for a pythagorean triple is: ```per = a + b + c```\n\nThe first 16 primitive pythagorean triples with their corresponding perimeter beside, having c below or equal 100 ```(c ≤ 100)``` are:\n```python\n (3, 4, 5),   12\t    (5, 12, 13),  30\t      (8, 15, 17),  40\t    (7, 24, 25),  56\n(20, 21, 29), 70\t    (12, 35, 37), 84\t      (9, 40, 41),  90\t    (28, 45, 53), 126\n(11, 60, 61), 132\t   (16, 63, 65), 144\t     (33, 56, 65), 154  \t (48, 55, 73), 176\n(13, 84, 85), 182 \t  (36, 77, 85), 198         (39, 80, 89), 208   \t(65, 72, 97), 234\n```\nThe primitive triple that has the maximum perimeter, with c ≤ 100 is ```(65, 72, 97)``` with a perimeter equals to ```234```\n\nYour task is to make a function that receives an argument returns the triple with the maximum perimeter having the side ```c``` below or equal its argument.\n\n~~~if:ruby,python\nThe function will output a list of dictionaries as follows:\n\n```[{\"number triplets below-eq c_max\": amount_triplets}, {\"max perimeter\": max_per}, {\"largest triplet\": (am, bm, cm)}]```\n\nLet's see some cases:\n```\n\nfind_max_triple(50) == [{'number triples below-eq 50': 7}, {'max perimeter': 90}, {'largest triplet': [(9, 40, 41)]}]\n\nfind_max_triple(100) == [{'number triples below-eq 100': 16}, {'max perimeter': 234}, {'largest triplet': [(65, 72, 97)]}]\n\nfind_max_triple(150) = [{'number triples below-eq 150': 24}, {'max perimeter': 340}, {'largest triplet': [(51, 140, 149)]}]\n```\n~~~\n~~~if:javascript\nThe function will output a 2D array, see examples bellow\n\n```javascript\nfindMaxTriple(50) ==[['number triples below-eq 50',7],['max perimeter', 90], ['largest triple', [[9, 40, 41]]]];\n\nfindMaxTriple(100) == [['number triples below-eq 100', 16], ['max perimeter', 234], ['largest triple', [[65, 72, 97]]]];\n\nfindMaxTriple(150) == [['number triples below-eq 150', 24], ['max perimeter', 340], ['largest triple', [[51, 140, 149]]]];\n``` \n~~~\n~~~if-not:javascript,python, ruby\nThe function will output a tuple / array (depending on the language; refer to solution set up for the exact format) of 3 elements in order: the number of triples below the argument, the maximum perimeter of those triples, and an array / tuple with the largest triple.\n\n### Examples (input --> output)\n50 --> (7, 90, (9, 40, 41))\n\n100 --> (16, 234, (65, 72, 97))\n\n150 --> (24, 340, (51, 140, 149))\n~~~\n\nHint, see at: https://en.wikipedia.org/wiki/Formulas_for_generating_Pythagorean_triples\n\nYour code will be tested for values of c_max up to `10000`.\n\n(Memoizations is advisable)\n",
+  "totalAttempts": 1262,
+  "totalCompleted": 155,
+  "totalStars": 44,
+  "voteScore": 44,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Algorithms",
+    "Data Structures",
+    "Algebra",
+    "Geometry",
+    "Memoization"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 6,
+    "suggestions": 1
+  }
+}

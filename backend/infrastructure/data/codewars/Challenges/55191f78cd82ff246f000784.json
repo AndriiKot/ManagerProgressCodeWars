@@ -1,0 +1,43 @@
+{
+  "id": "55191f78cd82ff246f000784",
+  "name": "Wheel of Fortune",
+  "slug": "wheel-of-fortune",
+  "category": "algorithms",
+  "publishedAt": "2015-03-30T12:14:27.262Z",
+  "approvedAt": "2016-05-01T19:57:11.480Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/55191f78cd82ff246f000784",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-03-30T10:03:37.009Z",
+  "createdBy": {
+    "username": "Uraza",
+    "url": "https://www.codewars.com/users/Uraza"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "Three candidates take part in a TV show.\n\nIn order to decide who will take part in the final game and probably become rich, they have to roll the Wheel of Fortune!\n\nThe Wheel of Fortune is divided into 20 sections, each with a number from 5 to 100 (only mulitples of 5).\n\nEach candidate can roll the wheel once or twice and sum up the score of each roll.\nThe winner one that is closest to 100 (while still being lower or equal to 100). \nIn case of a tie, the candidate that rolled the wheel first wins.\n\nYou receive the information about each candidate as an array of objects: each object should have a `name` and a `scores` array with the candidate roll values.\n\nYour solution should return the name of the winner or `false` if there is no winner (all scored more than 100).\n\n__Example:__\n\n```javascript\nvar c1 = { name: \"Bob\", scores: [10, 65] };\nvar c2 = { name: \"Bill\", scores: [90, 5] };\nvar c3 = { name: \"Charlie\", scores: [40, 55] };\nwinner([c1, c2, c3]); // Returns \"Bill\"\n```\n```python\nc1 = {\"name\": \"Bob\", \"scores\": [10, 65]}\nc2 = {\"name\": \"Bill\", \"scores\": [90, 5]}\nc3 = {\"name\": \"Charlie\", \"scores\": [40, 55]}\nwinner([c1, c2, c3]) #Returns \"Bill\"\n```\n```ruby\nc1 = {\"name\"=>\"Bob\", \"scores\"=>[10, 65]}\nc2 = {\"name\"=>\"Bill\", \"scores\"=>[90, 5]}\nc3 = {\"name\"=>\"Charlie\", \"scores\"=>[40, 55]}\nwinner([c1, c2, c3]) #Returns \"Bill\"\n```\n\nPlease note that inputs may be invalid: in this case, the function should return false.\n\nPotential errors derived from the specifications are:\n- More or less than three candidates take part in the game.\n- A candidate did not roll the wheel or rolled it more than twice.\n- Scores are not valid.\n- Invalid user entry (no name or no score).\n",
+  "totalAttempts": 16200,
+  "totalCompleted": 811,
+  "totalStars": 44,
+  "voteScore": 99,
+  "tags": [
+    "Games",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

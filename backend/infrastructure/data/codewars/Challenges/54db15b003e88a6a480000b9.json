@@ -1,0 +1,76 @@
+{
+  "id": "54db15b003e88a6a480000b9",
+  "name": "Moduli number system",
+  "slug": "moduli-number-system",
+  "category": "reference",
+  "publishedAt": "2015-02-11T08:41:57.699Z",
+  "approvedAt": "2015-06-05T19:26:17.559Z",
+  "languages": [
+    "java",
+    "csharp",
+    "ruby",
+    "python",
+    "clojure",
+    "javascript",
+    "haskell",
+    "coffeescript",
+    "cpp",
+    "php",
+    "crystal",
+    "c",
+    "typescript",
+    "rust",
+    "swift",
+    "r",
+    "shell",
+    "ocaml",
+    "fsharp",
+    "julia",
+    "scala",
+    "go",
+    "nim",
+    "racket",
+    "reason",
+    "kotlin",
+    "groovy",
+    "prolog",
+    "haxe",
+    "dart",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d",
+    "cobol",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/54db15b003e88a6a480000b9",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-02-11T08:41:21.458Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "A number system with moduli is deﬁned by a vector of k moduli, `[m1,m2, ···,mk]`. \n  \nThe moduli must be `pairwise co-prime`, which means that, for any pair of moduli, the only common factor is `1`. \n\nIn such a system each number `n` is represented by a string `\"-x1--x2-- ... --xk-\"` of its residues, one for each modulus. \nThe product `m1 * ... * mk` must be greater than the given number `n` which is to be converted in the moduli number system.\n \nFor example, if we use the system `[2, 3, 5]` the number `n = 11` is represented by `\"-1--2--1-\"`,  \nthe number `n = 23` by `\"-1--2--3-\"`. \n\nIf we use the system `[8, 7, 5, 3]` the number `n = 187` becomes\n`\"-3--5--2--1-\"`.\n \nYou will be given a number `n (n >= 0)` and a system `S = [m1,m2, ···,mk]` and you will return a string\n`\"-x1--x2-- ...--xk-\"` representing the number `n` in the system `S`.\n \nIf the moduli are not `pairwise co-prime` or if the product `m1 * ... * mk` is not greater than `n`, return `\"Not applicable\"`.\n\n#### Examples: \n(you can add them in the \"Sample tests\")\n\n```\nfromNb2Str(11, [2,3,5]) -> \"-1--2--1-\"\nfromNb2Str(6, [2, 3, 4]) -> \"Not applicable\", since 2 and 4 are not coprime\nfromNb2Str(7, [2, 3]) -> \"Not applicable\" since 2 * 3 < 7\n```\n",
+  "totalAttempts": 13220,
+  "totalCompleted": 2144,
+  "totalStars": 106,
+  "voteScore": 293,
+  "tags": [
+    "Fundamentals",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

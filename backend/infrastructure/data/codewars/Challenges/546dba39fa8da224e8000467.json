@@ -1,0 +1,49 @@
+{
+  "id": "546dba39fa8da224e8000467",
+  "name": "Run-length encoding",
+  "slug": "run-length-encoding",
+  "category": "algorithms",
+  "publishedAt": "2014-11-20T10:22:48.045Z",
+  "approvedAt": "2014-11-24T19:03:53.076Z",
+  "languages": [
+    "haskell",
+    "javascript",
+    "coffeescript",
+    "python",
+    "ruby",
+    "c",
+    "cobol",
+    "rust",
+    "julia",
+    "elixir"
+  ],
+  "url": "https://www.codewars.com/kata/546dba39fa8da224e8000467",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-11-20T09:54:01.130Z",
+  "createdBy": {
+    "username": "bkaes",
+    "url": "https://www.codewars.com/users/bkaes"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "> [Run-length encoding](https://en.wikipedia.org/w/index.php?title=Run-length_encoding) (RLE) is a very simple form of data compression in which runs of data (that is, sequences in which the same data value occurs in many consecutive data elements) are stored as a single data value and count, rather than as the original run. <cite>Wikipedia</cite>\n\n## Task\n\nYour task is to write such a run-length encoding. For a given string, return a list (or array) of pairs (or arrays) \n[\n (i<sub>1</sub>, s<sub>1</sub>),\n (i<sub>2</sub>, s<sub>2</sub>),\n …,\n (i<sub>n</sub>, s<sub>n</sub>)\n], such that one can reconstruct the original string by replicating the character s<sub>x</sub> i<sub>x</sub> times and concatening all those strings. Your run-length encoding should be minimal, ie. for all i the values s<sub>i</sub> and s<sub>i+1</sub> should differ.\n\n## Examples\n\nAs the article states, RLE is a _very_ simple form of data compression. It's only suitable for runs of data, as one can see in the following example:\n\n```haskell\nrunLengthEncoding \"hello world!\" \n        `shouldBe` [(1,'h'), (1,'e'), (2,'l'), (1,'o'), (1,' '), (1,'w'),(1,'o'), (1,'r'), (1,'l'), (1,'d'), (1,'!')]\n```\n```coffeescript\nrunLengthEncoding \"hello world!\"\n # =>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]\n```\n```javascript\nrunLengthEncoding(\"hello world!\")\n //=>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]\n```\n```python\nrun_length_encoding(\"hello world!\")\n //=>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]\n```\n```ruby\nrle(\"hello world!\")\n # => [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]\n```\n```elixir\nrun_length_encoding(\"hello world!\")\n# => [[1,\"h\"], [1,\"e\"], [2,\"l\"], [1,\"o\"], [1,\" \"], [1,\"w\"], [1,\"o\"], [1,\"r\"], [1,\"l\"], [1,\"d\"], [1,\"!\"]]\n```\n\nIt's very effective if the same data value occurs in many consecutive data elements:\n```haskell\nrunLengthEncoding \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\" \n        `shouldBe` [(34,'a'), (3,'b')]\n```\n```coffeescript\nrunLengthEncoding \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\" \n #  => [[34,'a'], [3,'b']]\n```\n```javascript\nrunLengthEncoding(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\")\n // => [[34,'a'], [3,'b']]\n```\n```python\nrun_length_encoding(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\")\n# => [[34,'a'], [3,'b']]\n```\n```ruby\nrle(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\")\n# => [[34,'a'], [3,'b']]\n```\n```elixir\nrun_length_encoding(\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb\")\n# => [[34,\"a\"], [3,\"b\"]]\n```",
+  "totalAttempts": 22510,
+  "totalCompleted": 9990,
+  "totalStars": 116,
+  "voteScore": 600,
+  "tags": [
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 3
+  }
+}

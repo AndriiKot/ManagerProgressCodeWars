@@ -1,0 +1,46 @@
+{
+  "id": "572a0fd8984419070e000491",
+  "name": "Pandigital Powers",
+  "slug": "pandigital-powers",
+  "category": "reference",
+  "publishedAt": "2016-05-05T07:40:27.392Z",
+  "approvedAt": "2017-09-18T23:38:40.389Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/572a0fd8984419070e000491",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-05-04T15:06:00.714Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "A **pandigital number** is one that has its digits from ```1``` to ```9``` occuring only once (they do not have the digit 0).\r\n\r\nThe number ```169```, is the first pandigital square, higher than ```100```, having its square root, ```13```, pandigital too.\r\n\r\nThe number ```1728``` is the first pandigital cubic, higher than ```1000```, having its cubic root, ```12```, pandigital too.\r\n\r\nMake the function ```pow_root_pandigit()```, that receives three arguments:\r\n\r\n- a minimum number, ```val```\r\n\r\n- the exponent of the n-perfect powers to search, ```n```\r\n\r\n- ```k```, maximum amount of terms that we want in the output\r\n\r\nThe function should output a 2D-array with an amount of k pairs of numbers(or an array of an only pair if we have this case). Each pair has a nth-perfect power pandigital higher than val with its respective nth-root that is pandigital, too.\r\n\r\nThe function should work in this way:\r\n```python\r\npow_root_pandigit(val, n, k) = [[root1, pow1], [root2, pow2], ...., [rootk, powk]]\r\n\"\"\"\r\nroot1 < root2 <.....< rootk\r\nval < pow1 < pow2 < ....< powk\r\nroot1 ^ n = pow1 // root2 ^ n = pow2 //........// rootk ^ n = powk\r\nall pairs rooti, powi are pandigitals\r\n\"\"\"\r\n```\r\nLet's see some examples:\r\n```python\r\npow_root_pandigit(388, 2, 3)== [[23, 529], [24, 576], [25, 625]] # 3 pairs (k = 3)\r\n```\r\nFor a different power:\r\n```python\r\npow_root_pandigit(1750, 3, 5) == [[13, 2197], [17, 4913], [18, 5832], [19, 6859], [21, 9261]] # 5 pairs (k = 5)\r\n```\r\n\r\nThe output in not inclusive for val.\r\n```python\r\npow_root_pandigit(1728, 3, 4) == [[13, 2197], [17, 4913], [18, 5832], [19, 6859]]\r\n# ∛1728 = 12\r\n```\r\n\r\nThe result may have less terms than the required:\r\n```python\r\npow_root_pandigit(600000000, 2, 5) == [25941, 672935481] # If the result has an only one pair, the output is an array\r\n```\r\nFurthermore, if the minimum value, ```val``` is high enough, the result may be an empty list:\r\n```python\r\npow_root_pandigit(900000000, 2, 5) == []\r\n```\r\n\r\nYou may suposse that the input ```val```, ```n``` will be always:  ```val > 10``` and ```n > 2```.\r\n\r\nEnjoy it!!\r\n\r\n",
+  "totalAttempts": 938,
+  "totalCompleted": 151,
+  "totalStars": 18,
+  "voteScore": 53,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

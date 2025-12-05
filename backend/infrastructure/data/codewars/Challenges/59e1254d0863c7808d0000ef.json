@@ -1,0 +1,42 @@
+{
+  "id": "59e1254d0863c7808d0000ef",
+  "name": "Fouriest transformation",
+  "slug": "fouriest-transformation",
+  "category": "algorithms",
+  "publishedAt": "2017-10-13T20:43:09.252Z",
+  "approvedAt": "2018-12-07T13:22:42.925Z",
+  "languages": [
+    "ruby",
+    "haskell",
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/59e1254d0863c7808d0000ef",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-13T20:42:54.003Z",
+  "createdBy": {
+    "username": "myxoh",
+    "url": "https://www.codewars.com/users/myxoh"
+  },
+  "approvedBy": {
+    "username": "anter69",
+    "url": "https://www.codewars.com/users/anter69"
+  },
+  "description": "# Fourier transformations are hard. Fouriest transformations are harder.\n\n[<img src=\"http://smbc-comics.com/comics/20130201.gif\">](http://smbc-comics.com/comic/2013-02-01)\n\nThis Kata is based on the SMBC Comic on fourier transformations (2874). (click on the comic to go to the website)\n\nA fourier transformation on a number is one that converts the number to a base in which it has more `4`s ( `10` in base `6` is `14`, which has `1` four as opposed to none, hence, fourier in base `6` ).\n\nA number's fouriest transformation converts it to the base in which it has the most `4`s.  \nFor example: `35353` is the fouriest in base `6`: `431401`.\n\nThis kata requires you to create a method `fouriest` that takes a number and makes it the fouriest, telling us in which base this happened, as follows:\n\n```ruby\nfouriest(number) -> \"#{number} is the fouriest (#{fouriest_representation}) in base #{base}\"\n```\n```haskell\nfouriest number -> ( ${fouriestRepresentation}, #{base} )\n```\n```javascript\nfouriest number -> [ ${fouriestRepresentation}, #{base} ]\n```\n```python\nfouriest(number) -> \"{number} is the fouriest ({fouriest_representation}) in base {base}\"\n```\n\n## Important notes\n\n* For this kata we don't care about digits greater than `9` ( only `0` to `9` ), so we will represent all digits greater than `9` as `'x'`: `10` in base `11` is `'x'`, `119` in base `20` is `'5x'`, `118` in base `20` is also `'5x'`\n\n\n* When a number has several fouriest representations, we want the one with the LOWEST base\n\n```if:haskell,javascript\n* Numbers below `9` will not be tested\n```\n\n```if:javascript\n* The native BigInt is used as input: <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt\">link</a>\n```\n\n## Examples\n\n```ruby\n\"30 is the fouriest (42) in base 7\"\n\"15 is the fouriest (14) in base 11\"\n```\n```haskell\n30 -> (\"42\",7)\n15 -> (\"14\",11)\n```\n```javascript\n\"30\" -> [\"42\",7]\n\"15\" -> [\"14\",11]\n```\n```python\n\"30 is the fouriest (42) in base 7\"\n\"15 is the fouriest (14) in base 11\"\n```",
+  "totalAttempts": 995,
+  "totalCompleted": 101,
+  "totalStars": 16,
+  "voteScore": 40,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "61419e8f0d12db000792d21a",
+  "name": "(a+b)^n ",
+  "slug": "a-plus-b-n",
+  "category": "games",
+  "publishedAt": "2021-09-15T07:21:12.173Z",
+  "approvedAt": "2021-09-26T02:54:08.945Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "java",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/61419e8f0d12db000792d21a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-09-15T07:19:43.849Z",
+  "createdBy": {
+    "username": "LearningFTW",
+    "url": "https://www.codewars.com/users/LearningFTW"
+  },
+  "approvedBy": {
+    "username": "ejini战神",
+    "url": "https://www.codewars.com/users/ejini%E6%88%98%E7%A5%9E"
+  },
+  "description": "Similar but fairly harder version : [Linked](https://www.codewars.com/kata/540d0fdd3b6532e5c3000b5b)\n\nCreate a function that takes a integer number `n` and returns the formula for `$(a+b)^n$` as a string. (**Input --> Output**)\n\n```\n0  --> \"1\"\n1  --> \"a+b\"\n2  --> \"a^2+2ab+b^2\"\n-2 --> \"1/(a^2+2ab+b^2)\"\n3  --> \"a^3+3a^2b+3ab^2+b^3\"\n5  --> \"a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5\"\n```\n\nThe formula for `n=5` is like so : \n\n```math\na^5 + 5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5\n```\nSo the answer would look like so : `a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5`\n\n\n# Important notes : \n\n- Your string may not have spaces so you can't do this : `a^5 + 5a^4 b + 10a^3 b^2...`\n- You will show raised to power of by `^` and not using `**`. \n- You need not put `*` between each multiplication\n- There is no need to show `a^1` or `b^1` since that is basically `a` and `b`\n- `a^0` and/or `b^0` also don't need be shown instead be a normal person and use `1` since that is what they equate to.\n- You will need to handle both `positive and negative numbers + 0` \n- Note  : \n     - ```math\n      a^{-n} = \\frac 1{a^n}\n     ```\n- You will not be tested for float (only negative integers and whole numbers)\n- input `n` goes from -200 to 200.\n\n```if:java,javascript\nYou will need to use BigInt since otherewise it will not work for both JS and Java\n```\n\n```if:c\nIn C you will not have to deal with numbers that cannot fit in an unsigned 64 bits integer.\n```",
+  "totalAttempts": 3515,
+  "totalCompleted": 456,
+  "totalStars": 59,
+  "voteScore": 126,
+  "tags": [
+    "Mathematics",
+    "Algebra",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

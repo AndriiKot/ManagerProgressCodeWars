@@ -1,0 +1,44 @@
+{
+  "id": "635d9b5c8f20017aa1cf2cf6",
+  "name": "Transforming Chess Piece Puzzle",
+  "slug": "transforming-chess-piece-puzzle",
+  "category": "games",
+  "publishedAt": "2022-11-02T19:47:20.822Z",
+  "approvedAt": "2022-11-03T16:25:44.643Z",
+  "languages": [
+    "python",
+    "javascript",
+    "c",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/635d9b5c8f20017aa1cf2cf6",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-10-29T21:30:04.369Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Overview\n\nThis is a simple \"chess themed\" algorithmic puzzle - but you don't need to know anything about chess to solve it, other than 3 basic moves. \n\nThe game is played between two players who take turns moving a piece on the board: Player 1, **who always plays the first move,** and Player 2.\n\nThe game takes place on a 5x5 board, and **at all times there is only 1 single piece on the board - it is either a Rook, a Bishop, or a Queen.** \n\n(Quick reminder: the Rook can move horizontally or vertically, the Bishop can move diagonally, the Queen can move horizontally or vertically or diagonally).\n\nThe winner is the Player who, on their turn, moves the current piece to any of the board's 4 corner squares.\n\nGameplay is simple - after a Player moves the current piece, they either:\n- win the game, if they managed to move the current piece to any of the board's 4 corner squares. \n- or, if they do not win on their turn, **the piece will automatically transform into the \"next\" piece according to the following repeating cyclic pattern, and the other Player then takes their turn (from the current position on the 5x5 board):**\n```\nrepeating 3-cyclic pattern:\n     Rook ---> Bishop \n      ^         /  \n       \\       v\n         Queen\n```\n\nGiven the starting piece (Rook, Bishop, or Queen) and a starting location for the piece, **and assuming both players play optimally**, your goal is to determine whether Player 1 has a **guaranteed** win, a **guaranteed** loss, or\nif the game will become an infinite never-ending **guaranteed** draw.\n\n(For the purposes of this kata, \"playing optimally\" means that: [both Players will attempt to win the game, if there is any combination of moves that will allow them to do so, and conversely will avoid any move that can lead to them losing.](https://en.wikipedia.org/wiki/Combinatorial_game_theory))\n\n---\n\n## Inputs and Outputs\n\nYou will be given `starting_piece`, which is a `string`representing the piece that is on the board when the game starts, 1 of 3 possibilities: \n- `'r'` representing the Rook\n- `'b'` representing the Bishop\n- `'q'` representing the Queen\n\n\nYou will also be given `starting_row` and `starting_column`, both are `ints` from `0` to `4` inclusive: for example `starting_row == 0` and `starting_column == 0` means that the piece starts in the top-left square of the 5x5 board.\n\nWe use standard \"array row and column\" indexing to encode the 5x5 board,\nas represented in the diagram below:\n\n```\n  'r=0, c=0' | 'r=0, c=1' | 'r=0, c=2' | 'r=0, c=3' | 'r=0, c=4'  <--- row 0\n  'r=1, c=0' | 'r=1, c=1' | 'r=1, c=2' | 'r=1, c=3' | 'r=1, c=4' \n  'r=2, c=0' | 'r=2, c=1' | 'r=2, c=2' | 'r=2, c=3' | 'r=2, c=4'\n  'r=3, c=0' | 'r=3, c=1' | 'r=3, c=2' | 'r=3, c=3' | 'r=3, c=4' \n  'r=4, c=0' | 'r=4, c=1' | 'r=4, c=2' | 'r=4, c=3' | 'r=4, c=4'  <--- row 4\n      ^                                                   ^\n      |                                                   |\n  column 0                                            column 4\n```\n\nYou must return a `string`: `'win'`, `'lose'`, or `'draw'` depending on whether Player 1 (who always goes first) has a **guaranteed** win, loss, or draw.\n\nRemember - to win the game, the current player just needs to move the current piece to any of the 4 corners: (0,0), (0,4), (4,0), (4,4).\n\n---\n\n## Examples\n\n```\nExample 1\n\n  _'r'_ _ _  <--- row 0\n  _ _ _ _ _\n  _ _ _ _ _\n  _ _ _ _ _\n  _ _ _ _ _\n    ^\n    | column 1\n```\n\nIn the above example game, the piece starts as a Rook, `'r'`, and in `starting_row == 0`, `starting_column == 1`. \n\nHere Player 1 has a **guaranteed** winning strategy - the winning strategy\nis: Player 1 moves the Rook from square (0,1) to corner square (0,0) or (0,4) and immediately wins the game, without even letting Player 2 play a single move. \n\nSo the expected answer for `starting_piece == 'r'`, `starting_row == 0`, `starting_column == 1` is `'win'`.\n\n\n```\nExample 2\n\n  _ _ _ _ _ \n  _ _ _ _ _\n  _ _ _ _ _\n  _ _ _ _ _\n  _ _ _'b'_\n\n```\n\nIn the above example game, the piece starts as a Bishop, `'b'`, and in `starting_row == 4`, `starting_column == 3`. \n\nUnlike for the previous example, where Player 1 had a guaranteed win immediately, here Player 1 **can't win immediately on their first turn**.\n\nSo Player 1 needs to try to make a move with the Bishop so that Player 2 **can't win** when they take their turn (which will be with the Queen, since that is the piece \"after\" the `'b'` Bishop). \n\nYou should be able to analyse the various possibilities from here on ;)  \n\n---\n\n## Similar katas\n\nIf you like chess katas, I highly recommend [Is the King in check ?](https://www.codewars.com/kata/5e28ae347036fa001a504bbe) by @trashy_incel\n\nIf you want a weirder and, more challenging, chess themed puzzle, check out [Evil genius game - Find the moving chess piece while blindfolded](https://www.codewars.com/kata/62e068c14129156a2e0df46a) by yours truly ;)\n",
+  "totalAttempts": 1625,
+  "totalCompleted": 158,
+  "totalStars": 19,
+  "voteScore": 46,
+  "tags": [
+    "Puzzles",
+    "Games",
+    "Logic"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

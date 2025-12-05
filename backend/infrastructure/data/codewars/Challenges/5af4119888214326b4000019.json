@@ -1,0 +1,45 @@
+{
+  "id": "5af4119888214326b4000019",
+  "name": "Amidakuji",
+  "slug": "amidakuji",
+  "category": "reference",
+  "publishedAt": "2018-05-10T09:32:08.617Z",
+  "approvedAt": "2018-05-11T02:22:15.789Z",
+  "languages": [
+    "javascript",
+    "python",
+    "elixir",
+    "go",
+    "csharp",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5af4119888214326b4000019",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-05-10T09:32:38.051Z",
+  "createdBy": {
+    "username": "docgunthrop",
+    "url": "https://www.codewars.com/users/docgunthrop"
+  },
+  "approvedBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "description": "<!--Amidakuji-->\n<p><span style='color:#8df'><a href='https://en.wikipedia.org/wiki/Ghost_Leg' style='color:#9f9;text-decoration:none'>Amidakuji</a></span> is a method of lottery designed to create random pairings between two sets comprised of an equal number of elements.</p>\n<p>Your task is to write a function <code>amidakuji</code> that returns the final positions of each element. Note that the elements are an ascending sequence of consecutive integers starting with <code>0</code> (from left to right).</p>\n\n<h2 style='color:#f88'>Input</h2>\n<p>Your function will receive an array/list of equal-length strings consisting of <code>0</code> and <code>1</code> characters; this represents the \"ladder\" structure. The <code>1</code>s represent the rungs of the ladder and the <code>0</code>s represent empty space.<br/><br/>\nEach element begins at the top of its corresponding vertical rail, as illustrated in the diagram below.<br/>During the descent of the ladder, whenever a vertical rail intersects a horizontal rung, it swaps values with the adjacent connecting vertical rail.</p>\n\n<h2 style='color:#f88'>Output</h2>\n<p>Your function should return an array of integers, with each integer in its final position.</p>\n\n<h2 style='color:#f88'>Test Example</h2>\n<img src='https://i.imgur.com/6pJ87vP.png'>\n<p>The diagram above is a visual representation of the test example below. The yellow highlighted path shows the path taken by the <code>2</code> value. Each time it encounters a crosspiece, it shifts position.</p>\n\n```javascript\nlet ladder = [\n\t'001001',\n\t'010000',\n\t'100100',\n\t'001000',\n\t'100101',\n\t'010010',\n\t'101001',\n\t'010100'\n];\n\namidakuji(ladder); // [4, 2, 0, 5, 3, 6, 1]\n```\n```python\nladder = [\n\t'001001',\n\t'010000',\n\t'100100',\n\t'001000',\n\t'100101',\n\t'010010',\n\t'101001',\n\t'010100'\n]\n\namidakuji(ladder) # [4, 2, 0, 5, 3, 6, 1]\n```\n```elixir\nladder = [\n\t\"001001\",\n\t\"010000\",\n\t\"100100\",\n\t\"001000\",\n\t\"100101\",\n\t\"010010\",\n\t\"101001\",\n\t\"010100\"\n]\n\nBanzai.amidakuji(ladder) # [4, 2, 0, 5, 3, 6, 1]\n```\n```go\nladder := []string{\n\t\"001001\",\n\t\"010000\",\n\t\"100100\",\n\t\"001000\",\n\t\"100101\",\n\t\"010010\",\n\t\"101001\",\n\t\"010100\",\n}\n\nAmidakuji(ladder) // [4 2 0 5 3 6 1]\n```\n```csharp\nvar ladder = new string[]{\n\t\"001001\",\n\t\"010000\",\n\t\"100100\",\n\t\"001000\",\n\t\"100101\",\n\t\"010010\",\n\t\"101001\",\n\t\"010100\"\n};\n\nBanzai.Amidakuji(ladder) == new int[]{4,2,0,5,3,6,1}; // true\n```\n\n<h2 style='color:#f88'>Other Technical Details</h2>\n<ul>\n\t<li>A function <code>visualizer</code> is preloaded to help illustrate the structure of the ladder; you can call this function with test inputs</li>\n\t<li>No two rungs will ever be adjacent (so there is no ambiguity about directional path)</li>\n\t<li>Full Test Suite: <code>10</code> fixed tests and <code>100</code> randomly-generated tests</li>\n\t<li>Test input dimension upper bounds:<br/>\n\t\t<ul>\n\t\t\t<li>maximum width: <code>20</code></li>\n\t\t\t<li>maximum height: <code>50</code></li>\n\t\t</ul>\n\t</li>\n\t<li>Inputs will always be valid</li>\n</ul>\n\n<p>If you enjoyed this kata, be sure to check out <a href='https://www.codewars.com/users/docgunthrop/authored' style='color:#9f9;text-decoration:none'>my other katas</a></p>",
+  "totalAttempts": 2244,
+  "totalCompleted": 606,
+  "totalStars": 72,
+  "voteScore": 152,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

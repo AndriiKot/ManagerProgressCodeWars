@@ -1,0 +1,46 @@
+{
+  "id": "5694d22eb15d78fe8d00003a",
+  "name": "Group in 10s",
+  "slug": "group-in-10s",
+  "category": "reference",
+  "publishedAt": "2016-01-12T17:50:37.000Z",
+  "approvedAt": "2016-01-14T09:44:43.914Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "ruby",
+    "python",
+    "csharp",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/5694d22eb15d78fe8d00003a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-01-12T10:15:11.426Z",
+  "createdBy": {
+    "username": "matthewglover",
+    "url": "https://www.codewars.com/users/matthewglover"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "Write a function `groupIn10s` which takes any number of arguments, groups them into tens, and sorts each group in ascending order.\n\nThe return value should be an array of arrays, so that numbers between `0` and`9` inclusive are in position `0`, numbers between `10` and `19` are in position `1`, etc. \n\nHere's an example of the required output:\n\n```javascript\nconst grouped = groupIn10s(8, 12, 38, 3, 17, 19, 25, 35, 50) \n\ngrouped[0]     // [3, 8]\ngrouped[1]     // [12, 17, 19]\ngrouped[2]     // [25]\ngrouped[3]     // [35, 38]\ngrouped[4]     // undefined\ngrouped[5]     // [50]\n```\n```csharp\nint[][] grouped = Kata.GroupIn10s(new int[] { 8, 12, 38, 3, 17, 19, 25, 35, 50 });\n\ngrouped[0]     // [3, 8]\ngrouped[1]     // [12, 17, 19]\ngrouped[2]     // [25]\ngrouped[3]     // [35, 38]\ngrouped[4]     // null\ngrouped[5]     // [50]\n```\n```python\ngrouped = group_in_10s(8, 12, 38, 3, 17, 19, 25, 35, 50) \n\ngrouped[0]     # [3, 8]\ngrouped[1]     # [12, 17, 19]\ngrouped[2]     # [25]\ngrouped[3]     # [35, 38]\ngrouped[4]     # None\ngrouped[5]     # [50]\n```\n```ruby\ngrouped = group_in_10s(8, 12, 38, 3, 17, 19, 25, 35, 50) \n\ngrouped[0]     # [3, 8]\ngrouped[1]     # [12, 17, 19]\ngrouped[2]     # [25]\ngrouped[3]     # [35, 38]\ngrouped[4]     # nil\ngrouped[5]     # [50]\n```\n``` haskell\ngroupIn10s [8, 12, 3, 17, 19, 24, 35, 50] `shouldBe` [[3,8],[12,17,19],[24],[35],[],[50]]\n```\n```lambdacalc\n# group-in-10s : List Number -> List (List Number)\ngroup-in-10s [ 8, 12, 3, 17, 19, 24, 35, 50 ] -> [[3,8],[12,17,19],[24],[35],[],[50]]\n```\n\n~~~if:lambdacalc\n### Encodings\n\npurity: `LetRec`  \nnumEncoding: `Scott`  \nexport `nil, cons, foldl` for your `List` encoding  \n~~~\n",
+  "totalAttempts": 5285,
+  "totalCompleted": 1132,
+  "totalStars": 45,
+  "voteScore": 244,
+  "tags": [
+    "Arrays",
+    "Lists",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 5
+  }
+}

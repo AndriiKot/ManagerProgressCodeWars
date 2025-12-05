@@ -1,0 +1,40 @@
+{
+  "id": "64c0fd3bb57ecf0058e101dd",
+  "name": "Books That Have Been Out for the Longest Duration",
+  "slug": "books-that-have-been-out-for-the-longest-duration",
+  "category": "reference",
+  "publishedAt": "2023-07-26T12:16:31.212Z",
+  "approvedAt": "2023-10-28T17:48:53.874Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64c0fd3bb57ecf0058e101dd",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-26T11:02:19.469Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "The library management system uses two main tables - books and loans. The books table contains details about the books, while the loans table contains details about the loans.\n\n`books`:\n\n* `book_id` (integer) - The unique identifier for a book\n* `title` (string) - The title of the book\n* `author` (string) - The author of the book\n\n`loans`:\n\n* `loan_id` (integer) - The unique identifier for a loan\n* `book_id` (integer) - The identifier for the book that was loaned, corresponds to book_id in the books table\n* `borrower_name` (string) - The name of the person who borrowed the book\n* `return_date` (date) - The date when the book was returned. If the book has not yet been returned, this field is null.\n\nImportant Note: In this system, the date a book is loaned corresponds directly to the return date of its previous loan. This means that when one loan ends (i.e., when a book is returned), a new loan for the same book can start immediately on that return date.\n\nYour task is to write a SQL query to identify the book that has experienced the longest duration between two consecutive borrows (i.e., between two return dates). If a book is currently borrowed (i.e., return_date is null), then the duration should be calculated from the last return_date till the `CURRENT_DATE`. If there is a tie, return `all` loans with the same longest duration.\n\nThe output should be a list of rows with each row containing the following columns:\n\n* `book_id` (integer) - The unique identifier for a book.\n* `title` (string) - The title of the book.\n* `author` (string) - The author of the book.\n* `loan_id` (integer) - The ID of the loan.\n* `borrower_name` (string) - The name of the borrower.\n* `longest_borrow_interval` (string) - The longest duration for which the book has been borrowed, in the form of \"N Days\".\n\nThe results should be ordered by `loan_id` in ascending order in case of the tie (i.e., when there are multiple loans with the same longest borrow interval).\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>book_id</th><th>title</th><th>author</th><th>loan_id</th><th>borrower_name</th><th>longest_borrow_interval</th></tr><tr><td>5</td><td>Nectar in a Sieve</td><td>Arleen Bayer</td><td>14</td><td>Jamal Kuhn DO</td><td>17 Days</td></tr><tr><td>16</td><td>The Painted Veil</td><td>Valorie Kihn CPA</td><td>49</td><td>Tressa Schamberger</td><td>17 Days</td></tr></table>\n\n",
+  "totalAttempts": 1543,
+  "totalCompleted": 102,
+  "totalStars": 10,
+  "voteScore": 38,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

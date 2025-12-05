@@ -1,0 +1,43 @@
+{
+  "id": "53f211b159c3fcec3d000efa",
+  "name": "Left$   and   Right$",
+  "slug": "left$-and-right$",
+  "category": "reference",
+  "publishedAt": "2014-08-18T14:46:37.902Z",
+  "approvedAt": "2014-09-06T04:25:26.591Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/53f211b159c3fcec3d000efa",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2014-08-18T14:46:10.458Z",
+  "createdBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "approvedBy": {
+    "username": "xcthulhu",
+    "url": "https://www.codewars.com/users/xcthulhu"
+  },
+  "description": "Once upon a time, more precisely upon BASIC time, there were 2 functions named LEFT$ and RIGHT$ (I wrote them uppercase because it was the custom in those early years).\n\nThese functions let you read left(/right)-most characters of a string.\n\n* use:  `LEFT$ (str, i)`  -> returns `i` left-most characters of `str`.\n\n```\n- eg:\nA$=\"ABCDEFG\":PRINT LEFT$(A$,3) - prints ABC\n```\n\nand `RIGHT$ (str, i )`,  of course, returns `i` right-most characters of `str`.\n\n\n### So, your mission is...\n\n...to write 2 functions ( `left$(str, i)` & `right$(str, i)` ) (`left` & `right` in **Ruby** or **Python**) that will work as the BASIC ones did,... except :\n\n* ` i ` may be a negative integer. In this case the function returns the **whole** string **but** `i` right(/left)-most chars (respectively in left$(/right$) function).\n* if ` i ` === 0 :   returns an empty string;\n* if **no** ` i ` is provided consider it should be `1` ( not zero ).\n* if ` i ` is greater than `str` length : returns the whole str.\n\n**and**\n\n* if ` i ` is a `string` ( yes it can ) : returns part of `str` at left(/right) of ` i `.\n    + returns `left` of **first** occurence of `i`\n    + returns `right` of **last** occurence of `i`\n\n### Examples:\n```javascript\nvar str = 'Hello (not so) cruel World!'\n\nleft$(str,5)   // -> 'Hello'\nleft$(str,-22) // -> 'Hello'\nleft$(str,1)   // -> 'H'\nleft$(str)     // -> 'H' too\nleft$(str,0)   // -> ''\nleft$(str,99)  // -> 'Hello (not so) cruel World!'\n\nright$(str,6)  // -> 'World!'\nright$(str)    // -> '!'\n\n//== with string as 2d argument ==\nleft$(str,'o') // -> 'Hell'\nright$(str,'o')// -> 'rld!'\nleft$(str,' ') // -> 'Hello'  // -- string may be a space\n```\n```ruby\nvar str = 'Hello (not so) cruel World!'\n\nleft(str,5)   // -> 'Hello'\nleft(str,-22) // -> 'Hello'\nleft(str,1)   // -> 'H'\nleft(str)     // -> 'H' too\nleft(str,0)   // -> ''\nleft(str,99)  // -> 'Hello (not so) cruel World!'\n\nright(str,6)  // -> 'World!'\nright(str)    // -> '!'\n\n#== with string as 2nd argument ==\nleft(str,'o') // -> 'Hell'\nright(str,'o')// -> 'rld!'\nleft(str,' ') // -> 'Hello'  # -- string may be a space\n```\n```python\ntext = 'Hello (not so) cruel World!'\n\nleft(text,5)   # -> 'Hello'\nleft(text,-22) # -> 'Hello'\nleft(text,1)   # -> 'H'\nleft(text)     # -> 'H' too\nleft(text,0)   # -> ''\nleft(text,99)  # -> 'Hello (not so) cruel World!'\n\nright(text,6)  # -> 'World!'\nright(text)    # -> '!'\n\n#== with string as 2nd argument ==\nleft(text,'o') # -> 'Hell'\nright(text,'o')# -> 'rld!'\nleft(text,' ') # -> 'Hello'  // -- string may be a space\n```\n\n",
+  "totalAttempts": 23668,
+  "totalCompleted": 969,
+  "totalStars": 39,
+  "voteScore": 116,
+  "tags": [
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 5
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "55bf6b640e7ec0138e000071",
+  "name": "Null-Conditional Operator (C# 6.0)",
+  "slug": "null-conditional-operator-c-number-6-dot-0",
+  "category": "reference",
+  "publishedAt": "2015-08-09T10:38:34.947Z",
+  "approvedAt": "2016-03-11T08:53:11.157Z",
+  "languages": [
+    "csharp",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/55bf6b640e7ec0138e000071",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-08-03T13:23:48.725Z",
+  "createdBy": {
+    "username": "ah01",
+    "url": "https://www.codewars.com/users/ah01"
+  },
+  "approvedBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "description": "```if:csharp\nIn C# 6.0 there is new operator `?.` called the **Null-Conditional Operator**.\n```\n```if:javascript\nIn ECMAScript 2020, there is a new operator `?.` called the **optional chaining operator**. This operator is available from Node.js v14 onwards.\n```\n\nIt's nothing revolutionary - just an example of syntactic sugar but a pretty neat one.\n\n## Use case\n\nImagine you have a `Car`, the car has an `Engine`, the engine has a `Gearbox` and the gearbox has some property you are interested in, for example `numberOfGears`. Now, the car could be from junkyard and the gearbox or even the engine could be missing (`null`).\n\nThe name of each property is the name of the class it contains, converted to the appropriate case, such that if all components are present the final property could be accessed by:\n\n```if:csharp\n`Car.Engine.GearBox.NumberOfGears`\n```\n```if:javascript\n`Car.engine.gearbox.numberOfGears`\n```\n\n**How to determine the number of gears in a car?**\n\n## Instructions\n\n```if:csharp\nWrite an extension method for `Car` called `GetNumberOfGears`. This method will return the value of `NumberOfGears` property of the gearbox or `-1` if the gearbox (or anything else) is missing.\n```\n```if:javascript\nComplete the method called `getNumberOfGears` being added to the prototype of the `Car` class. This method will return the value of the `numberOfGears` property of the gearbox or `null` if the gearbox (or anything else) is missing.\n```\n\n### Constraints\n\nFind some information about the `?.` and `??` operators and try to write the method without using `if` or the ternary operator `?:`.\n\n```if:csharp\n## References\n\n* [Null-conditional Operators (?.)](https://msdn.microsoft.com/en-us/library/dn986595.aspx)\n* [Null-coalescing operator (??)](https://msdn.microsoft.com/en-us/library/ms173224.aspx)\n* [Conditional operator (?:)](https://msdn.microsoft.com/en-us/library/ty67wk28%28v=vs.120%29.aspx)\n```\n\n\n",
+  "totalAttempts": 1973,
+  "totalCompleted": 810,
+  "totalStars": 15,
+  "voteScore": 153,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

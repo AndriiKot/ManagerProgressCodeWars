@@ -1,0 +1,40 @@
+{
+  "id": "65ba1120b51541407b4ed4ce",
+  "name": "Public Domain Popularity: Analyzing User Email Trends with SQL",
+  "slug": "public-domain-popularity-analyzing-user-email-trends-with-sql",
+  "category": "reference",
+  "publishedAt": "2024-01-31T09:22:24.865Z",
+  "approvedAt": "2024-02-01T10:35:30.991Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65ba1120b51541407b4ed4ce",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-01-31T09:21:36.514Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Develop a SQL query to analyze and report the most popular public email domains used by users in a database. A 'public domain' in this context refers to widely-used, generally accessible email services such as 'gmail.com', 'yahoo.com', 'hotmail.com', etc. These are contrasted with private or less common email domains that might be used by specific organizations or less known email services.\n\nFor the purposes of this task, an \"email address\" is defined as a string in the basic format of `localpart@domain.com`. Complex email formats, such as those containing multiple '@' symbols or quoted local parts, are excluded from this task.\n\nYou have been provided with a PostgreSQL database that contains a table named `users`. This table includes user email addresses among other details. There is also a table named `public_domains` that lists known public email domains.\n\n`users`:\n\n* `id` (int): primary key \n* `email` (varchar, unique): The email address of the user.\n\n`public_domains`:\n\n* `domain` (varchar, primary key): A known public email domain (e.g., 'gmail.com', 'yahoo.com').\n\nWrite a SQL query that performs the following operations:\n\n1) Extracts and counts public domain email addresses from the `users` table, using the `public_domains` table for reference.\n2) Filters out non-public email addresses.\n3) Aggregates the data to count the number of users per public domain.\n4) Sorts the result in descending order based on the count of users per domain with a secondary sorting criterion that sorts alphabetically by domain in case of a tie in the counts.\n\nThe query should output a result set with the following columns:\n1) `domain` (varchar): The public domain extracted from the email addresses.\n2) `user_count` (int): The number of users associated with each public domain.\n\n#### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>domain</th><th>user_count</th></tr><tr><td>gmail.com</td><td>4</td></tr><tr><td>aol.com</td><td>3</td></tr><tr><td>hotmail.com</td><td>3</td></tr><tr><td>mail.com</td><td>3</td></tr></table>\n...\n\nGLHF!\n\n",
+  "totalAttempts": 1149,
+  "totalCompleted": 344,
+  "totalStars": 9,
+  "voteScore": 51,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

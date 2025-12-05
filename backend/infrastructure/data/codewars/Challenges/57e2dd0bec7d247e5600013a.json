@@ -1,0 +1,48 @@
+{
+  "id": "57e2dd0bec7d247e5600013a",
+  "name": "Unflatten a list (Easy)",
+  "slug": "unflatten-a-list-easy",
+  "category": "algorithms",
+  "publishedAt": "2016-09-21T20:19:28.127Z",
+  "approvedAt": "2016-09-27T11:28:35.668Z",
+  "languages": [
+    "csharp",
+    "java",
+    "javascript",
+    "ruby",
+    "python",
+    "typescript",
+    "coffeescript",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/57e2dd0bec7d247e5600013a",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-09-21T19:18:36.028Z",
+  "createdBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "approvedBy": {
+    "username": "Dentzil",
+    "url": "https://www.codewars.com/users/Dentzil"
+  },
+  "description": "## Unflatten a list (Easy)\n\nThere are several katas like \"Flatten a list\".\nThese katas are done by so many warriors, that the count of available list to flatten goes down!\n\nSo you have to build a method, that creates new arrays, that can be flattened!\n\nIn short: You have to unflatten a list/an array.\n\nYou get an array of integers and have to unflatten it by these rules:\n```\n- You start at the first number.\n- If this number x is smaller than 3, take this number x\n  directly for the new array and continue with the next \n  number.\n- If this number x is greater than 2, take the next x\n  numbers (inclusive this number) as a sub-array in the\n  new array. Continue with the next number AFTER this\n  taken numbers.\n- If there are too few numbers to take by number, take \n  the last available numbers.\n```\n\nThe given array will always contain numbers. There will only be numbers > 0.\n\nExample:\n```\n[1,4,5,2,1,2,4,5,2,6,2,3,3] -> [1,[4,5,2,1],2,[4,5,2,6],2,[3,3]]\n\nSteps: \n1. The 1 is added directly to the new array.\n2. The next number is 4. So the next 4 numbers (4,5,2,1) are\n   added as sub-array in the new array.\n3. The 2 is added directly to the new array.\n4. The next number is 4. So the next 4 numbers (4,5,2,6) are\n   added as sub-array in the new array.\n5. The 2 is added directly to the new array.\n6. The next number is 3. So the next 3 numbers would be\n   taken. There are only 2, so take these (3,3) as sub-array\n   in the new array.\n```\n\nThere is also a [harder version](https://www.codewars.com/kata/57e5aa1d7fbcc988800001ae) of this kata!\n\nHave fun coding it and please don't forget to vote and rank this kata! :-) \n\nI have created other katas. Have a look if you like coding and challenges.",
+  "totalAttempts": 5324,
+  "totalCompleted": 1717,
+  "totalStars": 61,
+  "voteScore": 329,
+  "tags": [
+    "Mathematics",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "550cb646b9e7b565d600048a",
+  "name": "Scheduling (Round-Robin)",
+  "slug": "scheduling-round-robin",
+  "category": "algorithms",
+  "publishedAt": "2015-03-21T00:20:54.794Z",
+  "approvedAt": "2017-02-17T17:41:01.379Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/550cb646b9e7b565d600048a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-03-21T00:07:34.624Z",
+  "createdBy": {
+    "username": "talamb",
+    "url": "https://www.codewars.com/users/talamb"
+  },
+  "approvedBy": {
+    "username": "tachyonlabs",
+    "url": "https://www.codewars.com/users/tachyonlabs"
+  },
+  "description": "Scheduling is how the processor decides which jobs (processes) get to use the processor and for how long. This can cause a lot of problems. Like a really long process taking the entire CPU and freezing all the other processes. One solution is Round-Robin, which today you will be implementing.\n\nRound-Robin works by queuing jobs in a First In First Out fashion, but the processes are only given a short slice of time. If a processes is not finished in that time slice, it yields the proccessor and goes to the back of the queue.\n\nFor this Kata you will be implementing the \n```javascript\n   function roundRobin(jobs, slice, index)\n```\n```python\n  def round_robin(jobs, time_slice, index):\n```\n```ruby\n  def roundRobin(jobs, slice, index)\n```\n\nIt takes in:\n\n    1. \"jobs\" a non-empty positive integer array. It represents the queue and clock-cycles(cc) remaining till the job[i] is finished.\n\n    2. \"slice\" a positive integer. It is the amount of clock-cycles that each job is given till the job yields to the next job in the queue.\n\n    3. \"index\" a positive integer. Which is the index of the job we're interested in.\n\nroundRobin returns:\n\n    1. the number of cc till the job at index is finished.\n\nHere's an example:\n```\nroundRobin([10,20,1], 5, 0) \nat 0cc [10,20,1] jobs[0] starts\nafter 5cc [5,20,1] jobs[0] yields, jobs[1] starts\nafter 10cc [5,15,1] jobs[1] yields, jobs[2] starts\nafter 11cc [5,15,0] jobs[2] finishes, jobs[0] starts\nafter 16cc [0,15,0] jobs[0] finishes\n```\n\nso:\n```\nroundRobin([10,20,1], 5, 0) == 16\n```\n\n**You can assume that the processor can switch jobs between cc so it does not add to the total time.\n",
+  "totalAttempts": 2562,
+  "totalCompleted": 714,
+  "totalStars": 45,
+  "voteScore": 193,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

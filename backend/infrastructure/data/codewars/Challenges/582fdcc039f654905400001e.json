@@ -1,0 +1,47 @@
+{
+  "id": "582fdcc039f654905400001e",
+  "name": "Sorting Arrays by the Amount of Perfect Squares that Each Element May Generate",
+  "slug": "sorting-arrays-by-the-amount-of-perfect-squares-that-each-element-may-generate",
+  "category": "reference",
+  "publishedAt": "2016-11-19T05:01:52.269Z",
+  "approvedAt": "2017-05-29T16:17:48.363Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "d",
+    "rust",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/582fdcc039f654905400001e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-19T05:02:12.385Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "You will be given an array of positive integers. The array should be sorted by the amount of distinct perfect squares and reversed, that can be generated from each number permuting its digits.\n\nE.g.: ```arr = [715, 112, 136, 169, 144]``` \n``` \nNumber   Perfect Squares w/ its Digits   Amount\n 715                -                       0\n 112               121                      1\n 136               361                      1\n 169           169, 196, 961                3\n 144             144, 441                   2\n``` \nSo the output will have the following order:\n```[169, 144, 112, 136, 715]``` \n\nWhen we have two or more numbers with the same amount of perfect squares in their permutations, we sorted by their values.\n\nIn the example given above, we can see that 112 and 136 both generate a perfect square. So 112 comes first.\n\nExamples for this kata:\n```python\nsort_by_perfsq([715, 112, 136, 169, 144]) == [169, 144, 112, 136, 715]\n# number of perfect squares:                   3    2    1    1    0\n``` \nWe may have in the array numbers that belongs to the same set of permutations.\n```python\nsort_by_perfsq([234, 61, 16, 441, 144, 728]) == [144, 441, 16, 61, 234, 728]\n# number of perfect squares:                      2    2    1   0   0    0\n```\n\nFeatures of the random tests:\n~~~if:ruby,python,d,rust,go\n- Number of tests: 80\n- Arrays between 4 and 20 elements\n- Integers having from 1 to 7 digits included\n~~~\n~~~if:javascript,\n- Number of tests: 30\n- Arrays between 4 and 16 elements\n- Integers having from 1 to 7 digits included\n~~~\n\nEnjoy it!!\n",
+  "totalAttempts": 2187,
+  "totalCompleted": 507,
+  "totalStars": 54,
+  "voteScore": 118,
+  "tags": [
+    "Algorithms",
+    "Mathematics",
+    "Number Theory",
+    "Permutations"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

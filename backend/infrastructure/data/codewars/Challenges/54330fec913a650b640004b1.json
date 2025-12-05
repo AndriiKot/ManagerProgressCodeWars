@@ -1,0 +1,39 @@
+{
+  "id": "54330fec913a650b640004b1",
+  "name": "Simple Memoization",
+  "slug": "simple-memoization",
+  "category": "reference",
+  "publishedAt": "2014-10-06T22:13:08.099Z",
+  "approvedAt": "2017-02-03T10:45:23.287Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/54330fec913a650b640004b1",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-10-06T21:55:56.723Z",
+  "createdBy": {
+    "username": "moonfly",
+    "url": "https://www.codewars.com/users/moonfly"
+  },
+  "approvedBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "description": "Create a class called `Memo` that allows to memoize computed results. The class instances have only the constructor and the `[]` operator. The constructor accepts a block, which recieves a parameter and returns the value for this parameter. This block is called when the `[]` operator is first called with this parameter. After that the result is memoized, and all subsequent calls to `[]` with that parameter return the computed value. \n\nRemember that anything can be a parameter, not necessarily a number.\n\nExample:\n```ruby\nm = Memo.new { |param| param ** 2 } # memoizing squares\n\nm[2] # => calls the block with param=2, gets 4, memoizes\nm[2] # => the second call with the same parameter returns the memoizd value without calling the block\n```",
+  "totalAttempts": 707,
+  "totalCompleted": 185,
+  "totalStars": 12,
+  "voteScore": 77,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

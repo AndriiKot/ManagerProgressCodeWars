@@ -1,0 +1,48 @@
+{
+  "id": "597ccf7613d879c4cb00000f",
+  "name": "Expression Transpiler",
+  "slug": "expression-transpiler",
+  "category": "reference",
+  "publishedAt": "2017-07-29T18:21:47.914Z",
+  "approvedAt": "2017-08-09T22:11:42.377Z",
+  "languages": [
+    "haskell",
+    "javascript",
+    "c",
+    "cpp",
+    "csharp",
+    "java",
+    "python",
+    "ruby",
+    "kotlin",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/597ccf7613d879c4cb00000f",
+  "rank": {
+    "id": -2,
+    "name": "2 kyu",
+    "color": "purple"
+  },
+  "createdAt": "2017-07-29T18:09:58.679Z",
+  "createdBy": {
+    "username": "ice1000",
+    "url": "https://www.codewars.com/users/ice1000"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "In this Kata, you're going to transpile an expression from one langauge into another language.\n\nThe source language looks like Kotlin and the target language looks like Dart. And you **don't need to know neither of them** to complete this Kata.\n\nWe're going to transpile a `function call` expression.\n\nIf you successfully parsed the input, return `Right output`, otherwise give me `Left \"Hugh?\"`.\n~~~if:java\nFor Java, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:csharp\nFor C#, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:c\nFor C, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:cpp\nFor C++, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:python\nFor Python, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:ruby\nFor Ruby, return the empty string upon failure, else the transpiled string.\n~~~\n~~~if:rust\nFor Rust, return `Ok(transpiled string)` on success, or `Err(\"Hugh?\")` on failure.\n~~~\n\nWe have three kinds of basic expressions:\n\n+ names, like `abc`, `ABC`, `run`, `a1`, beginning with `_`/letters and followed by `_`/letters/numbers\n+ numbers, like `123`, `02333`, `66666` (may have leading zeroes)\n+ lambda expressions, like `{ a -> a }`, `{ a, b -> a b }`(source), `(a){a;}`, `(a,b){a;b;}`(target)\n\nWe have empty characters `blank space` and `\\n`.\n\nThe definition of `names` is quite similiar to C/Java. Names like this are invalid:\n\n+ `1a`\n\nYou don't have to worry about reserved words here.\n\nLambda expressions consist of two parts:\n\n+ parameters, they're just names/numbers\n+ statements, a list of names/numbers, seperated by whitespaces in source language, by `;` in target language.\n\nInvoking a function is to pass some arguments to something callable(names and lambdas), like `plus(1, 2)`, or `repeat(10, { xxx })`.\n\nThere's a syntax sugar in Kotlin: if the last argument is a lambda, it can be out of the brackets. Like, `repeat(10, { xxx })` can be written in `repeat(10) { xxx }`. And if that lambda is the only argument, you can even ignore the brackets. Like: `run({ xxx })` is equaled to `run { xxx }`.\n\nYou can refer to the examples at the bottom.\n\n## The source language looks like:\n\n```\nfunction ::= expression \"(\" [parameters] \")\" [lambda]\n           | expression lambda\n\nexpression ::= nameOrNumber\n             | lambda\n\nparameters ::= expression [\",\" parameters]\n\nlambdaparam ::= nameOrNumber [\",\" lambdaparam]\nlambdastmt  ::= nameOrNumber [lambdastmt]\n\nlambda ::= \"{\" [lambdaparam \"->\"] [lambdastmt] \"}\"\n```\n\nNotice: there can be whitespaces among everywhere, it's not a part of the language grammar.\n\n## The target language looks like:\n\n```\nfunction ::= expression \"(\" [parameters] \")\"\n\nexpression ::= nameOrNumber\n             | lambda\n\nparameters ::= expression [\",\" parameters]\n\nlambdaparam ::= nameOrNumber [\",\" lambdaparam]\nlambdastmt  ::= nameOrNumber \";\" [lambdastmt]\n\nlambda ::= \"(\" [lambdaparam] \"){\" [lambdastmt] \"}\"\n```\n\nYou shouldn't produce any whitespaces in the target language.\n\nThose examples covered all the language features shown above. Hope you enjoy it :D\n\n`fun()` => `fun()`  \n`fun(a)` => `fun(a)`  \n`fun(a, b)` => `fun(a,b)`  \n`{}()` => `(){}()`  \n`fun {}` => `fun((){})`  \n`fun(a, {})` => `fun(a,(){})`  \n`fun(a) {}` => `fun(a,(){})`  \n`fun {a -> a}` => `fun((a){a;})`  \n`{a -> a}(1)` => `(a){a;}(1)`  \n`fun { a, b -> a b }` => `fun((a,b){a;b;})`  \n`{a, b -> a b} (1, 2)` => `(a,b){a;b;}(1,2)`  \n`f { a }` => `f((){a;})`  \n`f { a -> }` => `f((a){})`\\\n`{}{}` => `(){}((){})`\n\n~~~if:javascript,haskell,python,ruby,java,rust,csharp\nYou have to write your own tokenizer (hint: whitespace is significant to separate some tokens, but can be ignored otherwise).\n~~~\n~~~if:c,cpp\nA tokenizer is provided.\n~~~\n\n",
+  "totalAttempts": 13203,
+  "totalCompleted": 620,
+  "totalStars": 420,
+  "voteScore": 129,
+  "tags": [
+    "Compilers"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "5be4d000825f24623a0001e8",
+  "name": "Almost Isosceles Integer Triangles  With Their Angles  With Asymptotic Tendency",
+  "slug": "almost-isosceles-integer-triangles-with-their-angles-with-asymptotic-tendency",
+  "category": "reference",
+  "publishedAt": "2018-11-09T00:08:54.444Z",
+  "approvedAt": "2021-03-25T18:36:57.886Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5be4d000825f24623a0001e8",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-11-09T00:08:33.137Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "dolamroth",
+    "url": "https://www.codewars.com/users/dolamroth"
+  },
+  "description": "An **Almost Isosceles Integer Triangle** is a triangle that all its side lengths are integers and also, \ntwo sides are almost equal, being their absolute difference `1` unit of length.\n\nWe are interested in the generation of the almost isosceles triangles by the diophantine equation (length sides of triangles are positive and not 0):\n\n`x³-(x-1)³ = y²` Eq.1\n\nSo the first solution `(x,y)` for this equation is that may generate a real triangle and almost isosceles is `(8,13)`, being the first nearly  isosceles triangle `(7,8,13)`.\n\nEquation 1 has infinite solutions `(x,y)`, so the corresponding triangles will be `(x-1,x,y)`\n\nWe need a code that can find those triangles with huge sides. \n\nYou will be given an integer `p` (always valid and positive, and p ≠ 0) and your code should output the closest perimeter to p, let's name it p_, of the corresponding triangle.\n\nExamples:\n```python\nfind_closest_perim(500) === 390 # (104, 105, 181) is the triangle with the closest perimeter to 500\n\nfind_closest_perim(5000) === 5432 # perimeter of triangle (1455, 1456, 2521)\n``` \n```javascript\nfindClosestPerimeter(500) === 390 # (104, 105, 181) is the triangle with the closest perimeter to 500\n\nfindClosestPerimeter(5000) === 5432 # perimeter of triangle (1455, 1456, 2521)\n``` \nIn the case that you have two possible solutions, `p_1` and `p_2` being `p_1 < p_2`, because `p = p_1 + (p_2 - p1)/2`, you select the highest solution `p_2`.\n\nIf `p` coincides with a perimeter of these triangles the output should be `p`.\n\nFeatures of the random tests:\n`1000 <= p <= 1e180`\n\nInteresting cases in the example tests box with edge cases.\n\nThe sequence of triangles are almost similar with the two nearly same sides forming an angle of 120º (strictly, nearly 120º)\n\nNo hardcoded solutions are allowed for this kata.\n\nEnjoy it!",
+  "totalAttempts": 430,
+  "totalCompleted": 72,
+  "totalStars": 13,
+  "voteScore": 38,
+  "tags": [
+    "Algorithms",
+    "Performance",
+    "Number Theory",
+    "Recursion",
+    "Geometry",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

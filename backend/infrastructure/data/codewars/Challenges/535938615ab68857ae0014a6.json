@@ -1,0 +1,42 @@
+{
+  "id": "535938615ab68857ae0014a6",
+  "name": "EventEmitter",
+  "slug": "eventemitter",
+  "category": "reference",
+  "publishedAt": "2014-04-24T17:28:51.417Z",
+  "approvedAt": "2017-08-03T22:58:03.688Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/535938615ab68857ae0014a6",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-04-24T16:14:26.437Z",
+  "createdBy": {
+    "username": "Lordnibbler",
+    "url": "https://www.codewars.com/users/Lordnibbler"
+  },
+  "approvedBy": {
+    "username": "10XL",
+    "url": "https://www.codewars.com/users/10XL"
+  },
+  "description": "Implement an `EventEmitter` class with two methods, `on()` and `trigger()`.\n\nOn allows you to 'subscribe' to an event, passing in a `key` as a parameter, and a Ruby `block` to be executed when this particular event is `trigger`ed.\n\nThe `trigger` method accepts a `key` as a parameter.  The `trigger` method  calls all blocks that have been subscribed to the key parameter. This method should return an array of all of the blocks for the key parameter.  \n\n`trigger`ing a `key` which has no subscribed blocks should return an empty array.\n\n```ruby\ne = EventEmitter.new\ne.trigger('key')\n# => []\n```\n\nFor the solution to be correct, you must be able to subscribe n number of blocks to the same key:\n\n```ruby\ne = EventEmitter.new\n\ne.on('foo') { puts 'foo' }\ne.on('foo') { puts 'bar' }\ne.on('foo') { puts 'baz' }\n\ne.trigger('foo')\n# => 'foo'\n# => 'bar'\n# => 'baz'\n```",
+  "totalAttempts": 1973,
+  "totalCompleted": 163,
+  "totalStars": 10,
+  "voteScore": 45,
+  "tags": [
+    "Data Structures",
+    "Arrays",
+    "Algorithms",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

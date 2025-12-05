@@ -1,0 +1,53 @@
+{
+  "id": "52bef5e3588c56132c0003bc",
+  "name": "Sort binary tree by levels",
+  "slug": "sort-binary-tree-by-levels",
+  "category": "algorithms",
+  "publishedAt": "2013-12-28T16:28:04.561Z",
+  "approvedAt": "2014-03-18T17:22:18.887Z",
+  "languages": [
+    "ruby",
+    "haskell",
+    "python",
+    "groovy",
+    "csharp",
+    "java",
+    "javascript",
+    "lambdacalc",
+    "c",
+    "rust",
+    "scala"
+  ],
+  "url": "https://www.codewars.com/kata/52bef5e3588c56132c0003bc",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2013-12-28T16:01:39.682Z",
+  "createdBy": {
+    "username": "kars7e",
+    "url": "https://www.codewars.com/users/kars7e"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "You are given a binary tree:\n\n```ruby\nclass TreeNode\n  attr_accessor :left\n  attr_accessor :right\n  attr_reader :value\nend\n```\n```haskell\ndata TreeNode a = TreeNode {\n  left  :: Maybe (TreeNode a),\n  right :: Maybe (TreeNode a),\n  value :: a\n  } deriving Show\n```\n```python\nclass Node:\n    def __init__(self, L, R, n):\n        self.left = L\n        self.right = R\n        self.value = n\n```\n```groovy\nclass Node {\n    Integer value\n    Node left\n    Node right\n\n    Node(left, right, value) {\n        this.value = value\n        this.left = left\n        this.right = right\n    }\n}\n```\n```csharp\npublic class Node\n{\n    public Node Left;\n    public Node Right;\n    public int Value;\n    \n    public Node(Node l, Node r, int v)\n    {\n        Left = l;\n        Right = r;\n        Value = v;\n    }\n}\n```\n```java\npublic class Node {\n  public Node left;\n  public Node right;\n  public int value;\n  \n  public Node(Node l, Node r, int v) {\n    left = l;\n    right = r;\n    value = v;\n  }\n}\n```\n```javascript\nclass Node { \n  constructor(value, left = null, right = null) {\n    this.value = value;\n    this.left  = left;\n    this.right = right;\n  }\n}\n```\n```lambdacalc\n# Available in preloaded\n# data Tree a = Leaf | Node a Tree Tree\nLeaf = \\ leaf _node . leaf\nNode = \\ v l r . \\ _leaf node . node v l r\n```\n```c\ntypedef struct Tree {\n\tstruct Tree *left, *right;\n\tint value;\n} Tree;\n```\n```rust\nstruct Node {\n  value: u32,\n  left: Option<Box<Node>>,\n  right: Option<Box<Node>>\n}\n```\n```scala\ncase class Node(\n  left: Option[Node], \n  right: Option[Node],\n  value: Int\n)\n```\n\nYour task is to return the list with elements from tree sorted by levels, which means the root element goes first, then root children (from left to right) are second and third, and so on.\n\n```if:ruby\nReturn empty array if root is `nil`.\n```\n```if:haskell\nReturn empty list if root is `Nothing`.\n```\n```if:python\nReturn empty list if root is `None`.\n```\n```if:csharp\nReturn empty list if root is 'null'.\n```\n```if:java\nReturn empty list if root is 'null'.\n```\n```if:javascript\nReturn empty array if root is `null`.\n```\n```if:c\nSet `tree_size` to `0` if root is `NULL`.\n```\n```if:lambdacalc\nReturn empty list if root is `Leaf`.\n\nPlease also provide `foldr` for your chosen list encoding. Purity is `LetRec`.\n```\n```if:rust\nInputs will always contain at least one node.\n```\n```if:scala\nInputs will always contain at least one node.\n```\n\nExample 1 - following tree:\n\n                     2\n                8        9\n              1  3     4   5\n\nShould return following list:\n\n    [2,8,9,1,3,4,5]\n\nExample 2 - following tree:\n\n                     1\n                8        4\n                  3        5\n                             7\nShould return following list:\n\n    [1,8,4,3,5,7]\n    \n```if:rust\n**Note**: A `Node`'s tree can be displayed via Debug:\n`println!(\"{:?}\", node)`\n```",
+  "totalAttempts": 65489,
+  "totalCompleted": 14972,
+  "totalStars": 974,
+  "voteScore": 1188,
+  "tags": [
+    "Trees",
+    "Binary Trees",
+    "Performance",
+    "Algorithms",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 6
+  }
+}

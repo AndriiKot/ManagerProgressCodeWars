@@ -1,0 +1,43 @@
+{
+  "id": "58aaa3ca821a767300000017",
+  "name": "Simple Fun #150: Robot Transfer",
+  "slug": "simple-fun-number-150-robot-transfer",
+  "category": "games",
+  "publishedAt": "2017-02-20T08:42:38.089Z",
+  "approvedAt": "2017-03-13T03:24:28.988Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "ruby",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/58aaa3ca821a767300000017",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-02-20T08:07:39.567Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": "# Task\n We have a N×N `matrix` (N<10) and a robot. \n \n We wrote in each point of matrix x and y coordinates of a point of matrix. \n \n When robot goes to a point of matrix, reads x and y and transfer to point with x and y coordinates.\n \n For each point in the matrix we want to know if robot returns back to it after `EXACTLY k` moves. So your task is to count points to which Robot returns in `EXACTLY k` moves. \n \n You should stop counting moves as soon as the robot returns to the starting point. That is, if the robot returns to the starting point in fewer than k moves, that point should not count as a valid point.\n \n# example\n\n For:\n ```\n matrix=[\n [\"0,1\",\"0,0\",\"1,2\"], \n [\"1,1\",\"1,0\",\"0,2\"], \n [\"2,1\",\"2,0\",\"0,0\"]]\n k= 2\n ```\n The result should be `8`\n```\nRobot start at (0,0) --> (0,1) --> (0,0), total 2 moves\nRobot start at (0,1) --> (0,0) --> (0,1), total 2 moves\nRobot start at (0,2) --> (1,2) --> (0,2), total 2 moves\nRobot start at (1,2) --> (0,2) --> (1,2), total 2 moves\nRobot start at (1,0) --> (1,1) --> (1,0), total 2 moves\nRobot start at (1,1) --> (1,0) --> (1,1), total 2 moves\nRobot start at (2,0) --> (2,1) --> (2,0), total 2 moves\nRobot start at (2,1) --> (2,0) --> (2,1), total 2 moves\nRobot start at (2,2) --> (0,0) --> (0,1) --> (0,0) --> (0,1) ....\n(Robot can not transfer back to 2,2)\n```\nSo the result is 8.\n\n# Input/Output\n\n\n - `[input]` 2D integer array matrix\n \n n x n matrix. 3 <= n <=9\n \n \n - `[input]` integer `k`\n \n `2 <= k <= 5`\n \n \n - `[output]` an integer",
+  "totalAttempts": 2081,
+  "totalCompleted": 250,
+  "totalStars": 17,
+  "voteScore": 93,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

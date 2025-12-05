@@ -1,0 +1,42 @@
+{
+  "id": "568c3498e48a0231d200001f",
+  "name": "Dee, The Generous Tipper",
+  "slug": "dee-the-generous-tipper",
+  "category": "algorithms",
+  "publishedAt": "2016-01-05T21:28:01.630Z",
+  "approvedAt": "2017-02-04T18:24:52.400Z",
+  "languages": [
+    "ruby",
+    "python",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/568c3498e48a0231d200001f",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-01-05T21:24:41.784Z",
+  "createdBy": {
+    "username": "DiegoSalazar",
+    "url": "https://www.codewars.com/users/DiegoSalazar"
+  },
+  "approvedBy": {
+    "username": "Iron Fingers",
+    "url": "https://www.codewars.com/users/Iron%20Fingers"
+  },
+  "description": "Dee is lazy but she's kind and she likes to eat out at all the nice restaurants and gastropubs in town. To make paying quick and easy she uses a simple mental algorithm she's called The Fair %20 Rule. She's gotten so good she can do this in a few seconds and it always impresses her dates but she's perplexingly still single. Like you probably. \n\nThis is how she does it:\n\n - She rounds the price `P` at the tens place e.g:\n   - 25 becomes 30\n   - 24 becomes 20\n   - 5 becomes 10\n   - 4 becomes 0\n - She figures out the base tip `T` by dropping the singles place digit e.g:\n   - when `P = 24` she rounds to 20 drops 0 `T = 2`\n   - `P = 115` rounds to 120 drops 0 `T = 12`\n   - `P = 25` rounds to 30 drops 0 `T = 3`\n   - `P = 5` rounds to 10 drops 0 `T = 1`\n   - `P = 4` rounds to 0 `T = 0`\n - She then applies a 3 point satisfaction rating `R` to `T` i.e:\n   - When she's satisfied: `R = 1` and she'll add 1 to `T`\n   - Unsatisfied: `R = 0` and she'll subtract 1 from `T`\n   - Appalled: `R = -1` she'll divide `T` by 2, **rounds down** and subtracts 1\n \n## Your Task\n\nImplement a method `calc_tip` that takes two integer arguments for price `p` \n\nwhere `1 <= p <= 1000` and a rating `r` which is one of `-1, 0, 1`.\n\nThe return value `T` should be a non negative integer.\n\n*Note: each step should be done in the order listed.*\n\nDee always politely smiles and says \"Thank you\" on her way out. Dee is nice. Be like Dee.",
+  "totalAttempts": 2483,
+  "totalCompleted": 347,
+  "totalStars": 11,
+  "voteScore": 79,
+  "tags": [
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

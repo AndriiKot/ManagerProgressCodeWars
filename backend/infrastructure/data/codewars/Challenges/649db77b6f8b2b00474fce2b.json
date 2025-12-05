@@ -1,0 +1,40 @@
+{
+  "id": "649db77b6f8b2b00474fce2b",
+  "name": "Students Who Consistently Improve: A Trimester Analysis in UK University",
+  "slug": "students-who-consistently-improve-a-trimester-analysis-in-uk-university",
+  "category": "reference",
+  "publishedAt": "2023-06-30T10:13:23.594Z",
+  "approvedAt": "2023-07-04T18:15:27.899Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/649db77b6f8b2b00474fce2b",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-29T16:55:23.621Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst at a prestigious UK university. As part of the university's ongoing efforts to understand student performance and provide effective learning support, you've been tasked with analyzing the course scores of students over the academic year 2022-2023. Universities in the UK follow a trimester system, with each year split into three terms: \n\n* `Michaelmas` term (Autumn term) - October to December\n* `Lent` term (Spring term) - January to March\n* `Summer` term (or Easter term) - April to June\n\nYour task is to identify students who have shown consistent improvement in their course scores over the three trimesters. The university is particularly interested in these students to understand and potentially replicate their success.\n\nYou have access to two tables: students and courses.\n\n`students`: \n```\n| id  | name     | email               |\n|-----|----------|---------------------|\n| 1   | John     | john@example.com    |\n| 2   | Sarah    | sarah@example.com   |\n| 3   | Robert   | robert@example.com  |\n...\n```\n`courses`: \n```\n| id  | student_id | course_name | score |  course_date |\n|-----|------------|-------------|-------|--------------|\n| 1   | 1          | Math        | 90    | 2022-10-01   |\n| 2   | 1          | Science     | 85    | 2022-10-15   |\n| 3   | 1          | Physics     | 92    | 2023-01-10   | \n| 4   | 1          | Literature  | 80    | 2023-04-05   |\n...\n```\nThe students table has records of the students' id, name, and email. The courses table keeps a record of each course's id, the student_id of the student who took the course, the course name, the student's score in the course, and the date when the course was completed.\n\nYour query should return the following columns:\n\n* `student_id`: the id of the student\n* `name`: the name of the student\n* `trimesters_avg_scores`: a string aggregating the average score for each trimester, with each trimester's average score rounded to two decimal places and placed in brackets. The trimesters should appear in this order: Michaelmas, Lent, Summer.\n* `consistent_improvement`: a boolean indicating whether a student has shown consistent improvement in their scores. This should be true if a student's average score in the Lent term is higher than in the Michaelmas term, and their average score in the Summer term is higher than in the Lent term.\n\nThe results should be ordered by `student_id` in descending order. The trimester boundaries are defined by the start of the month of the first month of the trimester and the end of the month of the last month of the trimester. Only course records where `course_date` falls within these boundaries should be considered for the average calculation for that trimester.\n\nGLHF!\n\n##### Notes:\n\n* For this task, let's assume that each student has taken courses in all trimesters.\n* The academic year in consideration is from October 2022 to June 2023. Any records outside of this period should be disregarded.\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>student_id</th><th>name</th><th>trimesters_avg_scores</th><th>consistent_improvement</th></tr><tr><td>20</td><td>Mac Erdman DC</td><td>Michaelmas (84.14), Lent (85.43), Summer (81.14)</td><td>false</td></tr><tr><td>19</td><td>Lala Bradtke DO</td><td>Michaelmas (82.14), Lent (82.43), Summer (83.14)</td><td>true</td></tr><tr><td>18</td><td>Nolan Feil</td><td>Michaelmas (80.86), Lent (85.86), Summer (81.29)</td><td>false</td></tr></table>\n...\n",
+  "totalAttempts": 1735,
+  "totalCompleted": 218,
+  "totalStars": 9,
+  "voteScore": 41,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64b4eec61cefd8503e1a2fb3",
+  "name": "Order Ratio for Each Product",
+  "slug": "order-ratio-for-each-product",
+  "category": "reference",
+  "publishedAt": "2023-07-17T07:45:03.819Z",
+  "approvedAt": "2023-07-22T15:15:37.647Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64b4eec61cefd8503e1a2fb3",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-07-17T07:33:26.637Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "As a data analyst at a thriving e-commerce company, you've been assigned to understand the distribution of orders across different products. Your task is to write a PostgreSQL query that calculates the ratio of orders for each product in relation to all orders.\n\nYou are given a table named `orders` with the following schema:\n\n* `product_id` (integer): The unique identifier of a product.\n* `order_id` (integer): The unique identifier of an order.\n* `quantity` (integer): The quantity of product in the order.\n\nThe orders table represents all orders made in an online store. Each row represents a single order for a product, so the same product could have multiple orders and therefore appear multiple times in the table.\n\nYour need to write a query that returns the following columns:\n\n* `product_id`: The unique identifier of a product.\n* `count`: The total number of orders for the product.\n* `ratio`: The ratio of number of orders for this product to number of all orders in the table, represented as a percentage. This should be of numeric type, rounded to 2 decimal places\n\nThe table should be sorted by `product_id` in ascending order.\n\nOn the concrete example, if the `orders` table is:\n\n``` \n product_id | order_id | quantity \n------------+----------+----------\n         1  |     1001 |       2\n         1  |     1002 |       1\n         2  |     1003 |       1\n         3  |     1004 |       1\n         3  |     1005 |       1\n         3  |     1006 |       2\n```\n\nThe output based on the table above should be:\n```\nproduct_id  | count | ratio \n------------+-------+-------\n         1  |     2 | 0.3333e2\n         2  |     1 | 0.1667e2\n         3  |     3 | 0.5e2\n``` \n\nGLHF!\n",
+  "totalAttempts": 1183,
+  "totalCompleted": 186,
+  "totalStars": 5,
+  "voteScore": 52,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

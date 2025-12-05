@@ -1,0 +1,58 @@
+{
+  "id": "52c31f8e6605bcc646000082",
+  "name": "Two Sum",
+  "slug": "two-sum",
+  "category": "reference",
+  "publishedAt": "2013-12-31T20:03:10.317Z",
+  "approvedAt": "2014-01-10T00:19:13.194Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "ruby",
+    "powershell",
+    "java",
+    "clojure",
+    "cpp",
+    "swift",
+    "go",
+    "haskell",
+    "elixir",
+    "c",
+    "cobol",
+    "rust",
+    "lambdacalc",
+    "kotlin",
+    "scala"
+  ],
+  "url": "https://www.codewars.com/kata/52c31f8e6605bcc646000082",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-12-31T19:48:30.725Z",
+  "createdBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indexes of these items should then be returned in a tuple / list (depending on your language) like so: `(index1, index2)`.\n\nFor the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.\n\nThe input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).\n\nBased on: https://leetcode.com/problems/two-sum/\n\n```elixir\ntwo_sum([1, 2, 3], 4) == {0, 2}\ntwo_sum([3, 2, 4], 6) == {1, 2}\n```\n```lambdacalc\ntwo-sum < 1 2 3 > 4 # returns (0, 2) or (2, 0)\ntwo-sum < 3 2 4 > 6 # returns (1, 2) or (2, 1)\n```\n```cpp\ntwo_sum({1, 2, 3}, 4); // returns {0, 2} or {2, 0}\ntwo_sum({3, 2, 4}, 6); // returns {1, 2} or {2, 1}\n```\n```go\nTwoSum([]int{1, 2, 3}, 4) // returns [2]int{0, 2}\n// the go translation has an issue where random tests accept either [2]int{0, 2} or [2]int{2, 0}, but fixed tests and sample tests demand the resulting slice to be sorted!\n// untill it's fixed, please sort your result in go.\n```\n```haskell\ntwoSum [1, 2, 3] 4 === (0, 2)\ntwoSum [3, 2, 4] 6 === (1, 2)\n```\n```javascript\ntwoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]\ntwoSum([3, 2, 4], 6) // returns [1, 2] or [2, 1]\n```\n```python\ntwo_sum([1, 2, 3], 4) # returns (0, 2) or (2, 0)\ntwo_sum([3, 2, 4], 6) # returns (1, 2) or (2, 1)\n```\n```rust\ntwo_sum(&[1, 2, 3], 4) // return (0, 2) or (2, 0)\ntwo_sum(&[3, 2, 4], 6) // return (1, 2) or (2, 1)\n```\n```cobol\n      TwoSum([1, 2, 3], 4) => result = [1, 3]\n      TwoSum([3, 2, 4], 6) => result = [1, 2]      \n```\n```scala\ntwoSum(List(1, 2, 3), 4) // (0, 2) or (2, 0)\ntwoSum(List(3, 2, 4), 6) // (1, 2) or (2, 1)\n```\n~~~if:lambdacalc\n### Encodings\n\npurity: `LetRec`  \nnumEncoding: `BinaryScott`  \nexport constructors `nil, cons` for your `List` encoding  \nexport deconstructors `fst, snd` for your `Tuple` encoding  \n~~~\n",
+  "totalAttempts": 287709,
+  "totalCompleted": 92536,
+  "totalStars": 1853,
+  "voteScore": 5233,
+  "tags": [
+    "Arrays",
+    "Fundamentals",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 12,
+    "suggestions": 3
+  }
+}

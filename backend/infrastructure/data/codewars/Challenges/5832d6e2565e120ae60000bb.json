@@ -1,0 +1,41 @@
+{
+  "id": "5832d6e2565e120ae60000bb",
+  "name": "Build a  Car",
+  "slug": "build-a-car",
+  "category": "reference",
+  "publishedAt": "2016-11-23T21:46:30.503Z",
+  "approvedAt": "2017-11-15T13:05:40.011Z",
+  "languages": [
+    "javascript",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/5832d6e2565e120ae60000bb",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-21T11:13:38.256Z",
+  "createdBy": {
+    "username": "frameture",
+    "url": "https://www.codewars.com/users/frameture"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Build a Car\nEver wondered how it is to build cars? Today you can have a taste of it\nand build your own, very simplified version of car using your programming skills. We are going to build vehicles like these below:\n     ____            __________             ____________\n    |  []\\          |        []\\           |[]        []\\\n    -o--o-'         -o-o------o-'          -o-o------o-o-'\n\n(Hope that those resemble cars|buses|trucks).\n\n### Short introduction\nA single vehicle is built with 3 layers:\n\nfirst: `' ____'`        second: `|  []\\`       third: `-o--o-'`\n\n- first layer (top) consists of one space character `' '` and underscores `'_'`;\n\n- second layer consists of a vertical line (rear) `|`, empty spaces (filling) `' '`, square brackets (doors) `[]` and a backslash (front) `\\` ;\n    \n- third layer consists of dashes (frame) `'-'`, lowercase O letters (axles|wheels) `'o'` and one single quote (headlight) `\"'\"`\n\n      \n\n### Problem specification\n\nYour aim is to implement 'Car' class/constructor. The instance of 'Car' must contain 2 properties/members `body` and `chassis` which themselves are objects.\n\nEach instance object (`body` and `chassis`) must contain one property called `component`. \n\nLet's assume that `car` refers to an instance of `Car`, then tests can refer to `component` properties by: `car.chassis.component` and `car.body.component`.\n\nThe `component` properties are of `String` type, and contain layers of the car. `body.component` constitutes of first two layers, whereas `chassis.component`contains the last, third layer.\n\nIn Java, all these properties/objects have to be `public`.\n\nThe `Car` constructor takes two integer arguments: \n\n- `length` specifies the length of the car (in number of characters). Must be at least `7` characters wide (as the first car above), if not, an `Exception | Error` must be thrown;\n- `doors` specifies the number of doors (square brackets) in the second layer. Must be at least `1`, if not, an exception must be thrown. Another exception must be thrown when the `doors` parameter is too big for the current car (when we cannot fit that number of doors in the given length).\n\nThe specified error cases are the **only 3 expected** (in Java: throw an unchecked exception), therefore the tests will use only positive integers as parameters to `Car()`\n\n### Design guidelines\n\n        _____________          ______          __________\n       |[][]   [][][]\\        |[][][]\\        |        []\\\n       -o-o-o-----o-o-'       -o----o-'       -o-o------o-'\n     \nAs we can see, our `Car` class is quite flexible in terms of number of axles and doors, and here the following applies.\n\n- As the `length` parameter increases, we want our cars|trucks to keep balance, hence the number of axles has to increase. The third axle has to be added at the `length = 12` and subsequent axles have to be added every time the given length is wider by `2` (next axle at `length = 14` and so on). As the parameter is big enough we add axles once to the rear (left), once to the front (right) part of the car - starting from the rear. \n \n- The situation works similarly with the `doors` parameter. We try to fit the given number of `doors` in the given length. The first door is added to the front, the next to the rear, the next again to the front.\n\nOne final guide:\n\n- first layer's length = `length - 2`\n- second layer's length  = `length - 1`\n- third layer's length = `length`\n- first and second layers need a line feed character at their end: `\\n`.\n",
+  "totalAttempts": 1837,
+  "totalCompleted": 312,
+  "totalStars": 120,
+  "voteScore": 75,
+  "tags": [
+    "Object-oriented Programming",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

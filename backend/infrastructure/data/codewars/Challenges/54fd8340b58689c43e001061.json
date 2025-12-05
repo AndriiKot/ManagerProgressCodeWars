@@ -1,0 +1,40 @@
+{
+  "id": "54fd8340b58689c43e001061",
+  "name": "No Modulo Mk II",
+  "slug": "no-modulo-mk-ii",
+  "category": "reference",
+  "publishedAt": "2015-03-09T14:35:03.818Z",
+  "approvedAt": "2018-11-18T02:33:45.346Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/54fd8340b58689c43e001061",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-03-09T11:25:52.111Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "Directly inspired by [this kata](http://www.codewars.com/kata/no-modulo/), your goal is now a bit more complex.\n\nYou have to write a function that takes **both a dividend and a divisor and return the remainder of the division**.\n\nExample usage:\n\n    no_modulo(16,16) # => 0\n    no_modulo(15,14) # => 1\n    no_modulo(-5,14) # => 9\n\nNotice that **both dividend and divisor can be negative numbers**; the absolute value of the remainder has always to be greater than or equal to zero and lesser than the absolute value of the divisor.\n\nMore concisely: `0 <= remainder.abs < divisor`.\n\nThe function has to behave like the ordinary modulo operator in Ruby, so, in case you are in doubt:\n\n    no_modulo(5,14) # => 5\n    no_modulo(5,-14) # => -9\n    no_modulo(-5,14) # => 9\n    no_modulo(-5,-14) # => -5\n\nIn the previous kata the divisor was always 16; in this kata, to simplify things a bit, you can expect **the absolute value of the divisor to be always greater than or equal to 2 and lesser than or equal to 32**.\n\nAgain, more concisely: `2 <= divisor.abs <= 32`.\n\nNote: like in the original kata, the following methods (among many others, including `Float`) have been disabled:\n\n    Fixnum#**\n    Fixnum#^\n    Fixnum#*\n    Fixnum#/\n    Fixnum#%\n    Fixnum#divmod\n    Fixnum#fdiv\n    Fixnum#modulo\n    Fixnum#to_f\n    Fixnum#**\n    \nYou can use addition, subtraction and absolute value, but use them sparingly, because big numbers will be tested too.\n\nComparison and logical operators still work, as most of the other functions, including conversion to string and back to integer.",
+  "totalAttempts": 574,
+  "totalCompleted": 31,
+  "totalStars": 3,
+  "voteScore": 15,
+  "tags": [
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

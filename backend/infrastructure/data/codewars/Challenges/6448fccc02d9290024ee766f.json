@@ -1,0 +1,40 @@
+{
+  "id": "6448fccc02d9290024ee766f",
+  "name": "Population Increase",
+  "slug": "population-increase",
+  "category": "reference",
+  "publishedAt": "2023-04-26T10:29:51.759Z",
+  "approvedAt": "2023-05-15T03:23:23.769Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6448fccc02d9290024ee766f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-26T10:28:28.549Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "ejini战神",
+    "url": "https://www.codewars.com/users/ejini%E6%88%98%E7%A5%9E"
+  },
+  "description": "You are given a denormalized database table called `world_population` with columns `id`, `country`, `year`, and `population`. The table contains population data for various countries over the years.\n\nYour task is to write a SQL query that finds the top 5 countries with the highest population increase `strictly` between the years 2000 and 2020, inclusive. The result should show the country name and the population increase in millions, rounded to 2 decimal places. The query should group the results by country and sort them in descending order based on the population increase.\n\n##### Notes:\n\n* `population_increase` should be obtained by dividing the result by 1,000,000 to convert the number to millions, rounding it to 2 decimal places and afterwards by adding an abbreviation for millions, \"M\", to the end of result.\n* for the sample test is used static actual data taken from the United Nations, for the final solution - random test.\n* for this task there is no data missing, so you don't need to take into account that data for a year for some countries may be lacking\n* to avoid ambiguety: by \"increase\" is simply meant \"population at year `y1` - population at year `y2`\".\n\n### Schema:\n\n#### `world_population` table:\n\n```\nColumn      | Type          | Modifiers\n------------+---------------+-----------\nid          | integer       | not null\ncountry     | varchar(255)  | not null\npopulation  | bigint        | not null\nyear        | smallint      | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n```\ncountry      | population_increase\n-------------+-------------------+\nChina        | 436.55 M          |\nIndia        | 195.85 M          | \n...\n```\n\n",
+  "totalAttempts": 2135,
+  "totalCompleted": 275,
+  "totalStars": 18,
+  "voteScore": 61,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

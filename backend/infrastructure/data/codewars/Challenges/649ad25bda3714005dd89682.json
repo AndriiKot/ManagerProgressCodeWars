@@ -1,0 +1,40 @@
+{
+  "id": "649ad25bda3714005dd89682",
+  "name": "Loan Eligibility: part 1",
+  "slug": "loan-eligibility-part-1",
+  "category": "reference",
+  "publishedAt": "2023-06-28T10:44:39.398Z",
+  "approvedAt": "2023-06-30T07:05:39.173Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/649ad25bda3714005dd89682",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-06-27T12:13:15.264Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "We have two tables: customers and loans.\n\n`customers` table:\n\n* `id` (integer): The primary key for the table.\n* `age` (integer): The age of the customer.\n\n`loans` table:\n\n* `id` (integer): The primary key for the table.\n* `customer_id` (integer): A foreign key referencing id in the customers table.\n* `loan_status` (string): The status of the loan, either 'paid' or 'unpaid'.\n* `loan_amount` (float): The amount of the loan.\n\nWrite a SQL query that returns a list of all customers who have IDs between 1 and 10.\nFor each customer, the query should return their ID (as customer_id) and their loan eligibility based on the following criteria:\n* If the customer is 18 to 65 years old (inclusive) and all their loans are paid or they don't have any loans, they should be considered eligible for a loan, and the query should return 'loan can be given'.\n* Otherwise, the query should return 'loan cannot be given'.\n\nThe results should be sorted by `customer_id` in descending order.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n\n<table><!----><tr><th>customer_id</th><th>loan_eligibility</th></tr><tr><td>10</td><td>loan can be given</td></tr><tr><td>9</td><td>loan can be given</td></tr><tr><td>8</td><td>loan cannot be given</td></tr></table>\n...\n\n",
+  "totalAttempts": 2354,
+  "totalCompleted": 355,
+  "totalStars": 16,
+  "voteScore": 50,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

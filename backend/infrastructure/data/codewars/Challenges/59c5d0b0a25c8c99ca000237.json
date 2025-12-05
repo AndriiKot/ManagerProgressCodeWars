@@ -1,0 +1,44 @@
+{
+  "id": "59c5d0b0a25c8c99ca000237",
+  "name": "Line Safari - Is that a line?",
+  "slug": "line-safari-is-that-a-line",
+  "category": "algorithms",
+  "publishedAt": "2017-10-04T09:39:46.899Z",
+  "approvedAt": "2017-11-05T04:43:51.296Z",
+  "languages": [
+    "java",
+    "javascript",
+    "python",
+    "csharp",
+    "haskell",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/59c5d0b0a25c8c99ca000237",
+  "rank": {
+    "id": -3,
+    "name": "3 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2017-09-23T03:10:40.790Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "ZED.CWT",
+    "url": "https://www.codewars.com/users/ZED.CWT"
+  },
+  "description": "<a href=\"https://imgur.com/ta6gv1i\"><img src=\"https://i.imgur.com/ta6gv1i.png?1\" title=\"source: imgur.com\" /></a>\n\n# Kata Task\n\nYou are given a ``grid``, which always includes exactly two end-points indicated by `X`\n\nYou simply need to return true/false if you can detect a **one and only one** \"valid\" line joining those points.\n\nA line can have the following characters :\n\n* `-` = left / right\n* `|` = up / down\n* `+` = corner\n\n## Rules for valid lines\n\n* The most basic kind of valid line is when the end-points are already adjacent\n```\nX\nX\n```\n```\nXX\n```\n* The corner character (`+`) must be used for all corners (but **only** for corners).\n* If you find yourself at a corner then you **must** turn.\n* It must be possible to follow the line with no ambiguity (lookahead of just **one** step, and never treading on the same spot twice).\n* The line may take any path between the two points.\n* Sometimes a line may be valid in one direction but not the other. Such a line is still considered valid.\n* Every line \"character\" found in the grid must be part of the line. If extras are found then the line is not valid.\n \n# Examples\n\n## Good lines\n\n<table border=\"2\">\n<tr>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\nX---------X\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\nX\n|\n|\nX\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n   +--------+\nX--+        +--+\n               |\n               X\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n   +-------------+\n   |             |\nX--+      X------+    \n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n   +-------+\n   |      +<span style='background:green'>+</span>+---+\nX--+      +-+   X\n</pre>\n</table>\n\n## Bad lines\n\n<table border=\"2\">\n\n<tr>\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\nX-----<span style='background:red'>|</span>----X\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\nX\n|\n<span style='background:red'>+</span>\nX\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n   <span style='background:red'>|</span>--------+\nX---        <span style='background:red'>-</span>--+\n               |\n               X\n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n   +------<span style='background:red'> </span>\n   |      <span style='background:red'> </span>       \nX--+      X  \n</pre>\n\n<td width=\"20%\">\n<pre style='font-size:20px;line-height:22px'>\n      +------+\n      |      |\nX-----<span style='background:red'>+</span>------+\n      |\n      X\n</pre>\n</table>\n\n# Hint\n\nImagine yourself walking a path where you can only see your very next step. Can you know which step you must take, or not?",
+  "totalAttempts": 22676,
+  "totalCompleted": 933,
+  "totalStars": 445,
+  "voteScore": 187,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

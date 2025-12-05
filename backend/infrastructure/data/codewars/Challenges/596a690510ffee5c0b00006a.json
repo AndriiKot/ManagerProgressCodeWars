@@ -1,0 +1,45 @@
+{
+  "id": "596a690510ffee5c0b00006a",
+  "name": "D&D Character generator #1: attribute modifiers and spells",
+  "slug": "d-and-d-character-generator-number-1-attribute-modifiers-and-spells",
+  "category": "reference",
+  "publishedAt": "2017-07-15T21:12:29.805Z",
+  "approvedAt": "2017-07-17T11:38:14.396Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python",
+    "crystal",
+    "php",
+    "csharp",
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/596a690510ffee5c0b00006a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-07-15T19:12:05.680Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Taking into consideration the [3.5 edition rules](http://www.dandwiki.com/wiki/SRD:Ability_Scores#Table:_Ability_Modifiers_and_Bonus_Spells), your goal is to build a function that takes an ability score (worry not about validation: it is always going to be a non negative integer), will return:\n\n* attribute modifier, as indicated on the table of the above link;\n* maximum spell level for the spells you can cast (-1 for no spells at all) with that score;\n* the eventual extra spells you might get (as an array/list, with elements representing extra spells for 1st, 2nd,... spell level in order; empty array for no extra spells).\n\nThe result needs to be an object (associative array in PHP), as shown in the examples:\n\n```javascript\ncharAttribute(0) === {modifier: 0, maximumSpellLevel: -1, extraSpells: []}\ncharAttribute(1) === {modifier: -5, maximumSpellLevel: -1, extraSpells: []}\ncharAttribute(5) === {modifier: -3, maximumSpellLevel: -1, extraSpells: []}\ncharAttribute(10) === {modifier: 0, maximumSpellLevel: 0, extraSpells: []}\ncharAttribute(20) === {modifier: +5, maximumSpellLevel: 9, extraSpells: [2,1,1,1,1]}\n```\n```php\nchar_attribute(0); // => ['modifier' => 0, 'maximum_spell_level' => -1, 'extra_spells' => []]\nchar_attribute(1); // => ['modifier' => -5, 'maximum_spell_level' => -1, 'extra_spells' => []]\nchar_attribute(5); // => ['modifier' => -3, 'maximum_spell_level' => -1, 'extra_spells' => []]\nchar_attribute(10); // => ['modifier' => 0, 'maximum_spell_level' => 0, 'extra_spells' => []]\nchar_attribute(20); // => ['modifier' => +5, 'maximum_spell_level' => 9, 'extra_spells' => [2, 1, 1, 1, 1]]\n```\n```python\nchar_attribute(0) == {\"modifier\": 0, \"maximum_spell_level\": -1, \"extra_spells\": []}\nchar_attribute(1) == {\"modifier\": -5, \"maximum_spell_level\": -1, \"extra_spells\": []}\nchar_attribute(5) == {\"modifier\": -3, \"maximum_spell_level\": -1, \"extra_spells\": []}\nchar_attribute(10) == {\"modifier\": 0, \"maximum_spell_level\": 0, \"extra_spells\": []}\nchar_attribute(20) == {\"modifier\": +5, \"maximum_spell_level\": 9, \"extra_spells\": [2,1,1,1,1]}\n```\n```ruby\nchar_attribute(0) == {\"modifier\"=>0, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(1) == {\"modifier\"=>-5, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(5) == {\"modifier\"=>-3, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(10) == {\"modifier\": 0, \"maximum_spell_level\"=>0, \"extra_spells\"=>[]}\nchar_attribute(20) == {\"modifier\": +5, \"maximum_spell_level\"=>9, \"extra_spells\"=>[2,1,1,1,1]}\n```\n```crystal\nchar_attribute(0) == {\"modifier\"=>0, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(1) == {\"modifier\"=>-5, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(5) == {\"modifier\"=>-3, \"maximum_spell_level\"=>-1, \"extra_spells\"=>[]}\nchar_attribute(10) == {\"modifier\": 0, \"maximum_spell_level\"=>0, \"extra_spells\"=>[]}\nchar_attribute(20) == {\"modifier\": +5, \"maximum_spell_level\"=>9, \"extra_spells\"=>[2,1,1,1,1]}\n```\n```csharp\nCharAttribute(0) => (modifier: 0, maximumSpellLevel: -1, extraSpells: new int[0])\nCharAttribute(1) => (modifier: -5, maximumSpellLevel: -1, extraSpells: new int[0])\nCharAttribute(5) => (modifier: -3, maximumSpellLevel: -1, extraSpells: new int[0])\nCharAttribute(10) => (modifier: 0, maximumSpellLevel: 0, extraSpells: new int[0])\nCharAttribute(20) => (modifier: +5, maximumSpellLevel: 9, extraSpells: new []{2,1,1,1,1})\n```\n\n*Note: I didn't explain things in detail and just pointed out to the table on purpose, as my goal is also to train the pattern recognition skills of whoever is going to take this challenges, so do not complain about a summary description. Thanks :)*\n\nIn the same series:\n\n* [D&D Character generator #1: attribute modifiers and spells](https://www.codewars.com/kata/d-and-d-character-generator-number-1-attribute-modifiers-and-spells/)\n* [D&D Character generator #2: psion power points](https://www.codewars.com/kata/d-and-d-character-generator-number-2-psion-power-points/)\n* [D&D Character generator #3: carrying capacity](https://www.codewars.com/kata/d-and-d-character-generator-number-3-carrying-capacity/)",
+  "totalAttempts": 3615,
+  "totalCompleted": 264,
+  "totalStars": 25,
+  "voteScore": 53,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

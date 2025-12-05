@@ -1,0 +1,49 @@
+{
+  "id": "58b57ae2724e3c63df000006",
+  "name": "Parse HTML/CSS Colors",
+  "slug": "parse-html-slash-css-colors",
+  "category": "reference",
+  "publishedAt": "2017-02-28T14:47:11.733Z",
+  "approvedAt": "2017-03-02T14:56:03.176Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "clojure",
+    "haskell",
+    "java",
+    "csharp",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/58b57ae2724e3c63df000006",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-02-28T13:28:02.251Z",
+  "createdBy": {
+    "username": "junthecoder",
+    "url": "https://www.codewars.com/users/junthecoder"
+  },
+  "approvedBy": {
+    "username": "zruF",
+    "url": "https://www.codewars.com/users/zruF"
+  },
+  "description": "In this kata you parse RGB colors represented by strings. The formats are primarily used in HTML and CSS. Your task is to implement a function which takes a color as a string and returns the parsed color as a map (see Examples).\n\n\n## Input:\nThe input string represents one of the following:\n\n- **6-digit hexadecimal** - \"#RRGGBB\"  \n  e.g. \"#012345\", \"#789abc\", \"#FFA077\"  \n  Each pair of digits represents a value of the channel in hexadecimal: 00 to FF\n\n\n- **3-digit hexadecimal** - \"#RGB\"  \n  e.g. \"#012\", \"#aaa\", \"#F5A\"  \n  Each digit represents a value 0 to F which translates to 2-digit hexadecimal: 0->00, 1->11, 2->22, and so on.\n\n\n- **Preset color name**  \n e.g. \"red\", \"BLUE\", \"LimeGreen\"  \n  You have to use the predefined map `PRESET_COLORS` (JavaScript, Python, Ruby), `presetColors` (Java, C#, Haskell), `PresetColors` (Go) or `preset-colors` (Clojure). The keys are the names of preset colors *in lower-case* and the values are the corresponding colors in 6-digit hexadecimal (same as 1. \"#RRGGBB\").\n\n\n## Examples:\n\n```ruby\nparse_html_color('#80FFA0')   # => { r: 128, g: 255, b: 160 }\nparse_html_color('#3B7')      # => { r: 51,  g: 187, b: 119 }\nparse_html_color('LimeGreen') # => { r: 50,  g: 205, b: 50  }\n```\n```python\nparse_html_color('#80FFA0')   # => {'r': 128, 'g': 255, 'b': 160}\nparse_html_color('#3B7')      # => {'r': 51,  'g': 187, 'b': 119}\nparse_html_color('LimeGreen') # => {'r': 50,  'g': 205, 'b': 50 }\n```\n```javascript\nparseHTMLColor('#80FFA0');    // => { r: 128, g: 255, b: 160 }\nparseHTMLColor('#3B7');       // => { r: 51,  g: 187, b: 119 }\nparseHTMLColor('LimeGreen');  // => { r: 50,  g: 205, b: 50  }\n```\n```clojure\n(parse-html-color \"#80FFA0\")   ; => {:r 128 :g 255 :b 160}\n(parse-html-color \"#3B7\")      ; => {:r 51  :g 187 :b 119}\n(parse-html-color \"LimeGreen\") ; => {:r 50  :g 205 :b 50 }\n```\n```haskell\n-- You can get a value from the map like this:\npresetColors ! \"blue\"\n--\nparseHtmlColor \"#80FFA0\"   === fromList [('r',128), ('g',255), ('b',160)]\nparseHtmlColor \"#3B7\"      === fromList [('r',51), ('g',187), ('b',119)]\nparseHtmlColor \"LimeGreen\" === fromList [('r',50), ('g',205), ('b',50)]\n```\n```java\nparse(\"#80FFA0\")   === new RGB(128, 255, 160))\nparse(\"#3B7\")      === new RGB( 51, 187, 119))\nparse(\"LimeGreen\") === new RGB( 50, 205,  50))\n\n// RGB class is defined as follows:\nfinal class RGB {\n    public int r, g, b;\n    \n    public RGB();\n    public RGB(int r, int g, int b);\n}\n```\n```csharp\nParse(\"#80FFA0\")   === new RGB(128, 255, 160))\nParse(\"#3B7\")      === new RGB( 51, 187, 119))\nParse(\"LimeGreen\") === new RGB( 50, 205,  50))\n\n// RGB struct is defined as follows:\nstruct RGB\n{\n    public byte r, g, b;\n    public RGB(byte r, byte g, byte b);\n}\n```\n```go\nParse(\"#80FFA0\")   == Color{128, 255, 160}\nParse(\"#3B7\")      == Color{51, 187, 119}\nParse(\"LimeGreen\") == Color{50, 205, 50}\n\n// Color struct is defined as follows:\ntype Color struct{ R, G, B byte }\n```\n",
+  "totalAttempts": 16060,
+  "totalCompleted": 2893,
+  "totalStars": 180,
+  "voteScore": 534,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Strings",
+    "Parsing"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

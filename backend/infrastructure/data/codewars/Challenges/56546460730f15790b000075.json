@@ -1,0 +1,46 @@
+{
+  "id": "56546460730f15790b000075",
+  "name": "Conic Classification",
+  "slug": "conic-classification",
+  "category": "reference",
+  "publishedAt": "2015-11-25T15:10:59.456Z",
+  "approvedAt": "2018-10-13T10:26:15.488Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/56546460730f15790b000075",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-11-24T13:21:36.367Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "The conic curves may be obtained doing different sections of a cone and we may obtain the three principal groups: ellipse, hyperbola and parabola.\n\n<a href=\"http://imgur.com/4NdOkgf\"><img src=\"http://i.imgur.com/4NdOkgf.png?2\" title=\"source: imgur.com\" /></a>\n\nThe circle is a special case of ellipses.\n\nIn mathematics all the conics may be represented by the following equation:\n\n<a href=\"http://imgur.com/SVTomxD\"><img src=\"http://i.imgur.com/SVTomxD.jpg?1\" title=\"source: imgur.com\" /></a>\n\n```A, B, C, D, E and F``` are coefficients that may have different values in the real numeric field.\n\nHesse in the nineteenth century, introduced the use of the invariants, useful tool in order to classify the different conic curves.\n\nThe invariants ```M, N, and S``` are:\n\n<a href=\"http://imgur.com/v7xVjyX\"><img src=\"http://i.imgur.com/v7xVjyX.png?1\" title=\"source: imgur.com\" /></a>\n\nIt may be proved that if the system of coordinates changes, for example moving the center of the system of coordinates or rotating the coordinates axes, or doing both things, the invariants will have the same value, even though the coefficients ```A, B, C, D, E, and F``` change.\n\nThe following chart shows how the values of ```M, N and S``` classify the gender of the conics and the special cases when the conics are degenerated (points or lines) or they are imaginary:\n\n<a href=\"https://imgur.com/2hUJNeN\"><img src=\"https://i.imgur.com/2hUJNeN.jpg?1\" title=\"source: imgur.com\" /></a>\n\nThe function ```classify_conic()``` will do this work.\nThis function will receive the different coefficients of the conic equation and will output the result of the classification as a string\n```python\nclassify_conic(A, B, C, D, E, F) == result\n```\n\n```javascript\nclassifyConic(A, B, C, D, E, F) == result\n```\n```ruby\nclassify_conic(a, b, c, d, e, f) == result\n```\nLet's see some cases:\n\n```\nCase1\nA = 1 , B = 1, C = 1, D = 2, E = 2, F = -4\nclassify_conic(A, B, C, D, E, F) == \"A real ellipse\"\n\nCase2\nA = 1 , B = 1, C = -1, D = 2, E = 2, F = 4\nclassify_conic(A, B, C, D, E, F) == \"A real hyperbola\"\n\nCase3\nA =1, B = 0, C = 0, D = 4; E = 4, F = 4\nclassify_conic(A, B, C, D, E, F) == \"A real parabola\"\n```\n\n```\nCase1\nA = 1 , B = 1, C = 1, D = 2, E = 2, F = -4\nclassifyConic(A, B, C, D, E, F) == \"A real ellipse\"\n\nCase2\nA = 1 , B = 1, C = -1, D = 2, E = 2, F = 4\nclassifyConic(A, B, C, D, E, F) == \"A real hyperbola\"\n\nCase3\nA =1, B = 0, C = 0, D = 4; E = 4, F = 4\nclassifyConic(A, B, C, D, E, F) == \"A real parabola\"\n```\nThe graph showing the above three cases is the following:\n\n<a href=\"http://imgur.com/nUE4mcM\"><img src=\"http://i.imgur.com/nUE4mcM.png?1\" title=\"source: imgur.com\" /></a>\n\nThe messages for the special cases, having degenerated or imaginary conics will be:\n```python\n# For elliptic gender:\n\"An imaginary ellipse\"\n\"A degenerated ellipse: One point\"\n\n# For hyperbolic gender:\n\"A degenerated hyperbola: two intersecting lines\"\n\n# For parabolic gender:\n\"A degenerated parabola: two parallel lines\"\n\"A degenerated parabola: two coinciding lines\"\n\"A degenerated parabola: two imaginary lines\"\n```\nEnjoy it!!\n#Note: \n\n- The given coefficients `A`, `B`, `C`, `D`, `E and `F`, (`a`, `b`, `c`, `d`, `e` and `f` in Ruby) will be always integers.\n\n- In order to avoid precision problems, the determinant values of `M` and `N` should be obtained by the rule of Sarrus. (See: https://en.wikipedia.org/wiki/Rule_of_Sarrus)",
+  "totalAttempts": 641,
+  "totalCompleted": 141,
+  "totalStars": 16,
+  "voteScore": 33,
+  "tags": [
+    "Fundamentals",
+    "Logic",
+    "Data Structures",
+    "Mathematics",
+    "Geometry",
+    "Linear Algebra"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

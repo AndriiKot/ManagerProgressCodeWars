@@ -1,0 +1,40 @@
+{
+  "id": "653a1edb38656500434d80ba",
+  "name": "Finding Duplicate Product Codes Across Different Groups",
+  "slug": "finding-duplicate-product-codes-across-different-groups",
+  "category": "reference",
+  "publishedAt": "2023-10-26T08:10:22.203Z",
+  "approvedAt": "2023-10-27T08:13:30.437Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/653a1edb38656500434d80ba",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-10-26T08:10:03.140Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Write an SQL query to identify products that:\n\n1) Have at least one other product with the same `product_code` but from a different `group_id`.\n2) For a given `product_code` and `group_id` combination, if multiple entries exist, the output should only return the entry with the highest `product_id`.\n3) If a product has a `product_code` that isn't found in any other `group_id`, then it should not appear in the result set.\n\n`products` table:\n\n1) `product_id` (integer): A unique identifier for each product.\n2) `group_id` (integer): An identifier representing the group to which the product belongs.\n3) `product_code` (varchar): A code assigned to the product. Multiple products, possibly from different groups, can have the same code.\n\nThe desired output should include all the columns of the `products` table. Results should be ordered by `product_code` first in asc order and then by `group_id` in descending order. Thus for this sample dataset:\n\n```\nproduct_id | group_id | product_code\n-----------+----------+--------------\n    1      |    1     |      A\n    2      |    1     |      A \n    3      |    2     |      B\n    4      |    3     |      B\n```    \n    \nthe expected output would be:\n\n```\nproduct_id | group_id | product_code\n-----------+----------+-------------\n    4      |    3     |      B\n    3      |    2     |      B\n```\n\n\nGLHF!\n\n\n\n\n\n",
+  "totalAttempts": 474,
+  "totalCompleted": 96,
+  "totalStars": 8,
+  "voteScore": 33,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

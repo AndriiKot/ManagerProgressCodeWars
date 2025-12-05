@@ -1,0 +1,40 @@
+{
+  "id": "649563164b1bbf004be34cd6",
+  "name": "Ranking students by performance in Math and Science",
+  "slug": "ranking-students-by-performance-in-math-and-science",
+  "category": "reference",
+  "publishedAt": "2023-06-23T09:19:31.798Z",
+  "approvedAt": "2023-06-28T09:27:07.499Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/649563164b1bbf004be34cd6",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-23T09:17:11.162Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Let's consider a case where we have a `students` table and a `courses` table. The tables have the following structure:\n\n`students`: \n```\n| id  | name     | email               |\n|-----|----------|---------------------|\n| 1   | John     | john@example.com    |\n| 2   | Sarah    | sarah@example.com   |\n| 3   | Robert   | robert@example.com  |\n...\n```\n`courses`: \n```\n| id  | student_id | course_name | score |\n|-----|------------|-------------|-------|\n| 1   | 1          | Math        | 90    |\n| 2   | 1          | Science     | 85    |\n| 3   | 1          | Physics     | 92    |\n| 4   | 1          | Literature  | 80    |\n...\n```\n\nYour task is to write a SQL query that identifies the students who have the highest combined score in 'Math' and 'Science' and assigns each student a unique ordinal number (which we will call 'rank') based on their total score. The student with the highest combined score should receive a rank of 1. If students have the same total score, the student with the smaller student ID should receive the lower rank.\n\nYour query should return the following columns:\n\n* `rank`: The unique ordinal number\n* `student_id`: The ID of the student \n* `name`: The name of the student\n* `total_score`: The total score of the student in 'Math' and 'Science'\n\nThe result should be ordered by the rank in asc order\n\nGood Luck!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>rank</th><th>student_id</th><th>name</th><th>total_score</th></tr><tr><td>1</td><td>28</td><td>Dr. Emelda Klocko</td><td>192</td></tr><tr><td>2</td><td>39</td><td>Eleonor Lynch</td><td>191</td></tr><tr><td>3</td><td>26</td><td>Jannet Schoen V</td><td>189</td></tr></table>\n...\n\n\n",
+  "totalAttempts": 1460,
+  "totalCompleted": 362,
+  "totalStars": 11,
+  "voteScore": 56,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

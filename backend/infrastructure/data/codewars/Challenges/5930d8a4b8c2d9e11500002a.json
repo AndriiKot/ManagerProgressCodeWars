@@ -1,0 +1,48 @@
+{
+  "id": "5930d8a4b8c2d9e11500002a",
+  "name": "Digital cypher vol 3 - missing key",
+  "slug": "digital-cypher-vol-3-missing-key",
+  "category": "reference",
+  "publishedAt": "2017-06-02T06:20:43.569Z",
+  "approvedAt": "2017-07-14T12:38:09.397Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "ruby",
+    "coffeescript",
+    "c",
+    "python",
+    "nasm",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/5930d8a4b8c2d9e11500002a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-06-02T03:16:53.398Z",
+  "createdBy": {
+    "username": "dcieslak",
+    "url": "https://www.codewars.com/users/dcieslak"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "# Introduction \n\nDigital Cypher assigns a unique number to each letter of the alphabet:\n\n```\n a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z\n 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26\n```\n\nIn the encrypted word we write the corresponding numbers instead of the letters. For example, the word `scout` becomes:\n\n```\n s  c  o  u  t\n19  3 15 21 20\n```\nThen we add to each number a digit from the key (repeated if necessary). For example if the key is `1939`:\n\n```\n   s  c  o  u  t\n  19  3 15 21 20\n + 1  9  3  9  1\n ---------------\n  20 12 18 30 21\n  \n   m  a  s  t  e  r  p  i  e  c  e\n  13  1 19 20  5 18 16  9  5  3  5\n+  1  9  3  9  1  9  3  9  1  9  3\n  --------------------------------\n  14 10 22 29  6 27 19 18  6  12 8\n```\n\n# Task\n\nWrite a function that accepts a `message` string  and an array of integers `code`. As the result, return the `key` that was used to encrypt the `message`. The `key` has to be shortest of all possible keys that can be used to code the `message`: i.e. when the possible keys are `12` , `1212`, `121212`, your solution should return `12`.\n\n#### Input / Output:\n\n* The `message` is a string containing only lowercase letters.<br/>\n* The `code` is an array of positive integers.<br/>\n* The `key` output is a positive integer.\n\n# Examples\n\n```javascript\nfindTheKey(\"scout\", [20, 12, 18, 30, 21]);  =>  1939\nfindTheKey(\"masterpiece\", [14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8]);  =>  1939 \nfindTheKey(\"nomoretears\", [15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20]);  =>  12\n```\n```csharp\nFindTheKey(\"scout\", new int[]{20, 12, 18, 30, 21});  => 1939\nFindTheKey(\"masterpiece\", new int[]{14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8});  =>  1939\nFindTheKey(\"nomoretears\", new int[]{15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20});  =>  12\n```\n```go\nFindTheKey(\"scout\", []int{20, 12, 18, 30, 21})  => 1939\nFindTheKey(\"masterpiece\", []int{14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8})  => 1939\nFindTheKey(\"nomoretears\", []int{15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20})  => 12\n```\n```ruby\nfind_the_key(\"scout\", [20, 12, 18, 30, 21]) # -->  1939\nfind_the_key(\"masterpiece\", [14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8]) # -->  1939\nfind_the_key(\"nomoretears\", [15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20]) # -->  12\n```\n```python\nfind_the_key(\"scout\", [20, 12, 18, 30, 21]) # -->  1939\nfind_the_key(\"masterpiece\", [14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8]) # -->  1939\nfind_the_key(\"nomoretears\", [15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20]) # -->  12\n```\n```nasm\nmsg:    db    `scout\\0`\ncode:   db    20, 12, 18, 30, 21\nmov rdi, msg\nmov rsi, code\nmov rdx, 5\ncall find_the_key    ; EAX <- 1939\n\nmsg:    db    `masterpiece\\0`\ncode:   db    14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8\nmov rdi, msg\nmov rsi, code\nmov rdx, 11\ncall find_the_key    ; EAX <- 1939\n\nmsg:    db    `nomoretears\\0`\ncode:   db    15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20\nmov rdi, msg\nmov rsi, code\nmov rdx, 11\ncall find_the_key    ; EAX <- 12\n```\n```c\nfind_the_key(\"scout\", (const unsigned char[]){20, 12, 18, 30, 21}, 5) /* -->  1939  */\nfind_the_key(\"masterpiece\", (const unsigned char[]){14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8}, 11) /* -->  1939  */\nfind_the_key(\"nomoretears\", (const unsigned char[]){15, 17, 14, 17, 19, 7, 21, 7, 2, 20, 20}, 11) /* -->  12  */\n```\n\n# Digital cypher series\n- [Digital cypher vol 1](https://www.codewars.com/kata/592e830e043b99888600002d)\n- [Digital cypher vol 2](https://www.codewars.com/kata/592edfda5be407b9640000b2)\n- [Digital cypher vol 3 - missing key](https://www.codewars.com/kata/5930d8a4b8c2d9e11500002a)\n",
+  "totalAttempts": 12079,
+  "totalCompleted": 1112,
+  "totalStars": 122,
+  "voteScore": 248,
+  "tags": [
+    "Fundamentals",
+    "Ciphers",
+    "Cryptography"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

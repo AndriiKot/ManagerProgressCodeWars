@@ -1,0 +1,41 @@
+{
+  "id": "5821ee33ec380124f1000013",
+  "name": "Dealing With Messy Data",
+  "slug": "dealing-with-messy-data",
+  "category": "reference",
+  "publishedAt": "2016-11-08T15:24:35.784Z",
+  "approvedAt": "2017-04-20T16:48:29.031Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/5821ee33ec380124f1000013",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2016-11-08T15:25:41.981Z",
+  "createdBy": {
+    "username": "danicat",
+    "url": "https://www.codewars.com/users/danicat"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "Your company has an internal policy to determine your customers' credit limit, but this procedure has been questioned recently by the board as being too conservative.\n\nYour CEO wants to increase the current customer base credit limits in order to upsell a new line of products. In order to do that, the company hired several external consultancies to produce new credit limit estimates.\n\nThe problem is that each agency has produced the report in its own format. Some use the format `\"First-name Last-name\"` to identify a person, others use the format `\"Last-name, First-name\"`. There is also no consensus on how to capitalize each word, so some used all uppercase, others used all lowercase, and some used mixed-case.\n\nAlso, some names are titled, for example: `\"Dr. Hannibal Lecter\"`, `\"Robert Downey Jr.\"` etc, so you will need to pay attention to any such or similar cases.\n\nInternally, the data is structured as follows:\n\n```\nTable: customers\n================\n\nid: INT\nfirst_name: TEXT\nlast_name: TEXT\ncredit_limit: FLOAT\n```\n\nThe data you've received from all agencies was consolidated in the following table:\n\n```\nTable: prospects\n================\nfull_name: TEXT\ncredit_limit: FLOAT\n```\n\nKeep in mind that the agencies had access only to a <b>*partial*</b> customer base. There is also the possibility of more than one agency prospecting the same customer, so it's highly likely that there will be duplicates. Finally, they've prospected customers that were not in your customer base as well.\n\nFor this task you are interested in the prospected customers that are already in your customer base and the prospected credit limit is higher than your internal estimate. When more than one agency prospected the same customer, chose the highest estimate.\n\nYou have to produce a report with the following fields:\n\n```\nfirst_name\nlast_name\nold_limit [the current credit_limit]\nnew_limit [the highest credit_limit found]\n```\n\nGood luck!\n\nNotes: \n- only list the customers that a higher credit limit was found.",
+  "totalAttempts": 22467,
+  "totalCompleted": 1315,
+  "totalStars": 247,
+  "voteScore": 201,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Data Science"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

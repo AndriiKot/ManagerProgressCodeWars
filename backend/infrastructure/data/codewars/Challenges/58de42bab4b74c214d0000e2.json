@@ -1,0 +1,41 @@
+{
+  "id": "58de42bab4b74c214d0000e2",
+  "name": "A Simple Music Decoder",
+  "slug": "a-simple-music-decoder",
+  "category": "algorithms",
+  "publishedAt": "2017-03-31T14:34:37.370Z",
+  "approvedAt": "2017-04-17T08:32:40.748Z",
+  "languages": [
+    "javascript",
+    "java",
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/58de42bab4b74c214d0000e2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-03-31T11:51:22.731Z",
+  "createdBy": {
+    "username": "chainsaw-maniac",
+    "url": "https://www.codewars.com/users/chainsaw-maniac"
+  },
+  "approvedBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "description": "You have been hired by a major MP3 player manufacturer to implement a new music compression standard. In this kata you will implement the DECODER, and its companion kata deals with the <a href=\"https://www.codewars.com/kata/a-simple-music-encoder\">ENCODER</a>.\n\n# Specification\nThe input signal is represented as a comma-separated string of integers and tokens (sequence descriptors). Tokens must be expanded as follows.\n\n* `number*count` is expanded as `number` repeated `count` times\n* `first-last` is expanded as a sequence of consecutive numbers starting with `first` and ending with `last`. This is true for both ascending and descending order\n* `first-last/interval` is similarly expanded, as sequence starting with `first`, ending with `last`, where the numbers are separated by `interval`. Note that interval does NOT have a sign\n\n\n# Examples\n* `\"1,3-5,7-11,14,15,17-20\"`\n  is expanded to\n  `[1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]`\n* `\"0-4/2, 5, 7-9\"`\n  is expanded to\n  `[0, 2, 4, 5, 7, 8, 9]`\n* `\"0-4/2, 5, 7-5\"`\n  is expanded to\n  `[0, 2, 4, 5, 7, 6, 5]`\n* `\"0-4/2, 5, 7-5, 5*4\"`\n  is expanded to\n  `[0, 2, 4, 5, 7, 6, 5, 5, 5, 5, 5]`\n\n# Input\nA string of comma-separated integers and tokens (sequence descriptors)\n\n# Output\nAn array of integers\n",
+  "totalAttempts": 4430,
+  "totalCompleted": 363,
+  "totalStars": 41,
+  "voteScore": 128,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

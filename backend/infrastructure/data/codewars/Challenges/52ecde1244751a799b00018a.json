@@ -1,0 +1,44 @@
+{
+  "id": "52ecde1244751a799b00018a",
+  "name": "Sqrt approximation",
+  "slug": "sqrt-approximation",
+  "category": "algorithms",
+  "publishedAt": "2014-02-01T11:44:34.234Z",
+  "approvedAt": "2014-11-06T15:32:24.850Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "csharp",
+    "cpp",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/52ecde1244751a799b00018a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-02-01T11:44:19.384Z",
+  "createdBy": {
+    "username": "riomus",
+    "url": "https://www.codewars.com/users/riomus"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "We want to approximate the `sqrt` function. Usually this function takes a floating point number and returns another floating point number, but in this kata we're going to work with _integral_ numbers instead.\n\nYour task is to write a function that takes an integer `n` and returns either\n\n- an integer `k` if `n` is a square number, such that `k * k == n` or\n- a range `(k, k+1)`, such that `k * k < n` and `n < (k+1) * (k+1)`.\n\n### Examples\n\n```python\nsqrt_approximation(4) --> 2\nsqrt_approximation(5) --> [2,3]\n```\n```javascript\nassert.deepEqual( sqrtApproximation(4), 2 );\nassert.deepEqual( sqrtApproximation(5), [2,3] );\n```\n```haskell\nsqrtInt :: Integral n => n -> Either (n,n) n\nsqrtInt 4 `shouldBe` Right 2\nsqrtInt 5 `shouldBe` Left (2,3)\n```\n```csharp\nAssert.AreEqual(2, Kata.SqrtApproximation(4));\nAssert.AreEqual(new int[] { 2,3 }, Kata.SqrtApproximation(5));\n```\n```cpp\nAssert::That(sqrtApproximation(4), Equals(std::vector<int>{2}));\nAssert::That(sqrtApproximation(5), Equals(std::vector<int>{2,3}));\n```\n\nNote : `pow` and `sqrt` functions are disabled.\n\n### Remarks\n\nIn dynamic languages, return either a single value or an array/list. In Haskell, use `Either`.",
+  "totalAttempts": 8284,
+  "totalCompleted": 1858,
+  "totalStars": 46,
+  "voteScore": 241,
+  "tags": [
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 2
+  }
+}

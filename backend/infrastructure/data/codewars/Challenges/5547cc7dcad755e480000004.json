@@ -1,0 +1,78 @@
+{
+  "id": "5547cc7dcad755e480000004",
+  "name": "Is  my friend cheating?",
+  "slug": "is-my-friend-cheating",
+  "category": "games",
+  "publishedAt": "2015-05-05T14:20:58.386Z",
+  "approvedAt": "2015-06-05T16:44:33.094Z",
+  "languages": [
+    "python",
+    "ruby",
+    "csharp",
+    "java",
+    "clojure",
+    "javascript",
+    "haskell",
+    "coffeescript",
+    "typescript",
+    "cpp",
+    "elixir",
+    "php",
+    "crystal",
+    "fsharp",
+    "c",
+    "rust",
+    "swift",
+    "go",
+    "r",
+    "shell",
+    "ocaml",
+    "fortran",
+    "julia",
+    "scala",
+    "powershell",
+    "nim",
+    "racket",
+    "reason",
+    "kotlin",
+    "prolog",
+    "pascal",
+    "factor",
+    "raku",
+    "perl",
+    "elm",
+    "cobol",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/5547cc7dcad755e480000004",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-05-04T19:46:06.700Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "- A friend of mine takes the sequence of all numbers from 1 to n (where n > 0).\n- Within that sequence, he chooses two numbers, a and b.\n- He says that the product of a and b should be equal to the sum of all numbers in the sequence, excluding a and b.\n- Given a number n, could you tell me the numbers he excluded from the sequence?\n\nThe function takes the parameter: `n` \n(n is always strictly greater than 0) and returns an array or a string (depending on the language) of the form: \n```\n[(a, b), ...] or [[a, b], ...] or {{a, b}, ...} or or [{a, b}, ...]\n```\nwith **all** `(a, b)` which are the possible removed numbers in the sequence `1 to n`.\n\n`[(a, b), ...] or [[a, b], ...] or {{a, b}, ...} or ... `will be sorted in increasing order of the \"a\".\n\nIt happens that there are several possible (a, b).\nThe function returns an empty array (or an empty string) if no possible numbers are found which will prove that my friend has not told the truth! (Go: in this case return `nil`).\n\n#### Examples:\n\n```\nremovNb(26) should return [(15, 21), (21, 15)]\nor\nremovNb(26) should return { {15, 21}, {21, 15} }\nor\nremoveNb(26) should return [[15, 21], [21, 15]]\nor\nremovNb(26) should return [ {15, 21}, {21, 15} ]\nor\nremovNb(26) should return \"15 21, 21 15\"\n```\nor\n```\nin C:\nremovNb(26) should return  {{15, 21}{21, 15}} tested by way of strings.\nFunction removNb should return a pointer to an allocated array of Pair pointers, each one also allocated. \n```\n#### Note\nSee examples of returns for each language in \"RUN SAMPLE TESTS\"\n\n\n\n",
+  "totalAttempts": 134356,
+  "totalCompleted": 18801,
+  "totalStars": 1870,
+  "voteScore": 1706,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 7,
+    "suggestions": 2
+  }
+}

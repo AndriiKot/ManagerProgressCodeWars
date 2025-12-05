@@ -1,0 +1,57 @@
+{
+  "id": "56b97b776ffcea598a0006f2",
+  "name": "Bubblesort Once",
+  "slug": "bubblesort-once",
+  "category": "algorithms",
+  "publishedAt": "2016-02-09T15:58:18.835Z",
+  "approvedAt": "2016-05-21T16:47:43.990Z",
+  "languages": [
+    "javascript",
+    "cpp",
+    "csharp",
+    "php",
+    "python",
+    "riscv",
+    "go",
+    "d",
+    "rust",
+    "ocaml",
+    "lua",
+    "haskell",
+    "lambdacalc",
+    "java",
+    "coffeescript",
+    "scala",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/56b97b776ffcea598a0006f2",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-02-09T05:39:03.891Z",
+  "createdBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "## Overview\n\n[Bubblesort](https://en.wikipedia.org/wiki/Bubble_sort) is an inefficient sorting algorithm that is simple to understand and therefore often taught in introductory computer science courses as an example how _not_ to sort a list. Nevertheless, it is correct in the sense that it eventually produces a sorted version of the original list when executed to completion.\n\nAt the heart of Bubblesort is what is known as a _pass_. Let's look at an example at how a pass works.\n\nConsider the following list:\n\n```\n9, 7, 5, 3, 1, 2, 4, 6, 8\n```\n\nWe initiate a pass by comparing the first two elements of the list. Is the first element greater than the second? If so, we swap the two elements. Since `9` is greater than `7` in this case, we swap them to give `7, 9`. The list then becomes:\n\n```\n7, 9, 5, 3, 1, 2, 4, 6, 8\n```\n\nWe then continue the process for the 2nd and 3rd elements, 3rd and 4th elements ... all the way up to the last two elements. When the pass is complete, our list becomes:\n\n```\n7, 5, 3, 1, 2, 4, 6, 8, 9\n```\n\nNotice that the largest value `9` \"bubbled up\" to the end of the list. This is precisely how Bubblesort got its name.\n\n## Task\n\n~~~if-not:riscv\nGiven an array of integers, your function should return a *new* array equivalent to performing exactly **1 complete pass** on the original array.  Your function should be pure, i.e. it should **not** mutate the input array.\n~~~\n\n~~~if:riscv\nImplement a function `bubblesort_pass()` that performs exactly 1 complete pass of Bubblesort on the input array. It should return whether any pair of integers have been swapped.\n\nThe function signature is\n\n```c\nbool bubblesort_pass(int *arr, size_t n);\n```\n\nwhere `arr` is the input array and `n` is the number of elements in the array.\n~~~\n\n~~~if:lambdacalc\n## Encodings\n\npurity: `LetRec`  \nnumEncoding: `Scott`  \nexport constructors `nil, cons` and deconstructor `foldl` for your `List` encoding  \n~~~",
+  "totalAttempts": 37701,
+  "totalCompleted": 7798,
+  "totalStars": 159,
+  "voteScore": 681,
+  "tags": [
+    "Algorithms",
+    "Tutorials",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

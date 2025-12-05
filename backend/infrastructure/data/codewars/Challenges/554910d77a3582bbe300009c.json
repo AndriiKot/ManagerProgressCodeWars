@@ -1,0 +1,45 @@
+{
+  "id": "554910d77a3582bbe300009c",
+  "name": "Who won the election?",
+  "slug": "who-won-the-election",
+  "category": "algorithms",
+  "publishedAt": "2015-05-10T09:09:54.365Z",
+  "approvedAt": "2015-05-17T09:50:56.049Z",
+  "languages": [
+    "java",
+    "python",
+    "javascript",
+    "ruby",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/554910d77a3582bbe300009c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-05-05T18:50:00.216Z",
+  "createdBy": {
+    "username": "SithFire",
+    "url": "https://www.codewars.com/users/SithFire"
+  },
+  "approvedBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "description": "In democracy we have a lot of elections. For example, we have to vote for a class representative in school, for a new parliament or a new government.\n\nUsually, we vote for a candidate, i.e. a set of eligible candidates is given. This is done by casting a ballot into a ballot-box. After that, it must be counted how many ballots (= votes) a candidate got. \n\nA candidate will win this election if he has the <a href=\"https://en.wikipedia.org/wiki/Supermajority#Majority_of_the_entire_membership\">absolute majority</a>.\n\n\n## Your Task\n\nReturn the name of the winner. If there is no winner, return `null / nil / None` depending on the language.\n\n\n## Task Description\n\nThere are no given candidates. An elector can vote for anyone. Each ballot contains only one name and represents one vote for this name. A name is an arbitrary string, e.g. `\"A\"`, `\"B\"`, or `\"XJDHD\"`. There are no spoiled ballots.\n\nThe ballot-box is represented by an unsorted list of names. Each entry in the list corresponds to one vote for this name. You do not know the names in advance (because there are no candidates).\n\nA name wins the election if it gets more than `n / 2` votes (`n` = number of all votes, i.e. the size of the given list). \n\n\n## Examples\n\n```python\n# 3 votes for \"A\", 2 votes for \"B\"  -->  \"A\" wins the election\n[\"A\", \"A\", \"A\", \"B\", \"B\"]  -->  \"A\"\n\n# 2 votes for \"A\", 2 votes for \"B\"  -->  no winner\n[\"A\", \"A\", \"B\", \"B\"]  -->  None / nil / null\n\n# 1 vote for each name --> no winner\n[\"A\", \"B\", \"C\", \"D\"]  -->  None / nil / null\n\n# 3 votes for \"A\", 2 votes for \"B\", 1 vote for \"C\"  -->  no winner, as \"A\" does not have more than n / 2 = 3 votes\n[\"A\", \"A\", \"A\", \"B\", \"B\", \"C\"] -->  None / nil / null\n```\n\n\n## Note\n\nPlease keep in mind the list of votes can be large (`n <= 1 200 000`). The given list is immutable, i.e. you cannot modify the list (otherwise this could lead to vote rigging).\n\nGood luck and have fun.",
+  "totalAttempts": 15241,
+  "totalCompleted": 3641,
+  "totalStars": 113,
+  "voteScore": 419,
+  "tags": [
+    "Algorithms",
+    "Lists",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

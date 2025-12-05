@@ -1,0 +1,43 @@
+{
+  "id": "56be4affc5dc03b84b001d2d",
+  "name": "HTML Complementary Color",
+  "slug": "html-complementary-color",
+  "category": "reference",
+  "publishedAt": "2016-02-12T21:14:26.357Z",
+  "approvedAt": "2016-02-23T20:38:40.024Z",
+  "languages": [
+    "python",
+    "javascript",
+    "haskell",
+    "java",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/56be4affc5dc03b84b001d2d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-02-12T21:13:35.303Z",
+  "createdBy": {
+    "username": "goodwin64",
+    "url": "https://www.codewars.com/users/goodwin64"
+  },
+  "approvedBy": {
+    "username": "matt c",
+    "url": "https://www.codewars.com/users/matt%20c"
+  },
+  "description": "# Intro\nHi there! \nYou have to implement a function that takes a hex-color string and returns the string represents the complementary color.\n\n<img src=\"http://www.w3schools.com/colors/img_colormap.gif\" align=right></img>\n\nWhat is the hex-color? You can find the answer on [w3schools](http://www.w3schools.com/colors/colors_picker.asp) and [Wikipedia](https://en.wikipedia.org/wiki/Web_colors)\n\n# Input\nThis function takes only one argument - a hexadecimal string (case-ignored with chars 0..9 or A..F) without hash-char `\"#\"`.\nIf the string is shorter than 6 characters, pad it with zeroes from the left to make it 6 characters long.\n\n```\n\"a23\" <=> \"000a23\"\n\"\" <=> \"0\" <=> \"000000\"\n```\n\n# Output\nYour function output should be an **uppercased** string containing a hash character (`#`) followed by the complementary color. Complementary color is some color that gives completely white color in sum with the entered one:\n`#000A23` + `#FFF5DC` = `#FFFFFF`\n\n# Errors\nIf the entered argument is incorrect: string length is 7+, has non-hexadecimal characters or non-string type, then an **Error** should be raised/thrown (throw an IllegalArgumentException in Java) or **Nothing** should be returned in Haskell.\n```\n\"00fffff\" --> Incorrect string length\n\"00ffZZ\"  --> Non-hex chars\n 112233   --> Incorrect type (not a string)\n```\n\n# Examples\n```\n   Input        Output\n------------------------\n \"01fD08\" --> \"#FE02F7\"\n    \"a23\" --> \"#FFF5DC\"\n       \"\" --> \"#FFFFFF\"\n```",
+  "totalAttempts": 8515,
+  "totalCompleted": 850,
+  "totalStars": 55,
+  "voteScore": 135,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 2
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "644e21831c0cb6566b89ad27",
+  "name": "Revenue Analysis with Grouping Sets in PostgreSQL",
+  "slug": "revenue-analysis-with-grouping-sets-in-postgresql",
+  "category": "reference",
+  "publishedAt": "2023-04-30T09:22:59.270Z",
+  "approvedAt": "2023-06-24T20:14:37.127Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/644e21831c0cb6566b89ad27",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-30T08:06:27.960Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Your task is to write a query that retrieves the total revenue for each film category for each month of the year 2007, as well as the overall total revenue for each month (which is being displayed prior to data for each category). The results should be ordered by month (in asc order) and revenue in descending order. Additionally, the query should display the total revenue for the year 2007 as the last row of the result set.\n\nTo group the data and calculate the revenue totals, you can use the GROUP BY clause with the [GROUPING SETS](https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-grouping-sets/) feature of PostgreSQL. This will allow you to group the data by different combinations of columns, including the year only, the year and month, and the year, month, and category. \n\nYour query should produce a table with the following columns:\n*  `year`: the year of the payment date\n* `month`: the month of the payment date - integer from 1 to 12\n* `category`: the name of the film category\n* `revenue`: the total revenue for the given combination of year, month, and category, or for the given year and month, or for a whole year\n\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* by `revenue` is simply meant sum of `amount` from `payment` table\n* `revenue` should be rounded down to the previous whole number.\n* if `revenue` for some categories is the same, then order by category name alphabeitcally\n\n### Schema\n(not all columns - only part of the domain required to solve this kata)\n\n##### `payment` table:\n```\n   Column     |  Type     | Modifiers\n--------------+-----------+-----------\n payment_id   | integer   | not null\n rental_id    | integer   | not null\n amount       | numeric   | not null\n payment_date | timestamp | not null\n ```\n\n#### `film_category` table:\n```\nColumn      | Type      | Modifiers\n------------+---------- +----------\nfilm_id     | smallint  | not null\ncategory_id | smallint  | not null\n````\n#### `category` table:\n```\nColumn      | Type      | Modifiers\n------------+-----------+----------\ncategory_id | smallint  | not null\nname        | text      | not null\n```\n\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ninventory_id | integer   | not null\n```\n\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\nYear    | month | category   | revenue    |\n--------+--------------------+------------|\n 2007   | 2      | <null>     | 9008      |   \n 2007   | 2      | Music      | 1023      |\n 2007   | 2      | Sci-Fi     | 814       |\n...\n 2007   | 3      | <null>     | 8351      |   \n 2007   | 3      | Action     | 628       |\n 2007   | 3      | Sports     | 607       |\n...\n 2007   | <null> | <null>     | 38005     |\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+  "totalAttempts": 771,
+  "totalCompleted": 140,
+  "totalStars": 9,
+  "voteScore": 41,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

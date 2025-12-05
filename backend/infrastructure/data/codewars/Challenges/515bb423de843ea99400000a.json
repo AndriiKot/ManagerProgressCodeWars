@@ -1,0 +1,51 @@
+{
+  "id": "515bb423de843ea99400000a",
+  "name": "PaginationHelper",
+  "slug": "paginationhelper",
+  "category": "algorithms",
+  "publishedAt": "2013-04-11T19:24:05.848Z",
+  "approvedAt": "2013-12-12T21:18:49.839Z",
+  "languages": [
+    "ruby",
+    "coffeescript",
+    "javascript",
+    "java",
+    "haskell",
+    "python",
+    "csharp",
+    "crystal",
+    "kotlin",
+    "typescript",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/515bb423de843ea99400000a",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-04-03T04:46:27.033Z",
+  "createdBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "For this exercise you will be strengthening your page-fu mastery.  You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array. \n\nThe class is designed to take in an array of values and an integer indicating how many items will be allowed per each page. The types of values contained within the collection/array are not relevant. \n\nThe following are some examples of how this class is used:\n\n```javascript \nvar helper = new PaginationHelper(['a','b','c','d','e','f'], 4);\nhelper.pageCount(); // should == 2\nhelper.itemCount(); // should == 6\nhelper.pageItemCount(0); // should == 4\nhelper.pageItemCount(1); // last page - should == 2\nhelper.pageItemCount(2); // should == -1 since the page is invalid\n\n// pageIndex takes an item index and returns the page that it belongs on\nhelper.pageIndex(5); // should == 1 (zero based index)\nhelper.pageIndex(2); // should == 0\nhelper.pageIndex(20); // should == -1\nhelper.pageIndex(-10); // should == -1\n```\n```crystal\nhelper = PaginationHelper(Char).new(['a','b','c','d','e','f'], 4);\nhelper.page_count() # should == 2\nhelper.item_count() # should == 6\nhelper.page_item_count(0) # should == 4\nhelper.page_item_count(1) # last page - should == 2\nhelper.page_item_count(2) # should == -1 since the page is invalid\n\n# pageIndex takes an item index and returns the page that it belongs on\nhelper.page_index(5) # should == 1 (zero based index)\nhelper.page_index(2) # should == 0\nhelper.page_index(20) # should == -1\nhelper.page_index(-10) # should == -1\n```\n```java\nPaginationHelper<Character> helper = new PaginationHelper(Arrays.asList('a', 'b', 'c', 'd', 'e', 'f'), 4);\nhelper.pageCount(); // should == 2\nhelper.itemCount(); // should == 6\nhelper.pageItemCount(0); // should == 4\nhelper.pageItemCount(1); // last page - should == 2\nhelper.pageItemCount(2); // should == -1 since the page is invalid\n\n// pageIndex takes an item index and returns the page that it belongs on\nhelper.pageIndex(5); // should == 1 (zero based index)\nhelper.pageIndex(2); // should == 0\nhelper.pageIndex(20); // should == -1\nhelper.pageIndex(-10); // should == -1\n```\n```coffeescript\nhelper = new PaginationHelper(['a','b','c','d','e','f'], 4)\nhelper.pageCount() # should == 2\nhelper.itemCount() # should == 6\nhelper.pageItemCount(0) # should == 4\nhelper.pageItemCount(1) # last page - should == 2\nhelper.pageItemCount(2) # should == -1 since the page is invalid\n\n# pageIndex takes an item index and returns the page that it belongs on\nhelper.pageIndex(5) # should == 1 (zero based index)\nhelper.pageIndex(2) # should == 0\nhelper.pageIndex(20) # should == -1\nhelper.pageIndex(-10) # should == -1\n```\n```ruby\nhelper = PaginationHelper.new(['a','b','c','d','e','f'], 4)\nhelper.page_count() # should == 2\nhelper.item_count() # should == 6\nhelper.page_item_count(0) # should == 4\nhelper.page_item_count(1) # last page - should == 2\nhelper.page_item_count(2) # should == -1 since the page is invalid\n\n# page_index takes an item index and returns the page that it belongs on\nhelper.page_index(5) # should == 1 (zero based index)\nhelper.page_index(2) # should == 0\nhelper.page_index(20) # should == -1\nhelper.page_index(-10) # should == -1 because negative indexes are invalid\n```\n```haskell\ncollection   = ['a','b','c','d','e','f']\nitemsPerPage = 4\n\npageCount collection itemsPerPage       `shouldBe` 2\nitemCount collection itemsPerPage       `shouldBe` 6\n\npageItemCount collection itemsPerPage 0 `shouldBe` Just 4 -- four of six items\npageItemCount collection itemsPerPage 1 `shouldBe` Just 2 -- the last two items\npageItemCount collection itemsPerPage 3 `shouldBe` Nothing -- page doesn't exist\n\npageIndex collection itemsPerPage  0    `shouldBe` Just 0 -- zero based index\npageIndex collection itemsPerPage  5    `shouldBe` Just 1 \npageIndex collection itemsPerPage 20    `shouldBe` Nothing\npageIndex collection itemsPerPage (-20) `shouldBe` Nothing\n```\n```python\nhelper = PaginationHelper(['a','b','c','d','e','f'], 4)\nhelper.page_count() # should == 2\nhelper.item_count() # should == 6\nhelper.page_item_count(0) # should == 4\nhelper.page_item_count(1) # last page - should == 2\nhelper.page_item_count(2) # should == -1 since the page is invalid\n\n# page_index takes an item index and returns the page that it belongs on\nhelper.page_index(5) # should == 1 (zero based index)\nhelper.page_index(2) # should == 0\nhelper.page_index(20) # should == -1\nhelper.page_index(-10) # should == -1 because negative indexes are invalid\n```\n```csharp\nvar helper = new PaginationHelper<char>(new List<char>{'a', 'b', 'c', 'd', 'e', 'f'}, 4);\nhelper.PageCount; // should == 2\nhelper.ItemCount; // should == 6\nhelper.PageItemCount(0); // should == 4\nhelper.PageItemCount(1); // last page - should == 2\nhelper.PageItemCount(2); // should == -1 since the page is invalid\n\n// pageIndex takes an item index and returns the page that it belongs on\nhelper.PageIndex(5); // should == 1 (zero based index)\nhelper.PageIndex(2); // should == 0\nhelper.PageIndex(20); // should == -1\nhelper.PageIndex(-10); // should == -1\n```\n```kotlin\nval helper = PaginationHelper<Char>(listOf('a', 'b', 'c', 'd', 'e', 'f'), 4)\nhelper.pageCount // should == 2\nhelper.itemCount // should == 6\nhelper.pageItemCount(0) // should == 4\nhelper.pageItemCount(1) // last page - should == 2\nhelper.pageItemCount(2) // should == -1 since the page is invalid\n\n// pageIndex takes an item index and returns the page that it belongs on\nhelper.pageIndex(5) // should == 1 (zero based index)\nhelper.pageIndex(2) // should == 0\nhelper.pageIndex(20) // should == -1\nhelper.pageIndex(-10) // should == -1\n```\n```typescript \nlet helper = new PaginationHelper([\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], 4)\nhelper.pageCount() // should == 2\nhelper.itemCount() // should == 6\nhelper.pageItemCount(0) // should == 4\nhelper.pageItemCount(1) // last page - should == 2\nhelper.pageItemCount(2) // should == -1 since the page is invalid\n\n// pageIndex takes an item index and returns the page that it belongs on\nhelper.pageIndex(5) // should == 1 (zero based index)\nhelper.pageIndex(2) // should == 0\nhelper.pageIndex(20) // should == -1\nhelper.pageIndex(-10) // should == -1\n```\n```rust\nlet helper = PaginationHelper::new(vec!['a', 'b', 'c', 'd', 'e', 'f'], 4);\nhelper.page_count() // should be 2\nhelper.item_count() // should be 6\nhelper.page_item_count(0) // should be Some(4)\nhelper.page_item_count(1) // should be Some(2) (last page)\nhelper.page_item_count(2) // should be None (since the page is invalid)\n\n// page_index takes an item index and returns the page that it belongs on\nhelper.page_index(5) // should be Some(1) (zero based index)\nhelper.page_index(2) // should be Some(0)\nhelper.page_index(20) // should be None (since the item is invalid)\n```\n",
+  "totalAttempts": 504415,
+  "totalCompleted": 44067,
+  "totalStars": 2014,
+  "voteScore": 2361,
+  "tags": [
+    "Object-oriented Programming",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 6
+  }
+}

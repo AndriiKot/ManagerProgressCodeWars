@@ -1,0 +1,42 @@
+{
+  "id": "5b13530f828fab68820000c4",
+  "name": "Parametric to Rectangular Equation",
+  "slug": "parametric-to-rectangular-equation",
+  "category": "reference",
+  "publishedAt": "2018-06-03T03:50:07.411Z",
+  "approvedAt": "2018-06-10T06:47:02.151Z",
+  "languages": [
+    "ruby",
+    "python",
+    "java",
+    "crystal"
+  ],
+  "url": "https://www.codewars.com/kata/5b13530f828fab68820000c4",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-06-03T02:31:43.590Z",
+  "createdBy": {
+    "username": "narayanswa30663",
+    "url": "https://www.codewars.com/users/narayanswa30663"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "### Task:\n\nYour job is to take a pair of parametric equations, passed in as strings, and convert them into a single rectangular equation by eliminating the parameter. Both parametric halves will represent linear equations of x as a function of time and y as a function of time respectively. \n\nThe format of the final equation must be `Ax + By = C` or `Ax - By = C` where A and B must be positive and A, B, and C are integers. The final equation also needs to have the lowest possible whole coefficients. Omit coefficients equal to one.\n\nThe method is called `para_to_rect` or `EquationsManager.paraToRect` and takes in two strings in the form `x = at +(or -) b` and `y = ct +(or -) d` respectively, where `a` and `c` must be integers, and `b` and `d` must be positive integers. If `a` or `c` is omitted, the coefficient of _t_ is obviously assumed to be 1 (see final case in the example tests). There will NEVER be double signs in the equations inputted (For example: `\"x = -12t + -18\"` and `\"y = -12t - -18\"` won't show up.)\n\n### Example 1\n\n    \"x = 12t + 18\", \"y = 8t + 7\" => \"2x - 3y = 15\"\n\n    CALCULATION:\n        x = 12t + 18  \n        y = 8t + 7  \n        2x = 24t + 36  \n        3y = 24t + 21  \n        2x - 3y = (24t + 36) - (24t + 21)  \n        2x - 3y = 15  \n\n\n### Example 2\n\n    \"x = -12t - 18\", \"y = 8t + 7\" => \"2x + 3y = -15\"\n    \n    CALCULATION:\n        x = -12t - 18  \n        y = 8t + 7  \n        2x = -24t - 36  \n        3y = 24t + 21  \n        2x + 3y = (-24t - 36) + (24t + 21)  \n        2x + 3y = -15  \n\n\n### Example 3\n\n    \"x = -t + 12\", \"y = 12t - 1\" => \"12x + y = 143\"\n    \n    CALCULATION:\n        x = -t + 12  \n        y = 12t - 1  \n        12x = -12t + 144  \n        y   = 12t  - 1  \n        12x + y = 143  \n\n### Note\n\nAs you can see above, sometimes you'll need to add the two parametric equations after multiplying by the necessary values; sometimes you'll need to subtract them – just get rid of the _t_!",
+  "totalAttempts": 662,
+  "totalCompleted": 170,
+  "totalStars": 23,
+  "voteScore": 52,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

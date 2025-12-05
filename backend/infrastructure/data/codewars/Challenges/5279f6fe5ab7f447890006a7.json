@@ -1,0 +1,51 @@
+{
+  "id": "5279f6fe5ab7f447890006a7",
+  "name": "Pick peaks",
+  "slug": "pick-peaks",
+  "category": "algorithms",
+  "publishedAt": "2013-11-06T07:59:58.961Z",
+  "approvedAt": "2013-11-27T17:27:33.652Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "go",
+    "php",
+    "cpp",
+    "java",
+    "haskell",
+    "csharp",
+    "fsharp",
+    "cobol",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5279f6fe5ab7f447890006a7",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-11-06T07:59:59.926Z",
+  "createdBy": {
+    "username": "frenetic_be",
+    "url": "https://www.codewars.com/users/frenetic_be"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "In this kata, you will write a function that returns the positions and the values of the \"peaks\" (or local maxima) of a numeric array.\n\nFor example, the array `arr = [0, 1, 2, 5, 1, 0]` has a peak at position `3` with a value of `5` (since `arr[3]` equals `5`).\n\n~~~if-not:php,cpp,java,csharp,fsharp,rust\nThe output will be returned as an object with two properties: pos and peaks. Both of these properties should be arrays. If there is no peak in the given array, then the output should be `{pos: [], peaks: []}`.\n~~~\n~~~if:php\nThe output will be returned as an associative array with two key-value pairs: `'pos'` and `'peaks'`.  Both of them should be (non-associative) arrays.  If there is no peak in the given array, simply return `['pos' => [], 'peaks' => []]`.\n~~~\n~~~if:cpp\nThe output will be returned as an object of type `PeakData` which has two members: `pos` and `peaks`.  Both of these members should be `vector<int>`s.  If there is no peak in the given array then the output should be a `PeakData` with an empty vector for both the `pos` and `peaks` members.\n\n`PeakData` is defined in Preloaded as follows:\n\n```cpp\nstruct PeakData {\n  vector<int> pos, peaks;\n};\n```\n~~~\n~~~if:java\nThe output will be returned as a ``Map<String,List<integer>>` with two key-value pairs: `\"pos\"` and `\"peaks\"`. If there is no peak in the given array, simply return `{\"pos\" => [], \"peaks\" => []}`.\n~~~\n~~~if:csharp\nThe output will be returned as a `Dictionary<string, List<int>>` with two key-value pairs: `\"pos\"` and `\"peaks\"`. \nIf there is no peak in the given array, simply return `{\"pos\" => new List<int>(), \"peaks\" => new List<int>()}`.\n~~~\n~~~if:fsharp\nThe output will be returned as a record type `PeakPositionInfo` with two fields: `Pos` and `Peaks`. \nIf there is no peak in the given array, simply return `{ Pos = []; Peaks = [] }`.\n~~~\n~~~if:cobol\nFor COBOL, the answer will be stored in the two tables `positions` and `peaks` provided in the linkage section. \nIf there is no peak in the given array, simply set the length of both tables to 0.\nSince COBOL is a 1-indexed language, the indexes stored in `peaks`  will be shifted by 1 in comparison with other languages.\n~~~\n~~~if:rust\nThe output will be returned as a `(Vec<usize>, Vec<i32>)` tuple for the positons (`Vec<usize>`) and peak values (`Vec<i32>`).\n~~~\n\nExample: `pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3])` should return `{pos: [3, 7], peaks: [6, 3]}` (or equivalent in other languages)\n\nAll input arrays will be valid integer arrays (although it could still be empty), so you won't need to validate the input.\n\nThe first and last elements of the array will not be considered as peaks (in the context of a mathematical function, we don't know what is after and before and therefore, we don't know if it is a peak or not).\n\nAlso, beware of plateaus !!! `[1, 2, 2, 2, 1]` has a peak while `[1, 2, 2, 2, 3]` and `[1, 2, 2, 2, 2]` do not. In case of a plateau-peak, please only return the position and value of the beginning of the plateau. For example: \n`pickPeaks([1, 2, 2, 2, 1])` returns `{pos: [1], peaks: [2]}` (or equivalent in other languages)\n\nHave fun!\n",
+  "totalAttempts": 253237,
+  "totalCompleted": 31252,
+  "totalStars": 2007,
+  "voteScore": 2385,
+  "tags": [
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 10
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "54d4c8b08776e4ad92000835",
+  "name": "What's a Perfect Power  anyway?",
+  "slug": "whats-a-perfect-power-anyway",
+  "category": "reference",
+  "publishedAt": "2015-02-06T13:59:22.186Z",
+  "approvedAt": "2015-02-11T23:53:35.229Z",
+  "languages": [
+    "haskell",
+    "javascript",
+    "coffeescript",
+    "python",
+    "java",
+    "ruby",
+    "r",
+    "csharp",
+    "cobol",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/54d4c8b08776e4ad92000835",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-02-06T13:59:12.645Z",
+  "createdBy": {
+    "username": "bkaes",
+    "url": "https://www.codewars.com/users/bkaes"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "A [perfect power](https://en.wikipedia.org/wiki/Perfect_power) is a classification of positive integers:\n\n> In mathematics, a **perfect power** is a positive integer that can be expressed as an integer power of another positive integer. More formally, n is a perfect power if there exist natural numbers m > 1, and k > 1 such that m<sup>k</sup> = n.\n\nYour task is to check wheter a given integer is a perfect power. If it is a perfect power, return a pair `m` and `k` with m<sup>k</sup> = n as a proof. Otherwise return `Nothing`, `Nil`, `null`, `NULL`, `None` or your language's equivalent.\n\n**Note:** For a perfect power, there might be several pairs. For example `81 = 3^4 = 9^2`, so `(3,4)` and `(9,2)` are valid solutions. However, the tests take care of this, so if a number is a perfect power, return any pair that proves it.\n\n### Examples\n```javascript\ndescribe(\"perfect powers\", function(){\n  it(\"should work for some examples\",function(){\n    assert.deepEqual(isPP(4), [2,2], \"4 = 2^2\");\n    assert.deepEqual(isPP(9), [3,2], \"9 = 3^2\");\n    assert.strictEqual(isPP(5), null, \"5 isn't a perfect number\");\n  });\n});\n```\n```coffeescript\nTest.describe \"perfect powers\", ->\n  Test.it \"should work for some examples\", ->\n    Test.assertSimilar isPP(4), [ 2, 2 ], \"4 = 2^2\"\n    Test.assertSimilar isPP(9), [ 3, 2 ], \"9 = 3^2\"\n    Test.assertEquals isPP(5), null, \"5 isn't a perfect number\"\n```\n```haskell\nisPP 4 `shouldBe` Just (2,2)\nisPP 9 `shouldBe` Just (3,2)\nisPP 5 `shouldBe` Nothing\n```\n```python\nisPP(4) => [2,2]\nisPP(9) => [3,2]\nisPP(5) => None\n```\n```ruby\nisPP(4) => [2,2]\nisPP(9) => [3,2]\nisPP(5) => nil\n```\n```java\nisPerfectPower(4) => new int[]{2,2}\nisPerfectPower(5) => null\nisPerfectPower(8) => new int[]{2,3}\nisPerfectPower(9) => new int[]{3,2}\n```\n```r\nisPP(4) => 2 2\nisPP(9) => 3 2\nisPP(5) => NULL\n```\n```csharp\nIsPerfectPower(4) => (2,2)\nIsPerfectPower(5) => null\nIsPerfectPower(8) => (2,3)\nIsPerfectPower(9) => (3,2)\n```\n",
+  "totalAttempts": 102129,
+  "totalCompleted": 20118,
+  "totalStars": 1183,
+  "voteScore": 1363,
+  "tags": [
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 14,
+    "suggestions": 7
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "5458d4d2cbae2a9438000389",
+  "name": "Lazily executing a function",
+  "slug": "lazily-executing-a-function",
+  "category": "reference",
+  "publishedAt": "2014-11-04T13:31:03.960Z",
+  "approvedAt": "2015-02-06T23:03:27.255Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5458d4d2cbae2a9438000389",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2014-11-04T13:29:55.218Z",
+  "createdBy": {
+    "username": "myTerminal",
+    "url": "https://www.codewars.com/users/myTerminal"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Deferring a function execution can sometimes save a lot of execution time in our programs by *postponing* the execution to the latest possible instant of time, when we're sure that the time spent while executing it is worth it.\n\nWrite a method `make_lazy` that takes in a function (symbol for Ruby) and the arguments to the function and returns another function (lambda for Ruby) which when invoked, returns the result of the original function invoked with the supplied arguments.\n\nFor example:\n\nGiven a function `add`\n\n    function add (a, b) {\n      return a + b;\n    }\n\nOne could make it *lazy* as:\n\n    var lazy_value = make_lazy(add, 2, 3);\n    \nThe expression does not get evaluated at the moment, but only when you *invoke* `lazy_value` as:\n\n    lazy_value() => 5\n    \nThe above invokation then performs the sum.\n\nPlease note: The functions that are passed to `make_lazy` may take one or more arguments and the number of arguments is not fixed.",
+  "totalAttempts": 15347,
+  "totalCompleted": 3537,
+  "totalStars": 143,
+  "voteScore": 279,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "57e5279b7cf1aea5cf000359",
+  "name": "Fun with trees: max sum",
+  "slug": "fun-with-trees-max-sum",
+  "category": "algorithms",
+  "publishedAt": "2016-09-23T16:34:10.038Z",
+  "approvedAt": "2016-10-14T16:38:29.464Z",
+  "languages": [
+    "java",
+    "csharp",
+    "cpp",
+    "javascript",
+    "haskell",
+    "c",
+    "scala",
+    "python",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/57e5279b7cf1aea5cf000359",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-09-23T13:01:16.017Z",
+  "createdBy": {
+    "username": "janitormeir",
+    "url": "https://www.codewars.com/users/janitormeir"
+  },
+  "approvedBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "description": "You are given a binary tree. Implement a function that returns the maximum sum of a route from root to leaf.\n\nFor example, given the following tree:\n\n```\n    17\n   /  \\\n  3   -10\n /    /  \\\n2    16   1\n         /\n        13\n```\n\nThe function should return `23`, since `17 -> -10 -> 16` is the route from root to leaf with the maximum sum.\n\nReturn `0` if the tree is empty.\n\nPlease note that you are not to find the best possible *route* in the tree, but the best possible route *from root to leaf*, e.g. for the following tree, you cannot skip the leaves and return `5 + 10 = 15`: the expected answer is `5 + 4 + -60 = -51`\n\n```\n        5\n      /   \\\n    4      10\n   / \\     /\n-80 -60 -90\n```\n\nA tree node type is preloaded for you:\n\n```java\nclass TreeNode {\n    TreeNode left;\n    TreeNode right;\n    int value;\n    ...\n}\n```\n```csharp\nclass TreeNode\n{\n    public TreeNode left;\n    public TreeNode right;\n    public int value;\n    ...\n}\n```\n```cpp\nclass TreeNode\n{\n    public:\n        TreeNode* left;\n        TreeNode* right;\n        int value;\n    ...\n};\n```\n```c\ntypedef struct TreeNode {\n    int value;\n    struct TreeNode *left, *right;\n} TreeNode;\n```\n```javascript\nclass TreeNode {\n    constructor(value, left = null, right = null) {\n        this.value = value;\n        this.left = left;\n        this.right = right;\n    }\n}\n```\n```haskell\ndata TreeNode = None | Node TreeNode Int TreeNode\n```\n```scala\ncase class TreeNode(\n  value: Int, \n  left: Option[TreeNode] = None, \n  right: Option[TreeNode] = None\n)\n```\n```python\nclass TreeNode:\n    def __init__(self, value, left=None, right=None):\n        self.value = value\n        self.left = left\n        self.right = right\n```\n```rust\n#[derive(Debug)]\npub struct TreeNode {\n    pub value: i32,\n    pub left: Option<Box<TreeNode>>,\n    pub right: Option<Box<TreeNode>>,\n}\n// Note: you can pretty-print trees with {:#?}\n```\n\nThis kata is part of [fun with trees](https://www.codewars.com/collections/fun-with-trees) series:\n\n* [Fun with trees: max sum](https://www.codewars.com/kata/57e5279b7cf1aea5cf000359)\n* [Fun with trees: array to tree](https://www.codewars.com/kata/57e5a6a67fbcc9ba900021cd)\n* [Fun with trees: is perfect](https://www.codewars.com/kata/57dd79bff6df9b103b00010f)",
+  "totalAttempts": 18285,
+  "totalCompleted": 4833,
+  "totalStars": 223,
+  "voteScore": 539,
+  "tags": [
+    "Trees",
+    "Recursion",
+    "Binary Trees",
+    "Binary Search Trees",
+    "Data Structures",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

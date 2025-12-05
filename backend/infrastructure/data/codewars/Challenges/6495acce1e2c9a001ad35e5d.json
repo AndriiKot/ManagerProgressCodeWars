@@ -1,0 +1,40 @@
+{
+  "id": "6495acce1e2c9a001ad35e5d",
+  "name": "Top Performing Students",
+  "slug": "top-performing-students",
+  "category": "reference",
+  "publishedAt": "2023-06-24T08:31:18.056Z",
+  "approvedAt": "2023-06-28T09:26:10.375Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6495acce1e2c9a001ad35e5d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-23T14:31:42.183Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Let's consider a case where we have a `students` table and a `courses` table. The tables have the following structure:\n\n`students`: \n```\n| id  | name     | email               |\n|-----|----------|---------------------|\n| 1   | John     | john@example.com    |\n| 2   | Sarah    | sarah@example.com   |\n| 3   | Robert   | robert@example.com  |\n...\n```\n`courses`: \n```\n| id  | student_id | course_name | score |\n|-----|------------|-------------|-------|\n| 1   | 1          | Math        | 90    |\n| 2   | 1          | Science     | 85    |\n| 3   | 1          | Physics     | 92    |\n| 4   | 1          | Literature  | 80    |\n...\n```\n\nThe educational institution you are working for would like to recognize top performing students in their academics.\n\nIn this task, you need to identify students who are outperforming the average score in at least 3 subjects. A student is considered to outperform in a subject if their score is higher than the average score of all students in that subject.\n\nThe output of your query should return the following columns:\n\n* `student_id`: The id of the student.\n* `name`: The name of the student.\n* `outperformance`: An aggregated string in the format subject (percentage), showing the subjects they are outperforming in and the percentage of how much they are outperforming the average. The subjects should be arranged in ascending order by their names.\n\nThe percentage of how much a student is outperforming the average in a subject is calculated by the following formula:\n\n`(student's score - average score) / average score * 100%`\n\nThis formula calculates the difference between the student's score and the average score, divides that difference by the average score to get a ratio, and then multiplies that ratio by 100 to get a percentage. This percentage shows how much the student's score is above the average score, as a proportion of the average score.\n\nMake sure to round off this percentage to two decimal places for neatness.\n\nHere's a more concrete example:\n\nAssume the average score in Math is 70, and a student scores 90 in Math. The calculation would be:\n\n(90 - 70) / 70 * 100% = 28.57%\n\nSo, this student outperforms the average in Math by 28.57%. This means the student's score is 28.57% higher than the average score in Math.\n\nThe result should be ordered by `student_id` in asc order. \n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>student_id</th><th>name</th><th>outperformance</th></tr><tr><td>1</td><td>John</td><td>Literature (15.79%), Math (11.24%), Physics (12.69%), Science (5.65%)</td></tr><tr><td>2</td><td>Sarah</td><td>Literature (0.69%), Math (13.71%), Physics (5.01%)</td></tr><tr><td>4</td><td>Michael</td><td>Literature (10.76%), Math (8.76%), Physics (6.29%)</td></tr></table>\n\n",
+  "totalAttempts": 1964,
+  "totalCompleted": 220,
+  "totalStars": 10,
+  "voteScore": 37,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

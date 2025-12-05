@@ -1,0 +1,49 @@
+{
+  "id": "5904be220881cb68be00007d",
+  "name": "Plenty of Fish in the Pond",
+  "slug": "plenty-of-fish-in-the-pond",
+  "category": "reference",
+  "publishedAt": "2017-04-29T18:42:28.871Z",
+  "approvedAt": "2017-04-30T21:24:36.000Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "csharp",
+    "php",
+    "cpp",
+    "haskell",
+    "c",
+    "typescript",
+    "vb",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5904be220881cb68be00007d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-04-29T16:24:02.418Z",
+  "createdBy": {
+    "username": "adrian.eyre",
+    "url": "https://www.codewars.com/users/adrian.eyre"
+  },
+  "approvedBy": {
+    "username": "K1ngMX",
+    "url": "https://www.codewars.com/users/K1ngMX"
+  },
+  "description": "## Introduction\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\nFish are an integral part of any ecosystem. Unfortunately, fish are often seen as high maintenance. Contrary to popular belief, fish actually reduce pond maintenance as they graze on string algae and bottom feed from the pond floor. They also make very enjoyable pets, providing hours of natural entertainment.\n</pre>\n\n<center><img src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/fish.jpg\" alt=\"Driving\"></center>\n\n## Task\n\nIn this Kata you are fish in a pond that needs to survive by eating other fish. You can only eat fish that are the same size or smaller than yourself. \nYou must create a function that takes a shoal of fish as an input string. From this you must work out how many fish you can eat and ultimately the size you will grow to and return this as an integer.\n\n\n## Rules\n1. Your size starts at `1`\n2. The shoal string will contain fish integers between `0-9`\n3. `0` = algae and wont help you feed.\n4. The fish integer represents the size of the fish `(1-9)`.\n5. You can only eat fish the **same** size or **less** than yourself.\n6. You can eat the fish in any order you choose to maximize your size.\n7.  You can and only eat each fish once.\n8. The bigger fish you eat, the faster you grow. A size 2 fish equals two size 1 fish, size 3 fish equals three size 1 fish, and so on.\n9. Your size increments by one each time you reach the amounts below.\n\n## Increase your size\nYour size will increase depending how many fish you eat and on the size of the fish.\nThis chart shows the amount of size `1` fish you have to eat in order to increase your size.\n\n| Current size | Amount extra needed for next size | Total size 1 fish | Increase to size |\n|--------------|----------------------------------|-------------------|------------------|\n| 1            | 4                                | 4                 | 2                |\n| 2            | 8                                | 12                | 3                |\n| 3            | 12                               | 24                | 4                |\n| 4            | 16                               | 40                | 5                |\n| 5            | 20                               | 60                | 6                |\n| 6            | 24                               | 84                | 7                |\n\n### Example 1\n```c\n\"11112222\" => 3\n\n=> 4 fish of size 1\n=> 4 fish of size 2\n```\n* You eat the 4 fish of size 1 (4 * 1 = 4) which increases your size to 2\n* Now that you are size 2 you can eat the fish that are sized 1 or 2.\n* You then eat the 4 fish of size 2 (4 * 2 = 8) which increases your size to 3\n\n### Example 2\n\n```c\nshoal = \"111111111111\" => 3\n\n=> 12 fish of size 1\n```\n* You eat the 4 fish of size 1 (4 * 1 = 4) which increases your size to 2\n* You then eat the remainding 8 fish of size 1 (8 * 1 = 8) which increases your size to 3\n\n\nGood luck and enjoy!\n\n___\n# Kata Series\nIf you enjoyed this, then please try one of my other Katas. Any feedback, translations and grading of beta Katas are greatly appreciated. Thank you.\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58663693b359c4a6560001d6\" target=\"_blank\">Maze Runner</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58693bbfd7da144164000d05\" target=\"_blank\">Scooby Doo Puzzle</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/7KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/586a1af1c66d18ad81000134\" target=\"_blank\">Driving License</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/586c0909c1923fdb89002031\" target=\"_blank\">Connect 4</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/586e6d4cb98de09e3800014f\" target=\"_blank\">Vending Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/587136ba2eefcb92a9000027\" target=\"_blank\">Snakes and Ladders</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58a848258a6909dd35000003\" target=\"_blank\">Mastermind</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58b2c5de4cf8b90723000051\" target=\"_blank\">Guess Who?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58ce88427e6c3f41c2000087\" target=\"_blank\">Am I safe to drive?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58f5c63f1e26ecda7e000029\" target=\"_blank\">Mexican Wave</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/58fdcc51b4f81a0b1e00003e\" target=\"_blank\">Pigs in a Pen</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/590300eb378a9282ba000095\" target=\"_blank\">Hungry Hippos</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/5904be220881cb68be00007d\" target=\"_blank\">Plenty of Fish in the Pond</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/590adadea658017d90000039\" target=\"_blank\">Fruit Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/><a href=\"https://www.codewars.com/kata/591eab1d192fe0435e000014\" target=\"_blank\">Car Park Escape</a></span>",
+  "totalAttempts": 12191,
+  "totalCompleted": 1568,
+  "totalStars": 150,
+  "voteScore": 344,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

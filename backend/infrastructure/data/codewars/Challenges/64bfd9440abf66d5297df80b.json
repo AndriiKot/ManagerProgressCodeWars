@@ -1,0 +1,40 @@
+{
+  "id": "64bfd9440abf66d5297df80b",
+  "name": "Most Borrowed Books and Their Last Borrowers",
+  "slug": "most-borrowed-books-and-their-last-borrowers",
+  "category": "reference",
+  "publishedAt": "2023-07-25T14:18:32.453Z",
+  "approvedAt": "2023-09-13T20:33:26.026Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64bfd9440abf66d5297df80b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-25T14:16:36.310Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "The library management system uses two main tables - books and loans. The books table contains details about the books, while the loans table contains details about the loans.\n\n`books`:\n\n* `book_id` (integer) - The unique identifier for a book\n* `title` (string) - The title of the book\n* `author` (string) - The author of the book\n\n`loans`:\n\n* `loan_id` (integer) - The unique identifier for a loan\n* `book_id` (integer) - The identifier for the book that was loaned, corresponds to book_id in the books table\n* `borrower_name` (string) - The name of the person who borrowed the book\n* `return_date` (date) - The date when the book was returned. If the book has not yet been returned, this field is null.\n\nYour task is to write a SQL query that identifies which books have been borrowed the most from a library and who was the last person to borrow them. If there is a tie, return all tied books, sorted by `book_id` in ascending order.\n\nThe output should be a single row (or list of rows in the case of the tie) with row containing the following columns:\n\n* `book_id` (integer) - The unique identifier for a book.\n* `title` (string) - The title of the book.\n* `last_borrower` (string) - The name of the last person who borrowed the book.\n* `loan_count` (integer) - The total count of loans for the book.\n\nThe \"last borrower\" of a book is determined based on the `return_date` in the loans table. There are two possibilities for each loan record:\n\n* The return_date is null: In this case, the book has not been returned yet, and the borrower_name is considered the current borrower of the book.\n* The return_date is not null: In this case, the book has been returned, and the borrower_name is considered a previous borrower.\n\nWhen multiple loan records exist for the same book, the following rules are applied:\n\n* If there is a loan record with a null return_date, this indicates the book is currently borrowed and the borrower_name from this record is chosen as the last borrower.\n* If there are no loan records with a null return_date, the one with the most recent return_date is chosen as the last borrower. This is the person who returned the book most recently.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>book_id</th><th>title</th><th>last_borrower</th><th>loan_count</th></tr><tr><td>18</td><td>The Sun Also Rises</td><td>Xavier Durgan I</td><td>5</td></tr><tr><td>20</td><td>Bury My Heart at Wounded Knee</td><td>Msgr. Tammara Batz</td><td>5</td></tr></table>\n...\n\n",
+  "totalAttempts": 953,
+  "totalCompleted": 119,
+  "totalStars": 10,
+  "voteScore": 37,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

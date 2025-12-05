@@ -1,0 +1,40 @@
+{
+  "id": "598a48baae35d17bc500001d",
+  "name": "Fame Of All",
+  "slug": "fame-of-all",
+  "category": "reference",
+  "publishedAt": "2017-08-08T23:27:07.430Z",
+  "approvedAt": "2017-11-07T13:05:58.968Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/598a48baae35d17bc500001d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-08-08T23:26:51.720Z",
+  "createdBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "<center>The Revenge of <big>[Hall Of Fame](https://www.codewars.com/kata/59879e52704c4f96540000c1)</big></center>\n>\" *It should be good to enter the Hall of Fame . . .* \"\n\nBad news ! Top places are **ALL** occupied by the same player ! ! ! ( <small> som'thin' like <span style=\"font-size:larger\">myjinKing, myKingxin</span>, or whatosoever</small> ). \n\nThings should change now !\n\n\n## Task\nCreate a class `HallOfFame(size, players)` with `list` property and `add` method.\n\n* `list` give list of `size` `players` in the form \"Name: score\", sorted by score in descending order and name in ascending order in case of same score.\n\n* `add( player )` lets. . . add a player to the list.\n  * a `player` is a 2-items array : `[name, score]`\n    * if `score` is lesser than last player of the list then player is **not** added.\n    * if `name` is yet in list, `score` of this player is updated **if** new score is better than previous **and other players may stay in list**.\n  * if a new player is added or a score is changed the list should be re-sorted\n  * at last, `add` method return the object itself (to permit chaining methods).\n\n\n* `HallOfFame` constructor **may** have 2 arguments : `size` and `players`.\n  * `size` (default 5) defines the maximum size of the `list` (`list`can't take more than `size` players)\n  * `players` if provided, should be added to the list.\n    * If no players (or not enough players) are provided \"empty slots\" should returns empty strings.\n\n\n### Examples\n```javascript\nvar top3 = new HallOfFame(3, [[\"Ada\",99], [\"Bob\",\"42], [\"Clo\", 101], [\"Dan\", 3]])\n  // ... create a Hall of size 3 and (try) to add 4 players\n  \ntop3.list -> [\"Clo: 101\", \"Ada: 99\", \"Bob: 42\"] \n  // ... only 3 players kept 'cause size of the Hall is 3\n\ntop3.add([\"Dan\",54])\ntop3.list -> [\"Clo: 101\", \"Ada: 99\", \"Dan: 54\"]\n  // ... Dan entered the list 'cause is score is better than Bob's\n  \ntop3.add([\"Eva\",75]).add([\"Fox\",120]).list --> [\"Fox: 120\",\"Clo: 101\",\"Ada: 99\"]\n  // ... 2 new players added using chaining\n\nvar top5 = new HallOfFame(); \n  // ... create an empty Hall of size 5 (by default)\n  \ntop5.add([\"A\",4]).add([\"E\",3]).add([\"I\",1])\n  // ... add 3 players\n  \ntop5.list --> [\"A: 4\",\"E: 3\",\"I: 1\",\"\",\"\"] \n  // ... 2 \"empty players\" at the end of list\n\ntop5.add([\"S\",5]).add([\"T\",7])\ntop5.list --> [\"T: 7\",\"S: 5\",\"A: 4\",\"E: 3\",\"I: 1\"]\n  // ... 2 more players, no more \"empty slot\"\n  \ntop5.add([\"A\", 25]).list --> [\"A: 25\",\"T: 7\",\"S: 5\",\"E: 3\",\"I: 1\"]\n  // ... add \"A\" with a new (better) score then it moves to 1st place !\n  \ntop5.add([\"T\", 6]).list --> [\"A: 25\",\"T: 7\",\"S: 5\",\"E: 3\",\"I: 1\"]\n  // ... try to add \"S\" with a lesser score then no change !  \n```\n\n**Note**: The ECMAScript 2015 Class model given in \"Initial Soluion\" is **not mandatory**, feel free to choose the way to implement `HallOfFame`.\n\nWill you enter it ?\n\n",
+  "totalAttempts": 1730,
+  "totalCompleted": 104,
+  "totalStars": 18,
+  "voteScore": 46,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

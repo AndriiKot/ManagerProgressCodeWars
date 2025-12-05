@@ -1,0 +1,48 @@
+{
+  "id": "5825792ada030e9601000782",
+  "name": "zipWith",
+  "slug": "zipwith",
+  "category": "algorithms",
+  "publishedAt": "2016-11-11T08:10:35.970Z",
+  "approvedAt": "2016-11-13T03:47:39.266Z",
+  "languages": [
+    "javascript",
+    "python",
+    "rust",
+    "c",
+    "ocaml",
+    "scala",
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/5825792ada030e9601000782",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-11T07:54:18.144Z",
+  "createdBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "## Task\n\n`zipWith` ( or `zip_with` ) takes a function and two arrays and zips the arrays together, applying the function to every pair of values.  \nThe function value is one new array.\n\nIf the arrays are of unequal length, the output will only be as long as the shorter one.  \n(Values of the longer array are simply not used.)\n\nInputs should not be modified.\n\n## Examples\n\n```c\nzip_with(pow,4,{10,10,10,10},4,{0,1,2,3},*z,*a) =>\na = {1,10,100,1000}\nz = 4\nzip_with(max,3,{2,7,5},5,{8,7,4,1,3},*z,*a)     =>\na = {8,7,5}\nz = 3\n```\n```javascript\nzipWith( Math.pow, [10,10,10,10], [0,1,2,3] )      =>  [1,10,100,1000]\nzipWith( Math.max, [1,4,7,1,4,7], [4,7,1,4,7,1] )  =>  [4,7,7,4,7,7]\n\nzipWith( function(a,b) { return a+b; }, [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  // Both forms are valid\nzipWith( (a,b) => a+b,                  [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  // Both are functions\n```\n```python\nzip_with( pow, [10,10,10,10], [0,1,2,3] )     =>  [1,10,100,1000]\nzip_with( max, [1,4,7,1,4,7], [4,7,1,4,7,1])  =>  [4,7,7,4,7,7]\n\ndef add(a,b): return a+b; # or from operator import add\nzip_with( add,             [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  # Both forms are valid\nzip_with( lambda a,b: a+b, [0,1,2,3], [0,1,2,3] )  =>  [0,2,4,6]  # Both are functions\n```\n```rust\nzip_with(i32::pow, &[10,10,10,10], [0,1,2,3])     => [1,10,100,1000]\nzip_with(i32::max, &[1,4,7,1,4,7], [4,7,1,4,7,1]) => [4,7,7,4,7,7]\n\nfn add(a: i32, b: i32) -> i32 { a + b }  // or i32::add\nzip_with(add, &[0,1,2,3], &[0,1,2,3])         => [0,2,4,6]  // Both forms are valid\nzip_with(|a,b| a + b, &[0,1,2,3], &[0,1,2,3]) => [0,2,4,6]  // Both are functions\n```\n```ocaml\nzip_with ( * ) [10; 10; 10; 10] [0; 1; 2; 3] (* = [0; 10; 20; 30] *)\nzip_with max [1; 4; 7; 1; 4; 7] [4; 7; 1; 4; 7; 1] (* = [4; 7; 7; 4; 7; 7] *)\n\nzip_with        (+)         [0; 1; 2; 3] [0; 1; 2; 3] (* = [0; 2; 4; 6] *)\nzip_with (fun a b -> a + b) [0; 1; 2; 3] [0; 1; 2; 3] (* = [0; 2; 4; 6] *)\n```\n```lua\nzip_with(math.pow, { 10, 10, 10, 10 }, { 0, 1, 2, 3 }) => { 1, 10, 100, 1000 }\nzip_with(math.max, { 1, 4, 7, 1, 4, 7 }, { 4, 7, 1, 4, 7, 1 }) => { 4, 7, 7, 4, 7, 7 }\n\nlocal function add(x, y) return x + y end\nzip_with(add, { 0, 1, 2, 3 }, { 0, 1, 2, 3 }) => { 0, 2, 4, 6 } -- Both forms are valid\nzip_with(function(x, y) return x + y end, { 0, 1, 2, 3 }, { 0, 1, 2, 3 }) => { 0, 2, 4, 6 } -- Both are functions\n```\n\n## Input validation\n\nAssume all input is valid.\n",
+  "totalAttempts": 21786,
+  "totalCompleted": 7369,
+  "totalStars": 97,
+  "voteScore": 732,
+  "tags": [
+    "Lists",
+    "Arrays",
+    "Functional Programming",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "658ae4c7dc801726974dce76",
+  "name": "Calculating Next Fiscal Year-End Dates for UK Companies",
+  "slug": "calculating-next-fiscal-year-end-dates-for-uk-companies",
+  "category": "reference",
+  "publishedAt": "2023-12-26T14:36:47.432Z",
+  "approvedAt": "2023-12-27T11:56:37.541Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/658ae4c7dc801726974dce76",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-12-26T14:35:51.328Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the UK, companies are required to file financial reports annually based on their fiscal year end. This task involves calculating the next fiscal year-end date for each company after their last filing.\n\nYou are given a PostgreSQL database containing a table named `uk_company_filings`. This table represents the filing dates of various UK companies and their respective fiscal year ends. Your task is to write a SQL query that calculates the next fiscal year-end date following each company's filing.\n\nThe `uk_company_filings` table has the following structure:\n\n* `id` (int): primary key\n* `filing_date` (date): The date when the company filed its report\n* `fiscal_year_end`(varchar(4)): The official end of the company's fiscal year, in 'MMDD' format\n\n#### Task Requirements\n\n1) Write a SQL query that selects all columns from the `uk_company_filings` table and calculates the next fiscal year-end date for each record.\n2) The next fiscal year-end date should be calculated based on the `filing_date` and `fiscal_year_end`.\n3) The output should have a new column `next_fiscal_year_end` that shows this calculated date.\n4) Ensure your query handles the year transition correctly. For example, if the `filing_date` is in December 2023 and the `fiscal_year_end` is in January, the `next_fiscal_year_end` should be in January 2024.\n5) When the `filing_date` and the `fiscal_year_end` fall within the same month, the decision about whether the `next_fiscal_year_end` is in the current year or the next year depends on the day component of these dates: \n    * If the day of the `fiscal_year_end` is after the day of the `filing_date`: In this case, the `next_fiscal_year_end` should be in the same year as the `filing_date`. \n    * If the day of the `fiscal_year_end` is on or before the day of the `filing_date`: Here, the `next_fiscal_year_end` should be in the following year.\n5) Result should be ordered first by `filing_date` in ascending order and then by `id` in descending order:\n\n##### Additional Notes:\n\n* Ensure your query correctly handles the scenario where the `filing_date` and `fiscal_year_end` are the same. In such cases, the `next_fiscal_year_end` should be set to the same date in the following year.\n* We'll exclude February 29th from possible fiscal year-end dates, avoiding complications with leap years.\n\n#### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>filing_date</th><th>fiscal_year_end</th><th>next_fiscal_year_end</th></tr><tr><td>2023-07-31</td><td>0801</td><td>2023-08-01</td></tr><tr><td>2023-07-31</td><td>0601</td><td>2024-06-01</td></tr><tr><td>2023-12-31</td><td>0101</td><td>2024-01-01</td></tr><tr><td>2023-12-31</td><td>1130</td><td>2024-11-30</td></tr><tr><td>2023-12-31</td><td>1231</td><td>2024-12-31</td></tr></table>\n\nGLHF!\n",
+  "totalAttempts": 540,
+  "totalCompleted": 169,
+  "totalStars": 5,
+  "voteScore": 40,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

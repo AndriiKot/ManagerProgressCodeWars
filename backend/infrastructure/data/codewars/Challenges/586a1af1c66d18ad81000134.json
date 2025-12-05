@@ -1,0 +1,51 @@
+{
+  "id": "586a1af1c66d18ad81000134",
+  "name": "Driving Licence",
+  "slug": "driving-licence",
+  "category": "reference",
+  "publishedAt": "2017-01-02T09:18:44.444Z",
+  "approvedAt": "2017-01-28T00:10:46.871Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "csharp",
+    "php",
+    "cpp",
+    "typescript",
+    "c",
+    "java",
+    "coffeescript",
+    "crystal"
+  ],
+  "url": "https://www.codewars.com/kata/586a1af1c66d18ad81000134",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-01-02T09:18:41.771Z",
+  "createdBy": {
+    "username": "adrian.eyre",
+    "url": "https://www.codewars.com/users/adrian.eyre"
+  },
+  "approvedBy": {
+    "username": "tachyonlabs",
+    "url": "https://www.codewars.com/users/tachyonlabs"
+  },
+  "description": "# Introduction\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\nIn the United Kingdom, the driving licence is the official document which authorises its holder to operate various types of motor vehicle on highways and some other roads to which the public have access. In England, Scotland and Wales they are administered by the Driver and Vehicle Licensing Agency (DVLA) and in Northern Ireland by the Driver & Vehicle Agency (DVA). A driving licence is required in the UK by any person driving a vehicle on any highway or other road defined in s.192 Road Traffic Act 1988[1] irrespective of ownership of the land over which the road passes, thus including many which allow the public to pass over private land; similar requirements apply in Northern Ireland under the Road Traffic (Northern Ireland) Order 1981. (Source <a href=\"https://en.wikipedia.org/wiki/Driving_licence_in_the_United_Kingdom\">Wikipedia</a>)\n</pre>\n\n<center><img src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/drivinglicense.jpg\" alt=\"Driving\"></center>\n\n# Task\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\nThe UK driving number is made up from the personal details of the driver. The individual letters and digits can be code using the below information\n</pre>\n\n# Rules\n\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\n1–5: The first five characters of the surname (padded with 9s if less than 5 characters)\n\n6: The decade digit from the year of birth (e.g. for 1987 it would be 8)\n\n7–8: The month of birth (7th character incremented by 5 if driver is female i.e. 51–62 instead of 01–12)\n\n9–10: The date within the month of birth\n\n11: The year digit from the year of birth (e.g. for 1987 it would be 7)\n\n12–13: The initial letter of the first name and middle name, padded with a 9 if no middle name\n\n14: Arbitrary digit – usually 9, but decremented to differentiate drivers with the first 13 characters in common. We will always use 9\n\n15–16: Two computer check digits. We will always use \"AA\"\n</pre>\n\nYour task is to code a UK driving license number using an Array of data. The Array will look like\n\n```ruby\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"]\n```\n```python\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"]\n```\n```coffeescript\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"]\n```\n```crystal\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"]\n```\n```javascript\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"];\n```\n```csharp\ndata = [\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"];\n```\n```c\ndata = {\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"};\n```\n```cpp\ndata = {\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"};\n```\n```java\ndata = {\"John\",\"James\",\"Smith\",\"01-Jan-2000\",\"M\"};\n```\n\nWhere the elements are as follows\n<pre style=\"white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;\">\n0 = Forename\n1 = Middle Name (if any)\n2 = Surname\n3 = Date of Birth (In the format Day Month Year, this could include the full Month name or just shorthand ie September or Sep)\n4 = M-Male or F-Female\n</pre>\n\nYou will need to output the full 16 digit driving license number, in all UPPERCASE.\n\nGood luck and enjoy!\n\n# Kata Series\nIf you enjoyed this, then please try one of my other Katas. Any feedback, translations and grading of beta Katas are greatly appreciated. Thank you.\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58663693b359c4a6560001d6\" target=\"_blank\">Maze Runner</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58693bbfd7da144164000d05\" target=\"_blank\">Scooby Doo Puzzle</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/7KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586a1af1c66d18ad81000134\" target=\"_blank\">Driving License</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586c0909c1923fdb89002031\" target=\"_blank\">Connect 4</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/586e6d4cb98de09e3800014f\" target=\"_blank\">Vending Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/587136ba2eefcb92a9000027\" target=\"_blank\">Snakes and Ladders</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58a848258a6909dd35000003\" target=\"_blank\">Mastermind</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58b2c5de4cf8b90723000051\" target=\"_blank\">Guess Who?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58ce88427e6c3f41c2000087\" target=\"_blank\">Am I safe to drive?</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58f5c63f1e26ecda7e000029\" target=\"_blank\">Mexican Wave</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/58fdcc51b4f81a0b1e00003e\" target=\"_blank\">Pigs in a Pen</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/590300eb378a9282ba000095\" target=\"_blank\">Hungry Hippos</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/5904be220881cb68be00007d\" target=\"_blank\">Plenty of Fish in the Pond</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/590adadea658017d90000039\" target=\"_blank\">Fruit Machine</a></span>\n\n<span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/>&nbsp;<a href=\"https://www.codewars.com/kata/591eab1d192fe0435e000014\" target=\"_blank\">Car Park Escape</a></span>",
+  "totalAttempts": 28024,
+  "totalCompleted": 4467,
+  "totalStars": 298,
+  "voteScore": 600,
+  "tags": [
+    "Strings",
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

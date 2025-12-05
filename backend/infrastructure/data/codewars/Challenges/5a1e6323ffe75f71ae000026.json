@@ -1,0 +1,47 @@
+{
+  "id": "5a1e6323ffe75f71ae000026",
+  "name": "Simple Fun #384: Is Turing's Equation?",
+  "slug": "simple-fun-number-384-is-turings-equation",
+  "category": "reference",
+  "publishedAt": "2017-11-29T08:39:06.979Z",
+  "approvedAt": "2017-11-29T09:35:31.773Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "kotlin",
+    "cpp",
+    "julia",
+    "dart"
+  ],
+  "url": "https://www.codewars.com/kata/5a1e6323ffe75f71ae000026",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-11-29T07:34:59.711Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "# Story\n\n`Joe Stoy`, in his book \"Denotational Semantics\", tells following story: \n```\nThe decision which way round the digits run is, of course, mathematically trivial.\nIndeed, one early British computer had numbers running from right to left (because\nthe spot on an oscilloscope tube runs from left to right, but in serial logic the\nleast significant digits are dealt with first). \n\nTuring used to mystify audiences at public lectures when, quite by accident, he would \nslip into this mode even for decimal arithmetic, and write things like 73+42=16.\n\nThe next version of the machine was made more conventional simply by crossing the\nx-deflection wires: this, however, worried the engineers, whose waveforms were all\nbackwards. That problem was in turn solved by providing a little window so that the \nengineers(who tended to be behind the computer anyway) could view the oscilloscope\nscreen from the back. \n\n[C. Strachey - private communication.]\n```\nYou will play the role of the audience and judge on the truth value of `Turing's equations`.\n\n\n# Task\n\nYou are given a string `s`. It's an equation such as `\"a+b=c\"`, where a, b, c are numbers made up of the digits 0 to 9. This includes possible leading or trailing zeros. The equations will not contain any spaces.\n\nYour task is to determine whether `s` is a valid Turing equation. Return `true` or `false`, respectively, in Turing's interpretation, i.e. the numbers being read backwards.\n\nStill struggling to understand the task? Look at the following examples ;-)\n\n# Examples\n\nFor `s = \"73+42=16\"`, the output should be `true`.\n```\n73 -> 37\n42 -> 24\n16 -> 61\n37+24==61\n```\n\nFor `s = \"5+8=13\"`, the output should be `false`.\n```\n5 -> 5\n8 -> 8\n13 -> 31\n5+8!=31\n```\n\nFor `s = \"10+20=30\"`, the output should be `true`.\n```\n10 -> 01 -> 1\n20 -> 02 -> 2\n30 -> 03 -> 3\n1+2==3\n```\n\n\n\n# Note\n\n- All the numbers a,b,c no more than 10 digits, excluding leading zeros(read  backwards)\n\n- `s` contains only digits, \"+\" and \"=\", `\"-\",\"*\" or \"/\"` will not appear in the string.\n\n- Happy Coding `^_^`\n",
+  "totalAttempts": 6178,
+  "totalCompleted": 1821,
+  "totalStars": 32,
+  "voteScore": 284,
+  "tags": [
+    "Fundamentals",
+    "Strings",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

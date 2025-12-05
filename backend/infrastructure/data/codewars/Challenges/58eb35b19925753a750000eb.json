@@ -1,0 +1,43 @@
+{
+  "id": "58eb35b19925753a750000eb",
+  "name": "Simple Drawing Board",
+  "slug": "simple-drawing-board",
+  "category": "reference",
+  "publishedAt": "2017-04-10T09:28:06.950Z",
+  "approvedAt": "2018-01-21T17:34:38.616Z",
+  "languages": [
+    "java",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/58eb35b19925753a750000eb",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-04-10T07:35:13.740Z",
+  "createdBy": {
+    "username": "lodimob",
+    "url": "https://www.codewars.com/users/lodimob"
+  },
+  "approvedBy": {
+    "username": "siebenschlaefer",
+    "url": "https://www.codewars.com/users/siebenschlaefer"
+  },
+  "description": "You are going to write a simple console-style drawing board program.\n\n### Functions\nThe drawing board is very simple so only these functions are supported.\n\nFunction | Description\n-------- | -----------\nCreate canvas | Create new empty canvas (filled with ' ') with given width and height\nDraw line / rectangle | Draw the line with 'x' which connects the given points.<br> If the points are diagonal, a rectangle instead of diagonal line should be drawn\nFill color | Fill the entire area connected to the given point with given character, also known as \"bucket fill\" in paint programs\n\n### Output\nImplement the `drawCanvas` method to return the string contains the entire canvas surrounded by borders with `-` and `|`.\n\n### Example\nEmpty canvas 4x2\n```\n------\n|    |\n|    |\n------\n```\n\nDrawing 2 lines\n`(0, 2)` to `(4, 2)` and `(2, 0)` to `(2, 4)`\n```\n-------\n|  x  |\n|  x  |\n|xxxxx|\n|  x  |\n|  x  |\n-------\n```\n\nDrawing a rectangle `(1, 1)` to `(5, 4)` and fill with `o`\n```\n---------\n|       |\n| xxxxx |\n| xooox |\n| xooox |\n| xxxxx |\n|       |\n---------\n```\n\n### Error handling\nFor any invalid input, raise an error/exception depends on the language.\n\n- In `Java` should throw `java.lang.IllegalArgumentException`\n- In `JavaScript` should throw the string `Out of bounds`\n\nThe data type of the arguments is **always valid**, no need to do type checks.\n\n### Remarks\n- The drawing board functions should return the object itself to allow `method chaining`\n- The coordinates are zero-based, therefore the origin is `(0, 0)`, which is at the top-left corner\n- The coordinates are inclusive in `draw` method\n- If the area is already filled with different color, `fill` method should do nothing",
+  "totalAttempts": 3843,
+  "totalCompleted": 174,
+  "totalStars": 38,
+  "voteScore": 55,
+  "tags": [
+    "Geometry",
+    "Object-oriented Programming",
+    "ASCII Art",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

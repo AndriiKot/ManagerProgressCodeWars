@@ -1,0 +1,42 @@
+{
+  "id": "6089c7992df556001253ba7d",
+  "name": "What a \"Classy\" Song",
+  "slug": "what-a-classy-song",
+  "category": "reference",
+  "publishedAt": "2021-04-28T22:23:26.368Z",
+  "approvedAt": "2021-06-07T06:24:52.429Z",
+  "languages": [
+    "javascript",
+    "python",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/6089c7992df556001253ba7d",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2021-04-28T20:37:45.192Z",
+  "createdBy": {
+    "username": "this is my username",
+    "url": "https://www.codewars.com/users/this%20is%20my%20username"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Your job is to create a class called `Song`.\n\nA new `Song` will take two parameters, `title` and `artist`.\n\n```javascript\nconst mountMoose = new Song('Mount Moose', 'The Snazzy Moose');\n\nmountMoose.title => 'Mount Moose'\nmountMoose.artist => 'The Snazzy Moose'\n```\n```python\nmount_moose = Song('Mount Moose', 'The Snazzy Moose')\n\nmount_moose.title => 'Mount Moose'\nmount_moose.artist => 'The Snazzy Moose'\n```\n```java\nSong mountMoose = new Song(\"Mount Moose\", \"The Snazzy Moose\");\n\nmountMoose.getTitle() => \"Mount Moose\";\nmountMoose.getArtist() => \"The Snazzy Moose\";\n```\n\nYou will also have to create an instance method named `howMany()` (or `how_many()`).\n\nThe method takes an array of people who have listened to the song that day. The output should be how many new listeners the song gained on that day out of all listeners. Names should be treated in a case-insensitive manner, i.e. \"John\" is the same as \"john\".\n\n### Example\n\n```javascript\nconst mountMoose = new Song('Mount Moose', 'The Snazzy Moose');\n\n// day 1 (or test 1)\nmountMoose.howMany(['John', 'Fred', 'BOb', 'carl', 'RyAn']); => 5\n// These are all new since they are the first listeners.\n\n// day 2\nmountMoose.howMany(['JoHn', 'Luke', 'AmAndA']); => 2\n// Luke and Amanda are new, john already listened to it the previous day\n```\n```python\nmount_moose = Song('Mount Moose', 'The Snazzy Moose')\n\n# day 1 (or test 1)\nmount_moose.how_many(['John', 'Fred', 'BOb', 'carl', 'RyAn']) => 5\n# These are all new since they are the first listeners.\n\n# day 2\nmount_moose.how_many(['JoHn', 'Luke', 'AmAndA']); => 2\n# Luke and Amanda are new, john already listened to it the previous day\n```\n```java\nSong mountMoose = new Song(\"Mount Moose\", \"The Snazzy Moose\");\n\n// day 1 (or test 1)\nmountMoose.howMany(new ArrayList<String>(Arrays.asList(\"John\", \"Fred\", \"BOb\", \"carl\", \"RyAn\"))); => 5\n// These are all new since they are the first listeners.\n\n// day 2\nmountMoose.howMany(new ArrayList<String>(Arrays.asList(\"JoHn\", \"Luke\", \"AmAndA\"))); => 2\n// Luke and Amanda are new, john already listened to it the previous day\n```\n\nAlso if the same person listened to it more than once a day it should only count them once.\n\n### Example\n\n```javascript\nconst mountMoose = new Song('Mount Moose', 'The Snazzy Moose');\n\n// day 1\nmountMoose.howMany(['John', 'joHN', 'carl']); => 2\n```\n```python\nmount_moose = Song('Mount Moose', 'The Snazzy Moose')\n\n# day 1\nmount_moose.how_many(['John', 'joHN', 'carl']) => 2\n```\n```java\nSong mountMoose = new Song(\"Mount Moose\", \"The Snazzy Moose\");\n\n// day 1\nmountMoose.howMany(new ArrayList<String>(Arrays.asList(\"John\", \"joHN\", \"carl\"))); => 2\n```\n\nGood luck!",
+  "totalAttempts": 20243,
+  "totalCompleted": 5225,
+  "totalStars": 107,
+  "voteScore": 583,
+  "tags": [
+    "Fundamentals",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

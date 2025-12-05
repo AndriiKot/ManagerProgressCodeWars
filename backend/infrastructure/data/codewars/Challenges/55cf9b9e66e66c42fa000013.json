@@ -1,0 +1,42 @@
+{
+  "id": "55cf9b9e66e66c42fa000013",
+  "name": "Tree Depth",
+  "slug": "tree-depth",
+  "category": "reference",
+  "publishedAt": "2015-08-15T20:14:26.903Z",
+  "approvedAt": "2018-12-25T16:01:08.236Z",
+  "languages": [
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/55cf9b9e66e66c42fa000013",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-08-15T20:05:50.616Z",
+  "createdBy": {
+    "username": "leesharma",
+    "url": "https://www.codewars.com/users/leesharma"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "Write a method that takes a nested hash (object in javascript) as input and returns that hash with added \"depth\" keys. So, for example, the following input:\n\n```ruby\ntree = { \n  a: 1,\n  b: 2, \n  c: { d: { e: 3 } }\n}\n```\n```javascript\n{ a: 1, b: 2, c: { d: { e: 3 } } }\n```\n\nwould yield the following return value:\n\n```ruby\n{\n  a: 1,\n  b: 2,\n  c: {\n    d: {\n      e: 3,\n      depth: 2\n    },\n    depth: 1\n  },\n  depth: 0\n}\n```\n```javascript\n{ a: 1, b: 2, c: { d: { e: 3, depth: 2 }, depth: 1 }, depth: 0 }\n```\n\nFor Ruby, if the input is not a hash, then the function should return nil.\nFor JavaScript, if the input is not an object (including an array), the function should return `null`.",
+  "totalAttempts": 4251,
+  "totalCompleted": 592,
+  "totalStars": 16,
+  "voteScore": 111,
+  "tags": [
+    "Trees",
+    "Recursion",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

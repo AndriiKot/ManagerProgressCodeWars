@@ -1,0 +1,47 @@
+{
+  "id": "536602df5d0266e7b0000d31",
+  "name": "Morse Encoding",
+  "slug": "morse-encoding",
+  "category": "algorithms",
+  "publishedAt": "2014-05-07T09:48:01.224Z",
+  "approvedAt": "2015-08-05T00:13:04.047Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "coffeescript",
+    "python",
+    "php"
+  ],
+  "url": "https://www.codewars.com/kata/536602df5d0266e7b0000d31",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-05-04T09:05:35.708Z",
+  "createdBy": {
+    "username": "constablebrew",
+    "url": "https://www.codewars.com/users/constablebrew"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "You are writing an encoder/decoder to convert between javascript strings and a binary representation of Morse code.\n\nEach Morse code character is represented by a series of \"dots\" and \"dashes\". In binary, a dot is a single bit (`1`) and a dash is three bits (`111`). Between each dot or dash within a single character, we place a single zero bit. (I.e. \"dot dash\" would become `10111`.) Separate characters are separated by three zero bits (`000`). Words are spearated by a single space, which is represented by 7 zero bits (`0000000`).\n\n<br>\n<h3>Formal Syntax</h3>\nBinary Morse code has the following syntax: (Where '1' and '0' are literal bits.)\n\n<pre>\n    message    ::= word\n                 | word 0000000 message\n\n    word       ::= character\n                 | character 000 word\n\n    character  ::= mark\n                 | mark 0 character\n\n    mark       ::= dot\n                 | dash\n\n    dot (·)    ::= 1\n\n    dash (–)   ::= 111\n</pre>\n\n<br>\n<h3>Morse Code</h3>\nChracters in Morse code are traditionally represented by a series of dots and dashes. Below is the full list of characters supported by our Binary Morse code:\n<pre>\nA    ·–\nB    –···\nC    –·–·\nD    –··\nE    ·\nF    ··–·\nG    ––·\nH    ····\nI    ··\nJ    ·–––\nK    –·–\nL    ·–··\nM    ––\nN    –·\nO    –––\nP    ·––·\nQ    ––·–\nR    ·–·\nS    ···\nT    –\nU    ··–\nV    ···–\nW    ·––\nX    –··–\nY    –·––\nZ    ––··\n0    –––––\n1    ·––––\n2    ··–––\n3    ···––\n4    ····–\n5    ·····\n6    –····\n7    ––···\n8    –––··\n9    ––––·\n.    ·–·–·–\n,    ––··––\n?    ··––··\n'    ·––––·\n!    –·–·––\n/    –··–·\n(    –·––·\n)    –·––·–\n&    ·–···\n:    –––···\n;    –·–·–·\n=    –···–\n+    ·–·–·\n-    –····–\n_    ··––·–\n\"    ·–··–·\n$    ···–··–\n@    ·––·–·\n</pre>\n\n<br>\nNote that space itself is not a character but is interpreted as the separater between words.\n<br>\n<br>\n\nThe first method `Morse.encode` will take a String representing the message and will return an array of signed 32-bit integers in big-endian order and in two's complement format. (Note: This is the standard format for numbers returned by JavaScript bitwise operators.) Since it is possible that the Morse encoded message will not align perfectly with the binary 32-bit numbers, all unused bits are to be padded with 0's.\n<br>\n<br>\n\nThe second method `Morse.decode` will take an array of numbers and return the String representation of the message.\n\n<h3>Example</h3>\n<pre>\nText content  H           E     L             L             O           [space] W             O               R           L             D       \nMorse Code    ····        ·     ·−··          ·−··          −−−                 ·−−           −−−             ·−·         ·−··          −··     \nBit pattern   1010101 000 1 000 101110101 000 101110101 000 11101110111 0000000 101110111 000 11101110111 000 1011101 000 10111010 1000 1110101 00000000000000000\n32-bit Value  -1,440,552,402                       | -1,547,992,901                    | -1,896,993,141                      | -1,461,059,584\nHex Value     AA22 EA2E                            | A3BB 80BB                         | 8EEE 2E8B                           | A8EA 0000\n              ^        ^          ^        ^        ^         ^       ^         ^       ^         ^        ^        ^         ^         ^        ^       ^\n              |        |          |        |        |         |       |         |       |         |        |        |         |         |        |       |\n              0        8          16       24       0         8       16        24      0         8        16       24        0         8        16      24\n</pre>",
+  "totalAttempts": 14036,
+  "totalCompleted": 1270,
+  "totalStars": 413,
+  "voteScore": 240,
+  "tags": [
+    "Bits",
+    "Strings",
+    "Binary",
+    "Parsing",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

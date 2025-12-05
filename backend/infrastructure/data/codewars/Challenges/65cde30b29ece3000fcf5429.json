@@ -1,0 +1,40 @@
+{
+  "id": "65cde30b29ece3000fcf5429",
+  "name": "Deduplicated Aggregation of Data from Multiple Tables in Banking Operations",
+  "slug": "deduplicated-aggregation-of-data-from-multiple-tables-in-banking-operations",
+  "category": "reference",
+  "publishedAt": "2024-02-19T09:08:39.054Z",
+  "approvedAt": "2024-02-20T14:14:56.922Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65cde30b29ece3000fcf5429",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-02-15T10:10:19.304Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In the banking sector, the process of issuing different types of credit cards involves multiple stages. Efficiently combining data from these stages is vital for analysis and planning.\n\nDevelop a SQL query to aggregate and align data from multiple stages of the credit card issuance process, focusing on the specific ordering of assistants and dates, and handling null values.\n\nWe have `bank_assistants` table which has an information about bank assistants involved in credit card issuance:\n\n* `id` (int): Primary key\n* `event_id` (int): Unique identifier for each credit card issuance event.,\n* `assistant_name` (string): Name of the bank assistant involved in the event.\n\n`consultations` table which records of consultation dates for each credit card event:\n\n* `id` (int): Primary key\n* `event_id` (int): Unique identifier for each credit card issuance event.\n* `consultation_date` (date): Date when the consultation for the credit card took place.\n\nand `card_issuances` table with details about the dates when credit cards are issued:\n\n* `id` (int): Primary key\n* `event_id` (int): Unique identifier for each credit card issuance event.\n* `issuance_date`(date): Date when the credit card was issued.\n\nAggregation Logic:\n\n1) Each `event_id` corresponds to a process of getting a particular credit card in the bank and links the data across tables.\n2) In the aggregation, align the data so that for each `event_id`, the assistant's name appears in alphabetical order, followed by the earliest consultation date and the earliest card issuance date. \n3) Any of the fields (`assistant_name`, `consultation_date`, `issuance_date`) can be NULL if the data is not available for a particular `event_id`.\n\nExpected Output and Ordering:\n\n1) The output should list each `event_id` with the corresponding `assistant_name` (if available), the earliest `consultation_date` (if available), and the earliest card `issuance_date` (if available).\n2) The output must correctly handle cases where an `event_id` may not have an associated assistant, consultation, or issuance, showing NULL in these cases.\n3) The result should be ordered by `event_id` in ascending order. Then the resulting data should be presented in a way that for each `event_id`, the corresponding bank assistant's name (if available) is listed first. Following the assistant's name, the earliest consultation date (if available) should be shown. Finally, the earliest card issuance date (if available) should be listed.\n\nFor this sample data:\n\n```\nbank_assistants\n-------------------\nevent_id | assistant_name\n---------------------------\n101      | Alice\n101      | Charlie\n101      | Bob\n```\n\n```\nconsultations\n----------------------------\nevent_id | consultation_date\n--------------------------------\n101      | 2023-06-15\n101      | 2023-06-20\n102      | 2023-07-01\n```\n\n```\ncard_issuances\n----------------------------\nevent_id | issuance_date\n-----------------------------\n101      | 2023-07-01\n102      | 2023-07-25\n102      | 2023-08-05\n```\n\nthe expected ouput is the following:\n\n```\nevent_id | assistant_name | consultation_date | issuance_date\n-------------------------------------------------------------\n101      | Alice          | 2023-06-15        | 2023-07-01\n101      | Bob            | 2023-06-20        | NULL\n101      | Charlie        | NULL              | NULL\n102      | NULL           | 2023-07-01        | 2023-07-25\n102      | NULL           | NULL              | 2023-08-05 \n```\nGLHF!\n",
+  "totalAttempts": 696,
+  "totalCompleted": 75,
+  "totalStars": 5,
+  "voteScore": 27,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

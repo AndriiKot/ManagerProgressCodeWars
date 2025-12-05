@@ -1,0 +1,43 @@
+{
+  "id": "56b4af8ac6167012ec00006f",
+  "name": "Number Shortening Filter",
+  "slug": "number-shortening-filter",
+  "category": "algorithms",
+  "publishedAt": "2016-02-05T19:34:56.579Z",
+  "approvedAt": "2016-02-13T01:03:31.428Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/56b4af8ac6167012ec00006f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-02-05T14:19:54.889Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "Here is a new kata that Codewars asked me to do related to interviewing and working in a production setting.\n\nYou might be familar with and have used Angular.js. Among other things, it lets you create your own filters that work as functions. You can then put these in a page to perform specific data changes, such as shortening a number to display a more concise notation.\n\nIn this kata, we will create a function which returns another function (or process, in Ruby) that shortens very long numbers. Given an initial array of values replace the Xth power of a given base. If the input of the returned function is not a numerical string, it should return the input itself as a string.\n\nHere's an example, which is worth a thousand words:\n```javascript\nfilter1 = shortenNumber(['','k','m'],1000);\nfilter1('234324') == '234k';\nfilter1('98234324') == '98m';\nfilter1([1,2,3]) == '1,2,3';\nfilter2 = shortenNumber(['B','KB','MB','GB'],1024);\nfilter2('32') == '32B';\nfilter2('2100') == '2KB';\nfilter2('pippi') == 'pippi';\n```\n```python\nfilter1 = shorten_number(['','k','m'],1000)\nfilter1('234324') == '234k'\nfilter1('98234324') == '98m'\nfilter1([1,2,3]) == '[1,2,3]'\nfilter2 = shorten_number(['B','KB','MB','GB'],1024)\nfilter2('32') == '32B'\nfilter2('2100') == '2KB';\nfilter2('pippi') == 'pippi'\n```\n```csharp\nvar filter1 = shortenMethods.ShortenNumberCreator(new string[] { \"\", \"k\", \"m\" }, 1000);\nfilter1(\"234324\") == \"234k\";\nfilter1(\"98234324\") == \"98m\";\nfilter1(new int[] { 1,2,3 }) == \"1,2,3\";\nvar filter2 = shortenMethods.ShortenNumberCreator(new string[] { \"B\", \"KB\", \"MB\", \"GB\" }, 1024);\nfilter2(\"32\") == \"32B\";\nfilter2(\"2100\") == \"2KB\";\nfilter2(\"pippi\") == \"pippi\";\n```\n```ruby\nfilter1 = shorten_number(['','k','m'],1000)\nfilter1.call('234324') == '234k'\nfilter1.call('98234324') == '98m'\nfilter1({}) == '{}'\nfilter2 = shortenNumber(['B','KB','MB','GB'],1024)\nfilter2.call('32') == '32B';\nfilter2.call('2100') == '2KB';\nfilter2.call('pippi') == 'pippi'\n```\n\nIf you like to test yourself on kata related to actual work and interviews, consider trying this kata where you will build [a breadcrumb generator](http://www.codewars.com/kata/563fbac924106b8bf7000046)",
+  "totalAttempts": 5694,
+  "totalCompleted": 1010,
+  "totalStars": 96,
+  "voteScore": 180,
+  "tags": [
+    "Angular",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

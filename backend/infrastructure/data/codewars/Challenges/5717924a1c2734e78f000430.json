@@ -1,0 +1,46 @@
+{
+  "id": "5717924a1c2734e78f000430",
+  "name": "Building a Sequence Cocatenating Digits with a Given Order.",
+  "slug": "building-a-sequence-cocatenating-digits-with-a-given-order",
+  "category": "reference",
+  "publishedAt": "2016-04-20T15:21:24.006Z",
+  "approvedAt": "2017-03-12T21:53:46.618Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5717924a1c2734e78f000430",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-04-20T14:29:30.759Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "You will receive an uncertain amount of integers in a certain order ```k1, k2, ..., kn```.\n\nYou form a new number of n digits in the following way:\nyou take one of the possible digits of the first given number, ```k1```, then the same with the given number ```k2```, repeating the same process up to ```kn``` and you concatenate these obtained digits(in the order that were taken) obtaining the new number. As you can see, we have many possibilities.\n\nLet's see the process above explained with three given numbers:\n```\nk1 = 23, k2 = 17, k3 = 89\nDigits Combinations   Obtained Number\n  ('2', '1', '8')           218    <---- Minimum\n  ('2', '1', '9')           219\n  ('2', '7', '8')           278\n  ('2', '7', '9')           279\n  ('3', '1', '8')           318\n  ('3', '1', '9')           319\n  ('3', '7', '8')           378\n  ('3', '7', '9')           379    <---- Maximum\n             Total Sum =   2388   (8 different values)\n```\nWe need the function that may work in this way:\n\n```python\nproc_seq(23, 17, 89) == [8, 218, 379, 2388]\n```\n\n\n```javascript\nprocSeq(23, 17, 89) ---> [8, 218, 379, 2388]\n```\n\nSee this special case and deduce how the function should handle the cases which have many repetitions.\n\n```python\nproc_seq(22, 22, 22, 22) == [1, 2222] # we have only one obtained number, the minimum, maximum and total sum coincide\n```\n\n```javascript\nprocSeq(22, 22, 22, 22) ---> [1, 2222] /* we have only one obtained number, the minimum, maximum and total sum coincide*/\n```\n\nThe sequence of numbers will have numbers of n digits only. Numbers formed by leading zeroes will be discarded.\n\n```python\nproc_seq(230, 15, 8) == [4, 218, 358, 1152]\n```\n\n```javascript\nprocSeq(230, 15, 8) ---> [4, 218, 358, 1152]\n```\n\nEnjoy it!!\n\nYou will never receive the number 0 and all the numbers will be in valid format.\n",
+  "totalAttempts": 1445,
+  "totalCompleted": 198,
+  "totalStars": 28,
+  "voteScore": 75,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

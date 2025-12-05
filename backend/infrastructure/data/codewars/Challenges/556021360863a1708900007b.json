@@ -1,0 +1,41 @@
+{
+  "id": "556021360863a1708900007b",
+  "name": "Turkish National Identity Number",
+  "slug": "turkish-national-identity-number",
+  "category": "algorithms",
+  "publishedAt": "2015-05-23T10:52:56.868Z",
+  "approvedAt": "2015-06-05T16:33:41.993Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/556021360863a1708900007b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-05-23T06:41:58.951Z",
+  "createdBy": {
+    "username": "keune",
+    "url": "https://www.codewars.com/users/keune"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Every Turkish citizen has an identity number whose validity can be checked by these set of rules:\n\n- It is an 11 digit number\n- First digit can't be zero\n- Take the sum of 1st, 3rd, 5th, 7th and 9th digit and multiply it by 7.\nThen subtract the sum of 2nd, 4th, 6th and 8th digits from this value.\nModulus 10 of the result should be equal to 10th digit.\n- Sum of first ten digits' modulus 10 should be equal to eleventh digit.\n\nExample:\n\n    10167994524\n    //  1+1+7+9+5= 23   // \"Take the sum of 1st, 3rd, 5th, 7th and 9th digit...\"\n    //    23 * 7= 161   //  \"...and multiply it by 7\"\n    //   0+6+9+4 = 19   // \"Take the sum of 2nd, 4th, 6th and 8th digits...\"\n    // 161 - 19 = 142   // \"...and subtract from first value\"\n    // \"Modulus 10 of the result should be equal to 10th digit\"\n    10167994524\n             ^ = 2 = 142 % 10\n    // 1+0+1+6+7+9+9+4+5+2 = 44\n    // \"Sum of first ten digits' modulus 10 should be equal to eleventh digit\"\n    10167994524\n              ^ = 4 = 44 % 10\n\nYour task is to write a function to check the validity of a given number.\nReturn `true` or `false` accordingly.\n\nNote: The input can be a string in some cases.",
+  "totalAttempts": 4140,
+  "totalCompleted": 715,
+  "totalStars": 33,
+  "voteScore": 153,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "5868b2de442e3fb2bb000119",
+  "name": "Closest and Smallest",
+  "slug": "closest-and-smallest",
+  "category": "reference",
+  "publishedAt": "2017-01-01T07:42:30.132Z",
+  "approvedAt": "2017-03-27T09:35:21.014Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "java",
+    "csharp",
+    "haskell",
+    "clojure",
+    "elixir",
+    "fsharp",
+    "crystal",
+    "php",
+    "typescript",
+    "cpp",
+    "c",
+    "ocaml",
+    "r",
+    "shell",
+    "groovy",
+    "scala",
+    "go",
+    "nim",
+    "racket",
+    "vb",
+    "kotlin",
+    "rust",
+    "pascal",
+    "perl",
+    "elm",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/5868b2de442e3fb2bb000119",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-01-01T07:42:22.727Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "#### Input\n\n- a string `strng` of n positive numbers (n = 0 or n >= 2)\n\nLet us call weight of a number the sum of its digits. \nFor example `99` will have \"weight\" `18`, `100` will have \"weight\" `1`.\n\nTwo numbers are \"close\" if the difference of their weights is small.\n\n#### Task:\nFor each number in `strng` calculate its \"weight\" and then find *two* numbers\nof `strng` that have:\n\n- the smallest difference of weights ie that are the closest\n- with the smallest weights\n- and with the smallest indices (or ranks, numbered from 0) in `strng`\n\n#### Output:\n\n- an array of two arrays, each subarray in the following format:\n\n`[number-weight, index in strng of the corresponding number, original corresponding number in `strng`]`\n\nor a pair of two subarrays (Haskell, Clojure, FSharp) or an array of tuples (Elixir, C++) \n\nor a (char*) in C or a string in some other languages mimicking an array of two subarrays or a string\n\nor a matrix in R (2 rows, 3 columns, no columns names)\n\nThe two subarrays are sorted in ascending order by their number weights if these weights are different, \nby their indexes in the string if they have the same weights.\n\n#### Examples:\nLet us call that function `closest`\n```\nstrng = \"103 123 4444 99 2000\"\nthe weights are 4, 6, 16, 18, 2 (ie 2, 4, 6, 16, 18)\n\nclosest should return [[2, 4, 2000], [4, 0, 103]] (or ([2, 4, 2000], [4, 0, 103])\nor [{2, 4, 2000}, {4, 0, 103}] or ... depending on the language)\nbecause 2000 and 103 have for weight 2 and 4, their indexes in strng are 4 and 0.\nThe smallest difference is 2.\n4 (for 103) and 6 (for 123) have a difference of 2 too but they are not \nthe smallest ones with a difference of 2 between their weights.\n....................\n\nstrng = \"80 71 62 53\"\nAll the weights are 8.\nclosest should return [[8, 0, 80], [8, 1, 71]]\n71 and 62 have also:\n- the smallest weights (which is 8 for all)\n- the smallest difference of weights (which is 0 for all pairs)\n- but not the smallest indices in strng.\n....................\n\nstrng = \"444 2000 445 544\"\nthe weights are 12, 2, 13, 13 (ie 2, 12, 13, 13)\n\nclosest should return [[13, 2, 445], [13, 3, 544]] or ([13, 2, 445], [13, 3, 544])\nor [{13, 2, 445}, {13, 3, 544}] or ...\n444 and 2000 have the smallest weights (12 and 2) but not the smallest difference of weights;\nthey are not the closest.\nHere the smallest difference is 0 and in the result the indexes are in ascending order.\n...................\n\nclosest(\"444 2000 445 644 2001 1002\") --> [[3, 4, 2001], [3, 5, 1002]] or ([3, 4, 2001], \n[3, 5, 1002]]) or [{3, 4, 2001}, {3, 5, 1002}] or ...\nHere the smallest difference is 0 and in the result the indexes are in ascending order.\n...................\n\nclosest(\"239382 162 254765 182 485944 468751 49780 108 54\")\nThe weights are: 27, 9, 29, 11, 34, 31, 28, 9, 9.\nclosest should return  [[9, 1, 162], [9, 7, 108]] or ([9, 1, 162], [9, 7, 108]) \nor [{9, 1, 162}, {9, 7, 108}] or ...\n108 and 54 have the smallest difference of weights too, they also have \nthe smallest weights but they don't have the smallest ranks in the original string.\n..................\n\nclosest(\"54 239382 162 254765 182 485944 468751 49780 108\")\nclosest should return  [[9, 0, 54], [9, 2, 162]] or ([9, 0, 54], [9, 2, 162])\nor [{9, 0, 54}, {9, 2, 162}] or ...\n```\n#### Notes :\n If `n == 0` `closest(\"\")` should return [] \n-  or ([], []) in Haskell, Clojure, FSharp \n\n- or [{}, {}] in Elixir or '(() ()) in Racket \n- or {{0,0,0}, {0,0,0}} in C++\n- or \"[(), ()]\" in Go, Nim,\n- or \"{{0,0,0}, {0,0,0}}\" in C, NULL in R\n- or \"\" in Perl.\n\nSee Example tests for the format of the results in your language.\n",
+  "totalAttempts": 32271,
+  "totalCompleted": 3588,
+  "totalStars": 425,
+  "voteScore": 456,
+  "tags": [
+    "Fundamentals",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "58184387d14fc32f2b0012b2",
+  "name": "Floating-point Approximation (I)",
+  "slug": "floating-point-approximation-i",
+  "category": "reference",
+  "publishedAt": "2016-11-01T07:26:33.010Z",
+  "approvedAt": "2017-01-27T18:31:22.085Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "php",
+    "crystal",
+    "csharp",
+    "cpp",
+    "fsharp",
+    "java",
+    "clojure",
+    "haskell",
+    "elixir",
+    "ocaml",
+    "typescript",
+    "c",
+    "rust",
+    "swift",
+    "go",
+    "shell",
+    "r",
+    "kotlin",
+    "fortran",
+    "julia",
+    "groovy",
+    "scala",
+    "powershell",
+    "lua",
+    "nim",
+    "reason",
+    "racket",
+    "vb",
+    "forth",
+    "prolog",
+    "haxe",
+    "pascal",
+    "perl",
+    "raku",
+    "elm",
+    "cobol",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/58184387d14fc32f2b0012b2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-01T07:25:59.389Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "Unnamed",
+    "url": "https://www.codewars.com/users/Unnamed"
+  },
+  "description": "Consider the function \n\n`f: x -> sqrt(1 + x) - 1` at `x = 1e-15`. \n\nWe get:\n`f(x) = 4.44089209850062616e-16` \n\nor something around that, depending on the language.\n\nThis function involves the subtraction of a pair of similar numbers when x is near 0\nand the results are significantly erroneous in this region. Using `pow` instead of `sqrt`\ndoesn't give better results.\n\nA \"good\" answer is `4.99999999999999875... * 1e-16`. \n\nCan you modify f(x) to give a good approximation of f(x) in the neighborhood of 0?\n\n#### Note:\n\nDon't round or truncate your results. See the testing function in `Sample Tests:`.\n",
+  "totalAttempts": 7406,
+  "totalCompleted": 1507,
+  "totalStars": 93,
+  "voteScore": 192,
+  "tags": [
+    "Fundamentals",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

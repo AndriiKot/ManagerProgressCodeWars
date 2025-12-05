@@ -1,0 +1,42 @@
+{
+  "id": "58a3cb34623e8c119d0000d5",
+  "name": "Simple Fun #126: Decrypt Number",
+  "slug": "simple-fun-number-126-decrypt-number",
+  "category": "games",
+  "publishedAt": "2017-02-15T04:27:42.115Z",
+  "approvedAt": "2017-06-11T15:47:42.994Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/58a3cb34623e8c119d0000d5",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-02-15T03:29:56.312Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "# Task\n Smartphones software security has become a growing concern related to mobile telephony. It is particularly important as it relates to the security of available personal information.\n \n For this reason, Ahmed decided to encrypt phone numbers of contacts in such a way that nobody can decrypt them. At first he tried encryption algorithms very complex, but the decryption process is tedious, especially when he needed to dial a speed dial.\n\n He eventually found the algorithm following: instead of writing the number itself, Ahmed multiplied by 10, then adds the result to the original number.\n \n For example, if the phone number is `123`, after the transformation, it becomes `1353`. Ahmed truncates the result (from the left), so it has as many digits as the original phone number. In this example Ahmed wrote `353` instead of `123` in his smart phone.\n\n Ahmed needs a program to recover the original phone number from number stored on his phone. The program return \"impossible\" if the initial number can not be calculated.\n \n Note: There is no left leading zero in either the input or the output; Input `s` is given by string format, because it may be very huge ;-)\n\n# Example\n\n For `s=\"353\"`, the result should be `\"123\"`\n \n ```\n    1230\n  +  123\n  .......\n  = 1353  \n  \n  truncates the result to 3 digit -->\"353\"\n  \n  So the initial number is \"123\"\n ```\n For `s=\"123456\"`, the result should be `\"738496\"`\n \n ```\n    7384960\n  +  738496\n  .........\n  = 8123456\n  \n  truncates the result to 6 digit -->\"123456\"\n  \n  So the initial number is \"738496\"\n ```\n For `s=\"4334\"`, the result should be `\"impossible\"`\n \n Because no such a number can be encrypted to `\"4334\"`.\n\n# Input/Output\n\n\n - `[input]` string `s`\n\n  string presentation of n with `1 <= n <= 10^100`\n\n\n - `[output]` a string\n\n  The original phone number before encryption, or `\"impossible\"` if the initial number can not be calculated.",
+  "totalAttempts": 2569,
+  "totalCompleted": 265,
+  "totalStars": 23,
+  "voteScore": 94,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "527c3755bb2890568500000d",
+  "name": "Counterfeiting",
+  "slug": "counterfeiting",
+  "category": "games",
+  "publishedAt": "2013-11-08T02:36:05.535Z",
+  "approvedAt": "2013-11-19T20:59:30.165Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/527c3755bb2890568500000d",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2013-11-08T00:59:01.707Z",
+  "createdBy": {
+    "username": "benzrf",
+    "url": "https://www.codewars.com/users/benzrf"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Your `counterfeit` method will be passed a `coin` object and a block called `spend`. \n\nCalling spend with coin (`spend.(coin)` or `yield coin`) should only work once; spending it again should raise an error. \n\nCan you counterfeit a new coin to spend, or trick `spend` into accepting `coin` more than once?\n\n\n---\n\nYour solution is tested by the following code:\n\n```ruby\ncoin = Object.new\nclass << coin\n  def to_s\n    \"Coin1\"\n  end\nend\n\nspent = []\ncounterfeit(coin) do |suspect_coin|\n  raise \"Already spent #{suspect_coin}\" if spent.include? suspect_coin\n  is_coin = begin\n    suspect_coin.singleton_class == coin.singleton_class\n  rescue TypeError\n    false\n  end\n  raise \"Not a coin: #{suspect_coin}\" unless is_coin\n  spent << suspect_coin\nend\n\nexpect(spent.size > 1).to be(true), \"Less than two coins spent\"\n```",
+  "totalAttempts": 3647,
+  "totalCompleted": 606,
+  "totalStars": 42,
+  "voteScore": 63,
+  "tags": [
+    "Metaprogramming",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

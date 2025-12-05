@@ -1,0 +1,40 @@
+{
+  "id": "653bd2c1355c3a1309f407f2",
+  "name": "Extract Direct Subdirectories",
+  "slug": "extract-direct-subdirectories",
+  "category": "reference",
+  "publishedAt": "2023-10-27T15:10:22.205Z",
+  "approvedAt": "2024-02-10T14:10:36.656Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/653bd2c1355c3a1309f407f2",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-10-27T15:09:53.696Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Given a table containing directory paths, write a SQL query to extract all direct subdirectories of a specified base directory. The results should be in alphabetical order.\n\nWe have directories table\n\n* `id` (integer): primary key\n* `path` (varchar): column containing directory paths.\n\nTask Requirements:\n\n1) Your query should extract direct subdirectories of the base path `/home/user/pictures/`.\n2) The result should not contain the full path, but only the direct subdirectory name.\n3) The result should not have duplicates.\n4) The result should be sorted in alphabetical order.\n5) The result should contain single `subdirectory` column\n\n\nFor this sample data:\n\n```\n| id |                   path                      |\n+----+---------------------------------------------+\n| 1  | /home/user/pictures/books/2022              |\n| 2  | /home/user/pictures/vacation                |\n| 3  | /home/user/pictures/work/2023/important     |\n| 4  | /home/user/pictures/vacation/2023           |\n```\n\nquery needs to return\n\n```\n| subdirectory |\n+--------------+\n| books        |\n| vacation     |\n| work         |\n```\n\nGLHF!\n\n\n",
+  "totalAttempts": 1266,
+  "totalCompleted": 240,
+  "totalStars": 14,
+  "voteScore": 48,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

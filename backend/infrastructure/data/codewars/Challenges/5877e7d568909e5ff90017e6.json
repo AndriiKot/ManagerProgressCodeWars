@@ -1,0 +1,57 @@
+{
+  "id": "5877e7d568909e5ff90017e6",
+  "name": "How many numbers III?",
+  "slug": "how-many-numbers-iii",
+  "category": "reference",
+  "publishedAt": "2017-01-12T20:32:21.741Z",
+  "approvedAt": "2017-03-09T01:53:54.874Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "java",
+    "csharp",
+    "crystal",
+    "haskell",
+    "rust",
+    "go",
+    "d",
+    "julia",
+    "cpp",
+    "swift",
+    "scala",
+    "ocaml"
+  ],
+  "url": "https://www.codewars.com/kata/5877e7d568909e5ff90017e6",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2017-01-12T20:32:55.143Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": "We want to generate all the numbers of three digits where:\n\n- the sum of their digits is equal to `10`\n- their digits are in increasing order (the numbers may have two or more equal contiguous digits)\n\nThe numbers that fulfill these constraints are: `[118, 127, 136, 145, 226, 235, 244, 334]`. There are `8` numbers in total with `118` being the lowest and `334` being the greatest.\n\n___\n\n## Task\n\nImplement a function which receives two arguments:\n\n1. the sum of digits (`sum`)\n2. the number of digits (`count`)\n\nThis function should return three values:\n\n1. the total number of values which have `count` digits that add up to `sum` and are in increasing order\n2. the lowest such value\n3. the greatest such value\n\n**Note**: if there are no values which satisfy these constaints, you should return an empty value (refer to the examples to see what exactly is expected).\n\n## Examples\n\n```python\nfind_all(10, 3)  =>  [8, 118, 334]\nfind_all(27, 3)  =>  [1, 999, 999]\nfind_all(84, 4)  =>  []\n```\n```ruby\nfind_all(10, 3)  =>  [8, 118, 334]\nfind_all(27, 3)  =>  [1, 999, 999]\nfind_all(84, 4)  =>  []\n```\n```crystal\nfind_all(10, 3)  =>  [8, 118, 334]\nfind_all(27, 3)  =>  [1, 999, 999]\nfind_all(84, 4)  =>  []\n```\n```javascript\nfindAll(10, 3)  =>  [8, \"118\", \"334\"]\nfindAll(27, 3)  =>  [1, \"999\", \"999\"]\nfindAll(84, 4)  =>  []\n```\n```haskell\nfindAll 10 3  =>  ( 8, Just 118, Just 334 )\nfindAll 27 3  =>  ( 1, Just 999, Just 999 )\nfindAll 84 4  =>  ( 0, Nothing, Nothing )\n```\n```java\n// The output type is List<Long>\nHowManyNumbers.findAll(10, 3)  =>  [8, 118, 334]\nHowManyNumbers.findAll(27, 3)  =>  [1, 999, 999]\nHowManyNumbers.findAll(84, 4)  =>  []\n```\n```csharp\n// The output type is List<long>\nHowManyNumbers.FindAll(10, 3)  =>  [8, 118, 334]\nHowManyNumbers.FindAll(27, 3)  =>  [1, 999, 999]\nHowManyNumbers.FindAll(84, 4)  =>  []\n```\n```cpp\n// The output type is optional<tuple<uint32_t, uint64_t, uint64_t>>\nfind_all(10, 3)  =>  (8, 118, 334)\nfind_all(27, 3)  =>  (1, 999, 999)\nfind_all(84, 4)  =>  nullopt\n```\n```scala\n// (Long, Long) => Option[(Long, Long, Long)]\nfindAll(10, 3)  =>  Some(8L, 118L, 334L)\nfindAll(27, 3)  =>  Some(1L, 999L, 999L)\nfindAll(84, 4)  =>  None\n```\n```ocaml\nfind_all 10 3  =>  Some (8, 118, 334)\nfind_all 27 3  =>  Some (1, 999, 999)\nfind_all 84 4  =>  None\n```\n\n___\n\nFeatures of the random tests:\n\n* Number of tests: `112`\n* Sum of digits value between `20` and `65`\n* Amount of digits between `2` and `17`",
+  "totalAttempts": 32691,
+  "totalCompleted": 4813,
+  "totalStars": 1012,
+  "voteScore": 603,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 3
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "59d9d8cb27ee005972000045",
+  "name": "Catalog",
+  "slug": "catalog",
+  "category": "reference",
+  "publishedAt": "2017-10-08T07:50:43.160Z",
+  "approvedAt": "2018-04-11T12:09:45.637Z",
+  "languages": [
+    "shell",
+    "python",
+    "javascript",
+    "ruby",
+    "java",
+    "julia",
+    "scala",
+    "r",
+    "kotlin",
+    "powershell",
+    "go",
+    "nim",
+    "php",
+    "csharp",
+    "rust",
+    "clojure",
+    "racket",
+    "typescript",
+    "fsharp",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/59d9d8cb27ee005972000045",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-08T07:50:35.250Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "You are given a *small* extract of a catalog:\n\n```\ns = \"<prod><name>drill</name><prx>99</prx><qty>5</qty></prod>\n\n<prod><name>hammer</name><prx>10</prx><qty>50</qty></prod>\n\n<prod><name>screwdriver</name><prx>5</prx><qty>51</qty></prod>\n\n<prod><name>table saw</name><prx>1099.99</prx><qty>5</qty></prod>\n\n<prod><name>saw</name><prx>9</prx><qty>10</qty></prod>\n\n...\n```\n\n(`prx` stands for `price`, `qty` for `quantity`) and an article i.e \"saw\".\n\nThe `function catalog(s, \"saw\")` returns the line(s) corresponding to the article\nwith `$` before the prices:\n\n```\n\"table saw > prx: $1099.99 qty: 5\\nsaw > prx: $9 qty: 10\\n...\"\n```\n\nIf the article is not in the catalog return \"Nothing\".\n\n#### Notes\n- There is a blank line between two lines of the catalog.\n\n- The same article may appear more than once. If that happens return all the lines concerned by the article (in the same order as in the catalog; however see below a note for Prolog language).\n\n- The line separator of results may depend on the language `\\n`or `\\r\\n`.\n  In **Pascal** `\\n` is replaced by `LineEnding`.\n\n- in Perl use \"£\" instead of \"$\" before the prices.\n\n-  You can see examples in the \"Sample tests\".\n\n#### Note for Prolog language\n- If the article is not in the catalog then R equals \"\".\n\n- R substrings (separated by \"\\n\") must be in alphabetic order.\n",
+  "totalAttempts": 20881,
+  "totalCompleted": 3078,
+  "totalStars": 159,
+  "voteScore": 481,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "52b50a20fa0e77b304000103",
+  "name": "SantaClausable Interface",
+  "slug": "santaclausable-interface",
+  "category": "reference",
+  "publishedAt": "2013-12-21T04:32:22.101Z",
+  "approvedAt": "2013-12-24T16:33:10.834Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/52b50a20fa0e77b304000103",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2013-12-21T03:25:21.058Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "You probably know, that in Javascript (and also Ruby) there is no concept of interfaces. There is only a concept of inheritance, but you can't assume that a certain method or property exists, just because it exists in the parent prototype / class. We want to find out, whether a given object fulfils the requirements to implement the \"SantaClausable\" *interface*. We need to implement a method which checks for this *interface*.\n\n### Rules\n\nThe SantaClausable interface is implemented, if all of the following methods are defined on an object:\n\n* `sayHoHoHo()` / `say_ho_ho_ho`\n* `distributeGifts()` / `distribute_gifts`\n* `goDownTheChimney()` / `go_down_the_chimney`\n\n### Example\n\n```javascript\n  let santa = {\n    sayHoHoHo: function() { console.log('Ho Ho Ho!') },\n    distributeGifts: function() { console.log('Gifts for all!'); },\n    goDownTheChimney: function() { console.log('*whoosh*'); }\n};\n\nlet notSanta = {\n    sayHoHoHo: function() { console.log('Oink Oink!') }\n    // no distributeGifts() and no goDownTheChimney()\n};\n\nisSantaClausable(santa); // must return TRUE\nisSantaClausable(notSanta); // must return FALSE\n```\n\n```coffeescript\nsanta =\n  sayHoHoHo: ->\n    console.log \"Ho Ho Ho!\"\n\n  distributeGifts: ->\n    console.log \"Gifts for all!\"\n\n  goDownTheChimney: ->\n    console.log \"*whoosh*\"\n\nnotSanta = sayHoHoHo: ->\n  console.log \"Oink Oink!\"\n  # no distributeGifts() and no goDownTheChimney()\n\nisSantaClausable santa # must return TRUE\nisSantaClausable notSanta # must return FALSE\n```\n\n```ruby\nclass SantaClaus\n    def say_ho_ho_ho\n        # Ho Ho Ho!\n    end\n    \n    def distribute_gifts\n        # Gifts for all!\n    end\n    \n    def go_down_the_chimney\n        # Whoosh!\n    end\nend\n  \nclass NotSantaClaus\n    def say_ho_ho_ho\n    end\nend\n\nis_santa_clausable(SantaClaus.new) # must return TRUE\nis_santa_clausable(NotSantaClaus.new) # must return FALSE\n```\n### Additional Information on this Topic\n\n* [Duck Typing](http://en.wikipedia.org/wiki/Duck_typing) (Wikipedia)\n",
+  "totalAttempts": 108608,
+  "totalCompleted": 14535,
+  "totalStars": 105,
+  "voteScore": 297,
+  "tags": [
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 4
+  }
+}

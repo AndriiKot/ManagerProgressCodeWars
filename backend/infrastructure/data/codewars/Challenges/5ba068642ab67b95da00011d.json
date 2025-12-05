@@ -1,0 +1,42 @@
+{
+  "id": "5ba068642ab67b95da00011d",
+  "name": "Micro-World ",
+  "slug": "micro-world",
+  "category": "reference",
+  "publishedAt": "2018-09-18T03:08:10.996Z",
+  "approvedAt": "2018-09-19T14:21:32.916Z",
+  "languages": [
+    "cpp",
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5ba068642ab67b95da00011d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-09-18T02:52:20.961Z",
+  "createdBy": {
+    "username": "sazzadshopno",
+    "url": "https://www.codewars.com/users/sazzadshopno"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Your Task\nYou have a Petri dish with bacteria, and you are preparing to dive into the harsh micro-world. But, unfortunately, you don't have any microscope nearby, so you can't watch them.\n\nYou know that you have `n` bacteria in the Petri dish and size of the i-th bacteria is bacteria<sub>i</sub>. Also you know intergalactic positive integer constant `K`.\n\nThe i-th bacteria can swallow the j-th bacteria if and only if bacteria<sub>i</sub> > bacteria<sub>j</sub> and bacteria<sub>i</sub> ≤ bacteria<sub>j</sub> + K. The j-th bacteria disappear, but the i-th bacteria doesn't change its size.\n\nSince you don't have a microscope, you can only guess the minimal possible number of bacteria that will remain in your Petri dish when you finally find a microscope.\n\n```cpp\nmicroWorld({101, 53, 42, 102, 101, 55, 54} , 1) == 3\nmicroWorld({20, 15, 10, 15, 20, 25} , 5) == 1\n```\n```python\nmicro_world([101, 53, 42, 102, 101, 55, 54], 1) == 3\nmicro_world([20, 15, 10, 15, 20, 25], 5) == 1\n```\n```ruby\nmicro_world([101, 53, 42, 102, 101, 55, 54], 1) == 3\nmicro_world([20, 15, 10, 15, 20, 25], 5) == 1\n```\n```javascript\nmicroWorld([101, 53, 42, 102, 101, 55, 54], 1) === 3\nmicroWorld([20, 15, 10, 15, 20, 25], 5) === 1\n```\n\n___\n\n# Explanation\n```cpp\nbacteria = {101, 53, 42, 102, 101, 55, 54}\nK = 1\n```\n```python\nbacteria = [101, 53, 42, 102, 101, 55, 54]\nK = 1\n```\n```ruby\nbacteria = [101, 53, 42, 102, 101, 55, 54]\nK = 1\n```\n```javascript\nbacteria = [101, 53, 42, 102, 101, 55, 54]\nK = 1\n```\n\n```if:cpp\nThe one of possible sequences of swallows is: {101,53,42,102,<s>101</s>,55,54} → {101,<s>53</s>,42,102,55,54} → {<s>101</s>,42,102,55,54} → {42,102,55,<s>54</s>} → {42,102,55}. In total there are 3 bacteria remaining.\n```\n```if:python,ruby,javascript\nThe one of possible sequences of swallows is: [101,53,42,102,<s>101</s>,55,54] → [101,<s>53</s>,42,102,55,54] → [<s>101</s>,42,102,55,54] → [42,102,55,<s>54</s>] → [42,102,55]. In total there are 3 bacteria remaining.\n```",
+  "totalAttempts": 1367,
+  "totalCompleted": 210,
+  "totalStars": 12,
+  "voteScore": 82,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

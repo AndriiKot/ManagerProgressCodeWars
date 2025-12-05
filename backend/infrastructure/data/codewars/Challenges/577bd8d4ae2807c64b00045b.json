@@ -1,0 +1,48 @@
+{
+  "id": "577bd8d4ae2807c64b00045b",
+  "name": "Two fighters, one winner.",
+  "slug": "two-fighters-one-winner",
+  "category": "reference",
+  "publishedAt": "2016-07-05T16:01:11.870Z",
+  "approvedAt": "2016-08-03T20:12:29.459Z",
+  "languages": [
+    "python",
+    "javascript",
+    "java",
+    "csharp",
+    "clojure",
+    "cpp",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/577bd8d4ae2807c64b00045b",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-07-05T15:57:08.474Z",
+  "createdBy": {
+    "username": "Scopula",
+    "url": "https://www.codewars.com/users/Scopula"
+  },
+  "approvedBy": {
+    "username": "suic",
+    "url": "https://www.codewars.com/users/suic"
+  },
+  "description": "Create a function that returns the name of the winner in a fight between two fighters.\n\nEach fighter takes turns attacking the other and whoever kills the other first is victorious. Death is defined as having `health <= 0`.\n\nEach fighter will be a `Fighter` object/instance. See the Fighter class below in your chosen language.\n\nBoth `health` and `damagePerAttack` (`damage_per_attack` for python) will be integers larger than `0`. You can mutate the `Fighter` objects.\n\nYour function also receives a third argument, a string, with the name of the fighter that attacks first.\n\n## Example:\n```\n  declare_winner(Fighter(\"Lew\", 10, 2), Fighter(\"Harry\", 5, 4), \"Lew\") => \"Lew\"\n  \n  Lew attacks Harry; Harry now has 3 health.\n  Harry attacks Lew; Lew now has 6 health.\n  Lew attacks Harry; Harry now has 1 health.\n  Harry attacks Lew; Lew now has 2 health.\n  Lew attacks Harry: Harry now has -1 health and is dead. Lew wins.\n```\n\n```javascript\nclass Fighter {\n    #name;            get name()            { return this.#name; }\n    #damagePerAttack; get damagePerAttack() { return this.#damagePerAttack; }\n\n    constructor(name, health, damagePerAttack) {\n      this.#name = name;\n      this.#damagePerAttack = damagePerAttack;\n      this.health = health;\n    }\n}\n```\n```python\nclass Fighter(object):\n    def __init__(self, name, health, damage_per_attack):\n        self.name = name\n        self.health = health\n        self.damage_per_attack = damage_per_attack\n        \n    def __str__(self): return \"Fighter({}, {}, {})\".format(self.name, self.health, self.damage_per_attack)\n    __repr__=__str__\n```\n```java\npublic class Fighter {\n  public String name;\n  public int health, damagePerAttack;\n  public Fighter(String name, int health, int damagePerAttack) {\n    this.name = name;\n    this.health = health;\n    this.damagePerAttack = damagePerAttack;\n  }\n}\n```\n```csharp\npublic class Fighter {\n  public string Name;\n  public int Health, DamagePerAttack;\n  public Fighter(string name, int health, int damagePerAttack) {\n    this.Name = name;\n    this.Health = health;\n    this.DamagePerAttack = damagePerAttack;\n  }\n}\n```\n```clojure\nTechnical note: The second fighter argument (f2) always attacks first.\n\n(defrecord Fighter [name hp attack])\n```\n```cpp\nclass Fighter\n{\nprivate:\n    std::string name;\n    \n    int health;\n    \n    int damagePerAttack;\n\npublic:\n    Fighter(std::string name, int health, int damagePerAttack)\n    {\n        this->name = name;\n        this->health = health;\n        this->damagePerAttack = damagePerAttack;\n    }\n    \n    ~Fighter() { };\n    \n    std::string getName()\n    {\n        return name;\n    }\n    \n    int getHealth()\n    {\n        return health;\n    }\n    \n    int getDamagePerAttack()\n    {\n        return damagePerAttack;\n    }\n    \n    void setHealth(int value)\n    {\n        health = value;\n    }\n};\n```\n```go\ntype Fighter struct {\n\tName            string\n\tHealth          int\n\tDamagePerAttack int\n}\n```\n",
+  "totalAttempts": 120047,
+  "totalCompleted": 29553,
+  "totalStars": 1459,
+  "voteScore": 3126,
+  "tags": [
+    "Games",
+    "Algorithms",
+    "Logic",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 8
+  }
+}

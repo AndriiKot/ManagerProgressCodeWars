@@ -1,0 +1,49 @@
+{
+  "id": "55d5f4aae676c3da53000024",
+  "name": "Special Subsets of Primes",
+  "slug": "special-subsets-of-primes",
+  "category": "reference",
+  "publishedAt": "2015-08-21T10:02:48.380Z",
+  "approvedAt": "2019-04-04T04:56:08.530Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "haskell",
+    "d",
+    "csharp",
+    "rust",
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/55d5f4aae676c3da53000024",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-08-20T15:39:23.005Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "A programmer that loves creating algorithms for security is doing a previous investigation of a special set of primes. Specially, he has to define ranges of values and to have the total number of the required primes.\n\nThese primes should fulfill the following requirements:\n\n* The primes should have at least 3 digits.\n\n* The primes can not include the digit 0.\n\n* The sum of the digits should be a multiple of a perfect square number. (**Note:** even though 1 is a perfect square, **do not** consider it for obvious reasons)\n\n* The product of the first digit by the last one cannot be 45, or in other words, if 5 is the first digit, the last one cannot be 9.\n\n* The primes' digits should occur only once. Examples of this kind of primes are: `167, 359`. Cases like `113` and `331` have to be discarded because digits 1 and 3 that appear twice respectively.\n\nOnce he has these special primes, that fulfill the constraints listed above, he has to classify them in three subsets: bouncy, increasing and decreasing primes.\nThe increasing primes are the ones that have their digits in increasing order, for example : `157, 359, 569`. \n\nThe decreasing ones, on the other hand, have their digits in decreasing order, for example: `761, 953, 971`.\n\nFinally, the bouncy primes are the ones that does not belong to any of both previous subsets: neither increasing nor decreasing ones, for example: `173, 193, 317`.\n\n\n## Your Task\n\n*Do you want to have the results of this investigation and accept the challenge? If your answer is affirmative, continue reading.*\n\nYour function will accept an integer higher than 100 (and lower than 50000) as an upper bound of the range to work in, so all these special primes should be lower or equal to the given value of `n`.\n\nThe function should output a list of lists with the data in this order:\n```\n[ [data for _bouncy_ primes], [data for _increasing_ primes], [data for _decreasing_ primes] ]\n```\n\nThe data required for each subset should be as follows:\n```\n[ min. prime found, max. prime found, number of primes in range ]\n```\n\n\n## Examples\n\nLet's see some examples for some values of n:\n```\nspecial_primes(101) --> [[0, 0, 0], [0, 0, 0], [0, 0, 0]]\n```\nNo special primes at this value (obviously).\n\n```\nspecial_primes(200) --> [[0, 0, 0], [0, 0, 0], [0, 0, 0]]\n```\nStill no special primes.\n\n```\nspecial_primes(457) --> [[251, 439, 2], [349, 457, 4], [431, 431, 1]]\n```\nNow we have some values:\n* bouncy primes: `251, 439` (2 in total)\n* increasing primes: `349, 367, 389, 457` (4)\n* decreasing primes: `431` (1)\n\n```\nspecial_primes(1000) --> [[251, 947, 11], [349, 479, 5], [431, 983, 4]]\n```\n* bouncy primes: `251, 439, 547, 587, 619, 659, 673, 691, 839, 857, 947` (11)\n* increasing primes: `349, 367, 389, 457, 479` (5)\n* decreasing primes: `431, 521, 853, 983` (4)\n\nGood Luck and happy coding!\n\n---\n\nItems the programmer has to think after the investigation:\n\n- The highest possible prime, with these constraints, is ________.\n\n- The larger subset of prime is _______.\n\n- The smallest subset of primes is _______.\n\n- The sum of the digits of these special primes are always multiples of the perfect squares: __________\n\n\nIf your code passed you have these answers!!",
+  "totalAttempts": 1145,
+  "totalCompleted": 185,
+  "totalStars": 26,
+  "voteScore": 78,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Mathematics",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

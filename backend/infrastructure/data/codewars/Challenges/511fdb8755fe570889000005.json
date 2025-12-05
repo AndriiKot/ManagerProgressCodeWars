@@ -1,0 +1,40 @@
+{
+  "id": "511fdb8755fe570889000005",
+  "name": "Ruby Array invoke instance method",
+  "slug": "ruby-array-invoke-instance-method",
+  "category": "algorithms",
+  "publishedAt": "2013-03-21T01:07:49.178Z",
+  "approvedAt": "2013-12-28T20:06:48.899Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/511fdb8755fe570889000005",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-02-16T19:18:31.998Z",
+  "createdBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Extend the Array class so that it supports an \"invoke\" instance method. The method will be called when someone wishes to execute/invoke a method on each of the items in the array. \n\nThis method will be a more advanced alternative to using the each/to_proc shorthand:\n```ruby\narray_items.each(&:method_to_call) \n```\n\nThe invoke method signature will take a method name, any number of arguments to be passed to the invoked method and optionally a block that will be used to determine if the method should be called for a particular item or not. The method will return an array containing the result from each invoked method (one result per each item in the array). Items that do not have their method invoked will not be included in the array.\n\nFor example, if you wanted to call the \"update\" method with two arguments on all non-nil objects within an array called \"items\":\n```ruby\n# contrived class example used to provide a method that we could call\nclass ExampleItem\n  # notice that this method always returns \"updated\"\n  def update(arg1, arg2)\n    @arg1 = arg1\n    @arg2 = arg2\n    \"updated\"\n  end\nend\n\nitems = [ExampleItem.new, nil, ExampleItem.new]\n\nupdate_results = items.invoke(:update, \"argument 1\", \"argument 2\") {|item| item != nil}\n# update_result would == ['updated', 'updated']\n```\n\n",
+  "totalAttempts": 5879,
+  "totalCompleted": 469,
+  "totalStars": 15,
+  "voteScore": 36,
+  "tags": [
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

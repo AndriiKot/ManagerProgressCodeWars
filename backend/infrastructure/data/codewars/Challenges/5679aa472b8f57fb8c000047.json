@@ -1,0 +1,64 @@
+{
+  "id": "5679aa472b8f57fb8c000047",
+  "name": "Equal Sides Of An Array",
+  "slug": "equal-sides-of-an-array",
+  "category": "reference",
+  "publishedAt": "2015-12-22T22:03:35.429Z",
+  "approvedAt": "2016-01-03T09:48:13.959Z",
+  "languages": [
+    "csharp",
+    "javascript",
+    "python",
+    "coffeescript",
+    "ruby",
+    "java",
+    "haskell",
+    "clojure",
+    "c",
+    "cpp",
+    "php",
+    "fsharp",
+    "crystal",
+    "kotlin",
+    "nasm",
+    "julia",
+    "typescript",
+    "factor",
+    "cobol",
+    "scala",
+    "d",
+    "rust",
+    "go",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/5679aa472b8f57fb8c000047",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-22T19:53:43.525Z",
+  "createdBy": {
+    "username": "Shivo",
+    "url": "https://www.codewars.com/users/Shivo"
+  },
+  "approvedBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "description": "You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.\n\n```if-not:rust\nIf there is no index that would make this happen, return `-1`.\n```\n\n```if:rust\nIf there is no index that would make this happen, return `None`.\n```\n\n### For example:\n\nLet's say you are given the array `{1,2,3,4,3,2,1}`:  \nYour function will return the index `3`, because the sum of left side of the index (`{1,2,3}`) and the sum of the right side of the index (`{3,2,1}`) both equal `6`.\n\n\nLet's look at another one.  \nYou are given the array `{1,100,50,-51,1,1}`:  \nYour function will return the index `1`, because the sum of left side of the index (`{1}`) and the sum of the right side of the index (`{50,-51,1,1}`) both equal `1`.\n\nLast one:  \nYou are given the array `{20,10,-80,10,10,15,35}`  \nAt index 0 the left side is `{}`  \nThe right side is `{10,-80,10,10,15,35}`  \nThey both are equal to `0` when added. (Empty arrays are equal to 0 in this problem)  \nIndex 0 is the place where the left side and right side are equal.  \n\nNote: Please remember that in most languages the index of an array starts at 0.\n\n### Input\n\nAn integer array of length `0 < arr < 1000`. The numbers in the array can be any integer positive or negative.\n\n### Output\n\nThe lowest index `N` where the side to the left of `N` is equal to the side to the right of `N`. If you do not find an index that fits these rules, then you will return `-1`.\n\n### Note\n\nIf you are given an array with multiple answers, return the lowest correct index.  \n\n~~~if:lambdacalc\n### Encodings\n\npurity: `LetRec`  \nnumEncoding: custom `NegaBinaryScott`  \n\nExport constructors `nil, cons` for your `List` encoding.  \n`NegaBinaryScott` is just like `BinaryScott`, but uses base `-2` instead of `2`.\n~~~",
+  "totalAttempts": 530973,
+  "totalCompleted": 138170,
+  "totalStars": 3851,
+  "voteScore": 10936,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 4
+  }
+}

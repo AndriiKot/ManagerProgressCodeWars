@@ -1,0 +1,40 @@
+{
+  "id": "6570379ddb71be2fca8f6560",
+  "name": "Bakery Delight: Querying Custom Cakes with Perfect Decorations",
+  "slug": "bakery-delight-querying-custom-cakes-with-perfect-decorations",
+  "category": "reference",
+  "publishedAt": "2023-12-06T08:58:40.093Z",
+  "approvedAt": "2023-12-12T11:51:42.923Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6570379ddb71be2fca8f6560",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-12-06T08:58:05.689Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are working with a database for a bakery that specializes in customized cakes. The cake names in the database follow a specific pattern: they begin with letters and end with digits (e.g., 'cake5', 'cake28'). Each cake is uniquely decorated with exactly one type of icing  and a variety of sprinkles. The database tracks these decorations, and your task is to query it for specific cake information.\n\nThe database consists of the following tables:\n\n`cakes`: This table stores information about each cake:\n\n* `cake`: (varchar, primary key) - the unique name or identifier of the cake.\n* `icing` (varchar) - the type of icing used on the cake.\n\n`reserved_sprinkles`: This table maps cakes to their respective sprinkles. A cake may have zero, one, or multiple entries in this table:\n\n* `cake` (varchar) - the name of the cake, referencing the cakes table.\n* `sprinkle`: (varchar) -  the type of sprinkle used, referencing the sprinkles table.\n\n`sprinkles`: Contains details about different types of sprinkles.\n\n* `sprinkle`: (varchar, primary key) = the unique name or identifier of the sprinkle type.\n* `consumed`: (boolean) - indicates whether the sprinkle type is currently available (false for available, true for consumed).\n\n`icings`: Contains details about different types of icings.\n\n* `icing`: (varchar, primary key) - the unique name or identifier of the icing type.\n* `consumed`: (boolean) - indicates whether the icing type is currently available (false for available, true for consumed).\n\nWe need cakes associated with exactly three different sprinkles. Write an SQL query that returns the names of cakes where neither the icing nor any of the three sprinkles are consumed. To be selected, a cake must meet the following criteria:\n\n1) The icing associated with the cake must not be consumed.\n2) All three sprinkles associated with the cake must not be consumed.\n\nThe query should return a list of cake names meeting the criteria. The output column should be named `cake`. Additionally, the query should sort the cake names in a natural ascending order, where the alphabetical part is sorted alphabetically and the numerical part is sorted numerically (e.g., 'cake5' should come before 'cake28').\n\nGLHF!\n\n\n",
+  "totalAttempts": 1026,
+  "totalCompleted": 94,
+  "totalStars": 6,
+  "voteScore": 39,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

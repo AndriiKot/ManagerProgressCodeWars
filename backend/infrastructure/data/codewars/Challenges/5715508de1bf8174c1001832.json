@@ -1,0 +1,47 @@
+{
+  "id": "5715508de1bf8174c1001832",
+  "name": "Find the Longest Increasing or Decreasing  Combination in an Array",
+  "slug": "find-the-longest-increasing-or-decreasing-combination-in-an-array",
+  "category": "reference",
+  "publishedAt": "2016-04-18T22:46:08.318Z",
+  "approvedAt": "2017-10-26T09:44:56.462Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "d",
+    "go",
+    "rust",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5715508de1bf8174c1001832",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-04-18T21:24:29.636Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "## Task\n\nCreate a function `longestComb/LongestComb/longest_comb` (case dependent on language, refer to the initial code) that takes a sequence of integers and a method of ordering integers (increasing/decreasing) and returns all of the longest subsequences (with length of at least 3) of the given sequence such that the subsequence elements are ordered according to the given ordering method. \n\nAs a reminder, a subsequence is a sequence derived by deleting some or no elements from a given sequence without changing the order of the remaining elements.\n\nFor example, given a sequence `S = S_1, S_1 ... S_n`, the subsequences of `S` will all be of the form `SubS = S_a, S_b ... S_k` such that `1 <= a < b < ... < k <= n`  and\n\n* If the desired order is increasing: `S_a < S_b < ... < S_k`\n* If the desired order is decreasing: `S_a > S_b > ... > S_k`\n\n#### Arguments\n\n* `arr`: An array/list of integers\n* `command`: A string representing the ordering of the returned subsequences\n    * Increasing: `\"< <\"` or `\"<<\"`\n    * Decreasing: `\"> >\"` or `\">>\"`\n\n#### Output\n\n* A 2D list (list of lists) of the longest subsequences (length >= 3) of `arr` that are ordered in the way indicated by `command`.\n~~~if:python,javascript,ruby\n  * If only a single valid subsequence is found, return just that list (see examples).\n~~~\n* The returned list should be ordered by the original element indices from `arr`.\n  * For example: if `arr = [-1,3,-34,18,-55,60,118,-64` and `command = \"> >\"`, there are two increasing subsequences of maximal length: `[3,-34,-55,-64]` and `[-1,-34,-55,-64]`.\n  * These subsequences are formed by the indices `[1,2,4,7]` and `[0,2,4,7]` of `arr` respectively.\n  * Thus, the returned list should be [[-1, -34, -55, -64], [3, -34, -55, -64]]\n  \n#### Examples\n\n~~~if:python,javascript,ruby\n```python\nlongest_comb([-1, 3, -34, 18, -55, 60, 118, -64], '< <') == [-1, 3, 18, 60, 118]\n\nlongest_comb([-1, 3, -34, 18, -55, 60, 118, -64], '> >') == [[-1, -34, -55, -64], [3, -34, -55, -64]]\n```\nWe may have some cases without any possible subsequences:\n```python\nlongest_comb([-26, 26, -36, 17, 12, 12, -10, -21], \"< <\") == []\n```\n\nOn the other hand we may have cases with many solutions:\n```python\nlongest_comb([-22, 40, -45, -43, -1, 7, 43, -56], \"> >\") == [[-22, -45, -56], [-22, -43, -56], [40, -45, -56], [40, -43, -56], [40, -1, -56], [40, 7, -56]]\n```\n~~~\n~~~if:d,rust,go\n```\n[-1, 3, -34, 18, -55, 60, 118, -64], \"< <\" --> [[-1, 3, 18, 60, 118]]\n\n[-1, 3, -34, 18, -55, 60, 118, -64], \"> >\" --> [[-1, -34, -55, -64], [3, -34, -55, -64]]\n```\nWe may have some cases without any possible subsequences:\n```\n[-26, 26, -36, 17, 12, 12, -10, -21], \"< <\" --> []\n```\n\nOn the other hand we may have cases with many solutions:\n```\n[-22, 40, -45, -43, -1, 7, 43, -56], \"> >\" -> [[-22, -45, -56], [-22, -43, -56], [40, -45, -56], [40, -43, -56], [40, -1, -56], [40, 7, -56]]\n```\n~~~\n~~~if:haskell\n```haskell\n>>> longestComb [-1, 3, -34, 18, -55, 60, 118, -64] \"< <\"\n[[-1, 3, 18, 60, 118]]\n\n>>> longestComb [-1, 3, -34, 18, -55, 60, 118, -64] \"> >\"\n[[-1, -34, -55, -64], [3, -34, -55, -64]]\n```\nWe may have some cases without any possible subsequences:\n```haskell\n>>> longestComb [-26, 26, -36, 17, 12, 12, -10, -21] \"< <\"\n[]\n```\n\nOn the other hand we may have cases with many solutions:\n```haskell\n>>> longestComb [-22, 40, -45, -43, -1, 7, 43, -56] \"> >\"\n[[-22, -45, -56], [-22, -43, -56], [40, -45, -56], [40, -43, -56], [40, -1, -56], [40, 7, -56]]\n```\n~~~",
+  "totalAttempts": 2208,
+  "totalCompleted": 162,
+  "totalStars": 54,
+  "voteScore": 43,
+  "tags": [
+    "Data Structures",
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 3
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "52a64cf14009fd59c6000994",
+  "name": "Holiday Shopping Priority Queue",
+  "slug": "holiday-shopping-priority-queue",
+  "category": "algorithms",
+  "publishedAt": "2013-12-10T04:28:00.326Z",
+  "approvedAt": "2013-12-11T02:45:36.493Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/52a64cf14009fd59c6000994",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-12-09T23:06:25.743Z",
+  "createdBy": {
+    "username": "xDranik",
+    "url": "https://www.codewars.com/users/xDranik"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "### Happy Holidays fellow Code Warriors! <br/>\nThe holidays are just around the corner. You know what that means...Holiday Shopping! I was planning on buying  all you Code Warriors a gift, but I don't know which order to buy them! I have a small shopping list that I'm constantly adding to, and all of the items have a certain priority. What if I use a priority queue?\n### Holiday Shopping Priority Queue\nPriority queues are similar to queues, but they add a priority to each data entry, so items with higher priorities (lower integer values) are processed first.\n\nWhile I'm running around buying the gifts, I need you to write a few methods for the `HolidayPriorityQueue` class to help me out. The class needs two methods: `addGift` and `buyGift`. For this Kata, all priorities will be unique, so no need to worry about equal priorities.\n\n### Method descriptions:\n\n`addGift` (or enqueue) adds a gift to the priority queue. This method should accept one object (or hash in ruby), which has two properties: `gift` - the name of the gift, and `priority` - the priority of the gift, and should return the new length of the queue. All gifts will be in this form.\n\n`buyGift` (or dequeue) removes the gift with the highest priority from the priority queue, and returns the gifts name (value of the gift property). If the queue is empty, return the empty string `''`\n\n### Examples:\n#### Javascript/CoffeeScript\n    var giftList = new HolidayPriorityQueue();\n    giftList.addGift( { gift: 'Water gun', priority: 1} );// => returns 1\n    giftList.addGift( { gift: 'Toy truck', priority: 4 } );// => returns 2\n    giftList.addGift( { gift: 'Roller Skates', priority: 3 } );// => returns 3\n\n    giftList.buyGift();// => returns 'Water gun'\n    giftList.buyGift();// => returns 'Roller Skates'\n    giftList.buyGift();// => returns 'Toy truck'\n\n\n#### Ruby\n    gift_list = HolidayPriorityQueue.new\n    gift_list.addGift( { 'gift' => 'Water gun', 'priority' => 1 } )// => returns 1\n    gift_list.addGift( { 'gift' => 'Toy truck', 'priority' => 4 } )// => returns 2\n    gift_list.addGift( { 'gift' => 'Roller Skates', 'priority' => 3} )// => returns 3\n\n    gift_list.buyGift()// => returns 'Water gun'\n    gift_list.buyGift()// => returns 'Roller Skates'\n    gift_list.buyGift()// => returns 'Toy truck'\n\nResources for priority queues:<br/>\nhttp://en.wikipedia.org/wiki/Priority_queue<br/>",
+  "totalAttempts": 6850,
+  "totalCompleted": 973,
+  "totalStars": 29,
+  "voteScore": 112,
+  "tags": [
+    "Queues",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

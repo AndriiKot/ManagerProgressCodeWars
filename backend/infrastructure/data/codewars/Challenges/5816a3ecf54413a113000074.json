@@ -1,0 +1,41 @@
+{
+  "id": "5816a3ecf54413a113000074",
+  "name": "Conditional Count",
+  "slug": "conditional-count",
+  "category": "reference",
+  "publishedAt": "2016-10-31T01:57:19.983Z",
+  "approvedAt": "2017-01-25T18:58:22.832Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/5816a3ecf54413a113000074",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-10-31T01:52:44.582Z",
+  "createdBy": {
+    "username": "pmatseykanets",
+    "url": "https://www.codewars.com/users/pmatseykanets"
+  },
+  "approvedBy": {
+    "username": "Dentzil",
+    "url": "https://www.codewars.com/users/Dentzil"
+  },
+  "description": "Given a `payment` table, which is a part of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/), with the following schema\n\n```\nColumn       | Type                        | Modifiers\n-------------+-----------------------------+----------\npayment_id   | integer                     | not null \ncustomer_id  | smallint                    | not null\nstaff_id     | smallint                    | not null\nrental_id    | integer                     | not null\namount       | numeric(5,2)                | not null\npayment_date | timestamp without time zone | not null\n```\n\nproduce a result set for the report that shows a side-by-side comparison of the number and total \namounts of payments made in Mike's and Jon's stores broken down by months.\n\nThe resulting data set should be ordered by `month` using natural order (Jan, Feb, Mar, etc.).\n\nNote: *You don't need to worry about the year component. \nMonths are never repeated because the sample data set contains payment \ninformation only for one year.*\n\nThe desired output for the report\n\n```\nmonth | total_count | total_amount | mike_count | mike_amount | jon_count | jon_amount\n------+-------------+--------------+------------+-------------+-----------+-----------\n2     |             |              |            |             |           |           \n5     |             |              |            |             |           |           \n...\n```\n\n* `month` - number of the month (1 - January, 2 - February, etc.)\n* `total_count` - total number of payments\n* `total_amount` - total payment amount\n* `mike_count` - total number of payments accepted by Mike (`staff_id = 1`)\n* `mike_amount` - total amount of payments accepted by Mike (`staff_id = 1`)\n* `jon_count` - total number of payments accepted by Jon (`staff_id = 2`)\n* `jon_amount` - total amount of payments accepted by Jon (`staff_id = 2`)\n",
+  "totalAttempts": 45046,
+  "totalCompleted": 7892,
+  "totalStars": 261,
+  "voteScore": 867,
+  "tags": [
+    "SQL",
+    "Fundamentals",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

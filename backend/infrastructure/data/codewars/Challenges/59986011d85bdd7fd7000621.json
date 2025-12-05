@@ -1,0 +1,45 @@
+{
+  "id": "59986011d85bdd7fd7000621",
+  "name": "Stern-Brocot Sequence Part I",
+  "slug": "stern-brocot-sequence-part-i",
+  "category": "algorithms",
+  "publishedAt": "2017-08-19T15:58:10.590Z",
+  "approvedAt": "2017-11-21T05:07:37.729Z",
+  "languages": [
+    "python",
+    "ruby",
+    "scala",
+    "javascript",
+    "haskell",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/59986011d85bdd7fd7000621",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-08-19T15:58:36.722Z",
+  "createdBy": {
+    "username": "erdos2n",
+    "url": "https://www.codewars.com/users/erdos2n"
+  },
+  "approvedBy": {
+    "username": "ZED.CWT",
+    "url": "https://www.codewars.com/users/ZED.CWT"
+  },
+  "description": "The Stern-Brocot sequence is much like the Fibonacci sequence and has some cool implications. Let's learn about it:\n\nIt starts with `[1, 1]` and adds **two** new terms every iteration: `nextTerm` which is the sum of a previous pair; and `termAfterThat` which is the second term of this previous pair. Here is how to find those terms:\n\n```\n[1, 1] + [nextTerm: 1 + 1 = 2; termAfterThat: 1] ==> [1, 1, 2, 1]\n ^  ^\n```\n\nThen you shift the pairs with one index in the sequence:\n\n```\n[1, 1, 2, 1] + [1 + 2, 2] ==> [1, 1, 2, 1, 3, 2]\n    ^  ^\n```\n\nAnd so on... doing this for 2 more iterations will yield:\n\n```\n[1, 1, 2, 1, 3, 2, 3, 1, 4, 3]\n```\n\nComplete the code that takes a positive integer `n`, and returns the index of the first occurrence of `n` in the sequence. Note: indexing start at zero.\n\n## Examples\n\n```\n[1, 1, 2, 1, 3, 2, 3, 1, 4, 3, ...]\n       ^     ^           ^\nn = 2 ==> 2 \nn = 3 ==> 4\nn = 4 ==> 8\n```",
+  "totalAttempts": 1031,
+  "totalCompleted": 345,
+  "totalStars": 15,
+  "voteScore": 97,
+  "tags": [
+    "Number Theory",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

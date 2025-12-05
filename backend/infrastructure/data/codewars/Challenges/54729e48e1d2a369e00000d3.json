@@ -1,0 +1,45 @@
+{
+  "id": "54729e48e1d2a369e00000d3",
+  "name": "Rotation Cipher Cracker",
+  "slug": "rotation-cipher-cracker",
+  "category": "games",
+  "publishedAt": "2014-11-24T02:56:08.969Z",
+  "approvedAt": "2015-03-19T05:33:49.891Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/54729e48e1d2a369e00000d3",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-11-24T02:56:15.866Z",
+  "createdBy": {
+    "username": "NicholasSeward",
+    "url": "https://www.codewars.com/users/NicholasSeward"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "[Rotation ciphers](http://en.wikipedia.org/wiki/Caesar_cipher) are very vulnerable to brute force attacks. There are only 25 possible ways to decrypt the message.\n\nExample Encoded Message:````ymjxvznwwjqnxhzyj````\n\nPossible Decoded Messages:\n```\nznkywaoxxkroyiazk, aolzxbpyylspzjbal, bpmaycqzzmtqakcbm,\ncqnbzdraanurbldcn, drocaesbbovscmedo, espdbftccpwtdnfep,\nftqecguddqxueogfq, gurfdhveeryvfphgr, hvsgeiwffszwgqihs,\niwthfjxggtaxhrjit, jxuigkyhhubyiskju, kyvjhlziivczjtlkv,\nlzwkimajjwdakumlw, maxljnbkkxeblvnmx, nbymkocllyfcmwony,\nocznlpdmmzgdnxpoz, pdaomqennaheoyqpa, qebpnrfoobifpzrqb,\nrfcqosgppcjgqasrc, sgdrpthqqdkhrbtsd, thesquirreliscute,\nuiftrvjssfmjtdvuf, vjguswkttgnkuewvg, wkhvtxluuholvfxwh,\nxliwuymvvipmwgyxi\n```\n\nIf you scan through the list you will see only a few that contain an English word longer than two characters.  ````thesquirreliscute```` is the only one that could be completely separated into english words to form the message \"the squirrel is cute\".\n\nYour job for this kata is to make a function that will give all possible decoded messages given the encoded message and suspected contents.\n\nThe original unshifted alphabet should also be tested for, making it a total of 26 possible ways to decrypt the message. The order of the returned results does not matter. See last line below for an example:\n\n```python\nEncoded message: \"ymjxvznwwjqnxhzyj\"\nSuspected content: \"squirrel\"\nreturns [\"thesquirreliscute\"]\n\nEncoded message: \"lzwespnsdmwakafxafalq\"\nSuspected content: \"max\"\nreturns [\"maxftqotenxblbgybgbmr\", \"themaxvalueisinfinity\"]\n\nEncoded message: \"pumy\"\nSuspected content: \"um\"\nreturns [\"pumy\"]\n```",
+  "totalAttempts": 3648,
+  "totalCompleted": 941,
+  "totalStars": 52,
+  "voteScore": 146,
+  "tags": [
+    "Ciphers",
+    "Cryptography",
+    "Algorithms",
+    "Security",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

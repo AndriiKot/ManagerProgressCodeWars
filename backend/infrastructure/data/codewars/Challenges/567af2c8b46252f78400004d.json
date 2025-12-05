@@ -1,0 +1,45 @@
+{
+  "id": "567af2c8b46252f78400004d",
+  "name": "Magic The Gathering #1: Creatures",
+  "slug": "magic-the-gathering-number-1-creatures",
+  "category": "algorithms",
+  "publishedAt": "2015-12-23T19:15:30.093Z",
+  "approvedAt": "2016-01-15T22:30:54.575Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "coffeescript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/567af2c8b46252f78400004d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-23T19:15:20.989Z",
+  "createdBy": {
+    "username": "NateBrady23",
+    "url": "https://www.codewars.com/users/NateBrady23"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Magic The Gathering is a collectible card game that features wizards battling against each other with spells and creature summons. The game itself can be quite complicated to learn. In this series of katas, we'll be solving some of the situations that arise during gameplay. You won't need any prior knowledge of the game to solve these contrived problems, as I will provide you with enough information.\n\n## Creatures\n\nEach creature has a power and toughness. We will represent this in an array. [2, 3] means this creature has a power of 2 and a toughness of 3.\n\nWhen two creatures square off, they each deal damage equal to their power to each other at the same time. This only happens once. If a creature takes on damage greater than or equal to their toughness, they die.\n\nExamples:\n\n- Creature 1 - [2, 3]\n- Creature 2 - [3, 3]\n- Creature 3 - [1, 4]\n- Creature 4 - [4, 1]\n\nIf creature 1 battles creature 2, creature 1 dies, while 2 survives. If creature 3 battles creature 4, they both die, as 3 deals 1 damage to 4, but creature 4 only has a toughness of 1.\n\nWrite a function `battle(player1, player2)` that takes in 2 arrays of creatures. Each players' creatures battle each other in order (player1[0] battles the creature in player2[0]) and so on. If one list of creatures is longer than the other, those creatures are considered unblocked, and do not battle.\n\nYour function should return an object (a hash in Ruby) with the keys player1 and player2 that contain the power and toughness of the surviving creatures.\n\nExample:\n````javascript\nplayer1 = [[1, 1], [2, 1], [2, 2], [5, 5]];\nplayer2 = [[1, 2], [1, 2], [3, 3]];\nbattle(player1, player2) ->\n{ 'player1': [[5, 5]],\n  'player2': [[1, 2], [3, 3]] }\n````\n````coffeescript\nplayer1 = [[1, 1], [2, 1], [2, 2], [5, 5]]\nplayer2 = [[1, 2], [1, 2], [3, 3]]\nbattle(player1, player2) # { 'player1': [[5, 5]], 'player2': [[1, 2], [3, 3]] }\n````\n````ruby\nplayer1 = [[1, 1], [2, 1], [2, 2], [5, 5]];\nplayer2 = [[1, 2], [1, 2], [3, 3]];\nbattle(player1, player2) # { player1: [[5, 5]], player2: [[1, 2], [3, 3]] }\n````\n\nGood luck with your battles!\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other Magic The Gathering katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-1-creatures'><span style='color:#00C5CD'>Magic The Gathering #1:</span> Creatures</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/magic-the-gathering-number-2-mana'><span style='color:#00C5CD'>Magic The Gathering #2:</span> Mana</a><br />\n\n</div>\n",
+  "totalAttempts": 6610,
+  "totalCompleted": 659,
+  "totalStars": 56,
+  "voteScore": 173,
+  "tags": [
+    "Algorithms",
+    "Fundamentals",
+    "Arrays",
+    "Games"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

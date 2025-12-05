@@ -1,0 +1,78 @@
+{
+  "id": "566543703c72200f0b0000c9",
+  "name": "Disease Spread",
+  "slug": "disease-spread",
+  "category": "reference",
+  "publishedAt": "2015-12-07T08:29:36.519Z",
+  "approvedAt": "2016-03-24T03:44:02.201Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "csharp",
+    "java",
+    "haskell",
+    "clojure",
+    "cpp",
+    "php",
+    "typescript",
+    "elixir",
+    "crystal",
+    "fsharp",
+    "c",
+    "rust",
+    "swift",
+    "go",
+    "r",
+    "shell",
+    "ocaml",
+    "kotlin",
+    "fortran",
+    "julia",
+    "scala",
+    "powershell",
+    "nim",
+    "reason",
+    "racket",
+    "prolog",
+    "haxe",
+    "dart",
+    "pascal",
+    "raku",
+    "vb",
+    "lua",
+    "perl",
+    "d",
+    "elm",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/566543703c72200f0b0000c9",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-07T08:29:39.987Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "description": "In 1978 the British Medical Journal reported on an outbreak of influenza at a British boarding school. There were `1000` students. The outbreak began with one infected student.\n\nWe want to study the spread of the disease through the population of this school. The total population may be divided into three: \nthe infected `(i)`, those who have recovered `(r)`, and\nthose who are still susceptible `(s)` to get the disease.\n\nWe will study the disease on a period of `tm` days. One model of propagation uses 3 differential equations:\n\n```\n(1) s'(t) = -b * s(t) * i(t)\n(2) i'(t) =  b * s(t) * i(t) - a * i(t)\n(3) r'(t) =  a * i(t)\n```\nwhere `s(t), i(t), r(t)` are the susceptible, infected, recovered at time `t` and \n`s'(t), i'(t), r'(t)` the corresponding derivatives. \n`b` and `a` are constants:\n`b` is representing a number of contacts which can spread the disease and\n`a` is a fraction of the infected that will recover. \n\nWe can transform equations `(1), (2), (3)` in finite differences\n    (https://en.wikipedia.org/wiki/Finite_difference_method#Example:_ordinary_differential_equation)\n    (http://www.codewars.com/kata/56347fcfd086de8f11000014)\n\n```\n(I)    S[k+1] = S[k] - dt * b * S[k] * I[k]\n(II)   I[k+1] = I[k] + dt * (b * S[k] * I[k] - a * I[k])\n(III)  R[k+1] = R[k] + dt * I[k] *a\n```\nThe interval `[0, tm]` will be divided in `n` small intervals of length `dt = tm/n`.\nInitial conditions here could be : `S0 = 999, I0 = 1, R0 = 0`\nWhatever S0 and I0, R0 (number of recovered at time 0) is always 0.\n\nThe function `epidemic` will return the maximum number of infected\nas an *integer* (truncate to integer the result of max(I)).\n\n#### Example:\n\n```\ntm = 14 ;n = 336 ;s0 = 996 ;i0 = 2 ;b = 0.00206 ;a = 0.41\nepidemic(tm, n, s0, i0, b, a) --> 483\n```\n    \n#### Notes: \n\n- Keeping track of the values of susceptible, infected and recovered you can plot the solutions of the 3 differential equations. See an example below on the plot.\n\n![alternative text](http://i.imgur.com/xB6VSqzm.png)\n",
+  "totalAttempts": 5558,
+  "totalCompleted": 1888,
+  "totalStars": 291,
+  "voteScore": 294,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

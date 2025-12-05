@@ -1,0 +1,79 @@
+{
+  "id": "564057bc348c7200bd0000ff",
+  "name": "A Rule of Divisibility by 13",
+  "slug": "a-rule-of-divisibility-by-13",
+  "category": "reference",
+  "publishedAt": "2015-11-09T08:22:20.886Z",
+  "approvedAt": "2015-11-14T23:31:47.469Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "haskell",
+    "csharp",
+    "java",
+    "coffeescript",
+    "clojure",
+    "elixir",
+    "cpp",
+    "typescript",
+    "php",
+    "crystal",
+    "fsharp",
+    "c",
+    "rust",
+    "swift",
+    "go",
+    "shell",
+    "r",
+    "ocaml",
+    "kotlin",
+    "julia",
+    "fortran",
+    "scala",
+    "powershell",
+    "nim",
+    "reason",
+    "racket",
+    "forth",
+    "prolog",
+    "haxe",
+    "dart",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/564057bc348c7200bd0000ff",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-11-09T08:22:25.749Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "From Wikipedia:\n\n\"A divisibility rule is a shorthand way of determining whether a given integer is divisible by a fixed divisor without performing the division, usually by examining its digits.\"\n\nWhen you divide the successive powers of `10` by `13` you get the following remainders of the integer divisions:  \n\n`1, 10, 9, 12, 3, 4` because:\n\n```\n10 ^ 0 ->  1 (mod 13)\n10 ^ 1 -> 10 (mod 13)\n10 ^ 2 ->  9 (mod 13)\n10 ^ 3 -> 12 (mod 13)\n10 ^ 4 ->  3 (mod 13)\n10 ^ 5 ->  4 (mod 13)\n```\n\n(For \"mod\" you can see:\n<https://en.wikipedia.org/wiki/Modulo_operation>)\n\nThen the whole pattern repeats. Hence the following method:\n\nMultiply \n- the *right* most digit of the number with the *left* most number \nin the sequence shown above, \n- the second *right* most digit with the second *left* most digit of the number in the sequence. \n\nThe cycle goes on and you sum all these products. Repeat this process until the sequence of sums is **stationary**.\n\n#### Example:\nWhat is the remainder when `1234567` is divided by `13`?\n```\n7      6     5      4     3     2     1  (digits of 1234567 from the right)\n×      ×     ×      ×     ×     ×     ×  (multiplication)\n1     10     9     12     3     4     1  (the repeating sequence)\n```\nTherefore following the method we get:\n\n``` 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178``` \n\nWe repeat the process with the number 178:\n\n`8x1 + 7x10 + 1x9 = 87`\n\nand again with 87:\n\n`7x1 + 8x10 = 87`\n\nFrom now on the sequence is **stationary** (we always get `87`) and the remainder of `1234567` by `13` is \nthe same as the remainder of `87` by `13` ( i.e `9`).\n\n#### Task:\n\nCall `thirt` the function which processes this sequence of operations on an integer `n (>=0)`. `thirt` will return the **stationary** number.\n\n`thirt(1234567)` calculates 178, then 87, then 87 and returns `87`.\n\n`thirt(321)` calculates 48, 48 and returns `48`\n\n",
+  "totalAttempts": 62128,
+  "totalCompleted": 16365,
+  "totalStars": 808,
+  "voteScore": 1849,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

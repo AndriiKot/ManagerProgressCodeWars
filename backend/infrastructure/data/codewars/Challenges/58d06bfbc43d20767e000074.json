@@ -1,0 +1,44 @@
+{
+  "id": "58d06bfbc43d20767e000074",
+  "name": "Battle ships: Sunk damaged or not touched?",
+  "slug": "battle-ships-sunk-damaged-or-not-touched",
+  "category": "reference",
+  "publishedAt": "2017-03-21T19:54:51.474Z",
+  "approvedAt": "2017-06-29T05:40:58.795Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "csharp",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/58d06bfbc43d20767e000074",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-03-20T23:55:39.843Z",
+  "createdBy": {
+    "username": "rebecacalvoquintero",
+    "url": "https://www.codewars.com/users/rebecacalvoquintero"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "# Task\n\nYour task in the kata is to determine how many boats are sunk damaged and untouched from a set amount of attacks. You will need to create a function that takes two arguments, the playing board and the attacks.\n\n# Example Game\n\n### The board\n\n<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n  <tr>\n    <td width=\"200\"><table width=\"200\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n      <tr>\n        <td>&nbsp;</td>\n        <td colspan=\"7\"><strong><center>X</center></strong></td>\n        </tr>\n      <tr>\n        <td rowspan=\"5\"><strong><center>Y</center></strong></td>\n        <td>&nbsp;</td>\n        <td><strong><center>1</center></strong></td>\n        <td><strong><center>2</center></strong></td>\n        <td><strong><center>3</center></strong></td>\n        <td><strong><center>4</center></strong></td>\n        <td><strong><center>5</center></strong></td>\n        <td><strong><center>6</center></strong></td>\n      </tr>\n      <tr>\n        <td><strong><center>4</center></strong></td>\n        <td colspan=\"6\" rowspan=\"4\">\n         <table width=\"100%\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n          <tr>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#FF0000\"><center>2</center></td>\n            <td bgcolor=\"#FF0000\"><center>2</center></td>\n            <td bgcolor=\"#FF0000\"><center>2</center></td>\n            <td bgcolor=\"#FF0000\"><center>2</center></td>\n          </tr>\n          <tr>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#FF00FF\"><center>3</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n          </tr>\n          <tr>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#FF00FF\"><center>3</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#0000FF\"><center>1</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n          </tr>\n          <tr>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#FF00FF\"><center>3</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#0000FF\"><center>1</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n            <td bgcolor=\"#CCCCCC\"><center>0</center></td>\n          </tr>\n         </table>\n        </td>\n        </tr>\n      <tr>\n        <td><strong><center>3</center></strong></td>\n        </tr>\n      <tr>\n        <td><strong><center>2</center></strong></td>\n        </tr>\n      <tr>\n        <td><strong><center>1</center></strong></td>\n        </tr>\n    </table></td>\n    <td>&nbsp;</td>\n  </tr>\n</table>\n\n<br>Boats are placed either horizontally, vertically or diagonally on the board. `0` represents a space <b> not</b> occupied by a boat. Digits `1-3` represent boats which vary in length 1-4 spaces long. There will always be at least 1 boat up to a maximum of 3 in any one game. Boat sizes and board dimentions will vary from game to game.\n\n### Attacks\n\nAttacks are calculated from the bottom left, first the X coordinate then the Y. There will be at least one attack per game, and the array will not contain duplicates.\n```javascript\n[[2, 1], [1, 3], [4, 2]];\n```\n```python\n[[2, 1], [1, 3], [4, 2]]\n```\n```ruby\n[[2, 1], [1, 3], [4, 2]]\n```\n```csharp\n{ {2, 1}, {1, 3}, {4, 2} };\n```\n```java\n{ {2, 1}, {1, 3}, {4, 2} };\n```\n\n<li> First attack &nbsp;&nbsp;&nbsp;&nbsp; `[2, 1]` = `3`<br>\n<li> Second attack `[1, 3]` = `0`<br>\n<li> Third attack &nbsp;&nbsp;&nbsp; `[4, 2]` = `1`<br>\n\n## Function Initialization\n\n```javascript\nboard = [[0,0,0,2,2,0],\n         [0,3,0,0,0,0],\n         [0,3,0,1,0,0],\n         [0,3,0,1,0,0]];\nattacks = [[2, 1], [1, 3], [4, 2]];\ndamagedOrSunk(board, attacks);\n```\n```ruby\nboard = [[0,0,0,2,2,0],\n         [0,3,0,0,0,0],\n         [0,3,0,1,0,0],\n         [0,3,0,1,0,0]]\nattacks = [[2, 1], [1, 3], [4, 2]]\ndamaged_or_sunk(board, attacks)\n```\n```python\nboard = [[0,0,0,2,2,0],\n         [0,3,0,0,0,0],\n         [0,3,0,1,0,0],\n         [0,3,0,1,0,0]]\nattacks = [[2, 1], [1, 3], [4, 2]]\ndamaged_or_sunk(board, attacks)\n```\n```csharp\nvar kata = new Kata();\nint[,] board = { {0,0,0,2,2,0},\n                 {0,3,0,0,0,0},\n                 {0,3,0,1,0,0},\n                 {0,3,0,1,0,0} };\nint[,] attacks = { {2, 1}, {1, 3}, {4, 2} };\nvar result = Kata.damagedOrSunk(board, attacks);\n```\n```java\nint[][] board   = new int[][] {new int[] {0,0,1,0},\n                               new int[] {0,0,1,0},\n                               new int[] {0,0,1,0}};\nint[][] attacks = new int[][] {new int[] {3,1},new int[] {3,2},new int[] {3,3}};\nBattleShips.damagedOrSunk(board, attacks);\n```\n\n## Scoring\n\n<li> 1 point for every whole boat sank.\n<li> 0.5 points for each boat hit at least once (<b>not</b> including boats that are sunk).\n<li> -1 point for each whole boat that was not hit at least once.\n\n\n## Sunk or Damaged\n\n<li> `sunk` = all boats that are sunk\n<li> `damaged` = all boats that have been hit at least once but not sunk\n<li> `notTouched/not_touched` = all boats that have not been hit at least once\n\n## Output\n\nYou should return a hash with the following data\n```javascript\n`sunk`, `damaged`, `notTouched`, `points`\n```\n```python\n`sunk`, `damaged`, `not_touched`, `points`\n```\n```ruby\n`sunk`, `damaged`, `not_touched`, `points`\n```\n```csharp\n`sunk`, `damaged`, `notTouched`, `points`\n```\n\n## Example Game Output\n\nIn our above example..\n<li> First attack: `boat 3` was damaged, which increases the `points` by `0.5`\n<li> Second attack: miss nothing happens\n<li> Third attack: `boat 1` was damaged, which increases the `points` by `0.5`\n<li> `boat 2` was untouched so `points -1` and `notTouched +1` in Javascript/Java/C# and `not_touched +1` in Python/Ruby.\n\n<li> No whole boats sank\n\n### Return Hash\n```javascript\n{ sunk: 0, damaged: 2 , notTouched: 1, points: 0 }\n```\n```python\n{ 'sunk': 0, 'damaged': 2 , 'not_touched': 1, 'points': 0 }\n```\n```ruby\n{ 'sunk' => 0, 'damaged' => 2 , 'not_touched' => 1, 'points' => 0 }\n```\n```csharp\nDictionary<string, double> { {\"sunk\", 0}, {\"damaged\", 2}, {\"notTouched\", 1}, {\"points\", 0} };\n```\n\n\n",
+  "totalAttempts": 17726,
+  "totalCompleted": 2394,
+  "totalStars": 394,
+  "voteScore": 419,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 4
+  }
+}

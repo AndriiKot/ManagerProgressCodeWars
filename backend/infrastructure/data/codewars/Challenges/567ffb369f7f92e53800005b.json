@@ -1,0 +1,47 @@
+{
+  "id": "567ffb369f7f92e53800005b",
+  "name": "Bernoulli numbers",
+  "slug": "bernoulli-numbers-1",
+  "category": "algorithms",
+  "publishedAt": "2015-12-27T16:25:32.695Z",
+  "approvedAt": "2017-11-07T15:02:11.099Z",
+  "languages": [
+    "python",
+    "ruby",
+    "shell",
+    "clojure",
+    "haskell",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/567ffb369f7f92e53800005b",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2015-12-27T14:52:39.360Z",
+  "createdBy": {
+    "username": "JustyFY",
+    "url": "https://www.codewars.com/users/JustyFY"
+  },
+  "approvedBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "description": "## Story\n\nBefore we dive into the exercise, I would like to show you why these numbers are so important in computer programming today.\n\nIt all goes back to the time of 19th century. Where computers we know today were non-existing. The first ever **computer program** was for the Analytical Engine to compute **Bernoulli numbers**. A woman named Ada Lovelace wrote the very first program. The sad part is the engine was never fully build so her code was never tested. She also predicted the start of **AI** (artificial intelligence).\n\nComputers will be able to compose music by themselves, solve problems (not only numbers) ... So in her honor reproduce what was done back in 1842. The Bernoulli numbers are a sequence of rational numbers with deep connections to number theory. The Swiss mathematician Jakob Bernoulli and the Japanese mathematician Seki Kowa discovered the numbers around the same time at the start of the 18th Century. If you want to read more about her or Bernoulli numbers follow these links:\n\nhttps://en.wikipedia.org/wiki/Ada_Lovelace\n\nhttps://en.wikipedia.org/wiki/Bernoulli_number\n\nhttp://mathworld.wolfram.com/BernoulliNumber.html\n\n## Exercise\n\nYour job is to write a function `bernoulli_number(n)` which outputs the n-th Bernoulli number. The input will always be a non-negative integer so you do not need to worry about exceptions. How you will solve the problem is none of my business but here are some guidelines.  \nYou can make pascal triangle and then with the basic formula generate all Bernoulli numbers. Look example below.\n\nFor the sake of floating numbers, just use `Fractions` so there will be no problems with rounding.\n\n\n0 = 1 + 2b<sub>1</sub> ............................................................... \n  b<sub>1</sub> = - 1/2\n\n0 = 1 + 3b<sub>1</sub> + 3b<sub>2</sub> ...................................................    b<sub>2</sub>        = 1/6\n\n0 = 1 + 4b<sub>1</sub> + 6b<sub>2</sub> + 4b<sub>3</sub> .......................................  b<sub>3</sub> = 0\n\n0 = 1 + 5b<sub>1</sub> + 10b<sub>2</sub> + 10b<sub>3</sub> + 5b<sub>4</sub> ...................... b<sub>4</sub> = - 1/30\n\n... and so on.\n\n```\nbernoulli_number(0) # return 1\nbernoulli_number(1) # return Fraction(-1,2) or Rational(-1,2) or \"1/2\"\nbernoulli_number(6) # return Fraction(1,42) or ...\nbernoulli_number(42) # return Fraction(1520097643918070802691,1806) or ...\nbernoulli_number(22) # return Fraction(854513,138) or ... \"854513/138\"\n```\n\n## Note\n\nSee \"Sample Tests\" to see the return type for each language.\n\nGood luck and happy coding! \n\nPS: be careful some numbers might exceed `1000`.\nIf this kata is too hard for you try to solve pascal triangle and something similar to this and then come back :).",
+  "totalAttempts": 2701,
+  "totalCompleted": 277,
+  "totalStars": 101,
+  "voteScore": 66,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Number Theory",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "61055e2cb02dcb003da50cd5",
+  "name": "Pair items from two lists of different lengths",
+  "slug": "pair-items-from-two-lists-of-different-lengths",
+  "category": "reference",
+  "publishedAt": "2021-08-01T13:37:41.978Z",
+  "approvedAt": "2021-08-03T06:26:51.117Z",
+  "languages": [
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/61055e2cb02dcb003da50cd5",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-07-31T14:29:00.302Z",
+  "createdBy": {
+    "username": "user2553318",
+    "url": "https://www.codewars.com/users/user2553318"
+  },
+  "approvedBy": {
+    "username": "albertogcmr",
+    "url": "https://www.codewars.com/users/albertogcmr"
+  },
+  "description": "# Task\n\nWrite a function with the following properties:\n- takes two lists\n- returns a list of all possibilities to pair as many elements as possible from both lists while keeping the order of the elements\n- output format is a list of lists of tuples, or a list with an empty list, if no pairs are possible\n- inner lists can be of any order (see tests)\n\n\n## Hints\n\nIf both input lists are of equal length, then every item of one list will be paired with an item of the other list (see first example) -> results in only one sublist.\nIf both input lists are of different length and not empty, then every item of the shorter list will be paired, but not every item of the larger list -> results in more than one sublist, because there are more then one possibilities to omit items from the larger list.\n\n\n\n# Example 1\n\nPair elements of `['c', 'o', 'd', 'e']` with elements of `['w', 'a', 'r', 's']`\n\nExpected Result:\n\n    [[('c', 'w'), ('o', 'a'), ('d', 'r'), ('e', 's')]]\n\n\n# Example 2\n\nPair elements of the following two lists:\n\n    ['electric', 'horse', 'fly']\n    ['1st', '2nd']\n    \nValid result:\n\n    [[('electric', '1st'), ('horse', '2nd')],\n     [('electric', '1st'), ('fly', '2nd')],\n     [('horse', '1st'), ('fly', '2nd')]]\n\n\n# Example 3\n\nPair elements of `['a', 'b', 'c']` with elements of `['x', 'y']`\n\nValid Result:\n\n    [[('a', 'x'), ('b', 'y')],\n     [('a', 'x'), ('c', 'y')],\n     [('b', 'x'), ('c', 'y')]]\n\n\n# Example 4\n\nPair elements of `[1, 2]` with elements of `[6, 7, 8, 9]`\n\nValid Result:\n\n    [[(1, 6), (2, 7)],\n     [(1, 6), (2, 8)],\n     [(1, 6), (2, 9)],\n     [(1, 7), (2, 8)],\n     [(1, 7), (2, 9)],\n     [(1, 8), (2, 9)]]\n\n",
+  "totalAttempts": 625,
+  "totalCompleted": 131,
+  "totalStars": 19,
+  "voteScore": 57,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

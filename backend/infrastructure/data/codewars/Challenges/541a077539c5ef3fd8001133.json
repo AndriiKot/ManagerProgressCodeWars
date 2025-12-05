@@ -1,0 +1,41 @@
+{
+  "id": "541a077539c5ef3fd8001133",
+  "name": "Typer.js",
+  "slug": "typer-dot-js",
+  "category": "reference",
+  "publishedAt": "2014-09-18T18:14:37.644Z",
+  "approvedAt": "2015-01-08T16:51:08.778Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/541a077539c5ef3fd8001133",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-09-17T22:13:09.192Z",
+  "createdBy": {
+    "username": "Jim-Y",
+    "url": "https://www.codewars.com/users/Jim-Y"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Type checking in JavaScript\n===========================\n\nSometimes it could be a good thing to check if an object is of a type T. Lets see this example:\n\n```javascript\nfunction doStuff(thing) {\n  return thing.map(function(item) {\n    return item * 2;\n  });\n}\n```\n```coffeescript\ndoStuff = (thing) =>\n  thing.map (item) =>\n    item * 2;\n```\n```ruby\ndef do_stuff thing\n  thing.map{ |item| item * 2}\nend\n```\n\nIf we call this function with an array, we get the expected result\n\n```javascript\ndoStuff([1,2,3]) //Array [ 2, 4, 6 ]\n```\n```coffeescript\ndoStuff([1,2,3]) # Array [ 2, 4, 6 ]\n```\n```ruby\ndo_stuff [1,2,3] # [ 2, 4, 6 ]\n```\n\nBut if someone calls `doStuff` (**ruby** `do_stuff`) with a different type of argument, it will throw an exception, because most likely the argument object won't have a method `map` defined on it.\n\n```javascript\ndoStuff(3) //TypeError: thing.map is not a function\n```\n```coffeescript\ndoStuff(3) # TypeError: thing.map is not a function\n```\n```ruby\ndo_stuff(3) # NoMethodError: undefined method `map'\n```\n\nApart from this, having methods like `isArray` (**ruby** `Typer.is_array? obj`), or `isString` (**ruby** `Typer.is_string? obj`) can rise readability when validating input arguments, and clears things up for fellow co-workers.\n\nYour task will be to create a basic type-checker \"framework/api\" for JavaScript (**or** for Ruby). Let's call it **typer.js** (**ruby** `Typer` class). Your API must contain the following methods:\n\n* isNumber (**ruby** `is_number?`)\n* isString (**ruby** `is_string?`)\n* isArray (**ruby** `is_array?`)\n* isFunction (**ruby** do not implement this)\n* isDate (**ruby** `is_time?`)\n* isRegExp (**ruby** `is_regexp?`)\n* isBoolean (**ruby** `is_boolean?`)\n* isError (**ruby** `is_exception?`)\n* isNull (**ruby** `is_nil?`)\n* isUndefined (**ruby** `is_nil?`)\n\nCreate these utility methods for input validation. For example, if the argument is a number, then isNumber called with this argument should return true.\n\nExample\n=======\n\n```javascript\nassert.equal(typer.isNumber(5), true);\nassert.equal(typer.isString({}), false);\n```\n```coffeescript\nassert.equal(typer.isNumber(5), true)\nassert.equal(typer.isString({}), false)\n```\n```ruby\nexpect(Typer.is_number?(5)).to be(true)\nexpect(Typer.is_string?({})).to be(false)\n```\n\nNote\n====\n\nIf you are stuck, feel free to check how known utility libraries do the exact same thing. Check them on GitHub ;)\n\nMotivation\n==========\n\nPossibly after this kata the warriors who just started to learn JavaScript will learn that sometimes the conventional ways of type checking in JavaScript in not sufficient enough, since, for example, not only \"simple\" numbers are considered as numbers, but numbers created by Number constructors, etc.\n\n> This kata has also been translated to Ruby\n",
+  "totalAttempts": 15263,
+  "totalCompleted": 945,
+  "totalStars": 75,
+  "voteScore": 101,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

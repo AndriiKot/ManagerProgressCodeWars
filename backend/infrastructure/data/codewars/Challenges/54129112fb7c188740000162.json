@@ -1,0 +1,43 @@
+{
+  "id": "54129112fb7c188740000162",
+  "name": "Prefill an Array",
+  "slug": "prefill-an-array",
+  "category": "reference",
+  "publishedAt": "2014-09-12T06:32:38.462Z",
+  "approvedAt": "2014-10-07T21:00:53.134Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/54129112fb7c188740000162",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-09-12T06:22:10.846Z",
+  "createdBy": {
+    "username": "user5854572",
+    "url": "https://www.codewars.com/users/user5854572"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Create the function `prefill` that returns an array of `n` elements that all have the same value `v`.  See if you can do this *without* using a loop.\n\nYou have to validate input:\n\n * `v` can be *anything* (primitive or otherwise)\n * if `v` is ommited, fill the array with `undefined`\n * if `n` is 0, return an empty array\n * if `n` is anything other than an **integer** or **integer-formatted** string (e.g. `'123'`) that is `>=0`, throw a `TypeError`\n \nWhen throwing a `TypeError`, the message should be `n is invalid`, where you replace `n` for the actual value passed to the function.\n\nCode Examples\n\n```javascript\n    prefill(3,1) --> [1,1,1]\n    \n    prefill(2,\"abc\") --> ['abc','abc']\n    \n    prefill(\"1\", 1) --> [1]\n    \n    prefill(3, prefill(2,'2d'))\n      --> [['2d','2d'],['2d','2d'],['2d','2d']]\n      \n    prefill(\"xyz\", 1)\n      --> throws TypeError with message \"xyz is invalid\"\n```\n```ruby\n    prefill(3,1) --> [1,1,1]\n    \n    prefill(2,\"abc\") --> ['abc','abc']\n    \n    prefill(\"1\", 1) --> [1]\n    \n    prefill(3, prefill(2,'2d'))\n      --> [['2d','2d'],['2d','2d'],['2d','2d']]\n      \n    prefill(\"xyz\", 1)\n      --> throws TypeError with message \"xyz is invalid\"\n```\n```python\n    prefill(3,1) --> [1,1,1]\n    \n    prefill(2,\"abc\") --> ['abc','abc']\n    \n    prefill(\"1\", 1) --> [1]\n    \n    prefill(3, prefill(2,'2d'))\n      --> [['2d','2d'],['2d','2d'],['2d','2d']]\n      \n    prefill(\"xyz\", 1)\n      --> throws TypeError with message \"xyz is invalid\"\n```\n```coffeescript\n    prefill 3, 1 #returns [1, 1, 1]\n    \n    prefill 2, \"abc\" #returns [\"abc\",\"abc\"]\n    \n    prefill \"1\", 1 #returns [1]\n    \n    prefill 3, prefill(2, \"2d\")\n      #returns [['2d','2d'],['2d','2d'],['2d','2d']]\n      \n    prefill \"xyz\", 1\n      #throws TypeError with message \"xyz is invalid\"\n```\n",
+  "totalAttempts": 194372,
+  "totalCompleted": 13379,
+  "totalStars": 324,
+  "voteScore": 660,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 7,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "574b448ed27783868600004c",
+  "name": "Filtering Values For an Election",
+  "slug": "filtering-values-for-an-election",
+  "category": "reference",
+  "publishedAt": "2016-05-30T10:42:50.120Z",
+  "approvedAt": "2018-10-20T02:36:13.444Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/574b448ed27783868600004c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-05-29T19:35:42.647Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "A specialist of statistics was hired to do an investigation about the people's voting intention for a certain candidate for the next elections.\n\nUnfortunately, some of the interviewers, hired for the researches, are not honest and they want to modify the results because, some of them like the candidate too much, or others hate him.\n\nThe specialist suspects about the situation and will apply his own method named: Recursive 2.5 Standard Deviation Filter. \n\nHe does not know who of them are cheating and obviously, he doesn´t know the minimum or maximum possible votes for this candidate.\n\nThe method works with the following steps explained below:\n\n1) The method calculates the mean, ``` μ```, and the standard deviation, ```σ``` for the received data that has ```n``` elements.\n\n<a href=\"http://imgur.com/qi97XWq\"><img src=\"http://i.imgur.com/qi97XWq.png?2\" title=\"source: imgur.com\" /></a>\n\n2) A new data is obtained discarding all the values that are not in the range [μ - 2.5*σ, μ + 2.5*σ] (strictly lower or higher than these extremes)\n\n3) The values of ``` μ``` and ```σ``` are recalculated and an all the values will be filtered by the new range with the updated values of ``` μ```   and ```σ``` and so on.\n\nHe receives the data from the interviewers. The data is the number of votes of samples less than 500 people per neighbourhood of a county. \n\nLet's see a suspect data, the exaggerated data was left at the end on purpose, to see it clearly:\n``` \nvotes = [35, 34, 37, 32, 33, 36, 38, 32, 35, 35, 36, 34, 35, 100*, 85*, 70*]\n``` \nThe values marked with an (*) are suspect, too high perhaps.\n```\nStep                      Votes                                μ            σ           μ - 2.5*σ            μ + 2.5*σ     dicarded values \n1    [35,34,37,32,33,36,38,32,35,35,36,34,35,100,85,70]    44.1875       20.3692        -6.7354               95.1104          100\n2    [35,34,37,32,33,36,38,32,35,35,36,34,35,85,70]        40.4667       14.8677         3.2974               77.6359           85\n3    [35,34,37,32,33,36,38,32,35,35,36,34,35,70]           37.2857        9.2229        14.2286               60.3429           70\n4    [35,34,37,32,33,36,38,32,35,35,36,34,35]              34.7692        1.7166        30.4777               39.0608          ---\n```\nThe final values that will be output are ```̅X```and ```s```, ```̅X = μ ``` and ```s = σ/√̅n``` because this will be consider a sample for another calculations.\n\nIn this case ```̅X = 34.7692``` and ```s = 1.7166/√̅13 = 0.4761```.\n\nWe need a function ```filter_val()```, that receives an array with the number of votes of different neighbourhoods of a county and may express the comparisson in the size of the data and the values of ```̅X``` and ```s```.\n\nFor our case:\n```python\nfilter_val([35,34,37,32,33,36,38,32,35,35,36,34,35,100,85,70]) == [[16, 13], 34.76923076923077, 0.4761016021276081] # you don't have to round the results\n# 16 was the length of the received array of votes, 13 is the length of the filtered data.\n```\nThe assumptions for this kata: the honest interviwers are much more than the cheaters and the last ones do not agree about the number of votes they will add or subtract, so the modified values are not equal or almost equal.\n\nSome \"honest values\" may be discarded with this process and all the \"dishonest ones\" will be eliminated in almost the total of cases but the method still gives a good result.\n\nEnjoy it!!",
+  "totalAttempts": 1487,
+  "totalCompleted": 225,
+  "totalStars": 36,
+  "voteScore": 57,
+  "tags": [
+    "Mathematics",
+    "Statistics",
+    "Recursion",
+    "Data Science"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64d36a38e0d3a51afcd6e1ff",
+  "name": "Sales Analysis for the Previous Week",
+  "slug": "sales-analysis-for-the-previous-week",
+  "category": "reference",
+  "publishedAt": "2023-08-09T11:55:24.478Z",
+  "approvedAt": "2023-08-10T07:38:02.169Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64d36a38e0d3a51afcd6e1ff",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-08-09T10:28:08.679Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Write an SQL query to retrieve the total number of sales and total amount for each category for the previous week. The term \"previous week\" refers to the time period that begins on the Monday immediately preceding the current week and ends on the following Sunday. This time period is considered to be the last complete week that has passed.\n\nDatabase Schema:\n\n`categories`: \n\n* `category_id` (integer, primary key) - Unique identifier for the category.\n* `category_name` (varchar) - Name of the category (e.g., Electronics, Clothing).\n\n`products`: \n\n* `product_id` (integer, primary key) - Unique identifier for the product.\n* `category_id` (integer, foreign key) - References the `category_id` in the categories table.\n* `product_name` (varchar) - Name of the product.\n\n`sales`:\n\n* `sale_id` (integer, primary key) - Unique identifier for the sale.\n* `product_id` (integer, foreign key) - References the product_id in the products table.\n* `sale_date` (date) - The date when the sale occurred.\n* `amount` (integer) - The amount of the sale in currency.\n\nResultant Dataset:\n\n1) `category_name` (text) - Name of the category.\n2) `total_products_sold` (integer) - Count of sales within the previous week for the given category.\n3) `total_sales_amount` (integer) - Total amount of sales within the previous week for the given category.\n\nThe results should be ordered by the count of sales in descending order, then by the total amount in descending order, and finally by the category name in ascending order.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>category_name</th><th>total_products_sold</th><th>total_sales_amount</th></tr><tr><td>Electronics</td><td>7</td><td>1529</td></tr><tr><td>Clothing</td><td>7</td><td>1078</td></tr><tr><td>Furniture</td><td>7</td><td>1056</td></tr><tr><td>Books</td><td>7</td><td>465</td></tr><tr><td>Groceries</td><td>7</td><td>465</td></tr><tr><td>Beauty Products</td><td>5</td><td>1045</td></tr><tr><td>Sports Equipment</td><td>5</td><td>952</td></tr></table>\n\n\n",
+  "totalAttempts": 1982,
+  "totalCompleted": 270,
+  "totalStars": 15,
+  "voteScore": 46,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

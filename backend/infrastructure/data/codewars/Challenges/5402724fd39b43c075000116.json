@@ -1,0 +1,40 @@
+{
+  "id": "5402724fd39b43c075000116",
+  "name": " xD-Arrays  for dimmies",
+  "slug": "xd-arrays-for-dimmies",
+  "category": "reference",
+  "publishedAt": "2014-08-31T00:56:36.024Z",
+  "approvedAt": "2016-01-15T22:38:46.278Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5402724fd39b43c075000116",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-08-31T00:54:39.643Z",
+  "createdBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "approvedBy": {
+    "username": "alchemy",
+    "url": "https://www.codewars.com/users/alchemy"
+  },
+  "description": "Sometimes we need to use multiDIMensional arrays (array of arrays).\n\nThe goal of this kata is to code a `dim` function which will create an xD-array and fill it with a default value.\n\nSo..\n\n    dim( d1 [,d2 [,d3 [... ]]], value )\n    \n... will create an array of `d1` subarrays of `d2` sub-subarrays of `d3` sub-sub-subarrays (and so on), with each final item being equal to `value`.\n\nYou may assume:\n\n* at least 2 arguments (`d1`and `value`) are provided\n\n* each `d` argument will be a positive integer \n\n* `value` argument may be a number, a string, a boolean, ...\n\nIf `value` is a function then the **result** of this function will be attribued to the item.\n\n##Examples\n\n```javascript\ndim( 3,3,\"x\" ) // => [['x','x','x'],['x','x','x'],['x','x','x']]\n\ndim( 2,2,2,0 ) // => [[[0,0],[0,0]],[[0,0],[0,0]]]\n\ndim( 3, true ) // => [true,true,true]\n\nvar xxx=function(){ return \"xX\" }\ndim( 2,5,xxx ) // => [['xX','xX','xX','xX','xX'],['xX','xX','xX','xX','xX']]\n\n// if function provides different value on each iteration\n// then produced subarrays must should be different!\nvar rnd=function(){ return (~~Math.random()*3) }\ndim( 3,2,rnd ) // => (depends on results of rnd) \n  // eg: [[0,1],[2,1],[0,0]] \n\n```\n",
+  "totalAttempts": 5684,
+  "totalCompleted": 385,
+  "totalStars": 83,
+  "voteScore": 108,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "59437bd7d8c9438fb5000004",
+  "name": "Alphabet wars - nuclear strike",
+  "slug": "alphabet-wars-nuclear-strike",
+  "category": "reference",
+  "publishedAt": "2017-06-16T07:11:19.020Z",
+  "approvedAt": "2017-07-09T09:57:40.437Z",
+  "languages": [
+    "javascript",
+    "csharp",
+    "ruby",
+    "python",
+    "java",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/59437bd7d8c9438fb5000004",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-06-16T06:33:59.512Z",
+  "createdBy": {
+    "username": "dcieslak",
+    "url": "https://www.codewars.com/users/dcieslak"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Introduction\n\nThere is a war and nobody knows - the alphabet war!  \nThe letters hide in their nuclear shelters. The nuclear strikes hit the battlefield and killed a lot of them. \n\n# Task\n\nWrite a function that accepts `battlefield` string and returns letters that survived the nuclear strike.  \n- The `battlefield` string consists of only small letters, `#`,`[` and `]`. \n- The nuclear shelter is represented by square brackets `[]`. The letters inside the square brackets represent letters inside the shelter.  \n- The `#` means a place where nuclear strike hit the battlefield. \nIf there is at least one `#` on the battlefield, all letters outside of shelter die. When there is no any `#` on the battlefield, all letters survive (but do not expect such scenario too often ;-P ).\n- The shelters have some durability. When 2 or more `#` hit close to the shelter, the shelter is destroyed and all letters inside evaporate. The 'close to the shelter' means on the ground between the shelter and the next shelter (or beginning/end of battlefield). The below samples make it clear for you.\n\n# Example \n\n```\nabde[fgh]ijk     => \"abdefghijk\"  (all letters survive because there is no # )\nab#de[fgh]ijk    => \"fgh\" (all letters outside die because there is a # )\nab#de[fgh]ij#k   => \"\"  (all letters dies, there are 2 # close to the shellter )\n##abde[fgh]ijk   => \"\"  (all letters dies, there are 2 # close to the shellter )\n##abde[fgh]ijk[mn]op => \"mn\" (letters from the second shelter survive, there is no # close)\n#ab#de[fgh]ijk[mn]op => \"mn\" (letters from the second shelter survive, there is no # close)\n#abde[fgh]i#jk[mn]op => \"mn\" (letters from the second shelter survive, there is only 1 # close)\n[a]#[b]#[c]  => \"ac\"\n[a]#b#[c][d] => \"d\"\n[a][b][c]    => \"abc\"\n##a[a]b[c]#  => \"c\"\n\n```\n\n\n# Alphabet war Collection\n\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n<tr>\n<td ><a href=\"https://www.codewars.com/kata/59377c53e66267c8f6000027\" target=\"_blank\">Alphavet war </a></td>\n</tr>\n<tr>\n<td ><a href=\"https://www.codewars.com/kata/5938f5b606c3033f4700015a\" target=\"_blank\">Alphabet war - airstrike - letters massacre</a></td>\n</tr>\n<tr>\n<td ><a href=\"https://www.codewars.com/kata/alphabet-wars-reinforces-massacre\" target=\"_blank\">Alphabet wars - reinforces massacre</a></td>\n</tr>\n<tr>\n<td ><a href=\"https://www.codewars.com/kata/59437bd7d8c9438fb5000004\" target=\"_blank\">Alphabet wars - nuclear strike</a></td>\n</tr>\n<tr>\n<td ><a href=\"https://www.codewars.com/kata/59473c0a952ac9b463000064\" target=\"_blank\">Alphabet war - Wo lo loooooo priests join the war</a></td>\n</tr>\n</table>\n",
+  "totalAttempts": 12025,
+  "totalCompleted": 1799,
+  "totalStars": 355,
+  "voteScore": 327,
+  "tags": [
+    "Strings",
+    "Regular Expressions",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

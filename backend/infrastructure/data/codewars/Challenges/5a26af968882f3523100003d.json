@@ -1,0 +1,43 @@
+{
+  "id": "5a26af968882f3523100003d",
+  "name": "Simple palindrome game",
+  "slug": "simple-palindrome-game",
+  "category": "algorithms",
+  "publishedAt": "2017-12-05T16:09:04.680Z",
+  "approvedAt": "2017-12-07T06:15:39.103Z",
+  "languages": [
+    "javascript",
+    "python",
+    "haskell",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5a26af968882f3523100003d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-12-05T14:39:18.681Z",
+  "createdBy": {
+    "username": "KenKamau",
+    "url": "https://www.codewars.com/users/KenKamau"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "In this Kata, two players, Alice and Bob, are playing a palindrome game. Alice starts with `string1`, Bob starts with `string2`, and the board starts out as an empty string. Alice and Bob take turns; during a turn, a player selects a letter from his or her string, removes it from the string, and appends it to the board; if the board becomes a palindrome (of length >= 2), the player wins. Alice makes the first move. Since Bob has the disadvantage of playing second, then he wins automatically if letters run out or the board is never a palindrome. Note also that each player can see the other player's letters.\n\nThe problem will be presented as `solve(string1,string2)`. Return 1 if Alice wins and 2 it Bob wins.\n\nFor example:\n```Haskell\nsolve(\"abc\",\"baxy\") = 2 -- There is no way for Alice to win. If she starts with 'a', Bob wins by playing 'a'. The same case with 'b'. If Alice starts with 'c', Bob still wins because a palindrome is not possible. Return 2.\nsolve(\"eyfjy\",\"ooigvo\") = 1 -- Alice plays 'y' and whatever Bob plays, Alice wins by playing another 'y'. Return 1.\nsolve(\"abc\",\"xyz\") = 2 -- No palindrome is possible, so Bob wins; return 2\nsolve(\"gzyqsczkctutjves\",\"hpaqrfwkdntfwnvgs\") = 1 -- If Alice plays 'g', Bob wins by playing 'g'. Alice must be clever. She starts with 'z'. She knows that since she has two 'z', the win is guaranteed. Note that she also has two 's'. But she cannot play that. Can you see why? \nsolve(\"rmevmtw\",\"uavtyft\") = 1 -- Alice wins by playing 'm'. Can you see why? \n```\nPalindrome lengths should be at least `2` characters. More examples in the test cases. \n\nGood luck!",
+  "totalAttempts": 592,
+  "totalCompleted": 149,
+  "totalStars": 13,
+  "voteScore": 78,
+  "tags": [
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "57fa3a33e8c829780a0001d2",
+  "name": "Berserk rater: CG Vs. Clang",
+  "slug": "berserk-rater-cg-vs-clang",
+  "category": "algorithms",
+  "publishedAt": "2016-10-09T16:13:22.830Z",
+  "approvedAt": "2016-10-14T16:57:37.342Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python",
+    "crystal",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/57fa3a33e8c829780a0001d2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-10-09T12:38:11.703Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "# Background\n\nIn case you might be unlucky enough not to know the best dark fantasy franchise ever, Berserk tells the story of a man that, hating gratuitous violence, decided to become a mercenary (thus one who sells violence, no gratuity anymore!) and starts an epic struggle against apparently unsormountable odds, unsure if he really wants to pursue a path of vengeance or to try to focus on his remaining and new loved ones.\n\n<div style=\"float:right;text-align:center;margin:5px\"><img src=\"https://upload.wikimedia.org/wikipedia/en/4/4a/Berserk_vol01.png\"/><p>*The main character, Gatsu,<br>ready to start yet another Tuesday</p>*</div>\n\nOk, the first part was a joke, but you can read more about the tale of the main character, a \"Byronic hero\" for wikipedia, in other pages like [here](https://en.wikipedia.org/wiki/Berserk_(manga%29).\n\nAfter an insanely long waiting, finally fans got the [follow up](https://en.wikipedia.org/wiki/Berserk_(2016_TV_series%29) of [the acclaimed 90s show](https://en.wikipedia.org/wiki/Berserk_(1997_TV_series%29).\n\nRegrettably, while the first adaption was considerably shortened, the latter was quite butchered, missing entire parts, like the \"lost children\" arc, but that would have actual children butchered and thus you might get why it was decided to skip it. And fan could somehow cope with it, if it was not for the very meager use of CG (Computer Graphic).\n\nLuckily, I am a simple man and every time Gatsu swings his humongous sword, that is enough to make me forget about everything else.\n\n# Task\n\nYour goal is to build a Berserk Rater function that takes an array/list of events of each episode (as strings) and calculate a rating based on that: you start with a score of 0 (hey, it's a work from Miura-sensei, I have great expectations to satisfy!) and you have to:\n\n* subtract 2 if \"CG\" is mentioned (case insensitive, once per string);\n* add 5 if \"Clang\" is mentioned (case insensitive, once per string);\n* if a sentence has both \"Clang\" and \"CG\", only \"Clang\" takes effect (just add 5, ignore \"CG\");\n* subtract 1 if neither is mentioned (I get bored easily, you know, particularly if you remove important parts and keep side character whining for half an episode).\n\nYou should then return a string, structured like this:\n\n* if the final score is less than 0: \"worstest episode ever\";\n* if the score is between 0 and 10: the score itself, as a string;\n* if the final score is more than 10: \"bestest episode ever\".\n\n# Examples\n\n```python\n[ \"is this the CG from a P2 game?\",\n  \"Hell, no! Even the CG in the Dreamcast game was more fluid than this!\",\n  \"Well, at least Gatsu does his clang even against a mere rabbit\",\n  \"Hey, Cosette was not in this part of the story!\", \n  \"Ops, everybody dead again! Well, how boring...\"\n]\n# Total score: (-2) + (-2) + 5 + (-1) + (-1) = -1\n# Result: \"worstest episode ever\"\n\n[ \"missing the Count arc\",\n  \"lame CG\",\n  \"Gatsu doing its clang against a few henchmen\", \n  \"even more lame CG\"\n]\n# Total score: (-1) + (-2) + 5 + (-2) = 0\n# Result: \"0\"\n\n[ \"Farnese unable to shut the fuck up\",\n  \"awful CG dogs assaulting everybody\", \n  \"Gatsu clanging the pig apostle!\"\n]\n# Total score: (-1) + (-2) + 5 = 0\n# Result: \"2\"\n\n[ \"spirits of the dead attacking Gatsu and getting clanged for good\",\n  \"but the wheel spirits where really made with bad CG\", \n  \"Isidoro trying to steal the dragon Slayer and getting a sort of clang on his face\",\n  \"Gatsu vs. the possessed horse: clang!\", \n  \"Farnese whining again...\",\n  \"a shame the episode ends with that scrappy CG\"\n]\n# Total score: 5 + (-2) + 5 + 5 + (-1) + (-2) = 10\n# Result: \"10\"\n\n[ \"Holy chain knights being dicks\",\n  \"Serpico almost getting clanged by Gatsu, but without losing his composure\",\n  \"lame CG\",\n  \"Luka getting kicked\",\n  \"Gatsu going clang against the angels\", \n  \"Gatsu clanging vs Mozgus, big time!\"\n]\n# Total score: (-1) + 5 + (-2) + (-1) + 5 + 5 = 11\n# Result: \"bestest episode ever\"\n```\n\n---\n\nExtra cookies if you manage to solve it all using a `reduce/inject` approach.\n\nOh, and in case you might want a taste of clang to fully understand it, [click](https://www.youtube.com/watch?v=IZgxH8MJFno) (one of the least gory samples I managed to find).",
+  "totalAttempts": 1167,
+  "totalCompleted": 219,
+  "totalStars": 9,
+  "voteScore": 46,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "56af1a20509ce5b9b000001e",
+  "name": "Salesman's Travel",
+  "slug": "salesmans-travel",
+  "category": "reference",
+  "publishedAt": "2016-02-01T08:42:06.104Z",
+  "approvedAt": "2016-02-08T09:44:34.359Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "haskell",
+    "clojure",
+    "csharp",
+    "java",
+    "cpp",
+    "php",
+    "c",
+    "typescript",
+    "swift",
+    "elixir",
+    "r",
+    "shell",
+    "ocaml",
+    "kotlin",
+    "fsharp",
+    "scala",
+    "julia",
+    "powershell",
+    "go",
+    "nim",
+    "rust",
+    "pascal",
+    "perl",
+    "elm",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/56af1a20509ce5b9b000001e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-02-01T08:41:05.343Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "NaMe613",
+    "url": "https://www.codewars.com/users/NaMe613"
+  },
+  "description": "A traveling salesman has to visit clients. He got each client's address e.g. `\"432 Main Long Road St. Louisville OH 43071\"` as a list.\n\nThe basic zipcode format usually consists of two capital letters followed by a white space and five digits.\nThe list of clients to visit was given as a string of all addresses, each separated from the others by a comma, e.g. :\n\n`\"123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432\"`.\n\nTo ease his travel he wants to group the list by zipcode.\n#### Task\nThe function `travel` will take two parameters `r` (addresses' list of all clients' as a string) and `zipcode` and returns a string in the following format:\n\n`zipcode:street and town,street and town,.../house number,house number,...` \n\nThe street numbers must be in the same order as the streets where they belong.\n\nIf a given zipcode doesn't exist in the list of clients' addresses return `\"zipcode:/\"`\n\n#### Examples\n```\nr = \"123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432\"\n\ntravel(r, \"OH 43071\") --> \"OH 43071:Main Street St. Louisville,Main Long Road St. Louisville/123,432\"\n\ntravel(r, \"NY 56432\") --> \"NY 56432:High Street Pollocksville/786\"\n\ntravel(r, \"NY 5643\") --> \"NY 5643:/\"\n```\n\n#### Note for Elixir:\nIn Elixir the empty addresses' input is an empty *list*, not an empty string.\n\n#### Note: \nYou can see a few addresses and zipcodes in the test cases.",
+  "totalAttempts": 65291,
+  "totalCompleted": 6924,
+  "totalStars": 475,
+  "voteScore": 848,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

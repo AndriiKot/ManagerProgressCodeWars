@@ -1,0 +1,39 @@
+{
+  "id": "52cc64baae8d3d803e0007a3",
+  "name": "Natural compare",
+  "slug": "natural-compare",
+  "category": "algorithms",
+  "publishedAt": "2014-01-07T21:00:26.544Z",
+  "approvedAt": "2016-01-13T05:47:02.926Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/52cc64baae8d3d803e0007a3",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-01-07T20:34:02.367Z",
+  "createdBy": {
+    "username": "christianhammer",
+    "url": "https://www.codewars.com/users/christianhammer"
+  },
+  "approvedBy": {
+    "username": "OverZealous",
+    "url": "https://www.codewars.com/users/OverZealous"
+  },
+  "description": "Quite some years ago I worked doing a lot of automated document sorting. As part of the we needed to do \"natural compare\" on document titles (and other relevant fields).\nNatural compare intend to let \"file 2\" be less than \"file 10\", while normal lexical compare claim the opposite.\nSolving this issue by normalizing numbers to eg 3 digits, was not an option.\n\nYour task is to make a compare function that given \"file 2\" and \"file 10\" will return -1 (as C strcmp).\nFor equal strings the return value should be 0 and 1 if the first argument is \"greater than\" the second.\n<pre><code>naturalCompare(\"file 2\", \"file 10\")   return  -1\nnaturalCompare(\"file 2\", \"file 2\")    return 0\nnaturalCompare(\"file 10\", \"file 2\")   return 1</code></pre>\n\nIf two strings are \"natural equal\" the shortest must be sorted before the longer version (return 1 since first argument is longest):\n<pre><code>naturalCompare(\"file 01\", \"file 1\") === 1</code></pre>\n\nDo not concern yourself with negative (signed) numbers, such as \"file -1\". This will not form a part of the test - the '-' should be considered a non-number character.",
+  "totalAttempts": 1850,
+  "totalCompleted": 142,
+  "totalStars": 18,
+  "voteScore": 37,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

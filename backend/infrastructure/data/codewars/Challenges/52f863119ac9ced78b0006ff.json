@@ -1,0 +1,39 @@
+{
+  "id": "52f863119ac9ced78b0006ff",
+  "name": "ruby + accumulate",
+  "slug": "ruby-plus-accumulate",
+  "category": "reference",
+  "publishedAt": "2014-02-10T05:55:16.670Z",
+  "approvedAt": "2018-01-07T09:32:50.694Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/52f863119ac9ced78b0006ff",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2014-02-10T05:26:42.011Z",
+  "createdBy": {
+    "username": "sahglie",
+    "url": "https://www.codewars.com/users/sahglie"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "Implement the method `Enumerable#accumulate` which should behave exactly like `Enumerable#reduce` and `Enumerable#inject`.\n\nFor example:\n\nSum some numbers\n```\n(5..10).accumulate(:+)\n=> 45\n```\n\nSame using symbol to proc\n```\n(5..10).accumulate(&:+)\n=> 45\n```\n\nSame using a block\n```\n5..10).accumulate { |sum, n| sum + n }\n=> 45\n```\n\nMultiply some numbers\n```\n(5..10).accumulate(1, :*)\n=> 151200\n```\n\nSame using a block\n```\n(5..10).accumulate(1) { |product, n| product * n }\n=> 151200\n```\n\nfind the longest word\n```\nlongest = %w{ cat sheep bear }.accumulate do |memo, word|\n  memo.length > word.length ? memo : word\nend\n\nlongest\n=> \"sheep\"\n```\n\nIt should also chain with other enumerables properly, and exhibits various edge case behaviours that `Enumerable#inject` has (see example tests for details).\n\n`Enumerable#reduce` and `Enumerable#inject` have been disabled for the purpose of this kata.",
+  "totalAttempts": 1028,
+  "totalCompleted": 92,
+  "totalStars": 33,
+  "voteScore": 43,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

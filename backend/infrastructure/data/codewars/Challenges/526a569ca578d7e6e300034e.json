@@ -1,0 +1,46 @@
+{
+  "id": "526a569ca578d7e6e300034e",
+  "name": "Base Conversion",
+  "slug": "base-conversion",
+  "category": "algorithms",
+  "publishedAt": "2013-10-25T14:20:38.886Z",
+  "approvedAt": "2014-02-12T23:02:49.448Z",
+  "languages": [
+    "javascript",
+    "python",
+    "haskell",
+    "ruby",
+    "csharp",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/526a569ca578d7e6e300034e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-10-25T11:31:40.486Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "In this kata you have to implement a base converter, which converts **positive integers** between arbitrary bases / alphabets. Here are some pre-defined alphabets:\n\n```javascript\nvar Alphabet = {\n  BINARY:        '01',\n  OCTAL:         '01234567',\n  DECIMAL:       '0123456789',\n  HEXA_DECIMAL:  '0123456789abcdef',\n  ALPHA_LOWER:   'abcdefghijklmnopqrstuvwxyz',\n  ALPHA_UPPER:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',\n  ALPHA:         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',\n  ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n};\n```\n```csharp\npublic class Alphabet\n{\n   public const string BINARY = \"01\";\n   public const string OCTAL = \"01234567\";\n   public const string DECIMAL = \"0123456789\";\n   public const string HEXA_DECIMAL = \"0123456789abcdef\";\n   public const string ALPHA_LOWER = \"abcdefghijklmnopqrstuvwxyz\";\n   public const string ALPHA_UPPER = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n   public const string ALPHA = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n   public const string ALPHA_NUMERIC = \"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n}\n```\n```python\nbin      = '01'\noct      = '01234567'\ndec      = '0123456789'\nhex      = '0123456789abcdef'\nallow    = 'abcdefghijklmnopqrstuvwxyz'\nallup    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\nalpha    = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\nalphanum = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n```\n```ruby\nbin      = '01'\noct      = '01234567'\ndec      = '0123456789'\nhex      = '0123456789abcdef'\nallow    = 'abcdefghijklmnopqrstuvwxyz'\nallup    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\nalpha    = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\nalphanum = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n```\n```haskell\nnewtype Alphabet = Alphabet { getDigits :: [Char] } deriving (Show)\nbin, oct, dec, hex, alphaLower, alphaUpper, alpha, alphaNumeric :: Alphabet\nbin = Alphabet $ \"01\"\noct = Alphabet $ ['0'..'7']\ndec = Alphabet $ ['0'..'9']\nhex = Alphabet $ ['0'..'9'] ++ ['a'..'f']\nalphaLower    = Alphabet $ ['a'..'z']\nalphaUpper    = Alphabet $ ['A'..'Z']\nalpha         = Alphabet $ ['a'..'z'] ++ ['A'..'Z']\nalphaNumeric  = Alphabet $ ['0'..'9'] ++ ['a'..'z'] ++ ['A'..'Z']\n```\n```c\nconst char * bin = \"01\";\nconst char * oct = \"01234567\";\nconst char * dec = \"0123456789\";\nconst char * hex = \"0123456789abcdef\";\nconst char * allow = \"abcdefghijklmnopqrstuvwxyz\";\nconst char * alup = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nconst char * alpha = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nconst char * alnum = \"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n```\n\nThe function `convert()` should take an input (string), the source alphabet (string) and the target alphabet (string). You can assume that the input value always consists of characters from the source alphabet. You don't need to validate it.\n\n### Examples\n\n```javascript\n// convert between numeral systems\nconvert(\"15\", Alphabet.DECIMAL, Alphabet.BINARY); // should return \"1111\"\nconvert(\"15\", Alphabet.DECIMAL, Alphabet.OCTAL); // should return \"17\"\nconvert(\"1010\", Alphabet.BINARY, Alphabet.DECIMAL); // should return \"10\"\nconvert(\"1010\", Alphabet.BINARY, Alphabet.HEXA_DECIMAL); // should return \"a\"\n\n// other bases\nconvert(\"0\", Alphabet.DECIMAL, Alphabet.ALPHA); // should return \"a\"\nconvert(\"27\", Alphabet.DECIMAL, Alphabet.ALPHA_LOWER); // should return \"bb\"\nconvert(\"hello\", Alphabet.ALPHA_LOWER, Alphabet.HEXA_DECIMAL); // should return \"320048\"\nconvert(\"SAME\", Alphabet.ALPHA_UPPER, Alphabet.ALPHA_UPPER); // should return \"SAME\"\n```\n```csharp\n// convert between numeral systems\nConvert(\"15\", Alphabet.DECIMAL, Alphabet.BINARY); // should return \"1111\"\nConvert(\"15\", Alphabet.DECIMAL, Alphabet.OCTAL); // should return \"17\"\nConvert(\"1010\", Alphabet.BINARY, Alphabet.DECIMAL); // should return \"10\"\nConvert(\"1010\", Alphabet.BINARY, Alphabet.HEXA_DECIMAL); // should return \"a\"\n\n// other bases\nConvert(\"0\", Alphabet.DECIMAL, Alphabet.ALPHA); // should return \"a\"\nConvert(\"27\", Alphabet.DECIMAL, Alphabet.ALPHA_LOWER); // should return \"bb\"\nConvert(\"hello\", Alphabet.ALPHA_LOWER, Alphabet.HEXA_DECIMAL); // should return \"320048\"\nConvert(\"SAME\", Alphabet.ALPHA_UPPER, Alphabet.ALPHA_UPPER); // should return \"SAME\"\n```\n```python\nconvert(\"15\", dec, bin)       ==>  \"1111\"\nconvert(\"15\", dec, oct)       ==>  \"17\"\nconvert(\"1010\", bin, dec)     ==>  \"10\"\nconvert(\"1010\", bin, hex)     ==>  \"a\"\nconvert(\"0\", dec, alpha)      ==>  \"a\"\nconvert(\"27\", dec, allow)     ==>  \"bb\"\nconvert(\"hello\", allow, hex)  ==>  \"320048\"\n```\n```ruby\nconvert(\"15\", dec, bin)   # should return \"1111\"\nconvert(\"15\", dec, oct)   # should return \"17\"\nconvert(\"1010\", bin, dec) # should return \"10\"\nconvert(\"1010\", bin, hex) # should return \"a\"\nconvert(\"0\", dec, alpha)  # should return \"a\"\nconvert(\"27\", dec, allow) # should return \"bb\"\nconvert(\"hello\", allow, hex) # should return \"320048\"\n```\n```haskell\nconvert dec bin \"15\"   `shouldBe` \"1111\"\nconvert dec oct \"15\"   `shouldBe` \"17\"\nconvert bin dec \"1010\" `shouldBe` \"10\"\nconvert bin hex \"1010\" `shouldBe` \"a\"\nconvert dec alpha      \"0\"     `shouldBe` \"a\"\nconvert dec alphaLower \"27\"    `shouldBe` \"bb\"\nconvert alphaLower hex \"hello\" `shouldBe` \"320048\"\n```\n```c\nconvert(\"15\", dec, bin)       // should return \"1111\"\nconvert(\"15\", dec, oct)       // should return \"17\"\nconvert(\"1010\", bin, dec)     // should return \"10\"\nconvert(\"1010\", bin, hex)     // should return \"a\"\nconvert(\"0\", dec, alpha)      // should return \"a\"\nconvert(\"27\", dec, allow)     // should return \"bb\"\nconvert(\"hello\", allow, hex)  // should return \"320048\"\n```\n\nAdditional Notes:\n\n* The maximum input value can always be encoded in a number without loss of precision in JavaScript. In Haskell, intermediate results will probably be too large for `Int`.\n* The function must work for any arbitrary alphabets, not only the pre-defined ones\n* You don't have to consider negative numbers",
+  "totalAttempts": 61888,
+  "totalCompleted": 10919,
+  "totalStars": 820,
+  "voteScore": 785,
+  "tags": [
+    "Strings",
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 7,
+    "suggestions": 1
+  }
+}

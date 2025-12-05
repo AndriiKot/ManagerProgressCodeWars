@@ -1,0 +1,44 @@
+{
+  "id": "58319f37aeb69a89a00000c7",
+  "name": "Fun with lists: reduce",
+  "slug": "fun-with-lists-reduce",
+  "category": "reference",
+  "publishedAt": "2016-11-20T15:37:52.041Z",
+  "approvedAt": "2016-12-19T11:43:40.925Z",
+  "languages": [
+    "javascript",
+    "java",
+    "php",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/58319f37aeb69a89a00000c7",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-20T13:03:51.220Z",
+  "createdBy": {
+    "username": "janitormeir",
+    "url": "https://www.codewars.com/users/janitormeir"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Implement the method **reduce**, which accepts three arguments:\n\n* linked list (head)\n* bi-function - (accumulated_value, current_element_data)\n* initial value\n\nThis method should return the result of applying the given function on every element with the accumulating result, **starting with the initial value**.\n\nFor example:\n\nGiven the list: `1 -> 2 -> 3`, the function `(acc, curr) => acc + curr` and an initial value of 0, **reduce** should return `6`, because:\n\n* (0, 1) and the function `(acc, curr) => acc + curr` gives 1\n* (1, 2) and the function `(acc, curr) => acc + curr` gives 3\n* (3, 3) and the function `(acc, curr) => acc + curr` gives 6\n\nAnother example:\n\nGiven the list: `1 -> 2 -> 3 -> 4`, the function `(acc, curr) => acc * curr` and an initial value of 1, **reduce** should return `24`\n\nThe linked list is defined as follows:\n\n```javascript\nfunction Node(data, next = null) {\n  this.data = data;\n  this.next = next;\n}\n```\n```java\nclass Node<T> {\n  public T data;\n  public Node<T> next;\n  \n  Node(T data, Node next) {\n    this.data = data;\n    this.next = next;\n  }\n  \n  Node(T data) {\n    this(data, null);\n  }\n}\n```\n```php\nclass Node {\n  public $data, $next;\n  public function __construct($data, $next = NULL) {\n    $this->data = $data;\n    $this->next = $next;\n  }\n}\n```\n```c\nstruct Node {\n\tstruct Node *next;\n\tint data;\n};\n```\n\nNote: the list may be null and can hold any type of value.\n\nGood luck!\n\n\nThis kata is part of [fun with lists](https://www.codewars.com/collections/fun-with-lists) series:\n\n* [Fun with lists: length](https://www.codewars.com/kata/581e476d5f59408553000a4b)\n* [Fun with lists: indexOf](https://www.codewars.com/kata/581c6b075cfa83852700021f)\n* [Fun with lists: lastIndexOf](https://www.codewars.com/kata/581c867a33b9fe732e000076)\n* [Fun with lists: countIf](https://www.codewars.com/kata/5819081d056d4bdd410004f8)\n* [Fun with lists: anyMatch + allMatch](https://www.codewars.com/kata/581e50555f59405743001813)\n* [Fun with lists: filter](https://www.codewars.com/kata/582041237df353e01d000084)\n* [Fun with lists: map](https://www.codewars.com/kata/58259d9062cfb45e1a00006b)\n* [Fun with lists: reduce](https://www.codewars.com/kata/58319f37aeb69a89a00000c7)",
+  "totalAttempts": 3559,
+  "totalCompleted": 1124,
+  "totalStars": 51,
+  "voteScore": 264,
+  "tags": [
+    "Lists",
+    "Functional Programming",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64af976daba6b3000f3e5776",
+  "name": "Grouping Session Lengths in PostgreSQL",
+  "slug": "grouping-session-lengths-in-postgresql",
+  "category": "reference",
+  "publishedAt": "2023-07-13T06:19:55.039Z",
+  "approvedAt": "2023-07-28T21:27:12.907Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64af976daba6b3000f3e5776",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-07-13T06:19:25.726Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are working for a company that provides a video streaming platform. They are interested in understanding the length of video streaming sessions their users have. To do this, they've collected data for each session and stored it in a PostgreSQL database.\n\nThe database has a table called `sessions` with the following columns:\n\n* `session_id` (integer): A unique identifier for each streaming session.\n* `length_seconds` (integer): The length of the streaming session in seconds.\n\nWrite a SQL query to count the number of sessions that fall within five-second intervals (e.g., 0-4, 5-9, etc.).\n\nYour query should return a result set with two columns:\n\n* `bucket` (text): This represents the five-second interval. It should be a string in the format \"start-end\", where \"start\" is the beginning of the interval and \"end\" is the end of the interval. For example, a session length of 25 seconds should fall into the \"25-29\" bucket.\n* `count` (integer): The number of sessions that fall within the interval represented by the bucket.\n\nSo on the concrete example, for this sample dataset:\n\n```\n| session_id | length_seconds |\n|------------|----------------|\n|     1      |      25        |\n|     2      |      453       |\n|     3      |      27        |\n```\n\nThe result of the SQL query will be:\n\n```\n|  bucket  | count |\n|----------|-------|\n|  25-29   |   2   |\n| 450-454  |   1   |\n```\n\nGLHF!\n\n",
+  "totalAttempts": 719,
+  "totalCompleted": 139,
+  "totalStars": 2,
+  "voteScore": 31,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

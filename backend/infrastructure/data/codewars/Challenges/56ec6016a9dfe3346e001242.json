@@ -1,0 +1,46 @@
+{
+  "id": "56ec6016a9dfe3346e001242",
+  "name": "Geometric Mean II",
+  "slug": "geometric-mean-ii",
+  "category": "reference",
+  "publishedAt": "2016-03-18T21:22:56.337Z",
+  "approvedAt": "2018-10-17T15:46:28.394Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/56ec6016a9dfe3346e001242",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-03-18T20:07:50.677Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "If you did Geometric Mean I ( http://www.codewars.com/kata/geometric-mean-i), you may continue with this second part.\n\nWe have seen the formula:\n```math\nG = \\sqrt[\\large{n}]{x_1 \\cdot x_2 \\cdot \\ldots \\cdot x_n}\n```\n\nThis expression is not convenient to apply to statistical researches, specially when we have high values of the variable ```x``` and/or many entries of it, because the value of the product will be huge and an error message will appear in our codes for the calculation of the geometric mean.\n\nIn real life, most of the researches will not have so many values of a variable but each one repeated with a certain specific frequency.\n\nThis would be our situation using the above formula:\n\n<a href=\"http://imgur.com/UXxrzTi\"><img src=\"http://i.imgur.com/UXxrzTi.png?1\" title=\"source: imgur.com\" /></a>\n\nImplementing logarithms we have:\n\n<a href=\"https://imgur.com/onWZA4H\"><img src=\"https://i.imgur.com/onWZA4H.jpg?1\" title=\"source: imgur.com\" /></a>\n\nThe logarithms more suitable for this formula are the ones with `base 10`.\n\nOur task is to implement the function ```geometric_meanII()```(```geometricMeanII```, Javascript), that should be able to make the calculations of the geometric mean from pretty much longer arrays than the ones used for Goemetric Mean I.\n\nThe function will output the value of the geometric mean without roundings.\n\nWe will use the same criteria for invalid entries than the previous kata.\n(strings and negative values of x)\n```ruby\namount of entries      maximum invalid entries\n  2 - 10                       1\n  From 11 and above      <10 % of total of entries              \n```\n```python\namount of entries      maximum invalid entries\n  2 - 10                       1\n  From 11 and above      10 % of total of entries              \n```\n```javascript\namount of entries      maximum invalid entries\n  2 - 10                       1\n  From 11 and above      10 % of total of entries              \n```\nIf the limit of bad entries is exceeded, the function should output 0\n(When you finish this kata, Geometric Mean III will be waiting you)",
+  "totalAttempts": 771,
+  "totalCompleted": 166,
+  "totalStars": 12,
+  "voteScore": 35,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 4
+  }
+}

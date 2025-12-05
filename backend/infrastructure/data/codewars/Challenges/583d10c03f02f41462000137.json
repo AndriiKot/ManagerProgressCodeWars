@@ -1,0 +1,44 @@
+{
+  "id": "583d10c03f02f41462000137",
+  "name": "The maximum sum value of ranges -- Simple version",
+  "slug": "the-maximum-sum-value-of-ranges-simple-version",
+  "category": "reference",
+  "publishedAt": "2016-11-29T07:11:51.758Z",
+  "approvedAt": "2017-02-05T09:11:41.584Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "php",
+    "ruby",
+    "python",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/583d10c03f02f41462000137",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-29T05:23:13.193Z",
+  "createdBy": {
+    "username": "myjinxin2015",
+    "url": "https://www.codewars.com/users/myjinxin2015"
+  },
+  "approvedBy": {
+    "username": "kazk",
+    "url": "https://www.codewars.com/users/kazk"
+  },
+  "description": ">When no more interesting kata can be resolved, I just choose to create the new kata, to solve their own, to enjoy the process  --myjinxin2015 said\n\n# Description:\n\n```if:javascript\nGiven an array `arr` that contains some integers(positive, negative or 0), and a `range` list such as `[[start1,end1],[start2,end2],...]`, start and end are the index of `arr` and start always less than end. Your task is to calculate the sum value of each range (start index and end index are both inclusive), and return the maximum sum value.\n```\n```if:ruby\nGiven an array (`arr`) of integers and an array (`ranges`) of ranges (e.g. `[[1, 32], [16, 24],...]`), which represent an index range of `arr`, calculate the sum of each range (start index and end index are both inclusive) of `arr`, and return the maximum sum.\n```\n```if:php\nGiven an array `$a` that contains some integers and a `$range` list such as `[[$start1, $end1], [$start2, $end2], ... ]` where `$start(n)` and `$end(n)` are valid keys of the non-associative array `$a` and `$start(n)` is always guaranteed to be strictly less than `$end(n)`.  Your task is to calculate the sum value of each range (start index and end index are both inclusive) and return the maximum sum value.\n```\n```if:haskell\nGiven a list `arr` that contains some integers(positive, negative or 0), and a `range` list such as `[(start1,end1),(start2,end2),...]`, start and end are the index of `arr` and start always less than end. Your task is to calculate the sum value of each range (start index and end index are both inclusive), and return the maximum sum value.\n```\n\nFor example:\n```javascript\n Given arr = [1,-2,3,4,-5,-4,3,2,1], \n       range = [[1,3],[0,4],[6,8]]\n should return 6\n \n calculation process:\n range[1,3] = arr[1]+arr[2]+arr[3] = 5\n range[0,4] = arr[0]+arr[1]+arr[2]+arr[3]+arr[4] = 1\n range[6,8] = arr[6]+arr[7]+arr[8] = 6\n So the maximum sum value is 6\n```\n```ruby\n arr = [1,-2,3,4,-5,-4,3,2,1] \n ranges = [[1,3],[0,4],[6,8]]\n max_sum(arr,ranges) should return 6\n \n Process:\n   range[1,3] = arr[1] + arr[2] + arr[3] = 5\n   range[0,4] = arr[0] + arr[1] + arr[2] + arr[3] + arr[4] = 1\n   range[6,8] = arr[6] + arr[7] + arr[8] = 6\n   \n   Result: Maximum range sum is 6\n```\n```php\nGiven arr = [1,-2,3,4,-5,-4,3,2,1], \n      range = [[1,3],[0,4],[6,8]]\nshould return 6\n \ncalculation process:\nrange[1,3] = arr[1]+arr[2]+arr[3] = 5\nrange[0,4] = arr[0]+arr[1]+arr[2]+arr[3]+arr[4] = 1\nrange[6,8] = arr[6]+arr[7]+arr[8] = 6\nSo the maximum sum value is 6\n```\n```haskell\n Given arr = [1,-2,3,4,-5,-4,3,2,1], \n       range = [(1,3),(0,4),(6,8)]\n should return 6\n \n calculation process:\n range(1,3) = arr[1]+arr[2]+arr[3] = 5\n range(0,4) = arr[0]+arr[1]+arr[2]+arr[3]+arr[4] = 1\n range(6,8) = arr[6]+arr[7]+arr[8] = 6\n So the maximum sum value is 6\n```\n \n# Note:\n\n - `arr`/`$a` always has at least 5 elements;\n - `range`/`$range`/`ranges` always has at least 1 element;\n - All inputs are valid;\n - This is a simple version, if you want some challenge, please [try the challenge version](https://www.codewars.com/kata/the-maximum-sum-value-of-ranges-challenge-version/).\n\n# Some Examples\n\n```javascript\n maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,3],[0,4],[6,8]]) === 6\n maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,3]]) === 5\n maxSum([1,-2,3,4,-5,-4,3,2,1],[[1,4],[2,5]]) === 0\n```\n```php\nmax_sum([1, -2, 3, 4, -5, -4, 3, 2, 1], [[1, 3], [0, 4], [6, 8]]); // => 6\nmax_sum([1, -2, 3, 4, -5, -4, 3, 2, 1], [[1, 3]]); // => 5\nmax_sum([1, -2, 3, 4, -5, -4, 3, 2, 1], [[1, 4], [2, 5]]); // => 0\n```\n```haskell\n maxSum [1,-2,3,4,-5,-4,3,2,1] [(1,3),(0,4),(6,8)] == 6\n maxSum [1,-2,3,4,-5,-4,3,2,1] [(1,3)] == 5\n maxSum [1,-2,3,4,-5,-4,3,2,1] [(1,4),(2,5)] == 0\n```\n```ruby\n max_sum([1,-2,3,4,-5,-4,3,2,1], [[1,3]]) == 5\n max_sum([1,-2,3,4,-5,-4,3,2,1], [[1,4],[2,5]]) == 0\n max_sum([1,-2,3,4,-5,-4,3,2,1], [ [1,3], [0,4], [6,8] ]) == 6\n max_sum([11,-22,31,34,-45,-46,35,32,21], [[1,4],[0,3],[6,8],[0,8]]) == 88 \n```",
+  "totalAttempts": 7621,
+  "totalCompleted": 2798,
+  "totalStars": 49,
+  "voteScore": 460,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

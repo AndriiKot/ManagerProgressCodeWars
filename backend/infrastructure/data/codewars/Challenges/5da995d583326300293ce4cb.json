@@ -1,0 +1,47 @@
+{
+  "id": "5da995d583326300293ce4cb",
+  "name": "2D Vector Mapping",
+  "slug": "2d-vector-mapping",
+  "category": "algorithms",
+  "publishedAt": "2019-10-18T10:59:59.344Z",
+  "approvedAt": "2020-04-04T20:16:53.856Z",
+  "languages": [
+    "python",
+    "javascript",
+    "java",
+    "julia",
+    "typescript",
+    "go",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5da995d583326300293ce4cb",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2019-10-18T10:37:09.466Z",
+  "createdBy": {
+    "username": "David Gildour",
+    "url": "https://www.codewars.com/users/David%20Gildour"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "<h3>Introduction</h3>\n\nImagine a function that maps a number from a given range, to another, desired one. If this is too vague - let me explain a little bit further: let's take an arbitrary number - `2` for instance - and map it with this function from range `0-5` to, let's say - `10-20`. Our number lies in `2/5` of the way in it's original range, so in order to map it to the desired one we need to find a number that lies exactly in the same place, but in our new range. This number, in this case, is `14`. You can visualize this as taking a 5cm piece of rubber, putting it next to the ruler, marking the dot on the second centimeter, then stretching the rubber between 10th and 20th centimeter and reading the value next to the dot.\n\n<h3>Task</h3>\n\nThe task in this kata is, unfortunately, a little bit more complex. We will take the same idea, but apply it to the 2-dimensional plane, so instead of single numbers, we will consider vectors with their x-position and y-position, instead of ranges, we will look at the circles with given centers and radii.\n\nYou need to write a function called `map_vector` (or `mapVector`) that takes 3 arguments - `vector`, `circle1`, `circle2` and returns a tuple/array/slice of x, y positions of the mapped vector. All three arguments will be tuples (arrays), the first one with x, y positions of a base vector, the second and third with x, y positions of the center of a circle and it's radius. The base vector will always be within the first circle and you need to map it from the first circle to the second. The coordinates should be precise up to second decimal place.\n<h3>Examples</h3>\n\nLet's take a look at a simple example:\n\n```\nvector = 5, 5\ncircle1 = 10, 20, 42\ncircle2 = -100, -42, 69\n```\n\nAs we see, the vector's cartesian coordinates are x=5, y=5, first's circle's center is in x=10, y=20, it's radius is 42, and so on. Let's visualize it:<br />\n<img src=\"https://i.ibb.co/nnfjCt4/ex1.png\" /><br />\nThe red dot is our given vector. After running our function we should get our new, mapped vector with coordinates x=-108.21, y=-66.64. Take a look at the light-blue dot here:<br />\n<img src=\"https://i.ibb.co/Gx6dgxT/ex2.png\" /><br />\nSo, to represent this with code:\n\n```python\nmap_vector((5, 5), (10, 20, 42), (-100, -42, 69)) == (-108.21, -66.64)\n```\n```java\nmapVector([5, 5], [10, 20, 42], [-100, -42, 69]) == [-108.21, -66.64]\n```\n```javascript\nmapVector([5, 5], [10, 20, 42], [-100, -42, 69]) === [-108.21, -66.64]\n```\n```typescript\nmapVector([5, 5], [10, 20, 42], [-100, -42, 69]) === [-108.21, -66.64]\n```\n```julia\nmapvector([5, 5], [10, 20, 42], [-100, -42, 69]) == [-108.21, -66.64] \n```\n```go\nMapVector([5, 5], [10, 20, 42], [-100, -42, 69]) == [-108.21, -66.64] \n```\n\nTwo, very important things to notice here are:\n<ul>\n<li>The distance between a vector and a circle's center is scaled accordingly to the second circle's radius</li>\n<li>The angle between the vector and the line x=c1.x is preserved (c1.x == first circle's center's x position)</li>\n</ul>\n\nIt is also worth to mention, that when both circles' radii are equal, this is equivalent of just translating the vector by the distance between them, and when the circles are concentric this is roughly equivalent to the mapping function mentioned in the introduction.\n\n<h3>Notes</h3>\n\nAlthough it is not really a problem, but for simplicity the given vector will always be contained within the first circle. The plane in random tests is a square with sides ranging between `-400` to `400`.\n\n<h3>Tip</h3>\n\nIt may not be necessary, but if you're stuck, think about the most iconic animal that pops to mind when thinking about the negative influence of the climate changes on our planet's habitat.\n\nEnjoy, and don't hesitate to comment on any mistakes or problems with this kata.\n",
+  "totalAttempts": 1344,
+  "totalCompleted": 547,
+  "totalStars": 35,
+  "voteScore": 117,
+  "tags": [
+    "Mathematics",
+    "Algorithms",
+    "Geometry"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

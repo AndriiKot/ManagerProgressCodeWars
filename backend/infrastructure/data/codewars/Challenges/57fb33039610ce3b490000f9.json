@@ -1,0 +1,46 @@
+{
+  "id": "57fb33039610ce3b490000f9",
+  "name": "Working With Coloured Numbers II",
+  "slug": "working-with-coloured-numbers-ii",
+  "category": "reference",
+  "publishedAt": "2016-10-15T07:36:28.980Z",
+  "approvedAt": "2018-06-13T20:01:12.506Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/57fb33039610ce3b490000f9",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-10-10T06:19:47.589Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "Different colour pattern lists produce different numerical sequences in colours.\n\nFor example the sequence [<span style=\"color:red\">'red'</span>, <span style=\"color:#EEBB00\">'yellow''</span>, <span style=\"color:DodgerBlue\">'blue''</span>], produces the following coloured sequence:\n\n<span style=\"color:red\"> 1 </span> <span style=\"color:#EEBB00\">  2</span>  <span style=\"color:DodgerBlue\">  3</span>  <span style=\"color:red\">  4 </span><span style=\"color:#EEBB00\">  5</span>  <span style=\"color:DodgerBlue\">  6 </span> <span style=\"color:red\">  7 </span><span style=\"color:#EEBB00\">  8</span>  <span style=\"color:DodgerBlue\">  9</span> <span style=\"color:red\">  10</span> <span style=\"color:#EEBB00\">  11 </span><span style=\"color:DodgerBlue\">  12 </span> <span style=\"color:red\">  13</span>.....\n\nThe sequence [<span style=\"color:red\">'red'</span>, <span style=\"color:#EEBB00\">'yellow'</span>, <span style=\"color:DodgerBlue\">'blue'</span>, <span style=\"color:orange\"> 'orange'</span>, <span style=\"color:green\"> 'green'</span>] produce the sequence:\n  \n<span style=\"color:red\">  1 </span> <span style=\"color:#EEBB00\">  2  </span><span style=\"color:DodgerBlue\">  3 </span> <span style=\"color:orange\">  4 </span><span style=\"color:green\">  5 </span> <span style=\"color:red\">  6 </span> <span style=\"color:#EEBB00\">  7 </span><span style=\"color:DodgerBlue\">  8 </span> <span style=\"color:orange\">  9 </span><span style=\"color:green\">  10 </span><span style=\"color:red\">  11</span> <span style=\"color:#EEBB00\">  12</span>  <span style=\"color:DodgerBlue\">  13</span>.....\n\nWe have the following recursive sequence:\n\n* a<sub>1</sub> = 1\n* a<sub>n</sub>  =   a<sub>n-1</sub>  + n + k\n\nhaving that **k** may be positive or negative.\n\n## Task\n\nCreate a function ```count_col_hits()```, (javascript ```countColHits()```that receives the following arguments:\n\n- the value of k\n\n- a certain pattern colour list, `pat_col`,or array of colours (that has an specific order as it was shown above)\n\n- a range of values, `range_`, an array of two elements, having a  lower and upper bound, `[a, b]`, such that `a < b` \n\nThe function should output an array with two elements:\n\n- the maximum number of hits that each colour has in the range `[a, b]`, such that every value, `val`, that hits the sequence of coloured numbers are such that, `a ≤ val ≤ b`\n\n- the corresponding name of the colour that produces this maximum amount of hits (or it may be also colours that produce the maximum amount of hits).\n\n### Examples\n\n```python\nk = -4\npat_col = ['red', 'yellow', 'blue', 'orange', 'green']\nrange_ = [20, 40]\n\nith term    value     colour     hit or not\n1             1         red         yes         \n2            -1         ---          no   (negative values do not hit)\n3            -2         ---          no\n4            -2         ---          no\n5            -1         ---          no\n6             1         red         yes\n7             4        orange       yes\n8             8         blue        yes\n9            13         blue        yes\n10           19        orange       yes\n11           26         red         yes <---- hit in the range, 20 ≤ 26 ≤ 40\n12           34        orange       yes <---- hit in the range, 20 ≤ 34 ≤ 40\n\ncount_col_hits(k, pat_col, range_) == [1, ['orange', 'red']]  # If there is more than one colour the array should be sorted alphabetically\n```\n\nHaving another case changing the input:\n\n```python\nk = -7\npat_col = ['red', 'yellow', 'blue', 'orange', 'green', 'pink']\nrange_ = [20, 150]\n\ncount_col_hits(k, pat_col, range_) == [4, 'orange'] #If there is only one colour with maximum amount of hits there is no need to use an array of colours in the result.\n\n# The other colours had the result: 'red': 3, 'green': 2, 'yellow': 1, 'blue': 0, 'pink': 0\n```\n\nYour code should handle carefully the cases where there are no hits at all. For that case the output should be an empty array.\n\n```python\nk = 50\npat_col = ['red', 'yellow', 'blue', 'orange', 'green', 'pink']\nrange_ = [20, 50]\ncount_col_hits(k, pat_col, range_) == []\n```\n\nYou will be always receiving valid inputs for the arguments of the function.\n\n---\n\nFeatures of the random tests:\n* Numpber of tests: `200`\n* `-100 ≤  k ≤  100`\n* length of pattern colour array: `5 ≤ l ≤ 20`\n* `100 ≤ a  ≤ 100000`, `1000 ≤ b ≤ 10**8` and always `a < b`\n",
+  "totalAttempts": 396,
+  "totalCompleted": 66,
+  "totalStars": 6,
+  "voteScore": 23,
+  "tags": [
+    "Fundamentals",
+    "Data Structures",
+    "Algorithms",
+    "Mathematics",
+    "Logic",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

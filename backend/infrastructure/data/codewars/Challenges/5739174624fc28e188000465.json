@@ -1,0 +1,49 @@
+{
+  "id": "5739174624fc28e188000465",
+  "name": "Ranking Poker Hands",
+  "slug": "ranking-poker-hands",
+  "category": "algorithms",
+  "publishedAt": "2016-05-16T00:49:44.530Z",
+  "approvedAt": "2017-01-06T14:18:27.290Z",
+  "languages": [
+    "csharp",
+    "java",
+    "fsharp",
+    "javascript",
+    "c",
+    "cpp",
+    "python",
+    "elixir",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5739174624fc28e188000465",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2016-05-16T00:41:42.859Z",
+  "createdBy": {
+    "username": "FrankK",
+    "url": "https://www.codewars.com/users/FrankK"
+  },
+  "approvedBy": {
+    "username": "Dentzil",
+    "url": "https://www.codewars.com/users/Dentzil"
+  },
+  "description": "A famous casino is suddenly faced with a sharp decline of their revenues. They decide to offer Texas hold'em also online. Can you help them by writing an algorithm that can rank poker hands? \n\n## Task\n\n\n\nCreate a poker hand that has a method to compare itself to another poker hand:\n\n```csharp\nResult PokerHand.CompareWith(PokerHand hand);\n```\n```fsharp\nPokerHand.compareWith: hand: PokerHand -> Result\n```\n```java\nResult PokerHand.compareWith(PokerHand hand);\n```\n```javascript\nPokerHand.prototype.compareWith = function(hand){...};\n```\n```c\nResult compare (Hand* player, Hand* opponent);\n```\n```cpp\nResult compare (const PokerHand &player, const PokerHand &opponent);\n```\n```python\ncompare_with(self, other_hand)\n```\n```ruby\ncompare_with(other_hand)\n```\n```elixir\nPokerHand.compare(String player, String opponent)\n```\n\nA poker hand has a constructor that accepts a string containing 5 cards:\n```csharp\nPokerHand hand = new PokerHand(\"KS 2H 5C JD TD\");\n```\n```fsharp\nlet hand = PokerHand(\"KS 2H 5C JD TD\")\n```\n```java\nPokerHand hand = new PokerHand(\"KS 2H 5C JD TD\");\n```\n```javascript\nvar hand = new PokerHand(\"KS 2H 5C JD TD\");\n```\n```c\nHand *hand = PokerHand (\"KS 2H 5C JD TD\");\n```\n```cpp\nPokerHand hand (\"KS 2H 5C JD TD\");\n```\n```python\nPokerHand(\"KS 2H 5C JD TD\")\n```\n```ruby\nPokerHand.new(\"KS 2H 5C JD TD\")\n```\n```elixir\n# no constructor in elixir, pass the string into the compare\n\"KS 2H 5C JD TD\"\n```\n\nThe characteristics of the string of cards are:\n* Each card consists of two characters, where\n * The first character is the value of the card: `2, 3, 4, 5, 6, 7, 8, 9, T(en), J(ack), Q(ueen), K(ing), A(ce)`\n * The second character represents the suit: `S(pades), H(earts), D(iamonds), C(lubs)`\n* A space is used as card separator between cards\n\n\nThe result of your poker hand compare can be one of these 3 options:\n\n```csharp\npublic enum Result \n{ \n    Win, \n    Loss, \n    Tie \n}\n```\n```fsharp\ntype Result =\n| Win = 0 \n| Loss = 1\n| Tie = 2\n```\n```java\npublic enum Result\n{\n    WIN,\n    LOSS,\n    TIE\n}\n```\n```javascript\nvar Result = \n{\n    \"win\": 1,\n    \"loss\": 2,\n    \"tie\": 3\n}\n```\n```c\ntypedef enum { Win, Loss, Tie } Result;\n```\n```cpp\nenum class Result { Win, Loss, Tie };\n```\n```python\n[ \"Win\", \"Tie\", \"Loss\" ]\n```\n```ruby\n[ \"Win\", \"Tie\", \"Loss\" ]\n```\n```elixir\n@result %{win: 1, loss: 2, tie: 3}\n```\n\n## Notes\n* Apply the [Texas Hold'em](https://en.wikipedia.org/wiki/Texas_hold_%27em) rules for ranking the cards.\n* Low aces are valid in this kata.\n* There is no ranking for the suits.\n\n\nIf you finished this kata, you might want to continue with [Sortable Poker Hands](https://www.codewars.com/kata/sortable-poker-hands)\n\n",
+  "totalAttempts": 48274,
+  "totalCompleted": 3673,
+  "totalStars": 1189,
+  "voteScore": 633,
+  "tags": [
+    "Games",
+    "Algorithms",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 4
+  }
+}

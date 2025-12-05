@@ -1,0 +1,51 @@
+{
+  "id": "51f2b4448cadf20ed0000386",
+  "name": "Remove anchor from URL",
+  "slug": "remove-anchor-from-url",
+  "category": "reference",
+  "publishedAt": "2013-07-26T18:05:22.863Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python",
+    "shell",
+    "csharp",
+    "php",
+    "lua",
+    "haskell",
+    "c",
+    "nasm",
+    "clojure",
+    "cpp",
+    "scala",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/51f2b4448cadf20ed0000386",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2013-07-26T17:39:16.181Z",
+  "createdBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Complete the function/method so that it returns the url with anything after the anchor (`#`) removed. \n\n## Examples\n\n~~~if-not:nasm\n```\n\"www.codewars.com#about\" --> \"www.codewars.com\"\n\"www.codewars.com?page=1\" -->\"www.codewars.com?page=1\"\n```\n~~~\n\n~~~if:nasm\n```\nurl1:  db    `www.codewars.com#about\\0`\nurl2:  db    `www.codewars.com?page=1\\0`\n    \n    mov rdi, url1\n    call rmurlahr    ; RAX <- `www.codewars.com\\0`\n    \n    mov rdi, url2\n    call rmurlahr    ; RAX <- `www.codewars.com?page=1\\0`\n```\n~~~\n",
+  "totalAttempts": 118559,
+  "totalCompleted": 51214,
+  "totalStars": 414,
+  "voteScore": 3465,
+  "tags": [
+    "Regular Expressions",
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 5
+  }
+}

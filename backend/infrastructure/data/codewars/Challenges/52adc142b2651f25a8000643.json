@@ -1,0 +1,46 @@
+{
+  "id": "52adc142b2651f25a8000643",
+  "name": "Sleigh Authentication",
+  "slug": "sleigh-authentication",
+  "category": "reference",
+  "publishedAt": "2013-12-15T14:48:34.256Z",
+  "approvedAt": "2013-12-16T17:22:55.654Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python",
+    "haskell",
+    "elixir",
+    "csharp",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/52adc142b2651f25a8000643",
+  "rank": {
+    "id": -8,
+    "name": "8 kyu",
+    "color": "white"
+  },
+  "createdAt": "2013-12-15T14:48:37.755Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Christmas is coming and many people dreamed of having a ride with Santa's sleigh. But, of course, only Santa himself is allowed to use this wonderful transportation. And in order to make sure, that only he can board the sleigh, there's an authentication mechanism.\n\nYour task is to implement the `authenticate()` method of the sleigh, which takes the name of the person, who wants to board the sleigh and a secret password. If, and only if, the name equals \"Santa Claus\" and the password is \"Ho Ho Ho!\" *(yes, even Santa has a secret password with uppercase and lowercase letters and special characters :D)*, the return value must be `true`. Otherwise it should return `false`.\n\nExamples:\n\n```javascript\nvar sleigh = new Sleigh();\nsleigh.authenticate(\"Santa Claus\", \"Ho Ho Ho!\"); // must return TRUE\n\nsleigh.authenticate(\"Santa\", \"Ho Ho Ho!\"); // must return FALSE\nsleigh.authenticate(\"Santa Claus\", \"Ho Ho!\"); // must return FALSE\nsleigh.authenticate(\"jhoffner\", \"CodeWars\"); // Nope, even Jake is not allowed to use the sleigh ;)\n```\n```python\nsleigh = Sleigh()\nsleigh.authenticate('Santa Claus', 'Ho Ho Ho!') # must return True\n\nsleigh.authenticate('Santa', 'Ho Ho Ho!') # must return False\nsleigh.authenticate('Santa Claus', 'Ho Ho!') # must return False\nsleigh.authenticate('jhoffner', 'CodeWars') # Nope, even Jake is not allowed to use the sleigh ;)\n```\n```haskell\nauthenticate \"Santa Claus\" \"Ho Ho Ho!\" -- True\nauthenticate \"Santa\"       \"Ho Ho Ho!\" -- False\nauthenticate \"Santa Claus\" \"Ho Ho!\"    -- False\nauthenticate \"jhoffner\"    \"CodeWars\"  -- False\n```\n```elixir\nauthenticate? \"Santa Claus\", \"Ho Ho Ho!\" #=> true\nauthenticate? \"Santa\",       \"Ho Ho Ho!\" #=> false\nauthenticate? \"Santa Claus\", \"Ho Ho!\"    #=> false\nauthenticate? \"jhoffner\",    \"CodeWars\"  #=> false\n```\n```java\nsleigh.authenticate(\"Santa Claus\", \"Ho Ho Ho!\") # must return True\nsleigh.authenticate(\"Santa', 'Ho Ho Ho!\") # must return False\nsleigh.authenticate(\"Santa Claus\", \"Ho Ho!\") # must return False\nsleigh.authenticate(\"jhoffner\", \"CodeWars\") # Nope, even Jak\n```\n",
+  "totalAttempts": 37578,
+  "totalCompleted": 23613,
+  "totalStars": 140,
+  "voteScore": 1676,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

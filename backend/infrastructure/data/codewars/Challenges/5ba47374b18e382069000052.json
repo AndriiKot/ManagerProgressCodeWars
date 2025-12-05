@@ -1,0 +1,44 @@
+{
+  "id": "5ba47374b18e382069000052",
+  "name": "Minimum Reduction",
+  "slug": "minimum-reduction",
+  "category": "algorithms",
+  "publishedAt": "2018-09-22T19:32:57.156Z",
+  "approvedAt": "2018-09-23T13:59:05.293Z",
+  "languages": [
+    "cpp",
+    "python",
+    "javascript",
+    "ruby",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/5ba47374b18e382069000052",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-09-21T04:28:36.290Z",
+  "createdBy": {
+    "username": "kodejuice",
+    "url": "https://www.codewars.com/users/kodejuice"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "Given an array of integers, find the minimum number of elements to remove from the array so that the square root of the largest integer in the array is less or equal to the smallest number in the same array.\n\n`x` = smallest integer in the array\n\n`y` = largest integer in the array\n\nFind the minimum number of elements to remove so, √y ≤ x.\n\n### Example\n\n```cpp\nA = {3, 6, 5, 9, 16}\n```\n```python\nA = [3, 6, 5, 9, 16]\n```\n\n`min=3`\n`max=16`\n\n`√16 > 3`\n\nremove 16, so largest element becomes 9.\n\n`√9 ≤ 3`\n\nso\n```cpp\nminRemove(A) = 1\n```\n\n```python\nmin_remove(A) = 1\n```\nsince only `16` was removed.\n\n## Note\n\n- If all integers in the array are equal, then it wouldnt make any sense to reduce the array any further, so return 0.\n<br>\n<br>\n\n```cpp\nminRemove({2}) //=> 0\nminRemove({6,6,6,6}) //=> 0\nminRemove({6,6,6,2}) //=> 1\n```\n\n```python\nmin_remove([2]) #=> 0\nmin_remove([6,6,6,6]) #=> 0\nmin_remove([6,6,6,2]) #=> 1\n```\n\n## Constraints\n\n```if:cpp\n### 1 <= |A| <= 10<sup>5</sup>\n```\n```if:python\n### 1 <= |A| <= 10<sup>4</sup>\n```\n",
+  "totalAttempts": 3434,
+  "totalCompleted": 242,
+  "totalStars": 60,
+  "voteScore": 79,
+  "tags": [
+    "Algorithms",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

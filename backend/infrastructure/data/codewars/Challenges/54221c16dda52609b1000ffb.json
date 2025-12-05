@@ -1,0 +1,40 @@
+{
+  "id": "54221c16dda52609b1000ffb",
+  "name": "Vowel Alternations",
+  "slug": "vowel-alternations",
+  "category": "games",
+  "publishedAt": "2014-09-24T01:31:36.474Z",
+  "approvedAt": "2017-04-17T18:45:23.571Z",
+  "languages": [
+    "python",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/54221c16dda52609b1000ffb",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-09-24T01:19:18.287Z",
+  "createdBy": {
+    "username": "zyocum",
+    "url": "https://www.codewars.com/users/zyocum"
+  },
+  "approvedBy": {
+    "username": "docgunthrop",
+    "url": "https://www.codewars.com/users/docgunthrop"
+  },
+  "description": "Write a program that performs a search for solutions to a word game.  The goal of the game is to find sets of five words that share a vowel alternation.  E.g., one solution to the game might be the words:\n\n    ['last', 'lest', 'list', 'lost', 'lust']\n\nThis list above is a valid solution instance since the vowels `'a'`, `'e'`, `'i'`, `'o'`, and `'u'` occur in the same positions between the consonant clusters `'l'` and `'st'`.\n\nYour program should return a list of all solutions (like the list above) given a list of words to search through.\n\nNote that **order matters**.  If you prefer to use sets for book-keeping purposes, that is fine, but you will need to sort your list of solutions, and each solution set itself.\n\nThis is easy in Python:\n\n    solutions = [set(['last', 'lest', 'list', 'lost', 'lust']),\n                 set(['bill', 'bull', 'bell', 'ball', 'boll'])]\n    \n    sorted_soultions = sorted(sorted(solution) for solution in solutions)\n    sorted_solutions == [['ball', 'bell', 'bill', 'boll', 'bull'],\n                         ['last', 'lest', 'list', 'lost', 'lust']]\n    \nFor the sake of simplificiation, you may assume that the words in the list you are searching over are unique.",
+  "totalAttempts": 3672,
+  "totalCompleted": 278,
+  "totalStars": 47,
+  "voteScore": 74,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 1
+  }
+}

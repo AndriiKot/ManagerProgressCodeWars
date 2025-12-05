@@ -1,0 +1,48 @@
+{
+  "id": "59901fb5917839fe41000029",
+  "name": "Generic numeric template formatter",
+  "slug": "generic-numeric-template-formatter",
+  "category": "algorithms",
+  "publishedAt": "2017-08-13T10:16:24.750Z",
+  "approvedAt": "2017-08-13T18:29:53.228Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python",
+    "crystal",
+    "haskell",
+    "swift",
+    "csharp",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/59901fb5917839fe41000029",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-08-13T09:45:25.636Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "aweleshetu",
+    "url": "https://www.codewars.com/users/aweleshetu"
+  },
+  "description": "Your goal is to create a function to format a number given a template; if the number is not present, use the digits `1234567890` to fill in the spaces.\n\nA few rules:\n\n* the template might consist of other numbers, special characters or the like: you need to replace only alphabetical characters (both lower- and uppercase);\n* if the given or default string representing the number is shorter than the template, just repeat it to fill all the spaces.\n\nA few examples:\n\n```javascript\nnumericFormatter(\"xxx xxxxx xx\",\"5465253289\") === \"546 52532 89\"\nnumericFormatter(\"xxx xxxxx xx\") === \"123 45678 90\"\nnumericFormatter(\"+555 aaaa bbbb\", \"18031978\") === \"+555 1803 1978\"\nnumericFormatter(\"+555 aaaa bbbb\") === \"+555 1234 5678\"\nnumericFormatter(\"xxxx yyyy zzzz\") === \"1234 5678 9012\"\n```\n```python\nnumeric_formatter(\"xxx xxxxx xx\",\"5465253289\") == \"546 52532 89\"\nnumeric_formatter(\"xxx xxxxx xx\") == \"123 45678 90\"\nnumeric_formatter(\"+555 aaaa bbbb\", \"18031978\") == \"+555 1803 1978\"\nnumeric_formatter(\"+555 aaaa bbbb\") == \"+555 1234 5678\"\nnumeric_formatter(\"xxxx yyyy zzzz\") == \"1234 5678 9012\"\n```\n```ruby\nnumeric_formatter(\"xxx xxxxx xx\",\"5465253289\") == \"546 52532 89\"\nnumeric_formatter(\"xxx xxxxx xx\") == \"123 45678 90\"\nnumeric_formatter(\"+555 aaaa bbbb\", \"18031978\") == \"+555 1803 1978\"\nnumeric_formatter(\"+555 aaaa bbbb\") == \"+555 1234 5678\"\nnumeric_formatter(\"xxxx yyyy zzzz\") == \"1234 5678 9012\"\n```\n```crystal\nnumeric_formatter(\"xxx xxxxx xx\",\"5465253289\") == \"546 52532 89\"\nnumeric_formatter(\"xxx xxxxx xx\", nil) == \"123 45678 90\"\nnumeric_formatter(\"+555 aaaa bbbb\", \"18031978\") == \"+555 1803 1978\"\nnumeric_formatter(\"+555 aaaa bbbb\", nil) == \"+555 1234 5678\"\nnumeric_formatter(\"xxxx yyyy zzzz\", nil) == \"1234 5678 9012\"\n```\n```haskell\nnumericFormatter \"xxx xxxxx xx\" \"5465253289\" == \"546 52532 89\"\nnumericFormatter \"xxx xxxxx xx\" \"\" == \"123 45678 90\"\nnumericFormatter \"+555 aaaa bbbb\" \"18031978\" == \"+555 1803 1978\"\nnumericFormatter \"+555 aaaa bbbb\" \"\" == \"+555 1234 5678\"\nnumericFormatter \"xxxx yyyy zzzz\" \"\" == \"1234 5678 9012\"\n```\n```swift\nnumericFormatter(\"xxx xxxxx xx\",\"5465253289\") == \"546 52532 89\"\nnumericFormatter(\"xxx xxxxx xx\") == \"123 45678 90\"\nnumericFormatter(\"+555 aaaa bbbb\", \"18031978\") == \"+555 1803 1978\"\nnumericFormatter(\"+555 aaaa bbbb\") == \"+555 1234 5678\"\nnumericFormatter(\"xxxx yyyy zzzz\") == \"1234 5678 9012\"\n```\n```c\nnumeric_formatter(\"xxx xxxxx xx\", \"5465253289\") == \"546 52532 89\"\nnumeric_formatter(\"xxx xxxxx xx\", \"\") == \"123 45678 90\"\nnumeric_formatter(\"+555 aaaa bbbb\", \"18031978\") == \"+555 1803 1978\"\nnumeric_formatter(\"+555 aaaa bbbb\", \"\") == \"+555 1234 5678\"\nnumeric_formatter(\"xxxx yyyy zzzz\", \"\") == \"1234 5678 9012\"\n\n\nNote that numeric_formatter should return a dynamically allocated string.\nThe tests will automatically free this string.\n```\n",
+  "totalAttempts": 7591,
+  "totalCompleted": 1348,
+  "totalStars": 56,
+  "voteScore": 309,
+  "tags": [
+    "Regular Expressions",
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

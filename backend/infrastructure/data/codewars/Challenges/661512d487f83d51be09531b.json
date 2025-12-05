@@ -1,0 +1,40 @@
+{
+  "id": "661512d487f83d51be09531b",
+  "name": "Category-Wise Duplicate Name Resolver",
+  "slug": "category-wise-duplicate-name-resolver",
+  "category": "reference",
+  "publishedAt": "2024-04-09T10:05:12.687Z",
+  "approvedAt": "2024-04-10T07:34:04.411Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/661512d487f83d51be09531b",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2024-04-09T10:05:08.171Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Imagine you are working with a database for a medium-sized retail company that manages an extensive inventory of products. The database has a table named `items` where each item is categorized into different categories (e.g., electronics, clothing, kitchenware). Within each category, items are named, but due to the vast diversity of products, some item names are duplicated within the same category. The company needs to organize its inventory system to identify these items uniquely while keeping their original names. Your task is to write an SQL query that adds numeric suffixes to duplicate item names within each category, maintaining the original name for the first occurrence.\n\nWe have `items` table:\n\n* `item_id` (integer): The unique identifier for an item.\n* `category_id` (integer): The identifier for the category to which an item belongs.\n* `item_name` (string): The name of the item.\n\nIn this SQL task, you are required to address the issue of duplicate item names within the same category in a retail inventory database. Your goal is to uniquely identify these duplicates by appending a numerical suffix to each duplicate name. The suffix assignment should be based on the `item_id` in ascending order, ensuring that the item with the lowest item_id retains its original name, and subsequent duplicates receive incrementally higher suffixes (e.g., _2, _3, etc.). This process should be case-insensitive, treating item names with different cases as duplicates if they are otherwise identical.\n\nYour query should produce columns `item_id`, `category_id`, and modified `item_name` (where `item_name` is the item name with any necessary suffix).\n\nOutput should be ordered by `category_id` in ascending order, and within each category, by `item_id` in ascending order. \n\nFor this sample data:\n\n```\n| item_id | category_id | item_name |\n+---------+-------------+-----------+\n| 1       | 1           | hoge      |\n| 2       | 1           | hoge      |\n| 3       | 2           | fuga      |\n| 4       | 2           | fuga      |\n| 5       | 2           | fuga      |\n| 6       | 2           | piyo      |\n| 7       | 3           | foo       |\n| 8       | 4           | bar       |\n| 9       | 4           | bar       |\n```\n\nthe expected output should be: \n\n<table><!----><tr><th>item_id</th><th>category_id</th><th>item_name</th></tr><tr><td>1</td><td>1</td><td>hoge</td></tr><tr><td>2</td><td>1</td><td>hoge_2</td></tr><tr><td>3</td><td>2</td><td>fuga</td></tr><tr><td>4</td><td>2</td><td>fuga_2</td></tr><tr><td>5</td><td>2</td><td>fuga_3</td></tr><tr><td>6</td><td>2</td><td>piyo</td></tr><tr><td>7</td><td>3</td><td>foo</td></tr><tr><td>8</td><td>4</td><td>bar</td></tr><tr><td>9</td><td>4</td><td>bar_2</td></tr></table>\n\nGLHF!\n\n\n",
+  "totalAttempts": 876,
+  "totalCompleted": 244,
+  "totalStars": 14,
+  "voteScore": 53,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

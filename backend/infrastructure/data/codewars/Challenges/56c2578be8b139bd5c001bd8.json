@@ -1,0 +1,43 @@
+{
+  "id": "56c2578be8b139bd5c001bd8",
+  "name": "Job Matching #2",
+  "slug": "job-matching-number-2",
+  "category": "algorithms",
+  "publishedAt": "2016-02-17T02:39:14.017Z",
+  "approvedAt": "2016-02-18T16:53:33.190Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/56c2578be8b139bd5c001bd8",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-02-15T22:56:11.759Z",
+  "createdBy": {
+    "username": "dnolan",
+    "url": "https://www.codewars.com/users/dnolan"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "Consider a matchmaking system that is designed to deliver jobs to software developers on a continual basis. As more quality jobs are handpicked into the system, they will be matched to all the enrolled developers; affording them better opportunities daily. \n\nThis means that somewhere in the system there exists functionality to take a job and match it against enrolled candidates. There are several factors that go into this matching, but we'll focus on two for the purposes of this Kata.\n\nCreate a function `match` which takes a `job`, and filters a list of `candidates` to the ones that match the job. We'll focus on two matching properties for this Kata: equity and location.\n\n### Equity\nThe candidate has an equity property (boolean) indicating if they desire equity, while the job will have a maximum equity property (float) representing the max amount of equity offered. If the maximum equity is zero, we can infer there is no equity offered. A job will match unless the candidate desires equity, but the job does not offer any.\n\n### Location\nThe candidate will have two location properties: current location and desired locations. A job can be located in multiple places as well which will be represented by its locations property. A match is when a job location is either in the candidate's current location or any of the candidate's desired locations. \n\nSo the candidate list might look like this: \n\n```javascript\nlet candidates = [{\n  desiresEquity: true, \n  currentLocation: 'New York',\n  desiredLocations: ['San Francisco', 'Los Angeles', 'Colorado']\n}, ...];\n```\n```ruby\ncandidates = [{ \n  'desires_equity' => true,\n  'current_location' => 'New York',\n  'desired_locations' => ['San Francisco', 'Los Angeles']\n}, ...]\n```\n```python\ncandidates = [{\n  'desires_equity': True,\n  'current_location': 'New York',\n  'desired_locations': ['San Francisco', 'Los Angeles']\n}, ...]\n```\n\nAnd a job might look like this: \n\n```javascript\nlet job = { \n  equityMax: 1.2, \n  locations: ['New York', 'Kentucky'] \n}\n```\n```ruby\njob = {\n  'equity_max' => 1.2,\n  'locations' => ['New York', 'Kentucky']\n}\n```\n```python\njob = {\n  'equity_max': 1.2,\n  'locations': ['New York', 'Kentucky']\n}\n```\n\n---\n\nContinue on with Kata:\n\n- [Job Matching #1][2]\n- [Job Matching #3][3]\n\n[4]:http://www.codewars.com/kata/strive-matching-number-2/discuss/javascript\n[3]:https://www.codewars.com/kata/56c2a067585d9ac8280003c9\n[2]:https://www.codewars.com/kata/56c22c5ae8b139416c00175d",
+  "totalAttempts": 9026,
+  "totalCompleted": 1420,
+  "totalStars": 54,
+  "voteScore": 195,
+  "tags": [
+    "Arrays",
+    "Filtering",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

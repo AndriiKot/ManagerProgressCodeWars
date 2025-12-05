@@ -1,0 +1,67 @@
+{
+  "id": "59f44c7bd4b36946fd000052",
+  "name": "Errors : histogram",
+  "slug": "errors-histogram",
+  "category": "reference",
+  "publishedAt": "2017-10-28T09:25:28.435Z",
+  "approvedAt": "2018-09-28T11:33:15.961Z",
+  "languages": [
+    "shell",
+    "ruby",
+    "java",
+    "python",
+    "c",
+    "csharp",
+    "cpp",
+    "scala",
+    "julia",
+    "r",
+    "powershell",
+    "go",
+    "javascript",
+    "nim",
+    "php",
+    "rust",
+    "clojure",
+    "racket",
+    "typescript",
+    "fsharp",
+    "vb",
+    "kotlin",
+    "groovy",
+    "pascal",
+    "perl",
+    "lua",
+    "elm",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/59f44c7bd4b36946fd000052",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-28T09:23:07.867Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "In a factory a printer prints labels for boxes. The printer uses colors which, for the sake of simplicity, are named with letters from a to z (except letters `u`, `w`, `x` or `z` that are for errors).\n\nThe colors used by the printer are recorded in a control string. For example a control string would be `aaabbbbhaijjjm` meaning that the printer used three times color a, four times color b, one time color h then one time color a... and so on.\n\nSometimes there are problems: lack of colors, technical malfunction and a control string is produced e.g. `uuaaaxbbbbyyhwawiwjjjwwxym` where errors are reported with letters `u`, `w`, `x` or `z`.\n\nYou have to write a function `hist` which given a string will output the errors as a string representing a histogram of the encountered errors.\n\nFormat of the output string:\n\nletter (error letters are sorted in alphabetical order) in a field of 2 characters, a white space, number of error for that letter in a field of 6, as many \"*\" as the number of errors for that letter and \"\\r\" (or \"\\n\" depending on the langauge).\n\nThe string has a length greater or equal to one and contains only letters from `a` to `z`.\n\n#### Examples\n\n```\ns=\"uuaaaxbbbbyyhwawiwjjjwwxym\"\nhist(s) => \"u  2     **\\rw  5     *****\\rx  2     **\"\n```\n*or with dots to see white spaces:*\n```\nhist(s) => \"u..2.....**\\rw..5.....*****\\rx..2.....**\"\ns=\"uuaaaxbbbbyyhwawiwjjjwwxymzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"\nhist(s) => \"u..2.....**\\rw..5.....*****\\rx..2.....**\\rz..31....*******************************\"\n```\n#### Notes\n\n- Unfortunately most often Codewars compresses all white spaces into one.\n- See other examples in the \"Sample tests\".\n\n",
+  "totalAttempts": 15645,
+  "totalCompleted": 2593,
+  "totalStars": 94,
+  "voteScore": 386,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

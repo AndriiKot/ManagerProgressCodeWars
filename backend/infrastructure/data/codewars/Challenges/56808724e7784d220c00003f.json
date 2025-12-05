@@ -1,0 +1,42 @@
+{
+  "id": "56808724e7784d220c00003f",
+  "name": "RuplesJS #3: String EachChar",
+  "slug": "ruplesjs-number-3-string-eachchar",
+  "category": "reference",
+  "publishedAt": "2015-12-28T00:49:40.314Z",
+  "approvedAt": "2016-01-03T04:15:28.454Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/56808724e7784d220c00003f",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-12-28T00:49:51.188Z",
+  "createdBy": {
+    "username": "NateBrady23",
+    "url": "https://www.codewars.com/users/NateBrady23"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "Your team is really excited with all the contributions you've made to the RuplesJS library. They feel the work you're doing will truly help Ruby developers transition to Javascript! They've assigned you another task.\n\n## String.eachChar()\n\nIn ruby you can add something after each character in a string like so:\n````\n\"hello\".each_char {|c| print c, ' ' } -> \"h e l l o \" \n````\n\nIn the spirit of polymorphism, our eachChar method will allow one of two arguments, a callback function or a string. If a string is presented, it will be added after each character of the original string and return the new string. If a function is presented, it will perform a manipulation of each character in the string.\n\nExample:\n\n```javascript\n\"hello\".eachChar(\" \");\n-> \"h e l l o \"\n\n\"hello all\".eachChar(function(char) {\n  if (char == \"l\") {\n    return char.toUpperCase();\n  } else {\n    return char;\n  }\n});\n-> \"heLLo aLL\"\n```\n```python\neach_char(\"hello\",\" \")\n-> \"h e l l o \"\n\ndef func(c):\n    return 'L' if c=='l' else c\n    \neach_char(\"hello all\", func)\n-> \"heLLo aLL\"\n```\n```ruby\n\"hello\".each_char(\" \")\n-> \"h e l l o \"\n\ndef func(c)\n    return c=='l' ? 'L' : c\nend\n\"hello all\".each_char(:func)\n-> \"heLLo aLL\"\n```\n\nPlease add your contribution to RuplesJS!\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other RuplesJS katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-1-n-times-do'><span style='color:#00C5CD'>RuplesJS #1:</span> N Times Do</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-2-string-delete'><span style='color:#00C5CD'>RuplesJS #2:</span> String Delete</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-3-string-eachchar'><span style='color:#00C5CD'>RuplesJS #3:</span> String EachChar</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-4-string-formatting'><span style='color:#00C5CD'>RuplesJS #4:</span> String Formatting</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-5-range'><span style='color:#00C5CD'>RuplesJS #5:</span> Range</a><br />\n</div>",
+  "totalAttempts": 2017,
+  "totalCompleted": 719,
+  "totalStars": 12,
+  "voteScore": 166,
+  "tags": [
+    "Fundamentals",
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

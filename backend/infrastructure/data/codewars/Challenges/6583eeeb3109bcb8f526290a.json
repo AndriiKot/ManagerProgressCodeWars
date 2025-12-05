@@ -1,0 +1,40 @@
+{
+  "id": "6583eeeb3109bcb8f526290a",
+  "name": "Histogram Creation with Ceiling Rounding in PostgreSQL",
+  "slug": "histogram-creation-with-ceiling-rounding-in-postgresql",
+  "category": "reference",
+  "publishedAt": "2023-12-23T14:30:47.169Z",
+  "approvedAt": "2023-12-28T13:19:45.519Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6583eeeb3109bcb8f526290a",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-12-21T07:53:15.490Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Write a SQL query that creates a histogram from a given set of numerical data (sale prices) in a PostgreSQL database. The histogram should distribute the data across a specified number of buckets (10) and display the frequency of data points in each bucket. The task involves calculating the range for each bucket, with the focus on ensuring that each bucket in the histogram is as close as possible to a fixed size, using the `ceil()` function for bucket boundary calculations.\n\nWe have `sales` table with the following structure:\n\n* `id`: (integer) - primary key\n* `sale_price`: (integer) - The sale price\n\nWhat do we need to do? \n\n1) Calculate the Range of Prices:\n    * Determine the minimum and maximum sale prices from the sales table.\n2) Set Up Bucket Boundaries: \n    * The number of buckets for the histogram is 10\n    * Calculate the range for each bucket and ensure that the boundaries are of equal/almost equal size. Use `ceil()` to calculate the start and end of each bucket.  Due to the use of `ceil()`, the bucket sizes may sometimes alternate slightly between two sizes (e.g., between 45 and 46 units), depending on the specific values resulting from the bucket width calculations. The upper boundary of each bucket is inclusive. The buckets should be non-overlapping. \n3) Generate the Histogram:\n    * Group the results by bucket and count the number of sale prices in each bucket.\n    * Display the bucket number,  the price range for each bucket, and the frequency of sale prices in each bucket.\n\nThe output should be a table with the following columns:\n\n1) `bucket`: The bucket number (1, 2, 3, ..., 10).\n2) `price_range`: The range of prices in each bucket (e.g., '100 - 149', '150 - 199', ...).\n3) `frequency`: The number of sale prices within each bucket's range.\n\n##### How Bucket Boundaries Are Calculated\n\nLet's take this sample data: `[97, 120, 145, 146, 300, 150, 250, 350, 400, 450, 500, 525, 550]`\n\n1) Total Range: First, the total range of your data is determined, which is the difference between the maximum and minimum prices. In our case, this is  `550 − 97 = 453`\n2) Bucket Width Calculation: `453/10 = 45.3`\n    * Bucket 1:\n        * Start: `ceil(97 + 0 * 45.3) = 97`\n        * End: `ceil(97 + 1 * 45.3) - 1 = ceil(142.3) - 1 = 143 - 1 = 142`\n        * Width: `142 - 97 + 1 = 46 units`\n    * Bucket 2:\n        * Start: `ceil(97 + 1 * 45.3) = ceil(142.3) = 143`    \n        * End: `ceil(97 + 2 * 45.3) - 1 = ceil(187.6) - 1 = 188 - 1 = 187`\n        * Width: `187 - 143 + 1 = 45 units`\n    * Bucket 3:\n        * Start: `ceil(97 + 2 * 45.3) = ceil(187.6) = 188`\n        * End: `ceil(97 + 3 * 45.3) - 1 = ceil(232.9) - 1 = 233 - 1 = 232`\n        * Width: `232 - 188 + 1 = 45 units`\n    * Bucket 4:\n        * Start: `ceil(97 + 3 * 45.3) = ceil(232.9) = 233`\n        * End: `ceil(97 + 4 * 45.3) - 1 = ceil(278.2) - 1 = 279 - 1 = 278`\n        * Width: `278 - 233 + 1 = 46 units`\n    * Etc.\n3) Non-Overlapping Ranges:  By adding 1 to the start of each range (except for the first bucket), we ensure non-overlapping buckets. For example, if bucket 1 ends at 142, bucket 2 starts at 143. Last bucket should include max price.\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>bucket</th><th>price_range</th><th>frequency</th></tr><tr><td>1</td><td>97 - 142</td><td>2</td></tr><tr><td>2</td><td>143 - 187</td><td>3</td></tr><tr><td>3</td><td>188 - 232</td><td>0</td></tr><tr><td>4</td><td>233 - 278</td><td>1</td></tr><tr><td>5</td><td>279 - 323</td><td>1</td></tr><tr><td>6</td><td>324 - 368</td><td>1</td></tr><tr><td>7</td><td>369 - 414</td><td>1</td></tr><tr><td>8</td><td>415 - 459</td><td>1</td></tr><tr><td>9</td><td>460 - 504</td><td>1</td></tr><tr><td>10</td><td>505 - 550</td><td>2</td></tr></table>\n\nGLHF!\n\n",
+  "totalAttempts": 274,
+  "totalCompleted": 53,
+  "totalStars": 4,
+  "voteScore": 33,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

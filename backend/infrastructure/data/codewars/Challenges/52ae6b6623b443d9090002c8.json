@@ -1,0 +1,42 @@
+{
+  "id": "52ae6b6623b443d9090002c8",
+  "name": "Guess The Gifts!",
+  "slug": "guess-the-gifts",
+  "category": "algorithms",
+  "publishedAt": "2013-12-16T02:57:38.593Z",
+  "approvedAt": "2013-12-16T21:34:41.995Z",
+  "languages": [
+    "javascript",
+    "coffeescript",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/52ae6b6623b443d9090002c8",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-12-16T02:54:30.159Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "It's Christmas! You had to wait the whole year for this moment. You can already see all the presents under the Christmas tree. But you have to wait for the next morning in order to unwrap them. You really want to know, what's inside those boxes. But as a clever child, you can do your assumptions already.\n\nYou know, you were a good child this year. So you may assume, that you'll only get things from your wishlist. You see those presents, you can lift them and you can shake them a bit. Now you can make you assumptions about what you'll get.\n\n## Your Task\n\nYou will be given a wishlist (array), containing all possible items. Each item is in the format: `{name: \"toy car\", size: \"medium\", clatters: \"a bit\", weight: \"medium\"}` (Ruby version has an analog hash structure, see example below)\n\nYou also get a list of presents (array), you see under the christmas tree, which have the following format each: `{size: \"small\", clatters: \"no\", weight: \"light\"}`\n\nYour task is to return the names of all wishlisted presents that you might have gotten.\n\n## Rules\n\n* Possible values for `size`: \"small\", \"medium\", \"large\"\n* Possible values for `clatters`: \"no\", \"a bit\", \"yes\"\n* Possible values for `weight`: \"light\", \"medium\", \"heavy\"\n* Don't add any item more than once to the result\n* The order of names in the output doesn't matter\n* It's possible, that multiple items from your wish list have the same attribute values. If they match the attributes of one of the presents, add all of them.\n\n## Example\n\n```javascript\nvar wishlist = [\n    {name: \"Mini Puzzle\", size: \"small\", clatters: \"yes\", weight: \"light\"},\n    {name: \"Toy Car\", size: \"medium\", clatters: \"a bit\", weight: \"medium\"},\n    {name: \"Card Game\", size: \"small\", clatters: \"no\", weight: \"light\"}\n];\n\nvar presents = [\n    {size: \"medium\", clatters: \"a bit\", weight: \"medium\"},\n    {size: \"small\", clatters: \"yes\", weight: \"light\"}\n];\n\nguessGifts(wishlist, presents); // must return [\"Toy Car\", \"Mini Puzzle\"]\n```\n\n```coffeescript\nwishlist = [\n    {name: \"Mini Puzzle\", size: \"small\", clatters: \"yes\", weight: \"light\"},\n    {name: \"Toy Car\", size: \"medium\", clatters: \"a bit\", weight: \"medium\"},\n    {name: \"Card Game\", size: \"small\", clatters: \"no\", weight: \"light\"}\n]\n\npresents = [\n    {size: \"medium\", clatters: \"a bit\", weight: \"medium\"},\n    {size: \"small\", clatters: \"yes\", weight: \"light\"}\n]\n\nguessGifts(wishlist, presents); # must return [\"Toy Car\", \"Mini Puzzle\"]\n```\n\n```ruby\nwishlist = [\n    {:name => \"mini puzzle\", :size => \"small\", :clatters => \"yes\", :weight => \"light\"},\n    {:name => \"toy car\", :size => \"medium\", :clatters => \"a bit\", :weight => \"medium\"},\n    {:name => \"card game\", :size => \"small\", :clatters => \"no\", :weight => \"light\"}\n]\n\npresents = [\n    {:size => \"medium\", :clatters => \"a bit\", :weight => \"medium\"},\n    {:size => \"small\", :clatters => \"yes\", :weight => \"light\"}\n]\n\nguess_gifts(wishlist, presents) # must return ['toy car', 'mini puzzle']\n```\n```python\nwishlist = [{'name': \"mini puzzle\", 'size': \"small\", 'clatters': \"yes\", 'weight': \"light\"},\n            {'name': \"toy car\", 'size': \"medium\", 'clatters': \"a bit\", 'weight': \"medium\"},\n            {'name': \"card game\", 'size': \"small\", 'clatters': \"no\", 'weight': \"light\"}]\npresents = [{'size': \"medium\", 'clatters': \"a bit\", 'weight': \"medium\"},\n            {'size': \"small\", 'clatters': \"yes\", 'weight': \"light\"}]\n\nguess_gifts(wishlist, presents) # => must return [\"Toy Car\", \"Mini Puzzle\"]\n```",
+  "totalAttempts": 16128,
+  "totalCompleted": 3790,
+  "totalStars": 127,
+  "voteScore": 351,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

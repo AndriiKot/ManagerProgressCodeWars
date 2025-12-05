@@ -1,0 +1,44 @@
+{
+  "id": "54746b7ab2bc2868a0000acf",
+  "name": "Mod4 Regex",
+  "slug": "mod4-regex",
+  "category": "reference",
+  "publishedAt": "2014-11-25T12:07:28.019Z",
+  "approvedAt": "2014-12-27T23:25:25.800Z",
+  "languages": [
+    "javascript",
+    "java",
+    "python",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/54746b7ab2bc2868a0000acf",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-11-25T11:43:54.891Z",
+  "createdBy": {
+    "username": "wthit56",
+    "url": "https://www.codewars.com/users/wthit56"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "> NOTE: This kata requires a decent knowledge of Regular Expressions. As such, it's best to learn about it _before_ tackling this kata. Some good places to start are: the [MDN pages](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/RegExp), and [Regular-Expressions.info](http://www.regular-expressions.info/).\n\nYou are to write a Regular Expression that matches any string with at least one number divisible by 4 (with no remainder). In most languages, you could do this easily by using `number % 4 == 0`. How would you do it with Regex?\n\nA number will start with `[` and end with `]`. They may (or may not) include a plus or minus symbol at the start; this should be taken into account. Leading zeros may be present, and should be ignored (no octals here ;P). There may be other text in the string, outside of the number; this should also be ignored. Also, all numbers will be integers; any floats should be ignored.\n\nIf there are no valid numbers defined as above, there should be no match made by your regex.\n\nSo here are some examples:\n```\n\"[+05620]\" // 5620 is divisible by 4 (valid)\n\"[+05621]\" // 5621 is not divisible by 4 (invalid)\n\"[-55622]\" // -55622 is not divisible by 4 (invalid)\n\"[005623]\" // 5623 invalid\n\"[005624]\" // 5624 valid\n\"[-05628]\" // valid\n\"[005632]\" // valid\n\"[555636]\" // valid\n\"[+05640]\" // valid\n\"[005600]\" // valid\n\"the beginning [0] ... [invalid] numb[3]rs ... the end\" // 0 is valid\n\"No, [2014] isn't a multiple of 4...\"  // 2014 is invalid\n\"...may be [+002016] will be.\" // 2016 is valid\n```\n\n> **NOTE:** Only `Mod4.test(str)` will be used, so your expression will just need make a match of some kind.",
+  "totalAttempts": 10683,
+  "totalCompleted": 1958,
+  "totalStars": 246,
+  "voteScore": 269,
+  "tags": [
+    "Regular Expressions",
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 2
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "53988ee02c2414dbad000baa",
+  "name": "Pretty date",
+  "slug": "pretty-date",
+  "category": "reference",
+  "publishedAt": "2014-06-11T17:24:08.628Z",
+  "approvedAt": "2015-05-06T23:05:24.364Z",
+  "languages": [
+    "ruby",
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/53988ee02c2414dbad000baa",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-06-11T17:16:17.356Z",
+  "createdBy": {
+    "username": "burce",
+    "url": "https://www.codewars.com/users/burce"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "### Overview\n\nWrite a helper function that accepts an argument (Ruby: a Time object / Others: number of seconds) and converts it to a more human-readable format. You need only go up to '_ weeks ago'.\n```python\nto_pretty(0) => \"just now\"\n\nto_pretty(40000) => \"11 hours ago\"\n```\n```ruby\nto_pretty(Time.now) => \"just now\"\n\nto_pretty(Time.now - 40000) => \"11 hours ago\"\n```\n```javascript\ntoPretty(0) => \"just now\"\n\ntoPretty(40000) => \"11 hours ago\"\n```\n### Specifics\n - The output will be an amount of time, t, included in one of the following phrases: \"just now\", \"[t] seconds ago\", \"[t] minutes ago\", \"[t] hours ago\", \"[t] days ago\", \"[t] weeks ago\".\n - You will have to handle the singular cases. That is, when t = 1, the phrasing will be one of \"a second ago\", \"a minute ago\", \"an hour ago\", \"a day ago\", \"a week ago\".\n - The amount of time is always rounded down to the nearest integer. For example, if the amount of time is actually 11.73 hours ago, the return value will be \"11 hours ago\".\n - Only times in the past will be given, with the range \"just now\" to \"52 weeks ago\"",
+  "totalAttempts": 7488,
+  "totalCompleted": 901,
+  "totalStars": 48,
+  "voteScore": 134,
+  "tags": [
+    "Date Time",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

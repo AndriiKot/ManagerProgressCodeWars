@@ -1,0 +1,40 @@
+{
+  "id": "64afa6af47bbf000205a2ea8",
+  "name": "Sorting Madness: part 1",
+  "slug": "sorting-madness-part-1",
+  "category": "reference",
+  "publishedAt": "2023-07-13T10:38:37.188Z",
+  "approvedAt": "2023-07-26T16:28:09.356Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64afa6af47bbf000205a2ea8",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-13T07:24:31.199Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given a PostgreSQL table named 'orders' with the following schema:\n\n* `order_id` (integer): A unique identifier for each order. This field serves as the primary key.\n* `customer` (varchar): A character string that indicates the customer who placed the order. It can be any single uppercase alphabet character.\n* `order_type` (varchar, nullable): A character string that represents the type of the order. It can either be 'S' or NULL.\n\nYour task is to write a PostgreSQL query that retrieves all records from the 'orders' table. The results should be sorted as follows:\n\n* Customers who have `at least one` order of type 'S' should be displayed first. Within this group, customers should be sorted in alphabetical order and their orders of type 'S' should be displayed first, followed by NULL orders.\n* After displaying all 'S' orders for relevant customers, customers without 'S' orders should be displayed, also sorted in alphabetical order.\n* Within each group of customers, the orders should be sorted in ascending order by `order_id`.\n\nSo on the concrete example, for this sample dataset:\n```\n| order_id | customer | order_type |\n+----------+----------+------------+\n| 1        | A        | NULL       |\n| 2        | A        | NULL       |\n| 3        | B        | NULL       |\n| 4        | C        | NULL       |\n| 5        | D        | S          |\n| 6        | B        | S          |\n| 7        | D        | S          |\n```\nThe result set after executing the query:\n```\n| order_id | customer | order_type |\n+----------+----------+------------+\n| 6        | B        | S          |\n| 3        | B        | NULL       |\n| 5        | D        | S          |\n| 7        | D        | S          |\n| 1        | A        | NULL       |\n| 2        | A        | NULL       |\n| 4        | C        | NULL       |\n```\n\nGLHF!",
+  "totalAttempts": 707,
+  "totalCompleted": 123,
+  "totalStars": 7,
+  "voteScore": 41,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

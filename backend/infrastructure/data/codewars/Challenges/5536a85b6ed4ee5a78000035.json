@@ -1,0 +1,66 @@
+{
+  "id": "5536a85b6ed4ee5a78000035",
+  "name": "Help your granny!",
+  "slug": "help-your-granny",
+  "category": "reference",
+  "publishedAt": "2015-04-21T20:37:12.926Z",
+  "approvedAt": "2015-11-07T00:02:33.649Z",
+  "languages": [
+    "csharp",
+    "python",
+    "java",
+    "ruby",
+    "haskell",
+    "clojure",
+    "javascript",
+    "coffeescript",
+    "cpp",
+    "php",
+    "crystal",
+    "c",
+    "typescript",
+    "rust",
+    "swift",
+    "fsharp",
+    "shell",
+    "ocaml",
+    "julia",
+    "scala",
+    "go",
+    "racket",
+    "kotlin",
+    "lua",
+    "perl",
+    "elm",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/5536a85b6ed4ee5a78000035",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-04-21T19:43:24.610Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "Your granny, who lives in town X0, has friends. \nThese friends are given in an array, for example: \narray of friends is `[\"A1\", \"A2\", \"A3\", \"A4\", \"A5\"]`.\n\n**The order of friends in this array must *not be changed* since this order gives the order in which they will be visited.**\n\nFriends inhabit towns and you get an array\nwith friends and their towns (or an associative array), for example:\n`[[\"A1\", \"X1\"], [\"A2\", \"X2\"], [\"A3\", \"X3\"], [\"A4\", \"X4\"]]`\nwhich means A1 is in town X1, A2 in town X2...\nIt can happen that we do not know the town of one of the friends hence it will not be visited.\n \nYour granny wants to visit her friends and to know approximately how many miles\nshe will have to travel. You will make the circuit that permits her to visit her friends.\nFor example here the circuit will be:`X0, X1, X2, X3, X4, X0`\nand you will compute approximately the total distance `X0X1 + X1X2 + .. + X4X0`.\n\nFor the distances you are given an array or a dictionary that gives each distance X0X1, X0X2 and so on. For example (it depends on the language):\n```\n[ [\"X1\", 100.0], [\"X2\", 200.0], [\"X3\", 250.0], [\"X4\", 300.0] ]\nor\n(\"X1\" -> 100.0, \"X2\" -> 200.0, \"X3\" -> 250.0, \"X4\" -> 300.0)\n```\nwhich means that X1 is at 100.0 miles from X0, X2 at 200.0 miles from X0, etc...\nIt's not real life, it's a story... :\nthe towns X0, X1, .., X0 are placed in the following manner (see drawing below):\n\nX0X1X2 is a right triangle with the right angle in X1, X0X2X3 is a right triangle with the right angle in X2, ... \nIn a travel X0, X1, .., Xi-1, Xi, Xi+1.., X0 you will suppose - to make it easier - that there is a right angle in Xi (i > 0). \n \nSo if a town Xi is not visited you will consider that the triangle <code> X<sub>0</sub>X<sub>i-1</sub>X<sub>i+1</sub></code> \nis still a right triangle in <code>X<sub>i-1</sub></code> and you can use the \"Pythagorean_theorem\".\n#### Task\nCan you help your granny and give her approximately the distance to travel?\n\n#### Notes\nIf you have some difficulty to see the tour I made a maybe useful drawing:\n\n![alternative text](http://i.imgur.com/dG7iWXhm.jpg)\n\n#### All languages:\n- See the type of data in the sample tests.\n- Friends and towns can have other names than in the examples.\n- Function \"tour\" returns an int which is the floor of the total distance.\n",
+  "totalAttempts": 44088,
+  "totalCompleted": 4346,
+  "totalStars": 533,
+  "voteScore": 392,
+  "tags": [
+    "Fundamentals",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 6
+  }
+}

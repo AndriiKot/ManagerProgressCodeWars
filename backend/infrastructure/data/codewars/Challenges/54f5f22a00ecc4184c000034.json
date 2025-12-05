@@ -1,0 +1,43 @@
+{
+  "id": "54f5f22a00ecc4184c000034",
+  "name": "Exponentials as fractions",
+  "slug": "exponentials-as-fractions",
+  "category": "reference",
+  "publishedAt": "2015-03-03T19:27:37.883Z",
+  "approvedAt": "2017-03-27T09:38:04.137Z",
+  "languages": [
+    "ruby",
+    "python",
+    "haskell",
+    "clojure",
+    "r"
+  ],
+  "url": "https://www.codewars.com/kata/54f5f22a00ecc4184c000034",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2015-03-03T17:40:59.331Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "The aim is to calculate `exponential(x)` (written `exp(x)` in most math libraries) as an irreducible fraction, the numerator of this fraction having a given number of digits.\n\nWe call this function `expand`, it takes two parameters, `x` of which we want to evaluate the exponential, `digits` which is the required number of digits for the numerator. \n\nThe function `expand` will return an array of the form `[numerator, denominator]`; we stop the loop in the Taylor expansion (see references below) when the numerator has a number of digits `>=` the required number of digits\n\n## Examples:\n```\nexpand(1, 2) --> 65/24 (we will write this [65, 24] or (65, 24) in Haskell; \n65/24 ~ 2.708...)\n\nexpand(2, 5) --> [20947, 2835]\n\nexpand(3, 10) --> [7205850259, 358758400]\n\nexpand(1.5, 10) --> [36185315027,8074035200]\n```\n\n**Note**\n\n```expand(1,5) = [109601, 40320]``` is the same as ```expand(1, 6)```\n\n\n## Method:\n\nAs said above the way here is to use `Taylor expansion` of the exponential function though it is not always the best approximation by a rational.\n\n\n## References:\n\nhttps://en.wikipedia.org/wiki/Exponential_function#Formal_definition\n\nhttp://www.efunda.com/math/taylor_series/exponential.cfm\n\n",
+  "totalAttempts": 11075,
+  "totalCompleted": 560,
+  "totalStars": 90,
+  "voteScore": 65,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

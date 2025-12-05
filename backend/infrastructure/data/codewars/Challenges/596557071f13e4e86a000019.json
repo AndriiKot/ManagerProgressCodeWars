@@ -1,0 +1,42 @@
+{
+  "id": "596557071f13e4e86a000019",
+  "name": "Pirate Island Conquer Part 3",
+  "slug": "pirate-island-conquer-part-3",
+  "category": "games",
+  "publishedAt": "2017-07-11T23:36:45.856Z",
+  "approvedAt": "2020-06-01T14:57:17.245Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/596557071f13e4e86a000019",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-07-11T22:53:59.528Z",
+  "createdBy": {
+    "username": "roseinapuddle",
+    "url": "https://www.codewars.com/users/roseinapuddle"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "This kata is part of a series:\n\n<a href=\"https://www.codewars.com/kata/59604925a68b04598e00001e\">Pirate Island Conquer Part 1</a>\n\n<a href=\"https://www.codewars.com/kata/5962b98c2e8c8b02fa0000b4\">Pirate Island Conquer Part 2</a>\n\n<br>\n\n## Quick start\n\nThe rules of this ship are the same as before but...\n\nNow there are sharks!  The first mate is deathly afraid of sharks.  An island has sharks if there is an 's' one square to the north, south, east or west of an island.  This island has sharks in all those positions:\n\n\n    '~', 's', '~'\n    's', 'u', 's'\n    '~', 's', '~'\n    \nAnd now there is treasure!  We like treasure.  An island has treasure if it is one square to the north, south east or west of an island.\n\nAboard your ship, you have some rules for choosing an island to conquer...\n\n<br>\n\n## Rules (highest priority first)\n\n* Conquer an unoccupied island. If there are no unoccupied islands, conquer one of the marines' islands (but better a \"sharked\" island than marines...).\n* Conquer an island with the least number of sharks.\n* Conquer the island closest to any of our home islands (the `p` items / distances are computed as [Manhattan distances](https://en.wikipedia.org/wiki/Taxicab_geometry)).\n* If there is a tie, conquer the island with more treasures.\n* If several islands match the same conditions, return them all!\n\n<br>\n\n# Complete Instructions\n\nYou are a captain on a pirate ship.  You are looking to conquer islands, so that you can do lots of piratey stuff on those islands.  Let's take a look at your pirate map of the area:\n\n<br>\n\n## Map\n\n```\n                      y\n         0    1    2    3    4    5    6    7\n\n  0    ['~', '~', '~', '~', '~', '~', '~', '~'],\n  1    ['~', '~', '~', '~', 's', 'p', '~', '~'],\n  2    ['~', '~', '~', '~', '~', '~', '~', '~'],\n  3    ['p', 't', 'u', '~', '~', '~', '~', '~'],\nx 4    ['~', '~', '~', '~', 'm', '~', '~', '~'],\n  5    ['~', '~', '~', '~', '~', '~', '~', '~'],\n  6    ['~', '~', '~', '~', '~', '~', '~', '~'],\n  7    ['~', '~', '~', '~', '~', '~', '~', '~']];\n```\n\nWhere:\n\n* `'p'` = pirate (that's our home island). There will always be at least one home island.\n* `'u'` = unoccupied island\n* `'m'` = island occupied by marines\n* `'t'` = treasure!\n* `'s'` = shark\n* `'~'` = ocean waves\n\nThe map size will always be 8 x 8.  Each of 'p', 'u', 'm' and '~' can occur in any space of the map.  \nCoordinates are given as [x,y] (examples from the above map: `'p'` at [0, 0], `'u'` at [3, 2], `'m'` at [4, 4]).\n\n<br>\n\n## Input\n\nA see map, formatted as an array of arrays of strings.\n\n## Output\n\nReturn an array containing all the best candidates (ordered by lowest x coordinate, then lowest y), or an empty array if no island to conquer.\n\n<br>\n\n## Examples:\n\nExample 1:\n\n```\n  map = [\n    ['~', 't', 'u', 't', '~', '~', '~', '~'],\n    ['~', '~', '~', 'p', '~', '~', '~', '~'],\n    ['u', 't', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', 'p', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', 'u']];\n```\n\nsolution = [[0, 2]]  \nThere are several unoccupied islands, but we'll return the one with the most treasure nearby.\n\n<br> \n\n```\n  map = [\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', 'p', '~', '~', '~'],\n    ['~', '~', 'm', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', 's', 'u', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', 'p']];\n```\n\nsolution = [[4, 4]]  \nIt's higher priority to take an unoccupied island with sharks than an island with marines.\n\n<br> \n\n```\n  map = [\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['p', '~', '~', 'm', '~', '~', '~', '~'],\n    ['m', 't', 'm', 'p', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', 'm', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~'],\n    ['~', '~', '~', 'm', '~', '~', '~', '~'],\n    ['~', '~', '~', '~', '~', '~', '~', '~']];\n```\n\nsolution = [[2, 0],[2, 2]]  \nThos two islands share the same treasure!",
+  "totalAttempts": 385,
+  "totalCompleted": 84,
+  "totalStars": 9,
+  "voteScore": 41,
+  "tags": [
+    "Games",
+    "Arrays",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

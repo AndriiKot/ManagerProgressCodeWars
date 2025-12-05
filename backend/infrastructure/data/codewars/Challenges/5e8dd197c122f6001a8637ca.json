@@ -1,0 +1,45 @@
+{
+  "id": "5e8dd197c122f6001a8637ca",
+  "name": "Duplicates. Duplicates Everywhere.",
+  "slug": "duplicates-duplicates-everywhere",
+  "category": "reference",
+  "publishedAt": "2020-04-08T14:00:52.606Z",
+  "approvedAt": "2020-07-23T12:02:03.731Z",
+  "languages": [
+    "javascript",
+    "python",
+    "cpp",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/5e8dd197c122f6001a8637ca",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-04-08T13:28:55.181Z",
+  "createdBy": {
+    "username": "bretcameron",
+    "url": "https://www.codewars.com/users/bretcameron"
+  },
+  "approvedBy": {
+    "username": "user9644768",
+    "url": "https://www.codewars.com/users/user9644768"
+  },
+  "description": "You are given a table, in which every key is a stringified number, and each corresponding value is an array of characters, e.g.\n \n```javascript\n{\n  \"1\": [\"A\", \"B\", \"C\"],\n  \"2\": [\"A\", \"B\", \"D\", \"A\"],\n}\n```\n \nCreate a function that returns a table with the same keys, but each character should appear only once among the value-arrays, e.g.\n\n```javascript\n{\n  \"1\": [\"C\"],\n  \"2\": [\"A\", \"B\", \"D\"],\n}\n```\n \n## Rules\n\n* Whenever two keys share the same character, they should be compared **numerically**, and the larger key will keep that character. That's why in the example above the array under the key `\"2\"` contains `\"A\"` and `\"B\"`, as `2 > 1`.\n* If duplicate characters are found in the same array, the first occurance should be kept.\n\n___\n\n## Example 1\n\n```javascript\ninput = {\n  \"1\": [\"C\", \"F\", \"G\"],\n  \"2\": [\"A\", \"B\", \"C\"],\n  \"3\": [\"A\", \"B\", \"D\"],\n}\n\noutput = {\n  \"1\": [\"F\", \"G\"],\n  \"2\": [\"C\"],\n  \"3\": [\"A\", \"B\", \"D\"],\n}\n```\n\n___\n\n## Example 2\n\n```javascript\ninput = {\n  \"1\": [\"A\"],\n  \"2\": [\"A\"],\n  \"3\": [\"A\"],\n}\n\noutput = {\n  \"1\": [],\n  \"2\": [],\n  \"3\": [\"A\"],\n}\n```\n\n___\n\n## Example 3\n\n```javascript\ninput = {\n  \"432\": [\"A\", \"A\", \"B\", \"D\"],\n  \"53\": [\"L\", \"G\", \"B\", \"C\"],\n  \"236\": [\"L\", \"A\", \"X\", \"G\", \"H\", \"X\"],\n  \"11\": [\"P\", \"R\", \"S\", \"D\"],\n}\n\noutput = {\n  \"11\": [\"P\", \"R\", \"S\"],\n  \"53\": [\"C\"],\n  \"236\": [\"L\", \"X\", \"G\", \"H\"],\n  \"432\": [\"A\", \"B\", \"D\"],\n}\n```",
+  "totalAttempts": 10728,
+  "totalCompleted": 2723,
+  "totalStars": 174,
+  "voteScore": 402,
+  "tags": [
+    "Arrays",
+    "Sets",
+    "Sorting",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

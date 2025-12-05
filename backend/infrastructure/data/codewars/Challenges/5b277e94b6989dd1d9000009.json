@@ -1,0 +1,46 @@
+{
+  "id": "5b277e94b6989dd1d9000009",
+  "name": "TV Remote (shift and space)",
+  "slug": "tv-remote-shift-and-space",
+  "category": "algorithms",
+  "publishedAt": "2018-06-19T11:23:23.109Z",
+  "approvedAt": "2018-06-20T09:13:27.925Z",
+  "languages": [
+    "java",
+    "python",
+    "javascript",
+    "cpp",
+    "c",
+    "ruby",
+    "dart",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/5b277e94b6989dd1d9000009",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-06-18T09:42:44.858Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "zruF",
+    "url": "https://www.codewars.com/users/zruF"
+  },
+  "description": "# Background\n\nMy TV remote control has arrow buttons and an `OK` button.\n\nI can use these to move a \"cursor\" on a logical screen keyboard to type words...\n\n# Keyboard\n\nThe screen \"keyboard\" layout looks like this\n\n<style>\n  #tvkb {\n    width : 400px;\n    border: 5px solid gray; border-collapse: collapse;\n  }\n  #tvkb td {\n    color : orange;\n    background-color : black;\n    text-align : center;\n    border: 3px solid gray; border-collapse: collapse;\n  }\n</style>\n\n<table id = \"tvkb\">\n<tr><td>a<td>b<td>c<td>d<td>e<td>1<td>2<td>3</tr>\n<tr><td>f<td>g<td>h<td>i<td>j<td>4<td>5<td>6</tr>\n<tr><td>k<td>l<td>m<td>n<td>o<td>7<td>8<td>9</tr>\n<tr><td>p<td>q<td>r<td>s<td>t<td>.<td>@<td>0</tr>\n<tr><td>u<td>v<td>w<td>x<td>y<td>z<td>_<td>/</tr>\n<tr><td>aA<td>SP<td style=\"background-color: orange\"><td style=\"background-color: orange\"><td style=\"background-color: orange\"><td style=\"background-color: orange\"><td style=\"background-color: orange\"><td style=\"background-color: orange\"></tr>\n</table>\n\n\n* `aA` is the SHIFT key. Pressing this key toggles alpha characters between UPPERCASE and lowercase\n* `SP` is the space character\n* The other blank keys in the bottom row have no function\n\n# Kata task\n\nHow many button presses on my remote are required to type the given `words`?\n\n## Notes\n\n* The cursor always starts on the letter `a` (top left)\n* The alpha characters are initially lowercase (as shown above)\n* Remember to also press `OK` to \"accept\" each letter\n* Take a direct route from one letter to the next\n* The cursor does not wrap (e.g. you cannot leave one edge and reappear on the opposite edge)\n* Although the blank keys have no function, you may navigate through them if you want to\n* Spaces may occur anywhere in the `words` string.\n* Do not press the SHIFT key until you need to. For example, with the word `e.Z`, the SHIFT change happens **after** the `.` is pressed (not before)\n \n# Example\n\nwords = `Code Wars`\n\n* C => `a`-`f`-`k`-`p`-`u`-`aA`-OK-`U`-`P`-`K`-`F`-`A`-`B`-`C`-OK = 14\n* o => `C`-`H`-`M`-`R`-`W`-`V`-`U`-`aA`-OK-`SP`-`v`-`q`-`l`-`m`-`n`-`o`-OK = 16\n* d => `o`-`j`-`e`-`d`-OK = 4\n* e => `d`-`e`-OK = 2\n* space => `e`-`d`-`c`-`b`-`g`-`l`-`q`-`v`-`SP`-OK = 9\n* W => `SP`-`aA`-OK-`SP`-`V`-`W`-OK = 6\n* a => `W`-`V`-`U`-`aA`-OK-`u`-`p`-`k`-`f`-`a`-OK = 10\n* r => `a`-`f`-`k`-`p`-`q`-`r`-OK = 6\n* s => `r`-`s`-OK = 2\n\nAnswer = 14 + 16 + 4 + 2 + 9 + 6 + 10 + 6 + 2 = 69\n\n<hr style=\"background-color:orange;height:2px;width:75%;margin-top:30px;margin-bottom:30px;\"/>\n\n<span style=\"color:orange;\">\n*Good Luck!<br/>\nDM.*\n</span>\n\n<hr>\n\nSeries\n* <a href=https://www.codewars.com/kata/tv-remote>TV Remote</a>\n* TV Remote (shift and space)\n* <a href=https://www.codewars.com/kata/tv-remote-wrap>TV Remote (wrap)</a>\n* <a href=https://www.codewars.com/kata/tv-remote-symbols>TV Remote (symbols)</a>\n\n",
+  "totalAttempts": 6562,
+  "totalCompleted": 883,
+  "totalStars": 59,
+  "voteScore": 230,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

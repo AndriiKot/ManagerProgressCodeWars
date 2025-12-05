@@ -1,0 +1,40 @@
+{
+  "id": "64f1bc6dcb89756a5fddcba1",
+  "name": "Hosts Missing  Specific Software Title and Having Recent Installations",
+  "slug": "hosts-missing-specific-software-title-and-having-recent-installations",
+  "category": "reference",
+  "publishedAt": "2023-09-01T10:27:43.960Z",
+  "approvedAt": "2023-09-13T20:28:30.376Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64f1bc6dcb89756a5fddcba1",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-09-01T10:26:53.224Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "We need to identify hosts in a network that are missing a specific software title, in this case, \"Title2\" This query aims to support IT operations in understanding which hosts might be non-compliant with required software installations or may require updates.\n\n`host_software` table:\n\n* `id` (integer) - primary key\n* `host` (varchar) - Represents the name of the host machine ('web_server_1', 'db_server_2' etc,) \n* `software_title` (varchar) - represents the name of the software installed on the host. ( 'Title1', 'Title2', 'Title3', etc.)\n* `install_date` (date) - Records the date of the software installation.\n\nRequirements: \n\n1) The query should return a list of host names.\n2) Each host name in the list should represent a host machine where \"Title2\" is missing.\n3) The query should also filter out hosts that haven't had any software installed in over a year from the current date, as these might be decommissioned or out-of-scope for immediate attention. In other words, if a host has all installations older than a year, it should not appear in the result set. Also, \"one year from the current date\" criterion should be inclusive of the current date. That is, any software installed exactly one year ago from today should also be considered \"recent.\" \n\nThe result should contain only one column, `host`, and be sorted in ascending alphabetical order.\n\nGLHF!\n",
+  "totalAttempts": 1327,
+  "totalCompleted": 158,
+  "totalStars": 6,
+  "voteScore": 46,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

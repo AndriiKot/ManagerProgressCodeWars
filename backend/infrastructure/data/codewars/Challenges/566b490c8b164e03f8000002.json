@@ -1,0 +1,43 @@
+{
+  "id": "566b490c8b164e03f8000002",
+  "name": "80's Kids #6: Rock 'Em, Sock 'Em Robots",
+  "slug": "80-s-kids-number-6-rock-em-sock-em-robots",
+  "category": "reference",
+  "publishedAt": "2015-12-11T22:07:08.970Z",
+  "approvedAt": "2016-12-22T18:46:18.328Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "coffeescript",
+    "java",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/566b490c8b164e03f8000002",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-11T22:07:14.882Z",
+  "createdBy": {
+    "username": "NateBrady23",
+    "url": "https://www.codewars.com/users/NateBrady23"
+  },
+  "approvedBy": {
+    "username": "gabbek",
+    "url": "https://www.codewars.com/users/gabbek"
+  },
+  "description": "You and your friends have been battling it out with your Rock 'Em, Sock 'Em robots, but things have gotten a little boring. You've each decided to add some amazing new features to your robot and automate them to battle to the death.\n\nEach robot will be represented by an object. You will be given two robot objects, and an object of battle tactics and how much damage they produce. Each robot will have a name, hit points, speed, and then a list of battle tactics they are to perform in order. Whichever robot has the best speed, will attack first with one battle tactic. \n\nYour job is to decide who wins.\n\nExample:\n```javascript\n robot1 = {\n  \"name\": \"Rocky\",\n  \"health\": 100,\n  \"speed\": 20,\n  \"tactics\": [\"punch\", \"punch\", \"laser\", \"missile\"]\n }\n robot2 = {\n   \"name\": \"Missile Bob\",\n   \"health\": 100,\n   \"speed\": 21,\n   \"tactics\": [\"missile\", \"missile\", \"missile\", \"missile\"]\n }\n tactics = {\n   \"punch\": 20,\n   \"laser\": 30,\n   \"missile\": 35\n }\n \n fight(robot1, robot2, tactics) -> \"Missile Bob has won the fight.\"\n```\n```coffeescript\nrobot1 =\n  name: \"Rocky\"\n  health: 100\n  speed: 20\n  tactics: [\n    \"punch\", \"punch\", \"laser\", \"missile\"\n  ]\nrobot2 =\n  name: \"Missile Bob\"\n  health: 100\n  speed: 21\n  tactics: [\n    \"missile\", \"missile\", \"missile\", \"missile\"\n  ]\ntactics =\n  punch: 20\n  laser: 30\n  missile: 35\n \nfight(robot1, robot2, tactics) # \"Missile Bob has won the fight.\"\n```\n```ruby\nrobot1 = {\n  \"name\" => \"Rocky\",\n  \"health\" => 100,\n  \"speed\" => 20,\n  \"tactics\" => [\"punch\", \"punch\", \"laser\", \"missile\"]\n }\n robot2 = {\n   \"name\" => \"Missile Bob\",\n   \"health\" => 100,\n   \"speed\" => 21,\n   \"tactics\" => [\"missile\", \"missile\", \"missile\", \"missile\"]\n }\n tactics = {\n   \"punch\" => 20,\n   \"laser\" => 30,\n   \"missile\" => 35\n }\n \n fight(robot1, robot2, tactics) # \"Missile Bob has won the fight.\"\n```\n```java\n  robot1.getName() => \"Rocky\"\n  robot1.getHealth() => 100\n  robot1.getSpeed() => 20\n  robot1.getTactics() => [\"punch\", \"punch\", \"laser\", \"missile\"]\n    \n  robot2.getName() => \"Missile Bob\"\n  robot2.getHealth() => 100\n  robot2.getSpeed() => 21\n  robot2.getTactics() => [\"missile\", \"missile\", \"missile\", \"missile\"]\n \n  tactics = {\n    \"punch\" => 20,\n    \"laser\" => 30,\n    \"missile\" => 35\n  }\n \n fight(Robot robot1, Robot robot2, Map<String, Integer> tactics) -> \"Missile Bob has won the fight.\"\n```\n```python\n robot_1 = {\n  \"name\": \"Rocky\",\n  \"health\": 100,\n  \"speed\": 20,\n  \"tactics\": [\"punch\", \"punch\", \"laser\", \"missile\"]\n }\n robot_2 = {\n   \"name\": \"Missile Bob\",\n   \"health\": 100,\n   \"speed\": 21,\n   \"tactics\": [\"missile\", \"missile\", \"missile\", \"missile\"]\n }\n tactics = {\n   \"punch\": 20,\n   \"laser\": 30,\n   \"missile\": 35\n }\n \n fight(robot_1, robot_2, tactics) -> \"Missile Bob has won the fight.\"\n```\n\nrobot2 uses the first tactic, \"missile\" because he has the most speed. This reduces robot1's health by 35. Now robot1 uses a punch, and so on. \n\n**Rules**\n\n- A robot with the most speed attacks first. If they are tied, the first robot passed in attacks first.\n- Robots alternate turns attacking. Tactics are used in order.\n- A fight is over when a robot has 0 or less health or both robots have run out of tactics.\n- A robot who has no tactics left does no more damage, but the other robot may use the rest of his tactics.\n- If both robots run out of tactics, whoever has the most health wins. If one robot has 0 health, the other wins. Return the message \"{Name} has won the fight.\"\n- If both robots run out of tactics and are tied for health, the fight is a draw. Return \"The fight was a draw.\"\n\n**To Java warriors**\n\n`Robot` class is immutable.\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other 80's Kids Katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-1-how-many-licks-does-it-take'><span style='color:#00C5CD'>80's Kids #1:</span> How Many Licks Does It Take</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-2-help-alf-find-his-spaceship'><span style='color:#00C5CD'>80's Kids #2:</span> Help Alf Find His Spaceship</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-3-punky-brewsters-socks'><span style='color:#00C5CD'>80's Kids #3:</span> Punky Brewster's Socks</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-4-legends-of-the-hidden-temple'><span style='color:#00C5CD'>80's Kids #4:</span> Legends of the Hidden Temple</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-5-you-cant-do-that-on-television'><span style='color:#00C5CD'>80's Kids #5:</span> You Can't Do That on Television</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-6-rock-em-sock-em-robots'><span style='color:#00C5CD'>80's Kids #6:</span> Rock 'Em, Sock 'Em Robots</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-7-shes-a-small-wonder'><span style='color:#00C5CD'>80's Kids #7:</span> She's a Small Wonder</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-8-the-secret-world-of-alex-mack'><span style='color:#00C5CD'>80's Kids #8:</span> The Secret World of Alex Mack</a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-9-down-in-fraggle-rock'><span style='color:#00C5CD'>80's Kids #9:</span> Down in Fraggle Rock </a><br />\n\n<a style='text-decoration:none' href='http://www.codewars.com/kata/80-s-kids-number-10-captain-planet'><span style='color:#00C5CD'>80's Kids #10:</span> Captain Planet </a><br />\n\n\n</div>\n",
+  "totalAttempts": 39861,
+  "totalCompleted": 2540,
+  "totalStars": 275,
+  "voteScore": 381,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

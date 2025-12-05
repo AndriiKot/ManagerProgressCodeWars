@@ -1,0 +1,45 @@
+{
+  "id": "58be35e9e36224a33f000023",
+  "name": "Tom's Allergies",
+  "slug": "toms-allergies",
+  "category": "games",
+  "publishedAt": "2017-03-08T04:10:11.748Z",
+  "approvedAt": "2017-03-14T02:59:27.022Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "crystal",
+    "php"
+  ],
+  "url": "https://www.codewars.com/kata/58be35e9e36224a33f000023",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-03-07T04:24:09.998Z",
+  "createdBy": {
+    "username": "Lusina",
+    "url": "https://www.codewars.com/users/Lusina"
+  },
+  "approvedBy": {
+    "username": "tachyonlabs",
+    "url": "https://www.codewars.com/users/tachyonlabs"
+  },
+  "description": "# Allergies\n\nWrite a program that, given a person's allergy score, can tell them whether or not they're allergic to a given item, and their full list of allergies.\n\nAn allergy test produces a single numeric score which contains the\ninformation about all the allergies the person has (that they were\ntested for).\n\nThe list of items (and their value) that were tested are:\n\n* eggs (1)\n* peanuts (2)\n* shellfish (4)\n* strawberries (8)\n* tomatoes (16)\n* chocolate (32)\n* pollen (64)\n* cats (128)\n\nSo if Tom is allergic to peanuts and chocolate, he gets a score of 34.\n\nNow, given just that score of 34, your program should be able to say:\n\n- Whether Tom is allergic to any one of those allergens listed above.\n- All the allergens Tom is allergic to., sorted alphabetically\n\nExample:\n\n``` python\n>>> allergies = Allergies(0)\n>>> allergies.is_allergic_to('peanuts')\nFalse\n```\n\n``` python\n>>> Allergies(255).allergies()\n['cats', 'chocolate', 'eggs', 'peanuts', 'pollen', 'shellfish', 'strawberries', 'tomatoes']\n```\n\n``` python\n>>> Allergies(259).allergies()\n[\"eggs\", \"peanuts\"]\n```\n\nYou will be provided with a class `Allergies` which will have 2 methods\n\n+ is_allergic_to\n  Checks if Tom is allergic to a particular allergen. Returns True if Tom is allergic, False otherwise\n\n+ allergies\n  Returns a list of what Tom is allergic to. This list must be sorted alphabetically\n\nMust Dos:\n\nEnsure that your function throws a TypeError for invalid inputs such as None(Null), floats, strings, or any data type that is not an integer.\n\n*Hint: Use Bitwise ANDing*\n",
+  "totalAttempts": 2143,
+  "totalCompleted": 315,
+  "totalStars": 22,
+  "voteScore": 118,
+  "tags": [
+    "Algorithms",
+    "Puzzles",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

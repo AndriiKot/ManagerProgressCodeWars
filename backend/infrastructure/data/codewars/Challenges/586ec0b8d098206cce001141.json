@@ -1,0 +1,49 @@
+{
+  "id": "586ec0b8d098206cce001141",
+  "name": "Thinkful - List and Loop Drills: Inverse Slicer",
+  "slug": "thinkful-list-and-loop-drills-inverse-slicer",
+  "category": "reference",
+  "publishedAt": "2017-01-05T21:55:04.969Z",
+  "approvedAt": "2017-01-19T10:59:53.755Z",
+  "languages": [
+    "python",
+    "javascript",
+    "coffeescript",
+    "crystal",
+    "ruby",
+    "php",
+    "haskell",
+    "rust",
+    "cobol",
+    "scala"
+  ],
+  "url": "https://www.codewars.com/kata/586ec0b8d098206cce001141",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2017-01-05T21:55:09.058Z",
+  "createdBy": {
+    "username": "Grae-Drake",
+    "url": "https://www.codewars.com/users/Grae-Drake"
+  },
+  "approvedBy": {
+    "username": "suic",
+    "url": "https://www.codewars.com/users/suic"
+  },
+  "description": "You're familiar with [list slicing](https://docs.python.org/3/library/functions.html#slice) in Python and know, for example, that:\n\n```python\n>>> ages = [12, 14, 63, 72, 55, 24]\n>>> ages[2:4]\n[63, 72]\n>>> ages[2:]\n[63, 72, 55, 24]\n>>> ages[:3]\n[12, 14, 63]\n```\n\nWrite a function `inverse_slice` that takes three arguments: a list `items`, an integer `a` and an integer `b`. The function should return a new list with the slice specified by `items[a:b]` __*excluded*__.\n\nFor example:\n\n```python\n>>>inverse_slice([12, 14, 63, 72, 55, 24], 2, 4)\n[12, 14, 55, 24]\n```\n```rust\ninverse_slice(&[12, 14, 63, 72, 55, 24], 2, 4) == [12, 14, 55, 24]\n```\n\nInput domain:\n- `items` will always be a valid sequence.\n- `b` will always be greater than `a`.\n- `a` will always be greater than or equal to zero.\n- `a` will always be less than the length of `items`.\n- `b` may be greater than the length of `items`.\n\n```if:cobol\n#### Note for COBOL:\nRemember COBOL's tables use 1-based indexing, so `a` and `b` will always be superior or equal to 1, and indexes need to be shifted by 1 in comparison with other languages:\n\n     InverseSlice [12, 14, 63, 72, 55, 24], 3, 5 => [12, 14, 55, 24]\n```",
+  "totalAttempts": 11038,
+  "totalCompleted": 4598,
+  "totalStars": 53,
+  "voteScore": 544,
+  "tags": [
+    "Fundamentals",
+    "Lists"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "658af675d179e1003e200be9",
+  "name": "Time Trek: Navigating the Chronology of Employee Tenures",
+  "slug": "time-trek-navigating-the-chronology-of-employee-tenures",
+  "category": "reference",
+  "publishedAt": "2023-12-27T09:32:26.785Z",
+  "approvedAt": "2023-12-30T12:59:00.795Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/658af675d179e1003e200be9",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-12-26T15:51:17.884Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given two tables in a PostgreSQL database: `employees` and `employee_works`. The `employees` table contains basic information about employees, while the `employee_works` table tracks the periods during which each employee has worked for the company.\n\nTables Structure:\n\n`employees`:\n\n* `id` (int): primary key\n* `employee_name` (string): name of the employee\n\n`employee_works`:\n\n* `id` (int): primary key\n* `employee_id`(int): foreign key referencing employees.id)\n* `start_date`(DateTime): date and time when employee started working\n* `finish_date` (DateTime, nullable): date and time when employee finished working\n\nNote: A `NULL` value in `finish_date` indicates that the employee is currently working.\n\nWrite a SQL query to generate a report that provides the following information for each employee in the `employees` table:\n\n1) `id` (int): Employee's ID.\n2) `employee_name` (string): Employee's name.\n3) `status` (string): A string that can be one of the following:\n    * 'Still with us': If the employee is currently working (i.e., has an ongoing period with finish_date as NULL).\n    * 'Left': If the employee has worked in the past but is not currently working.\n    * 'Never worked': If the employee has never worked (i.e., no corresponding records in `employee_works`).\n4) `total_duration` (interval): The total accumulated duration of employment for each employee, calculated as follows:\n    * For employees currently working (finish_date is NULL for their latest period), calculate the duration from the start date of their first period to the current date. This includes aggregating any previous periods of employment. Use PostgreSQL's `current_date` function for ongoing employment calculations.\n    * For past employees (those who have left and have a `finish_date` for their last period), aggregate the durations of all their work periods.\n    * The `interval` datatype in PostgreSQL will automatically format this duration in a standardized and human-readable format, so don't worry about formatting. This will default to PostgreSQL's interval format, which primarily shows days and time.\n    \n##### Additional info:\n\n* Please note that this query assumes that each employee has at most one continuous employment period or multiple periods with <b>no overlaps</b>.\n*  The PostgreSQL interval datatype, when summed up directly, often defaults to a format that primarily shows days and time (hours, minutes, seconds) and does not automatically convert this into years and months. This behavior is due to the inherent complexity in converting days to months or years, as the number of days in a month and year can vary. In this task, we will not focus on manually adjusting the interval to a specific format like years, months, and days.\n* Order the results by the employee's `id` in descending order.\n\n#### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>id</th><th>employee_name</th><th>status</th><th>total_duration</th></tr><tr><td>7</td><td>Employee G</td><td>Never worked</td><td></td></tr><tr><td>6</td><td>Employee F</td><td>Still with us</td><td>313 days</td></tr><tr><td>5</td><td>Employee E</td><td>Never worked</td><td></td></tr><tr><td>4</td><td>Employee D</td><td>Left</td><td>1077 days</td></tr><tr><td>3</td><td>Employee C</td><td>Never worked</td><td></td></tr><tr><td>2</td><td>Employee B</td><td>Still with us</td><td>342 days 20:00:00</td></tr><tr><td>1</td><td>Employee A</td><td>Still with us</td><td>361 days</td></tr></table>\n\nGLHF!",
+  "totalAttempts": 730,
+  "totalCompleted": 84,
+  "totalStars": 3,
+  "voteScore": 29,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

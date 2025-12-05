@@ -1,0 +1,44 @@
+{
+  "id": "590572de63bfadf5d4000027",
+  "name": "#7 Matrices: Focused on the Contour",
+  "slug": "number-7-matrices-focused-on-the-contour",
+  "category": "reference",
+  "publishedAt": "2017-04-30T22:16:16.613Z",
+  "approvedAt": "2017-05-01T16:22:01.960Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/590572de63bfadf5d4000027",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-04-30T05:15:10.571Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "See the \"contour\" of a matrix in the following example:\n ``` \nM = [[ 1, 3, -4,  5, -2,  5,   1], \n     [2,  0, -7,  6,  8,  8,  15],\n     [4,  4, -2,-10,  7, -1,   7],\n     [-1, 3,  1,  0, 11,  4,  21],\n     [-7, 6, -4, 10,  5,  7,   6],\n     [-5, 4,  3, -5,  7,  8,  17],\n     [-11,3,  4, -8,  6, 16,   4]]\n ```   \nIt's made of:\n- the elements of the first row: ```1,3,-4,5,-2,5,1```\n- the ones of the last column (excepting the first one, ```1```): ```15, 7,21,6,17,4```\n- the elements of the last row (excepting the last one, ```4```):```16,6,-8,4,3,-11```\n- and finally, the ones of the first column(excepting the first one, ```1```, and the last one, ```-11```): ```-5,-7,-1,4,2```\n\nThe instructions for this kata are as it follows:\n\nInput: We receive a matrix, ```M```, of ```m``` rows and ```n``` columns with two integers ```a```, and ```b```, such that ```a < b``` always.\n\nTask: We have to select the elements of the countour of the matrix ```M``` that are in the range ```[a, b]``` (values of ```a``` and ```b``` are inclusive) **in order to find the element or elements of them with the highest occurrence frequency**.\n\nOutput: We have to give an array with the maximum amount of occurrences followed by the wanted value or in the case of having two or more encountered values, in increasing order.\n\nSee the case with matrix M given above with ```a = -1``` and ```b = 7```.\n\nThe contour of M is:\n```\n[1,3,-4,5,-2,5,1,15,7,21,6,17,4,16,6,-8,4,3,-11,-5,-7,-1,4,2]\n```\nThe elements that are in the range ```[-1, 7]``` are:\n```\n[1,3,5,5,1,7,6,4,6,4,3,-1,4,2]\n```\n\nThe number ```4``` has the highest occurrence frequency and it is ```3```.\n\nSo the output will be ```[3, [4]]```.\n\nSee this another example with the same values for a and b:\n```\nM1 = [[ 1,   3, -4,   5,  1,  5,  1], \n    [  2,   0, -7,   6,  8,  8, 15],\n    [  4,   4, -2, -10,  7, -1,  7]\n    [ -1,   3,  1,   0, 11,  4, 21],\n    [ 7,   6, -4,  10,  5,  7,  6],\n    [ 5,   4,  3,  -5,   7,  8, 17],\n    [-11,   3,  4,  -8,  7, 16,  4]]\n```\nThe output will be:\n```\n[3, [1, 4, 5, 7]]  // see the array of encountered numbers sorted\n```\nThat means that the numbers ```1, 4, 5, 7``` have the same occurrence frequency, ```3```.\n\nIn the case that all the values have the same frequency, the output will be the empty array.\n```\nM2 = [[2,1,1,6], \n      [1,3,2,2],\n      [2,1,2,6]]   and a = 0, b = 5\n```\n\n```contour = [2,1,1,6,2,6,2,1,2,1]```\n\nThen, ```[2,1,1,2,2,1,2,1]``` are in the range ```[0,5]```\n\n```2``` with ```4``` occurrences and ```1``` with ```4``` occurrences\nThere is no maximum frequency value so the output will be ```[]```.\n\nFeatures of the Random Tests\n```\nNumber of tests = 200\n10 <= m <= 200 // m is the number of rows\n10 <= n <= 200 // n is the amount of columns\n-50 <= a < b <= 50\n-50 <= m[i][j] <= 50\n```\n\nTry to avoid using nested loops (unless a very smart one). Probably a O(n²) algorithm will not pass the tests. This kata is tagged with OPTIMIZATION. :)\n\nEnjoy it!",
+  "totalAttempts": 1103,
+  "totalCompleted": 185,
+  "totalStars": 8,
+  "voteScore": 67,
+  "tags": [
+    "Matrix",
+    "Algorithms",
+    "Searching",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

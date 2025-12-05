@@ -1,0 +1,48 @@
+{
+  "id": "582e0450fe38013dbc0002d3",
+  "name": "Regex Tic Tac Toe Win Checker",
+  "slug": "regex-tic-tac-toe-win-checker",
+  "category": "reference",
+  "publishedAt": "2016-11-17T20:10:04.273Z",
+  "approvedAt": "2016-12-05T19:44:53.672Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "php",
+    "java",
+    "crystal",
+    "kotlin",
+    "groovy"
+  ],
+  "url": "https://www.codewars.com/kata/582e0450fe38013dbc0002d3",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-11-17T19:26:09.317Z",
+  "createdBy": {
+    "username": "tachyonlabs",
+    "url": "https://www.codewars.com/users/tachyonlabs"
+  },
+  "approvedBy": {
+    "username": "gabbek",
+    "url": "https://www.codewars.com/users/gabbek"
+  },
+  "description": "Earlier this year I was in a <a href=\"https://www.hackerrank.com/contests/regular-expresso/challenges\">contest on HackerRank</a> which included a <a href=\"https://en.wikipedia.org/wiki/Code_golf\">code golf</a>-style <a href=\"https://www.hackerrank.com/contests/regular-expresso/challenges/winning-tic-tac-toe\">challenge</a> to write a regular expression of 50 or fewer characters that could determine whether or not a <a href=\"https://en.wikipedia.org/wiki/Tic-tac-toe\">tic tac toe</a> (also known as noughts and crosses or Xs and Os) board had a winner.\n\nI'm not going to force you to keep your regex at or under 50 characters here, or even force you to use a regex if you really don't want to (though if you really don't want to write a regex, why don't you do one of the <a href=\"https://www.codewars.com/kata/search/?q=tic+tac+toe\">other tic tac toe katas</a> here instead?), but why not challenge yourself, maybe learn something, and perhaps earn some Best Practices/Clever honor points for yourself as well?\n\nYour function will receive a string of nine \"X\", \"O\", and/or \"-\" characters representing the state of a tic tac toe board, for example the string \n```\n\"X-OXXXO-O\"\n```\nwould represent the board\n```\nX-O\nXXX\nO-O\n```\nwhere player X has won by getting three in a row horizontally on the middle row.\n\nYour function needs to return True/true/TRUE (depending on the language you're using) if either the X or the O player has won the game by getting three in a row vertically, horizontally, or diagonally; or False/false/FALSE if there is no winner.\n\nA few more examples:\n\n`\"---------\"` - False - no one has even made a move yet!\n\n`\"XOOOXXXXO\"` - False - no one got three in a row here.\n\n`\"OXO-XOX-O\"` - True - player O won by getting three in a row vertically in the third column.\n\nNote: Occasionally one of the random boards in the Test Suite will have two three-in-a-rows instead of one or none, and this still counts as a winning board. If the two three-in-a-rows belong to the same player, this just means that the second player played so badly that the first player's fifth and final move created two three-in-a-rows. If the two three-in-a-rows belong to different players, this just means that although one player won the game, afterward (as sometimes happens in real life) the other player made their mark in another square anyway, just because even though they already lost, they feel better doing that. :-)\n\nHave fun! \n",
+  "totalAttempts": 5829,
+  "totalCompleted": 1291,
+  "totalStars": 103,
+  "voteScore": 262,
+  "tags": [
+    "Games",
+    "Regular Expressions",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

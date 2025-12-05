@@ -1,0 +1,40 @@
+{
+  "id": "64466fb8b8642100159e0574",
+  "name": "Bezos Gets Eccentric with DVD Rentals: Prime Subscriptions for Prime Rentals with Even Digits",
+  "slug": "bezos-gets-eccentric-with-dvd-rentals-prime-subscriptions-for-prime-rentals-with-even-digits",
+  "category": "reference",
+  "publishedAt": "2023-04-24T12:16:16.622Z",
+  "approvedAt": "2023-09-22T12:03:52.074Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64466fb8b8642100159e0574",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-04-24T12:02:00.522Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "### Introduction\n\nAfter conquering the world of online shopping, Jeff Bezos, the billionaire founder of Amazon, decided to expand his empire into the world of DVD rentals. He signed a contract with a local DVD rental shop to provide the latest movies to Amazon customers through a new DVD rental service.\n\nAs a way to thank the customers who signed up for the new service, Bezos announced that he would be giving a free Amazon Prime subscription to all customers whose total quantity of rentals added up to a prime number. The catch? Only a select few customers actually qualified for the free subscription, because their total rentals had to be a prime number!\n\nBut Jeff didn't stop there. He wanted to make sure that only the most unique and interesting customers received the free subscription. To qualify, not only did the total rentals have to add up to a prime number, but the sum of the digits in their customer ID numbers had to be even.\n\n### Task\n\nYour task is to write a query that retrieves customer information for a DVD rental service, including their customer ID, full name (concatenated first name and last name), the total number of unique rentals they have made, and the total amount of money they have paid for those rentals.\n\nHowever, there are two additional conditions that must be met for a customer to be included in the query results:\n\n* The total number of rentals made by the customer must be a prime number.\n* The sum of the digits in the customer's ID number must be an even number.\n\nThe results should be sorted first by total payments (in descending order), then by total rentals (in descending order), and finally by last name (in ascending order).  The query should display the following columns:\n\n* `customer_id`: ID of customer that meets above mentioned condition\n* `customer_name`: concatenated first name and last name.\n* `all_rentals`: the total number of rentals they have made and this amount meets above mentioned condition\n* `total_payments`: total `amount` of money customer have paid for those rentals. This param should be rounded to 2 decimal places.\n\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n* please use `numeric` type to display total_amount\n* There are rentals without payments in the test data. The tests expect rentals without any payments to not be counted among the total rentals for a customer.\n\n### Schema: \n(data that is needed for the task)\n\n##### `customer` table:\n```\n   Column    |  Type   | Modifiers\n-------------+---------+-----------\n customer_id | integer | not null\n first_name  | text    | not null\n last_name   | text    | not null\n ```\n##### `rental` table:\n\n```\n   Column   |  Type   | Modifiers\n------------+---------+-----------\n rental_id  | integer | not null\n customer_id| integer | not null\n ```\n\n##### `payment` table:\n```\n   Column     |  Type    | Modifiers\n--------------+----------+-----------\n payment_id   | integer  | not null\n rental_id    | integer  | not null\n amount       | numeric  | not null\n ```\n \n\n### Desired Output\n\nThe desired output should look like this:\n```\ncustomer_id | customer_name | all_rentals | total_payments |\n------------+---------------+-------------+----------------|\n   33       | Emily Diaz    | 31          | 0.15271e3      |\n   15       | Jackie Lynch  | 29          | 0.14969e3      |\n...\n```\n",
+  "totalAttempts": 2817,
+  "totalCompleted": 113,
+  "totalStars": 19,
+  "voteScore": 30,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

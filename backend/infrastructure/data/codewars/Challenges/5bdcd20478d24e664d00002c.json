@@ -1,0 +1,49 @@
+{
+  "id": "5bdcd20478d24e664d00002c",
+  "name": "Separate The Wheat From The Chaff",
+  "slug": "separate-the-wheat-from-the-chaff",
+  "category": "reference",
+  "publishedAt": "2018-11-03T00:24:57.480Z",
+  "approvedAt": "2018-12-30T15:36:49.963Z",
+  "languages": [
+    "cpp",
+    "java",
+    "haskell",
+    "c",
+    "javascript",
+    "nasm",
+    "python",
+    "cfml",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5bdcd20478d24e664d00002c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-11-02T22:39:00.362Z",
+  "createdBy": {
+    "username": "MrZizoScream",
+    "url": "https://www.codewars.com/users/MrZizoScream"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "# Scenario \n\nWith **_Cereal crops_** like wheat or rice, before we can eat the grain kernel, we need to remove that inedible hull, or *to separate the wheat from the chaff*.\n___\n\n# Task\n\n**_Given_** a *sequence of n integers* , **_separate_** *the negative numbers (chaff) from positive ones (wheat).*  ![!alt](https://i.imgur.com/mdX8dJP.png)\n___\n\n# Notes\n\n* **_Sequence size_** is _at least_ **_3_**\n* **_Return_** *a new sequence*, such that  **_negative numbers (chaff) come first, then positive ones (wheat)_**.\n* In Java , *you're not allowed to modify the input Array/list/Vector*\n* **_Have no fear_** , *it is guaranteed that there will be no zeroes* . ![!alt](https://i.imgur.com/mdX8dJP.png)  \n* **_Repetition_** of numbers in *the input sequence could occur* , so **_duplications are included when separating_**.\n* If a misplaced *positive* number is found in the front part of the sequence, replace it with the last misplaced negative number (the one found near the end of the input). The second misplaced positive number should be swapped with the second last misplaced negative number. *Negative numbers found at the head (begining) of the sequence* , **_should be kept in place_** .\n\n____\n\n# Input >> Output Examples:\n\n```\nwheatFromChaff ({7, -8, 1 ,-2}) ==> return ({-2, -8, 1, 7}) \n```\n\n## **_Explanation_**:\n\n* **_Since_** `7 ` is a  **_positive number_** , it should not be located at the beginnig so it needs to be swapped with the **last negative number** `-2`.\n____\n\n```\nwheatFromChaff ({-31, -5, 11 , -42, -22, -46, -4, -28 }) ==> return ({-31, -5,- 28, -42, -22, -46 , -4, 11})\n```\n\n## **_Explanation_**:\n\n* **_Since_**, `{-31, -5} ` are  **_negative numbers_** *found at the head (begining) of the sequence* , *so we keep them in place* .\n* Since `11` is a positive number, it's replaced by  the last negative which is `-28` , and so on till sepration is complete. \n\n____\n\n```\nwheatFromChaff ({-25, -48, -29, -25, 1, 49, -32, -19, -46, 1}) ==> return ({-25, -48, -29, -25, -46, -19, -32, 49, 1, 1})\n```\n\n## **_Explanation_**:\n\n* **_Since_** `{-25, -48, -29, -25} ` are  **_negative numbers_** *found at the head (begining) of the input* , *so we keep them in place* .\n\n* Since `1` is a positive number, it's replaced by  the last negative which is `-46` , and so on till sepration is complete. \n\n* Remeber, *duplications are included when separating* , that's why the number `1` appeared twice at the end of the output. \n____\n\n# Tune Your Code , There are 250 Assertions , 100.000 element For Each .\n\n# Only O(N) Complexity Solutions Will pass . \n____\n____\n____\n\n# [Playing with Numbers Series](https://www.codewars.com/collections/playing-with-numbers)\n\n# [Playing With Lists/Arrays Series](https://www.codewars.com/collections/playing-with-lists-slash-arrays)\n\n# [Bizarre Sorting-katas](https://www.codewars.com/collections/bizarre-sorting-katas)\n\n# [For More Enjoyable Katas](http://www.codewars.com/users/MrZizoScream/authored)\n___\n\n## ALL translations are welcome\n\n## Enjoy Learning !!\n# Zizou\n",
+  "totalAttempts": 8559,
+  "totalCompleted": 1776,
+  "totalStars": 119,
+  "voteScore": 291,
+  "tags": [
+    "Fundamentals",
+    "Arrays",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

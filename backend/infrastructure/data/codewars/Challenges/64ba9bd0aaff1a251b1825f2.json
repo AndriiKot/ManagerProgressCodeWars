@@ -1,0 +1,40 @@
+{
+  "id": "64ba9bd0aaff1a251b1825f2",
+  "name": "Forward Filling of Missing Data",
+  "slug": "forward-filling-of-missing-data",
+  "category": "reference",
+  "publishedAt": "2023-07-21T14:53:09.894Z",
+  "approvedAt": "2023-07-24T10:19:57.795Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64ba9bd0aaff1a251b1825f2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-21T14:53:04.549Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Let's say we have a table called `sales_data` and it contains daily sales data. The table has two columns: `day` (an integer representing the day) and `sales` (an integer representing the sales amount for that day).\n\nSometimes, for whatever reason, sales data for a certain day might be missing (NULL). We want to fill in these missing values with the last recorded sales data.\n\nHere is a sample `sales_data` table:\n\n```\nday | sales\n----+------\n  1 | 100\n  2 | 150\n  3 | NULL\n  4 | NULL\n  5 | 200\n  6 | 120\n  7 | NULL\n  8 | NULL\n  9 | NULL\n```\n\nYour task is to write a SQL query that returns a result set with the same day values, but where the sales values have been replaced in such a way that each NULL value is replaced by the last non-NULL value (ordered by day). If the first sales values are NULL, they should remain NULL.\n\nThe result set for the sample `sales_data` table above should look like this:\n\n```\nday | filled_sales\n----+-------------\n  1 | 100\n  2 | 150\n  3 | 150\n  4 | 150\n  5 | 200\n  6 | 120\n  7 | 120\n  8 | 120\n  9 | 120\n  ```\n\nGLHF!\n\n",
+  "totalAttempts": 545,
+  "totalCompleted": 104,
+  "totalStars": 7,
+  "voteScore": 31,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

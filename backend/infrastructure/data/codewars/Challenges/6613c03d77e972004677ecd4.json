@@ -1,0 +1,40 @@
+{
+  "id": "6613c03d77e972004677ecd4",
+  "name": "Monthly Landlord Revenue Report Generation",
+  "slug": "monthly-landlord-revenue-report-generation",
+  "category": "reference",
+  "publishedAt": "2024-04-08T10:00:56.940Z",
+  "approvedAt": "2024-04-18T08:26:09.330Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6613c03d77e972004677ecd4",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-08T10:00:29.973Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are working as a database manager for a property management company. The company oversees various properties, each owned by different landlords. Your task is to create a monthly report that shows how much each landlord should be paid. This payment is calculated by summing up the total rent from all properties owned by a landlord and then subtracting the total cost of maintenance carried out on those properties for the month.\n\nDevelop an SQL query that generates a monthly invoice for each landlord. The invoice should include the landlord's ID and name, total rent from all properties they own, total maintenance costs for those properties for a specific month (April, 2024), and the final amount payable to the landlord.\n\nWe have `landlord` table:\n\n* `id` (integer, primary Key): Unique identifier for the landlord.\n* `name` (varchar): Name of the landlord.\n* `email` (varchar): Email address of the landlord.\n\n`property` table:\n\n* `id` (integer, primary Key): Unique identifier for the property.\n* `address` (varchar): Physical address of the property.\n* `rent` (integer): Monthly rent price for the property.\n* `landlord_id` (integer, Foreign Key to `landlord` table): ID of the landlord who owns the property.\n\nand `maintenance` table:\n\n* `id` (integer, primary Key): Unique identifier for the maintenance record.\n* `details` (varchar): Description of the maintenance work.\n* `cost` (integer): Cost of the maintenance work.\n* `maintenance_date` (date): Date when the maintenance was carried out.\n* `property_id` (integer, foreign key to `property` table): ID of the property where the maintenance was performed.\n\nThe query should output a table with columns:\n\n1) `landlord_id` (integer): ID of the landlord.\n2) `name` (varchar): Name of the landlord.\n3) `total_rent` (integer): Total rent collected from all properties owned by the landlord.\n4) `total_cost` (integer): Total maintenance cost for those properties for the April, 2024.\n5) `amount_payable` (integer): The total rent minus the total maintenance cost.\n\nThe final output should be ordered first by the `total_rent` in descending order, showcasing those landlords due the most at the top, and then by `landlord_id` in descending order for easy reference.\n\nFor this sample data:\n\n```\nlandlord:\n\nid  |    name    |       email       \n----|------------|-------------------\n 1  | J Johnson  | jj@example.com    \n 2  | R Kelly    | rk@example.com    \n ```\n \n ```\n property:\n \n id |  address   | rent | landlord_id \n---|------------|------|-------------\n 1  | 123 Street | 400  |      1      \n 2  | 456 Avenue | 600  |      1      \n 3  | 789 Blvd   | 750  |      2     \n ```\n  \n ```\nmaintenance: \n\nid  |   details      | cost | maintenance_date | property_id \n----|----------------|------|------------------|------------\n 1   | Fixing pipes   |  25  | 2024-04-05       |      1      \n 2   | Painting walls | 120  | 2024-04-10       |      2      \n 3   | Window replace |  35  | 2024-04-15       |      3      \n ```\n \n The desired output is the following:\n \n <table><!----><tr><th>landlord_id</th><th>name</th><th>total_rent</th><th>total_cost</th><th>amount_payable</th></tr><tr><td>1</td><td>J Johnson</td><td>1000</td><td>145</td><td>855</td></tr><tr><td>2</td><td>R Kelly</td><td>750</td><td>35</td><td>715</td></tr></table>\n \n \nGLHF!",
+  "totalAttempts": 2226,
+  "totalCompleted": 226,
+  "totalStars": 17,
+  "voteScore": 38,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "59d727d40e8c9dd2dd00009f",
+  "name": "Easy Balance Checking",
+  "slug": "easy-balance-checking",
+  "category": "reference",
+  "publishedAt": "2017-10-06T06:51:09.660Z",
+  "approvedAt": "2018-03-19T13:31:57.699Z",
+  "languages": [
+    "shell",
+    "python",
+    "javascript",
+    "ruby",
+    "java",
+    "julia",
+    "scala",
+    "r",
+    "powershell",
+    "go",
+    "nim",
+    "php",
+    "rust",
+    "csharp",
+    "clojure",
+    "racket",
+    "typescript",
+    "fsharp",
+    "kotlin",
+    "pascal",
+    "perl",
+    "elm",
+    "d",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/59d727d40e8c9dd2dd00009f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-06T06:51:01.225Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "anter69",
+    "url": "https://www.codewars.com/users/anter69"
+  },
+  "description": "You are given a (small) check book as a - sometimes - cluttered (by non-alphanumeric characters) string:\n\n```\n\"1000.00\n125 Market 125.45\n126 Hardware 34.95\n127 Video 7.45\n128 Book 14.32\n129 Gasoline 16.10\"\n```\nThe first line shows the original balance. \nEach other line (when not blank) gives information: check number, category, check amount. \n(Input form may change depending on the language).\n\nFirst you have to clean the lines keeping only letters, digits, dots and spaces.\n\nThen return a report as a string (underscores show spaces -- don't put them in your solution. They are there so you can see them and how many of them you need to have):\n\n```\n\"Original_Balance:_1000.00\n125_Market_125.45_Balance_874.55\n126_Hardware_34.95_Balance_839.60\n127_Video_7.45_Balance_832.15\n128_Book_14.32_Balance_817.83\n129_Gasoline_16.10_Balance_801.73\nTotal_expense__198.27\nAverage_expense__39.65\"\n```\nOn each line of the report you have to add the new balance and then in the last two lines the total expense and the average expense.\nSo as not to have a too long result string we don't ask for a properly formatted result.\n\n#### Notes\n- See input examples in Sample Tests.\n- It *may* happen that one (or more) line(s) is (are) blank.\n- Round to 2 decimals your calculated results (Elm: without traling 0)\n- The line separator of results may depend on the language `\\n` or `\\r\\n`. See examples in the \"Sample tests\".\n- R language: Don't use R's base function \"mean()\" that could give results slightly different from expected ones.\n\n",
+  "totalAttempts": 32752,
+  "totalCompleted": 3037,
+  "totalStars": 208,
+  "voteScore": 312,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 4
+  }
+}

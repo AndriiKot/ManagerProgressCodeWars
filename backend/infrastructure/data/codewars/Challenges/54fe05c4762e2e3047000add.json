@@ -1,0 +1,46 @@
+{
+  "id": "54fe05c4762e2e3047000add",
+  "name": "OOP: Object Oriented Piracy ",
+  "slug": "oop-object-oriented-piracy",
+  "category": "reference",
+  "publishedAt": "2015-03-09T21:55:36.128Z",
+  "approvedAt": "2015-03-17T14:34:31.461Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "csharp",
+    "rust",
+    "java",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/54fe05c4762e2e3047000add",
+  "rank": {
+    "id": -8,
+    "name": "8 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-03-09T20:42:44.845Z",
+  "createdBy": {
+    "username": "By-The-Ocean",
+    "url": "https://www.codewars.com/users/By-The-Ocean"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Ahoy matey!\n\nYou are a leader of a small pirate crew. And you have a plan.\nWith the help of OOP you wish to make a pretty efficient system to identify ships with heavy booty on board!\n\nUnfortunately for you, people weigh a lot these days, so how do you know if a ship is full of gold and not people?\n\nYou begin with writing a generic Ship class / struct:\n```javascript\nclass Ship {\n  constructor(draft, crew) {\n    this.draft = draft\n    this.crew = crew\n  }\n}\n```\n```coffeescript\nclass Ship\n  constructor: (draft, crew) ->\n    @draft = draft\n    @crew = crew\n```\n```python\nclass Ship:\n    def __init__(self, draft, crew):\n        self.draft = draft\n        self.crew = crew\n```\n```csharp\npublic class Ship\n{\n  public int Draft;\n  public int Crew;\n  \n  public Ship(int draft, int crew)\n  {\n    Draft = draft;\n    Crew = crew;\n  }\n}\n```\n```rust\nstruct Ship {\n  draft: u32,\n  crew: u32,\n}\n```\n```java\npublic class Ship {\n    private final double draft;\n    private final int crew;\n    \n    public Ship(double draft, int crew) {\n        this.draft = draft;\n        this.crew = crew;\n    }\n} \n```\n```ruby\nclass Ship\n  def initialize(draft,crew)\n    @draft=draft\n    @crew=crew\n  end\nend\n```\n\nEvery time your spies see a new ship enter the dock, they will create a new ship object based on their observations:\n\n* draft - an estimate of the ship's weight based on how low it is in the water\n* crew - the count of crew on board\n\n```javascript\nconst titanic = new Ship(15, 10);\n```\n```coffeescript\ntitanic = new Ship(15, 10)\n```\n```python\nTitanic = Ship(15, 10)\n```\n```csharp\nShip titanic = new Ship(15, 10);\n```\n```rust\n  let titanic = Ship {\n      draft : 15,\n      crew : 10,\n  };\n```\n```java\nShip titanic = new Ship(15, 10);\n```\n```ruby\ntitanic = Ship.new(15, 10)\n```\n\n## Task\nYou have access to the ship \"draft\" and \"crew\". \"Draft\" is the total ship weight and \"crew\" is the number of humans on the ship.\n\nEach crew member adds `1.5` units to the ship draft. If after removing the weight of the crew, the draft is still more than `20`, then the ship is worth looting. Any ship weighing that much must have a lot of booty!\n\nAdd the method\n```javascript\nisWorthIt\n``` \n```coffeescript\nisWorthIt\n``` \n```python\nis_worth_it\n``` \n```rust\nis_worth_it(&self)\n``` \n```csharp\nIsWorthIt\n```\n```java\nisWorthIt\n```\n```ruby\nis_worth_it\n```\n\nto decide if the ship is worthy to loot. For example:\n\n```javascript\ntitanic.isWorthIt() // return false\n```\n```coffeescript\ntitanic.isWorthIt() # return false\n```\n```python\nTitanic.is_worth_it()\nFalse\n```\n```csharp\ntitanic.IsWorthIt() => false\n```\n```rust\ntitanic.is_worth_it() -> false\n```\n```java\ntitanic.isWorthIt() == false\n```\n```ruby\ntitanic.is_worth_it() # false\n```\n\nGood luck and may you find GOOOLD!\n",
+  "totalAttempts": 80093,
+  "totalCompleted": 23295,
+  "totalStars": 355,
+  "voteScore": 1749,
+  "tags": [
+    "Object-oriented Programming",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

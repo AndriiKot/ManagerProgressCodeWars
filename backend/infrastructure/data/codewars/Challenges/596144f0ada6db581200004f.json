@@ -1,0 +1,47 @@
+{
+  "id": "596144f0ada6db581200004f",
+  "name": "Fibonacci on roids",
+  "slug": "fibonacci-on-roids",
+  "category": "algorithms",
+  "publishedAt": "2017-07-08T20:48:33.809Z",
+  "approvedAt": "2017-07-09T07:32:22.188Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "crystal",
+    "python",
+    "csharp",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/596144f0ada6db581200004f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-07-08T20:47:44.723Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "<div style=\"float:right;border:5px\"><img src=\"http://modernhealthmonk.com/wp-content/uploads/2013/01/Arnold.jpg\" style=\"width:375px\" alt=\"Leonardo Fibonacci in a rare portrait of his younger days\"><p><i>Leonardo Fibonacci in a rare portrait of his younger days</i></p></div>\n\nI assume you are all familiar with the famous Fibonacci sequence, having to get each number as the sum of the previous two (and typically starting with either `[0,1]` or `[1,1]` as the first numbers).\n\nWhile there are plenty of variation on it ([including](https://www.codewars.com/kata/tribonacci-sequence) [a few](https://www.codewars.com/kata/fibonacci-tribonacci-and-friends) [I wrote](https://www.codewars.com/kata/triple-shiftian-numbers/)), usually the catch is all the same: get a starting (signature) list of numbers, then proceed creating more with the given rules.\n\nWhat if you were to get to get two parameters, one with the signature (starting value) and the other with the number you need to sum at each iteration to obtain the next one?\n\nAnd there you have it, getting 3 parameters:\n\n* a signature of length `length`\n* a second parameter is a list/array of indexes of the last `length` elements you need to use to obtain the next item in the sequence (consider you can end up not using a few or summing the same number multiple times)' in other words, if you get a signature of length `5` and `[1,4,2]` as indexes, at each iteration you generate the next number by summing the 2nd, 5th and 3rd element (the ones with indexes `[1,4,2]`) of the last 5 numbers\n* a third and final parameter is of course which sequence element you need to return (starting from zero, I don't want to bother you with adding/removing 1s or just coping with the fact that after years on CodeWars we all count as computers do):\n\n```\nClassical Fibonnaci:\nsignature = [1,1], indexes = [0,1], n = 2\n---> 2\nsignature = [1,1], indexes = [0,1], n = 3\n---> 3\nsignature = [1,1], indexes = [0,1], n = 4\n---> 5\n\nSimilar to my Tribonacci:\nsignature = [3,5,2], indexes = [0,1,2], n = 4\n---> 17\n\nCan you figure out how it worked ? ;)\nsignature = [7,3,4,1], indexes = [1,1], n = 6\n---> 2\n\nIf n < length, the element is already in the signature:\nsignature = [7,3,4,1], indexes = [1,1], n = 2\n---> 4\n```",
+  "totalAttempts": 3167,
+  "totalCompleted": 529,
+  "totalStars": 69,
+  "voteScore": 117,
+  "tags": [
+    "Recursion",
+    "Lists",
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

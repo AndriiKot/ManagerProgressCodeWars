@@ -1,0 +1,43 @@
+{
+  "id": "520446778469526ec0000001",
+  "name": "Nesting Structure Comparison",
+  "slug": "nesting-structure-comparison",
+  "category": "algorithms",
+  "publishedAt": "2013-08-09T01:31:42.180Z",
+  "approvedAt": "2013-11-26T23:39:14.643Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "php"
+  ],
+  "url": "https://www.codewars.com/kata/520446778469526ec0000001",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2013-08-09T01:31:35.238Z",
+  "createdBy": {
+    "username": "nklein",
+    "url": "https://www.codewars.com/users/nklein"
+  },
+  "approvedBy": {
+    "username": "nklein",
+    "url": "https://www.codewars.com/users/nklein"
+  },
+  "description": "Complete the function/method (depending on the language) to return `true`/`True` when its argument is an array that has the same nesting structures and same corresponding length of nested arrays as the first array.\n\nFor example:\n\n```javascript\n // should return true\n[ 1, 1, 1 ].sameStructureAs( [ 2, 2, 2 ] );          \n[ 1, [ 1, 1 ] ].sameStructureAs( [ 2, [ 2, 2 ] ] );  \n\n // should return false \n[ 1, [ 1, 1 ] ].sameStructureAs( [ [ 2, 2 ], 2 ] );  \n[ 1, [ 1, 1 ] ].sameStructureAs( [ [ 2 ], 2 ] );  \n\n// should return true\n[ [ [ ], [ ] ] ].sameStructureAs( [ [ [ ], [ ] ] ] ); \n\n// should return false\n[ [ [ ], [ ] ] ].sameStructureAs( [ [ 1, 1 ] ] );     \n```\n```php\nsame_structure_as([1, 1, 1], [2, 2, 2]); // => true\nsame_structure_as([1, [1, 1]], [2, [2, 2]]); // => true\nsame_structure_as([1, [1, 1]], [[2, 2], 2]); // => false\nsame_structure_as([1, [1, 1]], [[2], 2]); // => false\nsame_structure_as([[[], []]], [[[], []]]); // => true\nsame_structure_as([[[], []]], [[1, 1]]); // => false\n```\n```ruby\n# should return true\n[ 1, 1, 1 ].same_structure_as( [ 2, 2, 2 ] )\n[ 1, [ 1, 1 ] ].same_structure_as( [ 2, [ 2, 2 ] ] )\n\n# should return false \n[ 1, [ 1, 1 ] ].same_structure_as( [ [ 2, 2 ], 2 ] )\n[ 1, [ 1, 1 ] ].same_structure_as( [ [ 2 ], 2 ] )\n\n# should return true\n[ [ [ ], [ ] ] ].same_structure_as( [ [ [ ], [ ] ] ] ); \n\n# should return false\n[ [ [ ], [ ] ] ].same_structure_as( [ [ 1, 1 ] ] )   \n```\n```python\n# should return True\nsame_structure_as([ 1, 1, 1 ], [ 2, 2, 2 ] )\nsame_structure_as([ 1, [ 1, 1 ] ], [ 2, [ 2, 2 ] ] )\n\n# should return False \nsame_structure_as([ 1, [ 1, 1 ] ], [ [ 2, 2 ], 2 ] )\nsame_structure_as([ 1, [ 1, 1 ] ], [ [ 2 ], 2 ] )\n\n# should return True\nsame_structure_as([ [ [ ], [ ] ] ], [ [ [ ], [ ] ] ] )\n\n# should return False\nsame_structure_as([ [ [ ], [ ] ] ], [ [ 1, 1 ] ] )\n```\n\n~~~if:javascript\nFor your convenience, there is already a function 'isArray(o)' declared and defined that returns true if its argument is an array, false otherwise.\n~~~\n\n~~~if:php\nYou may assume that all arrays passed in will be non-associative.\n~~~",
+  "totalAttempts": 248351,
+  "totalCompleted": 24846,
+  "totalStars": 1330,
+  "voteScore": 1680,
+  "tags": [
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 8,
+    "suggestions": 6
+  }
+}

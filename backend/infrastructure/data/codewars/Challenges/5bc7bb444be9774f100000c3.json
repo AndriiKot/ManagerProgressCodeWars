@@ -1,0 +1,48 @@
+{
+  "id": "5bc7bb444be9774f100000c3",
+  "name": "Versions manager",
+  "slug": "versions-manager",
+  "category": "algorithms",
+  "publishedAt": "2018-10-19T09:23:58.614Z",
+  "approvedAt": "2018-10-30T03:19:58.698Z",
+  "languages": [
+    "javascript",
+    "java",
+    "php",
+    "python",
+    "rust",
+    "factor",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/5bc7bb444be9774f100000c3",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-10-17T22:44:21.139Z",
+  "createdBy": {
+    "username": "bedis-elacheche",
+    "url": "https://www.codewars.com/users/bedis-elacheche"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "In this kata we are going to mimic a software versioning system.\n\n```if:javascript\nYou have to implement a `vm` function returning an object.\n```\n```if:factor\nYou have to implement a `<version-manager>` constructor word, and some associated words.\n```\n```if:rust\nYou have to implement a `VersionManager` struct.\n```\n```if-not:javascript,factor,rust\nYou have to implement a `VersionManager` class.\n```\n\nIt should accept an optional parameter that represents the initial version. The input will be in one of the following formats: `\"{MAJOR}\"`, `\"{MAJOR}.{MINOR}\"`, or `\"{MAJOR}.{MINOR}.{PATCH}\"`. More values may be provided after `PATCH` but they should be ignored. If these 3 parts are not decimal values, an exception with the message `\"Error occured while parsing version!\"` should be thrown. If the initial version is not provided or is an empty string, use `\"0.0.1\"` by default.\n\nThis class should support the following methods, all of which should be chainable (except `release`):\n\n* `major()` - increase `MAJOR` by `1`, set `MINOR` and `PATCH` to `0`\n* `minor()` - increase `MINOR` by `1`, set `PATCH` to `0`\n* `patch()` - increase `PATCH` by `1`\n* `rollback()` - return the `MAJOR`, `MINOR`, and `PATCH` to their values before the previous `major`/`minor`/`patch` call, or throw an exception with the message `\"Cannot rollback!\"` if there's no version to roll back to. Multiple calls to `rollback()` should be possible and restore the version history\n* `release()` - return a string in the format `\"{MAJOR}.{MINOR}.{PATCH}\"`\n\n~~~if:factor\n***Note:** An error word has been preloaded for you, use it as follows: `msg version-error`.*\n~~~\n\n~~~if:cpp\n**Note:** In C++, use preloaded `VersionException` class for throwing exceptions.\n~~~\n\nMay the binary force be with you!\n\n~~~if:rust\n# Notes for Rust\n### API\nRust is strictly typed and thus imposes restrictions and idioms that don't apply to some other languages, particularly for concepts like method chaining and optional parameters. To allow the tests to interface with your solution, an API has been chosen and set up in the initial solution which you **must not alter** (you are free to declare and use custom structs and methods outside and within the given API as you see fit).\\\nThe constructor functions are as follows:\n* `new`: takes no arguments and creates a VersionManager with the  default initial version as described above\n* `from_version`: takes a string representing the initial version and attempts to parse it into a VersionManager (see below)\n\n\n### Errors\nIn Rust, we don't throw and (maybe) catch Exceptions, and as *competent* Rustaceans we certainly don't `panic!` when we encounter an error we can recover from. Accordingly, the two methods that can potentially fail return a `Result<VersionManager, VMError>`.\\\nThe error type `VMError` has been preloaded for you and replaces the string messages in the original description:\n```rust\npub enum VMError {\n  InvalidVersion, // for the `from_version` function\n  NoHistory,      // for the `rollback` method\n}\n```\n~~~\n",
+  "totalAttempts": 18108,
+  "totalCompleted": 1802,
+  "totalStars": 234,
+  "voteScore": 253,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Strings",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

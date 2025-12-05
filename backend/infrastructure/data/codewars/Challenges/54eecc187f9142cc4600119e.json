@@ -1,0 +1,44 @@
+{
+  "id": "54eecc187f9142cc4600119e",
+  "name": "HTML Generator",
+  "slug": "html-generator",
+  "category": "games",
+  "publishedAt": "2015-02-28T02:08:42.535Z",
+  "approvedAt": "2015-04-28T02:26:01.695Z",
+  "languages": [
+    "javascript",
+    "python",
+    "coffeescript",
+    "c",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/54eecc187f9142cc4600119e",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-02-26T07:32:40.577Z",
+  "createdBy": {
+    "username": "jgdodson",
+    "url": "https://www.codewars.com/users/jgdodson"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Another rewarding day in the fast-paced world of WebDev. Man, you love your job! But as with any job, somtimes things can get a little tedious. Part of the website you're working on has a very repetitive structure, and writing all the HTML by hand is a bore. Time to automate! You want to write some functions that will generate the HTML for you. \n\nTo organize your code, make of all your functions methods of a class called HTMLGen. Tag functions should be named after the tag of the element they create. Each function will take one argument, a string, which is the inner HTML of the element to be created. The functions will return the string for the appropriate HTML element.\n\nFor example, \n\n~~~if:javascript\nJavaScript:\n\n```javascript\nvar g = new HTMLGen();\nvar paragraph = g.p('Hello, World!');\nvar block = g.div(paragraph);\n\n// The following are now true\nparagraph === '<p>Hello, World!</p>'\nblock === '<div><p>Hello, World!</p></div>'\n```\n~~~\n\n~~~if:python\nPython:\n\n```python\ng = HTMLGen();\nparagraph = g.p('Hello, World!')\nblock = g.div(paragraph)\n\n# The following are now true\nparagraph == '<p>Hello, World!</p>'\nblock == '<div><p>Hello, World!</p></div>'\n```\n~~~\n\n~~~if:ruby\nIn Ruby:\n\n```ruby\ng = HTMLGen.new\nparagraph = g.p('Hello, World!')\nblock = g.div(paragraph)\n\n# The following are now true\nparagraph == '<p>Hello, World!</p>'\nblock == '<div><p>Hello, World!</p></div>'\n```\n~~~\n\nYour HTMLGen class should have methods to create the following elements:\n\n  * a\n  * b\n  * p\n  * body\n  * div\n  * span\n  * title\n  * comment\n\nNote: The comment method should wrap its argument with an HTML comment. It is the only method whose name does not match an HTML tag. So, ```g.comment('i am a comment')``` must produce ```<!--i am a comment-->```.\n \n",
+  "totalAttempts": 8589,
+  "totalCompleted": 2440,
+  "totalStars": 101,
+  "voteScore": 262,
+  "tags": [
+    "Functional Programming",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

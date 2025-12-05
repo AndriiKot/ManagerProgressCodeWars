@@ -1,0 +1,40 @@
+{
+  "id": "57e45ce6a20449368f000092",
+  "name": "Dumb News: The Truth About CW Leaderboard !",
+  "slug": "dumb-news-the-truth-about-cw-leaderboard",
+  "category": "reference",
+  "publishedAt": "2016-09-22T22:36:22.722Z",
+  "approvedAt": "2017-03-13T19:52:19.920Z",
+  "languages": [
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/57e45ce6a20449368f000092",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-09-22T22:36:29.756Z",
+  "createdBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "Many of you, happy & honest codewarriors, are probably wondering the same thing looking at the CW leaderboard:\n\n* How can someone gain so many points (more than 30000) in CW?\n* How can someone publish dozens of new kata a day?\n* <s>How can someone speak chinese</s> (<small>uh, no, not that question, shame on you !</small>)\n* How can...\n\nOk, ok, ok! We get the picture! The answer is **very** simple:\n\n<u>**Most of these \"warriors\" are aliens from the 5th dimension, come to earth to torment the poor humans**</u>\n\nThe good news is: we can examine their names to find who they really are.\n\n## Your Task :\nYou may code a `checkUser/check_user` function to check a `userName/user_name` to see who he/she is.\nThe algorithm is:\n\n**1.)** \"Un-leet\" the name; replace `0123456789`  with `olzeasbtBg` respectively (e.g. replace 0 with \"o\", 6 with \"b\", 2 with \"z\". . .)\n\n**2.)** Get the \"binary\" value of the name, by taking the name of the Imp of Imps himself, `Mxyzptlk`, and replacing each letter in his name with a 1 if it is present in user's name, and a 0 if it's not (ignore case)\n\n**3.)** Compute the 5th dimension level by dividing the decimal value of \"bin\"-value by 255 and multiplying by 100: \n```javascript\nfifthDimensionLevel = 100 * parseInt(binaryValue, 2) / 255\n```\n```ruby\nfifth_dimension_level = 100.0 * binary_value.to_i(2) / 255.0\n```\n\n**4.)** Finally, depending of this final score, return a comment:\n\n```\n  score : comment to be returned\n--------+------------------------------------------------------------------------------\n <  1   : \"This one's too clean, should be a bot.\"\n <  50  : \"This one seems ok, may be there's still some humans around here...\"\n <  90  : \"This one's probably an alien from 5th dim, be careful!\"\n >= 90  : \"Yeeerk!!! Mr Mxyztplk himself the imp of imps! Only Superman can beat him!\"\n\n```\n**These messages are preloaded in an array MSGS**\n\n## Example:\n```\nname : 'Am4b0'\n1. unleet --> 'Amabo'\n2. bin-value: 'Mxyzptlk' -> '10000000' (only the 'M' matches Amabo)\n3. level: `10000000` to decimal -> 128, 100*128/255 -> ~ 50.19607843137255\n4. msg: \"This one's probably an alien from 5th dim, be careful!\" (==MSGS[2] )\n```\n\n## Note:\nMore info on the [5th dimension menace](https://en.wikipedia.org/wiki/Mister_Mxyzptlk)\n\n---\n\n<center>**Bold Code-Warriors It's Time to reveal the Truth to our Poor World !**</center>",
+  "totalAttempts": 465,
+  "totalCompleted": 137,
+  "totalStars": 8,
+  "voteScore": 78,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

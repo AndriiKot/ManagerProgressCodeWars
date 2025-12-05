@@ -1,0 +1,46 @@
+{
+  "id": "544034f426bc6adda200000e",
+  "name": "Find heavy ball - level: master",
+  "slug": "find-heavy-ball-level-master",
+  "category": "games",
+  "publishedAt": "2014-10-16T21:31:53.993Z",
+  "approvedAt": "2015-07-04T12:44:31.739Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "cpp",
+    "ocaml",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/544034f426bc6adda200000e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-10-16T21:13:24.800Z",
+  "createdBy": {
+    "username": "tiriana",
+    "url": "https://www.codewars.com/users/tiriana"
+  },
+  "approvedBy": {
+    "username": "MMMAAANNN",
+    "url": "https://www.codewars.com/users/MMMAAANNN"
+  },
+  "description": "There are 8 balls numbered from 0 to 7. \nSeven of them have the same weight. One is heavier. Your task is to find its number.\n\nYour function `findBall` will receive single argument - `scales` object. The `scales` object contains an internally stored array of 8 elements (indexes 0-7), each having the same value except one, which is greater. It also has a public method named `getWeight(left, right)` which takes two arrays of indexes and returns -1, 0, or 1 based on the accumulation of the values found at the indexes passed are heavier, equal, or lighter.\n\n`getWeight` returns:\n\n`-1` if **left** pan is heavier\n\n`1` if **right** pan is heavier\n\n`0` if both pans weigh the same\n\nExamples of `scales.getWeight()` usage:\n\n`scales.getWeight([3], [7])` returns `-1` if ball 3 is heavier than ball 7, `1` if ball 7 is heavier, or `0` i these balls have the same weight.\n\n`scales.getWeight([3, 4], [5, 2])` returns `-1` if weight of balls 3 and 4 is heavier than weight of balls 5 and 2 etc.\n\nSo where's the catch, you may ask. Well - the scales is very old. You can use it only **TWICE** before the scale breaks.\n\n``` if:python,ruby,crystal\n**Note** - Use `scales.get_weight()` in the Python, Crystal and Ruby versions.\n```\n``` if:ocaml\n**Note** - Use `scales#get_weight` in the OCaml version.\n```\n```if:c\nIn C `findBall()` takes no argument, and `getWeight()` is accessible directly as a function instead of a method.\n```\n\nToo hard ? Try lower levels:\n\n* [novice](http://www.codewars.com/kata/544047f0cf362503e000036e)\n* [conqueror](http://www.codewars.com/kata/54404a06cf36258b08000364)\n\nStill too easy ? Try this kata - [ubermaster](http://www.codewars.com/kata/find-heavy-ball-level-ubermaster) (made by by [bellmyer](http://www.codewars.com/users/bellmyer))",
+  "totalAttempts": 6674,
+  "totalCompleted": 1780,
+  "totalStars": 65,
+  "voteScore": 246,
+  "tags": [
+    "Puzzles",
+    "Logic",
+    "Riddles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "55d38b959f9c33f3fb00007d",
+  "name": "The Coins of Ter | Round to the Next N",
+  "slug": "the-coins-of-ter-round-to-the-next-n",
+  "category": "games",
+  "publishedAt": "2015-08-18T20:26:06.093Z",
+  "approvedAt": "2015-08-22T18:14:03.578Z",
+  "languages": [
+    "haskell",
+    "javascript",
+    "coffeescript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/55d38b959f9c33f3fb00007d",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-08-18T19:46:29.911Z",
+  "createdBy": {
+    "username": "bkaes",
+    "url": "https://www.codewars.com/users/bkaes"
+  },
+  "approvedBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "description": "<div style=\"border:1px solid; padding:1ex;\">Inspired by <a href=\"/kata/55d1d6d5955ec6365400006d\">Round to the next 5</a>.\n<strong>Warning!</strong> This kata contains spoilers on the mentioned one. Solve that one first!</div>\n\n# The Coins of Ter\n\nTer is a small country, located between Brelnam and the Orange juice ocean. It uses many different coins and bills for payment. However, one day, the leaders of Ter decide that there are too many small coins. Therefore, they ban the small coins. But no one knows _which_ coins they'll ban, so they ask you to provide a tool that can recalculate a price. After all, if one does not have a 1 Terrek bill and can only give a 2 Terrek bill, one needs to adjust the oddly priced items.\n\n# Task\n\nWrite a function `adjust`, that takes a two integers: the lowest currency unit that's still allowed, and the price/debt that needs to get adjusted. All prices are going up, and debts are remitted. The lowest currency will always be positive.\n\nIn other words:`adjust` takes two integers, `b` and `n`, and returns the smallest number `k`, such that `n <= k` and `k % b == 0 `.\n\n# Examples\n\n```haskell\nadjust 3 0    `shouldBe` 0\nadjust 3 1    `shouldBe` 3\nadjust 3 (-2) `shouldBe` 0\nadjust 3 (-4) `shouldBe` (-3)\nadjust 3 3    `shouldBe` 3\nadjust 6 3    `shouldBe` 6\nadjust 7 3    `shouldBe` 9\n```\n```javascript\nadjust( 3, 0 ) ===  0\nadjust( 3, 1 ) ===  3\nadjust( 3, -2) ===  0\nadjust( 3, -4) === -3\nadjust( 3, 3 ) ===  3\nadjust( 3, 6 ) ===  6\nadjust( 3, 7 ) ===  9\n```\n```coffeescript\nadjust( 3, 0 ) ===  0\nadjust( 3, 1 ) ===  3\nadjust( 3, -2) ===  0\nadjust( 3, -4) === -3\nadjust( 3, 3 ) ===  3\nadjust( 3, 6 ) ===  6\nadjust( 3, 7 ) ===  9\n```\n```python\nadjust( 3, 0 ) ==  0\nadjust( 3, 1 ) ==  3\nadjust( 3, -2) ==  0\nadjust( 3, -4) == -3\nadjust( 3, 3 ) ==  3\nadjust( 3, 6 ) ==  6\nadjust( 3, 7 ) ==  9\n```\n```ruby\nadjust( 3, 0 ) ==  0\nadjust( 3, 1 ) ==  3\nadjust( 3, -2) ==  0\nadjust( 3, -4) == -3\nadjust( 3, 3 ) ==  3\nadjust( 3, 6 ) ==  6\nadjust( 3, 7 ) ==  9\n```\n\n<div style=\"border:1px solid; padding:1ex;\">\n<strong>Translator notice:</strong> Make sure that you provide about the same random tests, so that a user can get feedback during \"Run tests\", and not only during \"Submit\".</div>",
+  "totalAttempts": 2282,
+  "totalCompleted": 1023,
+  "totalStars": 25,
+  "voteScore": 129,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "54834b3559e638b39d0009a2",
+  "name": "\"this\" is an other solution",
+  "slug": "this-is-an-other-solution",
+  "category": "bug_fixes",
+  "publishedAt": "2014-12-06T18:32:32.279Z",
+  "approvedAt": "2015-01-04T16:49:56.123Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/54834b3559e638b39d0009a2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2014-12-06T18:30:14.163Z",
+  "createdBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "In a previous kata ( http://www.codewars.com/kata/547f1a8d4a437abdf800055c ) we try to create an object with **mutable** properties.\n\nThe function `NamedOne` taken `first` & `last` names as parameters, returned an object with `firstName`, `lastName` and `fullName` ( = `firstName` + a space + `lastName` ) properties. These properties were **mutable**.\n\nFor example, with a \"NamedOne\" like this :\n```javascript\nvar namedOne = new NamedOne(\"Naomi\",\"Wang\")\nnamedOne.fullName  // -> \"Naomi Wang\"\n```\n\n...we were able to  **change** its properties:\n```javascript\nnamedOne.firstName = \"John\" \nnamedOne.lastName = \"Doe\"\nnamedOne.fullName  // -> \"John Doe\" \n//..or..\nnamedOne.fullName = \"Bill Smith\"\nnamedOne.firstName // -> \"Bill\" \nnamedOne.lastName // -> \"Smith\"\n```\n\n##Your mission \n\n**On the contrary**, the purpose of this kata is to create an `OnceNamedOne` object with **immutable** properties.\n\nThat means `.firstName`, `.lastName` and `.fullName` are defined into the Constructor and can't be no more changed.\n\nThe properties are still **readable** using the dot or bracket notation but there're **not writable**.\n\n##Examples:\n\n```javascript\nvar onceNamed = new OnceNamedOne(\"Naomi\",\"Wang\")\n\n// ...then...\nonceNamed.firstName // -> \"Naomi\"\nonceNamed.lastName  // -> \"Wang\"\nonceNamed.fullName // -> \"Naomi Wang\"\n\n// ...if you try : ...\nonceNamed.firstName = \"Bill\"\n// ...or...\nonceNamed['lastName'] = \"Smith\"\n\n// ...then...\nonceNamed['firstName'] // -> \"Naomi\"\nonceNamed['lastName']  // -> \"Wang\"\nonceNamed['fullName'] // -> \"Naomi Wang\"\n\n// ..but you can still create other instances..\nvar otherOne = new OnceNamedOne(\"Don\",\"Jones\")\notherOne.fullName // -> \"Don Jones\"\n```\n\nCan you change our function to create such a `OnceNamedOne` object ?\n\n(<small> **Hint**: in this kata you'll try to **define properties** of an **object**</small> )\n",
+  "totalAttempts": 2608,
+  "totalCompleted": 1011,
+  "totalStars": 43,
+  "voteScore": 156,
+  "tags": [
+    "Object-oriented Programming",
+    "Debugging",
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

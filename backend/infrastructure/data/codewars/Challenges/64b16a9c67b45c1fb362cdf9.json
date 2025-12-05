@@ -1,0 +1,40 @@
+{
+  "id": "64b16a9c67b45c1fb362cdf9",
+  "name": "Retained Users",
+  "slug": "retained-users",
+  "category": "reference",
+  "publishedAt": "2023-07-14T15:33:43.324Z",
+  "approvedAt": "2023-07-20T07:17:04.786Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64b16a9c67b45c1fb362cdf9",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-14T15:32:44.120Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst at a rapidly growing social media startup. Your team is interested in understanding user engagement and specifically wants to track monthly user retention. They define 'retained users' as users who logged in during a specific month, and also logged in the month immediately prior to that.\n\nYour task is to write a SQL query that calculates the number of retained users per month from a given `logins` table, which has the following columns:\n\n* `user_id` (integer): An identifier for the user. Each user has a unique user_id.\n* `date` (date): The date on which the user logged in.\n\nThe SQL query should return a result with two columns:\n\n* `month` (string): The timestamp for the given month, formatted as 'FMMonth, YYYY'. For example, 'July, 2023'.\n* `retained_users` (integer): The number of retained users for the given month.\n\nThe results should be sorted by the `month` in ascending chronological order.\n\nNotes:\n\n* multiple logins per month for a user are possible;\n* it is possible for users to potentially \"skip\" a month (or more) before logging in again.\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>month</th><th>retained_users</th></tr><tr><td>February, 2023</td><td>16</td></tr><tr><td>March, 2023</td><td>15</td></tr><tr><td>April, 2023</td><td>17</td></tr></table>",
+  "totalAttempts": 1119,
+  "totalCompleted": 94,
+  "totalStars": 5,
+  "voteScore": 35,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

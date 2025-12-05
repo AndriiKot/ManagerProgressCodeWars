@@ -1,0 +1,50 @@
+{
+  "id": "55beec7dd347078289000021",
+  "name": "Linked Lists - Length & Count",
+  "slug": "linked-lists-length-and-count",
+  "category": "reference",
+  "publishedAt": "2015-08-03T04:33:22.354Z",
+  "approvedAt": "2015-09-19T06:34:28.368Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby",
+    "swift",
+    "csharp",
+    "cpp",
+    "nasm",
+    "cobol",
+    "c",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/55beec7dd347078289000021",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-08-03T04:22:21.799Z",
+  "createdBy": {
+    "username": "JDeBolt",
+    "url": "https://www.codewars.com/users/JDeBolt"
+  },
+  "approvedBy": {
+    "username": "CIS 122",
+    "url": "https://www.codewars.com/users/CIS%20122"
+  },
+  "description": "Linked Lists - Length & Count\n\nImplement `length` to count the number of nodes in a linked list.<br>\n```javascript\nlength(null) => 0\nlength(1 -> 2 -> 3 -> null) => 3\n```\n```csharp\nNode.Length(nullptr) => 0\nNode.Length(1 -> 2 -> 3 -> nullptr) => 3\n```\n```cpp\nLength(null) => 0\nLength(1 -> 2 -> 3 -> null) => 3\n```\n```cobol\n      NodeListLength(null) => 0\n      NodeListLength(1 -> 2 -> 3 -> null) => 3\n```\n```lambdacalc\nlength nil # 0\nlength (1 -> 2 -> 3 -> nil) # 3\n```\n~~~if-not:csharp,lambdacalc\nImplement Count() to count the occurrences of an integer in a linked list.\n~~~\n~~~if:csharp\nImplement Count() to count the occurrences of a that satisfy a condition provided by a predicate which takes in a node's Data value.\n~~~\n~~~if:lambdacalc\nImplement `count` to count the occurrences of an element in a linked list. A function `eq` is preloaded for you to make comparisons, which will return `True = \\ a _ . a` or `False = \\ _ b . b`.\n~~~\n\n```javascript\ncount(null, 1) => 0\ncount(1 -> 2 -> 3 -> null, 1) => 1\ncount(1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> null, 2) => 4\n```\n```csharp\nNode.Count(null, value => value == 1) => 0\nNode.Count(1 -> 3 -> 5 -> 6, value => value % 2 != 0) => 3\n```\n```cpp\nCount(null, 1) => 0\nCount(1 -> 2 -> 3 -> nullptr, 1) => 1\nCount(1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> nullptr, 2) => 4\n```\n```cobol\n      NodeListCount(null, 1) => 0\n      NodeListCount(1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> null, 2) => 4\n```\n```lambdacalc\ncount nil 1 # 0\ncount (1 -> 2 -> 3 -> nil) 1 # 1\ncount (1 -> 1 -> 2 -> 1 -> 2) 2 # 2\n```\n\nI've decided to bundle these two functions within the same Kata since they are both very similar.\n\n~~~if:lambdacalc\n### Lambda Calculus Notes\n\nIn the LC translations of this series, we use the Scott encoding of a linked list. In this encoding, a list is a function which accepts two arguments. If the list is `nil` then it returns the first argument (the default case), otherwise it will pass its data and tail to the second argument. In practice this looks like this:\n```lambdacalc\nmy-list (default-case) (\\ data next . result)\n```\nFor this kata, `nil` is defined for you in `Preloaded` like this:\n```lambdacalc\nnil = \\ n _ . n\n```\n\nIn addition, we also use the [Scott encoding](https://github.com/codewars/lambda-calculus/wiki/encodings-guide#scott-numerals) of numbers.\n~~~\n\nThe `push()`/`Push()` and `buildOneTwoThree()`/`BuildOneTwoThree()` functions do not need to be redefined.\n\nRelated Kata in order of expected completion (increasing difficulty):<br>\n <a href=\"http://www.codewars.com/kata/linked-lists-push-and-buildonetwothree\">Linked Lists - Push & BuildOneTwoThree</a><br>\n <a href=\"http://www.codewars.com/kata/linked-lists-length-and-count\">Linked Lists - Length & Count</a><br>\n <a href=\"http://www.codewars.com/kata/linked-lists-get-nth-node\">Linked Lists - Get Nth Node</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-insert-nth-node\">Linked Lists - Insert Nth Node</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-sorted-insert\">Linked Lists - Sorted Insert</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-insert-sort\">Linked Lists - Insert Sort</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-append\">Linked Lists - Append</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-remove-duplicates\">Linked Lists - Remove Duplicates</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-move-node\">Linked Lists - Move Node</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-move-node-in-place\">Linked Lists - Move Node In-place</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-alternating-split\">Linked Lists - Alternating Split</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-front-back-split\">Linked Lists - Front Back Split</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-shuffle-merge\">Linked Lists - Shuffle Merge</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-sorted-merge\">Linked Lists - Sorted Merge</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-merge-sort\">Linked Lists - Merge Sort</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-sorted-intersect\">Linked Lists - Sorted Intersect</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-iterative-reverse\">Linked Lists - Iterative Reverse</a><br>\n<a href=\"http://www.codewars.com/kata/linked-lists-recursive-reverse\">Linked Lists - Recursive Reverse</a><br>\n\nInspired by Stanford Professor Nick Parlante's excellent [Linked List teachings.](http://cslibrary.stanford.edu/103/LinkedListBasics.pdf)",
+  "totalAttempts": 28547,
+  "totalCompleted": 10758,
+  "totalStars": 474,
+  "voteScore": 1094,
+  "tags": [
+    "Linked Lists",
+    "Data Structures",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

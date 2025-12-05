@@ -1,0 +1,47 @@
+{
+  "id": "57d0329442e44e65e8000bb5",
+  "name": "Simple Encryption #3 - Turn The Bits Around",
+  "slug": "simple-encryption-number-3-turn-the-bits-around",
+  "category": "algorithms",
+  "publishedAt": "2016-09-08T05:37:29.437Z",
+  "approvedAt": "2017-03-12T20:09:34.199Z",
+  "languages": [
+    "csharp",
+    "cpp",
+    "javascript",
+    "typescript",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/57d0329442e44e65e8000bb5",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-09-07T15:30:28.136Z",
+  "createdBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "approvedBy": {
+    "username": "smile67",
+    "url": "https://www.codewars.com/users/smile67"
+  },
+  "description": "For encrypting the strings this region of chars is given (in this order!):\n\n- all letters (ascending, first all UpperCase, then all LowerCase)<br>\n- all digits (ascending)<br>\n- the both chars: \" \"(space) and \".\"\n\nThese are 64 chars! (This region is zero-based.)<br>\nSo, every char from this region has 6 bits!<br>\n\nWrite two methods: <br/>\n```csharp\nstring Encrypt(string text)\nstring Decrypt(string encryptedText)\n```\n```javascript\nfunction encrypt(text)\nfunction decrypt(encryptedText)\n```\n```cpp\nstd::string encrypt(std::string text)\nstd::string decrypt(std::string encryptedText)\n```\n```typescript\nexport function encrypt(text:string):string\nexport function decrypt(encryptedText:string):string\n```\n\nPrechecks:<br>\n```\n1. If the input-string (for both methods!) has chars, that are not in the region, \n   throw an Exception(C#, C++, Python) or Error(JavaScript).\n2. If the input-string is null or empty return exactly this value!\n```\n\nFor building the encrypted string:<br>\nFor every char use these rules:<br>\n```\n1. Change the fifth bit of the char and the first bit of the next char. (C1.5 <==> C2.1, only if there is a next char!)\n2. Inverse the second and the forth bit of the char.           (2,4 => 0->1 or 1->0)\n3. Change the first 3 bit against the last 3 bit of the char.  (1,2,3 <==> 4,5,6)\n4. Change every odd bit against the following bit of the char. (1 <==> 2, 3 <==> 4, 5 <==> 6)\n5. Reverse the whole line of bits of the char.\n6. Change the first against the third bit of the char.         (1 <==> 3)\n```\n\nOf course every rule takes the changed char from the previous rule.<br>\nThe position of a bit starts from the beginning and not from the end! (So maybe in different order as you thought! See the example.)\n\nExample for the first rule for \"B9\":\n```\npos: 1 2 3 4 5 6 \nB -> 0 0 0 0 0 1\n9 -> 1 1 1 1 0 1\nChange pos 5 from \"B\" against pos 1 from \"9\".\n ->  0 0 0 0 1 1 \n ->  0 1 1 1 0 1 \n```\n\n<br><br>\nThis kata is part of the Simple Encryption Series:<br>\n<a href=\"https://www.codewars.com/kata/simple-encryption-number-1-alternating-split\" taget=_blank>Simple Encryption #1 - Alternating Split</a><br>\n<a href=\"https://www.codewars.com/kata/simple-encryption-number-2-index-difference\" taget=_blank>Simple Encryption #2 - Index-Difference</a><br>\n<a href=\"https://www.codewars.com/kata/simple-encryption-number-3-turn-the-bits-around\" taget=_blank>Simple Encryption #3 - Turn The Bits Around</a><br>\n<a href=\"https://www.codewars.com/kata/simple-encryption-number-4-qwerty\" taget=_blank>Simple Encryption #4 - Qwerty</a><br>\n\nHave fun coding it and please don't forget to vote and rank this kata! :-)",
+  "totalAttempts": 1949,
+  "totalCompleted": 275,
+  "totalStars": 121,
+  "voteScore": 105,
+  "tags": [
+    "Cryptography",
+    "Security",
+    "Strings",
+    "Algorithms",
+    "Bits"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "54be8c92f57794fc2f000aeb",
+  "name": "Map With Empty Fallback",
+  "slug": "map-with-empty-fallback",
+  "category": "algorithms",
+  "publishedAt": "2015-01-20T17:13:55.174Z",
+  "approvedAt": "2016-04-11T00:49:45.176Z",
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/54be8c92f57794fc2f000aeb",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-01-20T17:12:53.071Z",
+  "createdBy": {
+    "username": "DiegoSalazar",
+    "url": "https://www.codewars.com/users/DiegoSalazar"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Add a method to the Array class to map over itself with the given proc, but when the array is empty call the fallback proc. The method should return a new array when not empty.\n\nIt's use should look like this:\n\n```ruby\nmy_feelings = [\"random\", \"stuff\"]\nmy_emptiness = []\n\nmy_feelings.map_with_fallback ->(i) {\n  # map over my_feelings\n}, fallback: -> {\n  # run me when array is empty\n}\n# should return result of mapping over my_feelings with the first proc\n\nmy_emptiness.map_with_fallback ->(i) {\n  # map over my_emptiness\n}, fallback: -> {\n  # run me when array is empty\n}\n# should return result of of the fallback proc\n```\n\nImplement the `Array#map_with_fallback` method.",
+  "totalAttempts": 1122,
+  "totalCompleted": 123,
+  "totalStars": 2,
+  "voteScore": 25,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

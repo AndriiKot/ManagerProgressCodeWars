@@ -1,0 +1,46 @@
+{
+  "id": "563fbac924106b8bf7000046",
+  "name": "Breadcrumb Generator",
+  "slug": "breadcrumb-generator",
+  "category": "algorithms",
+  "publishedAt": "2015-11-28T21:17:52.260Z",
+  "approvedAt": "2015-12-25T07:40:54.221Z",
+  "languages": [
+    "javascript",
+    "ruby",
+    "python",
+    "java",
+    "csharp",
+    "coffeescript"
+  ],
+  "url": "https://www.codewars.com/kata/563fbac924106b8bf7000046",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2015-11-08T21:12:41.768Z",
+  "createdBy": {
+    "username": "GiacomoSorbi",
+    "url": "https://www.codewars.com/users/GiacomoSorbi"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "As [breadcrumb menùs](https://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29) are quite popular today, I won't digress much on explaining them, leaving the wiki link to do all the dirty work in my place.\n\nWhat might not be so trivial is instead to get a decent breadcrumb from your current url. For this kata, your purpose is to create a function that takes a url, strips the first part (labelling it always `HOME`) and then builds it making each element but the last a `<a>` element linking to the relevant path; last has to be a `<span>` element getting the `active` `class`.\n\nAll elements need to be turned to uppercase and separated by a separator, given as the second parameter of the function; the last element can terminate in some common extension like `.html`, `.htm`, `.php` or `.asp`; if the name of the last element is `index`.something, you treat it as if it wasn't there, sending users automatically to the upper level folder.\n\nA few examples can be more helpful than thousands of words of explanation, so here you have them:\n```javascript\ngenerateBC(\"mysite.com/pictures/holidays.html\", \" : \") == '<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>'\ngenerateBC(\"www.codewars.com/users/GiacomoSorbi\", \" / \") == '<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>'\ngenerateBC(\"www.microsoft.com/docs/index.htm\", \" * \") == '<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>'\n```\n```python\ngenerate_bc(\"mysite.com/pictures/holidays.html\", \" : \") == '<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>'\ngenerate_bc(\"www.codewars.com/users/GiacomoSorbi\", \" / \") == '<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>'\ngenerate_bc(\"www.microsoft.com/docs/index.htm\", \" * \") == '<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>'\n```\n```ruby\ngenerate_bc(\"mysite.com/pictures/holidays.html\", \" : \") == '<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>'\ngenerate_bc(\"www.codewars.com/users/GiacomoSorbi\", \" / \") == '<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>'\ngenerate_bc(\"www.microsoft.com/docs/index.htm\", \" * \") == '<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>'\n```\n```java\nSolution.generate_bc(\"mysite.com/pictures/holidays.html\", \" : \").equals( '<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>' );\nSolution.generate_bc(\"www.codewars.com/users/GiacomoSorbi\", \" / \").equals( '<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>' );\nSolution.generate_bc(\"www.microsoft.com/docs/index.htm\", \" * \").equals( '<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>' );\n```\n```csharp\nKata.GenerateBC(\"mysite.com/pictures/holidays.html\", \" : \") == '<a href=\"/\">HOME</a> : <a href=\"/pictures/\">PICTURES</a> : <span class=\"active\">HOLIDAYS</span>';\nKata.GenerateBC(\"www.codewars.com/users/GiacomoSorbi\", \" / \") == '<a href=\"/\">HOME</a> / <a href=\"/users/\">USERS</a> / <span class=\"active\">GIACOMOSORBI</span>';\nKata.GenerateBC(\"www.microsoft.com/docs/index.htm\", \" * \") == '<a href=\"/\">HOME</a> * <span class=\"active\">DOCS</span>';\n```\nSeems easy enough?\n\nWell, probably not so much, but we have one last extra rule: if one element (other than the root/home) is longer than 30 characters, you have to shorten it, acronymizing it (i.e.: taking just the initials of every word); url will be always given in the format `this-is-an-element-of-the-url` and you should ignore words in this array while acronymizing: `[\"the\",\"of\",\"in\",\"from\",\"by\",\"with\",\"and\", \"or\", \"for\", \"to\", \"at\", \"a\"]`; a url composed of more words separated by `-` and equal or less than 30 characters long needs to be just uppercased with hyphens replaced by spaces.\n\nIgnore anchors (`www.url.com#lameAnchorExample`) and parameters (`www.url.com?codewars=rocks&pippi=rocksToo`) when present.\n\nExamples:\n```javascript\ngenerateBC(\"mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm\", \" > \") == '<a href=\"/\">HOME</a> > <a href=\"/very-long-url-to-make-a-silly-yet-meaningful-example/\">VLUMSYME</a> > <span class=\"active\">EXAMPLE</span>'\ngenerateBC(\"www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi\", \" + \") == '<a href=\"/\">HOME</a> + <a href=\"/users/\">USERS</a> + <span class=\"active\">GIACOMO SORBI</span>'\n```\n```python\ngenerate_bc(\"mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm\", \" > \") == '<a href=\"/\">HOME</a> > <a href=\"/very-long-url-to-make-a-silly-yet-meaningful-example/\">VLUMSYME</a> > <span class=\"active\">EXAMPLE</span>'\ngenerate_bc(\"www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi\", \" + \") == '<a href=\"/\">HOME</a> + <a href=\"/users/\">USERS</a> + <span class=\"active\">GIACOMO SORBI</span>'\n```\n```ruby\ngenerate_bc(\"mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm\", \" > \") == '<a href=\"/\">HOME</a> > <a href=\"/very-long-url-to-make-a-silly-yet-meaningful-example/\">VLUMSYME</a> > <span class=\"active\">EXAMPLE</span>'\ngenerate_bc(\"www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi\", \" + \") == '<a href=\"/\">HOME</a> + <a href=\"/users/\">USERS</a> + <span class=\"active\">GIACOMO SORBI</span>'\n```\n```java\nSolution.generate_bc(\"mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm\", \" > \").equals( '<a href=\"/\">HOME</a> > <a href=\"/very-long-url-to-make-a-silly-yet-meaningful-example/\">VLUMSYME</a> > <span class=\"active\">EXAMPLE</span>' );\nSolution.generate_bc(\"www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi\", \" + \").equals( '<a href=\"/\">HOME</a> + <a href=\"/users/\">USERS</a> + <span class=\"active\">GIACOMO SORBI</span>' );\n```\n\nYou will always be provided **valid url** to webpages **in common formats**, so you probably shouldn't bother validating them.\n\nIf you like to test yourself with actual work/interview related kata, please also consider this one about building [a string filter for Angular.js](http://www.codewars.com/kata/number-shortening-filter).\n\n_Special thanks to [the colleague](http://www.codewars.com/users/jury89) that, seeing my code and commenting that I worked on that as if it was I was on CodeWars, made me realize that it could be indeed a good idea for a kata_ :)",
+  "totalAttempts": 114001,
+  "totalCompleted": 4941,
+  "totalStars": 910,
+  "voteScore": 670,
+  "tags": [
+    "Parsing",
+    "Regular Expressions",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

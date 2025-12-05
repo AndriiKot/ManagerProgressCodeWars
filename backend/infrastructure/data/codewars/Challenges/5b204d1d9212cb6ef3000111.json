@@ -1,0 +1,43 @@
+{
+  "id": "5b204d1d9212cb6ef3000111",
+  "name": "The Pony Express (missing rider)",
+  "slug": "the-pony-express-missing-rider",
+  "category": "algorithms",
+  "publishedAt": "2018-06-13T04:38:13.684Z",
+  "approvedAt": "2018-06-14T05:07:48.476Z",
+  "languages": [
+    "java",
+    "javascript",
+    "python",
+    "ruby",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/5b204d1d9212cb6ef3000111",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-06-12T22:45:49.642Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "FArekkusu",
+    "url": "https://www.codewars.com/users/FArekkusu"
+  },
+  "description": "# A History Lesson\n\nThe <a href=https://en.wikipedia.org/wiki/Pony_Express>Pony Express</a> was a mail service operating in the US in 1859-60.\n\n\n<img src=\"https://i.imgur.com/oEqUjpP.png\" title=\"Pony Express\" />\n\n\nIt reduced the time for messages to travel between the Atlantic and Pacific coasts to about 10 days, before it was made obsolete by the <a href=https://en.wikipedia.org/wiki/First_transcontinental_telegraph>transcontinental telegraph</a>.\n\n# How it worked\n\nThere were a number of *stations*, where:\n\n\n* The rider switched to a fresh horse and carried on, or\n\n* The mail bag was handed over to the next rider\n\n\n# Kata Task\n\n\n`stations` is a list/array of distances (miles) from one station to the next along the Pony Express route.\n\nImplement the `riders` method/function, to return how many riders are necessary to get the mail from one end to the other.\n\n##  Missing rider\n\nIn this version of the Kata a rider may go missing. In practice, this could be for a number of reasons - a lame horse, an accidental fall, foul play... \n\nAfter some time, the rider's absence would be noticed at the **next** station, so the next designated rider from there would have to back-track the mail route to look for his missing colleague. The missing rider is then safely escorted back to the station he last came from, and the mail bags are handed to his rescuer (or another substitute rider if necessary). \n\n`stationX` is the number (2..N) of the station where the rider's absence was noticed.\n\n# Notes\n\n* Each rider travels as far as he can, but never more than 100 miles.\n\n# Example\n\nGIven\n\n* `stations = [43, 23, 40, 13]`\n\n* `stationX = 4`\n\nSo\n\n`S1` ...  ... 43 ...  ... `S2` ...  ... 23 ...  ... `S3` ...  ... 40 ...  ... `S4` ...  ... 13 ...  ... `S5`\n\n* Rider 1 gets as far as Station S3\n* Rider 2 (at station S3) takes mail bags from Rider 1\n* Rider 2 never arrives at station S4\n* Rider 3 goes back to find what happened to Rider 2\n* Rider 2 and Rider 3 return together back to Station S3\n* Rider 3 takes mail bags from Rider 2\n* Rider 3 completes the journey to Station S5\n\n**Answer:** \n3 riders\n\n\n<hr style=\"width:75%;margin-top:40px;margin-bottom:40px;height:1px;border:none;color:red;background-color:red;\" />\n\n*Good Luck.</br>\nDM.*\n\n---\n\nSee also\n* <a href=https://www.codewars.com/kata/the-pony-express>The Pony Express</a>\n* The Pony Express (missing rider)\n\n\n\n",
+  "totalAttempts": 3080,
+  "totalCompleted": 150,
+  "totalStars": 15,
+  "voteScore": 55,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

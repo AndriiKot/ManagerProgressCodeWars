@@ -1,0 +1,55 @@
+{
+  "id": "55d8aa568dec9fb9e200004a",
+  "name": "How Many Numbers?",
+  "slug": "how-many-numbers",
+  "category": "reference",
+  "publishedAt": "2015-08-24T13:38:57.207Z",
+  "approvedAt": "2016-09-01T05:59:12.629Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript",
+    "coffeescript",
+    "csharp",
+    "java",
+    "haskell",
+    "clojure",
+    "elixir",
+    "rust",
+    "d",
+    "go",
+    "julia",
+    "factor"
+  ],
+  "url": "https://www.codewars.com/kata/55d8aa568dec9fb9e200004a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-08-22T16:59:02.280Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "description": "Create a function that will select numbers that fulfill the following constraints:\n\n1) The numbers should have at least 2 digits.\n\n2) They should have their respective digits in increasing order from left to right. \n    \n    Examples: 789, 479, 12678, have these feature. But 617, 89927 are not of this type.\n\n    In general, if ```d1, d2, d3....``` are the digits of a certain number ```i``` \n\n    Example: ```(i = d1d2d3d4d5) so, d1 < d2 < d3 < d4 < d5```\n\n3) They cannot have digits that occur twice or more. Example: 1223 should be discarded.\n\n4) The difference between neighbouring pairs of digits cannot exceed a certain value. \n    \n    Example: If the difference between contiguous digits cannot exceed 2, so 1345, 23568 and 234578 pass this test. \n    \n    Other numbers like 1456, 389, 157 don't belong to that group because in the first number (1456), the difference between the second and first digit 4 - 1 > 2; in the next one (389), we have 8 - 3 > 2; and see for yourself why 157 should be discarded.\n\n    In general, taking the example above of ```i = d1d2d3d4d5```:\n\n    ```\n    d2 - d1 <= d;\n    d3 - d2 <= d;\n    d4 - d3 <= d;\n    d5 - d4 <= d;\n    ```\n\nThe function should accept two arguments n and d; n is the upper limit of the range to work with (all the numbers should be less than or equal to n), and d is maximum difference between every pair of its contiguous digits. It's clear that 1 <= d <= 8.\n\nHere we have some cases:\n\n```\nn = 0, d = 1 ---> 0 \n# n = 0, empty range\n\nn = 3, d = 1 ---> 0 \n# n = 3, numbers should be higher or equal than 12\n\nn = 13, d = 1 ---> 1 \n# only 12 fulfill the requirements\n\nn = 20, d = 2 ---> 2 \n# 12 and 13 are the numbers\n\nn = 30, d = 2 ---> 4 \n# 12, 13, 23 and 24 are the selected ones\n\nn = 44, d = 2 ---> 6 \n# 12, 13, 23, 24, 34 and 35 are valid ones\n\nn = 50, d = 3 ---> 12 \n# 12, 13, 14, 23, 24, 25, 34, 35, 36, 45, 46 and 47 are valid\n```\n\nCompare the last example with this one:\n\n```\nn = 47, d = 3 ---> 12 \n# 12, 13, 14, 23, 24, 25, 34, 35, 36, 45, 46 and 47 are valid \n```\n\n(because the instructions say the value `n` may be included if it fulfills the above constraints of course)\n\nHappy coding!!\n",
+  "totalAttempts": 6003,
+  "totalCompleted": 1198,
+  "totalStars": 86,
+  "voteScore": 232,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Mathematics",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

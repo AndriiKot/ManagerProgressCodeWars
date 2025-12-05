@@ -1,0 +1,45 @@
+{
+  "id": "581e50555f59405743001813",
+  "name": "Fun with lists: anyMatch + allMatch",
+  "slug": "fun-with-lists-anymatch-plus-allmatch",
+  "category": "reference",
+  "publishedAt": "2016-11-05T21:43:14.552Z",
+  "approvedAt": "2016-11-07T11:53:24.576Z",
+  "languages": [
+    "javascript",
+    "java",
+    "php",
+    "python",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/581e50555f59405743001813",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2016-11-05T21:34:13.859Z",
+  "createdBy": {
+    "username": "janitormeir",
+    "url": "https://www.codewars.com/users/janitormeir"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "Implement two methods `anyMatch` and `allMatch` which take the head of a linked list and a predicate function, and return:\n* anyMatch: whether the predicate is true for *any* of the list's elements.\n* allMatch: whether the predicate is true for *all* of the list's elements.\n\nFor example:\n\nGiven the list: `1 -> 2 -> 3`, and the predicate `x => x > 1`, **anyMatch** / `any_match` should return true (both 2 & 3 are valid for this predicate), and **allMatch** / `all_match` should return false (1 is not valid for this predicate)\n\nThe linked list is defined as follows:\n\n```c\nstruct Node {\n\tstruct Node *next;\n\tint data;\n};\n```\n```javascript\nfunction Node(data, next = null) {\n  this.data = data;\n  this.next = next;\n}\n```\n```java\nclass Node<T> {\n  public T data;\n  public Node<T> next;\n  \n  Node(T data, Node next) {\n    this.data = data;\n    this.next = next;\n  }\n  \n  Node(T data) {\n    this(data, null);\n  }\n}\n```\n```php\nclass Node {\n  public $data, $next;\n  public function __construct($data, $next = NULL) {\n    $this->data = $data;\n    $this->next = $next;\n  }\n}\n```\n```python\nclass Node:\n    def __init__(self, data, next=None):\n        self.data = data\n        self.next = next\n```\n\nNote: the list may be null and can hold any type of value.\n\nGood luck!\n\n\nThis kata is part of [fun with lists](https://www.codewars.com/collections/fun-with-lists) series:\n\n* [Fun with lists: length](https://www.codewars.com/kata/581e476d5f59408553000a4b)\n* [Fun with lists: indexOf](https://www.codewars.com/kata/581c6b075cfa83852700021f)\n* [Fun with lists: lastIndexOf](https://www.codewars.com/kata/581c867a33b9fe732e000076)\n* [Fun with lists: countIf](https://www.codewars.com/kata/5819081d056d4bdd410004f8)\n* [Fun with lists: anyMatch + allMatch](https://www.codewars.com/kata/581e50555f59405743001813)\n* [Fun with lists: filter](https://www.codewars.com/kata/582041237df353e01d000084)\n* [Fun with lists: map](https://www.codewars.com/kata/58259d9062cfb45e1a00006b)\n* [Fun with lists: reduce](https://www.codewars.com/kata/58319f37aeb69a89a00000c7)",
+  "totalAttempts": 4019,
+  "totalCompleted": 1176,
+  "totalStars": 32,
+  "voteScore": 265,
+  "tags": [
+    "Lists",
+    "Functional Programming",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "650c5aa70b7009a1640c9596",
+  "name": "Sibling Count based on  Common Parent ",
+  "slug": "sibling-count-based-on-common-parent",
+  "category": "reference",
+  "publishedAt": "2023-09-22T07:38:41.247Z",
+  "approvedAt": "2023-10-18T11:59:45.056Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/650c5aa70b7009a1640c9596",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-09-21T15:00:55.732Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Given a table `client_parents` that describes parent-child relationships, write an SQL query to determine how many siblings each child has. A sibling is defined as another child who shares at least one parent with the given child.\n\nEach child (represented by `client_id`) has exactly two parents (represented by `parent_id`). There can be no duplicate rows in the table; that is, a particular combination of `client_id` and `parent_id` is unique. \n\nThe sibling relationship is not transitive: If Client X is a sibling of Client Y, and Client Y is a sibling of Client Z, it does not necessarily mean that Client X is a sibling of Client Z unless they directly share a parent.\n```\nparent:   1   2   3   4\n           \\ / \\ / \\ /\nchild:      A   B   C\n```\n\nIn the above example, Child A and Child B are siblings because they share Parent 2. Child B and Child C are siblings because they share Parent 3. However, Child A and Child C are not siblings because they don't share a direct parent, showcasing the non-transitive nature of the sibling relationship.\n\n##### Schema\n\n`client_parents`:\n\n* `client_id` (integer) - Represents the ID of the client.\n* `parent_id` (integer) - Represents the ID of the parent.\n\nFor this sample data:\n\n```\n| client_id | parent_id |\n+-----------+-----------+\n|     1     |     1     |\n|     1     |     2     |\n|     2     |     3     |\n|     2     |     4     |\n|     3     |     3     |\n|     3     |     5     |\n|     4     |     3     |\n|     4     |     4     |\n|     5     |     1     |\n|     5     |     6     |\n|     6     |     7     |\n|     6     |     8     |\n```\n\nExpected output is: \n\n```\n| client_id | num_siblings |\n+-----------+--------------+\n|     1     |      1       |\n|     2     |      2       |\n|     3     |      2       |\n|     4     |      2       |\n|     5     |      1       |\n|     6     |      0       |\n```\n\nResult should be sorted by `client_id` in ascending order.\n\nColumns in the resultant dataset:\n\n1) `client_id` (integer) - Represents the ID of the client.\n2) `num_siblings` (integer) - Represents the number of siblings the client has.\n\nExplanation of the Expected Output:\n\n1) Client 1 has parents 1 and 2.\n    * Shares parent 1 with Client 5.\n    * Total siblings = 1 (Client 5).\n    \n2) Client 2 has parents 3 and 4.\n    * Shares parent 3 with Clients 3 and 4.\n    * Shares parent 4 also with Client 4.\n    * Total siblings = 2 (Clients 3 and 4).\n    \n3) Client 3 has parents 3 and 5.\n    * Shares parent 3 with Clients 2 and 4.\n    * Total siblings = 2 (Clients 2 and 4).\n\n4) Client 4 has parents 3 and 4.\n    * Shares parent 3 with Clients 2 and 3.\n    * Shares parent 4 also with Client 2.\n    * Total siblings = 2 (Clients 2 and 3).\n    \n5) Client 5 has parents 1 and 6.\n    * Shares parent 1 with Client 1.\n    * Total siblings = 1 (Client 1).\n    \n6) Client 6 has parents 7 and 8.\n    * Doesn't share parents with any other client.\n    * Total siblings = 0.\n\n\nGLHF!",
+  "totalAttempts": 884,
+  "totalCompleted": 232,
+  "totalStars": 14,
+  "voteScore": 55,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

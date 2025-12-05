@@ -1,0 +1,43 @@
+{
+  "id": "572ced1822719279fa0005ea",
+  "name": "Building Chains Using  the Arithmetic Derivative of a Number",
+  "slug": "building-chains-using-the-arithmetic-derivative-of-a-number",
+  "category": "reference",
+  "publishedAt": "2016-05-09T23:30:51.201Z",
+  "approvedAt": "2017-06-11T18:31:35.847Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/572ced1822719279fa0005ea",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-05-06T19:14:32.279Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Every natural number, ```n```, may have a prime factorization like:\n\n<a href=\"http://imgur.com/M5n0WCg\"><img src=\"http://i.imgur.com/M5n0WCg.png?1\" title=\"source: imgur.com\" /></a>\n\nWe define the arithmetic derivative of ```n```, ```n'``` the value of the expression:\n\n<a href=\"http://imgur.com/D9Ckb8P\"><img src=\"http://i.imgur.com/D9Ckb8P.png?1\" title=\"source: imgur.com\" /></a>\n\nLet's do the calculation for ```n = 231525```.\n```\n231525 = 3³5²7³ \nn' = (3*3²)*5²7³ + 3³*(2*5)*7³ + 3³*5²*(3*7²) = 231525 + 92610 + 99225 = 423360\n```\nWe may make a chain of arithmetic derivatives, starting from a number we apply to the result the transformation and so on until we get the result ```1```.\n```\nn ---> n'  ---> (n')' ---> ((n')')' ---> ..... ---> ((...(n')...)')'\n```\nLet's do it starting with our number, ```n = 231525``` and making a chain of 5 terms:\n```\n231525 ---> 423360 ---> 1899072 ---> 7879680 ---> 51895296\n```\nWe need a function ```chain_arith_deriv()``` that receives two arguments: ```start``` and ```k```, amount of terms of the chain.\n\nThe function should output the chain in an array format:\n```\nchain_arith_deriv(start, k) ---> [start, term1, term2, .....term(k-1)] # a total of k-terms\n```\nFor the case presented above:\n```python\nchain_arith_deriv(231525, 5) == [231525, 423360, 1899072, 7879680, 51895296]\n```\nThe function has to reject prime numbers giving an alerting message\n```python\nchain_arith_deriv(997, 5) == \"997 is a prime number\"\n```\nFeatures of the tests:\n```\nNumber of Random Tests: 50\n1000 ≤ start ≤ 99000000\n3 ≤ k ≤ 15\n```\nEnjoy it and do your best!",
+  "totalAttempts": 908,
+  "totalCompleted": 102,
+  "totalStars": 12,
+  "voteScore": 37,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Recursion"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

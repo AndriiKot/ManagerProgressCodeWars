@@ -1,0 +1,44 @@
+{
+  "id": "57feb00f08d102352400026e",
+  "name": "Airport Arrivals/Departures - #1",
+  "slug": "airport-arrivals-slash-departures-number-1",
+  "category": "algorithms",
+  "publishedAt": "2016-12-11T06:58:44.786Z",
+  "approvedAt": "2016-12-23T20:08:49.207Z",
+  "languages": [
+    "javascript",
+    "java",
+    "python",
+    "php",
+    "ruby",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/57feb00f08d102352400026e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-10-12T21:50:07.126Z",
+  "createdBy": {
+    "username": "dinglemouse",
+    "url": "https://www.codewars.com/users/dinglemouse"
+  },
+  "approvedBy": {
+    "username": "user5036852",
+    "url": "https://www.codewars.com/users/user5036852"
+  },
+  "description": "You are at the airport staring blankly at the arrivals/departures flap display...\n\n<div style=\"width:75%\"><img src=\"http://www.airport-arrivals-departures.com/img/meta/1200_630_arrivals-departures.png\"></div>\n\n# How it works\n\nYou notice that each flap character is on some kind of a rotor and the order of characters on each rotor is:\n\n```ABCDEFGHIJKLMNOPQRSTUVWXYZ ?!@#&()|<>.:=-+*/0123456789```\n\nAnd after a long while you deduce that the display works like this:\n\n* Starting from the left, all rotors (from the current one to the end of the line) flap together until the left-most rotor character is correct.\n\n\n* Then the mechanism advances by 1 rotor to the right...\n\n\n* ...REPEAT this rotor procedure until the whole line is updated\n\n\n* ...REPEAT this line procedure from top to bottom until the whole display is updated\n\n# Example\n\nConsider a flap display with 3 rotors and 1 line which currently spells ```CAT```\n\n<hr><span style=\"color:red\">Step 1</span>  (current rotor is 1)\n\n* Flap x 1\n* Now line says ```DBU```\n\n<hr><span style=\"color:red\">Step 2</span>  (current rotor is 2)\n\n* Flap x 13\n* Now line says ```DO)```\n\n<hr><span style=\"color:red\">Step 3</span>  (current rotor is 3)\n\n* Flap x 27\n* Now line says ```DOG```\n\n<hr>\n\n*This can be represented as*\n\n```\nlines  // array of strings. Each string is a display line of the initial configuration\nrotors // array of array-of-rotor-values. Each array-of-rotor-values is applied to the corresponding display line\nresult // array of strings. Each string is a display line of the final configuration\n```\n\n*e.g.*\n\n```\nlines = [\"CAT\"]\nrotors = [[1,13,27]]\nresult = [\"DOG\"]\n```\n\n\n# Kata Task\n\nGiven the initial display lines and the rotor moves for each line, determine what the board will say after it has been fully updated.\n\nFor your convenience the characters of each rotor are in the pre-loaded constant ```ALPHABET``` which is a string.\n<hr>\n\n*And don't forget to try my other flap display Katas!*\n\n:-)",
+  "totalAttempts": 25864,
+  "totalCompleted": 2887,
+  "totalStars": 297,
+  "voteScore": 589,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 3
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "52a0f488852a85c723000aca",
+  "name": "Palindromic Numbers",
+  "slug": "palindromic-numbers",
+  "category": "algorithms",
+  "publishedAt": "2013-12-05T21:55:13.812Z",
+  "approvedAt": "2013-12-07T02:10:42.053Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "ruby",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/52a0f488852a85c723000aca",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-12-05T21:47:52.193Z",
+  "createdBy": {
+    "username": "edalorzo",
+    "url": "https://www.codewars.com/users/edalorzo"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "# Palindromic Numbers\nA [palindromic number](http://en.wikipedia.org/wiki/Palindromic_number) is a number that remains the same when its digits are reversed. Like 16461, for example, it is \"symmetrical\".\n\nNon-palindromic numbers can be paired with palindromic ones via a series of operations. First, the non-palindromic number is reversed and the result is added to the original number. If the result is not a palindromic number, this is repeated until it gives a palindromic number.\n\n## Lychrel Numbers\nIt is not known whether all non-palindromic numbers can be paired with palindromic numbers in this way. While no number has been proven to be unpaired, many do not appear to be. For example, 196 does not yield a palindrome even after 700,000,000 iterations. Any number that never becomes palindromic in this way is known as a [Lychrel number](http://en.wikipedia.org/wiki/Lychrel_number).\n\nThis Kata is about actually finding a palindromic number out of an original seed. \n\nYou will be given a number as input and in the output you must return a string containing the number of iterations (i.e. additions) you had to perform to reach the palindromic result and the palindromic number itself, separated by a space. In Haskell return a tuple `(Int, Integer)`.\n```mostlangs\npalindromize(195) == 4 9339\npalindromize(265) == 5 45254\npalindromize(750) == 3 6666\n```\n```haskell\npalindromize 195       == (4, 9339)\npalindromize 265       == (5, 45254)\npalindromize 750       == (3, 6666)\npalindromize 999999991 == (16,43559188195534)  \n```\n\n### Some Assumptions\n\nYou can assume that all numbers provided as input will be actually paired with a palindromic result and that you will reach that result in less than 1000 iterations and yield a palindrome.\n",
+  "totalAttempts": 2739,
+  "totalCompleted": 1136,
+  "totalStars": 25,
+  "voteScore": 149,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

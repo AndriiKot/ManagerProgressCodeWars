@@ -1,0 +1,40 @@
+{
+  "id": "6475a060e81712003cc2eb44",
+  "name": "Analyzing Consecutive Days of DVD Rentals for a Customer",
+  "slug": "analyzing-consecutive-days-of-dvd-rentals-for-a-customer",
+  "category": "reference",
+  "publishedAt": "2023-05-30T07:07:28.306Z",
+  "approvedAt": "2023-06-22T13:31:13.758Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6475a060e81712003cc2eb44",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-05-30T07:06:08.763Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In this task, you are given the DVD Rental database. Your objective is to write a SQL query that accomplishes the following:\n\n*  Select rentals for a specific customer with `customer_id` = 1\n*  For each day that the selected customer rented a movie, identify groups of consecutive rental days. In other words, find sequences of days where each day is directly following the previous one (e.g., 14th, 15th, and 16th of February would form a group of three consecutive days).\n*  For each rental day, determine the size of its group of consecutive days.\n*  Ensure each date appears only once in your results. If the customer rented more than one movie on the same day, that day should still only be counted once.\n\nThe output of your query should be a list of all rental dates for the selected customer, along with the size of the consecutive day group that each date belongs to. For dates that are not part of a consecutive sequence, the group size should be 1.\n\nThe result should consist of the following columns:\n\n* `name`: This column represents the full name of the customer. It is a concatenation of the `first_name` and `last_name`\n* `date_rental_occurred`: This column represents the date without the time component when the customer rented a DVD. The dates are sorted in ascending order (from the earliest to the latest).\n* `consecutive_days`: This column represents the size of the group of consecutive rental days that each date belongs to. For each rental day, it counts the number of consecutive days, including the day itself, during which the customer rented DVDs. If a date is not part of a consecutive sequence (i.e., the customer didn't rent a DVD on the day before or after), the group size is 1.\n\n##### Notes:\n\n*  for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests.\n\nGood luck!\n\n### Schema\n(not all columns - part of the domain required to solve this kata)\n\n#### `customer` table:\n```\nColumn       | Type     | Modifiers\n------------ +----------+----------\ncustomer_id  | integer  | not null\nfirst_name   | varchar  | not null\nlast_name    | varchar  | not null\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\nrental_date  | timestamp | not null\n```\n\n### Desired Output\n\nThe desired output should look like this:\n\n```\n  name        | date_rental_occurred   | consecutive_days\n--------------+-----------------------+------------------\n John Smith   | 2005-05-25            | 1             \n John Smith   | 2005-05-28            | 1  \n John Smith   | 2005-06-15            | 2             \n John Smith   | 2005-06-16            | 2   \n John Smith   | 2005-06-21            | 1\n ...\n```\n",
+  "totalAttempts": 1667,
+  "totalCompleted": 192,
+  "totalStars": 15,
+  "voteScore": 42,
+  "tags": [
+    "Databases",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

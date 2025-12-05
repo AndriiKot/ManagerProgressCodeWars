@@ -1,0 +1,40 @@
+{
+  "id": "64aebf66362be64fd1eb9da5",
+  "name": " Maximum Daily Sales by Product and Store ",
+  "slug": "maximum-daily-sales-by-product-and-store",
+  "category": "reference",
+  "publishedAt": "2023-07-12T16:03:11.572Z",
+  "approvedAt": "2023-08-08T10:27:15.839Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64aebf66362be64fd1eb9da5",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-12T14:57:42.280Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Imagine a company that has many stores, and each store sells many different products. Each row in the `sales` table represents a single sale transaction in a specific store on a specific date, including the product sold, the quantity sold, and the unit price.\n\nThe table has the following columns: \n\n* `id` (integer): A unique identifier for each record in the table.\n* `store_id` (integer): The identifier of the store where the transaction took place.\n* `product_id` (integer): The identifier of the product that was sold.\n* `quantity` (integer): The number of units of the product that were sold in this transaction.\n* `transaction_date` (date): The date when the transaction took place.\n* `price` (float): The price per unit of the product for this transaction.\n\nYour task is to write a SQL query that, for each product and store combination, finds the date of the highest single-transaction sale (i.e., the transaction in which the most units of that product were sold in one go), and the total quantity of that product sold on that day. If there is a tie for the maximum_quantity, we need to select the earliest date when this maximum quantity happened.\n\nThe query should return a result set with the following columns:\n\n* `store_id`: The identifier of the store.\n* `product_id`: The identifier of the product.\n* `transaction_date`: The date of the highest single-transaction sale for this store and product. If there are multiple dates with the highest single-transaction sale, we need to take the earliest.\n* `max_quantity`: The quantity sold in the highest single-transaction sale for this store and product.\n* `total_quantity_on_max_day`: The total quantity of this product sold in the store on the date of the highest single-transaction sale.\n\n\n\nThe result set should be ordered by store_id in ascending order, and then by product_id in ascending order.\n\nLet's provide a concrete example. Here's a simplified version of what the sales table might look like:\n\n```\n+----+----------+------------+----------+-------------------+-------+\n| id | store_id | product_id | quantity | transaction_date  | price |\n+----+----------+------------+----------+-------------------+-------+\n| 1  |    1     |     1      |    3     |   2023-06-01      |   5   |\n| 2  |    1     |     1      |    7     |   2023-06-01      |   5   |\n| 3  |    1     |     1      |    5     |   2023-06-02      |   5   |\n| 4  |    2     |     1      |    2     |   2023-06-01      |   7   |\n| 5  |    2     |     1      |    10    |   2023-06-02      |   7   |\n| 6  |    2     |     2      |    4     |   2023-06-01      |   3   |\n| 7  |    2     |     2      |    6     |   2023-06-01      |   3   |\n+----+----------+------------+----------+-------------------+-------+\n```\n\nLet's break down the query result:\n\n* For store 1 and product 1, the highest single-transaction sale day was 2023-06-01 with a quantity of 7. On that day, the total quantity sold was 10 (7 from the highest single sale and 3 from the other transaction).\n* For store 2 and product 1, the highest single-transaction sale day was 2023-06-02 with a quantity of 10.\n* For store 2 and product 2, the highest single-transaction sale day was 2023-06-01 with a quantity of 6. On that day, the total quantity sold was 10 (6 from the highest single sale and 4 from the other transaction).\n\nSo the result of the query would be:\n```\n+----------+------------+-------------------+--------------+---------------------------+\n| store_id | product_id | transaction_date  | max_quantity | total_quantity_on_max_day |\n+----------+------------+-------------------+--------------+---------------------------+\n|    1     |     1      |   2023-06-01      |     7        |           10              |\n|    2     |     1      |   2023-06-02      |     10       |           10              |\n|    2     |     2      |   2023-06-01      |     6        |           10              |\n+----------+------------+-------------------+--------------+---------------------------+\n```\n\nGLHF!",
+  "totalAttempts": 2825,
+  "totalCompleted": 249,
+  "totalStars": 13,
+  "voteScore": 53,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

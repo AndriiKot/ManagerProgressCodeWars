@@ -1,0 +1,44 @@
+{
+  "id": "606b43f4adea6e00425dff42",
+  "name": "Map over a list of lists",
+  "slug": "map-over-a-list-of-lists",
+  "category": "reference",
+  "publishedAt": "2021-04-05T18:23:37.968Z",
+  "approvedAt": "2021-04-26T21:23:04.945Z",
+  "languages": [
+    "haskell",
+    "python",
+    "javascript",
+    "java",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/606b43f4adea6e00425dff42",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2021-04-05T17:08:04.625Z",
+  "createdBy": {
+    "username": "Paul Robertson",
+    "url": "https://www.codewars.com/users/Paul%20Robertson"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Write a function which maps a function over the lists in a list:\n```ruby\ndef grid_map inp,&block\n  # applies the &block to all nested elements\n```\n```haskell\ngridMap :: (a -> b) -> [[a]] -> [[b]]\n```\n```python\ndef grid_map(inp, op)\n    # which performs op(element) for all elements of inp\n```\n```javascript\nfunction gridMap(fn,xss) { return [[]]; }\n```\n```java\npublic static <T,R> R[][] gridMap(Function<T,R> fn, T[][] list)\n```\n\nExample 1:\n```ruby\nx = [[1,2,3],\n     [4,5,6]]\n     \ngrid_map(x) { |n| n + 1 }\n#-- returns [[2,3,4],[5,6,7]]\n\ngrid_map(x) { |n| n ** 2 }\n#-- returns [[1,4,9],[16,25,36]]\n```\n```haskell\nx = [[1,2,3],\n     [4,5,6]]\n     \ngridMap (+1) x\n-- returns [[2,3,4],[5,6,7]]\n\ngridMap (^2) x\n-- returns [[1,4,9],[16,25,36]]\n```\n```python\nx = [[1,2,3],\n     [4,5,6]]\n     \ngrid_map(x, lambda x: x + 1)\n-- returns [[2,3,4],[5,6,7]]\n\ngrid_map(x, lambda x: x ** 2)\n-- returns [[1,4,9],[16,25,36]]\n```\n```javascript\nconst xss = [ [1,2,3]\n            , [4,5,6]\n            ];\n\ngridMap( x => x+1 , xss )  =>  [[2,3,4],[5,6,7]]\ngridMap( x => x**2 , xss )  =>  [[1,4,9],[16,25,36]]\n```\n```java\nint[][] x = {{1,2,3},\n             {4,5,6}};\n\ngridMap(e -> e + 1, x); // {{2,3,4},{5,6,7}}\ngridMap(e -> e * e, x); // {{1,4,9},{16,25,36}}\n```\n\nExample 2\n```ruby\nx = [['h', 'E', 'l', 'l', 'O'], ['w', 'O', 'r', 'L', 'd']]\n     \ngrid_map(x) { |c| c.upcase }\n#-- returns [[\"H\", \"E\", \"L\", \"L\", \"O\"], [\"W\", \"O\", \"R\", \"L\", \"D\"]]\n\n```\n```haskell\nimport Data.Char\nx = [\"hEllO\", \"wOrLd\"]\n\ngridMap toUpper x\n-- returns [\"HELLO, WORLD\"]\n```\n```python\nx = [['h', 'E', 'l', 'l', 'O'], ['w', 'O', 'r', 'L', 'd']]\ngrid_map(x, lambda x: x.upper())\n-- returns [['H', 'E', 'L', 'L', 'O'], ['W', 'O', 'R', 'L', 'D']]\n```\n```javascript\nconst xss = [['h','E','l','l','O'],['w','O','r','L','d']];\n\ngridMap( x => x.toUpperCase() , xss )  =>  [['H','E','L','L','O'],['W','O','R','L','D']]\n```\n```java\nchar[][] x = {{'h','E','l','l','O'},{'w','O','r','L','d'}};\n\ngridMap(e -> Character.toUpperCase(e), x); // {{'H','E','L','L','O'},{'W','O','R','L','D'}}\n```",
+  "totalAttempts": 4921,
+  "totalCompleted": 2275,
+  "totalStars": 70,
+  "voteScore": 456,
+  "tags": [
+    "Fundamentals",
+    "Lists"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

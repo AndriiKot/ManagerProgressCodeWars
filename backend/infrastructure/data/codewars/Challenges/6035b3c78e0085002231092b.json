@@ -1,0 +1,41 @@
+{
+  "id": "6035b3c78e0085002231092b",
+  "name": "Balance history",
+  "slug": "balance-history",
+  "category": "reference",
+  "publishedAt": "2021-02-24T04:38:30.067Z",
+  "approvedAt": "2023-06-20T18:06:57.244Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6035b3c78e0085002231092b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-02-24T02:02:47.165Z",
+  "createdBy": {
+    "username": "rsaryev",
+    "url": "https://www.codewars.com/users/rsaryev"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Hi!  \nYou need to write a sql query that will return the daily balance history from monetary operations tables for all the time.\n\nThe balance of the day (end day balance) is equal to the balance at the begin of the day with total amount of operations during the day added.\nThe balance at the begin of the day is equal to the balance at the end of the previous day.\nThe balance before the very first operation is zero.\n\n## Input\n### operations\n```\n Column    |  Type      |\n-----------+------------+\n amount    | numeric    |\n date      | timestamp  |\n ```\n\n```\n    amount             date      \n--------------------------------------+\n502.944042810036   2020-01-01T00:01:00.000+00:00\n1101.5004691791    2020-01-01T00:02:00.000+00:00\n1618.92180791447   2020-01-01T00:03:00.000+00:00\n-1656.39770507234  2020-01-02T10:01:00.000+00:00\n656.39770507234    2020-01-03T00:05:00.000+00:00\n-656.39770507234   2020-01-03T00:07:00.000+00:00\n613.944042810036   2020-01-04T01:01:00.000+00:00\n..\n```\n \n## Output\n```\n Column    |  Type      |\n-----------+------------+\n date      | date       |\n balance   | numeric    |\n```\n\n```\n  date    |   balance      \n--------------------------+\n2020-01-01  3223.3663199036064\n2020-01-02  1566.9686148312664\n2020-01-03  1566.9686148312664\n..\n```",
+  "totalAttempts": 1952,
+  "totalCompleted": 349,
+  "totalStars": 13,
+  "voteScore": 69,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

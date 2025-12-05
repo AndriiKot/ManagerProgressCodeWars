@@ -1,0 +1,43 @@
+{
+  "id": "56797325703d8b34a4000014",
+  "name": "Approximate  Fractions",
+  "slug": "approximate-fractions",
+  "category": "reference",
+  "publishedAt": "2015-12-23T03:17:07.575Z",
+  "approvedAt": "2018-10-09T05:28:37.706Z",
+  "languages": [
+    "python",
+    "javascript",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/56797325703d8b34a4000014",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-12-22T15:58:29.821Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "We want to obtain number ```π``` (```π = 3,1415926535897932384626433832795```) with an approximate fraction having a relative error of 1%\n\n```\nrel_error = (π - fraction_value) / π * 100 = ± 1\nabsolute_error = |± 1 / 100 * π| = 0.031416\n```\n\nTry to get the used algorithm  to obtain the approximate fraction, observing the process bellow:\n\n```\n1/1 -----> 2/1 -----> 3/1 -----> 4/1 -----> 4/2 -----> 5/2 -----> 6/2 -----> 7/2 -----> 7/3 -----> 8/3 -----> 9/3 -----> 10/3 ----> 10/4 ----> 11/4 ----> 12/4 ----> 13/4 ----> 13/5 ----> 14/5 ----> 15/5 ----> 16/5 ----> 16/6 ----> 17/6 ----> 18/6 ----> 19/6 \n```\n```|π - 19/6| = 0.02 < 0.031416```\n\nSo we obtain the fraction ```19/6``` (approximate to π) in ```23``` steps.\n\nMake the function ```approx_fraction()```, that receives a float (an irrational number) and a relative error (as percentage) as arguments. The function should output a list with the fraction as a string and the number of steps needed.\n\nLet's see some cases:\n```python\nfloat_ = math.pi\nrel_error = 1\napprox_fraction(float_, rel_error) == ['19/6', 23]\n\nfloat_ = math.pi\nrel_error = 0.01\napprox_fraction(float_, rel_error) ==  ['289/92', 379]\n```\nYour code should handle negative floats.\n```python\ndegrees = 130\nfloat_ = math.cos(math.pi*degrees/180) # (= -0.6427876096865394)\nrel_error = 0.001\napprox_fraction(float_, rel_error) == ['-610/949', 1557]\n```\nIf the float number does not have a decimal part, like this case:\n```python\nfloat_ = math.sqrt(361) #(= 19)\nrel_error = 0.01\napprox_fraction(float_, rel_error) == \"There is no need to have a fraction for 19\"\n\nfloat_ = math.log(1)\nrel_error = 0.01\napprox_fraction(float_, rel_error) == \"There is no need to have a fraction for 0\"\n```\nFinally if the absolute difference with the given float and its integer part is less than 0.0000000001 (1* 10^-10), consider it as an integer\n```python\ndegrees = 45\nfloat_ = math.tan(math.pi*degrees/180) # (= 0.9999999999999999)\nrel_error = 0.01\napprox_fraction(float_, rel_error) == \"There is no need to have a fraction for 1\"\n```\nAs irrational numbers, you will be given: 10-base logarithms, natural logarithms, trigonometric functions, square roots and nth-roots of numbers.\n\nDo not worry about values like ± ∞ (positive, negative infinity) or complex numbers. For python: There is no need to import the math library.\n\nEnjoy it!!\n\n \n\n",
+  "totalAttempts": 667,
+  "totalCompleted": 85,
+  "totalStars": 13,
+  "voteScore": 29,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

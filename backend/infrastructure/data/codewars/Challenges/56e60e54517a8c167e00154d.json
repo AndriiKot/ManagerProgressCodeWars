@@ -1,0 +1,45 @@
+{
+  "id": "56e60e54517a8c167e00154d",
+  "name": "Oracle: Coin Method",
+  "slug": "oracle-coin-method",
+  "category": "reference",
+  "publishedAt": "2016-03-16T12:53:13.635Z",
+  "approvedAt": "2017-09-03T08:22:32.205Z",
+  "languages": [
+    "javascript",
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/56e60e54517a8c167e00154d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-03-14T01:05:24.886Z",
+  "createdBy": {
+    "username": "Aquila",
+    "url": "https://www.codewars.com/users/Aquila"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "### Introduction\n\nThe [I Ching](https://en.wikipedia.org/wiki/I_Ching) (Yijing, or Book of Changes) is an ancient Chinese book of sixty-four hexagrams. \nA hexagram is a figure composed of six stacked horizontal lines, where each line is either Yang (an unbroken line) or Yin (a broken line):\n```\n---------    ---- ----    ---------    \n---- ----    ---- ----    ---------    \n---- ----    ---- ----    ---------    \n---------    ---- ----    ---- ----    \n---------    ---------    ---- ----    \n---- ----    ---- ----    ---------    \n```\nThe book is commonly used as an oracle. After asking it a question about one's present scenario,\neach line is determined by random methods to be Yang or Yin. The resulting hexagram is then interpreted by the querent as a symbol of their current situation, and how it might unfold.\n\nThis kata will consult the I Ching using the three coin method.\n\n### Instructions\n\nA coin is flipped three times and lands heads\nor tails. The three results are used to\ndetermine a line as being either:\n\n```\n3 tails          ----x----  Yin (Moving Line*)\n2 tails 1 heads  ---------  Yang\n1 tails 2 heads  ---- ----  Yin \n3 heads          ----o----  Yang (Moving Line*)\n\n*See bottom of description if curious.\n```\nThis process is repeated six times to determine\neach line of the hexagram. The results of these\noperations are then stored in a 2D Array like so:\n```javascript\n[['two','h','h','t'],['six','t','h','t'],['four','t','t','t'],\n['one','h','t','h'],['three','h','h','h'],['five','t','t','h']]\n```\nIn each array the first index will always be the number of the line ('one' is the bottom line, and 'six' the top), and the other three values will be the results of the coin flips that belong to that line as heads ('h') and tails ('t').\n\nWrite a function that will take a 2D Array like the above as argument and return its hexagram as a string. Each line of the hexagram should begin on a new line.\n\nGiven the above 2D Array, your function should return:\n\n```\n---------\n---------\n----x----\n----o----\n---- ----\n---- ----\n```\n\nYou are welcome to consult your new oracle program with a question before pressing submit. You can compare your result [here](http://www.ichingfortune.com/hexagrams.php). The last test case is random and can be used for your query.\n\n*[1] A Moving Line is a Yang line that will change\nto Yin or vice versa. The hexagram made by the coin\nthrows represents the querent's current situation,\nand the hexagram that results from changing its\nmoving lines represents their upcoming situation.*",
+  "totalAttempts": 630,
+  "totalCompleted": 266,
+  "totalStars": 14,
+  "voteScore": 101,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Sorting",
+    "Games",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

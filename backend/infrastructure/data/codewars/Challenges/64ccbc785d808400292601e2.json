@@ -1,0 +1,40 @@
+{
+  "id": "64ccbc785d808400292601e2",
+  "name": "Flexible Sum Based on Operations",
+  "slug": "flexible-sum-based-on-operations",
+  "category": "reference",
+  "publishedAt": "2023-08-04T08:55:05.106Z",
+  "approvedAt": "2023-08-04T19:10:26.156Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64ccbc785d808400292601e2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-08-04T08:53:12.761Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given a table named `transactions`, which records various operations performed on a financial account. The table consists of the following columns:\n\n* `id`: An integer representing the unique identifier for each transaction.\n* `operation`: A string representing the type of operation. It can have one of five values: 'add', 'remove', 'make', 'freeze', or 'hold'.\n* `amount`: An integer representing the amount involved in the operation.\n* `date`: A date in the 'YYYY-MM-DD' format representing the date of the operation.\n\nThe objective of this task is to write an SQL query that calculates a running sum, which we'll refer to as `flexible_sum`, based on the operations in the table. The rules for calculating `flexible_sum` are as follows:\n\n* If the operation is 'add', the amount should be added to `flexible_sum`.\n* If the operation is 'remove', the amount should be subtracted from `flexible_sum`.\n* If the operation is one of the other three types ('make', 'freeze', or 'hold'), flexible_sum should remain unchanged from the previous row.\n* If a record starts with one of the operations 'make', 'freeze', or 'hold', `flexible_sum` should display 0.\n\nYour query:\n\n1) must select all columns from the transactions table.\n2) must include a new column, `flexible_sum`, which represents the running sum based on the rules above.\n3) must order the results by the `date` and `id` columns in ascending order (it applies both for the rolling sum and the main query).\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>id</th><th>operation</th><th>amount</th><th>date</th><th>flexible_sum</th></tr><tr><td>1</td><td>add</td><td>5</td><td>2023-01-01</td><td>5</td></tr><tr><td>2</td><td>freeze</td><td>5</td><td>2023-01-02</td><td>5</td></tr><tr><td>3</td><td>add</td><td>5</td><td>2023-01-02</td><td>10</td></tr><tr><td>4</td><td>add</td><td>1</td><td>2023-01-03</td><td>11</td></tr><tr><td>5</td><td>remove</td><td>5</td><td>2023-01-04</td><td>6</td></tr><tr><td>6</td><td>add</td><td>4</td><td>2023-01-04</td><td>10</td></tr><tr><td>7</td><td>make</td><td>8</td><td>2023-01-04</td><td>10</td></tr><tr><td>8</td><td>add</td><td>5</td><td>2023-01-04</td><td>15</td></tr></table>",
+  "totalAttempts": 461,
+  "totalCompleted": 127,
+  "totalStars": 6,
+  "voteScore": 39,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

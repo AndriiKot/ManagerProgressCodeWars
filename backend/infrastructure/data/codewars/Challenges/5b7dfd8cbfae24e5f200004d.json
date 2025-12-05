@@ -1,0 +1,40 @@
+{
+  "id": "5b7dfd8cbfae24e5f200004d",
+  "name": "Read a UPC/Barcode",
+  "slug": "read-a-upc-slash-barcode",
+  "category": "algorithms",
+  "publishedAt": "2018-08-23T03:40:33.387Z",
+  "approvedAt": "2018-09-11T09:06:38.505Z",
+  "languages": [
+    "python",
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5b7dfd8cbfae24e5f200004d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-08-23T00:19:24.180Z",
+  "createdBy": {
+    "username": "BinaryEclipse",
+    "url": "https://www.codewars.com/users/BinaryEclipse"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/d5/UPC-A.png\" />\n\nYour task is to convert a string representing the lines/spaces in a 12 digit barcode/UPC-A into a string of numbers 0-9.\n\nA black line represents a `1` and a space represents `0`. The string you are returning is the decimal representation of those binary digits. NOTE: The digits 0-9 are not represented as bits the usual way, UPC has it's own tables which are preloaded as `LEFT_HAND` and `RIGHT_HAND` dictionaries.\n\nThe `LEFT_HAND` and `RIGHT_HAND` dictionaries contain 7 digit bit strings as keys and an integer for values. For example:\n\n`'0011001'` = `1` in `LEFT_HAND`\n\n`'1100110'` = `1` in `RIGHT_HAND`, left and right side bit strings are complements of each other.\n\nThe structure of a UPC-A is as follows:\n* Starts with a guard pattern, always representing 101. Known as `left-hand` guard pattern. \n* 6 groups of 7 bits each, eg: <code>'&nbsp; ▍▍&nbsp; ▍'</code> = '0011001' = 1(left-hand). The first group is the `number system digit.`\n* A center guard pattern, always representing 01010. Divides \"left-hand\" groups and \"right-hand\" groups.\n* 6 groups of 7 bits each, eg: <code>'▍▍&nbsp; ▍▍&nbsp;'</code> = '1100110' = 1(right-hand). The last group is the `modulo check digit.`\n* Ends with a guard pattern, always representing 101. Known as `right-hand` guard pattern.\n\nThe format for your returned string is:\n```python\n'(number_system) (left_hand) (right_hand) (modulo_check)'\n```\n\nExample barcode, sorry about number formatting:\n```python\n1. '▍ ▍   ▍▍ ▍ ▍▍   ▍  ▍▍  ▍   ▍▍ ▍   ▍▍ ▍   ▍▍ ▍ ▍ ▍ ▍▍▍  ▍ ▍▍  ▍▍ ▍▍ ▍▍  ▍  ▍▍▍ ▍▍  ▍▍ ▍   ▍  ▍ ▍'\n2. '(101)0001101,0110001,0011001,0001101,0001101,0001101(01010)1110010,1100110,1101100,1001110,1100110,1000100(101)'\n3. (left_guard)0,5,1,0,0,0(center_guard)0,1,2,5,1,7(right_guard)\nreturn '0 51000 01251 7'\n```\n    \nFor this kata there will be no tricks, no error checking, or reading backwards. Inputs will always be correct, left to right, and a single bar/space will always represent 1/0. The validity of modulo check digit is irrelevant here, we're just doing conversion and formatting. Guards are not part of the returned string but will be part of the input.\n    \nA bar in case you need to use it: `▍`\n\n[Further reading/details wiki](https://en.wikipedia.org/wiki/Universal_Product_Code), thanks to CODE by Charles Petzold.\n",
+  "totalAttempts": 702,
+  "totalCompleted": 241,
+  "totalStars": 29,
+  "voteScore": 92,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

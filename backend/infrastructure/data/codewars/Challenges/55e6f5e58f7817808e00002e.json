@@ -1,0 +1,78 @@
+{
+  "id": "55e6f5e58f7817808e00002e",
+  "name": "A Rule of Divisibility by 7",
+  "slug": "a-rule-of-divisibility-by-7",
+  "category": "reference",
+  "publishedAt": "2015-09-02T13:51:40.641Z",
+  "approvedAt": "2015-09-17T12:44:56.097Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "haskell",
+    "java",
+    "csharp",
+    "clojure",
+    "coffeescript",
+    "typescript",
+    "elixir",
+    "cpp",
+    "php",
+    "crystal",
+    "fsharp",
+    "c",
+    "shell",
+    "ocaml",
+    "kotlin",
+    "nasm",
+    "julia",
+    "r",
+    "powershell",
+    "go",
+    "nim",
+    "rust",
+    "reason",
+    "racket",
+    "forth",
+    "factor",
+    "scala",
+    "prolog",
+    "fortran",
+    "haxe",
+    "dart",
+    "pascal",
+    "lua",
+    "perl",
+    "cobol",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/55e6f5e58f7817808e00002e",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2015-09-02T13:13:09.774Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "NaMe613",
+    "url": "https://www.codewars.com/users/NaMe613"
+  },
+  "description": "A number m of the form 10x + y is divisible by 7 if and only if x − 2y is divisible by 7. In other words, subtract twice the last digit \nfrom the number formed by the remaining digits. Continue to do this until a number known to be divisible by 7 is obtained; \nyou can stop when this number has *at most* 2 digits because you are supposed to know if a number of at most 2 digits is divisible by 7 or not.\n\nThe original number is divisible by 7 if and only if the last number obtained using this procedure is divisible by 7. \n\n#### Examples:\n\n1 - `m = 371 -> 37 − (2×1) -> 37 − 2 = 35` ; thus, since 35 is divisible by 7, 371 is divisible by 7. \n\nThe number of steps to get the result is `1`.\n\n2 - `m = 1603 -> 160 - (2 x 3) -> 154 -> 15 - 8 = 7` and 7 is divisible by 7. \n\n3 - `m = 372 -> 37 − (2×2) -> 37 − 4 = 33` ; thus, since 33 is not divisible by 7, 372 is not divisible by 7. \n\n4 - `m = 477557101->47755708->4775554->477547->47740->4774->469->28` and 28 is divisible by 7, so is 477557101. \nThe number of steps is 7.\n\n#### Task:\n\nYour task is to return to the function ```seven(m)``` (m integer >= 0) an array (or a pair, depending on the language) of numbers, \nthe first being the *last* number `m` with at most 2 digits obtained by your function (this last `m` will be divisible or not by 7), the second one being the number of steps to get the result.\n\n#### Forth Note:\nReturn on the stack `number-of-steps, last-number-m-with-at-most-2-digits `\n\n#### Examples:\n\n```\nseven(371) should return [35, 1]\nseven(1603) should return [7, 2]\nseven(477557101) should return [28, 7]\n```\n",
+  "totalAttempts": 68625,
+  "totalCompleted": 13618,
+  "totalStars": 461,
+  "voteScore": 1250,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

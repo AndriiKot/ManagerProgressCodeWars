@@ -1,0 +1,45 @@
+{
+  "id": "63ebadc7879f2500315fa07e",
+  "name": "Noisy Cell Counts",
+  "slug": "noisy-cell-counts",
+  "category": "reference",
+  "publishedAt": "2023-02-14T20:59:51.913Z",
+  "approvedAt": "2023-02-17T18:12:11.413Z",
+  "languages": [
+    "python",
+    "c",
+    "haskell",
+    "cpp",
+    "javascript",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/63ebadc7879f2500315fa07e",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-02-14T15:50:31.929Z",
+  "createdBy": {
+    "username": "amiller.phys",
+    "url": "https://www.codewars.com/users/amiller.phys"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "A researcher is studying cell division in a large number of samples. Counting the cells in each sample is automated, but when she looks at the data, she immediately notices that something is wrong.\n\nThe data are arrays of integers corresponding to the number of cells in the sample over time. The first element `data[0]` is the initial count. The next element `data[1]` is the cell count at a later time. `data[2]` is the next count, and so on. \n\nThe cells are reproducing, so the elements of the array are supposed to be non-decreasing (there is no cell death), but the automatic cell counter has undercounted. In fact, the researcher has verified that the counter undercounts by `1` at random. The error rate is unknown.\n\nYour task is to create a new non-decreasing array that is minimally different from the `data` array. For example, if the `data = [1, 1, 2, 2, 1, 2, 2, 2, 2]` then the returned array should be `[1, 1, 2, 2, 2, 2, 2, 2, 2]` because `data[4] < data[3]` is clearly an error.   \n\nThe first entry of the array is correct, and does not require an adjustment.  \nThe array will never be empty.\n\n~~~if:lambdacalc\n### Encodings\n\npurity: `LetRec`  \nnumEncoding: `Scott`  \nexport constructors `nil, cons` and deconstructor `foldl` for your `List` encoding.\n~~~",
+  "totalAttempts": 3746,
+  "totalCompleted": 1148,
+  "totalStars": 25,
+  "voteScore": 219,
+  "tags": [
+    "Arrays",
+    "Logic"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

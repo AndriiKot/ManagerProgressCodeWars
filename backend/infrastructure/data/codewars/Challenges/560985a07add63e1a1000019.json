@@ -1,0 +1,44 @@
+{
+  "id": "560985a07add63e1a1000019",
+  "name": "Required Data II (Easy One)",
+  "slug": "required-data-ii-easy-one",
+  "category": "reference",
+  "publishedAt": "2015-09-28T22:12:37.361Z",
+  "approvedAt": "2016-09-05T20:09:39.304Z",
+  "languages": [
+    "python",
+    "ruby",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/560985a07add63e1a1000019",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-09-28T18:23:28.464Z",
+  "createdBy": {
+    "username": "raulbc777",
+    "url": "https://www.codewars.com/users/raulbc777"
+  },
+  "approvedBy": {
+    "username": "suic",
+    "url": "https://www.codewars.com/users/suic"
+  },
+  "description": "Your function ```given_nth_value()``` (Javascript: ```givenNthValue()```)will receive an array or list of integers, positive or negative, then, it will receive an integer k, to search a certain term and finally the mode string ```\"min\"``` or ```\"max\"```.\nWe may understand better graphically\n```python\ngiven_nth_value(arr, k, \"max\") or given_nth_value(arr, k, \"min\")\n```\nThe function will work differently depending on the receiving last entry, that string define the mode of the function:\n\n- if it is ```\"max\"```, the function will build internally an array of received values in  descending order and will output the k-th term in the list.\n\n- if it is ```\"min\"```, the function will build internally an array of received values in  ascending order and will output the k-th term in the list.\n\nLet's see clearer all these explanations with some cases.\n```python\narr = [3, 3, -1, 10, 6, 8, -5, 4, 22, 31, 34, - 16, -16, 8 , 8] # (15 elements)\nk = 5\nstr_ = \"min\"\ngiven_nth_value(arr, k, str_) -------> 4 \n/// The ascending list of values of this array is:\nk-th value    Value   (we received 15 elements but there are only 11 values)\n   1            -16 \n   2             -5 \n   3             -1\n   4              3\n   5  ------->    4  (As k = 5, the value to output is 4)\n   6              6 \n   7              8\n   8             10\n   9             22\n   10            31 \n   11            34\n```\nLet's see the inverse case:\n```python\nthe same arr in the above case\nk = 6\nstr_ = \"max\"\ngiven_nth_value(arr, k, str_) -------> 6\n/// The desending list of values of this array is:\nk-th value    Value\n    1            34\n    2            31\n    3            22\n    4            10\n    5             8\n    6 ------->    6 (As k = 6, the value to output is 6)\n    7             4\n    8             3\n    9            -1\n    10           -5\n    11          -16\n```\nIf the value of k is higher than the number of values, the asked function will return the string ```\"No way\"```\n```python\nthe same array above\nk = 13\nstr_ = \"max\"\ngiven_nth_value(arr, k, str_) -------> No way\n```\nIf we have a \"corrupted array\", an array that has one element that is not an integer, the function will output ```\"Invalid entry list\"```\n```python\narr = [3, 3, -1, 10, 6, 8, -5, 'Yes', 4, 22, 31]\nk= 4\nstr_ = \"max\"\ngiven_nth_value(arr, k, str_) -------> Invalid entry list\n```\nOn the other hand, if our array is an empty list, the function should output: ```\"No values in the array\"```\n```python\narr = []\nk= 4\nstr_ = \"max\"\ngiven_nth_value(arr, k, str_) -------> No values in the array\n```\nIf there is a typing mistake in the third entry, the function will return:\n```\"Valid entries: 'max' or 'min'\"```\n```python\narr = [3, 3, -1, 10, 6, 8, -5, 4, 22, 31]\nk = 2\nstr_ = 'mix'\ngiven_nth_value(arr, k, str_) -------> Valid entries: 'max' or 'min'\n```\nBut if the last string has uppercases letters of the words ```max``` or ```min```, the function should work without problems.\nFor example:\n```python\narr = [3, 3, -1, 10, 6, 8, -5, 4, 22, 31]\nk = 2\nstr_ = 'MaX'\ngiven_nth_value(arr, k, str_) -------> 22\n```\n\nIf the second entry is not a positive integer (k < 0), the function should output \"Incorrect value for k\". The code should detect if k is a string , too, with the same result.\n```python\narr = [3, 3, -1, 10, 6, 8, -5, 4, 22, 31]\nk = \"Second\"\nstr_ = 'MaX'\ngiven_nth_value(arr, k, str_) -------> \"Incorrect value for k\"\n```\nIf we have more than one \"irregularity\" simultaneously the code should not output all the mistakes or invalid entries. It will output only one, checking in the following order:\n\n1) The value of k.\n\n2) The mode strings: \"max\" or \"min\".\n\n3) The array with the values.\n\nLet's see some cases with more than one invalid entry following the priority described above:\n```python\narr = []\nk = \"Second\"\nstr_ = 'MaX'\ngiven_nth_value(arr, k, str_) -------> \"Incorrect value for k\"\n\narr = []\nk = - 10\nstr_ = 'asdasd'\ngiven_nth_value(arr, k, str_) ------->\n\"Incorrect value for k\"\n\narr = [1,2,3,2,4,-5, 'Four']\nk = 29\nstr_ = 'kljklj'\ngiven_nth_value(arr, k, str_) -------> \"Valid entries: 'max' or 'min'\"\n\narr = [1,2,3,2,4,-5, 'Four']\nk = 29\nstr_ = 'MiN'\ngiven_nth_value(arr, k, str_) -------> \"Invalid entry list\"\n```\nFor all the cases the function will receive three arguments.\nEnjoy it!!\n",
+  "totalAttempts": 3039,
+  "totalCompleted": 301,
+  "totalStars": 15,
+  "voteScore": 43,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Data Structures",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 6,
+    "suggestions": 2
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "5613d06cee1e7da6d5000055",
+  "name": "Steps in Primes",
+  "slug": "steps-in-primes",
+  "category": "reference",
+  "publishedAt": "2015-10-06T13:45:16.954Z",
+  "approvedAt": "2015-11-06T23:57:49.575Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "haskell",
+    "csharp",
+    "java",
+    "clojure",
+    "coffeescript",
+    "cpp",
+    "php",
+    "crystal",
+    "c",
+    "ocaml",
+    "fsharp",
+    "typescript",
+    "elixir",
+    "rust",
+    "swift",
+    "go",
+    "shell",
+    "r",
+    "kotlin",
+    "scala",
+    "julia",
+    "powershell",
+    "nim",
+    "reason",
+    "racket",
+    "forth",
+    "prolog",
+    "fortran",
+    "dart",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d"
+  ],
+  "url": "https://www.codewars.com/kata/5613d06cee1e7da6d5000055",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-10-06T13:45:30.598Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "joh_pot",
+    "url": "https://www.codewars.com/users/joh_pot"
+  },
+  "description": "The prime numbers are not regularly spaced. For example from `2` to `3` the step is `1`.\nFrom `3` to `5` the step is `2`. From `7` to `11` it is `4`.\nBetween 2 and 50 we have the following pairs of 2-steps primes:\n\n`3, 5 - 5, 7, - 11, 13, - 17, 19, - 29, 31, - 41, 43`\n\nWe will write a function `step` with parameters:\n\n- `g` (integer >= 2) which indicates the step we are looking for,\n\n- `m` (integer >= 2) which gives the start of the search (m inclusive),\n\n- `n` (integer >= m) which gives the end of the search (n inclusive)\n\nIn the example above `step(2, 2, 50)` will return `[3, 5]` which is the first pair between 2 and 50 with a 2-steps.\n\nSo this function should return the **first** pair of the two prime numbers spaced with a step of `g`\nbetween the limits `m`, `n` if these g-steps prime numbers exist otherwise `nil` or `null` or `None` or `Nothing` or `[]` or `\"0, 0\"` or `{0, 0}` or `0 0` or \"\" (depending on the language). \n\n#### Examples:\n\n`step(2, 5, 7) --> [5, 7] or (5, 7) or {5, 7} or \"5 7\"`\n\n`step(2, 5, 5) --> nil or ... or [] in Ocaml or {0, 0} in C++`\n\n`step(4, 130, 200) --> [163, 167] or (163, 167) or {163, 167}`\n\nSee more examples for your language in \"TESTS\"\n\n\n#### Remarks:\n\n([193, 197] is also such a 4-steps primes between 130 and 200 but it's not the first pair).\n\n`step(6, 100, 110) --> [101, 107]` though there is a prime between 101 and 107 which is 103; the pair 101-103 is a 2-step.\n\n\n#### Notes: \nThe idea of \"step\" is close to that of \"gap\" but it is not exactly the same. For those interested they can have a look\nat <http://mathworld.wolfram.com/PrimeGaps.html>. \n\nA \"gap\" is more restrictive: there must be no primes in between \n(101-107 is a \"step\" but not a \"gap\". Next kata will be about \"gaps\":-).\n\nFor Go: nil slice is expected when there are no `step` between m and n.\nExample: step(2,4900,4919) --> nil\n",
+  "totalAttempts": 43728,
+  "totalCompleted": 7024,
+  "totalStars": 506,
+  "voteScore": 886,
+  "tags": [
+    "Mathematics",
+    "Number Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 5
+  }
+}

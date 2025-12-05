@@ -1,0 +1,73 @@
+{
+  "id": "56dbe7f113c2f63570000b86",
+  "name": "Moves in squared strings (II)",
+  "slug": "moves-in-squared-strings-ii",
+  "category": "reference",
+  "publishedAt": "2016-03-06T08:19:04.169Z",
+  "approvedAt": "2016-03-14T14:38:43.077Z",
+  "languages": [
+    "ruby",
+    "python",
+    "javascript",
+    "coffeescript",
+    "java",
+    "csharp",
+    "haskell",
+    "clojure",
+    "cpp",
+    "php",
+    "typescript",
+    "fsharp",
+    "c",
+    "crystal",
+    "rust",
+    "swift",
+    "r",
+    "shell",
+    "objc",
+    "ocaml",
+    "scala",
+    "julia",
+    "go",
+    "nim",
+    "racket",
+    "kotlin",
+    "prolog",
+    "dart",
+    "pascal",
+    "lua",
+    "perl",
+    "elm",
+    "d",
+    "erlang"
+  ],
+  "url": "https://www.codewars.com/kata/56dbe7f113c2f63570000b86",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-03-06T08:18:57.583Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "NaMe613",
+    "url": "https://www.codewars.com/users/NaMe613"
+  },
+  "description": "You are given a string of `n` lines, each substring being `n` characters long: For example:\n\n`s = \"abcd\\nefgh\\nijkl\\nmnop\"`\n\nWe will study some transformations of this square of strings.\n\n- rot(s):\\\nClock rotation 180 degrees.\n```\nrot(s) => \"ponm\\nlkji\\nhgfe\\ndcba\"\n```\n- selfie_and_rot(s) (or selfieAndRot or selfie-and-rot):\\\nIt is an initial string combined with its 180-degree clock-rotated version, interspersed with dots proportional to the length of the segments, to better illustrate the rotation when printed.\n```\ns = \"abcd\\nefgh\\nijkl\\nmnop\" --> \n\"abcd....\\nefgh....\\nijkl....\\nmnop....\\n....ponm\\n....lkji\\n....hgfe\\n....dcba\"\n```\n\nOn printing, these functions work as follows:\n\n```\n|rot             |selfie_and_rot\n|abcd --> ponm   |abcd --> abcd....\n|efgh     lkji   |efgh     efgh....\n|ijkl     hgfe   |ijkl     ijkl....   \n|mnop     dcba   |mnop     mnop....\n                           ....ponm\n                           ....lkji\n                           ....hgfe\n                           ....dcba\n```\nNotice that the *number of dots* is the *common length* of \"abcd\", \"efgh\", \"ijkl\", \"mnop\".\n\n#### Task:\n- Write these two functions `rot` and `selfie_and_rot`\n\nand\n\n- high-order function `oper(fct, s)` where\n\n - fct is the function of one variable f to apply to the string `s`\n(fct will be one of `rot, selfie_and_rot`)\n\n#### Examples:\n```\ns = \"abcd\\nefgh\\nijkl\\nmnop\"\noper(rot, s) => \"ponm\\nlkji\\nhgfe\\ndcba\"\noper(selfie_and_rot, s) => \"abcd....\\nefgh....\\nijkl....\\nmnop....\\n....ponm\\n....lkji\\n....hgfe\\n....dcba\"\n```\n#### Notes:\n- The form of the parameter `fct` in oper\nchanges according to the language. You can see each form according to the language in \"Your test cases\".\n- It could be easier to take these katas from number (I) to number (IV)\n\nForthcoming katas will study other tranformations.\n\n####  Bash Note:\nThe input strings are separated by `,` instead of `\\n`. The ouput strings should be separated by `\\r` instead of `\\n`. See \"Sample Tests\".\n",
+  "totalAttempts": 25412,
+  "totalCompleted": 5139,
+  "totalStars": 256,
+  "voteScore": 702,
+  "tags": [
+    "Algorithms",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

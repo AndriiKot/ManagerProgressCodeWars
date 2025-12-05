@@ -1,0 +1,40 @@
+{
+  "id": "64edadd1dea72f005e62aa69",
+  "name": "Constructing a Student-Course Relationship Map ",
+  "slug": "constructing-a-student-course-relationship-map",
+  "category": "reference",
+  "publishedAt": "2023-08-29T08:36:44.418Z",
+  "approvedAt": "2023-09-20T18:33:19.652Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64edadd1dea72f005e62aa69",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-08-29T08:35:29.138Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Your task is to write a SQL query that joins three tables (`students`, `courses`, and `enrollments`) and will create a matrix-like output that includes only \"active\" students and courses. An \"active\" student or course is defined as one that has at least one record in the `enrollments` table.\n\nThe matrix should indicate whether or not each active student is enrolled in each active course.\n\n`students`:\n\n* `student_id` (integer) - The unique identifier for a student.\n* `name` (varchar) - The name of the student.\n\n`courses`:\n\n* `course_id` (integer) - The unique identifier for a course.\n* `course_name` (varchar) - The name of the course.\n\n`enrollments`:\n\n* `student_id` (integer) - The student identifier, a foreign key referencing students.\n* `course_id` (integer) - The course identifier, a foreign key referencing courses.\n\nConstraints: \n\n1) The output should only include students and courses that are active, i.e., they exist in the `enrollments` table.\n2) The output columns should include a formatted string for students and courses, as well as a flag (`is_exists`) to indicate the relationship status.\n3) The output should be sorted by `student_id` and then by `course_id` - both in ascending order\n\nExpected output columns:\n\n1) `student` (varchar) - A formatted string showing the student name and ID, like \"John Doe (1)\".\n2) `course` (varchar) - A formatted string showing the course name and ID, like \"Mathematics (101)\".\n3) `is_exists` (integer) - A flag indicating whether the student is enrolled in the course (1) or not (0).\n\nGLHF!\n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>student</th><th>course</th><th>is_exists</th></tr><tr><td>Miss Juan Connelly (1)</td><td>Law 487 (1)</td><td>1</td></tr><tr><td>Miss Juan Connelly (1)</td><td>Teaching 551 (2)</td><td>0</td></tr><tr><td>Miss Juan Connelly (1)</td><td>Business 555 (3)</td><td>1</td></tr><tr><td>Miss Juan Connelly (1)</td><td>Architectural Technology 572 (4)</td><td>0</td></tr><tr><td>Miss Juan Connelly (1)</td><td>Arts 479 (5)</td><td>0</td></tr></table>\n...\n\n\n\n\n",
+  "totalAttempts": 821,
+  "totalCompleted": 111,
+  "totalStars": 7,
+  "voteScore": 37,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}
