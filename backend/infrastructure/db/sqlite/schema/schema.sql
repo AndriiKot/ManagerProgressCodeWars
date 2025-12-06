@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     codewars_id TEXT UNIQUE
 );
+
 -- ===========================
 -- Таблица рангов
 -- ===========================
@@ -63,6 +64,21 @@ CREATE TABLE IF NOT EXISTS user_ranks (
 );
 
 -- ===========================
+-- Таблица глобальных счетчиков
+-- ===========================
+CREATE TABLE IF NOT EXISTS counts (
+    id INTEGER PRIMARY KEY CHECK (id = 1),
+    total_challenges INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Вставляем единственную строку
+INSERT INTO counts (id, total_challenges)
+VALUES (1, 0)
+ON CONFLICT(id) DO NOTHING;
+
+-- ===========================
 -- Таблица челленджей
 -- ===========================
 CREATE TABLE IF NOT EXISTS challenges (
@@ -83,6 +99,27 @@ CREATE TABLE IF NOT EXISTS challenges (
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(rank_id) REFERENCES ranks(id)
 );
+
+-- ===========================
+-- Триггеры обновления глобального счётчика челленджей
+-- ===========================
+CREATE TRIGGER IF NOT EXISTS trg_challenges_insert
+AFTER INSERT ON challenges
+BEGIN
+    UPDATE counts
+    SET total_challenges = total_challenges + 1,
+        updated_at = CURRENT_TIMESTAMP
+    WHERE id = 1;
+END;
+
+CREATE TRIGGER IF NOT EXISTS trg_challenges_delete
+AFTER DELETE ON challenges
+BEGIN
+    UPDATE counts
+    SET total_challenges = total_challenges - 1,
+        updated_at = CURRENT_TIMESTAMP
+    WHERE id = 1;
+END;
 
 -- ===========================
 -- Таблица challenge_tags
@@ -152,4 +189,3 @@ CREATE INDEX IF NOT EXISTS idx_challenges_rank_id ON challenges(rank_id);
 CREATE INDEX IF NOT EXISTS idx_challenges_category ON challenges(category);
 CREATE INDEX IF NOT EXISTS idx_challenges_slug ON challenges(slug);
 CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
-
