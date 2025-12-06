@@ -69,7 +69,6 @@ CREATE TABLE IF NOT EXISTS challenges (
     id TEXT PRIMARY KEY,
     name TEXT NOT NULL,
     slug TEXT UNIQUE,
-    description TEXT,
     category TEXT,
     rank_id INTEGER DEFAULT 0,
     created_by_username TEXT,
