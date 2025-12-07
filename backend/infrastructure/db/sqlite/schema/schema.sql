@@ -85,7 +85,7 @@ ON CONFLICT(id) DO NOTHING;
 -- Таблица челленджей
 -- ===========================
 CREATE TABLE IF NOT EXISTS challenges (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY,                        
     name TEXT NOT NULL,
     slug TEXT UNIQUE,
     category TEXT,
@@ -98,8 +98,12 @@ CREATE TABLE IF NOT EXISTS challenges (
     vote_score INTEGER DEFAULT 0,
     published_at TEXT,
     approved_at TEXT,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    created_at TEXT,                            
+    updated_at TEXT,
+    url TEXT,                                    
+    contributors_wanted INTEGER DEFAULT 0,       
+    unresolved_issues INTEGER DEFAULT 0,        
+    unresolved_suggestions INTEGER DEFAULT 0,   
     FOREIGN KEY(rank_id) REFERENCES ranks(id)
 );
 
@@ -115,6 +119,16 @@ BEGIN
     WHERE id = 1;
 END;
 
+CREATE TRIGGER IF NOT EXISTS trg_challenges_set_updated_at
+AFTER UPDATE ON challenges
+FOR EACH ROW
+WHEN NEW.updated_at IS NULL OR NEW.updated_at = OLD.updated_at
+BEGIN
+    UPDATE challenges
+    SET updated_at = CURRENT_TIMESTAMP
+    WHERE rowid = NEW.rowid;
+END;
+
 CREATE TRIGGER IF NOT EXISTS trg_challenges_delete
 AFTER DELETE ON challenges
 BEGIN
@@ -123,6 +137,7 @@ BEGIN
         updated_at = CURRENT_TIMESTAMP
     WHERE id = 1;
 END;
+
 
 -- ===========================
 -- Таблица challenge_tags
