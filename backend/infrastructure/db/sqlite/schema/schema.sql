@@ -7,6 +7,7 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
+    codewars_id TEXT UNIQUE NOT NULL,
     name TEXT,
     honor INTEGER DEFAULT 0,
     clan TEXT,
@@ -14,8 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
     total_completed INTEGER DEFAULT 0,
     total_authored INTEGER DEFAULT 0,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
-    codewars_id TEXT UNIQUE
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ===========================
