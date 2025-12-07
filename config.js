@@ -15,3 +15,13 @@ export const CACHE_DIR_CODEWARS = join(
 export const DATA_DIR_CODEWARS = join(__dirname, 'backend', 'infrastructure', 'data', 'codewars');
 
 export const DB_SCHEMAS = join(__dirname, 'backend', 'infrastructure', 'db', 'sqlite', 'schema', 'schema.sql');
+
+export const CHALLENGES_DIR = join(
+  __dirname,
+  'backend',
+  'infrastructure',
+  'data',
+  'codewars',
+  'Challenges'
+);
+
