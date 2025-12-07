@@ -14,7 +14,6 @@ function runTests() {
         id TEXT PRIMARY KEY,
         name TEXT NOT NULL,
         slug TEXT UNIQUE,
-        description TEXT,
         category TEXT,
         rank_id INTEGER DEFAULT 0,
         created_by_username TEXT,
@@ -52,11 +51,11 @@ function runTests() {
 
     console.log('=== Tables created ===');
 
+    // === TEST: INSERT ===
     const challenge1 = {
       id: "651bfcbd409ea1001ef2c3cb",
       name: "Roguelike game 1 - stats and weapon",
       slug: "roguelike-game-1-stats-and-weapon",
-      description: "Test description",
       category: "games",
       rank: { id: -5, name: "5 kyu" },
       createdBy: { username: "Krillan" },
@@ -77,8 +76,13 @@ function runTests() {
     console.log('--- Insert ---');
     console.log(row1);
 
-    const tags1 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag').all(id1).map(r => r.tag);
-    const langs1 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language').all(id1).map(r => r.language);
+    const tags1 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag')
+      .all(id1)
+      .map(r => r.tag);
+
+    const langs1 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language')
+      .all(id1)
+      .map(r => r.language);
 
     console.log('Tags:', tags1);
     console.log('Languages:', langs1);
@@ -89,29 +93,45 @@ function runTests() {
       console.error('❌ Insert tags & languages failed');
     }
 
-    const challenge2 = { ...challenge1, name: "Updated name", description: "Updated desc" };
+    // === TEST: UPDATE (NO DESCRIPTION ANYMORE) ===
+    const challenge2 = { ...challenge1, name: "Updated name" };
     const id2 = insertChallengeSync(db, challenge2);
     const row2 = db.prepare('SELECT * FROM challenges WHERE id = ?').get(id2);
 
     console.log('--- Update ---');
     console.log(row2);
 
-    if (row2.name === "Updated name" && row2.description === "Updated desc") {
+    if (row2.name === "Updated name") {
       console.log('✅ Update successful');
     } else {
       console.error('❌ Update failed');
     }
 
-    const challenge3 = { ...challenge1, tags: ["Games", "NewTag"], languages: ["python", "Dart"] };
+    // === TEST: DEDUPLICATION ===
+    const challenge3 = {
+      ...challenge1,
+      tags: ["Games", "NewTag"],
+      languages: ["python", "Dart"]
+    };
+
     insertChallengeSync(db, challenge3);
 
-    const tags3 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag').all(id1).map(r => r.tag);
-    const langs3 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language').all(id1).map(r => r.language);
+    const tags3 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag')
+      .all(id1)
+      .map(r => r.tag);
+
+    const langs3 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language')
+      .all(id1)
+      .map(r => r.language);
 
     console.log('--- Tags after duplicate insert ---', tags3);
     console.log('--- Languages after duplicate insert ---', langs3);
 
-    if (tags3.includes("NewTag") && langs3.includes("Dart") && tags3.filter(t => t === "Games").length === 1) {
+    if (
+      tags3.includes("NewTag") &&
+      langs3.includes("Dart") &&
+      tags3.filter(t => t === "Games").length === 1
+    ) {
       console.log('✅ Tags & Languages deduplication successful');
     } else {
       console.error('❌ Deduplication failed');

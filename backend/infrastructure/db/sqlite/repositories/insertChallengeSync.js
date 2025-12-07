@@ -5,7 +5,6 @@ export const insertChallengeSync = (db, challenge) => {
     id,
     name,
     slug,
-    description,
     category,
     rank,
     createdBy,
@@ -24,16 +23,15 @@ export const insertChallengeSync = (db, challenge) => {
 
   const stmt = db.prepare(`
     INSERT INTO challenges (
-      id, name, slug, description, category, rank_id,
+      id, name, slug, category, rank_id,
       created_by_username, approved_by_username,
       total_attempts, total_completed, total_stars, vote_score,
       published_at, approved_at, created_at, updated_at
     )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     ON CONFLICT(id) DO UPDATE SET
       name = COALESCE(excluded.name, challenges.name),
       slug = COALESCE(excluded.slug, challenges.slug),
-      description = COALESCE(excluded.description, challenges.description),
       category = COALESCE(excluded.category, challenges.category),
       rank_id = COALESCE(excluded.rank_id, challenges.rank_id),
       created_by_username = COALESCE(excluded.created_by_username, challenges.created_by_username),
@@ -48,7 +46,7 @@ export const insertChallengeSync = (db, challenge) => {
   `);
 
   stmt.run(
-    id, name, slug, description, category, rankId,
+    id, name, slug, category, rankId,
     createdBy?.username ?? null,
     approvedBy?.username ?? null,
     totalAttempts ?? null,
