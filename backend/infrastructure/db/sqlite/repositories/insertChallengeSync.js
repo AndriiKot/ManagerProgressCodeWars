@@ -15,8 +15,11 @@ export const insertChallengeSync = (db, challenge) => {
     voteScore,
     publishedAt,
     approvedAt,
+    url,
+    contributorsWanted,
+    unresolved,
     languages = [],
-    tags = [],
+    tags = []
   } = challenge;
 
   const rankId = rank?.id ?? 0;
@@ -28,24 +31,31 @@ export const insertChallengeSync = (db, challenge) => {
         id, name, slug, category, rank_id,
         created_by_username, approved_by_username,
         total_attempts, total_completed, total_stars, vote_score,
-        published_at, approved_at, created_at, updated_at
+        published_at, approved_at, url,
+        contributors_wanted, unresolved_issues, unresolved_suggestions,
+        created_at, updated_at
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
       ON CONFLICT(id) DO UPDATE SET
-        name = COALESCE(excluded.name, challenges.name),
-        slug = COALESCE(excluded.slug, challenges.slug),
-        category = COALESCE(excluded.category, challenges.category),
-        rank_id = COALESCE(excluded.rank_id, challenges.rank_id),
-        created_by_username = COALESCE(excluded.created_by_username, challenges.created_by_username),
-        approved_by_username = COALESCE(excluded.approved_by_username, challenges.approved_by_username),
-        total_attempts = COALESCE(excluded.total_attempts, challenges.total_attempts),
-        total_completed = COALESCE(excluded.total_completed, challenges.total_completed),
-        total_stars = COALESCE(excluded.total_stars, challenges.total_stars),
-        vote_score = COALESCE(excluded.vote_score, challenges.vote_score),
-        published_at = COALESCE(excluded.published_at, challenges.published_at),
-        approved_at = COALESCE(excluded.approved_at, challenges.approved_at),
+        name = excluded.name,
+        slug = excluded.slug,
+        category = excluded.category,
+        rank_id = excluded.rank_id,
+        created_by_username = excluded.created_by_username,
+        approved_by_username = excluded.approved_by_username,
+        total_attempts = excluded.total_attempts,
+        total_completed = excluded.total_completed,
+        total_stars = excluded.total_stars,
+        vote_score = excluded.vote_score,
+        published_at = excluded.published_at,
+        approved_at = excluded.approved_at,
+        url = excluded.url,
+        contributors_wanted = excluded.contributors_wanted,
+        unresolved_issues = excluded.unresolved_issues,
+        unresolved_suggestions = excluded.unresolved_suggestions,
         updated_at = CURRENT_TIMESTAMP
     `);
+
     stmt.run(
       id, name, slug, category, rankId,
       createdBy?.username ?? null,
@@ -55,34 +65,34 @@ export const insertChallengeSync = (db, challenge) => {
       totalStars ?? null,
       voteScore ?? null,
       publishedAt ?? null,
-      approvedAt ?? null
+      approvedAt ?? null,
+      url ?? null,
+      contributorsWanted ? 1 : 0,
+      unresolved?.issues ?? 0,
+      unresolved?.suggestions ?? 0
     );
 
     if (tags.length) {
       const tagStmt = db.prepare(`
-        INSERT INTO challenge_tags (challenge_id, tag, created_at)
-        VALUES (?, ?, CURRENT_TIMESTAMP)
+        INSERT INTO challenge_tags (challenge_id, tag)
+        VALUES (?, ?)
         ON CONFLICT(challenge_id, tag) DO NOTHING
       `);
-      for (const tag of tags) {
-        tagStmt.run(id, tag);
-      }
+      for (const tag of tags) tagStmt.run(id, tag);
     }
 
     if (languages.length) {
       const langStmt = db.prepare(`
-        INSERT INTO challenge_languages (challenge_id, language, created_at)
-        VALUES (?, ?, CURRENT_TIMESTAMP)
+        INSERT INTO challenge_languages (challenge_id, language)
+        VALUES (?, ?)
         ON CONFLICT(challenge_id, language) DO NOTHING
       `);
-      for (const lang of languages) {
-        langStmt.run(id, lang);
-      }
+      for (const lang of languages) langStmt.run(id, lang);
     }
 
     db.exec('COMMIT');
 
-    return db.prepare('SELECT id FROM challenges WHERE id = ?').get(id).id;
+    return id;
 
   } catch (err) {
     db.exec('ROLLBACK');

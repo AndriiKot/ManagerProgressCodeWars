@@ -85,26 +85,32 @@ ON CONFLICT(id) DO NOTHING;
 -- Таблица челленджей
 -- ===========================
 CREATE TABLE IF NOT EXISTS challenges (
-    id TEXT PRIMARY KEY,                        
+    id TEXT PRIMARY KEY,
     name TEXT NOT NULL,
     slug TEXT UNIQUE,
     category TEXT,
     rank_id INTEGER DEFAULT 0,
+
     created_by_username TEXT,
     approved_by_username TEXT,
+
     total_attempts INTEGER DEFAULT 0,
     total_completed INTEGER DEFAULT 0,
     total_stars INTEGER DEFAULT 0,
     vote_score INTEGER DEFAULT 0,
+
     published_at TEXT,
     approved_at TEXT,
-    created_at TEXT,                            
-    updated_at TEXT,
-    url TEXT,                                    
-    contributors_wanted INTEGER DEFAULT 0,       
-    unresolved_issues INTEGER DEFAULT 0,        
-    unresolved_suggestions INTEGER DEFAULT 0,   
-    FOREIGN KEY(rank_id) REFERENCES ranks(id)
+    url TEXT,
+
+    contributors_wanted INTEGER DEFAULT 0,
+    unresolved_issues INTEGER DEFAULT 0,
+    unresolved_suggestions INTEGER DEFAULT 0,
+
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (rank_id) REFERENCES ranks(id)
 );
 
 -- ===========================

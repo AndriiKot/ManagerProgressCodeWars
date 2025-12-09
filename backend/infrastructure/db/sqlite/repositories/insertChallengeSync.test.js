@@ -9,11 +9,15 @@ function runTests() {
   try {
     console.log('=== Creating tables ===');
 
+    //
+    // === REALISTIC SCHEMA FOR TESTING insertChallengeSync ===
+    //
+
     db.exec(`
       CREATE TABLE challenges (
         id TEXT PRIMARY KEY,
         name TEXT NOT NULL,
-        slug TEXT UNIQUE,
+        slug TEXT,
         category TEXT,
         rank_id INTEGER DEFAULT 0,
         created_by_username TEXT,
@@ -24,34 +28,37 @@ function runTests() {
         vote_score INTEGER DEFAULT 0,
         published_at TEXT,
         approved_at TEXT,
+        url TEXT,
+        contributors_wanted INTEGER DEFAULT 0,
+        unresolved_issues INTEGER DEFAULT 0,
+        unresolved_suggestions INTEGER DEFAULT 0,
         created_at TEXT DEFAULT CURRENT_TIMESTAMP,
         updated_at TEXT DEFAULT CURRENT_TIMESTAMP
-      ) STRICT
+      ) STRICT;
     `);
 
     db.exec(`
       CREATE TABLE challenge_tags (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
         challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
         tag TEXT NOT NULL,
         created_at TEXT DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(challenge_id, tag)
-      ) STRICT
+      ) STRICT;
     `);
 
     db.exec(`
       CREATE TABLE challenge_languages (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
         challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
         language TEXT NOT NULL,
         created_at TEXT DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(challenge_id, language)
-      ) STRICT
+      ) STRICT;
     `);
 
     console.log('=== Tables created ===');
 
     // === TEST: INSERT ===
+
     const challenge1 = {
       id: "651bfcbd409ea1001ef2c3cb",
       name: "Roguelike game 1 - stats and weapon",
@@ -66,6 +73,9 @@ function runTests() {
       voteScore: 66,
       publishedAt: "2023-10-03T12:23:37.541Z",
       approvedAt: "2023-11-25T16:12:45.312Z",
+      url: "https://codewars.com/kata/roguelike-game-1",
+      contributorsWanted: true,
+      unresolved: { issues: 1, suggestions: 2 },
       languages: ["javascript", "python", "ruby"],
       tags: ["Puzzles", "Games", "OOP"]
     };
@@ -73,16 +83,16 @@ function runTests() {
     const id1 = insertChallengeSync(db, challenge1);
     const row1 = db.prepare('SELECT * FROM challenges WHERE id = ?').get(id1);
 
-    console.log('--- Insert ---');
+    console.log('--- Insert row ---');
     console.log(row1);
 
-    const tags1 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag')
-      .all(id1)
-      .map(r => r.tag);
+    const tags1 = db.prepare(
+      'SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag'
+    ).all(id1).map(r => r.tag);
 
-    const langs1 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language')
-      .all(id1)
-      .map(r => r.language);
+    const langs1 = db.prepare(
+      'SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language'
+    ).all(id1).map(r => r.language);
 
     console.log('Tags:', tags1);
     console.log('Languages:', langs1);
@@ -93,12 +103,13 @@ function runTests() {
       console.error('❌ Insert tags & languages failed');
     }
 
-    // === TEST: UPDATE (NO DESCRIPTION ANYMORE) ===
+    // === TEST: UPDATE ===
+
     const challenge2 = { ...challenge1, name: "Updated name" };
     const id2 = insertChallengeSync(db, challenge2);
     const row2 = db.prepare('SELECT * FROM challenges WHERE id = ?').get(id2);
 
-    console.log('--- Update ---');
+    console.log('--- Update row ---');
     console.log(row2);
 
     if (row2.name === "Updated name") {
@@ -108,6 +119,7 @@ function runTests() {
     }
 
     // === TEST: DEDUPLICATION ===
+
     const challenge3 = {
       ...challenge1,
       tags: ["Games", "NewTag"],
@@ -116,13 +128,13 @@ function runTests() {
 
     insertChallengeSync(db, challenge3);
 
-    const tags3 = db.prepare('SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag')
-      .all(id1)
-      .map(r => r.tag);
+    const tags3 = db.prepare(
+      'SELECT tag FROM challenge_tags WHERE challenge_id = ? ORDER BY tag'
+    ).all(id1).map(r => r.tag);
 
-    const langs3 = db.prepare('SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language')
-      .all(id1)
-      .map(r => r.language);
+    const langs3 = db.prepare(
+      'SELECT language FROM challenge_languages WHERE challenge_id = ? ORDER BY language'
+    ).all(id1).map(r => r.language);
 
     console.log('--- Tags after duplicate insert ---', tags3);
     console.log('--- Languages after duplicate insert ---', langs3);
@@ -132,7 +144,7 @@ function runTests() {
       langs3.includes("Dart") &&
       tags3.filter(t => t === "Games").length === 1
     ) {
-      console.log('✅ Tags & Languages deduplication successful');
+      console.log('✅ Deduplication successful');
     } else {
       console.error('❌ Deduplication failed');
     }
