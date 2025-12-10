@@ -3,29 +3,28 @@ import { CodewarsAPI } from '#api';
 import { userProfileSchema, validateWithRankCheck } from '#schemas';
 import { Storage } from '#storage';
 import { sqlite } from '#db';
-import { deepFreezeArray, checkUsersLimit } from '#utils';
+import { deepFreezeArray, checkUsersLimit, withTimeout } from '#utils';
 import { loadUsersCache } from '#cache';
 
 const { bootstrapDatabase } = sqlite;
+
 
 (async () => {
   const cache = await loadUsersCache();
   const { getUserProfile } = CodewarsAPI;
 
   const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS]);
-
-  try {
-    checkUsersLimit(usersToCheck);
-  } catch (err) {
-    console.error('Users limit exceeded:', err.message);
-    process.exit(1);
-  }
+  checkUsersLimit(usersToCheck);
 
   const db = bootstrapDatabase();
 
   for (const username of usersToCheck) {
     try {
-      const { success, data: profileData } = await getUserProfile(username);
+      const { success, data: profileData } = await withTimeout(
+        () => getUserProfile(username),
+        7000,
+        1
+      );
 
       if (!success) {
         console.warn(`Failed to fetch profile for ${username}`);
@@ -46,7 +45,7 @@ const { bootstrapDatabase } = sqlite;
       }
 
     } catch (err) {
-      console.error(`Error processing profile for ${username}:`, err);
+      console.error(`Error processing profile for ${username}:`, err.message);
     }
   }
 })();
