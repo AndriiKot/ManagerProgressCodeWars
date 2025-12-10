@@ -43,4 +43,3 @@ export const bootstrapDatabase = () => {
   return db;
 };
 
-bootstrapDatabase();
