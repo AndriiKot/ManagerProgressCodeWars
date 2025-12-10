@@ -1,4 +1,4 @@
-import { USER_NAME } from '#config';
+import { USER_NAME, FRIENDS } from '#config';
 import { CodewarsAPI } from '#api';
 import { userProfileSchema, validateWithRankCheck } from '#schemas';
 import { Storage } from '#storage';
@@ -11,23 +11,32 @@ const { bootstrapDatabase } = sqlite;
 
   const db = bootstrapDatabase();
 
-  const { success: isProfileSuccess, data: profileData } = await getUserProfile(USER_NAME);
+  const usersToCheck = [USER_NAME, ...FRIENDS];
 
-  if (!isProfileSuccess) {
-    console.warn(`Failed to fetch profile for ${USER_NAME}`);
-    return;
-  }
+  for (const username of usersToCheck) {
+    try {
+      const { success, data: profileData } = await getUserProfile(username);
 
-  const validationResult = validateWithRankCheck({
-    schema: userProfileSchema,
-    data: profileData,
-    options: { recursive: true, strict: true },
-  });
+      if (!success) {
+        console.warn(`Failed to fetch profile for ${username}`);
+        continue;
+      }
 
-  if (validationResult.isValid) {
-    console.log(`User profile ${USER_NAME} data is valid!`);
+      const validationResult = validateWithRankCheck({
+        schema: userProfileSchema,
+        data: profileData,
+        options: { recursive: true, strict: true },
+      });
 
-  } else {
-    console.warn(`User profile ${USER_NAME} failed validation`, validationResult.errors);
+      if (validationResult.isValid) {
+        console.log(`User profile ${username} data is valid!`);
+        // await Storage.update({ user: username, data: profileData });
+      } else {
+        console.warn(`User profile ${username} failed validation`, validationResult.errors);
+      }
+
+    } catch (err) {
+      console.error(`Error processing profile for ${username}:`, err);
+    }
   }
 })();

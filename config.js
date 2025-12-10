@@ -1,9 +1,12 @@
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { deepFreezeArray } from '#utils';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export const USER_NAME = 'Krillan';
+export const USER_NAME = 'AndriiKot';
+
+export const FRIENDS = deepFreezeArray([...new Set(['Krillan'])]); 
 
 export const CACHE_DIR = join(__dirname, 'infrastructure', 'backend', 'cache');
 export const CACHE_DIR_CODEWARS = join(
