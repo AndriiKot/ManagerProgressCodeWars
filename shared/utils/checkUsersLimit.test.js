@@ -1,4 +1,4 @@
-import { checkFriendsLimit } from './checkFriendsLimit.js';
+import { checkUsersLimit } from './checkUsersLimit.js';
 import { MAX_USERS } from '#config';
 
 const runTest = (description, fn) => {
@@ -13,13 +13,13 @@ const runTest = (description, fn) => {
 
 runTest('does not throw when number of friends is within limit', () => {
   const friends = new Array(MAX_USERS).fill('friend');
-  checkFriendsLimit(friends);
+  checkUsersLimit(friends);
 });
 
 runTest('throws when number of friends exceeds limit', () => {
   const friends = new Array(MAX_USERS + 1).fill('friend');
   try {
-    checkFriendsLimit(friends);
+    checkUsersLimit(friends);
     throw new Error('Expected an error but none was thrown');
   } catch (err) {
     if (err.message !== `You can only have up to ${MAX_USERS} friends.`) {
@@ -29,5 +29,5 @@ runTest('throws when number of friends exceeds limit', () => {
 });
 
 runTest('does not throw when friends array is empty', () => {
-  checkFriendsLimit([]);
+  checkUsersLimit([]);
 });

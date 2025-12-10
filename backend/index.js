@@ -3,7 +3,7 @@ import { CodewarsAPI } from '#api';
 import { userProfileSchema, validateWithRankCheck } from '#schemas';
 import { Storage } from '#storage';
 import { sqlite } from '#db';
-import { deepFreezeArray, checkFriendsLimit } from '#utils';
+import { deepFreezeArray, checkUsersLimit } from '#utils';
 
 const { bootstrapDatabase } = sqlite;
 
@@ -13,7 +13,7 @@ const { bootstrapDatabase } = sqlite;
   const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS]);
 
   try {
-    checkFriendsLimit(usersToCheck);
+    checkUsersLimit(usersToCheck);
   } catch (err) {
     console.error('Users limit exceeded:', err.message);
     process.exit(1);
