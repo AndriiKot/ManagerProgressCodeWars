@@ -12,5 +12,3 @@ function simpleBootstrapDatabaseTest() {
 
   console.log('✅ In-memory database test passed');
 }
-
-simpleBootstrapDatabaseTest();
