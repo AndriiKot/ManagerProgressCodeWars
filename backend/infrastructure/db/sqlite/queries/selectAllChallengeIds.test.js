@@ -30,13 +30,18 @@ function runTest() {
     const ids = selectAllChallengeIds(db);
     console.log('Fetched IDs:', ids);
 
+    // EXPECTED
     const expectedIds = ['id1', 'id2', 'id3'];
-    const allFound = expectedIds.every(id => ids.includes(id));
 
-    if (allFound && ids.length === expectedIds.length) {
+    const allFound = expectedIds.every(id => ids.has(id));
+    const sizeCorrect = ids.size === expectedIds.length;
+
+    if (allFound && sizeCorrect) {
       console.log('✅ selectAllChallengeIds test passed');
     } else {
       console.error('❌ selectAllChallengeIds test failed');
+      console.error('Expected:', expectedIds);
+      console.error('Got:', [...ids]);
     }
 
   } finally {
