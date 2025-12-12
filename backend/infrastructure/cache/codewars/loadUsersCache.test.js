@@ -6,7 +6,7 @@ import { mkdtemp, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { loadUsersCache } from '#cache';
+import { loadUsersCache } from './loadUsersCache.js';
 
 test('loadUsersCache correctly loads users and their JSON files', async () => {
   // create a temporary directory

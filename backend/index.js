@@ -4,19 +4,20 @@ import { userProfileSchema, validateWithRankCheck } from '#schemas';
 import { Storage } from '#storage';
 import { sqlite } from '#db';
 import { deepFreezeArray, checkUsersLimit, withTimeout } from '#utils';
-import { loadUsersCache } from '#cache';
+import { buildGlobalCache } from '#cache';
 
 const { bootstrapDatabase } = sqlite;
 
 
 (async () => {
-  const cache = await loadUsersCache();
+
   const { getUserProfile } = CodewarsAPI;
 
   const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS]);
   checkUsersLimit(usersToCheck);
 
   const db = bootstrapDatabase();
+  const cache = await buildGlobalCache(db);
 
   for (const username of usersToCheck) {
     try {
