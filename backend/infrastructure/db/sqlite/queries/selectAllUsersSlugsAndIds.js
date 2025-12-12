@@ -1,7 +1,7 @@
 'use strict';
 
 export const selectAllUsersSlugsAndIds = (db) => {
-  const stmt = db.prepare(`SELECT slug, codewars_id FROM users`);
+  const stmt = db.prepare(`SELECT username, codewars_id FROM users`);
   const rows = stmt.all();
 
   const slugs = new Set();

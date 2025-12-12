@@ -12,7 +12,7 @@ function runTest() {
     db.exec(`
       CREATE TABLE users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        slug TEXT UNIQUE NOT NULL,
+        username TEXT UNIQUE NOT NULL,
         codewars_id TEXT UNIQUE NOT NULL,
         name TEXT,
         honor INTEGER DEFAULT 0,
@@ -28,7 +28,7 @@ function runTest() {
     console.log('=== Table created ===');
 
     db.exec(`
-      INSERT INTO users (slug, codewars_id, name) VALUES
+      INSERT INTO users (username, codewars_id, name) VALUES
       ('user1', 'cw1', 'User One'),
       ('user2', 'cw2', 'User Two'),
       ('user3', 'cw3', 'User Three');
