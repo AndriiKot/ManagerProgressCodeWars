@@ -14,22 +14,6 @@ export const CodewarsAPI = {
   getUserProfile: (user) => retryFetchApiRequest(Users_API(user)),
   getCompletedChallenges: (user, pageNumber = 0) =>
     retryFetchApiRequest(List_Completed_Challenges(user, pageNumber)),
-  getAllPagesCompletedChallenges: async (user) => {
-    const firstPage = await retryFetchApiRequest(
-      List_Completed_Challenges(user, 0),
-    );
-    let pages = [];
-    if (firstPage.success) {
-      const countPages = firstPage.data.totalPages;
-      const urls = Array.from({ length: countPages }, (_, i) =>
-        List_Completed_Challenges(user, i),
-      );
-      pages = await Promise.all(urls.map((url) => retryFetchApiRequest(url)));
-    } else {
-      console.warn(`Failed to fetch first page: ${firstPage.error}`);
-    }
-    return pages;
-  },
   getAuthoredChallenges: (user) =>
     retryFetchApiRequest(List_Authored_Challenges(user)),
   getChallenge: (idOrSlug) =>
