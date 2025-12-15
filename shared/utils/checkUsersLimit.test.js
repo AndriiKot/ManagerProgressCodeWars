@@ -1,3 +1,5 @@
+'use strict';
+
 import { checkUsersLimit } from './checkUsersLimit.js';
 import { MAX_USERS } from '#config';
 

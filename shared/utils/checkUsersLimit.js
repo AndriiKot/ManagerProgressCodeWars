@@ -1,3 +1,5 @@
+'use strict';
+
 import { MAX_USERS } from '#config';
 
 export const checkUsersLimit = (usersArray) => {

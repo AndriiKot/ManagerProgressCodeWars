@@ -1,3 +1,5 @@
+'use strict';
+
 import { deepFreeze } from './deepFreeze.js';
 
 const testObj = {

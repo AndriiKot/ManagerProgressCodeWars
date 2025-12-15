@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import { pLimit } from "./pLimit.js";
 

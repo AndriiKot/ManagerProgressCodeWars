@@ -1,3 +1,5 @@
+'use strict';
+
 export const deepFreeze = (obj) => {
   const propNames = Object.getOwnPropertyNames(obj);
   propNames.forEach((name) => {

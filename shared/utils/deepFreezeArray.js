@@ -1,3 +1,5 @@
+'use strict';
+
 import { deepFreeze } from '#utils';
 
 export const deepFreezeArray = (arr) => {

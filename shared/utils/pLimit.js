@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 export const pLimit = (limit) => {
   let activeCount = 0;

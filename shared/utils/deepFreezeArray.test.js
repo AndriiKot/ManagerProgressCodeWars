@@ -1,3 +1,5 @@
+'use strict';
+
 import { deepFreezeArray } from './deepFreezeArray.js';
 import { deepFreeze } from './deepFreeze.js';
 
