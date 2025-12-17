@@ -8,14 +8,14 @@ export const saveAuthoredChallengesSafeSync = async (
   userId,
   { username },
   {
-    fetchUserAuthored,
-    fetchCodeChallenge,
+    getUserAuthored,
+    getCodeChallenge,
     insertAuthoredChallengeSync,
     insertChallengeSync,
     selectAllChallengeIds,
-  }
+  },
 ) => {
-  const { ok, data, error } = unwrapApiResult(await fetchUserAuthored(username));
+  const { ok, data, error } = unwrapApiResult(await getUserAuthored(username));
 
   if (!ok) {
     return SaveAuthoredResponse.fail(null, error);
@@ -31,7 +31,7 @@ export const saveAuthoredChallengesSafeSync = async (
     if (!id) continue;
 
     if (!existingIds.has(id)) {
-      const challengeRes = unwrapApiResult(await fetchCodeChallenge(id));
+      const challengeRes = unwrapApiResult(await getCodeChallenge(id));
       if (!challengeRes.ok) {
         errors.push({ id, error: challengeRes.error });
         continue;
@@ -44,5 +44,10 @@ export const saveAuthoredChallengesSafeSync = async (
     savedCount++;
   }
 
-  return SaveAuthoredResponse.ok(data, savedCount, challenges.length, errors.length ? errors : null);
+  return SaveAuthoredResponse.ok(
+    data,
+    savedCount,
+    challenges.length,
+    errors.length ? errors : null,
+  );
 };

@@ -34,7 +34,7 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       .run('TestUser').lastInsertRowid;
 
     // ===== MOCKS =====
-    const fetchUserAuthored = async () => ({
+    const getUserAuthored = async () => ({
       success: true,
       isValid: true,
       data: {
@@ -42,28 +42,29 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       },
     });
 
-    const fetchCodeChallenge = async (id) => ({
+    const getCodeChallenge = async (id) => ({
       success: true,
       isValid: true,
       data: { id, name: `Challenge ${id}` },
     });
 
     const insertChallengeSync = (db, ch) => {
-      db.prepare(
-        `INSERT INTO challenges (id, name) VALUES (?, ?)`
-      ).run(ch.id, ch.name);
+      db.prepare(`INSERT INTO challenges (id, name) VALUES (?, ?)`).run(
+        ch.id,
+        ch.name,
+      );
     };
 
     const insertAuthoredChallengeSync = (db, userId, challengeId) => {
       db.prepare(
         `INSERT OR IGNORE INTO authored_challenges (user_id, challenge_id)
-         VALUES (?, ?)`
+         VALUES (?, ?)`,
       ).run(userId, challengeId);
     };
 
     const selectAllChallengeIds = (db) => {
       const rows = db.prepare(`SELECT id FROM challenges`).all();
-      return { ids: new Set(rows.map(r => r.id)) };
+      return { ids: new Set(rows.map((r) => r.id)) };
     };
 
     const response = await saveAuthoredChallengesSafeSync(
@@ -71,12 +72,12 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       userId,
       { username: 'TestUser' },
       {
-        fetchUserAuthored,
-        fetchCodeChallenge,
+        getUserAuthored,
+        getCodeChallenge,
         insertAuthoredChallengeSync,
         insertChallengeSync,
         selectAllChallengeIds,
-      }
+      },
     );
 
     const challenges = db.prepare(`SELECT * FROM challenges`).all();
@@ -89,7 +90,6 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
 
     assert.equal(challenges.length, 2);
     assert.equal(authored.length, 2);
-
   } finally {
     db.close();
   }

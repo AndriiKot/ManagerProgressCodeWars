@@ -4,13 +4,13 @@ import { validateApiResource } from './validateApiResource.js';
 import { validateWithRankCheck, userProfileSchema } from '#schemas';
 import { CodewarsAPI } from '#api';
 
-const { getUserProfile } = CodewarsAPI;
+const { getUserProfile: getUserProfileApi } = CodewarsAPI;
 
-export const fetchUserProfile = async (username) => {
+export const getUserProfile = async (username) => {
   return validateApiResource({
-    apiFn: getUserProfile,
+    apiFn: getUserProfileApi,
     apiArgs: [username],
     schema: userProfileSchema,
-    validateFn: validateWithRankCheck,   
+    validateFn: validateWithRankCheck,
   });
 };

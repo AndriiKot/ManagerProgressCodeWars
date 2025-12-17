@@ -6,7 +6,7 @@ import { CodewarsAPI } from '#api';
 
 const { getCompletedChallenges } = CodewarsAPI;
 
-export const fetchUserCodeChallenges = async (username, page) => {
+export const getUserCodeChallenges = async (username, page) => {
   return validateApiResource({
     apiFn: getCompletedChallenges,
     apiArgs: [username, page],
@@ -14,4 +14,3 @@ export const fetchUserCodeChallenges = async (username, page) => {
     validateFn: validateSchema,
   });
 };
-

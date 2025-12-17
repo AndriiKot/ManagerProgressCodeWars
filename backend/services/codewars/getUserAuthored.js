@@ -6,11 +6,10 @@ import { CodewarsAPI } from '#api';
 
 const { getAuthoredChallenges } = CodewarsAPI;
 
-export const fetchUserAuthored = async (username) => {
+export const getUserAuthored = async (username) => {
   return validateApiResource({
     apiFn: getAuthoredChallenges,
     apiArgs: [username],
     schema: userAuthoredSchema,
   });
 };
-

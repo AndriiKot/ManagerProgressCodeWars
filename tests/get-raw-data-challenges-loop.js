@@ -2,7 +2,7 @@
 
 import { open, mkdir } from 'node:fs/promises';
 //import { USER_NAME } from '#config';
-import { fetchUserCodeChallenges, fetchCodeChallenge } from '#api';
+import { getUserCodeChallenges, getCodeChallenge } from '#api';
 
 const USER_NAME = 'Voile';
 const MAX_PAGES = 63;
@@ -26,7 +26,7 @@ async function processPage() {
     return;
   }
 
-  const res = await fetchUserCodeChallenges(USER_NAME, currentPage);
+  const res = await getUserCodeChallenges(USER_NAME, currentPage);
   if (!res.success) {
     console.error('Error loading page:', currentPage, res.error);
     currentPage++;
@@ -39,7 +39,7 @@ async function processPage() {
   console.log(`Slice from ${start} to ${end}, total: ${chunk.length}`);
 
   for (const { id } of chunk) {
-    const task = await fetchCodeChallenge(id);
+    const task = await getCodeChallenge(id);
 
     if (task.success) {
       const file = await open(`./Challenges/${id}.json`, 'w+');
