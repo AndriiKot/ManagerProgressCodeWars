@@ -8,7 +8,7 @@ import {
   getUserCodeChallenges,
   getUserAuthored,
   getCodeChallenge,
-} from '#api';
+} from '#services';
 
 test('Full Codewars API flow returns valid data', async (t) => {
   await t.test('1. User Profile should be valid', async () => {
@@ -24,7 +24,7 @@ test('Full Codewars API flow returns valid data', async (t) => {
       completed.isValid,
       true,
       'Completed challenges data is invalid',
-    );
+    );                                                       
   });
 
   await t.test('3. Authored Challenges should be valid', async () => {
@@ -39,7 +39,7 @@ test('Full Codewars API flow returns valid data', async (t) => {
 
   await t.test('4. Single Challenge by ID should be valid', async () => {
     const challenge = await getCodeChallenge('56aed32a154d33a1f3000018');
-    assert.strictEqual(challenge.success, true, 'getCodeChallenge failed');
+    assert.strictEqual(challenge.success, true, 'getChallenge failed');
     assert.strictEqual(challenge.isValid, true, 'Challenge data is invalid');
   });
 });
