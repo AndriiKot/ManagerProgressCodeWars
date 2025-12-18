@@ -1,42 +1,51 @@
 'use strict';
 
-const saveAllPages = async (db, userId, user, services) => {
-  const allErrors = [];
-  let totalSaved = 0;
+export const saveAllPages = async (db, userId, user, services) => {
+  const { saveCompletedChallengesSafeSync } = services;
 
-  const firstPageRes = await saveCompletedChallengesSafeSync(
+  let totalSaved = 0;
+  const allErrors = [];
+
+  const firstRes = await saveCompletedChallengesSafeSync(
     db,
     userId,
     user,
-    services
+    services,
+    0
   );
 
-  if (!firstPageRes.ok) {
-    return { totalSaved, allErrors: firstPageRes.errors || [] };
+  if (!firstRes.success) {
+    return {
+      totalSaved,
+      allErrors: firstRes.errors ? [firstRes.errors] : [],
+    };
   }
 
-  totalSaved += firstPageRes.savedCount;
-  if (firstPageRes.errors) allErrors.push(...firstPageRes.errors);
+  totalSaved += firstRes.savedCount;
+  if (firstRes.errors) allErrors.push(...firstRes.errors);
 
-  const { totalPages } = firstPageRes.data;
+  const { totalPages } = firstRes.data;
 
   for (let page = 1; page < totalPages; page++) {
-    const pageRes = await saveCompletedChallengesSafeSync(
+    const res = await saveCompletedChallengesSafeSync(
       db,
       userId,
       user,
-      {
-        ...services,
-        getUserCompleted: (username) => services.getUserCompleted(username, page),
-      }
+      services,
+      page
     );
 
-    if (!pageRes.ok) continue;
+    if (!res.success) {
+      if (res.errors) allErrors.push(res.errors);
+      continue;
+    }
 
-    totalSaved += pageRes.savedCount;
-    if (pageRes.errors) allErrors.push(...pageRes.errors);
+    totalSaved += res.savedCount;
+    if (res.errors) allErrors.push(...res.errors);
   }
 
-  return { totalSaved, allErrors };
+  return {
+    totalSaved,
+    allErrors,
+  };
 };
-
