@@ -1,6 +1,6 @@
 'use strict';
 
 import { deepFreeze } from '#utils';
-import { createSaveResponse } from '#helpers';
+import { createSaveResponse } from './createSaveResponse.js';
 
 export const SaveCompletedResponse = createSaveResponse();
