@@ -5,7 +5,6 @@ import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 
 import { saveCompletedChallengesSafeSync } from './saveCompletedChallengesSafeSync.js';
-import { SaveCompletedResponse } from '#contracts';
 
 test('saveCompletedChallengesSafeSync saves challenges and completed links', async () => {
   const db = new DatabaseSync(':memory:');
@@ -42,7 +41,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
       .run('TestUser').lastInsertRowid;
 
     // ===== MOCKS =====
-    const getUserCompleted = async () => ({
+    const getUserCodeChallenges = async () => ({
       success: true,
       isValid: true,
       data: {
@@ -68,20 +67,17 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
     });
 
     const insertChallengeSync = (db, ch) => {
-      db.prepare(`INSERT INTO challenges (id, name) VALUES (?, ?)`).run(
-        ch.id,
-        ch.name,
-      );
+      db.prepare(
+        `INSERT INTO challenges (id, name) VALUES (?, ?)`
+      ).run(ch.id, ch.name);
     };
 
     const insertCompletedChallengeSync = (db, userId, challenge) => {
-      const stmt = db.prepare(`
+      db.prepare(`
         INSERT OR IGNORE INTO completed_challenges
           (user_id, challenge_id, completed_at)
         VALUES (?, ?, ?)
-      `);
-
-      stmt.run(userId, challenge.id, challenge.completedAt);
+      `).run(userId, challenge.id, challenge.completedAt);
 
       const row = db.prepare(`
         SELECT id FROM completed_challenges
@@ -99,7 +95,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
 
     const selectAllChallengeIds = (db) => {
       const rows = db.prepare(`SELECT id FROM challenges`).all();
-      return { ids: new Set(rows.map((r) => r.id)) };
+      return { ids: new Set(rows.map(r => r.id)) };
     };
 
     const response = await saveCompletedChallengesSafeSync(
@@ -107,7 +103,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
       userId,
       { username: 'TestUser' },
       {
-        getUserCompleted,
+        getUserCodeChallenges, // ✅ ИМЯ СОВПАДАЕТ С USE-CASE
         getCodeChallenge,
         insertChallengeSync,
         insertCompletedChallengeSync,
@@ -118,13 +114,13 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
     const challenges = db.prepare(`SELECT * FROM challenges`).all();
     const completed = db.prepare(`SELECT * FROM completed_challenges`).all();
     const languages = db.prepare(
-      `SELECT * FROM completed_challenge_languages`,
+      `SELECT * FROM completed_challenge_languages`
     ).all();
 
     assert.equal(response.success, true);
     assert.equal(response.savedCount, 2);
     assert.equal(response.total, 2);
-    assert.deepEqual(response.errors, null);
+    assert.equal(response.errors, null);
 
     assert.equal(challenges.length, 2);
     assert.equal(completed.length, 2);

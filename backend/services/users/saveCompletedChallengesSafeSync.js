@@ -8,7 +8,7 @@ export const saveCompletedChallengesSafeSync = async (
   userId,
   { username },
   {
-    getUserCompleted,
+    getUserCodeChallenges,
     getCodeChallenge,
     insertChallengeSync,
     insertCompletedChallengeSync,
@@ -16,7 +16,7 @@ export const saveCompletedChallengesSafeSync = async (
   },
 ) => {
   const { ok, data, error } = unwrapApiResult(
-    await getUserCompleted(username),
+    await getUserCodeChallenges(username),
   );
 
   if (!ok) {
