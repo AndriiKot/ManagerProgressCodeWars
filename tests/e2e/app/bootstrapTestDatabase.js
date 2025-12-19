@@ -16,7 +16,6 @@ export const bootstrapTestDatabase = (filename = 'test.sqlite') => {
     return null;
   }
 
-  // Проверяем, есть ли уже челленджи
   let count = 0;
   try {
     const row = db
