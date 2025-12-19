@@ -40,7 +40,7 @@ const { bootstrapDatabase } = sqlite;
 
       if (validationResult.isValid) {
         console.log(`User profile ${username} data is valid!`);
-        // await Storage.update({ user: username, data: profileData });
+        
       } else {
         console.warn(`User profile ${username} failed validation`, validationResult.errors);
       }
