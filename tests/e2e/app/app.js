@@ -16,7 +16,13 @@ console.log('⚠️ Running in test mode, database: test_database.sqlite');
   checkUsersLimit(usersToCheck);
 
   const db = bootstrapTestDatabase('test_database.sqlite');
-  const { saveFullUser, saveAuthoredChallenges, savePages } = createUserService(sqlite);
+
+  const userService = createUserService(
+    db,
+    sqlite
+  );
+
+  const { saveFullUser, saveAuthoredChallenges, savePages } = userService;
 
   for (const username of usersToCheck) {
       const { success, data: profileData, error } = await withTimeout(
@@ -32,7 +38,7 @@ console.log('⚠️ Running in test mode, database: test_database.sqlite');
 
       console.log(`User profile ${username} data is valid!`);
 
-      const userId = await saveFullUser(db, profileData);
+      const userId = await saveFullUser(profileData);
       await saveAuthoredChallenges(userId, { username });
       await savePages(userId, { username }); 
           

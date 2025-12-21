@@ -7,13 +7,13 @@ import {
   getCodeChallenge,
 } from '#services';
 
-export const createUserServiceDeps = (db) => {
+export const createUserServiceDeps = (sqlite) => {
   const {
     insertChallengeSync,
     selectAllChallengeIds,
     insertAuthoredChallengeSync,
     insertCompletedChallengeSync,
-  } = db;
+  } = sqlite;
 
   return Object.freeze({
     // API

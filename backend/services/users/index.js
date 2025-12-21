@@ -6,28 +6,23 @@ import { saveAuthoredChallengesSafeSync } from './saveAuthoredChallengesSafeSync
 import { saveCompletedChallengesSafeSync } from './saveCompletedChallengesSafeSync.js';
 import { saveFullUser } from './saveFullUser.js';
 
-export const createUserService = ({ db }) => {
-  // deps — это API + методы работы с БД + внутренние use-case
+export const createUserService = (db, sqlite) => {
   const deps = {
-    ...createUserServiceDeps({ db }),
+    ...createUserServiceDeps(sqlite),
 
-    // Добавляем внутренние функции, которые используют другие use-case
     saveCompletedChallengesSafeSync,
     saveAuthoredChallengesSafeSync,
   };
 
   return {
-    // Полный save всего пользователя
-    saveFullUser(userId, user) {
-      return saveFullUser(db, user, deps);
+    saveFullUser(profile) {
+      return saveFullUser(db, profile, deps);
     },
 
-    // Отдельно можно вызвать authored
     saveAuthoredChallenges(userId, user) {
       return saveAuthoredChallengesSafeSync(db, userId, user, deps);
     },
 
-    // Отдельно можно вызвать completed по страницам
     savePages(userId, user) {
       return saveAllPages(db, userId, user, deps);
     },
