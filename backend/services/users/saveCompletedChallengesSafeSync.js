@@ -14,9 +14,10 @@ export const saveCompletedChallengesSafeSync = async (
     insertCompletedChallengeSync,
     selectAllChallengeIds,
   },
+  page = 0
 ) => {
   const { ok, data, error } = unwrapApiResult(
-    await getUserCodeChallenges(username),
+    await getUserCodeChallenges(username, page),
   );
 
   if (!ok) {
@@ -24,7 +25,7 @@ export const saveCompletedChallengesSafeSync = async (
   }
 
   const { data: challenges } = data;
-  const { ids: existingIds } = selectAllChallengeIds(db);
+  const existingIds = new Set(selectAllChallengeIds(db)?.ids || []);
 
   let savedCount = 0;
   const errors = [];
