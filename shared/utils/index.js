@@ -7,3 +7,4 @@ export { pLimit } from './pLimit.js';
 export { runLimited } from './runLimited.js';
 export { checkUsersLimit } from './checkUsersLimit.js';
 export { withTimeout } from './withTimeout.js';
+export { createSafeApiCall } from './createSafeApiCall.js';
