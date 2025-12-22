@@ -175,7 +175,6 @@ CREATE TABLE IF NOT EXISTS completed_challenges (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     challenge_id TEXT NOT NULL REFERENCES challenges(id) ON DELETE CASCADE,
     completed_at TEXT NOT NULL,
-    languages_json TEXT CHECK (json_valid(languages_json) OR languages_json IS NULL),
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(user_id, challenge_id) ON CONFLICT REPLACE
