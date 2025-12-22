@@ -7,6 +7,8 @@ import {
   getCodeChallenge,
 } from '#services';
 
+import { createSafeApiCall } from '#utils';
+
 export const createUserServiceDeps = (sqlite) => {
   const {
     insertChallengeSync,
@@ -15,13 +17,17 @@ export const createUserServiceDeps = (sqlite) => {
     insertCompletedChallengeSync,
   } = sqlite;
 
-  return Object.freeze({
-    // API
-    getUserAuthored,
-    getUserCodeChallenges,
-    getCodeChallenge,
+  const safeApiCall = createSafeApiCall({
+    concurrency: 2,
+    interval: 400,
+  });
 
-    // DB
+  return Object.freeze({
+
+    getUserAuthored: safeApiCall(getUserAuthored),
+    getUserCodeChallenges: safeApiCall(getUserCodeChallenges),
+    getCodeChallenge: safeApiCall(getCodeChallenge),
+
     insertChallengeSync,
     insertAuthoredChallengeSync,
     insertCompletedChallengeSync,
