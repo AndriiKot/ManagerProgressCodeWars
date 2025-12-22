@@ -22,7 +22,7 @@ export const saveAuthoredChallengesSafeSync = async (
   }
 
   const { data: challenges } = data;
-  const existingIds = new Set(selectAllChallengeIds(db)?.ids || []);
+  const existingIds = selectAllChallengeIds(db) || new Set();
 
   let savedCount = 0;
   const errors = [];

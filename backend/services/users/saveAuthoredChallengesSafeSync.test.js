@@ -5,9 +5,8 @@ import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 
 import { saveAuthoredChallengesSafeSync } from './saveAuthoredChallengesSafeSync.js';
-import { SaveAuthoredResponse } from '#contracts';
 
-test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
+test('saveAuthoredChallengesSafeSync saves authored challenges', async () => {
   const db = new DatabaseSync(':memory:');
 
   try {
@@ -23,6 +22,7 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       ) STRICT;
 
       CREATE TABLE authored_challenges (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         challenge_id TEXT NOT NULL,
         UNIQUE(user_id, challenge_id)
@@ -33,12 +33,14 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       .prepare(`INSERT INTO users (username) VALUES (?)`)
       .run('TestUser').lastInsertRowid;
 
-    // ===== MOCKS =====
     const getUserAuthored = async () => ({
       success: true,
       isValid: true,
       data: {
-        data: [{ id: 'a1' }, { id: 'b2' }],
+        data: [
+          { id: 'x1' },
+          { id: 'y2' },
+        ],
       },
     });
 
@@ -49,22 +51,20 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
     });
 
     const insertChallengeSync = (db, ch) => {
-      db.prepare(`INSERT INTO challenges (id, name) VALUES (?, ?)`).run(
-        ch.id,
-        ch.name,
-      );
+      db.prepare(`INSERT INTO challenges (id, name) VALUES (?, ?)`).run(ch.id, ch.name);
     };
 
     const insertAuthoredChallengeSync = (db, userId, challengeId) => {
-      db.prepare(
-        `INSERT OR IGNORE INTO authored_challenges (user_id, challenge_id)
-         VALUES (?, ?)`,
-      ).run(userId, challengeId);
+      db.prepare(`
+        INSERT OR IGNORE INTO authored_challenges
+          (user_id, challenge_id)
+        VALUES (?, ?)
+      `).run(userId, challengeId);
     };
 
     const selectAllChallengeIds = (db) => {
       const rows = db.prepare(`SELECT id FROM challenges`).all();
-      return { ids: new Set(rows.map((r) => r.id)) };
+      return new Set(rows.map(r => r.id));
     };
 
     const response = await saveAuthoredChallengesSafeSync(
@@ -74,8 +74,8 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
       {
         getUserAuthored,
         getCodeChallenge,
-        insertAuthoredChallengeSync,
         insertChallengeSync,
+        insertAuthoredChallengeSync,
         selectAllChallengeIds,
       },
     );
@@ -86,7 +86,7 @@ test('saveAuthoredChallengesSafeSync saves challenges and links', async () => {
     assert.equal(response.success, true);
     assert.equal(response.savedCount, 2);
     assert.equal(response.total, 2);
-    assert.deepEqual(response.errors, null);
+    assert.equal(response.errors, null);
 
     assert.equal(challenges.length, 2);
     assert.equal(authored.length, 2);
