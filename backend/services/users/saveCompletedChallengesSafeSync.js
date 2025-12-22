@@ -25,7 +25,7 @@ export const saveCompletedChallengesSafeSync = async (
   }
 
   const { data: challenges } = data;
-  const existingIds = new Set(selectAllChallengeIds(db)?.ids || []);
+  const existingIds = selectAllChallengeIds(db) || new Set();
 
   let savedCount = 0;
   const errors = [];
@@ -33,17 +33,16 @@ export const saveCompletedChallengesSafeSync = async (
   for (const challenge of challenges) {
     const { id } = challenge;
     if (!id) continue;
-
     if (!existingIds.has(id)) {
       const challengeRes = unwrapApiResult(
         await getCodeChallenge(id),
       );
-
+ 
+     
       if (!challengeRes.ok) {
         errors.push({ id, error: challengeRes.error });
         continue;
       }
-
       insertChallengeSync(db, challengeRes.data);
       existingIds.add(id);
     }

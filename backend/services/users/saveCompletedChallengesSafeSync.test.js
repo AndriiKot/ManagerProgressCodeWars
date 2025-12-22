@@ -40,22 +40,13 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
       .prepare(`INSERT INTO users (username) VALUES (?)`)
       .run('TestUser').lastInsertRowid;
 
-    // ===== MOCKS =====
     const getUserCodeChallenges = async () => ({
       success: true,
       isValid: true,
       data: {
         data: [
-          {
-            id: 'a1',
-            completedAt: '2024-01-01',
-            completedLanguages: ['js', 'python'],
-          },
-          {
-            id: 'b2',
-            completedAt: '2024-01-02',
-            completedLanguages: ['js'],
-          },
+          { id: 'a1', completedAt: '2024-01-01', completedLanguages: ['js', 'python'] },
+          { id: 'b2', completedAt: '2024-01-02', completedLanguages: ['js'] },
         ],
       },
     });
@@ -67,9 +58,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
     });
 
     const insertChallengeSync = (db, ch) => {
-      db.prepare(
-        `INSERT INTO challenges (id, name) VALUES (?, ?)`
-      ).run(ch.id, ch.name);
+      db.prepare(`INSERT INTO challenges (id, name) VALUES (?, ?)`).run(ch.id, ch.name);
     };
 
     const insertCompletedChallengeSync = (db, userId, challenge) => {
@@ -93,9 +82,10 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
       }
     };
 
+    // Теперь selectAllChallengeIds возвращает Set напрямую
     const selectAllChallengeIds = (db) => {
       const rows = db.prepare(`SELECT id FROM challenges`).all();
-      return { ids: new Set(rows.map(r => r.id)) };
+      return new Set(rows.map(r => r.id));
     };
 
     const response = await saveCompletedChallengesSafeSync(
@@ -103,7 +93,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
       userId,
       { username: 'TestUser' },
       {
-        getUserCodeChallenges, // ✅ ИМЯ СОВПАДАЕТ С USE-CASE
+        getUserCodeChallenges,
         getCodeChallenge,
         insertChallengeSync,
         insertCompletedChallengeSync,
@@ -113,9 +103,7 @@ test('saveCompletedChallengesSafeSync saves challenges and completed links', asy
 
     const challenges = db.prepare(`SELECT * FROM challenges`).all();
     const completed = db.prepare(`SELECT * FROM completed_challenges`).all();
-    const languages = db.prepare(
-      `SELECT * FROM completed_challenge_languages`
-    ).all();
+    const languages = db.prepare(`SELECT * FROM completed_challenge_languages`).all();
 
     assert.equal(response.success, true);
     assert.equal(response.savedCount, 2);
