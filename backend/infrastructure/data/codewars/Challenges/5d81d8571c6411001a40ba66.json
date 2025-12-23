@@ -1,0 +1,47 @@
+{
+  "id": "5d81d8571c6411001a40ba66",
+  "name": "Dots and Boxes Validator",
+  "slug": "dots-and-boxes-validator",
+  "category": "algorithms",
+  "publishedAt": "2019-09-18T17:41:26.855Z",
+  "approvedAt": "2019-09-22T09:39:17.327Z",
+  "languages": [
+    "python",
+    "go",
+    "javascript",
+    "haskell",
+    "elixir",
+    "csharp",
+    "kotlin",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5d81d8571c6411001a40ba66",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-09-18T07:10:15.204Z",
+  "createdBy": {
+    "username": "docgunthrop",
+    "url": "https://www.codewars.com/users/docgunthrop"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "<!--Dots and Boxes Validator-->\n<p><span style='color:#8df'><a href='https://en.wikipedia.org/wiki/Dots_and_Boxes' style='color:#9f9;text-decoration:none'>Dots and Boxes</a></span> is a game typically played by two players. It starts with an empty square grid of equally-spaced dots. Two players take turns adding a single horizontal or vertical line between two unjoined adjacent dots. A player who completes the fourth side of a <code>1 x 1</code> box earns one point and takes another turn. The game ends when no more lines can be placed.</p>\n\n<p>Your task is to return the scores of the two players of a finished game.</p>\n\n<h2 style='color:#f88'>Input</h2>\n\nYour function will receive an array/tuple of integer pairs, each representing a link between two dots. Dots are denoted by a sequence of integers that increases left to right and top to bottom, like shown below.\n\n```\nfor a 3 x 3 square\n\n0  1  2\n\n3  4  5\n\n6  7  8\n```\n\n<h2 style='color:#f88'>Output</h2>\n\nYour function should return an array/tuple consisting of two non-negative integers representing the scores of both players.\n\n<h2 style='color:#f88'>Test Example</h2>\n<img src='https://i.imgur.com/kwS3rDy.png'/><br/>\n<!-- <sup style='color:#ccc'>Sequence for the test example</sup> -->\n\n```python\nmoves = ((0,1),(7,8),(1,2),(6,7),(0,3),(8,5),(3,4),(4,1),(4,5),(2,5),(7,4),(3,6))\ndots_and_boxes(moves) # should return (3,1)\n```\n```javascript\nlet moves = [[0,1],[7,8],[1,2],[6,7],[0,3],[8,5],[3,4],[4,1],[4,5],[2,5],[7,4],[3,6]];\ndotsAndBoxes(moves) // should return [3,1]\n```\n```go\nvar moves = [][2]int{{0,1},{7,8},{1,2},{6,7},{0,3},{8,5},{3,4},{4,1},{4,5},{2,5},{7,4},{3,6}}\nDotsAndBoxes(moves) // should return [3 1]\n```\n```haskell\nmoves = [(0,1),(7,8),(1,2),(6,7),(0,3),(8,5),(3,4),(4,1),(4,5),(2,5),(7,4),(3,6)]\ndotsAndBoxes moves -- should return (3,1)\n```\n```elixir\nmoves = [{0,1},{7,8},{1,2},{6,7},{0,3},{8,5},{3,4},{4,1},{4,5},{2,5},{7,4},{3,6}]\nDnB.dots_and_boxes(moves) # should return {3,1}\n```\n```csharp\nvar moves = new int[][]{new[]{0,1}, new[]{7,8}, new[]{1,2}, new[]{6,7}, new[]{0,3} ,new[]{8,5}, new[]{3,4}, new[]{4,1}, new[]{4,5}, new[]{2,5}, new[]{7,4}, new[]{3,6}};\nDnB.DotsAndBoxes(moves) // should return int[2]{3,1}\n```\n```kotlin\nval moves = arrayOf(Pair(0,1),Pair(7,8),Pair(1,2),Pair(6,7),Pair(0,3),Pair(8,5),Pair(3,4),Pair(4,1),Pair(4,5),Pair(2,5),Pair(7,4),Pair(3,6))\nDnB.dotsAndBoxes(moves) // should return Pair(3,1)\n```\n```rust\nlet moves = vec![(0,1),(7,8),(1,2),(6,7),(0,3),(8,5),(3,4),(4,1),(4,5),(2,5),(7,4),(3,6)];\ndnb::dots_and_boxes(moves) // should return (3,1)\n```\n\n<h2 style='color:#f88'>Additional Details</h2>\n\n- All inputs will be valid\n- `n x n` board size range: `3 <= n <= 12`\n- Full Test Suite: `10` fixed tests and `100` random tests\n- Use Python 3+ for the Python translation\n- For JavaScript, `module` and `require` are disabled\n\n<p>If you enjoyed this kata, be sure to check out <a href='https://www.codewars.com/users/docgunthrop/authored' style='color:#9f9;text-decoration:none'>my other katas</a></p>",
+  "totalAttempts": 3780,
+  "totalCompleted": 553,
+  "totalStars": 164,
+  "voteScore": 140,
+  "tags": [
+    "Games",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

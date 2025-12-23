@@ -1,0 +1,39 @@
+{
+  "id": "62cc917fedc75c95ef961ad1",
+  "name": "Sexagenary Cycle (干支): How old am I?",
+  "slug": "sexagenary-cycle-gan-zhi-how-old-am-i",
+  "category": "reference",
+  "publishedAt": "2022-07-11T21:10:44.732Z",
+  "approvedAt": "2022-07-16T10:20:01.518Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/62cc917fedc75c95ef961ad1",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-07-11T21:09:19.651Z",
+  "createdBy": {
+    "username": "LanXnHn",
+    "url": "https://www.codewars.com/users/LanXnHn"
+  },
+  "approvedBy": {
+    "username": "ejini战神",
+    "url": "https://www.codewars.com/users/ejini%E6%88%98%E7%A5%9E"
+  },
+  "description": "# Sexagenary Cycle\n\nIn trandition East Asia calendar, [Sexagenary Cycle](https://en.wikipedia.org/wiki/Sexagenary_cycle) was used to note the years. It has 2 parts:\n\n[Heavenly Stems](https://en.wikipedia.org/wiki/Heavenly_Stems), (天干) \n\nand\n\n[Earthly Branches](https://en.wikipedia.org/wiki/Earthly_Branches), (地支)\n\nThe Heavenly Stems contains `10` characters:\n\n```\n甲乙丙丁戊己庚辛壬癸\n```\n\nThe Earthly Branches contains `12` characters:\n\n```\n子丑寅卯辰巳午未申酉戌亥\n```\n\n__NONE__ of the characters is repeated.\n___\n# Year\n\nLet's start with the beginning, year `1`, the characters for it will be:\n\n```\n01: 甲子 (Heavenly Stems always comes before Earthly Branches)\n```\n\nBoth are the first character.\n\nAnd `1` year goes by, now both Heavenly Stems and Earthly Branches will change to the next one, which is:\n\n```\n02 :乙丑\n```\n\nAnd keep going on for the following years.\n\n```\n03: 丙寅, 04: 丁卯, ...\n```\n\nAnd when it reaches the last character of _Heavenly Stems_ or _Earthly Branches_, it will go back to the beginning of it:\n\n```\n10: 癸酉 => 11: 甲戌 (癸 is the last character, so the next one it goes back to the first character, which is 甲)\n```\n\nAnd after `60` years, it will go back to beginning.\n\n```\n60: 癸亥 => 01: 甲子\n```\n___\n\n# Task\n\nYou will be given 2 strings of Sexagenary Cycle, first one is the `birth year` and second one is the `present year`. You need to return how old the person is.\n\nAll inputs will be valid.\n\n`1 <= age <= 60`\n\nExamples **(Input1, Input2) --> Output**:\n```\n(\"甲子\", \"乙丑\") --> 1\n(\"甲子\", \"甲子\") --> 60\n(\"乙丑\", \"甲子\") --> 59\n```",
+  "totalAttempts": 421,
+  "totalCompleted": 119,
+  "totalStars": 5,
+  "voteScore": 72,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

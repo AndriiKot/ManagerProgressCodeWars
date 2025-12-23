@@ -1,0 +1,39 @@
+{
+  "id": "62c702489012c30017ded374",
+  "name": "Async  Requests",
+  "slug": "async-requests",
+  "category": "reference",
+  "publishedAt": "2022-07-07T16:01:16.886Z",
+  "approvedAt": "2022-11-30T19:29:54.478Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/62c702489012c30017ded374",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-07-07T15:56:56.075Z",
+  "createdBy": {
+    "username": "chr3st5an",
+    "url": "https://www.codewars.com/users/chr3st5an"
+  },
+  "approvedBy": {
+    "username": "el-f",
+    "url": "https://www.codewars.com/users/el-f"
+  },
+  "description": "# Async Request Manager\n\n---\n\nYour task is it to implement a coroutine which \nsends `n` requests and concats the returned \nstrings of each response  to one string.\n\nA request can be made by invoking the prebuild \ncoro `send_request`. When invoked, the coro\nsleeps for 1 sec and then returns a single\ncharacter. \n\nYour overall task is to implement an async\n`request_manager` which completes all `n` requests\nin under **1.5** sec\n\n---\n\n## Summary:\n\n- Implement a coro `request_manager` which sends and processes fake requests\n\n  - It accepts the parameter `n` which represents the amount of requests that should be made\n  \n- Requests have to be made with `send_request`\n\n  - `send_request` is a preloaded coroutine : `(coro) send_request() -> str`\n  \n  - It takes 1 sec until a character is returned to the caller\n  \n    - The waiting time is implemented via `asyncio.sleep`\n\n- Characters returned by `send_request` have to be concat to one string\n\n  - That string is then returned by your `request_manager`\n  \n  - The characters in the string need to be ordered, so that the character returned \n    by the first request is at index 0, the character returned by the second request \n    is at index 1 etc.\n  \n- Your `request_manager` has 1.5 sec to start & process all `n` requests and to \n  return the desired string\n  \n---\n\nGood Luck, should be easy :)",
+  "totalAttempts": 541,
+  "totalCompleted": 265,
+  "totalStars": 23,
+  "voteScore": 90,
+  "tags": [
+    "Asynchronous"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

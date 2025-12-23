@@ -1,0 +1,42 @@
+{
+  "id": "63d53ca9cce9531953e38b6e",
+  "name": "Hulot's Playtime",
+  "slug": "hulots-playtime",
+  "category": "reference",
+  "publishedAt": "2023-01-29T16:51:07.974Z",
+  "approvedAt": "2023-01-29T21:52:44.017Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63d53ca9cce9531953e38b6e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-28T15:18:01.827Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Story\n  \nAs a child, <a href=\"https://en.wikipedia.org/wiki/Monsieur_Hulot\">Mr. Hulot </a> was a happy boy who loved playing games all by himself. He used to walk around in the city by nightfall, and when he saw an interesting building, he would take pictures of it from different angles. He would then go home and try to figure out how many rooms were lit, based on the windows that are lit on the pictures. This was his <a href=\"https://www.imdb.com/title/tt0062136/\">Playtime (1967)</a>.\n  \n## Task\n  \n##### \"Given an array of pictures takes from a building at nightfall, can you help little Hulot figure out how many rooms were lit?\"\n\n#### Input\n##### pictures\n- a 3d-array containing 4 pictures, one for each side of a building in the following order, facing: North, West, South, East (assume all buildings are blocks with 4 sides)\n- each picture is a 2d-array containing bits, each representing a window at the associated row and column, that shows a room that is either lit <code>1</code> or not <code>0</code>.\n- each room has 1 window for every side that it is anchored to\n- each room has a size of 1 unit in height, width and length\n- rooms do not let light pass to other rooms, there are walls between them\n\n#### Output\n- return a non negative integer with the number of rooms that were lit in the building\n- we only care about rooms that Hulot could see, so no rooms inside the building without a window to look outside\n\n#### Directions\n##### When looking down at the building from a helicopter, we get the following directions.\n\n```\n    N\n\n   +--+\nW  |  |  E\n   +--+\n \n    S\n```\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n  \n##### The examples show each of the 4 sides of a building from a slight perspective, to give an idea about the architecture of the building.\n  \n#### Open Studio\n\n```\npictures: [[[1]], [[1]], [[1]], [[1]]]\nreturn: 1\n\nNorth    \n\n +---+\n+---+| \n| 1 |+\n+---+\n\nWest    \n\n +---+\n+---+| \n| 1 |+\n+---+\n\nSouth    \n\n +---+\n+---+| \n| 1 |+\n+---+\n\nEast    \n\n +---+\n+---+| \n| 1 |+\n+---+\n\n```\n\n#### Exclusive Lofts\n\n```\npictures: [[[1],[0],[0]], [[1],[0],[0]], [[1],[0],[0]], [[1],[0],[0]]]\nreturn: 1\n\nNorth    \n\n +---+\n+---+| \n| 1 ||\n| 0 ||\n| 0 |+ \n+---+\n\nWest    \n\n +---+\n+---+| \n| 1 ||\n| 0 ||\n| 0 |+ \n+---+\n\nSouth    \n\n +---+\n+---+| \n| 1 ||\n| 0 ||\n| 0 |+ \n+---+\n\nEast    \n\n +---+\n+---+| \n| 1 ||\n| 0 ||\n| 0 |+ \n+---+\n\n```\n\n#### Half Open Studios\n\n```\npictures: [[[1, 1, 0]], [[0]], [[0, 1, 1]], [[1]]]\nreturn: 2\n\nNorth    \n\n +---------+\n+---------+| \n| 1  1  0 |+\n+---------+\n\nWest    \n\n    +---+ \n  +---+ | \n+---+   +\n| 0 | +\n+---+\n\nSouth    \n\n +---------+\n+---------+| \n| 0  1  1 |+\n+---------+\n\nEast    \n\n    +---+ \n  +---+ | \n+---+   +\n| 1 | +\n+---+\n\n```\n\n#### Lofts\n\n```\npictures: [[[1, 1, 0], [1, 0, 1]], [[0], [1]], [[0, 1, 1], [1, 0, 1]], [[1], [1]]]\nreturn: 4\n\nNorth    \n\n +---------+\n+---------+| \n| 1  1  0 ||\n| 1  0  1 |+\n+---------+\n\nWest    \n\n    +---+ \n  +---+ | \n+---+   |\n| 0 |   +\n| 1 | + \n+---+\n\nSouth    \n\n +---------+\n+---------+| \n| 0  1  1 ||\n| 1  0  1 |+\n+---------+\n\nEast    \n\n    +---+ \n  +---+ | \n+---+   |\n| 1 |   +\n| 1 | + \n+---+\n\n```\n\n#### Studios\n\n```\npictures: [[[1, 0]], [[0, 1]], [[1, 1]], [[1, 1]]]\nreturn: 3\n\nNorth    \n\n  +------+ \n+------+ | \n| 1  0 | +\n+------+\n\nWest    \n\n  +------+ \n+------+ | \n| 0  1 | +\n+------+\n\nSouth    \n\n  +------+ \n+------+ | \n| 1  1 | +\n+------+\n\nEast    \n\n  +------+ \n+------+ | \n| 1  1 | +\n+------+\n\n```\n\n#### Appartments\n\n```\npictures: [[[1, 1], [1, 0]], [[1, 1, 1], [0, 1, 1]], [[1, 0], [1, 0]], [[0, 1, 1], [0, 1, 1]]]\nreturn: 9\n\nNorth    \n\n    +------+ \n  +------+ | \n+------+   | \n| 1  1 |   +\n| 1  0 | +\n+------+\n\nWest    \n\n  +---------+ \n+---------+ | \n| 1  1  1 | | \n| 0  1  1 | +\n+---------+\n\nSouth    \n\n    +------+ \n  +------+ | \n+------+   | \n| 1  0 |   +\n| 1  0 | +\n+------+\n\nEast    \n\n  +---------+ \n+---------+ | \n| 0  1  1 | | \n| 0  1  1 | +\n+---------+\n\n```\n  \n</details>",
+  "totalAttempts": 347,
+  "totalCompleted": 63,
+  "totalStars": 11,
+  "voteScore": 35,
+  "tags": [
+    "Fundamentals",
+    "Arrays",
+    "Geometry"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

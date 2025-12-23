@@ -1,0 +1,39 @@
+{
+  "id": "658fac55dc8017d95e4ddae0",
+  "name": "Rubik's Cube Solver",
+  "slug": "rubiks-cube-solver-1",
+  "category": "games",
+  "publishedAt": "2024-01-03T21:56:34.134Z",
+  "approvedAt": "2025-06-07T13:17:15.118Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/658fac55dc8017d95e4ddae0",
+  "rank": {
+    "id": -3,
+    "name": "3 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-12-30T05:36:21.240Z",
+  "createdBy": {
+    "username": "cbg342",
+    "url": "https://www.codewars.com/users/cbg342"
+  },
+  "approvedBy": {
+    "username": "kubesolver",
+    "url": "https://www.codewars.com/users/kubesolver"
+  },
+  "description": "Given a scrambled Rubik's Cube, return a string of space-separated moves which will bring the cube to a solved state.\n\n<br><br><br>\nFrom [The Rubik's Cube](https://www.codewars.com/kata/5b3bec086be5d8893000002e/) by sgeredos:\n\n_The Rubik's Cube is made of six faces. F(ront), L(eft), R(ight), B(ack), U(p), D(own)_\n\n_Below a two dimensional representation of the cube._\n```\n      +-----+\n      |     |\n      |  U  |\n      |     |\n+-----+-----+-----+-----+\n|     |     |     |     |\n|  L  |  F  |  R  |  B  |\n|     |     |     |     |\n+-----+-----+-----+-----+\n      |     |\n      |  D  |\n      |     |\n      +-----+\n```\n_On every face you can see nine stickers. Every sticker can be one of the six colors: Yellow, Blue, Red, Green, Orange, White. In this Kata they are represented with according small letters (y, b, r, g, o, w,)._\n\n_A solved cube has on every face only one color:_\n```\n      +-----+\n      |y y y|\n      |y y y|\n      |y y y|\n+-----+-----+-----+-----+\n|b b b|r r r|g g g|o o o|\n|b b b|r r r|g g g|o o o|\n|b b b|r r r|g g g|o o o|\n+-----+-----+-----+-----+\n      |w w w|\n      |w w w|\n      |w w w|\n      +-----+\n```\n_Every sticker on a face in this Kata has a positional number_\n```\n+-----+\n|1 2 3|\n|4 5 6|\n|7 8 9|\n+-----+\n```\n\nSo a face of the cube can be represented as a 9 item list consisting of its colors:\n```\n+-----+\n|r o w|\n|b y g|  -->  ['r', 'o', 'w', 'b', 'y', 'g', 'b', 'r', 'y']\n|b r y|\n+-----+\n```\nThe state of the cube is a 6 item list consisting of each face of the cube in this order: U L F R B D\n```\n      +-----+\n      |y y y|\n      |y y y|\n      |y y y|                 [['y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y'],\n+-----+-----+-----+-----+      ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'],\n|b b b|r r r|g g g|o o o|      ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r'],\n|b b b|r r r|g g g|o o o| -->  ['g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'],\n|b b b|r r r|g g g|o o o|      ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],\n+-----+-----+-----+-----+      ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w']]\n      |w w w|\n      |w w w|\n      |w w w|\n      +-----+\n```\n<br><br>\nYou can return any combination of these valid moves:\n\n```\nX Y Z X' Y' Z' X2 Y2 Z2\nF B L R U D F' B' L' R' U' D' F2 B2 L2 R2 U2 D2\nf b l r u d f' b' l' r' u' d' f2 b2 l2 r2 u2 d2\nM E S M' E' S' M2 E2 S2\n```\n[Move Notation Guide](https://jperm.net/3x3/moves)\n<br><br><br>\nFor your convenience you're given the cube_net(cube) function, which displays a two dimensional representation of a given cube. You're also given apply_moves(cube, moves) which mutates a cube given a string of moves.\n\n\nThanks Hobovsky for helping format this kata\n",
+  "totalAttempts": 259,
+  "totalCompleted": 17,
+  "totalStars": 27,
+  "voteScore": 18,
+  "tags": [
+    "Games"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "63d8c1aa165b8b0058fa98ef",
+  "name": "Browser tabs",
+  "slug": "browser-tabs",
+  "category": "games",
+  "publishedAt": "2023-01-31T14:44:48.050Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63d8c1aa165b8b0058fa98ef",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-31T07:22:18.672Z",
+  "createdBy": {
+    "username": "MeeDaniel",
+    "url": "https://www.codewars.com/users/MeeDaniel"
+  },
+  "description": "**Introduction**<br>\nHow often do you use a large number of tabs in bowser? The main character of this kata is Bob, and he often has problems with RAM overflow due to the large number of tabs. Bob already knows how much memory each tab needs and how much RAM space he has. Bob wants to know if he opens several tabs, will he have enough RAM space? Can you help him?<br>\n\n<img src=\"https://media.discordapp.net/attachments/954392818879709246/1070007522947244103/image.png\"/>\n\n**Task**<br>\nWrite a function that takes an array of tab sizes in the format ```\"{size}{unit}\"```, as well as the amount of free space on RAM and returns whether these tabs will fit on Bob's RAM<br>\n<br>\n**Examples**\n```python\n[\"1Kb\", \"10Kb\", \"5Kb\"], \"16Kb\" -> True\n[\"32Mb\"], \"32Kb\" -> False\n[\"32Kb\"], \"32Mb\" -> True\n[\"1000b\"], \"1Kb\" -> True\n[\"1000b\", \"1b\"], \"1Kb\" -> False\n[\"1Mb\", \"1000Kb\", \"1000000b\"], \"3Mb\" -> True\n[\"100Mb\"]*10 + [\"1b\"], \"1Gb\" -> False\n[\"1000Gb\"], \"1Tb\" -> True\n```\n**Untils**<br>\nShould work with bits, kilobits, megabits, gigabits and terrabits.\nUse formal values for this kata:<br>\n`1Kb -> 1000b`<br>\n`1Mb -> 1000Kb`<br>\n`1Gb -> 1000Mb`<br>\n`1Tb -> 1000Gb`<br>",
+  "totalAttempts": 155,
+  "totalCompleted": 23,
+  "totalStars": 1,
+  "voteScore": 26,
+  "tags": [
+    "Logic"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

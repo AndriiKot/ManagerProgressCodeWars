@@ -1,0 +1,38 @@
+{
+  "id": "61cd0378ab22ae0033905112",
+  "name": "Probation Officer - Restitution Arrearage Calculator",
+  "slug": "probation-officer-restitution-arrearage-calculator",
+  "category": "reference",
+  "publishedAt": "2021-12-30T19:01:34.926Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/61cd0378ab22ae0033905112",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-12-30T00:55:20.339Z",
+  "createdBy": {
+    "username": "stevemartis",
+    "url": "https://www.codewars.com/users/stevemartis"
+  },
+  "description": "## Introduction\nGreg is a probation officer. He makes sure that probationers are compliant with Court requirements. When a probationer owes a victim money, the Court orders them to pay Restitution. One of Greg's tasks is to check if Restitution payments are being made properly. This is called a Restitution Review.\n\nGreg hates redundant tasks. So, he developed a macro to scrape the relevant data from the Court system. The macro generates two strings, like this:\n\n```\n\"01/01/2022,12 months,$1000.00,$200.00\", \"12/29/2022\"\n```\n\nIn this example, the string reveals the following:\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Sentencing Date]: &nbsp;&nbsp;&nbsp;&nbsp;01/01/2022\\\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Probation Term]:&nbsp;&nbsp;&nbsp;&nbsp;12 months\\\n[Restitution Ordered]:&nbsp;&nbsp;&nbsp;&nbsp;$1000.00\\\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Restitution Paid]:&nbsp;&nbsp;&nbsp;&nbsp;$200.00\\\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Review Date]:&nbsp;&nbsp;&nbsp;&nbsp;12/29/2022\n## Tasks\nGreg needs to use this information to generate a case note for the Court indicating whether there is an arrearage. An arrearage occurs if a probationer has not paid as much as required by the **Review Date**. However, Greg needs to know how much to expect a probationer to pay each month first. This is determined by the following:\n\n**[Expected Monthly Payment] &nbsp;&nbsp; = &nbsp;&nbsp; [Restitution Ordered] &nbsp;&nbsp; / &nbsp;&nbsp; [Probation Term] &nbsp;&nbsp; (rounded to two decimal places)**\n\nNow, Greg must determine if the probationer has paid enough between the **Sentencing Date** and the **Review Date**. This is the difficult part, as calculating the number of months between two dates is not easy. The months should be rounded down to the nearest whole month.\n\n**The dates are always given as strings, and they are in the format MM/DD/YYYY**\n\nIn the above example, the number of months between the **Sentencing Date** (01/01/2022) and the **Review Date** (12/29/2022) is 11 months, 28 days, which is rounded down to **11 months**.\n\nNow, he needs to figure out how much the probationer should have paid by the **Review Date**. This is determined by the following:\n\n**[Expected Total Payments] &nbsp;&nbsp; = &nbsp;&nbsp; [Months on Probation] &nbsp; *  &nbsp;&nbsp; [Expected Monthly Payment]**\n\nNow the arrearage can be calculated! The arreaage is determined by the following:\n\n**If &nbsp;&nbsp; [Expected Total Payments] &nbsp;&nbsp; > &nbsp;&nbsp; [Restitution Paid]**\n\n**Then &nbsp;&nbsp; [arrearage] &nbsp;&nbsp; = &nbsp;&nbsp; ([Restitution Paid] &nbsp;&nbsp; - &nbsp;&nbsp; [Expected Total Payments]) &nbsp;&nbsp; * &nbsp;&nbsp; -1**\n\nGreg needs your help to generate a case note for the Court. The case note must allow for three different possibilities:\n\n1. The probationer has an arrearage. Example output: \n\n>>>\nAs of 12/29/2022 the probationer has paid $200.00 towards Restitution. Their remaining Restitution balance is $800.00. Their Restitution arrearage is currently $716.63.\n>>>\n\n2. The probationer is up-to-date on payments, but they have not paid off their Restitution completely. Example output:\n\n>>>\nAs of 09/29/2023 the probationer has paid $9800.00 towards Restitution. Their remaining Restitution balance is $650.00. They do not have an arrearage.\n>>>\n\n3. The probationer has paid off Restitution completely (obviously no arrearage). Example output:\n\n>>>\nAs of 04/29/2025 the probationer has paid $67675.76 towards Restitution. Their remaining Restitution balance is $0.00.\n>>>\n\n## Examples\nSee the examples below to see the expected returned string:\n\n```python\narrearage_case_note(\"01/01/2022,12 months,$1000.00,$200.00\", \"12/29/2022\") \n# Solution #1\n# \"As of 12/29/2022 the probationer has paid $200.00 towards Restitution. Their remaining Restitution balance is $800.00. Their Restitution arrearage is currently $716.63.\"\n\narrearage_case_note(\"04/01/2022,24 months,$10450.00,$9800.00\", \"09/29/2023\") \n# Solution #2\n# \"As of 09/29/2023 the probationer has paid $9800.00 towards Restitution. Their remaining Restitution balance is $650.00. They do not have an arrearage.\"\n\narrearage_case_note(\"06/01/2022,36 months,$67675.76,$67675.76\", \"04/29/2025\") \n# Solution #3\n# \"As of 04/29/2025 the probationer has paid $67675.76 towards Restitution. Their remaining Restitution balance is $0.00.\"\n```\n\nThere are no curve balls. You will not get any weird values thrown in. You do not have to think of outlier cases or exceptions.\n",
+  "totalAttempts": 192,
+  "totalCompleted": 17,
+  "totalStars": 3,
+  "voteScore": 20,
+  "tags": [
+    "Date Time",
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

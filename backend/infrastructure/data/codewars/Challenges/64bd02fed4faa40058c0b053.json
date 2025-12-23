@@ -1,0 +1,40 @@
+{
+  "id": "64bd02fed4faa40058c0b053",
+  "name": "Matrix Division",
+  "slug": "matrix-division",
+  "category": "games",
+  "publishedAt": "2023-07-23T14:23:29.187Z",
+  "approvedAt": "2025-03-13T23:45:53.313Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64bd02fed4faa40058c0b053",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-23T10:37:50.296Z",
+  "createdBy": {
+    "username": "Homogen",
+    "url": "https://www.codewars.com/users/Homogen"
+  },
+  "approvedBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "description": "When multiplying matrices, the `$ element_{ij}$` of the product matrix C is equal to the sum of pairwise products of the elements of `$row_i$` of the left matrix A and elements of `$column_j$` of the right matrix B. For this kata, we will redefine matrix multiplication by removing the step with summation so that division of matrices can be unambiguously defined:\n\n```math\nc_{ij} = (a_{i0} ∗ b_{0j}, a_{i1} ∗ b_{1j}, ..., a_{ik} ∗ b_{kj})\n```\n\n**Task**:\n\nImplement a function <code>matrix_div</code> with 3 parameters:\n\n - result represents the product matrix C\n\n - factor represents one of the two factors (either A or B).\n\n - position is either 0 or 1: 0 means that given factor is the left factor while 1 means it's the right one.\n\nFunc should return the other factor.\n\n**Examples**:\n\n<code>matrix_div([[[5, 14], [6, 16]], [[15, 28], [18, 32]]], [[1, 2], [3, 4]], 0)</code>\n<code>should return [[5, 6], [7, 8]]</code>\n\n<code>matrix_div([[[5, 14], [6, 16]], [[15, 28], [18, 32]]], [[1, 2], [3, 4]], 1)</code>\n<code>should return [[5, 4], [15, 8]]</code>\n\n**Constraints**:\n\n- `$A[k×k], B[k×k]$` - for convenience\n\n- `$1 ≤ k ≤ 30$`\n\n- `$A_{ij}, B_{ij} ∈ Z$`\n\n- `$1 ≤ A_{ij}, B_{ij} ≤ 100$`",
+  "totalAttempts": 175,
+  "totalCompleted": 51,
+  "totalStars": 10,
+  "voteScore": 50,
+  "tags": [
+    "Matrix",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "62c68f0920d291001737fa22",
+  "name": "Tinder for Programmers",
+  "slug": "tinder-for-programmers",
+  "category": "reference",
+  "publishedAt": "2022-07-07T23:41:30.997Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript",
+    "go",
+    "typescript",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/62c68f0920d291001737fa22",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-07-07T07:45:13.377Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "description": "# Introduction\n\nYou might know the popular app \"Tinder\", which can be used to find nice people, which fit to you. The core functionality of it is to show you profiles of people and you can decide to either **swipe left** to dismiss the chance to get to know the person or to **swipe right**, if the profile sounds promising.\n\nIn this kata we want to build something similar to find programmer profiles, which fit to us :)\n\n# Task\n\nYou are given one person's profile and two callbacks: one to swipe to the left and another one to swipe to the right. If the person mentions your favorite programming language in their bio, then you want to give your friendship a chance and swipe to the right. Otherwise you swipe to the left.\n\n**Note**: Your favorite programming language is assumed to be the one, you're solving this kata in. So if you're solving this kata in Javascript, you should look out for `JavaScript` in the profile text. See the examples matching and non-matching profiles.\n\n## Profile Structure\n\nEach profile has the following fields:\n\n- `name` (string)\n- `age` (int)\n- `bio` (string)\n\n# Examples\n\n## Swipe Right\n```javascript\nconst profile = {\n    name: 'Julia Green',\n    age: 24,\n    bio: 'From Chile. Sushi lover 🍣 Learning JavaScript on codewars.com. Always be yourself. Unless you can be a unicorn, then always be a unicorn 🦄',\n};\n\nrateProfile(profile, swipeLeft, swipeRight);\n// should call swipeRight(), as JavaScript is mentioned in the bio\n```\n```typescript\nconst profile: Profile = {\n    name: 'Julia Green',\n    age: 24,\n    bio: 'From Chile. Sushi lover 🍣 Learning TypeScript on codewars.com. Always be yourself. Unless you can be a unicorn, then always be a unicorn 🦄',\n};\n\nrateProfile(profile, swipeLeft, swipeRight);\n// should call swipeRight(), as TypeScript is mentioned in the bio\n```\n```go\nprofile := Profile{\n    Name: \"Julia Green\",\n    Age: 24,\n    Bio: \"From Chile. Sushi lover 🍣 Learning Go on codewars.com. Always be yourself. Unless you can be a unicorn, then always be a unicorn 🦄\",\n}\n\nRateProfile(profile, swipeLeft, swipeRight);\n// should call swipeRight(), as Go is mentioned in the bio\n```\n```java\n// fields are available via profile.getName(), profile.getAge() and profile.getBio()\nvar profile = new Profile(\n  \"Julia Green\",\n  24,\n  \"From Chile. Sushi lover 🍣 Learning Java on codewars.com. Always be yourself. Unless you can be a unicorn, then always be a unicorn 🦄\"\n);\n\nProgrammersMacher.rateProfile(profile, swipeLeft, swipeRight);\n// should call swipeRight.execute(), as Java is mentioned in the bio\n```\n\n## Swipe Left\n```javascript\nconst profile = {\n    name: 'Peter Parker',\n    age: 31,\n    bio: 'Huge soccer fan ⚽️ Living in Dallas. Java = ❤️',\n};\n\nrateProfile(profile, swipeLeft, swipeRight);\n// should call swipeLeft(), as JavaScript is not mentioned in the bio\n```\n```typescript\nconst profile: Profile = {\n    name: 'Peter Parker',\n    age: 31,\n    bio: 'Huge soccer fan ⚽️ Living in Dallas. Python = ❤️',\n};\n\nrateProfile(profile, swipeLeft, swipeRight);\n// should call swipeLeft(), as TypeScript is not mentioned in the bio\n```\n```go\nprofile := Profile{\n    Name: \"Peter Parker\",\n    Age: 31,\n    Bio: \"Huge soccer fan ⚽️ Living in Dallas. Java = ❤️\",\n}\n\nRateProfile(profile, swipeLeft, swipeRight);\n// should call swipeLeft(), as Go is not mentioned in the bio\n```\n```java\n// fields are available via profile.getName(), profile.getAge() and profile.getBio()\nvar profile = new Profile(\n  \"Peter Parker\",\n  31,\n  \"Huge soccer fan ⚽️ Living in Dallas. Rust = ❤️\"\n);\n\nProgrammersMacher.rateProfile(profile, swipeLeft, swipeRight);\n// should call swipeLeft.execute(), as Java is not mentioned in the bio\n```",
+  "totalAttempts": 414,
+  "totalCompleted": 217,
+  "totalStars": 10,
+  "voteScore": 208,
+  "tags": [
+    "Strings",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

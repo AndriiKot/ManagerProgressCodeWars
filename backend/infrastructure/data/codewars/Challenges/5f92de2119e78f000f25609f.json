@@ -1,0 +1,36 @@
+{
+  "id": "5f92de2119e78f000f25609f",
+  "name": "Approximate a number as fraction",
+  "slug": "approximate-a-number-as-fraction",
+  "category": "algorithms",
+  "publishedAt": "2020-10-23T13:45:37.725Z",
+  "approvedAt": null,
+  "languages": [
+    "php",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5f92de2119e78f000f25609f",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2020-10-23T13:44:01.315Z",
+  "createdBy": {
+    "username": "zsolt-szilagyi",
+    "url": "https://www.codewars.com/users/zsolt-szilagyi"
+  },
+  "description": "Some calculators are able to provide decimal numbers as a fraction of natural numbers: you type in `0.25` and they return `1 / 4`. Write an algorithm that will do just that.\n\n## Input:\n\nYour function will be given a floating point number as input in the range `0 < f < 1`.\n\nThe input is guaranteed to fulfill the following conditions:\n\n- It is rational, i.e. generated from `a / b` ( within floating point precision )\n- `a` and `b` are integral numbers with `1 <= a < b <= 9 999 999`\n\n## Expected result:\n\nThe expected return is an array containing `a` and `b`. The fraction `a / b` must be irreducible, e.g. `[ 3 , 6 ]` is invalid and must be reduced to `[ 1 , 2 ]` .\n\n- `10 / 30` : return `[ 1, 3 ]`\n- `31 / 73` : return `[ 31, 73 ]`\n\n## Hint:\n\nLet's say we search for `3 / 7` . We know that the number starts strictly between `0 / 1` (left bound) and `1 / 1` (right bound).\n\nLoop:\n\n- Create a rational number between those two: add the dividends and the divisors respectively to get `(0 + 1) / (1 + 1) = 1 / 2`\n- We get: left bound `0 / 1`, middle `1 / 2`, right bound `1 / 1`\n- Compare number to middle: `3 / 7 < 1 / 2`\n- Update bounds: In this case, the middle becomes the new right bound",
+  "totalAttempts": 263,
+  "totalCompleted": 23,
+  "totalStars": 1,
+  "voteScore": 26,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

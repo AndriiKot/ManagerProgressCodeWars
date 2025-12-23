@@ -1,0 +1,37 @@
+{
+  "id": "553a45efb46fcf6c0a0000ea",
+  "name": "Polynomial regression",
+  "slug": "polynomial-regression",
+  "category": "algorithms",
+  "publishedAt": "2015-04-24T16:05:18.199Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/553a45efb46fcf6c0a0000ea",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2015-04-24T13:32:31.344Z",
+  "createdBy": {
+    "username": "zvytas",
+    "url": "https://www.codewars.com/users/zvytas"
+  },
+  "description": "In statistics, linear regression is a technique of fitting a straight line to given data points so that average square error is minimal. By extension [polynomial regression](http://en.wikipedia.org/wiki/Polynomial_regression) is fitting nth degree [polynomial](http://en.wikipedia.org/wiki/Polynomial) which minimizes square error.\n\nIn this kata you will try to write a polynomial regression solver which finds nth degree polynomial to fit n+1 data points. Since you will always have n+1 data points, your polynomial function will fit all data points perfectly - you will be looking for a unique least squares solution rather than doing optimisation.\n\nLet's look at some simple examples:    \nIf you're given two data points {x: -1, y: -1} and {x: 1, y: 1}, 1st degree polynomial that fits these point perfectly is f(x) = x.       \nIf you're given three data points {x: -1, y: 1}, {x: 0, y: 0} and {x: 2, y: 4}, polynomial f(x) = x^2 would fit them perfectly.\n\nSo, your task is to write function solveRegression. It will accept an array of data points as such:    \n`[{x: -1, y: -1}, {x: 0, y: 5}, ...]`           \n\nYour method should return a string of following form: `f(x) = 2x^2 - x + 1.5`. Please note the following rules for result formatting:         \n- All coefficients should be rounded to 5 decimal places     \n- If a given coefficient is 0, the term should be ignored, i.e. `f(x) = 0x + 5` is invalid (should be `f(x) = 5`    \n- Negative coefficients should be formatted as follows: `f(x) = - 5x - 1`\n     \n     \n     \nP.S. Please suggest rank for this kata, I was not sure 4 kyu is suitable.",
+  "totalAttempts": 144,
+  "totalCompleted": 16,
+  "totalStars": 4,
+  "voteScore": 16,
+  "tags": [
+    "Algorithms",
+    "Mathematics",
+    "Algebra"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

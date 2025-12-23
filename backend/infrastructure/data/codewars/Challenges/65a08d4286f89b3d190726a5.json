@@ -1,0 +1,36 @@
+{
+  "id": "65a08d4286f89b3d190726a5",
+  "name": "File/Folder JSON Tree Formatting",
+  "slug": "file-slash-folder-json-tree-formatting",
+  "category": "algorithms",
+  "publishedAt": "2024-01-12T01:13:00.555Z",
+  "approvedAt": null,
+  "languages": [
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/65a08d4286f89b3d190726a5",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-01-12T00:52:18.468Z",
+  "createdBy": {
+    "username": "gelus",
+    "url": "https://www.codewars.com/users/gelus"
+  },
+  "description": "Given a flat array of file/folder objects return a json tree structure based on the parent/child relation of the files and folders.\n\nFile/Folder objects will impement the following interfaces:\n```typescript\ninterface FileFolderObject {\n    name: string;\n    parent?: string | 'root';\n    type: 'file'|'folder';\n    children?: Array<FileFolderObject>;\n}\n```\n\nWhen provided a flat `Array<FileObject | FolderObject>` we should be returned a tree structure with all children inserted into their respective parents `children` array.\n\nIt is safe to assume that the flat array will form a valid tree structure, with all objects having `parent` fields that match a folder name above them in the tree, OR be set to `'root'` if it is to be placed under the returned root level `FileFolderObject`.\n\nNotice that the `parent` field is declared as optional, as the returned root level FileFolderObject should not have a parent field.\n\nThe order of the provided flat array is not known, files and folders should be in the same order in their children array as they were in the flat array.\n\nNotice that the children field is declared as optional as an initial `children` array is not provided on the flat list, and should not be added to `FileFolderObject`s with type `'file'`.\n",
+  "totalAttempts": 112,
+  "totalCompleted": 15,
+  "totalStars": 1,
+  "voteScore": 11,
+  "tags": [
+    "JSON",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "5ff131130e1ea3002b3d4256",
+  "name": "Brackets paired, Type-safely",
+  "slug": "brackets-paired-type-safely",
+  "category": "reference",
+  "publishedAt": "2021-01-03T03:10:49.598Z",
+  "approvedAt": "2021-01-06T22:18:36.897Z",
+  "languages": [
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5ff131130e1ea3002b3d4256",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2021-01-03T02:50:59.677Z",
+  "createdBy": {
+    "username": "soulomoon",
+    "url": "https://www.codewars.com/users/soulomoon"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "# Paired brackets\n\nThis is the first kata of serial of katas.\n\n* [Paired brackets](https://www.codewars.com/kata/5ff131130e1ea3002b3d4256)\n* [Brackets paired and sized](https://www.codewars.com/kata/5fff4fe1ffa782001ea74a3b)\n* Sized, brackets and nested bracket(to be designed)\n\nType safe program is essential in haskell,\n`KindSignatures, DataKinds, GADTs` extension in ghc can utilize type system ability.\n\n## Design a Paren data type\n\nA naive implementation without encoding the balancing is\n\n```{haskell}\ndata Paren where\n   PEmpty :: Paren \n   PLeft :: Paren -> Paren \n   PRight :: Paren -> Paren \n```\n\nPlease design a `Paren` data definition to restrict that expression p is a paired brackets if and only if p is with type `Paren Z`.\n\n```{Haskell}\ndata Paren ::  Nat -> * \n```\n\nValid examples:\n\n```{Haskell}\nPEmpty :: Paren Z\nPLeft (PRight PEmpty) :: Paren Z\n(PLeft $ PRight $ PLeft $ PRight PEmpty) :: Paren Z\n```\n\nNotValid examples:\n\n```{Haskell}\nPLeft PEmpty\nPRight (PLeft PEmpty)\n```\n\n## Use the Paren data type\n\nAlthough The paren data definition is more type well defined, it comes with restriction.\nDifficulty will comes to you when you are using it to implement functions.\n\nFor example this naive function could be implemented without the type restrictions.\nGenerate nested parens of size n. For n <= 0, it should be empty.\n\n```{haskell}\nmakeNestedParenOfSize :: Int -> Paren \nmakeNestedParenOfSize n | n <= 0 = PEmpty\nmakeNestedParenOfSize n = foldr ($) PEmpty (replicate n PLeft ++ replicate n PRight)\n```\n\nBut implement the same function for `data Paren ::  Nat -> *` would not be the same story.\n\n```{haskell}\nmakeNestedParenOfSize :: Int -> Paren Z\n```\n",
+  "totalAttempts": 143,
+  "totalCompleted": 54,
+  "totalStars": 7,
+  "voteScore": 36,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

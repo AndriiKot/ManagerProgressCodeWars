@@ -1,0 +1,44 @@
+{
+  "id": "63c05c1aeffe877458a15994",
+  "name": "Multiplying Polynomials",
+  "slug": "multiplying-polynomials",
+  "category": "algorithms",
+  "publishedAt": "2023-01-13T08:06:04.263Z",
+  "approvedAt": "2023-07-02T14:57:35.377Z",
+  "languages": [
+    "python",
+    "rust",
+    "php",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63c05c1aeffe877458a15994",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-01-12T19:14:34.650Z",
+  "createdBy": {
+    "username": "Yushi.py",
+    "url": "https://www.codewars.com/users/Yushi.py"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## SITUATION\n\nOne day, as you wake up, you have a terrible realization:<br>\n*You have **magically** time-traveled, going all the way back to high school.*\n\nIgnoring the weird scientific implications of this event, you focus on what's truly important: **HOMEWORK**\n\nYou see, your teacher has handed out hours' worth of math assignments for you. However, you have better things to do, such as trying to figure out how you even ended up in this situation.\n\nUsing your retained knowledge, in order to save time, you decide to create a program to do your homework for you, even if it takes way longer than just being a normal person and doing it yourself. <br>\n\n## TASK\n~~~if:javascript,typescript\nWrite a function / method called `polynomialProduct()`, which takes two strings representing polynomials as input and returns another string representing the product of those polynomials.\n~~~\n~~~if-not:javascript,typescript\nWrite a function / method called `polynomial_product()`, which takes two strings representing polynomials as input and returns another string representing the product of those polynomials.\n~~~\n\n## INPUT\n\nYou will be given two strings of the form: `ax^n + bx^n-1 + cx^n-2 ... + hx^2 + ix + j`.\n\nWhere `a, b, c, ..., i, j` and `n` are integers.<br>\nFor example: `4x^3 - x^2 + 7x - 1` and `x^2 - 2x + 1`\n\n#### Special Cases:\n- The variable won't always be x; it may be u, v, A, or **any other ascii letter** (character code: 65 to 90 and 97 to 122). However, the variable is **always consistent** between the polynomials.<br> You might get `u^2 - 1` and `2u + 1` as well as `A^3 - A` and `2A^2 + 8`, but never `3x^2 - x` and `2y + 1`.\n- If the coefficient of a term is `1`, then it will simply **not show up**, unless it's the constant term. <br> For example,`u^3 - u^2 + u - 1` or `u^2 + u + 1`\n- If the coefficient of a term is `0`, then, the whole term will, simply, **not show up**.<br> For example,`2H^2 + 1` or `3H^3 - 4H`\n\n## OUTPUT\n\nReturn a string representing a polynomial of the form: `ax^n + bx^n-1 + cx^n-2 ... + hx^2 + ix + j`.\n\nFor example, given `x^2 + 2x + 1` and `x + 1`, return `x^3+3x^2+3x+1`\n\n#### Rules for formatting the answer:\n- Your answer should not contain whitespace; all the terms, must, be together.<br> For example, `s^2+2s+1` instead of `s^2 + 2s + 1`\n- When the coefficient of a term is `1` or `-1`, it shouldn't show up, unless it's the constant term.<br> For example, `-x^2+x-1` instead of `-1x^2+1x-1`\n- When the coefficient of a term is `0`, the whole term shouldn't appear in the answer.<br> For example, `2Y^3+Y` instead of `2Y^3+0Y^2+Y+0`\n- The terms should be in order from the highest degree to the lowest, from left to right. <br> For example, `a^4+2a^2+1` instead of `1+2a^2+a^4`\n- The variable used for the answer should be the **same as the input**; don't go turning every variable into x's.<br> For example, given `b^2 + 1` and `9b - 2`, return `9b^3-2b^2+9b-2` rather than `9x^3-2x^2+9x-2`.\n\n\n### EXAMPLES\n\n~~~if:javascript,typescript\n```javascript\npolynomialProduct(\"u^2 + 2u+1\", \"u + 1\") -> \"u^3+3u^2+3u+1\"\npolynomialProduct(\"x^2\", \"3x - 1\") -> \"3x^3-x^2\"\npolynomialProduct(\"2\", \"4y - 4\") -> \"8y-8\"\npolynomialProduct(\"-4r^2 + 1\", \"-1\") -> \"4r^2 - 1\"\npolynomialProduct(\"1\", \"p^3\") -> \"p^3\"\npolynomialProduct(\"1\", \"-1\") -> \"-1\"\npolynomialProduct(\"0\", \"2 - x\") -> \"0\"\npolynomialProduct(\"-1\", \"0\") -> \"0\"\npolynomialProduct(\"v^2 - 1+3v^3\", \"1+v^2\") -> \"3v^5+v^4+3v^3-1\"\n```\n~~~\n~~~if-not:javascript\n```\npolynomial_product(\"u^2 + 2u+1\", \"u + 1\") -> \"u^3+3u^2+3u+1\"\npolynomial_product(\"x^2\", \"3x - 1\") -> \"3x^3-x^2\"\npolynomial_product(\"2\", \"4y - 4\") -> \"8y-8\"\npolynomial_product(\"-4r^2 + 1\", \"-1\") -> \"4r^2 - 1\"\npolynomial_product(\"1\", \"p^3\") -> \"p^3\"\npolynomial_product(\"1\", \"-1\") -> \"-1\"\npolynomial_product(\"0\", \"2 - x\") -> \"0\"\npolynomial_product(\"-1\", \"0\") -> \"0\"\npolynomial_product(\"v^2 - 1+3v^3\", \"1+v^2\") -> \"3v^5+v^4+3v^3-1\"\n```\n~~~\n\n### RANDOM TESTS\n\n- `0 <= exponents <= 4500`\n- `-85000 <= coefficients <= 85000`\n\n`20` small tests<br>\n`30` medium tests<br>\n`20` big tests<br>\n`5` really big tests<br>\n\nThis kata isn't focused on performance. However, don't go writing spaghetti code just because of this; you can still timeout if your code is poorly written.\n",
+  "totalAttempts": 1999,
+  "totalCompleted": 196,
+  "totalStars": 76,
+  "voteScore": 76,
+  "tags": [
+    "Mathematics",
+    "Strings",
+    "Regular Expressions"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

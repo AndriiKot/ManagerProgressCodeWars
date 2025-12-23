@@ -1,0 +1,44 @@
+{
+  "id": "63a489ce96a48e000e56dda0",
+  "name": "Roman Army Formations: Contubernium",
+  "slug": "roman-army-formations-contubernium",
+  "category": "reference",
+  "publishedAt": "2022-12-22T19:22:15.848Z",
+  "approvedAt": "2023-02-09T07:23:13.721Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63a489ce96a48e000e56dda0",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-22T16:46:06.818Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "ThisIsUndefined",
+    "url": "https://www.codewars.com/users/ThisIsUndefined"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Preface</summary>\n\nThis is the first of (hopefully) a series of kata's about military units in the Roman Army. This kata concerns the <a href=\"https://en.wikipedia.org/wiki/Contubernium_(Roman_army_unit)\">Contubernium</a>, which is the basic military unit. Only infantry units are in scope.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\n##### \"Given the formation of one or more Contubernium units, render those units as string.\"\n\n### Input\n\n- formation: a <code>'-'</code> delimited string containing the formation type, size of unit, and amount of units. For instance, <code>'A-8-1'</code> is the standard Contubernium unit standing at attention.\n  - formation type: char <code>'A'</code> or <code>'M'</code>\n    - <code>'A'</code>: standing at (A)ttention\n    - <code>'M'</code>: (M)arching\n  - size: an even positive number representing the amount of soldiers in a single military unit\n  - count: a positive number representing the amount of military units\n\n### Output\n\n- return a <code>'\\n'</code> delimited string, with rows of equal size, representing the units positioned conform the specified formation. Characters used in the output:\n  - <code>'.'</code>: ground\n  - <code>'/'</code>: stride (during march)\n  - <code>'\\\\'</code>: location of a soldier\n  - <code>'´'</code>: identifies a legionary\n  - <code>'¨'</code>: identifies a decanus\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Input Constraints</summary>\n\n- size will always be even (because of pair forming when marching)\n- 50 tests with 2 <= size <= 10 and 1 <= count <= 2\n- 50 tests with 2 <= size <= 10 and 3 <= count <= 6\n- 50 tests with 10 <= size <= 20 and 1 <= count <= 2\n- 50 tests with 10 <= size <= 20 and 10 <= count <= 20\n- 50 tests with 45 <= size <= 50 and 45 <= count <= 50\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n\n### Soldiers\n\n- legionary: the standard soldier\n- decanus: the ranking officer of a Contubernium\n- all soldiers are always rendered by 2 tiles:\n  - left: their identifier\n  - right: their location (and body)\n  \n```\n---------------------\nsoldiers\n---------------------\n\n´\\  legionary\n¨\\  decanus\n\n```\n  \n### Contubernium\n- the Contubernium is the basic military unit\n- it usually consists of 7 legionaries and 1 decanus (size = 8), together they are the contubernales\n\n### Formations\n\n- both formations described below are in 2D perspective. The main direction is <code>↙</code>.\n- for both formations, render a rectangle big enough to contain the formation while allowing a padding of 1 ground tile in all directions (up, down, left, right)\n- there are sample tests for each of the examples described below\n\n#### standing at Attention\n\n- within one unit:\n  - legionaries are standing horizontally next to eachother with 1 tile beteen them\n  - the decanus stands across (↙) the middle legionary with 1 tile between them\n- between units:\n  - there are 3 tiles between the right-most legionary of a unit and the left-most legionary of the next unit\n\n```\n---------------------\nstanding at attention\n---------------------\n\nA-2-1   A-2-2     \n\n......  ..........  \n...´\\.  ...´\\..´\\.  \n......  ..........  \n.¨\\...  .¨\\..¨\\...  \n......  ..........  \n\nA-4-1      A-4-2\n\n........   ................\n.´\\´\\´\\.   .´\\´\\´\\..´\\´\\´\\.\n........   ................\n.¨\\.....   .¨\\......¨\\.....\n........   ................\n\nA-8-1             A-8-2\n................  ................................\n.´\\´\\´\\´\\´\\´\\´\\.  .´\\´\\´\\´\\´\\´\\´\\..´\\´\\´\\´\\´\\´\\´\\.\n................  ................................\n.....¨\\.........  .....¨\\..............¨\\.........\n................  ................................\n\n```\n\n#### Marching\n\n- within one unit:\n  - legionaries are walking in pairs, with 1 tile between each member of pair\n  - the decanus forms a pair with one of the legionaries, and takes left position from our point of view\n  - each pair walks in a straight line (↙) behind the pair in front of them\n  - legionaries that don't have another person within 2 tiles to the right, have their stride visible\n- between units:\n  - there is 1 tile between the last pair of a unit and the first pair of the next unit\n\n```\n---------------------\nmarching\n---------------------\n\nM-2-1    M-2-2\n\n         .........\n         ...¨\\´\\/. \n.......  .........   \n.¨\\´\\/.  .¨\\´\\/... \n.......  ......... \n\nM-4-1     M-4-2\n\n          ...........\n          .....´\\´\\/.\n          ....¨\\´\\/..\n........  ...........\n..´\\´\\/.  ..´\\´\\/....\n.¨\\´\\/..  .¨\\´\\/.....\n........  ...........\n\nM-8-1       M-8-2\n\n            ...............\n            .........´\\´\\/.\n            ........´\\´\\/..\n            .......´\\´\\/...\n            ......¨\\´\\/....\n..........  ...............\n....´\\´\\/.  ....´\\´\\/......\n...´\\´\\/..  ...´\\´\\/.......\n..´\\´\\/...  ..´\\´\\/........\n.¨\\´\\/....  .¨\\´\\/.........\n..........  ...............\n\n```\n\n</details>\n",
+  "totalAttempts": 171,
+  "totalCompleted": 34,
+  "totalStars": 23,
+  "voteScore": 25,
+  "tags": [
+    "Fundamentals",
+    "Strings",
+    "ASCII Art",
+    "Geometry",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

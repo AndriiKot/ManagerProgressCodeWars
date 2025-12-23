@@ -1,0 +1,42 @@
+{
+  "id": "63e9a2ef7774010017975438",
+  "name": "Clustering corrupted banks",
+  "slug": "clustering-corrupted-banks",
+  "category": "algorithms",
+  "publishedAt": "2023-02-17T04:23:33.558Z",
+  "approvedAt": "2023-02-20T20:35:37.160Z",
+  "languages": [
+    "python",
+    "factor"
+  ],
+  "url": "https://www.codewars.com/kata/63e9a2ef7774010017975438",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-02-13T02:39:43.670Z",
+  "createdBy": {
+    "username": "Donvito-911",
+    "url": "https://www.codewars.com/users/Donvito-911"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Clustering corrupted banks\n\nYou work in the Fraud Tracking Organization (FTO) and one of the teams have found a list of corrupted banks. A corrupted bank, in simple words, is a bank that has been tracked lending money to itself. These banks will suffered a penalty fee based on the amount of banks that are in the same clusters. You have two tasks: cluster the corrupted banks and obtain the accumulated reward of the penalty fee.\n\n### Data\nThe FTO gives you a list of tuples where a tuple `$(i,j)$` means the bank `$i$` lends money to bank `$j$`. \n### <u>Assumptions</u>\n\n- Each bank lends money to exactly 1 bank.\n- Every bank receives money only from 1 bank. That is, the loans are one-to-one.\n\nFor example, `[(1,3), (4,6), (3,1), (6,7), (7,4), (8,8)]` is a possible list of corrupted banks since each bank only lends to one bank and only receives once. \n\nNote that lists of corrupted banks such as `[(1, 3), (2, 3), (3, 1)]` are not possible because the bank 3 is receiving a loan more than once (the assumption 2 is violated). Or in `[(1, 3), (1, 2), (2, 1)]` every bank is receiving just once but the bank 1 is lending more than once (assumption 1 is violated).\n\n### Clustering\nGiven the list of corrupted banks, you have to cluster them in self-loan cycles so each bank in a cluster, eventually, lends money to itself. Using the example above, you can see the followings clusters: `$\\{1,3\\}$`, `$\\{4,6, 7\\}$` and `$\\{8\\}$`. \n\n\n### Accumulated reward\nThe penalty fee is quite simple. Each bank must pay 2 million dollars power to the number of banks in their cluster. Following the example above, the banks `$1,3$`  have to pay `$2^2 = 4$` million dollars each. Banks `$\\{4,6, 7\\}$` must pay `$2^3 = 8$` million dollars each, and the bank `$8$` pays 2 million dollar. Therefore, the accumulated reward the FTO will receive is 34 million dollars.\n\n### Input\nThe list given to you will satisfy the <u><strong>assumptions</strong></u> and it will be at least 1 bank (be aware it could be thousands of banks).\n\ncorrupted_banks: (list) a list of tuples where each tuple `$(i,j)$` means bank `$i$` lends to bank `$j$`. `$i,j$` are integers. \n### Output\n(int) The accumulated reward the FTO will receive in million dollars (for example, returning 32 means 32 million dollars).\n\n",
+  "totalAttempts": 547,
+  "totalCompleted": 75,
+  "totalStars": 15,
+  "voteScore": 53,
+  "tags": [
+    "Data Structures",
+    "Algorithms",
+    "Set Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

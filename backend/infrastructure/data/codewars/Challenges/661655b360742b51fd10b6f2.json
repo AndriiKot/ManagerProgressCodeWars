@@ -1,0 +1,36 @@
+{
+  "id": "661655b360742b51fd10b6f2",
+  "name": "Word Correlations in Text Data ",
+  "slug": "word-correlations-in-text-data",
+  "category": "reference",
+  "publishedAt": "2024-04-11T11:43:35.021Z",
+  "approvedAt": null,
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/661655b360742b51fd10b6f2",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-04-10T09:02:43.592Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "description": "Imagine you're working as a data analyst for a digital publishing company. Your team is interested in understanding how certain words in articles are correlated to improve content relevance and reader engagement. Your task is to analyze a database of sentences extracted from various articles to find out how often certain words co-occur, providing insights into common word patterns\n\nYou are provided with a PostgreSQL database containing two tables: `text_data` and `patterns`. The `text_data` table consists of sentences from various articles, and the `patterns` table contains a list of specific words (patterns) of interest.\n\n`text_data`:\n\n* `sentence_id` (int): primary key\n* `sentence` (text): sentence content.\n\n`patterns`:\n\n* `pattern_id`(int): primary key\n* `pattern_text` (varchar, unique): the word pattern\n\n\nWrite a SQL query that performs the following:\n\n1) Finds all pairs of patterns that appear in the same sentence.\n2) Counts the number of occurrences of each pattern and the number of sentences where both patterns co-occur.\n3) Sorts correctly:\n    * Primary: Sort by `both_count` in descending order.\n    * Secondary: Sort by the sum of `pattern1_count` and `pattern2_count` in descending order.\n    * Tertiary: Sort by `pattern1` in ascending order (alphabetically).\n    * Quaternary: Sort by `pattern2` in ascending order (alphabetically).\n\nThe output should be a table with the following columns:\n\n1) `pattern1`: The text of the first pattern.\n2) `pattern2`: The text of the second pattern.\n3) `pattern1_count`: The number of sentences where the first pattern appears.\n4) `pattern2_count`: The number of sentences where the second pattern appears.\n5) `both_count`: The number of sentences where both patterns co-occur.\n\nNotes\n1) The SQL query should use a case-insensitive check when matching patterns to sentences. This is to account for variations in how the words appear in the text, such as \"Quick\" vs. \"quick\".\n2) Patterns are not bound to word boundaries. For example, the pattern \"quick\" will match with \"quicker\" in the sentence.\n\nFor this sample data:\n\n```\ntext_data: \n\n| sentence_id | sentence                                         |\n+-------------+--------------------------------------------------+\n| 1           | Quick brown fox jumps over the lazy dog.         |\n| 2           | A good example of a sentence is a quick response |\n| 3           | Lazy days are sometimes the best days.           |\n| 4           | Foxes are quicker than dogs.                     |\n```\n\n```\npatterns: \n\n| pattern_id| pattern_text|\n+-----------+-------------+\n| 1         | quick       |\n| 2         | lazy        |\n| 3         | example     |\n```\n\nThe expected output is the following:\n\n```\n| pattern1 | pattern2 | pattern1_count | pattern2_count | both_count |\n+----------+----------+----------------+----------------+------------+\n| lazy     | quick    | 2              | 3              | 1          |\n| example  | quick    | 1              | 3              | 1          |\n```\n\n\n\nThe first row (lazy, quick) indicates that the word \"lazy\" appears in 2 different sentences, \"quick\" appears in 3, and they both appear together in 1 sentence.\nThe second row (example, quick) shows that \"example\" appears in 1 sentence, \"quick\" in 3, and they co-occur in 1 sentence.\n\nGLHF!",
+  "totalAttempts": 48,
+  "totalCompleted": 11,
+  "totalStars": 5,
+  "voteScore": 24,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

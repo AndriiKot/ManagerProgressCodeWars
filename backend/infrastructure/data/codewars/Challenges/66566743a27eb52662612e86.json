@@ -1,0 +1,39 @@
+{
+  "id": "66566743a27eb52662612e86",
+  "name": "LRU Cache with TTL Memoization",
+  "slug": "lru-cache-with-ttl-memoization",
+  "category": "reference",
+  "publishedAt": "2024-05-29T00:16:53.158Z",
+  "approvedAt": null,
+  "languages": [
+    "typescript",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/66566743a27eb52662612e86",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-05-28T23:22:43.928Z",
+  "createdBy": {
+    "username": "GnomGad",
+    "url": "https://www.codewars.com/users/GnomGad"
+  },
+  "description": "# Description\nYour task is to create a memoization function that wraps around a given function and enhances it with caching capabilities. The cache should have a configurable maximum size, and each cached result should expire after a specified TTL. This ensures that the cache does not grow indefinitely and that stale data is eventually removed. Additionally, when the cache exceeds its maximum size, the least recently used (LRU) entry should be evicted to make space for new entries.\n\n---\n\n## Behavior\n\n1. The memoized function should return cached results for previously computed inputs, improving performance for repetitive calls.\n2. The cache should automatically evict the least recently used (LRU) entry when the maximum cache size is exceeded (if `maxSize` is specified).\n3. Cached entries should expire after the specified TTL (if `ttl` is specified).\n4. If both `maxSize` and `ttl` are specified, the memoized function should handle both constraints.\n\n## Edge Cases\n1. Ensure the function works with various types of input parameters (e.g., numbers, strings, objects).\n2. Handle the scenario where `maxSize` is 0 or negative by treating it as unlimited.\n3. Handle the scenario where `ttl` is 0 or negative by treating it as no expiration.\n\n## Parameters\n\n1. `fn` (function): The function to be memoized.\n2. `options` (object): An optional object with the following properties:\n- - `maxSize` (number): The maximum number of entries to store in the cache. If not provided, the cache size is unlimited.\n- - `ttl` (number): The time-to-live (TTL) for each cache entry in milliseconds. If not provided, entries do not expire based on time.\n\n## Examples\n```typescript\nfunction add(a: number, b: number): number {\n    return a + b;\n}\n\nconst memoizedAdd = memoize(add, { maxSize: 3, ttl: 5000 });\n\nconsole.log(memoizedAdd(1, 2)); // 3 (calculated)\nconsole.log(memoizedAdd(1, 2)); // 3 (cached)\nconsole.log(memoizedAdd(2, 3)); // 5 (calculated)\nconsole.log(memoizedAdd(3, 4)); // 7 (calculated)\nconsole.log(memoizedAdd(4, 5)); // 9 (calculated, cache size exceeded, first entry evicted)\nconsole.log(memoizedAdd(1, 2)); // 3 (recalculated)\n```\n## Hints\n1. If `maxSize` or `ttl` are set to 0 or negative values, treat these as having no limit on size or no expiration time, respectively.\n2. Store timestamps for each cached value and check them each time the cache is accessed. If an entry has expired, remove it from the cache.\n3. You can use `JSON.stringify` to create a unique hash for each set of arguments, as the tests will not include checks for `undefined` and `null`and empty items.\n\n#### For convenience, I've separately defined the types.\n```typescript\ntype MemoizeOptions = {\n    maxSize?: number;\n    ttl?: number;\n};\n\ntype AnyFunction = (...args: any[]) => any;\n\ntype MemoizedFunction<T extends AnyFunction> = (...args: Parameters<T>) => ReturnType<T>;\n\nfunction memoize<T extends AnyFunction>(fn: T, options?: MemoizeOptions): MemoizedFunction<T>;\n```\n",
+  "totalAttempts": 117,
+  "totalCompleted": 15,
+  "totalStars": 4,
+  "voteScore": 17,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Memoization",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

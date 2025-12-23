@@ -1,0 +1,46 @@
+{
+  "id": "648f2033d52f51608e06c458",
+  "name": "Skills Master",
+  "slug": "skills-master",
+  "category": "algorithms",
+  "publishedAt": "2023-06-18T21:54:34.123Z",
+  "approvedAt": "2023-06-19T10:13:49.132Z",
+  "languages": [
+    "python",
+    "scala",
+    "javascript",
+    "rust",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/648f2033d52f51608e06c458",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-18T15:18:11.885Z",
+  "createdBy": {
+    "username": "el-f",
+    "url": "https://www.codewars.com/users/el-f"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Description\n\nBelow is described a skill tree:\n\n<!-- commented out this cool css tree since codewars broke css rendering -->\n<!-- <html>\n<body>\n  <style>\n  <!-- credit to codepen.io/Gerim :) >\n    .body {  }\n    .tree ul {\n      margin: 0;\n      padding: 0;\n      padding-top: 20px;\n      position: relative;\n      transition: all 0.5s;\n      -webkit-transition: all 0.5s;\n      -moz-transition: all 0.5s;\n    }\n    .tree li {\n      float: left;\n      text-align: center;\n      list-style-type: none;\n      position: relative;\n      padding: 20px 5px 0 5px;\n      transition: all 0.5s;\n      -webkit-transition: all 0.5s;\n      -moz-transition: all 0.5s;\n    }\n    .tree li::before,\n    .tree li::after {\n      content: '';\n      position: absolute;\n      top: 0;\n      right: 50%;\n      border-top: 1px solid #ccc;\n      width: 50%;\n      height: 20px;\n    }\n    .tree li::after {\n      right: auto;\n      left: 50%;\n      border-left: 1px solid #ccc;\n    }\n    .tree li:only-child::after,\n    .tree li:only-child::before {\n      display: none;\n    }\n    .tree li:only-child {\n      padding-top: 0;\n    }\n    .tree li:first-child::before,\n    .tree li:last-child::after {\n      border: 0 none;\n    }\n    .tree li:last-child::before {\n      border-right: 1px solid #ccc;\n      border-radius: 0 5px 0 0;\n      -webkit-border-radius: 0 5px 0 0;\n      -moz-border-radius: 0 5px 0 0;\n    }\n    .tree li:first-child::after {\n      border-radius: 5px 0 0 0;\n      -webkit-border-radius: 5px 0 0 0;\n      -moz-border-radius: 5px 0 0 0;\n    }\n    .tree ul ul::before {\n      content: '';\n      position: absolute;\n      top: 0;\n      left: 50%;\n      border-left: 1px solid #ccc;\n      width: 0;\n      height: 20px;\n    }\n    .tree li a {\n      border: 1px solid #ccc;\n      padding: 5px 10px;\n      text-decoration: none;\n      color: #ff0000;\n      font-family: Arial, Verdana, Tahoma;\n      font-size: 11px;\n      display: inline-block;\n      border-radius: 5px;\n      -webkit-border-radius: 5px;\n      -moz-border-radius: 5px;\n      transition: all 0.5s;\n      -webkit-transition: all 0.5s;\n      -moz-transition: all 0.5s;\n    }\n    .tree li a:hover,\n    .tree li a:hover+ul li a {\n      background: #c8e4f8;\n      color: #000;\n      border: 1px solid #94a0b4;\n    }\n    .tree li a:hover+ul li::after,\n    .tree li a:hover+ul li::before,\n    .tree li a:hover+ul::before,\n    .tree li a:hover+ul ul::before {\n      border-color: #94a0b4;\n    }\n  </style>\n  \n  <div class=\"tree\">\n    <ul>\n      <li>\n        <a>0</a>\n        <ul>\n          <li>\n            <a>1</a>\n            <ul>\n              <li>\n                <a>3</a>\n                <ul>\n                  <li>\n                    <a>4</a>\n                  </li>\n                  <li>\n                    <a>5</a>\n                  </li>\n                </ul>\n              </li>\n            </ul>\n          </li>\n          <li>\n            <a>2</a>\n            <ul>\n              <li>\n                <a>6</a>\n              </li>\n            </ul>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  </div>\n</body>\n</html>\n<br><br><br><br><br><br><br><br><br><br><br> -->\n<img alt=\"Tree\" src=\"https://gist.githubusercontent.com/el-f/387770bf21b35add9a694c829b7df855/raw/b2c8c551177d3220f48c58ada2e1902462c1206e/tree.svg\" style=\"max-width: 480px;\">\n\n\nThe array that describes this skill tree is as follows:\n```python\n[\n 0, # 0 is the root and does not depend on any skill.\n 0, # 1 is unlocked by skill 0 (skill at index 0).\n 0, # 2 is unlocked by skill 0.\n 1, # 3 is unlocked by skill 1.\n 3, # 4 is unlocked by skill 3.\n 3, # 5 is unlocked by skill 3.\n 2  # 6 is unlocked by skill 2.\n]\n```\nIn another words, each skill is identified by its index in the array, and its value identifies the skill that unlocks it.\n\n---\n\n# Your Task:\nGiven a skill tree described as an array and a set of required skills, return the total number of skills needed to learn all of the required skills.\n\n<b>Intuition</b>: In the example's tree, if I want to learn skill 6, I first need to learn skills 0 and 2 - a total of 3 skills learned.\n\n---\n\n# Examples:\n```python\ncount_skills([ 0, 0, 0, 1, 3, 3, 2 ], { 6 })     -> 3\ncount_skills([ 0, 0, 0, 1, 3, 3, 2 ], set())     -> 0\ncount_skills([ 0, 0, 0, 1, 3, 3, 2 ], { 1, 2 })  -> 3\n```\n```scala\ncountSkills(Seq( 0, 0, 0, 1, 3, 3, 2 ), Set( 6 ))     -> 3\ncountSkills(Seq( 0, 0, 0, 1, 3, 3, 2 ), Set[Int]())   -> 0\ncountSkills(Seq( 0, 0, 0, 1, 3, 3, 2 ), Set( 1, 2 ))  -> 3\n```\n```javascript\ncountSkills([ 0, 0, 0, 1, 3, 3, 2 ], new Set([ 6 ]));     -> 3\ncountSkills([ 0, 0, 0, 1, 3, 3, 2 ], new Set());          -> 0\ncountSkills([ 0, 0, 0, 1, 3, 3, 2 ], new Set([ 1, 2 ]));  -> 3\n```\n```rust\ncountSkills(&[0, 0, 0, 1, 3, 3, 2], &HashSet::from([6]))     -> 3\ncountSkills(&[0, 0, 0, 1, 3, 3, 2], &HashSet::new())         -> 0\ncountSkills(&[0, 0, 0, 1, 3, 3, 2], &HashSet::from([1, 2]))  -> 3\n```\n```java\ncountSkills(new int[] { 0, 0, 0, 1, 3, 3, 2 }, Set.of( 6 ));     -> 3\ncountSkills(new int[] { 0, 0, 0, 1, 3, 3, 2 }, Set.of());        -> 0\ncountSkills(new int[] { 0, 0, 0, 1, 3, 3, 2 }, Set.of( 1, 2 ));  -> 3\n```\n---\n## Constraints:\n- <b>Each skill is only unlocked by exactly one skill!</b>\n- Skills can unlock any number of skills.\n- Inputs are always valid and each skill can be unlocked by some other skill, except 0.\n\n~~~if-not:rust,java\n  - `$0 \\le len(tree) \\le 200\\,000$`\n~~~\n~~~if:rust,java\n  - `$0 \\le len(tree) \\le 300\\,000$`\n~~~\n\n  - `$0 \\le len(required) \\le len(tree)$`\n\n---\n\n## Notes:\n- You need to be somewhat efficient with your approach.\n- You are provided with 2 functions in `preloaded` to help you debug:\n  1. `build_tree/buildTree` - convert a tree array into a dict/Map describing which skills each skill unlocks.\n  2. `visualize_tree/visualiseTree/visualizeTree` - get a visual representation of the given tree array.\n\n",
+  "totalAttempts": 2832,
+  "totalCompleted": 400,
+  "totalStars": 49,
+  "voteScore": 99,
+  "tags": [
+    "Algorithms",
+    "Data Structures",
+    "Graph Theory",
+    "Trees"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

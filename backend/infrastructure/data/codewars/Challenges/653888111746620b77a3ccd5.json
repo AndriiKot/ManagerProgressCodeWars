@@ -1,0 +1,42 @@
+{
+  "id": "653888111746620b77a3ccd5",
+  "name": "Escape the knight!",
+  "slug": "escape-the-knight",
+  "category": "games",
+  "publishedAt": "2023-11-25T16:00:16.739Z",
+  "approvedAt": "2023-12-02T20:56:41.268Z",
+  "languages": [
+    "python",
+    "java",
+    "csharp",
+    "swift"
+  ],
+  "url": "https://www.codewars.com/kata/653888111746620b77a3ccd5",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-10-25T03:14:25.578Z",
+  "createdBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "### Background\n\nConsider a 8-by-8 chessboard containing only a knight and a king. The knight wants to check the king. The king wants to avoid this. The knight has a cloaking shield, so it moves invisibly. Help the king escape the knight!\n\n### Task\n\nYou are given the initial king position, initial knight position, and the number of moves **n** that the titanic struggle will last. Return a list (or array) of length **n** containing the king's moves. The first move must be a legal king move from the initial king position, and each subsequent move must be a legal king move from the king's previous position. Your goal is for the king to make all the moves in sequence without ever getting checked by the knight, no matter which moves the knight makes.\n\n### Details\n\n(1) Squares on the chessboard are specified as strings giving the horizontal coordinate first (a letter from a to h), followed by the vertical coordinate (a number from 1 to 8). Example: On the board below, the knight N is on \"d4\" and the king K is on \"g7\".\n```\n8 ........         \n7 ......K.                 \n6 ........                \n5 ........              \n4 ...N....                 \n3 ........               \n2 ........                  \n1 ........                 \n  abcdefgh\n```\n\n(2) The king moves one square in any direction. For example, the king on g7 can move to any of the following squares: f8, f7, f6, g8, g6, h8, h7, h6, as shown below.\n\n```\n8 .....***         \n7 .....*K*                 \n6 .....***               \n5 ........              \n4 ........                 \n3 ........               \n2 ........                  \n1 ........                 \n  abcdefgh\n```\n\n(3) The knight moves one square horizontally and two squares vertically, or two squares horizontally and one square vertically. For example, the knight on d4 can move to any of the following squares: b3, c2, e2, f3, f5, e6, c6, b5, as shown below.\n\n```\n8 ........         \n7 ........                 \n6 ..*.*...                \n5 .*...*..              \n4 ...N....                 \n3 .*...*..               \n2 ..*.*...                  \n1 ........                 \n  abcdefgh\n```\n\n(4) The knight and king move *simultaneously*. The knight wins if it ever checks the king (or if the king moves illegally). The king (and you) win if it survives the specified number of moves without ever being checked. \n\n### Example\n\nGiven input (\"g7\", \"d4\", 6), suppose your function returns [\"f8\", \"e7\", \"f6\", \"e7\", \"d7\", \"d6\"] as the king's moves. If the knight happened to move [\"c6\", \"e5\", \"g4, \"f2\", \"d1\", \"e3\"], then the knight wins, because after move 3 the knight at g4 checks the king at f6. \n\n### Things to Note\n\n(1) The number of moves **n** satisfies 1 <= **n** <= 50.\n\n(2) The initial position of the king is always a different square from the initial position of the knight.\n\n(3) It's possible that the knight could be checking the king in the initial position. This is ignored. It's also possible that the same position could occur three times in succession. This is also ignored. (In regular chess this allows a draw to be declared.)\n\n(4) In order to make sure that it never moves to the same square as the king, the knight can access the move-list returned by your function. This means it can use this information when picking its move. (We didn't say this was a fair fight!)\n\n### Related Kata\n\nThis kata was motivited by [Red Knight](https://www.codewars.com/kata/5fc4349ddb878a0017838d0f) and [Knight vs King](https://www.codewars.com/kata/564e1d90c41a8423230000bc).",
+  "totalAttempts": 454,
+  "totalCompleted": 91,
+  "totalStars": 31,
+  "voteScore": 45,
+  "tags": [
+    "Games"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "5d2ba61f6ea26c00111936d2",
+  "name": "Hidden pixels",
+  "slug": "hidden-pixels",
+  "category": "algorithms",
+  "publishedAt": "2019-07-15T20:10:38.362Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5d2ba61f6ea26c00111936d2",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2019-07-14T22:01:03.636Z",
+  "createdBy": {
+    "username": "Idan Hazan",
+    "url": "https://www.codewars.com/users/Idan%20Hazan"
+  },
+  "description": "You probably ask what is hidden pixels?!<br>\nWell, imagine for a moment a TV that can display 3 individual pixel colors - RGB.\n\nR represents Red.<br>\nG represents Green.<br>\nB represents Blue.<br>\n\nLet's assume your TV has only 20 pixels (5x4):<br>\n<code>B G G R</code>\n<br>\n<code>R B B R</code>\n<br>\n<code>B B B G</code>\n<br>\n<code>G G R B</code>\n<br>\n<code>R B G R</code>\n\nThose pixels written as <code>['BGGR', 'RBBR', 'BBBG', 'GGRB', 'RBGR']</code> in this kata.\n\nSo, how do we find the hidden pixels?<br>\nWe can \"merge\" the pixels that are attached to each other.\n\nWhen the pixels are the same, the \"merge\" no effect at all, but when they are different, the color will be replaced to the 3rd color, take a look here for all the possible combination:<br>\n<code>R and R = R</code>\n<br>\n<code>R and G = B</code>\n<br>\n<code>R and B = G</code>\n<br>\n<code>G and R = B</code>\n<br>\n<code>G and G = G</code>\n<br>\n<code>G and B = R</code>\n<br>\n<code>B and R = G</code>\n<br>\n<code>B and G = R</code>\n<br>\n<code>B and B = B</code>\n\nLet's go back to the example. If we want to find out if 'B' is the hidden pixel we should try to convert the whole screen to this pixel.<br>\n\n<code>B G G R</code>\n<br>\n<code>R B B R</code>\n<br>\n<code>B B B G</code>\n<br>\n<code>G G R B</code>\n<br>\n<code>R B G R</code>\n\n<code>B G <font color=\"yellow\">G</font> <font color=\"yellow\">R</font></code> --> <code>B G <font color=\"yellow\">B</font> <font color=\"yellow\">B</font></code>\n<br>\n<code>R B B R</code> --> <code>R B B R</code>\n<br>\n<code>B B B G</code> --> <code>B B B G</code>\n<br>\n<code>G G R B</code> --> <code>G G R B</code>\n<br>\n<code>R B G R</code> --> <code>R B G R</code>\n\n<code>B G B B</code> --> <code>B G B B</code>\n<br>\n<code>R B B <font color=\"yellow\">R</font></code> --> <code>R B B <font color=\"yellow\">B</font></code>\n<br>\n<code>B B B <font color=\"yellow\">G</font></code> --> <code>B B B <font color=\"yellow\">B</font></code>\n<br>\n<code>G G R B</code> --> <code>G G R B</code>\n<br>\n<code>R B G R</code> --> <code>R B G R</code>\n\n<code>B G B B</code> --> <code>B G B B</code>\n<br>\n<code>R B B B</code> --> <code>R B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code><font color=\"yellow\">G</font> G R B</code> --> <code><font color=\"yellow\">B</font> G R B</code>\n<br>\n<code><font color=\"yellow\">R</font> B G R</code> --> <code><font color=\"yellow\">B</font> B G R</code>\n\n<code>B G B B</code> --> <code>B G B B</code>\n<br>\n<code>R B B B</code> --> <code>R B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B <font color=\"yellow\">G</font> <font color=\"yellow\">R</font> B</code> --> <code>B <font color=\"yellow\">B</font> <font color=\"yellow\">B</font> B</code>\n<br>\n<code>B B G R</code> --> <code>B B G R</code>\n\n<code>B G B B</code> --> <code>B G B B</code>\n<br>\n<code>R B B B</code> --> <code>R B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B <font color=\"yellow\">G</font> <font color=\"yellow\">R</font></code> --> <code>B B <font color=\"yellow\">B</font> <font color=\"yellow\">B</font></code>\n\nUmm, it's look like we stuck here, but watch this magic trick!\n\n<code>B G B B</code> --> <code>B G B B</code>\n<br>\n<code><font color=\"yellow\">R</font> <font color=\"yellow\">B</font> B B</code> --> <code><font color=\"yellow\">G</font> <font color=\"yellow\">G</font> B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n\n<code><font color=\"yellow\">B</font> G B B</code> --> <code><font color=\"yellow\">R</font> G B B</code>\n<br>\n<code><font color=\"yellow\">G</font> G B B</code> --> <code><font color=\"yellow\">R</font> G B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n\n<code><font color=\"yellow\">R</font> <font color=\"yellow\">G</font> B B</code> --> <code><font color=\"yellow\">B</font> <font color=\"yellow\">B</font> B B</code>\n<br>\n<code>R G B B</code> --> <code>R G B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code><font color=\"yellow\">R</font> <font color=\"yellow\">G</font> B B</code> --> <code><font color=\"yellow\">B</font> <font color=\"yellow\">B</font> B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n<br>\n<code>B B B B</code> --> <code>B B B B</code>\n\nOh yea!<br>\nAll the pixels changed to 'B', that means 'B' is hidden pixel!<br>\nBut wait, what about 'R' and 'G'?<br>\nWell, in this example, you can't do that, I hope you belive me, because I'm not gonna proof it ;)<br>\n\nYour mission is to get an array and return the hidden pixels, the output of the example should be <code>['B']</code>, in case your answer don't have any hidden pixel, return <code>[]</code> as a result. in another case your result have more then one hidden pixels (for example 'R' and 'B'), return <code>['R', 'B']</code> or <code>['B', 'R']</code> as a result. (the order of the pixels are not relevant).\n\nThere are 1000 test cases, each test case generate randomly rows and columns between 1-20.\n\nGood luck for everyone :)",
+  "totalAttempts": 137,
+  "totalCompleted": 12,
+  "totalStars": 11,
+  "voteScore": 8,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

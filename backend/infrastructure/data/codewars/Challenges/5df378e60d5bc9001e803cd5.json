@@ -1,0 +1,35 @@
+{
+  "id": "5df378e60d5bc9001e803cd5",
+  "name": "A Sandbox _ENVironment",
+  "slug": "a-sandbox-environment",
+  "category": "reference",
+  "publishedAt": "2019-12-17T15:43:03.958Z",
+  "approvedAt": null,
+  "languages": [
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/5df378e60d5bc9001e803cd5",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2019-12-13T11:41:26.890Z",
+  "createdBy": {
+    "username": "user7887068",
+    "url": "https://www.codewars.com/users/user7887068"
+  },
+  "description": "# The \\_ENVironment\nIn Lua 5.2, the `_ENV` table was introduced as a replacement for the function environment functions (`setfenv` and `getfenv`). It allows to change the environment of the current scope to a table.\n\n\nAs a reminder, Lua uses lexical scoping which is illustrated in the following example:\n```lua\nx = 1\nprint(x) -- => 1\ndo \n    local x = 7\n    print(x) -- => 7\n    y = 5\nend\nprint(x) -- => 1, local declaration contained in block\nprint(y) -- => 5, global declaration ignores scope\n```\nAnd setting the environment to an empty table takes literally every definition away. (Including `print`)\n```lua\ndo\n    local _ENV = {}\n    print(\"Hello world!\") -- => attempt to call nil, since _ENV.print is nil\nend\n```\nSo the `_ENV` of a block determines what it has access to. (These blocks where definitions are restricted are sometimes referred to as \"sandboxes.\") For more information about Lua's environments, check out the section of the [reference manual](https://www.lua.org/manual/5.3/manual.html#2.2)\n\n# Your Job\n\nYour task is to create a function `createEnvironment` that returns two tables, `environment` and `container`.\n```lua\nlocal environment, container = createEnvironment()\n```\nWhen `environment` is used for `_ENV` it should take any global declarations and put it in `container` rather than `_G`, the global table.\n\n\n```lua\nlocal environment, container = createEnvironment()\ndo \n    local _ENV = environment\n    local x = 7 -- not captured, local declaration\n    y = 5       -- captured, global declaration\n    \n    function doThings() -- captured, global declaration \n                        -- (since this is sytactic sugar for doThings = function() ... end)\n        return x\n    end\nend\nprint(container.x)          -- => nil\nprint(container.y)          -- => 5\nprint(container.doThings()) -- => 7\n```\nBut we should still have access to our standard library functions and previous declarations in our local `_ENV`. We still want to be able to print inside of our sandbox.\n```lua\nlocal function aVeryImportantFunction()\n    return 7\nend\n\nlocal environment, container = createEnvironment()\ndo \n    local _ENV = environment\n    local x = aVeryImportantFunction()\n    print(\"a very important function was called\")\nend\n```\nAnd we should have access to our container inside the sandbox.\n```lua\nlocal environment, container = createEnvironment()\ndo \n    local _ENV = environment\n    x = aVeryImportantFunction()\n    print(x)\nend\n```\n\n# To reiterate: \nYour function must:\n- Return two tables, `environment` and `container`, such that when `local _ENV = environment`\n  - Any global declarations are put into `container`\n  - We can access global variables from inside the sandbox\n  - We can access `container` values from inside the sandbox\n\n## Caveats:\nFor security reasons, codewars doesn't allow you to access the global table `_G` which you will probably need access to for this challenge (hint hint). So there is a small snippet of preloaded code to emulate how the global table works and your code should work as if it were running locally with the normal `_G` table.",
+  "totalAttempts": 42,
+  "totalCompleted": 12,
+  "totalStars": 3,
+  "voteScore": 10,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

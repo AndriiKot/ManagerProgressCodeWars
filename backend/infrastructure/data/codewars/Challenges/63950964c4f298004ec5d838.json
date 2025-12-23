@@ -1,0 +1,36 @@
+{
+  "id": "63950964c4f298004ec5d838",
+  "name": "Crop the Image",
+  "slug": "crop-the-image",
+  "category": "algorithms",
+  "publishedAt": "2022-12-11T20:11:49.150Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63950964c4f298004ec5d838",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-12-10T22:34:13.046Z",
+  "createdBy": {
+    "username": "ewelborn",
+    "url": "https://www.codewars.com/users/ewelborn"
+  },
+  "description": "Ted is taking pictures of an [Aurora](https://en.wikipedia.org/wiki/Aurora) at night with his brand new, fancy camera. The problem is, the Aurora is small compared to the rest of the image - he wants the image to be cropped so that the Aurora is the only thing in frame.\n\nWe're in luck - the Aurora is very bright compared to the rest of the background. Cropping it should be easy, right?\n\n# Task\nGiven a 3D array in RGB format, return a new 3D array that is tightly cropped around the brightest region of the image. All pixels that lie within the brightest region *must* be included in the new, cropped image, with the minimum number of non-brightest region pixels included.\n\nFor the purposes of this kata, you may calculate the brightness of a pixel as the sum of all three RGB channels. It is up to you to design an algorithm that properly segments the bright pixels from the dark pixels in the image.\n\n# Example\nHere is an example 4x4 image that Ted took last night:\n\n| | | | |\n|--------------------|-------------------|-----------|-----------|\n| [4, 3, 3]          | [5, 0, 1]         | [0, 0, 0] | [3, 0, 0] |\n| **[25, 255, 104]** | [0, 0, 4]         | [5, 0, 1] | [0, 0, 0] |\n| [5, 5, 0]          | **[21, 255, 96]** | [4, 0, 0] | [0, 3, 3] |\n| [3, 0, 1]          | [0, 0, 4]         | [1, 1, 0] | [0, 0, 2] |\n\nThere are two pixels in this image that are clearly brighter than the rest (**bolded** for emphasis) - their sums, 384 and 372, are much higher than the other pixels in the image. The image should be cropped tightly around these brightest pixels - the tightest crop we can achieve is shown below.\n\n| | |\n|--------------------|-------------------|\n| **[25, 255, 104]** | [0, 0, 4]         |\n| [5, 5, 0]          | **[21, 255, 96]** |\n\n# Notes\nThe input will never be empty.\n```if:python\n**For Python**: The images will be passed as ndarrays of shape (width, height, 3), and the return value should be of the same type. In addition to the sample tests, there are 5 small tests (up to 10 x 10 in image size), 5 large tests (up to 100 x 100), and 1 very large test (500 x 500).\n```",
+  "totalAttempts": 99,
+  "totalCompleted": 5,
+  "totalStars": 0,
+  "voteScore": 3,
+  "tags": [
+    "Image Processing",
+    "NumPy"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

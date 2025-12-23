@@ -1,0 +1,35 @@
+{
+  "id": "58004c892dc24cdcd3000166",
+  "name": "Family Gift Exchange / Names Out of a Hat",
+  "slug": "family-gift-exchange-slash-names-out-of-a-hat",
+  "category": "algorithms",
+  "publishedAt": "2016-10-14T05:35:46.342Z",
+  "approvedAt": null,
+  "languages": [
+    "php"
+  ],
+  "url": "https://www.codewars.com/kata/58004c892dc24cdcd3000166",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-10-14T03:10:01.816Z",
+  "createdBy": {
+    "username": "jdubwelch",
+    "url": "https://www.codewars.com/users/jdubwelch"
+  },
+  "description": "This is my first Kata, wanted to take something that I've done to see how others might go about it. This is a great \"real life\" problem that needs a solution. I'd love to see better ways to do it.\n\nThe following is a true story, the names have been changed to protect the innocent.\n\n# Real Life Scenario \n\nIt's Thanksgiving and you've just finished dinner with your extended family. As you're cleaning up the dishes you look over and see your Aunt May writing names on small pieces of paper and putting them in a hat. \n\n\"What are you doing Aunt May,\" you ask. \n\n\"Picking names for the Christmas gift exchange,\" she says. \"This is the third time and I just can't get it to work.\"\n\n\"Work? What do you mean, don't you just pick the names out of the hat.\"\n\nShe goes on to tell you about the rules of the gift exchange. Then the light bulb pops in your head!  \n\n\"Aunt May, I can write you a program to do this for you and save you loads of time!\"\n\n## Gift Exchange Rules\n\n1. Every year family members declare if they are participating or not. If they are, each one will be assigned another person to give a gift to.\n\n2. A person has to give a gift to an extended family member (ie Roy can't give a gift to his dad, brother, mother, or wife.  He'd have to give it to his cousins or aunts and uncles.)\n\n3. A person has to give a gift to a different person than they did last year.\n\n\n## Fake Example\n\nThe Simpsons are having a Christmas gift exchange. Homer, Marge, Bart, Lisa, and Maggie will all be participating from their family. Uncle Herbert will be there and participating as well. Then, Patty, Selma, their parents Clancy and Jackie along with their kid Ling will take part in the gift exchange as well. \n\nThey had a gift exchange last year where:\n```\nHomer gave to Jackie, \nJackie gave to Maggie,\nMaggie gave to Clancy,\nClancy gave to Homer,\nMarge gave to Ling,\nLing gave to Herbert,\nHerbert gave to Bart,\nBart gave to Patty,\nPatty gave to Lisa,\nLisa gave to Selma,\nSelma gave to Marge.\n```\n\n### Input\n\nSo the list of participants would look something like this:\n\n```\n$participants = [\n    [ 'username' => 'Homer',   'house' => 'Simpson', 'last' => 'Jackie' ],\n    [ 'username' => 'Marge',   'house' => 'Simpson', 'last' => 'Ling' ],\n    [ 'username' => 'Bart',    'house' => 'Simpson', 'last' => 'Patty' ],\n    [ 'username' => 'Lisa',    'house' => 'Simpson', 'last' => 'Selma' ],\n    [ 'username' => 'Maggie',  'house' => 'Simpson', 'last' => 'Clancy' ],\n    [ 'username' => 'Herbert', 'house' => 'Powell',  'last' => 'Bart' ],\n    [ 'username' => 'Patty',   'house' => 'Bouvier', 'last' => 'Lisa' ],\n    [ 'username' => 'Selma',   'house' => 'Bouvier', 'last' => 'Marge' ],\n    [ 'username' => 'Ling',    'house' => 'Bouvier', 'last' => 'Herbert' ],\n    [ 'username' => 'Clancy',  'house' => 'Bouvier', 'last' => 'Homer' ],\n    [ 'username' => 'Jackie',  'house' => 'Bouvier', 'last' => 'Maggie' ],\n];\n```\n\n### Task\n\nComplete the Determine class to make the gift exchange assignments.\n\n```\n$determine = new Determine;\n$assignments = $determine->assign($participants);\n```\n\n### Output \nShould be random, but an example would be something like:\n\n```\nArray\n(\n    // User => GivesTo\n    [Homer] => Clancy\n    [Marge] => Selma\n    [Bart] => Jackie\n    [Lisa] => Patty\n    [Maggie] => Herbert\n    [Herbert] => Ling\n    [Patty] => Marge\n    [Selma] => Homer\n    [Ling] => Maggie\n    [Clancy] => Bart\n    [Jackie] => Lisa\n)\n```\n\n\n\n\n\n\n",
+  "totalAttempts": 210,
+  "totalCompleted": 26,
+  "totalStars": 4,
+  "voteScore": 7,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

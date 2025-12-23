@@ -1,0 +1,37 @@
+{
+  "id": "58fe6c72627d2f882f000356",
+  "name": "Turn Bus Ticket Digits Into 100",
+  "slug": "turn-bus-ticket-digits-into-100",
+  "category": "games",
+  "publishedAt": "2017-04-25T18:53:55.382Z",
+  "approvedAt": null,
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/58fe6c72627d2f882f000356",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2017-04-24T21:21:54.853Z",
+  "createdBy": {
+    "username": "ortega89",
+    "url": "https://www.codewars.com/users/ortega89"
+  },
+  "description": "<img src=\"http://dic.academic.ru/pictures/wiki/files/84/Ticket268736.jpg\" position=\"left\" title=\"Yes, this ticket can also be solved!\" style=\"width: 120px; height: 160px; float: left; margin: 0 1em\" />\n\nThere is a nice game popularized thanks to a Russian puzzle book, 'Math wit' (by E. Ignatiev, 1994).\n\nWhen you get into a bus and pay your fare, you receive a ticket with an arbitrary 6-digit number. Your trip may be quite long, so you can use your time for some mental exercise. Your goal is to put certain mathematical operations and brackets among the digits of your ticket, so that you get a result of 100.\n\n<h2>Real Life Examples</h2>\n<ul>\n  <li>\n  <code>Ticket: 206472<br />\n  Solution: (2 + 0) * (6 + 4) * (7 - 2) = 100</code>\n  </li>\n  <li>\n  <code>Ticket: 574196<br />\n  Solution: (5 - 7) * (4 * 1 - 9 * 6) = 100</code>\n  </li>\n  <li>\n  <code>Ticket: 121561<br />\n  Solution: (1 + 2 + 1) * 5 * (6 - 1) = 100</code>\n  </li>\n  <li>\n  <code>Ticket: 453324<br />\n  Solution: 4 * 5 * (3 + 3 * 2 - 4) = 100</code>\n  </li>\n  <li>\n  <code>Ticket: 205342```<br />\n  Solution: Try this one for yourself!</code>\n  </li>\n</ul>\n\n<h2>Rules</h2>\n<ul>\n  <li>You can only put parentheses <code>(</code>, <code>)</code> and basic arithmetic operations: addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, and division <code>/</code>.</li>\n  <li>All digits must be presented in their original order, none added, none removed.</li>\n  <li>You cannot join digits into several-digit numbers. Every two consecutive digits must be separated by at least one operation. <br />\n  <code>\n  Right: 9 + 3 * 7\n  </code>;\n  <code>\n  Wrong: 93 + 7\n  </code></li>\n  \n  <li>Do not omit multiplication before or after the brackets as you would normally do in math. Think like a coder.<br />\n  <code>\n  Right: 7 * (9 + 3)\n  </code>;\n  <code>\n  Wrong: 7(9 + 3)\n  </code></li>\n  <li>Support of a unary minus (negation operator, like <code>-34</code>) is not required in this kata, but not forbidden either.</li>\n  <li>The result must be a valid arithmetical expression, which can be successfully calculated. There is a pre-made math evaluator class. You can use it to validate and evaluate any expression you make. It is based on <a href=\"https://www.codewars.com/kata/52a78825cdfc2cfc87000005\">this kata</a>.</li>\n  <li>Not every ticket can be solved. In fact, recent tests have shown that only 71.5% of possible 6-digit tickets can be solved according to the rules of this game without applying a unary minus.</li>\n</ul>\n\n<h2>Your Task</h2>\n<p>For a given ticket, specified as an array of its digits, implement a <code>solveTicket</code> method which will provide a String representation of one of its solutions. If there is no solution available, return <code>null</code>. It's fine as long as the test cannot do any better than your code.</p>\n\n<h2>Hint</h2>\n<p>You might find it a good idea to get a solution as a <a href=\"https://en.wikipedia.org/wiki/Reverse_Polish_notation\">reverse polish expression</a> and then convert it to a normal math expression. Reverse polish expressions do not have any brackets, and this makes it much easier to deal with them.</p>",
+  "totalAttempts": 43,
+  "totalCompleted": 6,
+  "totalStars": 7,
+  "voteScore": -1,
+  "tags": [
+    "Mathematics",
+    "Games",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "651478c7ba373c338a173de6",
+  "name": "From Traversals to Tree",
+  "slug": "from-traversals-to-tree",
+  "category": "algorithms",
+  "publishedAt": "2023-09-29T13:50:05.513Z",
+  "approvedAt": "2023-09-30T09:07:21.695Z",
+  "languages": [
+    "python",
+    "haskell",
+    "javascript",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/651478c7ba373c338a173de6",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-09-27T18:47:35.057Z",
+  "createdBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "approvedBy": {
+    "username": "akar-0",
+    "url": "https://www.codewars.com/users/akar-0"
+  },
+  "description": "### Finding a Binary Tree from Traversals\n\nReconstruct a binary tree from its in-order and post-order traversals. A binary tree is a tree where each node has either 0, 1 or 2 children. Such a tree is usually represented recursively using a class where each node has a value and left and right subtrees (either of which can be `None` or a similar empty value).\n\n```python\nclass TreeNode:\n    def __init__(self, value, left = None, right = None):\n        self.value = value\n        self.left = left\n        self.right = right\n```\n```haskell\ndata Tree = None\n          | Node Int Tree Tree\n          deriving (Show, Eq)\n```\n```javascript\nclass TreeNode {\n  constructor(value,left=null,right=null) {\n    this.value = value;\n    this.left = left;\n    this.right = right;\n  }\n}\n```\n```lambdacalc\n# Tree a = None | Node a (Tree a) (Tree a)\nNone = \\ none _node . none\nNode = \\ here left right . \\ _none node . node here left right\n```\n\nFor example,\n\n```python\nTreeNode(1, TreeNode(2, TreeNode(4), None), TreeNode(3, TreeNode(5, None, None), TreeNode(6, None, None)))\n```\n```haskell\nNode 1\n     (Node 2\n           (Node 4 None None)\n           None\n     )\n     (Node 3\n           (Node 5 None None)\n           (Node 6 None None)\n     )\n```\n```javascript\nnew TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3, new TreeNode(5, null, null), new TreeNode(6, null, null)))\n```\n```lambdacalc\nNode 1\n     (Node 2\n           (Node 4 None None)\n           None\n     )\n     (Node 3\n           (Node 5 None None)\n           (Node 6 None None)\n     )\n\nshown in testing as\n\n[ 1, [ 2, [ 4, [], [] ], [] ], [ 3, [ 5, [], [] ], [ 6, [], [] ] ]\n```\n\nrepresents the tree below. \n\n~~~if:python,\nTrailing `None`s can be omitted, as in `TreeNode(4)`.\n~~~\n~~~if:javascript,\nTrailing `null`s can be omitted, as in `new TreeNode(4)`.\n~~~\n\n```   \n          1\n         / \\\n        2   3\n       /   / \\\n      4   5   6\n```\n\n### Traversals\n\nA tree can be traversed in various ways. The **in-order traversal** visits the left child of each node, then the node itself, then its right child. For example, the in-order traversal of the tree above is `4 2 1 5 3 6`.\n\nDifferent trees can have the same in-order traversal. For example, the in-order traversal of the tree below is also `4 2 1 5 3 6`.\n\n```   \n          3\n         / \\\n        1   6\n       / \\  \n      2   5  \n     /\n    4\n ```\n \nThe **post-order traversal** visits the left child first, then the right child, then the node itself. For example, the post-order traversal of the first tree is `4 2 5 6 3 1`, while the post-order traversal of the second tree is `4 2 5 1 6 3`. Different trees can have the same post-order traversal.\n\nAlthough neither the in-order traversal nor the post-order traversal identify the tree, the combination of the two does.\n\n### Task\n\nReconstruct a tree from its in-order and post-order traversals. \n\nInput: Two lists of integers, the first containing the in-order traversal and the second the post-order traversal of a particular tree. Each list will have no duplicate values, so each node is identifiable.\n\n~~~if:python,\nOutput: Return the tree whose in-order and post-order traversals match the given values. Subtrees that are `None` can be omitted or included.\n~~~\n~~~if:haskell,lambdacalc,\nOutput: Return the tree whose in-order and post-order traversals match the given values.\n~~~\n~~~if:javascript,\nOutput: Return the tree whose in-order and post-order traversals match the given values. Subtrees that are `null` can be omitted or included.\n~~~\n\n### Examples\n\n```python\nbuild_tree([4, 2, 1, 5, 3, 6], [4, 2, 5, 6, 3, 1])\n# should return TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6))) or an equivalent representation of the first tree above.\n\nbuild_tree([4, 2, 1, 5, 3, 6], [4, 2, 5, 1, 6, 3])\n# should return TreeNode(3, TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(5)), TreeNode(6)), the second tree above.\n```\n```haskell\n>>> buildTree [4,2,1,5,3,6] [4,2,5,6,3,1]\nNode 1 (Node 2 (Node 4 None None) None) (Node 3 (Node 5 None None) (Node 6 None None))\n-- ^ equal to the first tree above\n>>> buildTree [4,2,1,5,3,6] [4,2,5,1,6,3]\nNode 3 (Node 1 (Node 2 (Node 4 None None) None) (Node 5 None None)) (Node 6 None None)\n-- ^ equal to the second tree above\n```\n```javascript\nbuildTree([4, 2, 1, 5, 3, 6], [4, 2, 5, 6, 3, 1])\n// should return new TreeNode(1, new TreeNode(2, new TreeNode(4)), new TreeNode(3, new TreeNode(5), new TreeNode(6))) or an equivalent representation of the first tree above.\n\nbuildTree([4, 2, 1, 5, 3, 6], [4, 2, 5, 1, 6, 3])\n// should return new TreeNode(3, new TreeNode(1, new TreeNode(2, new TreeNode(4)), new TreeNode(5)), new TreeNode(6)), the second tree above.\n```\n```lambdacalc\nbuild-tree [4,2,1,5,3,6] [4,2,5,6,3,1]\n# should return\nNode 1 (Node 2 (Node 4 None None) None) (Node 3 (Node 5 None None) (Node 6 None None))\n# equal the first tree above\n\nbuild-tree [4,2,1,5,3,6] [4,2,5,1,6,3]\n# should return\nNode 3 (Node 1 (Node 2 (Node 4 None None) None) (Node 5 None None)) (Node 6 None None)\n# equal to the second tree above\n```\n\n### Random Tests\n\nThere are 2 types of random tests:\n\n1. 100 random trees containing from 0 to 15 nodes.\n2. Five random trees of 150,000 nodes.\n\n~~~if:lambdacalc\n( In Lambda Calculus, only the first type will be tested. )\n\n### Encodings\npurity: `LetRec`  \nnumEncoding: `BinaryScott`  \n\nexport constructors `nil, cons` for your `List` encoding\n~~~\n\n### Related:\n\nThere is also a **pre-order traversal**: Visit the node before visiting its left child and then its right child. To reconstruct a tree from its in-order and pre-order traversals, see [Tree Reconstruction](https://www.codewars.com/kata/52f56c2be248dfbdc6000f87). \n\nSomething to think about: Can a tree be reconstructed from its pre-order and post-order traversals?\n\nOther kata related to binary tree traversals include [Perfect Binary Tree Traversal: BFS to DFS](https://www.codewars.com/kata/64ebbfc4f1294ff0504352be), [Binary Tree Traversal](https://www.codewars.com/kata/5268956c10342831a8000135), and [Binary Tree Serpentine Traversal](https://www.codewars.com/kata/5268988a1034287628000156).",
+  "totalAttempts": 472,
+  "totalCompleted": 151,
+  "totalStars": 38,
+  "voteScore": 47,
+  "tags": [
+    "Trees",
+    "Recursion",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "659ebf22758e07125543b494",
+  "name": "Factoradic Number System",
+  "slug": "factoradic-number-system",
+  "category": "algorithms",
+  "publishedAt": "2024-01-10T16:01:36.699Z",
+  "approvedAt": "2024-11-01T10:46:22.307Z",
+  "languages": [
+    "python",
+    "lua",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/659ebf22758e07125543b494",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-01-10T16:00:34.945Z",
+  "createdBy": {
+    "username": "SmallWolfxDDD",
+    "url": "https://www.codewars.com/users/SmallWolfxDDD"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Background\n\nFactoradic, is a mixed radix numeral system adapted to numbering permutations. It is also called factorial base, although factorials do not function as base, but as place value of digits. By converting a number less than n! to factorial representation, one obtains a sequence of n digits that can be converted to a permutation of n elements in a straightforward way\n\nThe factorial number system is a mixed radix numeral system: the i-th digit from the right has base i, which means that the digit must be strictly less than i, and that (taking into account the bases of the less significant digits) its value is to be multiplied by (i − 1)! (its place value).\n\n```\nRadix/Base                8     7    6    5    4    3    2    1\n\nPlace value               7!    6!   5!   4!   3!   2!   1!   0!\n\nPlace value in decimal    5040  720  120  24   6    2    1    1\n\nHighest digit allowed     7     6    5    4    3    2    1    0\n```\n\nUnlike single radix systems whose place values are base<sup>n</sup> for both positive and negative integral n, the factorial number base cannot be extended to negative place values as these would be (−1)!, (−2)! and so on, and these values are undefined.\n\nOne possible extension is therefore to use 1/0!, 1/1!, 1/2!, 1/3!, ..., 1/n! etc. instead, possibly omitting the 1/0! and 1/1! places which are always zero.\n\nFor example:\n```\n1200(fac) --> 1*3! + 2*2! + 0*1! + 0*0! --> 10(dec)\n0.01(fac) --> 0*0! + 0/1! + 1/2! --> 0.5(dec)\n10.00104(fac) --> 1*1! + 0*0! + 0/1! + 0/2! + 1/3! + 0/4! + 4/5! --> 1.2(dec)\n```\nRead more about on [Wiki](https://en.m.wikipedia.org/wiki/Factorial_number_system).\n\n# Task\n\nwrite a function `factoradic(n)` that changes the input `n` (as a fraction, detail at the last of the description) to the fratoradic system. The output must be a string that each term saves each digit of the output  and use `:` to separate. If the output is a float, `\"0:.:0:0\"` should be written as `\"0.0:1\"`\n\n# Example\n\n```python\nfactoradic(0/1) --> \"0\"\nfactoradic(2/1) --> \"1:0:0\"\nfactoradic(11/1) --> \"1:2:1:0\"\nfactoradic(1/2) --> \"0.0:1\"\nfactoradic(10/11) --> \"0.0:1:2:1:4:0:3:6:4:9:1\"\nfactoradic(100/11) --> \"1:1:1:0.0:0:0:2:0:5:3:1:4:0:10\"\n```\n```lua\nfactoradic(0, 1) --> \"0\"\nfactoradic(2, 1) --> \"1:0:0\"\nfactoradic(11, 1) --> \"1:2:1:0\"\nfactoradic(1, 2) --> \"0.0:1\"\nfactoradic(10, 11) --> \"0.0:1:2:1:4:0:3:6:4:9:1\"\nfactoradic(100, 11) --> \"1:1:1:0.0:0:0:2:0:5:3:1:4:0:10\"\n```\n```csharp\nfactoradic(0, 1) --> \"0\"\nfactoradic(2, 1) --> \"1:0:0\"\nfactoradic(11, 1) --> \"1:2:1:0\"\nfactoradic(1, 2) --> \"0.0:1\"\nfactoradic(10, 11) --> \"0.0:1:2:1:4:0:3:6:4:9:1\"\nfactoradic(100, 11) --> \"1:1:1:0.0:0:0:2:0:5:3:1:4:0:10\"\n```\n\n# Note\n\nInput `n` always a fraction use the lib `fractions` (python)\n\nIf it is other languages, Input `n1`(Numerator) and `n2`(Denominator)\n\nAll term must be integer even its 10 or more than 10. i.e. `A -> 10` `B -> 11`\n\n`0 <= n <= 5e4`",
+  "totalAttempts": 330,
+  "totalCompleted": 44,
+  "totalStars": 9,
+  "voteScore": 32,
+  "tags": [
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

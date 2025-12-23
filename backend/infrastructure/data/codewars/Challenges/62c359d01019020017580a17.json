@@ -1,0 +1,43 @@
+{
+  "id": "62c359d01019020017580a17",
+  "name": "Count Obeying Bitmasks In The Range",
+  "slug": "count-obeying-bitmasks-in-the-range",
+  "category": "algorithms",
+  "publishedAt": "2022-07-04T21:49:23.650Z",
+  "approvedAt": "2023-11-18T20:41:43.634Z",
+  "languages": [
+    "javascript",
+    "python",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/62c359d01019020017580a17",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-07-04T21:21:20.921Z",
+  "createdBy": {
+    "username": "Jomopipi",
+    "url": "https://www.codewars.com/users/Jomopipi"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "We say that integer a __obeys__ integer b if in all positions where b has bits set to 1, a has corresponding bits set to 1.\n\nFor example:\n```\n1111101 = 125 obeys\n1101101 = 109, but\n1111000 = 120 does not obey\n1101011 = 107.\n```\n\n# <span style=\"color:cyan\">Task\n\nWrite a function `countObeyingBitmasks` that takes integers `x`, `y`, `z` and returns the number of integers in __the range__ (determined by the inputs, see below) that obey at least one of the inputs.\n\n## <span style=\"color:cyan\">The range determined by the inputs:\n`$ [0, 2^{\\left\\lceil \\log_{2}(\\max(x,y,z)+1) \\right\\rceil} )$`\n\n(from zero up to, but not including, the smallest power of two greater than the inputs)\n\n# <span style=\"color:cyan\">Example\n\nFor integers:\n```\nx = 1001 = 9\ny = 0011 = 3 and\nz = 0110 = 6\n```\nthe function should return 8, since there are 8 integers obeying x, y, or z. Namely:\n```\n0011 = 3,\n0110 = 6,\n0111 = 7,\n1001 = 9,\n1011 = 11\n1101 = 13,\n1110 = 14,\n1111 = 15\n```\n\n# <span style=\"color:cyan\"> Note\n\nThe inputs can be big (up to a billion), so make your solution efficient.",
+  "totalAttempts": 318,
+  "totalCompleted": 50,
+  "totalStars": 6,
+  "voteScore": 39,
+  "tags": [
+    "Mathematics",
+    "Binary",
+    "Bits"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

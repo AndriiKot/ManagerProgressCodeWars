@@ -1,0 +1,39 @@
+{
+  "id": "54e0816286522e95990007de",
+  "name": "Context manager decorator",
+  "slug": "context-manager-decorator",
+  "category": "reference",
+  "publishedAt": "2015-02-15T11:31:09.187Z",
+  "approvedAt": "2019-08-25T20:14:08.226Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/54e0816286522e95990007de",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2015-02-15T11:22:11.341Z",
+  "createdBy": {
+    "username": "Dundee",
+    "url": "https://www.codewars.com/users/Dundee"
+  },
+  "approvedBy": {
+    "username": "Hippunky",
+    "url": "https://www.codewars.com/users/Hippunky"
+  },
+  "description": "Your task in this kata is to implement simple version of <a href=\"https://docs.python.org/2/library/contextlib.html\">contextlib.contextmanager</a>.\n\nThe decorator will be used on a generator functions and use the part of function before yield as context manager's \"enter section\" and the part after the yield as \"exit section\". \n\nIf exception occurs inside the context of the with statement, the exception should be passed to the generator via its throw method.\n\nExamples:\n\n```python\n@contextmanager\ndef file_opened(file):\n    fp = open(file)\n    try:\n        yield fp\n    finally:\n        fp.close()\n\nwith file_opened('a.txt') as fp:\n    print fp.readline()\n    \n@contextmanager\ndef transaction(connection):\n    connection.begin()\n    try:\n        yield\n    except:\n        connection.rollback()\n        raise\n    else:\n        connection.commit()\n\nwith transaction():\n    # ...\n    raise Exception()\n```\n\n_Note: contextlib as been forbidden, write your own..._",
+  "totalAttempts": 414,
+  "totalCompleted": 136,
+  "totalStars": 34,
+  "voteScore": 42,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 2
+  }
+}

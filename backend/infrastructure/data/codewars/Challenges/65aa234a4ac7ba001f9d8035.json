@@ -1,0 +1,35 @@
+{
+  "id": "65aa234a4ac7ba001f9d8035",
+  "name": "Air Traffic Controller",
+  "slug": "air-traffic-controller",
+  "category": "algorithms",
+  "publishedAt": "2024-01-19T07:28:00.177Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/65aa234a4ac7ba001f9d8035",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-01-19T07:22:50.547Z",
+  "createdBy": {
+    "username": "ReefSalter",
+    "url": "https://www.codewars.com/users/ReefSalter"
+  },
+  "description": "## Air Traffic Controller\n\n### Objective\n\nYou are in charge of managing the air traffic for a bustling regional airport. Your task is to develop a programme that efficiently coordinates the landing and takeoff of aeroplanes, ensuring safety and optimal airport operation.\n\n### Task\n\nWrite a Python function `manage_air_traffic` that takes a list of aeroplanes as input and returns the sequence in which they should land or take off. Each aeroplane is represented as a dictionary containing the following details:\n\n- `id`: A unique identifier for the aeroplane (a string).\n- `fuel`: The remaining fuel in the aeroplane, measured in minutes (an integer).\n- `type`: The operation type - either 'landing' or 'takeoff' (a string).\n\nYour function should prioritise aeroplanes for landing and takeoff based on these criteria:\n\n1. Aeroplanes with less fuel are to be prioritised for landing over those with more fuel.\n2. Takeoffs are generally prioritised after landings, unless an aeroplane has only 5 minutes or less of fuel remaining.\n3. In cases where aeroplanes have the same fuel level, they should be prioritised based on the order they appear in the input list.\n\n### Function Signature\n\n```python\ndef manage_air_traffic(planes):\n    pass\n```\n\n### Input\n\nA list of dictionaries, with each dictionary representing an aeroplane with an `id`, `fuel`, and `type`.\n\n### Output\n\nA list of aeroplane `id`s in the order in which they should be scheduled for landing or takeoff.\n\n### Example\n\n**Input:**\n\n```python\nplanes = [\n    {\"id\": \"Plane1\", \"fuel\": 10, \"type\": \"landing\"},\n    {\"id\": \"Plane2\", \"fuel\": 3, \"type\": \"landing\"},\n    {\"id\": \"Plane3\", \"fuel\": 15, \"type\": \"takeoff\"},\n    {\"id\": \"Plane4\", \"fuel\": 5, \"type\": \"landing\"}\n]\n```\n\n**Output:**\n\n```python\n[\"Plane2\", \"Plane4\", \"Plane1\", \"Plane3\"]\n```\n\n**Explanation:** 'Plane2' has the least fuel and is ready for landing, so it goes first. 'Plane4' has exactly 5 minutes of fuel and is next in line for landing. 'Plane1' follows as the next aircraft to land. 'Plane3', although ready for takeoff, is queued last as takeoff is of lower priority compared to landing.\n\nThis challenge will test your ability to manipulate lists and dictionaries, and to apply sorting algorithms and custom logic to solve real-world problems efficiently.",
+  "totalAttempts": 12,
+  "totalCompleted": 5,
+  "totalStars": 0,
+  "voteScore": 0,
+  "tags": [
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "64ba6ec98e1e95222690ecf7",
+  "name": "Defining numbers",
+  "slug": "defining-numbers",
+  "category": "algorithms",
+  "publishedAt": "2023-07-21T12:14:12.103Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64ba6ec98e1e95222690ecf7",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-07-21T11:40:57.629Z",
+  "createdBy": {
+    "username": "goldenratio161",
+    "url": "https://www.codewars.com/users/goldenratio161"
+  },
+  "description": "```{}``` is the empty set. Since there's nothing in it, we'll define it as ```0```\n\nAnd this is how you define ```1```.\n\n```\n{{}}\n```\n\nWhy, you may ask. Well, since ```{}``` is ```0```, ```{{}}``` would be the set containing zero, so define it as ```1```.\n\n\\\n\\\n\\\nHow about ```2```? Well, ```2``` could be written as \n\n```\n{0, 1}\n```\n\nWe already defined ```0``` and ```1```, hence ```2``` could be written as\n\n```\n{{}, {{}}}\n```\n\n\\\n\\\n\\\nHow about ```3```? That would be\n\n```\n{0, 1, 2}\n```\nSince we defined ```0, 1, 2``` already, ```3``` would be\n\n```\n{{}, {{}}, {{},{{}}}}\n  ^    ^       ^\n  0    1       2\n```\n\nHow about ```4```? Well, I think you're getting the pattern now.\n\n```\n{0, 1, 2, 3}\n```\n\nWe already defined ```0, 1, 2 and 3```, so ```4``` would be\n\n```\n{{}, {{}}, {{},{{}}}, {{},{{}},{{},{{}}}}}\n  ^    ^       ^               ^\n  0    1       2               3\n```\n\nAnd the pattern goes on ... to infinity.\n\n```\n0 : {}\n1 : {{}}\n2 : {{}, {{}}}\n3 : {{}, {{}}, {{},{{}}}}\n4 : {{}, {{}}, {{},{{}}}, {{},{{}},{{},{{}}}}}\n5 : {{}, {{}}, {{},{{}}}, {{},{{}},{{},{{}}}}, {{},{{}},{{},{{}}},{{},{{}},{{},{{}}}}}}\n...\n```\n\nGiven a function ```define_set(num)```, return ```num```* defined with the above method.\nA little ironic, but even though I used sets to explain the process, I couldn't find a way to make it work using sets, so I had to change to using lists. Still, we use the same process.\n\n```\n0 : []\n1 : [[]]\n2 : [[], [[]]]\n3 : [[], [[]], [[],[[]]]]\n\nand so on\n```\n\n*num will not exceed 23\n\nHint: Memoization",
+  "totalAttempts": 5,
+  "totalCompleted": 6,
+  "totalStars": 0,
+  "voteScore": -4,
+  "tags": [
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

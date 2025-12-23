@@ -1,0 +1,43 @@
+{
+  "id": "6394d7573c47cb003d3253ec",
+  "name": "Swimming Race",
+  "slug": "swimming-race",
+  "category": "games",
+  "publishedAt": "2022-12-11T14:26:29.910Z",
+  "approvedAt": "2024-02-07T12:37:43.753Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6394d7573c47cb003d3253ec",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-10T19:00:39.472Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "lachesism",
+    "url": "https://www.codewars.com/users/lachesism"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\nYou're watching a swimming race and like to draw the current situation in the race. You are given the <i>indices </i> of each of the contestants, and the <i>length</i> of each lane. There are as much lanes as there are indices provided.\n\n#### Input\n\n- indices: an array containing integers (positive, negative and/or 0); each index represents the progress of the corresponding contestant.\n  - <code>0</code>: there is no contestant, so the lane is empty\n  - <code>positive</code>: the progress a contestant has made so far, counting from the start\n  - <code>negative</code>: the progress a contestant has made, counting back from the finish\n- length: the length of each lane in the pool.\n\n#### Output\n\n- return a string displaying the swimming race; each lane is separated with a new line <code>'\\n'</code>. Make sure to use the correct amount of leading and trailing white space for each lane. All lanes need to be of identical length.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Race</summary>\n\n- for each lane that has a contestant, that contestant performs the actions below; note that actions marked with <code>[p]</code> are only accessible by positive indices, and those marked by <code>[n]</code> only by negative indices. Other actions are accessible by all integers, except zero:\n  - [p] go on the mark (always on right side of the pool)\n  - [p] get set\n  - [p] jump into the water\n  - [p] swim a couple of strokes under water\n  - [p] surface from the water\n  - repeat:\n    - swim across\n    - turn\n    - swim back\n  - [n] finish (always on right side of the pool)\n  - [n] get out of the pool\n- for each lane that has a contestant, there are two officials watching over the contestant: <code>p</code> on the left side, <code>q</code> on the right side; their job is to watch over how the contestants make their turn, and the one on the right also verifies the finish.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Puzzle Goals</summary>\n\n##### Since this is a puzzle, I can't give away too much. Example tests are your best friend.\n\n- figure out the starting position of positive and negative indices \n- figure out the different actions and how to draw these (go to mark, get set, jump, swim underwater, surface, swim, approach turn, turn, push away, finish, celebrate, leave pool, walk away, other?)\n- figure out the positions of the officials, depending on position of the swimmer, and maybe other events?\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Input Constraints</summary>\n\n- 100 random tests with 2 <= lane count <= 2 and 10 <= lane length <= 20\n- 100 random tests with 4 <= lane count <= 4 and 10 <= lane length <= 20\n- 100 random tests with 8 <= lane count <= 8 and 10 <= lane length <= 20\n- 100 random tests with 1 <= lane count <= 8 and 10 <= lane length <= 20\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n\n##### It's a puzzle, hit that 'Train' button.\n\nOne example can be spoiled here:\n\n```\nindices: [0, 0, 0, 0]\nlength: 10\nreturn:\n\n   ../~~~~~~~~~~//.. /1\n  ../~~~~~~~~~~//.. /2 \n ../~~~~~~~~~~//.. /3  \n../~~~~~~~~~~//.. /4   \n\n```\n\nOkay, just to give you an idea about what to expect:\n\n```\nrace just started\n\n       p./~~~~~~~~~~~~~~~~~~~<//q. /1\n      p./~~~~~~~~~~~~~~~~~~~<//q. /2 \n     p./~~~~~~~~~~~~~~~~~~~<//q. /3  \n    p./~~~~~~~~~~~~~~~~~~~~x/q. /4   \n   p./~~~~~~~~~~~~~~~~~~~~x/q. /5    \n  p./~~~~~~~~~~~~~~~~~~~<//q. /6     \n p./~~~~~~~~~~~~~~~~~~--//.q /7      \np./~~~~~~~~~~~~~~~~~<<o//q. /8       \n\nall contestants have already swum one length and are now on the way back\n\n       p./~~~~~~~-x~~~~~~//.q /1\n      p./~~~~~~~~~-x~~~~//.q /2 \n     p./~~~~~~~~~~~-x~~//.q /3  \n    p./~~~~~~~~-x~~~~~//.q /4   \n   p./~~~~~~~~~~~-x~~//.q /5    \n  p./~~~~~~~~~~~-x~~//.q /6     \n p./~~~~~~~~~~~-x~~//.q /7      \np./~~~~~~~-x~~~~~~//.q /8  \n```\n\n</details>\n\n",
+  "totalAttempts": 283,
+  "totalCompleted": 25,
+  "totalStars": 16,
+  "voteScore": 21,
+  "tags": [
+    "Puzzles",
+    "ASCII Art",
+    "Strings",
+    "Logic"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

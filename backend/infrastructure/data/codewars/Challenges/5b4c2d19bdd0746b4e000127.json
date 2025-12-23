@@ -1,0 +1,37 @@
+{
+  "id": "5b4c2d19bdd0746b4e000127",
+  "name": "Triangular Peg Solitaire Solver",
+  "slug": "triangular-peg-solitaire-solver",
+  "category": "games",
+  "publishedAt": "2018-07-16T07:02:00.675Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5b4c2d19bdd0746b4e000127",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2018-07-16T05:28:57.099Z",
+  "createdBy": {
+    "username": "ggorlen",
+    "url": "https://www.codewars.com/users/ggorlen"
+  },
+  "description": "# Peg solitaire overview\n\nPeg solitaire (https://en.wikipedia.org/wiki/Peg_solitaire) is a single-player puzzle game dating from 1687. The objective of the game is to remove all but one peg from the board making legal moves.\n\nA legal move consists of \"jumping\" one peg over one of its neighboring pegs into an empty cell immediately beyond the neighbor. The jumped neighbor is then removed from the board.\n\nIn this variation of peg solitaire, the board is an equilateral triangle with side length 5 and with 15 holes. The board starts with one random hole initially empty and the rest occupied by pegs.\n\n# Example game\n\nHere is an example of a board being solved. The character \"o\" denotes an empty hole and an \"x\" is a hole occupied by a peg.\n\n```\n     x\n    x x\n   x o x\n  x x x x\n x x x x x\n\n     x\n    x x\n   x x x\n  x o x x\n x o x x x\n\n     x\n    x x\n   x x x\n  x x o o\n x o x x x\n\n     x\n    o x\n   x o x\n  x x x o\n x o x x x\n\n     x\n    x x\n   o o x\n  o x x o\n x o x x x\n\n     o\n    o x\n   x o x\n  o x x o\n x o x x x\n\n     o\n    o o\n   x o o\n  o x x x\n x o x x x\n\n     o\n    o o\n   x o x\n  o x x o\n x o x x o\n\n     o\n    o o\n   x o x\n  o x x o\n x x o o o\n\n     o\n    o o\n   o o x\n  o o x o\n x x x o o\n\n     o\n    o o\n   o o x\n  o o x o\n x o o x o\n\n     o\n    o o\n   o o o\n  o o o o\n x o x x o\n\n     o\n    o o\n   o o o\n  o o o o\n x x o o o\n\n     o\n    o o\n   o o o\n  o o o o\n o o x o o\n ```\n\n# Task description\n \nYour task is to write a `solve(pegs)` function which returns an array of all possible solution states in any order given an initial board configuration. \n\nAll test input will be solvable triangles of side length 5 with one random hole empty. The argument to your `solve(pegs)` function will be a jagged 2-dimensional array of 5 rows. Each row in the argument array has size equal to its index + 1. Each element in a row is a single character, either `\"x\"` or `\"o\"` representing a hole with peg or empty hole, respectively.\n\nExample input:\n\n```\n[\n  [\"o\"],\n  [\"x\", \"x\"],\n  [\"x\", \"x\", \"x\"],\n  [\"x\", \"x\", \"x\", \"x\"],\n  [\"x\", \"x\", \"x\", \"x\", \"x\"]\n]\n```\n\nValid output for the above example board:\n```\n[\n  [\n    [\"o\"], \n    [\"o\", \"o\"], \n    [\"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"x\", \"o\", \"o\"]\n  ],\n  [\n    [\"x\"], \n    [\"o\", \"o\"], \n    [\"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"o\", \"o\", \"o\"]\n  ],\n  [\n    [\"o\"], \n    [\"o\", \"o\"], \n    [\"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"o\", \"x\"], \n    [\"o\", \"o\", \"o\", \"o\", \"o\"]\n  ],\n  [\n    [\"o\"], \n    [\"o\", \"o\"], \n    [\"o\", \"o\", \"o\"], \n    [\"x\", \"o\", \"o\", \"o\"], \n    [\"o\", \"o\", \"o\", \"o\", \"o\"]\n  ]\n]\n```",
+  "totalAttempts": 41,
+  "totalCompleted": 5,
+  "totalStars": 0,
+  "voteScore": 7,
+  "tags": [
+    "Puzzles",
+    "Games",
+    "Game Solvers"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

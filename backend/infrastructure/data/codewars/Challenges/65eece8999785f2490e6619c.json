@@ -1,0 +1,39 @@
+{
+  "id": "65eece8999785f2490e6619c",
+  "name": "Find The Longest Concatenation",
+  "slug": "find-the-longest-concatenation",
+  "category": "reference",
+  "publishedAt": "2024-03-11T10:03:44.263Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/65eece8999785f2490e6619c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-03-11T09:27:37.282Z",
+  "createdBy": {
+    "username": "anusha.j",
+    "url": "https://www.codewars.com/users/anusha.j"
+  },
+  "description": "## Task\n\nWrite a function **longest_concatenated_word**, which does the following:\n\nGiven a tuple of words, determine what word (if any) can be formed by a concatenation of two or more words of the same tuple (should be case sensitive).\n\nThen, return the longest such word. If no such word exists, return \"No word found\".\n\n<hr>\n\n## Examples\n\n```python\nwords = (\"hello\",\"world\",\"helloworld\",\"wow\")\nlongest_concatenated_word(words) # returns \"helloworld\"\n```\n\nIn the above example, \"helloworld\" was a combination of two words (\"hello\" and \"world\"). \n\n```python\nwords = (\"hello\",\"world\",\"helloworlds\",\"wow\")\nlongest_concatenated_word(words) # returns \"No word found\"\n```\n\nIn the above example, no word existed in the list which was a combination of two or more words. \n\n```python\nwords = ('cat','cats','catsdogcats','dog','dogcatsdog','hippopotamuses','rat','ratcatdogcat')\nlongest_concatenated_word(words) # returns \"ratcatdogcat\"\n```\nIn the above example, \"ratcatdogcat\" was the *longest* string which could be formed by the words in the tuple (\"cat\", \"dog\", \"rat\"). Note how the same word CAN be used twice.\n\nSimilarly,\n\n```python\nwords = ('cat','dogs','catcat','catdogs','dogsdogs')\nlongest_concatenated_word(words) # returns \"dogsdogs\"\n```\n\nAbove, \"dogsdogs\" was the longest string that could be formed by the combination of two or more words (\"dogs\").\n\n```python\nwords = ('cold','hot','coldhot','hotcold')\nlongest_concatenated_word(words) # returns \"coldhot\"\n```\n\nAbove, \"coldhot\" and \"hotcold\" were both the longest strings; however, \"coldhot\" comes first in the tuple, so the result is \"coldhot\"\n\n**See example tests for more examples**.\n\n<hr>\n\nTo summarize, \n\n- Return the longest word of the tuple which can be formed by combination of two or more words of the tuple.\n\n- If no such word exists, return \"No word found\"\n\n- Your \"search\" should be case-sensitive, that is, \"helloworld\" does not equal \"Helloworld\".\n\n- The same word can be used twice to make the bigger word.\n\n- If multiple such words exist, return the word that comes first in the provided tuple\n\n## Good luck!\n",
+  "totalAttempts": 51,
+  "totalCompleted": 9,
+  "totalStars": 0,
+  "voteScore": 0,
+  "tags": [
+    "Strings",
+    "Arrays",
+    "Algorithms",
+    "Memoization",
+    "Recursion"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

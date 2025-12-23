@@ -1,0 +1,41 @@
+{
+  "id": "64b63c024979c9001f9307e4",
+  "name": "Typing series #2 --> the [shift] function",
+  "slug": "typing-series-number-2-the-shift-function",
+  "category": "algorithms",
+  "publishedAt": "2023-07-18T11:39:14.578Z",
+  "approvedAt": "2024-01-04T13:57:19.586Z",
+  "languages": [
+    "python",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/64b63c024979c9001f9307e4",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-18T07:15:14.703Z",
+  "createdBy": {
+    "username": "goldenratio161",
+    "url": "https://www.codewars.com/users/goldenratio161"
+  },
+  "approvedBy": {
+    "username": "lechevalier",
+    "url": "https://www.codewars.com/users/lechevalier"
+  },
+  "description": "Been a while, but here's part 2!\n\nYou are given a ```string``` of lowercase letters and spaces that you need to type out. In the string there is a special function: ```[shift]```.  Once you encounter a ```[shift]``` , you ```capitalise``` the character right after it, as if you're actually holding the key. Return the final ```string``` .\n\n\\\n\\\ne.g. ```[shift]john [shift]green``` return ```John Green``` (capitalise the ```j``` and ```g```)\n\nWalkthrough:\n\n```[shift]```\\\nJ ```capitalise``` the ```j```\\\nJo\\\nJoh\\\nJohn\\\nJohn[space]\\\nJohn G ```capitalise``` the ```g```\\\nJohn Gr\\\nJohn Gre\\\nJohn Gree\\\nJohn Green\n\n```John Green```\n\n\\\n\\\ne.g. ```[shift]n[shift]o[shift]o[shift]o``` return ```NOOO``` (capitalise all the letters)\n\nWalkthrough:\n\n```[shift]```\\\nN ```capitalise``` the ```n```\\\nNO ```capitalise``` the ```O```\\\nNOO ```capitalise``` the ```O```\\\nNOOO ```capitalise``` the ```O```\n\n```NOOO```\n\n___\nNotice if we want to capitalise a long string of letters, it will look very confusing viually. So, let's add two new functions, ```holdshift``` and ```unshift```. It's self-explanatory.\n\n\\\n\\\nSome examples:\n\n```[holdshift]uppercase[unshift]``` return ```UPPERCASE``` (```holdshift``` all letters)\n\nWalkthrough:\n\n```[holdshift]```\\\nU\\\nUP\\\nUPP\\\n...\n\nUPPERCASE\\\n```[unshift]```\n\n```UPPERCASE```\n\n\\\n\\\n```unshift``` can also apply to normal ```shift```, but since normal ```shift``` only affects the character right after, ```unshift``` would have to be directly after normal ```shift``` for it to affect it.\n\nExample: ```[shift][unshift]dont [shift][unshift]shift``` returns ```dont shift```\n\nWalkthrough:\n\n```[shift][unshift]``` cancels\\\ndont[space]\\\n```[shift][unshift]``` cancels\\\ndont shift\n\n```dont shift```\n\n\\\n\\\nWhew! That was lengthy!\n\nOk, to summerise:\n\n- ```[shift]``` capitalises the character right after it (```[shift]a``` -> ```A```)\n- ```[holdshift]``` capitalises all the characters after it until it reaches ```unshift``` (```[holdshift]one[unshift]two``` -> ```ONEtwo```)\n- ```[unshift]``` releases shift (either ```[shift]``` or ```[holdshift]```)\n- ```[shift][unshift]d``` returns ```d```\n\nOther necessary things you might want to know:\n\n- ```Shifting``` a space is a space\n- After a ```[holdshift]```, there is always an ```unshift```, without any functions in between\n- After ```unshifting```, the next function called will not be an ```unshift``` (you can't release something if you're not pressing it)\n- Things like ```[shift][holdshift]``` or ```[shift][shift]``` or ```[holdshift][shift]```can't occur, but ```[shift][unshift]``` can\n- The string will never start with ```[unshift]``` for obvious reasons\n\nGood luck! More examples in the example tests (The description took me way too long lol)\n\nPlease give this a good rating, I spent a really long time coding this.\n\nThank you!\n\n______\n\nCheck out <a href=\"https://www.codewars.com/collections/65abaddba4b9f2013327dd3d\">the rest of the kata in this series</a>!",
+  "totalAttempts": 758,
+  "totalCompleted": 201,
+  "totalStars": 15,
+  "voteScore": 95,
+  "tags": [
+    "Algorithms",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

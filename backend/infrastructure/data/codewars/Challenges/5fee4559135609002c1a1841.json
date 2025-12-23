@@ -1,0 +1,46 @@
+{
+  "id": "5fee4559135609002c1a1841",
+  "name": "URL shortener",
+  "slug": "url-shortener-1",
+  "category": "algorithms",
+  "publishedAt": "2021-01-01T23:52:23.531Z",
+  "approvedAt": "2021-01-05T15:44:56.455Z",
+  "languages": [
+    "javascript",
+    "java",
+    "python",
+    "rust",
+    "csharp",
+    "dart"
+  ],
+  "url": "https://www.codewars.com/kata/5fee4559135609002c1a1841",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-12-31T21:40:41.225Z",
+  "createdBy": {
+    "username": "zLuki",
+    "url": "https://www.codewars.com/users/zLuki"
+  },
+  "approvedBy": {
+    "username": "Glyxerine",
+    "url": "https://www.codewars.com/users/Glyxerine"
+  },
+  "description": "## Background Information\n\n### When do we use an URL shortener?\nIn your PC life you have probably seen URLs like this before: \n- https://bit.ly/3kiMhkU\n\nIf we want to share a URL we sometimes have the problem that it is way too long, for example this URL:\n- https://www.google.com/search?q=codewars&tbm=isch&ved=2ahUKEwjGuLOJjvjsAhXNkKQKHdYdDhUQ2-cCegQIABAA&oq=codewars&gs_lcp=CgNpbWcQAzICCAAyBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBAgAEB4yBggAEAUQHlDADlibD2CjEGgAcAB4AIABXIgBuAGSAQEymAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=RJmqX8aGHM2hkgXWu7ioAQ&bih=1099&biw=1920#imgrc=Cq0ZYnAGP79ddM\n\nIn such cases a URL shortener is very useful.\n\n### How does it work?\n\nThe URL shortener is given a long URL, which is then converted into a shorter one. Both URLs are stored in a database. It is important that each long URL is assigned a unique short URL.\n\nIf a user then calls up the short URL, the database is checked to see which long URL belongs to this short URL and you are redirected to the original/long URL.\n\n**Important Note:** Some URLs such as `www.google.com` are used very often. It can happen that two users want to shorten the same URL, so you have to check if this URL has been shortened before to save memory in your database.\n\n## Task\n```if:javascript\nWrite a class with two methods, ```shorten``` and ```redirect```\n```\n\n### URL Shortener\n```if:javascript,python\nWrite a method ```shorten```, which receives a long URL and returns a short URL starting with `short.ly/`, consisting only of `lowercase letters` (and one dot and one slash) and max length of `13`.\n```\n```if:java\nWrite a function ```urlShortener(longUrl)```, which receives a long URL and returns a short URL starting with `short.ly/`, consisting only of `lowercase letters` (and one dot and one slash) and max length of `13`.\n```\n```if:rust\nComplete the function `shorten()`, which receives a long URL and returns a short URL starting with `short.ly/`, consisting only of `lowercase letters` (and one dot and one slash) and max length of `13`.\n```\n\n**Note:** `short.ly/` is not a valid short URL.\n\n### Redirect URL\n```if:javascript,python\nWrite a method ```redirect```, which receives the shortened URL and returns the corresponding long URL.\n```\n```if:java\nWrite a function ```urlRedirector(shortUrl)```, which receives the shortened URL and returns the corresponding long URL.\n```\n```if:rust\nComplete the function `redirect()`, which receives the shortened URL and returns the corresponding long URL.\n```\n\n## Performance\n\nThere are `475_000` random tests.\nYou don't need a complicated algorithm to solve this kata, but iterating each time through the whole database to check if a URL was used before or generating short URLs based on randomness, won't pass.\n\n**GOOD LUCK AND HAVE FUN!**",
+  "totalAttempts": 19767,
+  "totalCompleted": 894,
+  "totalStars": 228,
+  "voteScore": 169,
+  "tags": [
+    "Databases",
+    "Algorithms",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

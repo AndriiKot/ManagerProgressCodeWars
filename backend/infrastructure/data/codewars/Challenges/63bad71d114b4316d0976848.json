@@ -1,0 +1,43 @@
+{
+  "id": "63bad71d114b4316d0976848",
+  "name": "[Code Golf] Spinning Wheels",
+  "slug": "code-golf-spinning-wheels",
+  "category": "games",
+  "publishedAt": "2023-01-08T15:53:02.085Z",
+  "approvedAt": "2023-01-21T11:39:05.601Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63bad71d114b4316d0976848",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-08T14:45:49.941Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n  \n##### \"Given a chain of spinning wheels, can you figure out how many rotations in total are needed to get a crate from start to finish?\" Can you also do it with a code length restriction?\"\n\n### Code Golf Requirement\n  \n- the code length must not exceed <code>111</code> characters\n- current champion: <b>uttumuttu</b> (<code>59</code>) based on <b>monadius</b> (<code>63</code>)\n\n### Input\n\n##### chain\n- an array containing positive numbers (BigInt)\n- each number represents the number of teeth of the wheel in the associated position in the chain\n\n### Output\n\n- return a positive number (BigInt) representing the minimum total amount of rotations to get a crate from start to finish while it's moving across the wheels in the chain.\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n  \n### Wheel\n\n- A wheel is a circular component that rotates around its center point.\n- Each wheel has a number of teeth, which is a factor of 4 in order to align teeth in all main wind directions.\n- Each tooth of a wheel can hold a crate.\n- A wheel rotates in one direction. This can be clockwise or counter-clockwise.\n\n```\nExample: wheel with 4 teeth, crate 'C' is on the right tooth\n\n    |\n  - + C\n    |\n\n```\n\n### Chain\n\n- A chain is a group of connected wheels (at least 1 wheel).\n- The first wheel rotates clockwise.\n- Each consecutive wheel rotates in the opposite direction as the previous.\n\n```\nExample: chain: [4, 4, 4], with one tooth of each wheel labeled, to see movement when rotating the chain.\n\n    |     |     3                         |     |     |\n  - + 1 2 + - - + -   -> 1 rotation ->  - + - - + - - + 3\n    |     |     |                         1     2     |\n\n```\n\n### Crate\n\n- A crate is placed on the top tooth of the first wheel.\n- With each rotation, the crate follows the tooth it is onto.\n- The crate gets transferred from one wheel to another when the tooth the crate is on connects with a tooth of the next wheel in the chain.\n- The chain rotations stop when the crate reaches the bottom tooth of the last wheel.\n\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Tutorial</summary>\n  \nThe examples in the tutorial all use wheels with <code>4</code> teeth, because these are the easiest to render visually. See section <b>Test Cases</b> for cases with different sizes of teeth.\n  \n### One wheel\n\n```\nExample: chain: [4] with a crate 'C'.\n\nstart position                    end position\n\n    C                                |    \n  - + -        -> 2 rotations ->   - + - \n    |                                C    \n    \nafter 1 rotation \n\n    |          \n  - + C  \n    |         \n    \nafter 2 rotations\n\n    |        \n  - + - \n    C      \n\n```\n\n### Two wheels\n\n```\nExample: chain: [4, 4] with a crate 'C'.\n\nstart position                    end position\n\n    C     |                         |     |\n  - + - - + -  -> 2 rotations ->  - + - - + -\n    |     |                         |     C\n    \nafter 1 rotation ('C' gets transferred to the next wheel)\n\n    |     |     \n  - + C C + - \n    |     |     \n    \nafter 2 rotations\n\n    |     |    \n  - + - - + - \n    |     C     \n    \n```\n\n### Three wheels\n\n```\nExample: chain: [4, 4, 4] with a crate 'C'.\n\nstart position                         end position\n\n    C     |     |                         |     |     |\n  - + - - + - - + -  -> 6 rotations ->  - + - - + - - + -\n    |     |     |                         |     |     C\n    \nafter 1 rotation ('C' gets transferred to the next wheel)\n\n    |     |     |\n  - + C C + - - + -\n    |     |     |\n    \nafter 2 rotations\n\n    |     |     |\n  - + - - + - - + -\n    |     C     |\n    \nafter 3 rotations ('C' gets transferred to the next wheel)\n\n    |     |     |\n  - + - - + C C + -\n    |     |     |\n\nafter 4 rotations\n\n    |     |     C\n  - + - - + - - + -\n    |     |     |\n    \nafter 5 rotations\n\n    |     |     |\n  - + - - + - - + C\n    |     |     |\n    \nafter 6 rotations\n\n    |     |     |\n  - + - - + - - + -\n    |     |     C\n    \n```\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Test Cases</summary>\n  \n### Sample Tests\n  \n```\nchain             expected rotations\n\n[4, 4]            2\n[4, 8]            3\n[32, 16]          12\n[4, 4, 4]         6\n[4, 8, 4]         8\n[32, 16, 8]       22\n[4, 4, 4, 4]      6\n[4, 8, 4, 8]      9\n\nLast sample test explained:\n\n[4, 8, 4, 8]      9   - start at top of first wheel (4)\n                      - 1 rotation to right\n                      - transfer crate to second wheel (8)\n                      - 4 rotations from left over bottom to right\n                      - transfer crate to third wheel (4)\n                      - 2 rotations from left over top to right\n                      - transfer crate to last wheel (8)\n                      - 2 rotations from left to bottom\n                      - 1 + 4 + 2 + 2 = 9\n\n```\n\n### Random Tests\n\n- 100 random tests with 4 <= max teeth < 16 and 1 <= number of wheels < 8\n- 100 random tests with 4 <= max teeth < 16 and 50 <= number of wheels < 100\n- 100 random tests with 4 <= max teeth < 4000 and 1 <= number of wheels < 100\n- 100 random tests with 4 <= max teeth < 4000000 and 1 <= number of wheels < 100\n- 100 random tests with 4 <= max teeth < 4000000000 and 50 <= number of wheels < 100\n  \n</details>",
+  "totalAttempts": 186,
+  "totalCompleted": 31,
+  "totalStars": 9,
+  "voteScore": 47,
+  "tags": [
+    "Puzzles",
+    "Algorithms",
+    "Arrays",
+    "Mathematics",
+    "Restricted"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

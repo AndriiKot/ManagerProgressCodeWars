@@ -12,7 +12,7 @@ import { getUserProfile, createUserService } from '#services';
 console.log('⚠️ Running in test mode, database: test_database.sqlite');
 
 (async () => {
-  const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS]);
+  const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS, 'Voile']);
   checkUsersLimit(usersToCheck);
 
   const db = bootstrapTestDatabase('test_database.sqlite');

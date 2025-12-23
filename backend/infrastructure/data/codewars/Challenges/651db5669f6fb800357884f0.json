@@ -1,0 +1,35 @@
+{
+  "id": "651db5669f6fb800357884f0",
+  "name": "Worthless Queen",
+  "slug": "worthless-queen",
+  "category": "reference",
+  "publishedAt": "2023-10-05T19:10:09.030Z",
+  "approvedAt": null,
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/651db5669f6fb800357884f0",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-10-04T18:56:38.917Z",
+  "createdBy": {
+    "username": "LosBlobbos",
+    "url": "https://www.codewars.com/users/LosBlobbos"
+  },
+  "description": "# The game\nWorthless Queen can be played with 2 - 5 players. (You will be playing against 1-3 opponents)<br>\nEach player have 4 cards infront of them face down in a row.\nIn the middle of the table is a pile with the rest of the deck, also face down and a pile with discarded cards, face up.\nIn the begining of the game the top card of the deck is drawn and directly discarded so the discarded pile will always have atleast 1 card.\nThe winner is the player with lowest sum of the cards infront of them when all cards have been drawn from the deck.\nIt's played with a normal deck. Ace (A) is worth 1, Queens (Q) is worth 0 (ie. the \"Worthless Queen\"), 2 - 10, J is 11 and K is 13.\n\n## Each turn\nEach player takes turn doing the following steps (You go first, I'm nice like that)\n### draw\nThe current player can either pick up the top card from the discarded pile or draw a random card from the deck.\n### switch\nNow the player can\n- discard the card they picked up, the card is put on the top of the discarded pile and the players turn is over.\n- replace the picked up card with the leftmost card infront of the player. the picked up card will be placed face down in the leftmost place and the leftmost card will be the new card in the players hand. The player then keeps going right through the cards infront of it. players turn ends when the player chooses to discard its card or when all 4 cards have been replaced.\n\n# The Task\nYour object is to implement 2 methods:\n\n### draw\n- Input: String discarded - The top card in the discarded pile.\n- Output: A string: \"draw\" - if you want to draw a random card from the deck or \"discard\" - if you want to pick up the top of the discarded pile.\n\n### switchCard\n- Input: \n  - int tableCardNr - The index of the face down card infront of you that you can currently switch with (1 - leftmost, 4 - rightmost)\n  - String hand - the card currently in your hand.\n- Output: A boolean: true if you want to switch the cards, false if you want to discard the current card in your hand.\n\n### Passing the tests\nYou will be playing full games against a random number of opponents (1-3). (full game = when all cards have been drawn from the deck)<br>\nSince even with a good strategy there is still a good bit of chance in this game so you will not be expected to beat your opponents but instead you need to be lower than or equal to a score dependent on number of opponents you face:\n- 1 opponent: 12\n- 2 opponents: 16\n- 3 opponents: 20\n\nYou will be subjected to 500 random games.\n\n## Example\n```\nEXAMPLE 1\nLets follow Bob. Bob is a gambler and risktaker.\n\nTurn 1:\ndiscard pile --> 6 ? <-- deck pile\nBobs table --> ? ? ? ?  (4 unknown cards)\n\nBeing a gambler Bob decides to draw from the deck\n\ndrawn: 5 (gambling payed off, it's less than 6)\n\ndiscard pile --> 6 ? <-- deck pile\nBobs hand: 5\nBobs table --> ? ? ? ?  (4 unknown cards)\n\nBob decides to do a switch on the first leftmost.\n\nPicked up: 2\n\nBobs hand: 2\nBobs table  --> (5)  ?  ?  ?  (We now know it's a 5 under the first card even if we cant see it)\n\nBob does another switch\n\nPicked up: A  (Damn he is lucky)\n\nBobs hand: A\nBobs table --> (5) (2) ? ?\n\nBob does another switch\n\nPicked up: K\n\nBobs hand: K\nBobs table --> (5) (2) (A) ?\n\nBob (being a bit stupid) does another switch\n\nPicked up: Q \n\nBobs hand: Q\nBobs table --> (5) (2) (A) (K)\n\nAs he now has no more cards to switch with Bob is left with no choice but to discard the Queen (poor Bob)\n\ndiscard pile --> Q ? <-- deck pile\nBobs hand:\nBobs table --> (5) (2) (A) (K)\n\nOverpowered with sadness of loosing the Queen, Bob just does draw and discard the rest of the game.\n\nBobs ending table: 5 2 A K\nScore: 21 (5 + 2 + (A=1) + (K=13))\n\nBetter luck next time Bob\n\nEXAMPLE 2\nNow lets follow Sarah. Sarah is a sharp Codewarrior.\n\nTurn 1:\nOh as chance would have it Sarahs premises is the same as Bobs\n\ndiscard pile --> 6 ? <-- deck pile\nSarahs table --> ? ? ? ?  (4 unknown cards)\n\nSarah thinks 6 is meh! so she also wants a random draw\n\ndrawn: 5\n\ndiscard pile --> 6 ? <-- deck pile\nSarahs hand: 5\nSarahs table --> ? ? ? ?  (4 unknown cards)\n\nSarah decides to do a switch on the first leftmost.\n\nPicked up: 2\n\nSarahs hand: 2\nSarahs table  --> (5)  ?  ?  ? \n\nSarah does another switch\n\nPicked up: A\n\nSarahs hand: A\nSarahs table --> (5) (2) ? ?\n\nSarah does another switch\n\nPicked up: K\n\nSarahs hand: K\nSarahs table --> (5) (2) (A) ?\n\nSarah decides to discard the King\n\ndiscard pile --> K ? <-- deck pile\nSarahs hand:\nSarahs table --> (5) (2) (A) ?\n\nThe other players do their moves\n\nTurn 2:\n\ndiscard pile --> 3 ? <-- deck pile\nSarahs table --> (5) (2) (A) ?  (4 unknown cards)\n\nSarah decides to get the discarded card\n\nSarahs hand: 3\nSarahs table --> (5) (2) (A) ?\n\nSarah switches the first card\n\nSarahs hand: 5\nSarahs table --> (3) (2) (A) ?\n\nSarah does another switch\n\nSarahs hand: 2\nSarahs table --> (3) (5) (A) ?\n\nSarah does another switch\n\nSarahs hand: A\nSarahs table --> (3) (5) (2) ?\n\nSarah does another switch\n\nSarahs hand: 2\nSarahs table --> (3) (5) (A) ?\n\nSarah does another switch\n\nSarahs hand: Q\nSarahs table --> (3) (5) (A) (2)\n\nOh she also have to discard a Queen, but atleast it was with a 2\n\nThe other players do their moves\n\nTurn 3:\n\ndiscard pile --> J ? <-- deck pile\nSarahs table --> (3) (5) (A) (2)\n\nSarah decides to draw from the deck\n\ndrawn: Q\n\nSarahs hand: Q\nSarahs table --> (3) (5) (A) (2)\n\nSarah switches the first card\n\nSarahs hand: 3\nSarahs table --> (Q) (5) (A) (2)\n\nSarah does another switch\n\nSarahs hand: 5\nSarahs table --> (Q) (3) (A) (2)\n\nSarah decides to discard the 5\n\nSarah thinks she is happy and will do no more switches\n\nEnd score: 6 ((Q=0) + 3 + (A=1) + 2)\n```",
+  "totalAttempts": 32,
+  "totalCompleted": 4,
+  "totalStars": 0,
+  "voteScore": 0,
+  "tags": [
+    "Games"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

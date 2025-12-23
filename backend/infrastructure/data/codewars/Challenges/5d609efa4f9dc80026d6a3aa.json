@@ -1,0 +1,35 @@
+{
+  "id": "5d609efa4f9dc80026d6a3aa",
+  "name": "Will you win BIG?",
+  "slug": "will-you-win-big",
+  "category": "reference",
+  "publishedAt": "2019-08-24T02:22:11.539Z",
+  "approvedAt": null,
+  "languages": [
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/5d609efa4f9dc80026d6a3aa",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2019-08-24T02:20:42.803Z",
+  "createdBy": {
+    "username": "stevejaxon",
+    "url": "https://www.codewars.com/users/stevejaxon"
+  },
+  "description": "# Description\n\nChitl Corp. Execs have identified a business opportunity and so have decided to get into the business of creating an online casino.\n\nThe Chitl Execs have become aware that some countries are experiencing [Hyperinflation](https://en.wikipedia.org/wiki/Hyperinflation) and as such the population of those countries have very little incentive to save - and would likely be interested in the opportunity to gamble their savings for \"outsized returns\".\n\nChitl Corp's first gambling product is to be a simple, online, [slot machine](https://en.wikipedia.org/wiki/Slot_machine) type game that offers the players the option of enter any amount of the local currency with the fix odds of 2/1 (as long as the amount they enter is not greater than 50% of the currency in the instance of the game i.e. the machine could pay out fully should the player win).\n\nThe UI/web page has been handled, but the core logic to determine whether the player has won or lost and that updates the amount of money remaining in the jackpot still needs to be implemented. The Execs are impatient and have heard that \"timing is everything\" and it is important to \"move fast\" and \"to get to market\". They've also heard that randomness is hard and time consuming, so it's a corner they have decided to cut\\*<sup>1</sup> and they've come up with a 'clever' way to determine whether a player wins or not (that gives the house quite favorable odds):\n* If the number of bits in the potential jackpot is even - the player loses\n* If the number of bits in the potential jackpot is odd then\n  * If the middle bit is not set - the player wins\n  * If the middle bit is set - the player loses\n\nSince the target audience is a population experiencing Hyperinflation they expect the game will have to deal with some very large numbers...\n\n# Summary\n\n* The function will take in the size of the potential jackpot (as a string) and the amount gambled (as a string) and will return the updated state of these two values after the short game has concluded.\n  * The size of the potential jackpot will be in the range **0 - 1x10<sup>25</sup>**\n  * The size of the amount gambled will be in the range **0 - 1x10<sup>25</sup>**\n* The game supports a fixed odds of 2/1 e.g. if a user enters 100 and wins they are returned 300 - along with the potential jackpot balance being reduced by 200. \n* If the player tries to gamble an amount that would result in a payout larger than the jackpot (were they to win), then the game should return the same values entered (i.e. no game was played).\n* The random function's logic is based on the value of the potential jackpot - the player only wins if it has an odd number of bits and the middle bit is not set.\n\n# Examples\n\n* The player tries to gamble an amount that would result in a payout larger than the jackpot:\n```\nPlay(\"100\", \"51\") => [\"100\", \"51\"]\n```\nIn this case, the potential jackpot is 100 and the user gambles 51. The game can not payout 102, so the original values are returned.\n\n* The player gambles a valid amount and loses\n```\nPlay(\"700\", \"51\") => [\"751\", \"0\"]\n```\n700 in binary is `1010111100` and therefore has an even number of bits.\nThe amount gambled is added to the potential jackpot's total.\n\n* The player gambles a valid amount and loses (again)\n```\nPlay(\"108\", \"50\") => [\"158\", \"0\"]\n```\n108 in binary is `1101100`. It is odd and the middle bit is 1: `110 1 100`. The player loses.\n\n* The player gambles a valid amount and wins\n```\nPlay(\"100\", \"50\") => [\"0\", \"150\"]\n```\n100 in binary is `1100100`. It is odd and the middle bit is 0: `110 0 100`. The player wins.\nThe player wins double the amount they gambled plus the amount they initially gambled.\n\n\\*<sup>1</sup> the randomness in this task is deliberately terrible because it's not the focus of the task - and it's a simple way to get deterministic behaviour.",
+  "totalAttempts": 59,
+  "totalCompleted": 12,
+  "totalStars": 2,
+  "voteScore": 4,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

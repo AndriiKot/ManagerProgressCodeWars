@@ -1,0 +1,35 @@
+{
+  "id": "58030766db07c5c8f6000977",
+  "name": "Generic Ball Clock",
+  "slug": "generic-ball-clock",
+  "category": "algorithms",
+  "publishedAt": "2016-10-17T11:45:03.105Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/58030766db07c5c8f6000977",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-10-16T04:51:51.022Z",
+  "createdBy": {
+    "username": "Austin Haws",
+    "url": "https://www.codewars.com/users/Austin%20Haws"
+  },
+  "description": "The Ball Clock is often used in interviews. It is a fairly simple algorithm that turns in to a pattern finding exercise which lends for great interview discussion.\n\nhttp://code.jsoftware.com/wiki/Essays/The_Ball_Clock_Problem\n\n\"Every minute, the least recently used ball is removed from the queue of balls at the bottom of the clock, elevated, then deposited on the minute indicator track, which is able to hold four balls. When a fifth ball rolls on to the minute indicator track, its weight causes the track to tilt. The four balls already on the track run back down to join the queue of balls waiting at the bottom in reverse order of their original addition to the minutes track. The fifth ball, which caused the tilt, rolls on down to the five-minute indicator track. This track holds eleven balls. The twelfth ball carried over from the minutes causes the five-minute track to tilt, returning the eleven balls to the queue, again in reverse order of their addition. The twelfth ball rolls down to the hour indicator. The hour indicator also holds eleven balls, but has one extra fixed ball which is always present so that counting the balls in the hour indicator will yield an hour in the range one to twelve. The twelfth ball carried over from the five-minute indicator causes the hour indicator to tilt, returning the eleven free balls to the queue, in reverse order, before the twelfth ball itself also returns to the queue.\"\n\nExample:\n```\nstart w/ 7 balls:\navailable: [0, 1, 2, 3, 4, 5, 6] <= pulling balls off right to left\nminute: []\n5 minute: []\n\nafter one minute:\navailable: [0, 1, 2, 3, 4, 5]\nminute: [6]\n5 minute: []\n\nafter four minutes:\navailable: [0, 1, 2]\nminute: [6, 5, 4, 3]\n5 minute: []\n\nafter five minutes:\navailable: [6, 5, 4, 3, 0, 1]\nminute: []\n5 minute: [2]\n```\n\nexample of 12th hour:\n```\nbefore adding ball:\navailable: [1]\nminute: [2, 3, 4, 5]\n5 minute: [6, 7, 8, 8, 10, 11, 12, 13, 14, 15, 16]\nhour: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]\n\nafter adding a ball:\navailable: [1, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 6, 7, 8, 8, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5]\nminute: []\n4 minute: []\nhour: []\n```\n\nThis kata takes it a step further. You will be given a number of balls and an array of ramp lengths. You are to return how many iterations (minutes) the ball clock uses before the available balls are back to their original order.\n\nFor a standard 12 hour clock, per the examples above, the ramp lengths array is [5, 12, 12]. 5 balls to fill the minute ramp. 12 balls to fill the 5 minute ramp. and 12 balls to fill the hour ramp.\n\nThe number of ramps will be between 1 and 10. The number of balls will always be at least a minimum number needed to run the clock and will always work out to a pattern.\n\nYoutube has some pretty awesome ball clocks including a lego one: https://www.youtube.com/watch?v=4S2DSteBLDY\n",
+  "totalAttempts": 74,
+  "totalCompleted": 10,
+  "totalStars": 5,
+  "voteScore": 4,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

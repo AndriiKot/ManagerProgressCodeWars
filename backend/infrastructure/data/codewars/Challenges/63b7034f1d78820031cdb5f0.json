@@ -1,0 +1,36 @@
+{
+  "id": "63b7034f1d78820031cdb5f0",
+  "name": "Finding Badly Addressed Mail",
+  "slug": "finding-badly-addressed-mail",
+  "category": "reference",
+  "publishedAt": "2023-01-05T21:26:45.371Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63b7034f1d78820031cdb5f0",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-05T17:05:19.612Z",
+  "createdBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "description": "Badly Addressed Mail\t\t\t\t\t\n\nThe Post Office needs to program its mail-sorting machine to detect badly addressed mail. The valid address ranges for each street are stored in a tuple, containing a string denoting the street-name and a non-empty list of ranges. A street-name consists of 2-5 words, with a single space between each pair of words. A range is defined by two positive integers, specifying that all addresses between and including both integers are valid addresses on that street. \n\nFor example, **(\"Buxton Street\", [[100, 400], [575, 602]])** indicates that the valid addresses on Buxton Street are precisely those from **100 Buxton Street** to **400 Buxton Street** and from **575 Buxton Street** to **602 Buxton Street**, inclusive. The ranges for any street are disjoint.\n\nEach address on a mail item is a single string, containing a positive number and a street-name, for example **\"312 Buxton Street\"**. The case of the street name is irrelevant, for example **\"312 BUXTon streeT\"** and similar versions are fine. However, the machine does not attempt to detect spelling errors or abbreviations. So, for example, **\"312 Button Street\"** and  **\"312 Buxton St\"** are **invalid**.\n\nGiven any set of streets and any collection of addresses, find all the badly addressed mail. The results should be sorted in lexigraphical order by street-name, with items on the same street in numerical ascending order. \n\nFor example, \n\nIf the streets are\n\t**[ (\"Chicken Dinner Road\", [[200, 499]]), \n\t  (\"Buxton Street\", [[100, 400], [575, 602], [955, 1150], [1152, 1153]]),  (\"Liquid Laughter Lane\", [[529, 580], [52, 236]]) ]**,\n\t\nand the mail items are \n\t**[\"14 Buxton Street\", \"222 liquid Laughter lane\", \"251 buxton Ave\", \"334 \tBuxton street\", \"251 Buxtone Street\", \"234 Chicken Dinner\", \"1151 Buxton Street\", \"432 ChickeN DinNer Road\"]**,\n\nthen the result should be\n**['14 Buxton Street', '1151 Buxton Street', '251 Buxtone Street', '234 Chicken Dinner', '251 buxton Ave']**.\n\nThere are no more than 100 streets, each with 10 ranges or less, and no more than 200 addresses, so performance is not a concern.\n",
+  "totalAttempts": 66,
+  "totalCompleted": 9,
+  "totalStars": 0,
+  "voteScore": -1,
+  "tags": [
+    "Strings",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

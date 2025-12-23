@@ -1,0 +1,37 @@
+{
+  "id": "58af185833f5397e37000021",
+  "name": "Airplane Alert System",
+  "slug": "airplane-alert-system",
+  "category": "games",
+  "publishedAt": "2017-03-08T16:06:52.667Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/58af185833f5397e37000021",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2017-02-23T17:14:00.539Z",
+  "createdBy": {
+    "username": "Diackne",
+    "url": "https://www.codewars.com/users/Diackne"
+  },
+  "description": "#Airplane Alert System\n\nAlert airplanes for the danger \n\n- All Airplanes (&#x2708;) have a diferent position (x,y) the z is ignored all airplanes fly in same high.\n- Airplanes can't have the same positon, is a bad sign :)\n- The (&ofcir;) is the storms position (x,y) and can be the same of others airplanes\n\n###Objective\n If the distance between 2 airplanes is equal to 1 need add a alert to both airplanes, and if the distance of airplane to storm is equal or 1 you need add alert to airplane, check diagonals. \n\n\n\\#| 0       | 1       | 2      | 3       |  x |||||||||||||\n--| --      |--       |--      |--       |--    \n0 | &#x2708;|         |        |         |      \n1 | &#x2708;| &ofcir; |        | &#x2708;|      \n2 |         | &#x2708;|        |         |\n3 |         |         | &ofcir;|         |       \ny |\n\n---\n\n\n###Input\nthe function control have 2 arguments first argument is the array of objects with airplanes informations, the second is the storms positions.\n\n````javascript\ncontrol(\n         [\n          {id:\"US9823\",x:0,y:0},  // Airplanes positions \n          {id:\"PT0202\",x:0,y:1},  //\n          {id:\"ES1272\",x:3,y:1},  //\n          {id:\"CN8989\",x:1,y:2}   //\n         ] \n        ,\n         [\n          {x:1,y:1},   // Storms positions\n          {x:2,y:3}    //\n        ] \n       );\n         ````\n---\n ###Output:\n-  The output is an object converted to JSON string.\n \n````javascript\n  // the object not compressed ------------------------------ \n  { \n    \"US9823\": { //<- key is the id of airplane target of alerts\n                  airplanes:[\"PT0202 x:0 y:1\"] , // Alerts airplanes approach informations\n                  stroms:[\"x:1 y:1\"] // Alerts stroms positions\n               },\n    \"PT0202\": {\n                airplanes: [\"US9823 x:0 y:0\",\"CN8989 x:1 y:2\"],\n                stroms:[\"x:1 y:1\"] \n               },\n    \"CN8989\": { \n                airplanes: [\"PT0202 x:0 y:1\"], \n                stroms:[\"x:1 y:1\",\"x:2 y:3\"]\n               }\n  }\n\n // The final output compressed to JSON string ---------------------\n\n'{\"US9823\":{\"airplanes\":[\"PT0202 x:0 y:1\"],\"storms\":[\"x:1 y:1\"]},\"PT0202\":{\"airplanes\":[\"US9823 x:0 y:0\",\"CN8989 x:1 y:2\"],\"storms\":[\"x:1 y:1\"]},\"CN8989\":{\"airplanes\":[\"PT0202 x:0 y:1\"],\"storms\":[\"x:1 y:1\",\"x:2 y:3\"]}}'\n\n````\n\n The order of keys is the same order of array in input, and the order of alerts is left to rigth top to bottom\n, example the [&#x2708;A] \n\n|        |        |       |        |   |||||||||||||\n--| --      |--       |--      |--       |--    \n | &#x2708;(c)|   &#x2708;(d) |        |         |      \n |  | [&#x2708;A]|        | &#x2708;(e)|      \n |         | &#x2708;(b)|        |         |\n |         |         | |         |       \n \nreceve a alert of approach airplanes in this order: [&#x2708;(c),&#x2708;(d),&#x2708;(e), &#x2708;(b)], is the same logic to storms\n\n---\n\ncreate the best system alert, don't crash any airplane.\n\n\n [DCK002]\n\n\n\n                          \n                      \n                         ",
+  "totalAttempts": 162,
+  "totalCompleted": 11,
+  "totalStars": 3,
+  "voteScore": 6,
+  "tags": [
+    "Puzzles",
+    "Games",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

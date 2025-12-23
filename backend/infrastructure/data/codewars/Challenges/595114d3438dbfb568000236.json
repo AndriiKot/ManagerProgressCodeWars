@@ -1,0 +1,36 @@
+{
+  "id": "595114d3438dbfb568000236",
+  "name": "My friends' circles",
+  "slug": "my-friends-circles",
+  "category": "algorithms",
+  "publishedAt": "2017-07-09T17:24:44.908Z",
+  "approvedAt": null,
+  "languages": [
+    "swift"
+  ],
+  "url": "https://www.codewars.com/kata/595114d3438dbfb568000236",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2017-06-26T14:06:11.563Z",
+  "createdBy": {
+    "username": "artFintch",
+    "url": "https://www.codewars.com/users/artFintch"
+  },
+  "description": "You have many friends. Some your friends know each other. It's a different friends' circles.\nSometimes friendship can be broken and friends' circles too.\n\nYour task is to write a function `friendsCircles` wich to count how many different friends' circles you have after each change in your friends' relationships.\n\nIn `friendsCircles` function:\n* count of `friends` is Int, 1 < `friends` < 20e4\n```swift\nfriends: 3\n```\n* list of `friendships`, 0 < `friendship`. Can be repeated (like a strong relationship) and can be symmetric.\n```swift\nfriendship: [Friendship(1, 2)]\n```\n* list of Int `index` of `brokenFriendship`, 0 < `index`, 0 < `brokenFriendship`\n```swift\nbrokenFriendship: [1]\n```\n\nFriend without any `friendship` also is your friend circle.\n\n###### Examples:\n```swift\n// Should return [2, 3]\nfriendsCircles(friends: 3, friendship: [Friendship(1, 2)], brokenFriendship: [1])\n\n// Should return [1, 1, 2]\nfriendsCircles(friends: 2, friendship: [Friendship(1, 2), Friendship(1, 2)], brokenFriendship: [1, 2])\n```\n\nMore details in `Initial solution` section.",
+  "totalAttempts": 61,
+  "totalCompleted": 4,
+  "totalStars": 6,
+  "voteScore": -2,
+  "tags": [
+    "Algorithms",
+    "Graph Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

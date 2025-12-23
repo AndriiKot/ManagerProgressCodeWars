@@ -1,0 +1,41 @@
+{
+  "id": "5ea1de08a140dc0025b10d82",
+  "name": "Lisp-esque parsing [Code Golf]",
+  "slug": "lisp-esque-parsing-code-golf",
+  "category": "algorithms",
+  "publishedAt": "2020-04-24T13:37:49.530Z",
+  "approvedAt": "2020-05-03T11:22:05.541Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5ea1de08a140dc0025b10d82",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-04-23T18:27:20.446Z",
+  "createdBy": {
+    "username": "Dr Gabo",
+    "url": "https://www.codewars.com/users/Dr%20Gabo"
+  },
+  "approvedBy": {
+    "username": "FArekkusu",
+    "url": "https://www.codewars.com/users/FArekkusu"
+  },
+  "description": "# Basic pseudo-lisp syntax\n\nLet's create a language that has the following syntax (_Backus–Naur form_):\n\n```prolog\n<expression> ::= <int> | <func_call>\n\n<digit> ::= '0' | '1' | '2' | ... | '9'\n<int>   ::= <digit> [<int>]\n\n<name_char> ::= (any character except parentheses and spaces)\n<func_name> ::= <name_char> [<func_name>]\n<func_args> ::= <expression> [' ' <func_args>]\n<func_call> ::= '(' <func_name> <func_args> ')'\n```\n\nA quick interpretation of this syntax tells us that expressions in this pseudo-lisp language look like this:\n\n```lisp\n53\n(neg 3)\n(+ (* 2 4) 2)\n(+ (* (+ 1 1) 4) (^2 2))\n(pow (mul 2 4) 3)\n```\n\nThese are all valid expressions that can be evaluated into a number if you know how to apply the functions. Let's see some examples with well-known operators:\n\n```lisp\n3                 ; Evaluates to 3\n(- 3)             ; Evaluates to -3\n(+ 1 3)           ; Evaluates to 4\n(* (- 3) (+ 1 3)) ; Evaluates to -12\n```\n\nSimple enough, right? Now let's play around with this idea :)\n\n# Your task\n\nWrite a funtion `parse(code: str, function_table: Dict[str, Callable])` that takes the code to parse in pseudo-lisp and a dictionary of functions and returns the result that a correct interpreter for this language would give.\n\nNow, the thing is that you only have **160 characters** to do this, so be careful :D\n\n*__Personal best:__ 154 characters.*\n\n# Preloaded code\n\nall the contents of the `regex` (not `re`) module have been preloaded with `from regex import *`, so you can use any of this freely.\n\n# Examples\n\n```python\nf = {\n    'sum': lambda a, b: a + b,\n    'mul': lambda a, b: a * b,\n    'div': lambda a, b: a / b,\n    'pow': lambda a, b: a ** b,\n    'neg': lambda a: -a,\n    'sqr': lambda a: a*a\n}\n\nparse('(sum 2 (mul 5 6))', f) == 32\nparse('(sqr (neg 5))', f)     == 25\nparse('(pow 2 (sum 2 6))', f) == 256\n```\n\n## As always, have fun :)",
+  "totalAttempts": 661,
+  "totalCompleted": 45,
+  "totalStars": 11,
+  "voteScore": 27,
+  "tags": [
+    "Parsing",
+    "Restricted",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

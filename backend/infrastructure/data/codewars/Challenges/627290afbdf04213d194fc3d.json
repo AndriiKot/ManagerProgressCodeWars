@@ -1,0 +1,41 @@
+{
+  "id": "627290afbdf04213d194fc3d",
+  "name": "Probability 101",
+  "slug": "probability-101",
+  "category": "reference",
+  "publishedAt": "2022-05-07T15:31:25.335Z",
+  "approvedAt": "2022-05-23T13:34:57.253Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/627290afbdf04213d194fc3d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-04T14:41:51.192Z",
+  "createdBy": {
+    "username": "valerio_c",
+    "url": "https://www.codewars.com/users/valerio_c"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "# Probability 101\n\nYou will be given two numbers: `length` and `num`.\n\nA number with an amount of digits equal to `length` is chosen at random.\n\nNB: The random number of length `length` cannot start with zero if `length` > 1\n\nSome examples:\n\n- if length is 1, there is 10 possible numbers: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`\n\n- if length is 2, the possible numbers will be all numbers from `10` up to `99`\n\n- if length is 3, the possible numbers will be all numbers from `100` up to `999`\n\n## Task\n\nCalculate the probability that the random number is a multiple of `num`.\n\nThe returned value should be a floating point number, representing the probability in percentage.\n\nExamples:\n\n- If there is no chance the random number will be a multiple of `num` you should return `0`\n- If it's certain the random number will be a multiple of `num` you should return `100`\n- If there is a 50% chance the random number will be a multiple of `num` you should return `50`\n- If there is a 4.1874% chance the random number will be a multiple of `num` you should return `4.1874`\n\nAs we are dealing with floating point numbers the tests take floating point approximation into account, the returned value needs to be exact `+/- 1e-8`\n\n\nPossible inputs:\n\n- `length` will be an integer between 1 and 9\n- `num` will be an integer between 1 and 1000\n\n\n## Example:\n\n```js\nprobability(1, 2)\n// output: 50\n```\n\n## Explanation:\n\nThere are 10 numbers with length of 1 digit = `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`\n\n5 of them are multiples of 2 = `[0, 2, 4, 6, 8]`\n\nThat means you should return 5/10 represented as a percentage  = `50`\n\n## More examples:\n\n```js\nprobability(2, 3)\n// output: 33.333333333333336\n```\n\n```js\nprobability(3, 22)\n// output: 4.555555555555555\n```\n\n```js\nprobability(9, 2201)\n// output: 0.04543388888888889\n```",
+  "totalAttempts": 1341,
+  "totalCompleted": 96,
+  "totalStars": 14,
+  "voteScore": 44,
+  "tags": [
+    "Probability",
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

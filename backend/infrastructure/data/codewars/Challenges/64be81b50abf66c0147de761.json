@@ -1,0 +1,47 @@
+{
+  "id": "64be81b50abf66c0147de761",
+  "name": "Find the Missing Number using NAND",
+  "slug": "find-the-missing-number-using-nand",
+  "category": "algorithms",
+  "publishedAt": "2023-07-24T15:29:17.001Z",
+  "approvedAt": "2023-10-27T10:17:21.192Z",
+  "languages": [
+    "typescript",
+    "javascript",
+    "php",
+    "python",
+    "coffeescript",
+    "ruby",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/64be81b50abf66c0147de761",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-24T13:50:45.059Z",
+  "createdBy": {
+    "username": "SagePtr",
+    "url": "https://www.codewars.com/users/SagePtr"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "**Introduction:**\n\nYou've got a 16-bit calculating machine, but it's old and rusty. It has four 16-bit registers (`R0`, `R1`, `R2`, `R3`) and can do only a NAND operation.\n\n\n#### Machine Functions:\n\nThis machine can perform these actions:\n- `read()`: Grabs the next number from a tape and stores it in `R0`. Returns true if it succeeds, false if the tape is empty.\n- `output()`: Returns the number stored in `R0` but can only be used once.\n- `nand(target, arg1, arg2)`: Calculates (`arg1` NAND `arg2`) and saves the result in the `target` register. Both `arg1` and `arg2` can be either register identifiers, or plain numbers from `0` to `65535`. `target` can only be register identifier `R0`, `R1`, `R2`, `R3` (see the initial solution for more information). It doesn't return anything. Can be called no more than `400 000` times.\n- `dump()`: Prints the contents of the registers and tape for debugging purposes. It doesn't return anything.\n\n#### Machine Registers:\n`R0`, `R1`, `R2`, `R3` are 16-bit registers that can hold numbers from 0 to 65535. You can't directly read/write them; you can only use them as arguments for the `nand` method.\n\n\n#### The Task:\n\nYour goal is to find the missing number in a sequence of shuffled integers from `0` to an unknown `n` (0 <= n <= 65535). You need to write a function that takes a 'Machine' instance as an argument. The machine already has a tape loaded, which you can read with the `read` method, perform `nand` operations, and return the missing number using the `output` method. The registers are all set to zero initially, so you don't need to initialize them.\n\n#### Constraints:\n\nYou can't simply add the numbers to find the missing one. You must use NAND operations blindly and make only one pass through the tape, and `output()` can only be used once.\nThe `nand()` method can be called no more than `400 000` times per test.\n\n**Additional Resources:**\nThis resource may be helpful: [Nand2Tetris Course](https://www.nand2tetris.org/course).\n\n### Example tapes\n\n```\n   tape                result\n[3, 2, 1, 4]    ---> should return 0\n[3, 0, 2, 4]    ---> should return 1\n[3, 0, 1, 4]    ---> should return 2\n[0, 2, 1, 4]    ---> should return 3\n[3, 0, 2, 1]    ---> should return 4\n[3, 0, 2, 1, 4] ---> should return 5\n[]              ---> should return 0 for empty tape\n```\n\nGood luck and have fun!",
+  "totalAttempts": 276,
+  "totalCompleted": 44,
+  "totalStars": 27,
+  "voteScore": 37,
+  "tags": [
+    "Logic",
+    "Mathematics",
+    "Restricted"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

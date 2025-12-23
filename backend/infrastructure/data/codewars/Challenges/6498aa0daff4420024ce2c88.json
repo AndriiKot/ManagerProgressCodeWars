@@ -1,0 +1,46 @@
+{
+  "id": "6498aa0daff4420024ce2c88",
+  "name": "LET ME IN!",
+  "slug": "let-me-in",
+  "category": "reference",
+  "publishedAt": "2023-06-25T22:01:15.078Z",
+  "approvedAt": "2023-06-30T07:51:47.000Z",
+  "languages": [
+    "python",
+    "cpp",
+    "rust",
+    "javascript",
+    "coffeescript",
+    "typescript",
+    "php"
+  ],
+  "url": "https://www.codewars.com/kata/6498aa0daff4420024ce2c88",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-25T20:56:45.276Z",
+  "createdBy": {
+    "username": "ExplosiveEnd",
+    "url": "https://www.codewars.com/users/ExplosiveEnd"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Prologue:\nYou get back from work late at night, roaming the streets of Japan (it has to be!). As you are headed home, starved after a long and grueling day at work, stumble upon a ramen shop still serving customers. You dash in, practically drooling for some ramen -- but as soon as you walk in, you realize just how chaotic this restaurant is.\n\n## Problem:\nYou're standing in a line, where everybody seems to be playing a game for entry. The owner of the restaurant stands at the \"front\", bringing guests in individually.   \n  \nThere are four \"types\" of guests:\n1. *Known guests* -> Guests who know the restaurant owner personally. These people can enter as they please, without having to wait in a line. Whenever the owner meets a known guest, he yells out \"SWAP\", requiring everybody to switch places with the person on the \"opposite\" end of the line, **except for other known guests**\n2. *Members* → Guests who have an active membership subscription at the food chain. These people have priority over *unknown guests*, but are not immune to swapping. \n3. *Decoys* → These are actually staff members that are hidden into the line, in order to make the game more interesting. When swapping, decoys aren’t allowed to swap, maintaining their position in line. To better disguise themselves, they are given the same priority level as \"unknown guests\". \n4. *Unknown Guests* → The typical person, either too broke to afford a membership, or trying out the restaurant for the first time. They are subject to swaps and get bottom tier priority. \n\nYou are given a list of the people that are waiting in queue, each numbered 1-3 except you, who is `0`, and \"unknown guests\", which can be any other positive number.  Your goal is to determine how long it will take for you to get seated (with each person being removed from queue being considered a \"minute\", including yourself).\n\n## Examples:\n```python\nqueue = [1, 1, 3, 2, 0] # The given queue\nsorted = [1, 1, 2, 3, 0] # Sorted by priority\n#                     ^-- you \n```\n```javascript\nqueue = [1, 1, 3, 2, 0] // The given queue\nsorted = [1, 1, 2, 3, 0] // Sorted by priority\n//                    ^-- you \n```\n- The 1's are the \"known guests\", so they get priority.\n- The 2's are the \"members\", so they get secondary priority.\n  - The resulting array is `[1, 1, 2, 3, 0]`\n- The first \"known guest\" gets consumed, so the swap occurs on the remaining elements in the list `[1, 2, 3, 0]`\n  - `1` cannot swap with `0`, and `3` cannot swap with `2`\n- Repeat, resulting in `[2, 3, 0]`.\n  - `0` and `2` can be swapped, resulting in `[0, 3, 2]`\n- With `0` in front, it took 3 minutes for you to get seated, so the answer is `3`   \n\n```python\nqueue = [0, 8, 2, 1, 4, 2, 12, 3, 2] # The given queue\nsorted = [1, 2, 2, 2, 0, 8, 4, 12, 3] # Sorted by priority\n#                     ^-- you \n```\n```javascript\nqueue = [0, 8, 2, 1, 4, 2, 12, 3, 2] // The given queue\nsorted = [1, 2, 2, 2, 0, 8, 4, 12, 3] // Sorted by priority\n//                    ^-- you \n```\n- The first \"known guest\" gets consumed: `[2, 2, 2, 0, 8, 4, 12, 3]`\n  - `2` cannot swap with `3`\n  - the rest swap, resulting in: `[2, 12, 4, 8, 0, 2, 2, 3]`\n- The numbers up to the `0` get \"consumed\", as no more swapping is required\n- With `0` in front, it took 6 minutes for you to get seated, so the answer is `6`\n",
+  "totalAttempts": 1241,
+  "totalCompleted": 186,
+  "totalStars": 39,
+  "voteScore": 70,
+  "tags": [
+    "Fundamentals",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

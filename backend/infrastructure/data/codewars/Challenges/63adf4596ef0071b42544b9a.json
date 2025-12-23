@@ -1,0 +1,41 @@
+{
+  "id": "63adf4596ef0071b42544b9a",
+  "name": "Maximum different differences",
+  "slug": "maximum-different-differences",
+  "category": "games",
+  "publishedAt": "2022-12-29T20:46:45.451Z",
+  "approvedAt": "2023-01-07T20:33:19.442Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63adf4596ef0071b42544b9a",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-12-29T20:11:06.000Z",
+  "createdBy": {
+    "username": "Donvito-911",
+    "url": "https://www.codewars.com/users/Donvito-911"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Maximum different differences\n\nAssume `$A$` is a strictly increasing array of positive integers with `$n$` elements:\n\n```math\nA = [a_1, a_2, ..., a_n] \\text{ such that } a_1 < a_2<a_3<\\dots<a_n\n```\n\nThe difference array of `$A$` is `$[a_2-a_1, a_3-a_2, \\dots, a_n-a_{n-1}]$`\nThat is,\n\n`$D = [d_1, d_2, \\dots, d_{n-1}]$` such that `$d_i = a_{i+1}-a_i$`.\n\n\n\n\nFor example, \n\n```math\n1.\\hspace{2mm} A=[1,2,3,4] \\Rightarrow D=[1,1,1]\\\\\n2.\\hspace{2mm} A=[1,3,4,10] \\Rightarrow D=[2,1,6]\n```\n\nDenote the <strong><i>characteristic</i></strong> as the number of different elements in the array `$D$`.\n\nFollowing above examples, the characteristic of the first example is 1, since the array only contains the element `$\\{1\\}$`. In the second example, the characteristic is 3 : `$\\{1, 2, 6\\}$`.\n\n\nGiven the last element of a strictly increasing array `$A$`, i.e. `$a_n$`, find the maximum possible characteristic. Note the size of `$A$` is less or equal than `$a_n$`.\n\nFor example, if `$a_n = 7$`, some examples that you could think of are:\n\n```math\n1.\\hspace{2mm} A=[1,2,3,4,5,6,7] \\Rightarrow D=[1,1,1,1,1,1]\\\\\n2.\\hspace{2mm} A=[1,2, 7] \\Rightarrow D=[1, 5]\\\\\n3.\\hspace{2mm} A=[2,3,5, 7] \\Rightarrow D=[1,2,2]\\\\\n4.\\hspace{2mm} A=[1,4,5, 7] \\Rightarrow D=[3, 1, 2]\\\\\n```\n\nThe characteristic of the first example is 1 (it only has one different element: `$\\{1\\}$` in `$D$`), in the second and third one the characteristic is 2 and in the last one, the characteristic is 3. If you try any other possible `$A$`, you won't find a characteristic greater than 3. Thus, the answer is 3.\n\n## Input\n`$a_n$`: (int) The maximum/last element of `$A$`. `$2\\leq a_n \\leq 2^{200}$`\n\n## Output\n(int) The maximum possible characteristic based on `$a_n$`\n\n<strong> Note:</strong> Be aware of the size of `$a_n$` and the precision when working with big numbers. Find an optimal solution",
+  "totalAttempts": 1599,
+  "totalCompleted": 120,
+  "totalStars": 12,
+  "voteScore": 58,
+  "tags": [
+    "Mathematics",
+    "Puzzles",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

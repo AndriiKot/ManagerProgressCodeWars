@@ -1,0 +1,42 @@
+{
+  "id": "64b84ed4b46f91004b493d87",
+  "name": "Play Nerdle - It's Wordle for Calculations",
+  "slug": "play-nerdle-its-wordle-for-calculations",
+  "category": "games",
+  "publishedAt": "2023-07-22T12:36:16.864Z",
+  "approvedAt": "2023-12-13T23:39:27.870Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64b84ed4b46f91004b493d87",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-19T21:00:04.452Z",
+  "createdBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "### Background\n\n**Nerdle** is like Wordle, but for arithmetic expressions rather than words. The idea is to identify a target expression using feedback from previous guesses. In this kata we play the simplest form of Nerdle, where the target expression consists of 5 characters: A digit, followed by an arithmetic operator (either multiplication, division, addition, or subtraction), followed by another digit, then an equals sign, then the result of the computation (which must be a single digit). Examples of such expressions are '1+2=3', '7\\*0=0', '9-3=6', '8\\/2=4', and so on. \n\nThis version of Nerdle is called \"Micro-Nerdle\". You can play different versions of Nerdle at [the Nerdle website](https://nerdlegame.com/game). The general version of Nerdle, where the expression has 8 characters, is a much harder kata - [Nerdle - The General Version](https://www.codewars.com/kata/64c16111b57ecf13c2e1031e). It might also be worth looking at this Wordle kata - [Wordle! Cheat bot](https://www.codewars.com/kata/6255e6f2c53cc9001e5ef629).\n\nSuppose you guess '1+2=3' and receive the feedback 'RBBGB'. In this notation 'B' means that the character is not present in the target expression, 'R' means that the character is  present but in the wrong position, and 'G' means that the character is in the correct position. So we can infer the following about the target expression:\n\n<ol>\n<li>It contains at least one 1, but not in the first position.\n<li>It doesn't contains a + sign, a 2, or a 3.\n<li>It has an equals sign in the fourth position. (This will always be true in Micro-Nerdle.)\n</ol>\n\nUsing this information, we construct another guess, receive feedback, and so on, until we have identified the target expression. The task in this kata is to program an \"intelligent\" agent, represented by a function *solve_micro_nerdle*, that successfully plays Micro-Nerdle.\n\n### Input\n\nYour function is provided with a single input called **history** - a list of tuples containing previous guesses and the feedback each one received. The feedbacks are guaranteed to have been computed using a fixed target expression. \n\n### Output\n\nYour function should output a new guess - a string of 5 characters representing an expression in the format above. The goal is for the guess to match the target expression. \n\n### Testing\n\nThe testing framework does the following. First *solve_micro_nerdle* is called with **history = [ ]**, i.e. no previous guesses. It should generate some valid expression, call that **guess1**, and the testing code computes the feedback. It then calls *solve_micro_nerdle* with **history = [(guess1, feedback1)]**, and receives a second guess, **guess2**. That guess and feedback are added to the history, creating **history = [(guess1, feedback1), (guess2, feedback2)]**, and *solve_micro_nerdle* is called with that history. This process continues until either *solve_micro_nerdle*'s output matches the target - a success, or when *solve_micro_nerdle* has been called 10 times without matching the target - a failure. \n\nNOTE: To succeed at this kata each case must be solved within 10 attempts AND the average number of attempts over all tests must be lower than 5. \n\n### Details\n\n(1) If the output of any call of *solve_micro_nerdle* is not a valid expression, the feedback will be a string indicating why it's not valid. If this happens, (guess, feedback) is still added to **history** in the usual way, but it's a wasted guess, since it provides no information about the target. In particular, a valid expression must be a correct calculation. For example, a guess like '1+2=8' is invalid, and its feedback is \"'1+2' evaluates to 3, NOT 8!\"\n\n(2) Your function will only be called with **history** containing its own previous guesses. If you make sure that it never outputs an invalid expression, you don't have to worry about dealing with input histories containing invalid guesses.\n\n(3) Division is real division, not integer division. So an expression like '5/2=2' is invalid; its feedback is \"'5/2' evaluates to 2.5, which is not an integer!\" Divisions like '8/2=4' are fine. Any division by 0 is invalid.\n\n(4) Commutative solutions are treated as correct. For example, if the target is 2\\*3=6, then 3\\*2=6 matches the target. However, all feedback is computed on the basis of the actual target, not commutative versions of it. For example, if the target is 2\\*3=6 and the guess is 5+2=7, the 2 receives 'R', not 'G'.\n\n### Examples\n\nHere are two examples of an agent nerdling its way to the target.\n\n```\nGuess 1 was 1+2=3 Feedback is BBBGG\nGuess 2 was 7*0=0 Feedback is GBBGB\nGuess 3 was 7-3=4 Feedback is GGRGR\nGuess 4 was 7-4=3 Feedback is GGGGG\nCongratulations! Target was 7-4=3. You got it in 4 attempts.\n\nGuess 1 was 1+2=3 Feedback is RBBGB\nGuess 2 was 1*9=9 Feedback is RGBGB\nGuess 3 was 1*0=0 Feedback is RGBGB\nGuess 4 was 7*1=7 Feedback is BGGGB\nGuess 5 was 6*1=6 Feedback is BGGGB\nGuess 6 was 5*1=5 Feedback is BGGGB\nGuess 7 was 8*1=8 Feedback is GGGGG\nCongratulations! Target was 8*1=8. You got it in 7 attempts.\n```\n\n### Duplicates\n\nUnderstanding the feedback when there are duplicate digits in the guess or target can be tricky. For example:\n\n(a) Suppose guess is '1-1=0' and feedback is 'BBGGB'. The first 1 is 'B' and the second is 'G'. It would be incorrect to infer from the first 1 being 'B' that there is no 1 in the target, because guess contains a second 1.  So a 'B' really means \"not present in the target, once all other occurrences of the same character in guess have been accounted for\".\n\n(b) Suppose guess is '1+1=2' and feedback is 'RBGGR'. The first 1 is 'R' and the second is 'G'. The first 1 being 'R' tells you that there is a second 1 in the target, and it's not in first position. If there wasn't, the first 1 would be 'B', as in (a). So a good next guess is '2-1=1'.\n\n(c) Suppose guess is '1+1=2' and feedback is 'GBGGB'. Both 1s are 'G', and the last character is not 2. It's easy to overlook that the last character could also be a 1 (e.g. target might be '1\\*1=1').\n\n\n\n\n\n\n\n\n\n",
+  "totalAttempts": 441,
+  "totalCompleted": 47,
+  "totalStars": 22,
+  "voteScore": 32,
+  "tags": [
+    "Strings",
+    "Games",
+    "Game Solvers",
+    "Artificial Intelligence"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

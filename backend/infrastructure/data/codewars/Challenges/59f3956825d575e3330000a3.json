@@ -1,0 +1,42 @@
+{
+  "id": "59f3956825d575e3330000a3",
+  "name": "Positions of a substring in a string",
+  "slug": "positions-of-a-substring-in-a-string",
+  "category": "reference",
+  "publishedAt": "2017-10-27T20:22:39.173Z",
+  "approvedAt": "2019-05-11T09:45:24.532Z",
+  "languages": [
+    "shell",
+    "python",
+    "perl"
+  ],
+  "url": "https://www.codewars.com/kata/59f3956825d575e3330000a3",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-10-27T20:22:00.677Z",
+  "createdBy": {
+    "username": "g964",
+    "url": "https://www.codewars.com/users/g964"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "Let us go  through an example.\n\nYou have a string (here a short one):\n\n`s = \"GCAGCaGCTGCgatggcggcgctgaggggtcttgggggctctaggccggccacctactgg\"`,\nwith only upper or lower cases letters A, C, G, T.\n\nYou want to find substrings in this string.  Each substring to find has a label.\nThe different substrings to find are given in a string of the following form:\n```\nBase = \"Version xxxx                                             \n  \n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= \nPartial Database   \nhttp://... \nCopyright (c) All rights reserved. \n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= \n  \n<>\n\nAaaI (XmaIII)                     CGGCCG \nAacI (BamHI)                      GGATCC \nAaeI                              GGATCC \nAagI (ClaI)                       ATCGAT\nAarI                              CACCTGCNNNN\nAcc38I (EcoRII)                   CCWGG\nAceI (TseI)                       GCWGC\"\n\n```\nOnly the first lines of a Base are given here. \n\nIn first place you get a few lines of comments.\nThen in three columns: the labels of the substrings, in the second one - that can be empty -\nkind of comments, in the 3rd one the substring corresponding to the label. \n\nNotice that other letters than A, C, G, T appear. \n\nThe conventions for these other letters follow:\n```\nR stands for G or A \nY stands for C or T \nM stands for A or C \nK stands for G or T \nS stands for G or C \nW stands for A or T \nB stands for not A ie (C or G or T) \nD stands for not C ie (A or G or T) \nH stands for not G ie (A or C or T) \nV stands for not T ie (A or C or G) \nN stands for A or C or G or T\n```\nIn the tests there are two different Bases called `Base` and `Base1` and two long strings: `data` and `data1`.\n\nGiven a base `base` (Base or Base1), a string `strng` (which will be data or data1 or s of the example) and a query name `query` - e.g label \"AceI\" - the function `get_pos` will return:\n\n- the *non-overlapping* positions in `strng` where the `query` substring has been found. \n\nIn the previous example we will return `\"1 7\"` since the positions are numbered from 1 and not from 0.\n\n### Explanation: \nlabel `\"AceI\"` is the name of the substring `\"GCWGC\"` that can be written (see conventions above) `\"GCAGC\"` found at position `1` in `s` or `\"GCTGC\"` found at position `7`.\n\n### Particular cases\nIf `query` name doesn't exist in Base return:\n\n`\"This query name does not exist in given Base\"`.\n\nIf `query` name exists but `query` is not found in `strng` return:\n\n`\"... is not in given string\"` (`...` being the query argument).\n\n### Examples:\n```\nget_pos(Base, str, \"AceI\") => \"1 7\"\nget_pos(Base, str, \"AaeI\") => \"AaeI is not in given string\"\nget_pos(Base, str, \"XaeI\") => \"This query name does not exist in given Base\"\n```\n### Notes\n- You can see other examples in the \"Sample tests\".\n- Translators are welcome for all languages, except for Ruby since the Bash random tests needing Ruby a Ruby reference solution is already there though not yet published.",
+  "totalAttempts": 775,
+  "totalCompleted": 120,
+  "totalStars": 32,
+  "voteScore": 47,
+  "tags": [
+    "Fundamentals",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

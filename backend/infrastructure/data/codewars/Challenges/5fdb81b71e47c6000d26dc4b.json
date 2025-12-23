@@ -1,0 +1,44 @@
+{
+  "id": "5fdb81b71e47c6000d26dc4b",
+  "name": "Trees to Parentheses, and Back",
+  "slug": "trees-to-parentheses-and-back",
+  "category": "reference",
+  "publishedAt": "2020-12-17T16:19:28.748Z",
+  "approvedAt": "2021-04-03T20:39:33.281Z",
+  "languages": [
+    "haskell",
+    "javascript",
+    "ocaml",
+    "python",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5fdb81b71e47c6000d26dc4b",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-12-17T16:05:11.886Z",
+  "createdBy": {
+    "username": "oisdk",
+    "url": "https://www.codewars.com/users/oisdk"
+  },
+  "approvedBy": {
+    "username": "monadius",
+    "url": "https://www.codewars.com/users/monadius"
+  },
+  "description": "Binary trees can be encoded as strings of balanced parentheses (in fact, the two things are *isomorphic*).\nYour task is to figure out such an encoding, and write the two functions which convert back and forth between the binary trees and strings of parentheses.\n\nHere's the definition of binary trees:\n\n```haskell\ndata Tree = Leaf | Tree :*: Tree deriving (Eq, Show)\n```\n```javascript\nclass Tree {}\nclass Leaf extends Tree {}\nclass Branch extends Tree { constructor(left,right) {} }\n```\n```ocaml\ntype tree =\n    | Leaf\n    | Node of tree * tree\n```\n```python\nclass Tree:pass\n    \nclass Leaf(Tree): pass\n\nclass Branch(Tree):\n    left:  Tree\n    right: Tree\n```\n```rust\n#[derive(PartialEq, Eq, Debug)]\npub enum Tree {\n    Leaf,\n    Branch {left: Box<Tree>, right: Box<Tree>}\n}\n```\n\n```if:python\nAll classes are frozen dataclasses: the left and right children cannot be modified once the instance has been created.\n```\n\nAnd here are the functions you need to define:\n\n```haskell\ntreeToParens :: Tree -> String\nparensToTree :: String -> Tree\n```\n```javascript\nfunction treeToParens(Tree) => String\nfunction parensToTree(String) => Tree\n```\n```ocaml\ntree_to_parens : tree -> string\nparens_to_tree : string -> tree\n```\n```python\ntreeToParens(Tree) -> str\nparensToTree(str) -> Tree\n```\n```rust\nfn tree_to_parens(tree: &Tree) -> String;\nfn parens_to_tree(parens: &str) -> Tree;\n```\n\nThe first function needs to accept any binary tree, and return only strings of valid balanced parentheses (like `\"()(())\"`).  \nThe second needs to accept any string of balanced parentheses (including the empty string!), and return a binary tree.\n\nAlso, the functions need to be inverses of each other.  \nIn other words, they need to satisfy the following equations:\n\n```haskell\nforall s. treeToParens (parensToTree s) = s\nforall t. parensToTree (treeToParens t) = t\n```\n```javascript\ntreeToParens(parensToTree(parens)) === parens\nparensToTree(treeToParens(tree)) === tree\n```\n```ocaml\ntree_to_parens (parens_to_tree s) = s\nparens_to_tree (tree_to_parens t) = t\n```\n```python\ntree_to_parens(parens_to_tree(s)) == s\nparens_to_tree(tree_to_parens(t)) == t\n```\n```rust\ntree_to_parens(&parens_to_tree(s)) == s\nparens_to_tree(&tree_to_parens(t)) == t\n```\n\n---\n\nNote:\n\nThere is more than one possible answer to this puzzle! There are number of different ways to \"encode\" a binary tree as a string of parentheses. Any solution that follows the laws above will be accepted.\n\n~~~if:javascript,\nYour functions will run in sandboxes; only `Tree`, `Leaf`, `Branch` and `console` ( for `.log` ) will be in scope, and they will be frozen. If you need helper functions, define them _inside_ your functions. If you experience any problems with this setup, please leave a comment in the `Discourse`.\n~~~\n~~~if:python,\nYour functions must not share any global state, to attempt to bypass the encoding logic. If they do, you will pass all tests except the `state check` batch at the end of the full test suite. So just don't use shared states...  \nIf you experience any problems with this setup, please leave a comment in the `Discourse`.\n~~~\n",
+  "totalAttempts": 1624,
+  "totalCompleted": 133,
+  "totalStars": 68,
+  "voteScore": 40,
+  "tags": [
+    "Trees",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "5fa49cfb19923f00299eae22",
+  "name": "Guitar #1: Find the frets",
+  "slug": "guitar-number-1-find-the-frets",
+  "category": "games",
+  "publishedAt": "2020-11-06T15:14:10.417Z",
+  "approvedAt": "2022-12-28T14:53:25.344Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5fa49cfb19923f00299eae22",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-11-06T00:46:51.490Z",
+  "createdBy": {
+    "username": "MrKoyl",
+    "url": "https://www.codewars.com/users/MrKoyl"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "### Intro\n\nYour friend recently started learning how to play a guitar. He asked for your help to write a program that will help to find frets for each note on the guitar.\n\n## Main task:\n\nHe wants to enter 2-4 parameters: `note, exact, string and position`.\nAll inputs will be valid.\n\n1) note - \"name\" of the note. There are 12 names: `'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'`. They are represents all octave semitones.\n\n2) exact - boolean parameter. If it's true, you should find only exact same 'high' notes (See 'little tip' below in the description). If it's false - return all notes frets with the same name.\n\n3) string [only for exact === true] - number of the string for current note. `1 <= string <= 6`.\n\n4) position [only for exact === true] - every string contain `1` or `2` notes with the same name (I will explain later). This parameter defines exactly what note should be chose.\n\nDepending on `exact` value, return all frets with same note name or exactly the same notes.\n```if:python\nOutput format: `[(string, fret), (string, fret), (string,fret), ...]`.\n```\n```if-not:python\nOutput format: `[[string, fret], [string, fret], [string,fret], ...]`.\n```\nWhere `1 <= string <= 6` and `0 <= fret <= 22`. Both are integers. Frets could be placed in any order in the output array.\n\n## SOME MUSICAL THEORY:\n\nGuitar neck has 22-24 frets (in this Kata we will use 22-frets guitar). This means each string contains 23 semitones: open string (is 0 fret) plus 22 frets.\n\nIn this Kata guitar has standard tuning. It describes what name has each string on 0 fret (open string). Standard tuning: EBGDAE (from 1st string to 6th).\n\n\"Difference\" between two adjacent notes from the 'notes list' equals a semitone. \"Difference\" between strings equals 5 semitones, except B-G strings with 4 semitones difference.\n\nShort piece of the guitar neck, to show you how it looks like:\n\n| string\\freat| | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | ... |\n| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| 1| | E | F | F# | G | G#| A | A# | B | C | C# | D | D# | E | F | ... |\n| 2| | B | C | C# | D | D#| E | F  | F# | G | G# | A | A# | B | C | ... |\n| 3| | G | G# | A | A# | B | C | C# | D | D# | E | F | F# | G | G# | ... |\n| 4| | D | D# | E | F | F#| G | G# | A | A# | B | C | C# | D | D# | ... |\n| 5| | A | A# | B | C | C#| D | D# | E | F | F# | G | G# | A | A# | ... |\n| 6| | E | F | F# | G | G#| A | A# | B | C | C# | D | D# | E | F | ... |\n\nLet me explain `position` parameter meaning. The notes with the same name could be found on the string once or twice. Let `position = 1` be for left note (smaller fret) and `position = 2` is for right note if such exist (bigger fret). Take a look at this example:\n\n| string\\freat| | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | ... |\n| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| 1| | `E` | *F* | F# | G | G#| A | A# | B | C | C# | D | D# | `E` | *F* | ... |\n\nThe notes with the same names marked: `'E'`: `(1, 0)` and `(1, 12)`, `'F'`: `(1, 1)` and `(1, 13)` and so on.\n\n### A little tip\nTo understand what should function return, think about notes as about vibration frequency. So if you should return exactly same note, you have to find frets that represent same vibration frequency.\nYou can image that with math. Let the input is getFrets(\"E\", true, 1, 1). So we need to find same frets for note 'E' on the 1st string 1st position. It's position is `(1, 0)` - `(string, fret)`. Let call it `x`. We know the \"difference\" between strings equals 5 semitones. So `(2, 0) = 'B' on 2nd string = x - 5`.\nThen we should go right on this string, adding 1 semitone for each step. `C = x - 4`, `C# = x - 3`, `D = x -2`, `D# = x -1`, `E = x`. So `(2, 5) = (1, 0)` and so on.\nTake a look at this example:\n\n| string\\freat| | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | ... |\n| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| 1| | `E` | F | F# | G | G#| A | A# | B | C | C# | D | D# | E | F | ... |\n| 2| | B | C | C# | D | D#| `E` | F  | F# | G | G# | A | A# | B | C | ... |\n| 3| | G | G# | A | A# | B | C | C# | D | D# | `E` | F | F# | G | G# | ... |\n| 4| | D | D# | E | F | F#| G | G# | A | A# | B | C | C# | D | D# | ... |\n| 5| | A | A# | B | C | C#| D | D# | E | F | F# | G | G# | A | A# | ... |\n| 6| | E | F | F# | G | G#| A | A# | B | C | C# | D | D# | E | F | ... |\n\nI marked the same note. So for getFrets(\"E\", true, 1, 1) we should return frets that represent the same note as `(1, 0)`. \n```if:python\nThe answer is: `[(1, 0), (2, 5), (3, 9), (4, 14), (5, 19)]`.\n```\n```if-not:python\nThe answer is: `[[1, 0], [2, 5], [3, 9], [4, 14], [5, 19]]`.\n```",
+  "totalAttempts": 646,
+  "totalCompleted": 61,
+  "totalStars": 16,
+  "voteScore": 23,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

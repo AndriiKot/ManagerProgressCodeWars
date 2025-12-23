@@ -1,0 +1,36 @@
+{
+  "id": "64959e041e2c9a003cd35d21",
+  "name": "Mini Pokemon II",
+  "slug": "mini-pokemon-ii",
+  "category": "reference",
+  "publishedAt": "2023-06-23T13:30:36.853Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64959e041e2c9a003cd35d21",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-23T13:28:36.413Z",
+  "createdBy": {
+    "username": "Nika.dev",
+    "url": "https://www.codewars.com/users/Nika.dev"
+  },
+  "description": "*This is a follow-up on the last Kumite \"[Mini Pokemon](https://www.codewars.com/kata/64959cc04b1bbf16a6e348c3/python)\" that expands on complexity. I recommend looking at the first version first.*\n\n**Goal:**      \nWe want to calculate the optimal move to use given an attacking pokemon, and a defending pokemon.\n____________\n\n**Description:**          \nAdditional to type information, pokemon attacks possess a given power level.\nType effectiveness works as a multiplier on the base damage of the move.\n\n```\nEffective: 2.0\nNormal: 1.0\nIneffective: 0.5\n```\n\nSo a fire-type move of base-power 40 does 80 damage against a grass-type pokemon.\n\nEach pokemon can learn a variety of moves.\nThe goal is still to find the best move to use against an opponent.\n________________\n\n**Task:**      \nComplete the function `get_move()` so that the resulting `Move` is the best move against the given opponent.\nIf two moves are equally good, use the one with the lower moves list index.\nThe types are limited to `FIRE`, `GRASS`, and `WATER`.\nThe base power of a move can be assumed to be an integer (0 <= base-power < 200).\n\n**Classes Available:**    \n```python\nclass Element(StrEnum):\n    GRASS\n    FIRE \n    WATER\n\nclass Move:\n    name: str\n    element: Element\n    power: int\n    \nclass Pokemon:\n    element: Element\n    moves: list[Move]\n```",
+  "totalAttempts": 41,
+  "totalCompleted": 10,
+  "totalStars": 1,
+  "voteScore": 1,
+  "tags": [
+    "Artificial Intelligence",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

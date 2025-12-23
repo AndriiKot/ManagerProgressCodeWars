@@ -1,0 +1,37 @@
+{
+  "id": "5569e127d8237e1ea80000fd",
+  "name": "Triangulation:  Help Robin find Sherwood (technically Trilateration)",
+  "slug": "triangulation-help-robin-find-sherwood-technically-trilateration",
+  "category": "algorithms",
+  "publishedAt": "2015-05-31T08:22:51.824Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5569e127d8237e1ea80000fd",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2015-05-30T16:11:20.177Z",
+  "createdBy": {
+    "username": "DeanBrown",
+    "url": "https://www.codewars.com/users/DeanBrown"
+  },
+  "description": "Robin is a shepherd who lives in a forest.  Lately she hasn't been doing a very good job of watching her sheep.  Now her favorite sheep Sherwood is lost in the forest.  Luckily Robin bought all of her sheep cell phones last year.  Even more fortunate for Robin,  there is a cell tower installed on the roof of her house.  After hacking into the cell tower, Robin learns that Sherwood's phone is on and has a signal intensity of 1000 nanoWatts/m^2. ( a nanoWatt is 1E-9 Watts )\n\nRobin knows that Sherwood's phone transmits a signal that obeys the following equation.\n\nI = P / r^2 <br> \nor<br>\nr^2 = P / I\n\n+ r = the distance from the phone measured in meters\n+ P = the phones power in nanoWatts\n+ I = the  intensity of the signal recieved by the tower in nanoWatts/m^2\n\nRobin's neighbor also has a cell tower on his house. The tower on her neighbor's house shows an intensity of 2000 nanoWatts/m^2.  Robin' knows that her neighbor lives exactly 1 kilometer (1000 meters) east of her. She also knows that her sheep's phone transmits 1 watt (1E9 nanoWatts) of power.  \n\nYour job is to write a function that takes the phones power, and the two intensities and returns an array of all the coordinates where Sherwood can be.  The coordinates should be in meters and rounded to the nearest meter.  The origin of the coordinate system is Robin's house and a single coordinate should be a 2 element array of the form.\n\n[distance East, distance North]\n \nSome facts to keep in mind\n \n+ Sherwood can't dig or fly so height is ignored.\n+ The cell tower electronics aren't reliable for intensities below 10 nanoWatts/m^2.\n+ The trees in the forest disrupt and distort any signal that travels more than 10,000 meters\n\nRobin is lazy (*she would say smart*) and doesn't want to waste much time looking so she will give up in the following situations.\n\n+ She suspects the data from her tower or her neighbor's tower is unreliable.\n+ The data from the cell towers doesn't narrow her search down to at most two coordinates.\n\nIf either of these occur then your function should return the string \"Sherwood is lost forever!\"\n\nWith trilateration, if you know the distance an object is from two different locations, you can draw a circle around each location with the radius equal to the distance from that point.  The locations where the circles intersect are the possible locations for the object.  If the two circles don't intersect then the distances are incorrect.  \n\nExample:  In the above Example\n\n+ P =1E9\n+ I1 = 1000\n+ I2 = 2000\n\n``` findSherwood ( 1E9, 1000, 2000) === [ [750,661], [750,-661] ] ```",
+  "totalAttempts": 143,
+  "totalCompleted": 20,
+  "totalStars": 8,
+  "voteScore": 15,
+  "tags": [
+    "Geometry",
+    "Physics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "626466bdd13ea6923d0663ea",
+  "name": "Tunnel Digging",
+  "slug": "tunnel-digging",
+  "category": "reference",
+  "publishedAt": "2022-04-23T20:51:44.269Z",
+  "approvedAt": "2024-06-14T23:53:55.995Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/626466bdd13ea6923d0663ea",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-04-23T20:51:09.591Z",
+  "createdBy": {
+    "username": "user3340470",
+    "url": "https://www.codewars.com/users/user3340470"
+  },
+  "approvedBy": {
+    "username": "glovastefan",
+    "url": "https://www.codewars.com/users/glovastefan"
+  },
+  "description": "Given a list `r`, return how long it would take a tunnel boring machine to excavate a tunnel through `r`.\n\n`r` is a list that contain the following sections made of combinations of the following:\n- Very hard rock `[]`: this section takes 60 minutes to excavate\n- Hard Rock `{}`: this section takes 50 minutes to excavate\n- Somewhat Hard Rock `()`: this section takes 40 minutes to excavate\n- Somewhat Soft Rock `||`: this section takes 30 minutes to excavate\n- Soft Rock `::`: this section takes 20 minutes to excavate\n- Broken Rock `  `: this section only needs to be cleared (see below)\n\nAfter every 3 sections it excavates, the machine needs to stop for 30 minutes so workers can remove the excavated rock.\n\n# Notes: \n- The returned time should be in minutes\n- 'r' may contain sections with only one half. Example: `[` should equal 30\n\n# Examples\n```python\ntunnel_digging(['()', ')']) # returns 60\ntunnel_digging([': ', '  ', ': ']) # returns 50\ntunnel_digging(['|)', '{ ', '{ ', '|]', '{ ', ' }']) # returns 240\ntunnel_digging(['( ', '()', '(}', '[]', '{ ', '{ ']) # returns 275\ntunnel_digging(['  ', '{ ', '[ ', '[)', '[}']) # returns 190\ntunnel_digging(['{ ', ' }', '[}', ': ', '[ ', ':|']) # returns 230\n```",
+  "totalAttempts": 673,
+  "totalCompleted": 249,
+  "totalStars": 4,
+  "voteScore": 111,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

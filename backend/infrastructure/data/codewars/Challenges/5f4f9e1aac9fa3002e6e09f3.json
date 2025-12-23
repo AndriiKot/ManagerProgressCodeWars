@@ -1,0 +1,39 @@
+{
+  "id": "5f4f9e1aac9fa3002e6e09f3",
+  "name": "Olympiad podium",
+  "slug": "olympiad-podium",
+  "category": "algorithms",
+  "publishedAt": "2020-09-03T14:58:16.413Z",
+  "approvedAt": "2023-01-20T12:18:54.711Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5f4f9e1aac9fa3002e6e09f3",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-09-02T13:28:58.517Z",
+  "createdBy": {
+    "username": "ostaladaFab",
+    "url": "https://www.codewars.com/users/ostaladaFab"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "<div class=\"alert-box\">Hey, my english writing skills are perfectible :P. So, feel free to correct me in order to improve this kata.</div>\n\nYou are organizing an olympiad and would like to create an algorithm to determine the podium. Simple, isn't it!?  \nAn olympiad is a tournament with few rounds. Each round brings more or less points to the players.\n__Good luck!__\n\n## Input\nA `score` object, containing the scores of all players for each round. For exemple:\n```javascript\n{\n  'Emy': [8, 12, 1],    // Emy scored 8 points in the first round, 12 points in the second and 1 point in the third.\n  'Paul': [2, 6, -9],   // Paul scored 2 points in the first round, 6 points in the second and -9 points in the third.\n  'Sandra': [3, 9, 7],  // Sandra scored 3 points in the first round, 9 points in the second and 7 points in the third.\n  'Sue': [10, 2, 0],    // ...\n  'Yseult': [8, 9, 3]\n}\n```\n\n\n## Your task\n\nReturn the podium in this form:\n```javascript\n{\n  'gold': {\n    'score': 21,\n    'players': ['Emy']\n  },\n  'silver': {\n    'score': 20,\n    'players': ['Yseult']\n  },\n  'bronze': {\n    'score': 19,\n    'players': ['Sandra']\n  }\n}\n```\n\n\n## Rules\n\n* The best players are those with the most points accumulated.\n* In each round, players can score positive or negative points (between -100 and 100).\n* There may be a tie (Example 2).\n* Tied players share their medal (Example 2).\n* Names of tied players must be sorted in alphabetical order (Example 2).\n* When there is a tie, the following medal(s) are not awarded, like at the [Olympic Games](\"https://en.wikipedia.org/wiki/Alpine_skiing_at_the_2014_Winter_Olympics_%E2%80%93_Women%27s_downhill\") (Example 3).\n* Players are not required to participate in all rounds (Example 4).\n* If a player does not participate in any round, his scores is an empty array `[]`. He is declared forfeit and cannot be on the podium (Example 4).\n* If by misfortune, there is no one on the podium. The olympiad is cancelled. Return `{}`.\n\n\n## Examples\n\n### Example 1\nInput\n```javascript\n{\n  'Emy': [8, 12, 1],    // Emy scored a total of 21 points\n  'Paul': [2, 6, -9],   // Paul scored a total of -1 point\n  'Sandra': [3, 9, 7],  // Sandra scored a total of 19 points\n  'Sue': [10, 2, 0],    // Sue scored a total of 12 points\n  'Yseult': [8, 9, 3]   // Yseult scored a total of 20 points\n}\n```\n\nOutput\n\n```javascript\n{\n  'gold': {\n    'score': 21,\n    'players': ['Emy']\n  },\n  'silver': {\n    'score': 20,\n    'players': ['Yseult']\n  },\n  'bronze': {\n    'score': 19,\n    'players': ['Sandra']\n  }\n}\n```\n\n### Example 2\n\nInput\n\n```javascript\n{\n  'Emy': [8, 12, 1],    // Emy scored a total of 21 points\n  'Sandra': [4, 6, 9],  // Sandra scored a total of 19 points\n  'Paul': [3, 9, 7],    // Paul scored a total of 19 points\n  'Sue': [10, 2, 0],    // Sue scored a total of 12 points\n  'Yseult': [8, 9, 3]   // Yseult scored a total of 20 points\n}\n```\nOutput\n\n```javascript\n{\n  'gold': {\n    'score': 21,\n    'players': ['Emy']\n  },\n  'silver': {\n    'score': 20,\n    'players': ['Yseult']\n  },\n  'bronze': {\n    'score': 19,\n    'players': ['Paul', 'Sandra']\n  }\n}\n```\n\n### Example 3\n\nInput\n\n```javascript\n{\n  'Emy': [8, 12, 1],    // Emy scored a total of 21 points\n  'Paul': [2, 6, 7],    // Paul scored a total of 15 points\n  'Sandra': [3, 9, 7],  // Sandra scored a total of 19 points\n  'Sue': [10, 11, 0],   // Sue scored a total of 21 points\n  'Yseult': [8, 9, 3]   // Yseult scored a total of 20 points\n}\n```\nOutput\n\n```javascript\n{                   // No silver medal!\n  'gold': {\n    'score': 21,\n    'players': ['Emy', 'Sue']\n  },\n  'bronze': {\n    'score': 20,\n    'players': ['Yseult']\n  }\n}         \n```\n\n### Example 4\n\nInput\n\n```javascript\n{\n  'Emy': [12],      // Emy scored a total of 12 points\n  'Sandra': [],     // shall be declared forfeited\n  'Sue': [0, 0]     // Sue scored a total of 0 point\n}\n```\nOutput\n\n```javascript\n{\n  'gold': {\n    'score': 12,\n    'players': ['Emy']\n  },\n  'silver': {\n    'score': 0,\n    'players': ['Sue']\n  }\n}\n```",
+  "totalAttempts": 1399,
+  "totalCompleted": 128,
+  "totalStars": 19,
+  "voteScore": 51,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

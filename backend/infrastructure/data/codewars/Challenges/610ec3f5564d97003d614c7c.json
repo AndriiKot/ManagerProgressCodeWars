@@ -1,0 +1,35 @@
+{
+  "id": "610ec3f5564d97003d614c7c",
+  "name": "Continuations",
+  "slug": "continuations",
+  "category": "reference",
+  "publishedAt": "2021-08-07T22:14:34.591Z",
+  "approvedAt": null,
+  "languages": [
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/610ec3f5564d97003d614c7c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-08-07T17:33:41.958Z",
+  "createdBy": {
+    "username": "jariazavalverde",
+    "url": "https://www.codewars.com/users/jariazavalverde"
+  },
+  "description": "# Continuations\n\nA continuation is an abstract representation of the control state of a program. In continuation-passing style (CPS) function result is not returned, but instead is passed to another function, received as a parameter (continuation).\n\n```haskell\nnewtype ContT r m a = ContT { runContT :: (a -> m r) -> m r }\n```\n\n**The continuation monad transformer:** *a computation that produces an intermediate result of type `a` within a CPS computation whose final result type is* `m r` *.* **Note:** *the* `Monad` *instance and most of the operations do not require* `m` *to be a monad.*\n\n**Basic library functions:**\n\n```haskell\nevalContT :: Monad m => ContT r m r -> m r\ncallCC :: ((a -> ContT r m b) -> ContT r m a) -> ContT r m a\n```\n\n* `evalContT`: the result of running a CPS computation with `return` as the final continuation.\n* `callCC`: (call-with-current-continuation) calls its argument function, passing it the current continuation.\n\n\n# Coroutines\n\nContinuations are useful for encoding other control mechanisms such as exceptions, generators or coroutines. **Coroutines** are computations that can be suspended and resumed.\n\n```haskell\ntype Coroutine r = ContT r IO ()\ntype Queue r = IORef [Coroutine r]\n```\n\nHere, you have to implement coroutines as separate threads, using an `IORef` to hold a list of continuations \"waiting to run\".\n\n**Interface:**\n\n```haskell\nyield :: Queue r -> Coroutine r\nfork :: Queue r -> Coroutine r -> Coroutine r\n```\n\n* `yield q`: yields the processor to next thread in `q`.\n  * **Hint:** *enqueue the current continuation and run the next thread in `q`.*\n* `fork q p`: starts a new thread in `q` running `p`.\n  * **Hint:** *enqueue the current continuation, run `p`, and run the next thread in `q`.*\n\n# Example\n\n```haskell\nloop :: Queue r -> String -> Int -> Coroutine r\nloop q id n = do lift $ putStrLn $ id ++ \": \" ++ show n\n                 yield q\n                 loop q id (n+1)\n\nexample :: Coroutine r\nexample = do q <- lift $ newIORef [] \n             fork q $ loop q \"thread a\" 1\n             loop q \"thread b\" 1\n```\n\n```haskell\nghci> evalContT example\nthread a: 1\nthread b: 1\nthread a: 2\nthread b: 2\nthread a: 3\nthread b: 3\n...\n```\n\n\n# Task\n\nYour task in this kata is as follows:\n\n1. Implement the `Functor`, `Applicative`, `Monad`, `MonadTrans` and `Alternative` instances for `ContT`.\n2. Implement the library functions (`evalContT` and `callCC`).\n3. Implement the interface for coroutines (`yield` and `fork`).",
+  "totalAttempts": 119,
+  "totalCompleted": 9,
+  "totalStars": 5,
+  "voteScore": 12,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

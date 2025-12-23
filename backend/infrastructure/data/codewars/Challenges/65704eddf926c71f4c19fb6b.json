@@ -1,0 +1,35 @@
+{
+  "id": "65704eddf926c71f4c19fb6b",
+  "name": "Who Advanced?",
+  "slug": "who-advanced",
+  "category": "reference",
+  "publishedAt": "2023-12-06T21:26:00.824Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/65704eddf926c71f4c19fb6b",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-12-06T10:37:17.586Z",
+  "createdBy": {
+    "username": "vlukyanets",
+    "url": "https://www.codewars.com/users/vlukyanets"
+  },
+  "description": "Many residents of Bitaculandia participate in the stages of international programming olympiads. There are seven such olympiads held in Bitaculandia:\n1. IOI - International Olympiad in Informatics\n2. CEOI - Central-Eventora Olympiad in Informatics\n3. EGOI - Eventora Girls Olympiad in Informatics\n4. EJOI - Eventora Junior Olympiad in Informatics\n5. BaltOI - Balticodian Olympiad in Informatics\n6. BalkOI - Balkolian Olympiad in Informatics\n7. JBOI - Junior Balkolian Olympiad in Informatics\n\nMiss M is responsible for organizing various stages of olympiads, as well as selections (training camps) for all seven international stages. After the last selection round, teams of four to six people are formed for all seven olympiads. However, only those participants who meet the criteria for participation in the olympiad should be sent to each competition. Here is a list of algorithms for determining the participants of the teams for the olympiads:\n\n1. IOI - Top 4 participants based on the total scores from all selection rounds.\n2. CEOI - Top 4 participants based on the total scores from all selection rounds.\n3. EGOI - Top 4 female participants based on the total scores from all selection rounds.\n4. EJOI - Top 4 participants at most 15 years old based on the total scores from all selection rounds.\n5. BaltOI - Top 6 participants based on the total scores from all selection rounds.\n6. BalkOI - Top 4 participants who are not in 11th grade based on the total scores from all selection rounds.\n7. JBOI - Top 4 participants who are not in 11th or 10th grade based on the total scores from all selection rounds.\n\nIf there are fewer participants than the required number, it means that the team will consist of fewer people.\nFor example, if you need to determine the team for EGOI and there are only two girls, it means that the team will consist of only two participants, not four.\nSince there are many participants and many olympiads, and the results are desired immediately after the competition ends, Miss M asks to write a program that, based on the results and information about the participants, provides the composition of the teams for the international stages of the olympiads.\n\nInput:\n\nFirst arguments contains list of `n` (1 ≤ `n` ≤ 10^4) string values, each contains information about the olympiad participants:\n- `id` - unique participant number (10^6 ≤ `id` < 10^7);\n- `gender` - participant’s gender (`male`, `female`);\n- `grade` - participant’s grade level (1 ≤ `grade` ≤ 11);\n- `age` - participant’s age (10 ≤ `age` ≤ 20);\n- `score` - the number of points participants have from all selection rounds (0 ≤ `score` ≤ 10^8).\n\nIt is guaranteed that all ID and score of participants are different.\nSecond arguments contains `m` (1 ≤ `m` ≤ 7) - list of international olympiads for which Miss\nM wants to know the composition of the participant teams. Possible olympiads: `IOI`, `CEOI`, `EGOI`, `EJOI`, `BaltOI`, `BalkOI`, `JBOI`.\nIt is guaranteed that all olympiads are different.\n\nOutput:\n\nDictionary with `m` key-value pairs where key is name of olympiad (`IOI`, `CEOI` etc.) and value is list of participants IDs. Each list of IDs should be sorted by ascending. If no participants satisfy criteria of olympiad, add empty list for corresponding key.\n\nExample:\n\n```python\nparticipants = [\n  '1000001 female 10 16 400',\n  '1000002 male 10 17 500',\n  '1000003 male 11 17 505',\n  '1000004 male 11 16 405',\n  '1000005 female 11 17 450',\n  '1000006 female 10 15 480',\n  '1000007 male 9 15 445',\n  '1000008 male 6 12 350',\n  '1000009 male 8 13 399',\n  '1000010 male 10 16 430'\n]\nolympiads = [\n  'IOI',\n  'EGOI',\n  'BaltOI'\n]\n\nadvanced = who_advanced(participants, olympiads)\nprint(advanced)\n\n{\n  'IOI': [1000002, 1000003, 1000005, 1000006],\n  'EGOI': [1000001, 1000005, 1000006],\n  'BaltOI': [1000002, 1000003, 1000005, 1000006, 1000007, 1000010]\n}\n```\n\nExplanation of example:\n\nAll participants can take part in IOI, the results table will look like this:\n1. 1000003 - 505 points\n2. 1000002 - 500 points\n3. 1000006 - 480 points\n4. 1000005 - 450 points\n5. 1000007 - 445 points\n6. 1000010 - 430 points\n7. 1000004 - 405 points\n8. 1000001 - 400 points\n9. 1000009 - 399 points\n10. 1000008 - 350 points\n\nThe participants who will go to the olympiad are 1000003, 1000002, 1000006, 1000005.\n\nOnly girls can participate in EGOI, the results table will look like this:\n1. 1000006 - 480 points\n2. 1000005 - 450 points\n3. 1000001 - 400 points\n\nThe participants who will go to the olympiad are 1000006, 1000005, 1000001.\n\nAll participants can take part in BaltOI, the results table will look the same as for IOI. The same participants who will go to IOI will also go to BaltOI, as well as 1000007 and 1000010.\n\n_Adopted from Ukrainian Olympiad in Informatics 2023-2024, II stage_",
+  "totalAttempts": 76,
+  "totalCompleted": 10,
+  "totalStars": 1,
+  "voteScore": 12,
+  "tags": [
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

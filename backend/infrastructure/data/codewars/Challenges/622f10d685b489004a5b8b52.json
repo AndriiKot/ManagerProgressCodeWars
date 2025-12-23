@@ -1,0 +1,35 @@
+{
+  "id": "622f10d685b489004a5b8b52",
+  "name": "Cheapest route (Toll roads included)",
+  "slug": "cheapest-route-toll-roads-included",
+  "category": "algorithms",
+  "publishedAt": "2022-03-17T13:56:11.913Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/622f10d685b489004a5b8b52",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-03-14T09:54:30.121Z",
+  "createdBy": {
+    "username": "MrTurtle",
+    "url": "https://www.codewars.com/users/MrTurtle"
+  },
+  "description": "# Cheapest route (Toll roads included)\n\nYou are driving across the country, but recent Government changes have led to new fuel prices and new toll roads.\nAll you have is your map, a list of toll roads (with prices), the current price of fuel, and your wallet. Your job is to create a function to provide the cheapest route from point A to point B.\n\n\n## Map\nYour map will be in the format of a list, as such:\n```\nmap = [\n  {\n    {new_junction}: {distance_to_new_junction},\n    {...}: {...}\n  }\n]\n```\nFor example:\n```\nmap = [\n  {   ## Junction 0\n    1: 32,  ## The distance from Junction 0 to Junction 1 is 32\n    2: 12   ## The distance from J0 to J2 is 12\n  },\n  {   ## Junction 1\n    0: 32,  ## The distance from J1 to J0 is 32\n    2: 9    ## The distance from J1 to J2 is 9\n  },\n  {   ## Junction 2\n    0: 12,  ## The distance from J2 to J0 is 12\n    1: 9    ## The distance from J2 to J1 is 9\n  }\n]\n```\nAs you can see, these roads form a triangle, and the distances between the junctions are stored in the dictionaries. For simplicity, we'll say the distances are in kilometers.\n\n## Tolls\nYour list of toll roads will be in a dictionary:\n```\ntolls = {\n  \"{junction}-{new_junction}\":{price}\n}\n```\nFollowing the example from before, lets say that the road inbetween Junction 0 and Junction 2 is a toll road, and the toll costs $5.40 (All costs are calculated as integers to prevent floating point problems).\n```\ntolls = {\n  \"0-2\":540\n}\n```\nThis means that if your calculated route should cross this path, $5.40 should be added onto your final cost. Remember to factor this into your calculated route. Also note that this is two way. Travelling from Junction 2 to Junction 0 should also add $5.40.\n\n## Fuel\nThe cost of fuel should be calculated using the provided price. The cost of fuel is **per kilometer**, not per litre or gallon. To calculate the fuel cost for a 12km stretch at $0.18 per km, you should multiply 12 by 18. This should be factored into your final route calculation.\n\n\n## The task\nYour job is to create a function, `calculate_route`, to find the cheapest route from junction `x` to junction `y`, taking into account the cost of `fuel`, the `tolls`, and the distances on the `map`.\nIf there are two paths with the same cost, choose the one with the fewest junctions.\nYou should return both a list of junctions that you pass through, and the cost of the route in the format `({route}, {cost})` (tuple).\nYou don't have to worry about making sure there is a valid route, both junctions will always be connected.\n\n\n## Note:\nWhile I won't outright ban imports (mainly because it would be ugly), my original idea of this wasn't a test of *who can find the best all-in-one pathfinding module*, so, if you can help it, please don't use any. I did it when I solved it, so can you. If lots of people still use imports, I'll have no choice but to blacklist the term `import`. :)\n",
+  "totalAttempts": 180,
+  "totalCompleted": 11,
+  "totalStars": 0,
+  "voteScore": -3,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 1
+  }
+}

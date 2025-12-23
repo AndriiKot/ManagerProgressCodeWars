@@ -1,0 +1,40 @@
+{
+  "id": "63deb6b0acb668000f87f01b",
+  "name": "Atomic Chess",
+  "slug": "atomic-chess",
+  "category": "games",
+  "publishedAt": "2023-02-04T19:54:46.141Z",
+  "approvedAt": "2023-02-05T16:50:34.137Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63deb6b0acb668000f87f01b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-02-04T19:49:04.423Z",
+  "createdBy": {
+    "username": "brodiemark",
+    "url": "https://www.codewars.com/users/brodiemark"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In atomic chess (https://en.wikipedia.org/wiki/Atomic_chess) all captures result in an \"explosion\" which destroys all pieces other than pawns in the 9 squares around and including the square where the capture takes place. The capturing piece and the captured piece are destroyed, whether they are pawns or not. \n\nFor example, in the following position, suppose the white knight <code>N</code> on f3 captures the black pawn <code>p</code> on e5.\n<code>\n8 rnbqkb.r\n7 pppp.ppp\n6 .....n..\n5 ....p...\n4 ....P...\n3 .....N..\n2 PPPP.PPP\n1 RNBQKB.R\n  abcdefgh\n</code>\n\nThis causes the <code>N</code> and <code>p</code>, as well as the black knight <code>n</code> on f6, to be destroyed. The white pawn <code>P</code> on e4 is not affected. The position now is:\n<code>\n8 rnbqkb.r\n7 pppp.ppp\n6 ........\n5 ........\n4 ....P...\n3 ........\n2 PPPP.PPP\n1 RNBQKB.R\n  abcdefgh\n</code>\n\nA capture that results in the enemy king being destroyed immediately wins the game! Therefore a king can never capture, because it would destroy itself.\n\nWrite a function that takes a chess position and a move and returns the resulting atomic chess position. A move that is not a capture is handled using regular chess rules (https://en.wikipedia.org/wiki/Rules_of_chess). \n\nDETAILS:\n\n(1) Positions are represented as 2-d lists. Uppercase letters denote white pieces and lowercase black. Empty squares are indicated using <code>.</code> (a single period). E.g. the first position above is \n<code>\n[ [\"r\",\"n\",\"b\",\"q\",\"k\",\"b\",\".\",\"r\"],\n  [\"p\",\"p\",\"p\",\"p\",\".\",\"p\",\"p\",\"p\"],\n  [\".\",\".\",\".\",\".\",\".\",\"n\",\".\",\".\"],\n  [\".\",\".\",\".\",\".\",\"p\",\".\",\".\",\".\"],\n  [\".\",\".\",\".\",\".\",\"P\",\".\",\".\",\".\"],\n  [\".\",\".\",\".\",\".\",\".\",\"N\",\".\",\".\"],\n  [\"P\",\"P\",\"P\",\"P\",\".\",\"P\",\"P\",\"P\"],\n  [\"R\",\"N\",\"B\",\"Q\",\"K\",\"B\",\".\",\"R\"] ]\n</code>\n  \n(2) Moves are denoted using the initial square and destination square, with <code>-</code> indicating a regular move and <code>x</code> a capture. E.g. the <code>Nxp</code> capture described above is <code>f3xe5.</code> If instead the white knight returned to its home square, that would be <code>f3-g1.</code>\n\n(3) You do NOT need to verify that the given move is legal. And you will not be given moves that involve castling, pawn promotion, or en-passant. You do not need to detect whether check or mate results from playing the move. Just return the resulting position as a 2-d list.\n\nEnjoy exploding!",
+  "totalAttempts": 506,
+  "totalCompleted": 106,
+  "totalStars": 7,
+  "voteScore": 44,
+  "tags": [
+    "Strings",
+    "Lists"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

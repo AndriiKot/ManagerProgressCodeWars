@@ -1,0 +1,41 @@
+{
+  "id": "629049687438580064f0e6dd",
+  "name": "Multisize Nonogram Encoder",
+  "slug": "multisize-nonogram-encoder",
+  "category": "algorithms",
+  "publishedAt": "2022-05-27T03:45:57.978Z",
+  "approvedAt": "2022-05-27T09:54:17.012Z",
+  "languages": [
+    "python",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/629049687438580064f0e6dd",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-27T03:45:44.083Z",
+  "createdBy": {
+    "username": "оkabe",
+    "url": "https://www.codewars.com/users/%D0%BEkabe"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "<h2>Nonogram encoder</h2>\n\nIf you're not familiar with nonograms, I recommend you to check this wikipedia page: <a href=\"https://en.wikipedia.org/wiki/Nonogram\">Nonogram - Wikipedia</a>\n\nMy friend Alex really likes to solve nonograms, and I've drawn one for him:\n\n<img src=\"https://i.imgur.com/IwaD1B6.png\" width=\"400\" height=\"400\">\n\nHowever, I'm too lazy to look through all 10 rows and all 10 columns to figure out all the clues.\n\nCould you please write me a program that can convert a drawn nonogram (represented as an array of arrays):\n\n```python\nnonogram = (\n  (0, 0, 0, 1, 0, 0, 0, 1, 1, 0),\n  (0, 0, 1, 1, 1, 0, 1, 1, 1, 1),\n  (0, 0, 1, 1, 1, 1, 1, 1, 1, 1),\n  (0, 0, 0, 1, 1, 1, 1, 1, 1, 0),\n  (0, 0, 0, 0, 0, 1, 1, 0, 0, 0),\n  (0, 1, 0, 0, 0, 0, 1, 1, 0, 0),\n  (1, 0, 1, 0, 0, 0, 1, 1, 0, 0),\n  (1, 1, 1, 0, 0, 1, 1, 0, 0, 0),\n  (1, 1, 1, 0, 0, 1, 1, 1, 0, 1),\n  (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)\n)\n```\n```rust\nnonogram = &[\n  &[0, 0, 0, 1, 0, 0, 0, 1, 1, 0],\n  &[0, 0, 1, 1, 1, 0, 1, 1, 1, 1],\n  &[0, 0, 1, 1, 1, 1, 1, 1, 1, 1],\n  &[0, 0, 0, 1, 1, 1, 1, 1, 1, 0],\n  &[0, 0, 0, 0, 0, 1, 1, 0, 0, 0],\n  &[0, 1, 0, 0, 0, 0, 1, 1, 0, 0],\n  &[1, 0, 1, 0, 0, 0, 1, 1, 0, 0],\n  &[1, 1, 1, 0, 0, 1, 1, 0, 0, 0],\n  &[1, 1, 1, 0, 0, 1, 1, 1, 0, 1],\n  &[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],\n]\n```\n\nInto a tuple of such structure:\n\n`(column_clues, row_clues)`\n\nwhere\n\n```if:python\n`column_clues = ((4,), (1, 3), (2, 4),...)` and `row_clues = ((1, 2), (3, 4), (8,),...)`\n```\n```if:rust\n`column_clues = vec![vec![4], vec![1, 3], vec![2, 4],...]` and `row_clues = vec![vec![1, 2], vec![3, 4], vec![8],...]`\n```\n\nNotes:\n1. Any empty rows or empty columns (which are cosmically unlikely to occur in random tests) should be represented as an empty (zero-length) sequence. \n2. Nonograms come in different sizes, such that `5 <= size <= 100`\n3. There are 200 random tests\n",
+  "totalAttempts": 483,
+  "totalCompleted": 183,
+  "totalStars": 14,
+  "voteScore": 58,
+  "tags": [
+    "Games",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

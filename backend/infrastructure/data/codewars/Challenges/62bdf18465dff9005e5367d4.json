@@ -1,0 +1,39 @@
+{
+  "id": "62bdf18465dff9005e5367d4",
+  "name": "Who will win the race?",
+  "slug": "who-will-win-the-race",
+  "category": "algorithms",
+  "publishedAt": "2022-06-30T21:25:14.179Z",
+  "approvedAt": "2025-12-22T21:42:36.838Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62bdf18465dff9005e5367d4",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-06-30T18:55:00.587Z",
+  "createdBy": {
+    "username": "johnbutlergames",
+    "url": "https://www.codewars.com/users/johnbutlergames"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Who Will Win the Race?\n\nA race has started! You need to determine who will win (if anyone).\n\nEach racer has a set speed, given in the form of a string. They accelerate to this speed instantly and stay at it consistently for the entire race.\n\nPay attention that this race is not very fair, as there is not a set distance for everyone to run. The distance each racer needs to run to get to the finish line will be given as a string, which will need to be parsed to obtain the speed.\n\n## Your Task:\n\nCreate the function `whoWillWin` that will predict what will happen in the race and return it as a string.\n\n## Input:\n\nYou are given the array `arr` of racers.\n\nEach racer is an object formatted like this: `{name:\"Racer\", speed:\"1 meter(s) per second\", distanceToRun:\"1000 meters\"}`\n\nNote that the values of `speed` and `distanceToRun` will be strings, so you will need to parse out the numbers to get useful values.\n\nAll racers will be valid and there will be no copies of names, but the array might be empty, in which case you should return the string `\"No one raced!\"`\n\n## Output:\n\nIf no racers are present (arr is empty), return the string `\"No one raced!\"`\n\nIf a racer starts at or beyond the finish line (`distanceToRun <= 0`), or is not running forwards (`speed <= 0`), they are disqualified.\n\nIf all racers are disqualified, return the string `\"Everyone was disqualified!\"`\n\nIf someone finished the race, return the name of the winner and the time they finished rounded to the nearest second: `\"Racer won the race in 1000 second(s)!\"`\n\nIf the race was a tie, return the string `\"N people tied in S second(s)!\"`, `N` being the number of people who tied and `S` being the time they finished in.\n\nGood luck!\n\n",
+  "totalAttempts": 252,
+  "totalCompleted": 55,
+  "totalStars": 1,
+  "voteScore": 56,
+  "tags": [
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

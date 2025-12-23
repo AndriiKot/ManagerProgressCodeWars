@@ -1,0 +1,42 @@
+{
+  "id": "65579292e361e60e202906f4",
+  "name": "Three-valued logic",
+  "slug": "three-valued-logic",
+  "category": "algorithms",
+  "publishedAt": "2023-11-23T14:04:53.976Z",
+  "approvedAt": "2023-11-24T15:31:43.530Z",
+  "languages": [
+    "python",
+    "haskell",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/65579292e361e60e202906f4",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-11-17T16:19:30.956Z",
+  "createdBy": {
+    "username": "pea18013",
+    "url": "https://www.codewars.com/users/pea18013"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Background\n\nThree-valued logic is a multiple-valued logic system in which there are three truth values; for this kata they will be `True`, `False` and `Unknown`. In this kata, `T` stands for `True`, `F` stands for `False` and `U` stands for `Unknown`. They are also represented as `1`, `-1` and `0` respectively.\n\nThis is the basic truth table:\n\n```\n*---+---+-------+---------+--------+---------*\n| P | Q | not P | P and Q | P or Q | P xor Q |\n| T | T |   F   |    T    |   T    |    F    |\n| T | U |   F   |    U    |   T    |    U    |\n| T | F |   F   |    F    |   T    |    T    |\n| U | T |   U   |    U    |   T    |    U    |\n| U | U |   U   |    U    |   U    |    U    |\n| U | F |   U   |    F    |   U    |    U    |\n| F | T |   T   |    F    |   T    |    T    |\n| F | U |   T   |    F    |   U    |    U    |\n| F | F |   T   |    F    |   F    |    F    |\n*---+---+-------+---------+--------+---------*\n```\n\nCommutativity holds in this three-valued logic.\n\nFor example:\n\n```\nT and U  is equal to  U and T.\n\nIn general:\np and q  is equal to  q and p.\n```\n\nMoreover, for identical operators, associativity holds in this three-valued logic.\n\nFor example:\n\n```\n(U or T) or F  is equal to  U or (T or F).\n\n((T xor F) xor U) xor T  is equal to\n  (T xor (F xor U)) xor T,\n  T xor ((F xor U) xor T), \n  T xor (F xor (U xor T)),\n  (T xor F) xor (U xor T).\n```\n\nNote that the law of the excluded middle and the law of non-contradiction do not hold in this three-valued logic.\n\nFor example:\n\n```\nU and not U  is not equal to  F.\nnot U or U  is not equal to  T.\n```\n\nRead more about three-valued logic [on Wikipedia](https://en.wikipedia.org/wiki/Three-valued_logic).\n\n# Task\n\nWrite a function `threevl` that accepts an expression ( as a string ) and returns its value ( as `1`, `0`, or `-1` ).\n\nFor example:\n\n```python\n\"not T or U\"             ->  0\n\"not (T or U)\"           -> -1\n\"U and not U\"            ->  0\n\"not (F and (U xor T))\"  ->  1\n```\n\n# Notes\n\n- Always evaluate expressions inside brackets first.\n- This kata only uses 4 operators `not, and, xor, or`.\n- Their priorities, from highest to lowest, are: `not, and, xor, or`. Hence, `not T or F xor U` should equal `(not T) or (F xor U)`.\n\n# Input\n\n- `0` <= the number of operators < `59`\n- There will be no invalid inputs.\n\nThere are `300` random tests. Good luck and happy coding!",
+  "totalAttempts": 1183,
+  "totalCompleted": 97,
+  "totalStars": 27,
+  "voteScore": 49,
+  "tags": [
+    "Interpreters",
+    "Logic"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

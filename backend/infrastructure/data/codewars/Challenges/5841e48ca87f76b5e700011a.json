@@ -1,0 +1,37 @@
+{
+  "id": "5841e48ca87f76b5e700011a",
+  "name": "Image Processing: Gaussian Blurring",
+  "slug": "image-processing-gaussian-blurring",
+  "category": "algorithms",
+  "publishedAt": "2016-12-02T21:53:16.976Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5841e48ca87f76b5e700011a",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-12-02T21:15:56.416Z",
+  "createdBy": {
+    "username": "depperm",
+    "url": "https://www.codewars.com/users/depperm"
+  },
+  "description": "You hate having your picture taken, but instead of hiding you decide to load a blur program into your family camera. Basically you need to apply a blur kernel to a pixel and it's neighbors. For simplicity your blur kernel will be 3x3 grid. You need to multiply the each value of the kernel with the pixel or neighbor and sum together. **The kernel and image will be given as 2d lists.**\n\nHere is a sample kernel:\n\n    [0.1,  0.12, 0.1]\n    [0.12, 0.2,  0.12]\n    [0.1,  0.12, 0.1]\nHere is an image and we will blur the middle pixel (20)\n\n    13 14 14\n    15 20 21\n    15 20 25\n\nStep 1 (multiply pixel and neighbors by the kernel values):\n \n    13*.1   14*.12  14*.1\n    15*.12  20*.2   21*.12\n    15*.1   20*.12  25*.1\nStep 2 (sum together and round), the middle point has a new value of 19 (`1.3 + 1.68 + 1.4 + 1.8 + 4 + 2.52 + 1.5 + 2.4 + 2.5 = 19.1`)\n\nThis has to be done for each pixel based on the original pixel value, not on previously blurred pixels.\n\nGiven an image representation\n\n    A B C\n    F G H \n    K L M\n    \nEdges and corners use their own values as the neighbors. For example if you blur corner pixel `A`, the neighbors would look like\n\n    A A B\n    A A B\n    F F G\nAnd for edge pixel `B`\n\n    A B C\n    A B C\n    F G H",
+  "totalAttempts": 103,
+  "totalCompleted": 14,
+  "totalStars": 2,
+  "voteScore": 17,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Lists"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

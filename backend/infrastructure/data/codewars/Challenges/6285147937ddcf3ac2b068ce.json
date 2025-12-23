@@ -1,0 +1,43 @@
+{
+  "id": "6285147937ddcf3ac2b068ce",
+  "name": "Networking 101/3: Find the number of valid Hosts in a Subnet",
+  "slug": "networking-101-slash-3-find-the-number-of-valid-hosts-in-a-subnet",
+  "category": "reference",
+  "publishedAt": "2022-05-19T15:37:44.837Z",
+  "approvedAt": "2022-05-20T13:47:21.165Z",
+  "languages": [
+    "c",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/6285147937ddcf3ac2b068ce",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-18T15:44:57.949Z",
+  "createdBy": {
+    "username": "bitcanon",
+    "url": "https://www.codewars.com/users/bitcanon"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "### Introduction \n\nAn IPv4 subnet mask consist of 32 bits, divided into four octets.\nAs an example, a subnet mask of 255.255.255.0 can be written as:\n\n```\n    11111111.11111111.11111111.00000000\n      255   .  255   .  255   .   0    \n```\n\nThe ones (1) represent the network/subnet part of the mask\nand the zeroes (0) represent the **host** part of the mask.\n\nThe zeroes tell us how many IP addresses there are in the \nnetwork defined by the ones.\n\nIn the example subnet above there are 256 addresses available;\nmore precisely 0-255.\n\n### The Assignment\n\nYour task is to implement a function `uint32_t hosts_in_subnet(const char* netmask)` which takes in an IPv4 subnet mask `netmask` and returns a 32-bit unsigned integer `uint32_t` with the number of **valid** host addresses. Using the subnet mask `netmask` you can figure out how many **usable** host addresses there are in a network defined by that netmask.\n\n### Notes\n\n1. The first and last address in a subnet are **not** valid\nhost addresses; they are reserved for the *network* \nand *broadcast* addresses. \n\n2. There are two special cases: \n * If all 32 bits are ones there is only **one** valid\n   host address.\n * When the mask has 31 bits set to ones there are **two** \n   valid host addresses (according to RFC 3021).\n\n### Testing\n\nThe tests will challenge you with valid netmasks in the range (`128.0.0.0 - 255.255.255.255`) and ***nothing else***.",
+  "totalAttempts": 790,
+  "totalCompleted": 129,
+  "totalStars": 10,
+  "voteScore": 41,
+  "tags": [
+    "Networks",
+    "Bits",
+    "Fundamentals",
+    "Binary"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

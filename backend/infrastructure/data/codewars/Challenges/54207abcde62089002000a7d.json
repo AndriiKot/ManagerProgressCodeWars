@@ -1,0 +1,35 @@
+{
+  "id": "54207abcde62089002000a7d",
+  "name": "Plain Condorcet Voting Method",
+  "slug": "plain-condorcet-voting-method",
+  "category": "algorithms",
+  "publishedAt": "2014-09-25T14:30:48.290Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/54207abcde62089002000a7d",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2014-09-22T19:38:36.597Z",
+  "createdBy": {
+    "username": "leakymirror",
+    "url": "https://www.codewars.com/users/leakymirror"
+  },
+  "description": "Condorcet method is an election method that elects the candidate that would win by majority rule in all pairings against the other candidates.\n\nLet's say, we have 3 candidates `a,b,c` and 4 voters with their ranked preferences:\n\n```\nVoter1: a,b,c\nVoter2: b,a,c\nVoter3: a,b,c\nVoter4: a,c,b\n```\n\nEach candidate has to face his opponents in a mini election and voters vote according to their preferences. In our case, the results are:\n\n```\na vs b: 3:1\na vs c: 4:0\nb vs c: 3:1\n```\n\nIf one of the candidates wins in all duels, he becomes a strong winner. In our simple case, `a` is the winner, because he won both times.\n\n```\na 2\nb 1\nc 0\n```\n\nIf there is no strong winner, then the candidate(s) with the least mini-election wins is (are) removed and the procedure is repeated.\n\nYour task is to create a function with method `.winner()`. It should take an array with voters' preferences and return a winner if there is one.\n\n```javascript\nvar winner = Condorcet(preferences).winner()\n```\n  \n### Some additional details:\n\n1. If there is a tie in a mini election, then both candidates do not get any points.\n2. If there is a tie in between candidates with least points, then all those candidates are removed.\n3. If there is no winner at all, then the function should return `null`.\n\n## References:\n1. [Wikipedia: Condorcet method](http://en.wikipedia.org/wiki/Condorcet_method)\n2. [Introduction at Princeton Uni](http://web.math.princeton.edu/math_alive/Voting/Lab1/Condorcet.html)",
+  "totalAttempts": 188,
+  "totalCompleted": 21,
+  "totalStars": 4,
+  "voteScore": 32,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

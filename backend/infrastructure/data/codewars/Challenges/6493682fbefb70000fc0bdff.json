@@ -1,0 +1,40 @@
+{
+  "id": "6493682fbefb70000fc0bdff",
+  "name": "Subsequences with no adjacent items",
+  "slug": "subsequences-with-no-adjacent-items",
+  "category": "algorithms",
+  "publishedAt": "2023-06-23T20:48:34.632Z",
+  "approvedAt": "2023-06-24T07:27:27.123Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6493682fbefb70000fc0bdff",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-21T21:14:23.987Z",
+  "createdBy": {
+    "username": "LanXnHn",
+    "url": "https://www.codewars.com/users/LanXnHn"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "### Subsequences:\n\n[Subsequence](https://en.wikipedia.org/wiki/Subsequence) for the Kata is defined as following:\n\n__For a collection of numbers, a subsequence is one of the possible results you can get by removing some of the numbers from the collection, keep the original order.__\n\n```\nExample: [1, 3, 5]\n\nAll subsequences are:\n\n[]        (Remove all numbers)\n[1]       (Remove 3, 5)\n[3]       (Remove 1, 5)\n[5]       (Remove 1, 3)\n[1, 3]    (Remove 5)\n[1, 5]    (Remove 3)\n[3, 5]    (Remove 1)\n[1, 3, 5] (Keep all)\n```\n___\n\n### No Adjacent Items:\n\nNow we look at all the subsequences, check if there are numbers which are adjacent to each other in the original collection. \n\nIn the above example:\n\n```\n[1, 3]    (1, 3) => adjacent items\n[3, 5]    (3, 5) => adjacent items\n[1, 3, 5] (1, 3) and (3, 5) => adjacent items\n\n```\n\nAnd we only want no adjacent items:\n\n```\n[1, 3, 5] => [[], [1], [3], [5], [1, 5]]\n```\n___\n\n### Task:\n\n* You will get a list of numbers, as input, it will have no repeated numbers.\n\n* Return all subsequences with no adjacent items, your answer will be sorted, so the order does not matter.\n___\n\n### Performance:\n\n```\n1 <= size of input list <= 25\n\nWhen the size is 25:\n    1. Total amount of subsequences is 33554432\n    2. Total amount of subsequences with no adjacent items is 196418\n```\n\n* 70 tests with input size <= `9`\n\n* 25 tests with input size <= `20`\n\n* for input size from `21` to `25`, 1 test for each\n___\n\n### Examples:\n\n__input => output__\n\n```\n[0] => [[], [0]]\n[2, 1] => [[], [1], [2]]\n[1, 3, 5] => [[], [1], [1, 5], [3], [5]]\n[8, 2, 6, 4] => [[], [2], [2, 4], [4], [6], [8], [8, 4], [8, 6]]\n```",
+  "totalAttempts": 700,
+  "totalCompleted": 69,
+  "totalStars": 12,
+  "voteScore": 45,
+  "tags": [
+    "Algorithms",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "5e3d26697a978d000ff52671",
+  "name": "Lagrange polynomial",
+  "slug": "lagrange-polynomial",
+  "category": "algorithms",
+  "publishedAt": "2020-02-07T10:54:51.898Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5e3d26697a978d000ff52671",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2020-02-07T08:57:13.995Z",
+  "createdBy": {
+    "username": "quint",
+    "url": "https://www.codewars.com/users/quint"
+  },
+  "description": "<strong>Your task is to find the Lagrange polynomial with a given rounded accuracy of the coefficients.</strong><br>\n\nThe interpolation polynomial in the Lagrange form is a linear combination<br>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/d07f3378ff7718c345e5d3d4a57d3053190226a0\" style=\"background-color: #c0c0c0; height: 60px;\"></center>\nof Lagrange basis polynomials\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/6e2c3a2ab16a8723c0446de6a30da839198fb04b\" style=\"background-color: #c0c0c0; height: 75px;\"></center>\nwhere <img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/4fbacffa9af137cb08ee9eb1ce4ee402a61b48ac\" style=\"display:inline; background-color: #c0c0c0; height: 18px;\">.<br>\n<strong>Input data:</strong><br>\n— Sorted list of coordinates of points by X without duplicates (-100 <= x <= 100, 0 <= number of values in array <= 10).<br>\n— List of coordinates of points by Y (-100 <= y <= 100, 0 <= number of values in array <= 10).<br>\n— Accuracy (0 <= Accuracy <= 6, the number of digits after the floating point).<br>\n<strong>Output data:</strong><br>\n— The Lagrange polynomial (string).<br>\n<strong>Coefficients should be rounded</strong> in accordance with the value of <code>rounded_accuracy</code>.<br>\nIf any rounded coefficient is zero, it should not be in the result string.<br>\nIf all rounded coefficients are equal to zero, output <code>+0.000000*x^0</code> with the <code>rounded_accuracy</code> number of digits after the floating point. For example, for <code>rounded_accuracy = 3</code>: <code>+0.000*x^0</code>.<br>\n\n<ins>Optimization is not required.</ins><br>\n<ins>You should use the <code>Decimal</code> library in Python.</ins><br>\n\n<strong>Examples</strong><br>\nExample 1: x<sup>2</sup>.<br>\nInput data:\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/30a104bdf94f6e00954aa959fecd93915a94624e\" style=\"background-color: #c0c0c0; height: 70px;\"></center>\nCalculation:\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/274ccc9dab43ec4880e953e43ebcd5a8470cf12a\" style=\"background-color: #c0c0c0; height: 80px;\"></center>\n<br>In code:\n<pre><code class='language-python'>interpolation_formula([1, 2, 3], [1, 4, 9], rounded_accuracy=2) -> '+1.00*x^2'</code></pre>\n<pre><code class='language-python'>interpolation_formula([1, 2, 3], [1, 4, 9], rounded_accuracy=4) -> '+1.0000*x^2'</code></pre>\n<pre><code class='language-python'>interpolation_formula([1, 2, 3], [1, 4, 9], rounded_accuracy=6) -> '+1.000000*x^2'</code></pre>\nExample 2: Tan[x].<br>\nInput data:<br>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/177c2e40410af8225a80dcc55a03b4f156c26656\" style=\"background-color: #c0c0c0; height: 120px;\"></center>\nCalculation:<br>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/2bd74c82ff00610dd70e3df0dc610df4d824ee51\" style=\"background-color: #c0c0c0; height: 40px;\"></center>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/4de11634962689345bf68bee60fff4b0dd20cb35\" style=\"background-color: #c0c0c0; height: 40px;\"></center>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/a148b7a27afea0cd45972eb04b4f751379b64be8\" style=\"background-color: #c0c0c0; height: 40px;\"></center>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/cf84c3afe481a050f3aee3de4321d4e0de0f2022\" style=\"background-color: #c0c0c0; height: 40px;\"></center>\n<center><img src=\"https://wikimedia.org/api/rest_v1/media/math/render/svg/02557f15e8474949a17871d6948b288c0d5e15d9\" style=\"background-color: #c0c0c0; height: 150px;\"></center>\n<br>In code:\n<pre><code class='language-python'>X = [-1.5, -0.75, 0, 0.75, 1.5]\nY = [-14.1014, -0.931596, 0, 0.931596, 14.1014]</code></pre>\n<pre><code class='language-python'>rounded_accuracy = 2\ninterpolation_formula(X, Y, rounded_accuracy) -> '-1.48*x^1 +4.83*x^3'</code></pre>\n<pre><code class='language-python'>rounded_accuracy = 4\ninterpolation_formula(X, Y, rounded_accuracy) -> '-1.4775*x^1 +4.8348*x^3'</code></pre>\n<pre><code class='language-python'>rounded_accuracy = 6\ninterpolation_formula(X, Y, rounded_accuracy) -> '-1.477474*x^1 +4.834848*x^3'</code></pre>\nWiki: <a href='https://en.wikipedia.org/wiki/Lagrange_polynomial'>https://en.wikipedia.org/wiki/Lagrange_polynomial</a>",
+  "totalAttempts": 213,
+  "totalCompleted": 7,
+  "totalStars": 2,
+  "voteScore": 6,
+  "tags": [
+    "Fundamentals",
+    "Mathematics",
+    "Lists",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

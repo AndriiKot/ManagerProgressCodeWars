@@ -1,0 +1,39 @@
+{
+  "id": "64b80e6110f916004d494599",
+  "name": "Length of long string (TS type)",
+  "slug": "length-of-long-string-ts-type",
+  "category": "reference",
+  "publishedAt": "2023-07-20T16:23:44.201Z",
+  "approvedAt": "2024-08-28T10:05:33.485Z",
+  "languages": [
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/64b80e6110f916004d494599",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-19T16:25:05.968Z",
+  "createdBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Task\nCreate a type `StrLen` that will receive a string `T`. The type should give the length of the string.\n<br>\n\nRange of length of `T`: `0 <= length of T <= 5000`\n<br><br>\nAdditional notes:\n- Using `T[\"length\"]` won't work\n- TS types have a recursion limit of `999` depth.\n\n\n## Examples\n```typescript\ntype A = StrLen<\"\">\n// Should have type 0\n\ntype B = StrLen<\"abc\">\n// Should have type 3\n\ntype C = StrLen<\"this is a string\">\n// Should have type 16\n\n\n// String of length 10\ntype S10 = \"1234567890\"\n\n// String of length 100\ntype S100 = `${S10}${S10}${S10}${S10}${S10}${S10}${S10}${S10}${S10}${S10}`\n\n// String of length 1000\ntype S1000 = `${S100}${S100}${S100}${S100}${S100}${S100}${S100}${S100}${S100}${S100}`\n\n\ntype D = StrLen<S1000>\n// Should have type 1000\n```\n\nGood luck!",
+  "totalAttempts": 104,
+  "totalCompleted": 12,
+  "totalStars": 6,
+  "voteScore": 18,
+  "tags": [
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

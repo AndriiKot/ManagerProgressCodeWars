@@ -1,0 +1,35 @@
+{
+  "id": "662c660ef925eb174cc5a45c",
+  "name": "Balancing Player Classes",
+  "slug": "balancing-player-classes",
+  "category": "reference",
+  "publishedAt": "2024-04-27T19:56:55.261Z",
+  "approvedAt": null,
+  "languages": [
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/662c660ef925eb174cc5a45c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-04-27T02:42:22.986Z",
+  "createdBy": {
+    "username": "yusemog",
+    "url": "https://www.codewars.com/users/yusemog"
+  },
+  "description": "Bob is creating a game!\n\n**BUT**, it has some balancing issues in its class system. Bob wants to encourage players to use a variety of classes rather than sticking to one, so, in order to combat this, he will apply a modifier to all the class's stats.\n\nAll the classes (and their stats) will be in the `classes` variable.\n\nThe stats should be multiplied like: `(modifier * ([sum of all players] - [player count])) / [sum of all players]`\n\nThe return value should be a table that contains the modified `classes` value. *THERE WILL BE NO INVALID INPUT!*\n\n*EXAMPLES:*\n\n```\nclasses = {[\"knight\"]={10,0},[\"shielder\"]={0,10}} -> you can access these by classes[\"NAME_OF_CLASS\"]\nplayers = {[\"knight\"]=10,[\"shielder\"]=5}\nmodifier = 3\n\nbalance.balanceClasses(classes, players, modifier) -> result={[\"knight\"]={10,0},[\"shielder\"]={0,20}}\n```\n\n*here is how it works:*\n\nThe knight class has 10 players using it currently, with the multiplier being (3 * (15 - 10)) / 15, simplifying to 1. The shielder class has 5 players using it currently, with the multiplier being (3 * (15 - 5)) / 15, simplifying to 2. After these calculations, we should multiply the stats of the knight class by 1, and shielder class by 2. Use `math.floor()` to turn it into an integer.\n\n",
+  "totalAttempts": 49,
+  "totalCompleted": 12,
+  "totalStars": 0,
+  "voteScore": 1,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

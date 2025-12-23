@@ -1,0 +1,40 @@
+{
+  "id": "65d4985f84d6d8004b777051",
+  "name": "E-commerce:  Categories with Decreased Product Stock",
+  "slug": "e-commerce-categories-with-decreased-product-stock",
+  "category": "reference",
+  "publishedAt": "2024-02-20T12:17:59.349Z",
+  "approvedAt": "2024-04-01T11:36:30.356Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65d4985f84d6d8004b777051",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-02-20T12:17:35.630Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are given a classical database for an e-commerce platform that includes information about products, their categories, and subcategories. The database uses a soft deletion approach to handle product removals.\n\n`categories` table:\n\n* `id` (int): primary key\n* `name` (varchar)\n\n`subcategories` table:\n\n* `id` (int): primary key\n* `name` (varchar)\n* `category_id` (int): foreign key (references `id` in `categories` table)\n\n`products` table:\n\n* `id` (int): primary key\n* `name` (varchar)\n* `subcategory_id` (int): foreign key (references `id` in `subcategories` table)\n* `last_updated` (dateTime)\n* `deleted_at`(dateTime):  NULL if not deleted, otherwise the date of soft deletion\n\nWrite a SQL query to find categories where the total number of active products (not marked as deleted) was 10 or more 30 days ago but has decreased to less than 10 today (`current_date`). \n\nThe query should output the `category_id` and `name` of categories, along with two additional columns: `current_quantity` (number of active products today) and `quantity_30_days_ago` (number of active products 30 days ago).\n\nNote that products can have a `deleted_at` field set in the future. For instance, for obsolete products that are bound to become inactive. Such products should be considered active today.\n\nQuery should be ordered by `category_id` in descending order.\n\n#### The desired output should look like this: \n\n<table><!----><tr><th>category_id</th><th>name</th><th>current_quantity</th><th>quantity_30_days_ago</th></tr><tr><td>11</td><td>Shoes, Toys &amp; Baby</td><td>7</td><td>14</td></tr><tr><td>10</td><td>Industrial &amp; Garden</td><td>6</td><td>18</td></tr><tr><td>5</td><td>Music</td><td>5</td><td>21</td></tr></table>",
+  "totalAttempts": 895,
+  "totalCompleted": 87,
+  "totalStars": 7,
+  "voteScore": 23,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

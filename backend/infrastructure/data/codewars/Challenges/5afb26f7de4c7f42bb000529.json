@@ -1,0 +1,40 @@
+{
+  "id": "5afb26f7de4c7f42bb000529",
+  "name": "RSA decryption challenge",
+  "slug": "rsa-decryption-challenge",
+  "category": "reference",
+  "publishedAt": "2018-05-16T11:26:44.060Z",
+  "approvedAt": "2025-02-23T10:15:25.705Z",
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/5afb26f7de4c7f42bb000529",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2018-05-15T18:29:14.081Z",
+  "createdBy": {
+    "username": "alexshavlovsky",
+    "url": "https://www.codewars.com/users/alexshavlovsky"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Introduction\n\n[RSA](https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29) is one of the first public-key cryptosystems and is widely used for secure data transmission. The security of RSA system lies in the fact that so far there is no efficient algorithm to factor large numbers.\n\nOne of the earliest descriptions of the RSA system appeared in Martin Gardner's column Mathematical Games in the August 1977 issue of Scientific American. There the inventors of RSA, Rivest, Shamir and Adleman, offered a reward of $100 to whomever found the solution of the following challenge.\n\nLet `n = 114381625 7578888676 6923577997 6146612010 2182967212 4236256256 1842935706 9352457338 9783059712 3563958705 0589890751 4759929002 6879543541` be the public modulus and let `e = 9007` be the public exponent. Find the plaintext English message which corresponds to the encrypted message `c = 96869613 7546220614 7714092225 4355882905 7599911245 7431987469 5120930816 2982251457 0835693147 6622883989 6280133919 9055182994 5157815154` where the original plaintext English message had been transformed into a decimal number `m` using the transformation `'A' = 01, 'B' = 02, ..., 'Z' = 26` with `00` indicating a space between words. An application of this transformation to a secret message, followed by an `e`th powering modulo `n`, results in the encrypted message `c = m^e mod n`.\n\nThe modulus `n` has 129 decimal digits and is the product of a 64-digit prime `p` and a 65-digit prime `q` such that both `p-1` and `q-1` are relatively prime to `e`. The primes `p` and `q` were kept secret. It is well known that the encrypted message can be decrypted by computing `m = c^d mod n` where `d` satisfies `de ≡ 1 (mod (p-1)(q-1))`. Because of the condition on `p` and `q`, finding `d` is straightforward if `(p-1)(q-1)` is known. But knowing `(p-1)(q-1)` is equivalent to knowing the secret primes `p` and `q`. It follows that the encrypted message can be decrypted by factoring `n`.\n\nRon Rivest (the R in RSA) thought it would take 40 quadrillion years for the prime numbers to be found. He was wrong. It took 17 years.\n\nIn 1994 the Dutch mathematician Arjen K. Lenstra, together with a team of hundreds, in just 8 months managed to find the solution. To organise the work, Lenstra needed hundreds of collaborators all over the world and involved thousands of computers, the whole enterprise being coordinated via the Internet.\n\nExhaustive mathematical proof of the RSA cryptosystem can be found [here](https://www.di-mgt.com.au/rsa_theory.pdf).\n\n# RSA cryptosystem glossary\n```\nc - ciphertext (encrypted) message\nm - decrypted message\np, q - two distinct prime numbers\nn - semiprime modulus (pq number)\ne - public exponent\nd - private exponent\n(e, n) - public key\n(d, n) - private key\n```\n# Task\n Your task is to decrypt an text mesage that was encrypted using the common RSA algorithm. Although this kind problem is not solvable in general case (if you do not know the secret key), in this kata you will be given some additional data, which would be impossible to obtain in real life.\n\nYou will be provided with 4 positive integer numbers in a decimal string format:\n```java\nString c; // ciphertext message\nString e; // public exponent\nString n; // semiprime modulus\nString p; // one of the prime factors of the modulus n\n```\nYou have to find out a private exponent `d`, decrypt a plaintext message `m` and convert it to a human readable ASCII text string.\n\nEncoding rules are as follows: `' '=00; 'A'=01; 'B'=02; ...; 'Z'=26`.\n\nPlaintext message encoding example:\n```\n1. Human readable string:\n   \"HELLO WORD\"\n2. Encoded plaintext:\n   08-05-12-12-15-00-23-15-18-12-04\n   H  E  L  L  O     W  O  R  L  D\n3. Integer number to encrypt:\n   m = 805121215002315181204\n```\nAll inputs will be valid. Secret text will be not null length with all letters in uppercase up to 384 characters long.\n\n# Examples\n`c = \"372\"; e = \"3\"; n = \"391\"; p = \"23\"` => **\"Z\"**\n\n`c = \"121330\"; e = \"257\"; n = \"576761\"; p = \"673\"` => **\"RSA\"**\n\n`c = \"60407535701324298645777196\"; e = \"65537\"; n = \"160719199861369881405873071\"; p = \"17394808553761\"` => **\"HELLO WORLD\"**\n",
+  "totalAttempts": 189,
+  "totalCompleted": 40,
+  "totalStars": 15,
+  "voteScore": 30,
+  "tags": [
+    "Cryptography",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

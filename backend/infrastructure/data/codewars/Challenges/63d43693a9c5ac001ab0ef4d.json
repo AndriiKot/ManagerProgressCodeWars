@@ -1,0 +1,36 @@
+{
+  "id": "63d43693a9c5ac001ab0ef4d",
+  "name": "x^y or y^x ?",
+  "slug": "x-y-or-y-x",
+  "category": "algorithms",
+  "publishedAt": "2023-02-04T08:13:34.126Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63d43693a9c5ac001ab0ef4d",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-27T20:39:47.679Z",
+  "createdBy": {
+    "username": "Yushi.py",
+    "url": "https://www.codewars.com/users/Yushi.py"
+  },
+  "description": "\n<h1> Situation </h1>\n\nWhile on a date, as you are talking to a ***girl***, you decide it's time to impress her. <br>\nLike any normal person would, you choose to do so, by showing her your *impressive* **mathematical** ***knowledge***. <br>\n<br>\nIn a condescending way, you ask:\n> Hey, which is bigger? 9^10 or 10^9?\n\nSurprisingly, she knew the answer.\n\n> Well, it's obviously 9^10. <br><br>\n> Allow **me** to pose a question to **you**. <br><br>\n> Which is bigger? 1.9134782541364907164^1578712472541.4673105061 or 1578712472541.4673105061^1.9134782541364907164?\n\nLeaving aside the fact that she had only recently memorized two twenty digits of these random ass numbers, you are dumbfounded. Not only did you get bested in your area of expertise, but you also got humiliated by a question you could not answer. <br>\n\nHowever, despite the humiliation, she says: <br>\n\n> I'll give you another shot with me. <br>\n> As long as you find the answer by tomorrow, we'll go on a second date.\n\nAnd thus, on your journey to acquire ***cooch***, you decide to create a program that will help you impress that girl. <br><br>\n\n<h1> Task </h1>\n\nCreate a function called ```compare``` that, given two numbers, ```x``` and ```y```, returns ```True``` if ```x^y``` is greater than ```y^x```, and returns ```False``` otherwise.<br>\nAs one may imply, in the case of ```x^y``` being equal to ```y^x```, return ```False```. <br><br>\n\n<h1> Input </h1>\n\nYou'll be given two positive, real, numbers. They may be either floats or integers.\n\nYou will not receive negative numbers. <br>\nYou will also not receive two zeros simultaneously. <br><br>\n\n<h1> Examples </h1>\n\n``` python\ncompare(9, 10) -> True\n# 9 ^ 10 (3_486_784_401) is greater than 10 ^ 9 (1_000_000_000)\n\ncompare(2, 3) -> False\n# 2 ^ 3 (8) is not greater than 3 ^ 2 (9)\n\ncompare(1, 1) -> False\n# 1 ^ 1 (1) is not greater than 1 ^ 1 (1)\n\ncompare(1.51, 1_000) -> True\n# 1.51 ^ 1_000 (9.483033683592794e+178) is greater than 1_000 ^ 1.51 (33884.41561392025)\n```\n\n<h1> Random Tests </h1>\n\nThere will be random tests involving:\n- **two small numbers** (```60``` tests)\n- **two big numbers** (```40``` tests)\n- One big number and one small number (```100``` tests). \n\nThe range for the numbers is the following:\n\n- **Small**: ```0 <= x <= 10```, ```0 <= y <= 10```\n- **Big**: ```2 ** 64 <= x <= 2 ** 128```, ```2 ** 64 <= y <= 2 ** 128```\n- **Small and Big**: ```0 <= x <= 3```and ```2 ** 64 <= y <= 2 ** 128``` or ```2 ** 64 <= x <= 2 ** 128```and ```0 <= y <= 3```",
+  "totalAttempts": 170,
+  "totalCompleted": 13,
+  "totalStars": 0,
+  "voteScore": 5,
+  "tags": [
+    "Mathematics",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

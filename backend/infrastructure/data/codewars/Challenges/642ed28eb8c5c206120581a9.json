@@ -1,0 +1,41 @@
+{
+  "id": "642ed28eb8c5c206120581a9",
+  "name": "The Most Dedicated  Customers - 2000s Nostalgia",
+  "slug": "the-most-dedicated-customers-2000s-nostalgia",
+  "category": "reference",
+  "publishedAt": "2023-04-06T14:14:33.902Z",
+  "approvedAt": "2023-07-28T21:30:23.887Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/642ed28eb8c5c206120581a9",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-04-06T14:09:18.324Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Ah, the 2000s, what a time! It was the golden era of DVDs, with Blockbuster ruling the rental scene and Netflix beginning to make its mark. With the rise of high-speed internet and affordable DVD players, movie nights at home became a favourite pastime for many. It was a simpler time, with the biggest concerns being which new release to watch and how to avoid spoilers. It was a time of both nostalgia for the past and excitement for the future.\n\nImagine that today is `1st August of 2005`, you are working in the DVD rental shop and a lottery with valuable gifts was organized for the most dedicated customers. You, as a data analyst, were asked to retrieve a list of customers who have returned all the films, along with the number of movies they have rented and the titles and rental dates of the movies.  \n\n##### Conditions:\n\n\n* For simplicity, a record that was not returned means that rental duration has expired by the day of `2005-08-01` and the customer has not returned at all the rented movie (`return_date` is `null`). If expiration is on `2005-08-01` or later (the expiration date is inclusive) and the customer has returned all the films where `rental_duration` has expired, then the customer participates, otherwise - is being excluded from the lottery. Please note that non-returnal could have happened more than 4 months ago.\n* `rental_duration` column in `film` table is `days`\n* Only rentals that occurred between the period of `2005-04-01` and `2005-07-31` inclusive should be counted for `num_rentals` and `films_rented` columns.\n* Only include customers who have rented 10 or more movies during that period.\n* Sort the results by the number of rentals in descending order.\n* If two or more customers have the same number of rentals, sort them by their last name in ascending order.\n* For each customer, list the titles and rental dates of the movies they have rented, sorted by the latest date of rented films (ignoring time component) You need to consider that if two or more movies were rented on the same day, they have to be sorted alphabetically by title. Elements should be  separated by ` || `.\n* for the sample tests, static dump of [DVD Rental Sample Database](http://www.postgresqltutorial.com/postgresql-sample-database/) is used, for the final solution - random tests. \n\n### Schema\n\n#### `customer` table:\n```\nColumn       | Type     | Modifiers\n------------ +----------+----------\ncustomer_id  | integer  | not null\nfirst_name   | varchar  | not null\nlast_name    | varchar  | not null\nemail        | varchar  | not null\n```\n\n#### `store` table:\n```\nColumn           | Type          | Modifiers\n-----------------+---------------+----------\nstore_id         | smallint      | not null\n```\n#### `inventory` table:\n```\nColumn       | Type      | Modifiers\n------------ +-----------+----------\ninventory_id | integer   | not null\nfilm_id      | smallint  | not null\nstore_id     | smallint  | not null\n```\n\n#### `film` table:\n```\nColumn           | Type     | Modifiers\n-----------------+----------+----------\nfilm_id          | integer  | not null\ntitle            | varchar  | not null\ndescription      | text     | not null\nrental_duration  | integer  | not null\n\n```\n#### `rental` table:\n```\nColumn       | Type      | Modifiers\n-------------+-----------+----------\nrental_id    | integer   | not null\ncustomer_id  | integer   | not null\ninventory_id | integer   | not null\nrental_date  | timestamp | not null\nreturn_date  | timestamp | \n```\n### Desired Output\n\nThe desired output should look like this:\n\n```\ncustomer_id  | customer_name | num_rentals | films_rented\n-------------+---------------+-------------+-------------------------\n   32        | Jami Hayes    | 22          | Samurai: 2023-02-18 || Pe..\n   14        | Hosea Jacobi  | 19          | Modern: 2023-02-18 || Ame...\n...\n```",
+  "totalAttempts": 1868,
+  "totalCompleted": 81,
+  "totalStars": 18,
+  "voteScore": 27,
+  "tags": [
+    "Databases",
+    "Fundamentals",
+    "SQL"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

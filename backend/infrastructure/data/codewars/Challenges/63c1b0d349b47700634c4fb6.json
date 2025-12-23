@@ -1,0 +1,36 @@
+{
+  "id": "63c1b0d349b47700634c4fb6",
+  "name": "Get/Set bitwise flags using a single integer",
+  "slug": "get-slash-set-bitwise-flags-using-a-single-integer",
+  "category": "algorithms",
+  "publishedAt": "2023-01-13T19:28:48.966Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/63c1b0d349b47700634c4fb6",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-13T19:28:19.111Z",
+  "createdBy": {
+    "username": "Rockster160",
+    "url": "https://www.codewars.com/users/Rockster160"
+  },
+  "description": "Binary numbers can be used to store a bunch of data in a single `integer` column.\nFor example, if you have multiple ways to broadcast a notification and a user can say which channels they want to receive a notification through.\n\nLet's say your channels are `email`, `sms`, `app`, `web`, and `phone`.\nYou'd normally need 5 different boolean columns to track which channels the user wants. However, we can use binary to store all of these in a single field.\n\nKeeping the channels in order, using the first letter to identify them, you end up with `esawp`. Mapping that to binary, you can have `1` represent `true` and `0` represent `false`.\n\n```\nesawp\n10010\n```\n\nLooking at the above, we see a 1 for e and w, meaning the user wants `email` and `web` notifications, but no other ones.\nStarting from the right, each bit is 2x the previous bit starting with 1.\n\n```\n00001 == 1\n00010 == 2\n00100 == 4\n01000 == 8\n10000 == 16\netc...\n```\n\nWhen you have multiple bits, you just count them up:\n\n```\nesawp\n10010 == [16 + 0 + 0 + 2 + 0] == 18\n```\n\nUsing your newfound knowledge of binary, write a getter and setter for a user's notifications.\n\nThe input `channels` will be a base 10 number representing the starting notification preferences (18 == `email` and `web`)\n\nThe input `flag` will always be a power of 2, representing a single notification type value. (1 being phone, 2 == web, 16 == email, etc)\n\n`get` - return true/false based on whether the flag is present in the given channels.\n\n`add` - return a new base 10 number with the new flag added to the given channels list.\n\n`remove` - return a new base 10 number with the new flag removed from the given channels list.\n\nHint: Although you can solve these without, try to use bitwise operations in all three methods!\n",
+  "totalAttempts": 83,
+  "totalCompleted": 25,
+  "totalStars": 1,
+  "voteScore": 27,
+  "tags": [
+    "Bits",
+    "Binary"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 3
+  }
+}

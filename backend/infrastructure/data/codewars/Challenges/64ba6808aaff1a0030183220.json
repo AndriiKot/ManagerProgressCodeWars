@@ -1,0 +1,40 @@
+{
+  "id": "64ba6808aaff1a0030183220",
+  "name": "Reactivated Users",
+  "slug": "reactivated-users",
+  "category": "reference",
+  "publishedAt": "2023-07-21T11:12:19.338Z",
+  "approvedAt": "2023-07-25T17:53:14.274Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/64ba6808aaff1a0030183220",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-21T11:12:08.996Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst at a rapidly growing social media startup. Your team is interested in understanding user engagement, and specifically wants to identify a group of users known as \"Reactivated Users\". These users were once active participants on the platform but became inactive for a period before returning.\n\nThe objective of this kata is to identify \"Reactivated Users\" from a given `logins` table. A user is considered \"Reactivated\" for a given month if the following conditions are met:\n\n* The user has at least one login entry in the specified month.\n* The user does not have any login entry either in the previous month or an extended period of multiple previous months.\n* The user has at least one login entry in any month before the specified month.\n\nThe `logins` table contains the following columns:\n\n* `user_id` (integer): An identifier for the user. Each user has a unique user_id.\n* `date` (date): The date on which the user logged in.\n\nThe query output should include the following columns:\n\n* `month` (string): The month and year in the format `FMMonth, YYYY`. It represents the specific month for which the reactivated users are being identified.\n* `reactivated_users` (integer): The count of distinct user_ids who meet the reactivation criteria for the respective month.\n\nThe result should be sorted by the `month` in ascending chronological order.\n\nNotes:\n\n* Multiple logins per month for a user are possible\n* An \"extended period of multiple previous months\" refers to a consecutive period of inactivity that spans more than one month. It means that a user should not have any login entry in the previous month or any (quantity does not matter) earlier months leading up to the specific month under consideration.\n\nGLHF! \n\n### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>month</th><th>reactivated_users</th></tr><tr><td>March, 2023</td><td>4</td></tr><tr><td>April, 2023</td><td>5</td></tr><tr><td>May, 2023</td><td>8</td></tr></table>\n...\n\n\n",
+  "totalAttempts": 803,
+  "totalCompleted": 77,
+  "totalStars": 6,
+  "voteScore": 28,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

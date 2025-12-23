@@ -1,0 +1,37 @@
+{
+  "id": "6251cba4629507b60a041b0e",
+  "name": "Steganography Part 2",
+  "slug": "steganography-part-2",
+  "category": "reference",
+  "publishedAt": "2022-04-09T21:31:00.469Z",
+  "approvedAt": null,
+  "languages": [
+    "go",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6251cba4629507b60a041b0e",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-04-09T18:08:36.552Z",
+  "createdBy": {
+    "username": "bshore",
+    "url": "https://www.codewars.com/users/bshore"
+  },
+  "description": "## Steganography Part 2\n\n- Part 1 - https://www.codewars.com/kata/624fc787983b3500648faf11\n\nSteganography is the practice of concealing a message within another medium. In Part 1, we concealed a message into pixels. In this case, we have `pixels` that already have a message concealed in them and we want to extract the message back out.\n\nYour function will take the 2D array `pixels` and reconstruct the message using each pixel color's Least Significant Bit, returning the message.\n\n#### Notes\n1. You can assume that the `pixels` inner array always has a length of 3 (for Red, Green, Blue).\n2. Since bytes are 8 bits long and `pixels` are in groups of 3, every 3rd pixel group's last color should be skipped.\n\nWith input:\n```\npixels = [\n  [200,213,128],[8,71,54],[154,124,135],\n  [138,175,117],[64,98,137],[142,191,5],\n  [120,113,209],[20,167,193],[38,146,171],\n  [88,235,147],[180,221,49],[24,186,226],\n  [244,215,195],[114,19,67],[101,161,57],\n]\n```\nAn example output will look like:\n```\noutput = \"Hello\"\n```",
+  "totalAttempts": 138,
+  "totalCompleted": 54,
+  "totalStars": 7,
+  "voteScore": 87,
+  "tags": [
+    "Cryptography",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

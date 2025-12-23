@@ -1,0 +1,39 @@
+{
+  "id": "5c45e3b0a4db1e0922ddcad0",
+  "name": "Elevator algorithm",
+  "slug": "elevator-algorithm",
+  "category": "algorithms",
+  "publishedAt": "2019-01-28T15:47:52.680Z",
+  "approvedAt": "2023-12-12T09:29:40.981Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5c45e3b0a4db1e0922ddcad0",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-01-21T15:22:24.411Z",
+  "createdBy": {
+    "username": "wildhamster26",
+    "url": "https://www.codewars.com/users/wildhamster26"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "There is a building with 2 elevators (`'left'` and `'right'`) and a bunch of floors (both negative and positive).\n\nWhen someone calls an elevator, they press an 'up' call button or a 'down' call button.\n\nGiven two people that press two call buttons at the same time, your function should decide which elevator takes which call according to the rules described below:\n\nGeneral outlay of the function is:<br> \n`elevator(leftCurrentFloor, rightCurrentFloor, {Call1}, {Call2});`<br>\n\nOutput should be a string with the names of the elevators that takes the 1st and 2nd call, respectively.<br>\nThese are the four possible outputs:<br>\n`'left left'`/`'left right'`/`'right left'`/`'right right'`. \n\n<br>1. The closest elevator to a call should take the call.<br>\n<strong>Examples:</strong><br>\n`elevator(0, 3, {3, 'down'}, {0, 'up'}); //outputs 'right left'`<br>\n`elevator(0, 3, {1, 'down'}, {4, 'down'}); //outputs 'left right'`<br>\n\n<br>2. If both elevators are equally close to the call, the default elevator is 'right'.<br>\n<strong>Examples:</strong><br>\n`elevator(2, 2, {2, 'down'}, {3, 'up'}); //outputs 'right left'`<br>\n`elevator(1, 1, {2, 'down'}, {2, 'up'}); //outputs 'right left'`<br>\n\n<br>3. An elevator will take both calls **only if ALL** of these conditions are met:<br>\n\na. Both calls are in the same direction.<br>\n<strong>Examples:</strong><br>\n`elevator(0, 0, {floor:1, direction:'up'}, {floor:3, direction:'up'}); //outputs 'right right'`.<br>\n`elevator(4, 4, {3, 'down'}, {2, 'down'}); //outputs 'right right'`<br>\n`elevator(4, 4, {3, 'down'}, {2, 'up'}); //outputs 'right left'`<br>\n\nb. The same elevator is closer to both calls.<br>\n<strong>Examples:</strong><br>\n`elevator(4, 3, {3, 'down'}, {2, 'down'}); //outputs 'right right'`<br>\n`elevator(1, 4, {4, 'down'}, {1, 'down'}); //outputs 'right left'`<br>\n\nc. The elevator doesn't have to change it's direction to get them both.<br>\n<strong>Examples:</strong><br>\n`elevator(2, 2, {floor:4, direction:'down'}, {floor:1, direction:'down'}); //outputs 'right left'`.<br>\n`elevator(0, 0, {2, 'up'}, {3, 'up'}); //outputs 'right right'`<br>\n`elevator(0, 0, {3, 'up'}, {2, 'up'}); //outputs 'right right'`<br>\n`elevator(0, 0, {3, 'up'}, {0, 'up'}); //outputs 'right right'`<br>\n\nd. The elevator doesn't have to go against a taken call direction to get them both.<br>\n<strong>Examples:</strong><br>\n`elevator(2, 2, {floor:2, direction:'down'}, {floor:4, direction:'down'}), //outputs 'right left'`.<br>\n`elevator(0, 3, {2, 'down'}, {4, 'down'}); //outputs 'right left'`<br>\n\ne. An edge case: the elevator should take the second call if it is closest to both calls AND if both floors are in the same direction for the elevator AND both calls are in the same direction **even if** it needs to change it's direction once to pick them both up.<br>\n`elevator(0, 4, {floor:2, direction:'up'}, {floor:3, direction:'up'});//outputs 'right right'`<br>\n`elevator(4, 0, {floor:2, direction:'down'}, {floor:1, direction:'down'}); //outputs 'right right'`<br>\n\nNotes:\n- if one or both calls come from the same floor as an elevator, these are considered to be on the same side of the elevator\n- if an elevator is closest to both calls, but the conditions to take both calls are not met, pick call1\n\n<br>4. All values will be valid integers for the floors ***(not limited to 0-4!)***, and 'up' or 'down' for the directions.\n\n\nRecommended kata before doing this one - \nClosest elevator (8 kyu)\nhttps://www.codewars.com/kata/5c374b346a5d0f77af500a5a/",
+  "totalAttempts": 341,
+  "totalCompleted": 25,
+  "totalStars": 24,
+  "voteScore": 26,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

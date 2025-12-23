@@ -1,0 +1,44 @@
+{
+  "id": "63be67b37060ec0a8b2fdcf7",
+  "name": "Multidimensional Coordinate Encoding",
+  "slug": "multidimensional-coordinate-encoding",
+  "category": "algorithms",
+  "publishedAt": "2023-01-11T14:08:10.577Z",
+  "approvedAt": "2023-01-12T07:14:49.888Z",
+  "languages": [
+    "javascript",
+    "python",
+    "scala",
+    "ocaml"
+  ],
+  "url": "https://www.codewars.com/kata/63be67b37060ec0a8b2fdcf7",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-11T07:39:31.705Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Problem Description</summary>\n  \nWhen dealing with multidimensional coordinates in a kata, we sometimes want to keep track of which cells have already been visited. In Python this is easy, we just use a tuple <code>(y, x)</code>. In javascript, however, there is no tuple. An alternative that comes to mind is to use an array <code>[y, x]</code>.\n\n```javascript\nconst h = new Set();\nh.add([0, 1]);\nconsole.log(h.has([0, 1]));  // false :-(\n```\n\nUnfortunately, that won't work. Some users resort to making a string key instead <code>\"${y},${x}\"</code>. While this works, it's unwanted overhead. Specially if we want to restore the original coordinates from that key, we need some string parsing and string to number mapping.\n\nLuckely, if the sizes of the dimensions are known, we can just use some plain maths to encode our multidimensional coordinates into a single number, containing all the information we need about the location of a cell in a higher dimensional structure, like a matrix.\n\nHere's an example for a 9x9 sudoku grid.\n\n```\n |  0  1  2  3  4  5  6  7  8         We can use the width as multiplier for 'y' and add the col 'x' to get\n-----------------------------         a single number.\n0|  0  1  2  3  4  5  6  7  8\n1|  9 10 11 12 13 14 15 16 17         Examples: cell (y = 1, x = 3) -> n = 1 * 9 + 3 = 12\n2| 18 19 20 21 22 23 24 25 26                   cell (y = 8, x = 8) -> n = 8 * 9 + 8 = 80\n3| 27 28 29 30 31 32 33 34 35\n4| 36 37 38 39 40 41 42 43 44\n5| 45 46 47 48 49 50 51 52 53\n6| 54 55 56 57 58 59 60 61 62\n7| 63 64 65 66 67 68 69 70 71\n8| 72 73 74 75 76 77 78 79 80\n\n```\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n  \n##### \"You are expected to encode and decode a point given the dimensions of the structure it is part of.\"\n  \n## Encode\n\n##### \"Given the dimensions as an array of positive integers and a point as an array of non negative integers, each representing a coordinate in the respective dimension, return the encoded point as a non negative integer.\" \n\n- dimensions: array of positive integers \n  - <code>1 <= array length <= 10</code> \n  - <code>1 <= dimension size <= 10000</code>\n  - from left to right we get from the highest to the lowest dimension\n- point: array of non negative integers, each representing a coordinate in the respective dimension \n  - <code>0 <= coordinate value < respective dimension size</code>\n  - from left to right we get from the coordinate of the highest to that of the lowest dimension\n- all integers are of type <code>BigInt</code>\n- all input will be valid (correct data type, in bounds of the dimensions)\n\n### Algorithm\n\n- in order to build the encoded point, we start from <code>0</code> and add the encoded value for each of the coordinates of the point\n- the encoded value for a coordinate is its value times the product of all lower dimension sizes\n- if you reach the coordinate of the lowest dimension, its value is the encoded value\n\n## Decode\n\n##### \"Given the dimensions as an array of positive integers and an encoded point as non negative integer, return the point as an array of non negative integers, each representing a coordinate in the respective dimension.\"\n\n- dimensions: array of positive integers \n  - <code>1 <= array length <= 10</code> \n  - <code>1 <= dimension size <= 10000</code>\n  - from left to right we get from the highest to the lowest dimension\n- encoded point: non negative integer, representing the encoded point\n  - <code>0 <= encoded point < product of sizes of all dimensions</code>\n- all integers are of type <code>BigInt</code>\n- all input will be valid (correct data type, in bounds of the dimensions)\n\n### Algorithm\n\nDecoding is the inverse process of encoding. So when calling the following operations, the original point should be provided whichever the value of dimensions or point.\n\n```\ndecode(dimensions, encode(dimensions, point)) == point\n```\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n  \n### Encode\n\n```\ndimensions            point         encoded point\n\n[10]                  [0]           0\n[10]                  [7]           7\n[5, 10]               [2, 0]        20\n[9, 9]                [8, 8]        80\n[7, 5, 10]            [1, 2, 3]     73\n[10, 5, 10, 8]        [6, 1, 2, 3]  2499   (explained below)\n```\n\n#### Explanation\n\n```\npoint: [6, 1, 2, 3] and dimensions: [10, 5, 10, 8] \nencoded point: start by 0\n               add 6 times 5 * 10 * 8 = 2400\n               add 1 time 10 * 8 = 80\n               add 2 times 8 = 16\n               add 3\n            + -------------------------------\n              0 + 2400 + 80 + 16 + 3 = 2499\n```\n  \n</details>",
+  "totalAttempts": 366,
+  "totalCompleted": 139,
+  "totalStars": 16,
+  "voteScore": 49,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

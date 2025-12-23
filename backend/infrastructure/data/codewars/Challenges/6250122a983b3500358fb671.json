@@ -1,0 +1,42 @@
+{
+  "id": "6250122a983b3500358fb671",
+  "name": "Mega Connect 4 ",
+  "slug": "mega-connect-4",
+  "category": "games",
+  "publishedAt": "2022-04-08T12:53:24.408Z",
+  "approvedAt": "2024-01-24T11:57:30.556Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6250122a983b3500358fb671",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2022-04-08T10:44:58.292Z",
+  "createdBy": {
+    "username": "Aharon Sambol",
+    "url": "https://www.codewars.com/users/Aharon%20Sambol"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## tl;dr-   \n```\nIt's connect4 but optimized, the board is MxM and you need to connect N.\nGiven a game move by move, determine which move is a winning move. \nTurn order is random.\n```\n\n\n\nThe other day I programmed a connect four game, and I thought to myself- this is nice, but\nfaster = better... So how can I optimize this? \n\nThe only issue was that there's no reason to optimize something that’s already fast enough, and my solution was plenty fast... Or should I say plenty fast in normal circumstances?\n\nThat's right, we're going to use huge boards! And it's no longer Connect four now it’s Connect N.\n\nI'm also going to change the rules a bit:\n\n# TASK\n\nFirst you are given a board size, and a win condition.\nThen you are given moves, one at a time.\nYou need to play out the moves and determine wether or not that move was a winning move.\n\nThe game *does not* end after a win! \nContinue playing and see which moves make another N in a row.\n(The next N in a row can contain pieces from the previous N in a row)\n\nEach move contains a `column` (0-indexed) and a `player`, \nwhich means that `player` has put a piece in `column`\n\n  eg: \n```python\n      game = MegaConnect4(10, 4)\n      # this means that we are making a new game with a board size of 10x10,\n      # and you need to connect 4 to win\n\n      game.add_move(\"Bob\", 3)\n      # Bob places a piece in column 3\n\n      game.add_move(\"Joe\", 5)\n      # Joe places a piece in column 5\n\n      game.add_move(\"Joe\", 6)\n      # once more Joe places a piece in column 6\n```\nIf the move was a winning move, `add_move` should return `True`, \notherwise it should return `False`.\n\nNote- there are only 2 players and the turn order is random.\n\n# RULES\n      \nThere is a square board (size x size) \nand a given goal (win_condition).\n\nDuring each turn a random player places one of his pieces in a certain column,\nthe piece then falls to the bottom of that column.\n\nEach player who gets `win_condition` pieces in a consecutive\nrow, column, or diagonal wins, BUT DOESN'T END THE GAME\n\n\n# Notes\n\n* Don't focus on small optimizations, you're going to need a smart algorithm.\n\n* Don't forget to remove all the prints from your code before attempting!\n\n* None of the board sizes will ever be 0\n\n\n# If you are having trouble solving this kata or you already solved it, check these out:\n\n  <span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/6KYU.png\" alt=\"Rank\"/> <a href=\"https://www.codewars.com/kata/5864f90473bd9c4b47000057\" target=\"_blank\">Connect Four - placing tokens</a></span>\n  \n  <span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/5KYU.png\" alt=\"Rank\"/> <a href=\"https://www.codewars.com/kata/586c0909c1923fdb89002031\" target=\"_blank\">Connect 4</a></span>\n  \n  <span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/5KYU.png\" alt=\"Rank\"/> <a href=\"https://www.codewars.com/kata/5b442a063da310049b000047\" target=\"_blank\">NxN Connect X</a></span>\n\n  <span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/4KYU.png\" alt=\"Rank\"/> <a href=\"https://www.codewars.com/kata/56882731514ec3ec3d000009\" target=\"_blank\">Connect Four</a></span>\n\n\n# If you want to check out my other kata:\n\n  <span style=\"display: flex !important;\"><img style=\"margin:0px;\" src=\"https://raw.githubusercontent.com/adrianeyre/codewars/master/Ruby/Authored/4KYU.png\" alt=\"Rank\"/> <a href=\"https://www.codewars.com/kata/6108f2fa3e38e900070b818c\" target=\"_blank\">Snafooz solver</a></span>\n\n\n",
+  "totalAttempts": 804,
+  "totalCompleted": 34,
+  "totalStars": 18,
+  "voteScore": 31,
+  "tags": [
+    "Games",
+    "Puzzles",
+    "Logic",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

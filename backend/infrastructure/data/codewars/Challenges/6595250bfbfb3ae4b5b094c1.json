@@ -1,0 +1,37 @@
+{
+  "id": "6595250bfbfb3ae4b5b094c1",
+  "name": "Automated Dice Rolls",
+  "slug": "automated-dice-rolls",
+  "category": "reference",
+  "publishedAt": "2024-01-04T10:43:55.302Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6595250bfbfb3ae4b5b094c1",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-01-03T09:12:44.007Z",
+  "createdBy": {
+    "username": "GarikZhuravskyi",
+    "url": "https://www.codewars.com/users/GarikZhuravskyi"
+  },
+  "description": "Introduction\n\nYou've played an enourmous amount of RPGs before and one particular thought suddenly appeared in your mind: ```\"What if I became an automated DM?\"```\n\nAn interesting idea. Such a shame it could never be implemented... Or could it?\nLuckily for you, you know ```insert your programming language here```. So it's possible for you to make a function for players to make automated saving throws, damage rolls, etc.\n\nYour task:\n\nImplement a function, which takes two to three arguments:\n1. A string ```xdn```, where ```x``` is the number of dice you have to throw to pass a check or a saving throw, and ```n``` is the number of sides these dice have. ```d``` here simply means \"dice\".\n2. An integer ```mod```, which has to be added to your throw to make a final result.\n3. In some cases you will also be given an integer ```dc``` (Difficulty class), which is basically a threshhold you have to pass with your result.\n\nIf ```dc``` is present, your function should return a Boolean value (```True``` or ```False```), depending on whether your result is ```greater than``` or ```equals``` the Difficulty class ```dc```. Note that this argument is only given if your ``xdn``` is ```1d20```.\n\nIf ```dc``` is absent, just return the result.\n\n```Restrictions```:\n1. -40 <= ```mod``` <= 50\n2. 1 <= ```dc``` <= 70 if present\n3. ```xdn``` is always going to be a legitimate string.\n4. ```x``` >= 1 and ```n``` can be one of: ```[3,4,6,8,10,20]```\n5. If your final result is ```less than or equals 0```, return ```0```\n\nExamples:\n\nInput:\n\n```xdn=\"2d4\", mod=2```\n\nOutput range: from ```4``` to ```10```\n\nInput 2:\n\n```xdn=\"1d20\", mod=-4, dc=17```\n\nOutput 2: ```False```\n\nInput 3: \n\n```xdn=\"1d20\", mod=11, dc=12```\n\nOutput 3: ```True```\n\nHappy coding everyone and may your DM guide you on your adventures!",
+  "totalAttempts": 64,
+  "totalCompleted": 8,
+  "totalStars": 0,
+  "voteScore": -3,
+  "tags": [
+    "Regular Expressions",
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

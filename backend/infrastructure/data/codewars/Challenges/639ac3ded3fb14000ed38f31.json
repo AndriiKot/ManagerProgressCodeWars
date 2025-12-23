@@ -1,0 +1,43 @@
+{
+  "id": "639ac3ded3fb14000ed38f31",
+  "name": "2D Coordinates Finder!",
+  "slug": "2d-coordinates-finder",
+  "category": "algorithms",
+  "publishedAt": "2022-12-15T08:03:29.684Z",
+  "approvedAt": "2022-12-17T17:07:41.623Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/639ac3ded3fb14000ed38f31",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-12-15T06:51:11.036Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\n##### \"Given a plane and numbers on or around that plane, return the coordinates of those numbers.\"\n\n### Input\n\n- plane: a string, representing a plane in 2D perspective. The string is delimited by newline <code>'\\n'</code> and each line has the same length. The string contains numbers, ranging from <code>0</code> to at most </code>9</code>. There will be at least 1 and at most 10 numbers in the string. Numbers will not contain gaps and always start with <code>0</code>. If, for instance, there are 3 numbers, they will be <code>[0, 1, 2]</code>. Those numbers can be in the plane or around it. The coordinate system around the plane is the same as in the plane.\n\n### Output\n\n- return an array of 2-ples, with each 2-ple representing the Y- and X-coordinates of the corresponding number in that array. For instance, <code>[[0, 0], [1, 0]]</code> represents coordinates <code>[0, 0]</code> for number <code>0</code> and coordinates <code>[1, 0]</code> for number <code>1</code>.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Coordinate System</summary>\n\nThe plane is a 2D perspective of a 2D plane, with Y-coordinates going <code>↗</code> (length) an X-coordinates going <code>→</code> (width).\n\n```\n2D perspective of a plane\n\n    / / / /       Y-coords ↗\n   / / / /        X-coords →\n  / / / /\n\n```\n\nThe zero point <code>[0, 0]</code> is located at the bottom left edge, this point is anchored to our view of the plane.\n\n```\nZero point\n\n    / / / /       p -> [0, 0]\n   / / / /       \n  /p/ / /\n\n```\n\nPoints across the Y-axis have the same X-coordinate.\n\n```\nPoints across Y-axis\n  \n    /2/ / /       0 -> [0, 0]\n   /1/ / /        1 -> [1, 0]\n  /0/ / /         2 -> [2, 0]\n      \n```\n\nPoints across the X-axis have the same Y-coordinate.\n\n```\nPoints across X-axis\n  \n    / / / /       0 -> [0, 0]\n   / / / /        1 -> [0, 1]\n  /0/1/2/         2 -> [0, 2]\n      \n```\n\nPoints can be outside the plane, but only their X-coordinates, the Y-range is fixed. We should look at it from a rectangular frame. All points within that frame are eligible, if they do not collide with a raster or location where an extended raster would be.\n\n```\nPoints outside of the plane                 Rectangular frame around the plane\n  \n   1/ / / /     0 -> [1, -1]                +-/-/-/-/       - -> all valid locations for points\n  0/ / / /3     1 -> [2, -1]                -/-/-/-/-       + -> all invalid locations for points \n  / / / /2      2 -> [0, 3]                 /-/-/-/-+\n                3 -> [1, 3]\n      \n```\n\nYou will <b>always</b> receive a valid plane and valid points. Examples of invalid situations:\n\n```\nPoints cannot be on the raster, or outside the plane where the raster would be if we extend the plane\n  \n    / / 1 /     0 -> invalid, point on raster\n   0 / / /      1 -> invalid, point on raster  \n  / / / / 2     2 -> invalid, point on raster  \n  \nPoints cannot be out of bounds of Y-axis\n\n     1          1 -> invalid, Y too big\n   / / /\n  / / /\n  0             0 -> invalid, Y too low\n  \nThe plane is not aligned properly to the bottom-left edge\n\n   / / /\n  / / /\n0/ / /          0 -> invalid, the raster should be here\n  \n```\n\n</details>\n\n\n\n",
+  "totalAttempts": 1288,
+  "totalCompleted": 128,
+  "totalStars": 10,
+  "voteScore": 63,
+  "tags": [
+    "Algorithms",
+    "Strings",
+    "Geometry",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

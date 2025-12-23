@@ -5,13 +5,15 @@ export const saveAllPages = async (db, userId, user, services) => {
 
   let totalSaved = 0;
   const allErrors = [];
+  const existingIds = services.selectAllChallengeIds(db) || new Set();
 
   const firstRes = await saveCompletedChallengesSafeSync(
     db,
     userId,
     user,
     services,
-    0
+    0,
+    existingIds
   );
 
   if (!firstRes.success) {
@@ -32,7 +34,8 @@ export const saveAllPages = async (db, userId, user, services) => {
       userId,
       user,
       services,
-      page
+      page,
+      existingIds
     );
 
     if (!res.success) {

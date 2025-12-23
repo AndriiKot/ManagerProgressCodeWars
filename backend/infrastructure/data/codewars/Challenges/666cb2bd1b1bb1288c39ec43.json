@@ -1,0 +1,39 @@
+{
+  "id": "666cb2bd1b1bb1288c39ec43",
+  "name": "Type-level Addition",
+  "slug": "type-level-addition",
+  "category": "reference",
+  "publishedAt": "2024-06-15T00:49:32.771Z",
+  "approvedAt": "2024-09-05T17:56:01.913Z",
+  "languages": [
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/666cb2bd1b1bb1288c39ec43",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2024-06-14T21:14:37.358Z",
+  "createdBy": {
+    "username": "monadius",
+    "url": "https://www.codewars.com/users/monadius"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Define a type `Add<M extends number, N extends number>` such that `Add<M, N>` is equal to `M + N` at the type level for non-negative integer literal types `M` and `N`. `Add<M, N>` should work for sufficiently large values of `M` and `N` (up to `$10^{12}$`).\n\nExamples:\n```typescript\nconst x: Add<3, 4> = 7;\nconst y: Add<176458299990, 614461515880> = 790919815870;\n// Should be invalid:\nconst z: Add<5, 7> = 11;\n```\n\nNote: If you get an error \"Type instantiation is excessively deep and possibly infinite.\" then the following trick may help. The type `X<Y<Z>>` could be rewritten as `Y<Z> extends infer R extends T ? X<R> : never` where `T` is the type of `Y<Z>`.",
+  "totalAttempts": 271,
+  "totalCompleted": 15,
+  "totalStars": 7,
+  "voteScore": 18,
+  "tags": [
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

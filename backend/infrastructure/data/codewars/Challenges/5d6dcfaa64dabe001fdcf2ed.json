@@ -1,0 +1,36 @@
+{
+  "id": "5d6dcfaa64dabe001fdcf2ed",
+  "name": "Binary Range Extraction",
+  "slug": "binary-range-extraction",
+  "category": "games",
+  "publishedAt": "2019-09-03T03:08:36.982Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5d6dcfaa64dabe001fdcf2ed",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2019-09-03T02:27:54.865Z",
+  "createdBy": {
+    "username": "el-iot",
+    "url": "https://www.codewars.com/users/el-iot"
+  },
+  "description": "# Preface\nThis kata is something of an extension of a previous kata: `Range of Integers in an unsorted string` (https://www.codewars.com/kata/5b6b67a5ecd0979e5b00000e). \nIt is recommended that you attempt that kata first, though this kata is by no-means unapproachable for complete newcomers. \n\n# Task\nYour task is to \"unshuffle\" a range of numbers (represented in binary) given two arguments:\n - `string` (the shuffled range of numbers)\n - `n` (the length of the range)\nYour function should return the lowest number of the range.\n\n## Example 1\n`unshuffle('111101110', 3)` should return `5`.\n\nThis is because `111101110` can be split into 3 binary representations of numbers, and these numbers form a range of length 3, i.e:\n```\n`111101110`\n= 111 - 101 - 110\n= 7 - 5 - 6\n```\n\n## Example 2\n`unshuffle('10011010101110111001000111101', 10)` should return 1, because\n```\n'11110001001110110101101011100' \n= 111 - 1000 - 1001 - 1 - 101 - 1010 - 110 - 10 - 11 - 100\n= 7 - 8 - 9 - 1 - 5 - 10 - 6 - 2 - 3 - 4\n```\nwhich is the range of numbers from 1 to 10.\n\n# Caveats\n- Every number in the range will be between 1 and 127.\n- No binary representations will have leading zeroes (i.e. `0110` is not a valid binary representation of `6`).\n- Not all binary representations in the range will have the same number of digits.\n- `n` (the length of the range) will always be between 3 and 30.\n\n\n\n \n\n\n\n\n\n\n",
+  "totalAttempts": 212,
+  "totalCompleted": 13,
+  "totalStars": 7,
+  "voteScore": 6,
+  "tags": [
+    "Binary",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "63bd62e60634a6006a1b53c0",
+  "name": "Mountain Bike Trail",
+  "slug": "mountain-bike-trail",
+  "category": "reference",
+  "publishedAt": "2023-01-10T19:58:30.219Z",
+  "approvedAt": "2023-01-12T07:12:10.020Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63bd62e60634a6006a1b53c0",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-10T13:06:46.050Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Introduction</summary>\n  \nLet's draw mountain bike trails!\n  \n```\n                               _--_ _\n                    -__  _-‾‾‾-    - \n         __     _--‾   ‾‾     _--_ _ \n -__   -‾  ‾---‾   -__  _-‾‾‾-    -  \n    ‾-‾ __     _--‾   ‾‾             \n-__   -‾  ‾---‾                      \n   ‾-‾                               \n                                 \n```\n  \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n  \n##### \"Given an array of numbers representing a mountain bike trail, render that trail as string.\"  \n\n### Input\n\n##### trail\n- an array containing integer numbers (-2 <= number <= 2)\n- the first number determines the token to use in the starting <b>tile</b>\n- each next number represents a delta height in <b>sub tiles</b> to draw the next token relative to the previous one\n\n### Output\n\n- return a string representing the mountain bike trail. The string is delimited with a newline <code>'\\n'</code>. All lines have the same width. Leading and trailing whitespace is important.\n- tokens used in the string: <code>'_', '-', '‾', ' '</code>\n- the trail is rendered with a 3D-effect (see examples at the end of the Specification)\n\n### Input Constraints\n\n- Beginner Trails\n  - 100 random tests with 10 <= size <= 20\n- Novice Trails\n  - 100 random tests with 20 <= size <= 30\n- Extreme Trails\n  - 100 random tests with 30 <= size <= 40\n  - 100 chaotic random tests with 40 <= size <= 50\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n  \n- The output string can be viewed at in rows and columns.\n- A tile represents a cell at a given row and column.\n- A tile can hold 3 different values, depending on which sub tile is used:\n  - sub tile <code>0</code>: <code>'_'</code> (underscore)\n  - sub tile <code>1</code>: <code>'-'</code> (dash)\n  - sub tile <code>2</code>: <code>'‾'</code> (upperscore)\n  - if no sub tile is used: <code>' '</code> (whitespace)\n  - there can always be at most 1 sub tile used per tile (there will be no conflicts)\n- Any number in the trail is a delta value added to the previous number.\n- Any accumulated number <i>modulo 3</i> represents the sub tile that is being used in a tile.\n\n```\nExamples:\n\nNotice that we sometimes need to create an additional row to render all sub tiles.\n\ntrail           sub tile values     rendered ('*' as whitespace)\n\n[0, 1, -1]      [0, 1, 0]            _-_\n\n[1, 1, -1]      [1, 2, 1]            -‾-\n\n[2, 1, -1]      [2, 3, 2]            *_*\n                                     ‾ ‾\n[0, -1, 1]      [0, -1, 0]           _*_\n                                     *‾*\n[1, -1, 1]      [1, 0, 1]            -_-                             \n\n[2, -1, 1]      [2, 1, 2]            ‾-‾                             \n\n[0, 1, 1]       [0, 1, 2]            _-‾\n\n                                     **_\n[1, 1, 1]       [1, 2, 3]            -‾*\n\n                                     *_-\n[2, 1, 1]       [2, 3, 4]            ‾**\n                                     \n```\n\n- To draw the trail, a 3D-effect must be created\n  - draw the bottom part of trail\n  - draw the same pattern 2 tiles higher and 1 tile to the right\n  - make sure to align both patterns in a way there is no unwanted padding\n  \n```\ntrail           sub tile values     rendered ('*' as whitespace)\n\n                                     *_-_     \n                                     ****\n[0, 1, -1]      [0, 1, 0]            _-_*\n\n\n                                     *_*_\n                                     **‾*\n[0, -1, 1]      [0, -1, 0]           _*_*\n                                     *‾**\n                                     \n                                     \n                                     * _-\n                                     *‾**\n                                     *_-*\n[2, 1, 1]       [2, 3, 4]            ‾***\n\n```\n\n- Beginner, Novice, Extreme trails are distinguished by steepness of hills, dells and ramps. They do not differ in the way you should render them.\n    \n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n  \n##### The examples can also be found in the sample tests. Note that an asterisk '*' is used to show whitespace in the examples below.\n  \n#### Beginner Trail\n\n```\ntrail: [-2, 1, 0, 0, -1, 1, 0, 0, -1, -1, 0, 0]\n\nreturn:   *-‾‾‾-‾‾‾-___\n          *************\n          -‾‾‾-‾‾‾-___*\n\n```\n\n#### Novice Trail\n        \n```\ntrail: [1, -1,  0, 0, -1,  1,  1, \n        0,  0,  0, 0, -2, -1, -1, \n        0, -1, -1, 0,  1,  1,  0, \n        0, -1, -1, 0]\n\nreturn:   *-___*_-----**************\n          *****‾******‾-__****___***\n          -___ _-----*****‾--‾***‾--\n          ****‾******‾-__****___****\n          ***************‾--‾***‾--*\n\n```\n  \n</details>",
+  "totalAttempts": 245,
+  "totalCompleted": 60,
+  "totalStars": 17,
+  "voteScore": 34,
+  "tags": [
+    "Fundamentals",
+    "Strings",
+    "ASCII Art",
+    "Geometry"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

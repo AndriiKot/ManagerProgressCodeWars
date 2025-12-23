@@ -1,0 +1,37 @@
+{
+  "id": "63b1dec789ef8a3719a75ded",
+  "name": "Replicate the password generator",
+  "slug": "replicate-the-password-generator",
+  "category": "games",
+  "publishedAt": "2023-01-02T01:46:54.882Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63b1dec789ef8a3719a75ded",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-01T19:28:07.965Z",
+  "createdBy": {
+    "username": "r4ng3l",
+    "url": "https://www.codewars.com/users/r4ng3l"
+  },
+  "description": "You are a respected criminal hired to break into a safe box. After some struggle you are finally in front of it.\n\nThe safe box is protected against multiple attempts so you have to input the exact password within the first tries otherwise the alarm will go off.\n\nAfter some recon you discover that the owner uses his own **password generator function** (taking 3 arguments: a number key, a string and the password length) to create his own passwords and in order to get the correct password you have to replicate this function.\n\n## Task\n- Create a function `genPasswd` that accepts the following arguments `key, str, pwLen`.\n\n- The function must return the `password` value that matches the safe box password, use the examples bellow for better understanding.\n\n## Examples\n- Example No. 1\n\n```javascript\nconst key = 5;\nconst str = '0123456789';\nconst pwLen = 12;\n\nconst password = genPasswd(key, str, pwLen);\n//Should return '546372819009'\n```\n- Example No. 2\n\n```javascript\nconst key = 0;\nconst str = '0123456789#';\nconst pwLen = 15;\n\nconst password = genPasswd(key, str, pwLen);\n//Should return '0#1928374655647'\n```\nAs you can see in the examples above, the pasword length is delimited by the variable `pwLen`, the password is hash of `str` and it is determinated somehow by `key`.",
+  "totalAttempts": 256,
+  "totalCompleted": 32,
+  "totalStars": 2,
+  "voteScore": 40,
+  "tags": [
+    "Puzzles",
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "63b5ce67e226b309f87cdefe",
+  "name": "Broken 7-segment display - reversed segments",
+  "slug": "broken-7-segment-display-reversed-segments",
+  "category": "reference",
+  "publishedAt": "2023-01-05T09:56:42.132Z",
+  "approvedAt": "2023-01-06T11:36:50.663Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63b5ce67e226b309f87cdefe",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-04T19:07:19.542Z",
+  "createdBy": {
+    "username": "mauro-1",
+    "url": "https://www.codewars.com/users/mauro-1"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "<img align=\"right\" alt=\"\" style=\"margin: 1em\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Seven_segment_01_Pengo.jpg/243px-Seven_segment_01_Pengo.jpg\">\n\n## <span style=\"color:#0ae\">Task</span>\n\nThere is a single-digit [seven segment display](https://en.wikipedia.org/wiki/Seven-segment_display). The display has a problem: there can be from 0 to 7 (all) \"*reversed*\" segments. A reversed segment is on when it should be off, and off when it should be on.\n\nThe display shows numbers from 0 to 9 (inclusive). If there are reversed segments, numbers may look strange.\n\n```\nHow numbers appear on a correctly working display:       0-5 with top segment reversed:\n  _         _    _         _    _    _    _    _                _              _\n | |    |   _|   _|  |_|  |_   |_     |  |_|  |_|         | |    |   _|   _|  |_|  |_\n |_|    |  |_    _|    |   _|  |_|    |  |_|   _|         |_|    |  |_    _|    |   _|\n```\n\nGiven some numbers as they appear on display, try to determine which segments are reversed.\n\n#### <span style=\"color:#0ae\">Segment names</span>\n\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/7_Segment_Display_with_Labeled_Segments.svg/180px-7_Segment_Display_with_Labeled_Segments.svg.png)\n*Note: in this kata segment names are lowercase, \"dp\" is not used.*\n\n\n## <span style=\"color:#0ae\">Input</span>\n\n##### <span style=\"color:#0ae\">⬬</span> `display` *[list of strings]*\n\nEach element of the list is a 11-chars string that represents a number shown on display. Format: (3 rows, 3 chars per row) ` a ` `fgb` `edc` (the 1st and 3rd chars of the first row are always spaces). Each segment is represented by a char:\n- off: space (`' '`)\n- on: `'_'` (a,d,g) or `'|'` (b,c,e,f)\n\nExamples:\n```python\n8: ' _ \\n|_|\\n|_|'\n```\\\n _ \n|_|\n|_|'''\n```\n```python\n4: '   \\n|_|\\n  |'\n```\\\n   \n|_|\n  |'''\n```\n\nAll inputs are valid; there is always at least one string.\n\n## <span style=\"color:#0ae\">Output</span>\n\n- *[string]* or `None`\n\nIf the set of reversed segments can be determined:\n- a lowercase string containing the names of reversed segments in alphabetical order (e.g. `''`, `'a'`, `'ceg'`, `'abcdefg'`);\n\notherwise:\n- `None`\n\n\n## <span style=\"color:#0ae\">Examples</span>\n```\n       _ \n |_|  | |\n |_     |\n```\nInput: `['   \\n|_|\\n|_ ', ' _ \\n| |\\n  |']`  \nOutput: `None`  (it could be *2,1* with *a,f* reversed, or *1,2* with *c,d,e,f,g* reversed)\n\n```\n  _    _\n |_|  |    | | \n |_|  |_|    | \n```\nInput: `[' _ \\n|_|\\n|_|', ' _ \\n|  \\n|_|', '   \\n| |\\n  |']`  \nOutput: `'g'`  (*0,6,4* with *g* reversed, no other options)\n",
+  "totalAttempts": 154,
+  "totalCompleted": 45,
+  "totalStars": 12,
+  "voteScore": 48,
+  "tags": [
+    "Logic",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

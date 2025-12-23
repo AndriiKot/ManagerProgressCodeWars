@@ -1,0 +1,40 @@
+{
+  "id": "65a7a5c3352cd50024efb4db",
+  "name": "Typing series #5 --> the insert key and moving cursor",
+  "slug": "typing-series-number-5-the-insert-key-and-moving-cursor",
+  "category": "reference",
+  "publishedAt": "2024-01-19T09:20:41.755Z",
+  "approvedAt": "2024-12-11T16:20:26.701Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/65a7a5c3352cd50024efb4db",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-01-17T10:02:43.134Z",
+  "createdBy": {
+    "username": "goldenratio161",
+    "url": "https://www.codewars.com/users/goldenratio161"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "First and foremost, thank you to <a href=\"https://www.codewars.com/users/vintrom\">vintrom</a> for the idea. I may have changed it a little (sorry about that!), but I think that this is good.\n\nAlright, back to the puzzle!\n___\n\nYou are given a `string` of lowercase letters and spaces that you need to type out. However, there are some functions in the string that you have to process.\n\nThe function this time is: the `ins` key. When pressed, it replaces text at the cursor by what is typed next.\n\n\nExamples:\n\n```\n\nabcd[ins 1]yyy -> ayyy\n\nWalkthrough:\n\n| -> cursor\n\na|\nab|\nabc|\nabcd|\n(cursor goes to index one, press ins)\na|bcd\nay|cd (ins replacement mode)\nayy|d\nayyy| (done)\n\n\nmgk the goat[ins 0]emi[ins]nem -> eminem the goat\n\nWalkthrough:\n\n...\n...\nmgk the goat|\n(cursor goes to index zero, press ins)\n|mgk the goat\ne|gk the goat\nem|k the goat\nemi| the goat\n(turn off ins)\nemin| the goat\nemine| the goat\neminem| the goat (done)\n\n\n[ins]rubiks[ins] cure[ins -3]b -> rubiks cube\n\nWalkthrough:\n\nins turned on\nr|\nru|\n...\n...\nrubiks|\n[ins] pressed, do not move cursor\nrubiks cur|\nrubiks cure|\n(cursor index -3, right behind r)\nrubiks cu|re\nrubiks cub|e (done)\n\n```\n\nBut what if you need to move the cursor but not press ins?\n\nLet's add a new function `[n]`. It moves the cursor to `index n` without pressing `ins`. (n can be negative too)\n\n```\nExamples:\n\nsquare of two[6] root -> squre root of two\n\nWalkthrough:\n\ns|\nsq|\n...\n...\nsquare of two|\n(go to index 6)\nsquare| of two\n...\n...\nsquare root of two (done)\n\n\nokay[ins 3][2][ins][ins 0]not okay -> not okay\n\nWalkthrough:\n\n...\n...\nokay|\noka|y (ins on)\nok|ay (index 2)\nok|ay (ins off)\n|okay (ins 0) (on)\n...\n...\nnot okay (done)\n```\n\n___\nNotes:\n\n- In the functions [ins n] and [n], n will never be empty and (-len(s)-1 <= n <= len(s)).\n- `[ins]` is a toggle (just like the key on your keyboard).\n\n```\nTake a look at the string: aa[n]x.\n\nif n == -1:\n  current step: aa|\n  cursor index: -1\n  aa[ins -1]x -> aax\n\nif n == -2:\n  current step: a|a\n  cursor index: -2\n  aa[ins -2]x -> axa\n  \nif n == -3:\n  current step: |aa\n  cursor index: -3\n  aa[ins -3]x -> xaa\n```\n\n- If something like this occurs:\n\n```\n[ins n]...text...[ins n]\n\nins toggles on, and then off.\n\nExamples:\n\nabcd[ins 0]wxyz[ins 0]pqrs -> pqrswxyz\n[ins]hello world[-6][ins]world -> hello worldworld\n```\n\nIf it gets too confusing, you can always try typing it out yourself on a text editor.\n\n\nGood luck!\n\n______\n\nCheck out <a href=\"https://www.codewars.com/collections/65abaddba4b9f2013327dd3d\">the rest of the kata in this series</a>!",
+  "totalAttempts": 167,
+  "totalCompleted": 39,
+  "totalStars": 6,
+  "voteScore": 36,
+  "tags": [
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

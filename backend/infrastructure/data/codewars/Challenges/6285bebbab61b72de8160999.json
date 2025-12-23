@@ -1,0 +1,39 @@
+{
+  "id": "6285bebbab61b72de8160999",
+  "name": "CodeWars Takeout Menu",
+  "slug": "codewars-takeout-menu",
+  "category": "reference",
+  "publishedAt": "2022-05-26T04:15:01.592Z",
+  "approvedAt": "2025-02-24T16:52:51.654Z",
+  "languages": [
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/6285bebbab61b72de8160999",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-19T03:51:23.645Z",
+  "createdBy": {
+    "username": "bshore",
+    "url": "https://www.codewars.com/users/bshore"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## CodeWars Takeout Menu\n\n<details>\n  <summary>Appetizers / Sushi</summary>\n  \n  <table>\n    <tr>\n      <th>Item</th>\n      <th>Price</th>\n    </tr>\n    <tbody>\n      <tr><td>spring roll</td><td>1.99</td></tr>\n      <tr><td>gyoza</td><td>3.99</td></tr>\n      <tr><td>miso soup</td><td>1.99</td></tr>\n      <tr><td>hibachi soup</td><td>1.99</td></tr>\n      <tr><td>tuna roll</td><td>5.99</td></tr>\n      <tr><td>salmon roll</td><td>5.99</td></tr>\n      <tr><td>yellowtail roll</td><td>5.99</td></tr>\n      <tr><td>crab roll</td><td>5.99</td></tr>\n      <tr><td>spicy tuna roll</td><td>5.99</td></tr>\n      <tr><td>spicy salmon roll</td><td>5.99</td></tr>\n    </tbody>\n  </table>\n</details>\n\n<details>\n  <summary>Food Menu</summary>\n  \n  <table>\n    <tr>\n      <th>Item</th>\n      <th>Price</th>\n    </tr>\n    <tbody>\n      <tr><td>veggie bento box</td><td>10.99</td></tr>\n      <tr><td>chicken bento box</td><td>12.99</td></tr>\n      <tr><td>shrimp bento box</td><td>13.99</td></tr>\n      <tr><td>steak bento box</td><td>16.99</td></tr>\n      <tr><td>veggie udon</td><td>10.99</td></tr>\n      <tr><td>chicken udon</td><td>12.99</td></tr>\n      <tr><td>shrimp udon</td><td>13.99</td></tr>\n      <tr><td>steak udon</td><td>16.99</td></tr>\n    </tbody>\n  </table>\n</details>\n\n#### Note: There is a preloaded function `GetMenu()` that will return a `map[string]float32` containing the full menu + pricing that may be used.\n\n# Task\n\nYour task at the CodeWars restaurant is to answer phone calls and take customer orders, telling them the final cost at the end of each phone call. The catch with this kata though is that it uses`channels` to communicate with your Solution rather than the typical single function call and return.\n\n\n## Details\n\n### Customer Dialogue:\n- The customer will always open the conversation with `place an order`\n- The customer may ask for a `price {item}`\n- The customer confirms they want an item by saying `order {item}`\n- The customer may ask for an item that is not on the menu\n- The order ends when the customer says `that is all`\n\n### Expected Responses:\n- Respond with `ok` for\n  - `place an order`\n  - `order {item}` - (`unavailable` if not on the menu)\n- Respond with the price as a string for\n  - `price {item}` - (`unavailable` if not on the menu)\n  - `that is all`\n- Respond to `goodbye` with `goodbye`\n\n### When to stop\nYou should continue to take orders until you receive on the `done` channel. You can assume that you will not receive on the `done` channel while you are also receiving on `hear`, it is one or the other. You can also assume that you won't receive on `done` in the middle of an order.\n\n### Example Phone Call\nEach newline is a receive on the `hear` channel, tabbed in lines are responses\n```\nplace an order\n    ok\nprice chicken bento box\n    12.99\nprice spring roll\n    1.99\norder spring roll\n    ok\norder spring roll\n    ok\norder chicken bento box\n    ok\nprice pizza\n    unavailable\nthat is all\n    16.97\ngoodbye\n    goodbye\n```",
+  "totalAttempts": 103,
+  "totalCompleted": 28,
+  "totalStars": 10,
+  "voteScore": 23,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

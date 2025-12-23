@@ -1,0 +1,41 @@
+{
+  "id": "5c878cc8a2fc6d10eff4b691",
+  "name": "Left, left! Right, right! Comp! Symmetric! Q!E!D!",
+  "slug": "left-left-right-right-comp-symmetric-q-e-d",
+  "category": "reference",
+  "publishedAt": "2019-03-12T10:47:19.768Z",
+  "approvedAt": "2019-03-29T08:04:10.219Z",
+  "languages": [
+    "agda"
+  ],
+  "url": "https://www.codewars.com/kata/5c878cc8a2fc6d10eff4b691",
+  "rank": {
+    "id": -1,
+    "name": "1 kyu",
+    "color": "purple"
+  },
+  "createdAt": "2019-03-12T10:41:12.319Z",
+  "createdBy": {
+    "username": "ice1000",
+    "url": "https://www.codewars.com/users/ice1000"
+  },
+  "approvedBy": {
+    "username": "solitude",
+    "url": "https://www.codewars.com/users/solitude"
+  },
+  "description": "This Kata is about Cubical Agda, proving some properties of a higher-inductive type.\n\nThis Kata is aim to be an introduction to Cubical model, showing how interval operations and Path types are working.\nTo simplify the Kata, I picked a very simple higher-inductive type: Symmetric Int.\n\nThe definition looks like this:\n\n```agda\ndata ℤ : Set where\n  pos : (n : ℕ) → ℤ\n  neg : (n : ℕ) → ℤ\n  posneg : pos 0 ≡ neg 0\n```\n\nThis is nicer than the plain old inductive definition:\n\n```agda\ndata Int : Set where\n  pos    : (n : ℕ) → Int\n  negsuc : (n : ℕ) → Int\n```\n\nThe reason is that our HIT version is symmetric.\n\nYour task is to prove a lemma of `+-comm` that is `posneg i + a = a`.\n\n(CodeWars takes 100% CPU and crashed my browser. My one-hour writing is lost)\n\n# Tutorial\n\n## Chapter one\n\nDefinition of Int:\n\n```agda\ndata ℤ : Set where\n  pos : (n : ℕ) → ℤ\n  neg : (n : ℕ) → ℤ\n  posneg : pos 0 ≡ neg 0\n```\n\nSo we can construct Ints:\n\n```agda\ntwo = pos 2\nnegTwo = neg 2\n```\n\nBut how does the constructor `posneg` work?\n\nLet's start from the `≡` definition. It's no longer a datatype, but a lambda.\nIt's a lambda takes a parameter representing a point on a segment, returns the\nvalue on the point. Each `a ≡ b` (imagine `a b : A`) is a segment, where the\ntwo endpoints are `a` and `b` respectively.\n\nThe instances of `a ≡ b` are such segments, `i0` is the left endpoint while `i1`\nis the right one.\n\nWhile a segment has infinite number of points, you can't pattern match it. This\nmeans you cannot simply construct things like\n\n```agda\nbla : 1 ≡ 2\nbla i = if i == i0 then 1 else 2\n```\n\nbut we can easily do trivial proofs\n\n```agda\nsample : 1 ≡ 1\nsample i = 1\n```\n\nso we have `refl`:\n\n```agda\nrefl : x ≡ x\nrefl i = x\n```\n\nthere's an unary operator on interval: find the point of symmetry.\nSo we can flip a path by:\n\n```agda\nsym : a ≡ b -> b ≡ a\nsym inputPath intervalParamOfTheReturnedPath = inputPath (~ intervalParamOfTheReturnedPath)\n```\n\ncongruence is function composition:\n\n```agda\ncong : (F : A -> B) -> {x y : A} -> x ≡ y -> F x ≡ F y\ncong f g a = f (g a)\n\n-- cong f inputPath intervalParamOfTheReturnedPath =\n--   f (inputPath intervalParamOfTheReturnedPath)\n```\n\nback to our Int, we can prove a lot of interesting things:\n\n```agda\n0=0 : neg 0 ≡ pos 0\n0=0 i = posneg (~ i)\n```\n\n## Chapter two\n\nYou should understand how does the interval construtor in HITs work.\nRead [this CS StackExchange question](https://cs.stackexchange.com/q/103146/79971).\n\n## Chapter three\n\nRead the definitions in `Cubical.HITs.HitInt`, like this:\n\n```agda\n_+ℤ_ : ℤ → ℤ → ℤ\nm +ℤ (pos (suc n)) = sucℤ   (m +ℤ pos n)\nm +ℤ (neg (suc n)) = predℤ  (m +ℤ neg n)\nm +ℤ _             = m\n```\n\nNow you can do the Kata.\n\n## Notes\n\nThe Kata name is from the lyrics of [this song](https://youtu.be/bcUVnSqrz9U?t=17).\n\n",
+  "totalAttempts": 121,
+  "totalCompleted": 50,
+  "totalStars": 13,
+  "voteScore": 25,
+  "tags": [
+    "Theorem Proving",
+    "Fundamentals",
+    "Tutorials"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "614a4eaeeae33e003fde909b",
+  "name": "Regex Series: Match All Except X",
+  "slug": "regex-series-match-all-except-x",
+  "category": "reference",
+  "publishedAt": "2021-09-22T04:12:05.104Z",
+  "approvedAt": "2021-10-03T09:30:03.032Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/614a4eaeeae33e003fde909b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-09-21T21:29:18.907Z",
+  "createdBy": {
+    "username": "farhanaditya",
+    "url": "https://www.codewars.com/users/farhanaditya"
+  },
+  "approvedBy": {
+    "username": "ejini战神",
+    "url": "https://www.codewars.com/users/ejini%E6%88%98%E7%A5%9E"
+  },
+  "description": "Regex is a powerful tool. You can easily match any word with `/\\w+/`. But what if you want to exclude certain words?\n\n## Task\n\nWrite a regex pattern that will match any word except `code` and `war`, but still match words that are formed with them (e.g., `codewars`, `barcode`, `beware`, `warfare`, `warm`). This also means you can match `codecode` or `warwar`. Matches and non-matches should be case-insensitive.\n\nFor the purpose of this kata, a word is a combination of one or more word characters (`[A-Za-z0-9_]`). Which means, if a word contains non-word characters (e.g., `t#!ree`), your pattern should match them separately (e.g., `[\"t\", \"ree\"]`).\n\nYour pattern will be tested as:\n```javascript\n\"some strings\".match(/yourpattern/gi)\n```\n\n## Input\n\nYour pattern will only be tested against strings, which:\n- have at least one character\n- consist of word and/or non-word characters\n- may contain \"code\" and \"war\"\n- may contain word that is formed with \"code\" and/or \"war\"\n\n## Example\n\n```javascript\nconst regex = /yourpattern/gi\n\nlet sample1 = \"Codewars is a great place to find a great code\"\nsample1.match(regex) // [\"Codewars\", \"is\", \"a\", \"great\", \"place\", \"to\", \"find\", \"a\", great\"] \n\nlet sample2 = \"There are no sym!bols bet@ween us!\"\nsample2.match(regex) // [\"There\", \"are\", \"no\", \"sym\", \"bols\", \"bet\", \"ween\", \"us\"]\n\nlet sample3 = \"Beware, a war impostor is among us\"\nsample3.match(regex) // [\"Beware\", \"a\", \"impostor\", \"is\", \"among\", \"us\"]\n\nlet sample4 = \"A good coder shouldn't hide their code\"\nsample4.match(regex) // [\"A\", \"good\", \"coder\", \"shouldn\", \"t\", \"hide\", \"their\"]\n```\n\n## Rules\n\nYou're only allowed to write a regex literal (eg., `/somepattern/`). Don't write any function, class, object, or modify any built-in ones. ",
+  "totalAttempts": 1002,
+  "totalCompleted": 219,
+  "totalStars": 12,
+  "voteScore": 76,
+  "tags": [
+    "Strings",
+    "Regular Expressions",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

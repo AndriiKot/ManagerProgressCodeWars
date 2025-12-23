@@ -1,0 +1,36 @@
+{
+  "id": "64bb74e28e1e9535af90f542",
+  "name": "Dictionary Attack",
+  "slug": "dictionary-attack",
+  "category": "algorithms",
+  "publishedAt": "2023-07-22T12:13:05.616Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/64bb74e28e1e9535af90f542",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-07-22T06:19:15.011Z",
+  "createdBy": {
+    "username": "DavidEl",
+    "url": "https://www.codewars.com/users/DavidEl"
+  },
+  "description": "## Dictionary attack\n\n![Hacker](https://i.gifer.com/5HJ3.gif)\n\nYou got your hacker fingers on a users table from the Evil Corp, available in global scope as:\n\n```\nconst dataTable = {\n  users: [\n    {\n      id: \"id-1\",\n      name: \"John\",\n      surname: \"Doe\",\n      hash: \"fe1a9218de8f369d\",\n      favoriteColor: \"blue\",\n    },\n    ...\n  ]\n}\n```\n\nAs an experienced hacker over the years you have gathered known passwords and their hashes and stored them in a dictionary, (password as the key and hash as the value) available in global scope as:\n\n```\nconst hashDictionary = {\nmySecretPassword: \"8d2c6f1ed3f17d42\",\n...\n};\n```\n\n### Your task:\n\nWrite a function **getPasswords** that takes an array of user ids and returns an array of user objects with key value pair for their password appended.\n\ne.g:\n\n```\ngetPasswords(['id-1']) --->  [{\n      id: \"id-1\",\n      name: \"John\",\n      surname: \"Doe\",\n      hash: \"fe1a9218de8f369d\",\n      favoriteColor: \"blue\",\n      password:'1234567'\n    }]\n```\n\nYour code should handle 0-n ids in.\n\nIf user is not found return null in its place\n\n```\n[null]\n```\n\nIf password is not found return user object with empty string in the password value\n\n```[{\n      id: \"id-100\",\n      name: \"John\",\n      surname: \"Doe\",\n      hash: \"fe1a9218de8f36d\",\n      favoriteColor: \"blue\",\n      password:''\n    },]\n```\n\nIt should only return unique users\n\n\nGood luck :)\n",
+  "totalAttempts": 32,
+  "totalCompleted": 5,
+  "totalStars": 0,
+  "voteScore": -2,
+  "tags": [
+    "Fundamentals",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "60bcabf6b3a07c00195f774c",
+  "name": "Expand Absolute Values",
+  "slug": "expand-absolute-values",
+  "category": "algorithms",
+  "publishedAt": "2021-06-06T14:00:20.981Z",
+  "approvedAt": "2023-01-18T10:06:54.358Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/60bcabf6b3a07c00195f774c",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-06-06T11:05:26.795Z",
+  "createdBy": {
+    "username": "Kyusodaru",
+    "url": "https://www.codewars.com/users/Kyusodaru"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Problem\n\nGiven a list of linear or affine functions `$y_i=a_i x + c_i$` (represented as tuples `$(a_i,c_i)$`), compute the sum of absolute value of the functions: `$\\Sigma\\lvert y_i \\lvert$` and return the result as a series of sorted intervals, defined as 4-uples: `$(x_{start,j} ,x_{end,j},a_j,c_j)$`.\n\n## Example:\n\nGiven the two equations:\n\n* `$y=0,25 x -3$` (red in the figure below)\n* `$y=-x+1$` (blue in the figure below)\n\nThe resulting function `$\\lvert 0,25 x -3 \\lvert + \\lvert -x+1 \\lvert$` (green in the figure below) is defined with 3 intervals:\n- `$y=-1,25 x + 4$` on `$[-∞,1]$`\n- `$y= 0,75 x + 2$` on `$[1,12]$`\n- `$y= 1,25 x - 4$` on `$[12,+∞]$`\n\n<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"Layer_1\" x=\"0\" y=\"0\" version=\"1.1\" viewBox=\"0 0 800 800\" style=\"width:400px;height:400px\" xml:space=\"preserve\"><style>.st1,.st2,.st3{fill:none;stroke:#000;stroke-width:2;stroke-miterlimit:20;stroke-opacity:.2}.st2,.st3{stroke-opacity:.25}.st3{stroke-width:3;stroke-opacity:.9}.st4{fill:none;stroke:#fff;stroke-width:6}.st5{font-family:&apos;ArialMT&apos;}.st6{font-size:28px}.st7,.st8{fill:none;stroke:#c74440;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20;stroke-opacity:.9}.st8{stroke:#2d70b3}.st10{fill:#c60505}.st11{fill:#0661c4}.st12{fill:#368404}</style><g transform=\"scale(2)\"><path id=\"background-6e957e33\" fill=\"#fff\" d=\"M0 0h400v400H0z\"/><g id=\"graphpaper-6e957e33\"><g id=\"grid-6e957e33\"><path d=\"M17.5 0v400M44.5 0v400M72.5 0v400M100.5 0v400M156.5 0v400M183.5 0v400M211.5 0v400M239.5 0v400M267.5 0v400M295.5 0v400M322.5 0v400M350.5 0v400M378.5 0v400M0 387.5h400M0 360.5h400M0 332.5h400M0 304.5h400M0 276.5h400M0 248.5h400M0 193.5h400M0 165.5h400M0 137.5h400M0 109.5h400M0 82.5h400M0 54.5h400M0 26.5h400\" class=\"st1\"/><path d=\"M267.5 0v400M0 360.5h400M0 82.5h400\" class=\"st2\"/></g><g id=\"axis-6e957e33\"><path id=\"yaxis-6e957e33\" d=\"M129 0v400\" class=\"st3\"/><path id=\"xaxis-6e957e33\" d=\"M0 222h400\" class=\"st3\"/><text class=\"st4 st5 st6\" transform=\"matrix(.5 0 0 .5 115.96 237.449)\">0</text><text class=\"st5 st6\" transform=\"matrix(.5 0 0 .5 115.96 237.449)\">0</text><text class=\"st4 st5 st6\" transform=\"matrix(.5 0 0 .5 259.975 237.449)\">10</text><text class=\"st5 st6\" transform=\"matrix(.5 0 0 .5 259.975 237.449)\">10</text><g><text class=\"st4 st5 st6\" transform=\"matrix(.5 0 0 .5 103.513 364.462)\">-10</text><text class=\"st5 st6\" transform=\"matrix(.5 0 0 .5 103.513 364.462)\">-10</text></g><g><text class=\"st4 st5 st6\" transform=\"matrix(.5 0 0 .5 108.175 86.436)\">10</text><text class=\"st5 st6\" transform=\"matrix(.5 0 0 .5 108.175 86.436)\">10</text></g></g></g><g id=\"expressions-6e957e33\"><path id=\"sketch-6e957e33\" d=\"M-.5 295l400-100\" class=\"st7\"/><path id=\"sketch-6e957e33_1_\" d=\"M-.5 78.5l327 327\" class=\"st8\"/><path id=\"sketch-6e957e33_2_\" fill=\"none\" stroke=\"#388c46\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"20\" stroke-opacity=\".9\" stroke-width=\"5\" d=\"M-.5 4.6h0l142.6 178.3L295.4 67.8 354-5.5\"/></g></g><path d=\"M124.4 586.2c0 8-3 12.3-8.1 12.3-4.6 0-7.7-4.3-7.7-12 0-7.8 3.4-12.2 8.1-12.2 4.9.1 7.7 4.5 7.7 11.9zm-12.7.4c0 6.1 1.9 9.5 4.8 9.5 3.2 0 4.8-3.8 4.8-9.8 0-5.8-1.5-9.5-4.8-9.5-2.8.1-4.8 3.4-4.8 9.8zM127.6 596.3c0-1.3.9-2.3 2.2-2.3 1.3 0 2.1.9 2.1 2.3 0 1.3-.8 2.3-2.2 2.3-1.2 0-2.1-1-2.1-2.3zM134.8 598.2v-1.9l2.5-2.4c6-5.7 8.7-8.7 8.7-12.2 0-2.4-1.2-4.6-4.6-4.6-2.1 0-3.9 1.1-5 2l-1-2.2c1.6-1.4 3.9-2.4 6.6-2.4 5 0 7.2 3.5 7.2 6.8 0 4.3-3.1 7.8-8.1 12.6l-1.9 1.7v.1h10.5v2.6h-14.9zM167.2 577.5h-8.9l-.9 6c.5-.1 1-.1 1.9-.1 1.8 0 3.6.4 5 1.3 1.8 1 3.3 3.1 3.3 6 0 4.6-3.6 8-8.7 8-2.6 0-4.7-.7-5.8-1.4l.8-2.4c1 .6 2.9 1.3 5 1.3 3 0 5.5-1.9 5.5-5.1 0-3-2.1-5.2-6.7-5.2-1.3 0-2.4.1-3.2.3L156 575h11.2v2.5zM174.2 580.8l2.5 3.7c.6 1 1.2 1.9 1.8 2.8h.1c.6-1 1.2-1.9 1.7-2.9l2.4-3.7h3.4l-5.9 8.4 6.1 9h-3.6l-2.6-3.9c-.7-1-1.3-2-1.9-3h-.1l-1.8 3-2.5 3.9h-3.5l6.2-8.9-5.9-8.5h3.6zM204.4 587.3v2.3h-8.9v-2.3h8.9zM215.5 594.6c.9.6 3 1.5 5.2 1.5 4.1 0 5.3-2.6 5.3-4.5 0-3.3-3-4.7-6-4.7h-1.8v-2.4h1.8c2.3 0 5.2-1.2 5.2-4 0-1.9-1.2-3.5-4.1-3.5-1.9 0-3.7.8-4.7 1.5l-.8-2.3c1.2-.9 3.6-1.8 6.1-1.8 4.6 0 6.7 2.7 6.7 5.6 0 2.4-1.4 4.5-4.3 5.5v.1c2.9.6 5.2 2.7 5.2 6 0 3.7-2.9 7-8.5 7-2.6 0-4.9-.8-6.1-1.6l.8-2.4z\" class=\"st10\"/><g><path d=\"M545.6 646.8v2.3h-8.9v-2.3h8.9zM555.2 637.3l-4.1 2.2-.6-2.4 5.1-2.7h2.7v23.4h-3.1v-20.5zM569.2 640.3l2.5 3.7c.6 1 1.2 1.9 1.8 2.8h.1c.6-1 1.2-1.9 1.7-2.9l2.4-3.7h3.4l-5.9 8.4 6.1 9h-3.6l-2.6-3.9c-.7-1-1.3-2-1.9-3h-.1l-1.8 3-2.5 3.9h-3.5l6.2-8.9-5.9-8.5h3.6zM601.3 638.5v8.5h8.1v2.2h-8.1v8.5H599v-8.5h-8.1V647h8.1v-8.5h2.3zM627 637.3l-4.1 2.2-.6-2.4 5.1-2.7h2.7v23.4H627v-20.5z\" class=\"st11\"/></g><g><path d=\"M345.9 336.4v36h-2.4v-36h2.4zM366.1 351.5c0 8-3 12.3-8.1 12.3-4.6 0-7.7-4.3-7.7-12 0-7.8 3.4-12.2 8.1-12.2 4.9 0 7.7 4.4 7.7 11.9zm-12.7.3c0 6.1 1.9 9.5 4.8 9.5 3.2 0 4.8-3.8 4.8-9.8 0-5.8-1.5-9.5-4.8-9.5-2.8.1-4.8 3.4-4.8 9.8zM369.3 361.5c0-1.3.9-2.3 2.2-2.3 1.3 0 2.1.9 2.1 2.3 0 1.3-.8 2.3-2.2 2.3-1.2 0-2.1-1-2.1-2.3zM376.5 363.4v-1.9l2.5-2.4c6-5.7 8.7-8.7 8.7-12.2 0-2.4-1.2-4.6-4.6-4.6-2.1 0-3.9 1.1-5 2l-1-2.2c1.6-1.4 3.9-2.4 6.6-2.4 5 0 7.2 3.5 7.2 6.8 0 4.3-3.1 7.8-8.1 12.6l-1.9 1.7v.1h10.5v2.6h-14.9zM408.9 342.7H400l-.9 6c.5-.1 1-.1 1.9-.1 1.8 0 3.6.4 5 1.3 1.8 1 3.3 3.1 3.3 6 0 4.6-3.6 8-8.7 8-2.6 0-4.7-.7-5.8-1.4l.8-2.4c1 .6 2.9 1.3 5 1.3 3 0 5.5-1.9 5.5-5.1 0-3-2.1-5.2-6.7-5.2-1.3 0-2.4.1-3.2.3l1.5-11.2h11.2v2.5zM415.9 346l2.5 3.7c.6 1 1.2 1.9 1.8 2.8h.1c.6-1 1.2-1.9 1.7-2.9l2.4-3.7h3.4l-5.9 8.4 6.1 9h-3.6l-2.6-3.9c-.7-1-1.3-2-1.9-3h-.1l-1.8 3-2.5 3.9H412l6.2-8.9-5.9-8.5h3.6zM446.1 352.5v2.3h-8.9v-2.3h8.9zM457.2 359.8c.9.6 3 1.5 5.2 1.5 4.1 0 5.3-2.6 5.3-4.5 0-3.3-3-4.7-6-4.7h-1.8v-2.4h1.8c2.3 0 5.2-1.2 5.2-4 0-1.9-1.2-3.5-4.1-3.5-1.9 0-3.7.8-4.7 1.5l-.8-2.3c1.2-.9 3.6-1.8 6.1-1.8 4.6 0 6.7 2.7 6.7 5.6 0 2.4-1.4 4.5-4.3 5.5v.1c2.9.6 5.2 2.7 5.2 6 0 3.7-2.9 7-8.5 7-2.6 0-4.9-.8-6.1-1.6l.8-2.4zM478.8 336.4v36h-2.4v-36h2.4zM501.4 344.3v8.5h8.1v2.2h-8.1v8.5h-2.3V355H491v-2.2h8.1v-8.5h2.3zM524.1 336.4v36h-2.4v-36h2.4zM537.2 352.5v2.3h-8.9v-2.3h8.9zM546.7 343l-4.1 2.2-.6-2.4 5.1-2.7h2.7v23.4h-3.1V343zM560.8 346l2.5 3.7c.6 1 1.2 1.9 1.8 2.8h.1c.6-1 1.2-1.9 1.7-2.9l2.4-3.7h3.4l-5.9 8.4 6.1 9h-3.6l-2.6-3.9c-.7-1-1.3-2-1.9-3h-.1l-1.8 3-2.5 3.9H557l6.2-8.9-5.9-8.5h3.5zM592.9 344.3v8.5h8.1v2.2h-8.1v8.5h-2.3V355h-8.1v-2.2h8.1v-8.5h2.3zM618.6 343l-4.1 2.2-.6-2.4 5.1-2.7h2.7v23.4h-3.1V343zM634.1 336.4v36h-2.4v-36h2.4z\" class=\"st12\"/></g></svg>\n<div style=\"font-size:75%;color:gray;font-style:italic;\">(Picture by <a href=\"https://www.codewars.com/users/5a8590a2ba1bb5d22c00011f\">awesomead</a>)</div><br>\n\nHence the result:\n```python\n# inf = float('inf')\n[(-inf, 1.0, -1.25, 4.0), (1.0, 12.0, 0.75, 2.0), (12.0, inf, 1.25, -4.0)]\n```\n\n## Inputs\n\n* Input list length: `1 <= size <= 1000`\n* Coefficients: `-1000 <= a <= 1000`, `-1000 <= c <= 1000`.\n\n## Outputs\n\n* Sorted list of 4 elements tuples\n* Empty ranges must be excluded\n* Floats are compared with a tolerance of `0.1` in the tests so you don't need to worry about floating point errors\n\n",
+  "totalAttempts": 270,
+  "totalCompleted": 36,
+  "totalStars": 3,
+  "voteScore": 32,
+  "tags": [
+    "Mathematics",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

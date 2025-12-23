@@ -1,0 +1,37 @@
+{
+  "id": "60d0e9db55d3a40017f1062a",
+  "name": "Return a solved array",
+  "slug": "return-a-solved-array",
+  "category": "reference",
+  "publishedAt": "2021-06-22T18:11:57.168Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/60d0e9db55d3a40017f1062a",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-06-21T19:34:51.561Z",
+  "createdBy": {
+    "username": "Shikiiii",
+    "url": "https://www.codewars.com/users/Shikiiii"
+  },
+  "description": "Given an array of strings, which may be a lot of things that are listed below, return an array of ints after clearing out each string and turning it into an integer.\n\n<h2>Details</h2>\n\nEach string may include:\n - **Simple math**: Something alike the sort of `1+2`, `2/4`, `5*5` or `3-2`.\n - **Numbers as letters**: For simplicity, the spelled-out numbers will only range from 0 to 9 and will be separated by a space. For example \"two three\" would be 23, not 2 and 3.\n - **Special characters**: These characters should be taken into considiration:\n  - `!`: add `1` to the last digit _before_ the character.\n  - `?`: remove `1` from the last digit _before_ the character.\n  - `=`: end the string here, everything _after_ this character should be ignored.\n\nNotes:\n - **IMPORTANT**: If you have `9` as a digit, and `!` right after it, that would equal `10`, and it shall not connect with the digit before it (if there is one). It should only connect with it after every `!` or `?` is used. Confused? Here is an example: `two nine !` --> `2 10` --> `210`; If you have 2 or more digits next to each other, only use the last one. If it's a `9`, treat it the same way. `9999!` --> `99910`\n - There will never be leading zeroes.\n - Make sure your result after converting the string is an int, not a float or anything else.\n - Arrays may be empty.\n - In the random tests, there may only be 1 string per array. It's to save resources and do the code execution faster.\n - There is a preloaded dict `converter` with digits and their corresponding strings. Feel free to use it. :)\n - Do the math lastly, first take care of all the other steps. :) \n \n<h2>Example</h2>\n\n```python\nsolve_array([\"1+5!\", \"two+five+two five?\", \"5+3+two=210\", \"5+two?\"]) --> [7, 31, 10, 6]\n```\n\nHave fun. :) \n  ",
+  "totalAttempts": 167,
+  "totalCompleted": 17,
+  "totalStars": 2,
+  "voteScore": 15,
+  "tags": [
+    "Mathematics",
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "5635950c96734c683300007c",
+  "name": "Tonk Card Set Determination",
+  "slug": "tonk-card-set-determination",
+  "category": "games",
+  "publishedAt": "2015-11-01T10:15:50.756Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5635950c96734c683300007c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2015-11-01T04:29:01.041Z",
+  "createdBy": {
+    "username": "danielpclark",
+    "url": "https://www.codewars.com/users/danielpclark"
+  },
+  "description": "In the card game Tonk part of the process is to determine when you have a **set**.  When you have a **set** in your hand you may discard that **set** to the table.  The rules for determining a **set** is that you must have either three or more cards of the same rank, or three or more suited cards in order.\n\nThese each count as a set, or sets:\n\n - A♣ 2♣ 3♣\n - 4♦ 4♥ 4♠\n - 7♥ 8♥ 9♥ T♥ J♥ Q♥\n - K♠ K♣ K♦ K♥\n \nThe order of ranks are: `A23456789TJQK` and the suits in the deck will be: `♣♦♥♠` *(Note: these US-ASCII characters are not used.  I had to use UTF8* `cdhs`*.  But your code should work either way.)*\n\n*A hand will never have more than 6 cards at any one time, and a set is never less than 3 cards.*\n\nWrite a method `TonkSets.get_sets(*cards)` that will take in an Array of cards and determine how many of the cards form a **set** *(if any)* and return `:all` if all cards can make **one set**, or each of the cards that make a **set** (or **sets**) -- always return the most *(max)* cards that make a **set** if not all, or the symbol `:none` if not enough cards form a **set**.\n\n```ruby\ninclude TonkSets\nget_sets(%w^7♥ 8♥ 9♥ T♥ J♥ Q♥^) # => :all\nget_sets(%w^7♥ 8♥ 9♥ T♠ J♥ Q♥^) # => [['7♥','8♥','9♥']]\nget_sets(%w^7♥ 4♦ 4♥ 4♠ Q♥^)    # => [['4♠','4♥','4♦']]\nget_sets(%w^7♥ 4♦ 4♥ T♠ J♥^)    # => :none\n```\nThe given order for input won't be sorted; so keep that in mind when implementing the method.  The output result(s) should be sorted with the standard `sort` method. There may be multiple **sets**, and a card may overlap.  As long as the **sets** are listed as seperate **sets** we are not concerned about the shared card being in both **sets** in the output.",
+  "totalAttempts": 165,
+  "totalCompleted": 10,
+  "totalStars": 1,
+  "voteScore": 12,
+  "tags": [
+    "Sorting",
+    "Filtering",
+    "Puzzles"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 1
+  }
+}

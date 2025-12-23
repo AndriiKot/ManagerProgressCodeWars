@@ -1,0 +1,42 @@
+{
+  "id": "63a2b523e37cea002372e649",
+  "name": "Clear Passage",
+  "slug": "clear-passage",
+  "category": "games",
+  "publishedAt": "2022-12-21T08:39:45.075Z",
+  "approvedAt": "2022-12-23T15:16:58.974Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63a2b523e37cea002372e649",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-12-21T07:26:27.391Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\n##### \"Given a scrambled path, return the rotations needed in horizontal direction to make a clear passage from top to bottom.\" \n\nThere is always at least one configuration possible. Multiple solutions may be possible. Any valid solution passes this kata.\n\n### Input\n\n- rows: an array of strings, each representing a row that needs to be rotated in order to make a clear passage from top to bottom. \n  - <code>'x'</code>: a wall\n  - <code>'.'</code>: a tile of path\n  \n### Output\n\n- return an array of integers, specifying the amount of rotations required to make a clear passage when all rows have been rotated. \n  - <code>zero</code>: no rotations\n  - <code>positive</code>: number of rotations to the left\n  - <code>negative</code>: number of rotations to the right\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n\n### Rotations\n\n- A rotation to the left, shifts all tiles to the left, adding the left most tiles back to the right.\n- A rotation to the right, shifts all tiles to the right, adding the right most tiles back to the left.\n\n```\nrows:     rotations: [0, 1, 0, -1]    clear passage:\n\nxx.x      0                           xx.x\nxxx.      1     // rotate left        xx.x\nxx.x      0                           xx.x\nx.xx     -1     // rotate right       xx.x\n\n```\n\n### Clear Passage\n\n- a clear passage is formed when there is a continous path possible from any tile and the top row to any tile at the bottom row\n- a continous path is formed by having a chain of adjacent tiles in any of the 4 directions (up, down, left, right);\n\n```\nClear passages:\n\nxx.x    .xxx\nxx.x    ...x \nx..x    xx.x\n        xx.x\n```\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Input Constraints</summary>\n\n- 100 tests with 3 <= height <= 5 and 3 <= width <= 5\n- 100 tests with 6 <= height <= 8 and 2 <= width <= 3\n- 100 tests with 2 <= height <= 3 and 6 <= width <= 8\n- 100 tests with 8 <= height <= 12 and 8 <= width <= 12\n- 100 tests with 10 <= height <= 100 and 10 <= width <= 100\n- 10 tests with 100 <= height <= 200 and 100 <= width <= 200\n- 10 tests with 200 <= height <= 300 and 200 <= width <= 300\n- 10 tests with 300 <= height <= 400 and 300 <= width <= 400\n- 5 tests with 400 <= height <= 500 and 400 <= width <= 500\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n\n```\nStraight path - clear\n\nrows:     rotations: [0, 0, 0, 0]   clear passage:\n\nx.xx      0                         x.xx\nx.xx      0                         x.xx\nx.xx      0                         x.xx\nx.xx      0                         x.xx\n\nStraight path - scrambled\n\nrows:     rotations: [1, 0, 0, -2]  clear passage:\n\nxx.x      1                         x.xx\nx.xx      0                         x.xx\nx.xx      0                         x.xx\nxxx.     -2                         x.xx\n\nComplex path - clear\n\nrows:     rotations: [0, 0, 0, 0]   clear passage:\n\nx.xx      0                         x.xx \nx.xx      0                         x.xx \nx...      0                         x... \nxxx.      0                         xxx.\n\nComplex path - scrambled\n\nrows:     rotations: [0, 0, -1, 0]  clear passage:\n\nx.xx      0                         x.xx \nx.xx      0                         x.xx \n...x     -1                         x... \nxxx.      0                         xxx.\n\n\n```\n\n</details>\n\n",
+  "totalAttempts": 373,
+  "totalCompleted": 124,
+  "totalStars": 4,
+  "voteScore": 37,
+  "tags": [
+    "Puzzles",
+    "Arrays",
+    "Strings",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

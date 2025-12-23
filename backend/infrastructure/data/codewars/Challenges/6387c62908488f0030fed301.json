@@ -1,0 +1,41 @@
+{
+  "id": "6387c62908488f0030fed301",
+  "name": "Xiangqi(Chinese Chess/象棋): Cannon(炮/砲) 's Attack",
+  "slug": "xiangqi-chinese-chess-slash-xiang-qi-cannon-pao-slash-pao-s-attack",
+  "category": "games",
+  "publishedAt": "2022-12-04T06:53:12.004Z",
+  "approvedAt": "2024-06-17T04:47:39.793Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6387c62908488f0030fed301",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-11-30T21:07:53.665Z",
+  "createdBy": {
+    "username": "LanXnHn",
+    "url": "https://www.codewars.com/users/LanXnHn"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "__Important Note: Even if you don't know anything about [Xiangqi/Chinese Chess/象棋](https://en.wikipedia.org/wiki/Xiangqi), you still can solve this Kata.__\n\n___\n\n# Cannon/炮/砲:\n\nIn this Kata, we will only take up one Xiangqi piece: Cannon.\n\n* Cannon attacks by jumping over one piece (can be either enemy piece or own piece) and attacks the next one. There can be any amount of unoccupied space in between, including none.\n\n```\nexample:\n(C for cannon, X for enemy piece, O for own piece.)\n\nXXC..O...X\n^        ^\nYou can attack one of these two.\n\n-----\nRemember, you cannot attack your own piece.\n\nOXC..O...O\n^        ^\n```\n\n___\n\n# Task:\n\nYou will get a string as input (1 Dimension), it will always start with `'C'` which means cannon.\n\nAnd the rest of the string consists of `'X'`(enemy piece) and `'O'`(own piece).\n\nYou need to find the rightmost position which is reachable with any number of consecutive moves. Return the `index`(0-basis) of it.\n\n__Note:__ Keep moving to the right might not be the correct solution, move to the left at some point might be a smart move, see the 8th move of left example and 3rd move of right example below.\n\n___\n\n# Examples:\n\n```\nEach column is one example:\n\ninput:                  input:\n'CXXXXXXXXXXXXXXX'  |   'CXXOXXOXXOXXXXX'\n ^                  |    ^\n                    |\n1st move:           |\n'.XCXXXXXXXXXXXXX'  |   '.XCOXXOXXOXXXXX'\n   ^                |      ^\n                    |\n2nd move:           |\n'.X.XCXXXXXXXXXXX'  |   '.X.OCXOXXOXXXXX'\n     ^              |        ^\n                    |\n3rd move:           |\n'.X.X.XCXXXXXXXXX'  |   '.C.O.XOXXOXXXXX'\n       ^            |     ^\n                    |\n4th move:           |\n'.X.X.X.XCXXXXXXX'  |   '...O.COXXOXXXXX'\n         ^          |         ^\n                    |\n5th move:           |\n'.X.X.X.X.XCXXXXX'  |   '...O..OCXOXXXXX'\n           ^        |           ^, index 7\n                    |\n6th move:\n'.X.X.X.X.X.XCXXX'\n             ^\n             \n7th move:\n'.X.X.X.X.X.X.XCX'\n               ^\n               \n8th move:\n'.X.X.X.X.X.C.X.X'\n            ^\n\n9th move:\n'.X.X.X.X.X...X.C'\n                ^, index 15\n```\n\nSee more examples in sample tests.",
+  "totalAttempts": 357,
+  "totalCompleted": 25,
+  "totalStars": 12,
+  "voteScore": 29,
+  "tags": [
+    "Algorithms",
+    "Games",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

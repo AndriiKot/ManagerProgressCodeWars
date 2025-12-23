@@ -1,0 +1,36 @@
+{
+  "id": "5f2ccaf7e568cf00016b72e9",
+  "name": "Count the number of instances of three identical digits on a four-digit digital  clock",
+  "slug": "count-the-number-of-instances-of-three-identical-digits-on-a-four-digit-digital-clock",
+  "category": "algorithms",
+  "publishedAt": "2020-08-07T03:31:03.524Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/5f2ccaf7e568cf00016b72e9",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2020-08-07T03:31:22.281Z",
+  "createdBy": {
+    "username": "travishooper",
+    "url": "https://www.codewars.com/users/travishooper"
+  },
+  "description": "On a digital clock showing `00:00` to `23:59` and given a start time and end time at [unix time](https://en.wikipedia.org/wiki/Unix_time) integers as seconds elapsed since the epoch at 00:00:00 UTC Thursday, 1 January 1970, return the number of instances where the clock will will display exactly 3 of the same integer.\n\nFor example:\n```ruby\n# function returns 0 because the clock would have only read 00:00 and there are 4 of the same integer\nthree_identical_digits(0, 0)\n#=> 0\n\n# function returns 1 because the clock would have read 00:01 and there are exactly 3 0s\nthree_identical_digits(60, 60)\n#=> 1\n\n# function returns 1 because the clock would have read 00:01 for the entire duration and there are exactly 3 0s\nthree_identical_digits(65, 77)\n#=> 1\n\n# function returns 1 because the clock would have read both 00:00 and 00:01 for the entire duration and there are exactly 3 0s in the 2nd time on the clock\nthree_identical_digits(59, 77)\n#=> 1\n\n# function returns 2 because the clock would have read 00:00, 00:01, and 00:02 for the entire duration and there are exactly 3 0s in the 2nd and 3rd time on the clock\nthree_identical_digits(59, 125)\n#=> 2\n\n# function returns 76 because the clock would have 76 instances where the clock would display exactly 3 of the same integer in a 24 hour period\nthree_identical_digits(0, 86_340)\n#= 76\n\n# function returns 152 because the clock would have 152 instances where the clock would display exactly 3 of the same integer in the 48 hour period of the day before the epoch and the day after the epoch\nthree_identical_digits(-86_400, 86_340)\n#= 152\n```\n\n",
+  "totalAttempts": 62,
+  "totalCompleted": 12,
+  "totalStars": 1,
+  "voteScore": 11,
+  "tags": [
+    "Strings",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

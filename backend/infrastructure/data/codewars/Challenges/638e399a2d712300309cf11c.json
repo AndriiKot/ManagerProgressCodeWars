@@ -1,0 +1,42 @@
+{
+  "id": "638e399a2d712300309cf11c",
+  "name": "Render the Code Golf Champions",
+  "slug": "render-the-code-golf-champions",
+  "category": "reference",
+  "publishedAt": "2022-12-05T20:54:27.497Z",
+  "approvedAt": "2022-12-07T16:44:49.562Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/638e399a2d712300309cf11c",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-05T18:34:02.393Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Introduction</summary>\n\nEverybody loves to code golf. Well, maybe not everybody, but some people do. This kata is <b>not</b> directed to such people. \n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\nGiven a bunch of user submissions to a code golf kata, and a minimum amount of submissions required to process the input, render a string containing information about the code golf champions. \n\n***Code Golf Champion***\n\nA code golf champion is a user that at any given moment holds the record (shortest code length), with that moment starting when at least \"minimum submission count\" submissions have been submitted, as we don't want early birds to take credit just because there aren't enough submissions yet.\n\n**Input**\n\n***submissions***\n\nAn array containing the user submissions to a code golf kata, in chronological order of submission timestamp, oldest first. Each user submission is a (2-)tuple consisting of two elements: the name of the user (string), and the length of the code (integer). An example of two submissions: <code>[[\"Tim\",45], [\"Jeff\",42]]</code>.\n\n***minimum submission count***\n\nAn integer representing the minimum amount of submissions required to start tracking code golf champions: <code>1 &lt;= minimum submission count</code>. If there are fewer submissions than this parameter, there can be no result outputted. While the number of submissions is within this parameter, we don't start tracking champions just yet. From the moment we hit this threshold, the users with the current best code lengths are the initial champions.\n\n**Output**\n\nA string representing information about the code golf champions. If the number of submissions is smaller than \"minimum submission count\", return an empty string. In other cases, the expected output is a <code>; </code> delimited string concatenating information about each champion, in order of best code length of any of the submissions of the respective user. On tie, order on user that first submitted a submission of that code length.\n\nNote that not all users are champions. Only those that at some point after \"minimum submission count\" submissions to the kata have held or still hold the record. This means, once \"minimum submission count\" submissions have been submitted, we start with the current record holder(s) as first champions.\n\nFor each champion, render the user name, concatenated with <code> - </code> and then the code lengths of all submissions of that user that at some point were a record in the kata, in ascending order, delimited by <code>, </code>. If for some code lengths, the user made multiple submissions that were a record at the time of submission, show them as one code length, with the number of such submissions between parentheses.\n\nA note about whitespace: use a blank space after each <code>,</code> after each <code>;</code> around each <code>-</code> and before each <code>(</code>.\n\n***examples output***\n\n• \"Joanne - 22\" -> Joanne is the only champion, with a record submission of code length 22\n\n• \"Joanne - 22, 23\" -> Joanne is the only champion, with a record submission of code length 22, but also had at one point a record submission of length 23\n\n• \"Mark - 21; Joanne - 22, 23 (2)\" -> Mark is the current champion, with a record submission of length 21. Joanne at some point had a record submission of length 22, and 2 record submissions of length 23 before that.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Example Tests</summary>\n\nThese tests are available in the sample test cases, among others.\n\n```\n// too few submissions\nrenderChampions([[\"Tim\",45], [\"Jeff\",42]], 3) -> \"\"      \n\n// Joanne has the record of length 22, but also had the record of 23 after 1 submission\nrenderChampions([[\"Joanne\",23], [\"Joanne\",22]], 1) -> \"Joanne - 22, 23\"\n\n// Joanne has the record of length 22, which is the best result after 2 submissions\nrenderChampions([[\"Joanne\",23], [\"Joanne\",22]], 2) -> \"Joanne - 22\"\n\n// Jane has the record of length 34, but John had the record of length 35 after 1 submission\nrenderChampions([[\"John\",35], [\"Jane\",34]], 1) -> \"Jane - 34; John - 35\"\n\n// Jane has the record of length 34, as John's attempt was in the initial 2 submissions and got overshadowed by Jane's attempt\nrenderChampions([[\"John\",35], [\"Jane\",34]], 2) -> \"Jane - 34\"\n\n// John has the record of length 114, but he also has 2 record submissions of length 117, note that his 3th 117 does not count, as a better record was made by Jane in between of length 115. \nrenderChampions([[\"Jane\",118], [\"John\",117], [\"John\",117], [\"Jane\",115], [\"John\",117], [\"John\",114]], 2) -> \"John - 114, 117 (2); Jane - 115\"\n```\n\n</details>\n\n\n",
+  "totalAttempts": 917,
+  "totalCompleted": 50,
+  "totalStars": 13,
+  "voteScore": 32,
+  "tags": [
+    "Arrays",
+    "Strings",
+    "Sorting"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

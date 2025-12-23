@@ -1,0 +1,36 @@
+{
+  "id": "60100ed80eebad0027b74baf",
+  "name": "Broken Dial Combination Safe",
+  "slug": "broken-dial-combination-safe",
+  "category": "games",
+  "publishedAt": "2021-01-26T20:15:00.265Z",
+  "approvedAt": null,
+  "languages": [
+    "kotlin"
+  ],
+  "url": "https://www.codewars.com/kata/60100ed80eebad0027b74baf",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-01-26T12:45:12.713Z",
+  "createdBy": {
+    "username": "saidaspen",
+    "url": "https://www.codewars.com/users/saidaspen"
+  },
+  "description": "You are in a locked room. A cell? A box, of some sort? Walls, ceiling and floor are all the same worn industrial metal. There is a small door, but it seems secured with some old kind of mechanism. One of those old safebox locks where you spin a knob alternatively left and right to get to the right sequence. \"Who puts the lock on the inside of a cell?\" you ponder. \n\"It doesn't matter. I need to get out of here.\"<br/>\nThere are scribblings and scratching on the walls and on the floor. Only one thing stands out; a long series of letters, your puzzle inputs.</p>\n\n<p>As you examine the lock's mechanism, it is clear to you that it is ancient. It is covered by corrosion, and its dial only seems to go in one direction, to your right. Something in the lock seems broken, stopping it from rotating to your left. The face of the dial has numbers on it, labelled 1 through 9. </p>\n<p>\"Time to get working on getting this thing opened and find out what the hell is going on.\"</p>\n</section>\n\n<hr>\n\n<section>\n<p>The dial starts out pointing at label <code>1</code>. The scribblings that you found is a long sequence of <code>R</code> and <code>L</code>. These seem to be the sequence which you need to turn the dial of the lock in order to unlock it. There is a problem, however; <em>the dial cannot move to the left</em>.\n\t</p>\n\t<p>\n\t\tThis can be solved by translating any instruction to turn the dial left, to a corresponding right turn. A left turn of <code>11</code>, for example, would leave the dial at label <code>8</code>, which means that the <em>smallest equivalent number of turns to the right is</em> <code>7</code>.\n\t</p>\n\t<p>\n\t\tAfter each step, you will have turned the dial <em>a certain number of steps</em> ending up at a <em>specific number label</em>. \n    <br/> \n    For each step, <b>multiply the number of right-turns by the label the dial ends up on. The sum of these products is your answer!</b>\n\t</p>\n\t<p>\n\t\tHere is an example given the input <code>RRRRLLRRRRRRRRRRLLLLLL</code>:\n\t</p>\n<pre><code>Start at 1\nRRRR \t\t    turn the dial <em>4</em> to the right having it land on label <em>5</em>\nLL \t\t      turn the dial 2 to the left, is equivalent to turning it <em>7</em> right, to label <em>3</em>\nRRRRRRRRRR       turn the dial <em>10</em> steps to the right, to label <em>4</em>\nLLLLLL \t\t  turn the dial 6 steps to the left, equivalent to turning it <em>3</em> right, to label <em>7</em>\n</code></pre>\n  \n  Which would sum up to: <code><em>(4 * 5) + (7 * 3) + (10 * 4) + (3 * 7) = 102</em></code>\n\n<section>",
+  "totalAttempts": 80,
+  "totalCompleted": 21,
+  "totalStars": 4,
+  "voteScore": 15,
+  "tags": [
+    "Algorithms",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

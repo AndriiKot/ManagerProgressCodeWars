@@ -1,0 +1,42 @@
+{
+  "id": "626868a414c0146ddbe0e6be",
+  "name": "Find a Limited King's Tour on a chessboard",
+  "slug": "find-a-limited-kings-tour-on-a-chessboard",
+  "category": "reference",
+  "publishedAt": "2022-04-27T11:00:44.200Z",
+  "approvedAt": "2022-07-23T11:35:03.126Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/626868a414c0146ddbe0e6be",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-26T21:48:20.140Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Overview\n\nOn an n x n chessboard, a standard King can move 1 square at a time in any of the following 8 possible directions: \n\n- up / down / left / right = the 4 possible linear directions\n- upleft / upright / downleft / downright = the 4 possible diagonal directions.\n\nImagine you now have a non-standard **Limited King** who can move 1 square at a time **in ONLY the following 3 possible directions**:\n\n- down = linear\n- right = linear\n- upleft = diagonal\n\nCan you create a **\"Limited King's Tour\"** of a standard n x n chessboard?\n\nIn other words: can you find a way to visit **EVERY SQUARE** on the n x n chessboard **EXACTLY ONCE**, using a Limited King who can only move in the 3 possible directions listed above?\n\n---\n\n## Important notes\n\n1. You are allowed to **choose your starting square** for your Limited King's Tour on **any square you want** on the board.\n\n2. Your Tour of the board does **NOT** have to be **closed** - i.e. once your Limited King reaches the final square on its Tour of the board, it **does not** have to be able to reach the initial square again (such Tours are called \"closed\" or \"re-entrant\" tours in the context of other chess pieces, if you want to learn more about them)\n\n---\n\n## Input\n\nYou will be given an integer, `n`, that specifies the size of the n x n chessboard to solve.\n\n**Performance requirements:** The maximum value of `n` used in the random tests will be `n = 750` .\n\n## Output\n\n1. You must return a `list` (Python), representing your complete solution to the Limited King's Tour on the n x n board.\n\n2. Each element in your solution `list` should be a 2-component`tuple` (Python) and will represent a square's location `(row,column)` on the board. The first `tuple` in your solution is therefore the square where your Limited King's Tour begins, and the last `tuple` is where your Tour ends.\n\n3. **IMPORTANT INDEXING CONVENTION** You must use index numbers to represent squares, so for example `(0,0)` is the top-left square of the board, and `( n-1, n-1 )` is the bottom-right square of the n x n board. \n\n4. **Hint: There is always at least one solution for any value of `n`. If your algorithm can find more than one valid solution, you should only return one of them.**\n\n---\n\n## Example\n\nFor `n = 2`, one possible valid solution to the Limited King's Tour is given by the following list: `[(1, 0), (1, 1), (0, 0), (0, 1)]` which corresponds to starting on bottom-left square of the board `(1,0)` then moving right to the bottom-right square of the board `(1,1)` etc. Note how all `n * n = 4` possible squares on the `n = 2` board have been used **exactly once**.\n\nFor `n = 3`, one possible valid solution is: `[(0,1),(0,2),(1,2),(2,2),(1,1),(0,0),(1,0),(2,0),(2,1)]`. Again, note how all `n * n = 9` possible squares on the `n = 3` board have been used exactly once.\n\n---\n\n## Tests\n\nTo help you understand error messages in case of a failed test:\n\nThe tests implement a solution checker that will return True if your solution is valid, and False if your solution is invalid for any of the following reasons:\n\n-Your solution must be of length n x n (since there are n x n squares on the board for the Limited King to visit)\n\n-Each possible square on the n x n board must appear **EXACTLY ONCE** in your solution\n\n-Each `tuple` in position *\"i+1\"* in your solution list must be reachable from the `tuple` in position *\"i\"*, using one of the 3 allowed Limited King moves",
+  "totalAttempts": 186,
+  "totalCompleted": 47,
+  "totalStars": 4,
+  "voteScore": 47,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Puzzles",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

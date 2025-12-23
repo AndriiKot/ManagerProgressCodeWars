@@ -1,0 +1,40 @@
+{
+  "id": "64f86726f8ce0f003342b79d",
+  "name": "Common Generator functions",
+  "slug": "common-generator-functions",
+  "category": "reference",
+  "publishedAt": "2023-09-07T11:04:54.235Z",
+  "approvedAt": "2023-10-04T17:52:05.944Z",
+  "languages": [
+    "typescript",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/64f86726f8ce0f003342b79d",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-09-06T11:48:54.903Z",
+  "createdBy": {
+    "username": "HartlIKS",
+    "url": "https://www.codewars.com/users/HartlIKS"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "One very useful feature of JavaScript (and thus derived languages like TypeScript) are [generator functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).\nThey allow you to easily create an iterable object for arbitrary purposes.\n\nUnlike arrays these generators don't have to contain their entire contents, which makes them suitable for handling infinite sequences, or allows saving on memory if your particular usecase does not have to care about the entirety of some sequence of things.\n\nIn this Kata we will implement a few generic generator functions for a couple of tasks that crop up when dealing with lists and streams of data.\n<hr>\n\n# 1: range(start, stop, step)\n`start`, `stop` and `step` are numbers.\n\nCount upwards from `start` until `stop`, with the given `step`.\n\n* `step` can be assumed to always be positive.\n* `step` is an optional argument; If it is not specified, behave as if it is 1.\n* `stop` is an optional argument; If it is not specified, count upwards forever.\n* `start` is an optional argument; If it is not specified, count starting from 0.\n<hr>\n\n# 2: generate(start, iterate, continues)\n* `start` can be anything.\n* `iterate` is a function, that returns the next element of the sequence if given the current element of the sequence.\n* `continues` is a function, that returns false if the given returned value of `iterate` is past the end of the sequence.\n\nGenerate a sequence of arbitrary values using the provided starting point and iteration function.\n\nE.g. `generate(1, i => i*2, i => i<10)` results in the sequence `[1, 2, 4, 8]`\n\n* `continues` is an optional argument; If it is not specified, the sequence is endless.\n* if `continues(start)` is false, the generated sequence is empty.\n* be prepared to handle `null` or `undefined` amongst the generated values\n<hr>\n\n# 3: delta(sequence, deltaFunction, start)\n* `sequence` is an iterable of arbitrary values.\n* `delta` is a function accepting a pair of values from `sequence`.\n* `start` is a value to be passed to `delta` as the element before the first element of `sequence`.\n\nGenerate a sequence of the return values of `delta` when called for every element of `sequence` and their precursor element.\n\nE.g. `delta([1, 3, 2], (a, b) => b-a, 0)` results in the sequence `[1, 2, -1]`\n\n* `sequence` will never contain `undefined` (but may contain `null`)\n* `start` is an optional argument; If it is not specified, the first element of the resulting sequence will be `delta(sequence[0], sequence[1])`. If start is specified its value will never be `undefined`.\n<hr>\n\n# 4: zip(sequence1, sequence2)\n`sequence1` and `sequence2` are iterables of arbitrary values.\n\nGenerate a sequence of arrays containing the elements of the given sequences.\n\nSpecifically `zip(sequence1, sequence2)[x] = [sequence1[x], sequence2[x]]`.\n\nIf any of the given sequences ends, the sequence you are generating ends as well.\n\nIn particular this means that if any input sequence has no elements, the resulting sequence has no elements either.",
+  "totalAttempts": 319,
+  "totalCompleted": 55,
+  "totalStars": 9,
+  "voteScore": 49,
+  "tags": [
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

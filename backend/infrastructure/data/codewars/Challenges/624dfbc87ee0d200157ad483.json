@@ -1,0 +1,41 @@
+{
+  "id": "624dfbc87ee0d200157ad483",
+  "name": "Interweave the Inequalities and the Integers",
+  "slug": "interweave-the-inequalities-and-the-integers",
+  "category": "reference",
+  "publishedAt": "2022-04-06T23:30:45.293Z",
+  "approvedAt": "2022-09-25T11:55:41.492Z",
+  "languages": [
+    "python",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/624dfbc87ee0d200157ad483",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-06T20:44:56.993Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "## Overview\n\nIn this kata you will be given:\n\n1. A `string` of `n` inequality symbols; i.e. `>` or `<`\n2. `n+1` **distinct** integers.\n\nYour goal is to place **all** of the `n+1` integers into the available positions created by the given `n` inequality symbols, so that **the entire resulting expression is** `True`.\n\nJust to be clear, if you have `n` inequality symbols there are `n-1` positions \"inside\" the string where you can place `n-1` distinct integers, and then there are `2` more positions \"outside\" the string - one at the beginning, and one other at the end - where you can place `2` more integers.\nThis is why you **will always be given `n` inequality symbols and `n+1` distinct integers**.\n\n`_ < _ > _ > _ < _ < _ > _ < _ > _`\n\nSo, in the illustration above we have `n = 8` inequality symbols, and `n+1 = 9` empty positions, represented by `_`, in which to place the `n+1 = 9` integers.\n\n---\n\n## Inputs\n\n1. `ineqs` = a `string` of `n` inequality symbols with **no spaces**, e.g. `'<><<><><'`\n2. `ints` = a `tuple/vector` (depending on language) of `n+1` **distinct** integers, e.g. `(12, 9, 31, 47, 15, 11, 22, 8, 4)`\n\n**Performance requirements:** Values up to `n = 10000` will be used in the random tests. \n\n## Output\n\nYou will return an array **of the n+1 integers, in the order in which you want to insert them into the n+1 inequality positions**.\n\nThe tests will then insert the elements of your solution into the inequalities and check that the resulting expression evaluates to `True`. \n\nThe tests will also check that you have used **all the integers from the input**.\n\n---\n\n## Example, with n = 8 inequalities and n+1 = 9 integers\n\n```python\nineqs = '<><<><><'\n\nints = (12, 9, 31, 47, 15, 11, 22, 8, 4)\n```\n\nFor these inputs, a valid solution for you to return is - for example - the array:\n\n```python\n[8, 31, 4, 9, 47, 12, 22, 11, 15]\n```\n\nbecause the resulting Boolean expression:\n\n```python\n8 < 31 > 4 < 9 < 47 > 12 < 22 > 11 < 15\n```\n\nwill indeed evaluate to `True`.\n",
+  "totalAttempts": 500,
+  "totalCompleted": 121,
+  "totalStars": 10,
+  "voteScore": 74,
+  "tags": [
+    "Fundamentals",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

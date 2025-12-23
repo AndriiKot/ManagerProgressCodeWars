@@ -1,0 +1,36 @@
+{
+  "id": "6663503171bb305036437e26",
+  "name": "Parse tags from string like html components",
+  "slug": "parse-tags-from-string-like-html-components",
+  "category": "algorithms",
+  "publishedAt": "2024-06-07T18:25:00.985Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/6663503171bb305036437e26",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-06-07T18:23:45.862Z",
+  "createdBy": {
+    "username": "KrejzolekPRO",
+    "url": "https://www.codewars.com/users/KrejzolekPRO"
+  },
+  "description": "Your task is to return an array of objects, where each object has a key with the tag name and a value with the content inside the tag. If a tag is nested inside another tag, the value should be an array reflecting this tree structure.\n\nNote: Self-closing tags, invalid tags, not closed tags are not valid and should be handled as normal text. Two (or more) duplicate tags should be handled as two (or more) separate tags.\n\nExamples:\n---------------------\nInput: \"Hello\"\n\nOutput: \n```[]```\n---------------------\nInput: \n```\"Hello, my name is <name>John</name>.\"```\n\nOutput:\n```\n[{ \"key\": \"name\", \"value\": \"John\" }]\n```\n---------------------\nInput: ```\"Hello, my name is <name>John</name> and <surname>Musk</surname>.\"```\n\nOutput:\n```\n[\n  { \"key\": \"name\", \"value\": \"John\" },\n  { \"key\": \"surname\", \"value\": \"Musk\" }\n]\n```\n---------------------\nInput: ```\"Hello, my name is <person><name>John</name> and <surname>Musk</surname></person>.\"```\n\nOutput:\n```\n[\n  {\n    \"key\": \"person\",\n    \"value\": [\n      { \"key\": \"name\", \"value\": \"John\" },\n      \" and \",\n      { \"key\": \"surname\", \"value\": \"Musk\" }\n    ]\n  }\n]\n```\n---------------------\nInput: ```\"Hello, my name is <name>John</name> and <name>Peter</name>.\"```\n\nOutput:\n```\n[\n  {\n    \"key\": \"name\",\n    \"value\": \"John\"\n  },\n  {\n    \"key\": \"name\",\n    \"value\": \"Peter\"\n  }\n]\n```\n\nHappy Coding!",
+  "totalAttempts": 113,
+  "totalCompleted": 11,
+  "totalStars": 5,
+  "voteScore": -1,
+  "tags": [
+    "Strings",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

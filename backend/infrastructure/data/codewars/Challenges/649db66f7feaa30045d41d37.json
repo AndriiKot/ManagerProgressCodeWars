@@ -1,0 +1,40 @@
+{
+  "id": "649db66f7feaa30045d41d37",
+  "name": "Finite State Automata 1: Traffic Lights",
+  "slug": "finite-state-automata-1-traffic-lights",
+  "category": "algorithms",
+  "publishedAt": "2023-06-29T21:02:44.566Z",
+  "approvedAt": "2023-06-30T07:52:27.096Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/649db66f7feaa30045d41d37",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-29T16:50:55.407Z",
+  "createdBy": {
+    "username": "thykka",
+    "url": "https://www.codewars.com/users/thykka"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "The behavior of traffic lights can be expressed as a [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine). A graph of such a state machine's states and transitions could look like this:\n\n```\n     States:      Transitions:\n    _________\n┌─→/         \\\n│ (    Red    )\n│  \\_________/───┐\n│   _________    ├─ Prepare\n│  /         \\←──┘\n│ ( Red+Amber )\n│  \\_________/───┐\n│   _________    ├─ Move\n│  /         \\←──┘\n│ (   Green   )\n│  \\_________/───┐\n│   _________    ├─ Slow\n│  /         \\←──┘\n│ (   Amber   )\n│  \\_________/───┐\n│                ├─ Stop\n└───────────────┘\n```\n\nYour task is to program a module which:\n- holds and initializes the state ID string\n- can be initialized with a list of transitions\n- provides a method for every declared transition\n- calling a transition method should carry out the transition\n  - ...but only if it's legal according to the associated transition rule\n\nA single transition rule consists of three strings:\n- `current` - The state ID this transition may begin from (e.g. `Red`)\n- `target`  - The state ID this transition may end at (e.g. `Red+Amber`)\n- `method`  - A name for the method which advances the state (e.g. `Prepare`)\n\nAll test cases have linear or circular graphs. You won't need to consider branching for now.\n\nHave fun! But also keep it readable, as you might need your solution in the next kata of this series.",
+  "totalAttempts": 381,
+  "totalCompleted": 92,
+  "totalStars": 6,
+  "voteScore": 39,
+  "tags": [
+    "Algorithms",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

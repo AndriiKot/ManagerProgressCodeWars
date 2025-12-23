@@ -1,0 +1,41 @@
+{
+  "id": "661bb565f54fde005b8e3d6c",
+  "name": "Arrow in/out transformation",
+  "slug": "arrow-in-slash-out-transformation",
+  "category": "algorithms",
+  "publishedAt": "2024-04-14T11:56:59.963Z",
+  "approvedAt": "2024-04-15T21:52:08.847Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/661bb565f54fde005b8e3d6c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-14T10:52:21.531Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "# Task\n\nGiven a string `s` representing a 2D rectangular grid with rows separated by `'\\n'`, empty tiles as `'.'`, the starting point `'p'` and a path from this point using arrows in <a href=\"https://en.wikipedia.org/wiki/Moore_neighborhood\">Moore neighborhood</a> `'←↑→↓↖↗↘↙'`, return a string depicting that **same path**, but with the following transformation:\n- the initial path has starting point `'p'` and for each next tile an arrow showing the **in-bound** direction\n- the transformed path must show the **out-bound** direction instead, and the final position as `'q'`\n\nConstraints:\n- There's at least 1 element in the path\n- Since the initial path shows in-bound direction, `'p'` is always shown, `'q'` never\n- Since the expected path shows out-bound direction, `'p'` is never shown, `'q'` always\n- A path is deterministic, no forks, joins or conflicts are possible\n- A path can cross with itself as long no tile is visited more than once (see third example below)\n\n---\n\n## Examples\n\n```\ntest    input              output\n----------------------------------\n\n1       p                   q\n\n2       ...p→→→...          ...→→→q...\n\n3       ↖↗                  ↓q\n        ↓p                  ↗↖\n\n4       ↑p                  q↓\n        ↑↓                  ↑↓\n        ←↓                  ↑←\n\n5       .↑.                 .↘.\n        p→↘                 →↑↓\n        ←←↓                 q←←\n\n6       .....↗→→→..         .....→→→↓..\n        .p→.↑↖..↓..         .→↘.↗q..↙..\n        ...↘→.←↙...         ...→↑.↖←...\n\n```\n\n---\n\nGood luck, have fun!",
+  "totalAttempts": 153,
+  "totalCompleted": 45,
+  "totalStars": 13,
+  "voteScore": 49,
+  "tags": [
+    "Algorithms",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

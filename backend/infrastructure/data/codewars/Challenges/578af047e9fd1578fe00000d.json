@@ -1,0 +1,35 @@
+{
+  "id": "578af047e9fd1578fe00000d",
+  "name": "Fantasy Football Showdown!",
+  "slug": "fantasy-football-showdown",
+  "category": "algorithms",
+  "publishedAt": "2016-07-17T03:32:10.037Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/578af047e9fd1578fe00000d",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-07-17T02:41:11.748Z",
+  "createdBy": {
+    "username": "davidhu2000",
+    "url": "https://www.codewars.com/users/davidhu2000"
+  },
+  "description": "<h1> A little history </h1>\nWho am I kidding, we all know what fantasy football is. No introduction necessary. So, let's just get to it. \n\n<h1> Scoring </h1>\n\nTo simplify this kata, we will only focus on offensive scoring. Here are the rules:\n<ul>\n  <li>Passing Yards (PaYD): 1 point per 25 yards passing </li>\n  <li>Passing Touchdowns (PaTD): 4 points </li>\n  <li>Interceptions (INT): -2 points </li>\n  <li>Rushing Yards (RuYD): 1 point per 10 yards </li>\n  <li>Rushing Touchdowns (RuTD): 6 points </li>\n  <li>Receiving Yards (ReYD): 1 point per 10 yards </li>\n  <li>Receiving Touchdowns (ReTD): 6 points </li>\n  <li>Fumbles Lost (FUM): -2 points </li>\n</ul>\nOf course, decimal numbers are allowed. So use floats, people. \n\n<h1> The Input </h1>\n\nYou will receive the input as stats from the game, obviously a really watered down version. The individual stat array most likely will not include every stat listed in the scoring section. For example, Tom Brady most likely won't have any receiving touchdowns, so his stat array will not include ReTD. The order may be different with each player, so you will have to sort through which one is which. There is also no set requirements on the type of player that needs to be picked, you can have all runningbacks if you want. \n\nThe naming convention will remain constant (see the values in parenthesis in the scoring section). \n\nA list of player stats is preloaded. You can use ```$stat``` to access it. ```$stat``` is a hash every player, whose stats are in an array.   \n\n```\n$stat = { \n\"Tom Brady\" => ['325 PaYD', '3 PaTD', '1 INT', '10 RuYD', '1 FUM'],\n\"Adrian Peterson\" => ['3 RuTD', '112 RuYD', '43 ReYD', '2 FUM']\n...\n}\n         \n```\n\nOf course, sometimes your buddy will try to cheat and pick some of the same players. This is allowed, we are playing with DraftKings rules. Of course, since he is not very bright, so he sometimes write down the wrong name, like Tim Brady, who is an eductional entrepreneur and not a football player. When that happens, you can simply disgard that player. The number of players each person have can change, and they are not always the same, sometimes people forget and forget to set a complete lineup. \n\n<h1> The Output </h1>\nThe goal of this data to determine in a head-up matchup (you vs. one other person), who won fantasy this week. You will return 'player1', 'player2', or 'tie' as a string. \n\n```ruby\nplayer1 = [\"Tom Brady\", \"Adrian Peterson\", \"Antonio Brown\"]\nplayer2 = [\"Drew Brees\", \"Le'Veon Bell\", \"Steve Smith\"]\nfantasy_king?(player1, player2) => 'player1'\n```\n\n\nRemember this is the battle for the baddest Motha in the country. So, let's found out who won!!",
+  "totalAttempts": 112,
+  "totalCompleted": 7,
+  "totalStars": 0,
+  "voteScore": -2,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

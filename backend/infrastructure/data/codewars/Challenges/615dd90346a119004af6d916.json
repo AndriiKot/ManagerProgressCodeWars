@@ -1,0 +1,39 @@
+{
+  "id": "615dd90346a119004af6d916",
+  "name": "Taylor's Sine Approximation: How Many Terms?",
+  "slug": "taylors-sine-approximation-how-many-terms",
+  "category": "reference",
+  "publishedAt": "2022-04-16T17:42:11.870Z",
+  "approvedAt": "2022-04-22T23:00:00.890Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/615dd90346a119004af6d916",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-10-06T17:12:35.810Z",
+  "createdBy": {
+    "username": "bonelli",
+    "url": "https://www.codewars.com/users/bonelli"
+  },
+  "approvedBy": {
+    "username": "el-f",
+    "url": "https://www.codewars.com/users/el-f"
+  },
+  "description": "## Intro:\n\nYou may have heard in a math class somewhere that at small values of x, sin(x) can be well approximated by x (ie sin(x) looks linear near 0).  This is true, and makes for some pretty slick shortcuts when calculating sin(x) at small x.  You may have also heard that sin(x) can be approximated by something called a taylor sum, given an appropriate number of terms.  This is also true, and the reason x is a decent approximation for sine at small x is the same reason why x is the first term in the taylor series for sine. \n\n\nThe taylor series of sine looks like:\n\n```math\nsin(x) = x - \\frac{x^{3}}{3!} + \\frac{x^{5}}{5!} - \\frac{x^{7}}{7!}+...+\\frac{(-1)^i}{(2i+1)!}x^{2i+1} = \\sum_{i=0}^{\\infty }\\frac{(-1)^i}{(2i+1)!}x^{2i+1}\n```\n\nwith the last term here being the generalized 'ith' term of the taylor series.  When computing sums like these, generally the ith term of a series is all you need to know to start modeling a given function. Simply adding together each ith term starting at 0 and iterating on i will pull the function value closer and closer to the true value of sin(x).  This series (centered at 0) is what we will be investigating in this kata.\n\n\n## The Task:\nIn this kata, your function will be given a position (x) to evaluate the series at, and a target error bound.   Your function will then calculate the minimal number of terms to approximate sin(x) within the given error bound, and return the number of terms.\n\nTest cases here assume a taylor series centered at zero, and to avoid any ambiguity all approximations must return **at least one term.**  Feel free to compare your approximation to a library's calculation of sine to determine error values, the function will not be given an error value lower than 1e-6.     \n\n\nAn image showing the sum's accuracy improving over a few different terms:\n![graph](https://i.imgur.com/oHa4Koc.png)\n\nAs the degree of the Taylor polynomial rises, it approaches the correct function. This image shows sin x and its Taylor approximations by polynomials of degree 1, 3, 5, 7, 9, 11, and 13 at x = 0.\n\nvia https://en.wikipedia.org/wiki/Taylor_series",
+  "totalAttempts": 688,
+  "totalCompleted": 97,
+  "totalStars": 10,
+  "voteScore": 52,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "6025224447c8ed001c6d8a43",
+  "name": "Function Overloading for Types",
+  "slug": "function-overloading-for-types",
+  "category": "reference",
+  "publishedAt": "2021-02-12T15:46:54.191Z",
+  "approvedAt": "2021-03-06T19:56:47.515Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6025224447c8ed001c6d8a43",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-02-11T12:25:40.894Z",
+  "createdBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Typed Function overloading\n\nPython is a very flexible language, however one thing it does not allow innately, is the overloading of functions. _(With a few exceptions)_. For those interested, [this existing kata](https://www.codewars.com/kata/5f24315eff32c4002efcfc6a) explores the possibility of overloading object methods for different amounts of arguments. In this kata we are going to implement a form of overloading for any function/method, based on the _classes_ of arguments, using decorators.\n\n### Overview\n\nYou will be writing a decorator `@overload(*types)` that will allow a function or method to be defined multiple times for different combinations of types of input arguments. The combination and order of classes of the arguments should call a specific defined function.\n\nTo keep this kata relatively simple, various aspects of functions (Going out of scope, etc) will not be tested, more details on what will and won't be tested are listed below. \n\n### Basic Example\n\n```python\n@overload(int)\ndef analyse(x):\n    print('X is an int!')\n    \n@overload(list)\ndef analyse(x):\n    print('X is a list!')\n    \nanalyse([])  # X is a list!\nanalyse(3)   # X is an int!\n```\n\n## Additional Information:\n\n### The decorator\n- It should accept any type or class, even user made classes. Note that an inherited class does **NOT** count as its parent class. Each custom class should be considered unique.\n- It should be able to handle any number of arguments, including zero.\n- If an overloaded function/method is called without a matching set of types/classes, an Exception should be raised.\n- The decorator can be used on regular functions and on instance methods of a class as well (see below about overloading vs overwritting behaviours). 'Magic methods' (eg. `__init__`, `__call__`) will **NOT** be tested.\n\n\n### The decorated function or method\n\n- The function/method should return correct values.\n- All other usual function behaviours should work (Recursion, passing function as argument, etc).\n- Static and class methods will ***NOT*** be tested.\n- Note that when decorating an instance method, the type of `self` isn't provided to the decorator. The decorated function should yet be able to use the reference to `self`.\n- Varargs (`*args`) may be used in functions definitions. In that case, trust the types given to the decorator to decide what call must be mapped to that function.\n- You do not need to consider scope problems, like having 2 different functions with the same name but in 2 different scope. All functions will be defined as top level functions, or top level object methods.\n\n### Overloading vs overwritting behaviours\n\n- Multiple different overloaded functions/methods must be able to exist at a time: `func(int,list)` overloads a previous `func(list)` and doesn't overwrite it.\n- Functions and methods should be considered *distinct*, ie. `analyse(int)` and `my_obj.analyse(int)` are not the same and one shouldn't overwrite the other.\n- If a function/method with a \"known\" name is decorated again with an already existing types combination, the previous definition should be overwritten (See examples below).\n\n\n## More specific Examples\n\n\nShould accept any class or type. Variable length args should work:\n```python\nclass My_Class: pass\nclass My_Inherited_Class(My_Class): pass\n  \n@overload(int, My_Class, str)\ndef some_function(*args):\n    return 'Option 1'\n    \n@overload()\ndef some_function():\n    return 'Option 2'\n  \nA = My_Class()\nB = My_Inherited_Class()\n\nsome_function()               # Option 2\nsome_function(3, A, 'Words')  # Option 1 <= trust the types given to the decorator \nsome_function('oops!')        # Exception raised <= no matching types combination\nsome_function(3, B, 'Words')  # Exception raised <= doesn't consider inheritence\n```\n\nShould be able to manage functions **AND** methods:\n\n```python  \n@overload(int)\ndef spin(x):\n    return x*3-1\n  \n@overload(str)\ndef spin(x):\n    return x[1:] + x[0]\n      \nprint(spin(6))            # 17\nprint(spin('Hello'))      # elloH  <=  overload correctly, just like before...\nprint(spin(''))           # raise IndexError\n\n\nclass T:\n    def __init__(self, x):\n        self.val = x\n\n    @overload(int)\n    def spin(self, x):\n        return self.val * x\n      \n    @overload(str)\n    def spin(self, x):\n        return x + str(self.val)\n      \nobj = T(7)\nprint(spin(6))            # 17 <= the instance method doesn't overwrite the function\nprint(obj.spin(2))        # 14 <= `self` is still usable\n\nprint(spin('Hello'))      # elloH\nprint(obj.spin('Hello'))  # Hello7\n```\n\nPrevious definitions should be overwritten:\n\n```python\n@overload(str)\ndef upgrade(x):\n    print('First')\n    \n@overload(str)\ndef upgrade(x):\n    print('Second')\n    \nupgrade('Y')    # Second\n```\n\nGood luck, and I hope you enjoy the Kata!",
+  "totalAttempts": 822,
+  "totalCompleted": 100,
+  "totalStars": 41,
+  "voteScore": 39,
+  "tags": [
+    "Decorator",
+    "Language Features",
+    "Metaprogramming"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "63ab34c2aed39f0a4e196804",
+  "name": "Alien's Cube Notation",
+  "slug": "aliens-cube-notation",
+  "category": "games",
+  "publishedAt": "2022-12-27T19:16:23.081Z",
+  "approvedAt": "2025-12-22T21:46:41.503Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63ab34c2aed39f0a4e196804",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-27T18:09:06.475Z",
+  "createdBy": {
+    "username": "VantaTree",
+    "url": "https://www.codewars.com/users/VantaTree"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "### Introduction\n\nYou have been contacted by Aliens, They want you to help them in making their cube puzzle's notation shorter.\n\nThe Alien's cube notation is very similar to the rubik's cube notation here on earth. To understand the Alien's cube notation we first have to look at the [Rubik's Cube Notation](https://solvethecube.com/notation).\n\nTry out the [Online Rubik's Cube](https://rubikscu.be/).\n\n### Rubik's Cube Notation\n\n1. A rubik's cube has 6 faces each represented by 6 letters: **U**P, **D**own, **L**eft, **R**ight, **F**ront, **B**ack (**U D L R F B**). These letters denote which face to be rotated.\n\n2. The direction of the rotation is denoted by another character infront of the face. **U** is up face rotated clockwise, **U'** is up face rotated anti-clockwise, **U2** is up face rotated 180°, rotating clockwise or anti-clockwise will be the same here.\n\n<img src=\"https://i.imgur.com/sX3OfSZ.png\" alt=\"U moves on rubick's cube\" width=80% style=\"border-radius:%\"/>\n\n\n3. A notation consists of many moves in a sequence like: **R U R' U'**.\n\n### Your Task\n\nWrite a function `shorten_notation` which takes an alien notation string with multiple moves separated by spaces and shortens it. Like: **F2 F -> F'**. Moving the front face 180° once then clockwise once is the same as moving it anti-clockwise once.\n\nThe notation of this puzzle is Alien so don't expect your typical 6 faces.\n\n### Rules\n\n1. The Alien Notation has 13 pairs of faces ranging from **A - Z**.\n2. Opposite faces **(U:D, L:R, F:B)** in alien notation are also different. The opposite/parallel face for a given face is 13 chars forward and loops back, eg pairs: **A:N, B:O, I:V, V:I, Q:D** etc\n3. Examples of shortened notations:-\n\n```\nG2 G -> G'\nA' D' D -> A'\n```\n4. When you encounter opposite face moves adjacent in the notation,  their order is irrelevent, therefore you must shorten them on first occurrence strictly.\n\n```\nI V2 I -> I2 V2\nS2 S S F2 S' -> S' F2\n```\n<img src=\"https://i.imgur.com/LK211pi.png\" alt=\"opposite sides moved on rubik's cube\" width=\"25%\" style=\"border-radius:10%\"/>\n\n### Note\n\n- Slice moves, wide moves, cube rotations are not considered for this puzzle.\n- Any sequence of moves repeated a number of times will result in the cube going back to the same position like (R U R' U') * 6. **This is also to be ignored.**\n\n\n\n\n\n\n\n",
+  "totalAttempts": 231,
+  "totalCompleted": 18,
+  "totalStars": 3,
+  "voteScore": 22,
+  "tags": [
+    "Strings",
+    "Puzzles",
+    "Parsing"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

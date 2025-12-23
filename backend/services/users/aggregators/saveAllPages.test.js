@@ -14,8 +14,9 @@ test('saveAllPages aggregates savedCount and errors from all pages', async () =>
     user,
     services,
     page,
+    existingIds,
   ) => {
-    calls.push(page);
+    calls.push({ page, hasExistingIds: !!existingIds });
 
     if (page === 0) {
       return {
@@ -41,14 +42,27 @@ test('saveAllPages aggregates savedCount and errors from all pages', async () =>
     };
   };
 
+  const selectAllChallengeIds = () => new Set(['a1', 'b2']);
+
   const result = await saveAllPages(
     null,
     1,
     { username: 'TestUser' },
-    { saveCompletedChallengesSafeSync }
+    {
+      saveCompletedChallengesSafeSync,
+      selectAllChallengeIds,
+    }
   );
 
   assert.equal(result.totalSaved, 3);
   assert.equal(result.allErrors.length, 2);
-  assert.deepEqual(calls, [0, 1, 2]);
+
+  assert.deepEqual(
+    calls.map(c => c.page),
+    [0, 1, 2],
+  );
+
+  assert.equal(calls[0].hasExistingIds, true);
+  assert.equal(calls[1].hasExistingIds, true);
+  assert.equal(calls[2].hasExistingIds, true);
 });

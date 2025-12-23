@@ -1,0 +1,37 @@
+{
+  "id": "628871154a9bf80054dba387",
+  "name": "Pocket monster defense",
+  "slug": "pocket-monster-defense",
+  "category": "games",
+  "publishedAt": "2022-05-21T10:47:52.405Z",
+  "approvedAt": null,
+  "languages": [
+    "clojure",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/628871154a9bf80054dba387",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-05-21T04:56:53.692Z",
+  "createdBy": {
+    "username": "dxholmes",
+    "url": "https://www.codewars.com/users/dxholmes"
+  },
+  "description": "# Pocket monster defense\n\nIn the Pok&eacute;mon type system, there are eighteen types (fire, water, grass, etc.). Each ordered pair of types `(s,t)` is associated with a damage multiplier from the list (0, 1/2, 1, 2). We say that the defending type `t` has a certain susceptibility to the attacking type `s`.  You can collect these susceptibility numbers in an 18x18 matrix, resulting in [this type chart](https://bulbapedia.bulbagarden.net/wiki/Type#Type_chart).\n\nSome Pok&eacute;mon have *two* types `t1,t2`, in which case the susceptibility to type `s` is the product of the individual susceptibilities `(s,t1)` and `(s,t2)`.  By extension, in this kata, a *chimeric type* will be an arbitrarily long list of types `T`. The susceptibility of the chimeric type `T` to another type `s` is the product of the susceptibilities of the individual types in `T` to `s`.\n\nFor example, the chimeric type `[:fire :fire]` is 4x susceptible to water, and 1/4 susceptible to grass.\n\nThere is a unique minimal chimeric type that is resistant to every type, i.e., that has susceptibility strictly less than one to each of the eighteen types. Minimal means that no shorter chimeric type has this property.\n\nObjective: Find the minimal all-resistant chimeric type.\n\n------\n\nNote: In this kata, you are supplied with the list of all types `pokemon.data/types` and the 18x18 type chart `pokemon.data/effectiveness`, which is a nested associative array sending `attacking type -> defending type -> susceptibility value`\n\n<!--`pokemon.data/susceptibility`, which is a nested associative array sending `defending type -> attacking type -> susceptibility value.`\n\n\n<!--\n\n| Item         | Price     | # In stock |\n|--------------|-----------|------------|\n| Juicy Apples | 1.99      | *7*        |\n| Bananas      | **1.89**  | 5234       |\n\nIn the Pok&eacute;mon type system, each species can have one or two distinct types. For this puzzle, an *amalgam type* will be a list of any number of types, allowing individual types to occur more than once.  You calculate the susceptibility of an amalgam type as usual, by taking the product of the susceptibilities for each type in the list. (See Background below for a more introductory explanation.)\n\nFor example, the amalgam type `[:fire :fire]` is 4x susceptible to water, and 1/4 susceptible to grass.\n\nThere are two minimal amalgam types that are resistant to every type (i.e. with a susceptibility strictly less than one for every type). They are minimal because they lose this resistance property if you remove any type from their list. Find both minimal amalgam types.\n\n!-->",
+  "totalAttempts": 359,
+  "totalCompleted": 13,
+  "totalStars": 1,
+  "voteScore": 3,
+  "tags": [
+    "Combinatorics",
+    "Puzzles"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "62794760c16c9a495a937a8d",
+  "name": "Implementing grep #1",
+  "slug": "implementing-grep-number-1",
+  "category": "reference",
+  "publishedAt": "2022-05-09T22:32:29.080Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/62794760c16c9a495a937a8d",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-05-09T16:54:56.425Z",
+  "createdBy": {
+    "username": "DoW-Gray",
+    "url": "https://www.codewars.com/users/DoW-Gray"
+  },
+  "description": "Implementing `grep`\n======\n\n`grep` is a program that prints out all lines from an input that match a given pattern. It's used every day by many people, even though it's very simple.\nBecause it was written in the 1970s, it's a simple yet powerful program, which makes it an excellent program to use as a study. And if you complete this kata, you can boast that you've written a program used by people millions of times every day!\n\nHow the script works\n------\n\nIf you have this input:\n```\na\nant\nb\nbunny\nc\ncat\n```\nAnd you run `grep a` on the input, you get this result:\n```\na\nant\ncat\n```\nThe 3 lines that were output all contain an `a`, so they match the pattern (`a`) that was given.\n\nHowever, if you run `grep at` on the input, you get this result:\n```\ncat\n```\nThis is because `cat` is the only input that contains `at` - note that `ant` does not contain `at`, because of the `n` in the middle.\n\nHow this kata is set up\n------\n\nYou'll see quite a bit of code given to you already, compared to most kata. That's because this is supposed to be an entire program - so it needs to read inputs from the outside world, and place outputs in the right areas as well!\n\nFeel free to ignore all of this, though. All you need to do is change the `matches` function, so that it returns lines from the `file_desc` that contain `pattern`. You can do this by putting them all in a list, then returning that list.\n\nIf you're not sure how a file handle works, don't worry - you can use `for line in file_desc:`, just like how you might use `for num in range(100):` or `for letter in ['a', 'b', 'c']:` -- [here's some more info on them, if you'd like to learn more](https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects).",
+  "totalAttempts": 67,
+  "totalCompleted": 19,
+  "totalStars": 1,
+  "voteScore": 3,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 0
+  }
+}

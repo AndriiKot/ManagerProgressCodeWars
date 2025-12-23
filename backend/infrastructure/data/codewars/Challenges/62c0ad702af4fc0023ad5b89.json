@@ -1,0 +1,39 @@
+{
+  "id": "62c0ad702af4fc0023ad5b89",
+  "name": "Cinderella and Go Channels",
+  "slug": "cinderella-and-go-channels",
+  "category": "reference",
+  "publishedAt": "2022-07-02T20:49:57.475Z",
+  "approvedAt": "2023-07-06T14:56:49.529Z",
+  "languages": [
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/62c0ad702af4fc0023ad5b89",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-07-02T20:41:20.626Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "# Introduction\n> The good ones go into the pot the bad ones go into your crop\n\nThis sounds like the story of Cinderella and if she used Go, this exercise might help her to get the job done.\n\n# Learning Goals\nThis kata should teach you about **how to read from channels** and how to use **multiple return values**.\n\n# Task\nYou're given a channel, filled with strings ... many strings. Those strings are either `good` or `bad`. Your task is to read all of those strings out of the channel until it's empty. And while doing it, keep track of the amounts of `good` and `bad` grains ... ehm strings.\n\nWrite a function `func PickGrains(<-chan string) (int, int)`, which takes a channel of strings and returns two integers: the first one with the amount of `good` occurrences, the second one with the amount of `bad` occurrences.\n\n# Example\n```go\n// channel contains 3 times \"good\" and 4 times \"bad\"\ngrains := make(chan string, 7)\ngrains<-\"good\"\ngrains<-\"bad\"\ngrains<-\"bad\"\ngrains<-\"good\"\ngrains<-\"bad\"\ngrains<-\"bad\"\ngrains<-\"good\"\nclose(grains)\n\n// your implementation of the PickGranes function\ngood, bad := PickGrains(grains)\n// good must be 3\n// bad must be 4\n```",
+  "totalAttempts": 433,
+  "totalCompleted": 267,
+  "totalStars": 4,
+  "voteScore": 53,
+  "tags": [
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "64b1727867b45c41a262c072",
+  "name": "Team dinner: find the best acceptable date",
+  "slug": "team-dinner-find-the-best-acceptable-date",
+  "category": "reference",
+  "publishedAt": "2023-07-19T16:19:21.791Z",
+  "approvedAt": "2023-07-20T11:56:55.615Z",
+  "languages": [
+    "python",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/64b1727867b45c41a262c072",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-14T16:06:16.883Z",
+  "createdBy": {
+    "username": "alexc19",
+    "url": "https://www.codewars.com/users/alexc19"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Introduction\n\nYou are in charge of organizing a dinner for your team and you would like it to happen  with as many participants as possible, as soon as possible. However, finding a date that works for everyone can be challenging due to their other commitments. In this case, a compromise, referred to as the best acceptable date, would be satisfactory.\n\n➡️ A date is considered *acceptable* if the number of people available on that date is equal to or higher than the number of people not available.\n\n➡️ The *best acceptable date* is the acceptable date with the highest number of available people. We will explain later in a dedicated section some tiebreaking rules to make sure the best acceptable date is unique, if existing.\n\n\n## Your task\n\n**Your task is to write a solution that takes a *list of available dates for each team member* and returns the best acceptable date. If no such date exists, your solution should return `None`.**\n\nFor a team of size `n` the input is a list of lists in the format:\n`available = [dates_person_1, ..., dates_person_n]`\n\nFor person `i` the available dates ```dates_person_i``` are expressed as a list of integers greater than or equal to 0 (in no particular order). Each integer represents the number of days until the intended date. For example, 0 indicates today, 1 indicates tomorrow, 2 indicates the day after tomorrow, and so on. This notation allows us to focus on the relative days without worrying about specific calendar dates.\n\n➡️ The *attendance* of a date is the number of people that would be available on that date.\n\nHere is an example to illustrate the format and approach:\n```text\nExample #1:\navailable = [ [0, 1, 2], [1], [1, 2, 4], [] ]\n```\n\nIn the above example there are 4 people:\n- The first person is available on days 0, 1, and 2; the second person is available only on day 1; the third person is available on days 1, 2, and 4; the fourth person is never available.\n- The attendance on day 0 is 1, on day 1 is 3, on day 2 is 2, and on day 4 is 1 (attendance is 0 for any other day not explicitly mentioned).\n- For this team of size 4, a date is acceptable if there are at least 2 people available.\n- Both day 1 (attendance 3) and day 2 (attendance 2) are acceptable dates.\n- Day 1 is the best acceptable date because it has the highest attendance (there are no ties to break because all the other dates have lower attendance).\n\n\nHere are two more examples:\n```text\nExample #2:\navailable = [ [0, 1, 5], [2, 3], [4], [], [0, 1] ]\n```\nFor the team of five people in example #2 you can easily verify (by applying the definition) that there are no acceptable dates. The dinner will not be happening, and your solution should return `None`.\n\n\n```text\nExample #3:\navailable = [ [3, 6, 7], [3, 6], [6] ]\n```\nFor the team of three people in example #3 there are two acceptable dates: day 3 and day 6. Day 6 is the best acceptable date and its attendance is 3.\n\n\n## Breaking ties\n\nIt could happen that there are multiple acceptable dates with the highest attendance. To resolve such ties, we introduce two rules, which should be *applied in strict order*, i.e. first apply rule 1, and if there is still a tie, then apply rule 2.\n\n\n### Rule 1: \"Reward flexibility\"\n\nLet's consider this example with 5 people:\n```text\nExample #4:\navailable = [ [0, 1, 2, 3], [2], [0, 2], [3, 4, 6], [1, 3, 6] ]\n```\nAttendance on each day is as follows:\n```text\nday 0: attendance 2 (works for person 1 and 2)\nday 1: attendance 2 (works for person 1 and 5)\nday 2: attendance 3 (works for person 1, 2 and 3, and is acceptable)\nday 3: attendance 3 (works for person 1, 4 and 5, and is acceptable)\nday 4: attendance 1 (works for person 4)\nday 6: attendance 2 (works for person 5)\n```\n\nBoth day 2 and day 3 are acceptable dates with the same and highest attendance. However, it's important to note that while some people indicated several available dates, others were less flexible, such as person 2 who indicated only one available date.\n\nTo break the tie, a fair approach (for lack of a better criteria) is to choose a date that works for team members who are more flexible with dates. The idea is that team members who indicated three dates and none of them worked would be more annoyed compared to those who indicated just one date and it didn't get selected.\n\n➡️ We define the *flexibility* of a person as the number of available dates they indicated. In example #4 above, the flexibility of each person is 4, 1, 2, 3, and 3, respectively.\n\n➡️ The *total flexibility of a date* is the sum of the flexibility of the people who are available on that date. To break the tie, we select the date with the *highest total flexibility*.\n\nLet's calculate the total flexibility for the dates with highest attendance in example #2:\n```text\ntotal_flexibility(day 2) is 4 + 1 + 2 = 7\ntotal_flexibility(day 3) is 4 + 3 + 3 = 10\n```\nDay 3 has the highest total flexibility and is therefore the best acceptable date that your solution should return.\n\n\n### Rule 2: \"The sooner the better\"\n\nLet's consider a new example with 4 people:\n```text\nExample #5:\navailable = [ [0, 1, 2, 3], [0, 1], [0, 5], [1, 6] ]\n\nday 0: attendance 3 (works for person 1, 2 and 3, and is acceptable) \nday 1: attendance 3 (works for person 1, 2 and 4, and is acceptable)\nday 2: attendance 1 (works for person 1)\nday 5: attendance 1 (works for person 3)\nday 6: attendance 1 (works for person 4)\n\nperson 1 flexibility: 4 (available on days 0, 1, 2, and 3)\nperson 2 flexibility: 2 (available on days 0 and 1)\nperson 3 flexibility: 2 (available on days 0 and 5)\nperson 4 flexibility: 2 (available on days 1 and 6)\n```\n\nIn this example, both day 0 and day 1 are the only acceptable dates, and both have an attendance of 3. Let's calculate the total flexibility for those dates:\n```text\ntotal_flexibility(day 0) is 4 + 2 + 2 = 8\ntotal_flexibility(day 1) is 4 + 2 + 2 = 8\n```\n\nSince both dates have equal total flexibility, rule 1 is not sufficient to break the tie. In this case, because the dinner should happen as soon as possible, we simply choose the earliest date. Therefore, day 0 is the best acceptable date that your solution should return.\n\nNo further rules are necessary to break ties, and you have now all the necessary information to code the solution!",
+  "totalAttempts": 574,
+  "totalCompleted": 95,
+  "totalStars": 9,
+  "voteScore": 37,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

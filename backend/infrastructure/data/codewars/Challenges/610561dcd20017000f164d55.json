@@ -1,0 +1,41 @@
+{
+  "id": "610561dcd20017000f164d55",
+  "name": "Mini Spreadsheet",
+  "slug": "mini-spreadsheet",
+  "category": "algorithms",
+  "publishedAt": "2021-07-31T20:45:55.153Z",
+  "approvedAt": "2021-08-10T10:28:09.687Z",
+  "languages": [
+    "javascript",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/610561dcd20017000f164d55",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-07-31T14:44:44.748Z",
+  "createdBy": {
+    "username": "omar-dahdouh",
+    "url": "https://www.codewars.com/users/omar-dahdouh"
+  },
+  "approvedBy": {
+    "username": "Madjosz",
+    "url": "https://www.codewars.com/users/Madjosz"
+  },
+  "description": "In this kata, we are going to make a simple [Spreadsheet](https://en.wikipedia.org/wiki/Spreadsheet) application.\n\nOur Spreadsheet has only two methods: `read` and `write`.\n\nThe method `read` simply returns the value of a cell by its name.\n```javascript\nread(name)\n```\nA cell `name` is a string (e.g., \"B5\", \"A12\").\n\nWe can use the method `write` to update the value of a cell.\n```javascript\nwrite(name, value)\n```\nA cell `value` can be any type (string, number, boolean, etc.).\n\nThe good thing about Spreadsheets is that you don't have to update a cell manually every time, we can also use the method `write` to make the value of a cell depend on some other cells.\n```javascript\nwrite(name, dependencies, formula)\n```\nThe `dependencies` is an array of strings (cell names) that a cell depends on.\n\nThe `formula` is a function to calculate the value of a cell using the value of its dependencies.\n\nIf any of the dependencies change, the cell should automatically update its value using the formula.\n\nThe method `write` returns an array of the affected cells (in any order).\n\nThe affected cells are the first cell to update and any other cell that depends on it, even if their values haven't actually changed.\n\nCycles are not allowed, if calling the method `write` can cause a cycle of cells that depends on each other, it does nothing and returns an empty array.\n\n## Task\nImplement a `Spreadsheet` class with two methods: `read` and `write` that meet the specifications above.\n\n## Notes\n- A sheet has an infinite number of cells\n- The default value of any cell is the number `0`\n\n## Hint\nUpdate the cells in the correct order, so that no cell will update until all its dependencies are up-to-date.\n\n\n",
+  "totalAttempts": 577,
+  "totalCompleted": 43,
+  "totalStars": 34,
+  "voteScore": 26,
+  "tags": [
+    "Algorithms",
+    "Graph Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

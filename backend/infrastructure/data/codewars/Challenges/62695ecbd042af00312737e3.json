@@ -1,0 +1,36 @@
+{
+  "id": "62695ecbd042af00312737e3",
+  "name": "Pill Popper",
+  "slug": "pill-popper",
+  "category": "reference",
+  "publishedAt": "2022-05-02T17:29:18.857Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62695ecbd042af00312737e3",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-04-27T15:18:35.494Z",
+  "createdBy": {
+    "username": "user9601375",
+    "url": "https://www.codewars.com/users/user9601375"
+  },
+  "description": "## Pill Popper\n\nJohn works at the local pharmacy, filling prescriptions. Unfortunately, his eyesight is going bad, so sometimes he miscounts the number of pills for a prescription, and sometimes he includes a pill that is broken, which should be discarded. You need to help John by double-checking the pills he counted to ensure the customer gets exactly the number of pills they were prescribed, and that every pill they receive is intact.\n\n### Inputs\n\nYou will be given 3 inputs\n\n* `count` which is an array of pills John has on the counting tray. These pills will be either **I** for an intact pill, or **B** for a pill that is broken. You need to remove any broken pills from the tray and discard them.\n\n* `bottle` is array with the remaining pills in the pharmacy bottle. If you need to take pills from the bottle, you will start at the top (the **last** element in the array) and remove pills until you have enough on the tray. Don't forget to discard any broken pills (indicated by a **B**) that were removed from the bottle. If John counted out too many pills, make sure you put them back in the bottle. Don't discard any broken pills that weren't taken out of the bottle.\n\n* `rx` which is the number of pills the customer was prescribed. It will be given as a single integer, and is the total number of intact pills that should be in `count` before you return it.\n\n### Instructions\n\nYou need to complete the `pillPopper` function to **add** or **remove** pills from `count` until it matches the number of pills the customer was prescribed in `rx`, and every pill in the `count` is intact. If there are too many pills, put the remaining pills back in `bottle`. If there aren't enough, take pills from the `bottle` and add them to `count`. Broken pills in the `count`, or taken out of the `bottle` should be discarded. And if John counted the pills correctly and they are all intact, return both values unaltered.\n\n### Return\n\nIf there are sufficient intact pills between the existing `count` and the `bottle`, return an array `[count, bottle]` with the updated count of pills to match the prescription. If there aren't enough pills to fill the prescription, return **false**.\n\n### Examples\n\n```javascript\npillPopper(['I','I','I','I','I'],['B','B','I','I','B'],5)\nshould return [['I','I','I','I','I'],['B','B','I','I','B']] \n// Prescription was counted correctly, so no need to remove any pills from the bottle\n\npillPopper(['I','B','I','I','B','I','I','B','I'],['I','I','B','I','I','B','I','I'],10)\nshould return [['I','I','I','I','I','I','I','I','I','I'],['I','I','B']]\n// 3 broken pills on the tray and it's also one short.\n// Need to remove 5 total pills from the bottle, 4 intact plus one broken.\n\npillPopper(['I','I','I','I','I'],['B','I','I'],10) \nshould return false\n// There aren't enough pills remaining in the bottle to fill the prescription\n```\n",
+  "totalAttempts": 316,
+  "totalCompleted": 37,
+  "totalStars": 0,
+  "voteScore": 42,
+  "tags": [
+    "Arrays",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 5,
+    "suggestions": 0
+  }
+}

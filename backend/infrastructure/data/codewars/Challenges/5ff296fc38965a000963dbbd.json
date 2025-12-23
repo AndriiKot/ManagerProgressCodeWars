@@ -1,0 +1,40 @@
+{
+  "id": "5ff296fc38965a000963dbbd",
+  "name": "Directory tree",
+  "slug": "directory-tree",
+  "category": "reference",
+  "publishedAt": "2021-01-04T06:30:16.486Z",
+  "approvedAt": "2021-01-04T22:25:56.778Z",
+  "languages": [
+    "python",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5ff296fc38965a000963dbbd",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-01-04T04:18:04.524Z",
+  "createdBy": {
+    "username": "ecolban",
+    "url": "https://www.codewars.com/users/ecolban"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Directory tree\n\nGiven a string that denotes a directory, and a list (or array or ArrayList, etc, depending on language) of strings that denote the paths of files relative to the given directory, your task is to write a function that produces an _iterable_ (list, array, ArrayList, generator) of strings that, when printed successively, draws a tree of the directory structure of the files. \n\nThis is best explained with an example:\n\nGiven:\n```\nroot = 'Desktop'\n``` \nand \n```\n  files = [\n        'meetings/2021-01-12/notes.txt',\n        'meetings/2020_calendar.ods',\n        'meetings/2021-01-12/report.pdf',\n        'misc/photos/forest_20130430.jpg',\n        'misc/photos/sunset_20130412.jpg',\n        'scripts/tree.py',\n        'meetings/2021-01-24/report.pdf',\n    ]\n```\nthe goal is to write a function (or method) `tree` that, when called with `root` and `files`, returns an iterable (list, generator, iterator, or other) that produces the following lines when iterated over:\n```\nDesktop\n├── meetings\n│   ├── 2021-01-12\n│   │   ├── notes.txt\n│   │   └── report.pdf\n│   ├── 2021-01-24\n│   │   └── report.pdf\n│   └── 2020_calendar.ods\n├── misc\n│   └── photos\n│       ├── forest_20130430.jpg\n│       └── sunset_20130412.jpg\n└── scripts\n    └── tree.py\n```\n\n## Details\n\n### Input\n\nThe `files` argument is not sorted in any particular way.\n\nThe given list `files` contains paths to files only (not directories), which implies that all leaves in the tree are files. This can be used to determine which nodes are directories and which are files. No naming conventions are used to distinguish directories from files. For example, `'a'` can be the name of a directory or a file. \n\nIn the tests, directory and file names contain ASCII characters only, but this does not prevent solutions from allowing non-ASCII characters.   \n\nThe given paths in `files` contain no references to parent directory, current directory, home directory, or variables (e.g., `..`, `.`, `~`, `$HOME`). \n\nThe separator used in paths is a forward slash:`'/'`. (Sorry, Microsoft users.) The given paths contain no initial or trailing slashes.\n\n### Output\n\nDirectories and files shall appear in alphabetical order, directories first, files thereafter. For example, in the `meetings` directory, the sub-directories `2021-01-12` and `2021-01-24` are listed before `2020_calendar.ods` although the latter comes before in alphabetical order, because directories are listed before files.\n\nLines shall contain no trailing whitespace characters.\n\nSpecial characters required to draw the tree can be copied from this example or the given example tests.\n\nFurther details can be derived from given example tests.",
+  "totalAttempts": 442,
+  "totalCompleted": 94,
+  "totalStars": 42,
+  "voteScore": 41,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

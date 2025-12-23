@@ -1,0 +1,42 @@
+{
+  "id": "64b41e7c1cefd82a951a303e",
+  "name": "Gymbro's Unique Gym - Weight Calculator",
+  "slug": "gymbros-unique-gym-weight-calculator",
+  "category": "algorithms",
+  "publishedAt": "2023-07-17T21:51:09.314Z",
+  "approvedAt": "2023-08-16T18:38:44.630Z",
+  "languages": [
+    "python",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/64b41e7c1cefd82a951a303e",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-07-16T16:44:44.733Z",
+  "createdBy": {
+    "username": "Zanamo",
+    "url": "https://www.codewars.com/users/Zanamo"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Gymbro is at a Unique gym with unique bars for Bench pressing. Bars are made up of 40 hyphens ('-') each weighing 0.5kg, represented like this: ``----------------------------------------``\n\nThe plates are represented in the format '|Xkg|', where 'X' is the weight of the plate.  For Example: ``['|4kg|', '|22kg|', '|10kg|', '|24kg|', '|171kg|']``\n\n*Plates weighing less than 10 kg have length of 5 hyphens, plates weighing between 10 kg and 99 kg have length of 6 hyphens and Plates weighing between 100 kg and 999 kg have length of 7 hyphens.*\n\nGymbro has a desired weight ``w``  he wants to benchpress, for that he has to put plates on the bar, but You don't actually put plates on the bar, rather, you replace hyphens with plates,\n\n*For example, if you put a 4 kg plate on the bar, it would look like this:*\n``--|4kg|---------------------------------``  *length of the bar is still 40*\n\n*5 hyphens were replaced by 4kg plate.*\nTo calculate the new weight of the bar after adding a plate, you need to subtract the weight of the mini bars that the plate replaces. For instance, if you replaced 5 hyphens (20 kg - 5 * 0.5 kg = 17.5 kg) with a 4 kg plate, the bar's new weight would be 17.5 kg + 4 kg = 21.5 kg.\n\nＲｕｌｅｓ:\n1. *There should be an equal amount of plates on each side*\n2. *Plates must always be 2 hyphens away from the edge of the bar on each side.* ``--|4kg||2kg|----------------|13kg||9kg|-`` *is wrong!*\n3. *Each plate is available once, but if there are multiple same weighted plates you can use them as many times as it's available*\n4. *Weight and Plate distribution matters. Sequentially arrange weight plates from heaviest to lightest,* ``--|30kg||5kg|--------------|7kg||34kg|--`` *biggest plate on the Right, next biggest on the left, next biggest next to biggest and etc, with the heaviest Weight on the Right!!!. Heavier plates should be closer to edges. See more example at test samples*\n5. *if there are multiple solutions, output the one which requires the least amount of plates, and which has the least heavy plate ``--|37kg||34kg|------------|36kg||40kg|--`` should equal ``--|39kg||23kg|------------|32kg||53kg|--``, Because second bar has the lightest plate ``23``*. \n_________________\n*if there is a tie between lightest plates with configurations for example:*  \n1. ``--|42kg||18kg|------------|27kg||83kg|--``\n2. ``--|52kg||18kg|------------|21kg||79kg|--``  \n\nreturn the one which has second lightest plate, If there are 2 ties, and both configs have 2 same weighted light plates, return config which has 3rd lightest plate. *In this case ``--|52kg||18kg|------------|21kg||79kg|--`` would be correct, because while both configurations have* |18kg| *plates, second config has, second lighter plate:* |21kg| \n________________\n6. Plates shouldn't cross middle point of the bar. Since length of bar is 40, middle point should be 2 hyphens in the middle: ``-------------------*--*-------------------``. * -- * is the middle point. ``--|28kg||28kg||10kg||20kg||28kg||30kg|--`` is wrong. ``--|10kg||1kg||1kg|--|1kg||10kg||100kg|--`` is also wrong since 2 middle hyphens aren't in the center\n\nYour task is to create a function that takes two parameters: ``w`` (the desired weight Gymbro wants to bench, ``targetSum`` in JS) and ``ap`` (a list of available plates, ``WeightList`` in JS). The function should calculate the weight distribution on the bar using the available plates while adhering to the rules mentioned above, and return a visual representation of the bar. \n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: \n\n```w``` = 40 *Desired Weight.*\n\n```ap``` = ['|3kg|', '|7kg|', '|1kg|', '|2kg|', '|10kg|', '|4kg|', '|11kg|']  *available plates.*\n\nresult = configure_bar(w, ap)\nreturn result\n\n0. Starting bar: ``----------------------------------------`` ``(40 hyphens, each 0.5 kg, Bar weight: 20 kg)``\n1. add 10kg:\n``--|10kg|--------------------------------``  ``(Replaced 6 '-',new weight:20kg - 6*0.5kg+10kg = 27kg)``\n2. add 7kg: \n``--|10kg|-------------------------|7kg|--`` ``(Replaced 5 '-', new weight: 27kg-5*0.5kg+7kg=31.5kg)``\n3. add 11kg: \n``--|10kg|-------------------|7kg||11kg|--``  ``(Replaced 6 '-',weight: 39.5)``\n4. add 3kg:\n``--|10kg||3kg|--------------|7kg||11kg|--``  \n`` ( Replaced 5 '-',weight: 40 kg)``\n\n*Output should be:*  ``\"--|10kg||3kg|--------------|7kg||11kg|--\"``\n\n𝗜𝗳 𝗱𝗲𝘀𝗶𝗿𝗲𝗱 𝗯𝗲𝗻𝗰𝗵𝗽𝗿𝗲𝘀𝘀 𝘄𝗲𝗶𝗴𝗵𝘁 𝗰𝗮𝗻'𝘁 𝗯𝗲 𝗮𝗰𝗵𝗶𝗲𝘃𝗲𝗱 𝘄𝗶𝘁𝗵 𝗴𝗶𝘃𝗲𝗻 𝗽𝗹𝗮𝘁𝗲𝘀 𝗼𝗿 𝗮𝗰𝗵𝗶𝗲𝘃𝗶𝗻𝗴 𝗱𝗲𝘀𝗶𝗿𝗲𝗱 𝘄𝗲𝗶𝗴𝗵𝘁 𝗯𝗿𝗲𝗮𝗸𝘀 𝗿𝘂𝗹𝗲𝘀, 𝗿𝗲𝘁𝘂𝗿𝗻``\":(\"``\n\n*in rare cases where Desired weight is 20, don't return an empty bar, return the correct config of the bar using plates, if it can't be achieved return :(*\n\n____________________________________________\nJs:\n1. 25 fixed tests\n2. 866 random test for heavy weights (Plate weight - 10-140,5 - 40 plates, Desired Weight 150 - 300 KG)\n3. 800 random test for light weights (plate weight 1-9, 5-30 plates, Desired Weight 20-80)\n \n____________________________________________\nPython:\n1. 1844 lightweight tests\n2. 1534 super-lightweight tests\n3. 300 medium weight tests\n4. 347 heavyweight tests\n5. 300 super heavyweight tests\n6. 266 super duper heavyweight tests",
+  "totalAttempts": 743,
+  "totalCompleted": 36,
+  "totalStars": 34,
+  "voteScore": 23,
+  "tags": [
+    "Algorithms",
+    "Performance",
+    "Combinatorics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

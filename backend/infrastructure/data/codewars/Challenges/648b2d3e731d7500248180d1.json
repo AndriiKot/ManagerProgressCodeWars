@@ -1,0 +1,36 @@
+{
+  "id": "648b2d3e731d7500248180d1",
+  "name": "Lightbulb Intro",
+  "slug": "lightbulb-intro",
+  "category": "algorithms",
+  "publishedAt": "2023-06-15T15:32:35.631Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/648b2d3e731d7500248180d1",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-15T15:24:46.483Z",
+  "createdBy": {
+    "username": "Matsamoto",
+    "url": "https://www.codewars.com/users/Matsamoto"
+  },
+  "description": "With this mission I want to start a series of missions with light bulbs. They will help you understand the concept of processes and evaluation of the processes’ performance. Instead of light bulbs, in real life, there may be equipment, the effectiveness of which must be calculated, or workers who go to work, and their wages must be calculated.\n\nThe first mission is quite simple. There is a light bulb, which by default is off, and a button, by pressing which the light bulb switches its state. This means that if the light bulb is off and the button is pressed, the light turns on, and if you press it again, it turns off.\n\n```if:python\nThe function input is an array of datetime objects - this is the date and time of pressing the button. Your task is to determine how long the light bulb has been turned on.\n\n- Input:\n  * els: A list of datetime objects.\n```\n```if:javascript\nThe function input is an array of Date objects - this is the date and time of pressing the button. Your task is to determine how long the light bulb has been turned on.\n\n- Input: \n  * els: A list of Date objects.\n```\n- Output: A number of seconds as an integer.\n\nExample:\n```javascript\nsumLight([\n    new Date(2015, 1, 12, 10, 0 , 0),\n    new Date(2015, 1, 12, 10, 10 , 10),\n]) == 610\n\nsumLight([\n    new Date(2015, 1, 12, 10, 0 , 0),\n    new Date(2015, 1, 12, 10, 10 , 10),\n    new Date(2015, 1, 12, 11, 0 , 0),\n    new Date(2015, 1, 12, 11, 10 , 10),\n]) == 1220\n\nsumLight([\n    new Date(2015, 1, 12, 10, 0 , 0),\n    new Date(2015, 1, 12, 10, 0 , 1),\n]) == 1\n```\n```python\nsum_light([\n    datetime(2015, 1, 12, 10, 0 , 0),\n    datetime(2015, 1, 12, 10, 10 , 10),\n]) == 610\n\nsum_light([\n    datetime(2015, 1, 12, 10, 0 , 0),\n    datetime(2015, 1, 12, 10, 10 , 10),\n    datetime(2015, 1, 12, 11, 0 , 0),\n    datetime(2015, 1, 12, 11, 10 , 10),\n]) == 1220\n\nsum_light([\n    datetime(2015, 1, 12, 10, 0 , 0),\n    datetime(2015, 1, 12, 10, 0 , 1),\n]) == 1\n```\n\nPrecondition:\n- The array of pressing the button is always sorted in ascending order\n- The array of pressing the button has no repeated elements (which means the result should always be bigger than 0)\n- The amount of elements is always even (the light will eventually be off)\n- The minimum possible date is 1970-01-01\n- The maximum possible date is 9999-12-31\n\n\nSource : https://github.com/CheckiO-Missions/checkio-mission-lamp-01-intro",
+  "totalAttempts": 48,
+  "totalCompleted": 25,
+  "totalStars": 0,
+  "voteScore": 29,
+  "tags": [
+    "Algorithms",
+    "Refactoring"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

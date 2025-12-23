@@ -1,0 +1,39 @@
+{
+  "id": "5fd8f7badda986000ae365fc",
+  "name": "A Breadth-First Traversable",
+  "slug": "a-breadth-first-traversable",
+  "category": "algorithms",
+  "publishedAt": "2020-12-15T18:09:11.083Z",
+  "approvedAt": "2021-11-11T19:00:24.240Z",
+  "languages": [
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5fd8f7badda986000ae365fc",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2020-12-15T17:51:55.004Z",
+  "createdBy": {
+    "username": "oisdk",
+    "url": "https://www.codewars.com/users/oisdk"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "Write a `Traversable` instance for the following type of Rose Trees which traverses the tree in breadth-first order.\n\n```haskell\ndata Tree a = a :& [Tree a] deriving (Eq, Ord, Show, Functor)\n```\n\nYour instance should be law-abiding.\n\nAn automatically derived implementation of `Traversable` performs the effects in depth-first order.\n\nFor instance, take the following example tree:\n\n```haskell\nexampleTree\n  =\n    1 :&\n      [ 2 :&\n          [ 5 :&\n              [ 9  :& []\n              , 10 :& []]\n          , 6 :& []]\n      , 3 :& []\n      , 4 :&\n          [ 7 :&\n              [ 11 :& []\n              , 12 :& []]\n          , 8 :& []]]\n```\n\nCalling `bft print exampleTree` should print out the numbers 1 to 12 in order.\n\nYou may replace the `Foldable` instance if you like: currently it simply derives the instance from the `Traversable` instance. ",
+  "totalAttempts": 102,
+  "totalCompleted": 26,
+  "totalStars": 12,
+  "voteScore": 22,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

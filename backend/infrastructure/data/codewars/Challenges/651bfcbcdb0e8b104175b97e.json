@@ -1,0 +1,43 @@
+{
+  "id": "651bfcbcdb0e8b104175b97e",
+  "name": "Popping Blocks",
+  "slug": "popping-blocks",
+  "category": "reference",
+  "publishedAt": "2023-10-03T11:42:13.171Z",
+  "approvedAt": "2023-10-24T11:17:43.867Z",
+  "languages": [
+    "python",
+    "scala",
+    "coffeescript",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/651bfcbcdb0e8b104175b97e",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-10-03T11:36:28.583Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "approvedBy": {
+    "username": "akar-0",
+    "url": "https://www.codewars.com/users/akar-0"
+  },
+  "description": "When two blocks of the same \"type\" are adjacent to each other, the entire contiguous block disappears (pops off). If this occurs, this can allow previously separated blocks to be in contact with each other, setting off a chain reaction. After each pop, the remaining items get pushed back before popping the next consecutive items.\n\nThis will continue until each block is surrounded by a different block. If the first round has multiple poppable blocks, **pop starting from the left**.\n\nHere's a demonstration:\n```\n[\"A\", \"B\", \"C\", \"C\", \"B\", \"D\", \"A\"]\n// The two adjacent Cs pop off\n\n[\"A\", \"B\", \"B\", \"D\", \"A\"]\n// Two adjacent Bs pop off\n\n[\"A\", \"D\", \"A\"]\n// No more blocks can be popped off\n```\n\nAnother demonstration:\n```\n[\"A\", \"B\", \"A\", \"A\", \"A\", \"B\", \"B\"]\n# The three adjacent As will pop off\n# (before the two adjacent Bs)\n\n[\"A\", \"B\", \"B\", \"B\"]\n# 3 adjacent Bs pop off\n\n[\"A\"]\n# Final result\n```\n\n### Examples\n```\n[\"B\", \"B\", \"A\", \"C\", \"A\", \"A\", \"C\"] ➞ [\"A\"]\n\n[\"B\", \"B\", \"C\", \"C\", \"A\", \"A\", \"A\"] ➞ []\n\n[\"C\", \"A\", \"C\"] ➞ [\"C\", \"A\", \"C\"]\n\n['ab', 'ab', 'cd', 'cx', 'B'], ['cd', 'cx', 'B']\n\n[] ➞ []\n```\n\n### Notes\n- 0 <= len(lst) <= 500\n- Blocks may consist of several characters.",
+  "totalAttempts": 2352,
+  "totalCompleted": 321,
+  "totalStars": 25,
+  "voteScore": 131,
+  "tags": [
+    "Algorithms",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

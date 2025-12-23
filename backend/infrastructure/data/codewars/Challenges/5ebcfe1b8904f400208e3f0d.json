@@ -1,0 +1,39 @@
+{
+  "id": "5ebcfe1b8904f400208e3f0d",
+  "name": "Function Addition",
+  "slug": "function-addition",
+  "category": "reference",
+  "publishedAt": "2020-05-14T09:38:41.860Z",
+  "approvedAt": "2020-08-13T18:06:05.188Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5ebcfe1b8904f400208e3f0d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-05-14T08:15:23.255Z",
+  "createdBy": {
+    "username": "wookie184",
+    "url": "https://www.codewars.com/users/wookie184"
+  },
+  "approvedBy": {
+    "username": "ozichukwu",
+    "url": "https://www.codewars.com/users/ozichukwu"
+  },
+  "description": "I often find that I end up needing to write a function to return multiple values, in this case I would often split it up into two different functions but then I have to spend time thinking of a new function name! Wouldn't it be great if I could use same name for a function again and again...\n\nIn this kata your task is to make a decorator, `FuncAdd` which will allow function names to be reused and when called all functions with that name will be called (in order) and the results returned as a tuple.\n\n```python\n@FuncAdd\ndef foo():\n    return 'Hello'\n\n@FuncAdd\ndef foo():\n    return 'World'\n\nfoo() --> ('Hello', 'World')\n```\nAs well as this you will have to implement two more things, a way of deleting a particular function, and a way of deleting all stored functions. The `delete` method must work as follows:\n```python\n@FuncAdd\ndef foo():\n    return 'Hello'\n    \nFuncAdd.delete(foo) # Delete all foo() functions only\nfoo() # Should raise NameError\n```\nAnd the `clear` method must work like this:\n```python\n@FuncAdd\ndef foo():\n    return 'Hello'\n    \nFuncAdd.clear() # Delete all decorated functions\nfoo() # Should raise NameError\n```\nThe functions must also accept args and kwargs which would all be passed to every function.",
+  "totalAttempts": 972,
+  "totalCompleted": 201,
+  "totalStars": 56,
+  "voteScore": 88,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

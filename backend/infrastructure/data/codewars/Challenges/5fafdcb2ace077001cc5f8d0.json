@@ -1,0 +1,42 @@
+{
+  "id": "5fafdcb2ace077001cc5f8d0",
+  "name": "Weigh The List #2",
+  "slug": "weigh-the-list-number-2",
+  "category": "reference",
+  "publishedAt": "2020-11-14T14:21:07.095Z",
+  "approvedAt": "2022-01-02T15:31:45.941Z",
+  "languages": [
+    "python",
+    "haskell",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/5fafdcb2ace077001cc5f8d0",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-11-14T13:33:38.584Z",
+  "createdBy": {
+    "username": "Rail-Gun",
+    "url": "https://www.codewars.com/users/Rail-Gun"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "You get a list of non-zero integers `A`, its length is always greater than one. Your task is to find such non-zero integers `W` that the weighted sum\n\n```math\nA_0 \\cdot W_0 + A_1 \\cdot W_1 + .. + A_n \\cdot W_n\n```\n\nis equal to `0`.\n\nUnlike the [first kata](https://www.codewars.com/kata/5fad2310ff1ef6003291a951) in the series, here the length of the list `A` can be odd.\n\n# Examples\n\n```python\n# One of the possible solutions: W = [-10, -1, -1, 1, 1, 1]\n# 1*(-10) + 2*(-1) + 3*(-1) + 4*1 + 5*1 + 6*1 = 0\nweigh_the_list([1, 2, 3, 4, 5, 6])\n\n# One of the possible solutions: W = [-5, -12, 4, 3, 1]\n# 1*(-5) + 2*(-12) + 3*4 + 4*3 + 5*1 = 0\nweigh_the_list([1, 2, 3, 4, 5])\n\n# One of the possible solutions: W = [4, 1]\n# -13*4 + 52*1 = 0\nweigh_the_list([-13, 52])\n\n# One of the possible solutions: W = [1, 1]\n# -1*1 + 1*1 = 0\nweigh_the_list([-1, 1])\n```\n```haskell\nweights [ 1, 2, 3, 4, 5 ]  ->  [ -2, -2, -1, 1, 1 ] -- other solution are possible\n-- 1 * (-2) + 2 * (-2) + 3 * (-1) + 4 * 1 + 5 * 1 == 0\n\nweights [ -13, 52 ]  ->  [ 4, 1 ] -- other solutions are possible\n-- (-13) * 4 + 52 * 1 == 0\n\nweights [ 1, 1 ]  ->  [ -1, 1 ] -- other solutions are possible\n-- 1 * (-1) + 1 * 1 == 0\n```\n```javascript\nweights([ 1, 2, 3, 4, 5 ])  =>  [ -2, -2, -1, 1, 1 ] // other solution are possible\n// 1 * (-2) + 2 * (-2) + 3 * (-1) + 4 * 1 + 5 * 1 == 0\n\nweights([ -13, 52 ])  =>  [ 4, 1 ] // other solutions are possible\n// (-13) * 4 + 52 * 1 == 0\n\nweights([ 1, 1 ])  =>  [ -1, 1 ] // other solutions are possible\n// 1 * (-1) + 1 * 1 == 0\n```\n\n[Previous kata](https://www.codewars.com/kata/5fad2310ff1ef6003291a951)\n\nHave fun! :)",
+  "totalAttempts": 703,
+  "totalCompleted": 116,
+  "totalStars": 17,
+  "voteScore": 73,
+  "tags": [
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

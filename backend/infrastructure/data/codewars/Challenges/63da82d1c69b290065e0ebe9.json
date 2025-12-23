@@ -1,0 +1,35 @@
+{
+  "id": "63da82d1c69b290065e0ebe9",
+  "name": "New House Plan Order",
+  "slug": "new-house-plan-order",
+  "category": "games",
+  "publishedAt": "2023-02-04T01:59:44.651Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63da82d1c69b290065e0ebe9",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-02-01T15:18:41.769Z",
+  "createdBy": {
+    "username": "aland97",
+    "url": "https://www.codewars.com/users/aland97"
+  },
+  "description": "# New House Plan Order\n## Description\n\nYou are an architect. And you have a new customer. He bought a area and wants to build it up.\nHe has rough plans for some rooms. He knows where they should be located and what size they are. You examined the area and figured out where would not be possible to build something. It remains to find out from the client what he planned...\n\n## Input\n```function planning(customer, area)```\n- ```customer``` - object with three functions\n- ```area``` - string\n\n## Customer Object Functions\n\n### whatNext()\n\nIf you planed all rooms return ```'We have planned all the rooms.'```\nOr ```'Let\\'s plan room <room>.'```, where ```<room>``` is letter or digit that represent current room.\n\n### next()\n\nWhen room was planed call this function to begin next room plannig.\n\n### providePlan(plan)\n\n- ```plan``` - string\n\nThe Customer tries to find the current room on it and tells you what to fix.\n\nReturn ```'I can\\'t find a room on plan!'``` if no current room on plan.\n\nReturn ```\"This is exactly what i wanted.\"``` if all correct.\n\nOr ```'It's too <list of fixes>!'``` where ```<list of fixes>``` may content: ```short```, ```long```, ```narrow```, ```wide```, ```west```, ```east```, ```north``` or ```south```.\n\nFor example: ```It's too long, west!```, ```It's too short!```\n\nHow its going: \n\n1. the customer finds the first occurrence of the character of the current room (top->bottom, left->right)\n2. from funded position move to right while it still current room \n3. then expand to bottom while all character under represent current room (see examples)\n4. compares the resulting rectangle with what he planned\n\nNote:\n\n- north-south and west-east looks for left-top corner of room on plan.\n- customer no look on other rooms and dont no about places which you marked with a ```'#'``` in ```area```.\n- in fact rooms may overlap with others, you must return ```'It`s impossible!'``` in this case.\n- all rooms are rectangle\n- customer does not do any validitions other than those described above\n\n\n### Expamples:\n\nOverlaping rooms:\n\nYou planed room: ```'1'```\n```\n  customer.providePlan([\n    ' 11  ',\n    ' 11  ',\n    '     ',\n  ].join('\\n')) => \"This is exactly what i wanted.\"\n\n  customer.providePlan([\n    '     ',\n    '  222',\n    '  222',\n  ].join('\\n')) => \"This is exactly what i wanted.\"\n```\nIn this case '2' and '1' overlap on 3th character of 2nd line and you must return ```'It's impossible!'```.\n\nSearch process: \n\nYou planed room ```'a'```\n```\ncustomer.providePlan([    +------+\n  'bbaaa ',               |bbaaa |\n  ' aaaa ',           ->  | aaaa |\n  ' aa  0'                | aa  0|\n].join('\\n')              +------+\n\n1) they find first ocurrence of room character row = 2, line = 0\n2) from this point expand to right w = 3\n3) expand to bottom h = 2 and ignore all other room characters\n\n +------+ +------+ +------+\n |  a   | |  aaa | |  aaa |\n |      | |      | |  aaa |\n |      | |      | |      |\n +------+ +------+ +------+\n   <1>      <2>      <3>\n\ncustomer wants:\n +------+\n |    aa|\n |    aa|\n |      |\n +------+\n\nreturn \"It's too narrow, east!\"\n\n```\n\n\n\n## Output\n\nReturn ```\"It's impossible!\"``` if some room overlap with other or with mark ```'#'``` on ```area```.\n\nReturn string that represent plan with all rooms and all marks from ```area```\n\n## Directions and dimensions\nTarget room:\n```\n+------+\n|      |\n|  aa  |\n|  aa  |\n|      |\n+------+\n```\n#### Too short\n```\n+------+\n|      |\n|  aa  |\n|      |\n|      |\n+------+\n```\n#### Too long\n```\n+------+\n|      |\n|  aa  |\n|  aa  |\n|  aa  |\n+------+\n```\n#### Too narrow\n```\n+------+\n|      |\n|  a   |\n|  a   |\n|      |\n+------+\n```\n#### Too wide\n```\n+------+\n|      |\n|  aaaa|\n|  aaaa|\n|      |\n+------+\n```\n#### Too south\n```\n+------+\n|      |\n|      |\n|  aa  |\n|  aa  |\n+------+\n```\n#### Too north\n```\n+------+\n|  aa  |\n|  aa  |\n|      |\n|      |\n+------+\n```\n#### Too west\n```\n+------+\n|      |\n| aa   |\n| aa   |\n|      |\n+------+\n```\n#### Too east\n```\n+------+\n|      |\n|   aa |\n|   aa |\n|      |\n+------+\n```\n\n## Note\n\nYou can look implementation of Customer in test cases.\n\nImplementation of Customer in Real tests may be difer.\n\nSize of area may be large, try be effective.\n\nIf you don't understand something or have a good idea, feel free to ask any questions or make suggestions.\n\n\n",
+  "totalAttempts": 26,
+  "totalCompleted": 6,
+  "totalStars": 4,
+  "voteScore": 8,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

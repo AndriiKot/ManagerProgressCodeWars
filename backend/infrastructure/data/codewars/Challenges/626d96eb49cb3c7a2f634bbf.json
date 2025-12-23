@@ -1,0 +1,43 @@
+{
+  "id": "626d96eb49cb3c7a2f634bbf",
+  "name": "Help the frogs reach the opposite side of the line",
+  "slug": "help-the-frogs-reach-the-opposite-side-of-the-line",
+  "category": "reference",
+  "publishedAt": "2022-04-30T21:04:18.397Z",
+  "approvedAt": "2022-05-02T07:31:01.543Z",
+  "languages": [
+    "python",
+    "javascript",
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/626d96eb49cb3c7a2f634bbf",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-30T20:07:07.297Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "B1ts",
+    "url": "https://www.codewars.com/users/B1ts"
+  },
+  "description": "## Overview\n\n`N` White frogs and `N` Black frogs are placed on either side of a line made up of `2*N + 1` spaces. The 1 \"leftover\" space is therefore empty, and is at the center of the line.\n\nThe `N` White frogs are placed on the left side and all face RIGHTWARDS, and the `N` Black frogs are placed on the right side all face LEFTWARDS.\n\nYour goal is to get all the White frogs to the right half of the line, and all the Black frogs to the left half of the line. \n\n`N=2, start: WW_BB --> BB_WW :end`\n\n**A white frog must move first,** then you may choose from any of the 3 following moves, each encoded by a single letter `w`,`b`, or `j`:\n\n- `w`: move a White frog one space rightwards, if that space is empty. `WWW_ -> WW_W`\n- `b`: move a Black frog one space leftwards, if that space is empty. `_BBB -> B_BB`\n- `j`: make a rightwards jump with a White frog, or a leftwards jump with a Black frog, over **ONE AND ONLY ONE frog of the opposite color**, and **only if the frog can land in the empty space**. `WB_B -> _BWB`\n\n\nCan you develop a general algorithm for arbitrary `N` that moves all the frogs to their end positions in the fewest number of moves?\n\n---\n\n## Inputs and Outputs\n\nYou will be given an integer `N` which specifies the number of both types of frogs i.e. `N` White and `N` Black frogs. The board will therefore always be of size `2*N + 1`.\n\nYou must return a `string` of the letters `w`, `b`, `j`, which encodes the moves your algorithm takes to solve the problem for a given value of `N`.\n\n**REMEMBER: a white frog must move first.** With this condition, there will always be a **unique optimal solution**, which will consist of `N**2 + 2*N` moves, for every value of `N`.\n\n---\n\n## Hint\n\nYou may be wondering how you can encode the different possible jump moves using only a single letter `j` - for example, if you somehow reached the configuration `WB_WB` there are 2 possible jump options: `WB_WB -> _BWWB` or `WB_WB -> WBBW_`, so how should you specify \"which frog does the jump\"? \n\nAnswer: in the optimal solution, every jump move will be **uniquely defined**.\n\nSo if your solution ever reaches a configuration where you find there are 2 or more possible jump options, you are guaranteed to eventually reach a dead-end, which means that your current list of moves will not lead to the correct answer!\n\n\n---\n\n## Examples\n\n\n\n**N = 1, optimal solution**\n\n```python\nW_B # initial state\n_WB # state after performing move: 'w'\nBW_ # state after performing move: 'j'\nB_W # state after performing move: 'w'\n```\n\nSolution string for `N = 1` is therefore: `'wjw'`. This solution is optimal and does indeed consist of `N**2 + 2*N = 1+2 = 3` moves.\n\n**N = 2, optimal solution**\n\n```python\nWW_BB # initial state\nW_WBB # state after performing move: 'w'\nWBW_B # state after performing move: 'j'\nWBWB_ # state after performing move: 'b'\nWB_BW # state after performing move: 'j'\n_BWBW # state after performing move: 'j'\nB_WBW # state after performing move: 'b'\nBBW_W # state after performing move: 'j'\nBB_WW # state after performing move: 'w'\n\n```\n\nSolution string for `N = 2` is therefore: `'wjbjjbjw'`. This solution is optimal and does indeed consist of `N**2 + 2*N = 4+4 = 8` moves.",
+  "totalAttempts": 1089,
+  "totalCompleted": 144,
+  "totalStars": 36,
+  "voteScore": 44,
+  "tags": [
+    "Algorithms",
+    "Puzzles",
+    "Recursion"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

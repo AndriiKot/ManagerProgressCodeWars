@@ -1,0 +1,40 @@
+{
+  "id": "63b9aa69114b4316d0974d2c",
+  "name": "Find Center of Star Graph",
+  "slug": "find-center-of-star-graph",
+  "category": "reference",
+  "publishedAt": "2023-01-07T18:03:45.128Z",
+  "approvedAt": "2023-02-23T14:25:09.633Z",
+  "languages": [
+    "python",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/63b9aa69114b4316d0974d2c",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-01-07T17:22:49.036Z",
+  "createdBy": {
+    "username": "monkey_on_a_keyboard_1",
+    "url": "https://www.codewars.com/users/monkey_on_a_keyboard_1"
+  },
+  "approvedBy": {
+    "username": "Kees de Vreugd",
+    "url": "https://www.codewars.com/users/Kees%20de%20Vreugd"
+  },
+  "description": "<h2>Introduction</h2>\n<p>Graphs are simply another way to represent data. There are many different kinds of graphs and innumerable applications for them. You can find many examples of graphs in your everyday life, from road maps to subway systems. One special type of graph that we will be focusing on is the star graph, which has real-world applications such as the star network, a way of designing a computer network.\n</p>\n\n<h2>The Task</h2>\n<p>For this problem, the graph will be undirected, consisting of a number of nodes and undirected edges. Additionally, the graph is given as a star graph. For this problem, a star graph of n nodes has n-1 edges and one and only one node has degree greater than one, all other nodes have degree equal to one (degree of a node of an undirected graph is simply the number of edges the node is a part of). The node to search for is the node with degree greater than one. All the other nodes with degree one must have one, and only one edge to the node with degree greater than one.</p>\n\n<p>Additionally, a star graph can be thought of as a special kind of undirected tree with n-1 leaf nodes and 1 non-leaf node (thus, any two nodes in the star graph have one and only one path between them). Let the sole non-leaf node be the center node. It is guaranteed there is one and only one node in the graph which is a center node. The center node has an edge to all other nodes. All the other nodes must have one, and only one edge to the center node.\n</p>\n\n<p>For this problem, there will be nodes with integer labels from 1 to n, where n is the number of nodes. Additionally, you will be be given a list of edges of length n-1, where each edge, (n1,n2), is a tuple denoting an edge exists between n1 and n2. </p>\n\n<p>Write a function that given the list of edges, returns the <b>center</b> of the star graph as an integer. There will not be any performance tests, only tests for correctness, and length of the list of edges is guaranteed to be >=3 and not exceed 1000.\n</p>\n\n<h2>Example</h2>\n<p>You are given edges [(1,5),(4,5),(5,2),(3,5)]. \n<br><br>\nSince 5 is the only node to have an edge to all other nodes, it is the center of the star graph. \n<br><br>\nReturn 5.</p>\n\n",
+  "totalAttempts": 972,
+  "totalCompleted": 396,
+  "totalStars": 11,
+  "voteScore": 134,
+  "tags": [
+    "Graph Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

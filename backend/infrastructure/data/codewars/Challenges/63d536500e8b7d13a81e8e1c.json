@@ -1,0 +1,41 @@
+{
+  "id": "63d536500e8b7d13a81e8e1c",
+  "name": "Confusing binary tree traversal",
+  "slug": "confusing-binary-tree-traversal",
+  "category": "reference",
+  "publishedAt": "2023-01-28T14:55:12.467Z",
+  "approvedAt": "2023-06-22T04:10:54.037Z",
+  "languages": [
+    "coq",
+    "agda"
+  ],
+  "url": "https://www.codewars.com/kata/63d536500e8b7d13a81e8e1c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-28T14:50:56.204Z",
+  "createdBy": {
+    "username": "dramforever",
+    "url": "https://www.codewars.com/users/dramforever"
+  },
+  "approvedBy": {
+    "username": "monadius",
+    "url": "https://www.codewars.com/users/monadius"
+  },
+  "description": "A friend of mine just randomly mentioned the inverting binary tree meme again, and I just thought of an interesting way to implement it.\n\nBy changing the definition of left and right, we can do better than [Verified binary tree inversion] and invert in `$O(1)$` time!\n\nEvery non-leaf node has two children, `a` and `b`. Which one is left and which one is right depends on the context in which the node is placed:\n\n- For the root node or a left child, `a` is its left child and `b` is its right child\n- For a right child, `a` is its right child and `b` is its left child\n\n\n[Verified binary tree inversion]: https://www.codewars.com/kata/60b9d5d64e0ae80031bdd9b4\n\nFor simplicity let's say all the data are in leaf nodes. Then the tree traversal goes through all the leaves in this order: (see preloaded code for details):\n\n```coq\nFixpoint to_list {A} (t : tree A): list A :=\n  match t with\n  | leaf n => [n]\n  | branch a b => to_list a ++ to_list_rev b\n  end\n\nwith to_list_rev {A} (t : tree A): list A :=\n  match t with\n  | leaf n => [n]\n  | branch a b => to_list b ++ to_list_rev a\n  end.\n```\n```agda\nto-list : ∀ {a} {A : Set a} (t : Tree A) → List A\nto-list-rev : ∀ {a} {A : Set a} (t : Tree A) → List A\n\nto-list (leaf n) = n ∷ []\nto-list (branch a b) = to-list a ++ to-list-rev b\n\nto-list-rev (leaf n) = n ∷ []\nto-list-rev (branch a b) = to-list b ++ to-list-rev a\n```\n\nIt's now very easy to flip the binary tree. It shouldn't require recursion, and would run in `$O(1)$` time. After you flip the binary tree, the entire traversal order of *all* the leaves is reversed.\n\n```coq\nDefinition flip {A} (t : tree A) : tree A.\n\nTheorem to_list_flip : forall A (t : tree A),\n  to_list (flip t) = rev (to_list t).\n```\n```agda\nflip : ∀ {a} {A : Set a} (t : Tree A) → Tree A\nto-list-flip : ∀ {a} {A : Set a} (t : Tree A) → to-list (flip t) ≡ reverse (to-list t)\n```\n\nTo show that this weird binary tree is usable like a normal binary tree, we need two helper functions that wrap `branch` so that the left child / right child weirdness is hidden. `join` should behave like a normal non-leaf node constructor, and `split` should behave like a normal tree destructor.\n\n```coq\nDefinition join {A} (t1 t2 : tree A) : tree A.\nDefinition split {A} (t : tree A) : A + (tree A * tree A).\n\nTheorem to_list_join : forall A (t1 t2 : tree A),\n  to_list (join t1 t2) = to_list t1 ++ to_list t2.\n\nTheorem split_leaf_join : forall A (t : tree A),\n  match split t with\n  | inl n => t = leaf n\n  | inr (a, b) => t = join a b\n  end.\n```\n```agda\njoin : ∀ {a} {A : Set a} (t₁ t₂ : Tree A) → Tree A\nsplit : ∀ {a} {A : Set a} (t : Tree A) → A ⊎ (Tree A × Tree A)\n\nto-list-join : ∀ {a} {A : Set a} (t₁ t₂ : Tree A) → to-list (join t₁ t₂) ≡ to-list t₁ ++ to-list t₂\n\nsplit-leaf-join : ∀ {a} {A : Set a} (t : Tree A) →\n  [ (λ n → t ≡ leaf n) , (λ { (a , b) → t ≡ join a b }) ]′ (split t)\n```\n\nImplement the missing functions and prove their correctness theorems :)\n\n<details>\n<summary>Hint...</summary>\n\n- The names of the two mutually recursive functions, `to_list` and `to_list_rev`, tells you the relationship between them.\n\n</details>\n\n# Appendix: Preloaded code\n\n```coq\nFrom Coq Require Import List.\nImport ListNotations.\n\nInductive tree (A : Set) : Set :=\n| leaf (n : A)\n| branch (a b : tree A).\n\nArguments leaf {_} _.\nArguments branch {_} _ _.\n\nFixpoint to_list {A} (t : tree A): list A :=\n  match t with\n  | leaf n => [n]\n  | branch a b => to_list a ++ to_list_rev b\n  end\n\nwith to_list_rev {A} (t : tree A): list A :=\n  match t with\n  | leaf n => [n]\n  | branch a b => to_list b ++ to_list_rev a\n  end.\n```\n```agda\n{-# OPTIONS --safe #-}\nmodule Preloaded where\n\nopen import Data.List\n\ndata Tree {a} (A : Set a) : Set a where\n  leaf : (n : A) → Tree A\n  branch : (a b : Tree A) → Tree A\n\nto-list : ∀ {a} {A : Set a} (t : Tree A) → List A\nto-list-rev : ∀ {a} {A : Set a} (t : Tree A) → List A\n\nto-list (leaf n) = n ∷ []\nto-list (branch a b) = to-list a ++ to-list-rev b\n\nto-list-rev (leaf n) = n ∷ []\nto-list-rev (branch a b) = to-list b ++ to-list-rev a\n```\n",
+  "totalAttempts": 44,
+  "totalCompleted": 34,
+  "totalStars": 3,
+  "voteScore": 22,
+  "tags": [
+    "Theorem Proving",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

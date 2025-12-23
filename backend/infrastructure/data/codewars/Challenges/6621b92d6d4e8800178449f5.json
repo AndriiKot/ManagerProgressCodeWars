@@ -1,0 +1,44 @@
+{
+  "id": "6621b92d6d4e8800178449f5",
+  "name": "Bomb has been planted!",
+  "slug": "bomb-has-been-planted",
+  "category": "reference",
+  "publishedAt": "2024-04-19T21:02:52.865Z",
+  "approvedAt": "2024-04-21T14:20:58.381Z",
+  "languages": [
+    "python",
+    "javascript",
+    "c",
+    "coffeescript",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/6621b92d6d4e8800178449f5",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-19T00:22:05.142Z",
+  "createdBy": {
+    "username": "Umarkhan42",
+    "url": "https://www.codewars.com/users/Umarkhan42"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Based off the game Counter-Strike\n\nThe bomb has been planted and you are the last CT (Counter Terrorist) alive\n\nYou need to defuse the bomb in time!\n\n___\n\n__Task:__\n\n\n\nGiven a matrix m and an integer time representing the seconds left before the bomb detonates, determine if it is possible to defuse the bomb in time. The time limit is inclusive.\n\nIn the matrix m:\n\n\n  * \"CT\" represents the counter terrorist\n  * \"B\" represents the bomb\n  * \"K\" represents the kit\n  * \"0\" represents empty space\n  \n```if:c\nNOTE: C lang uses chars, not strings, so \"CT\" is represented as 'C'\n```\n\nThe defuse kit may or may not be present in the matrix\n\n\n\nYou can defuse the bomb in 2 ways:\n\n\n  * If you defuse the bomb without the defuse kit, it will cost 10 seconds\n  * If you defuse the bomb with the defuse kit, it will cost only 5 seconds \n\n\nEach move the CT makes in any direction costs 1 second\n\nThe CT can move diagonally, horizontally and vertically.\n\n\n**Example 1**\n\n```\ntime = 14\n\nm = \n[\n  [\"0\", \"0\", \"0\", \"0\", \"B\"],\n  [\"0\", \"0\", \"0\", \"0\", \"CT\"],\n  [\"0\", \"0\", \"0\", \"0\", \"0\"],\n  [\"0\", \"K\", \"0\", \"0\", \"0\"],\n]\n\n```\n\nreturns true\n\n**Explanation:**\n\nThe CT moves upwards and gets to the bomb with 13 seconds left\n\nThe CT defuses the bomb without a kit which costs 10 seconds\n\nThe bomb is succesfully defused\n\n__Alternative__ \n\nThe CT picks up the kit which costs 3 seconds\n\nThe CT moves to the bomb which costs 3 seconds\n\nThe CT defuses with a kit which costs 5 seconds\n\nThe bomb is succesfully defused\n\n\n**Example 2**\n\n```\ntime = 10\n\nm = \n[\n  [\"CT\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\"],\n  [ \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"B\"]\n]\n\n```\n\nreturns false\n\n**Explanation:**\n\nThere is no kit present so the CT has to defuse without it\n\nThe CT takes 7 seconds to get to the bomb but there are only 10 seconds remaining\n\nThe bomb detonates!\n\n\nGood luck!\n\n\n> Bingo bango bongo bish bash bosh.\n",
+  "totalAttempts": 4369,
+  "totalCompleted": 516,
+  "totalStars": 60,
+  "voteScore": 120,
+  "tags": [
+    "Arrays",
+    "Games"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

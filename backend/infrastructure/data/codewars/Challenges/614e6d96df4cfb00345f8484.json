@@ -1,0 +1,39 @@
+{
+  "id": "614e6d96df4cfb00345f8484",
+  "name": "Borda count",
+  "slug": "borda-count",
+  "category": "algorithms",
+  "publishedAt": "2021-09-25T01:10:41.222Z",
+  "approvedAt": "2024-09-09T18:52:56.691Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/614e6d96df4cfb00345f8484",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-09-25T00:30:14.556Z",
+  "createdBy": {
+    "username": "dogfew",
+    "url": "https://www.codewars.com/users/dogfew"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You have to choose a collective solution using the Borda method.\nAccording to this method, the voting results are expressed in terms of the number of points scored by each of the candidates. So, in an election of `n` candidates, each voter ranks all candidates strictly in descending order of preference, for the first place according to preference `n - 1` points are awarded to the candidate, `n - 2` points for the second place, etc. (for the last place - 0 points). All points scored by each candidate are summed up. Then candidates with fewer points than the arithmetic mean are removed, and the method is repeated until there are only candidates with the same results or a candidate left. \n\n[More information on Wikipedia](https://en.wikipedia.org/wiki/Borda_count)\n\n\nFor example there are 3 people with different preferences:\n```\n  Maria: \t      Alexey: \t          Vladimir:\n  \tCoffee \t       Hot Chocolate \t    Coffee\n  \tTea \t          Tea \t              Hot Chocolate\n  \tHot Chocolate \tCoffee \t           Tea\n```\n\n```\n  Drink:    Score:\n  Coffee    (2 + 2 + 0) = 4\n  Tea       (1 + 1 + 0) = 2\n  Chocolate (2 + 1 + 0) = 3\n  \n  Mean      (4 + 2 + 3) / 3 = 3 \n```\nSo we exclude tea as 2 < 3, and the preference table takes the following form:\n\n```\n  Maria           Alexey            Vladimir\n    Coffee          Hot Chocolate     Coffee\n    Hot Chocolate   Coffee            Hot Chocolate\n\n```\n\nNext:\n\n```\n  Drink:        Score:\n  Coffee        (1 + 0 + 1) = 2\n  Hot Chocolate (0 + 1 + 0) = 1\n  \n  Mean           1.5 \n```\n\nNow we exclude hot chocolate (1 < 1.5) and we are done. Our collective solution is coffee.\n\nInput (dictionary):\n\n`{'A': ['a', 'b', 'c'], 'B': ['b', 'c', 'a']}`\n\nOutput (set):\n\n`{'a', 'b'}`",
+  "totalAttempts": 491,
+  "totalCompleted": 87,
+  "totalStars": 10,
+  "voteScore": 72,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

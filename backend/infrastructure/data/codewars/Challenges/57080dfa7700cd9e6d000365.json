@@ -1,0 +1,41 @@
+{
+  "id": "57080dfa7700cd9e6d000365",
+  "name": "Sweeping trees",
+  "slug": "sweeping-trees",
+  "category": "algorithms",
+  "publishedAt": "2016-04-09T16:56:21.805Z",
+  "approvedAt": "2018-12-16T04:59:46.450Z",
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/57080dfa7700cd9e6d000365",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2016-04-08T20:00:58.915Z",
+  "createdBy": {
+    "username": "hyperion",
+    "url": "https://www.codewars.com/users/hyperion"
+  },
+  "approvedBy": {
+    "username": "cliffstamp",
+    "url": "https://www.codewars.com/users/cliffstamp"
+  },
+  "description": "You will be given a list of strings representing nodes in a [rooted tree](https://en.wikipedia.org/wiki/Tree_%28graph_theory%29#Rooted_tree). A visual representation of a very simple rooted tree could be:\n\n            +----+\n            |root|\n            ++--++\n             |  |\n        +----+  +----+\n        v            v\n    +------+      +------+\n    |node A|      |node B|\n    +------+      +------+\n\n\nIn this case, the root node has two children, nodes A and B. A more complex example would be:\n\n            +----+\n            |root|\n            ++--++\n             |  |\n        +----+  +----+\n        v            v\n    +------+      +------+\n    |node A|      |node B|\n    +--+---+      +------+\n       |\n       +-------------+\n       v             v\n    +------+      +------+\n    |Node C|      |node D|\n    +------+      +------+\n\nHere, The root has two children (nodes A and B), and node A in turn also has two children (nodes C and D). Each of these node strings contains three comma-separated values in the given order: \n\n- a unique, non-zero length, alphanumeric node id\n- the id of its parent node\n- its status, which may either be \"valid\" or \"invalid\"\n\nThe root node of a tree always has an empty string as its parent id. The simple example from above would be represented by the following list (assuming all nodes have the status \"valid\"):\n\n    [\"root,,valid\", \"node A,root,valid\", \"node B,root,valid\"]\n\nThe more complex example would result in the list\n\n    [\"root,,valid\", \"node A,root,invalid\", \"node B,root,valid\", \"node C,node A,valid\", \"node D,node A,valid\"]\n    \nThis example assumes that all nodes apart from A have the status \"valid\".\n\n## Task\n\nThe goal of this kata is to remove the subtrees of all invalid nodes from the tree and return the **set of ids** of the remaining tree nodes.\n\n- An invalid node is one whose status equals \"invalid\". \n- \"Removing the subtree\" indicates that you should both remove the invalid nodes as well as all of their descendants (i.e. their children, the children of their children and so on). \n\nThe expected result set for the more complex example would hence contain the following strings in arbitrary order:\n\n    [\"root\", \"node B\"]\n\n## Notes\n\nThe list always represents a valid tree. This means that\n\n- there is only one root node in the list\n- the parent id of each node will correspond to the id of another node in the list (apart from the root node, of course, whose parent id is an empty string)\n- there are no cycles in the tree\n\nThe nodes in the list may be in any order, irrespectively of their parent/child relations.\n\nThe lists may contain a large number of nodes. If any test fails because of a timeout, this likely means that while your solution is formally correct, it is too inefficient.",
+  "totalAttempts": 1132,
+  "totalCompleted": 78,
+  "totalStars": 17,
+  "voteScore": 29,
+  "tags": [
+    "Trees",
+    "Algorithms",
+    "Graph Theory"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 1
+  }
+}

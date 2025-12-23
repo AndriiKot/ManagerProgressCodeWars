@@ -1,0 +1,37 @@
+{
+  "id": "572d098b8d04d28ae6000896",
+  "name": "Numbble",
+  "slug": "numbble",
+  "category": "reference",
+  "publishedAt": "2016-06-07T20:09:34.893Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/572d098b8d04d28ae6000896",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-05-06T21:15:55.975Z",
+  "createdBy": {
+    "username": "devtheory",
+    "url": "https://www.codewars.com/users/devtheory"
+  },
+  "description": "### Numbble\n\nFor this challenge, you will model a game called Numbble. In Numbble, two players begin each with a **Hand** containing 5 **Tile** objects which are shaped like a square. Each of the 4 sides of each tile contains a number from 1 to 9. The game begins with an empty **Board**. **Player** one makes the first move by removing one tile from his/her hand and placing it on the board. After the first move, player 2 gets to insert a tile if any of these conditions is met by any of the tiles in the player's hand:\n\n* the number on the left side of the tile matches the number on the right side of a tile on the board\n* the number on the right side of the tile matches the number on the left side of a tile on the board\n* if inserting a tile between two tiles, the sides must match according to the conditions above\n\nTurn concludes after both players attempt a move. Tiles in the player's hand can be rotated clockwise to help find a match. However, once on the board, they must remain in the position they were inserted into the board. If no move is possible with the current tiles in the player's hand, the player must draw a new tile and add it to their hand and the other player gets to make a move. The game is over when any player manages to place their last tile on the board and wins. If both players happen to have empty hands at the end of a turn, it's a tie.\n\nTo meet these requirements, you'll need a few classes:\n\n#### The **Player** class\n\nThe Player class will model a player. It will have an attribute called **name** which represents the name of the player and an attribute called **hand** which will be a member of the Hand class. It will also have an instance method called **draw_tile** which generates a random tile and adds it to the player's hand.\n\n#### The **Hand** class\n\nThe Hand class will model a player's hand. It will have an attribute called **tiles** which will be a member of the Array class and will represent a collection of Tile objects. It will also have a utility method called **get_initial_hand** which is called by the Hand constructor. It will call the Tile class and initialize 5 Tile objects and add them to the **tiles** collection.\n\n#### The **Tile** class\n\nThe Tile class will model a tile. It will have an attribute called **sides** which will be a member of the Array class. Each tile will initialize with 4 randomly chosen integers ranging from 1-9.\n\n* element at index 0 will be the **left** side of the tile\n* element at index 1 will be the **top** side of the tile\n* element at index 2 will be the **right** side of the tile\n* element at index 3 will be the **bottom** side of the tile\n\nWrite setter and getter methods for the Tile class that will return/set the value at each side of the tile as described above. Setter methods must be called **set_left, set_top, set_right, and set_bottom** and getter methods **get_left, get_top, get_right, and get_bottom**. The Tile class will also have an instance method called **rotate** which will rotate the tile clockwise. That means that the element at index of 0 will now be at index 1 and so on (last element will now be the first element upon rotation).\n\n#### The **Board** class\n\nThe Board class will represent the board in the game. It will have an attribute called **tiles** which will be a member of the Array class and will represent a collection of all the Tile objects placed on the board. It will have the following instance methods:\n\n* `can_insert_tile?` - which will take a parameter that represents a tile. It will rotate the tile and see if the tile can be inserted at a particular index on the board by calling get_index_for_fit. It returns true if it can be inserted, false if it cannot be inserted into the board.\n* `get_index_for_fit` - which will take a parameter that represents a current tile. It will iterate over all tiles on the board and check if the current tile can fit at that particular index. If a fit is found, it returns the index at which the tile should be inserted. The cuIg rent tile cannot be inserted anywhere on the board, it returns -1.\n\n* `insert_tile` - which will take a parameter that represents a tile. It will attempt to insert the tile passed in, rotating it as necessary and calling get_index_for_fit to see if the current position works.\n\n* `next_turn` - which will take two parameters that represent the players currently playing. It iterates over the hands of both players adding tiles to the board and removing them from the player's hand as needed.\n\n#### The **Game** class\n\nThe Game class will represent an actual game. It will have an attribute called **board** which will be a member of the Board class. It will also have attributes called **player_one** initialized with the name \"Player One\" and **player_two** initialized with the name \"Player Two\", both objects of the Player class. It will have the following instance methods:\n\n* `start_game` - which will call the board's next_turn method until one or both player hands are empty.\n* `end_game` - which will be called by start_game once the game needs to end. It will return whichever of these applies: **\"Player One Wins!\", \"Player Two Wins!\", \"It's a tie!\"**",
+  "totalAttempts": 38,
+  "totalCompleted": 6,
+  "totalStars": 0,
+  "voteScore": 1,
+  "tags": [
+    "Arrays",
+    "Object-oriented Programming",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

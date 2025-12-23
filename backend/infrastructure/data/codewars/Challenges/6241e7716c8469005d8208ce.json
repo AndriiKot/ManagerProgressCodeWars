@@ -1,0 +1,39 @@
+{
+  "id": "6241e7716c8469005d8208ce",
+  "name": "Church Numerals - Prefix is Overrated",
+  "slug": "church-numerals-prefix-is-overrated",
+  "category": "algorithms",
+  "publishedAt": "2022-03-28T17:15:57.893Z",
+  "approvedAt": "2022-03-31T06:10:13.871Z",
+  "languages": [
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/6241e7716c8469005d8208ce",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2022-03-28T16:50:57.895Z",
+  "createdBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "In lambda calculus, the only primitive are lambdas. No booleans, no strings, and of course no numbers. Everything is reduced to anonymous functions.\n\nChurch numbers are defined thusly:\n\n```lambdacalc\n0 = \\ f x . x\n1 = \\ f x . f x\n2 = \\ f x . f (f x)\n3 = \\ f x . f (f (f x))\nand so on ..\n```\n\nYour task will be to implement basic operators on numbers ( using only lambdas and function application ) : `add`, `mul`, and `sub`.\n\n## <span style=\"color:magenta\">However!</span>\n\nYour combinators will <span style=\"color:magenta\">not</span> be applied in <span style=\"color:magenta\">prefix</span> position, but in <span style=\"color:magenta\">infix</span> position instead.  \nTo make this at all possible, they will consist of single letters, like this:\n\n```lambdacalc\n2  a d d  3 -> 5\n2  m u l  3 -> 6\n2  s u b  3 -> 0  # subtractions that would normally result in negative values should return 0\n3  s u b  2 -> 1\n```\n\nActual testing will be extensional; the resulting function should behave correctly as a Church number, but need not be built strictly to the above definition.  \nYes, you can only define <span style=\"color:magenta\">one</span> `u`.\n\n## <span style=\"color:green\">For Bonus Points and Bragging Rights</span>\n\n`pow` is missing!\n\nIf you can make `pow` work, please publish a fork with the additional testing and earn Eternal Bragging Rights ( or at least until Christmas ). Both `0^0 = 1` and `0^0 = 0` are acceptable.",
+  "totalAttempts": 22,
+  "totalCompleted": 9,
+  "totalStars": 8,
+  "voteScore": 19,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

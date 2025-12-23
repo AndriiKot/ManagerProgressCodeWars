@@ -1,0 +1,41 @@
+{
+  "id": "63b9e30e29ba4400317a9ede",
+  "name": "Broken 7-segment display - dead segment [code golf]",
+  "slug": "broken-7-segment-display-dead-segment-code-golf",
+  "category": "reference",
+  "publishedAt": "2023-01-29T15:40:06.884Z",
+  "approvedAt": "2024-03-17T13:51:24.946Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63b9e30e29ba4400317a9ede",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-07T21:24:30.893Z",
+  "createdBy": {
+    "username": "mauro-1",
+    "url": "https://www.codewars.com/users/mauro-1"
+  },
+  "approvedBy": {
+    "username": "lachesism",
+    "url": "https://www.codewars.com/users/lachesism"
+  },
+  "description": "## <span style=\"color:#0ae\">Task</span>\n\nThere is a single-digit [seven segment display](https://en.wikipedia.org/wiki/Seven-segment_display). The display has a problem: there is exactly one dead segment. The dead segment is either always on or always off (we don't know in advance the type of defect).\n\nThe display can either be completely blank or show numbers from 0 to 9 (inclusive).\n\n```\nHow numbers appear on the display:\n  _         _    _         _    _    _    _    _\n | |    |   _|   _|  |_|  |_   |_     |  |_|  |_|\n |_|    |  |_    _|    |   _|  |_|    |  |_|   _|\n```\n\nGiven some numbers/blanks shown on display, try to determine the dead segment.\n\nNote: **all numbers look good on display**, but we know that there is a dead segment.\n\n#### <span style=\"color:#0ae\">Segment names</span>\n\n<svg width=\"142\" height=\"212\">\n  <rect x=\"40\" y=\"16\" width=\"62\" height=\"20\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"106\" y=\"26\" width=\"20\" height=\"77\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"106\" y=\"109\" width=\"20\" height=\"77\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"40\" y=\"176\" width=\"62\" height=\"20\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"16\" y=\"109\" width=\"20\" height=\"77\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"16\" y=\"26\" width=\"20\" height=\"77\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <rect x=\"40\" y=\"96\" width=\"62\" height=\"20\" style=\"fill:rgb(192,192,192);stroke-width:1\" />\n  <text x=\"66\" y=\"33\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">a</text>\n  <text x=\"110\" y=\"72\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">b</text>\n  <text x=\"110\" y=\"155\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">c</text>\n  <text x=\"66\" y=\"194\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">d</text>\n  <text x=\"20\" y=\"155\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">e</text>\n  <text x=\"22\" y=\"72\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"9\" lengthAdjust=\"spacingAndGlyphs\">f</text>\n  <text x=\"66\" y=\"111\" fill=\"rgb(112,0,0)\" font-size=\"20px\" font-weight=\"bold\" textLength=\"13\" lengthAdjust=\"spacingAndGlyphs\">g</text>\n</svg>\n\n## <span style=\"color:#0ae\">Restrictions</span>\n\nYour code should not be longer than **107 bytes**.\n\n## <span style=\"color:#0ae\">Input</span>\n\n##### <span style=\"color:#0ae\">⬬</span> `d` *[list of strings]*\n\nEach element of the list is a 11-chars string that represents a number shown on display. Format: (3 rows, 3 chars per row) ` a ` `fgb` `edc` (the 1st and 3rd chars of the first row are always spaces). Each segment is represented by a char:\n- off: space (`' '`)\n- on: `'_'` (a,d,g) or `'|'` (b,c,e,f)\n\nExamples:\n```python\n8: ' _ \\n|_|\\n|_|'\n```\\\n _ \n|_|\n|_|'''\n```\n```python\n4: '   \\n|_|\\n  |'\n```\\\n   \n|_|\n  |'''\n```\n\nAll inputs are valid; there is always at least one string.\n\n## <span style=\"color:#0ae\">Output</span>\n\n- *[string]* or `None`\n\nIf the dead segment can be determined:\n- the name of dead segment (e.g. `'a'`, `'c'`);\n\notherwise:\n- `None`\n\n\n## <span style=\"color:#0ae\">Examples</span>\n```\n   \n |_|\n   |\n```\nInput: `[' _ \\n| |\\n|_|']`  \nOutput `None`  (only one number, it can be any segment...)\n\n\n```\n\n   |\n   |\n  _ \n |_\n |_|\n```\nInput: `['   \\n  |\\n  |', ' _ \\n|_ \\n|_|']`  \nOutput: `'c'`  (now we know which segment is dead)\n\n\n```\n  _\n  _|\n  _|\n\n(blank)\n\n  _ \n  _|\n |_\n```\nInput: `[' _ \\n _|\\n _|', '   \\n   \\n   ', ' _ \\n _|\\n|_ ']`  \nOutput: `'f'` (the dead segment can also be off)\n",
+  "totalAttempts": 150,
+  "totalCompleted": 21,
+  "totalStars": 7,
+  "voteScore": 21,
+  "tags": [
+    "Logic",
+    "Fundamentals",
+    "Restricted"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

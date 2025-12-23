@@ -1,0 +1,39 @@
+{
+  "id": "6255e6f2c53cc9001e5ef629",
+  "name": "Wordle! Cheat bot",
+  "slug": "wordle-cheat-bot",
+  "category": "games",
+  "publishedAt": "2022-04-12T21:02:05.687Z",
+  "approvedAt": "2022-04-28T08:15:05.424Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6255e6f2c53cc9001e5ef629",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-12T20:54:10.880Z",
+  "createdBy": {
+    "username": "boyanci",
+    "url": "https://www.codewars.com/users/boyanci"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "Wordle is a game where you try to guess a 5-letter word. https://www.nytimes.com/games/wordle/index.html\n\nAfter each guess, the color of the tiles (letters) will change to show how close your guess was to the word.\n\n- Green (G) letter: This letter is in the correct position\n- Yellow (Y) letter: This letter is present in the word, but in the wrong position\n- Grey (-) letter: This letter is not in the word, except when the special rule applies (see below)\n\n---------\nFor this kata, instead of playing the game like an honest person, you are to write a cheat-bot that filters down the set of words (**wordlist**) using a list of **guesses** and their respective feedbacks. For example, if you were provided this wordlist and feedbacks:\n```python\n{\"SHEEP\", \"KINKY\", \"SWEET\", \"MAUVE\", \"FLUNG\", \"SKEET\", ... }  # wordlist\n[(\"SPOIL\", \"G----\"), (\"STEAD\", \"GYG--\"), (\"SEETH\", \"GYGY-\")]  # guesses\n```\nYour output should be the set of remaining words, each satisfying all the hints in **guesses**:\n```python\n{'SWEET', 'SKEET'}   # <- your output\n```\n\n\nAnd because you are special, this kata will not be restricted to 5-letter words!! The word length for each test case, however, would be consistent with the guesses. If the test case asks for a 9-letter word, all guesses in the hints would be of length 9. Make sure you can handle some big words!\n\n\n\n!! There are special rules when the same character appears multiple times in the guesses and/or the solution. After assigning greens to all applicable tiles, any remaining guessed characters will be assigned yellow until no matching character is left in the solution, the rest will be assigned grey. For example, if the solution is \"ATARI\", and the guess is \"ABBAA\", the hint would be \"G--Y-\"",
+  "totalAttempts": 2681,
+  "totalCompleted": 81,
+  "totalStars": 45,
+  "voteScore": 41,
+  "tags": [
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 2
+  }
+}

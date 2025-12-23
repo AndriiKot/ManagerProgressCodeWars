@@ -1,0 +1,38 @@
+{
+  "id": "5713d18ec82eff7766000bb2",
+  "name": "Dobble",
+  "slug": "dobble",
+  "category": "games",
+  "publishedAt": "2016-04-17T22:58:10.176Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5713d18ec82eff7766000bb2",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2016-04-17T18:10:22.716Z",
+  "createdBy": {
+    "username": "zellerede",
+    "url": "https://www.codewars.com/users/zellerede"
+  },
+  "description": "Do you know the game *Dobble*?\n\nIt is a game with 55 cards, with 8 different pictures on each card, such that every two cards have **exactly one** picture in common. The total amount of different pictures is 57.\n\nFor this kata, the pictures are represented by numbers `1,2,...,57`.\n\nYour task is to produce a possible Dobble card set `dobble`, i.e. a set/array of at least 55 pieces of 8-tuples `(a0,a1,a2,...,a7)` where `1 <= a0<a1<a2<...<a7 <= 57`, which satisfy the above criterium.\n\n<h2>Example</h2>\n\nIf `a = (1,2,3,4,5,6,7,8)` and `b = (8,9,10,11,12,13,14,15)` are two cards in the card set, then neither `u = (15,16,17,18,19,20,21,22)` nor `v = (1,9,15,16,17,18,19,20)` can appear in the card set, because `u` doesn't meet `a` in any common picture whereas `v` meets `b` in *two* common pictures: `9` and `15`.\n\nAt the same time, `c = (1,9,16,17,18,19,20,21)` fits together with `a` and `b` in the card set.\n\n\n---------------------\n\n<h3>*Hint:*</h3>\n\nBesides pure combinatorics, one can generate a dobble card set using some finite geometry.\n\nThe observation is that points and lines behave similarly as the dobble card set, in that every two points determine a unique line.\n\nSo, let dobble cards correspond to points and the pictures to lines.\n\nThe finite plane over the integers modulo 7 consists of 49 points. We can work with two integer coordinates  modulo 7 to represent a point or vector here. Moreover, any line can be written as `[P + i*d for i in range(7)]` with given starting point `P` and direction vector `d`.\n\nSo, each line has 7 points here, and by counting the direction vectors, we find that each point lies on exactly 8 lines, which will in turn imply that altogether the plane has 56 lines.\n\nThe missing 57th 'line' and some other 'points' are waiting for you to get discovered.\n\n<h4>*Hint on the hint:*</h4>\n\nTry to work out a smaller example, say modulo 3, to find and count all the appearing directions and lines in the corresponding finite plane of 9 points.\n\n",
+  "totalAttempts": 61,
+  "totalCompleted": 20,
+  "totalStars": 17,
+  "voteScore": 12,
+  "tags": [
+    "Games",
+    "Combinatorics",
+    "Mathematics",
+    "Puzzles"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

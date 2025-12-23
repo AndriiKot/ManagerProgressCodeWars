@@ -1,0 +1,39 @@
+{
+  "id": "64b41e2b1cefd82a951a3031",
+  "name": "Repeat a string / tuple (TS type)",
+  "slug": "repeat-a-string-slash-tuple-ts-type",
+  "category": "reference",
+  "publishedAt": "2023-07-17T16:59:52.110Z",
+  "approvedAt": "2024-08-29T07:32:12.235Z",
+  "languages": [
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/64b41e2b1cefd82a951a3031",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-16T16:43:23.539Z",
+  "createdBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Task\nCreate a type `Repeat` that will receive a string / tuple `T` and a number `R` (`Repeat<T, R extends number>`). The type should give the repetition of items in `T`, `R` times. The given type must be in the same type as `T` (meaning that if `T` is string, then `Repeat<T, R>` should give a string, and a tuple if `T` is tuple).\n\n## Examples\n```typescript\ntype A = Repeat<\"a\", 7>;\n// A should have type \"aaaaaaa\"\n\ntype B = Repeat<\"abc\", 5>;\n// B should have type \"abcabcabcabcabc\"\n\ntype C = Repeat<[\"this\", \"is\", \"a\", \"tuple\"], 3>;\n// C should have type [\"this\", \"is\", \"a\", \"tuple\", \"this\", \"is\", \"a\", \"tuple\", \"this\", \"is\", \"a\", \"tuple\"]\n\ntype D = Repeat<\"\", 123>;\n// D should have type \"\"\n\ntype E = Repeat<[], 123>;\n// E should have type []\n\ntype F = Repeat<[\"mixed\", 1, \"type\", 2], 2>;\n// F should have type [\"mixed\", 1, \"type\", 2, \"mixed\", 1, \"type\", 2]\n```\n\nGood luck!\n",
+  "totalAttempts": 167,
+  "totalCompleted": 18,
+  "totalStars": 8,
+  "voteScore": 20,
+  "tags": [
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

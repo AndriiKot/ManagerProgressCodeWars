@@ -1,0 +1,35 @@
+{
+  "id": "63c86be37c090b001d422031",
+  "name": "Government Percentage",
+  "slug": "government-percentage",
+  "category": "reference",
+  "publishedAt": "2023-01-18T22:00:28.326Z",
+  "approvedAt": null,
+  "languages": [
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/63c86be37c090b001d422031",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-18T22:00:03.823Z",
+  "createdBy": {
+    "username": "BatCountry",
+    "url": "https://www.codewars.com/users/BatCountry"
+  },
+  "description": "# Government Percentage\n\nA governmental agency recently released the source code for one of their official apps.\n\nOne of the functions is intended to return the text content of an indicator bar consisting of ten \"rounds,\" filled or empty, to reflect a percentage value.\n\nHere was their implementation:\n\n```C#\nprivate static string GetPercentageRounds(double percentage)\n{\n    if (percentage == 0)\n        return \"⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪\";\n    if (percentage > 0.0 && percentage <= 0.1)\n        return \"🔵⚪⚪⚪⚪⚪⚪⚪⚪⚪\";\n    if (percentage > 0.1 && percentage <= 0.2)\n        return \"🔵🔵⚪⚪⚪⚪⚪⚪⚪⚪\";\n    if (percentage > 0.2 && percentage <= 0.3)\n        return \"🔵🔵🔵⚪⚪⚪⚪⚪⚪⚪\";\n    if (percentage > 0.3 && percentage <= 0.4)\n        return \"🔵🔵🔵🔵⚪⚪⚪⚪⚪⚪\";\n    if (percentage > 0.4 && percentage <= 0.5)\n        return \"🔵🔵🔵🔵🔵⚪⚪⚪⚪⚪\";\n    if (percentage > 0.5 && percentage <= 0.6)\n        return \"🔵🔵🔵🔵🔵🔵⚪⚪⚪⚪\";\n    if (percentage > 0.6 && percentage <= 0.7)\n        return \"🔵🔵🔵🔵🔵🔵🔵⚪⚪⚪\";\n    if (percentage > 0.7 && percentage <= 0.8)\n        return \"🔵🔵🔵🔵🔵🔵🔵🔵⚪⚪\";\n    if (percentage > 0.8 && percentage <= 0.9)\n        return \"🔵🔵🔵🔵🔵🔵🔵🔵🔵⚪\";\n\n    return \"🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵\";\n}\n```\n\nBecause you are a beginning programmer, you can do better!\n\nFirst, fix the defect where a percentage is returned as 10% higher than it is. Then refactor or reimplement this function into the fewest lines you can. Bonus style for not including the emoji in the source.\n\n## What fixed looks like:\n\n```\n<  10% should produce \"⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪\"\n>= 10% should produce \"🔵⚪⚪⚪⚪⚪⚪⚪⚪⚪\"\n>= 90% should produce \"🔵🔵🔵🔵🔵🔵🔵🔵🔵⚪\"\n  100% should produce \"🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵\"\n```\n\nValues less than 0 should be treated as zero, and values greater than 100 should be treated as 100.\n\nWatch out how you count: 🔵 is longer than ⚪ - the blue-filled circle is 4 bytes, whereas the white empty circle is 3 bytes.",
+  "totalAttempts": 84,
+  "totalCompleted": 7,
+  "totalStars": 0,
+  "voteScore": -4,
+  "tags": [
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

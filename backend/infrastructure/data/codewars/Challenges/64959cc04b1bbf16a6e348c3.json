@@ -1,0 +1,36 @@
+{
+  "id": "64959cc04b1bbf16a6e348c3",
+  "name": "Mini Pokemon",
+  "slug": "mini-pokemon",
+  "category": "reference",
+  "publishedAt": "2023-06-23T13:27:56.519Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64959cc04b1bbf16a6e348c3",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-23T13:23:12.835Z",
+  "createdBy": {
+    "username": "Nika.dev",
+    "url": "https://www.codewars.com/users/Nika.dev"
+  },
+  "description": "*In this Task you will be looking at a minimal implementation of the game Pokemon.*\n\n**Goal:**      \nWe want to calculate the optimal move to use given an attacking pokemon,\nand a defending pokemon.\n_____________\n\n**Description:**      \nA pokemon has a list of moves it can use.     \nPokemon and moves posess types.     \nSome types are more effective against other types.      \n\nA *fire-attack* against a *grass-pokemon* is effective.     \nA *water-attack* against a *grass-pokemon* is ineffective.     \nA complete effectiveness description is further below.     \n\nEach pokemon can learn a vareity of moves.     \nThe goal of this exercise is to find the best move to use against an oponent.\n_____________\n\n**Task:**\n\nComplete the function `get_move()` so that the resulting Move is the best move\nagainst the given oponent.    \nIf two moves are equally good, use the one with the lower `moves` list index.\n\n\n**Effectiveness:**\n```\nWater beats Fire\nFire  beats Grass\nGrass beats Water\n\nWater is neutral on Water\nFire  is neutral on Fire\nGrass is neutral on Grass\n\nWater is weak against Grass\nGrass is weak against Fire\nFire  is weak against Water\n```\n\n**Classes Available:**    \n```python\nclass Element(StrEnum):\n    GRASS\n    FIRE\n    WATER\n\nclass Move:\n    name: str\n    element: Element\n    \nclass Pokemon:\n    element: Element\n    moves: list[Move]\n```",
+  "totalAttempts": 115,
+  "totalCompleted": 9,
+  "totalStars": 1,
+  "voteScore": 1,
+  "tags": [
+    "Artificial Intelligence",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

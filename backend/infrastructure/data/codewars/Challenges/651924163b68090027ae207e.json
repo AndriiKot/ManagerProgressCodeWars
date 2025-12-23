@@ -1,0 +1,40 @@
+{
+  "id": "651924163b68090027ae207e",
+  "name": "Factoradic class",
+  "slug": "factoradic-class",
+  "category": "games",
+  "publishedAt": "2023-10-01T07:48:55.040Z",
+  "approvedAt": "2024-11-08T07:01:15.251Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/651924163b68090027ae207e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-10-01T07:47:34.285Z",
+  "createdBy": {
+    "username": "catechni",
+    "url": "https://www.codewars.com/users/catechni"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Factoradic class\n\nPre-reading:\n\nhttps://xkcd.com/2835\n\nDevelop a Factoradic class which allows you to create and use both positive and negative factoradic integers.\n\nA factoradic number has a variable base.  The least significant digit is in base 2 and each more significant digit increases the base by 1.\nUnlike the linked comic, we won't limit ourselves to 9 digit numbers, but continue in base 11-36 with the letters A to Z.\n\n```\nBase 10 Factoradic   |   Base 10 Factoradic   |   Base 10 Factoradic\n      1          1   |        21        311   |      5038     654320\n      2         10   |        22        320   |      5039     654321\n      3         11   |        23        321   |      5040    1000000\n      4         20   |        24       1000   |\n      5         21   |        25       1001   |    999998  266251210\n      6        100   |                        |    999999  266251211\n      7        101   |       119       4321   |   1000000  266251220\n      8        110   |       120      10000   |   1000001  266251221\n```\n\nYour class must be able to:\n- cast factoradic numbers from base 10 integers, e.g. ```foo=Factoradic(125)```\n- cast Factoradic numbers from factoradic strings, e.g. ```bar=Factoradic('1001')```\n- be cast to int, e.g. ```print(int(bar)) # 25```\n- be cast to str, e.g. ```print(str(foo))`` # 10021```\n- do simple addittion, e.g. ```print(foo + bar) # 11100```\n- do simple subtraction, e.g. ```print(foo - bar) # 4020```\n- do simple multiplication, e.g. ```print(foo * bar) # 420021```\n- do simple floor division, e.g. ```print(foo // bar) # 21```\n- do negation, e.g. ```print(-bar) # -1001```\n- do simple equality ```print(foo==bar*Factoradic(5)) # True```\n- do simple comparisons ```print(foo>bar) # True```\n\n",
+  "totalAttempts": 255,
+  "totalCompleted": 33,
+  "totalStars": 6,
+  "voteScore": 36,
+  "tags": [
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

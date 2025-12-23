@@ -25,6 +25,7 @@
     "username": "dfhwze",
     "url": "https://www.codewars.com/users/dfhwze"
   },
+  "description": "# Concept\n\nWhat if a number could be expressed not in a single base, but with each digit having its own base? Let's explore this thought experiment with an example:\n```\nbase 232: number:\n     000   0\n     001   1\n     010   2\n     011   3\n     020   4\n     021   5\n     100   6\n     101   7\n     110   8\n        ...\n```\nIn this example, the base system is designed such that every odd-positioned digit (from the right) has a base of 3, and every even-positioned digit has a base of 2.\n\n## Task 1\n\nWrite a function called `to_multi_base` that returns a string representing a number in this multi-base system. The function takes an integer `n` and a function `base(k)`, which determines the base of the k-th digit (counting from right to left). The multi-base representation of the number should be returned as a string, where each digit is written in base 10, followed by its base in Unicode subscripts (e.g., `'₀₁₂₃₄₅₆₇₈₉'`). For example, the number `5` (in decimal) in a multi-base system where the first three digits follow the bases 232 would be represented as `2₃1₂`.\n\n## Task 2\n\nWrite a function called `from_multi_base` that converts a multi-base representation back into its integer form.\n\n## Note\n\nAll base functions are chosen to only return values greater than or equal to 2.\n",
   "totalAttempts": 565,
   "totalCompleted": 72,
   "totalStars": 17,

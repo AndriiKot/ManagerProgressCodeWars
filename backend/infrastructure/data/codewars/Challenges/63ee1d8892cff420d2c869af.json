@@ -1,0 +1,40 @@
+{
+  "id": "63ee1d8892cff420d2c869af",
+  "name": "D'Hondt method",
+  "slug": "dhondt-method",
+  "category": "algorithms",
+  "publishedAt": "2023-02-16T12:12:58.142Z",
+  "approvedAt": "2023-04-15T15:23:13.896Z",
+  "languages": [
+    "java",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63ee1d8892cff420d2c869af",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-02-16T12:11:52.488Z",
+  "createdBy": {
+    "username": "david.pb",
+    "url": "https://www.codewars.com/users/david.pb"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## intro\nThe D'Hondt method, also called the Jefferson method or the greatest divisors method, is a method for allocating seats in parliaments among federal states, or in party-list proportional representation systems.\n\nIt belongs to the class of highest-averages methods.\n\nYou can read more about that [here](https://en.wikipedia.org/wiki/D%27Hondt_method)\n\n## task\n\nYour task is, given a number of seats for allocate and a list with the number of votes of each party, return a list with the number of seats of each of them has won.\n\nEfficiency is relevant, only solutions with a single iteration on the vote list are supported.\n\n## quick explanation\n\nThe method consists of allocating a determined number of points to a list of values by no directly proportional.\n\nIf you have to distribute n points you must divide all the initials values into the values in the interval [1,n] both inclusive.\n\nThen you must choose the n greater results previously calculated and give one point to the source value that provides it.\n\nIn case of tie, the choosen result must be the one that comes from a minor divisor (that has been done before). The second tiebreaker must be the one that comes from the leftmost element.\n\n## example\n\nFor example, if you want to distribute 8 points into values [100000,80000,30000,20000] first divide each value by 1,2,3,4,5,6,7,8:\n\n* A (100000) - > 100000, 50000, 33333, 25000, 20000, 16666, 14285, 12500\n* B (80000)  - > 80000,  40000, 26666, 20000, 16000, 13333, 11428, 10000\n* C (30000)  - > 30000,  15000, 10000,  7500,  6000,  5000,  4285,  3750\n* D (20000)  - > 20000,  10000,  6666,  5000,  4000,  3333,  2857,  2500\n\nNow, you must select the 8 highest values\n\n* A (100000) - > **_100000_**, **_50000_**, **_33333_**, **_25000_**, 20000, 16666, 14285, 12500\n* B (80000)  - > **_80000_**,  **_40000_**, **_26666_**, 20000, 16000, 13333, 11428, 10000\n* C (30000)  - > **_30000_**,  15000, 10000,  7500,  6000,  5000,  4285,  3750\n* D (20000)  - > 20000,  10000,  6666,  5000,  4000,  3333,  2857,  2500\n\nWe selected 10000 (A), 80000 (B), 50000 (A),40000 (B), 33333 (A), 30000 (C) 26666 (B) and 25000 (A) as solution.\n\nThe result is [4,3,1,0]",
+  "totalAttempts": 651,
+  "totalCompleted": 94,
+  "totalStars": 9,
+  "voteScore": 28,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "65a15dfa19e7330bf2215c7a",
+  "name": "Apply parentheses to binary operation",
+  "slug": "apply-parentheses-to-binary-operation",
+  "category": "reference",
+  "publishedAt": "2024-01-16T12:29:47.039Z",
+  "approvedAt": null,
+  "languages": [
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/65a15dfa19e7330bf2215c7a",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-01-12T15:42:50.496Z",
+  "createdBy": {
+    "username": "zellerede",
+    "url": "https://www.codewars.com/users/zellerede"
+  },
+  "description": "Your task is to\n1. define an abstract data type `Parentheses` that represents possible placements of parentheses when applied to a single binary operation\n\n2. implement `toStr` and `repr` translater methods for the type `Parentheses`\n```haskell\ntoStr :: Parentheses -> String\nrepr :: String -> Maybe Parentheses\n```\nso that the empty string `\"\"` corresponds to the 'varibale' of the parenthesis expression, `\"(,)\"` corresponds to applying the binary operation on two variables.\nSo, when applying the `Parentheses` instance corresponding to `\"(,)\"` on an operation `f :: a -> a -> a` and values `[x,y] :: [a]`, we should get `f x y`.\n\nFurther, applying `\"((,),)\"` on `f` and values `[x,y,z]` should correspond to `f (f x y) z`, and so on...\n\nThe following strings represent valid parentheses\n```haskell\n\"\",   \"((,),)\",  \"(,((,),))\", \"((((,(,)),(,(,))),(,)),)\"\n```\nwhile these are invalid for this kata:\n```haskell\n\"x\",  \"(x,x)\",  \"),(\",  \"()\",  \"(,,)\",   \",)\",  \"((,)(,))\"\n```\n\n3. implement an `apply` function that, given a pattern of parentheses, a binary operation and an input list of values, it evaluates the given parentheses pattern, substituting the next value from the list for each variable occurance, as in the examples above.\nIf the list contains too few or too many values, simply return `Nothing`.\n\nSo, `apply` should have type\n```haskell\n    apply :: Parentheses -> (a -> a -> a) -> [a] -> Maybe a\n```\n\nand should satisfy\n```haskell\n    rep = fromJust . repr\n    apply (rep \"((,),(,(,)))\") (-) [10,6,5,4,1]   == Just ((10-6) - (5 - (4-1)))\n    apply (rep \"((,),(,(,)))\") (-) [10,6,5,4]     == Nothing\n    apply (rep \"((,),(,(,)))\") (-) [10,6,5,4,1,0] == Nothing\n```\n",
+  "totalAttempts": 44,
+  "totalCompleted": 11,
+  "totalStars": 1,
+  "voteScore": 36,
+  "tags": [
+    "Combinatorics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

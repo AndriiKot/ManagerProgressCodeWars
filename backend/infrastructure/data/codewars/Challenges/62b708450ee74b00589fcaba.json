@@ -1,0 +1,42 @@
+{
+  "id": "62b708450ee74b00589fcaba",
+  "name": "Randonneuring control calculator",
+  "slug": "randonneuring-control-calculator",
+  "category": "reference",
+  "publishedAt": "2022-06-25T13:06:51.898Z",
+  "approvedAt": "2023-07-21T10:54:30.293Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/62b708450ee74b00589fcaba",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-06-25T13:06:13.778Z",
+  "createdBy": {
+    "username": "avermakov",
+    "url": "https://www.codewars.com/users/avermakov"
+  },
+  "approvedBy": {
+    "username": "goldenratio161",
+    "url": "https://www.codewars.com/users/goldenratio161"
+  },
+  "description": "> __Randonneuring__ (also known as Audax in the UK, Australia and Brazil) is a long-distance cycling sport with its origins in audax cycling. In randonneuring, riders attempt courses of 200 km or more, passing through predetermined \"__controls__\" (checkpoints) every few tens of kilometres. Riders aim to complete the course within specified time limits, and receive equal recognition regardless of their finishing order. \n--Wikipedia\n\nEach __control__ is open during a limited time. This time is defined by start time and control location. For example, riders starting at `07:00` must appear at `250` km control between `14:27` and `23:40` on the same date.\n\nYour task is to make two functions calculating control open and control close times.\n\n__Control open__ \ntime is the time after which the fastest riders are expected to arrive at __control__. It's calculated through the maximum expected average speed: \n- `34` km/h over the initial `200` km\n- `32` km/h over km `200` - `400`\n- `30` km/h over km `400` - `600`\n- `28` km/h over km `600` - `1000`\n- `26` km/h over km `1000` - `1200`\n- `25` km/h over km `1200` - `1800`\n- `24` km/h over km `1800` - `2000`.\n\nFor example, riders starting at `07:00` are expected to appear at `250` km control after `14:27`. Let's see how we got that number:\n- take start time `07:00` \n- add `05:52:56.471` (`200`km divided by `34`km/h)\n- add `01:33:45.000` (`50`km divided by `32`km/h)\n- round `14:26:41.471` to `14:27` \n\n__Control close__\ntime is the time by which the slowest riders have to arrive at __control__ or be disqualified. It's calculated through minimum required average speed:\n- `20` km/h over the initial `60` km\n- `15` km/h over km `60` - `600`\n- `11.428` km/h over km `600` - `1000`\n- `13.333` km/h over km `1000` - `1200`\n- `11` km/h over km `1200` - `1400`\n- `10` km/h over km `1400` - `1800`\n- `9` km/h over km `1800` - `2000`.\n- Since it can  take a lot of time for big groups of riders to start, `1` extra hour is added to the result regardless of control location. \n\nFor example, riders starting at `07:00` are expected to appear at `250` km control before `23:40`. Let's see how we got that number:\n- take start time `07:00` \n- add `03:00:00.000` (`60`km divided by `20`km/h)\n- add `12:40:00.000` (`190`km divided by `15`km/h)\n- add `01:00:00.000` (an extra hour to compensate for the slow start)\n- round `23:40:00.000` to `23:40` \n\nInput:\n- `startTime` (`start_time`) - a string representing start time in 24-hour format,`%H:%M` \n- `km` - a whole number representing control location in km, `0` <= `km` <= `2000`\n\nOutput:\n- a string representing control open(close) time in 24-hour format,`%H:%M`, rounded to a minute, with zero padding.\n- if control open(close) time is not on the start date, reflect it after result in brackets, e.g. `07:00 (+1)` means '07:00 on the next day'.",
+  "totalAttempts": 440,
+  "totalCompleted": 62,
+  "totalStars": 3,
+  "voteScore": 50,
+  "tags": [
+    "Mathematics",
+    "Date Time",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "648985404fdc1399d6b95280",
+  "name": "Irretractable",
+  "slug": "irretractable",
+  "category": "reference",
+  "publishedAt": "2023-06-14T13:55:56.934Z",
+  "approvedAt": null,
+  "languages": [
+    "agda"
+  ],
+  "url": "https://www.codewars.com/kata/648985404fdc1399d6b95280",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-14T09:15:44.200Z",
+  "createdBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "While trying to prove that two functions `f : A → B` and `g : B → A` form an isomorphism between `A` and `B`, I sometimes find it much easier to prove the [section](https://en.wikipedia.org/wiki/Section_(category_theory)) (`∀ a → g (f a) ≡ a`) than to prove the retraction (`∀ b → f (g b) ≡ b`). But why should I need to prove the retraction? By proving the section I have already shown that the functions are inverses of each other... Why does the proof of isomorphism require both?\n\nBut we are using a proof language! Why speculate when we can prove it to ourselves!\n\n### Task\n\nProve that a section between two functions is not enough to show that the two functions form an isomorphism.\n\n### Preloaded\n\n```agda\nrecord IsIsomorphism {A B : Set} (f : A → B) (g : B → A) : Set where\n  constructor IsIso\n  field\n    section : ∀ (a : A) → g (f a) ≡ a\n    retract : ∀ (b : B) → f (g b) ≡ b\n```",
+  "totalAttempts": 10,
+  "totalCompleted": 8,
+  "totalStars": 0,
+  "voteScore": 20,
+  "tags": [
+    "Theorem Proving",
+    "Logic Programming"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

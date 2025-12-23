@@ -1,0 +1,43 @@
+{
+  "id": "63a5b74a9803f2105fa838f1",
+  "name": "Find the crossing ( graphic calculations )",
+  "slug": "find-the-crossing-graphic-calculations",
+  "category": "games",
+  "publishedAt": "2022-12-23T15:40:35.215Z",
+  "approvedAt": "2023-10-04T18:06:30.870Z",
+  "languages": [
+    "python",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/63a5b74a9803f2105fa838f1",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-23T14:12:26.551Z",
+  "createdBy": {
+    "username": "artiekra",
+    "url": "https://www.codewars.com/users/artiekra"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Description\nYou are given four tuples. In each tuple there is coordinates x and y of a point. There is one and only one line, that goes through two points, so with four points you can have two lines: first and second tuple is two points of a first line, thirs and fourth tuple is two points of the second line. Your task is to find and return a tuple with x and y coordinates of lines crossing point.\n\nNumbers can be positive as well as negative, integer or floats. Your answer shouldn't be rounded!!\n\nNote, that if two lines are the same ( have infinite crossing points ) or parallel ( have no crossing points ), you will need to return `None`/`Nothing` depending on language.\n\n![Example on graphic](https://justpaste.it/img/a6760541d86f232527c516f6882c28dc.png \"Example on graphic\")\n\n## Examples\n``` python\nfind_the_crossing((5,3), (10,4), (5,7.5), (10,7)) => (20, 6) #from the graphic above\nfind_the_crossing((5,3), (10,4), (20,6), (0,2)) => None #edge case for two identical lines\nfind_the_crossing((5,3), (10,4), (5,5), (10,6)) => None #edge case for two parallel lines \n```\n``` haskell\n>>> findTheCrossing (5,3) (10,4) (5,7.5) (10,7)\nJust (20, 6) -- from the graphic above\n>>> findTheCrossing (5,3) (10,4) (20,6) (0,2)\nNothing -- edge case for two identical lines\n>>> findTheCrossing (5,3) (10,4) (5,5) (10,6)\nNothing -- edge case for two parallel lines \n```\n## Tests\nThere will be example tests, random tests and tests on big numbers.\n\n**Example tests** are pre programmed tests for debugging.\n\n**Random tests** are generated randomly, where ```-1000 ≤ x ≤ 1100```. There is still will some with parallel and identical lines.\n\n**Tests on big numbers** are random tests where ```-1000000000 ≤ x ≤ 1000000000```",
+  "totalAttempts": 372,
+  "totalCompleted": 163,
+  "totalStars": 12,
+  "voteScore": 90,
+  "tags": [
+    "Algebra",
+    "Mathematics",
+    "Linear Algebra",
+    "Graphics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

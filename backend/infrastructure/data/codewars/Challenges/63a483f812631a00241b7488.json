@@ -1,0 +1,33 @@
+{
+  "id": "63a483f812631a00241b7488",
+  "name": "Java Optional training",
+  "slug": "java-optional-training",
+  "category": "reference",
+  "publishedAt": "2022-12-22T16:21:26.329Z",
+  "approvedAt": null,
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/63a483f812631a00241b7488",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-12-22T16:21:12.535Z",
+  "createdBy": {
+    "username": "yriy",
+    "url": "https://www.codewars.com/users/yriy"
+  },
+  "description": "You have 2 classes describing `Person` and `Photo`. Both are just a dtos containing `private final` fields, all args constructor, getters and toString methods.\n\n`Person` consist of:\n```\nprivate final int id;\nprivate final String firstName;\nprivate final String lastName;\nprivate final Integer age;\nprivate final Integer photoId;\n```\n \n`Photo`:\n```\nprivate final Integer id;\nprivate final String path;\n```\n \nBoth `Person` and `Photo` classes is a static inner classes of `App`, but you can think of them as of just public classes.\n\n`App` class also contain a couple of methods you have to implement without using if-else or loops:\n\n1. `Optional<Person> getPersonById(int id)`<br/>\nEN Should return an empty optional in case if id is 0; Otherwise - new Person(id, \"Yurii\", \"Vasylchuk\", 29, id). **Here it's fine to use if-else**<br/>\nRU Если `id == 0` - то возвращаем пустой `Optional`, иначе `new Person(id, \"Yurii\", \"Vasylchuk\", 29, id)`. **Тут можно тиспользовать if**\n\n2. `Optional<Photo> getPhotoById(int id)`<br/>\nEN If id is even - return `new Photo(id, \"/data/photos/%d.jpg\".formatted(id))`; Return empty optional otherwise. **Here it's fine to use if-else**<br/>\nRU Если id - четное - то возвращаем фотографию `new Photo(id, \"/data/photos/%d.jpg\".formatted(id))`, иначе - пустой `Optional`. **Тут можно использовать if**\n\n3. `String getPersonFullName(int id)`<br/>\nEN Should return full name in format \"[firstName] [lastName]\", or \"Person is not found\" in case if there is no user (Optional with user is empty). To retrieve a person - use previously implemented `getPersonById`;<br/>\nRU Возвращает полное имя пользователя в формате \"[firstName] [lastName]\" или \"Person is not found\" если пользователь не найден. Для получения пользователя воспользуйся статическим методом getPersonById(). Тут придется воспользоваться несколькими методами Optional\n\n4. `int getPersonAge(int id)`<br/>\nEN Should return person's age, or throw an `IllegalArgumentException` with message \"Person is not found\", if person is not found. To retrieve a person - use previously implemented `getPersonById` <br/>\nRU Возвращает возраст пользователя или бросает ошибку `IllegalArgumentException` с сообщением \"Person is not found\" пользователь не найден. Для получения пользователя воспользуйся статическим методом `getPersonById()`.\n\n5. `String getPhotoPathByPersonId(int id)`<br/>\nEN Should return path to photo (`Photo.getPath()`) by userId. First find the user by id, then photo by User.getPhotoId. If user or photo is not found - return a string in format \"Photo for person \\[id] is not found\". Don't forget to replace \"\\[id]\" with user's id (sent as argument). To retrieve a person - use previously implemented `getPersonById`. To retrieve the photo - `getPhotoById`<br/>\nRU Возвращает путь к фотографии пользователя (Photo.getPath) по id пользователя или строку в формате \"Photo for person \\[id] is not found\" если пользователь или фотография не найдены. Не забудь заменить \\[id] на id пользователя (которое было передано аргументом). Для получения пользователя воспользуйся статическим методом getPersonById(). Для получения фотографии воспользуйся статическим методом getPhotoById().",
+  "totalAttempts": 67,
+  "totalCompleted": 8,
+  "totalStars": 0,
+  "voteScore": -4,
+  "tags": [],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

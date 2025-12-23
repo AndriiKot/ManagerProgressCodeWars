@@ -1,0 +1,40 @@
+{
+  "id": "63b325618450087bfb48ff95",
+  "name": "Broken 7-segment display - challenge edition",
+  "slug": "broken-7-segment-display-challenge-edition",
+  "category": "reference",
+  "publishedAt": "2023-01-07T15:36:32.712Z",
+  "approvedAt": "2023-01-29T11:07:16.209Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63b325618450087bfb48ff95",
+  "rank": {
+    "id": -3,
+    "name": "3 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2023-01-02T18:41:37.789Z",
+  "createdBy": {
+    "username": "mauro-1",
+    "url": "https://www.codewars.com/users/mauro-1"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "<img align=\"right\" alt=\"\" style=\"margin: 1em\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LED_Digital_Display.jpg/320px-LED_Digital_Display.jpg\">\n\n## <span style=\"color:#0ae\">Task</span>\n\nThere is a multi-digit [seven segment display](https://en.wikipedia.org/wiki/Seven-segment_display). The display has a little problem: there is exactly one dead segment in the whole display. The dead segment is either always on or always off (we don't know in advance the type of defect).\n\n```\nHow digits appear on a correctly working display:       minus:\n  _         _    _         _    _    _    _    _ \n | |    |   _|   _|  |_|  |_   |_     |  |_|  |_|         _\n |_|    |  |_    _|    |   _|  |_|    |  |_|   _|\n```\n\n```\nExample: 0-4 with top segment always on/always off:\n  _    _    _    _    _\n | |    |   _|   _|  |_|    | |    |   _|   _|  |_|\n |_|    |  |_    _|    |    |_|    |  |_    _|    |\n```\n\nThe display (ignoring dead segment) can either\n- be completely blank, \nor \n- show an integer number `$n$`, `$-10^{d-1} \\lt n \\lt 10^d$` where *d* is the number of digits of display.\n\nAll numbers are right-aligned. The minus sign, if present, immediately precedes the number. No leading zeroes (but a single zero in the rightmost digit is allowed).\n\nGiven some numbers/blanks as they appear on display, try to determine the dead segment.\n\n\n#### <span style=\"color:#0ae\">Segment names</span>\n\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/7_Segment_Display_with_Labeled_Segments.svg/180px-7_Segment_Display_with_Labeled_Segments.svg.png)\n*Note: in this kata segment names are lowercase, \"dp\" is not used.*\n\n\n## <span style=\"color:#0ae\">Input</span>\n\n##### <span style=\"color:#0ae\">⬬</span> `display` *[list of strings]*\n\nEach element of the list is a 3-rows string that represents a number (of blank) shown on display. Each row is 4*d*-1 chars long (*d* = number of digits of display).  \nIn each row, chars from 4*k* to 4*k*+2 (inclusive) belong to digit *k*+1, where digit 1 is the leftmost digit and digit *d* is the rightmost one. Chars 4*k*+3 (used to separate digits) are always spaces.  \nThe format is (from 1st to 3rd row): ` a ` `fgb` `edc` (the 1st and 3rd chars of the first row are always spaces). Each segment is represented by a char:\n- off: space (`' '`)\n- on: `'_'` (a,d,g) or `'|'` (b,c,e,f)\n\nExamples:\n```python\n50 on a 2-digits display: ' _   _ \\n|_  | |\\n _| |_|'\n'''\\\n _   _ \n|_  | |\n _| |_|'''\n```\n```python\n-42 on a 4-digits display: '             _ \\n     _  |_|  _|\\n          | |_ '\n'''\\\n             _\n     _  |_|  _|\n          | |_ '''\n```\n\nAll inputs are valid.  \nNumber of strings: 1–6.  \nSize of display: 1–8 digits.\n\n## <span style=\"color:#0ae\">Output</span>\n\n- *[string]* or `None`\n\nIf the dead segment can be determined:\n- a 2-chars string containing the name of the segment (lowercase) and the number of the digit (1 = leftmost), e.g.: `'a3'`, `'g1'`, ``e5'`);\n\notherwise:\n- `None`\n\n\n## <span style=\"color:#0ae\">Examples</span>\n\n```\n  _\n | |\n |_|\n```\nInput: `[' _ \\n| |\\n|_|']`  \nOutput `None`  (\"g\" always off or an other segment always on?)\n\n\n```\n\n   |\n  _|\n```\nInput: `['   \\n  |\\n _|']`  \nOutput: `'d1'`  (the bottom segment should be off, no other options)\n\n```\n      _\n   |  _|\n     |_ \n```\nInput: `['     _ \\n  |  _|\\n    |_ ']`  \nOutput: `None`  (\"12\" with \"c1\" off or \"2\" wih \"b1\" on?)\n\n```\n      _ \n  _  | |\n     |_|\n  _   _ \n  _|  _|\n |_   _|\n```\nInput: `['     _ \\n _  | |\\n    |_|', ' _   _ \\n _|  _|\\n|_   _|']`  \nOutput: `'g1'`  (\"-0\" is not allowed, and it can't be \"-8\" because \"g2\" works)\n",
+  "totalAttempts": 408,
+  "totalCompleted": 41,
+  "totalStars": 25,
+  "voteScore": 24,
+  "tags": [
+    "Logic",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

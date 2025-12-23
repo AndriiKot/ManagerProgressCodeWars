@@ -1,0 +1,42 @@
+{
+  "id": "661aa2008fa7ab015ee33529",
+  "name": "A Wandering Man and his Umbrellas",
+  "slug": "a-wandering-man-and-his-umbrellas",
+  "category": "algorithms",
+  "publishedAt": "2024-04-13T15:22:29.169Z",
+  "approvedAt": "2024-04-14T07:01:04.680Z",
+  "languages": [
+    "javascript",
+    "java",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/661aa2008fa7ab015ee33529",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-13T15:17:20.498Z",
+  "createdBy": {
+    "username": "unflxw",
+    "url": "https://www.codewars.com/users/unflxw"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "This kata is a generalization of the [\"A Man And His Umbrellas\"](https://www.codewars.com/kata/58298e19c983caf4ba000c8d) kata by [mattlub](https://www.codewars.com/users/mattlub). If you haven't completed that kata, you may wish to do so before attempting this one.\n\nA man travels to different locations. If it is rainy, he will take an umbrella with him, from wherever he's coming from to wherever he's going. If it is sunny, he will not.\n\nYour function will receive, as an argument, an array of objects containing each of the locations the man travels to, and the weather during the trip to that location, for example:\n\n```javascript\n[\n  [\"work\", \"sunny\"],\n  [\"shop\", \"rainy\"],\n  [\"work\", \"rainy\"],\n  [\"home\", \"sunny\"],\n  [\"work\", \"rainy\"],\n  [\"gym\",  \"sunny\"],\n  [\"work\", \"sunny\"],\n  [\"home\", \"rainy\"]\n]\n```\n\nBefore his travels start, the man is at `\"home\"`, and therefore `\"home\"` will always be present in the returned list of locations. The locations can be arbitrary strings, not just the ones shown in these examples. The weather is always either `\"sunny\"` or `\"rainy\"`.\n\nYour function must return an object where the keys are the different locations that the man visited, and the values are the minimum number of umbrellas that must be at each of those locations before the man starts the sequence of travels, so that he never finds himself missing an umbrella when travelling somewhere. For example, for the above example:\n\n```javascript\n[\n  [\"work\", \"sunny\"],\n  [\"shop\", \"rainy\"], // there needs to be an umbrella at work\n  [\"work\", \"rainy\"], // he can re-use the umbrella he took to the shop\n  [\"home\", \"sunny\"],\n  [\"work\", \"rainy\"], // there needs to be an umbrella at home\n  [\"gym\",  \"sunny\"],\n  [\"work\", \"sunny\"],\n  [\"home\", \"rainy\"]  // he can re-use one of the umbrellas he took to work\n]\n```\n\nThe correct return value for your function would then be:\n\n```javascript\n{\n  \"work\": 1,\n  \"home\": 1,\n  \"gym\":  0,\n  \"shop\": 0\n}\n```\n\nNote that the man can travel from his current location to his current location. In this situation, the man still leaves the location, wanders around under a rainy or sunny sky for a bit (potentially needing, or not needing, an umbrella) and returns to the location.\n",
+  "totalAttempts": 943,
+  "totalCompleted": 153,
+  "totalStars": 14,
+  "voteScore": 49,
+  "tags": [
+    "Logic",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

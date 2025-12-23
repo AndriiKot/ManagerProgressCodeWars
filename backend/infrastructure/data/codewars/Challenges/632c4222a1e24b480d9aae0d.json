@@ -1,0 +1,42 @@
+{
+  "id": "632c4222a1e24b480d9aae0d",
+  "name": "Underload Interpreter",
+  "slug": "underload-interpreter",
+  "category": "algorithms",
+  "publishedAt": "2022-09-23T03:49:15.076Z",
+  "approvedAt": "2022-12-27T12:06:07.815Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/632c4222a1e24b480d9aae0d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-09-22T11:08:18.054Z",
+  "createdBy": {
+    "username": "razetime",
+    "url": "https://www.codewars.com/users/razetime"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "# Underload interpreter\n\nUnderload is an esoteric programming language. It is a stack based, turing complete language that works based on strings. Strings are the only datatype in Underload.\n\n## Commands\n- `(x)`: An underload string:\n  - Starts with an opening parenthesis `(`, and pushes all characters after the starting `(` and before the closing parenthesis `)` as a string.\n  - Parentheses that come after the first `(` *must* be matched, and a matched `)` will not end the string.\n  - An Underload program can only contain balanced parentheses i.e. `(()` is an invalid program.\n  - If all parentheses in a string are not correctly matched, you must raise an Exception.\n- `:`: Duplicate the top element of the stack.\n- `!`: Remove the top element of the stack.\n- `~`: Swap the top two elements in the stack.\n- `*`: Concatenate the top element of the stack to the end of the second element of the stack.\n  - The top element and second element are both popped and the concatenated string is pushed in their place.\n  - This is *ordinary string concatenation*, if the top of the stack is `[\"(a)\",\"(b)\"]`, the resulting stack should be `[\"(a)(b)\"]`. \n- `a`: Enclose the top element of the stack in a set of parentheses.\n- `^`: Include the top element of the stack into the program after this command. The top element is popped.\n  - The string must be inserted *after* the position of the `^` command being executed.\n  - For example, if the code is `^a*` and the top of the stack is `\"S~!\"`, then the code becomes `^S~!a*`, and execution continues starting with `S`.\n- `S`: Pop the top element of the stack, and output it (no newline). In the case of this challenge, you will have to \n  store the output every time `S` is called, and return it as a single string at the end of the program.\n\nCode is interpreted from left to right.\n\nCommands not mentioned in the command list must be ignored.\n\n**Stack underflow** is a condition where a command is run, but there are no arguments on the stack to use for it.\nYou do not need to handle stack underflow.\n\nThe program ends when it reaches the end of the code.\n\nYou can learn more about Underload from its [Esolangs Wiki](https://esolangs.org/wiki/Underload) page.",
+  "totalAttempts": 774,
+  "totalCompleted": 90,
+  "totalStars": 18,
+  "voteScore": 74,
+  "tags": [
+    "Interpreters",
+    "Esoteric Languages",
+    "Algorithms",
+    "Tutorials"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

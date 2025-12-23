@@ -1,0 +1,33 @@
+{
+  "id": "64b90805a814420048ed71bc",
+  "name": "Parabolic Jumps",
+  "slug": "parabolic-jumps",
+  "category": "reference",
+  "publishedAt": "2023-07-20T10:33:10.441Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64b90805a814420048ed71bc",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-07-20T10:10:13.562Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "description": "# Task\nWhen a bug jumps to a height y, its position can be plotted as a quadratic function with x as the time, and y as the vertical distance traveled. For example, for a bug that jumps 9 cm up and is back on the ground after 6 seconds, its trajectory can be plotted as:\n\n![bug jump quadratic plot](https://i.imgur.com/eB8k8AA.png)\n\nCreate a function that, given the max height of a vertical jump in cm and the current time in milliseconds, returns the current position of the bug rounded to two decimal places, and its direction (\"up\" or \"down\"). If the bug is already back on the ground, return 0 for the position and None for the direction.\n\n# Examples\n```\nbug_jump(9, 1000) ➞ (5, \"up\")\n\nbug_jump(9, 4000) ➞ (8, \"down\")\n\nbug_jump(9, 5500) ➞ (2.75, \"down\")\n\nbug_jump(9, 7000) ➞ (0, None)\n```\n\n# Notes\n- If the bug is exactly at the top, you can assume it has changed its direction to `'down'`.\n- Time and position both start at 0.\n- You only need to translate the parabola (you don't need to scale it).\n\n# Input Constraints\n- 1 <= height <= 20\n- 100 <= time <= 10000",
+  "totalAttempts": 25,
+  "totalCompleted": 4,
+  "totalStars": 0,
+  "voteScore": -2,
+  "tags": [],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

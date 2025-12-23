@@ -18,8 +18,8 @@ export const createUserServiceDeps = (sqlite) => {
   } = sqlite;
 
   const safeApiCall = createSafeApiCall({
-    concurrency: 2,
-    interval: 400,
+    concurrency: 5,
+    interval: 300,
   });
 
   return Object.freeze({

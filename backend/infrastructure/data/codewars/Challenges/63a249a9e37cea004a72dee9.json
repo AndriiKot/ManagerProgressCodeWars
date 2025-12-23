@@ -1,0 +1,43 @@
+{
+  "id": "63a249a9e37cea004a72dee9",
+  "name": "Number Sequence Rabbit Hole",
+  "slug": "number-sequence-rabbit-hole",
+  "category": "algorithms",
+  "publishedAt": "2022-12-20T23:56:15.672Z",
+  "approvedAt": "2022-12-22T11:12:24.941Z",
+  "languages": [
+    "python",
+    "haskell",
+    "javascript",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/63a249a9e37cea004a72dee9",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-20T23:47:53.715Z",
+  "createdBy": {
+    "username": "amir650",
+    "url": "https://www.codewars.com/users/amir650"
+  },
+  "approvedBy": {
+    "username": "anter69",
+    "url": "https://www.codewars.com/users/anter69"
+  },
+  "description": "Douglas Hofstadter is mainly known for his Pulitzer Prize winning book [Gödel, Escher, Bach](https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach).  One common idea he explores in his books is self similarity and strange loops. He describes a unique sequence with special qualities as the composition of two known sequences, namely, square numbers and triangular numbers:\n\n* Square numbers: `1, 4, 9, 16, 25, ...` --> formula: `$x * x$`\n* Triangular numbers: `1, 3, 6, 10, 15, 21, ...` --> formula: `$(x * (x+1)) / 2$`\n\nHofstadter wrote them down in order (note: each element is marked with `s` for *square* and `t` for *triangular*):\n\n```\n1, 1, 3, 4, 6, 9, 10, 15, 16, 21, 25, ...\ns, t, t, s, t, s,  t,  t,  s,  t,  s, ...\n```\n\nWhen a number appears in both sequences (e.g. `1, 36`), the *square* value always precedes the *triangular*:\n\n```\n1, 1, 3, ..., 28, 36, 36, 45, ...\ns, t, t, ...,  t,  s,  t,  t, ...\n           not\nt, s, t, ...,  t,  t,  s,  t, ...\n```\n\nNotice the number of *triangular* elements between the *square* values! If we were to generalize this observation, we might ask: *how many triangular numbers between successive squares?*\n\nThis gives a special sequence: `2, 1, 2, 1, 1, ...` Can you explore the rest?\n\n## Task\n\nComplete the function that can return an **infinite stream** of values representing the number of triangular numbers between successive squares.\n\n~~~if:lambdacalc\n## Encodings\n\npurity: `LetRec`  \nnumEncoding: `BinaryScott`  \nexport deconstructors `head, tail` for your `Stream` encoding  \n\n## Performance\n\n`Submit` tests expect `20 000` values in time.\n~~~",
+  "totalAttempts": 430,
+  "totalCompleted": 89,
+  "totalStars": 10,
+  "voteScore": 42,
+  "tags": [
+    "Puzzles",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

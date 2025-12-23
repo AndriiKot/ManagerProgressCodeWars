@@ -1,0 +1,41 @@
+{
+  "id": "6613fda5fe0da4bdcfb4be00",
+  "name": " Identification of Prolonged Employee Absences Over Consecutive Months",
+  "slug": "identification-of-prolonged-employee-absences-over-consecutive-months",
+  "category": "reference",
+  "publishedAt": "2024-04-08T14:23:03.270Z",
+  "approvedAt": "2024-04-09T19:01:06.358Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6613fda5fe0da4bdcfb4be00",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-08T14:22:29.680Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In a large corporation, the Human Resources (HR) department is responsible for managing employee attendance. They've observed a pattern of prolonged absenteeism among some employees and want to identify these cases to address potential underlying issues, such as job dissatisfaction, personal problems, or health issues. The goal is to improve employee well-being and productivity. The HR department has compiled an attendance record and requires a database query to pinpoint employees who have been absent in at least three consecutive months.\n\nYou are provided with a database table named `attendance` which records the dates on which employees were absent. Your task is to write an SQL query that identifies employees who have been absent in at least three consecutive calendar months. The query should return the details of these absences.\n\n`attendance`:\n\n* `emp_no` (integer): The employee number.\n* `absent_date` (Date): The date of absence.\n\nRequirements:\n\n1) Calculate Consecutive Absences: The query should identify sequences of months in which an employee was absent. A sequence is defined as a period where there are no gaps of more than one month between absences.\n2) Filter Employees: Only include employees who have been absent in at least three consecutive months.\n3) Return Data: The output should contain the employee number (`emp_no`) and the date of absence (`absent_date`). The output should exclusively contain the records of absences that fall within the periods where an employee has been absent for at least three consecutive calendar months. This means each returned record should be part of a sequence of absences spanning a minimum of three consecutive months.\n4) If an employee has more than one period where they were absent in three or more consecutive months, each period should be treated independently. The query should return records from all such periods.\n\nThe returned records should be ordered first by `emp_no` in descending order and then by `absent_date` in ascending order.\n\nNote: In the provided `attendance` data, each employee is recorded only once per date, ensuring no duplicate dates or double shifts for the same employee. This unique entry per employee per day must be considered in your analysis.\n\nFor this sample data:\n\n```\n| emp_no | absent_date |\n|--------|-------------|\n| 111    | 2024-03-01  |\n| 111    | 2024-05-05  |\n| 222    | 2024-02-13  |\n| 222    | 2024-03-01  |\n| 222    | 2024-03-02  |\n| 222    | 2024-04-29  |\n| 222    | 2024-09-09  |\n| 333    | 2024-05-15  |\n| 333    | 2024-09-18  |\n| 333    | 2024-09-19  |\n```\n\nExpected Output is the following: \n\n```\n| emp_no | absent_date |\n|--------|-------------|\n| 222    | 2024-02-13  |\n| 222    | 2024-03-01  |\n| 222    | 2024-03-02  |\n| 222    | 2024-04-29  |\n```\n\nEmployee 222: Absent in February, March, and April. These months are consecutive, meeting the criteria. Thus, all records of employee 222 during these months are included in the output.\n\nEmployee 111: Although absent in March and May, there is a gap of more than one month (April) between the absences. Therefore, this employee's records are not included.\n\nEmployee 333: Similar to employee 111, the absences are in May and September, with a gap of several months in between. Hence, their records are also not included.\n\nGLHF!\n",
+  "totalAttempts": 1662,
+  "totalCompleted": 87,
+  "totalStars": 14,
+  "voteScore": 26,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Date Time"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

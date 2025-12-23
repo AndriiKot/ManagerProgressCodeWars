@@ -1,0 +1,40 @@
+{
+  "id": "6565070e98e6731c13882aa0",
+  "name": "Ways from one number to another",
+  "slug": "ways-from-one-number-to-another",
+  "category": "algorithms",
+  "publishedAt": "2023-11-27T21:16:29.579Z",
+  "approvedAt": "2023-12-08T19:12:30.337Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6565070e98e6731c13882aa0",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-11-27T21:15:58.605Z",
+  "createdBy": {
+    "username": "ZolotarevAlexandr",
+    "url": "https://www.codewars.com/users/ZolotarevAlexandr"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "In this kata you are given two integers: `initial number`, `target number` \ntwo arrays and fixed set of instructions:\n\n    1. Add 3 to the number\n    2. Add the sum of its digits to a number, if number is not 0\n    3. Add the number reduced modulo 4 to the number, if the modulus is not 0\n\nYour task is to find amount of ways you can get from the `initial number` \nto the `target number`, performing these instructions\n\nAlso, there's some limitations, which are `must include` and `must avoid` arrays. Both should be set to `None` by default\n* `must include`: A list of numbers that must be included in the sequence of transformations from the initial number to the target number.\n* `must avoid`: A list of numbers that must be avoided in this sequence.\n\n\nFor example, you're given **1** as `initial number` and **7** as `target number`,  \nThere are **5** ways to get from 1 to 7. You can perform instructions in following orders:\n* 1, 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1 -> 4 -> 7)\n* 2, 2, 1 (1 -> 2 -> 4 -> 7)\n* 2, 3, 1 (1 -> 2 -> 4 -> 7)\n* 3, 2, 1 (1 -> 2 -> 4 -> 7)\n* 3, 3, 1 (1 -> 2 -> 4 -> 7)\n\nHowever, if there will be 2 in `must avoid` there is only 2 (first) way left  \nOr if there will be 2 in `must include` we can perform any of these, except first\n\nNotes:  \n* `initial number` and `target number` may be negative  \n* `target number` always greater than `insital number`  \n* If there isn't any numbers that should be included or avoided, corresponding argument may be set to empty list, None or not passed at all  \n* Values in `must include` and `must avoid` in tests are always valid (beetween `initial number` and `target number`)  \n* Ranges for `initial number` and `target number` are [-10; 28] and [initial_num + 1; 30]  \n* `must include` and `must avoid` arrays never intersect in tests",
+  "totalAttempts": 464,
+  "totalCompleted": 57,
+  "totalStars": 6,
+  "voteScore": 51,
+  "tags": [
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "64b6722493f1050058dc3f98",
+  "name": "Evaluate the Group of Parentheses",
+  "slug": "evaluate-the-group-of-parentheses",
+  "category": "algorithms",
+  "publishedAt": "2023-07-18T12:17:56.720Z",
+  "approvedAt": "2023-09-14T15:26:07.152Z",
+  "languages": [
+    "python",
+    "rust",
+    "java",
+    "haskell",
+    "scala",
+    "coffeescript",
+    "c",
+    "javascript",
+    "lambdacalc",
+    "prolog"
+  ],
+  "url": "https://www.codewars.com/kata/64b6722493f1050058dc3f98",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-18T11:06:13.060Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "# Task\n\nThe function is given a non-empty balanced parentheses string. Each opening `'('` has a corresponding closing `')'`.  \nCompute the total score based on the following rules:\n\n- Substring `s == ()` has score `1`, so `\"()\"` should return `1`\n- Substring `s1s2` has total score as score of `s1` plus score of `s2`, so `\"()()\"` should return `1 + 1 = 2`\n- Substring `(s)` has total score as two times score of `s`, so `\"(())\"` should return `2 * 1 = 2`\n\nReturn the total score as an integer.\n\n# Examples\n\n```python\neval_parentheses(\"()\") ➞ 1\n# 1\n\neval_parentheses(\"(())\") ➞ 2\n# 2 * 1\n\neval_parentheses(\"()()\") ➞ 2\n# 1 + 1\n\neval_parentheses(\"((())())\") ➞ 6\n# 2 * (2 * 1 + 1)\n\neval_parentheses(\"(()(()))\") ➞ 6\n# 2 * (1 + 2 * 1)\n\neval_parentheses(\"()(())\") ➞ 3\n# 1 + 2 * 1\n\neval_parentheses(\"()((()))\") ➞ 5\n# 1 + 2 * 2 * 1\n```\n\n~~~if:lambdacalc\n# Encodings\n\npurity: `LetRec`  \nnumEncoding: `BinaryScott`  \n\nthe input will be encoded as a `List` of `Paren`s:\n\n```lambdacalc\n# Paren = OPEN | CLOSE\nOPEN  = \\ open close . open\nCLOSE = \\ open close . close\n```\n\nthese definitions are `Preloaded`. note that `Paren` is isomorphic to `Boolean`.\n\nexport constructors `nil, cons` for your `List` encoding.\n~~~",
+  "totalAttempts": 2203,
+  "totalCompleted": 551,
+  "totalStars": 64,
+  "voteScore": 135,
+  "tags": [
+    "Algorithms",
+    "Logic",
+    "Regular Expressions",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

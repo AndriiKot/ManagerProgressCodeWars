@@ -1,0 +1,41 @@
+{
+  "id": "6253799a629507b60a045648",
+  "name": "Purely Random: Xorshift32",
+  "slug": "purely-random-xorshift32",
+  "category": "reference",
+  "publishedAt": "2022-04-11T00:44:23.026Z",
+  "approvedAt": "2022-04-23T22:49:13.573Z",
+  "languages": [
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/6253799a629507b60a045648",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-11T00:43:06.637Z",
+  "createdBy": {
+    "username": "glebec",
+    "url": "https://www.codewars.com/users/glebec"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "Implement the xorshift32 pseudorandom number generator.\n\n- Purity: `LetRec`\n- Encoding: `BinaryScott`\n\n# Background: PRNGs\n\nPseudorandom number generators (PRNGs) are deterministic functions which take a \"seed\" value and produce a seemingly \"random\" number as well as a new \"seed\".\n\n```\ntype PRNG = Seed -> (Number, Seed)\n```\n\nMany PRNGs use the last produced number as the next seed, which allows us to use an even simpler function type.\n\n```\ntype PRNG = Number -> Number\n```\n\nBy repeatedly calling the PRNG with its last result, we can generate a sequence of seemingly-random numbers.\n\n```\ninitialSeed                 = 0.6389251\nrandom1 = prng(initialSeed) # 0.3298734\nrandom2 = prng(random1)     # 0.9281719\nrandom3 = prng(random2)     # 0.1837422\n```\n\nMany languages include an impure built-in `random()` function that uses a PRNG internally but hides the seed state. However, the pure version (with explicit input) has certain benefits, such as allowing the developer to \"replay\" a previous sequence using the same initial seed.\n\n# The Xorshift Algorithms\n\nA particularly nice class of PRNGs was discovered and published by George Marsaglia in the 2003 paper [Xorshift RNGs](https://www.jstatsoft.org/article/view/v008i14). They are effective, fast, and simple, using two bitwise operators: XOR and Shift.\n\n## XOR\n\nThe `xor` (\"exclusive or\") operation, sometimes written `^`, takes two values and outputs a `1` at every position where the input bits differ.\n\n```\n  10011010110  # input A\n^ 00110100111  # XOR'd with input B\n  ===========  # equals\n  10101110001  # output\n```\n\n## Shift\n\nShifting a value, often written as `<<`, `>>`, and `>>>`, moves its bits left or right.\n\nFor a fixed \"word\" size (number of bits, e.g. eight) representing an unsigned integer, shifting up N times moves the bits N places higher, inserting N low 0s and dropping N high bits. This doubles the number N times (unless high one-bits are dropped!). The examples below are written using \"big-endian\" style, with high bits on the left:\n\n```\n00001101 << 2   # 13, shifted up twice\n========        # equals\n00110100        # 52\n\n10000101 << 1   # 133, shifted up once (within a fixed byte)\n========        # equals\n00001010        # ten\n```\n\nShifting a number down N times moves its bits N places lower, dropping N low bits. There are two strategies for inserting new high bits; either the existing high bit can be copied (this preserves the current sign bit for signed number representations), or a zero bit can be inserted. The latter, often written `>>>`, is called a _zero-fill_ or _logical_ shift, and it's all we need to know for this kata. This halves the number (with flooring):\n\n```\n00001101 >>> 2   # 13, shifted down twice\n========         # equals\n00000011         # 3 (13 / 2 / 2)\n\n10000101 >>> 1   # 133, shifted down once\n========         # equals\n01000010         # 66\n```\n\n## Xorshift32\n\nIn this kata you will implement a pure version of the first and simplest xorshift algorithm published, which uses an unsigned 32-bit integer as seed state and produces the next \"random\" unsigned 32-bit integer as output. The entire C code from the paper<sup>1</sup> is as follows (note that in C, `>>` on unsigned ints acts as a zero-fill shift down, like `>>>` in other languages):\n\n```\nunsigned long xor(){\nstatic unsigned long y=2463534242;\nyˆ=(y<<13); y^=(y>>17); return (yˆ=(y<<5)); }\n```\n\nOr in TS-like pseudocode:\n\n```\nlet state : uint32 = 2463534242\nfunction xor () {\n  state = state ^ (state <<  13)\n  state = state ^ (state >>> 17)\n  state = state ^ (state <<   5)\n  return state\n}\n```\n\nIn English:\n\n- XOR the input state with (itself shifted up 13 times);\n- XOR the result with (itself shifted down 17 times);\n- XOR _that_ result with (itself shifted up 5 times).\n\n# This Kata\n\nImplement the `xorshift32` algorithm, using the same constants and sequence (13 up, 17 down, 5 up) from the paper, but as a **pure** function which takes in an unsigned 32-bit number and outputs the next unsigned 32-bit number.\n\nNote that you will _receive_ numbers encoded in [`BinaryScott`](https://github.com/codewars/lambda-calculus/wiki/encodings-guide#scott-binary-encoded-numerals), and are expected to _return_ validly-encoded numbers in the same format. However, to implement the `xorshift32` internals correctly, you will need to pay attention to some subtleties:\n\n- `BinaryScott` is little-endian (the value starts with low bits) whereas the reference algorithm is big-endian (the value starts with high bits), so the physical metaphor of \"left\" and \"right\" might be unnecessarily confusing. Read `<<` as shifting _higher_ (doubling) and `>>>` as shifting _lower_ (halving); this is consistent between the two formats.\n- `BinaryScott` (inputs and outputs) allows arbitrary length and disallows high zero bits, but `xorshift32` should internally work as if values have exactly 32 bits – no more, no fewer.\n- You can assume that inputs will never have more than 32 bits (but being BinaryScott, they might have fewer!).\n\nFinally, note that `0` is considered an invalid input for the original algorithm. In this case it is fine to map `0` to `0`. (This won't be tested.)\n\n---\n\n1. _NB the original paper is missing the second XOR; this is probably a typo, judging from the rest of the paper._",
+  "totalAttempts": 16,
+  "totalCompleted": 10,
+  "totalStars": 3,
+  "voteScore": 19,
+  "tags": [
+    "Mathematics",
+    "Fundamentals",
+    "Bits"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

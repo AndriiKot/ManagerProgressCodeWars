@@ -1,0 +1,43 @@
+{
+  "id": "628f8211840e153e14346eaa",
+  "name": "Networking 101/4: Determine the IPv4 network prefix in CIDR notation",
+  "slug": "networking-101-slash-4-determine-the-ipv4-network-prefix-in-cidr-notation",
+  "category": "reference",
+  "publishedAt": "2022-05-27T13:05:03.902Z",
+  "approvedAt": "2022-05-29T02:04:50.675Z",
+  "languages": [
+    "c",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/628f8211840e153e14346eaa",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-26T13:35:13.224Z",
+  "createdBy": {
+    "username": "bitcanon",
+    "url": "https://www.codewars.com/users/bitcanon"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "### Introduction\n\nAn IPv4 address and its associated subnet mask is often written as \n`192.168.0.7 255.255.255.0`. This combination tells us what the *address of the host* is (`192.168.0.7`) and its *network prefix*, in other words *which network* it belongs to (`192.168.0.0`).\n\nBoth the IPv4 address and subnet mask is made up of 32 bits. The bits are divided into four sections called octets (groups of eight). Each octet can have a number in the range 0 to 255 (unsigned 8-bit integers).\n\nLet's take a closer look at the IPv4 information above.\n```\n192.168.0.7   = 11000000.10101000.00000000.00000111 \n255.255.255.0 = 11111111.11111111.11111111.00000000\n                |------------------------| |------|\n                      network prefix         hosts\n```\nHere we have the host address `192.168.0.7` which belongs to the network with a *network prefix* of `192.168.0.0/24` (CIDR notation).\n\nIn this kata we will focus on two things:\n1. The number of *bits set to one* (1) in the netmask, which is **24** in our example above.\n2. Which *network prefix* the netmask **masks out of the IPv4 address**, which is `192.168.0.0` (`11000000.10101000.00000000.00000000`) in this case.\n\nIf this seems a bit confusing it might get a bit clearer with another example, `192.168.0.21 255.255.255.248`:\n```\n  11000000.10101000.00000000.00010101 (192.168.0.21)\n& 11111111.11111111.11111111.11111000 (255.255.248.0)\n= 11000000.10101000.00000000.00010000 (192.168.0.16)\n  |------------------------------||-|\n          network prefix           hosts\n```\nHere we have the host address `192.168.0.21` which belongs to the network with a *network prefix* of `192.168.0.16/29` (CIDR notation).\n\n**Hint**: Using *bitwise operators* might be helpful.\n\n### CIDR Notation\n\n**CIDR** is short for *Classless Inter-Domain Routing* and is, among other things, a way for us to write an IPv4 address together with its subnet mask in a more efficient way.\n\nUsing the first example above, we can write the address as:\n```\n192.168.0.7 255.255.255.0 (address in Classful notation)\n192.168.0.7/24            (address in CIDR notation)\n192.168.0.0/24            (prefix in CIDR notation)\n```\n\nWe are simply showing the IPv4 address information together with the number of bits set in the netmask, which is **24** in this example.\n\n### The Assignment\n\n~~~if:c\nYour task is to implement a function `void network_cidr(const char *ipv4_addr, const char *netmask, char result[19])` which takes in an IPv4 address `ipv4_addr` and a subnet mask `netmask`, and writes the result (the ***network prefix in CIDR notation***) into the output parameter `result`, a pre-allocated character buffer large enough to hold the result. The function has no return value.\n~~~\n~~~if:python\nYour task is to implement a function `def network_cidr(ipv4_addr: str, net_mask: str) -> str` which takes in an IPv4 address `ipv4_addr` and a subnet mask `net_mask`, and returns the result (the ***network prefix in CIDR notation***) as a string.\n~~~\n\n### Testing\n\nThe tests will challenge your function with IPv4 addresses and subnet masks in the full 32-bit range (`0.0.0.0 - 255.255.255.255`) and ***nothing else***.\n\n### Links\nCheck out these links for more information:\n* https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation\n* https://en.wikipedia.org/wiki/IPv4#Addressing\n* https://en.wikipedia.org/wiki/Binary_number",
+  "totalAttempts": 328,
+  "totalCompleted": 163,
+  "totalStars": 13,
+  "voteScore": 50,
+  "tags": [
+    "Networks",
+    "Bits",
+    "Fundamentals",
+    "Binary"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

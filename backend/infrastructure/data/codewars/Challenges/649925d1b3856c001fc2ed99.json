@@ -1,0 +1,33 @@
+{
+  "id": "649925d1b3856c001fc2ed99",
+  "name": "Formatting list of rooms",
+  "slug": "formatting-list-of-rooms",
+  "category": "reference",
+  "publishedAt": "2023-07-03T08:08:25.588Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/649925d1b3856c001fc2ed99",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-26T05:44:49.923Z",
+  "createdBy": {
+    "username": "ellaylone",
+    "url": "https://www.codewars.com/users/ellaylone"
+  },
+  "description": "### Description\n\nWe have a list of rooms, each contains room number and list of devices present. \\\nWe need to write a function that based on this data will prepare an object with:\n - list of unique devices present in rooms\n - list of human readable descriptions for each room\n\n### Input\n\n```javascript\nconst sampleInput = [\n  {\n    number: '001',\n    devices: ['Samsung', 'Sony']\n  },\n  { number: '002', devices: [] },\n  {\n    number: '003',\n    devices: ['Samsung', 'Sony', 'Lg']\n  },\n  {\n    number: '004',\n    devices: ['Android']\n  }\n];\n```\nRoom always have number, and if there are no devices in a room - `devices` will be an empty list.\n\n### Output\n\nBased on `sampleInput` output will be:\n\n```javascript\nconst expected = {\n  // List of all unique devices\n  uniqueDevices: ['Samsung', 'Sony', 'Lg', 'Android'],\n  \n  // List of human readable descriptions for each room\n  devicesInRooms: [\n    'Samsung and Sony in 001',\n    'No devices in 002',\n    'Samsung, Sony and Lg in 003',\n    'Android in 004',\n  ],\n};\n```\n",
+  "totalAttempts": 8,
+  "totalCompleted": 3,
+  "totalStars": 0,
+  "voteScore": -2,
+  "tags": [],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

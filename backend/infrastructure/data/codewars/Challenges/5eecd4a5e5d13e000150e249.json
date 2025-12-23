@@ -1,0 +1,45 @@
+{
+  "id": "5eecd4a5e5d13e000150e249",
+  "name": "Lambda Calculus: Lists",
+  "slug": "lambda-calculus-lists",
+  "category": "reference",
+  "publishedAt": "2020-06-19T15:07:17.572Z",
+  "approvedAt": "2022-01-17T16:55:34.316Z",
+  "languages": [
+    "python",
+    "javascript",
+    "haskell",
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/5eecd4a5e5d13e000150e249",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-06-19T15:07:25.047Z",
+  "createdBy": {
+    "username": "Freddie C",
+    "url": "https://www.codewars.com/users/Freddie%20C"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "# Info\n\nLists are general purpose data structures. In Lambda Calculus, lists can be represented with pairs: the first element of a pair indicates whether the list is empty or not ( as a Church Boolean ), and the second element is another pair of the head and the tail of the list.  \nPairs can be represented as a function that will run its ( embedded ) values on its argument, also a function.  \nBooleans can be represented as a function that chooses between its two arguments.  \nThis kata uses the above encodings.\n\n***Note**: If not already, you may want to familiarize yourself with the concepts of [function currying](https://www.codewars.com/kata/53cf7e37e9876c35a60002c9) and [Church encoding](https://www.codewars.com/kata/5ac739ed3fdf73d3f0000048) before you start this kata.*\n\n~~~if:haskell,\nFor technical reasons, `type`s `Boolean`, `Pair` and `List` are `newtype`s ( see `Preloaded` ). There will be wrapping and unwrapping, possibly a lot. We apologise for the inconvenience.\n~~~\n~~~if:lambdacalc,\n## Definitions\n\nA `Boolean` is either `True` or `False` (Church booleans).\n\n`Pair` is built from two elements. When a `Boolean` is applied to a `Pair`, either the first element (for `True`) or second element (for `False`) is returned.\n\n`List` is `Pair Empty (Pair Head Tail)` where `Empty` is a `Boolean` indicating if this is the end of the `List`, `Head` is a single element, and `Tail` is the remaining `List`.\n\nPurity is `LetRec`.\n~~~\n~~~if-not:haskell,lambdacalc\n## Definitions\n\n`BOOL` is either `TRUE` or `FALSE` (Church booleans)\n\n`PAIR` is built from two elements. When a `BOOL` is applied to a `PAIR`, either the first element (for `TRUE`) or second element (for `FALSE`) is returned.\n\n`LIST` is `PAIR(EMPTY)(PAIR(HEAD)(TAIL))` where `EMPTY` is a `BOOL` indicating if this is the end of the `LIST`, `HEAD` is a single element, and `TAIL` is the remaining `LIST`.\n~~~\n## Task\n\n~~~if:python,javascript,\nYou will be required to write two functions: `APPEND` and `PREPEND`.\n~~~\n~~~if:haskell,lambdacalc,\nYou will be required to write two functions: `append` and `prepend`.\n~~~\nBoth take a list and an element as arguments and add the element to the list, in last and first position respectively.\n\n## Given Functions\n\nThe following functions are given to you `Preloaded` :\n\n```python\nTRUE  = lambda a: lambda b: a\nFALSE = lambda a: lambda b: b\n\nPAIR = lambda a: lambda b: lambda c: c(a)(b)\nFIRST  = lambda p: p(TRUE)\nSECOND  = lambda p: p(FALSE)\n\nNIL  = PAIR(TRUE)(TRUE)\nIS_EMPTY = lambda xs: FIRST(xs)\nHEAD  = lambda xs: FIRST(SECOND(xs))\nTAIL  = lambda xs: SECOND(SECOND(xs))\n```\n```javascript\nTRUE  = t => f => t                        // Boolean\nFALSE = t => f => f                        // Boolean\n\nPAIR   = fst => snd => fn => fn(fst)(snd)  // creates a pair\nFIRST  = fn => fn(TRUE)                    // extracts first  value from a pair\nSECOND = fn => fn(FALSE)                   // extracts second value from a pair\n\nNIL      = PAIR(TRUE)()                    // constant: the empty list\nIS_EMPTY = xs => FIRST(xs)                 // returns a Church Boolean indicating if a list is empty\nHEAD     = xs => FIRST(SECOND(xs))         // returns the first element of a list      // list must not be empty\nTAIL     = xs => SECOND(SECOND(xs))        // returns a list without its first element // list must not be empty\n```\n```haskell\nnewtype Boolean = Boolean { runBoolean :: forall a. a -> a -> a }\n\nfalse,true :: Boolean\nfalse = Boolean $ \\ t f -> f\ntrue  = Boolean $ \\ t f -> t\n\nnewtype Pair x y = Pair { runPair :: forall z. (x -> y -> z) -> z }\n\npair :: x -> y -> Pair x y\npair x y = Pair $ \\ z -> z x y\n\nfirst :: Pair x y -> x\nfirst (Pair xy) = xy $ \\ x y -> x\n\nsecond :: Pair x y -> y\nsecond (Pair xy) = xy $ \\ x y -> y\n\nnewtype List x = List { runList :: Pair Boolean (Pair x (List x)) }\n\nnil :: List x\nnil = List $ pair true undefined\n\nisEmpty :: List x -> Boolean\nisEmpty (List xs) = first xs\n\nhead :: List x -> x\nhead (List xs) = first $ second xs\n\ntail :: List x -> List x\ntail (List xs) = second $ second xs\n```\n```lambdacalc\nTrue = \\ t _ . t\nFalse = \\ _ f . f\n\nPair = \\ a b . \\ f . f a b\nfirst = \\ p . p True\nsecond = \\ p . p False\n\nNil = Pair True ()\nis-empty = \\ xs . first xs\nhead = \\ xs . first (second xs)\ntail = \\ xs . second (second xs)\n```\n\n## Syntax\n\n```python\n# showing a list as < value .. > to emphasise it's not a native Python list\n APPEND   (NIL) ( 1 )  ==  < 1 >\nPREPEND   (NIL) ( 1 )  ==  < 1 >\n APPEND (< 1 >) ( 2 )  ==  < 1 2 >\nPREPEND (< 1 >) ( 2 )  ==  < 2 1 >\n```\n```javascript\n// showing a list as < value .. > to emphasise it's not a JavaScript array\n\n APPEND   (NIL) ( 1 )  =>  < 1 >\nPREPEND   (NIL) ( 1 )  =>  < 1 >\n APPEND (< 1 >) ( 2 )  =>  < 1 2 >\nPREPEND (< 1 >) ( 2 )  =>  < 2 1 >\n```\n```haskell\n-- showing a list as < value .. > to emphasise it's not a native Haskell list\n\n append   nil   1  ->  < 1 >\nprepend   nil   1  ->  < 1 >\n append  < 1 >  2  ->  < 1 2 >\nprepend  < 1 >  2  ->  < 2 1 >\n```\n```lambdacalc\n# Showing a list as < value .. >\n\nappend  Nil 1 # < 1 >\nprepend Nil 1 # < 1 >\nappend  < 1 > 2 # < 1 2 >\nprepend < 1 > 2 # < 2 1 >\n```\n\n~~~if:javascript\nThis is Lambda Calculus, and so there are restrictions on the syntax allowed.\n\nIn Javascript, this means only definitions (without `const`, `let` or `var`). Functions can be defined using fat arrow notation only. Functions may take either zero or one argument.\n\nSome examples of *valid* syntax:\n```javascript\npair = a => b => c => c(a)(b)\nzero = _ => x => x\ncons = pair\nthunk = (() => x) ()\n```\n\nSome examples of *invalid* syntax:\n```javascript\nconst one = f => x => f(x); // const, and semicolon (;) are not allowed\nfunction head(l) { return l(true) } // functions must use fat arrow notation\nfold = f => x => l => l.reduce(f, x) // Only variables, functions and applications are allowed. Attribute accessing (.), and functions taking multiple arguments, are not allowed.\n```\n~~~\n~~~if:python\nThis is Lambda Calculus, and so there are restrictions on the syntax allowed.\n\nIn Python, this means only definitions. Functions can be defined using lambda notation only. Functions must always take a single argument.\n\nSome examples of *valid* syntax:\n```python\npair = lambda a: lambda b: lambda c: c(a)(b)\nzero = lambda f: lambda x: x\ncons = pair\n```\n\nSome examples of *invalid* syntax:\n```python\none = lambda: lambda f,x: f(x) # Functions must take one argument\ndef head(l):\n    return l(true) # functions must use lambda notation\nchoose = lambda a: lambda b: lambda c: a if c else b # Only variables, lambda functions and applications are allowed. Anything else (eg. ... if ... else ... ) is not.\n```\n~~~\n\n## Help:\n\n[Wikipedia: Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus)\n\n[The Y Combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Y_combinator)\n\n[YouTube: Computerphile](https://www.youtube.com/watch?v=eis11j_iGMs&feature=youtu.be)\n  \n### Notes\n\nFeel free to contribute to the kata in anyway.  \nFeedback would be greatly appreciated.  ",
+  "totalAttempts": 428,
+  "totalCompleted": 117,
+  "totalStars": 40,
+  "voteScore": 65,
+  "tags": [
+    "Functional Programming",
+    "Fundamentals",
+    "Lists",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

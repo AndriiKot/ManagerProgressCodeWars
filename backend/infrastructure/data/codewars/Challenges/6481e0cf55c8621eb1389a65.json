@@ -1,0 +1,40 @@
+{
+  "id": "6481e0cf55c8621eb1389a65",
+  "name": "Users' pets and JSON data: Part 4",
+  "slug": "users-pets-and-json-data-part-4",
+  "category": "reference",
+  "publishedAt": "2023-06-09T08:09:32.622Z",
+  "approvedAt": "2023-06-11T20:42:03.578Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/6481e0cf55c8621eb1389a65",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-08T14:08:15.177Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You have been provided with a PostgreSQL table named `users`. This table includes a `jsonb` column, `info`, which holds JSON data. Here is a simplified schema of the table:\n\n* `id`: primary key, integer.\n* `info`: JSON column which includes:\n   * `name`: a string (user's name).\n   * `age`: an age of the user\n   * `pets`: an array of JSON objects, each with two keys: `name` (a string that represents the pet's name) and `type` (a string that represents the type of pet, which could be 'Dog', 'Cat', 'Bird', 'Fish', 'Reptile', or 'Rodent').\n   \nYour task is to determine the most preferred pet type within each age group of users. Assume the age groups are as follows: \"18-30\", \"31-45\", \"46-60\", \"61 and above\". All pet owners are adults (>=18 years) - you can be sure that in the tests all users' ages are within these groups. \n\nFor each age group, find out which pet type(s) is/are the most common. If there are multiple pet types with the same highest count within an age group, list them all, ordered alphabetically. \n\nThe following columns should be displayed in the result:\n\n* `age_group`: A string representing the age group the user falls into. It is determined by the age of the user. The possible values are '18-30', '31-45', '46-60', and '61 and above'.\n\n* `preferred_pet_type`: An array of strings representing the most common pet type(s) within the corresponding age group. If multiple pet types share the highest count in an age group, all these pet types should be included in the array. The pet types within the array should be ordered alphabetically.\n\n* `count`: An integer representing the count of pets for the most common pet type(s) in each age group.\n\nThe rows in the result should be ordered by age group in ascending order.\n\nGood Luck!\n\n### Desired Output\n\nThe desired output should look like this:\n```\nage_group     | preferred_pet_type  | count     |\n--------------+---------------------+-----------|\n 18-30        | {Dog}               | 42        |\n 31-45        | {Cat,Dog}           | 13        |\n...\n```\n\n\n\n   ",
+  "totalAttempts": 952,
+  "totalCompleted": 113,
+  "totalStars": 13,
+  "voteScore": 34,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

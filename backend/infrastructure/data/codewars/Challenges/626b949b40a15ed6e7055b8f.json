@@ -1,0 +1,43 @@
+{
+  "id": "626b949b40a15ed6e7055b8f",
+  "name": "Configurations of White and Black Knights on a 3x3 chessboard",
+  "slug": "configurations-of-white-and-black-knights-on-a-3x3-chessboard",
+  "category": "reference",
+  "publishedAt": "2022-04-29T20:59:20.540Z",
+  "approvedAt": "2022-09-25T12:24:42.780Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/626b949b40a15ed6e7055b8f",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-29T07:32:43.958Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Overview\n\nIn this kata you will be working on a 3x3 chessboard. In each test case you will be given:\n\n- A **starting 3x3 board configuration** with some White and Black Knights on the 3x3 board.\n- An **ending 3x3 board configuration** with some White and Black Knights.\n\nYour goal is to determine if you can **reach the end board configuration from the start board configuration**.\n\nThis is a simple puzzle version of Knight movement, so some rules are different compared to real chess: \n\n**Firstly, you may not capture pieces** - so for example a White knight **can not** move to a square that's occupied by a Black knight and \"remove\" the piece. Therefore no pieces will be removed during each game.\n\n**Secondly**, you may only move one Knight at a time, but - **unlike in real chess** - you may choose to move **any number** of White pieces without \"swapping color\" to Black, and vice versa for Black pieces. In other words, you can move 1,2,3,4,... White knights around the board before you move a single Black piece etc.\n\nFinally, just like in standard chess moves, a Knight can move\n2 horizontal and 1 vertical position, or 1 horizontal and 2 vertical positions.\n\n---\n\n## Inputs\n\nYou will be given 2 `lists` (Python), 1 `list` called `start_board` representing the 3x3 state in the starting configuration, and 1 `list` called `end_board` representing the ending configuration.\n\nEach such `list` contains 3 `lists`, each of which consists of 3 `strings`, to represent an entire 1x3 row of the chessboard.\n\n3x3 board layout:\n\n```python\n  [ [top_left_square, top_middle_square, top_right_square],\n    [middle_left_square, middle_middle_square, middle_right_square],\n    [bottom_left_square, bottom_middle_square, bottom_right_square] ]\n```\n\nIf a White Knight is on a given square, the corresponding location in the board will have an `'W'` string, if a Black Knight is on a square the location will have a  `'B'` string. If a square is empty there will be a `'_'` string.\n\nExample input list:\n\n\n```python\nstart_board = [ ['B' , '_', '_' ], [ '_', '_', 'W'] , [ 'W', '_', '_'] ]\n```\n\nThe above example represents a starting configuration where there is a Black Knight in the top_left_square, a White Knight in the middle_right_square, and a White Knight in the bottom_left_square.\n\n## Outputs\n\nReturn `True` if it is possible to reach the given `end_board` from the given `start_board` using the legal moves.\n\nReturn `False` if it is **not** possible.\n\n---\n\n## Examples\n\nExample 1\n\n```python\nstart_board = [ ['W' , '_', '_' ], [ '_', '_', '_'] , [ '_', '_', '_'] ]\nend_board = [ ['W' , '_', '_' ], [ '_', '_', '_'] , [ '_', '_', '_'] ]\n```\n\nExpected solution is `True`; there is only one White Knight and it doesn't need to move between start and end configuration.\n\nExample 2\n\n```python\nstart_board = [ ['W' , '_', '_' ], [ '_', '_', '_'] , [ '_', '_', '_'] ]\nend_board = [ ['_' , '_', '_' ], [ '_', '_', '_'] , [ '_', 'W', '_'] ]\n```\n\nExpected solution is `True`; there is only one White Knight and it can reach the end configuration from the start configuration (in fact, it only requires one move to get there).\n\nExample 3\n\n```python\nstart_board = [ ['W' , '_', '_' ], [ '_', '_', '_'] , [ '_', '_', '_'] ]\nend_board = [ ['B' , '_', '_' ], [ '_', '_', '_'] , [ '_', '_', '_'] ]\n```\n\nExpected solution is `False`; the start configuration has only one White Knight and the end configuration has only one Black Knight.\n\nExample 4\n\n```python\nstart_board = [ ['_' , 'B', '_' ], [ '_', '_', '_'] , [ '_', '_', 'W'] ]\nend_board = [ ['_' , '_', '_' ], [ 'W', '_', 'B'] , [ '_', '_', '_'] ]\n```\n\nExpected solution is `True`; there is one White Knight and one Black Knight. It takes a minimum total of 1W+2B = 3 moves to get all the pieces from the start configuration to the end configuration.",
+  "totalAttempts": 580,
+  "totalCompleted": 44,
+  "totalStars": 10,
+  "voteScore": 32,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Puzzles",
+    "Mathematics",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

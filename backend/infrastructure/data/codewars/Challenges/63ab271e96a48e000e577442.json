@@ -1,0 +1,45 @@
+{
+  "id": "63ab271e96a48e000e577442",
+  "name": "Hurry up, the walls are closing in!",
+  "slug": "hurry-up-the-walls-are-closing-in",
+  "category": "algorithms",
+  "publishedAt": "2022-12-27T18:08:36.965Z",
+  "approvedAt": "2022-12-28T09:22:02.486Z",
+  "languages": [
+    "javascript",
+    "cpp",
+    "python",
+    "rust",
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/63ab271e96a48e000e577442",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2022-12-27T17:10:54.657Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\n##### \"Given a list walls closing in at you, can you make it past those walls without being hit?\"\n\n### Input\n\n- walls: an array of 2-ples, each 2-ple storing non-negative numbers representing the distance of the walls closing in at you from each side (north, south) respectively to the center of the room.\n\n### Output\n\n- return a boolean indicating whether it is possible to run past the walls without being hit.\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n\n- You stand at the west side of a rectangular room, right in the centre of the north and south side\n- Your goal is to reach the east side of the room\n- You can only move in a straight line across the room parallel to north and south side\n- Walls are closing in at you from both the north and south side of the room\n- Walls stop once they hit the center of the room (distance to north side = distance to south side)\n- You and the walls move at the same speed\n- You get hit by a wall if you are on the same tile as a wall\n- If a wall reaches a tile ahead of you, you cannot make it past that wall anymore\n- The distances of opposing walls in each 2-ple can differ\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Input Constraints</summary>\n\n- 50 tests with 1 <= number of walls <= 4\n- 50 tests with 5 <= number of walls <= 15\n- 50 tests with 16 <= number of walls <= 50\n- 50 tests with 51 <= number of walls <= 100\n- 0 <= starting distance of walls to center of room <= 120\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n\nIn the examples below, you start on tile <code>A</code> and want to reach tile <code>B</code>. You have to walk across the center of the room <code>-</code>. Walls <code>W</code> are closing in on you from the north and south.\n\n#### Walk in the park\n\n```\nwalls: [[7, 7], [7, 7], [7, 7], [7, 7]]\nexpected: true\n\nsteps:\n\nstart     1       2       3       4       end\n\n WWWW     WWWW    WWWW    WWWW    WWWW    WWWW\n ....     WWWW    WWWW    WWWW    WWWW    WWWW\n ....     ....    WWWW    WWWW    WWWW    WWWW\n ....     ....    ....    WWWW    WWWW    WWWW\n ....     ....    ....    ....    WWWW    WWWW\n ....     ....    ....    ....    ....    WWWW\n ....     ....    ....    ....    ....    ....\nA----B    A...B   .A..B   ..A.B   ...AB   ....A\n ....     ....    ....    ....    ....    ....\n ....     ....    ....    ....    ....    WWWW\n ....     ....    ....    ....    WWWW    WWWW\n ....     ....    ....    WWWW    WWWW    WWWW\n ....     ....    WWWW    WWWW    WWWW    WWWW\n ....     WWWW    WWWW    WWWW    WWWW    WWWW\n WWWW     WWWW    WWWW    WWWW    WWWW    WWWW\n```\n\n#### Close call\n\n```\nwalls: [[2, 2], [3, 3], [4, 4]]\nexpected: true\n\nsteps:\n\nstart     1       2       3       end\n\n WWW      WWW     WWW     WWW     WWW\n WW.      WWW     WWW     WWW     WWW\n W..      WW.     WWW     WWW     WWW\n ...      W..     WW.     WWW     WWW\nA---B     A--B    WA.B    WWAB    WWWA\n ...      W..     WW.     WWW     WWW\n W..      WW.     WWW     WWW     WWW\n WW.      WWW     WWW     WWW     WWW\n WWW      WWW     WWW     WWW     WWW\n```\n\n#### So close .. but we can't make it\n\n```\nwalls: [[2, 2], [3, 3], [3, 4]]\nexpected: false\n\nsteps:\n\nstart     1       2       end       \n\n WWW      WWW     WWW     WWW     \n WWW      WWW     WWW     WWW     \n W..      WWW     WWW     WWW     \n ...      W..     WWW     WWW     \nA---B     A--B    WA.B    WWXB     <-- X is position the north wall hits us\n ...      W..     WW.     WWW     \n W..      WW.     WWW     WWW     \n WW.      WWW     WWW     WWW     \n WWW      WWW     WWW     WWW     \n```\n\n#### We stand no chance\n\n```\nwalls: [[3, 3], [1, 1], [3, 3]]\nexpected: false\n\nsteps:\n\nstart     end                \n\n WWW      WWW             \n .W.      WWW            \n .W.      .W.                   \nA---B     AW-B    <-- A is blocked by walls     \n .W.      .W.            \n .W.      WWW             \n WWW      WWW            \n```\n\n</details>\n",
+  "totalAttempts": 1290,
+  "totalCompleted": 458,
+  "totalStars": 26,
+  "voteScore": 108,
+  "tags": [
+    "Algorithms",
+    "Mathematics",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

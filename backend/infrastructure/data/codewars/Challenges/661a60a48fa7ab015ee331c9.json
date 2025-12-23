@@ -1,0 +1,42 @@
+{
+  "id": "661a60a48fa7ab015ee331c9",
+  "name": "Check passwords by hashes",
+  "slug": "check-passwords-by-hashes",
+  "category": "reference",
+  "publishedAt": "2024-04-13T16:31:42.731Z",
+  "approvedAt": "2024-04-16T17:29:32.020Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/661a60a48fa7ab015ee331c9",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-13T10:38:28.544Z",
+  "createdBy": {
+    "username": "Twilight_Sun",
+    "url": "https://www.codewars.com/users/Twilight_Sun"
+  },
+  "approvedBy": {
+    "username": "Unnamed",
+    "url": "https://www.codewars.com/users/Unnamed"
+  },
+  "description": "You are a junior developer in a company that uses some app with database and wants to improve the security of user passwords. So they want to check whether passwords are stronger than some random well-known word. Your task is to write a function that would check passwords for their presence in a given dictionary. For security reasons, you will only be provided with the SHA1 hashes (encoded in base64) of these passwords. As a developer you have enough privileges to get your job done, not just rights to select data as an usual user.\n\nDatabase structure:\n\nTable `dictionary`:\n* `password` (text): well-known password\n\nFunction signature:\n* name: `check_hashes`\n* input parameters: \n  * `hashes` (text\\[\\]) - array of base64 encoded SHA1 hashes\n* returning value: \n  * a table with 2 columns:\n    * `hash` (text) - given hash from the input parameter\n    * `password` (text) - password from the dictionary, if found. Otherwise - NULL\n  \nThe result of the function should be ordered in the same way as the hashes in the input array.\n\nPerformance requirements:\n* 100 tests with ~50 hashes each and ~100k passwords in the dictionary\n* 100 tests with ~100 hashes each and ~100k passwords in the dictionary\n* 100 tests with ~50 hashes each and ~200k passwords in the dictionary\n\nNotes and hints: \n* The dictionary is changed only a very few times\n* in a rare case of a collision any password (or even both in two lines) would be counted as a right answer\n* you have enough DB rights to do everything you need to make your function fast enough",
+  "totalAttempts": 745,
+  "totalCompleted": 43,
+  "totalStars": 7,
+  "voteScore": 23,
+  "tags": [
+    "SQL",
+    "Databases",
+    "Performance",
+    "Cryptography"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

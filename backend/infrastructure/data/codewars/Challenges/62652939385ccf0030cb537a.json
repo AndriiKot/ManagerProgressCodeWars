@@ -1,0 +1,41 @@
+{
+  "id": "62652939385ccf0030cb537a",
+  "name": "Pawn Promotion",
+  "slug": "pawn-promotion",
+  "category": "reference",
+  "publishedAt": "2022-04-24T10:44:39.335Z",
+  "approvedAt": "2022-04-25T09:57:38.377Z",
+  "languages": [
+    "python",
+    "cobol",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/62652939385ccf0030cb537a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-24T10:40:57.911Z",
+  "createdBy": {
+    "username": "Eyad Hantouli",
+    "url": "https://www.codewars.com/users/Eyad%20Hantouli"
+  },
+  "approvedBy": {
+    "username": "akar-0",
+    "url": "https://www.codewars.com/users/akar-0"
+  },
+  "description": "# Welcome To Pawn Promotion Kata.\n\n\nIn this kata you will write a program that studies a chess board\nthat contains only two pieces (pawn) and (king).\n\nThe pawn is always in the last row\nas it will now turn into one of the four pieces\n```[queen , rook , bishop , knight]``` in a process called {pawn promotion}.\n\nYour task is to locate the king and the pawn and choose the appropriate piece\nto promote it and put the king in check.\n\n```The letter P represents the pawn```\n\n```The letter K represents the king```\n\n# Examples:\n```\ninput:\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n['P', ' ', ' ', 'K', ' ', ' ', ' ', ' '],\n\noutput:\n['queen', 'rook']\n```\n```\ninput:\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', 'K', ' '],\n[' ', ' ', ' ', ' ', 'P', ' ', ' ', ' '],\n\noutput:\n['knight']\n```\n\n```\ninput:\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', 'K', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],\n[' ', ' ', 'P', ' ', ' ', ' ', ' ', ' '],\n\noutput:\n[]\n```\n\n# Q&A:\n```\nQ:- Why was the order of the pieces in the first example as ['queen', 'rook']\nand not the other way around ?\n```\n```\nA:- In the event that there is more than one option that achieves check,\nreturn the order of the pieces as follows [queen, rook, bishop, knight]\n```\n\n# special cases:\n\n- If there is no piece that can make check immediately upon upgrade, return [].\n\n- If there is no pawn on the board, return [].\n\n- If there is no king on the board, return [].",
+  "totalAttempts": 1681,
+  "totalCompleted": 277,
+  "totalStars": 28,
+  "voteScore": 93,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

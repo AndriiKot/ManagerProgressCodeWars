@@ -1,0 +1,39 @@
+{
+  "id": "5feb264d4010c6000d6e9a30",
+  "name": "tricky swift: safe SQL string  interpolation",
+  "slug": "tricky-swift-safe-sql-string-interpolation",
+  "category": "reference",
+  "publishedAt": "2021-01-03T19:59:01.386Z",
+  "approvedAt": "2025-03-10T11:47:28.454Z",
+  "languages": [
+    "swift"
+  ],
+  "url": "https://www.codewars.com/kata/5feb264d4010c6000d6e9a30",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-12-29T12:51:25.978Z",
+  "createdBy": {
+    "username": "flaco",
+    "url": "https://www.codewars.com/users/flaco"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You just joined a new [Vapor](https://vapor.codes/) project and notice a suspicious function.\n\n```swift\nfunc runSQL(_ sqlQuery: String) {\n  connection.execute(sqlQuery)\n}\n```\nIt is called all over the project, and dynamic values are inserted with swift string interpolation.\n```swift\nrunSQL(\"INSERT INTO users (name, age) VALUES \\(name) \\(age);\")\n```\nYou realize that this is a [security threat](https://en.wikipedia.org/wiki/SQL_injection) right away!\n\nTo quickly get rid of it you decide to rewrite the function so that it takes a wrapper type as argument. The Queries of this type are then passed to your SQL library, where they are sanitized before being handed to the database. \n\n```swift\nfunc runSQL(_ sqlQuery: SQLQuery) {\n  connection.sanitizeAndExecute(sqlQuery)\n}\n```\n\nYour build log piles up with hundreds of compiler errors. That's too much work! Ideally, you wouldn't have to change the function calls at all...\n\n### Task\n\nExtend the type `SQLQuery` (defined as follows) so that `runSQL` can be called without changing the code at the call site.\n\n```swift\nenum SQLExpression: Equatable {\n    case integer(_ integer: Int)\n    case dynamicString(_ string: String)\n    case staticString(_ string: String)\n}\n\nstruct SQLQuery {\n    var parts: [SQLExpression]\n}\n```\n\nStatic parts of the string should be wrapped with `staticString`, and interpolated expressions should be wrapped in `integer` and `dynamicString`.\n\n### Example\n\nHere are some examples that you can easily try in a Playground.\n\n```swift\nlet command: SQLQuery = \"DROP TABLE students;\"\n```\nresults in:\n```swift\nSQLQuery(parts: [.staticString(\"DROP TABLE students;\")])\n```\n\n```swift\nlet name = \"Bobby tables\"\nlet age = 12\nlet command: SQLQuery = \"INSERT INTO users (name, age) VALUES (\\(name), \\(age));\"\n```\nresults in:\n```swift\nSQLQuery(\n    parts: [\n        .staticString(\"INSERT INTO users (name, age) VALUES (\"),\n        .dynamicString(\"Bobby tables\"),\n        .staticString(\", \"),\n        .integer(12),\n        .staticString(\");\")\n    ]\n)\n```\n\nImportant Notes\n- You *just* have to extend the `SQLQuery` type appropiately. The `runSQL` function is declared in preloaded and cannot be modified.\n- Only strings and integers have to be supported (in the interpolation).\n- Do not append empty strings to the SQLQuery parts.\n- The only task of the kata is to wrap the interpolated string parts. It has nothing to do with any SQL syntax checking / error handling.\n- In real life, always use the appropiate library functions for interpolating SQL commands!\n",
+  "totalAttempts": 38,
+  "totalCompleted": 19,
+  "totalStars": 7,
+  "voteScore": 28,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

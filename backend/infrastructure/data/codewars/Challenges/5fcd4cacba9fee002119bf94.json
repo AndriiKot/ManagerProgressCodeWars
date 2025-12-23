@@ -1,0 +1,36 @@
+{
+  "id": "5fcd4cacba9fee002119bf94",
+  "name": "Competitive team forming",
+  "slug": "competitive-team-forming",
+  "category": "algorithms",
+  "publishedAt": "2020-12-06T21:27:37.746Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5fcd4cacba9fee002119bf94",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2020-12-06T21:27:08.094Z",
+  "createdBy": {
+    "username": "drchangliu",
+    "url": "https://www.codewars.com/users/drchangliu"
+  },
+  "description": "Given a total of `N` players, each with different skill levels, form `M` teams, each with `P` players. `P = N//M`. The teams should have reasonably balanced collective skills for a competitive tournament. If `N % M` is not 0, it is fine to leave `N%M` players without a team.\n\nFor example, given a list of four players listed below:\n\n```\n[[\"Felix\",1],[\"Ryan\",2], [\"Adam\",5],[\"Ana\",4]]\n```\n\nTo form two teams with these four players, one should return:\n\n```\n[[[\"Felix\",1], [\"Adam\",5]], [[\"Ryan\",2],[\"Ana\",4]]]\n```\n\nwhere both teams have a collective skill level of 6.\n\nThe players left without a team do not need to be in the returned list.\n\nIn the returned teams list, the teams should be sorted by the name of the most skillful players alphabetically.\nWithin each team, the players should be sorted by player skill, with the highest skill level first. The skill levels are defined in Kyu, so the lower the number, the higher the skill level. \n\nNote that fundamentally, this problem cannot be efficiently solved. (It's called the number partitioning problem. Its difficulty is NP-Complete. https://en.wikipedia.org/wiki/Partition_problem) Here, a simple approximate solution will work. We may develop a harder version in the future asking for an optimal solution (within certain constraints, of course).\n\nA simple approximate algorithm is to sort the player list by skill level and then assign players in teams in alternating turns (first from high to low, then from low to high, then repeat ...).\n\nCurrently, the test cases accepts all team assignments with difference in team skills that is as much as 5.",
+  "totalAttempts": 92,
+  "totalCompleted": 9,
+  "totalStars": 4,
+  "voteScore": 3,
+  "tags": [
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

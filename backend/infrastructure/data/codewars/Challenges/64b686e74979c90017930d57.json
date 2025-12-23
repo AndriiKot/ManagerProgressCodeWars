@@ -1,0 +1,42 @@
+{
+  "id": "64b686e74979c90017930d57",
+  "name": "Let the Dominoes Fall Down",
+  "slug": "let-the-dominoes-fall-down",
+  "category": "games",
+  "publishedAt": "2023-07-18T12:44:31.199Z",
+  "approvedAt": "2023-08-14T16:27:58.255Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64b686e74979c90017930d57",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-18T12:34:47.439Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "approvedBy": {
+    "username": "akar-0",
+    "url": "https://www.codewars.com/users/akar-0"
+  },
+  "description": "# Task\nThe function is given a string consisting of a mix of three characters representing which direction a domino is tilted:\n\n- \"R\" tilted to the right\n- \"L\" tilted to the left\n- \"I\" standing up, not tilted\n\nThe string represents the initial state of the assembly. After a time click the overall state can change. The tilted dominoes tend to tilt their standing-up neighbors. The propagation speed is the same for left and right. The following rules are applied:\n\n- \"RI\" will change to \"RR\" unless \"I\" is being pushed from two opposite directions at the same time.\n- \"IL\" will change to \"LL\" unless \"I\" is being pushed from two opposite directions at the same time.\n- \"RIL\" will stay unchanged because \"I\" is being pushed from two opposite directions at the same time.\n- \"RIIL\" will change to \"RRLL\" after one click.\n- \"RR\", \"LL\" \"RL\" will stay unchanged.\n\nSome \"I\"s at the ends of the string may stay unaffected if no push came to them.\nDetermine the final state of the assembly after all propagations have been exhausted and return it as a string (of the same length).\n\n# Examples\n```\ndominoes_fall(\"\") ➞ \"\"\n# No dominoes in the assembly.\n\ndominoes_fall(\"RIIII\") ➞ \"RRRRR\"\n# Propagation starts on the left causing all others to tilt right.\n\ndominoes_fall(\"IIIIL\") ➞ \"LLLLL\"\n# Propagation starts on the right causing all others to tilt left.\n\ndominoes_fall(\"RIIIL\") ➞ \"RRILL\"\n# After one click second and fourth tilt and then the middle one is pushed by two opposing forces.\n\ndominoes_fall(\"IRIIL\") ➞ \"IRRLL\"\n# The first one has not received any push.\n\ndominoes_fall(\"IRRIL\") ➞ \"IRRIL\"\n# The assembly is already in the final stage. No propagation was launched.\n```\n\n# Input constraints\n- 0<=len(s)<=30000\n- Keep in mind that the state changes time click after time click.\n",
+  "totalAttempts": 871,
+  "totalCompleted": 73,
+  "totalStars": 12,
+  "voteScore": 61,
+  "tags": [
+    "Algorithms",
+    "Logic",
+    "Regular Expressions",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

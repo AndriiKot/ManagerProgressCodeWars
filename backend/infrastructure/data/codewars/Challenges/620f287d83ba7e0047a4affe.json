@@ -1,0 +1,40 @@
+{
+  "id": "620f287d83ba7e0047a4affe",
+  "name": "Uniform Milk Production",
+  "slug": "uniform-milk-production",
+  "category": "algorithms",
+  "publishedAt": "2022-02-19T01:29:14.350Z",
+  "approvedAt": "2024-09-17T10:31:33.294Z",
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/620f287d83ba7e0047a4affe",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-02-18T05:02:53.257Z",
+  "createdBy": {
+    "username": "tonylicoding",
+    "url": "https://www.codewars.com/users/tonylicoding"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Tom's `$n (2\\leq{n}\\leq{2\\cdot{10^5}})$` goats each can produce milk at rates `$[a_0, a_1, ..., a_{n-1}]$` respectively with `$(1\\leq{a_i}\\leq{5\\cdot 10^6})$` (in liters per hour.) Because Tom boasts about having the most uniform goats in the world, he wants the goats to each have a similar milk output. However, Tom is suspicious that one of his goats is either not keeping up with the rest of the trip (group of goats) or is outpacing its peers.\n\nIn an upcoming milking contest, Tom displays his goats side by side in the same order as their milk-producing rates appear in `$a$`. However, he wants to remove a goat that does not fit in with the rest.  \n\nTo determine the goat that does not fit, Tom looks at each group of `$x (2\\leq{x}\\leq{n})$` consecutive goats, and wants to find a goat such that it maximizes the absolute difference between the average milk outputs of the `$x$` consecutive goats and the average milk outputs of the same `$x-1$` goats but without it. Please help Tom find this goat and return the index that it appears in `$a$` (If multiple goats tie, return the minimum index.)\n<hr></hr>\n\n**Sample Input & Output**\n```java\nuniformMilkOutput(int [] a, int x); // Input format\nuniformMilkOutput(new int[] {4, 2, 9, 0, 8, 5, 2}, 3); // should return 3\nuniformMilkOutput(new int[] {6, 1, 4, 2, 10, 10, 3}, 4); // should return 4\nuniformMilkOutput(new int[] {5, 4, 12, 6, 14}, 2); // should return 1\nuniformMilkOutput(new int[] {5, 12, 4, 6, 14}, 2); // should return 1\n```\nFor the first test case, `$avg(\\{9, 0, 8\\})=\\frac{17}{3}, avg(\\{9, 8\\})=\\frac{17}{2}$` It can be shown that `$|\\frac{17}{3}-\\frac{17}{2}|$` is the largest absolute difference when removing one goat, and the goat that is removed is has a milk output of `$0$` and an index of `$3$`. In the last case, removing either 12, 4, 6, or 14 all give the same result, but 12 appears first, so the result should be `$1$`.\n\nNote: be careful of `double` imprecision and look out for time complexity.",
+  "totalAttempts": 200,
+  "totalCompleted": 16,
+  "totalStars": 9,
+  "voteScore": 20,
+  "tags": [
+    "Algorithms",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

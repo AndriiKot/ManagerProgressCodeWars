@@ -1,0 +1,44 @@
+{
+  "id": "62443a1ea8fca9002346d72c",
+  "name": "Rock paper scissors infinite",
+  "slug": "rock-paper-scissors-infinite",
+  "category": "reference",
+  "publishedAt": "2022-04-02T15:24:17.253Z",
+  "approvedAt": "2023-02-09T20:45:51.803Z",
+  "languages": [
+    "python",
+    "c",
+    "typescript",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62443a1ea8fca9002346d72c",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-03-30T11:08:14.702Z",
+  "createdBy": {
+    "username": "Jamezofchez",
+    "url": "https://www.codewars.com/users/Jamezofchez"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "![alt text](https://i0.wp.com/cjleo.com/wp-content/uploads/2020/05/rps15_lovelace.jpg?resize=658%2C668&ssl=1)\n# Summary:\n[Rock, Paper, Scissors](https://en.wikipedia.org/wiki/Rock_paper_scissors) is too boring- let's spice it up a little!\n\nGiven an array of possible choices, what player 1 chooses and what player 2 chooses, create a function which determines who wins.\n\nIf player 1 wins, return 'Player 1 won!'\n\nIf player 2 wins, return 'Player 2 won!'\n\nIf the game is drawn, return 'Draw!'\n\n```if:c\n( Note that in the C translation,\nreturn values will be taken from an enum:\n\n`enum infinite {DRAW, ONE, TWO};` )\n```\n\nPlayer 1 and 2 will always choose an item from the array choices.\n\nThe array will only have one of each choice.\n# Now for the details:\nThe array will look something like this 👇\n```\n[\"rock\",\"paper\",\"scissors\"]\n```\nThe rules of rock-paper-scissors are as follows:\n![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/220px-Rock-paper-scissors.svg.png)\n\nIt is a tie if player 1 and player 2 choose the same option.\n\nIf player 1 chooses \"paper\" and player 2 chooses \"rock\", since paper beats rock, return 'Player 1 won!'\n\nIf player 1 chooses \"paper\" and player 2 chooses \"scissors\", since scissors beats paper, return 'Player 2 won!'\n\nIf player 1 and player 2 both choose \"scissors\", return 'Draw!'\n\n(Think about how the order of each item in the array dictates if it wins or loses to other items, depending on their order)\n\nWhat if the array was this? 👇\n```\n[\"scissors\",\"paper\",\"rock\"]\n```\nIn this case, the rules would be inverted:\n\nRock beats paper\n\nPaper beats scissors\n\nScissors beats rock\n\nThe order of who-beats-what will change depending in their order in the array.\n\nWe don't need to limit ourselves to only rock, paper and scissors though.\n\nNow what if the array looks like this? 👇\n```\n[\"rock\",\"spock\",\"paper\",\"lizard\",\"scissors\"]\n```\nHere, if player 1 chooses \"rock\" and player 2 chooses either \"spock\" or \"paper\", return 'Player 2 won!'\n\nIf instead player 1 chooses \"rock\" and player 2 chooses either \"lizard\" or \"scissors\", return 'Player 1 won!'\n\nIf player 1 chooses \"lizard\" and player 2 chooses \"paper\", return 'Player 1 won!'\n\nWhat if the array's length was even? 👇\n```\n[\"heavy\",\"sniper\",\"soldier\",\"pyro\"]\n```\nHere, if player 1 chooses \"heavy\", then player 1 wins if player 2 chooses \"pyro\", and loses if player 2 chooses \"sniper\". \n\nHowever, if player 1 chooses \"heavy\" and player 2 chooses \"soldier\", then it is a draw.\n\nSimilarly, if player 1 chooses \"pyro\" and player 2 chooses \"sniper\", it is a draw.\n# Edge cases:\nIf the array's length is 1, it will always be a draw. The same happens if the array's length is 2.",
+  "totalAttempts": 914,
+  "totalCompleted": 232,
+  "totalStars": 39,
+  "voteScore": 78,
+  "tags": [
+    "Games",
+    "Puzzles",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

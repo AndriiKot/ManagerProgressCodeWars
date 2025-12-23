@@ -1,0 +1,36 @@
+{
+  "id": "63b5d708c28000000ff18a73",
+  "name": "Binary tic-tac-toe checker",
+  "slug": "binary-tic-tac-toe-checker",
+  "category": "algorithms",
+  "publishedAt": "2023-01-04T19:54:42.262Z",
+  "approvedAt": null,
+  "languages": [
+    "rust",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/63b5d708c28000000ff18a73",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-01-04T19:44:08.507Z",
+  "createdBy": {
+    "username": "copopit",
+    "url": "https://www.codewars.com/users/copopit"
+  },
+  "description": "#### TL;DR\nA Tic-tac-toe board state is represented by 2 binary numbers, one for each players moves. (For each number) The left-most bit is the top-left corner of the board, and the right-most bit is the bottom-right corner of the board.\n\nThe board states are final, and will not have illegal (overlapping) moves, or 2 winners.\n\nReturn <strong>\"Player 1\"</strong>, <strong>\"Player 2\"</strong>, or <strong>\"Draw\"</strong> depending on the winner.\n```\n(\n  0b101\n    001   // Player 1 - wins in column 3\n    011,\n    \n  0b010\n    110   // Player 2\n    100\n)\n```\n___________\n\n## Backstory\n\nYou find yourself at the biannual [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) world championship, and this year over 100 000 people will participate. Due to the huge amount of participants, brand new digital boards are being used, that will automatically return the result of the game.\n\nAs you watch the giant tally screen, it suddenly fills with errors and the dozen judges present are frantically sprinting from board to board trying to resolve the winners manually. That's when you, Certified Software DeveloperTM, see your opportunity to help find a way to fix the automatic system.\n\nThe judges are desperate to salvage the tournament and let you try and figure out what might be wrong. You realize that the digital boards themselves seem to be working and sending the correct boardstate, but the backend system has completely died and cannot resolve any games. \n\nWhen you connect your laptop to the input stream you are presented with just a pair of numbers per game, one of them looks like this: `(331, 180)`. Looking at all the numbers you realize none of them ever goes higher than 427, and maybe there is another way to display the numbers.\n\nThat is when you decide to print them in binary and you start to see a pattern, suddenly `(331, 180`) is instead `(0b101001011, 0b010110100)`.\n\n__________________\n\nFormatting it a bit differently:\n```\n(\n  0b101\n    001   // Player 1\n    011,\n    \n  0b010\n    110   // Player 2\n    100\n)\n```\n\nEach bit represents a move done by either player 1 or player 2, and looking at the numbers we can clearly see that the third column for player 1 has won. You can safely assume that there are no illegal moves, since the machines themselves take care of the local state. Only the final state of the board is sent for evaluation.\n\nReturn <strong>\"Player 1\"</strong>, <strong>\"Player 2\"</strong>, or <strong>\"Draw\"</strong> depending on the winner.\n\n# Example\n```\n(0b111000000, 0b000001010) -> \"Player 1\"\n(0b011011100, 0b100100011) -> \"Player 1\"\n(0b101001011, 0b010110100) -> \"Player 1\"\n\n(0b101101000, 0b000000111) -> \"Player 2\"\n(0b100100011, 0b011011100) -> \"Player 2\"\n(0b010110100, 0b101001011) -> \"Player 2\"\n\n(0b101101010, 0b010010101) -> \"Draw\"\n\n```",
+  "totalAttempts": 4,
+  "totalCompleted": 3,
+  "totalStars": 0,
+  "voteScore": -1,
+  "tags": [
+    "Binary"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

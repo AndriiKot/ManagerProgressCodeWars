@@ -1,0 +1,46 @@
+{
+  "id": "63b4758f27f8e5000fc1e427",
+  "name": "Yahtzee upper section scoring",
+  "slug": "yahtzee-upper-section-scoring",
+  "category": "games",
+  "publishedAt": "2023-01-03T20:00:08.212Z",
+  "approvedAt": "2023-01-16T20:59:34.344Z",
+  "languages": [
+    "python",
+    "cpp",
+    "powershell",
+    "haskell",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/63b4758f27f8e5000fc1e427",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-01-03T18:35:59.525Z",
+  "createdBy": {
+    "username": "artiekra",
+    "url": "https://www.codewars.com/users/artiekra"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "## Introduction\n\nThe game of Yahtzee is played by rolling five 6-sided dice and scoring the results in a number of ways. For the purpose of this kata, the upper section of a Yahtzee score card gives you six possible ways to score a roll: 1 times the number of 1s in the roll, 2 times the number of 2s, 3 times the number of 3s, and so on up to 6 times the number of 6s. \n  \nFor instance, consider the roll `[2, 3, 5, 5, 6]`. If you scored this as 1s, the score would be 0, since there are no 1s in the roll. If you scored it as 2s, the score would be 2, since there's one 2 in the roll. Scoring the roll in each of the six ways gives you the six possible scores: `0 2 3 0 10 6`.\nThe maximum here is 10 (2x5), so your result should be 10.\n\nYou are given a Yahtzee dice roll, represented as a list with `k` integers from `1` to `10000`. Your task is to find the maximum possible score for this roll in the upper section of the Yahtzee score card. Here's what that means.\n\n## Examples\n```python\nyahtzee_upper([2, 3, 5, 5, 6]) => 10 #5*2=10 - there are two 5s, which gives us 10\nyahtzee_upper([1, 1, 1, 1, 3]) => 4  #1*4=4, while 3*1=3 - there are four 1s, which gives us 4, while one 3 gives us 3\nyahtzee_upper([1, 1, 1, 3, 3]) => 6\nyahtzee_upper([15, 9, 9, 8, 9]) => 27\nyahtzee_upper([1654, 1654, 5099, 3086, 1654, 5099, 2274,\n    1654, 1654, 1654, 1654, 1654, 3086, 4868, 1654, 4868, 1654,\n    3086, 4868, 3086]) => 16540 #1654*10=16540 - large example - there are ten 1654s, which gives us 16540\n```\n```c\nyahtzee_upper({2, 3, 5, 5, 6}) => 10  //5*2=10 - there are two 5s, which gives us 10\nyahtzee_upper({1, 1, 1, 1, 3}) => 4  //1*4=4, while 3*1=3 - there are four 1s, which gives us 4, while one 3 gives us 3\nyahtzee_upper({1, 1, 1, 3, 3}) => 6\nyahtzee_upper({15, 9, 9, 8, 9}) => 27\nyahtzee_upper({1654, 1654, 5099, 3086, 1654, 5099, 2274,\n    1654, 1654, 1654, 1654, 1654, 3086, 4868, 1654, 4868, 1654,\n    3086, 4868, 3086}) => 16540  //1654*10=16540 - large example - there are ten 1654s, which gives us 16540\n```\n```cpp\nyahtzee_upper({2, 3, 5, 5, 6}) => 10  //5*2=10 - there are two 5s, which gives us 10\nyahtzee_upper({1, 1, 1, 1, 3}) => 4  //1*4=4, while 3*1=3 - there are four 1s, which gives us 4, while one 3 gives us 3\nyahtzee_upper({1, 1, 1, 3, 3}) => 6\nyahtzee_upper({15, 9, 9, 8, 9}) => 27\nyahtzee_upper({1654, 1654, 5099, 3086, 1654, 5099, 2274,\n    1654, 1654, 1654, 1654, 1654, 3086, 4868, 1654, 4868, 1654,\n    3086, 4868, 3086}) => 16540  //1654*10=16540 - large example - there are ten 1654s, which gives us 16540\n```\n```haskell\n>>> yahtzeeUpper [2, 3, 5, 5, 6]\n10 -- 5*2=10 - there are two 5s, which gives us 10\n>>> yahtzeeUpper [1, 1, 1, 1, 3]\n4  -- 1*4=4, while 3*1=3 - there are four 1s, which gives us 4, while one 3 gives us 3\n>>> yahtzeeUpper [1, 1, 1, 3, 3]\n6\n>>> yahtzeeUpper [15, 9, 9, 8, 9]\n27\n>>> yahtzeeUpper [1654, 1654, 5099, 3086, 1654, 5099, 2274, 1654, 1654, 1654,\n                  1654, 1654, 3086, 4868, 1654, 4868, 1654, 3086, 4868, 3086]\n16540 -- 1654*10=16540 - large example - there are ten 1654s, which gives us 16540\n```\n\n## Limitations\nThe random tests will use following numbers:\n\nNumber of rolls: `$50 \\le k \\le 5000$`",
+  "totalAttempts": 2082,
+  "totalCompleted": 905,
+  "totalStars": 24,
+  "voteScore": 130,
+  "tags": [
+    "Algorithms",
+    "Arrays",
+    "Games",
+    "Game Solvers"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

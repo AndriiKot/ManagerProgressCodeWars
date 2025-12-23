@@ -1,0 +1,39 @@
+{
+  "id": "63df4ae526149626f9b92b50",
+  "name": "CBC - Cipher Block Chaining ",
+  "slug": "cbc-cipher-block-chaining",
+  "category": "algorithms",
+  "publishedAt": "2023-02-05T06:22:59.586Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63df4ae526149626f9b92b50",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-02-05T06:21:26.031Z",
+  "createdBy": {
+    "username": "yakitategohan",
+    "url": "https://www.codewars.com/users/yakitategohan"
+  },
+  "description": "Hello! Please write a class that will be able to encrypt and decrypt a text using CBC, or cipher block chaining encryption. CBC is a commonly used encryption method. More about CBC can be read here:\n\nhttp://www.crypto-it.net/eng/theory/modes-of-block-ciphers.html\n\nYour class must take and store a key and an initialization vector. It will then need to encode and decode a block of text using CBC. For the sake of this problem, we will be assuming all input and output will be in the characters in the alphabet provided in the problem (base64 characters). Assume that there will be no whitespaces in the text and that provided IV will be the length of the key.\n\nThis is a simplification of CBC, so it will follow the following steps:\n1) Change each character in text to base64 index, change each index to binary (hint: each character will be 6 bits long)\n2) Split the binary into blocks depending on the key length\n3) XOR the first block with the given IV, and then encrypt first block\n4) Blocks after the first block will be XOR'd by the previous encrypted block\n\nThis diagram should clear up the steps:\nhttps://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/900px-CBC_encryption.svg.png\n\nIf you are confused about encrypting: the key will encrypt the XOR'd block by changing the order of the binary characters by the order of index of each letter of the key that has been alphabetized:\n```\nExample:\nkey =             C  A  T\nindex:            0  1  2\nalphabetized:     A  C  T\n                  1  0  2\nex block:         D  O  G\n                  0  1  2\nencrypted block:  O  D  G\n```\nDon't worry, I'll provide a key that is strictly numeric, so you don't have to alphabetize and figure out the order. This also means the key length will be up to 10 characters long. Test codes will also only test text with bit lengths that are multiples of the key length. Again, this is just a simplification of how CBC works.",
+  "totalAttempts": 20,
+  "totalCompleted": 6,
+  "totalStars": 2,
+  "voteScore": 8,
+  "tags": [
+    "Algorithms",
+    "Ciphers",
+    "Cryptography",
+    "Strings",
+    "Security"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

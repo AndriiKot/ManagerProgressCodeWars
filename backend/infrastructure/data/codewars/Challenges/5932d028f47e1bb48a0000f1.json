@@ -1,0 +1,36 @@
+{
+  "id": "5932d028f47e1bb48a0000f1",
+  "name": "Bridge: SAYC Openings",
+  "slug": "bridge-sayc-openings",
+  "category": "algorithms",
+  "publishedAt": "2017-06-04T00:47:43.977Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/5932d028f47e1bb48a0000f1",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2017-06-03T15:05:12.702Z",
+  "createdBy": {
+    "username": "Perlkonig",
+    "url": "https://www.codewars.com/users/Perlkonig"
+  },
+  "description": "# Background\n\n[Contract bridge](https://en.wikipedia.org/wiki/Contract_bridge) is one of the world's most popular card games and dates back to the nineteenth century. It's played with a standard deck of cards. The cards are ranked from 2 (the lowest) through the Ace (the highest). The suits are also ranked Clubs (lowest), Diamonds, Hearts, Spades, and No Trump (highest), but the suit ranking is irrelevant for this kata. The game is played with four players, in partnerships. All the cards are dealt and the bidding occurs. Players take turn bidding or passing until a contract is decided (see below), then the hand is played. The play itself is a standard trick-taking game in which the first player \"leads\" a card and the others must follow suit if they can. If they cannot, then they can play any card they wish. The winner of the trick is the one who played the highest trump (if any) or the highest card of the suit lead. The winner of the trick leads to the next trick. When all the cards are played, points are awarded to the partnerships depending on the type of match you're playing.\n\n# Your Task\n\nYour code must accept a string of characters representing an initial hand of 13 cards and return an appropriate bid. This kata focuses solely on the opening bid. It is assumed in every case that you are the first player to speak in the bidding round (you don't have to worry about competitive bidding or fourth-seat openers). You can also ignore scoring altogether and concepts like vulnerability. You will simply evaluate each hand against a standard set of opening rules.\n\n## Bidding\n\nThe language allowed in the bidding phase is restricted to the following:\n\n  * a number between 1 and 7 followed by a suit, including \"no trump,\" represented by an \"N\" (e.g., `2C`, `3N`, `4H`)\n  * `pass`\n  * `double` (not used in this kata)\n  * `redouble` (not used in this kata)\n  \n## Hand Evaluation\n\nTo evaluate the strength of your hand you need to know know how many high-card points (HCP) you have.\n\n  * Aces are worth 4 HCP\n  * Kings are worth 3 HCP\n  * Queens are worth 2 HCP\n  * Jacks are worth 1 HCP\n  \nThe cards 10 (`T`) through Ace are called \"honours.\"\n\nThe suits Clubs and Diamonds are called the \"minors,\" and Hearts and Spades are the \"majors.\"\n\n## SAYC Opening Conventions\n\nBridge bidding is a complex beast, and there are many well-established bidding systems. The one most widely adopted is [Standard American Yellow Card](https://en.wikipedia.org/wiki/Standard_American). The conventions for opening are as follows:\n\n* If your hand meets the \"Rule of 20\" (total HCP plus the length of your two longest suits must equal at least 20):\n  * Normally open five-card majors in all seats.\n  * Open the higher of long suits of equal length: 5-5 or 6-6.\n  * Normally open `1D` with 4-4 in the minors.\n  * Normally open `1C` with 3-3 in the minors.\n  * Notrump openings show a balanced hand and can be made with a five-card minor suit.\n    * `1N` = 15-17\n    * `2N` = 20-21\n    * `3N` = 25-27\n  * With 22+ points and an unbalanced hand, open `2C`\n\n* If you have 6+ HCP and a long suit with 2 of the top 3 or 3 of the top 5 honours:\n  * Open 2 of the suit if you have 6 cards in the suit\n  * Open 3 of the suit if you have 7 cards in the suit\n  * etc.\n  * The exception to this, of course, is `2C`, which is reserved for big hands. So for Clubs, `3C` is for 6 cards and `4C` is for 7.\n  \n\n",
+  "totalAttempts": 165,
+  "totalCompleted": 8,
+  "totalStars": 7,
+  "voteScore": 8,
+  "tags": [
+    "Games",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "65ae670db0783a0655f57972",
+  "name": "Table and sleeves . Fit it!",
+  "slug": "table-and-sleeves-fit-it",
+  "category": "reference",
+  "publishedAt": "2024-01-22T16:54:20.130Z",
+  "approvedAt": null,
+  "languages": [
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/65ae670db0783a0655f57972",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-01-22T13:01:01.855Z",
+  "createdBy": {
+    "username": "RealSup",
+    "url": "https://www.codewars.com/users/RealSup"
+  },
+  "description": "# Story\n[LP](https://en.wikipedia.org/wiki/LP_record) (from \"long playing\" or \"long play\") is an analog sound storage medium, also called vinyl.\nIn 2022 vinyl sales surpassed CDs for the first time in 35 years since 1987.\n# Usefull information\nThe size of the typical cardboard LP [sleeve cover](https://en.wikipedia.org/wiki/Album_cover) is 12.375х12.375 inch or 31.43x31.43 cm (you don't need these numbers in the kata).\n# Task\nGiven sleeve side size `12 < s < 32`, you need return the maximum number of sleeves that can fit on the flat square table with side `0 < t < 300`. There should be no overlap between sleeves, but they can lie beyond the end of the table, as long as they don't fall off (the center of gravity of the sleeve must be on the table). Sometimes it is necessary to rotate the sleeves for best results.\n# Examples\nFor `s = 13, t = 13` return `4` sleeves,\nfor `s = 20, t = 40` return `9` sleeves,\nfor `s = 31, t = 93` return `16` sleeves, etc.\n# Caution\nRest assured that your solution will have to calculate something like this:\n```\nTable (t = 23)    6 sleeves (s = 13)\n ___________         ___________       \n|     a     |       |  .  |  a  |      \n|     x     |     __|_____|_____|__    \n|     e     | -> |  .  |  x  |  .  |   \n|___________|    |_____|_____|_____|   \n                    e  |  .  |         \n                       |_____|\n      \n```\nThis is the best position in which to fit `6` sleeves for `s = 13, t = 23` (the angle of rotation is close to `45` degrees).",
+  "totalAttempts": 39,
+  "totalCompleted": 3,
+  "totalStars": 4,
+  "voteScore": 4,
+  "tags": [
+    "Geometry"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

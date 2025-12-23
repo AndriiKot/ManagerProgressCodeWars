@@ -1,0 +1,41 @@
+{
+  "id": "65f1c009e44a0f0777c9fa06",
+  "name": "Collapse Left",
+  "slug": "collapse-left",
+  "category": "games",
+  "publishedAt": "2024-03-13T15:03:47.989Z",
+  "approvedAt": "2024-03-18T14:55:17.933Z",
+  "languages": [
+    "javascript",
+    "haskell",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/65f1c009e44a0f0777c9fa06",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-03-13T15:02:33.668Z",
+  "createdBy": {
+    "username": "Uptyler",
+    "url": "https://www.codewars.com/users/Uptyler"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "# Task\n\nWrite a function that takes an array containing numbers and functions. The output of the function should be an array of only numbers. So how are we to remove the functions from the array?\n\nAll functions must be applied to the number before it prior to the function being discarded from the array. It is as if the functions are collapsing left in the array modifying the first number to the left of the function. The functions should apply in order of index in the array. After a function has been applied to the number before it, it should be \"removed\" from the array to allow any following functions to also modify that new number.\n\n# Example\n\n```javascript\n[ 3, f(x) = x + 2, f(x) = x * 5, 4, f(x) = x - 1 ] => [ 25, 3 ]\n```\n\nbecause\n\n```javascript\n[ (3 + 2) * 5, 4 - 1 ]\n```\n\nNote how all functions collapsed into the closest number to the left; they did not produce new numbers into the array, but modified existing ones.\n\n\n# Notes\n\n- If a function comes first in the array, it should behave as if it were passed in `0`:  \n  `[ f(x) = x + 2, 4 ] => [0 + 2, 4]`\n- An empty array passed in must return an empty array.\n- Functions will always take exactly one, number, parameter.\n- If an array only contains numbers, the array should be returned without any modifications.",
+  "totalAttempts": 1186,
+  "totalCompleted": 241,
+  "totalStars": 17,
+  "voteScore": 84,
+  "tags": [
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

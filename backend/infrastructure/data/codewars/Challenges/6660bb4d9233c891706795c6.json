@@ -1,0 +1,41 @@
+{
+  "id": "6660bb4d9233c891706795c6",
+  "name": "Regex Wordsearch Solver",
+  "slug": "regex-wordsearch-solver",
+  "category": "games",
+  "publishedAt": "2024-06-07T11:43:40.388Z",
+  "approvedAt": "2024-07-04T11:59:24.349Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/6660bb4d9233c891706795c6",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-06-05T19:23:57.564Z",
+  "createdBy": {
+    "username": "KayleighWasTaken",
+    "url": "https://www.codewars.com/users/KayleighWasTaken"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "### Preamble\nA [wordsearch](https://en.wikipedia.org/wiki/Word_search) is a type of word-based puzzle often assigned to school children as a language learning exercise. The objective of the puzzle is to find one or more given words which are concealed within a grid of letters.\n\n### Task overview\nYour task is to write a function which takes list of words and grid size and returns a [regular expression](https://en.wikipedia.org/wiki/Regular_expression). This regular expression should be able to match all occurrences of the given words inside all possible square grids of the given size - in order to solve the puzzle via replacing them, mimicking the way they are solved via highlighting/crossing out/circling on pencil and paper. The returned regex will be tested against multiple different boards, with the exact testing setup being viewable in the sample tests. See the `Specifications` section for details.\n\n### An example\nFor `size = 3` and `words = {CAT, ART}` a regular expression such as `/[CART]/g` would work for some grids, such as this one:\n```\nCAT    ***\nKRY -> K*Y\nJTO    J*O\n```\nBut it would not work for all possible grids - for example, it would match too many characters in this one:\n```\nCAT    ***\nRRK -> **K\nATW    **W\n```\nYour regular expression must work for ALL arbitrary grids which conform to the constraints provided below in `Specifications`.\n\n### Specifications (see sample tests or shout at me in the discourse if in doubt)\n - Your returned RegExp instance will be recompiled in order to prevent `[Symbol]` abuse.\n - Boards use a single newline (`\\n`) character between each row, with no trailing newline.\n - Boards are all square.\n - Boards will contain only ASCII uppercase characters, dots, and newlines (`[A-Z.\\n]`).\n - Words will only contain ASCII uppercase characters (`[A-Z]`).\n - Only ASCII uppercase characters should be matched - all other characters, including ASCII lowercase (`[a-z]`), should NOT be matched.\n - Each word may appear multiple times in a single board.\n - Words can go in any of the compass directions - (N, S, E, W, NE, NW, SE, SW).\n - Words go only in straight lines.\n - Words can overlap, and should both be matched in this instance.\n \n### Test parameters\n - 5 <= board size <= 15\n - 3 <= word size <= board size\n - 1 <= number of words <= 5\n\n#### Note to translators\nThis kata is largely designed around the specifications of the regex engine provided by JS, and translating it into the significantly more powerful engines (Perl, Python, Ruby, etc) would change the nature of the kata too much.",
+  "totalAttempts": 154,
+  "totalCompleted": 21,
+  "totalStars": 8,
+  "voteScore": 29,
+  "tags": [
+    "Matrix",
+    "Regular Expressions",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

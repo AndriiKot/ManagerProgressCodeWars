@@ -1,0 +1,39 @@
+{
+  "id": "603e0bb4e7ce47000b378d10",
+  "name": "Polyomino symmetry",
+  "slug": "polyomino-symmetry",
+  "category": "algorithms",
+  "publishedAt": "2021-03-02T18:22:13.283Z",
+  "approvedAt": "2021-03-04T21:17:22.872Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/603e0bb4e7ce47000b378d10",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-03-02T09:56:04.852Z",
+  "createdBy": {
+    "username": "davilla",
+    "url": "https://www.codewars.com/users/davilla"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "A (blank) domino has 2 squares. Tetris pieces, also called tetriminos/tetrominoes, are made up of 4 squares each. A __polyomino__ generalizes this concept to _n_ connected squares on a flat grid.\n\nSuch shapes will be provided as a dictionary of `x` coordinates to sets of `y` coordinates. For example, the domino could be written as `{0: {1, 2}}` in a vertical orientation, or `{1: {0}, 2: {0}}` in a horizonal orientation. (Translation of all squares by some fixed `x` and `y` is not considered to change the shape.)\n\nSome polyominoes have __symmetry__, while others do not. For instance, the 2-by-2 block in Tetris is highly symmetrical, not changing at all on each quarter rotation. In contrast, the L and J shaped Tetris pieces, which are mirror images of each other, have no symmetry. Some Tetris pieces can be rotated 180 degrees, or 2-fold. The domino not only has this rotational symmetry, but is its own mirror image.\n\nGiven a polyomino, your task is to determine its symmetry, and return one of the following classifications. Examples are given for each.\n\n```\n\"C1\" for no symmetry\nL shape in Tetris: {0: {0, 1, 2}, 1: {0}}\nConway's R pentomino: {0: {1}, 1: {0, 1, 2}, 2: {2}}\n```\n```\n\"D1\" for mirror symmetry only\nT shape in Tetris: {0: {0, 1, 2}, 1: {1}}\nRight angle ruler: {0: {0}, 1: {0, 1}}\n```\n```\n\"C2\" for 2-fold rotational symmetry\nS shape in Tetris: {0: {0}, 1: {0, 1}, 2: {1}}\nTallest net of the cube: {0: {0, 1, 2}, 1: {2, 3, 4}}\n```\n```\n\"D2\" for both mirror and 2-fold rotational symmetry\nI shape in Tetris: {0: {0, 1, 2, 3}}\nJoined blocks: {0: {0, 1}, 1: {0, 1, 2}, 2: {1, 2}}\n```\n```\n\"C4\" for 4-fold rotational symmetry\nSmallest example has 8 squares:\n    {0: {2}, 1: {0, 1, 2}, 2: {1, 2, 3}, 3: {1}}\n```\n```\n\"D4\" for both mirror and 4-fold rotational symmetry\nBlock shape in Tetris: {0: {0, 1}, 1: {0, 1}}\nX like a plus sign: {0: {1}, 1: {0, 1, 2}, 2: {1}}\n```\nMirror symmetry can result from horizontal, vertical, or 45-degree diagonal reflection. _C2_ and _C4_ are chiral like _C1_, meaning those polyominoes do not have mirror symmetry. Conventionally, `C` stands for cyclic group, and `D` for dihedral group.\n\nBest of luck! `:~)`\n",
+  "totalAttempts": 912,
+  "totalCompleted": 30,
+  "totalStars": 12,
+  "voteScore": 24,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

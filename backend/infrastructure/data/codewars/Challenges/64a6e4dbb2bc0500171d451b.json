@@ -1,0 +1,39 @@
+{
+  "id": "64a6e4dbb2bc0500171d451b",
+  "name": "Seven-segment display: how many switches?",
+  "slug": "seven-segment-display-how-many-switches",
+  "category": "algorithms",
+  "publishedAt": "2023-07-13T13:12:04.454Z",
+  "approvedAt": "2023-07-13T19:37:34.104Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/64a6e4dbb2bc0500171d451b",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-06T15:59:23.829Z",
+  "createdBy": {
+    "username": "alexc19",
+    "url": "https://www.codewars.com/users/alexc19"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Introduction\n\nA [seven-segment display](https://en.wikipedia.org/wiki/Seven-segment_display) is an electronic device used to show decimal numerals. It consists of seven segments arranged in a rectangular shape. There are two vertical segments on each side and one horizontal segment at the top, middle, and bottom. By activating specific combinations of segments, the display can represent all decimal digits.\n\nYou are working on a maker project involving a seven-segment display component. Your goal is to verify its functionality and understand how it operates.\n\n\n## Working with segments\n\nDigits are displayed with segments as follows:\n```text\n _     _  _       _   _  _   _   _\n| | |  _| _| |_| |_  |_   | |_| |_|\n|_| | |_  _|   |  _| |_|  | |_|  _|\n```\n\nA conventional way to indicate individual segments is to label them with letters `a`, `b`, `c`, `d`, `e`, `f`, `g`, arranged as follows:\n```text\n aaaa \nf    b\nf    b\n gggg\ne    c\ne    c\n dddd\n```\n\nEach **segment** can **switch** its state from off to on or vice versa. Depending on the digit currently displayed, certain segments are on and others off. When a new digit is displayed, some segments may switch their state, while others may remain unchanged. Here are a few examples:\n\n- when the display transitions from digit 6 to 8, segment `b` turns on: the number of segment switches is 1.\n\n- when the display transitions from digit 2 to 3, segment `e` turns off and segment `c` turns on: the number of segment switches is 2.\n\n- when the display transitions from blank state to digit 8, all segments turn on: the number of segment switches is 7.\n\nOne or more seven-segment displays can be arranged together to compose a **display board**. The amount of displays corresponds to the board **size**. For instance, a display board of size 4 can display any 4-digit number from 0 to 9999. When a number requires less digits then the display board size, it is displayed aligned to the right, and the components for the unused digits are blank.\n\n\n## Your task\n\nYour task is to write a solution that takes two parameters:\n\n- `size`: the size of the display board, i.e. the number of digits (size can be 1 or more)\n\n- `sequence`: a sequence of integers, each composed of a number of digits between 1 and `size`\n\nand returns the **total number of segment switches performed by the display board throughout the sequence**.\n\nNote initially the display board is blank, meaning all segments for all digit positions are off, and upon completion the last number of the sequence remains displayed.\n\n\n",
+  "totalAttempts": 198,
+  "totalCompleted": 44,
+  "totalStars": 3,
+  "voteScore": 34,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

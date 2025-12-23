@@ -1,0 +1,38 @@
+{
+  "id": "62642f000fe6db42eda65052",
+  "name": "Check if IP is in given Network",
+  "slug": "check-if-ip-is-in-given-network",
+  "category": "reference",
+  "publishedAt": "2022-04-23T17:45:53.790Z",
+  "approvedAt": null,
+  "languages": [
+    "csharp",
+    "go",
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62642f000fe6db42eda65052",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-04-23T16:53:20.762Z",
+  "createdBy": {
+    "username": "dinifarb",
+    "url": "https://www.codewars.com/users/dinifarb"
+  },
+  "description": "Write a function which returns `true` if an IP Address is in a given IP Network.\n\nBesides the IP address the function receives the subnet mask and the start address.\n\nAll addresses are given as strings.\n\nAs Example, if you have a very basic network like: \n\nsubnetmask = `255.255.255.0`\nstart adress = `192.168.1.0`\n\nThe function should return `true` for adresses in the network like: `192.168.1.2` and `false` for adresses not in this network like: `192.168.2.5`. \n\nSo but how the hell can we do that ? Well first of all you have to understand how IP addressing works, if you are completely new to that look it up [here](https://en.wikipedia.org/wiki/IPv4#Addressing) or just googling for IP-addressing.\n\nIf you have a base understanding and just need some hint on how to begin, then let me help you a bit:\n\nAs you surely know the subnet mask gives you the number of hosts in a given network. In our example above would that be 255 rigth ? Then as we know, if we represent the mask `255.255.255.0` in bits, the first 0 will mark the start point for our range which gives us exactly 255 possible numbers.\n                                             \n`11111111.11111111.11111111.00000000`<br>\n--------------------------------------^        \n\nWell basically 253, since the first and last addresses are reserved in a network but that hasn't to bother us in our task. What is interesting for us is, that we'll have always `1` in our subnet mask as long as our network ID is... Moment what the heck was the network ID again.. Let me demonstrate that with a picture:\n\n<p align=\"center\" >\n    <a href=\"\">\n      <img src=\"https://icons.r2v.ch/IP.svg\" />\n    </a>\n</p> \n\nNow as we now know the behavior of the network ID and that the subnetmask will always have `1` in this spot, couldn't we use that behavior with some bitwise operations ? Maybe compare mask, ip- and start-address in some way?           \n                   \n\nHave Fun! :)\n\n\n\n\n\n",
+  "totalAttempts": 72,
+  "totalCompleted": 16,
+  "totalStars": 2,
+  "voteScore": 10,
+  "tags": [
+    "Binary",
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 6,
+    "suggestions": 1
+  }
+}

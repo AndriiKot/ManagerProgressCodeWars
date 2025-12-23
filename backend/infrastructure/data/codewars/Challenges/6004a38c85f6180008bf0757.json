@@ -1,0 +1,36 @@
+{
+  "id": "6004a38c85f6180008bf0757",
+  "name": "Sarrus Fake Determinant",
+  "slug": "sarrus-fake-determinant",
+  "category": "reference",
+  "publishedAt": "2021-01-17T20:53:09.806Z",
+  "approvedAt": null,
+  "languages": [
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/6004a38c85f6180008bf0757",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-01-17T20:52:28.564Z",
+  "createdBy": {
+    "username": "bouraccino",
+    "url": "https://www.codewars.com/users/bouraccino"
+  },
+  "description": "Rule of Sarrus is a mnemonic device for computing the determinant of a 3x3 matrix named after the French mathematician Pierre Frédéric Sarrus. In this Kata we will compute fake determinants of matrixes of various dimensions (except dimension 2 & 3 it will be fake determinants - just numbers computed by Rulo of Sarrus).\n\nHow does it work?\n\nWrite out the first (n-1) rows of the matrix to the bottom of the nth row, giving 2n-1 rows in a row. Then add the products of the diagonals going from left to right and subtract the products of the diagonals going from right to left (see description below).\n\nLet us have a matrix M of dimension n = 3.\n\n  | 1 2 3 |<br>\n  | 4 5 6 |<br>\n  | 7 8 9 |\n\nAccording the rule of Sarrus we just copy frist (n-1) = 2 rows to bottow and then we need to create n positive diagonals and n negative diagonals, where n is dimension of matrix - in this case 3.\n\n  | 1 2 3 |<br>\n  | 4 5 6 |<br>\n  | 7 8 9 |<br>\n  | 1 2 3 |<br>\n  | 4 5 6 |\n  \nFirst_positive = 1 * 5 * 9 = 45   ---   First_negative = 3 * 5 * 7 = 105 <br>\nSecond_positive = 4 * 8 * 3 = 96  ---   Second_negative = 6 * 8 * 1 = 48 <br>\nThird_positive = 7 * 2 * 6 = 84   ---   Third_negative  = 9 * 2 * 4 = 72\n\nAfter that just multiply all negative diagonal products by -1 and make total sum of all products.\n\nresult = 45 + 96 + 84 -105 -48 -72 = 0.\n\nYou will be given only valid inputs of minimal dimension of 1.\n\nHappy coding!\n",
+  "totalAttempts": 78,
+  "totalCompleted": 27,
+  "totalStars": 8,
+  "voteScore": 35,
+  "tags": [
+    "Mathematics",
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 1
+  }
+}

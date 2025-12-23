@@ -1,0 +1,42 @@
+{
+  "id": "639f4307531bc600236012a2",
+  "name": "Function Shorthand",
+  "slug": "function-shorthand",
+  "category": "games",
+  "publishedAt": "2022-12-18T18:01:12.653Z",
+  "approvedAt": "2022-12-22T19:58:02.259Z",
+  "languages": [
+    "python",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/639f4307531bc600236012a2",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-18T16:42:47.123Z",
+  "createdBy": {
+    "username": "Captain Quack",
+    "url": "https://www.codewars.com/users/Captain%20Quack"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "Have you ever gotten tired of having to type out long function chains? I mean, seriously, look at this thing:\n<!-- Translators - add something for your language! -->\n```python\nprint(list(map(len,list(strings))))\n```\nWhat if there was a way to shorten the process, so we all can still be productive, even when we're lazy?\n\nPresenting **function shorthand!**\n```\nprint>list>map>len list>strings\n```\n---\n## How-to:\nYou are given a string that you need to parse into normal functions (also returned as a string.)\n\n- Function applications are represented with `>`: things after it are considered arguments: \n      \n      Given     |    Return\n      ---------------------\n      fn>1      |    fn(1)\n      \n- Carrots can be nested or empty, but won't double up: \n  \n      fn>fn>1   |   fn(fn(1))\n      fn>       |   fn()\n      // \">>\" does not appear\n      \n- Each space ` ` is replaced with a comma. However, if a space is separating the function and first argument, it is removed, along with any extra blanks:\n      \n      fn > 1 2  | fn(1,2)\n      fn >1 fn>3| fn(1,fn(3))\n      fn> fn>  2| fn(fn(2))\n- Functions containing nested functions will order them last, as `>` gets priority:\n      \n      fn1 > 1 fn2 > 3 4 | fn(1,fn2(3,4))\n      // fn1 contains 1 and fn2. \n      // fn2 contains 3 and 4.\n      \n- Newlines won't be given: all input will be on the same line as one big chain.\n---\n# Task summarized:\nGiven a string of `functions` in **function shorthand**, return the string translated to normal function format.\n\n---\n \n**Technical Notes about Input:**\n- **All inputs** will be valid (no unbalanced parentheses, multiple carrots in a row, or `(,)`). \n\n- **Inputs** will all be one whole function chain.\n\n-  **Arguments** follow variable-esque syntax, but you might see a couple variables that start with a numbers.\n\n- **Functions** will follow the same variable-ish rules that arguments do. Function words (like `fn`) won't always be seen as functions, sometimes you might recive things like `fn(fn)`. \n\n\n**Please raise an issue if you see any invalid functions that snuck by!!**",
+  "totalAttempts": 792,
+  "totalCompleted": 173,
+  "totalStars": 28,
+  "voteScore": 66,
+  "tags": [
+    "Strings",
+    "Puzzles",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

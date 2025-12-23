@@ -1,0 +1,40 @@
+{
+  "id": "63920d85e3eb22000ecbe254",
+  "name": "What is the quickest way to get to ...",
+  "slug": "what-is-the-quickest-way-to-get-to-dot-dot-dot",
+  "category": "algorithms",
+  "publishedAt": "2022-12-08T20:18:12.868Z",
+  "approvedAt": "2022-12-10T13:15:04.086Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63920d85e3eb22000ecbe254",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-08T16:15:01.500Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "el-f",
+    "url": "https://www.codewars.com/users/el-f"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Description</summary>\n\nYou are the owner of a cozy tavern in a small village up in the misty mountains. Tourism is good in the region and many tourists visit your establishment. And while most tourists enjoy some beverage and a snack, some just drop in to ask you for directions to key places like the village square, hotels, shops and (other) taverns.\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\n##### \"Given a map of the village and a tourist asking you for directions to a specific kind of key places in the village, return a map depicting those key places and directions to the nearest of such from anywhere in the village.\"\n\n### Input\n\n- village map: an array containing arrays of characters, representing the layout of the village. Key places are marked with a dedicated letter by kind (taverns: <code>'T'</code>, shops: <code>'S'</code>, hotels: <code>'H'</code> and village square: <code>'#'</code>), while others places, like roads, are shown as <code>'.'</code>. All areas on the map are accessible to tourists and can be travelled from, to and through.\n- requested directions to: a character representing any of the kind of key places the tourist asks directions to: <code>'T', 'S', 'H', '#'</code>. There will always be at least one key place of the requested type on the village map.\n\n### Output\n\n- return the directions map, which is an array containing arrays of characters, depicting the locations of the <b>requested</b> key places: <code>'T', 'S', 'H' or '#'</code> and directions to the nearest such key places from all over the map: <code>'↑', '↗', '→', '↘', '↓', '↙', '←', '↖'</code>. See \"<b>Specification Details</b>\" for more info.\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Input Constraints</summary>\n\n- 100 random tests with village map dimensions of: 3 <= height < 5 and 3 <= width < 5\n- 20 random tests with village map dimensions of: 5 <= height < 10 and 5 <= width < 10\n- 5 random tests with village map dimensions of: 10 <= height < 20 and 10 <= width < 20\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Specification</summary>\n\n### Navigation on the village and directions map\n\nBoth map types are represented by an array containing arrays of characters. Each inner array represents a row on the map from top to bottom, and each character a cell from left to right within their row.\n\n```\nRow coordinates start at the top with value 0 and increase when going down. \nColumn coordinates start left with value 0 and increase when going right. \nFor instance, in the examples below, the village square coordinates \nare at [[1,1], [1,2], [2,1], [2,2]] ([row index, column index]).\n\nvillage map:                                      directions map:\n\n.HHT                                              ↘↓↓↙\n.##S                                              →##←\n.##S                                              →##←\n....                                              ↗↑↑↖\n```\n\n### Finding the nearest key place\n\nFor each location on the village map, if that location represents the requested kind of key place, we don't need to find the nearest key place, as we are already there. The directions map should show the character of that kind of key place on the same location. For any other location, we look around in all 8 directions and pick the location of the nearest requested key place.\n\nThe distance between 2 locations on a map is measured using the following methods:\n- Calculate the <a href=\"https://en.wikipedia.org/wiki/Euclidean_distance\">Euclidean distance</a>, which means we take the square root of the sum of the vertical and horizontal squared distances. \n- In case of a tie, prefer the location with lowest row index. \n- If there still is a tie, prefer the location with lowest column index. \n\n```\nExamples of nearest requested key place. \nThe source location is marked with X in these examples.\n\nT.XT          [0,3] is closest T from X with a distance of 1 unit\n\nTX.T          [0,0] is closest T from X with a distance of 1 unit\n\nT.            [0,0] is closest T from X with a distance of √2 units\n.X            \n..\n.T\n\nT.T           [0,0] is closest T from X with a distance of √2 units,\n.X.           tie-break with T at [0,2], at same row index, \n              but at lower column index\n```\n\n### Rendering the directions\n\nDirections are rendered with arrows pointing from source to target cell.\n\n```\nExample of directions pointing towards the nearest requested key place.\n\ndirections map:\n\n#←←       // directions pointing to a key place in top left corner\n↑↖↖\n↑↖↖\n\n↘↘↓↙↙     // directions pointing to a centered key place\n↘↘↓↙↙\n→→#←←\n↗↗↑↖↖\n↗↗↑↖↖\n```\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n\n##### All examples are available in the sample tests\n\n```\nvillage map:        requested directions to:      directions map:\n\nExample of hotel and tavern, displaying the directions map for the tavern.\n\n..                  'T'                           ↘↓\nHT                                                →T\n\nExample of a village square, surrounded with hotels, shops and a tavern.\nThe first directions map displays the village square, the second the taverns.\n\n.HHT                '#'                           ↘↓↓↙\n.##S                                              →##←\n.##S                                              →##←\n....                                              ↗↑↑↖\n\n                    'T'                           →→→T\n                                                  ↗↗↗↑\n                                                  ↗↗↗↑\n                                                  ↗↗↗↑\n                                                  \nExample of a shopping street, displaying the directions map for the shops.\n\nSSS.S.S.SSS.SS      'S'                           SSS←S←S←SSS←SS\n..............                                    ↑↑↑↖↑↖↑↖↑↑↑↖↑↑\n..............                                    ↑↑↑↖↑↖↑↖↑↑↑↖↑↑\n..............                                    ↓↓↓↙↓↙↓↙↓↓↓↙↓↓\nSSS.S.S.SSS.SS                                    SSS←S←S←SSS←SS\n```\n\n</details>",
+  "totalAttempts": 168,
+  "totalCompleted": 36,
+  "totalStars": 14,
+  "voteScore": 23,
+  "tags": [
+    "Algorithms",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

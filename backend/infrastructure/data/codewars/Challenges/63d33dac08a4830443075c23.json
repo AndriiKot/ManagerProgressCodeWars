@@ -1,0 +1,40 @@
+{
+  "id": "63d33dac08a4830443075c23",
+  "name": "Scott Orderings and more",
+  "slug": "scott-orderings-and-more",
+  "category": "algorithms",
+  "publishedAt": "2023-01-29T00:13:06.040Z",
+  "approvedAt": "2023-01-29T20:27:15.754Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/63d33dac08a4830443075c23",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-01-27T02:57:48.663Z",
+  "createdBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "[Last time](https://www.codewars.com/kata/scott-booleans) we defined `Boolean`s, which have two possible values.\n\n# Respond Proportionately\n\nThe question then was Fire the Nukes or Keep the Peace? If we can also Respond Proportionately, if we have a third option, another datatype is necessary:\n\n    switch ( option ) {\n      deescalate: keep(peace);\n      reciprocate: respond(proportionately);\n      escalate: fire(nukes);\n    }\n\nOr compare two numbers to each other. The three possible outcomes are:\n\n    Ordering = LT | EQ | GT\n\nAgain, we have `Constructor`s, now three of them. Their order is arbitrary, but we need to agree on it, because the order of the function arguments we will later feed into the encodings functions corresponds with it. Following the recipe from last time\n\n> For every `Constructor`, define a curried function that takes as many arguments as there are `Constructor`s ( keeping arguments in order of their enumeration in the type definition ), and returns one of them:\n\n    LT = lt => eq => gt => lt\n    EQ = lt => eq => gt => eq\n    GT = lt => eq => gt => gt\n\n<span style=\"color:magenta\">TASK:</span> If you write the functions `LT`, `EQ` and `GT`, the Example Tests will feed them arguments and inspect the answers.\n\nCompare this to the JavaScript convention for sorting values:\n\n    x  <  y  <=>  -1 ( or any other negative number )\n    x === y  <=>   0\n    x  >  y  <=>   1 ( or any other positive number )\n\nDoing a certain operation, making a certain choice, when `x < y`, means\n\n    if ( compare(x,y) < 0 ) keep(peace);\n\nWith Scott encoding, that would look like\n\n    compare(x,y) (keep(peace)) () ()\n\nNot completely applying an `Ordering` is pretty useless ( the function will just wait for more arguments ), but there may be possibilities for empty values ( `SideEffect: do(nothing)`, `Thing: null`, `Property: undefined` ).  \nBy saturating the `Ordering` value with arguments, the whole thing again becomes an _expression,_ of the same type as the arguments we supplied.\n\nThe first real exercise is determining a `sorted` list from an input. You are given the function `compare`, which takes two numbers and returns an `Ordering`. As mentioned, JavaScript `sort` expects `Number`s as the result of a comparison, not `Ordering`s. ( See [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description), paragraph \"If `compareFn` is supplied ..\". )\n\n<span style=\"color:magenta\">TASK:</span> Change `sorted` so that it works ( do not change `compare` ).\n\nWith the same `compare`, the next exercise is determining the `maximum` of a list of numbers. By walking the entire list and calculating the maximum of the list so far for every element, calculate the maximum of the entire list. ( See [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#parameters), `callbackFn`. Your `callbackFn` should return the maximum of `accumulator` and `currentValue`. )\n\n<span style=\"color:magenta\">TASK:</span> Change `maximum` so that it works.\n\n# Respond Proportionately\n\nAs promised, now the case where there is _one_ possible value:\n\n    switch ( option ) {\n      reciprocate: respond(proportionately);\n    }\n\n    Unit = UNIT\n\nRemember,\n\n> For every `Constructor`, define a curried function that takes as many arguments as there are `Constructor`s ( keeping arguments in order of their enumeration in the type definition ), and returns one of them.\n\n<span style=\"color:magenta\">TASK:</span> If you write the function `UNIT`, the Example Tests will feed it arguments and inspect the answers.\n\n\\< pregnant pause \\>\n\nWell, that was useful.\n\nA datatype that can have only one value _does not contain any information._ Whatever comes out of the encoded value had to be put in first!\n\nStill, almost every programming language in existence has a `Unit` datatype ( JavaScript even has two! ).  \nThey may be named `undefined`, `null`, `None`, `NIL`, `Unit`, or `()` ( the zero-tuple. but don't worry if you don't know what that is ).  \nApparently there is a use for it :] and we may encounter one in a future example on encoding numbers in unary, as lists of .. nothings. But we are not there yet.\n\n# `do(nothing)` .. or _even less?_\n\nThe case where there are _zero_ possible values. It looks like this:\n\n    switch ( option ) {\n    }\n\n    Void\n\nThis case is completely nuts. There is a datatype, but it has no values. Because only values are encoded, and not the datatype .. there is no encoding either. You do not have to write the function - there is no function; there can be no tests, there are no inputs, no outputs, there is _less than zero_ information ( remember, `Unit` had _no_ information ). So what is the use of a datatype that has no values?\n\nOn the value level, there is none. ( It is acceptable to stop reading now. ) But when reasoning _about_ code, at the type level, there can be use cases for a `Void` type. It turns out there are useful things that can be done at the type level, without ever considering things as mundane as value implementations. There is a [kata](https://www.codewars.com/kata/count-them-all) about type cardinality, if you are interested ( and can handle `2kyu` Haskell ). `Void` also has use in proof languages: an impossibility at the value level can encode a falsehood at the type level.\n\n# Rainbow Colours\n\nTo not go out on a note of complete and utter uselessness, a final exercise with a happier subject: rainbows. Remember\n\n    Colour = RED | ORANGE | YELLOW | GREEN | BLUE | PURPLE\n\n<span style=\"color:magenta\">TASK:</span> If you write functions `RED`, `ORANGE`, `YELLOW`, `GREEN`, `BLUE` and `PURPLE`, the Example Tests will throw things in and show what comes out.\n\n# This concludes today's lecture\n\n[This kata](https://www.codewars.com/kata/likes-vs-dislikes) uses tri-valued logic. Solving it using Scott encoding is a nice exercise for the reader.\n\nNext time: unary `Constructor`s. They add information to existing information!",
+  "totalAttempts": 365,
+  "totalCompleted": 91,
+  "totalStars": 6,
+  "voteScore": 49,
+  "tags": [
+    "Data Structures",
+    "Functional Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

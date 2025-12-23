@@ -1,0 +1,41 @@
+{
+  "id": "626a887e8a33feabd6ad8f25",
+  "name": "Combining predicates",
+  "slug": "combining-predicates",
+  "category": "reference",
+  "publishedAt": "2022-06-05T10:58:43.145Z",
+  "approvedAt": "2022-06-05T22:42:34.613Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/626a887e8a33feabd6ad8f25",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-28T12:28:46.738Z",
+  "createdBy": {
+    "username": "Expurple",
+    "url": "https://www.codewars.com/users/Expurple"
+  },
+  "approvedBy": {
+    "username": "Blind4Basics",
+    "url": "https://www.codewars.com/users/Blind4Basics"
+  },
+  "description": "# Task\n\nCreate a decorator `@predicate` which allows boolean functions to be conveniently combined using `&`, `|` and `~` operators:\n\n```python\n@predicate\ndef is_even(num):\n    return num % 2 == 0\n\n@predicate\ndef is_positive(num):\n    return num > 0\n\n(is_even & is_positive)(4)   # True\n(is_even & is_positive)(3)   # False\n(is_even | is_positive)(3)   # True\n(~is_even & is_positive)(3)  # True\n```\n\nIt should work with all functions, regardless of how many arguments they accept:\n\n```python\n@predicate\ndef to_be():\n    return True\n\n(to_be | ~to_be)()  # True\n\n@predicate\ndef is_equal(a, b):\n    return a == b\n\n@predicate\ndef is_less_than(a, b):\n    return a < b\n\n(is_less_than | is_equal)(1, 2)      # True\n```\n\nKeyword arguments should work as well:\n\n```python\n(is_less_than | is_equal)(2, b=2)    # True\n(is_less_than | is_equal)(a=3, b=2)  # False\n```\n\nCombinations of functions with incompatible signatures (e.g. `is_positive & is_less_than`) will not be tested.\n\nA decorated function should be callable by itself (without combining with other predicates) and behave like the original function:\n\n```python\n@predicate\ndef is_less_than(a, b):\n    return a < b\n\nis_less_than(1, 2)  # True\nis_less_than(2, 2)  # False\nis_less_than(3, 2)  # False\n```\n\nGood luck!\n\nThis kata is heavily inspired by [FArekkusu](https://www.codewars.com/users/FArekkusu)'s [Readable Specification Pattern](https://www.codewars.com/kata/5dc424122c135e001499d0e5), but should be a bit easier. You should try his kata as well!",
+  "totalAttempts": 861,
+  "totalCompleted": 217,
+  "totalStars": 40,
+  "voteScore": 65,
+  "tags": [
+    "Decorator",
+    "Functional Programming",
+    "Object-oriented Programming"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

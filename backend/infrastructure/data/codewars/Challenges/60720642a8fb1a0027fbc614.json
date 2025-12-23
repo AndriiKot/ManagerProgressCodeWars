@@ -1,0 +1,40 @@
+{
+  "id": "60720642a8fb1a0027fbc614",
+  "name": "Iterators",
+  "slug": "iterators",
+  "category": "algorithms",
+  "publishedAt": "2021-04-13T10:02:47.783Z",
+  "approvedAt": "2021-08-17T11:45:05.506Z",
+  "languages": [
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/60720642a8fb1a0027fbc614",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2021-04-10T20:10:42.872Z",
+  "createdBy": {
+    "username": "FArekkusu",
+    "url": "https://www.codewars.com/users/FArekkusu"
+  },
+  "approvedBy": {
+    "username": "Unnamed",
+    "url": "https://www.codewars.com/users/Unnamed"
+  },
+  "description": "# Task\n\nImplement an `iterator` similar to the iterators found in Python, together with the few functions which return those.\n\nIterator is a mechanism that allows you to lazily traverse a data structure, yielding its values on demand. Iterators don't modify the underlying data by themselves, and they share state when one iterator is created on top of another iterator (the latter one both depends on and affects how much the former one has advanced).\n\nYour implementation must support 2 base array-iterators (`forward` and `reverse`) which simply traverse an array, and 4 more higher-level iterators (`map`, `filter`, `enumerate`, and `zip`) which are applied on top of those. For more details see the functional specifications below.\n\nFor simplicity, the following limitations (compared to the Python implementation) are in place:\n\n* `map` will receive only 1 iterator and a single-argument function\n* `zip` will receive exactly 2 iterators\n\n## Functional specifications\n\n```c\nIterator *iterator_forward(void *, size_t, size_t)\n// creates an iterator which yields array values - from first to last\n// args:\n//     1. pointer to array\n//     2. array length\n//     3. array elements' size in bytes\n// pseudocode example:\n//     it = forward([1, 2, 3, 4])\n//     next(it)  ->  1\n//     next(it)  ->  2\n//     next(it)  ->  3\n//     next(it)  ->  4\n\nIterator *iterator_reverse(void *, size_t, size_t)\n// creates an iterator which yields array values - from last to first\n// args:\n//     1. pointer to array\n//     2. array length\n//     3. array elements' size in bytes\n// pseudocode example:\n//     it = reverse([1, 2, 3, 4])\n//     next(it)  ->  4\n//     next(it)  ->  3\n//     next(it)  ->  2\n//     next(it)  ->  1\n\nIterator *iterator_map(Iterator *, MapFunction, size_t)\n// creates an iterator which consumes another iterator, and yields values after applying some function to them\n// args:\n//     1. pointer to the underlying iterator\n//     2. mapping function\n//     3. mapping function's output size in bytes\n// pseudocode example:\n//     it = map([1, 2, 3, 4], multiply_by_2)\n//     next(it)  ->  2\n//     next(it)  ->  4\n//     next(it)  ->  6\n//     next(it)  ->  8\n\nIterator *iterator_filter(Iterator *, FilterFunction)\n// creates an iterator which consumes another iterator, and yields values which satisfy some condition\n// args:\n//     1. pointer to the underlying iterator\n//     2. predicate function\n// pseudocode example:\n//     it = filter([1, 2, 3, 4], is_prime)\n//     next(it)  ->  2\n//     next(it)  ->  3\n\nIterator *iterator_enumerate(Iterator *, int)\n// creates an iterator which consumes another iterator, and yields values accompanied by sequential indices\n// args:\n//     1. pointer to the underlying iterator\n//     2. initial index\n// pseudocode example:\n//     it = enumerate([2, 4, 6, 8], 10)\n//     next(it)  ->  [10, 2]\n//     next(it)  ->  [11, 4]\n//     next(it)  ->  [12, 6]\n//     next(it)  ->  [13, 8]\n\nIterator *iterator_zip(Iterator *, Iterator *)\n// creates an iterator which consumes 2 iterators, and yields their values side-by-side\n// trying to advance zip when the first iterator is exhausted, should leave the second one unchanged\n// trying to advance zip when the second iterator is exhausted, should still try to advance the first one\n// args:\n//     1. pointer to the first iterator\n//     2. pointer to the second iterator\n// pseudocode examples:\n//     it = zip([1, 2, 3, 4], [5, 6, 7, 8])\n//     next(it)  ->  [1, 5]\n//     next(it)  ->  [2, 6]\n//     next(it)  ->  [3, 7]\n//     next(it)  ->  [4, 8]\n//\n//     it = zip([1, 2], [5, 6, 7, 8])\n//     next(it)  ->  [1, 5]\n//     next(it)  ->  [2, 6]\n//     (trying to advance zip further does nothing)\n//\n//     it = zip([1, 2, 3, 4], [5, 6])\n//     next(it)  ->  [1, 5]\n//     next(it)  ->  [2, 6]\n//     (trying to advance zip further would keep advancing the first iterator)\n\nvoid iterator_destroy(Iterator *)\n// destroys an iterator\n// args:\n//     1. pointer to an iterator\n\nbool iterator_next(Iterator *, void *)\n// tries to yield the next value by writing it to the output buffer\n// the output buffer has the same size as the values produced by the iterator\n// returns \"true\" on success, or \"false\" on failure\n// args:\n//     1. pointer to an iterator\n//     2. output buffer\n```\n\n**Note**: when `iterator_next` is called with an `enumerate`-iterator or `zip`-iterator, the produced values should be tightly-packed in the output buffer.\n\nSpecial arguments:\n* `MapFunction` - a function of the form `void f(const void *, void *)` which receives a pointer to some data as the first argument, and writes out the result of some operations to a memory location pointed by the second argument\n* `FilterFunction` - a function of the form `bool f(const void *)` which receives a pointer to some data as an argument, and returns a non-zero value if some condition is satisfied by that data, or zero otherwise\n\n**Note**: `MapFunction` and `FilterFunction` will `memcpy` the data from the address pointed by the first argument to an intermediate buffer, and `MapFunction` will also `memcpy` the result of the computations to the address pointed by the second argument.",
+  "totalAttempts": 931,
+  "totalCompleted": 56,
+  "totalStars": 27,
+  "voteScore": 32,
+  "tags": [
+    "Algorithms",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

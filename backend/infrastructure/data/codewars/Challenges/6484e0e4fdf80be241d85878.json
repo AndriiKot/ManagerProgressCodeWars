@@ -1,0 +1,42 @@
+{
+  "id": "6484e0e4fdf80be241d85878",
+  "name": "Binary with an unknown bit: average to binary (Simple Version)",
+  "slug": "binary-with-an-unknown-bit-average-to-binary-simple-version",
+  "category": "games",
+  "publishedAt": "2023-06-13T19:55:34.608Z",
+  "approvedAt": "2023-11-24T12:13:49.778Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6484e0e4fdf80be241d85878",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-06-10T20:45:24.740Z",
+  "createdBy": {
+    "username": "LanXnHn",
+    "url": "https://www.codewars.com/users/LanXnHn"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "_This Kata is intended to be a simple version of [Binary with unknown bits: average to binary](https://www.codewars.com/kata/6440554ac7a094000f0a4837)._\n\n_The main difference is that in this Kata, input `n` will only  be an __integer__, and only consider those binary string with exactly __one__ `x` (or cases of 0 and 1)._\n\n_After work out the __pattern__ for this Kata, you can try to work out the pattern for 2 or more `x`s, also the cases of __integer + 0.5__ for the above linked Kata._\n\n_There are many different approaches other than this one for the other Kata._\n\n___\n\n### Background\n\nIn [another Kata](https://www.codewars.com/kata/64348795d4d3ea00196f5e76) you calculated the `average number` from a string of binary with unknown bits, using the rules (see rules section below).\n\nWe now define `average` as the result calculated in the way described in that Kata.\n \n___\n\n### Average to Binary\n\nYou need the original binary strings, but somebody deleted them, there is no way to get them back.\n\nThe only solution is to use the average `n` to find the original binary strings.\n\nAlso, we know that the orginal binary strings has exactly one `x` in it.\n\nIt looks like this:\n\n```\naverage => string\n\n4 => 'x00'\n5 => '1x0'\n5 => 'x01'\n```\n\nBut some numbers will result in more than one strings.\n\nSo we collect all strings for the input into a __set__.\n\nIt looks like this:\n\n```\naverage => set of strings\n\n4 => {'x00'}\n5 => {'1x0', 'x01'}\n```\n\nAnd the task of this Kata is to write the function which takes the number `n` and returns the set.\n___\n\n### Task:\n\n* You will get a non-negative __integer__ `n` as input.\n\n* Find all the strings with exactly one `x` in it: for each string, its `average` would equal to the input `n`.\n\n* Return a set of all strings found.\n___\n\n### Rules:\n\n1. The string consists of `0`, `1` and/or `x`, if its length is 2 or higher, it would have exactly one `x`.\n\n2. Unless the number is a single zero(`0`), otherwise no leading zeros are allowed.\n\n3. `x` can be 0 or 1, but the string has to follow the above rules.\n\n___\n\n### Performance\n\n* `small tests`: 30 tests of numbers up to _2^20_\n\n* `Med Tests`: 30 tests of numbers up to _2^30_\n\n* `BIG TESTS`: 30 tests of numbers up to _2^40_\n\n* `*E*X*T*R*A* *T*E*S*T*S*`: 10 tests of numbers up to _2^50_\n___\n\n### Example\n\n```\nInput n = 25\n\n25 => average of 25 => '11001' => 'x1001'\n\n                              24:'11000'\n25 => average of 24 and 26 => 26:'11010' => '110x0'\n                        result > '110x0'\n\n                              21:'10101'\n25 => average of 21 and 29 => 29:'11101' => '1x101'\n                        result > '1x101'\n\nThe set of 25 is {'110x0', '1x101', 'x1001'}.\n```\n___\n\n### Sample Tests\n\n```\n0 => {'0'}\n1 => {'1'}\n2 => {'x0'}\n3 => {'x1'}\n4 => {'x00'}\n5 => {'1x0', 'x01'}\n6 => {'1x1', 'x10'}\n25 => {'110x0', '1x101', 'x1001'}\n1572864 => {'x10000000000000000000', '1x1000000000000000000'}\n```\n\n###### Don't ask what happened to the guy who deleted the original strings, it is a horrible story.",
+  "totalAttempts": 155,
+  "totalCompleted": 35,
+  "totalStars": 7,
+  "voteScore": 37,
+  "tags": [
+    "Binary",
+    "Strings",
+    "Performance",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

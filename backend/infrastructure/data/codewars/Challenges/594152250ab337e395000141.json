@@ -1,0 +1,36 @@
+{
+  "id": "594152250ab337e395000141",
+  "name": "Summarise Fuel Fill-Ups",
+  "slug": "summarise-fuel-fill-ups",
+  "category": "algorithms",
+  "publishedAt": "2017-06-19T07:01:47.553Z",
+  "approvedAt": null,
+  "languages": [
+    "csharp"
+  ],
+  "url": "https://www.codewars.com/kata/594152250ab337e395000141",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2017-06-14T15:11:34.091Z",
+  "createdBy": {
+    "username": "GrahamD",
+    "url": "https://www.codewars.com/users/GrahamD"
+  },
+  "description": "Consider the following class:\n\n```csharp\npublic class FillUp\n{\n  public DateTime FillDateTime { get; set; }\n  public double OdometerReading { get; set; }\n  public double Litres { get; set; }\n}\n```\n\nWrite a method that accepts a list of objects of that type. These represent fill-ups at the petrol station. The ```OdometerReading``` is the car's odomenter reading at the time of the fill-up, and ```Litres``` is the total number of litres that went into the vehicle at that time.\n\nYour method should return a list of objects of the following type:\n\n```csharp\npublic class MonthlyFillUpSummary\n{\n  public string MonthSlashYear { get; set; } //For example, \"01/2017\" for January 2017\n  public int NumberOfFillups { get; set; }\n  public double TotalLitres { get; set; }\n  public double AverageLitres { get; set; }\n  public double DistanceDriven { get; set; }\n}\n```\n\nThis list should contain one item per month of fill-ups in the input data, and each item should contain a summary of the total number of fill-ups, the total litres filled, the average litres filled, and the total distance driven, for that month.\n\nHint: the total distance driven will be the difference between the odometer reading of the last fill-up for the month, and the odometer reading of the first fill-up for the month.",
+  "totalAttempts": 50,
+  "totalCompleted": 21,
+  "totalStars": 1,
+  "voteScore": 16,
+  "tags": [
+    "Lists",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 6,
+    "suggestions": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "648b2529731d7500178180f7",
+  "name": "Classify Planetary Systems (with errors)",
+  "slug": "classify-planetary-systems-with-errors",
+  "category": "games",
+  "publishedAt": "2023-06-19T18:30:05.926Z",
+  "approvedAt": null,
+  "languages": [
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/648b2529731d7500178180f7",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-06-15T14:50:17.393Z",
+  "createdBy": {
+    "username": "Sommeba",
+    "url": "https://www.codewars.com/users/Sommeba"
+  },
+  "description": "![Example Photo](https://scx2.b-cdn.net/gfx/news/hires/2023/four-classes-of-planet.jpg)\n\n## Description:\n\nYou will be given a list of planet sizes for a given solar system, and you must determine the type of solar system. The first element will always be the size of the sun. The remaining elements will be planet sizes, starting with the planets closest to the sun and moving further away. You must determine if a solar system is ordered, anti-ordered, mixed, or similar. However, there is a chance that the pattern might be broken by an error planet. An error planet can happen differently depending on the assumed system type. Given a list of solar systems with planet sizes and the number of errors that occur, Determine the type of solar system.\n\n## Rules:\n1. You will be given a list of planet sizes, and number of errors\n2. The first posistion in the list of planet sizes will be the sun\n3. Determine the type of solar system you are given based on the number of errors\n   and the arrangment of planets\n4. If planets in a row are the same size it will not count as an error for ordered nor antiordered\n5. The total number of errors for systems that are not mixed will be less than half of the total number of planets not including the sun so their will be unique solution to each solar system \n   + i.e you cannot get a solar system that be has multiple answers \n   \nThere are four different return options:\n\n1. **ordered**\n2. **antiordered**\n3. **similar**\n4. **mixed**\n\nHow error planets can occur in each solar system:\n\n1. **Ordered**:\n   + An ordered system can have an errored planet in two different ways\n      1. By starting with planets that are too large e.g.\n         + Given : solarSystem = [100000000, 10, 7, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], numErrors = 3\n         + [10, 7, 5] are errors\n         + Errors at the beginning will be greater than all non errors from 1 to `numErrors` * 2 + 1\n         + In this case [4] is in position 7, so all errors will be greater than `4`\n      2. Errors after the first non errored planet will be too small e.g.\n         + [100000000, 10, 12, 13, 14, 15, 1, 2, 16, 17, 18, 19, 20]\n         + [1, 2] are errors \n2. **Anti-Ordered**:\n   + An anti-ordered system can have an errored planet in two different ways\n      1. By starting with planets that are too small e.g.\n         + Given : solarSystem = [100000000, 1, 5, 4, 10, 9, 8 , 7, 6, 5, 4, 3, 2, 1], numErrors = 3\n         + [1, 8, 4] are errors\n         + Errors at the beginning will be less than all non errors from 1 to `numErrors` * 2 + 1 \n          + In this case [7] is in position 7, so all errors with be less than `7` \n      2. Errors after the first non errored planet will be is too large e.g.\n         + [100000000, 10, 9, 8, 7, 100, 4, 300, 2, 1]\n         + [100, 300] are errors\n3. **Similar**:\n   + A similar system can have an errored planet in one way\n      1. By not being the same size (can occur anywhere)\n         + [100000000, 100, 15, 15, 15, 8, 200, 15, 15, 15, 15]\n         + [100, 8, 200] are errors\n4. **Mixed**\n   + Happens if a solar system does not follow a particular pattern, or if there are too many errors in the other systems e.g.\n     + [100000000, 1, 8, 10, 9, 8 , 100, 6, 5, 4, 3, 2, 1], numErrors = 2\n     + three errors here [1, 8, 100] thus mixed system\n   \n+ Learn more about: [Planetary Systems](https://en.wikipedia.org/wiki/Planetary_system)   \n\n\n",
+  "totalAttempts": 322,
+  "totalCompleted": 6,
+  "totalStars": 0,
+  "voteScore": 9,
+  "tags": [
+    "Arrays",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

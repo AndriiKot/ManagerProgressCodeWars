@@ -1,0 +1,39 @@
+{
+  "id": "651471e3077187003eceddc9",
+  "name": "Zip search",
+  "slug": "zip-search",
+  "category": "reference",
+  "publishedAt": "2023-09-27T22:29:20.815Z",
+  "approvedAt": null,
+  "languages": [
+    "java"
+  ],
+  "url": "https://www.codewars.com/kata/651471e3077187003eceddc9",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2023-09-27T18:18:11.688Z",
+  "createdBy": {
+    "username": "Madjosz",
+    "url": "https://www.codewars.com/users/Madjosz"
+  },
+  "description": "Oh dang! You just noticed a failure on one of your production servers. But it turns out this is not the first time that failure happened. In fact it happened for weeks now and just got unnoticed because nobody reads logs in your company. Now you have to scan through all your log files to find occurrences when this failure happened before.\n\nUnfortunately your log files are packed up in **zip files** which are packed in other zip files and it would take ages to unpack all these multi-layer nested zip files manually to `grep` them. Instead you want to find all the log files containing evidence of the failure using your favourite programming language and its ZIP libraries.\n\n# Task\n\nYou are given the path of a zip archive and a non-empty string to search for. The zip archives contains two different types of files:\n* other zip files named `[somefilename].zip`\n* log files named `[somefilename].txt`, containing ASCII encoded text\n\nNow you need to scan through the complete nested zip file structure and check the contents of each `*.txt` file if it contains the given string sequence somewhere. Return a set of all file paths of `*.txt` files containing the exact string sequence (case-sensitive).\n\n# Example\n\nSuppose we have the following zip structure given:\n```\ncompressed.zip   File contents\n├─ inner.zip\n│  ├─ hello.txt  \"Hello world!\"\n│  └─ bye.txt    \"Bye bye blackbird.\"\n├─ hi.txt        \"Hi world!\"\n└─ goodbye.txt   \"Goodbye World...\"\n```\nWhen we are searching for the string `\"world\"`, it is present in the files `hello.txt` and `hi.txt`. The expected return value for your function should be a set containing the path objects describing\n* `compressed.zip/inner.zip/hello.txt`\n* `compressed.zip/hi.txt`\n\n`goodbye.txt` should not be returned because the matches should be done case-sensitive.\n",
+  "totalAttempts": 23,
+  "totalCompleted": 4,
+  "totalStars": 6,
+  "voteScore": 4,
+  "tags": [
+    "Recursion",
+    "Algorithms",
+    "Trees",
+    "Searching",
+    "Strings"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

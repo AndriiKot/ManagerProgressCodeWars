@@ -1,0 +1,36 @@
+{
+  "id": "60de8b409ce8690026a78d9c",
+  "name": "Age Calculator",
+  "slug": "age-calculator",
+  "category": "algorithms",
+  "publishedAt": "2021-07-02T06:13:40.025Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby",
+    "cpp"
+  ],
+  "url": "https://www.codewars.com/kata/60de8b409ce8690026a78d9c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-07-02T03:42:56.814Z",
+  "createdBy": {
+    "username": "Chiispiitas",
+    "url": "https://www.codewars.com/users/Chiispiitas"
+  },
+  "description": "Make an age calculator which given a *date of birth* parameter returns the current age in *years*, *months* and *days*, as well as the time remaining for the next birthday in the same units.\n\nThe two results must be separated by a newline escape character.\n\n```ruby\n# String Format:\n\"Your age is x year/s, y month/s and z day/s.\\n\ny month/s and z day/s remaining for your birthday.\"\n```\n\nThe *month* measure mustn't be higher than 11, and the *day* measure mustn't be higher than the *amount of days in that month*. The purpose of this is to provide a \"simpler\" way for the user to read the result. For example:\n```ruby\n\"1 month and 64 days remaining for your birthday.\" #=> Wrong\n\"3 months and 4 days remaining for your birthday.\" #=> Correct\n\n# Time from January 1st to April 1st.\n\"2 months and 31 days remaining for your birthday.\" #=> Wrong\n\"3 months and 0 days remaining for your birthday.\" #=> Correct\n\n# Time from December 1st to March 1st in a non-leap year.\n\"2 months and 28 days remaining for your birthday.\" #=> Wrong\n\"3 months and 0 days remaining for your birthday.\" #=> Correct\n```\nAn easy way to look at this, is that the age and the remaining time always have to add up to ```12 months and 0 days.```\n\nThe units must also reflect whether the measure is singular or plural. For example: ```1 year, 0 months and 2 days.```\n\nAdditionally, if the current time happens to match the birthday of the test case, you should replace the last line with \"Happy Birthday\"!\n```ruby\n# If today is the birthday:\n\"Your age is x year/s, y month/s and z day/s.\\n\nHappy Birthday!\"\n```\n\nIf a person hasn't been born as of the current time (i.e. the date of birth is greater than the current date) then you must return:\n```ruby\n# If they haven't been born:\n\"You haven't been born!\"\n```\n\nFor the sake of the tests made in this Kata, the \"time\" will be set to ```June 15th of 2200```. So, you will calculate age as of this date.\n\n**Indications:**\n* This Kata uses ISO 8601 (YYYY-MM-DD) date format,\n* Use the real amount of days for every month, as well as considering leap years.\n* Don't change the \"time\" variable, otherwise your tests will show a wrong result.\n\n**Preloaded Libraries:**\n* Ruby: date\n* C++: ctime\n\n**Examples:**\n```ruby\ncalculate_age(\"2002-12-20\") #=>\n\n\"Your age is 197 years, 5 months and 25 days.\\n\n6 months and 5 days remaining for your birthday.\"\n```\n\n```ruby\ncalculate_age(\"2002-06-15\") #=>\n\n\"Your age is 198 years, 0 months and 0 days.\\n\nHappy Birthday!\"\n```\n",
+  "totalAttempts": 165,
+  "totalCompleted": 7,
+  "totalStars": 4,
+  "voteScore": -3,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 3,
+    "suggestions": 0
+  }
+}

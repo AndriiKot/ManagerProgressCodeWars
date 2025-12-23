@@ -1,0 +1,39 @@
+{
+  "id": "63b5951092477b0b918ff24f",
+  "name": "Lattice multiplication",
+  "slug": "lattice-multiplication",
+  "category": "algorithms",
+  "publishedAt": "2023-01-04T16:11:32.584Z",
+  "approvedAt": "2023-02-01T19:10:59.418Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63b5951092477b0b918ff24f",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-01-04T15:02:40.172Z",
+  "createdBy": {
+    "username": "Pr-141",
+    "url": "https://www.codewars.com/users/Pr-141"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "This kata wants you to perform a lattice multiplication. This is a box multiplication, which will be explained below. However, this has a twist. Instead of adding the diagonals together, you would return a 2D list cotaining the diagonals, for example, 13x28 would return:\n\n[[4], [6, 2, 8], [0, 2, 0], [0]]\n\n![An example, 13 times 28](https://i.postimg.cc/sXf3Fnk0/Untitled-drawing.png)\n\n## Description\n\nTo solve a lattice multiplication when multiplying an <i>k</i>-digit number by an <i>m</i>-digit number:\n\n1. Draw a <i>k</i> by <i>m</i> grid, and write the numbers to the top and right.\n\n2. Draw a line from the top-right to bottom-left corner in each box in the grid.\n\n3. To fill up each box, find the digits that lead to that box, and multiply them. If the resulting number is only one-digit, append a 0 at the beginning to make it two digits. Afterwards, put the units digit on the bottom-right corner of that box and the tens digit on the top-right corner.\n\n4. There should be diagonals appearing in the grid. To get the answer, add up all the numbers on the diagonals, from right to left (because carrying might be needed), and then resulting in a number. However, this process is not needed in this kata, and returning a list of diagonals would suffice.\n\n\n A more detailed method and explanation is on [Wikipedia](https://en.wikipedia.org/wiki/Lattice_multiplication).\n \n## Input\n\n2 integers, <i>a</i> and <i>b</i>.\n\n## Output\n\nA list of diagonals from right to left, with each diagonal  ordered from top to bottom.",
+  "totalAttempts": 372,
+  "totalCompleted": 53,
+  "totalStars": 10,
+  "voteScore": 42,
+  "tags": [
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

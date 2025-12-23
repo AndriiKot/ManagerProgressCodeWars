@@ -1,0 +1,40 @@
+{
+  "id": "624ddc1fc0da4c00174b5438",
+  "name": "Implement classNames function",
+  "slug": "implement-classnames-function",
+  "category": "reference",
+  "publishedAt": "2022-04-06T19:39:46.708Z",
+  "approvedAt": "2022-05-29T04:02:44.887Z",
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/624ddc1fc0da4c00174b5438",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-04-06T18:29:51.201Z",
+  "createdBy": {
+    "username": "kuzn5298",
+    "url": "https://www.codewars.com/users/kuzn5298"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "## Prelude\n\nThe HTML `class` attribute is a space-separated list of the case-sensitive classes of the element.\n\n[MDN class Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class).\n\n```xml\n<!--- HTML --->\n<button class=\"button active\">hello</button>\n````\n\nWe can also create a button and assign it class names in JavaScript using `element.className`.\n\n[MDN className Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/className).\n\n```javascript\n// JavaScript\nconst myButton = document.createElement(\"button\");\nmyButton.textContent = \"hello\";\nmyButton.className = \"button active\";\n```\n\n## Kata\n\nIn this kata, we're going to write a function, `cns`, to help generate our class name string.\n\nOur `cns` function should accept an arbitrary number of arguments.\n\nThe arguments maybe a mix of strings, conditionals and objects.\n\nEach `string` will represent a class name to be included in the class name string.\n\nEach object key will represent a class name to be included, only if it's property is `true`.\n\nNo string argument or object key will contain multiple class names, eg `'button action'` or `{ \"large primary\" : true }`.\n\nWe will then be able to use `cns` like so.\n\n```javascript\nconst isActive = true;\nconst isDisabled = false;\nconst isLarge = false;\nconst isPrimary = true;\n\nconst classNameString = cns(\n  'button',\n  isLarge && 'large',\n  {\n   'active': isActive,\n   'disabled': isDisabled\n  },\n  isPrimary && 'primary'\n); \n// -> 'button active primary'\n\nconst myButton = document.createElement(\"button\");\nmyButton.className = classNameString;\n```\n\n## Requirements\n\n- Output is a space-separated list of the case-sensitive class names, `\"button active primary\"`\n- You should ignore extra spaces (`''` and `' '` should be deleted; `'  button '` should change to `'button'`)\n- You should ignore boolean arguments\n- You should ignore object keys which aren't strings, or are empty strings\n- You should ignore object keys if the property is not `true`\n- The order of the class names must match the order they appear in the arguments\n- There must not be duplicate class names in the output\n- If two identical classes have the opposite condition, we keep the class that had `true`.\n\n> Nice to have some fun. And remember - it's just a code.\n\n\n",
+  "totalAttempts": 765,
+  "totalCompleted": 120,
+  "totalStars": 15,
+  "voteScore": 46,
+  "tags": [
+    "Fundamentals",
+    "Arrays"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

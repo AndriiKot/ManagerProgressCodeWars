@@ -1,0 +1,40 @@
+{
+  "id": "528aa29bd8a0399fc5000cae",
+  "name": "The \"CROTCH KICK OR BLOCK\" kata",
+  "slug": "the-crotch-kick-or-block-kata",
+  "category": "algorithms",
+  "publishedAt": "2013-11-18T23:28:42.942Z",
+  "approvedAt": "2013-12-03T00:29:54.636Z",
+  "languages": [
+    "javascript",
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/528aa29bd8a0399fc5000cae",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2013-11-18T23:28:27.625Z",
+  "createdBy": {
+    "username": "ThoughtSink",
+    "url": "https://www.codewars.com/users/ThoughtSink"
+  },
+  "approvedBy": {
+    "username": "jhoffner",
+    "url": "https://www.codewars.com/users/jhoffner"
+  },
+  "description": "Create a darkroom function that when first called takes an integer (no need to protect yourself in this kata), this is the master screaming where the crotch kick is going to come from (or possibly to tell the attacker where to kick from, no one really knows). Then a 1 will be used as an argument to one of the chaining function calls, this is to indicate which direction the student blocks. If the 1 was inserted into the right function call, 'BLOCK' should be returned for an .end function call, all other blocks should return \"CROTCH KICK\":\n```javascript\ndarkRoom(2)()(1)()()()()()().end() -> 'BLOCK'\ndarkRoom(3)()()(1)()()()()().end() -> 'BLOCK'\ndarkRoom(2)(1)()()()()()()().end() -> 'CROTCH KICK'\ndarkRoom(2)()()(1)()()()()().end() -> 'CROTCH KICK'\ndarkRoom(2)()()()()()()()().end() -> 'CROTCH KICK'\n```\n```python\ndark_room(2)()(1)()()()()()().end() -> 'BLOCK'\ndark_room(3)()()(1)()()()()().end() -> 'BLOCK'\ndark_room(2)(1)()()()()()()().end() -> 'CROTCH KICK'\ndark_room(2)()()(1)()()()()().end() -> 'CROTCH KICK'\ndark_room(2)()()()()()()()().end() -> 'CROTCH KICK'\n```\n\nI know I said you would not have to protect yourself in this kata, but as all great tutors I lied. You must protect yourself against cheating students that try to block in more than one direction at a time, even if they blocked, they deserve a crotch kick for cheating.\n```javascript\ndarkRoom(2)(1)(1)()()()()()().end() -> 'CROTCH KICK'\ndarkRoom(2)()(1)(1)()()()()().end() -> 'CROTCH KICK'\ndarkRoom(2)(1)(1)(1)(1)(1)(1)(1)(1).end() -> 'CROTCH KICK'\n```\n```python\ndark_room(2)(1)(1)()()()()()().end() -> 'CROTCH KICK'\ndark_room(2)()(1)(1)()()()()().end() -> 'CROTCH KICK'\ndark_room(2)(1)(1)(1)(1)(1)(1)(1)(1).end() -> 'CROTCH KICK'\n```\nAs we all know there are endless directions that you can be attacked from so you must be able to continue calling the chain for however long.\n\nGood luck Grasshopper",
+  "totalAttempts": 671,
+  "totalCompleted": 205,
+  "totalStars": 22,
+  "voteScore": 51,
+  "tags": [
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

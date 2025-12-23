@@ -1,0 +1,33 @@
+{
+  "id": "666297a468e25aafdc1ecb33",
+  "name": "Progressive tax",
+  "slug": "progressive-tax",
+  "category": "reference",
+  "publishedAt": "2024-06-08T15:27:39.825Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/666297a468e25aafdc1ecb33",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-06-07T05:16:20.488Z",
+  "createdBy": {
+    "username": "Konstantin Modin",
+    "url": "https://www.codewars.com/users/Konstantin%20Modin"
+  },
+  "description": "<img src=\"https://www.usnews.com/object/image/00000186-84ae-d7d5-afee-c5af055d0000/gettyimages-1438794367.jpg?update-time=1677263301931&size=responsive640\" width=\"350px\" style=\"float:right; margin: 20px;\"/>\n<p>In accordance with <a href=\"https://en.wikipedia.org/wiki/Progressive_tax\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia</a> a progressive tax is a tax in which the tax rate increases as the taxable amount increases. The task of this kata is to perform a tax calculation dependinging on provided tax rates which can be different.</p>\n<p>\nFor example we can take spanish tax rates (2023) which are as follows:\n</p>\n<ul>\n<li>from <span style=\"color:green\">0 €</span> to <span style=\"color:green\">12'449 €</span> tax rate is 19% </li>\n<li>from <span style=\"color:green\">12'450 €</span> to <span style=\"color:green\">20'199 €</span> tax rate is 24% </li>\n<li>from <span style=\"color:green\">20'200 €</span> to <span style=\"color:green\">35'199 €</span> tax rate is 30% </li>\n<li>from <span style=\"color:green\">35'200 €</span> to <span style=\"color:green\">59'999 €</span> tax rate is 37% </li>\n<li>from <span style=\"color:green\">60'000 €</span> to <span style=\"color:green\">299'999 €</span> tax rate is 45% </li>\n<li>from <span style=\"color:green\">300'000 €</span> tax rate is 47% </li>\n</ul>\nIf person had yearly income of 70'000 € then for each part we need to apply different tax rate:\n<pre>\n0 - 12'449      = 12'449 * 19%  =  2'365.31 €\n12'450 - 20'199 =  7'750 * 24%  =  1'860.00 €\n20'200 - 35'199 = 15'000 * 30%  =  4'500.00 €\n35'200 - 59'999 = 24'800 * 37%  =  9'176.00 €\n60'000 - 70'000 = 10'001 * 45%  =  4'500.45 €\n-----------------------------------------------\n                     Total tax  = 22'401.76 €\n</pre>\n<p>\nHave in mind that all numbers are included when calculating the money amount for each part.<br/>\nBecause different countries have different tax rates depending on the year we should be able to calculate tax based on any provided tax rates.<br/>Your function will receive the <strong style=\"color:brown\">amount of money</strong> a person earned (10'000 - 10'000'000)and <strong style=\"color:brown\">tax rates</strong> as an array of objects representing each tax-rate. Here is an example of tax rates array:\n</p>\n<pre>\nconst rates = [\n  { from: 0, to: 12449, rate: 19 },\n  { from: 12450, to: 20199, rate: 24 },\n  { from: 20200, to: 35199, rate: 30 },\n  { from: 35200, to: 59999, rate: 37 },\n  { from: 60000, to: 299999, rate: 45 },\n  { from: 300000, rate: 47 },\n]\n</pre>\n<p>You should return total amount of tax that a person should pay.<br/> After you perform all the calculations round the result to cents (x.5 should be rounded up, less then x.5 should be rounded down) example: 10.545 ==> 10.55, 10.5449 ==> 10.54 <br/>All inputs will be valid.</p>\n<h2>Good luck!</h2>",
+  "totalAttempts": 45,
+  "totalCompleted": 13,
+  "totalStars": 0,
+  "voteScore": 2,
+  "tags": [],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

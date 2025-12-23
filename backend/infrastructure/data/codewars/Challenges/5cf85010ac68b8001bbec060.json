@@ -1,0 +1,39 @@
+{
+  "id": "5cf85010ac68b8001bbec060",
+  "name": "Construct/Deconstruct",
+  "slug": "construct-slash-deconstruct",
+  "category": "reference",
+  "publishedAt": "2019-06-05T23:28:25.788Z",
+  "approvedAt": "2025-02-23T11:23:43.150Z",
+  "languages": [
+    "scala"
+  ],
+  "url": "https://www.codewars.com/kata/5cf85010ac68b8001bbec060",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2019-06-05T23:28:17.278Z",
+  "createdBy": {
+    "username": "xavierguihot",
+    "url": "https://www.codewars.com/users/xavierguihot"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "This Kata is an attempt at introducing <u>case classes</u> ***constructors*** and ***extractors***.\n\n---\n\n* Let's start with an alternative constructor:\n\nGiven the following case class,\n\n```scala\ncase class Person(name: String, age: Int, gender: Gender)\n```\n\ncan you provide an additional constructor which expects a first name and a last name, (instead of the full name) and joins them into a name, such that:\n\n```scala\nPerson(\"James\", \"Smith\", 27, Male) == Person(\"James Smith\", 27, Male)\n```\n\n<div style=\"font-size:0.8em\">Note that even if there are ways to achieve this using *classic classes* constructors, there is an elegant and dedicated way of doing this for case classes.</div>\n\n---\n\n* Let's then make it possible to provide an optional field with a default value:\n\nLet's refine the `Person` case class with an optional parameter representing the person's middle name:\n\n```scala\nPerson(\"John Kennedy\", 27, Male, Some(\"Fitzgerald\"))\n```\n\nand whose value defaults to `None`, such that it remains possible to use previous constructors:\n\n```scala\nPerson(\"John Kennedy\", 27, Male, None) == Person(\"John Kennedy\", 27, Male)\n```\n\n---\n\n* Let's define an extractor to pattern match a string as a gender:\n\nScala provides a specific language feature that allows creating an object (that we'll call `Extractor`) which can match in our case a `String` (`\"F\"` or `\"M\"`) and extracts a `Gender` out of it, such that this pattern match expression:\n\n```scala\n\"F\" match {\n  case Extractor(gender) => Some(gender)\n  case _                 => None\n}\n```\n\nproduces `Some(Female)`\n\nIf the string we're trying to match represents a gender (`\"F\"` or `\"M\"`), then there is a match and `Extrator` supplies the associated value by initializing and providing the `gender` variable.\n\n---\n\n* Let's finally define another extractor, this time, as a placeholder for extracted values:\n\nIn this last part, we'll apply the extractor feature for a slightly different purpose.\n\nInstead of using the extractor to generate the object in question (previously the `Gender`), we'll use it as a place holder for the generated object's fields (here the `Person`'s `name`, `age` and `gender`):\n\nFor instance:\n\n```scala\n\"James Johnson-30-M\" match {\n  case Person(_, age, _) if age % 10 == 0 => Some(age+5)\n  case Person(_, age, Female)             => Some(age-10)\n  case Person(_, age, _)                  => Some(age)\n  case _                                  => None\n}\n```\n\nproduces `Some(35)`.\n\nYour code should be able to parse strings such as `\"$name-$age-$gender\"` or `\"$firstName-$lastName-$age-$gender\"` (gender being either `\"F\"` or `\"M\"`).\n",
+  "totalAttempts": 61,
+  "totalCompleted": 18,
+  "totalStars": 6,
+  "voteScore": 22,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

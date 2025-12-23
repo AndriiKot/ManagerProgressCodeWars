@@ -1,0 +1,44 @@
+{
+  "id": "5e1b37bcc5772a0028c50c5d",
+  "name": "Minimum number of taxis",
+  "slug": "minimum-number-of-taxis",
+  "category": "algorithms",
+  "publishedAt": "2020-01-12T16:59:58.559Z",
+  "approvedAt": "2020-01-12T18:57:52.636Z",
+  "languages": [
+    "python",
+    "java",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5e1b37bcc5772a0028c50c5d",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-01-12T15:14:04.795Z",
+  "createdBy": {
+    "username": "Scopula",
+    "url": "https://www.codewars.com/users/Scopula"
+  },
+  "approvedBy": {
+    "username": "Avanta",
+    "url": "https://www.codewars.com/users/Avanta"
+  },
+  "description": "### You work at a taxi central.\n\nPeople contact you to order a taxi. They inform you of the time they want to be picked up and dropped off. \n\nA taxi is available to handle a new customer 1 time unit after it has dropped off a previous customer.\n\n**What is the minimum number of taxis you need to service all requests?**\n\n### Constraints:\n\n* Let **N** be the number of customer requests:\n  - **N** is an integer in the range **[1, 100k]**\n* All times will be integers in range **[1, 10k]**\n* Let **PU** be the time of pickup and **DO** be the time of dropoff\n  - Then for each request: **PU < DO**\n* The input list is **NOT sorted**.\n\n### Examples:\n\n```python\n# Two customers, overlapping schedule. Two taxis needed.\n# First customer wants to be picked up 1 and dropped off 4.\n# Second customer wants to be picked up 2 and dropped off 6.\nrequests = [(1, 4), (2, 6)]\nmin_num_taxis(requests) # => 2\n\n# Two customers, no overlap in schedule. Only one taxi needed.\n# First customer wants to be picked up 1 and dropped off 4.\n# Second customer wants to be picked up 5 and dropped off 9.\nrequests = [(1, 4), (5, 9)]\nmin_num_taxis(requests) # => 1\n```\n```haskell\n-- Two customers, overlapping schedule. Two taxis needed.\n-- First customer wants to be picked up 1 and dropped off 4.\n-- Second customer wants to be picked up 2 and dropped off 6.\n>>> let requests = [(1, 4), (2, 6)]\n>>> minNumTaxis requests -- 2\n\n-- Two customers, no overlap in schedule. Only one taxi needed.\n-- First customer wants to be picked up 1 and dropped off 4.\n-- Second customer wants to be picked up 5 and dropped off 9.\n>>> let requests = [(1, 4), (5, 9)]\n>>> minNumTaxis requests -- 1\n```\n",
+  "totalAttempts": 5481,
+  "totalCompleted": 459,
+  "totalStars": 82,
+  "voteScore": 85,
+  "tags": [
+    "Data Structures",
+    "Algorithms",
+    "Priority Queues",
+    "Scheduling"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

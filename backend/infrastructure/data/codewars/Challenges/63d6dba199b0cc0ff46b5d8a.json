@@ -1,0 +1,41 @@
+{
+  "id": "63d6dba199b0cc0ff46b5d8a",
+  "name": "[Code Golf] An Interesting Ritual",
+  "slug": "code-golf-an-interesting-ritual",
+  "category": "algorithms",
+  "publishedAt": "2023-01-30T00:09:08.308Z",
+  "approvedAt": "2023-01-30T10:10:30.122Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/63d6dba199b0cc0ff46b5d8a",
+  "rank": {
+    "id": -7,
+    "name": "7 kyu",
+    "color": "white"
+  },
+  "createdAt": "2023-01-29T20:48:33.144Z",
+  "createdBy": {
+    "username": "Yushi.py",
+    "url": "https://www.codewars.com/users/Yushi.py"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "> Skip ```Situation``` and go straight to ```Task``` if you care not about the story (all you need to solve the kata will be contained under \"Task\").\n\n> The answers are hidden to prevent users from figuring out the solution from the results of the tests.\n\n<h1> Situation </h1>\n\nEvery year, in an ancient civilization, all the villagers would gather for the ritual that would ensure their survival. <br>\n\nAll of the sheep in the village would be arranged in a square grid. Then, a sacrifice to the gods would be performed, granting the people **food and riches**. <br>\n\nHowever, their rewards for the sacrifice *weren't always the same*, **largely depending on the layout of the sheep**.\n\nUnbeknownst to the villagers, the gods had a very systematic method for rewarding them.\n\n> Our generosity towards you humans shall be proportional to the **determinant of the matrix** formed by the sheep you provide us.\n\nOne day, a new emperor, ***\"Yushi.py the II\"***, decides on a new formation for the sheep, believing it would bring great riches to his reign. <br>\n\nThe sheep would be placed in the following manner: <br>\n\n- Consider a matrix with rows and columns with indices beginning at 1 and the first square in the upper left corner.\n- The number of sheep in a given square shall be the product of the indices of the rows and the columns.\n- In more programmer friendly words: <br>\nThe elements of a matrix ```m``` are such that ```m[i][j] = (i + 1) * (j + 1)```.\n\nHere are the formations used in the first three rituals:\n\n```python\n[1]     [1, 2]      [1, 2, 3]\n        [2, 4]      [2, 4, 6]\n                    [3, 6, 9]\n```\n\nAs a historian, you stumble across this civilization and wish to try to explain their sudden decay after the rule of their new emperor. <br>\n\nTo do so, you decide to determine the riches received by the villagers, according to the new disposition of sheep decided by ***Yushi.py the II***. <br><br>\n\n<h1> Task </h1>\n\nLet's say a matrix ```m``` exists such that the value of each square is the **product of the indices of the rows and columns**, considering that the indices start at 1 and the first square is in the upper left corner.\n\n\nExamples of the matrix:\n```python\nn = 1 -> [1] n = 2 -> [1, 2] n = 3 -> [1, 2, 3]\n                      [2, 4]          [2, 4, 6]\n                                      [3, 6, 9]\n```\nGiven ```n```, the size of the square matrix, your task is to create a function, ```ritual```, that returns the determinant of the matrix.\n\n***Do not return the matrix; return its determinant*** <br><br>\n\n<h1> Input </h1>\n\nYou will be given a positive integer ```n```, meaning, don`t worry about input validation. <br><br>\n\n<h1> Maximum Length </h1>\n\nThe length of your code must not exceed ```19``` characters. <br><br>\n\n<h1> Random Tests </h1>\n\nThere will be a total of 100 random tests. They will be separated into 4 categories: small, medium, big, and huge tests, with 25 tests each; their range is: <br>\n\n- Small: ```1 <= n <= 9```\n- Medium: ```10 <= n <= 1_000```\n- Big: ```100_000 <= n <= 1_000_000```\n- Huge: ```2 ** 32 <= n <= 2 ** 64```",
+  "totalAttempts": 1500,
+  "totalCompleted": 191,
+  "totalStars": 4,
+  "voteScore": 39,
+  "tags": [
+    "Mathematics",
+    "Matrix",
+    "Restricted"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

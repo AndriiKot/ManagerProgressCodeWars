@@ -1,0 +1,41 @@
+{
+  "id": "661c2aacefc32821ecde863c",
+  "name": "Iterator.tee",
+  "slug": "iterator-dot-tee",
+  "category": "algorithms",
+  "publishedAt": "2024-04-14T21:05:37.467Z",
+  "approvedAt": "2024-04-17T08:11:21.454Z",
+  "languages": [
+    "javascript",
+    "typescript"
+  ],
+  "url": "https://www.codewars.com/kata/661c2aacefc32821ecde863c",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-04-14T19:12:44.486Z",
+  "createdBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "approvedBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "description": "[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator#iterator_helpers):\n\n> There is no way to \"fork\" an iterator to allow it to be iterated multiple times.\n\nOf course there is.  \nIf Python [itertools](https://docs.python.org/3/library/itertools.html#itertools.tee) can do it, so can JavaScript.\n\nDefine a function that takes an iterator and optionally a number ( defaulting to `2` ), and returns an array of `$NUMBER` forked iterators.  \nAll returned iterators should iterate the original iterator _independently._ They should also be iterable.\n\n# Values produced by generators as iterators and as iterables\n\n`iterator.next` returns an object of the form `{ value, done }`. Note that generators may, once, produce a `value` other than `undefined` when `done` first is `true` if they `return` a value instead of `yield`ing it. This behaviour should be replicated, and will be tested.  \nAn iterable does not produce this value, though it is generated and then cannot be produced by `next` later ( the generator is closed by then ).\n\n# Passing an argument to `next`\n\n`iterator.next` accepts an argument. There is, however, no consistent way to handle arguments passed to forked iterators: the original iterator may already have been called, either without or with a different argument. Expected behaviour is unspecified, and there will be no testing with arguments passed to `next`.\n\n# Errors thrown by iterators\n\nIterators can `throw` an `Error`. Expected behaviour in this case is unspecified, and it will not be tested.  \nGenerators have a `throw` method ( for iterators, this is optional ). There will be no calling of `throw`.\n\n# Test constraints\n\n* input iterator may be infinite\n* up to `10 000` output iterators\n* up to `10 000` values per output iterator\n\n# Example\n\n```javascript\nit = function*() { yield* [1,2,3,4] } ()\n\n[xs,ys] = tee(it)\n\nxs.next() -> { value: 1, done: false }\nxs.next() -> { value: 2, done: false }\nxs.next() -> { value: 3, done: false }\nys.next() -> { value: 1, done: false }\nys.next() -> { value: 2, done: false }\nxs.next() -> { value: 4, done: false }\nxs.next() -> { value: undefined, done: true }\n\nArray.from(ys) -> [3,4]\n```",
+  "totalAttempts": 286,
+  "totalCompleted": 64,
+  "totalStars": 15,
+  "voteScore": 58,
+  "tags": [
+    "Iterators",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

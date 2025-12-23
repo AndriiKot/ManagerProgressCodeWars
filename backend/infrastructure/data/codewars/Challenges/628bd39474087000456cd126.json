@@ -1,0 +1,43 @@
+{
+  "id": "628bd39474087000456cd126",
+  "name": "Merging and moving bubbles along a row of boxes",
+  "slug": "merging-and-moving-bubbles-along-a-row-of-boxes",
+  "category": "reference",
+  "publishedAt": "2022-05-23T19:48:54.107Z",
+  "approvedAt": "2022-05-24T16:54:45.371Z",
+  "languages": [
+    "python",
+    "c"
+  ],
+  "url": "https://www.codewars.com/kata/628bd39474087000456cd126",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-23T18:33:56.538Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "seleemdz",
+    "url": "https://www.codewars.com/users/seleemdz"
+  },
+  "description": "## Overview\n\nStart with a row of empty boxes, and place `n` bubbles in the left-most box in the row. You may assume there are infinitely many boxes to the right.\n\nAt each step, you must pick any box with 2 or more bubbles currently inside it, **merge 2 of the available bubbles in that box** to form a new bubble (thereby reducing the total number\nof bubbles in the entire row by 1), then you must immediately **move the new bubble rightwards** into the **immediate next neighbour** box to the right.\n\nYou must continue doing this until you reach the final state in which you cannot merge any more bubbles; i.e. reach the state in which all boxes have **at most one** bubble in them.\n\nFor a given value of `n` initial bubbles placed in the left-most box in the row, **what is the number of steps required to reach the final state?**\n\n(Hint: In case you are wondering why we can ask for **the** number of steps, and **the** final state, regardless of how you choose your steps: the number of steps for a given value of `n` will always be the same no matter how you choose your steps - see the Walk-through Example below)\n\n---\n\n## Inputs\n\nYou will be given an `integer`, `n`, representing the number of bubbles, which are all placed initially in the left-most box.\n\n**Performance requirement:** You will be tested on values of `n` up to `200,000,000`.\n\n## Outputs\n\nReturn an `integer`, representing the **number of steps required to reach the final state**.\n\n---\n\n## Walk-through Examples\n\n```python\nn = 10 bubbles\n\n10 _ _ _ _\n8 1 _ _ _\n6 2 _ _ _ \n```\nNote here that you can choose to either form `4 3 _ _ _` or `6 _ 1 _ _ _` let's pick the latter for this example:\n\n```python\n6 _ 1 _ _\n4 1 1 _ _\n2 2 1 _ _\n```\nNote here again that you can choose to either form `_ 3 1 _ _` or `2 _ 2 _ _` let's pick the former for this example:\n\n```python\n_ 3 1 _ _\n_ 1 2 _ _\n_ 1 _ 1 _ #final state\n```\n\nIn this example we reached the valid final state - where all boxes contain at most one bubble - in `8` steps.\n\nYou can see in the above example that there may be more than one allowed move at any given step; for example, what if \nwe had picked option `4 3 _ _ _` on the 2nd step?\n\n```python\nn = 10 bubbles, alternative choices\n\n10 _ _ _ _\n8 1 _ _ _\n6 2 _ _ _\n4 3 _ _ _ \n```\n\nHere again there are multiple possible legal choices, let's pick one:\n\n```python\n2 4 _ _ _ \n```\nAgain, multiple possible legal choices, let's pick one:\n\n```python\n_ 5 _ _ _\n_ 3 1 _ _\n_ 1 2 _ _\n_ 1 _ 1 _ #final state\n```\n\nNote how, with these alternative choices, we have reached the same final state as in previous example **and in the exact same number of steps = 8** as in previous example.",
+  "totalAttempts": 341,
+  "totalCompleted": 115,
+  "totalStars": 4,
+  "voteScore": 49,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Puzzles",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

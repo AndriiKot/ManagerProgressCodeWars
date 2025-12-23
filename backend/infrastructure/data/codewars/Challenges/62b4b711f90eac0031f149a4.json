@@ -1,0 +1,37 @@
+{
+  "id": "62b4b711f90eac0031f149a4",
+  "name": "Express an integer as a sum of consecutive integers",
+  "slug": "express-an-integer-as-a-sum-of-consecutive-integers",
+  "category": "reference",
+  "publishedAt": "2022-06-27T22:05:19.577Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/62b4b711f90eac0031f149a4",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-06-23T18:55:13.648Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "description": "## Overview\n\nGiven a positive `integer`, `n`, can you express `n` as the sum of (2 or more) **consecutive positive** integers?\n\nLet's look at some small examples:\n\n- 10 = 1 + 2 + 3 + 4\n- 11 = 5 + 6\n- 12 = 3 + 4 + 5\n\nWow this kata is going to be easy! But wait, let's look at a much larger example:\n\n- 18944 = 494 + 495 + 496 + 497 + 498 + 499 + 500 + 501 + 502 + 503 + 504 + 505 + 506 + 507 + 508 + 509 + 510 + 511 + 512 + 513 + 514 + 515 + 516 + 517 + 518 + 519 + 520 + 521 + 522 + 523 + 524 + 525 + 526 + 527 + 528 + 529 + 530\n\nAha, maybe we will have to use our brains a bit to earn our kata points after all!\n\n---\n\n## Input\n\nYou will be given a positive `integer`, `n`. The input will always be a positive integer, greater or equal to `3` so you don't need to worry about input validation etc.\n\n**Performance requirement:** multiple input values up to `n = 15,000,000` will be tested in random tests, and one specific input value up to `n = 2,000,000,000` will be used for a fixed test.\n\n## Output\n\nYou must return a **sorted** `list` (Python) of **consecutive increasing positive** `integers`, such that the sum of these consecutive increasing positive integers is equal to `n`.\n\nObviously, the trivial solution where you just return the 1-element `list`, `[n]`, is not a valid answer and will not be accepted by the tests.\n\n**Important:** \n- There may be *several possible valid solutions* for a given input value of `n`, but you should **only return one of them** - you can choose any one you like, as long as it is valid it will be accepted.\n\n- Conversely, if there is *no possible solution* for the given input value of `n`, **return an empty list (Python)**, `[]`.\n\n\n\n\n---\n\n## Walk-through Examples\n\nBased on the results we found earlier:\n\n- With input `n = 10`, a valid solution to return is the list `[1, 2, 3, 4]`. Notice how the solution does not include `0` or any negative integers, is sorted in increasing order, and sums to `10`.\n\n- With input `n = 11`, a valid solution to return is the list `[5, 6]`.\n\n- With input `n = 12`, a valid solution to return is the list `[3, 4, 5]`.\n\n- With input `n = 18944`, a valid solution to return is the list `[494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530]`.\n\n---\n\nIf you liked testing this, check out my other beta kata (mainly on mathematics and algorithmics) in this collection - thanks!:\n\n[Beta kata for feedback](https://www.codewars.com/collections/my-kata-in-beta-or-awaiting-approval) ",
+  "totalAttempts": 103,
+  "totalCompleted": 11,
+  "totalStars": 0,
+  "voteScore": 16,
+  "tags": [
+    "Fundamentals",
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

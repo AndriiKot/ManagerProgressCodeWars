@@ -1,0 +1,40 @@
+{
+  "id": "65a16ae06b146a1134225b33",
+  "name": " Matching Orders with Dynamic Pricing",
+  "slug": "matching-orders-with-dynamic-pricing",
+  "category": "reference",
+  "publishedAt": "2024-01-15T11:12:49.353Z",
+  "approvedAt": "2024-01-16T16:19:23.697Z",
+  "languages": [
+    "sql"
+  ],
+  "url": "https://www.codewars.com/kata/65a16ae06b146a1134225b33",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2024-01-12T16:37:52.282Z",
+  "createdBy": {
+    "username": "bornForThis",
+    "url": "https://www.codewars.com/users/bornForThis"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "You are a data analyst in a dynamic e-commerce platform where prices of items fluctuate based on supply, demand, and promotional activities. The marketing team  wants to analyze how these price changes impact customer orders. Specifically, they're interested in knowing the price of each item at the time an order is placed. This information will help in understanding customer buying patterns and in strategizing future price adjustments.\n\nWrite a SQL query to match each order with the price of the item at the time of the order. If no price was set for an item before the order date, the price should be listed as `null`.\n\nWe have `orders` table:\n\n* `order_id` (int, primary key): Unique identifier for each order.\n* `item_id` (int): Identifier for the item ordered.\n* `order_timestamp` (datetime): The date and time when the order was placed.\n\nand `price_changes` table:\n\n* `id` (int, primary key): Unique identifier for each price change record.\n* `item_id` (int): Identifier for the item whose price has changed.\n* `change_timestamp` (datetime): The date and time when the price change occurred.\n* `new_price` (int): The new price of the item after the change.\n\nEach order in the `orders` table can have one corresponding record in the `price_changes` table based on `item_id` and the `order_timestamp` falling between the `change_timestamp` and the next price change.\n\nUsing PostgreSQL, write a query that retrieves the `order_id`, `item_id`, `order_timestamp` (of string datatype), and the corresponding `new_price` at the time of the order. For orders placed after a price change and before the next change, the `new_price` should reflect the price at the time of the order. For orders placed before any price changes for that item, the `new_price` should be `null`.\n\nAdditional Notes:\n* If an order's timestamp matches exactly with a `change_timestamp`, the `new_price` at that exact timestamp should be applied.\n* Each order in the `orders` table includes exactly one item. There are no orders with multiple items.\n* Results should be ordered by `order_id` in ascending order.\n\n#### Desired Output\n\nThe desired output should look like this:\n\n<table><!----><tr><th>order_id</th><th>item_id</th><th>order_timestamp</th><th>new_price</th></tr><tr><td>1</td><td>1</td><td>2024-08-31 14:00:00</td><td>200</td></tr><tr><td>2</td><td>2</td><td>2024-08-29 15:00:00</td><td>100</td></tr><tr><td>3</td><td>3</td><td>2024-07-04 05:00:00</td><td>null</td></tr></table>\n\nGLHF!",
+  "totalAttempts": 637,
+  "totalCompleted": 93,
+  "totalStars": 6,
+  "voteScore": 30,
+  "tags": [
+    "SQL",
+    "Databases"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

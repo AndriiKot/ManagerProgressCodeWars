@@ -1,0 +1,37 @@
+{
+  "id": "53de8d578e46dc9282000091",
+  "name": "Count the all of the visible triangles",
+  "slug": "count-the-all-of-the-visible-triangles",
+  "category": "algorithms",
+  "publishedAt": "2014-08-03T19:30:31.449Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/53de8d578e46dc9282000091",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2014-08-03T19:28:24.349Z",
+  "createdBy": {
+    "username": "Anthony Terra",
+    "url": "https://www.codewars.com/users/Anthony%20Terra"
+  },
+  "description": "Given an array of defined triangles, create an algorithm that will count all of the triangles that can be found.  This function needs to count all of the triangles visible in the outer most triangle regardless of how many smaller triangles the found triangle is comprised of:\n\nThe Array needs to be defined as a three dimensional array dimension 1 is the list of triangles, dimension 2 is the Triangle definition and dimension 3 contains the triangle points.\n\nThe triangle points are x,y coordinates of the the triangle one triangle can be defined as:\n```javascript\n               //[center,left,right]\nvar triangle = [[1,0][0,1][1,1]]\n\nThis would represent the folowing triangle:\n    [1,0]\n     /\\\n [0,1] [2,1]\n``` \nThis is assuming the use of a top, left x,y coordinate system:\n```javascript\n   X\n    0123\n    ------->\n  0|/\\\nY 1|\n  2|\n  3|\n  \\ /\n```\nThis array represents a 3 row triangle made up of both top down and inverted triangles:\nThe following definition can be used as a starting point for testing your counting logic.\n```javascript\n                  //[center,left,right]\n\nvar triangleArray = [[[3,0],[2,1],[4,1]], //row 1\n                    \n                    [[2,1],[1,2],[3,2]], //row 2\n                    [[1,2],[2,1],[4,1]], //note this triangle is upside down\n                    [[4,1],[3,2],[5,2]],\n                    \n                    [[1,2],[0,3],[2,3]], //row 3\n                    [[2,3],[1,2],[3,2]], //note this triangle is upside down\n                    [[3,2],[2,3],[4,3]],\n                    [[4,3],[3,2],[5,2]],//note this triangle is upside down\n                    [[5,2],[4,3],[6,3]]]\n```\n```javascript\nrepresents the following triangle.\n      /\\ 1     1 defined    0 found   1 total\n     /\\/\\ 3    4 defined    1 found   5 total\n    /\\/\\/\\ 5   9 defined    4 found  13 total\n```\nThe found triangles in this array are the outer most triangle that comprises all of the inner triangles. The top triangle composed of the triangles in row one and two, and the two triangles (left and right) in rows 2, 3.\n\nSo for this triangle if you seperate the triangle into its individual triangles you would find the following triangles:\n``` \n'    /\\ top row 1 triangle\n'\n'    /\\ \\/ /\\ middle row 3 triangles\n'\n'    /\\ \\/ /\\ \\/ /\\ bottom row 5 triangles\n```\n\n```\n'    Total = 9 triangles\n```\n\nPlus you would find these additional triangles\n\n<div style=\"color:red;white-space:pre;font:courier new\">\n```\n'    /\\  Entire         /\\ Top Center   /\\ Bottom-Right   /\\  Bottom Left\n'   /  \\  outer        /  \\            /  \\              /  \\\n'  /    \\  triangle\n```\n</div>\n```javascript\n'    Total = 4 triangles\n```\n```javascript\ngiving a grand total of 13 triangles.\n```\n\nYour challenge should you choose to accept it is to count the number of triangle regardless of the size of the outer triangle.  Remember the triangle can be both upside down or right side up.\n\nThe ``` calculateTriangles ``` function should take in an array of triangles and return the full count of triangles as described above.\n\nGiven the example triangle array defined above ``` calculateTriangles(triangleArray) ``` should return the number 13.",
+  "totalAttempts": 66,
+  "totalCompleted": 5,
+  "totalStars": 3,
+  "voteScore": -2,
+  "tags": [
+    "Algorithms",
+    "Games",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

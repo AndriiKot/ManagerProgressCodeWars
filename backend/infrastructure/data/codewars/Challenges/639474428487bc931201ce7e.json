@@ -1,0 +1,43 @@
+{
+  "id": "639474428487bc931201ce7e",
+  "name": "Galahad's Quests: Escape the Dungeon",
+  "slug": "galahads-quests-escape-the-dungeon",
+  "category": "games",
+  "publishedAt": "2022-12-10T16:42:16.622Z",
+  "approvedAt": "2022-12-12T17:52:50.517Z",
+  "languages": [
+    "javascript",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/639474428487bc931201ce7e",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-12-10T11:57:54.791Z",
+  "createdBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Preface</summary>\n\nGalahad - _knight of King Arthur's Round Table, achiever of the Holy Grail and renowned for his gallantry and purity_ - is in a pickle. On one of his quests, after getting ambushed and being hopelessly outnumbered by his foes, he got captured and thrown in a dungeon. Now he needs your help to escape! Will you help him?\n\n</details>\n\n<details open>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Task</summary>\n\nOur hero managed to break out of his cell, only to find out he now has to cross a burning floor in order to escape. Provide him the steps he must take to cross that floor. Fortunately, the floor isn't always burning. You've spotted some patterns and noticed each tile has its own cycle of uptime (tile burning) and downtime (tile not burning). You also managed to determine at which step in the cycle each tile currently is. Galahad can only cross tiles that aren't burning.\n\nGiven observations about the floor, represented as an array of 3-ples - each 3-ple containing the downtime, uptime and current step in cycle - return a string containing the moves our hero must make in order to cross the floor. There will always be at least one path to safety.\n\n#### Input\n\n- observations: an array of 3-ples, representing observations about the floor, with each 3-ple corresponding to an observation about a single tile; each 3-ple contains:\n  - downtime: number of steps the tile is not burning\n  - uptime: number of steps the tile is burning\n  - step: the current step of the tile in the cycle; a cycle starts with the downtime\n  \n#### Output\n\n- return a string containing the moves Galahad must make in order to escape. Any path of moves that gets the job done is fine, we don't necessarely need the fastest path. Concatenate each move to render the final string. Each move can be:\n  - `'L'` : take a step back (left from the observer's point of view)\n  - `'R'` : take a step forth (right from the observer's point of view)\n  - `'.'` : stay at current tile (standing still also counts as a move)\n  \n</details>\n  \n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Physics</summary>\n\n- a floor is 1-dimensional and consists of a number of tiles from left to right\n- Galahad starts on the leftmost tile and needs to reach the rightmost tile; these two tiles will always be safe! This means there are always 2 more tiles than the number of observations.\n- a valid move is one where (in chronological order):\n  - prior to the move, the source tile cannot be burning\n  - Galahad makes his move\n  - all tiles progress a step in their respective cycles\n  - the target tile cannot be burning\n  \n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Performance Constraints</summary>\n\nMake sure you optimise your solution to find **any** path, not the best path. If your solution times out, but you are sure your solution is fast, try to submit again. Sometimes generating the random tests takes up quite some time.\n\n- 100 random tests with 2 <= observations <= 4\n- 10 random tests with 5 <= observations <= 8\n- 2 random tests with 20 <= observations <= 25\n- for all tiles: 0 <= uptime <= 20\n- for all tiles: 1 <= downtime <= 50\n\n</details>\n\n<details>\n  <summary style=\"\n    padding: 3px;\n    width: 100%;\n    border: none;\n    font-size: 18px;\n    box-shadow: 1px 1px 2px #bbbbbb; \n    cursor: pointer;\">\n  Examples</summary>\n\n##### All examples are available in the sample tests\n\n```text\ntest #1: walk in the park\ntrivia: floor is never burning\nobservations: [[1,0,0], [1,0,0]]\npossible output: \"RRR\"\nvisualisation: G--_    R\n               _G-_    R\n               _-G_    R\n               _--G\n               \ntest #2: don't look back!\ntrivia: entertainingly accurate timing, also known as the Hollywood floor\nobservations: [[2,1,0], [3,1,0], [4,1,0]]\npossible output: \"RRRR\"\nvisualisation: G---_    R\n               _G--_    R\n               _°G-_    R\n               _-°G_    R\n               _--°G\n               \ntest #3: just go, trust me\ntrivia: jump into danger, but tile gets safe right before you land, better known as the Bollywood floor\nobservations: [[9,1,9], [9,2,9], [9,3,9]]\npossible output: \"RRRR\"\nvisualisation: G°°°_    R\n               _G°°_    R\n               _-G°_    R\n               _--G_    R\n               _---G\n               \ntest #4: not too fast, Skippy\ntrivia: make quick progress, then wait a bit before making your escape\nobservations: [[2,9,0], [9,4,0], [3,4,3]]\npossible output: \"RR.RR\"\nvisualisation: G--°_    R\n               _G-°_    R\n               _°G°_    .\n               _°G°_    R\n               _°-G_    R\n               _°--G\n               \ntest #5: swing me, daddy\ntrivia: move in, dance a bit, move out\nobservations: [[2,1,0], [3,1,0], [3,4,3]]\npossible output: \"RRLRRR\"\nvisualisation: G--°_    R\n               _G-°_    R\n               _°G°_    L\n               _G°°_    R\n               _-G-_    R\n               _°-G_    R\n               _---G\n```\n\n</details>",
+  "totalAttempts": 259,
+  "totalCompleted": 28,
+  "totalStars": 16,
+  "voteScore": 27,
+  "tags": [
+    "Puzzles",
+    "Algorithms",
+    "Arrays",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

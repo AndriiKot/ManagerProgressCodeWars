@@ -1,21 +1,22 @@
 'use strict';
 
-import { open, mkdir } from 'node:fs/promises';
+import { open, mkdir, access, constants } from 'node:fs/promises';
 //import { USER_NAME } from '#config';
-import { getUserCodeChallenges, getCodeChallenge } from '#api';
+import { getUserCodeChallenges, getCodeChallenge } from '#services';
 
 const USER_NAME = 'Voile';
 const MAX_PAGES = 63;
 const MAX_CHALLENGES = 200;
-const STEPS = 50;
-const INTERVAL = 30_000; //  30 sec. (optimal option)
+const STEPS = 200;
+const INTERVAL = 15_000; //  15 sec. (optimal option)
 
-let currentPage = 19;
+let currentPage = 0;
 let start = 0;
 let end = STEPS;
 
 await mkdir('./Challenges', { recursive: true });
 await mkdir('./Challenges/errors', { recursive: true });
+
 
 async function processPage() {
   console.log('Run page:', currentPage);
@@ -34,11 +35,20 @@ async function processPage() {
   }
 
   const challenges = res.data.data;
-
+ 
   const chunk = challenges.slice(start, end);
   console.log(`Slice from ${start} to ${end}, total: ${chunk.length}`);
 
   for (const { id } of chunk) {
+    let taskExists;
+    try {
+      await access(`./Challenges/${id}.json`, constants.F_OK);
+      taskExists = true;
+    } catch { taskExists = false };
+    if (taskExists) {
+      console.log(`skip task ${id}`);
+      continue;
+    }
     const task = await getCodeChallenge(id);
 
     if (task.success) {

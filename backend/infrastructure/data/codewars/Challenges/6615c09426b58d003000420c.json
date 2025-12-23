@@ -1,0 +1,36 @@
+{
+  "id": "6615c09426b58d003000420c",
+  "name": "Pharaoh's pyramid of sum",
+  "slug": "pharaohs-pyramid-of-sum",
+  "category": "games",
+  "publishedAt": "2024-04-14T01:23:25.702Z",
+  "approvedAt": null,
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/6615c09426b58d003000420c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-04-09T22:26:28.387Z",
+  "createdBy": {
+    "username": "Rei_00",
+    "url": "https://www.codewars.com/users/Rei_00"
+  },
+  "description": "## Introduction\n\nAncient Egypt is thriving! The number of pyramid projects is increasing! \\\nHelp the priests to make the right order to the stone quarry, without resorting to the costly ritual of patronage of the goddess Seshat.\n\nEach dynasty of pharaohs built a larger pyramid than before, however, the total height ```n``` of the pyramid remains the same. \\\nSo have to increase the width: count of blocks for level ```i``` of new generation is sum of blocks from levels ```0,..,i``` by previous dynasty. \\\nFirst dynasty (numbering starts from 1) looks at forerunners\n\n---\n\n\n#### IN & OUT\nFunction ```pyramid_cost``` get:\n   * ```data``` - integer array of forerunner pyramid: ```data[i]``` - count of block's on their level ```i``` (```0 <= i < n, n < 10^6```)\n   * ```k``` - number of dynasty which pyramid you need calculate: ```1 <= k < 10^6```\n   * ```p``` -  prime number: ```n < p < 10^9 ``` \n   \nYou need to return the total number of blocks for pyramid of given dynasty modulo ```p```\n\n\n---\n## Example\n\n```\nIN: data = [a, b, c, d]\n    dynasty = 3\n    p = 11\n    \nSOLVE:\n   levels   |  0  |     1    |        2      |           3\n------------|-----|----------|---------------|---------------------\nforerunners |  a  |       b  |            c  |                  d\n------------|-----|----------|---------------|---------------------\n  I dynasty |  a  |   a + b  |   a +  b + c  |    a +  b +  c + d\n II dynasty |  a  |  2a + b  |  3a + 2b + c  |   4a + 3b + 2c + d\nIII dynasty |  a  |  3a + b  |  6a + 3b + c  |  10a + 6b + 3c + d\n \nOUT: ( (a) + (3a+b) + (6a+3b+c) + (10a+6b+3c+d) ) % 11\n```\n\n\n\n\n",
+  "totalAttempts": 61,
+  "totalCompleted": 10,
+  "totalStars": 3,
+  "voteScore": 20,
+  "tags": [
+    "Mathematics",
+    "Performance"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

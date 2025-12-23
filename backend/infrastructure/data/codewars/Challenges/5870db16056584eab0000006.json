@@ -1,0 +1,46 @@
+{
+  "id": "5870db16056584eab0000006",
+  "name": "Let's Play Darts!",
+  "slug": "lets-play-darts",
+  "category": "algorithms",
+  "publishedAt": "2017-01-07T13:06:10.973Z",
+  "approvedAt": "2017-04-26T20:52:31.198Z",
+  "languages": [
+    "csharp",
+    "java",
+    "javascript",
+    "python",
+    "swift",
+    "haskell",
+    "rust"
+  ],
+  "url": "https://www.codewars.com/kata/5870db16056584eab0000006",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2017-01-07T12:12:06.626Z",
+  "createdBy": {
+    "username": "FrankK",
+    "url": "https://www.codewars.com/users/FrankK"
+  },
+  "approvedBy": {
+    "username": "ZozoFouchtra",
+    "url": "https://www.codewars.com/users/ZozoFouchtra"
+  },
+  "description": "Create your own mechanical dartboard that gives back your score based on the coordinates of your dart.\n\n## Task\n\n* Use the [scoring rules](https://en.wikipedia.org/wiki/Darts#Scoring) for a standard dartboard:\n\n<div style=\"background: var(--color-donut-chart-bg)\">\n\n![Dartboard](https://upload.wikimedia.org/wikipedia/commons/4/42/Dartboard.svg)\n\n</div>\n\n* Finish function:\n\n```csharp\npublic string GetScore(double x, double y);\n```\n```java\npublic String getScore(double x, double y);\n```\n```javascript\nfunction getDartboardScore(x, y);\n```\n```python\ndef get_score(x,y):\n```\n```swift\nfunc getScore(dart: (x: Double, y: Double)) -> String\n```\n```haskell\ngetDartScore :: Double -> Double -> DartScore\n```\n```rust\nfn get_dart_score(x: f64, y: f64) -> String\n```\n\n* The coordinates `(x, y)` are always relative to the center of the board `(0, 0)`. The unit is millimeters. If you throw your dart `5` centimeters to the left and `3` centimeters below, it is written as:\n\n```csharp\nvar score = dartboard.GetScore(-50, -30);\n```\n```java\nString score = dartboard.getScore(-50, -30);\n```\n```javascript\nvar score = getDartboardScore(-50, -30);\n```\n```python\nscore = get_score(-50, -30)\n```\n```swift\nvar score = Dartboard.getScore(dart: (x: -50, y: -30))\n```\n```haskell\ngetDartScore (-50) (-30)\n```\n```rust\nlet score = get_dart_score(-50.0, -30.0)\n```\n\nPossible scores are:\n\n* Outside of the board: `\"X\"`\n* Bull's eye: `\"DB\"`\n* Bull: `\"SB\"`\n* A single number, example: `\"10\"`\n* A triple number: `\"T10\"`\n* A double number: `\"D10\"`\n* A throw that ends exactly on the border of two sections results in a bounce out. You can ignore this because all the given coordinates of the tests are within the sections.\n\nThe diameters of the circles on the dartboard are:\n\n* Bull's eye: `12.70 mm`\n* Bull: `31.8 mm`\n* Triple ring inner circle: `198 mm`\n* Triple ring outer circle: `214 mm`\n* Double ring inner circle: `324 mm`\n* Double ring outer circle: `340 mm`\n\nIf you liked this kata, you can continue with [Let's Play Darts: Beat The Power!](https://www.codewars.com/kata/lets-play-darts-beat-the-power)\n\n",
+  "totalAttempts": 9946,
+  "totalCompleted": 1035,
+  "totalStars": 180,
+  "voteScore": 222,
+  "tags": [
+    "Games",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 1,
+    "suggestions": 0
+  }
+}

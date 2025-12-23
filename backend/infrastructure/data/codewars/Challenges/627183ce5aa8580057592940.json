@@ -1,0 +1,45 @@
+{
+  "id": "627183ce5aa8580057592940",
+  "name": "Help naughty Codewars users cheat by sharing their solutions to katas",
+  "slug": "help-naughty-codewars-users-cheat-by-sharing-their-solutions-to-katas",
+  "category": "reference",
+  "publishedAt": "2022-05-04T21:02:50.826Z",
+  "approvedAt": "2022-11-29T05:19:05.151Z",
+  "languages": [
+    "python",
+    "javascript",
+    "haskell",
+    "factor"
+  ],
+  "url": "https://www.codewars.com/kata/627183ce5aa8580057592940",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-05-03T19:34:38.329Z",
+  "createdBy": {
+    "username": "benjaminzwhite",
+    "url": "https://www.codewars.com/users/benjaminzwhite"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "## Overview\n\n`n` very naughty Codewars users want to cheat amongst themselves, and share solutions to katas they have solved.\n\nEach of the `n` users was only clever enough to solve 1 distinct kata on their own, and now they would like to know the solutions to **each other's unique kata** that each of the other `n - 1` users was able to solve.\n\n**Any two** naughty Codewars users can chat to eachother on Discord, and during their naughty cheater **2-person conversation** they will **exchange ALL the solutions they currently know with the other user**.\n\nThe `n` naughty Codewars users now want to work out what the optimal way to organize their Discord chats is.\n\nIn other words, they want to **find a sequence of 2-person conversations that reaches a final state where all `n` users know all `n` solutions, in the smallest possible number of conversations.**\n\nSince they are all noobs, they have asked you to solve this problem for them!\n\n*Disclaimer: rest assured, no cheaters will be helped by you solving this kata. Any resemblance to actual Codewars users is purely coincidental. There is no secret cheater Discord.*\n\n---\n\n## Example with `n = 3` Codewars users\n\n```\nthese 2 users\nwill have a\nconversation  -> (1,3)  -> (2,3)  ->  (1,2)\n _____________  _______  _________  ________\n user 1: {1}    {1,3}    {1,3}      {1,2,3}\n user 2: {2}    {2}      {1,2,3}    {1,2,3}\n user 3: {3}    {1,3}    {1,2,3}    {1,2,3}\n \n```\n\nThe above illustration shows how the series of conversations `[(1,3), (2,3), (1,2)]` gradually leads to all 3 users gradually learning the solutions to all the different katas.\n\nInitially, all 3 users only know 1 solution each (user 1 knows solution to kata `{1}`, etc.) \n\nThen, for example, when user 1 and user 3 have their first conversation, they exchange all their known solutions, so after the first conversation `(1,3)` we have:\n\n`user 1 knows: {1,3}, user 2 knows: {2}, user 3 knows: {1,3}`\n\nNote that **there are many possible ways of reaching the desired final state**, for example you can check that `[(1,2), (3,2), (1,2)]` also works, but they all require at least 3 conversations. It is **not** possible to do this with a smaller number of conversations, so the **optimal length** is therefore 3.\n\n---\n\n## Inputs\n\nYou will be given an `integer` `n` representing the number of naughty Codewars users.\n\nThe input `n` will always be `n >= 2`.\n\n**Performance requirements:** Values of `n` up to `n = 1000` will be used in tests.\n\n## Outputs\n\nReturn an array of 2-element `tuples` of `integers`, representing the 2-person conversations that should take place, and with the **array sorted in the order in which the conversations should take place**.\n\nThe length of this array will therefore be the **number of conversations** that your algorithm determines to be the optimal i.e. fewest possible.\n\nThe order of the 2 users in each of the 2-element tuples **does not** matter: the solution checker will treat `(user_1, user_2)` as the same conversation as `(user_2, user_1)`.\n\n---\n\n## Important note on tests\n\nFor a given `n`, the exact series of conversations leading to optimal solution is not unique, as illustrated in the Example for `n=3` above, but the **optimal number of conversations is well defined**.\n\nTherefore, the tests will check **2** features of your solution:\n\n1. Tests will first check that your returned array of 2-person conversations does indeed lead to a final state in which all `n` users have the solutions to all `n` katas.\n\n1. Secondly, tests will then check for the OPTIMALITY of your proposed list of conversations; i.e. that its length is equal to the minimum possible for the given value of `n`.\n\n**If you are failing tests despite returning a valid list of conversations** it is probably because your solution is passing the tests corresponding to requirement 1) but not passing the optimality requirement 2). In other words, your solution is leading to a valid final state, but it is not doing so in the **minimum possible** number of conversations.",
+  "totalAttempts": 558,
+  "totalCompleted": 59,
+  "totalStars": 20,
+  "voteScore": 27,
+  "tags": [
+    "Puzzles",
+    "Mathematics",
+    "Logic",
+    "Combinatorics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

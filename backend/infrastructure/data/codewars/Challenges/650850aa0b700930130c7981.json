@@ -1,0 +1,40 @@
+{
+  "id": "650850aa0b700930130c7981",
+  "name": "Reflective Prime Pairs for a Range of Bases",
+  "slug": "reflective-prime-pairs-for-a-range-of-bases",
+  "category": "reference",
+  "publishedAt": "2023-09-18T13:44:24.033Z",
+  "approvedAt": "2023-12-22T08:48:44.433Z",
+  "languages": [
+    "python"
+  ],
+  "url": "https://www.codewars.com/kata/650850aa0b700930130c7981",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-09-18T13:29:14.735Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "approvedBy": {
+    "username": "dfhwze",
+    "url": "https://www.codewars.com/users/dfhwze"
+  },
+  "description": "**Problem Description**\nFind how many reflective prime pairs exist in a given range for each base in a given range. You'll be given two integers as parameters — ceiling range for primes and ceiling range for bases **(ranges include the parameters)**. By \"reflective\" I mean two distinct numbers who are each other's reflection in the same base (e.g. 37 and 73).\n\nPalindromic numbers like 101 don't count as reflective pairs with themselves — their pair must be distinct. Return a dictionary where ascending bases are keys and the count of reflective pairs within each are the values.\ne.g.\n```\n{ base : count of reflective pairs for base, ... }\n```\n\n**Input**\n\n- Two integers: `max_prime_range` and `max_base_range`, where:\n  - 2 <= `max_prime_range` <= 10^4\n  - 3 <= `max_base_range` <= 50\n\n**Output**\n\n- A dictionary where the keys are ascending bases within the range [2, `max_base_range`] (inclusive), and the values are the counts of reflective prime pairs for each base.\n\n**Examples**\n```\nInput: `(100, 5)`\nOutput: `{2: 6, 3: 6, 4: 4, 5: 6}`\n\nPrime numbers in the range (inclusive) [2, 100]: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n\nFor base 2: {('101011', '110101'), ('10111', '11101'), ('1000011', '1100001'), ('100101', '101001'), ('1011', '1101'), ('101111', '111101')}\n\nFor base 3: {('102', '201'), ('1112', '2111'), ('1011', '1101'), ('1202', '2021'), ('12', '21'), ('1222', '2221')}\n\nFor base 4: {('1021', '1201'), ('133', '331'), ('113', '311'), ('13', '31')}\n\nFor base 5: {('243', '342'), ('23', '32'), ('142', '241'), ('122', '221'), ('12', '21'), ('34', '43')}}\n```",
+  "totalAttempts": 154,
+  "totalCompleted": 51,
+  "totalStars": 3,
+  "voteScore": 48,
+  "tags": [
+    "Algorithms",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

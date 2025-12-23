@@ -1,0 +1,47 @@
+{
+  "id": "64b771989416793927fbd2bf",
+  "name": "Closed Brackets String",
+  "slug": "closed-brackets-string",
+  "category": "reference",
+  "publishedAt": "2023-07-19T05:28:57.693Z",
+  "approvedAt": "2023-09-23T00:00:12.001Z",
+  "languages": [
+    "python",
+    "rust",
+    "javascript",
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/64b771989416793927fbd2bf",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2023-07-19T05:16:08.915Z",
+  "createdBy": {
+    "username": "saudiGuy",
+    "url": "https://www.codewars.com/users/saudiGuy"
+  },
+  "approvedBy": {
+    "username": "akar-0",
+    "url": "https://www.codewars.com/users/akar-0"
+  },
+  "description": "# Task\nThe function is given a string consisting of a collection of three characters:\n\n- \"(\" open bracket\n- \")\" closed bracket\n- \"J\" Joker, which can be replaced by \"(\", \")\" or \"\"\n\nDevelop a solution to determine if the given string represents a proper sequence of parenthesis; return `True / False`. Each open bracket on the left should have a corresponding closed bracket on the right. For example \"(()())\" is a proper sequence, \"()(()\" is not a proper sequence. The presence of Jokers adds an extra level of difficulty to the analysis because each \"J\" makes three possibilities to consider. An empty string is considered a valid string because it does not contain unbalanced brackets.\n\n# Examples\n```\nclosed_brackets(\"(J))\") ➞ True\n# J can be replaced with (\n\nclosed_brackets(\"(\") ➞ False\n# Unbalanced open bracket.\n\nclosed_brackets(\"\") ➞ True\n# Empty string is a valid sequence.\n\nclosed_brackets(\"()J(\") ➞ False\n# Not possible to balance the brackets.\n\nclosed_brackets(\"J\") ➞ True\n# J can be replaced with an empty string.\n\nclosed_brackets(\")(\") ➞ False\n# Numbers of ( and ) are the same but they are in the wrong places.\n\nclosed_brackets(\"J)(J\") ➞ True\n# First 'J' can be replaced with '(' and second with ')'\n\nclosed_brackets(\"()\") ➞ True\n# A proper sequence of balanced brackets.\n```\n\n# Input Constraints\n- 0 <= len(s) <= 100",
+  "totalAttempts": 2521,
+  "totalCompleted": 229,
+  "totalStars": 41,
+  "voteScore": 71,
+  "tags": [
+    "Algorithms",
+    "Strings",
+    "Recursion",
+    "Stacks",
+    "Dynamic Programming",
+    "Data Structures"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

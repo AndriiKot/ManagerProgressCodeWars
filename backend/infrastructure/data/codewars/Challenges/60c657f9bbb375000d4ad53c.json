@@ -1,0 +1,35 @@
+{
+  "id": "60c657f9bbb375000d4ad53c",
+  "name": "The Startup ",
+  "slug": "the-startup",
+  "category": "reference",
+  "publishedAt": "2021-06-13T19:14:32.878Z",
+  "approvedAt": null,
+  "languages": [
+    "ruby"
+  ],
+  "url": "https://www.codewars.com/kata/60c657f9bbb375000d4ad53c",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2021-06-13T19:09:45.875Z",
+  "createdBy": {
+    "username": "Haumer",
+    "url": "https://www.codewars.com/users/Haumer"
+  },
+  "description": "# looking to hear your feedback ;)\n\nWrite a class called Startup that is used to track attributes of a startup as it grows (or fails).\n\n## Business Rules\n\nEvery Startup must have the following:\n- an initial`funding` of X$, eg 30.000$\n- a `location`, eg 'San Francisco', 'London', 'Paris', ... etc\n- two initial `employees` (the co-founders) - The Startups we follow have a flat hierarchy, so everyone has a salary of **3.000$** a month\n- a `burn_rate` calculated by the `rent` of the location and `salaries` of the employees\n- a `status` of \"in business\" or \"bust\"\n- a Startup is bust if funding is less than zero, at which point it ceases to operate\n\nWe check in with the Startup once a month: `startup.one_month_passes`\nEvery month we need to know how much runway is left, ie how many months the Startup can continue operating under the same conditions:\n\n- `burn_rate` = rent + salaries (rent and salaries are paid monthly)\n- `runway` = funding / (burn_rate)\n- If we have **four or more** months of `runway` left we hire **one** additional employee\n- If we have **two or less** months of `runway` left we fire **one** existing employee (Note a Startup cant have zero employees)\n- If we have **eight or more** months of `runway` the startup will move `location` to the next most expensive location if possible (table below)\n\n**If the startup is still in business after 3 months** the following rules apply:\n- Each month the Startup has a **5%** chance to receive additional funding of **100.000$**\n- For every **three employees** the chance to get **funding increases by 5%**, eg: 3 employees: 5%, 6 employees: 10%, 9 employees: 15%\n- Each **additional month increases the chance of funding by 1%**,eg at month 3 with 2 employees the chance of funding is 5%. Next month its 6%, then 7% etc. \n- So at `month=12` for a Startup where `employees=10` the chance to get funded is computed by: 5% (base), 6% (monthly bonus), 15% (employee bonus) for a **total of 26%**\n- hiring and firing rates are **doubled**, so we would hire/fire two employees depending on the runway\n\n### Location and Rent\n```rb\n{\n  'San Francisco': 4000,\n  'Paris': 2200,\n  'New York': 2900,\n  'Berlin': 1600,\n  'London': 2100,\n  'Shenzhen': 1500,\n  'Madrid': 1700,\n  'Rome': 1800,\n  'Moscow': 2000\n}\n```\n\n### Clarification:\nAssume that we start at month **zero**!\n\nWe hire/fire at the start of the month, eg if we hire someone that **salary affects the runway/burnrate** of month 1\n\nIf `location='San Francisco'` (ie the most expensive) we stay there even if `runway>=8`\n\n`funding_chance` should be an integer",
+  "totalAttempts": 224,
+  "totalCompleted": 4,
+  "totalStars": 2,
+  "voteScore": -3,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 4,
+    "suggestions": 0
+  }
+}

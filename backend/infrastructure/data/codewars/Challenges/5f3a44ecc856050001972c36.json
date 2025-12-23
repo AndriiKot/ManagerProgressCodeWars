@@ -1,0 +1,40 @@
+{
+  "id": "5f3a44ecc856050001972c36",
+  "name": "Classical Axioms: Peirce's Law-Equivalent",
+  "slug": "classical-axioms-peirces-law-equivalent",
+  "category": "algorithms",
+  "publishedAt": "2020-08-17T08:50:52.681Z",
+  "approvedAt": "2021-01-11T02:57:53.438Z",
+  "languages": [
+    "idris"
+  ],
+  "url": "https://www.codewars.com/kata/5f3a44ecc856050001972c36",
+  "rank": {
+    "id": -5,
+    "name": "5 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2020-08-17T08:51:29.245Z",
+  "createdBy": {
+    "username": "Milky2020",
+    "url": "https://www.codewars.com/users/Milky2020"
+  },
+  "approvedBy": {
+    "username": "donaldsebleung",
+    "url": "https://www.codewars.com/users/donaldsebleung"
+  },
+  "description": "_Note to translators: This Kata is **NOT** accepting any translations to Coq / Lean / Agda due to the huge difference in difficulty between Idris and those languages mentioned. Any translations violating this rule will be rejected without further reason._\n\n***\n\nThis kata was taken from Coq'Art book by Bertot and Casteran (p. 123). \n\nThe goal is to prove that all six propositions are equivalent.\n\n```idris\nPeirce : Type \nPeirce = (a : Type) -> (b : Type) -> ((a -> b) -> a) -> a\n\nExcludedMiddle : Type \nExcludedMiddle = (a : Type) -> Either a (Not a)\n\nDoubleNegationElim : Type \nDoubleNegationElim = (a : Type) -> Not (Not a) -> a \n\nAbsurdity : Type \nAbsurdity = (a : Type) -> (b : Type) -> (Not a -> Not b) -> b -> a \n\nDeMorganNotAndNot : Type \nDeMorganNotAndNot = (a : Type) -> (b : Type) -> Not (Not a, Not b) -> Either a b\n\nImpliesToOr : Type \nImpliesToOr = (a : Type) -> (b : Type) -> (a -> b) -> Either (Not a) b\n```\n\nTo prove these are equivalent, the simplest way is to form a closed loop of the implication relationship. Just like given in the initial solution: \n\n```idris\nproof1 : Peirce -> ExcludedMiddle\nproof2 : ExcludedMiddle -> DoubleNegationElim\nproof3 : DoubleNegationElim -> Absurdity\nproof4 : Absurdity -> DeMorganNotAndNot\nproof5 : DeMorganNotAndNot -> ImpliesToOr\nproof6 : ImpliesToOr -> Peirce\n```\n\nOf course, you could choose any order you prefer to construct proof1~6. For example, if you have already proved `lemma1 : Peirce -> DoubleNegationElim` and `lemma2 : DoubleNegationElim -> ExcludedMiddle`, just write proof1 as: `proof1 = lemma2 . lemma1`. \n\nFare thee well. \n",
+  "totalAttempts": 45,
+  "totalCompleted": 14,
+  "totalStars": 2,
+  "voteScore": 16,
+  "tags": [
+    "Logic",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

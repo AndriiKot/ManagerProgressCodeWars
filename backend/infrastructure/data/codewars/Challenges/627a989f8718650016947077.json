@@ -1,0 +1,38 @@
+{
+  "id": "627a989f8718650016947077",
+  "name": "A Carnival's Routes in Nomad Country",
+  "slug": "a-carnivals-routes-in-nomad-country",
+  "category": "algorithms",
+  "publishedAt": "2022-05-10T19:09:46.657Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/627a989f8718650016947077",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-05-10T16:53:51.802Z",
+  "createdBy": {
+    "username": "mohrizkyk",
+    "url": "https://www.codewars.com/users/mohrizkyk"
+  },
+  "description": "Meet Khan, he own a carnival in Nomad Country.<br>\nIn Nomad Country there are 26 large groups of people who stay in 1 place for a period of time before moving again to a random location.<br>\nFor many periods of times, Khan always stay in the same location and waiting for people (by luck) to come and settle at his carnival location.\n\nThis time Khan decides to visit those 26 groups instead of waiting for them to come to his carnival, hoping to get more money (or gain more barter opportunity).\n\nAs Khan told by his friends you are a great programmer, he then come to you and asked you to create a program that: given <em><strong>a starting location</strong></em> and <em><strong>a list of those 26 groups location</strong></em>, the program could generate an ordered list of groups he should visit from one location to another location after that.\n\nThe starting location will have the same structure as the rest of the group within the list given, example like below:\n<pre>{\n  name: \"\",\n  coordX: 0,\n  coordY: 0\n}\n// Starting Location always have \".\" as a name\n// While the groups will have name from \"A\" to \"Z\"\n// Coordinate of X and Y will always be random between -100 and 100</pre>\nHe use very simple rule to determine which location he should visit next, which is the <strong>nearest one</strong> from where he stand but <strong>not the location he has visited before</strong>.<br>\nYou've been told by Khan to use the <strong>Eucledian Distance</strong> formula, but after showing him the result of the calculation he doesn't like the number, he told you to <strong>round up the result</strong> so he could be extra prepared if the distance is longer than he expected.<br>\nWhen he is faced with more than 1 nearest destination, he believe that he should visit the group whose <strong>name</strong> came up first in alphabetical order from \"A\" to \"Z\".<br>\nTake a look of example locations and steps below:\n<pre>startingLocation = {\n  \"name\": \".\",\n  \"coordX\": 93,\n  \"coordY\": 48\n}\ngroups = [\n  {\"name\": \"S\", \"coordX\": 75, \"coordY\": 25},\n  {\"name\": \"J\", \"coordX\": 71, \"coordY\": 19},\n  {\"name\": \"Z\", \"coordX\": 50, \"coordY\": 13},\n  {\"name\": \"G\", \"coordX\": 56, \"coordY\": 4},\n]\n// With the function to calculate distance is\n// already written, you need to calculate each\n// distance starting from startingLocation and\n// determine where to go next.\n// \n// Starting from \".\" and calculating the distance\n// between \".\" to the other 4 groups will result \"S\"\n// with the distance of 30 is the nearest, therefore\n// \"S\" is the next location to visit.\n//\n// At location \"S\", calculating the distance to the\n// next 3 location will result \"J\" with the distance\n// of 8 is the nearest, therefore \"J\" is the next\n// location to visit.\n//\n// At location \"J\", calculating the distance to the\n// next 2 location will result <b>both \"Z\" and \"G\" have</b>\n// <b>the same distance of 22</b>, considering letter \"G\"\n// comes before \"Z\", therefore \"G\" is the next\n// location to visit.\n//\n// And so on...</pre>\nKhan also doesn't want the information he already have beforehand (such as location), instead he want the distance for each travel to be included in the list, so he can prepare himself for how long he will be travelling.<br>\nHe gave you an example like this:\n<pre>[\n  {\"from\":\".\", \"to\":\"S\", \"distance\":30},\n  {\"from\":\"S\", \"to\":\"J\", \"distance\":8},\n  {\"from\":\"J\", \"to\":\"G\", \"distance\":22},\n  {\"from\":\"G\", \"to\":\"Z\", \"distance\":11}\n]</pre>\nAs you aware there's no number ordering the list, Khan told you he prefer the list to be top to down ready, so he can simply put a strike-through when he reach his destination.\n\nThe success of Khan's Carnival travel plan now is in your hand.<br>\nGood Luck.",
+  "totalAttempts": 53,
+  "totalCompleted": 11,
+  "totalStars": 1,
+  "voteScore": 4,
+  "tags": [
+    "Arrays",
+    "Fundamentals",
+    "Sorting",
+    "Algorithms"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 1
+  }
+}

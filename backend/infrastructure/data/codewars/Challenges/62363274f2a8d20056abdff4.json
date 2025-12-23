@@ -1,0 +1,38 @@
+{
+  "id": "62363274f2a8d20056abdff4",
+  "name": "Makeshift pattern matching",
+  "slug": "makeshift-pattern-matching",
+  "category": "algorithms",
+  "publishedAt": "2022-03-19T19:44:37.765Z",
+  "approvedAt": null,
+  "languages": [
+    "javascript"
+  ],
+  "url": "https://www.codewars.com/kata/62363274f2a8d20056abdff4",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2022-03-19T19:43:49.120Z",
+  "createdBy": {
+    "username": "Anon2028",
+    "url": "https://www.codewars.com/users/Anon2028"
+  },
+  "description": "## Overview\n\nJavaScript has a switch statement, but it isn't very powerful. For example, none of the following functions work:\n\n```javascript\nfunction categorize(char) {\n  switch (char) {\n    case /[a-z]/i: return 'letter';\n    case /[0-9]/:  return 'digit';\n    case /\\s/:     return 'whitespace';\n  }\n}\n\nfunction numberOfElements(setOrArray) {\n  switch (setOrArray) {\n    case Set:   return setOrArray.size;\n    case Array: return setOrArray.length;\n  }\n}\n\nfunction or(a, b) {\n  switch ([a, b]) {\n    case [true, _]: return true;\n    case [_, true]: return true;\n    case _:         return false;\n  }\n}\n```\n\nIn this kata, we are going to implement a `patternMatch` function so that the following functions (and many more complex ones) _will_ work:\n\n```javascript\nfunction categorize(char) {\n  return patternMatch(char,\n    /[a-z]/i, 'letter',\n    /[0-9]/,  'number',\n    /\\s/,     'whitespace'\n  );\n}\n\nfunction numberOfElements(setOrArray) {\n  return patternMatch(setOrArray,\n    Set,   x => x.size,\n    Array, x => x.length\n  );\n}\n\nfunction or(a, b) {\n  return patternMatch([a, b],\n    [true, _], true,\n    [_, true], true,\n    _,         false\n  );\n}\n```\n\n## Details\n\n`patternMatch` will receive an `input` argument followed by one or more pairs of `pattern`s and `output`s. It should go through the pairs in the order it received them, and if it finds one with a pattern that matches the input:\n\n* If the output is a function, `patternMatch` should invoke it with the input and return the result.\n* If the output is not a function, it should be returned as-is.\n\nIf `patternMatch` doesn't find a match, it should return `undefined`.\n\nThe pattern matching rules are as follows:\n\n* `null` matches if the input is `null`.\n* `undefined` matches if the input is `undefined`.\n* Any other pattern matches if `pattern[matchesSymbol](input)` is truthy. The `matchesSymbol` variable is preloaded, and the solution must use it to define one or more properties, each on a standard prototype (e.g. `Object.prototype`). These properties should apply the following default rules:\n  * A regular expression matches if the input is a string containing a (regular expression) match.\n  * A function matches if at least one of the following is true:\n    * The function is a constructor in the input's prototype chain.\n    * The function returns `true` when invoked with the input.\n      * This rule does not apply when the function is the `Boolean` constructor (otherwise it would match anything truthy).\n      * _Errors from this call should be suppressed as e.g. `Set(input)` will always throw an error._\n  * An array matches if the input is an array of the same length and all of the pattern's elements match their corresponding element in the input (`pattern[0]` matches `input[0]`, `pattern[1]` matches `input[1]`, etc.).\n    * The solution does not need to consider sparse arrays.\n  * A plain object matches if the input is not `null` or `undefined` and all of the pattern's enumerable string-keyed properties match their corresponding value in the input (`pattern[key1]` matches `input[key1]`, `pattern[key2]` matches `input[key2]`, etc.).\n    * Properties do not need to be defined on the input for a match to succeed: `{ nonExistent: undefined }` matches `{}`.\n    * The solution may use either the enumerable string-keyed properties or the _own_ enumerable string-keyed properties of the pattern. The difference in behavior will not be tested.\n  * A pattern not covered by the above rules matches if it is considered equal to the input. The equality check should be a strict equality check with the following exceptions:\n    * `NaN` should be considered equal to `NaN` and nothing else.\n    * If an object has a primitive value (e.g. `new Number(1)`'s primitive value is `1`), it should be converted to that before comparison. `Object.prototype` has a function that performs this conversion.\n\n## Why `[matchesSymbol]`?\n\nUsing `matchesSymbol` enables custom pattern-matching behavior for user-defined types. For instance, if we have the following class:\n\n```javascript\nclass Range {\n  // Accepts expressions like \"0 < x <= 10\"\n  constructor(expression) {\n    this.contains = /* Parsing magic */;\n  }\n\n  [matchesSymbol](input) {\n    return this.contains(input);\n  }\n}\n```\n\nThen the following code will work:\n\n```javascript\nfunction sign(n) {\n  return patternMatch(n,\n    new Range('-Infinity <= x < 0'), -1,\n    0,                               0,\n    new Range('Infinity >= x > 0'),  1\n  );\n}\n\nsign(-Infinity); // -1\nsign(-0.5);      // -1\nsign(0);         // 0\nsign(0.5);       // 1\nsign(Infinity);  // 1\n```\n\n## Preloaded Code\n\n```javascript\nconst matchesSymbol = Symbol('matches');\nconst _ = () => true; // Should match anything\n```",
+  "totalAttempts": 59,
+  "totalCompleted": 3,
+  "totalStars": 2,
+  "voteScore": -1,
+  "tags": [
+    "Algorithms",
+    "Fundamentals",
+    "Functional Programming",
+    "Recursion"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 2
+  }
+}

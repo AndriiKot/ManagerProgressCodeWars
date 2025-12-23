@@ -1,0 +1,37 @@
+{
+  "id": "666928379a326a5e480f5fff",
+  "name": "The size of a sand pile",
+  "slug": "the-size-of-a-sand-pile",
+  "category": "games",
+  "publishedAt": "2024-06-12T06:16:58.246Z",
+  "approvedAt": null,
+  "languages": [
+    "lua"
+  ],
+  "url": "https://www.codewars.com/kata/666928379a326a5e480f5fff",
+  "rank": {
+    "id": null,
+    "name": null,
+    "color": null
+  },
+  "createdAt": "2024-06-12T04:46:47.504Z",
+  "createdBy": {
+    "username": "LRDPRDX",
+    "url": "https://www.codewars.com/users/LRDPRDX"
+  },
+  "description": "Description\n-----------\n\nLet us introduce the Abelian sand pile model (also known as \"chip firing game\"). We will define it as follows (for more details visit the links below).\n\nSuppose we have an (infinite) set of vertices (cells) placed in a grid with whole coordinates\n(`$ \\mathbb{Z}^{2} $`) so each vertex `$ v $` has coordinates of the form `$ (x, y) $`, \nwhere `$ x, y $` are whole numbers (can be zero or negative). Suppose also that a vertex can \"hold\" a finite\nnumber of sand grains but if this number is too big it \"topples\" in the following way: it gives one grain to \neach of its 4 neighbors (diagonal vertices are _not_ considered as neighbors). The number which forces a vertex \nto topple we'll denote as `$ T $` (for _threshold_), and it is the same for all vertices. We will also denote\nthe function that says how many grains a vertex has as `$ \\eta $`. So `$ \\eta(x, y) = \\text{number of grains at} (x, y) $`. If `$ \\eta(x, y) \\geq T $` we call the vertex _active_. Now imagine that initially every vertex is\nempty, i.e. `$\\eta(x, y) = 0$` for all `$x, y$`. And then ... you put `$n_{0}$` grains at `$(0, 0)$`.\nIf `$n_{0} \\geq T$` then it topples and the process has begun... The process of stabilizing itself:\n\n<br>\n\n* a) If `$\\eta(x, y) \\geq T $` then subtract 4 grains from `$(x, y)$` and add 1 grain to each of its neighbors i.e., `$(x \\pm 1, y)$` and `$(x, y \\pm 1)$`\n* b) If there is no more active vertices then terminate, else go to step a).\n\n<br>\n\nIt is easy to see that the process will end\nas we have the infinite amount of vertices and only finite number of grains (but we are interested not in\n_when_ it ends but _where_ it ends).\n\nWe denote that stable (terminated) configuration as\n\n```math\n\\Delta(n_{0}, T),\n```\n\nwhere\n\n```math\nn_{0} - \\text{the initial number of grains at (0, 0)},\\\\\nT - \\text{the minimum number of grains (threshold) which forces a vertex to topple}\n\n```\n\nBy the size (or radius) of `$ \\Delta(n_{0}, T) $` we assume the maximum distance between `$(0, 0)$` and a\nnon-empty vertex. So formally:\n\n```math\nR(\\Delta(n_{0}, T)) = \\max_{\\eta(x, y) > 0} |x| = \\max_{\\eta(x, y) > 0} |y| \n```\n\nTask\n----\n\nGiven `$ n_0 $` and `$ T $` find the _radius_ **and** the number of grains at `$(0, 0)$` of `$ \\Delta(n_0, T) $` in that order. So you have to return two values from your function: `$R$` and `$\\eta(0, 0)$` of `$\\Delta(n_{0}, T)$`.\n\nHint: try to find out why this model called the _Abelian_ sand piles. See the links at the end of description.\n\n<br>\n\nNOTE: `$0 \\leq n_{0} \\leq 10000, 4 \\leq T \\leq 100$` for all tests.\n\nGood luck !\n\n\nExamples\n--------\n\nSuppose `$ n_{0} = 10 $` and `$ T = 4 $`, then the stabilizing sequence would be the following:\n\n<br>\n\n```math\n\\begin{matrix}\n0 & 0 & 0\\\\\n0 & 10 & 0\\\\\n0 & 0 & 0\n\\end{matrix}\n\n\\quad\\to\\quad\n\n\\begin{matrix}\n0 & 1 & 0\\\\\n1 & 6 & 1\\\\\n0 & 1 & 0\n\\end{matrix}\n\n\\quad\\to\\quad\n\n\\begin{matrix}\n0 & 2 & 0\\\\\n2 & 2 & 2\\\\\n0 & 2 & 0\n\\end{matrix}\n\n\\quad = \\quad \\Delta(10, 4)\n```\n\n<br>\n\nand the answer would be `$R = 1$` and `$\\eta(0, 0) = 2$`.\n\n<br>\n\nAnd this is how `$\\Delta(1000, 10)$` looks like:\n\n<br>\n\n```math\n\\begin{matrix}\n0& 0& 0& 0& 3& 5& 6& 5& 3& 0& 0& 0& 0\\\\\n0& 0& 1& 9& 6& 9& 9& 9& 6& 9& 1& 0& 0\\\\\n0& 1& 8& 7& 9& 8& 9& 8& 9& 7& 8& 1& 0\\\\\n0& 9& 7& 8& 8& 9& 8& 9& 8& 8& 7& 9& 0\\\\\n3& 6& 9& 8& 8& 9& 9& 9& 8& 8& 9& 6& 3\\\\\n5& 9& 8& 9& 9& 8& 9& 8& 9& 9& 8& 9& 5\\\\\n6& 9& 9& 8& 9& 9& 8& 9& 9& 8& 9& 9& 6\\\\\n5& 9& 8& 9& 9& 8& 9& 8& 9& 9& 8& 9& 5\\\\\n3& 6& 9& 8& 8& 9& 9& 9& 8& 8& 9& 6& 3\\\\\n0& 9& 7& 8& 8& 9& 8& 9& 8& 8& 7& 9& 0\\\\\n0& 1& 8& 7& 9& 8& 9& 8& 9& 7& 8& 1& 0\\\\\n0& 0& 1& 9& 6& 9& 9& 9& 6& 9& 1& 0& 0\\\\\n0& 0& 0& 0& 3& 5& 6& 5& 3& 0& 0& 0& 0\\\\\n\n\\end{matrix}\n```\n\n<br>\n\nin this case the answer should be `6, 8`.\n\nUseful links:\n------------\n\nwiki : https://en.wikipedia.org/wiki/Abelian_sandpile_model <br>\narticle : https://arxiv.org/abs/1401.0354\n",
+  "totalAttempts": 58,
+  "totalCompleted": 7,
+  "totalStars": 4,
+  "voteScore": 17,
+  "tags": [
+    "Matrix",
+    "Graph Theory",
+    "Mathematics"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

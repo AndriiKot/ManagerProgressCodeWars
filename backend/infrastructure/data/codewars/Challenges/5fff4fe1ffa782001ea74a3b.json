@@ -1,0 +1,39 @@
+{
+  "id": "5fff4fe1ffa782001ea74a3b",
+  "name": "Brackets paired and sized, Type-safely",
+  "slug": "brackets-paired-and-sized-type-safely",
+  "category": "reference",
+  "publishedAt": "2021-01-14T18:07:27.945Z",
+  "approvedAt": "2021-01-27T18:04:51.271Z",
+  "languages": [
+    "haskell"
+  ],
+  "url": "https://www.codewars.com/kata/5fff4fe1ffa782001ea74a3b",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2021-01-13T19:54:09.682Z",
+  "createdBy": {
+    "username": "soulomoon",
+    "url": "https://www.codewars.com/users/soulomoon"
+  },
+  "approvedBy": {
+    "username": "JohanWiltink",
+    "url": "https://www.codewars.com/users/JohanWiltink"
+  },
+  "description": "# Brackets paired and sized\n\nThis is the second kata of serial of katas.\n\n* [Brackets paired](https://www.codewars.com/kata/5ff131130e1ea3002b3d4256)\n* [Brackets paired and sized](https://www.codewars.com/kata/5fff4fe1ffa782001ea74a3b)\n* Sized, brackets and nested bracket(to be designed)\n\nType safe program is essential in haskell,\n`KindSignatures, DataKinds, GADTs` extension in ghc can utilize more of type system ability.\n\n## Design a Paren data type\n\nA naive implementation without encoding the balancing is\n\n```{haskell}\ndata Paren where\n   PEmpty :: Paren \n   PLeft :: Paren -> Paren \n   PRight :: Paren -> Paren \n```\n\nPlease design a `Paren` data definition to restrict that \nexpression p is a paired brackets if and only if p is with type `Paren a Z`,\nwhere `a` contains the size information\n\n```{haskell}\ndata Paren ::  Nat -> Nat -> * \n```\n\nValid examples:\n\n```{Haskell}\nPEmpty :: Paren Z Z\nPLeft (PRight PEmpty) :: Paren (S Z) Z\n(PLeft $ PRight $ PLeft $ PRight PEmpty) :: Paren (S (S Z)) Z\n```\n\n## Use the Paren data type\n\nAlthough, the current paren data definition is more type well defined, it comes with restriction.\nDifficulty will comes to you when you are using it to implement functions.\n\n### makeNestedParenOfSize\n\nFor example this native function could be implemented without the type restrictions.\nGenerate nested parens of size n. For n <= 0, it should be empty.\n\n```{Haskell}\nmakeNestedParenOfSize :: Int -> Paren \nmakeNestedParenOfSize n | n <= 0 = PEmpty\nmakeNestedParenOfSize n = foldr ($) PEmpty (replicate n PLeft ++ replicate n PRight)\n```\n\nAs in the first kata, implement function like above with the updated `Paren :: Nat -> Nat -> *` data definition.\nNotice that we need to use `Nt :: Nat -> *` as input, since we need the size information of the input in the type level.\n\n```{Haskell}\nmakeNestedParenOfSize :: Nt a -> Paren a Z\n```\n\n### makeParensOfSize\n\nnow try something more interesting, implement a function `makeParensOfSize`\nto generate all possible balanced parens of size specified by the input.\n(Examples are in the comments)\n\n```{Haskell}\nmakeParensOfSize :: Nt a -> [Paren Z]\n```\n",
+  "totalAttempts": 106,
+  "totalCompleted": 23,
+  "totalStars": 5,
+  "voteScore": 17,
+  "tags": [
+    "Fundamentals"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 2,
+    "suggestions": 0
+  }
+}

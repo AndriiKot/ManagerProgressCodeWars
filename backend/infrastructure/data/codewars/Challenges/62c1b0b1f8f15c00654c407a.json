@@ -1,0 +1,40 @@
+{
+  "id": "62c1b0b1f8f15c00654c407a",
+  "name": "Merging N Channels",
+  "slug": "merging-n-channels",
+  "category": "reference",
+  "publishedAt": "2022-07-03T15:23:58.623Z",
+  "approvedAt": "2023-07-30T16:15:56.660Z",
+  "languages": [
+    "go"
+  ],
+  "url": "https://www.codewars.com/kata/62c1b0b1f8f15c00654c407a",
+  "rank": {
+    "id": -6,
+    "name": "6 kyu",
+    "color": "yellow"
+  },
+  "createdAt": "2022-07-03T15:07:29.928Z",
+  "createdBy": {
+    "username": "BattleRattle",
+    "url": "https://www.codewars.com/users/BattleRattle"
+  },
+  "approvedBy": {
+    "username": "Mednoob",
+    "url": "https://www.codewars.com/users/Mednoob"
+  },
+  "description": "# Introduction\nThis kata is an advanced version of [Merging Two Channels](https://www.codewars.com/kata/62c1a121f8ce9500571d90fe). It's recommended to solve that one first, as it already solves half of this problem :)\n\nGo has a powerful built-in data type: **channel**. In some cases you want process messages from different data sources (e.g. UDP packages, TCP messages, HTTP requests) and you want to consume all in the same way. Then it might make sense to merge multiple channels into a single one. This is what we do here.\n\n# Learning Goal\nIn this kata we learn to **merge any amount of channels into a single one** by utilizing **concurrency** patterns.\n\n# Task\nWrite a function `func Merge(c ...chan string) <-chan string`, which takes **any amount of channels** and returns a new channel. All messages from the input channels must be forwarded to the new channel. Once all input channels are closed, also the returned channel must be closed.\n\nThe order of the forwarded messages doesn't matter, but you should consume from all incoming channels concurrenly.\n\n# Example\n\n## Merging Two Channels\n```go\n// channel a contains 3 messages\na := make(chan string, 3)\na<-\"foo\"\na<-\"bar\"\na<-\"baz\"\nclose(a)\n\n// channel b contains 2 messages\nb := make(chan string, 2)\nb<-\"hello\"\nb<-\"world\"\nclose(b)\n\n// your implementation\nmerged := Merge(a, b)\n\n// when messages are consumed from the merged channel, it must return all 5 messages from a and b, while the order of the messages is not defined\n// afterwards the merged channel must be closed\n```\n\n## Merging Four Channels\n```go\n// channel a contains 3 messages\na := make(chan string, 3)\na<-\"a-foo\"\na<-\"a-bar\"\na<-\"a-baz\"\nclose(a)\n\n// channel b contains 2 messages\nb := make(chan string, 2)\nb<-\"b-foo\"\nb<-\"b-bar\"\nclose(b)\n\n// channel c contains 2 messages\nc := make(chan string, 2)\nc<-\"c-foo\"\nc<-\"c-bar\"\nclose(c)\n\n// channel d contains 3 messages\nd := make(chan string, 3)\nd<-\"d-foo\"\nd<-\"d-bar\"\nd<-\"d-baz\"\nclose(d)\n\n// your implementation\nmerged := Merge(a, b, c, d)\n\n// when messages are consumed from the merged channel, it must return all 10 messages from a, b, c and d, while the order of the messages is not defined\n// afterwards the combined channel must be closed\n```",
+  "totalAttempts": 408,
+  "totalCompleted": 241,
+  "totalStars": 12,
+  "voteScore": 38,
+  "tags": [
+    "Concurrency",
+    "Language Features"
+  ],
+  "contributorsWanted": true,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}

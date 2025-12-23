@@ -1,0 +1,39 @@
+{
+  "id": "622f43cecdd705006430de9c",
+  "name": "Generalisations",
+  "slug": "generalisations",
+  "category": "algorithms",
+  "publishedAt": "2022-03-16T13:43:31.882Z",
+  "approvedAt": "2022-04-12T08:47:40.982Z",
+  "languages": [
+    "lambdacalc"
+  ],
+  "url": "https://www.codewars.com/kata/622f43cecdd705006430de9c",
+  "rank": {
+    "id": -4,
+    "name": "4 kyu",
+    "color": "blue"
+  },
+  "createdAt": "2022-03-14T13:31:58.237Z",
+  "createdBy": {
+    "username": "Kacarott",
+    "url": "https://www.codewars.com/users/Kacarott"
+  },
+  "approvedBy": {
+    "username": "Voile",
+    "url": "https://www.codewars.com/users/Voile"
+  },
+  "description": "In untyped Lambda Calculus, polyvariadic functions can be very difficult to implement and use. However in some cases, it can be very convenient to be able to apply a variable number of arguments. A useful compromise can be \"generalised functions\".\n\n## Generalised functions\n\nA generalised function is one designed to operate on any number of arguments, but by first specifying the exact amount. Specifically, the first input to a generalised function will always be a number, which corrosponds to how many further arguments the function should accept and operate on. For example, consider `sum-n`:\n```lambdacalc\n# The first argument 3 dictates the number of inputs to sum\nsum-n 3  2 2 2 # 6\n```\nAnother way to think of this, is of the generalised function being a *factory function* for functions with a fixed number of inputs.\n```lambdacalc\nsum-4 = sum-n 4\nsum-4 1 2 3 4 # 10\n```\n\n\n## Task\n\nDefine the following generalised functions:\n\n#### `sum-n`\n\nReturn the sum of `n` input numbers. For no inputs, return `0`.\n\n```lambdacalc\nsum-n 4  1 2 0 2 # 5\nsum-n 0  # 0\n```\n\n#### `list-n`\n\nReturn a list containing all `n` inputs. The first applied inputs should be at the front of the list. For no inputs, return an empty list.\n\nYou may choose a list encoding yourself, but you should also provide a `foldr` definition for it, for use by tests.\n\n```lambdacalc\n# Using < > to represent lists\nlist-n 3  a b c # < a b c >\nlist-n 0  # < >\n```\n\n#### `compose-n`\n\nReturn a function [composed](https://en.wikipedia.org/wiki/Function_composition) of `n` input functions. Arguments should be composed \"right to left\". For no inputs, return the identity function (`\\ x . x`).\n\n```lambdacalc\nnew-func = compose-n 2  plus3 mul10\nnew-func 5 # 53\ncompose-n 0  7 # 7 - due to compose-n 0 being identity\n```\n\n### Encodings\n- Numbers: [`Church`](https://github.com/codewars/lambda-calculus/wiki/encodings-guide#church-numerals)\n- Purity: `LetRec`",
+  "totalAttempts": 54,
+  "totalCompleted": 16,
+  "totalStars": 3,
+  "voteScore": 25,
+  "tags": [
+    "Design Patterns"
+  ],
+  "contributorsWanted": false,
+  "unresolved": {
+    "issues": 0,
+    "suggestions": 0
+  }
+}
