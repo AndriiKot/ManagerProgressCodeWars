@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/554c9adce466e7127e0000d2",
+  "data": {
+    "id": "554c9adce466e7127e0000d2",
+    "name": "Classy Polynomials (Part 1)",
+    "slug": "classy-polynomials-part-1",
+    "category": "reference",
+    "publishedAt": "2015-05-08T12:34:14.526Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/554c9adce466e7127e0000d2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-08T11:15:41.217Z",
+    "createdBy": {
+      "username": "Ismail",
+      "url": "https://www.codewars.com/users/Ismail"
+    },
+    "description": "A polynomial function can be represented by a vector of its coefficients. For instance `p(x) = 5x^3 + 2x + 3` can be described as `(5, 0, 2, 3)`. The latter representation is more 'computational friendly', while the first representation is more human readable.\n \nYour task is to create a `Polynomial` class. The constructor takes an array with the integer coefficients as a parameter. The coefficients array starts with the highest degree.\nFurthermore the class should have a `toString` method which returns the polynomial in a simple human readable form. This means you skip `0` coefficient terms completely and you do not write down `1` coefficients. You also skip The examples should clarify this:\n \n```javascript\nvar poly = new Polynomial([5, 0, 1, 3]);\npoly.toString(); // <- should return 5x^3 + x + 3\n```\n\nIf one element of the array isn't a non-negative integer, the constructor should throw an error. You are provided with a function `assertNonNegativeInt(obj)` which throws an error `\"expected non-negative integer input\"` if invoked with something else than an integer.\n\nDo not forget to upvote if you liked this this kata and/or learned something :-)\n\n**Note:** More on polynomials / polynomial functions: http://en.wikipedia.org/wiki/Polynomial",
+    "totalAttempts": 161,
+    "totalCompleted": 26,
+    "totalStars": 3,
+    "voteScore": 33,
+    "tags": [
+      "Fundamentals",
+      "Object-oriented Programming",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

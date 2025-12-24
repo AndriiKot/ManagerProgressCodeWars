@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b746d2069826cfac3000051",
+  "data": {
+    "id": "5b746d2069826cfac3000051",
+    "name": "Bầu cua tôm cá ",
+    "slug": "bau-cua-tom-ca",
+    "category": "algorithms",
+    "publishedAt": "2018-08-16T12:25:42.310Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b746d2069826cfac3000051",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-15T18:12:48.297Z",
+    "createdBy": {
+      "username": "Huongg",
+      "url": "https://www.codewars.com/users/Huongg"
+    },
+    "description": "<strong>This is a coding take on a traditional Vietnamese dice game of chance.</strong>\n\nIf one die corresponds with a bet, the bettor receives 1x amount as their bet, 2x for two corresponding dice, and 3x for 3 dice. Else the bet is lost.\n\nFor instance, if one were to place £3 on fish, and the dealer rolls 2 fish and 1 stag, then the bettor would receive £6 while keeping the £3 they had bet. For simplicity, in this instance one would have a net +6. In this instance, if they had lost the bet, they would receive -3.\n\n<strong>Full rules:</strong> https://en.wikipedia.org/wiki/B%E1%BA%A7u_cua_c%C3%A1_c%E1%BB%8Dp\n\n\nThe 6 dice sides are representated by string values of the following:\n\"fish\", \"prawn\", \"crab\", \"rooster\", \"stag\", \"calabash\"\n\n<h1>Solution:</h1>\nGiven function rollDice, there are two parameters; dice and bets. Dice is a length 3 string array representing the dice throws for a single round.\nBets is a map of maps, maintaining player names-to-dice sides-to-bet amounts.\n\nE.g.\n\n```javascript\nrollDice( [\"fish\", \"fish\", \"stag\"], \n          {\n            \"Billy\": {\n              \"fish\": 3,\n              \"rooster\": 5\n            },\n            \"Michael\": {\n              \"prawn\": 10\n            },  \n            \"Lucille\": {\n              \"calabash\": 3,\n              \"stag\": 8\n            }\n          }\n        )\n```\n\n---\nReturn a map of participating player names to an integer sum of each players total winnings (or losses)\n\nE.g.\n```javascript\n{Billy: 1, Michael: -10, Lucille: 5}\n```\n\n\n\n\n<strong>Additional assumptions:</strong>\n- There are no limits on the number of players\n- There are no limits on bet size\n- Potentially, zero bets can occur in a round\n- Each player can bet on zero-six places\n\n",
+    "totalAttempts": 81,
+    "totalCompleted": 24,
+    "totalStars": 1,
+    "voteScore": 48,
+    "tags": [
+      "Fundamentals",
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

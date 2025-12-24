@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57f8109267c96aa0d2000243",
+  "data": {
+    "id": "57f8109267c96aa0d2000243",
+    "name": "Bob - The Automated Manager",
+    "slug": "bob-the-automated-manager",
+    "category": "reference",
+    "publishedAt": "2016-10-07T21:17:38.282Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57f8109267c96aa0d2000243",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-07T21:16:02.884Z",
+    "createdBy": {
+      "username": "owens2024",
+      "url": "https://www.codewars.com/users/owens2024"
+    },
+    "description": "<p>In an effort to cut cost Acme Inc. has decided to automate software development management.  So how can Acme ensure that development doesn't run amok?  That is where you come in.  Your job is to write a function to judge other functions.</p>\n<p>\nWriting small efficient functions is a hallmark of good programming. \n</p>\n<p>\nBuild a simple function complexity analyzer that returns a complexity score based on the following:\n<table>\n<tr><td>Each statement or line of the function (blank lines or lines that only comments do not count)</td><td>1 point</td></tr>\n<tr><td>if statement </td><td>2 points</td></tr>\n<tr><td>Calling a property of an object (such as myString.length)</td><td>3 points</td></tr>\n<tr><td>Calling a method of an object (such as myString.slice(1,5))</td><td>4 points</td></tr>\n<tr><td>Function inside the function</td><td>5 points</td></tr>\n</table>\n\nFor example: <br />\n<pre>\nfunction() {\n  var a = 5; \n  var b = 2;\n  return Math.pow(a, b);\n}\n</pre>\n\nThis functions complexity score would be: <br >\n5 Lines = 5 points <br >\n1 Method call (Math.pow) = 4 points <br >\n<strong>9 Total Points</strong>\n\n<p>No one wants developers to try and make their code less complex by putting all on one line,\nso make sure lines like <code>var a = 2; var b = 3;</code> are counted as two lines.</p>\n\n<em>Note this Kata does imply that the scoring rubric above is actual measure of complexity or efficiency of any particular function or programming practice.</em>",
+    "totalAttempts": 285,
+    "totalCompleted": 10,
+    "totalStars": 4,
+    "voteScore": 1,
+    "tags": [
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

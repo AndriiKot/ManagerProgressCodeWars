@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d8d339c734e7ebe645542e",
+  "data": {
+    "id": "64d8d339c734e7ebe645542e",
+    "name": "Sum of Slices of a List",
+    "slug": "sum-of-slices-of-a-list",
+    "category": "reference",
+    "publishedAt": "2023-08-13T13:20:06.696Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64d8d339c734e7ebe645542e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-13T12:57:29.685Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nCreate a function that accepts two arguments: a list `lst` and a number `n`. The function should return a list containing the sum of each of its contiguous slices. Slices in the list are comprised of consecutive values that, when summed, do not exceed a maximum of `n`. \n\nIt's important that no slice's cumulative sum surpasses the value of `n`. However, if an individual integer within the list is equal to or greater than `n`, it should also be included in the result.\n\n# Examples\n```python\nsum_of_slices([10, 29, 13, 14, 15, 16, 17, 31, 20, 10, 29, 13, 14, 15, 16, 17, 31, 20, 100], 100)\n➞ [97, 78, 87, 68, 100]\n\n# First slice: [10, 29, 13, 14, 15, 16]\n# 10 + 29 + 13 + 14 + 15 + 16 = 97\n# The next value could not be included in this slice because\n# the total would exceed 100.\n\n# Second slice: [17, 31, 20, 10]\n# 17 + 31 + 20 + 10 = 78\n# The next value could not be included in this slice because\n# the total would exceed 100.\n\n# And so on ...\n\nsum_of_slices([58, 3, 38, 9, 140], 140) ➞ [108, 140]\n# First slice: [58, 3, 38, 9]\n# 58 + 3 + 38 + 9 = 108\n\n# Second slice: [140]\n\nsum_of_slices([13], 10) ➞ [13]\n\nsum_of_slices([15], 1) ➞ [15]\n```\n# Notes\n- Do not sort the list.\n- n > 0 and min(lst) > 0\n",
+    "totalAttempts": 28,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

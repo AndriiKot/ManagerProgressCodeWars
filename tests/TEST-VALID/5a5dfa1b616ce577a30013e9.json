@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a5dfa1b616ce577a30013e9",
+  "data": {
+    "id": "5a5dfa1b616ce577a30013e9",
+    "name": "Is Crypt Solution?",
+    "slug": "is-crypt-solution",
+    "category": "algorithms",
+    "publishedAt": "2018-01-16T13:11:55.102Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "javascript",
+      "ruby",
+      "elixir"
+    ],
+    "url": "https://www.codewars.com/kata/5a5dfa1b616ce577a30013e9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-16T13:12:44.060Z",
+    "createdBy": {
+      "username": "Belia",
+      "url": "https://www.codewars.com/users/Belia"
+    },
+    "description": "A cryptarithm is a mathematical puzzle for which the goal is to find the correspondence between letters and digits, such that the given arithmetic equation consisting of letters holds true when the letters are converted to digits.\n\nYou have an array of strings ```crypt```, the cryptarithm, and an an array containing the mapping of letters and digits, ```solution```. The array ```crypt``` will contain three non-empty strings that follow the structure: ```[word1, word2, word3]```, which should be interpreted as the ```word1 + word2 = word3``` cryptarithm.\n\nIf ```crypt```, when it is decoded by replacing all of the letters in the cryptarithm with digits using the mapping in ```solution```, becomes a valid arithmetic equation containing no numbers with leading zeroes, the answer is ```true```. If it does not become a valid arithmetic solution, the answer is ```false```.\n\n<b>Example</b>\n\nFor ```crypt = [\"SEND\", \"MORE\", \"MONEY\"]``` and\n\n```solution = [['O', '0'],```<br>\n            ```['M', '1'],```<br>\n            ```['Y', '2'],```<br>\n            ```['E', '5'],```<br>\n            ```['N', '6'],```<br>\n            ```['D', '7'],```<br>\n            ```['R', '8'],```<br>\n            ```['S', '9']]```<br>\nthe output should be\n```isCryptSolution(crypt, solution) = true.```\n\nWhen you decrypt ```\"SEND\"```, ```\"MORE\"```, and ```\"MONEY\"``` using the mapping given in ```crypt```, you get ```9567 + 1085 = 10652``` which is correct and a valid arithmetic equation.\n\n<b>Example</b>\n\nFor ```crypt = [\"TEN\", \"TWO\", \"ONE\"]``` and\n\n```solution = [['O', '1'],```<br>\n            ```['T', '0'],```<br>\n            ```['W', '9'],```<br>\n            ```['E', '5'],```<br>\n            ```['N', '4']]```<br>\nthe output should be\n```isCryptSolution(crypt, solution) = false.```\n\nEven though ```054 + 091 = 145```, ```054``` and ```091``` both contain leading zeroes, meaning that this is not a valid solution.",
+    "totalAttempts": 182,
+    "totalCompleted": 48,
+    "totalStars": 0,
+    "voteScore": 72,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

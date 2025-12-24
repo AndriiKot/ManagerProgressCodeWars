@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/565a0112e03f2149f600011e",
+  "data": {
+    "id": "565a0112e03f2149f600011e",
+    "name": "Get a Bouncer for Your Club",
+    "slug": "get-a-bouncer-for-your-club",
+    "category": "reference",
+    "publishedAt": "2015-11-30T19:36:47.259Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/565a0112e03f2149f600011e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-28T19:31:30.895Z",
+    "createdBy": {
+      "username": "Fosna",
+      "url": "https://www.codewars.com/users/Fosna"
+    },
+    "description": "You've got yourself a night club. Now you need a bouncer. Why not build one? Make a bouncer with a method that accepts list of people (name, age) and returns filtered list of people that can enter the club. Age should be equal or above bouncers's age limit or name should be on guest list to enter the club. When constructing the bouncer, pass age limit and guest list.\n\nNotes:\nGuest names search should be case insensitive.\n\nAssume guest has valid name - string.\nAssume guest has valid age - number.\nAssume guest list is always passed to bouncer in constructor.\nAssume min age is always passed to bouncer as a number.\n\n```\nfunction Bouncer(settings) {\n    /* settings = {\n            minAge: 18,\n            guestList: [\"Lo\", \"Mc\"]\n        };\n    */\n}\n\nBouncer.prototype.letIn = function(people) {\n    /* people = [\n        {\n            name: \"Joe\",\n            age: 6\n        }, \n        {\n            name: \"Lo\",\n            age: 3\n        },\n        {\n            name: \"Hugh\",\n            age: 33\n        }\n    ];\n    */\n}\n;\n```\n\nReturns:\n\n`[{ name: 'Lo', age: 3 }, { name: 'Hugh', age: 33 } ]`",
+    "totalAttempts": 531,
+    "totalCompleted": 32,
+    "totalStars": 4,
+    "voteScore": 38,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

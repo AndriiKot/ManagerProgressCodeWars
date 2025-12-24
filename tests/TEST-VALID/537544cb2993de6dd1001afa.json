@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/537544cb2993de6dd1001afa",
+  "data": {
+    "id": "537544cb2993de6dd1001afa",
+    "name": "Calculate number of inversions in array in linearithmic time",
+    "slug": "calculate-number-of-inversions-in-array-in-linearithmic-time",
+    "category": "algorithms",
+    "publishedAt": "2014-05-16T02:58:18.883Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/537544cb2993de6dd1001afa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-15T22:50:51.618Z",
+    "createdBy": {
+      "username": "kirjs",
+      "url": "https://www.codewars.com/users/kirjs"
+    },
+    "description": "Array inversion indicates how far the array is from being sorted.\n\nInversions are pairs of elements in array, that are out of order.\n### Examples\n\n```javascript\n[1,2,3,4] // 0 inversions\n\n[1,3,2,4] // 1 inversion: 2 and 3\n\n[4,1,2,3] // 3 inversions: 4 and 1, 4 and 2, 4 and 3\n\n[4,3,2,1] // 6 inversions: 4 and 3, 4 and 2, 4 and 1, 3 and 2, 3 and 1, 2 and 1\n```\n\n### Goal\nThe goal is to come up with a function that can calculate inversions for any arbitrary array, in a linearithmic time. \nTwo arguments will be provided to the countInversions function:\n* Array that has to be analyzed\n* Comparator function that would know how to compare two array items. It returns a negative value if arguments are out  of order, 0 if they are equal, and a positive integer if they are in the right order.\n\n```javascript\n   compare('one', 'two') // 1\n   compare('two', 'one') // -1\n   compare('one', 'one') // 0\n```\nTests will count amount of comparisons for every input and will let you know  if the algorithm is not effective enough.\n\n\n",
+    "totalAttempts": 728,
+    "totalCompleted": 25,
+    "totalStars": 3,
+    "voteScore": 15,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

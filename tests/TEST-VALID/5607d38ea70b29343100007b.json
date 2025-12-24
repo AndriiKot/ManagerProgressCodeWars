@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5607d38ea70b29343100007b",
+  "data": {
+    "id": "5607d38ea70b29343100007b",
+    "name": "FloatStream",
+    "slug": "floatstream",
+    "category": "reference",
+    "publishedAt": "2015-09-28T16:06:16.238Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5607d38ea70b29343100007b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-27T11:31:26.810Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "# FloatStream\nReturns an `reader` function. This function should accept a single `data` parameter, and process it. Certain callbacks attached to the `reader` function will be called at particular times in same order the values are processed in. The callbacks are detailed below:\n\n## .received(string)\nIf provided, this callback should be called each time `data` is given to the `reader`. The `data` should be passed to the callback with no changes made.\n\n```javascript\nvar s = FloatStream();\ns.received = function(data) { console.log(\"received: \" + data); };\n\ns(\"1 2 3\");\n// received: \"1 2 3\"\ns(\"abc\");\n// received: \"abc\"\n```\n\n## .complete(float)\nIf provided, this callback should be called whenever a float is deemed \"complete.\" A float is deemed complete whenever is is ended by whitespace (a space, a new-line character, or a tab character). The resulting \"completed\" float should be passed to the `complete` callback.\n\nIf more than one complete float is found at any one time, each should be parsed and sent to the `complete` callback separately.\n\n```javascript\nvar s = FloatStream();\ns.complete = function(float) { console.log(\"complete: \" + float); };\n\ns(\"1\"); // the float has not be completed by a subsequent whitespace character\ns(\" \"); // the previously sent float has been completed\n// complete: 1\ns(\"2 3\\n\"); // 2 completed floats\n// complete: 2\n// complete: 3\n```\n\n## .possible(float)\nIf provided, this callback should be called when enough data has been passed into the `reader` to produce a float. This float should be passed to the `possible` callback. If more data changes what this value would be, the new value should be passed in a separate call. If the data does not change the value of the currently-streamed number, no additional call should be made.\n\nRemember, numbers can be positive or negative, or even have exponents (`1e3 == 1000`). Any part of these should be parsed and sent to the `possible` callback whenever appropriate.\n\nIf more than one float is found at any given time, each should be parsed and sent to the `possible` callback separately. If a complete float is found without any streaming necessary, this should also be sent to the `possible` callback.\n\n```javascript\nvar s = FloatStream();\ns.possible = function(float) { console.log(\"possible: \" + float); };\n\ns(\"1\"); // stream started\n// possible: 1\ns(\"2 \"); // stream continued and completed\n// possible: 12\ns(\"3.\"); // new float started\n// possible: 3\ns(\"141\"); // stream continued\n// possible: 3.141\ns(\"000\"); // stream continued 3.141000; no change\ns(\" \"); // stream completed; no change\n\ns(\"-0.3141e\"); // stream started\n// possible: -0.3141\ns(\"1\"); // stream continued, -0.3141e1\n// possible: -3.141\ns(\" 2 4 \"); // stream ended with no value change, 2 new completed floats\n// possible: 2\n// possible: 4\n```\n\n## .error(data)\nIf provided, this callback should be called when data is invalid. The invalid data should be passed to the callback. Processing should continue, and any other callbacks calls should be made. Later errors should also be sent to the `error` callback.\n\n```javascript\nvar s = FloatStream();\ns.error = function(error) { console.log(\"error: \" + error); };\n\ns(\"-\"); // valid stream started\ns(\"123\"); // stream continued\ns(\"abc\\t1\"); // invalid data, stream started\n// error: -123abc\na(\" d\\ne f\\t\\t\"); // invalid data\n// error: d\\ne f\n```",
+    "totalAttempts": 235,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Regular Expressions",
+      "Streams",
+      "Parsing",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57f819a367c96aff130013c2",
+  "data": {
+    "id": "57f819a367c96aff130013c2",
+    "name": "Operation - Steal the Election!",
+    "slug": "operation-steal-the-election",
+    "category": "games",
+    "publishedAt": "2016-10-12T16:31:00.950Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57f819a367c96aff130013c2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-07T21:54:43.019Z",
+    "createdBy": {
+      "username": "owens2024",
+      "url": "https://www.codewars.com/users/owens2024"
+    },
+    "description": "Honald Chump is in trouble.  He is behind Dillary Tilton in the polls and can't keep his foot out of his mouth.  Tuesday November 8 is quickly approaching, so it is time for an alternate political strategy - hack the election!\n\nHonald has hired you to hack into the voting systems in a few key states and alter the results, but without being detected.\n\nLucky for you budget cuts mean the voting machines purchased were, well, poorly designed.  The voting machine has a simple checksum-like method for security.  When a voter chooses a candidate three things happen:\n<ol>\n<li>The first letter of the candidates last name gets added to an array.</li>\n<li>The vote count is incremented</li>\n<li>The character code of the first letter of the last name is added to the previous checksum value.  Then that value is divided by a secret key with the remainder being stored as the new checksum.</li>\n</ol>\n\n<p>\nAfter the election is over the Elections Department counts the values in the array in #1 to see who won as well to ensure the count and checksum matches.\n</p>\n<p>\nThe developers of this code accidently put the code that generates the \"secret key\" on GitHub.  It appears to be based on the date of the election.<br />\n<code>\nvar secret_key = (monthOfElectionIndex * dayOfElectionIndex) - dayOfWeekOfElectionIndex \n</code><br />\nWhere January has a month index of 1 and Sunday has a day of week index of 1.\n</p>\n<p>Other hackers working for Chump have infliltrated the network and can intercept the array from #1 above.  Your job is to alter that array in such a way as to both ensure Chump wins and that the values from #2 and #3 are maintained so as to keep the pesky media at bay.\n</p>",
+    "totalAttempts": 119,
+    "totalCompleted": 9,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

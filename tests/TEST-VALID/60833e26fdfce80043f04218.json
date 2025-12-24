@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60833e26fdfce80043f04218",
+  "data": {
+    "id": "60833e26fdfce80043f04218",
+    "name": "Cracking Vigenère: unknown language",
+    "slug": "cracking-vigenere-unknown-language",
+    "category": "games",
+    "publishedAt": "2021-04-25T14:36:44.806Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60833e26fdfce80043f04218",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-04-23T21:37:42.130Z",
+    "createdBy": {
+      "username": "jharris3791",
+      "url": "https://www.codewars.com/users/jharris3791"
+    },
+    "description": "## Background\n\nCodewars nation is at war with a mysterious enemy. You are leading the security department responsible for intercepting and interpreting their communications.\n\nUnfortunately, their language is unknown and the linguists in your department are unable to start understanding it because the enemy is also encrypting its messages.\n\nYou task is to decrypt the messages, so that the linguists can start working on deciphering the language itself.\n\n## Starting assumptions\n\nBut you are not completely in the dark! Your spies have discovered a few key facts which might help to decrypt the messages:\n\n - The enemy language uses the English alphabet: all messages will always use the basic 26 letters in the English alphabet, in upper case\n - The messages contain no spaces or punctuation\n - They are encrypting the messages with a Vigenère cipher (more detail below) but the key used is different for every message\n - There are 100 messages to decrypt in total and the enemy is gradually learning that longer keys are harder to crack:\n    - there will be 30 keys of length 2\n    - then there will be 30 keys with length 5\n    - finally there will be 40 keys of lengths varying between 6 and 11\n - The enemy is planning an attack on the Codewars Headquarters and all the messages will be on the topic of that attack: therefore, every message will contain the string 'CODEWARS HEADQUARTERS' somewhere\n\n## Vigenère Cipher\n\nThe Vigenère cipher is too long to fully explain here. If you are unfamiliar, you could read [the Wikipedia page](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) or some other tutorial. There are also two other Kata which might be worth looking at before attempting this one.\n - [Cracking the Vigenère cipher, step 1: determining key length](https://www.codewars.com/kata/55d6afe3423873eabe000069)\n - [Vigenère Cipher Helper](https://www.codewars.com/kata/52d1bd3694d26f8d6e0000d3)\n - [Breaking the Vigenère Cipher](https://www.codewars.com/kata/544e5d75908f2d5eb700052b)\n\n## Task\n\nTo complete this Kata you need to define a function which can be applied to each of the 100 enemy messages and return <b>the encryption key used</b> for each one.\n\n<i>Note: The enemy language is randomly generated each time you submit a solution. The sample sizes have been set high enough that strong solutions should pass all 100 tests the vast majority of the time. However, if your solution fails one or two tests, then you may want to re-submit. Your linguists can deal with minor inaccuracies anyway.</i>",
+    "totalAttempts": 247,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles",
+      "Strings",
+      "Ciphers",
+      "Algorithms",
+      "Cryptography",
+      "Security"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

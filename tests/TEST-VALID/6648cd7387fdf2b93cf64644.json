@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6648cd7387fdf2b93cf64644",
+  "data": {
+    "id": "6648cd7387fdf2b93cf64644",
+    "name": "Falling Factorials",
+    "slug": "falling-factorials",
+    "category": "algorithms",
+    "publishedAt": "2024-05-18T16:34:28.846Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/6648cd7387fdf2b93cf64644",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-18T15:46:59.834Z",
+    "createdBy": {
+      "username": "user3664330",
+      "url": "https://www.codewars.com/users/user3664330"
+    },
+    "description": "The **falling factorial** of a number `$x$` of order `$n$`, denoted by `$x^{\\underbar{\\textit{n}}}$`, is defined by\n```math\n\\qquad x^{\\underbar{\\textit{n}}} = \\underbrace{x(x - 1)(x - 2) \\dotsb (x - n + 1)}_{\\textrm{\\# of factors is } n}\n```\nGiven a number `x` and a nonnegative integer `n`, compute `$x^{\\underbar{\\textit{n}}}$`. Answers within `0.001` of the correct answer will be accepted.\n\n## Example 1\nIf `$x = 5$` and `$n = 3$`, then\n```math\n\\qquad\\begin{aligned} 5^{\\underbar 3} &= 5 \\cdot (5 - 1) \\cdot (5 - 2) \\\\\n&= 5 \\cdot 4 \\cdot 3 \\\\\n&= 60 \\end{aligned}\n```\nTherefore, `falling_factorial(5.0, 3)` should return `60.0`.\n\n## Example 2\nIf `$x = -7$` and `$n = 4$`, then\n```math\n\\qquad\\begin{aligned} (-7)^{\\underbar 4} &= (-7) \\cdot (-7 - 1) \\cdot (-7 - 2) \\cdot (-7 - 3) \\\\\n &= (-7) \\cdot (-8) \\cdot (-9) \\cdot (-10) \\\\ &= 5040\\end{aligned}\n```\nTherefore, `falling_factorial(-7.0, 4)` should return `5040.0`.\n\n## Example 3\nIf `$x = 17$` and `$n = 1$`, then `$17^{\\underbar 1} = 17$`. Therefore, `falling_factorial(17.0, 1)` should return `17.0`. In fact, `falling_factorial(x, 1)` should always return `x`.\n\n## Example 4\nIf `$x = 17$` and `$n = 0$`, then `$17^{\\underbar 0}$` is an empty product (i.e., a product with zero factors). Empty products are defined to be `$1$`, so `$17^{\\underbar 0} = 1$`. Therefore, `falling_factorial(17.0, 0)` should return `1.0`. In fact, `falling_factorial(x, 0)` should always return `1.0`.\n\n#### See Also\nRead more about [falling and rising factorials](https://en.wikipedia.org/wiki/Falling_and_rising_factorials) on Wikipedia.\n",
+    "totalAttempts": 31,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

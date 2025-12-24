@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a03cf478ba914e2ad00009e",
+  "data": {
+    "id": "5a03cf478ba914e2ad00009e",
+    "name": "Simple Fun #377: The Visible Posters II",
+    "slug": "simple-fun-number-377-the-visible-posters-ii",
+    "category": "algorithms",
+    "publishedAt": "2017-11-09T08:33:49.673Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a03cf478ba914e2ad00009e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-09T03:45:11.796Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "### Story\n\nThe citizens of Bytetown, could not stand that the candidates in the mayoral election campaign have been placing their electoral posters at all places at their whim. The city council has finally decided to build an electoral wall for placing the posters and introduce the following rules: \n```\nEvery candidate can place exactly one poster on the wall. \nAll posters are of the same height equal to the height of the wall;\nthe width of a poster can be any integer number of bytes\n(byte is the unit of length in Bytetown). \nThe wall is divided into segments and the width of each segment is one byte. \nEach poster must completely cover a contiguous number of wall segments.\n```\nThey have built a wall 100000000 bytes long (such that there is enough place for all candidates). When the electoral campaign was restarted, the candidates were placing their posters on the wall and their posters differed widely in width. Moreover, the candidates started placing their posters on wall segments already occupied by other posters. \n\nEveryone in Bytetown was curious whose posters will be visible (entirely or in part) on the last day before elections.\n\n### Task\n\nYou are given a 2D integer array `posters`. Each subarray is a 2-elements array. i.e. `[1,10]`. It represents a poster, 1 and 10 represent the starting position and ending position of a poster.\n\nYour task is to count the number of visible posters when all the posters are placed given the information about posters' size, their place and order of placement on the electoral wall. \n\nYou can assume that the poster's pasting order is in accordance with the index order of the array.\n\nStill not understand the task? Look at the following example ;-)\n\n### Example\n\nFor `posters =`\n```\n[\n[1,4],\n[2,6],\n[8,10],\n[3,4],\n[7,10]\n]\n```\nthe output should be `4`\n```\nIn the following text, the position of byte and the index of poster are 1-based\n            a 100000000 bytes wall\n          0000000000.................\n(poster-1 paste from byte1 to byte4)\n          1111000000.................\n(poster-2 paste from byte2 to byte6)\n          1222220000.................\n(poster-3 paste from byte8 to byte10)\n          1222220333.................\n(poster-4 paste from byte3 to byte4)\n          1244220333.................\n(poster-5 paste from byte7 to byte10)\n          1244225555.................\nNow, we can see, poster 1,2,4,5 are visible, \nbut poster 3 was covered by poster 5.\n```\nFor `posters =`\n```\n[\n[1,2],\n[3,4],\n[5,6],\n[7,8],\n[9,10],\n[1,10]\n]\n```\nthe output should be `1`, because poster 1,2,3,4,5 covered by poster6.\n\n### Note\n\n- All positions of poster are valid(`1 <= position <= 1e8`)\n- `1 <= posters.length <= 15000`\n- In order to avoid timeout, be aware of the code's performance ;-)\n- Happy Coding `^_^`\n",
+    "totalAttempts": 45,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57e8e9df2aee49c0280009ab",
+  "data": {
+    "id": "57e8e9df2aee49c0280009ab",
+    "name": "Holiday I - Temperature in Bali",
+    "slug": "holiday-i-temperature-in-bali",
+    "category": "reference",
+    "publishedAt": "2016-09-26T09:42:54.749Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "python",
+      "cpp",
+      "crystal",
+      "haskell",
+      "java",
+      "prolog",
+      "clojure",
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/57e8e9df2aee49c0280009ab",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-26T09:26:55.890Z",
+    "createdBy": {
+      "username": "PG1",
+      "url": "https://www.codewars.com/users/PG1"
+    },
+    "description": "So it turns out the weather in Indonesia is beautiful... but also far too hot most of the time.\n\nGiven two variables: heat (0 - 50 degrees centigrade) and humidity (scored from 0.0 - 1.0), your job is to test whether the weather is bareable (according to my personal preferences :D)\n\n```\nRules for my personal preferences\ni. if humidity > 0.5 or the heat >= 36, it's unbearable return false\nii. if 25 < heat < 36 and the humidity > 0.4, also unbearable return false\niii. otherwise, it's sunbathing time :), return true\n```\n\n<h3>Examples</h3>\n\n```\n> heat = 36, humdity = 0.3 -> return false\n> heat = 36, humdity = 0.5 -> return false\n> heat = 10, humdity = 0.51 -> return false\n-> triggered rule 1\n\n> heat = 27, humdity = 0.5 -> return false\n-> triggered rule 2\n\n> heat = 27, humdity = 0.4 -> return true\n> heat = 25, humdity = 0.5 -> return true\n> heat = 33, humdity = 0.38 -> return true\n-> triggered rule 3\n\n```\n\nGoodluck!\n\nThanks to @Blind4Basics for raising a core issue earlier.",
+    "totalAttempts": 4730,
+    "totalCompleted": 1223,
+    "totalStars": 7,
+    "voteScore": 594,
+    "tags": [
+      "Fundamentals",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/596b467d61c22e9afe00000b",
+  "data": {
+    "id": "596b467d61c22e9afe00000b",
+    "name": "D&D Character generator #3: carrying capacity",
+    "slug": "d-and-d-character-generator-number-3-carrying-capacity",
+    "category": "reference",
+    "publishedAt": "2017-07-16T18:26:15.091Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/596b467d61c22e9afe00000b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-16T10:57:01.753Z",
+    "createdBy": {
+      "username": "GiacomoSorbi",
+      "url": "https://www.codewars.com/users/GiacomoSorbi"
+    },
+    "description": "While most parties I have played in have characters carrying around an insane amount of stuff without a bother, more picky DMs and most computer D&D games will take into account your character's brawn to decide how much you can take with you and what needs to be either left on the ground or moved in some other matter.\n\nStart [maximum allowed carrying weight table](http://www.dandwiki.com/wiki/SRD:Carrying_Capacity#Table:_Carrying_Capacity) and similarly to the other katas, try to build a good function that should return an array/list of lb. values in this format:\n\n```javascript\n[maximumLightLoad, minumumMediumLoad, maximumMediumLoad, minumumHeavyLoad, maximumHeavyLoad, maximumLiftLoad, maximumPushLoad]\n```\n```python\n[maximum_light_load, minumum_medium_load, maximum_medium_load, minumum_heavy_load, maximum_heavy_load, maximum_lift_load, maximum_push_load]\n```\n```ruby\n[maximum_light_load, minumum_medium_load, maximum_medium_load, minumum_heavy_load, maximum_heavy_load, maximum_lift_load, maximum_push_load]\n```\n```crystal\n[maximum_light_load, minumum_medium_load, maximum_medium_load, minumum_heavy_load, maximum_heavy_load, maximum_lift_load, maximum_push_load]\n```\n\nThe absolute minimum value for a light load is `1`, for a medium load is `2` and for a heavy load is `3`; the minimum range for each weight can thus be `0`, meaning that you can, have, for example both `minumumMediumLoad/minumum_medium_load` and `maximumMediumLoad/maximum_medium_load` equal to 2 [see example test cases in the kata for at least one sample of result with both very low strength score and diminutive size].\n\nTo compute the total, you will be provided:\n\n* strength score of the character, always a non negative number and if 0 it means the character cannot carry physical objects (although some incorporeal creatures might use other rules, let's simplify here), so return an empty array;\n* size, as indicated in the above link, as a lowercase string; default is medium;\n* quadrupede, passed as an optional boolean, default being `false/False`\n\nSome examples:\n\n```javascript\ncarryingCapacity(0) === []\ncarryingCapacity(1) === [3,4,6,7,10,20,50]\ncarryingCapacity(11) === [38,39,76,77,115,230,575]\ncarryingCapacity(20) === [133,134,266,267,400,800,2000]\ncarryingCapacity(30) === [533,534,1066,1067,1600,3200,8000]\n```\n```python\ncarrying_capacity(0) == []\ncarrying_capacity(1) == [3,4,6,7,10,20,50]\ncarrying_capacity(11) == [38,39,76,77,115,230,575]\ncarrying_capacity(20) == [133,134,266,267,400,800,2000]\ncarrying_capacity(30) == [533,534,1066,1067,1600,3200,8000]\n```\n```ruby\ncarrying_capacity(0) == []\ncarrying_capacity(1) == [3,4,6,7,10,20,50]\ncarrying_capacity(11) == [38,39,76,77,115,230,575]\ncarrying_capacity(20) == [133,134,266,267,400,800,2000]\ncarrying_capacity(30) == [533,534,1066,1067,1600,3200,8000]\n```\n```crystal\ncarrying_capacity(0) == []\ncarrying_capacity(1) == [3,4,6,7,10,20,50]\ncarrying_capacity(11) == [38,39,76,77,115,230,575]\ncarrying_capacity(20) == [133,134,266,267,400,800,2000]\ncarrying_capacity(30) == [533,534,1066,1067,1600,3200,8000]\n```\n```cpp\ncarryingCapacity(0) == []\ncarryingCapacity(1) == [3,4,6,7,10,20,50]\ncarryingCapacity(11) == [38,39,76,77,115,230,575]\ncarryingCapacity(20) == [133,134,266,267,400,800,2000]\ncarryingCapacity(30) == [533,534,1066,1067,1600,3200,8000]\n```\n\n*Note: I didn't explain things in detail and just pointed out to the table on purpose, as my goal is also to train the pattern recognition skills of whoever is going to take this challenges, so do not complain about a summary description. Thanks :)*\n\nIn the same series:\n\n* [D&D Character generator #1: attribute modifiers and spells](https://www.codewars.com/kata/d-and-d-character-generator-number-1-attribute-modifiers-and-spells/)\n* [D&D Character generator #2: psion power points](https://www.codewars.com/kata/d-and-d-character-generator-number-2-psion-power-points/)\n* [D&D Character generator #3: carrying capacity](https://www.codewars.com/kata/d-and-d-character-generator-number-3-carrying-capacity/)",
+    "totalAttempts": 493,
+    "totalCompleted": 14,
+    "totalStars": 3,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

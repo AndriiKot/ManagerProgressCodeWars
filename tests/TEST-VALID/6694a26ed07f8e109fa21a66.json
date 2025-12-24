@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6694a26ed07f8e109fa21a66",
+  "data": {
+    "id": "6694a26ed07f8e109fa21a66",
+    "name": "Find and highlight a word",
+    "slug": "find-and-highlight-a-word",
+    "category": "reference",
+    "publishedAt": "2024-07-15T04:16:03.299Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/6694a26ed07f8e109fa21a66",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-15T04:15:42.057Z",
+    "createdBy": {
+      "username": "estem8",
+      "url": "https://www.codewars.com/users/estem8"
+    },
+    "description": "#### Task\nHi, you decided to write a function that will take notes for you in markdown format.\n\nThe input data is a string consisting of sentences separated by signs\n\n`. \\n ! ?`\n#### The function should:\n* Return an empty string if the provided word \"search_word\" is empty or consists only of whitespace.\n* Search for exact matches of the word \"search_word\" in the text text (case insensitive) and highlight each found word with ** (double asterisks).\n* The result should be a string where each line:\n  * Starts with the character `>`\n  * Contains the sentence from the text that includes the found word.\n  * If a sentence contains multiple occurrences of the \"search_word\", all occurrences should be highlighted.\n  * Ends with a newline character. `\\n`\n  * The last result does not contain a newline character.\n  * Sentences not containing search word should not be included in the result\n\n  \n#### Example:\n\nwith text: `Lorem ipsum dolor sit amet. Amet sit dolor.`\n\nand search_word: `amet`\n\nshould return:\n\n>Lorem ipsum dolor sit **amet**.\n\n>**Amet** sit dolor.\n\n```rust\nfind_text(\"Lorem ipsum dolor sit amet. Amet sit dolor.\", \"amet\")\n/* should return:\n>Lorem ipsum dolor sit **amet**.\\n>**Amet** sit dolor.\n*/\n```\n\n",
+    "totalAttempts": 69,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": 2,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

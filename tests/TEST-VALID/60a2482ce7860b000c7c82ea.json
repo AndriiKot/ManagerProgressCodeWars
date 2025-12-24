@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60a2482ce7860b000c7c82ea",
+  "data": {
+    "id": "60a2482ce7860b000c7c82ea",
+    "name": "Make a break",
+    "slug": "make-a-break",
+    "category": "reference",
+    "publishedAt": "2021-05-17T11:01:14.773Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/60a2482ce7860b000c7c82ea",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-17T10:40:44.152Z",
+    "createdBy": {
+      "username": "lmachens",
+      "url": "https://www.codewars.com/users/lmachens"
+    },
+    "description": "# Task\n\nYou are working on a assembly line with very strict rules. Breaks are only allowed if you have nothing to do for a given time (idle timeout). Every break increases this time.\n\nImplement a function `startWorking` with two arguments. The first argument is the `doBreak` function, which is called whenever you want to do a break. The second argument is the idle timeout before you are allowed to call `doBreak`.  \nReturn a new function which is called everytime you have to work. If this function is not called during the idle timeout, call another function `doBreak`.  \nEvery break increases the idle timeout for your next break by 100 miliseconds.  \nYour break is over when the next work is requested.  \nYou always end with a break.  \nIt's not allowed to do a break before the returned function is called.\n\n## Example\n\n```\nInitial idle timeout: 100ms\n\nFirst call at 0ms\nSecond call at 80ms\nFirst break at 180ms; Timeout changed to 200ms\nThird call at 200ms\nFourth call at 350ms\nSecond break at 550ms; Timeout changed to 300ms\nFifth call at 600ms\nThird break at 900ms\n```\n\n## Tests\n\nRunning tests require 6-10 seconds to complete, depending on the timeouts of the random tests.\n\n## Resources\n\n- https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout\n- https://redd.one/blog/debounce-vs-throttle",
+    "totalAttempts": 176,
+    "totalCompleted": 13,
+    "totalStars": 5,
+    "voteScore": 13,
+    "tags": [
+      "Scheduling",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

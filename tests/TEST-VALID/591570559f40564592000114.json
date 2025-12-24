@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/591570559f40564592000114",
+  "data": {
+    "id": "591570559f40564592000114",
+    "name": "Simple Fun #271: Chessboard Shapes",
+    "slug": "simple-fun-number-271-chessboard-shapes",
+    "category": "algorithms",
+    "publishedAt": "2017-05-12T08:39:52.979Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/591570559f40564592000114",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-05-12T08:20:38.187Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "# Task\nA bored student printed out a regular `8 × 8` chessboard and then used a black marker to completely fill in some of the white squares. Knowing which squares he filled in, determine the area (i.e. the number of the chessboard squares) of the largest enclosed black region on the chessboard after his actions.\n\n\n# Input/Output\n\n`[input]` string array `squares`\n\nWhite squares colored black, expressed in standard algebraic chess notation (all letters are lowercase, `\"a1\"` is a black square).\n\n`0 ≤ squares.length ≤ 32`\n\n`[output]` an integer\n\nThe area of the largest enclosed black region.\n\n\n# Example\n\nFor `squares = [\"g2\", \"h1\"]`, the output should be `6`.\n\n![](http://i.imgur.com/vLisz7g.png)\n\nColoring `\"g2\"` black creates a plus-shaped black region around it consisting of 5 squares (`\"f2\", \"g1\", \"g2\", \"g3\", \"h2\"`). When `\"h1\"` is colored black, it connects to that region, but because it's in a corner of the chessboard, it doesn't add any new squares besides itself, thus the returned value is `5 + 1 = 6.`\n\nFor `squares = []`, the output should be `1`.\n\nIf no squares are recolored, the largest black region is just any of the originally black squares.",
+    "totalAttempts": 33,
+    "totalCompleted": 13,
+    "totalStars": 2,
+    "voteScore": 28,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

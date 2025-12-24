@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60c33bde92d1e80025b29ca6",
+  "data": {
+    "id": "60c33bde92d1e80025b29ca6",
+    "name": "Recursive array search",
+    "slug": "recursive-array-search",
+    "category": "algorithms",
+    "publishedAt": "2021-06-11T11:01:43.171Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/60c33bde92d1e80025b29ca6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-11T10:33:02.351Z",
+    "createdBy": {
+      "username": "evgeniy_pp",
+      "url": "https://www.codewars.com/users/evgeniy_pp"
+    },
+    "description": "Write a function that can find an element in an array using the passed callback (predicate) function. Something that works like the JavaScript [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) method. The main difference is that the function can also find nested elements.\n\nThe function takes four arguments: \n  - an array of elements with the same structure;\n  - a callback (predicate) function (one argument – an array item);\n  - a key of the nested array (optional, `children` by default);\n  - a default value that returns if nothing was found (optional, `null` by default).\n\nThe function returns the found item. If there is more than one, the closest to the first element (first children, then the next by index).\n\n```javascript\nconst data = [\n  { id: 1, children: [{ id: 11 }, { id: 12 }] },\n  { id: 2 },\n  { id: 3, children: [{ id: 31 }, { id: 32, children: [{ id: 321 }] }] },\n]\n\nfindRecursive(data, element => element.id === 32, 'children', null);\n// returns { id: 32, children: [{ id: 321 }] }\n```",
+    "totalAttempts": 55,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": -9,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Data Types",
+      "Search",
+      "Logic",
+      "Recursion",
+      "Computability Theory",
+      "Theoretical Computer Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

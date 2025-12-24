@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/625479472495f20057da1610",
+  "data": {
+    "id": "625479472495f20057da1610",
+    "name": "[\"No Letter Challenge\"] Polynomial Extrapolation",
+    "slug": "no-letter-challenge-polynomial-extrapolation",
+    "category": "games",
+    "publishedAt": "2022-04-12T00:28:03.576Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/625479472495f20057da1610",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-11T18:53:59.724Z",
+    "createdBy": {
+      "username": "Quaternions",
+      "url": "https://www.codewars.com/users/Quaternions"
+    },
+    "description": "# .:!:. Unpublished .:!:.\n(Since this is now an \"unpublished draft\" and \"can't be deleted\", I may test some changes I had suggested...)\n\n------\n\n**NOTE:** This can be seen as some kind of \"Challenge Mode\" for [**that Kata**](https://www.codewars.com/kata/6146a6f1b117f50007d44460/haskell), which I must credit `@Kacarott` for the Haskell translation (from which \"lazy me\" will just plagiarize a Lot... *please forgive me*).\n\n------\n\n# Description:\n\nIt's your first day; and as a very first little \"challenge\", *the Boss* requires you to implement a basic algorithm in Haskell to extrapolate sequences... \\\n==> *OK that sounds fairly easy! Let's do it!..* :) \n\n...Wait **WHAT!??** O_o \\\nOH NO!! Looks like your rival Vecheata just sabotaged your computer!? D: \\\nPart of your keyboard is completely locked: you can no longer type any letter of the alphabet (nor use the mouse nor any kind of ASCII/\"escape sequence\" trick or whatever: there is just \"no way to bypass it\")\n\nWhat an *@55h0le*! >:(\n\n...Anyways... You can still use numbers and special characters: that should be more than enough for you, right? ;)\n\n\n# Your Task:\n\nImplement a function `_0_` that takes a sequence and a number, and returns that sequece completed with that number of elements, according to the best polynomial approximation.\n(That is: for a sequence of length n, the extrapolation w.r.t. a polynomial of degree n-1)\n\n## Examples:\n\n```haskell\n_0_ [1] 0 -- returns [1]\n_0_ [1] 5 -- returns [1, 1, 1, 1, 1, 1]\n_0_ [1, 4] 5 -- returns [1, 4, 7, 10, 13, 16, 19]\n_0_ [1, 4, 9] 5 -- returns [1, 4, 9, 16, 25, 36, 49, 64]\n_0_ [4, 16, 36] 5 -- returns [4, 16, 36, 64, 100, 144, 196, 256]\n_0_ [216, 125, 64, 27] 7 -- returns [216, 125, 64, 27, 8, 1, 0, -1, -8, -27, -64]\n```\n\n***(see above-mentioned Kata for more details)***\n\n\n# Constraint:\n\nYou are **NOT** allowed to use any of the following characters: \\\nabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n\nHave fun! :D\n\n\n**Important NOTE:** The very first line of the program is the only exception; it should -obviously- remain unchanged: \\\n`module FckUVecheata where`",
+    "totalAttempts": 4,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

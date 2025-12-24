@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/616a871e41c786002c91baa3",
+  "data": {
+    "id": "616a871e41c786002c91baa3",
+    "name": "Pentomino SOLVER",
+    "slug": "pentomino-solver",
+    "category": "games",
+    "publishedAt": "2021-10-16T11:43:13.177Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/616a871e41c786002c91baa3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-16T08:02:38.415Z",
+    "createdBy": {
+      "username": "eurydice5717",
+      "url": "https://www.codewars.com/users/eurydice5717"
+    },
+    "description": "A Pentomino is a polygon in the plane made of 5 equal-sized squares connected edge-to-edge. There are 12 different pentominoes types (regardless of symmetry and rotations).\nThere is a naming convention in the pentomino community:\n<img src=\"https://www.d2x-expertise.com/images/pentPiecs.gif\">\n</img>\nA common problem is to try to place <strong>the 12 different</strong> types of pentominos on a grid.\\\nA 6x10 rectangular grid is a classic, as you may place <strong>all</strong> of the 12 types, with 2339 solutions without symetries and reflexions, 9356 in total.\n\nTo make pentomino puzzles more attractive and general, one invented the 'forbidden grid entry', noted '-'. Thus one may find solutions for an 8x8 grid with 4 '-', or some other problems...\n\nYour job is to write a \"pentomino solver\".\n\nThe grid to be solved will be passed as a string:\n<ul><li>each \"row\" ends with \"\\n\",except the last row</li>\n<li>unallowed positions are marked with '-'</li>\n<li>unknown positions are marked with '*'.</li>\n<li>prefilled positions are marked with a pentomino letter (capital)</li>\n</ul>\n\nYour function is expected to return a list of all valid solutions, with the same format as entry grid.\n\nIn this kata, a valid solution <strong>cannot use</strong> a given pentomino type more than once, but it is possible that some given types are NOT used in the solution. Those are called <em>'degenerate solutions'</em>.\n\nAs the solving may take a while to generate <strong>all</strong> solutions to an 'empty' puzzle and in order to provide some help, all the test cases contain some hints (in the form of prefilled values in entry grid), resulting in each puzzle having <strong>exactly one</strong> solution.\n\nExample:\n<p style=\"font-family:courier;font-size:20px;\">\n\"---TTT---\\n\"<br>\n\"---LTY---\\n\"<br>\n\"---LTY---\\n\"<br>\n\"VVVLIYYPP\\n\"<br>\n\"VZLLIYFPP\\n\"<br>\n\"VZZZIFFFP\\n\"<br>\n\"---ZIF---\\n\"<br>\n\"---UIU---\\n\"<br>\n\"---UUU---\"\"</p>\nis the only solution to\n<p style=\"font-family:courier;font-size:20px;\">\n\"---***---\\n\"<br>\n\"---***---\\n\"<br>\n\"---***---\\n\"<br>\n\"**V*I****\\n\"<br>\n\"*********\\n\"<br>\n\"*********\\n\"<br>\n\"---***---\\n\"<br>\n\"---***---\\n\"<br>\n\"---***---\"</p>\n\nHints:<br>\n<ul><li>You should not expect ill-formed strings.It's about algorithm, not\ndata massaging, </li>\n<li>Test cases were selected to provide exactly one solution, but your solver should be designed to solve any puzzle, even empty grids with no hints having several solutions.</li>\n<li>Valid Pentomino types are capital letters only.</li>\n<li>You may exphave to adress performance issues, as tests cases will include the base tests, plus 17 fixed tests from easy to hard (one 'hint' only), plus... 20 random cases.</li>\n</ul>\n\nNote:<br>\nYour solver function is expected to return a list of all possible solutions for a puzzle, even if for the test cases of this kat a list of length one is expected. This will allow you to play with some puzzles of your own in your C++ environnement when coding and testing.\n\n**Enjoy!**",
+    "totalAttempts": 62,
+    "totalCompleted": 6,
+    "totalStars": 8,
+    "voteScore": 11,
+    "tags": [
+      "Game Solvers",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

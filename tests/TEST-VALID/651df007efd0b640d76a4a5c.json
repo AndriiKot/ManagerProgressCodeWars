@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/651df007efd0b640d76a4a5c",
+  "data": {
+    "id": "651df007efd0b640d76a4a5c",
+    "name": "Dilutions for Chemical X",
+    "slug": "dilutions-for-chemical-x",
+    "category": "games",
+    "publishedAt": "2023-10-05T17:21:13.768Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/651df007efd0b640d76a4a5c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-04T23:06:47.994Z",
+    "createdBy": {
+      "username": "Nekose",
+      "url": "https://www.codewars.com/users/Nekose"
+    },
+    "description": "Bob works as a technician for Townsville Inc producing bottles of \"Chemical X\". Chemical X is manufactured as a highly concentrated substance, and must be diluted in water to a specific amount before it can be safely sold. However, If Chemical X is too dilute it wont be strong enough to interact with other ingredients (Such as sugar, spice, or everything nice). Each customer requests a very specific concentration to meet their needs and handling.\n\nOne day, Bob's boss informs him that the mixing machine was out of calibration for an entire week! This means the last thousands bottles will need to be meassured and adjusted to ensure the correct dilution. To do this, you'll need to reprogram the mixer to measure the current concentration of Chemical X in solution, and either add water or remove it through boiling. \n\nTo do this, you need to create a function \"rework\" that accepts:\n- **M1**, an int from 1-100 representing the current percentage of Chemical X in solution\n- **V1**, an int > 0 representing the current volume of mixture in the bottle\n- **M2**, an int from 1-100 representing the target percentage of Chemical X in solution\n\nUsing these inputs, the function should return a positive or negative value, representing how many units of water will need to be added (positive) or boiled away (negative). Floats should be accurate  within a margin of +/- .01\n\nFor Example:\n\nIf M1 = 50 (representing 50%), V1 = 100, and M2 = 25 (representing 25%), the solution is too concentrated. The machine will need to add an additional 100 units of water to reach a new concentration of 25% Chemical X. The function should return '100'\n\nIf M1 = 50 (representing 50%), V1 = 100, and M2 = 75 (representing 75%), then the solution is not concentrated enough. The machine will need to remove 33.333~ units of water to reach a new concentration of 75% Chemical X. The function should return (aproximately) '-33.33'\n\n",
+    "totalAttempts": 49,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 7,
+    "tags": [
+      "Algebra"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

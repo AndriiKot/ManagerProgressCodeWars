@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5634fb451a5c78b413000078",
+  "data": {
+    "id": "5634fb451a5c78b413000078",
+    "name": "Bird Breeding with Lights",
+    "slug": "bird-breeding-with-lights",
+    "category": "reference",
+    "publishedAt": "2015-10-31T19:04:13.577Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5634fb451a5c78b413000078",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-31T17:32:53.780Z",
+    "createdBy": {
+      "username": "franzmoro88",
+      "url": "https://www.codewars.com/users/franzmoro88"
+    },
+    "description": "You are an exotic bird breeder and are thinking of applying your newly acquired coding skills to remotely manage your ornithological duties. You have exactly 1 bird of each of the following species:\n\n\n   Hummingbirds, Orioles, Goldfinches, Warblers, Bluebirds, Jays.\n\n\nEvery 2 days, your birds need to get out of their cage and spread their wings for a full day.\n\n\nOnce you've let your birds out, it could be troublesome to get them back inside! Luckily you use the birds' attraction to colours to your advantage, and have equipped each bird's cage with a lighting device that can shine light of whichever color or color combination you command it to.\n\n\nThe following list shows which colours attract the different bird species.\n\n=> Red:            Hummingbirds\n\n=> Pink:           Orioles\n\n=> Yellow:         Goldfinches, Warblers\n\n=> Blue:           Bluebirds, Jays\n\nShining the birds' favourite lights will provide them comfort while inside, and signal to come back when they've been out for a full day. White light will tell the birds to leave the cage when they've been inside for 2 days.\n\n\nThe lighting mechanism shall connect to a database (an object providing a data structure), which provides the following information about each bird (in this order):\n\n=> the day when each bird last flew;\n\n=> their favourite colour;\n\n=> the current light colour shining.\n\nThe mechanism should shine white light if the birds need to go out, or their favourite colour if they need to come back or stay in.\n\nYou are required to:\n\n=> Define the method \"controlCages\" (takes no arguments), which creates the database and updates it according to the above logic.\n\n=> When creating the database, initialize dates at random as past days of last week (do not include today), and assume all birds are initially inside their cage.\n\n=> Define the method \"dateCheck\" (takes no arguments), which checks if, after having run your system at least once, each bird is either out or has flown yesterday (Hint: take a look at the test cases). This will be a useful function to debug your system.",
+    "totalAttempts": 37,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

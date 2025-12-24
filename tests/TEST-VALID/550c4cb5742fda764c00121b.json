@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/550c4cb5742fda764c00121b",
+  "data": {
+    "id": "550c4cb5742fda764c00121b",
+    "name": "Line, Normalization",
+    "slug": "line-normalization",
+    "category": "reference",
+    "publishedAt": "2015-03-22T15:43:06.921Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/550c4cb5742fda764c00121b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-20T16:37:09.344Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "There's a lot of interesting and useful things you can do with vectors, and when comparing two vectors you can do other, equally-interesting things. Your task is to write a Line object (or \"class\", for you fancy folks) that tackles one line of interestingness: vector normalization.\n\nThere's a few steps you need to take to calculate a normalized vector, and one in particular is pretty computationally \"slow\". With this object, we want to be able to calculate any single one of these steps, but also have the ability to change the vector parameters and have them re-calculated the next time we want a given value.\n\nBelow is a spec of what properties need to do what. Have fun!\n\n> **NOTE:** If you have any questions, find anything confusing, or have better links or explanations I could use, I'd be glad to hear them. Normalization is a tricky concept to explain to the layman... ;P\n\n# new Line()\nShould throw an error, encouraging the user (or programmer) to use `Line.new()` instead (see below).\n\n# Line.maxPoolSize\nThe maximum number of \"destroyed\" Line objects that should be kept in memory and reused when creating a \"new\" Line object.\n\nIt defaults to `Infinity`, which means they should always be stored. If the value is changed to a number smaller than the number of \"destroyed\" objects, extra references should be cleared, to allow that memory to be freed.\n\n# Line.new(from, to)\nReturns a new Line object (`Line.new() instanceof Line === true`).\n\nOptionally takes `from` and `to` vectors, each with `x` and `y` properties with numerical values. These values should be added to the `from` and `to` properties of the resulting object unchanged, and will be used to calculate the rest of the properties (see below).\n\nIf an instance has been destroyed but kept in memory (see `.destroy()` below), one of these destroyed objects should be used and set up using the `from` and `to` arguments as per usual. This allows the coder to keep things efficient. Instead of creating a load of Line objects and them being garbage collected when they aren't expecting it, they can be kept in-memory and reused later on.\n\n## .from, .to\nThe `.from` and `.to` properties are read-only, meaning if you try to write to them (change their value), nothing happens. Each has two properties of its own which are _not_ read-only: `.x` and `.y`. Their values default to 0.\n\n> **NOTE:** All other values on the object are read-only. \n\n_Shorthands:_ There are shorthand properties on the base `Line` object for these values. The properties `.fromX`, `.fromY`, `.toX`, and `.toY` are the same as referencing or setting `.from.x`, `.from.y`, `.to.x`, and `.to.y` respectively.\n\n## .difference (.diff)\nThe `.difference` property has two properties of its own: `.x` and `.y`. These are the difference between `.from.x` and `.to.x`, and `.from.y` and `.to.y` respecively. So if `.from.x = 10` and `.to.x = -5`, `.difference.x == -15`.\n\n_Shorthands:_ `.diff` is linked to `.difference`, `.differenceX` and `.diffX` are linked to `.difference.x`, and `.differenceY` and `.diffY` are linked to `.difference.y`.\n\n## .distance (.d)\nThe `.distance` property returns the distance between the `.from` and `.to` vectors.\n_Pythagorean Theorem:_ [Khan Academy](https://youtu.be/AA6RfgP-AHU), [Wikipedia](http://en.wikipedia.org/wiki/Pythagorean_theorem).\n_Shorthands:_ `.d` is linked to `.distance`.\n\n## .distanceSquared (.dSq)\nThe `.distanceSquared` property returns the distance between the `.from` and `.to` vectors, squared.\n_Shorthands:_ `.dSq` is linked to `.distanceSquared`.\n\n## .normalized (.norm)\nThe `.normalized` property has two properties of its own: `.x` and `.y`. These values are calulated so that the distance between (0, 0) and (`.x`, `.y`) is 1, and it would point in the same direction as `.from` to `.to`. Say if you were standing at point `.from`, and looking at `.to`. The `.normalized` vector would be 1 \"distance\" directly in front of you. Hopefully the links will be clearer, if you are unfamiliar with the concept.\n_Normalizing Vectors:_ [Khan Academy](https://youtu.be/lQn7fksaDq0), [Fundza](http://www.fundza.com/vectors/normalize/).\n_Shorthands:_ `.norm` is linked to `.normalized`, `.normalizedX` and `.normX` are linked to `.normalized.x`, and `.normalizedY` and `.normY` are linked to `.normalized.y`.\n\n## .destroy()\nIf there are fewer destroyed Line objects in memory than the set `Line.maxPoolSize`, the Line object should be stored in memory.\n\nOtherwise, its values should be set to null and all references held by the Line code should be cleared. This will allow Garbage Collection to remove it from memory later on.\n\n\n> **NOTE:** Math.sqrt, Math.pow, and Math.hypot will be disabled until the last moment at which it is needed to calculate a value. Using those methods at any other time will throw an error.",
+    "totalAttempts": 440,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 15,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

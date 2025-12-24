@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/597a0293fd74f59b170000c8",
+  "data": {
+    "id": "597a0293fd74f59b170000c8",
+    "name": "Convert Numbers to a 32-bitmap Hex ASCII Representation",
+    "slug": "convert-numbers-to-a-32-bitmap-hex-ascii-representation",
+    "category": "algorithms",
+    "publishedAt": "2017-07-27T15:12:36.290Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/597a0293fd74f59b170000c8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-27T15:11:24.532Z",
+    "createdBy": {
+      "username": "awesomeaf",
+      "url": "https://www.codewars.com/users/awesomeaf"
+    },
+    "description": "A bitmap is a 32 bit quantity where each bit represents the presence (=1) or absence (=0) \nof a particular number. The least significant bit \n(right-most) represents the number 0; the most significant bit (left-most) represents the number 31.\n\nFor example, the 8-character ASCII (Hex) message  ```0000047d```  translates into the \nfollowing bitmap rendering:\n\n```0000 0000 0000 0000 0000 0100 0111 1101```\n\nChecking for number presence or absence from 0 through 31 (right to left), this \nbit map indicates that numbers ```0, 2, 3, 4, 5, 6, and 10``` are present in this \nbitmap.\n\nWhat we want to do is take in a list of numbers between 0-31 and return the number bitmap as a 8\n-character ASCII message:\n\n```\n[] => represents a list, so depending on the language...\nbitmap([]) == '00000000' # empty list\nbitmap([0]) == '00000001' # list with only 1 number: 0\nbitmap([0,1]) == '00000003' # list with two numbers: 0 and 1\nbitmap([5]) ==  '00000020' # list with number 5 in it:\n-> binary bit map of 5 => 0000 0000 0000 0000 0000 0000 0010 0000\nbitmap([list of all numbers from 0->31]) == 'ffffffff'\n```\n## Python code example for all numbers:\n```\nbitmap([num for num in range(0,32)]) == 'ffffffff' # all numbers from 0-31\n```\n\nbitmap() should also be able to handle receiving integers outside of its range, and duplicates\nFor example it should disregard negative integers and integers 32 and above",
+    "totalAttempts": 199,
+    "totalCompleted": 67,
+    "totalStars": 6,
+    "voteScore": 84,
+    "tags": [
+      "Binary",
+      "Bits",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

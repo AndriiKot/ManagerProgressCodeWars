@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/657a0c5fbf23760024e06337",
+  "data": {
+    "id": "657a0c5fbf23760024e06337",
+    "name": "Bank Transactions with Undo",
+    "slug": "bank-transactions-with-undo",
+    "category": "reference",
+    "publishedAt": "2023-12-14T15:04:08.277Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/657a0c5fbf23760024e06337",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-13T19:56:15.770Z",
+    "createdBy": {
+      "username": "jkimbell",
+      "url": "https://www.codewars.com/users/jkimbell"
+    },
+    "description": "### Problem\nYour bank account has a list of transactions ready to be processed. But in addition to **deposits** and **withdrawals**, the list also includes **undos**, indicating cancellation of the preceding transaction(s).\n\nEach will come as a string, e.g. `\"withdraw 100\"` or `\"undo 2\"`, with the action and amount. In the case of deposits and withdrawals, the amount represents money, while with undos it represents the amount of actions to be undone.\n\n### Example\nStarting from a balance of `1000`, we might get a list of `[\"deposit 100\",\"withdraw 500\",\"undo 2\",\"deposit 1000\"]` leading us to \n\n- deposit 100 dollars into the account\n- withdraw 500 dollars from the account\n- never mind, cancel the last two transactions\n- deposit 1000 dollars into the account\n\nfor a final balance of `2000`. In other words, the first two actions go \"on the stack\", then are undone, then the final one survives.\n\nWe will return a string of the format `\"Final balance: $2000\"` unless the amount is negative, in which case we return `\"Final balance: invalid\"`\n\n### Notes\n- undos ignore each other. If we see `\"undo 1\"` followed by `\"undo 1\"`, the second simply reaches farther back, rather than becoming a redo\n- extra undos are harmless. If we've got two actions and the next says `\"undo 3\"`, we undo as many as we can (i.e. all of them) and move on\n- it's okay to dip below zero in the middle, as long as we end up nonnegative\n- inputs are \"safe\" and can be trusted to follow the format, but could be an empty list\n\n",
+    "totalAttempts": 34,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals",
+      "Lists",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

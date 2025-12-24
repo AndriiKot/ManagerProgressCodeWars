@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d4d2b4ff58f0005201d647",
+  "data": {
+    "id": "64d4d2b4ff58f0005201d647",
+    "name": "Mine Detection By Radar",
+    "slug": "mine-detection-by-radar",
+    "category": "reference",
+    "publishedAt": "2023-08-10T12:30:39.031Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64d4d2b4ff58f0005201d647",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-10T12:06:12.719Z",
+    "createdBy": {
+      "username": "R.Daneel.Olivaw",
+      "url": "https://www.codewars.com/users/R.Daneel.Olivaw"
+    },
+    "description": "You have the important Mission to detect mines in the path of your team soldiers, so They can cross in one piece through the enemy territory,\nHow can You detect mines? as You walk very carefully with the detector, pay atention to anomalies on the soil:\n\nthe data you receive:\n\n1. Vibrance (V): a number between 0 and 5, represents the noise of your detector\n2. Visual anomaly (A): a footprint you could identify as a potential mine, represented as a character \"*\" = 5 , \"#\" = 4, \"X\" = 3, \"(\" = 2, \"O\" = 1\n\nNot all the footprints will be mines, You will know if It's a mine if your detector gets a reading level 7, \nthat's determined by a combination of vibrance/footprint EX:\n\nV:2 + A:\"#\" 4 , Not a mine\nV:4 + A:\"0\" 1 , Not a mine\nV:5 + A:\"#\" 4 , It's a mine\nV:5 + A:\"0\" 1 , Not a mine\n\nYou will receive an array of data:\n\n[[V,A],[V,A],[V,A]]\n\nand You will return an array containing the position in the array where a mine is located EX:\n\n[0,2,7, ... etc] .. etc\n\nGood Luck!",
+    "totalAttempts": 38,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals",
+      "Arrays",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

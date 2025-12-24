@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c105276a8af377e71000084",
+  "data": {
+    "id": "5c105276a8af377e71000084",
+    "name": "Spring Framework: bind the correct implementation",
+    "slug": "spring-framework-bind-the-correct-implementation",
+    "category": "reference",
+    "publishedAt": "2018-12-12T00:24:31.334Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5c105276a8af377e71000084",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-12T00:12:39.405Z",
+    "createdBy": {
+      "username": "Javatlacati",
+      "url": "https://www.codewars.com/users/Javatlacati"
+    },
+    "description": "You have an important program that is configured with some USA configuration, now your company decides to use the same program in the United Kingdom and for that you have created an UK specific configuration class ( you now, how to format currency, and bad words list to ban, stuff like that ).\n\nFor this example you will have an specification that is:\n\n    public interface Country {}\n\nWich has two implementations:\n\n    public class USA implements Country {}\n\nand \n\n    public class UK implements Country {}\n\nAssume we have configured them trough XML as follows\n\n    <bean id=\"us\" class=\"USA\"/>\n    <bean id=\"uk\" class=\"UK\"/>\n    <bean id=\"main\" class=\"Main\"/>\n\nclass UK contains the United Kingdom specific Configuration, class USA contains the United States of America specific Configuration and the interface country contains the method names that are common for both so we don't miss any one of them.\n    \nTask\n---\n\nYou have to switch the configuration class `USA` to the `UK` one in order to choose UK as the implementation of country for the provided class.",
+    "totalAttempts": 217,
+    "totalCompleted": 31,
+    "totalStars": 0,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals",
+      "Backend"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

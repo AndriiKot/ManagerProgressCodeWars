@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62b7917c8e12f80031950ed8",
+  "data": {
+    "id": "62b7917c8e12f80031950ed8",
+    "name": "Airline fixer",
+    "slug": "airline-fixer",
+    "category": "algorithms",
+    "publishedAt": "2022-06-26T16:02:13.234Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62b7917c8e12f80031950ed8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-25T22:51:40.257Z",
+    "createdBy": {
+      "username": "fmoeran",
+      "url": "https://www.codewars.com/users/fmoeran"
+    },
+    "description": "## Description:\nYou have been given a list of airport IDs ranging from ``` 0-n``` in an array. Along with each ID you also recieve the airport IDs that it connects directly to with one flight. \n#### Note\nThese connections are only one way, meaing that being able to travel from x-y does not mean you can immediately travel from y-x (though it could still be possible depending on the given data).\n## Task\nCreate a function ```airlines``` which, given the airports and their connections, returns the ```minimum```  number of ```new```  connections that you will need to make to be able to travel from any airport ```x```  to any other airport ```y```. The number of airlines it takes to do this does NOT matter.\n## Input\nOne list in the form ```[[a1, a2...], [b1, b2...]...]``` where the index of each sublist is the airport's ```ID``` and each integer in the sublist is the airports that it connects directly to.\n## Example\nGiven the input: \n\n``` [[1], [0, 2], []]```\n\nSomeone can travel directly forom airport ```0 -> 1```; from ```1 -> 0 or 2```; and cannot travel anywhere from airport ```2```. \n\nWe would return ```1``` here because we can add an airline from airport ```2 -> 0``` which then allows us to travel from ```0 -> 1 and 2```, ```from 1 -> 0 and 2``` and ```from 2 -> 0 and 1```.",
+    "totalAttempts": 365,
+    "totalCompleted": 7,
+    "totalStars": 7,
+    "voteScore": 13,
+    "tags": [
+      "Graph Theory",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

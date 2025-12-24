@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580a30e1728d044ced00032f",
+  "data": {
+    "id": "580a30e1728d044ced00032f",
+    "name": "Save the rhino",
+    "slug": "save-the-rhino",
+    "category": "reference",
+    "publishedAt": "2016-10-21T17:19:27.543Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/580a30e1728d044ced00032f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-21T15:14:41.353Z",
+    "createdBy": {
+      "username": "JoeEdwardMorris",
+      "url": "https://www.codewars.com/users/JoeEdwardMorris"
+    },
+    "description": "Kaziranga's park rangers have been tracking a gang of rhinoceros horn poachers. They have finally discovered their base camp deep in the forest.\n\nThe likelihood of catching the poachers depends on the poachers' next move - their choice of escape route. The range of choices available to the poachers depends on the direction the rangers decide to approach from. The poachers know the terrain well and will always choose the available route that gives them the best chance of escape. \n\nWhich direction should the rangers approach the camp from to give the poachers the least chance of escape?\n\nWe will be passed a two dimensional array with four outer elements representing the compass points N,E,S,W that the rangers can choose, and one or more inner elements representing the 'score' of the poachers' next escape move, with higher numbers representing a higher chance of being caught. The poachers will always choose the best available move for them, eg the LOWEST score in that inner array.\n\nAn example input would be [[5,2],[1,10],[3,3],[1]]\n\nHere :\n\n- North leaves the poachers having to choose between [5,2]\n- East leaves the poachers having to choose between [1,10]\n- South leaves the poachers having to choose between [3,3]\n- West leaves the poachers having ca choice of [1]\n\nWe need the function to return the rangers' best next move as a string - 'North', 'East', 'West', or 'South' - so in the above example, the 'South' would be the correct output, as the poachers are forced in the end to take a '3' score, as that is the lowest available from this set which they will pick, but it is higher than the choices they could make from the other sets, and thus gives the rangers the best chance of catching them.\n\nNote : if there is a tie between directions, we take preference in clockwise order from North.\n\n\n",
+    "totalAttempts": 143,
+    "totalCompleted": 45,
+    "totalStars": 3,
+    "voteScore": 32,
+    "tags": [
+      "Artificial Intelligence",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

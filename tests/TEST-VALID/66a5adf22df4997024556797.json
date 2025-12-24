@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66a5adf22df4997024556797",
+  "data": {
+    "id": "66a5adf22df4997024556797",
+    "name": "JavaScript Built in Types: Maps, Objects, Headers",
+    "slug": "javascript-built-in-types-maps-objects-headers",
+    "category": "reference",
+    "publishedAt": "2024-07-28T03:09:13.878Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66a5adf22df4997024556797",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-28T02:33:22.714Z",
+    "createdBy": {
+      "username": "JavaScripts",
+      "url": "https://www.codewars.com/users/JavaScripts"
+    },
+    "description": "# JavaScript Built in Types: Maps, Objects, Headers\n\nObjects are the most foundational constructs in JavaScript. Everything in an object is stored as a `{key:value}` pair. The key is interpreted as a string and the value can be any type. Virtually everything in JavaScript is extended from objects.\n\nA map is an even more generalized version on of an object that allows the key and the value to be of any type.\n\nHeaders is a specialized type used often in networking. It behaves like a map or object except that both the key and the value are strings.\n\nIt is useful to know how to quickly convert between these data types. Conversions between these types often does change the contents in ways that can't be reversed but usually that is what we want.\n\n⠀\n⠀\n⠀\n# ⚠️ WARNING ⚠️\n### Modifying the Object prototype is extremely dangerous and should be handled with extreme care! This kata does so as a fun thought experiment that is primaryily for teaching purposes. You should almost never modify the base object prototype since (almost) every object inherits properties from it.\n⠀\n⠀\n## Task\n\nIn this Kata you must define 6 functions. 2 for each object type. Each function converts one type to another.\n\n```\nObject.prototype.toMap //converts the object to a map\nObject.prototype.toHead //converts the object to headers\nMap.prototype.toObj //converts the map to an object\nMap.prototype.toHead //converts the map to headers\nHeaders.prototype.toMap //converts the headers to a map\nHeaders.prototype.toObj //converts the headers to an object\n```\n\nWhen extending objects through their prototypes in this way, it is best to use `Object.setProperty` which will define the new properties as nonenumerable. If we just assign the properties using `=` then the properties are enumberable and will show up when looping over the objects in certain contexts like `for...in` loops.",
+    "totalAttempts": 39,
+    "totalCompleted": 21,
+    "totalStars": 1,
+    "voteScore": 16,
+    "tags": [
+      "Language Features",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

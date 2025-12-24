@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56a2e7373661dfb62c000039",
+  "data": {
+    "id": "56a2e7373661dfb62c000039",
+    "name": "Symmetry projection on the dihedral group of order 2",
+    "slug": "symmetry-projection-on-the-dihedral-group-of-order-2",
+    "category": "games",
+    "publishedAt": "2016-01-23T02:38:55.247Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/56a2e7373661dfb62c000039",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-23T02:36:39.532Z",
+    "createdBy": {
+      "username": "DumpsterDoofus",
+      "url": "https://www.codewars.com/users/DumpsterDoofus"
+    },
+    "description": "## Intro\n\nIn quantum mechanics, the notion of symmetry-projection is sometimes used to make calculations easier. While this may sound outlandish, you might've seen a simple example of this in high school math: any univariate function `f(x)` can be decomposed into \"odd\" and \"even\" parts:\n\n```\nf(x) = f[odd](x) + f[even](x) \n```\n\nwhere `f[odd](-x) = -f[odd](x)` is \"odd\", and `f[even](-x) = f[even](x)` is \"even\".\n\nSymmetry projection is a generalization of this idea, in which a function is decomposed into parts which are simultaneous eigenfunctions of a particular symmetry group. This Kata will deal with the following decomposition which can decompose any 2D function into 4 parts:\n\n```\nf(x, y) = f[1, 1](x, y) + f[1, -1](x, y) + f[-1, 1](x, y) + f[-1, -1](x, y)\n```\n\nwhere \n\n```\nf[a, b](-x, y) = a*f[a, b](x, y)\nf[a, b](x, -y) = b*f[a, b](x, y)\n```\n\nIn other words, `f` can be decomposed into 4 functions which are simultaneous eigenfunctions of the elements of the dihedral group `D_2 = {e, sigma_x, sigma_y, i}` of order 4, where `e` is identity, `sigma_n` is a Cartesian reflection operator and `i` is the inversion operator. `f[1, 1]` is symmetric under horizontal and vertical reflection, `f[1, -1]` is symmetric under vertical reflection and antisymmetric under horizontal reflection, etc.\n\nIf all this sounds confusing, then maybe some pictures will help! The following 5 images (red is positive, blue is negative, black is zero) represent the `D_2` projection of a Gaussian centered at `(-1, -1)`, ie `f(x, y) = Exp[-(x + 1)^2 - (y + 1)^2]`. The first image is the original `f`. The second is `f[1, 1]`, the third is `f[1, -1]`, the fourth is `f[-1, 1]`, and the fifth is `f[-1, -1]`:\n\n![](http://i.imgur.com/nuGmGrY.png)\n\nI apologize for not having axes on the five graphs, but they're plots of the function for `x` in `[-2.5, 2.5]` and `y` in `[-2.5, 2.5]`. Note that when you add the last four functions together, you get the first. \n\nHere's another example, where `f` is an equilateral-triangle-shaped region of 1's surrounded by zero everywhere else:\n\n![](http://i.imgur.com/3UihYwJ.png)\n\nNote that only the `[1, 1]` and `[-1, 1]` components are nonzero. Also, happy Hanukkah.\n\n## The Problem\n\nIn this Kata, you will be given an array `double[,]`, and you will return a `List<double[,]>` containing 5 arrays:\n\n1. The original array\n2. Its `[1, 1]` component\n3. Its `[1, -1]` component\n4. Its `[-1, 1]` component\n5. Its `[-1, -1]` component\n\nThe last 4 must add up to the first, and must have the correct symmetries. In this case, \"horizontal reflection\" of an array means to reverse the rows, and \"vertical reflection\" of an array means to reverse the columns. As a concrete example of what you're expected to do, say you get the following 4x4 array:\n\n```\n{{1., 0.9, -0.5, 1.5}, \n{-1.6, -1.5, -1.4, -0.5}, \n{1.4, 0.0, 0.0, -0.8}, \n{-0.4, -0.2, -0.1, 0.5}}\n```\n\nThe first element of your output list should be the previous array. The second element should be:\n\n```\n{{0.65, 0.025, 0.025, 0.65}, \n{-0.375, -0.725, -0.725, -0.375}, \n{-0.375, -0.725, -0.725, -0.375}, \n{0.65, 0.025, 0.025, 0.65}}\n```\n\nwhich is unchanged by horizontal or vertical reflection.\n\nThe third element should be \n\n```\n{{-0.35, 0.325, -0.325, 0.35}, \n{0.275, -0.025, 0.025, -0.275}, \n{0.275, -0.025, 0.025, -0.275}, \n{-0.35, 0.325, -0.325, 0.35}}\n```\n\nwhich is unchanged by a horizontal reflection, but is negated by a vertical reflection.\n\nThe fourth element should be\n\n```\n{{0.6, 0.175, 0.175, 0.6}, \n{-0.675, -0.725, -0.725, -0.675}, \n{0.675, 0.725, 0.725, 0.675}, \n{-0.6, -0.175, -0.175, -0.6}}\n```\n\nwhich is unchanged by a vertical reflection, but is negated by a horizontal reflection.\n\nThe fifth element should be \n\n```\n{{0.1, 0.375, -0.375, -0.1}, \n{-0.825, -0.025, 0.025, 0.825}, \n{0.825, 0.025, -0.025, -0.825}, \n{-0.1, -0.375, 0.375, 0.1}}\n```\n\nwhich is negated by a horizontal or a vertical reflection. You can check that these 4 arrays add up to the original array.\n\nOnce again, but in images:\n\n![](http://i.imgur.com/M2JWBof.png)\n\nThe first is the original array, and the last 4 are the symmetry-projected components.\n\n## More pictures\n\nHere's the triangle from before, but rotated slightly:\n\n![](http://i.imgur.com/FR5ozSx.png)\n\nHere's the triangle rotated by Pi/12:\n\n![](http://i.imgur.com/Fjqnbd7.png)\n\nHere's slightly off-center disk:\n\n![](http://i.imgur.com/QP5uizu.png)\n\nHere's a weird function that's only nonzero on an off-center diamond:\n\n![](http://i.imgur.com/rGWh3us.png)\n\nIt also works on complex functions. Here's `f(x, y) = x + i*y := z`, where brightness encodes modulus and hue encodes phase (this color scheme coincides with the scheme used previously for real-valued functions):\n\n![](http://i.imgur.com/RpX5dla.png)\n\nIt appears that the `[1, -1]` component is `Re[f]` and the `[-1, 1]` component is `i*Im[f]`.\n\nHere's `f(x, y) = 30 (x + I y)^3 Exp(-5 x^2 - 5 y^2)`:\n\n![](http://i.imgur.com/GagPqjb.png)\n\nAgain, the `[1, -1]` component is `Re[f]` and the `[-1, 1]` component is `i*Im[f]`, which makes sense, since `f = Re[f] + i*Im[f]` for any complex function `f`.",
+    "totalAttempts": 20,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": 5,
+    "tags": [
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

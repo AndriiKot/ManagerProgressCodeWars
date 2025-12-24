@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60116e37e25e6f002274de4f",
+  "data": {
+    "id": "60116e37e25e6f002274de4f",
+    "name": "Post Office Delivery",
+    "slug": "post-office-delivery",
+    "category": "games",
+    "publishedAt": "2021-01-27T14:25:54.519Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "kotlin",
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/60116e37e25e6f002274de4f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-01-27T13:44:23.520Z",
+    "createdBy": {
+      "username": "TechieHelper",
+      "url": "https://www.codewars.com/users/TechieHelper"
+    },
+    "description": "# Post Office Delivery\nIn this kata, you will act the job of a post office. \nYou will be given a list of roads and how many houses need serving on them, and how far they are from the 'main road'.\nHere, you may see the twist about this post office system. For every road given, it is connected to the 'main road'. Each road in the system is individual from any other roads (presume they are unreachable from each other), and to reach another house, a worker must travel back to the post office.\nThe distance from the end of each road (the section that connects to the 'main road') to the post office is how long the name of the road is, counting every character. The worker must return to the post office after servicing a road.\nYour task is to figure out how many minutes it will take to deliver all of the post to the people in the shortest amount of time.\nIt takes 1 minute to travel one unit down the main road, and 1 minute to service a house. Note: The worker **does not** have to return to the post office after finishing the last house.\n\nExample:\n\n    roads = [(\"Georgia High Street\", 10), (\"Rubble Close\", 13), (\"Bakers Street\", 3)]\n    deliveryTime(roads) # --> Should return 95\nThis is because the worker goes 12 minutes down the main road to \"Rubble Close\", and service 13 houses there, and returns. They then travel 13 minutes down the main road to \"Bakers Street\", service 3 houses, and return. Finally, they travel 19 minutes down the main road to \"Georgia High Street\", services 10 houses there. They are then finished, with the sum of these times being 95 minutes.\nP.S. Road names will always only contain uppercase and lowercase english letters and spaces.",
+    "totalAttempts": 140,
+    "totalCompleted": 58,
+    "totalStars": 2,
+    "voteScore": 59,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

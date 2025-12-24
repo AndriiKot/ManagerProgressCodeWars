@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54e7912f0507371a6f000a58",
+  "data": {
+    "id": "54e7912f0507371a6f000a58",
+    "name": "Dynamically Compile Java Code",
+    "slug": "dynamically-compile-java-code",
+    "category": "reference",
+    "publishedAt": "2015-02-20T20:43:29.997Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/54e7912f0507371a6f000a58",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-02-20T19:55:27.757Z",
+    "createdBy": {
+      "username": "vko89",
+      "url": "https://www.codewars.com/users/vko89"
+    },
+    "description": "Create a utulity that given the name and source code for a class compiles it and returns its `Class` instance to the user. It is strongly suggested that the `javax.tools.JavaCompiler` class is used for this instead of trying to implement your own compiler.\n\nYour implementation should provide the method\n\n    Class<?> compileAndLoad(String name, String source);\n    \nThe rules for the arguments to be accepted are:\n\n* `name` must not be `null`\n* `source` must not be `null`\n* `source` must be valid Java code for a single class (inner classes are allowed)\n* `name` must be the fully qualified name of the class (e.g. `my.project.MyClass`)\n* `name` must not be a duplicate of any classes that already exist\n\nIf any of these rules are broken please throw an exception.\n\nHints: \n\n* The `JavaCompiler` and related classes are meant to read Java code from a file and output the compiled class data to another file. You will have to get it to read and write to a `String` or `byte[]`.\n* In order to load a compiled class you will need to use a `ClassLoader`. You may find `defineClass(String, byte[], int, int)` useful for this.\n* If a class has one or more inner classes make sure to load them as well or you will fail some of the test cases.\n* The CodeWars solution validator does not like when things get printed to `System.err` and under the default configuration the `JavaCompiler` class will print error messages there for some of the test cases. As such make sure to configure the `JavaCompiler` so that it does not print to `System.err`.",
+    "totalAttempts": 191,
+    "totalCompleted": 12,
+    "totalStars": 19,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

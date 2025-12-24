@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5601de3f54fa4b5ed9000072",
+  "data": {
+    "id": "5601de3f54fa4b5ed9000072",
+    "name": "Player Methods - Dungeon crawler #2",
+    "slug": "player-methods-dungeon-crawler-number-2",
+    "category": "reference",
+    "publishedAt": "2015-09-23T03:57:27.035Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5601de3f54fa4b5ed9000072",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-22T23:03:27.991Z",
+    "createdBy": {
+      "username": "matt c",
+      "url": "https://www.codewars.com/users/matt%20c"
+    },
+    "description": "<h1>Player Methods - Dungeon crawler #2</h1>\n<p>\nWe now have the base of our Dungeon crawler, W00T! Next we want to make some methods for our Player class. Methods we have to add must move the players position, take damage, drink a potion which may change different stats and a final method to check if the player is still alive.\n</p>\n\n<h2>Task</h2>\n<p>\nYou must complete these prototype methods for the Player class to do as explained below.\n</p>\n\n<h2>Methods</h2>\n<p>\n  <ul>\n    <li><strong>movePlayer</strong> - This is used to move the players position based on a string input.<br>\n    <h4>Usage</h4>\n    <p>\n      This method must move the player position ```x``` and ```y``` properties according to the direction given the property values must not exceede below ```0``` or above the ```bound``` object property values, if it is then throw the error PlayerOutOfBounds from the ```ERROR``` object. After the input has been validated and the position changed return the new position object.\n    </p><p>\n      <ul><h4>Parameters</h4>\n        <li><strong>direction</strong> - This should always be a string if it is not we will throw a DirectionNotValid error from the ```ERROR``` constant, usage in the example section. The direction if it is a string will be of four types ```up```, ```down```, ```left``` and ```right```, But this method should be case insensitive.\n        </li>\n        <li><strong>bound</strong> - Bound is an object which is similar to the ```position``` object in the Player class it looks like this ```{x:5, y:5}```. The Player class position object properties cannot have values greater than those in the bound object. If the bound object does not contain either the ```x``` or ```y``` properties or both! then throw a BoundObjectInvalid error from the ```ERROR``` object.        \n        </li>\n      </ul>\n   \n    </li>\n    \n    <br>\n    \n    <li><strong>movePlayerTo</strong> - This method is used to just set the ```x``` and ```y``` properties the positions will always be valid so no error checking will need to be done.\n    </li>\n    \n    <br>\n    \n    <li><strong>hit</strong> - This method is used to take in a parameter which will be an int and add that onto the players health this input will only be valid so no error checking is required. At no point should the health go below zero.\n    </li>\n    \n    <br>\n    \n    <li><strong>attack</strong> - This method attack is used to get the amount of damage the player will do on a monster again this is all random. Some new properties have been added to the Player class to calculate the potential damage. The new properties in the Player class is: ```level```\n    \n    <h4>Usage</h4>\n    <p>\n    The method has to do no error checking on the monster object must use this formula when calculating the damage done: ```Player Damage + (level * 0.75) - Monster Defence```\n    </p>\n    <ul><h4>Parameters</h4>\n        <li><strong>monster</strong> - This parameter is a Monster object which has a property that you will use called ```defence``` this will be used to help calculate output damage\n        </li>\n      </ul>\n    </li>\n    <br>\n    <li><strong>drink</strong> - This method is used to apply effects from potions drunk. Potions could include health potions and damage potions.\n    <h4>Usage</h4><p>\n    The method has to do no error checking, you will be passed an object from the ```POTIONS``` object. You must then apply the affect to the appropriate property, e.g. health potion for health, damage potion for damage. \n    </p>\n    <ul><h4>Parameters</h4>\n        <li><strong>potion</strong> - This parameter is a Potion object which has a property that you will use called ```type``` this will be used to determine the type of effect and ```effect``` which will apply the effect on the type of the potion.\n        </li>\n      </ul>\n    </li>\n    <br>    \n    <li><strong>isAlive</strong> - This method should return a bool value true of false if the players health is above zero\\\n    <h4>Usage</h4>\n    <p>\n    Should return true if the players health is above zero or false if not\n    </p>\n    </li>\n  </ul>\n</p>\n\n\n<h2>How to use ERROR</h2>\n```javascript\nthrow ERROR.BoundObjectInvalid; //If the Bound object does not contain either the x or y property\n\nthrow ERROR.PlayerOutOfBounds; //If the Player goes out of bounds when the player has moved\n\n```\n\n<p>\nFuture note - These methods will be adapted in the future to work in different ways.\n</p>",
+    "totalAttempts": 213,
+    "totalCompleted": 29,
+    "totalStars": 2,
+    "voteScore": 37,
+    "tags": [
+      "Games",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

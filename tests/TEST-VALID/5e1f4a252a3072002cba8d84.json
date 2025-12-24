@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e1f4a252a3072002cba8d84",
+  "data": {
+    "id": "5e1f4a252a3072002cba8d84",
+    "name": "Generic MinMax in one iteration",
+    "slug": "generic-minmax-in-one-iteration",
+    "category": "reference",
+    "publishedAt": "2020-01-15T17:47:57.987Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5e1f4a252a3072002cba8d84",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-15T17:21:41.719Z",
+    "createdBy": {
+      "username": "B4rrCH",
+      "url": "https://www.codewars.com/users/B4rrCH"
+    },
+    "description": "# Motivation:\n\nQuite often we need both the minimum and maximum value of a data structure. However, while it's usually no problem to just use LINQ's `Enumerable.Min` and `Enumerable.Max` methods separately, doing so iterates through the collection twice.\n\n\n# Task:\nYour task is to implement a generic method `MinMax<TSource, TResult>` which takes a source `this IEnumerable<TSource> source` and an optional selector `Func<TSource, TResult> selector` and returns the minimum and maximum element. To pass all tests, you will only be allowed to access the source's iterator once.\n\n* If the source or selector are `null`, throw an `ArgumentException`.   \n* If the source is empty, throw an `InvalidOperationException`.\n\n# Example:\n```csharp\n(int, int) minMax = (new int[] {1, 2, 3, 4, 5}).MinMax(x => 3 * x);\n// minMax should equal (3, 15)\n```\n\n# Note:\nThe tests can't check this, but don't just use LINQ's `Enumerable.Select` or other methods to copy the values before appying other functions in order to circumvent the \"calling the iterator only once\" requirement.",
+    "totalAttempts": 24,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Advanced Language Features",
+      "Performance",
+      "Arrays",
+      "Data Types",
+      "Lists",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

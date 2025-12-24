@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5241060ff2471a5d7600025a",
+  "data": {
+    "id": "5241060ff2471a5d7600025a",
+    "name": "Custom Setters and Getters",
+    "slug": "custom-setters-and-getters",
+    "category": "reference",
+    "publishedAt": "2013-09-24T03:26:40.204Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5241060ff2471a5d7600025a",
+    "rank": {
+      "id": -6,
+      "name": "6 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-09-24T03:25:03.319Z",
+    "createdBy": {
+      "username": "bkimmel",
+      "url": "https://www.codewars.com/users/bkimmel"
+    },
+    "description": "Let's take a look at an interesting feature of JS: custom Getters and Setters for objects.\n\nSkimming over [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects?redirectlocale=en-US&redirectslug=JavaScript%2FGuide%2FWorking_with_Objects#defining_getters_and_setters) may help you prepare for this kata.\n\nThe object of this exercise will be to provide a class `Archiver` that creates a \"self-archiving\" object with respect to its `temperature` property, but otherwise looks and acts just like a normal JS object.  Each time the `temperature` property is assigned, the object should add a log entry to an array (the \"archive\") that it returns via a `getArchive` method. The log entry should be formed as such:\n\n```javascript\n{\ndate: // the time when the \"temperature\" property was assigned (Date object),\nval:  // the value that was written to the \"temperature\" property.\n}\n```\n\n## Example\n\n```javascript\n//new Date() == '2013-09-24...Z'\nconst archive = new Archiver();\narchive.temperature = 33;\narchive.temperature = 28;\narchive.temperature = 21;\narchive.getArchive() // == [{date: 2013-09-24..., val:33},{date: 2013-09-24..., val:28},{date: 2013-09-24..., val:21}]\n```\n",
+    "totalAttempts": 13204,
+    "totalCompleted": 1187,
+    "totalStars": 39,
+    "voteScore": 111,
+    "tags": [
+      "Fundamentals",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d4ae6bfe4e39d00240bc0ac",
+  "data": {
+    "id": "5d4ae6bfe4e39d00240bc0ac",
+    "name": "Thread Bomb",
+    "slug": "thread-bomb",
+    "category": "games",
+    "publishedAt": "2019-08-07T14:58:18.414Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5d4ae6bfe4e39d00240bc0ac",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-07T14:57:04.208Z",
+    "createdBy": {
+      "username": "phantamanta44",
+      "url": "https://www.codewars.com/users/phantamanta44"
+    },
+    "description": "# Meanwhile, in JVM Land...\n\nOnce again, the UCLF (URLClassLoader Forces) have deployed you, the preeminent bomb specialist, to sweep a recently-captured area. You and your squad methodically pick your way through the remains of what was once a magnificent and elephantine non-blocking queue implementation when Frank, your right-hand man, once again detects that all-too-familiar ticking noise -- you'd think the bomb manufacturers would have learned by now to not include surround-sound speakers!\n\nThis bomb seems to use a off-thread arming mechanism: the main detonation thread spawns a second thread that arms the bomb by setting an entry in a `boolean[]`. Furthermore, this seems to occur under mutual exclusion via the monitor of the very same `boolean[]` instance, so the bomb will always be armed if run normally. Fortunately, you think you might be able to prevent it from running normally -- after all, you and your squad's lives depend on it.\n\nYou use your trusty bytecode injector to inject your `void defuse()` method, and the game begins...",
+    "totalAttempts": 22,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Threads",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

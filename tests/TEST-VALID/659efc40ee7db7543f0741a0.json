@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/659efc40ee7db7543f0741a0",
+  "data": {
+    "id": "659efc40ee7db7543f0741a0",
+    "name": "Caesar Ciphering",
+    "slug": "caesar-ciphering",
+    "category": "reference",
+    "publishedAt": "2024-01-11T11:19:33.598Z",
+    "approvedAt": null,
+    "languages": [
+      "prolog"
+    ],
+    "url": "https://www.codewars.com/kata/659efc40ee7db7543f0741a0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-10T20:21:20.391Z",
+    "createdBy": {
+      "username": "alsampi10",
+      "url": "https://www.codewars.com/users/alsampi10"
+    },
+    "description": "# Caesar Ciphering\n‎\n<blockquote style=\" margin-bottom:0;\">\"If he had anything confidential to say, he wrote it in cipher, that is, by so changing the order of the letters of the alphabet, that not a word could be made out. If anyone wishes to decipher these, and get at their meaning, he must substitute the fourth letter of the alphabet, namely D, for A, and so with the others.\"</blockquote>\n<div style=\"text-align: right; margin-top:0;\"><cite> &mdash; Suetonius, Life of Julius Caesar 56 </cite></div>\n\n---\n\nLet's implement two functions to cipher and decipher a message using the Caesar Ciphering. To cipher, you will replace each letter for the N next letter in the alphabet, and each digit with the N next.\n\n## More info\n * Any symbol that isn't a letter should not be changed\n * Uppercase and lowercase are two different letters for this kata\n * The following letter of Z is A, idem for lowercase letters\n * The following number of 9 is 0\n \n## Examples\n\n```prolog\ncipher(3,\"Hello World!\",\"Khoor Zruog!\").\n\ndecipher(2,\"Abcd123\",\"Yzab901\").\n```\n\n## Need some help? (Only for Prolog)\n\nAre you starting in Prolog and need some tips? You can use the following hint:\n\n<details>\n  <summary> How to \"add 1\" to a letter? </summary>\n  \n  If I could only replace each letter with a number...\n  \n  Well, luckily you can use the predicate `string_codes/2` to bidirectionally transform a string into a list of numbers (ASCII code).\n  \n</details>\n\n### Good luck!\n\n<div></div>\n\n---\n## Corrections (Will be erased eventually)\n- Tests cases were wrong for deciphering, now corrected\n- To differentiate from a similar kata, now you have to shift the digits too.",
+    "totalAttempts": 11,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Ciphers",
+      "Strings",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

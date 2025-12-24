@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56c69bdd7c84beb576000072",
+  "data": {
+    "id": "56c69bdd7c84beb576000072",
+    "name": "Breadth First Tree Traversal",
+    "slug": "breadth-first-tree-traversal",
+    "category": "reference",
+    "publishedAt": "2016-02-19T04:36:45.455Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56c69bdd7c84beb576000072",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-19T04:36:48.467Z",
+    "createdBy": {
+      "username": "32bits",
+      "url": "https://www.codewars.com/users/32bits"
+    },
+    "description": "This is a fundamental fundamental. Code up a [breadth first traversal](https://en.wikipedia.org/wiki/Breadth-first_search) of a binary tree.\n\nThe tree is built using `Node` objects with the following structure:\n```if:python\n~~~python\nclass Node:\n  left = property('Node reference or None')\n  right = property('Node reference or None')\n  tag = property('integer')\n~~~\n```\n```if:javascript\n~~~javascript\nNode = {\n  left : property('Node reference or null')\n  right : property('Node reference or null')\n  tag : property('integer')\n}\n~~~\n```\n\nYou have to return an array containing the nodes' tags in the breadth-first order.\n\n## Examples\n\nWith the following tree :\n```\n            0\n           / \\\n          /   \\\n         /     \\\n        /       \\\n       1         2\n     /  \\      /   \\\n    3   4     5     6\n   / \\ / \\   / \\   / \\\n  7  8 9 10 11 12 13 14\n```\nyour function should return `[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]` .\n\n\n\n## Related katas\n* [A kata](https://www.codewars.com/kata/5268956c10342831a8000135) about [depth-first traversal](https://en.wikipedia.org/wiki/Depth-first_search)",
+    "totalAttempts": 734,
+    "totalCompleted": 133,
+    "totalStars": 10,
+    "voteScore": 135,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Binary Trees"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

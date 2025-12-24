@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/639a4b4c86b698003ea6fc4a",
+  "data": {
+    "id": "639a4b4c86b698003ea6fc4a",
+    "name": "Grouping Expressions with Parentheses",
+    "slug": "grouping-expressions-with-parentheses",
+    "category": "algorithms",
+    "publishedAt": "2022-12-15T00:55:12.418Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/639a4b4c86b698003ea6fc4a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-14T22:16:44.515Z",
+    "createdBy": {
+      "username": "skidd",
+      "url": "https://www.codewars.com/users/skidd"
+    },
+    "description": "# Task\n\nGiven a mathematical expression, generate all the ways to group it with parenthesis.\n  * For example, `1 * 2 - 3` outputs `1 * 2 - 3` `(1 * 2) - 3` `1 * (2 - 3)`\n* The rules for placing the parenthesis are as follows:\n  * The parentheses must be balanced, but there is no restriction on the number of pairs of parentheses. \n  * There must be at least one operator and two numbers inside every pair of parenthesis. \n  * Parentheses enclosing the whole string are ignored.\n  \n* The function should return a `set[str]`,  so order does not matter.\n* Expressions should be outputted with whitespace between each number and operator.\n* The expressions do not have to be mathematically valid (for example `\"(2 / 0) & 1.2\"` is a valid output)\n* The function should convert any decimals ending in `.0` to whole numbers and any decimal starting with `.` to `0.` Remove any trailing zeros.\n\n# Examples\n```python\n  parenthesis(\"2 - 3 + 4\") \n  # {'2 - 3 + 4', \n  #  '(2 - 3) + 4', \n  #  '2 - (3 + 4)'}\n  parenthesis(\"2|3  ==  98\")\n  # {'2 | 3 == 98',\n  #  '(2 | 3) == 98',\n  #  '2 | (3 == 98)}\n  parenthesis(\"1 + 2 + 3 + 4\")\n  #  {'(1 + 2 + 3) + 4', \n  #   '(1 + 2) + (3 + 4)', \n  #   '((1 + 2) + 3) + 4', \n  #   '1 + (2 + 3) + 4', \n  #   '1 + (2 + 3 + 4)', \n  #   '1 + (2 + (3 + 4))', \n  #   '(1 + (2 + 3)) + 4', \n  #   '1 + ((2 + 3) + 4)', \n  #   '(1 + 2) + 3 + 4', \n  #   '1 + 2 + (3 + 4)', \n  #   '1 + 2 + 3 + 4'}\n  parenthesis(\"0.0-8.3\")\n  #  {'0 - 8.3'}\n```\n### Tests\n* All expressions will contain at least 1 operator and 2 numbers.\n* All numbers in given expressions will be positive.\n* There will be no parenthesis in the given expressions, nor will there be trailing or leading operators.\n* The operators that will appear in the tests are `+` `-` `*` `/` `//` `%` `**` `<<` `>>` `==` `!=` `>` `<` `>=` `<=` `&` `|` `^` `and` `or`\n* Aside from whitespace and operators, the only other characters are positive whole and decimal numbers.\n* The solution must also be performant.\n* The randomized tests have the largest input being an expression with 11 terms.",
+    "totalAttempts": 41,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

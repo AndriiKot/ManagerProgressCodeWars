@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e621b0805fa2c002bb996ae",
+  "data": {
+    "id": "5e621b0805fa2c002bb996ae",
+    "name": "Taking the wagon to market",
+    "slug": "taking-the-wagon-to-market",
+    "category": "games",
+    "publishedAt": "2020-03-06T09:42:47.685Z",
+    "approvedAt": null,
+    "languages": [
+      "elixir"
+    ],
+    "url": "https://www.codewars.com/kata/5e621b0805fa2c002bb996ae",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-06T09:42:32.746Z",
+    "createdBy": {
+      "username": "edchancellor",
+      "url": "https://www.codewars.com/users/edchancellor"
+    },
+    "description": "THE PROBLEM:\n\nYou are a farmer with a large barrel, which you want to take to the market to sell. Unfortunately, the market is 100 miles away from your farm, and the barrel is too heavy for you to move by yourself. You do however have a camel, which you can use to carry the barrel for you.\n\nHere's the catch: the camel only has 100 energy. Every mile that it walks while carrying the barrel, the camel will lose ```barrel``` amount of energy. Additionally, every mile that it walks while NOT carrying the barrel it will  lose ```no_barrel``` amount of energy.\n\nFor example, if ```barrel = 2``` and ```no_barrel = 0.4``` the camel will lose 20 energy walking 10 miles with the barrel, or 4 energy walking 10 miles without the barrel.\n\nYou have a strategy for dealing with this problem. You will make the camel carry the barrel until it has just enough energy to make the return journey home. Then, you will leave the barrel at that spot, go back to the farm with the camel and allow it to regain its full 100 energy there. The following day, you will lead the camel back to the spot where you left the barrel overnight, make it carry it a little further, and then return home again. You repeat this step until you finally reach the market with the barrel and the camel. Remember that the camel also needs to return home to the farm after delivering the barrel!\n\n\nTHE TASK:\n\nIn this Kata, your task is to work out how far the camel travels in total, rounded to the nearest mile!\n\nSome rules for simplicity: \n```\n0 < no_barrel < 0.5\nno_barrel < barrel\n\n```\n\n\nEXAMPLE:\n\nStarting values: no_barrel = 0.4, barrel = 2\n\nDay 1: \n\nbarrel moved 41.666 miles, barrel position 41.666 miles\n\ntotal distance camel travelled: 83.333 miles\n\nDay 2: \n\nbarrel moved 27.777 miles, barrel position 69.444 miles\n\ntotal distance camel travelled: 222.222\n\nDay 3: \n\nbarrel moved 18.519 miles, barrel position 87.963 miles\n\ntotal distance camel travelled: 398.148\n\nDay 4: \n\nbarrel moved 12.037 miles, barrel position 100 miles\n\ntotal distance camel travelled: 598.148 (rounded to 598 miles)\n\nRemember, we have included the camel's final return journey of 100 miles. It is also worth remembering that the camel does not need to go any distance beyond the market, and that it may have a little energy left over when it finally returns home at the end.\n\n\n\n\n",
+    "totalAttempts": 8,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/645d15dffca9db00314d8728",
+  "data": {
+    "id": "645d15dffca9db00314d8728",
+    "name": "Goalkeeper Reflex Challenge - Fundamentals",
+    "slug": "goalkeeper-reflex-challenge-fundamentals",
+    "category": "reference",
+    "publishedAt": "2023-05-11T16:21:02.426Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/645d15dffca9db00314d8728",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-11T16:20:47.215Z",
+    "createdBy": {
+      "username": "Goldenvikingsunset",
+      "url": "https://www.codewars.com/users/Goldenvikingsunset"
+    },
+    "description": "**Instructions:**\nYou are working on a goalkeeper reflex challenge for a soccer video game. The goalkeeper should move to block incoming balls. However, there are some bugs in the code that need fixing an he currently only moves in one direction. Your task is to create a function to help test the code and ensure that the goalkeeper moves correctly to save the ball.\n\nThe goalkeeper's position is represented by a number on a linear scale, where 0 represents the leftmost position and 10 represents the rightmost position. The position of the incoming ball is also represented by a number on the same scale.\n\nYou need to implement the function \n```rust\nfn goalkeeper_reflex(position: i32, ball_position: i32) -> i32 {\n    // TODO: Implement the goalkeeper_reflex function\n    unimplemented!();\n}\n```\nwhich takes the current position of the goalkeeper and the position of the incoming ball as arguments. The function should return the new position of the goalkeeper after moving to save the ball.\n\nThe rules for goalkeeper movement are as follows:\n\n- If the ball is at the goalkeeper's position, the goalkeeper should not move.\n- If the ball is to the left of the goalkeeper's position, the goalkeeper should move one position to the left.\n- If the ball is to the right of the goalkeeper's position, the goalkeeper should move one position to the right.\n\nThe goalkeeper cannot move beyond the boundaries of the scale. If the goalkeeper is at position 0 and the ball is to the left of the goalkeeper, the goalkeeper should remain at position 0. Similarly, if the goalkeeper is at position 10 and the ball is to the right of the goalkeeper, the goalkeeper should remain at position 10.\n\n**Note:**\n- The positions are integers, and the function should return an integer as well.\n\n**Example:**\n\n```rust\nassert_eq!(goalkeeper_reflex(5, 3), 4);\nassert_eq!(goalkeeper_reflex(2, 7), 3);\nassert_eq!(goalkeeper_reflex(0, 0), 0);\n",
+    "totalAttempts": 46,
+    "totalCompleted": 29,
+    "totalStars": 0,
+    "voteScore": 22,
+    "tags": [
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

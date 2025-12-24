@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6529772709faaf02f9fadc9a",
+  "data": {
+    "id": "6529772709faaf02f9fadc9a",
+    "name": "Sum Set Expression",
+    "slug": "sum-set-expression",
+    "category": "algorithms",
+    "publishedAt": "2023-12-20T00:55:12.724Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/6529772709faaf02f9fadc9a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-13T16:58:15.297Z",
+    "createdBy": {
+      "username": "nachoMonllor",
+      "url": "https://www.codewars.com/users/nachoMonllor"
+    },
+    "description": "<p>Given an expression in which each element is separated by a space, your task is to calculate the sum of the resulting set. Elements can be integers <code>0 <= x <= 100</code> or set operators: <code>\"(\"</code>, <code>\")\"</code>, <code>intersection</code>, <code>union</code>, <code>symmetricDifference</code>, <code>difference</code>, and <code>complement</code>. In this challenge, we designate subsets of the universal set using uppercase letters from <code>\"A\"</code> to <code>\"Z\"</code>, and the universal set itself is denoted as <code>\"U\"</code>. If the expression is empty or does not contain any sets, the function should return <code>0.</code>\n\n<p>Given the following sets:</p>\n<ul>\n    <li><code>U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13} (universal set)</code></li>\n    <li><code>A = {4, 7, 8, 9, 12, 13} (subset of U)</code></li>\n    <li><code>B = {6, 7, 10, 11} (subset of U)</code></li>\n    <li><code>C = {6, 12, 13, 17} (subset of U)</code></li>\n</ul>\n\n  <h2>Example 1</h2>\n  <p>Expression: <code>( A intersection C ) union ( B intersection C )</code></p>\n  <p>For: <code>( A intersection C )</code>, you get <code>{12, 13}</code></p>\n  <p>For: <code>( B intersection C )</code>, you get <code>{6}</code></p>\n  <p>So: <code>\"( A intersection C ) union ( B intersection C )\"</code></p>\n  <p>Result: <code>{ 12, 13, 6 }</code>. Therefore, the function returns: <code>12 + 13 + 6 = 31</code></p>\n\n  <h2>Example 2</h2>\n  <p>Expression: <code>( A symmetricDifference B ) symmetricDifference ( A symmetricDifference ( B difference C ) )</code></p>\n  <p>For: <code>( A symmetricDifference B )</code>, you get <code>{4, 6, 8, 9, 10, 11, 12, 13}</code></p>\n  <p>For: <code>( B difference C )</code>, you get <code>{7, 10, 11}</code></p>\n  <p>For: <code>( A symmetricDifference ( B difference C ) )</code>, you get <code>{4, 8, 9, 10, 11, 12, 13}</code></p>\n  <p>So: <code>\"( A symmetricDifference B ) symmetricDifference ( A symmetricDifference ( B difference C ) )\"</code>, you get <code>{6}</code></p>\n  <p><code>Therefore, the function returns: 6</code></p>\n\n  <h2>Operators</h2>\n\n  <p><code>Union</code></p>\n  <p>Given two sets A and B, their union is the set that contains all elements that belong to at least one of the sets A or B.</p>\n\n  <p><code>Intersection</code></p>\n  <p>Given two sets A and B, their intersection is all the elements they have in common.</p>\n\n  <p><code>Symmetric Difference</code></p>\n  <p>The symmetric difference of two sets A and B is another set whose elements are all elements of A or B, except for the elements common to both.</p>\n\n  <p><code>Difference</code></p>\n  <p>The difference of A minus B (or between A and B) is another set whose elements are all those elements of A that are not in B.</p>\n\n  <p><code> Complement</code></p>\n  <p>The complement of A is the resulting set obtained by removing all elements of A from the Universal set.</p>\n  \n<p><code>Precedence Order</code></p>\n<p><code>1.</code> complement</p><code>2.</code> (</p> <code>3.</code> )</p> <code>4.</code> intersection</p> <code>5.</code> union</p><code>6.</code> symmetricDifference</p> <code>7.</code> difference</p>\n\n\n\n",
+    "totalAttempts": 110,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Set Theory",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

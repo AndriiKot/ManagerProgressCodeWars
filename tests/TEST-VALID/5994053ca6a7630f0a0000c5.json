@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5994053ca6a7630f0a0000c5",
+  "data": {
+    "id": "5994053ca6a7630f0a0000c5",
+    "name": "Squares",
+    "slug": "squares",
+    "category": "algorithms",
+    "publishedAt": "2017-08-16T09:25:04.589Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5994053ca6a7630f0a0000c5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-16T08:41:32.956Z",
+    "createdBy": {
+      "username": "arhigod",
+      "url": "https://www.codewars.com/users/arhigod"
+    },
+    "description": "&ensp;You are given an infinite checkered field. You should get from a square (x1; y1) to a square (x2; y2). Using the shortest path is not necessary. You can move on the field squares in four directions. That is, when you are positioned in any square, you can move to any other side-neighboring one.\n\n&ensp;A square (x; y) is considered bad, if at least one of the two conditions is fulfilled:\n  *  `|x + y| ≡ 0 (mod 2a)`\n  *  `|x - y| ≡ 0 (mod 2b)`\n  \n&ensp;Your task is to find the minimum number of bad cells one will have to visit on the way from (x1; y1) to (x2; y2).\n\n<b>Input:</b><br>\n&ensp;Input contains integers `a, b, x1, y1, x2, y2` — the parameters of the bad squares, the coordinates of the initial and the final squares correspondingly. It is guaranteed that the initial and the final square aren't bad.\n\n<b>Output:</b><br>\n&ensp;Return a single number — the minimum number of bad cells that one will have to visit in order to travel from square (x1; y1) to square (x2; y2).\n\n<b>Examples:</b>\n```\n(2, 2, 1, 0, 0, 1)    =>  1\n(2, 2, 10, 11, 0, 1)  =>  5\n(2, 4, 3, -1, 3, 7)   =>  2\n```\n<b>Note:</b><br>\n&ensp;In the third sample one of the possible paths in (3;-1)->(3;0)->(3;1)->(3;2)->(4;2)->(4;3)->(4;4)->(4;5)->(4;6)->(4;7)->(3;7). Squares (3;1) and (4;4) are bad.\n\n(c)aropan",
+    "totalAttempts": 6,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66b175cd42398124fc456cd8",
+  "data": {
+    "id": "66b175cd42398124fc456cd8",
+    "name": "Texas hold'em winning hand",
+    "slug": "texas-holdem-winning-hand",
+    "category": "algorithms",
+    "publishedAt": "2024-08-07T05:21:10.165Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66b175cd42398124fc456cd8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-08-06T01:01:02.012Z",
+    "createdBy": {
+      "username": "Bledder",
+      "url": "https://www.codewars.com/users/Bledder"
+    },
+    "description": "While dividing the online poker pot, we need to determine which player or players have the winning hand.\n\n## Community and hole cards\n\nIn each game of poker, five **community cards** are dealt. These cards are shared among all players. Additionally, each player gets two private **hole cards**. A poker hand consists of exactly five cards. Since each player has seven cards available, they must choose which five cards to use to form their best hand.\n\n## Poker hand categories\n[Poker hands](https://www.unibet.co.uk/polopoly_fs/1.696321.1636533552!/image/1470891313.jpg)\n\nA hand is scored based on its category. There are nine categories ranging from **High Card** to **Straight Flush** (**Royal Flush** is not a category; it's the best variant of a **Straight Flush**).\n\n## Determining the winner\n\nWhen multiple players fall into the same category, look at who has the highest card. The value of a card is based on its rank. Two is the lowest and ace the highest (low aces are valid).\n\nIf multiple players have a card with the same value, look at the second highest card, and so forth.\n\nIn rare cases, the best five cards for multiple players have the exact same values, resulting in a tie (split win).\n\n## Card representation\n\nA card is represented by two characters:\n- First character is the rank: 2, 3, 4, 5, 6, 7, 8, 9, t(en), j(ack), q(ueen), k(ing), a(ce)\n- Second character is the suit: c(lubs), d(iamonds), h(earts), s(pades)\n\nExamples:\n\n`2c` two of clubs\n\n`td` ten of diamonds\n\n`qh` queen of hearts\n\n`as` ace of spades\n\n## Player representation\nA player is represented as a string with their 2 hole cards seperated by a space. Example: `'2c td'`\n\nPlayers will be provided as an array of strings. Example of 3 players: `['4s 9s', 'ad jh', '2c ts']`\n\n## Expectation\n\nReturn an array with the indexes of the players holding the best hand.\n",
+    "totalAttempts": 3,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

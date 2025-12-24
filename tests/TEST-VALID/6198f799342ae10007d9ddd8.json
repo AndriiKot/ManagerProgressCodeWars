@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6198f799342ae10007d9ddd8",
+  "data": {
+    "id": "6198f799342ae10007d9ddd8",
+    "name": "Background Pattern",
+    "slug": "background-pattern",
+    "category": "reference",
+    "publishedAt": "2021-11-20T14:50:24.726Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6198f799342ae10007d9ddd8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-20T13:26:49.045Z",
+    "createdBy": {
+      "username": "Konstantin Modin",
+      "url": "https://www.codewars.com/users/Konstantin%20Modin"
+    },
+    "description": "You are working in \"Abc\" startup and yesterday our product managers arrived at conclusion that the whole design of our site is an absolute trash.</br> So after the meetings and plannings we came to agreement that we need to immediately implement a new design. </br> Today your job is to help our designers to create new backgrounds. You need to write a function which will return a new background based on the symbols provided. </br> \n<h4>Function will receive: </h4>\n<code>y</code> : number --> number of rows of background (positivies numbers)</br>\n<code>x</code> : number --> number of columns of background (positivies numbers)</br>\n<code>symbols</code> : string[] --> array of symbols to make a pattern of </br> \n<code>delimiter</code> : string -> symbols delimiter</br>\n\nEach row should be formed taking each symbol from array successively. Then each row character should be splitted one from another by delimiter. For starting new row we also take next symbol from array successively.</br>\nFor the sake of simplicity we will not include delimiter in background size. We will count only number of symbols/rows.</br>\n<pre>\nSo for symbols [\"!\", \"@\", \"#\", \"%\"] and delimiter \"-\" we start row like this:\n\n!-@-#-%-!-@-#... and so on\n</pre>\n\nFor column it should be like this:\n<pre>\n !-@-#-%-!-@-#-%-!-@-#-%-  row\n @\n #\n %\n !\n @\n #\n %  \n ... and so on for column\n\n</pre>\n\n<h4>Function should return:</h4>\nString where new line is represented with '\\n'</br>\n\n<h4>Example</h4>\ncalling our function with this arguments: <pre>getBackground(10, 20, [\"!\", \"@\", \"#\", \"%\"], \"-\");</pre>\nshould return:\n<pre>!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%\n@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!\n#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@\n%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#\n!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%\n@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!\n#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@\n%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#\n!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%\n@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!-@-#-%-!</pre>\n\nI think you got the idea.</br>\nGood luck!",
+    "totalAttempts": 71,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

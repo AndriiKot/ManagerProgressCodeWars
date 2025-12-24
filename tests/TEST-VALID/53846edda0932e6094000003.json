@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53846edda0932e6094000003",
+  "data": {
+    "id": "53846edda0932e6094000003",
+    "name": "Scrollbar Telemetry",
+    "slug": "scrollbar-telemetry",
+    "category": "reference",
+    "publishedAt": "2014-05-27T11:03:49.705Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53846edda0932e6094000003",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-27T10:54:21.631Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Scrollbars are one of the oldest bits of UI design. They show you where you are in the content, how much there _is_ of the content, and how much of the content you are looking at. It also lets you interact with it, letting you drag the bar around to move quickly through the content as fast or as slow as you like.\n\nThere are many implementations out there than let you control the scrollbar—its style, its behaviour... but they all rely on the same basic maths. They need to figure out what height the scrollbar should be, and what position it should take based on the content the container is currently showing.\n\nYour task is to write a function that accepts an object. That object will have a number of HMTL-like proeprties on it that you can access to use in your calculations. It should then return an object, with the necessary telemetry set to mimic normal scrollbar behaviour (as the implementation is pretty easy, you'll need to figure this out yourself):\n\n- If the content is shorter than the container (all of it can be shown at once), then the \"shown\" property should be set to false. At this point, the rest of the telemetry doesn't matter.\n- If some of the content would be cut off, the \"height\" of the scrollbar and it's \"top\" should be given as properties on the object.\n\nOh, and one last note: if there is so much content that the scrollbar would become tiny say, smaller than 10px, then beef it up a bit to 10. We don't want the users of our page having trouble using the scrollbar. If there is no room for the scrollbar in the container, the scrollbar should not be shown.\n\nAs a little point in the right direction, the height of the scrollbar should be smaller the more content there is that you can't see. And its top should never push the _bottom_ of the scrollbar below the bottom of the container. The rest is down to you to figure out. This should work the same way any scrollbar works in the real world.",
+    "totalAttempts": 457,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

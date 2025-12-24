@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cf2c9f0ce3194002a5a73c8",
+  "data": {
+    "id": "5cf2c9f0ce3194002a5a73c8",
+    "name": "Find permutation at index for large N",
+    "slug": "find-permutation-at-index-for-large-n",
+    "category": "algorithms",
+    "publishedAt": "2019-06-01T19:20:12.987Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5cf2c9f0ce3194002a5a73c8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-01T18:54:40.361Z",
+    "createdBy": {
+      "username": "osuushi",
+      "url": "https://www.codewars.com/users/osuushi"
+    },
+    "description": "The goal is to find write a function `find(n, index)` that finds the permutation of the integers in the range `[0, n)` at a specific index, assuming the permutations are listed in lexicographic order.\n\nFor example, for n = 3, the ordering is:\n\n```\n0: [0, 1, 2]\n1: [0, 2, 1]\n2: [1, 0, 2]\n3: [1, 2, 0]\n4: [2, 0, 1]\n5: [2, 1, 0]\n```\n\nIn other words, permutation `a` comes before `b` if the first differing element of `a` is less than that of `b`.\n\nSo `find(3, 4)` should return `[2, 0, 1]`.\n\nA naive solution to this problem would be as follows:\n\n```ruby\ndef find(n, index)\n  (0...n).to_a.permutation.sort[index]\nend\n```\n\nBut that solution isn't practical for any but the smallest `n`. Your solution will be tested with n as great as 100, and should not time out.",
+    "totalAttempts": 10,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Permutations",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/609fccd36b4ee50025068621",
+  "data": {
+    "id": "609fccd36b4ee50025068621",
+    "name": "Spanish DNI #2",
+    "slug": "spanish-dni-number-2",
+    "category": "algorithms",
+    "publishedAt": "2021-05-15T14:15:52.672Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/609fccd36b4ee50025068621",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-15T13:29:55.320Z",
+    "createdBy": {
+      "username": "daaaviid-03",
+      "url": "https://www.codewars.com/users/daaaviid-03"
+    },
+    "description": "**The second of a series**\n\n**----------------------------------------------------------**\n\n**The previous kata:**\n\nThe numbers of the Spanish DNI have some characteristics to prevent identity fraud, which relate the numbers to the letter.\nThe DNI has this structure:\n\n    01234567L\n\nWe can differenciate between two parts: the 8 digit number and the letter.\nThe remainder of dividing of the large number by 23 is the number id of the letter in the sequence:\n\n    0: T       7: F        14: Z       21: K\n    1: R       8: P        15: S       22: E\n    2: W       9: D        16: Q \n    3: A       10: X       17: V\n    4: G       11: B       18: H\n    5: M       12: N       19: L\n    6: Y       13: J       20: C\n\nSo knowning the numbers in the DNI number, we have to determine the letter in the DNI number.\n\n**Example**\n\n*Input:* 45923405?\n\n*Expected Output:* 45923405H\n\nAs *45923405 / 23 = 1996669.7826086956  =>*\n\n*45923405 - 1996669 * 23 = 18 =>*\n\n*18: H*\n\n*Resulting: 45923405H*\n\n**--------------------------------------------------------**\n\n**This kata**\n\nThis kata is an expansion of the previous one. In this one, the letter or one to three numbers can be unknowns.\n\nNumbers or the letter can be unknown, but never both because we need the numbers to determine the letter, and we need the letter for the numbers.\nIn this case, because of the quantity of valid solutions, we should return a list of all the valid solutions ordered by their number order in the real world.\n\nThe tests will have a maximum of three unknown numbers.\n\n**Example**\n\n*Input:* 45923405?\n\n*Expected Output:* ['45923405H']\n\n*----------*\n\n*Input:* 4592?405H\n\n*Expected Output:* ['45923405H']\n\n*----------*\n\n*Input:* 4?92?405H\n\n*Expected Output:* ['41921405H', '43922405H', '45923405H', '47924405H', '49925405H']\n\n",
+    "totalAttempts": 163,
+    "totalCompleted": 41,
+    "totalStars": 0,
+    "voteScore": 71,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

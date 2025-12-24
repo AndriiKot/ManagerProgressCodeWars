@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6596c9a292fe7904dd3e5dfb",
+  "data": {
+    "id": "6596c9a292fe7904dd3e5dfb",
+    "name": "Yahtzee: Did You Make the Upper Section?",
+    "slug": "yahtzee-did-you-make-the-upper-section",
+    "category": "reference",
+    "publishedAt": "2024-01-04T15:10:54.027Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6596c9a292fe7904dd3e5dfb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-04T15:07:14.464Z",
+    "createdBy": {
+      "username": "Hsabes",
+      "url": "https://www.codewars.com/users/Hsabes"
+    },
+    "description": "In the game of Yahtzee, there are two sections: The upper section and the lower section. Players roll 5 dice each turn and fill in various fields with the appropriate scores. Finally, they total up the score in each section and whoever has the highest cumulative score wins the game.\n\nIn this Kata we are only focusing on calculating the total score of the upper section. The upper section is comprised of six fields for each side of the dice (1 through 6). Every turn you score a field by summing the values of the dice that show the corresponding field. For example, if you were to roll 3 twos you would have a score of 6 in the twos field (2 * 3 = 6). If the total sum of each field in the upper section is greater than or equal to 63, the player receives a bonus of 35 points. \n\nAssume the game has already been played and you are now adding up your scores. Suppose each field in the upper section doesn’t contain the total score of each field, but rather the amount of dice you rolled for that specific field.\n```\nFor input [2, 3, 3, 4, 2, 3]:\nOnes:   2 => (1 * 2 = 2)\nTwos:   3 => (2 * 3 = 6)\nThrees: 3 => (3 * 3 = 9)\nFours:  4 => (4 * 4 = 16)\nFives:  2 => (5 * 2 = 10)\nSixes:  3 => (6 * 3 = 18)\nTotal:  2 + 6 + 9 + 16 + 10 + 18 = 63/63\nResult: Pass\n```\nGiven the number of dice rolled per field where ```0 <= diceRolledPerField <= 5```, determine whether or not you receive the 35 points bonus. Return true if you do, false otherwise. You can assume that the array will always be in order such that ones are first and sixes are last.\n\nExamples:\n```\n[3, 3, 3, 3, 3, 3] => true (total score is 63/63)\n[2, 3, 4, 3, 3, 3] => true (total score is 66/63)\n[3, 4, 2, 2, 3, 2] => false (total score is 52/63)\n```\nOptional bonus: Can you do it without calculating the total score for the upper section (in other words, checking if the total score >= 63)?\n\nReference: https://en.wikipedia.org/wiki/Yahtzee",
+    "totalAttempts": 490,
+    "totalCompleted": 29,
+    "totalStars": 0,
+    "voteScore": 31,
+    "tags": [
+      "Fundamentals",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

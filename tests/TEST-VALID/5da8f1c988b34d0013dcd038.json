@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5da8f1c988b34d0013dcd038",
+  "data": {
+    "id": "5da8f1c988b34d0013dcd038",
+    "name": "Boiler Plate",
+    "slug": "boiler-plate",
+    "category": "reference",
+    "publishedAt": "2019-10-17T22:57:26.088Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5da8f1c988b34d0013dcd038",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-17T22:57:13.619Z",
+    "createdBy": {
+      "username": "jaybruce1998",
+      "url": "https://www.codewars.com/users/jaybruce1998"
+    },
+    "description": "Given an array of Strings representing parts of a java class, generate a String containing code for said class. If there are an invalid number of arguments, throw a RuntimeException.<br/>\n1) At the moment, any type is valid because you can call Objects just about anything.<br/>\n2) Indent using \\t for tabs. Whenever there is a {, tab more than before that line, and } gets rid of a tab (so unindent subsequent lines).<br/>\n3) I like putting braces on their own line, so you will, too!<br/>\n4) For toString(), split variable names based on where upper-case letters are.<br/>\nExample variable name: livesRemaining<br/>\ntoString(): \"Lives Remaining: \"+livesRemaining<br/><br/>\nExample:<br/>\nInput: {\"ID\", \"String\", \"name\", \"int\", \"idNumber\", \"boolean\", \"expired\"}<br/>\nOutput:<br/> \n<pre>public class ID\n{\n\tprivate String name;\n\tprivate int idNumber;\n\tprivate boolean expired;\n\tpublic ID(String name, int idNumber, boolean expired)\n\t{\n\t\tthis.name=name;\n\t\tthis.idNumber=idNumber;\n\t\tthis.expired=expired;\n\t}\n\tpublic String getName()\n\t{\n\t\treturn name;\n\t}\n\tpublic void setName(String name)\n\t{\n\t\tthis.name=name;\n\t}\n\tpublic int getIdNumber()\n\t{\n\t\treturn idNumber;\n\t}\n\tpublic void setIdNumber(int idNumber)\n\t{\n\t\tthis.idNumber=idNumber;\n\t}\n\tpublic boolean getExpired()\n\t{\n\t\treturn expired;\n\t}\n\tpublic void setExpired(boolean expired)\n\t{\n\t\tthis.expired=expired;\n\t}\n\tpublic String toString()\n\t{\n\t\treturn \"Name: \"+name+\"\\n\"\n\t\t\t+\"Id Number: \"+idNumber+\"\\n\"\n\t\t\t+\"Expired: \"+expired;\n\t}\n}</pre>",
+    "totalAttempts": 147,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

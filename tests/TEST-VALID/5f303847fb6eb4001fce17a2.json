@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f303847fb6eb4001fce17a2",
+  "data": {
+    "id": "5f303847fb6eb4001fce17a2",
+    "name": "Bresenham Line Drawing",
+    "slug": "bresenham-line-drawing",
+    "category": "algorithms",
+    "publishedAt": "2020-08-09T18:13:05.515Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f303847fb6eb4001fce17a2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-09T17:54:15.546Z",
+    "createdBy": {
+      "username": "CopperFr",
+      "url": "https://www.codewars.com/users/CopperFr"
+    },
+    "description": "## Bresenham Line Algorithm\n\n### Task\n\nCode function `line` with bresenham algorithm without using any `floats`, `*`, `/`, `%`.\n\n`Algorithm using only integer arithmetic` can be found on the [wikipedia page](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm#Algorithm_for_integer_arithmetic).\n\nFunction `line` accepts 6 parameters: \n\nThe first four parameters ```x0, y0, x1, y1```, are coordinates of two endpoints for the line to draw on ``screen`` using ``color``. \n\n``screen`` is a 2d array of char (or string length 1) for example ``screen(13, 7, '⬜')`` generate:\n\n```\n[\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n]\n```\n\n``color`` is the char to use to plot pixels of the line on the screen. \n\n### Example :\n\n``line(1, 1, 11, 5, screen(13, 7, '⬜'), '⬛')``\n\nshoud return :\n\n```\n[\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n]\n```\n\nYou need to plot pixels of the line in the screen array and returning it.\n\nPlease note:\n\n1. origin of screen is top / left (screen[0][0])\n2. new screen must be returned\n3. color will always be ``⬛`` and background will be ``⬜``\n4. screen could already have some pixels drawn (multiline and random tests)\n5. all lines will be drawn entirely on screen (no clipping needed)\n6. screen function is a helper to generate a screen 2d array width x height pixels using a char as background color\n7. lines must be drawn in correct order from x0,y0 to x1,y1\n8. `floats`, `*`, `/`, `%` are not allowed in this kata. Bit shifting is.\n9. in tests expected screen is in green and actual wrong is in red. Screen is white when it's ok.",
+    "totalAttempts": 102,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": -4,
+    "tags": [
+      "Graphics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

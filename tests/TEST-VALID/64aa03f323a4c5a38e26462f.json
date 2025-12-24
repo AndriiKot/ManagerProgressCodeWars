@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64aa03f323a4c5a38e26462f",
+  "data": {
+    "id": "64aa03f323a4c5a38e26462f",
+    "name": "Rock, Paper, Scissors",
+    "slug": "rock-paper-scissors-3",
+    "category": "reference",
+    "publishedAt": "2023-07-09T00:51:22.108Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64aa03f323a4c5a38e26462f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-09T00:48:51.307Z",
+    "createdBy": {
+      "username": "EPiph",
+      "url": "https://www.codewars.com/users/EPiph"
+    },
+    "description": "Let's play a few games of Rock, Paper, Scissors!\n\nEach game consists of multiple rounds.\nIn each game, we both start with a score of 0: ```my_score = 0, your_score = 0```.\n\nIn each round of the game, I choose one of ```\"rock\"```, ```\"paper\"``` and ```\"scissors\"```, and then I ask you for your choice by calling ```play(my_score, your_score)``` which is a function that hopefully you will have coded.\n\nAs usual, ```\"scissors\"``` wins over ```\"paper\"``` wins over ```\"rock\"``` wins over ```\"scissors\"```. Winning a round adds 1 to the score of the player that won it. On a draw the scores remain as they were.\n\nI will then update the scores, and if no player has yet won the game, I will initiate another round by making another choice, and calling ```play``` again with the updated scores.\n\nThe game ends when one player's score is two more than the other player's score. Then the player with the highest score wins.\n\nWhen a game ends, I reset the scores to zero before calling ```play``` again, to start a new game.\n\nWe will play 100,000 games, and you pass if you have won at least 65,000 of them.\n\nBut let me first tell you a secret about the strategy I use when playing these games:\n\nIn the first round, or after a draw, I pick one of ```\"rock\"```, ```\"paper\"``` and ```\"scissors\"``` at random.\n\nHowever, if one of them has just won a round, I will play it in the next round with double the probability of any of the other particular choices (it has proven itself lucky, after all). For example, if you or I have just won a round with the use of ```\"paper\"```, in the next round I will choose ```\"paper\"``` with probability ```0.5```, ```\"rock\"``` with probability ```0.25```, and ```\"scissors\"``` with probability ```0.25```. (ups, I probably shouldn't have told you any of that).\n\nIf you found this description tricky to follow, you can look at the code in the Sample Tests section, it is the same code that will run when you attempt.\n\nIt should be noted that there is a very tiny element of luck when playing this kata... play only if you like a tiny bit of risk occasionally...",
+    "totalAttempts": 70,
+    "totalCompleted": 17,
+    "totalStars": 1,
+    "voteScore": 19,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62f15e57f47ee9e490a004f2",
+  "data": {
+    "id": "62f15e57f47ee9e490a004f2",
+    "name": "Expression Unfolder",
+    "slug": "expression-unfolder",
+    "category": "algorithms",
+    "publishedAt": "2022-08-08T19:31:40.732Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62f15e57f47ee9e490a004f2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-08T19:04:55.182Z",
+    "createdBy": {
+      "username": "WashirePie",
+      "url": "https://www.codewars.com/users/WashirePie"
+    },
+    "description": "# Intro\nYou are currently writing a compiler for a system which understands a set of basic arithmetic functions.<br>\nThese functions consist of an operator, a return variable and either two arguments (Infix) or one (Unary). \nAn argument can either be a number or a string (variable). \n\n```\nInfix: x = a + 10\n       │   │ │ └ Argument: number\n       │   │ └── Operation\n       │   └──── Argument: string\n       └──────── Return variable\nUnary: x = ~b\n       │   │└ Argument: string\n       │   └─ Operation\n       └───── Return variable\n```\n\nApart from the functions, it can also read and write variables from and to memory.* \n\nSince you've already completed most of the compilers frontend and are able to parse inputs such as `x = 1 + b * 2 - a / 3` into correct ASTs, you'll now want to take on the task of transforming the AST to a format which the aforementioned system understands. (You just want to transform the AST - not optimize it nor fold constants.)\n \nThe provided ASTs root will be an expression. Expressions are defined like this:\n\n```typescript\ntype Infix = { op: string; left: Expr; right: Expr };\ntype Unary = { op: string; inner: Expr };\n \ntype Expr = string | number | Infix | Unary;\n```\n \nYou will write a function which will receive an AST and a target variable and return the corresponding list of functions. \nFor your solution, you should take the following rules under consideration:\n - The system can handle self-assignment, meaning that it will resolve `a = a + 10` correctly, in that it reads `a` as the addend first and then writes the read value +10 to it.\n - The system input expects a list (array) of functions, executing them from index 0 to the last index.\n - Functions must be provided in the following format: `{ out: string, left: string | number, op: string, right: string | number}` for functions with two arguments, or `{ out: string, op: string, inner: string | number}` for unary functions.\n - The last function in the list *must* write to the target variable\n - Temporary variables which you create must follow the convention of `[A-z]\\d+`\n - You are not allowed to fold constants\n - \\*You can only write to temporary variables which you create, as well as the target variable. Other variables which are used in an input expression **can only be read**\n \nYou will need to generate some temporary variables along the way. But, you want to create as few temporary variables as possible - since **we do not waste memory** 😏\n \n# An Example\nConsider the following input: `test = x + 10 + ~xy / (xy + 20 - x) + 10`.<br>\nThis input produces the following AST:\n \n```\nASSIGN\n  VAR test\n  INFIX +\n    INFIX +\n      INFIX +\n        VAR x\n        NUM 10\n      INFIX /\n        UNARY ~\n          VAR xy\n        INFIX -\n          INFIX +\n            VAR xy\n            NUM 20\n          VAR x\n    NUM 10\n```\n\nOr in JavaScript terms: \n```js\nconst targetVar = 'test'\nconst ast = {\n  op: '+',\n  left: {\n    op: '+',\n    left: {\n      op: '+',\n      left: 'x',\n      right: 10\n    },\n    right: {\n      op: '/',\n      left: {\n        op: '~',\n        inner: 'xy'\n      },\n      right: {\n        op: '-',\n        left: {\n          op: '+',\n          left: 'xy',\n          right: 20\n        },\n        right: 'x'\n      }\n    }\n  },\n  right: 10\n}\n```\n \nThis AST, plus the target variable (`test`, in this case) is what you'll receive as your input. The expected output looks like this:\n \n```js\n[\n  { out: 't0',   left: 'x',    op: '+', right:   10 }, // t0   = x    + 10\n  { out: 't2',                 op: '~', inner:   10 }, // t2   = ~xy\n  { out: 't3',   left: 'xy',   op: '+', right:   20 }, // t3   = xy   + 20\n  { out: 't3',   left: 't3',   op: '-', right:  'x' }, // t3   = t3   - x\n  { out: 't1',   left: 't2',   op: '/', right: 't3' }, // t1   = t2   / t3\n  { out: 'test', left: 't0',   op: '+', right: 't1' }, // test = t0   + t1\n  { out: 'test', left: 'test', op: '+', right:   10 }, // test = test + 10\n]\n```\n\nWhere `t0` - `t3` are the generated temporary variables. As you can see, there are no 'nested' functions. They have been unfolded. Obviously, if you solve these calculations, you must get the same result as if you'd calculate the result of the original input string.\n \nHappy coding!\n ",
+    "totalAttempts": 141,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 9,
+    "tags": [
+      "Compilers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

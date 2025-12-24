@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c334350214a620009d1b512",
+  "data": {
+    "id": "5c334350214a620009d1b512",
+    "name": "Fish pwd",
+    "slug": "fish-pwd",
+    "category": "reference",
+    "publishedAt": "2019-01-07T18:25:27.012Z",
+    "approvedAt": null,
+    "languages": [
+      "c",
+      "javascript",
+      "typescript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c334350214a620009d1b512",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-07T12:17:21.081Z",
+    "createdBy": {
+      "username": "SuperPaintman",
+      "url": "https://www.codewars.com/users/SuperPaintman"
+    },
+    "description": "Write a function that returns [fish](https://fishshell.com)-like pwd.\n\nFor example `/home/username/projects/fork/react` path in the fish terms should be `~/p/f/react`.\n\nFish pwd follows several rules:\n  * if path starts with a home directory it repleces with `~` (`/home/username/projects` => `~/projects`).\n  * all previous directories in a path are replaced with their first letters (`/etc/nginx/sites-enabled` => `/e/n/sites-enabled`).\n  * if previous directory is hidden (starts with `.`) it includes also `.` before the first letter (`/home/username/.dotfiles/bash` => `~/.d/bash`).\n\n**Examples (for /home/username)**:\n\n| Pwd                                           | Fish Pwd             | Home             |\n|-----------------------------------------------|----------------------|------------------|\n| `/`                                           | `/`                  | `/home/username` |\n| `/tmp`                                        | `/tmp`               | `/home/username` |\n| `/etc/nginx/sites-enabled`                    | `/e/n/sites-enabled` | `/home/username` |\n| `/tmp/.hidden/out`                            | `/t/.h/out`          | `/home/username` |\n| `/home/username`                              | `~`                  | `/home/username` |\n| `/home/username/projects`                     | `~/projects`         | `/home/username` |\n| `/home/username/projects/own/octavo`          | `~/p/o/octavo`       | `/home/username` |\n| `/home/username/.dotfiles`                    | `~/.dotfiles`        | `/home/username` |\n| `/home/username/.dotfiles/bash/lib/functions` | `~/.d/b/l/functions` | `/home/username` |\n",
+    "totalAttempts": 26,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Data Types",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

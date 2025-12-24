@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/560d0959d28917a2ea00001a",
+  "data": {
+    "id": "560d0959d28917a2ea00001a",
+    "name": "Newton's Method: Finding roots (rational)",
+    "slug": "newtons-method-finding-roots-rational",
+    "category": "algorithms",
+    "publishedAt": "2015-10-17T17:20:30.391Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/560d0959d28917a2ea00001a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-01T10:22:17.520Z",
+    "createdBy": {
+      "username": "LesRamer",
+      "url": "https://www.codewars.com/users/LesRamer"
+    },
+    "description": "Newton's Method finds roots of a function -- iteratively refining values for ```x``` so that ```f(x)``` gets closer and closer to zero. Provided a value, one iteration of Newton's method calculates a better approximation that converges on the nearest root.\n\n<a href=\"https://en.wikipedia.org/wiki/Newton%27s_method\"><image style=\"width:400px;\" src=\"https://upload.wikimedia.org/wikipedia/commons/e/e0/NewtonIteration_Ani.gif\"></image></a>\n\n# Using Newton's Method to Calculate Square Roots\nIn the square root case, we need a function whose root is the square root of a constant - so we will use ```f(x) = x^2 - a```, and since Newton's method makes use of the derivative, here that is as well: ```f'(x) = 2x```\n\nApplying and simplifying:\n<pre><code><span style=\"color:royalblue;\">x<sub>n+1</sub> = x<sub>n</sub> - f(x<sub>n</sub>)/f'(x<sub>n</sub>)</span> <span style=\"color:#888;\">/* Newton's Method */</span>\n    = x<sub>n</sub> - (x<sub>n</sub><sup>2</sup> - a)/2x<sub>n</sub>\n    = (2x<sub>n</sub><sup>2</sup> - (x<sub>n</sub><sup>2</sup> - a))/2x<sub>n</sub>\n    = (x<sub>n</sub><sup>2</sup> + a)/2x<sub>n</sub>\n    = (x<sub>n</sub> + a/x<sub>n</sub>)/2 <span style=\"color:#444;\">/* Hero's Method */</span></code></pre>\n\nIf we represent x as a rational number (c/d), we can expand the above to get a pair of relations for the square root rational approximations:\n<pre><code>x<sub>n+1</sub> = (x<sub>n</sub><sup>2</sup> + a)/2x<sub>n</sub>\n    = c<sub>n+1</sub>/d<sub>n+1</sub>\n<span style=\"color:#446;\">Substitute c<sub>n</sub>/d<sub>n</sub> for x<sub>n</sub> & simplify</span>\n    = (c<sub>n</sub><sup>2</sup>+a*d<sub>n</sub><sup>2</sup>)/(2*c<sub>n</sub>*d<sub>n</sub>)\nc<sub>n+1</sub> = c<sub>n</sub><sup>2</sup>+a*d<sub>n</sub><sup>2</sup><br>d<sub>n+1</sub> = 2*c<sub>n</sub>*d<sub>n</sub>\n</code></pre>\n\n# Kata Specs : Calculating N<sup>th</sup> Roots using Newton's Method\nThe above application of Newton's Method for finding square roots is identical to the method devised [Hero of Alexandria](https://en.wikipedia.org/wiki/Hero_of_Alexandria) who lived 2000 years ago. We have [another kata for this](http://www.codewars.com/kata/heros-root) (though it stops at integer roots and asks us to count iterations instead of focusing on the values themselves.)\n\n * To mix it up a bit we're going to compute rational (i.e., fractional) representations that will begin at the integer level and continue from there. \n * Instead of square roots, we'll construct a general algorithm that works for all roots: square-roots, cube-roots, and so on and on.\n * The inputs will be the <code>x<sub>n</sub></code> value for the prior iteration, ```a``` - the value we're taking the root of and ```n``` the order of the root (2 = square root, 3 = cube root, etc...)\n * The return from the method will be the next iteration of Newton's method expressed as an object:\n ```javascript\n Newton({c:1,d:1},2,2) === {c:3, d:2}\n ```\n * In case you don't know the calculus involved, here are the general functions we will use:<pre><code>f(x) = x<sup>n</sup> - a\nf'(x) = nx<sup>n-1</sup>\n</code></pre>You will need to determine the expressions to use for the rational number expansion; however this is some relatively easy algebraic manipulation.\n * The tests will employ data of varying sizes and values, but they will not test validation or special cases such as negatives for even roots that would require imaginary numbers to solve.\n * To facilitate simplified fractions that your method will return, a gcd method is provided for you that provides the greatest common divisor of two integer values.",
+    "totalAttempts": 113,
+    "totalCompleted": 16,
+    "totalStars": 5,
+    "voteScore": 29,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

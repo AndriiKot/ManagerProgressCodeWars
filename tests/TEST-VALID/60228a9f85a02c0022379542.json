@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60228a9f85a02c0022379542",
+  "data": {
+    "id": "60228a9f85a02c0022379542",
+    "name": "Longest Subarray with Maximum Average Value (Challenge Version)",
+    "slug": "longest-subarray-with-maximum-average-value-challenge-version",
+    "category": "algorithms",
+    "publishedAt": "2021-02-10T19:05:06.746Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60228a9f85a02c0022379542",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-09T13:14:07.237Z",
+    "createdBy": {
+      "username": "ilash",
+      "url": "https://www.codewars.com/users/ilash"
+    },
+    "description": "## Problem Statement\n\nYou are given the outcomes of a repeated experiment in the form of a list of zeroes and ones,&nbsp; e.g.&nbsp; `[1, 0, 0, 1, 1]`,&nbsp; where `0` means that the experiment failed and `1` means that it was successful. The list is ordered by the time the experiments where performed such that the outcome of the last performed experiment is last in the list.   \n\nYour task is to present the result of the experiments in the best light possible. In particular, you should find the **longest contiguous subsequence** having the highest success rate, i.e. the maximum average value. (The subsequence must obviously be contiguous, otherwise we could just cherry pick all the successful experiments.) Moreover, the subsequence should have a length greater than or equal to some specified value `k`, because it would not be that impressive to have a success rate of `1.0` when you only look at one or a few experiments.\n\nGiven a positive integer `k` and a list `arr` of `0's` and `1's`,&nbsp; e.g.&nbsp; `arr = [1, 0, 0, 1, 1]`&nbsp;,&nbsp; find the **index** of the start of the longest contiguous subsequence with the highest average value and length `>= k`. Also find the **length** of this subsequence. Return the answer as a **tuple** `(index, length)`.\n\nIf there are multiple contiguous subsequences with maximal length and average value, choose the one that comes last in the list, since this represents the most recent sequence of experiments. \n<!---## Problem Statement\n\nGiven a positive integer k and a list of integers 0 or 1,&nbsp; e.g.&nbsp; [1, 0, 0, 1, 1]&nbsp;,&nbsp; find the **contiguous subsequence** with a length greater than or equal to k having the largest average value of all such subsequences.\n\nIn particular, find the 1-based index of the start of the subsequence, and the length of the subsequence, (the 1-based index because then index i correspond to the ith experiment). Return the answer as a **tuple** (index, length).\n\nIn case of multiple contiguous subsequences with a length >= k &nbsp;that share the highest average value, choose the **longest** such subsequence, and if there still are multiple options, choose the one with the **largest** first index. --->\n\n## Example\n\nConsider the case:\n```python\nInput:     arr = [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1], k = 3\n```\nWith `k = 3` subarray has to be of length *at least* `3`. The highest possible average value is then `2/3`, and there are seven subarrays with this average value:\n```python\n       [0, 1, 1], [1, 1, 0], [1, 1, 0, 0, 1, 1], [0, 1, 1], [1, 1, 0], [1, 1, 0, 0, 1, 1], [0, 1, 1]\n        ^          ^          ^                   ^          ^          ^                   ^\nindex:  0          1          1                   4          5          5                   8\n\n```\nTwo of these subarrays have the maximal length `6`, the first starting from index `i = 1`, and the other starting from `i = 5`:\n```python\n               [1, 1, 0, 0, 1, 1]\n                v              v\n[0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]\n    ^              ^\n   [1, 1, 0, 0, 1, 1], \n```\n\nThe largest starting index should be chosen so the result is `i = 5` and `length = 6`, which should be returned as a tuple.\n\n```python\nOutput should be: (5, 6)\n```\n\n## Input/Output\n\n**Input**:&nbsp; a list `arr` of integers `0` and `1`, with a size `n <= 50,000`, and a positive integer `1 <= k <= 1000`.\n\n**Output**:&nbsp; a tuple `(i, l)` where `i` is the index where the subarray starts and `l`, `l >= k`, is the length of the subarray.\n\nIf `k` is greater than the size of the input list or if the input list is empty, return an empty tuple `()`. See the sample tests for more examples.\n\n### Expected time complexity: O(n log n)",
+    "totalAttempts": 99,
+    "totalCompleted": 5,
+    "totalStars": 7,
+    "voteScore": 11,
+    "tags": [
+      "Algorithms",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

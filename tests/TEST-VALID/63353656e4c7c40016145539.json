@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63353656e4c7c40016145539",
+  "data": {
+    "id": "63353656e4c7c40016145539",
+    "name": "Collatz problem",
+    "slug": "collatz-problem-1",
+    "category": "algorithms",
+    "publishedAt": "2022-09-29T07:22:42.661Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/63353656e4c7c40016145539",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-29T06:08:22.879Z",
+    "createdBy": {
+      "username": "eviraznva_",
+      "url": "https://www.codewars.com/users/eviraznva_"
+    },
+    "description": "Consider the sequence 𝐴 starting with the number 𝑁.</br>\n\nEach subsequent word of this sequence 𝐴<sub>k</sub> + 1 is based on the previous word 𝐴<sub>k</sub>.</br>\n\nMore precisely, if 𝐴<sub>k</sub> is odd then 𝐴<sub>k</sub> + 1 = 3 · 𝐴<sub>k</sub> + 1, and if 𝐴<sub>k</sub> is even then 𝐴<sub>k</sub>+ 1 = 𝐴<sub>k</sub> / 2.</br>\n\nWe assume that the string ends with the first occurrence of the number 1.</br>\n\nFor example, for 𝑁 = 46, the sequence consists of 17 elements and looks as follows: \n```c# \n{ 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1 }\n```\nGiven the number 𝑀 specifying the expected number of elements in the string 𝐴, then\nfind a reasonably small initial value of the string 𝑁, for which the length of the created string 𝐴 is exactly 𝑀.</br>\n\nMax time of completed: 10s </br>\n\n`Input :`\n```c#\nNatural number M (1 <= M <= 1800) specifying the expected length of the string 𝐴.\n```\n`Output: `\n```c#\nNumber N specifying the starting word of the string 𝐴.\n```\nThe value of 𝑁 must be a positive integer and cannot exceed 10<sup>18</sup>\n\nExample:\n\n```c#\n  CollatzLength(17) => 46\n  CollatzLength(7) => 10\n```",
+    "totalAttempts": 18,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

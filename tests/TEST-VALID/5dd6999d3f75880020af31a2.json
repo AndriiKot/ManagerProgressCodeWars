@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dd6999d3f75880020af31a2",
+  "data": {
+    "id": "5dd6999d3f75880020af31a2",
+    "name": "Rust Quiz: We Can Prove It!",
+    "slug": "rust-quiz-we-can-prove-it",
+    "category": "games",
+    "publishedAt": "2020-01-29T11:52:13.272Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5dd6999d3f75880020af31a2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-21T14:05:17.248Z",
+    "createdBy": {
+      "username": "YuumuKonpaku",
+      "url": "https://www.codewars.com/users/YuumuKonpaku"
+    },
+    "description": "## Task\n\nFind out the proper definition of some basic logic constants and connectives in Rust under the well-known [propositions-as-types paradigm](https://www.wikiwand.com/en/Curry%E2%80%93Howard_correspondence), mainly complete the definition of these connectives and implement their constructor & deconstructor in given trait. Then prove some tautology about these connectives by constructing values which have the corresponding types\n\nIt can be hacky, since the type system of Rust is affine, you may need to utilize `Clone + 'static` and do some workaround. Note that although there are many different abnormal approaches (such as `panic!` or `loop`) to obtain a value of any type in Rust, this quiz will check the expected computational behaviours of these propositions to ensure their correctness. Moreover, the unsafe feature is forbidden in Prelude.\n\n## Preliminaries\n\nThe only indispensable skill to *complete* this kata is programming in Rust. However, some experience in logical reasoning can be helpful to *play with* this kata. For those who already known what Curry-Howard correspondence is, this kata can be a quiz about Rust programming language.\n\n### Propositions as Types, Proofs as Programs\n\nIt turns out that there are certain similarities in computer programming and logical reasoning, mainly the *propositions as types, proofs as programs* paradigm. In this paradigm, we can regard logical propositions as the type of programs, and the proof of propositions as programs. Thus it is possible to utilize programming languages as a proof assistant: to check if a program (value) is well-typed is exactly the same with to verify if it is a proof of certain proposition.\n\nIn this quiz we are focused on the minimal propositional logic, i.e., the truth constant and the conjunction, disjunction and implication connectives.\n\n#### Top\n`Top` is the truth constant, it holds unconditionally. Its proof should always be available.\n\n```Rust\ntrait Unit: Clone {\n    fn inhabit() -> Self;\n}\n\nimpl Unit for Top { fn inhabit() -> Self { unimplemented!() } \n```\n\n#### Conj\n`Conj` is the conjunction connective, it holds if all of its subpropositions hold. Its proof can be constructed when we supply proofs of all of its subpropositions, and we are able to extract these components when we needed.\n```Rust\ntrait Prod<A: Clone, B: Clone>: Clone {\n    fn fst(self) -> A;\n    fn snd(self) -> B;\n    fn cons(fst: A, snd: B) -> Self;\n}\n\nimpl<A: Clone, B: Clone> Prod<A, B> for Conj<A, B> {\n    fn fst(self) -> A { unimplemented!() }\n    fn snd(self) -> B { unimplemented!() }\n    fn cons(fst: A, snd: B) -> Self { unimplemented!() }\n}\n```\n\n#### Disj\n`Disj` is the disjunction connective, it holds if one of its subpropositions holds. Its proof can be constructed when we supply a proof of any of its subpropositions, and we can do case analysis on such a proof to consume it.\n```Rust\ntrait Sum<A: Clone, B: Clone>: Clone {\n    fn inl(left: A) -> Self;\n    fn inr(right: B) -> Self;\n    fn patmat<C>(self, left: impl Arrow<A, C>, right: impl Arrow<B, C>) -> C;\n}\n\nimpl<A: Clone, B: Clone> Sum<A, B> for Disj<A, B> {\n    fn inl(left: A) -> Self { unimplemented!() }\n    fn inr(right: B) -> Self { unimplemented!() }\n    fn patmat<C>(self, left: impl Arrow<A, C>, right: impl Arrow<B, C>) -> C {\n        unimplemented!()\n    }\n}\n```\n\n#### Impl\n`Impl` is the implication connective, it holds if whenever its antecedent holds, its succedent also holds. Its proof can be constructed when a proof of its succedent can be constructed depends on an arbitrary proof of its antecedent, and we are able to obtain a proof of the succedent of an implication by supplying a proof of its antecedent to convert it.\n```Rust\ntrait Arrow<A, B>: Clone {\n    fn app(self, para: A) -> B;\n    fn abs(fun: impl Fn(A) -> B + 'static) -> Self;\n}\n\nimpl<A, B> Arrow<A, B> for Impl<A, B> {\n    fn app(self, para: A) -> B { unimplemented!() }\n    fn abs(fun: impl Fn(A) -> B + 'static) -> Self { unimplemented!() }\n}\n```\n\n### call/cc\n`call_cc_minimal` is a relative negation (in minimal logic, `A -> B` can be regarded as the relative negation of `A` w.r.t. `B`) translation of the famous `call-with-current-continuation` operator, which can be typed by classical tautology `((A -> B) -> A) -> A` (Peirce's law). It acts like the CPS translation version of `call/cc`, since various of CPS translation correspond to various of embeddings from minimal/intuitionistic logic into classical logic. Trying to implement an `call/cc` under given continuation may be easier than directly prove this proposition.\n\n## Supplementary Material: Witness of Truth\n\nIn the intuitionistic tradition, the validity of a statement is justified by some kind of term called its \"proof\", which witnesses its truth. These terms act like really proofs, i.e., one can effectively checking their construction to find out whether a proposition is valid, just like check a proof. If their construction procedures are inductively specified by a formal derivation with the conventional \"proof\" simultaneously, people may also call them \"proof object\".\n\nThe most famous proof objects are typed lambda calculi, which correspond to a wide range of logic (even classical), and they are also the simplest programming languages. Hence the structure of a term is ismorphic to a proof (since they are generated by same derivation), the simplification of such a term on one side corresponds to the normalization or cut-elimination of a proof. On the other side, the simplification also means executing this term (the program) and produce a value (the simplified term). This paradigm of establishing connections between various programming languages and logics via proof object is called the *Curry-Howard correspondence*.\n\n",
+    "totalAttempts": 83,
+    "totalCompleted": 6,
+    "totalStars": 11,
+    "voteScore": 9,
+    "tags": [
+      "Logic",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

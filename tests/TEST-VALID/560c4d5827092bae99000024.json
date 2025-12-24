@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/560c4d5827092bae99000024",
+  "data": {
+    "id": "560c4d5827092bae99000024",
+    "name": "Calculation of the Angles of a Triangle",
+    "slug": "calculation-of-the-angles-of-a-triangle",
+    "category": "reference",
+    "publishedAt": "2015-09-30T23:28:28.319Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/560c4d5827092bae99000024",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-30T21:00:08.351Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "The task is to develop a solver that receives an array with the sides `a, b, c` of a triangle with the corresponding angles like the image bellow:\n\n<a href=\"http://imgur.com/fujriQ5\"><img src=\"http://i.imgur.com/fujriQ5.jpg?2\" title=\"source: imgur.com\" /></a>\n\nThe solver ```angle_solver()``` should output an array with the angle values in the same order.\n```python\nsides = [a, b, c]\nangle_solver(sides) -----> [A, B, C]\n```\nThe values of the angle will be expressed in degrees, minutes, seconds and decimal of seconds up to two decimal places (with rounded result), in a string format: ```\"dd:mm:ss.00\" ```, (not strictly, you may angles of 120 degrees, for example, and will use three digits, or may have minutes lower than 10.)\n\nFor that kata you need the following formulas expressed bellow:\n### Law of Cosines\n```math\na^2 = b^2 + c^2 - 2bc\\cos(A)\n```\n### Law of Sines\n\n```math\n\\frac{a}{\\sin(A)} = \\frac{b}{\\sin(B)} = \\frac{c}{\\sin(C)}\n\n```\n### Sum of angles in a triangle\n\n```math\n\\angle A + \\angle B + \\angle C = 180^\\circ\n```\n\nYou can easily get the condition of impossible triangles comparing the length of the sides(look the image)\n\nLet's see some cases:\n```python\nsides = [14, 22, 28]\nangle_solver(sides) == ('29:31:34.55', '50:45:13.92', '99:43:11.52')\n\nsides = [14, 22, 35]\nangle_solver(sides) == ('10:44:41.05', '17:02:08.48', '152:13:10.47')\n\nsides = [3, 4, 5] \nangle_solver(sides) == ('36:52:11.63', '53:07:48.37', '90:00:00.00')\n```\nEnjoy it and happy coding.",
+    "totalAttempts": 1322,
+    "totalCompleted": 55,
+    "totalStars": 13,
+    "voteScore": 67,
+    "tags": [
+      "Fundamentals",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

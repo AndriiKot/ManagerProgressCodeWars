@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65412747386565881b4d7d6b",
+  "data": {
+    "id": "65412747386565881b4d7d6b",
+    "name": "Help Alex with time.",
+    "slug": "help-alex-with-time-1",
+    "category": "reference",
+    "publishedAt": "2023-10-31T18:09:21.294Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65412747386565881b4d7d6b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-31T16:11:51.166Z",
+    "createdBy": {
+      "username": "roki4",
+      "url": "https://www.codewars.com/users/roki4"
+    },
+    "description": "__Description of the kata:__\n\n**Alex** has a problem. He loves to study, but it is very difficult for him to manage his time. He can understand how much time he needs to study a topic, but he does not understand whether he will have time to study this material before _22:00 (10 p.m. time when he should go to bed)_ or not. Help him understand whether he will have time to study the prepared material or not.\n\n__Task:__\n\nYour task is to write a function that takes two strings as an argument, the first string indicates the time when **Alex** looked at his watch, the second string indicates the time that **Alex** allocated to study the material. You need to return the string \"Alex, you have some time before bed to study.\" if he has time to study the material before bed at a predetermined time and he still has extra time left (**if he still has more than 0 minutes left**). If **Alex** calculated the time so that it will be close to bedtime (when he finishes studying during this time, it will be exactly 22:00), then return the string \"Alex, you have exactly as much time before bed as you allocated for studying!\". If the time before bed is less than the time that **Alex** has allocated for studying, then return the string: _\"Alex, hurry up! You have \"+ `and the time he has left before bed`_.\n\n__Example:__\n\n```javascript\ntimeAlex(\"15:00\", \"4:00\") //=> Should return \"Alex, you have some time before bed to study.\", because 15:00 + 4:00 = 19:00 < 22:00\ntimeAlex(\"18:00\", \"2:30\") //=> Should return \"Alex, you have some time before bed to study.\", because 18:00 + 2:30 = 20:30 < 22:00\ntimeAlex(\"21:00\", \"2:30\") //=> Should return \"Alex, hurry up! You have 1:00\", because 21:00 + 2:30 = 23:30 > 22:00 and therefore, we return a string with the time he has before bed - 1:00\ntimeAlex(\"1:00\", \"21:00\") //=> Should return \"Alex, you have exactly as much time before bed as you allocated for studying!\", because 1:00 + 21:00 = 22:00\ntimeAlex(\"14:30\", \"7:30\") //=> Should return \"Alex, you have exactly as much time before bed as you allocated for studying!\", because 14:30 + 7:30 = 22:00\n```\n\n_All data will be correct strings according to the condition, as in the examples. The `first string` will be in the range 0:00 - 21:59(including borders), and the `second string` will be in the range _0:01 - 22:00(including borders)__\n\n___Have fun solving this kata!___",
+    "totalAttempts": 70,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 5,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

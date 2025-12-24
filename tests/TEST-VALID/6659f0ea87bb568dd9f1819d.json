@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6659f0ea87bb568dd9f1819d",
+  "data": {
+    "id": "6659f0ea87bb568dd9f1819d",
+    "name": "AWS default password policy",
+    "slug": "aws-default-password-policy",
+    "category": "reference",
+    "publishedAt": "2024-05-31T15:48:06.979Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6659f0ea87bb568dd9f1819d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-31T15:46:50.622Z",
+    "createdBy": {
+      "username": "user4214990",
+      "url": "https://www.codewars.com/users/user4214990"
+    },
+    "description": "#### AWS default password policy\n\nWhen creating a new [IAM user](https://aws.amazon.com/iam/) in your AWS account, the default [password policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html#default-policy-details) enforces the following conditions:\n\n- Minimum length of 8 characters and a maximum length of 128 characters\n- Password must include a minimum of three of the following mix of character types:\n  - Uppercase letter from the Latin alphabet (A-Z)\n  - Lowercase letter from the Latin alphabet (a-z)\n  - Numbers (0-9)\n  - Non-alphanumeric characters `! @ # $ % ^ & * ( ) _ + - = [ ] { } | '`\n  \nFor example, the following passwords are not valid:\n1. `Short1` password length < 8 characters\n2. `OnlyUpperLowerCase` password only include upper and lower case characters, but missing numbers or non-alphanumeric characters\n3. `paris2024` password only includes lowercase characters and numbers, but not upper case or non-alphanumeric characters\n4. `London;2025` password contains invalid non-alphanumeric character `;`\n\nHowerver, the following passwords are valid:\n1. `Beverly_Hills_90210` password length is within accepted range, and it includes both upper/lower case characters, numbers and non-alphanumeric characters\n2. `ValidPassword!` password length is within accepted range, and it includes both upper/lower case characters and non-alphanumeric character\n\nYour mission, should you choose to accept it, is the write a function that will get a password to evaluate, and return true if the password is valid (false other wise)\n ",
+    "totalAttempts": 31,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

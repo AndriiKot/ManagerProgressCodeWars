@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60b3d25bcfaf610006e3b909",
+  "data": {
+    "id": "60b3d25bcfaf610006e3b909",
+    "name": "Convert Def To Lambda",
+    "slug": "convert-def-to-lambda",
+    "category": "reference",
+    "publishedAt": "2021-06-01T12:34:40.754Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/60b3d25bcfaf610006e3b909",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-30T17:58:51.296Z",
+    "createdBy": {
+      "username": "The-Kingfisher",
+      "url": "https://www.codewars.com/users/The-Kingfisher"
+    },
+    "description": "# Convert Def To Lambda\n\n```if:python\nIn this kata, you will be given a string with a [def function](https://www.w3schools.com/python/python_functions.asp) in it. Your task is to convert that def function to a [lambda function](https://www.w3schools.com/python/python_lambda.asp), with the same exact variables, the exact funtion name, and the exact function it does.\n```\n```if:javascript\nIn this kata, you will be given a string with a [function](https://www.w3schools.com/js/js_functions.asp) in it. Your task is to convert that function to a [arrow/lambda function](https://www.w3schools.com/js/js_arrow_function.asp), with the same exact variables, the exact funtion name, and the exact function it does.\n```\nThe output should be returned as a string\n\n### Examples\n\n```python\n\"\"\"\ndef func(a):\n    return a * 1\n\"\"\"\n```\n```javascript\n`\nfunction func(a) {\n    return a * 1;\n}\n`\n```\nthe above should return:\n\n```python\n\"func = lambda a: a * 1\"\n```\n```javascript\n\"const func = a => a * 1;\"\n```\nthe tests and outputs will look more like this:\n\n```python\nconvert_def_to_lambda(\"def func(a):\\n    return a * 1\")\n# the output should be \"func = lambda a: a * 1\"\n```\n```javascript\nconvertFuncToArrow(\"function func(a) {\\n    return a * 1;\\n}\");\n// the output should be const func = a => a * 1;\n```\n\n### Notes\n\n- The output should be formatted with the correct number of spaces as the example give above.\n- variable number of spaces, positions/keyword arguments, or zero arguments will not be tested\n- double parameters will not be tested\n\nHappy Coding!\n\n_If you liked this, you can also check out the opposite of this kata: [Convert Lambda To Def](https://www.codewars.com/kata/605d25f4f24c030033da9afb)_\n\n",
+    "totalAttempts": 379,
+    "totalCompleted": 86,
+    "totalStars": 3,
+    "voteScore": 149,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

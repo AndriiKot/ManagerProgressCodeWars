@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55701c1e36941f04ef0000c1",
+  "data": {
+    "id": "55701c1e36941f04ef0000c1",
+    "name": "Intro to Statistics - Part 3: Correlation Coefficients",
+    "slug": "intro-to-statistics-part-3-correlation-coefficients",
+    "category": "algorithms",
+    "publishedAt": "2015-06-04T13:36:31.124Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/55701c1e36941f04ef0000c1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-04T09:36:30.325Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "## Series\nThis kata is part of a series of kata about basis statistics, you are advised to tackle them in sequence.\n\nThe kata are:\n\n* [Intro to Statistics - Part 1: A Five figure summary](http://www.codewars.com/kata/intro-to-statistics-part-1-a-five-figure-summary)\n* [Intro to Statistics - Part 2: Boxplots](http://www.codewars.com/kata/intro-to-statistics-part-2-boxplots)\n* [Intro to Statistics - Part 3: Correlation Coefficients](http://www.codewars.com/kata/intro-to-statistics-part-3-correlation-coefficients)\n\n\n## Background\nSometimes we have two variables that are measured together, and we would like to know if changes in one are reflected by changes in the other, and if they are, how closely they are linked.  \n\nA simple statistical analysis of paired samples like this can be done to create a [Correlation Coefficient](http://en.wikipedia.org/wiki/Correlation_coefficient).\n\nThe correlation coefficient produces a measure indicating the 'strength' of a linear between the variables.  Once calculated the correlation coefficient produces a real value in the range `[-1.0, 1.0]` where:\n\n* `-1.0` means that an increase in one variable appears to direcly correlate with a decrease in the other\n* `0.0` means that an increase in one variable appears to have no relationship wth the other\n* `1.0` means that an increase in one variable appears to direcly correlate with a increase in the other\n\nThe closer to `-1.0` or `1.0` the value is, the stronger the (inverse or direct) linear relationship between variables.  If you were to plot the pairs of values on a scatterplot, the values would appear to be close to a straight line.  Plotting pairs where the correlation coefficient is close to `0.0` would display a plot where points are not close to a straight line.  (Of course if the relationship is not linear, but quadratic for example, then this measure of *linear* correlation would show little relationship between the variables.)\n\n**Remember**: Just because two variables correlate, does not mean that one causes the other.  Correlation never implies causation!\n\n## Kata\n\nIn this Kata you will be given a class outline to complete.  The `linear_correlation` method when called with a sequence of value pairs must implement calculate the correlation coefficient and return it.\n\nYou are expected to do the calculations yourself, using pandas or numpy will get you a squinty frown from your sensei! :)\n\n## Inputs\n1. A sequence of pairs of values.  Some values may be non-numeric, for the purposes of calculation any pair containing a non-numeric value should be ignored when calculating the result.\n\n## Calculations\nCalculating this figure is best broken down in to stages, here we have the intermediate stages, how they are calculated and the output dimension:\n\n|Calculation|Short Name|Description|Result Multiplicity|\n|-|-|-|-|\n|Mean|m|The average value from a sample.|One per variable.|\n|Deviation|d|The difference between a sample mean and a single sample value.|One per value.|\n|Co-deviation|cd|The product of the deviation for both points in a value pair.| One per pair.|\n|Variance|v|A squared deviation.|One per value.|\n|Co-variance|cv|The product of the variance of the two variables in a pair.|One per pair.|\n|Pooled deviation|pd|The square root of the sum of co-variances for all pairs.|One.|\n|Correlation Coefficient|cc|Sum of co-deviations divided by pooled deviation.|One|\n\n#### Intermediate caclulation examples:\n```\n# Given this data of (x, y) pairs\npairs = [(1, 5), (2, 4), (3, 3), (4, 2), (5, 1)]\nThen: \nxs = [1, 2, 3, 4, 5]\nys = [5, 4, 3, 2, 1]\n\n# Then:\nm(xs) => 3\nd(xs[0], xs) = -2\nv(xs[0], xs) = 4\ncd(xs[0], xs, ys[0], ys) = -4\ncv(xs[0], xs, ys[0], ys) = 16\n\n# Real examples to check your working:\npd([(0, 0.5), (1, 0.9), (2, 1.8), (3, 3.1), (4, 4.3), (5, 5.1)]) => 17.4139551318\ncc([(0, 0.5), (1, 0.9), (2, 1.8), (3, 3.1), (4, 4.3), (5, 5.1)]) => 0.99058484241\n```\n\n### Outputs\nA single numeric value between `-1.0` and `1.0`, results will be accepted as correct when accurate to 6 decimal places.\n\n### Worked Examples\n```python\n# Both points direcly related to x\ndata = [(x * 1.1, x * 0.1) for x in xrange(11)]\nCorrelator.linear_correlation(data) # => 1.0\n\n# Both points direcly related to x, but one inverted\ndata = [(x * 1.1, x * -1.0) for x in xrange(11)]\nCorrelator.linear_correlation(data) # => -1.0\n\nfrom random import random\nr = lambda: random() - 0.5\n\n# Both points mostly related to x\ndata = [(x + r(), x + r()) for x in xrange(11)]\nCorrelator.linear_correlation(data) # => Varies, but expected to be close to 1.0\n\n# Both points utterly random\ndata = [(r(), r()) for x in xrange(11)]\nCorrelator.linear_correlation(data) # => Varies, but expected to be close to 0.0\n\n# Previous example\ndata = [(0, 0.5), (1, 0.9), (2, 1.8), (3, 3.1), (4, 4.3), (5, 5.1)]\nCorrelator.linear_correlation(data) # => 0.99058484241\n```\n",
+    "totalAttempts": 150,
+    "totalCompleted": 25,
+    "totalStars": 10,
+    "voteScore": 20,
+    "tags": [
+      "Statistics",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

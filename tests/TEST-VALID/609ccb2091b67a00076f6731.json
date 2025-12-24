@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/609ccb2091b67a00076f6731",
+  "data": {
+    "id": "609ccb2091b67a00076f6731",
+    "name": "Simple Encryption and Decryption",
+    "slug": "simple-encryption-and-decryption",
+    "category": "algorithms",
+    "publishedAt": "2021-05-16T12:38:08.010Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/609ccb2091b67a00076f6731",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-13T06:45:53.017Z",
+    "createdBy": {
+      "username": "1ROCKY1",
+      "url": "https://www.codewars.com/users/1ROCKY1"
+    },
+    "description": "Ever wanted to generate a password from a favorite phrase of yours? \n\nWell you will be given random encryption for the alphabet(all lowercase letters, using the ASCII table, where each letter from our alphabet will have a value where its length is between 2-4 characters.\n(this is preloaded into a HashMap (Java)\\ Dictionary (Python) for you)\n\n\nThere won't be an issue about certain letters in the language being similar like a = 12 and b = 123, there is only one solution for each encryption/decryption.\n\n\n\n    key: a , value: d8K\n    key: b , value: di\n    key: c , value: h)'N\n    .\n    .\n    .\n    key: z , value gG&\n\n\nYou will be given a phrase/string that is all lowercase and with no whitespaces. You will then need to encrypt the phrase using the given alphabet(in java it will be a HashMap).\nWith the decrypt function you will take an encrypted string and revert it back to the original phrase/string by decrypting it. \n\nFor example when given the phrase: ``\"mynameisjeff\"``,\nencryptCode result could be: ``\"KesP1/gDzqhk7Ke@x3@x3eIA\"``\n\nif we put ``\"KesP1/gDzqhk7Ke@x3@x3eIA\"`` into the decryptCode function then the function should return the original phrase ``\"mynameisjeff\"``.\n\nAnother example: now lets take the HM(HashMap) from above as our alphabet.\nlets take the phrase/string ``\"abcz\"`` and if we input it into the encryptCode function the following steps will happen:\n\n\n    String value = \"\" ;\n    a = d8K  -> value = d8K\n    b = di   -> value = d8Kdi\n    c = h)'N -> value = d8Kdih)'N\n    z = gG&  -> value = d8Kdih)'NgG&\n\n    value = \"d8Kdih)'NgG&\";\n\n\ntherefore in this case the encryptCode function will return ``\"d8Kdih)'NgG&\"``\n\nif we take the string  ``\"d8Kdih)'NgG&\"`` with the Encryption type given above(HM) and input it into the decryptCode function, in this case it will return the original string ``\"abcz\" ``\n\n\n\nYour task it to write the code for the encryptCode and decryptCode that will make it return the correct encrypted/decrypted results.",
+    "totalAttempts": 178,
+    "totalCompleted": 58,
+    "totalStars": 3,
+    "voteScore": 83,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

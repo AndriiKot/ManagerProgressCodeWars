@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/565adf1bf8d70b663900003b",
+  "data": {
+    "id": "565adf1bf8d70b663900003b",
+    "name": "License Plate maker",
+    "slug": "license-plate-maker",
+    "category": "reference",
+    "publishedAt": "2015-11-29T15:04:02.592Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/565adf1bf8d70b663900003b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-29T11:18:51.164Z",
+    "createdBy": {
+      "username": "franzmoro88",
+      "url": "https://www.codewars.com/users/franzmoro88"
+    },
+    "description": "You are a car registration agency and have successfully been providing license plates since 1950. You would like to automate the process and never need to worry through the license plate making process manually. \nWrite the function \"licensePlate\", which takes the following arguments:\n\n- \"dat\" (should be a string, in the format \"day/month/year\").\n- \"province\" (should be a string),\n\nThe function shall return a string with the following format:\n\n                              UV-WX-YZ\n\n- \"UV\": U is the first letter in the province, and V is either the first consonant that occurs after U (or the second letter if there are no other consonants).\n- \"WX\": 2 characters representing the years passed from 1950. You have setup the code so that WX spans from \"00\" in 1950, to \"EE\" in 2174, resetting to \"00\" in 2175.\n- \"YZ\": 2 characters representing the day of the year (characters go from \"00\" on Jan 1st to \"I5\" on December 31st).\n\nExample:\n```javascript\nlicensePlate(\"29/11/2015\",\"Brussels\")  //should return \"BR-45-GD\"\nlicensePlate(\"12/07/2115\",\"Luxemburg\") //should return \"LX-B0-9D\"\n```\nEnjoy!\n",
+    "totalAttempts": 126,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Data Types",
+      "Functions",
+      "Control Flow",
+      "Basic Language Features",
+      "Loops"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

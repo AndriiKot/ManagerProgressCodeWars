@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a539360145c465f8b00030f",
+  "data": {
+    "id": "5a539360145c465f8b00030f",
+    "name": "Ramda #2 - Counting stars",
+    "slug": "ramda-number-2-counting-stars",
+    "category": "reference",
+    "publishedAt": "2018-01-08T17:33:54.476Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a539360145c465f8b00030f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-08T15:50:56.729Z",
+    "createdBy": {
+      "username": "kacgrzes",
+      "url": "https://www.codewars.com/users/kacgrzes"
+    },
+    "description": "You will be given a GraphQL response object representing data about GitHub repos with name containing `ramda`, sorted by stars:\n\n```javascript\n{\n  \"data\": {\n    \"search\": {\n      \"edges\": [\n        {\n          \"node\": {\n            \"name\": \"ramda\",\n            \"description\": \":ram: Practical functional Javascript\",\n            \"url\": \"https://github.com/ramda/ramda\",\n            \"stargazers\": {\n              \"totalCount\": 10562\n            }\n          }\n        },\n        {\n          \"node\": {\n            \"name\": \"ramda-fantasy\",\n            \"description\": \":ram::sparkles: Fantasy-Land compatible types for easy integration with Ramda.js\",\n            \"url\": \"https://github.com/ramda/ramda-fantasy\",\n            \"stargazers\": {\n              \"totalCount\": 982\n            }\n          }\n        },\n        // ...\n      ]\n    }\n  }\n}\n```\n\nWrite a function that uses Ramda to extract sums of all stars from the response\n```javascript\n// for data above it would be:\n10562 + 982 // 11544\n```\n\nRamda functions to be used:\n- `pipe`\n- `path`\n- `map`\n- `sum`\n\nThe Ramda library is preloaded and accessible under `R` (e.g. `R.map`).\n",
+    "totalAttempts": 191,
+    "totalCompleted": 37,
+    "totalStars": 2,
+    "voteScore": 23,
+    "tags": [
+      "Fundamentals",
+      "Functional Programming",
+      "Mathematics",
+      "Lists",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

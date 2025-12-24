@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63306aa4c68f640064b5d3f8",
+  "data": {
+    "id": "63306aa4c68f640064b5d3f8",
+    "name": "FLAMES",
+    "slug": "flames",
+    "category": "algorithms",
+    "publishedAt": "2022-09-25T14:59:24.944Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/63306aa4c68f640064b5d3f8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-25T14:50:12.859Z",
+    "createdBy": {
+      "username": "kleenestar",
+      "url": "https://www.codewars.com/users/kleenestar"
+    },
+    "description": "# Introduction\n\nFLAMES is a silly algorithm created by teenage girls. It takes two names and returns the type of relationship between them. Expanding the acronym reveals the possible types of relationships.\n\n```\nFriends Lovers Affectionate Marriage Enemies Siblings\n```\n\n# Algorithm\n\n1. Strike off the first occurance of each common letter in both names.\n\n<pre>\nA N T O N Y    C L E O P A T R A\n<del>A</del> N T O N Y    C L E O P <del>A</del> T R A    (A)\n<del>A</del> N <del>T</del> O N Y    C L E O P <del>A</del> <del>T</del> R A    (T)\n<del>A</del> N <del>T</del> <del>O</del> N Y    C L E <del>O</del> P <del>A</del> <del>T</del> R A    (O)\n</pre>\n\n\n2. Count the remaining letters.\n\n```\n        N N Y = 3\n+ C L E P R A = 6\n            n = 9\n```\n\n3. Write dowm ```FLAMES```. Count up from ```start``` letter upto ```n``` and strike off the ```stop``` letter.\n\n- ```start``` *is the first unstruck letter that comes after the previously struck letter.*\n- ```stop``` *is the nth letter counting from ```start``` while skipping any struck letters.*\n\n<pre>\n<i>start = F</i>              <i>start = M</i>              <i>start = L</i>\n<i>stop = A</i>               <i>stop = F</i>               <i>stop = L</i>\n\nF L A M E S            F L <del>A</del> M E S            <del>F</del> L <del>A</del> M E S            ...\n1 2 3 4 5 6                  1 2 3              1   2 3 4\n7 8 9                  4 5   6 7 8              5   6 7 8\n                       9                        9\n</pre>\n\n4. Repeat ```STEP 3``` until one letter remains.\n\n*NB: The tuple show the (start, stop) letter for each iteration.*\n\n<pre>\nF L A M E S    (F, A)\nF L <del>A</del> M E S    (M, F)\n<del>F</del> L <del>A</del> M E S    (L, L)\n<del>F</del> <del>L</del> <del>A</del> M E S    (M, S)\n<del>F</del> <del>L</del> <del>A</del> M E <del>S</del>    (M, M)\n<del>F</del> <del>L</del> <del>A</del> <del>M</del> E <del>S</del>    (E, E)\n</pre>\n\n5. Return the type of relationship represented by the letter: ```Enemies```\n\n*Thereby proving that Antony and Cleopatra were enemies Q.E.D.*\n\n# Todo\n\nImplement a function ```flames``` that takes two ```String``` arguments and returns a ```Relationship```.\n\n```haskell\nflames :: String -> String -> Relationship\n```\n\nHandle the case ```n = 0``` by returning ```Siblings```.\n\n```haskell\nflames \"paris\" \"helen\" = Lovers\nflames \"antony\" \"cleopatra\" = Enemies\nflames \"narcissus\" \"narcissus\" = Siblings\n```\n\n# Tips\n\n- *Assume that the strings are arbitrary and case-sensitive.*\n- *Try a few examples on pen and paper to become familiar with it.*\n- *Make sure you feed the paper into a shredder after you're done.*",
+    "totalAttempts": 9,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Puzzles",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

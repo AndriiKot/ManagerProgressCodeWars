@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b8d095b51541e4114ed56c",
+  "data": {
+    "id": "65b8d095b51541e4114ed56c",
+    "name": "new Language() ",
+    "slug": "new-language",
+    "category": "algorithms",
+    "publishedAt": "2024-02-06T00:01:24.287Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65b8d095b51541e4114ed56c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-30T10:33:57.884Z",
+    "createdBy": {
+      "username": "Rizwanelansyah",
+      "url": "https://www.codewars.com/users/Rizwanelansyah"
+    },
+    "description": "in this kata you will make class `Language` that can define immutable/mutable variable, have method that can do like if / else / else if, have method that can do like switch satement,\nhave method that can do for loop and while loop, and can delete the variable.\n\nexample use:\n```javascript\nconst lang = new Language()\n\n// create mutable variable with value 1\nlang.let.a(1)\nlang.a = 5 // a change from 1 to 5\n\n// create immutable variable with value 'freeze'\nlang.const.b('cold')\nlang.b = 'hot' // b still 'cold' not cahnged to 'hot'\n\n// cannot redefine the existing variable\nlang.const.b('new')\n\n// can create many variable in one line\nlang.let.c(true).d('value').e({name: 'user'})\nlang.const.f([0,2,4,6]).g(/[a-z]+/)\n\n// if\nlang.if(()=> lang.a === 5)\n       .do(()=> lang.d = 'change')\n\n// if else\nlang.if(/*condition*/)\n       .do(/*some function*/)\n    .else(()=> lang.d = 'aiueo')\n\n// if else elseIf\nlang.if(/*condition*/)\n       .do(/*some function*/)\n    .elseIf(/*condition*/)\n       .do(/*some function*/)\n    .else(/*some function*/)\n\n// switch\nlang.const.rank('C')\nlang.switch(lang.rank, (_case, _default) => {\n  _case('A', ()=> console.log('amazing'))\n  _case('B', ()=> console.log('good'))\n  _case('C', ()=> console.log('not bad'))\n  _default(()=> console.log('nah'))\n})\n\n// for\nlang.for(()=> lang.let.i(0), \n         ()=> lang.i < 10, \n         ()=> lang.i++,\n         ()=> {\n  console.log(lang.i)\n})\n\n// while\nlang.let.n(10)\nlang.while(()=> lang.n > 0, ()=> {\n  console.log(lang.n)\n})\n\n// can delete variable\nlang.delete.a\n\n// multiple delete in one line\n// variable 'b' cannot deleted because 'b' is immutable\nlang.delete.b.c.d\n\n// the key is customizable\n\nconst l = new Language({\n  mutableVarKey: 'create',// default 'let'\n  immutableVarKey: 'define', // default 'const'\n  ifKey: 'is', // default 'if'\n  doKey: 'execute', // default 'do'\n  elseKey: 'ifNotDo', // default 'else'\n  elseIfKey: 'or', // default 'elseIf'\n  switchKey: 'test', // default 'switch'\n  forKey: 'runs', // default 'for'\n  whileKey: 'repeatIf', // default 'while'\n  deleteKey: 'remove', // default 'delete'\n})\n\nl.create.a(20).b('hi').c(false)\nl.define.x({}).y(5.25).z([0])\n```\n# note<br>\n- the `_case` and `_default` the name can be replaced with another",
+    "totalAttempts": 7,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/587510553793a30f640000ff",
+  "data": {
+    "id": "587510553793a30f640000ff",
+    "name": "Ancestors Blowfish - play with bits.",
+    "slug": "ancestors-blowfish-play-with-bits",
+    "category": "games",
+    "publishedAt": "2017-01-10T16:48:31.765Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/587510553793a30f640000ff",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-10T16:48:22.439Z",
+    "createdBy": {
+      "username": "Tandyman",
+      "url": "https://www.codewars.com/users/Tandyman"
+    },
+    "description": "Blowfish is an old & complex encryption algorithm.\n\nwe took few elements from it to create our own simple version of this algorithm.\n\nour encryption method should get 2 Strings - plainText and password. which can be any string.\n\nthe encryption algorithm: we are doing *speical XOR* between every char of the plainText with the parallel char of the password - if the password is shorter than the plainText then it runs in a loop and start over from it's first char. (example: plain text:\"ab\", password:\"a\" -> we should do 'a' special XOR 'a', 'b' special XOR 'a')\n\nSpecial XOR = doing XOR between 2 chars only that the second char's first 8 bits(from the left) are swapped with it's last 8 bits(the right ones). for example:\nspecial XOR of 2 chars(bits representing) -> 1100110010101010 with 0001110011100111 is actually 1100110010101010 XOR 1110011100011100.\n\nthe second char was 0001110011100111 - so we swapped it's bits to 1110011100011100\n\nGood luck.\n\n\n",
+    "totalAttempts": 329,
+    "totalCompleted": 50,
+    "totalStars": 14,
+    "voteScore": 46,
+    "tags": [
+      "Puzzles",
+      "Riddles",
+      "Algorithms",
+      "Bits",
+      "Security"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60b7a6ad235801000dbd77e0",
+  "data": {
+    "id": "60b7a6ad235801000dbd77e0",
+    "name": "Compass Navigation Bar - Basic",
+    "slug": "compass-navigation-bar-basic",
+    "category": "games",
+    "publishedAt": "2021-06-02T15:58:01.799Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript",
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60b7a6ad235801000dbd77e0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-02T15:41:33.361Z",
+    "createdBy": {
+      "username": "user7132458",
+      "url": "https://www.codewars.com/users/user7132458"
+    },
+    "description": "On a peaceful day, there was a player in a 3D RPG game on a hunt. He went into a forest to hunt deer. It was getting late, he was having trouble finding his way back to his village. Because of his experience, he asked game developers to add compass navigation to make it easier for players to find directions.\n\nGoals:\n- Create a compass navigation bar like in other games (e.g. PUBG, Fortnite)\n- View compass range from `-90 to 90 degrees` from the direction the user is facing.\n- Between the wind directions will have `2 separators (.)`\n\nInput:\n- You will be given input of heading (direction of player-facing).\n\n  `e.g. (heading = 0 (N), heading = 135 (SE)).`\n\nOutput:\n- String of compass navigation bar\n\n  `e.g. \"E..SE..S..SW..W\"`\n\nExamples:\n```typescript\ngetCompass(0) // W..NW..N..NE..E\ngetCompass(15) // ..NW..N..NE..E.\ngetCompass(45) // NW..N..NE..E..SE\ngetCompass(75) // .N..NE..E..SE..\ngetCompass(-90) // S..SW..W..NW..N\ngetCompass(360) // W..NW..N..NE..E\ngetCompass(180) // E..SE..S..SW..W\ngetCompass(120) // .NE..E..SE..S..\n```\n\nNotes:\n- The wind direction will always be \n  `['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']`.\n- `['NE', 'SE', 'SW', 'NW'] counted as 1 character`\n- The direction of the user is facing in a clockwise direction.\n- Input can be negative and over 360.\n- More informations:\n```typescript\n  -7.5 <= N < 7.5\n  37.5 <= NE < 52.5\n  82.5 <= E < 97.5\n  127.5 <= SE < 142.5\n  172.5 <= S < 187.5\n  217.5 <= SW < 232.5\n  262.5 <= W < 277.5\n  307.5 <= NW < 322.5\n```\n\n```\nTesting:\n- 40 fixed tests\n- 120 random tests\n```\n",
+    "totalAttempts": 202,
+    "totalCompleted": 37,
+    "totalStars": 5,
+    "voteScore": 60,
+    "tags": [
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

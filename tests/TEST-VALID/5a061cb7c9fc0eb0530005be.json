@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a061cb7c9fc0eb0530005be",
+  "data": {
+    "id": "5a061cb7c9fc0eb0530005be",
+    "name": "Johnny the Poker Player - What is my equity?",
+    "slug": "johnny-the-poker-player-what-is-my-equity",
+    "category": "algorithms",
+    "publishedAt": "2017-11-10T21:41:47.939Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a061cb7c9fc0eb0530005be",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-10T21:40:08.468Z",
+    "createdBy": {
+      "username": "wenima",
+      "url": "https://www.codewars.com/users/wenima"
+    },
+    "description": "<a href=\"https://imgur.com/SjwoMLY\"><img src=\"https://i.imgur.com/SjwoMLY.jpg\" title=\"Johnny\" /></a><br>\nMeet Johnny.<br>\nHe is a recreational Poker Player and started playing No-Limit Texas Hold'em Poker during the [Poker Boom](https://en.wikipedia.org/wiki/Poker_boom) fuelled by the [Moneymaker effect](https://en.wikipedia.org/wiki/Moneymaker_effect).\n\nJohnny has a natural ability to read cards and situations and also has the heart to pull off the occasional bluff. These innate talents have served him well in the past but lately, he is on a losing streak.\n\nJohnny is a \"feel-player\" and lets his instintcs and gut decide the course of action rather than math. He heard some terms thrown around in conversations between professional players like: \"Pot Odds\", \"Equity\" or \"Expected Value\" and wants to find out how to let math decide his actions and rely less on instintcs and luck to turn his streak around. Luckily you are his friend and you know about math and solving problems so he turns to you with a set of questions.\n\nIn every form of Poker, each one of the 3 possible actions (Call, Fold or Raise) has an expected value (EV). EV is defined as the amount of money an action expects to win or lose on average.\n\nBut before you can help Johnny calculate the expected value for a given situation, we need to know how Johnny's hands hold up against his opponent's hands to figure out his equity in the pot. Equity is defined as the share of the current pot which belongs to the player based on the probability of winning the hand after all cards are dealt ([showdown](https://en.wikipedia.org/wiki/Showdown_(poker)).\n\nJohnny finds himself frequently in a situation where he has a draw but doesn't quite know the probability of winning the hand against his opponent's hand. For example, Johnny holds \nA<span style=’color: black’>&spades;</span>3<span style=’color: black’>&spades;</span> and the board reads J<span style=’color: black’>&spades;</span>9<span style=’color: black’>&spades;</span>K<span style=’color: red’>&hearts;</span> and he is very certain his opponent is holding K<span style=’color: red’>&hearts;</span>K<span style=’color: red’>&diams;</span>. He would like to know the chances of winning the hand if he gets to see 2 more cards. Any spade which doesn't pair the board gives him the winning hand in form of a flush (if the board pairs, his opponent makes a full house) and  if the Q and 10 come on the turn and river, he also makes a straight. Thus he holds a flush draw and a backdoor straight draw on the flop. Johnny asks you: <b>\"What is my equity?\"</b> which is the first kata in a series of katas where you help Johnny with poker related questions.\n\nWrite a function for Johnny called ```get_equity()``` with the following positional arguments of type list containing strings representing each card: ```board``` (can be empty if Johnny wants to evaluate pre-flop equity), ```hero``` (Johnny's cards) and ```villain``` (opponent's cards) which returns the chance in percent of Johnny's hand winning at [showdown](https://en.wikipedia.org/wiki/Showdown_(poker) (flop, turn, river).\n\nFor all situations where Johnny already knows the flop (or flop and turn) the number returned needs to be exact for 2 decimal places. For a situation where Johnny has not yet seen the flop (called pre-flop), he is ok with a good estimate, so the number returned can be in the range of 2% of the actual number. \n\nFor the example above where Johnny has a flush draw and a backdoor straight draw, the function would be called like this:\n```get_equity(['JS', '9S', 'KH'], ['AS', '3S'], ['KS', 'KD'])``` and it would return ```25.45``` as Johnny's hand has 25.45% equity in the pot on the flop.\n\nFor pre-flop situations, the function would be called with an empty board:\n```get_equity([], ['AH', 'KD'], ['QH', 'QD'])``` and it would return a number between ```41.65``` and ```45.65``` as the precise equity for Johnny's hand is 43.65%\n\nHand rankings are listed [here](http://poker.wikia.com/wiki/Hand_ranking). \nTies are resolved by comparing the remaining cards in the hand.\n\nWe assume that Johnny knows his opponent's hand because his opponents play very transparently. In a later kata we will need to compute our equity vs a range of hands.\n\n\n\n\n",
+    "totalAttempts": 76,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

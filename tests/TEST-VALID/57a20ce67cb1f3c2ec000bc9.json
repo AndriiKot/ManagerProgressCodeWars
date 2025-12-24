@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57a20ce67cb1f3c2ec000bc9",
+  "data": {
+    "id": "57a20ce67cb1f3c2ec000bc9",
+    "name": "PID Controller",
+    "slug": "pid-controller",
+    "category": "algorithms",
+    "publishedAt": "2016-08-03T15:25:30.657Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/57a20ce67cb1f3c2ec000bc9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-08-03T15:25:26.088Z",
+    "createdBy": {
+      "username": "DanWaxman",
+      "url": "https://www.codewars.com/users/DanWaxman"
+    },
+    "description": "A PID controller (proportional-integral-derivative controller) is a feedback mechanism commonly used for engineering purposes. A PID controller continuously measures the error (Set Point - Current Point) and passes it through each of the three terms to yield and output. To make a PID controller accurate for a given purpose, it is tuned using three constants: K<sub>p</sub>, K<sub>i</sub>, and K<sub>d</sub>. The equation of a PID controller looks something like this:\n\n![pid equation](https://wikimedia.org/api/rest_v1/media/math/render/svg/1bcb82541c2fd40dd893d3893e04b4d6b1f02330)\n\nIn this Kata, your task will be to write three methods: `calculateP` (or `calculate_p`), `calculateI` (or `calculate_i`), and `calculateD` (or `calculate_d`). In each method, you'll be given parameters of `setPoint`, `measuredValue`, and `K`<sub>x</sub> where x is the appropriate term. In the case of `calculateI`, you will also be passed a parameter `integral` since discrete time implementations often rely on summation to work. `integral` will be the summated previous error values. For `calculateD`, you will also receive a parameter `timeElapsed` which contains time elapsed since last call and `prevError` which contains the previous iterations error, since discrete time implementations of a PID controller often take the average rate of change since last call.\n\nTo recap, this is what your class methods should look like:\n```java\ncalculateP(double setPoint, double measuredValue, double Kp);\ncalculateI(double setPoint, double measuredValue, double Ki, double integral);\ncalculateD(double setPoint, double measuredValue, double Kd, double timeElapsed, double prevError);\n```\n```python\ncalculate_p(set_point, measured_value, Kp)\ncalculate_i(set_point, measured_value, Ki, integral)\ncalculate_d(set_point, measured_value, Kd, time_elapsed, prev_error)\n```\nIn Python, results should be rounded off to 4 decimal places. In Java, a tolerance of 1E-5 will be given and results should not be rounded. This is because the Java test API supports a delta while the Python one does not.\n\n##Further Reading\nhttps://en.wikipedia.org/wiki/PID_controller\n\n##Notes\nRemember that `integral` is already adjusted for the constant value of K<sub>i</sub> since it resulted from a previous iteration of our algorithm.",
+    "totalAttempts": 150,
+    "totalCompleted": 13,
+    "totalStars": 3,
+    "voteScore": 10,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

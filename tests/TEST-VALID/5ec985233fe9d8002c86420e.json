@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ec985233fe9d8002c86420e",
+  "data": {
+    "id": "5ec985233fe9d8002c86420e",
+    "name": "Turing Machine Emulator",
+    "slug": "turing-machine-emulator",
+    "category": "reference",
+    "publishedAt": "2020-05-23T20:19:16.286Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ec985233fe9d8002c86420e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-23T20:18:43.300Z",
+    "createdBy": {
+      "username": "leoparm",
+      "url": "https://www.codewars.com/users/leoparm"
+    },
+    "description": "# Description\n\nYour mission is to implement a Turing machine emulator.\n\n# Presentation\n\nA Turing machine is an abstract machine that manipulates symbols on a strip of tape according to a table of rules.\n\nYour program will have to return the final tape state (as a string) after operating on it\nusing an initial state and a transition function that represents the table of rules.\n\nFor more information about Turing machines:\nhttps://en.wikipedia.org/wiki/Turing_machine\n\n# Details\n\n## Input\nYou need to implement the `machine` function with this definition:\n```python\ndef machine(blank_symbol, state_0, state_final, transition_function):\n  \"\"\"\n  Parameters:\n    blank_symbol: The blank symbol\n    state_0: The Initial State\n    state_final: The Final State\n    transition_function: The transition function\n  Returns a string\n  \"\"\"\n  return \"\"\n```\n```javascript\n// Parameters:\n//   blankSymbol: the blank symbol\n//   state0: the initial state\n//   stateFinal: the final state\n//   transitionFunction: The transition function: (s, q) -> { direction: 'r'/'l', symbol: CHARACHTER , state: STATE }\n// Returns a string.\nfunction machine(blankSymbol, state0, stateFinal, transitionFunction)\n{\n  return \"\";\n}\n```\n\n## Explanation\nTuring Machine, for our purpose, is a state machine that contains:\n* A tape. Initiated empty. You might need to lengthen it to accommodate higher pointer values.\n* A blank symbol. The character read from an unwritten position in the tape.\n* A pointer to a character in the tape. Initiated with 0 (start of the tape).\n* A state that is the Initial State.\n* A state that is the Final State.\n* A current state. It could be the Initial State, the Final State or any other intermediate state.\n* A transition function.\n\n## Iterations\nThe machine, at each iteration, does the following:\n* Reads a character from the tape at the current pointer position.\n* Use the transition function to get instructions to operate.\n\n## Operations to perform using the transition function\nThe operations are executed in the following order:\n* Write the given character (the new symbol) to the tape at the current pointer position.\n* Move the pointer to the left or to the right (Must move 1 position).\n* Change the current state to the new state.\n\n## The transition function\n```python\n# Parameters:\n#   symbol: The character that is at the current position\n#   current_state: The current state\n# Returns a tuple:\n#   direction - ONLY: 'l' for Left or 'r' for Right\n#   new_symbol - A character to write at the current position\n#   new_state - The new state\ndef transition_function(symbol, current_state):\n  return (direction, new_symbol, new_state)\n```\n```javascript\n// Parameters:\n//   symbol: A character that is at the current position\n//   currentState: The current state\n// Returns an object with the following keys:\n//   direction - ONLY: 'l' for Left or 'r' for Right\n//   symbol - A charachter to write at the current position\n//   state - The new state\nfunction transitionFunction(symbol, currentState)\n{\n  // Example output:\n  return {\n      direction : 'l',\n      symbol : 'A',\n      state : 6,\n      }\n}\n```\n\n# Assumptions\n- You can assume that the pointer will never point to a negative position during the machine operation.\n- You can assume the machine reaches the final state quickly. If your code times out repeatedly, you have a problem with your code.\n- The transition function will never return the blank symbol as a character to write.\n\n# Examples:\n\n## Example 1\nLet's look at the simplest input:\n```python\nmachine('\\0', 0, 0, lambda s,q: ('l', '.', 0)) == \"\"\n```\n```javascript\nmachine('\\0', 0, 0, (s,q)=>({direction: 'l', symbol: '.', state:1})) === \"\"\n```\nThe expected result is an empty string.\nBecause the \"Initial State\" and the \"Final State\" are the same,\nthe machine does not need to query the transition function at all.\nIt does not write to the tape and returns it empty.\n\n## Example 2\n```python\nmachine('\\0', 0, 1, lambda s,q: ('l', '.', 1)) == \".\"\n```\n```javascript\nmachine('\\0', 0, 1, (s,q)=>({direction: 'l', symbol: '.', state:1})) === \".\"\n```\nThe expected result is: \".\"\nBecause the \"Initial State\" is not the \"Final State\",\nthe machine needs to query the transition function.\nThe intructions are:\n* Write \".\" to the 0 position in the tape.\n* Move the pointer left.\n* Next state is 1.\nFinally, 1 is the Final State and the machine returns.\n\n",
+    "totalAttempts": 221,
+    "totalCompleted": 32,
+    "totalStars": 8,
+    "voteScore": 46,
+    "tags": [
+      "State Machines",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

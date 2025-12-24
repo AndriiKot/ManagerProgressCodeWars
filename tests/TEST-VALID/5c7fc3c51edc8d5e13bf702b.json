@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c7fc3c51edc8d5e13bf702b",
+  "data": {
+    "id": "5c7fc3c51edc8d5e13bf702b",
+    "name": "Sorting with alternation",
+    "slug": "sorting-with-alternation",
+    "category": "algorithms",
+    "publishedAt": "2019-03-06T13:04:42.938Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c7fc3c51edc8d5e13bf702b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-06T12:57:42.354Z",
+    "createdBy": {
+      "username": "iCoderXXI",
+      "url": "https://www.codewars.com/users/iCoderXXI"
+    },
+    "description": "You're given array of objects. Each object contains at least three props 'room', 'type' and 'id'.\nYou should order items in the array as following:\n1) Order all items by room in ascending order;\n2) Within each room group order all items so that they're alternating with each other;\n3) Make sure, that types have ascending order;\n4) When alternating items within groups, keep initial order of items of the same type.\n\nYour function shold return a string of ids, separated by :\n\nex.:\n\ninput: \n[\n  { room: 1, type: \"lub\", id: 1 },\n  { room: 1, type: \"putil\", id: 2 },\n  { room: 1, type: \"lub\", id: 3 },\n  { room: 1, type: \"lub\", id: 4 },\n  { room: 1, type: \"lub\", id: 5 },\n  { room: 1, type: \"him\", id: 6 },\n  { room: 1, type: \"him\", id: 7 }\n]\n\nsorted: \n[\n  { room: 1, type: 'him', id: 6 },\n  { room: 1, type: 'lub', id: 1 },\n  { room: 1, type: 'putil', id: 2 },\n  { room: 1, type: 'him', id: 7 },\n  { room: 1, type: 'lub', id: 3 },\n  { room: 1, type: 'lub', id: 4 },\n  { room: 1, type: 'lub', id: 5 }\n]\n\noutput: '6:1:2:7:3:4:5'",
+    "totalAttempts": 34,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 24,
+    "tags": [
+      "Data Structures",
+      "Algorithms",
+      "Arrays",
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

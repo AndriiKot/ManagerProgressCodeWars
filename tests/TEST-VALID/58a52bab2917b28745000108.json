@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58a52bab2917b28745000108",
+  "data": {
+    "id": "58a52bab2917b28745000108",
+    "name": "Refactor out a switch-statement to a Visitor pattern",
+    "slug": "refactor-out-a-switch-statement-to-a-visitor-pattern",
+    "category": "refactoring",
+    "publishedAt": "2017-02-16T04:33:47.983Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/58a52bab2917b28745000108",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-16T04:33:59.553Z",
+    "createdBy": {
+      "username": "dibley1973",
+      "url": "https://www.codewars.com/users/dibley1973"
+    },
+    "description": "## Mission\nThe aim of this kata is to refactor out the switch statement and replace it with a the visitor pattern. \n\n## Problem\nAlthough switch statements can execute quickly and are a simple construct to grasp they can become unwieldly and a maintenance nightmare as they grow. \nAlso they do not readily encourage the \"Open Closed\" principle. With this in mind we will remove the switch statment from the code and replace it with the visitor pattern.\n\n## Solution\nYour solution will replace the `switch case` statment in the `GetStatusDescription()` method with a visitor pattern approach.\n\nWe will base our status on the following base class, which will accept an interface called `IVisitor`. \n\n```\npublic abstract class Status\n{\n    public abstract string Accept(IVisitor visitor);\n}\n```\nYou will need to create this interface and also your own concrete implementation of the `IVisitor`. In a real-world scenario the Visitor would likely be injected into the `Kata` class, but for this kata, just create your concrete instance when you construct the `Kata` class.\n```\npublic class Kata\n{\n    private readonly IVisitor _visitor = new MyVisitor();\n```\n\nNOTE:\nYes the tests will pass by doing nothing and leaving the `switch...case` construct present, but the idea of this kata is to give you an insight into removing `switch` statements from your code and looking for alternative constructs, in this case, the visitor pattern.\n\nEnjoy.\n\nTHis kata is in the same series as \"[Refactor out a switch-statement to a Dictionary](https://www.codewars.com/kata/58a1bce8d781ae52f9000090)\" and \"[Refactor out a switch-statement using polymorphism](https://www.codewars.com/kata/58a300b01e6f21b5dd001474)",
+    "totalAttempts": 96,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

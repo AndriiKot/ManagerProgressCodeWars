@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583a23d40cf946ec380002c2",
+  "data": {
+    "id": "583a23d40cf946ec380002c2",
+    "name": "[Minecraft Series #3] Lava is amazing!",
+    "slug": "minecraft-series-number-3-lava-is-amazing",
+    "category": "reference",
+    "publishedAt": "2016-11-27T01:16:46.376Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/583a23d40cf946ec380002c2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-27T00:07:48.341Z",
+    "createdBy": {
+      "username": "arwengu",
+      "url": "https://www.codewars.com/users/arwengu"
+    },
+    "description": "Ever since Steve started building his railway system, he became obssessed with lava as the major fuel source -- such powerful and magical gift from mother nature!\n\n![](https://i.ibb.co/Z1HjVD7p/Flowing-lava-anim.gif)\n\nBut the problem is, there's absolutely no lava source near Steve's house! Everytime he is out of lava, he has to take a trip to the Nether and collect lava from there. (For those who have never played Minecraft, Nether is basically this very scary place only for the brave of heart, Steve hates going there).\n\nNeedless to say, Steve is ready to have a pool of lava right in his backyard. He digged up a rectangle pit and is ready to get it filled with lava. But since Nether is such an unpleasant place to visit, Steve can only take a few trips (assume he can only bring back one bucket/block of lava each time).\n\nSteve's pool is stored as a multidimensional binary array, where `1`\trepresents a spot filled with lava, and `0` represents a \"normal\" spot, without lava. Luckily for Steve, he doesn't need to fill each spot with lava. Instead he can place lava in certain spots and have it spread throughout. These intial spots are called source blocks, as they are the source of the spreading lava. \n\nLava spreading is very predictable and is shown below. As seen in the photo below, the middle block was the source block, while the other blocks are filled by the source block.\n\n![](http://i.imgur.com/QqGeSb1.jpg)\n\nThis can be shown in the arrays below:\n\n<pre><code>Lava Source Block:\n  [\n    [ 0, 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, <strong style='color: red'>1</strong>, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0, 0 ]\n  ]\nLava Spread Results:\n  [\n    [ 0, 0, 0, <strong style='color: red'>1</strong>, 0, 0, 0 ],\n    [ 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0, 0 ],\n    [ 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0 ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0 ],\n    [ 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0, 0 ],\n    [ 0, 0, 0, <strong style='color: red'>1</strong>, 0, 0, 0 ]\n  ]\n</code></pre>\n\n---\nYour task is to write a function, `lavapool(arr)`, where `arr` is the multidimensional binary array of lava source blocks that Steve plans to place, and return an array of the results of these source blocks spreading.  See the following examples below:\n<pre><code>Input 1:\n  [\n    [ 0, 0, 0, 0, 0 ],\n    [ <strong style='color: red'>1</strong>, 0, 0, 0, <strong style='color: red'>1</strong> ],\n    [ 0, <strong style='color: red'>1</strong>, 0, 0, 0 ],\n    [ <strong style='color: red'>1</strong>, 0, 0, 0, 0 ],\n    [ 0, 0, <strong style='color: red'>1</strong>, 0, 0 ]\n\n  ]\nOutput 1:\n  [\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ]\n  ]\n</code></pre>\n\n---\n<pre><code>Input 2:\n  [\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, <strong style='color: red'>1</strong> ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ]\n\n  ]\nOutput 2:\n  [\n    [ 0, 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, 0, 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, 0, 0, 0, 0, <strong style='color: red'>1</strong> ],\n    [ 0, 0, 0, 0, 0, 0 ]\n  ]\n</code></pre>\n---\n<pre><code>Input 3:\n  [\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, <strong style='color: red'>1</strong>, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ],\n    [ <strong style='color: red'>1</strong>, 0, 0, 0, 0, 0 ],\n    [ 0, 0, 0, 0, 0, 0 ]\n  ]\nOutput 3:\n  [\n    [ 0, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong> ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0, <strong style='color: red'>1</strong>, 0 ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, 0, 0 ],\n    [ <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong>, <strong style='color: red'>1</strong                                                                                                        >, 0, 0, 0 ]\n  ]\n</code></pre>\n\n---\nTo all the Minecraft players out there: \nfeel free to expand this series or let me know if you have any ideas related to Minecraft that can be turned into codewars puzzles. Some ideas I have that might potentially be turned into katas:\n\n* distance traveled in real world vs. in Nether\n* shortest path problems related to mining diamonds/gold/goodies that appears in different levels under ground\n* growth of animal population from breeding\n* redstone stuff?!\n\nIf you do end up expanding this series, please send me a link of your kata so I can check it out and include a link to your kata here :-)\n\n* [Minecraft Series #1: Steve wants to build a beacon pyramid](https://www.codewars.com/kata/minecraft-series-number-1-steve-wants-to-build-a-beacon-pyramid/ruby)\n* [Minecraft Series #2: Minimum amount of fuel needed to get some iron ingots](https://www.codewars.com/kata/minecraft-series-number-2-minimum-amount-of-fuel-needed-to-get-some-iron-ingots/ruby)\n* [Minecraft Series #4: Lava is amazing, however...](https://www.codewars.com/kata/583a6b0b171f3a3c3f0003e3)\n\n\n",
+    "totalAttempts": 340,
+    "totalCompleted": 51,
+    "totalStars": 6,
+    "voteScore": 85,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

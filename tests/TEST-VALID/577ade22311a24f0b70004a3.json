@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/577ade22311a24f0b70004a3",
+  "data": {
+    "id": "577ade22311a24f0b70004a3",
+    "name": "Sieve of Eratosthenes",
+    "slug": "sieve-of-eratosthenes-1",
+    "category": "algorithms",
+    "publishedAt": "2016-07-04T22:56:50.001Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/577ade22311a24f0b70004a3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-04T22:07:31.021Z",
+    "createdBy": {
+      "username": "ArcaneIntegers",
+      "url": "https://www.codewars.com/users/ArcaneIntegers"
+    },
+    "description": "## The Sieve\n\nThe [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) is one of the most effective ways for generating \"small\" primes:\n\n>*[it works] by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, with constant difference between them that is equal to that prime. This is the sieve's key distinction from using trial division to sequentially test each candidate number for divisibility by each prime.*\n\n(source: wikipedia)\n\n\n## Task\n\nComplete the function that takes parameter `n`, and returns an array of prime numbers up to `n` (included).\n\n\n## Algorithm\n\nHere is a short description how to implement the Sieve of Eratosthenes to generate prime numbers up to and including an integer `n`:\n\n* Start with a list of numbers from `2` to `n` inclusive\n* Let `p = 2`. Cross off every multiple of `p` starting from `p*p`\n* Find the smallest number that has not been crossed off, set that number as `p` and repeat the previous step. If no such number exist, then the numbers that are in the list are the prime numbers up to `n`",
+    "totalAttempts": 428,
+    "totalCompleted": 50,
+    "totalStars": 7,
+    "voteScore": 89,
+    "tags": [
+      "Mathematics",
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

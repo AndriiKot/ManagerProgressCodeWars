@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bdf86a08332b38a75000016",
+  "data": {
+    "id": "5bdf86a08332b38a75000016",
+    "name": "Second Moment Of Area",
+    "slug": "second-moment-of-area",
+    "category": "reference",
+    "publishedAt": "2018-11-05T01:52:13.694Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5bdf86a08332b38a75000016",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-04T23:54:09.699Z",
+    "createdBy": {
+      "username": "chybrydra",
+      "url": "https://www.codewars.com/users/chybrydra"
+    },
+    "description": "Second moments of area (formulas for this Kata):\nhttps://en.wikipedia.org/wiki/List_of_second_moments_of_area\n\nWe want to return second moment of area for a given cross-section of a beam. Only x-axis and 2 decimal places in the result.\nx and y axis cross in the center of the shape.\nFor example:\n<code>\n\ngetData(\"rectangle\", new int[] {5,10}):\n\nwidth = 5, height = 10;\n\nIx = h^3 &ast; w / 12 = 10^3 &ast; 5 /12 = 416.67\n\nresult: 416.67 // 2 decimal places!\n\nIf shape is not one of 6 mentioned above, return String \"I don't know that shape man!\".\n\nIf shape is ok, but double[] size has less or more data than needed, return String \"The length of the size-array is wrong!\".\n\n</code>\n\nThere will be 6 possible shapes:\n\n<code>\n\ngetData(\"circle\", new double[] {5}) --> 5 is a diameter \n\ngetData(\"square\", new double[] {5}) --> 5 is a side length \n\ngetData(\"rectangle\", new double[] {5,10}) --> 5 is a width, 10 is a height \n\ngetData(\"circlePipe\", new double[] {25,2}) --> 25 is a diameter, 2 is a wall-thickness \n\ngetData(\"squarePipe\", new double[] {10,1}) --> 10 is a side length, 1 is a wall thickness\n\ngetData(\"rectanglePipe\", new double[] {25,15,3}) --> 25 is a width, 15 is a height, 5 is a wall-thickness \n\n</code>\n\n+ Must work with circle, CIRCLE, ciRcLe, etc.\n+ The situation where walls are thicker than physically possible (for example 10 diameter circle and 6 wall thickness) is possible here! Do not check this case! It's not a bug, I want it to be this way.",
+    "totalAttempts": 23,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals",
+      "Physics",
+      "Algorithms",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

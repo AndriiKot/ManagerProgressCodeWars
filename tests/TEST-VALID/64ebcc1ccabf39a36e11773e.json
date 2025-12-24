@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64ebcc1ccabf39a36e11773e",
+  "data": {
+    "id": "64ebcc1ccabf39a36e11773e",
+    "name": "Quote Extractor",
+    "slug": "quote-extractor",
+    "category": "games",
+    "publishedAt": "2023-08-27T22:20:24.196Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64ebcc1ccabf39a36e11773e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-27T22:20:12.126Z",
+    "createdBy": {
+      "username": "Captain Quack",
+      "url": "https://www.codewars.com/users/Captain%20Quack"
+    },
+    "description": "In this kata, you will create a tool that can extract all quotes from a given string.\n```\n\"'The best error message is the one that never shows up.' - Thomas Fuchs\"\n⇒\n{ \"The best error message is the one that never shows up.\" }\n```\nYou will receive single and double quotes, all of which are on the same line.\n```\n\"'This' is valid\" -> { \"This\" }\n\"This is also \"valid\"\" -> { \"valid\" }\n\"So 'is' \"this\"\" -> { \"is\", \"this\" }\n```\nIf you recive anything that is nested, you should separate them if the quote character is the same, and include them in the first, outermost quotation if they are different. For example: \n```\nSeparate\n--------\n\"'Hello 'World''\" -> { \"Hello \", \"\" }\n  ^     ^     ^^\n 'Hello '     ''\n \nInclude\n--------\n\"Hello 'World'\"   -> { \"Hello 'World'\" }\n```\n\nSome strings are also invalid, such as those containing mismatching `\"` and `'`, or those that don't match anything at all. However, you should look closely before labeling something as wrong. The first example from above, for instance, could be misleading at first.\n\nTrue invalid inputs, however, should return an empty array.\n```\n\"'Dang, only one quote!\" -> { }\n\"'Mismatch...\"\" -> { }\n```\nLastly, if other quotes in the string are valid, those still need to be collected. That rule might be the most annoying part of this challenge. :p\n```\n\"\"\"\"'hello'\" -> { \"\", \"hello\"}\n   ^-- The `\"` here is ignored.\n```\n\nLet me know if I missed anything, but that should be it. \n",
+    "totalAttempts": 106,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Strings",
+      "Puzzles",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

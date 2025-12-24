@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b988bb97eea310e2cfb5ae",
+  "data": {
+    "id": "65b988bb97eea310e2cfb5ae",
+    "name": "Cuboid Jigsaw, Part 1: The Pieces",
+    "slug": "cuboid-jigsaw-part-1-the-pieces",
+    "category": "games",
+    "publishedAt": "2024-01-31T17:05:51.044Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/65b988bb97eea310e2cfb5ae",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-30T23:39:40.010Z",
+    "createdBy": {
+      "username": "quantage",
+      "url": "https://www.codewars.com/users/quantage"
+    },
+    "description": "<h1>Consider, if you will, the curious case of the cuboid jigsaw ...</h1>\n\nIn 1933, during a lecture on quantum mechanics, the Danish polymath Piet Hein invented the Soma cube: a solid dissection puzzle, consisting of 7 different pieces made from unit cubes that must be assembled into a 3×3×3 cube. Since then, more variations of pieces and cuboid sizes have been devised, forming a larger collection of puzzles we'll call cuboid jigsaws.\n\nFor all these puzzles, each 3D piece is constructed from unit cubes, connected by their faces. Before positioning in the puzzle the pieces may need to be rotated.\n\nFor this Kata, we're not yet solving the puzzle. The task for now is to find all of the possible rotations for any given piece.\n\n<br>\n\n<h1>Piece encoding</h1>\n\nA piece is encoded as follows:\n\n```'1'``` or  ```'0'``` indicates presence or absence of a unit cube at the given row position\n\n```'|'``` seperates rows\n\n```'+'``` seperates levels\n\nFor any given piece, all row definitions have the same length, all levels have the same number of rows,\nand all leading and trailing ```'0'```s are present.\n\n<br>\n\n<h4>Example 2D shapes</h4>\n\n```c++\n\"11|10\"                                 // corner\n\"10|10|11\"                              // 'L'\n\"010|111|010\"                           // '+'\n\"101|101|111\"                           // 'U'\n```\n<h4>Example 3D shapes</h4>\n\n```c++\n\"11|10+10|00\"                           // corner\n\"11|11+11|11\"                           // cube\n\"000|010|000+010|111|010+000|010|000\"   // '+'\n```\n\n<br>\n\n<h1>Solutions</h1>\n\nYour solution should be a ```' '``` seperated string encoding all piece rotations.\n\n<br>\n\n<h1>Notes</h1>\n\n<ul>\n  <li>Piece rotations should be returned in sorted order (standard string comparison)</li>\n  <li>Your solution should not contain duplicate rotations</li>\n  <li>Invalid input (not conforming to the encoding spec) should return an empty string</li>\n  <li>The main test will provide fixed and random cases</li>\n</ul> \n\n",
+    "totalAttempts": 31,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 7,
+    "tags": [
+      "Puzzles",
+      "Algorithms",
+      "Geometry"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/545387c50294936959000649",
+  "data": {
+    "id": "545387c50294936959000649",
+    "name": "Polynomial's Root",
+    "slug": "polynomials-root",
+    "category": "algorithms",
+    "publishedAt": "2014-10-31T12:59:55.316Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/545387c50294936959000649",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-10-31T12:59:50.370Z",
+    "createdBy": {
+      "username": "knotman90",
+      "url": "https://www.codewars.com/users/knotman90"
+    },
+    "description": "In mathematics, a [polynomial](http://en.wikipedia.org/wiki/Polynomial) is an expression consisting of variables (or indeterminates) and coefficients, that involves only the operations of addition, subtraction, multiplication, and non-negative integer exponents.\n\nIn this kata, you have to add some members to the given `Poly` class. \nPolynomials are stored internally using an array of `Double` values that represent the polynomial's coefficients. \n\nFor example:\n\nThe array `[1,2,3,5]` represents the polynomial: 1x<sup>0</sup> + 2x<sup>1</sup> + 3x<sup>2</sup> + 5x<sup>3</sup> or more simply 1 + 2x + 3x<sup>2</sup> + 5x<sup>3</sup>.\n\nAs you can see in the initial solution, the constructor takes a list of coefficients. \n\nHowever, trailing zeros aren't really necessary when one evaluates the polynomial, so your first task is to eliminate all the trailing zero coefficients by implementing `trimTrailingZeroCoefficients()`.\n\nFor example an array like `[0,1,0,0,0,0]` should be reduced to `[0,1]`. The coefficient array cannot be empty and has to be able to represent the zero polynomial.\n\nYour next task is to implement `evaluatePoly(x)`, which evaluates the polynomial at the point `x`.\n\nYour last task is to find the root of the polynomial in the interval `(a,b)`, i.e. the point `x` such that `evaluatePoly(x)` is close to zero (close means: if the root is `r` then all values between `[r-epsilon,r+epsilon]` are accepted. epsilon lies in the interval `[0.0005,0.001]`). \n\n**Note:** When defining intervals parentheses `()` indicate a value is not included in the interval, while square brackets `[]` indicate they are.  For example: (1,3) Include all the values between 1 and 3, but not 1 and not 3. So `1.0000000001` is in the interval but `1.0000000000` is not!  By comparison [1,3] includes all values between 1 and 3 including `1.0000000000`, `1.0000000001`, `2.9999999999`, and `3.0000000000`.\n\nIn all test cases the root lies inside the interval and in particular that `f(a) > 0` and `f(b) < 0` with only one root in the interval.\n\nIf you get stuck on the last task, have a look at this [hint](http://en.wikipedia.org/wiki/Bisection_method\").\n",
+    "totalAttempts": 1109,
+    "totalCompleted": 50,
+    "totalStars": 10,
+    "voteScore": 11,
+    "tags": [
+      "Arrays",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

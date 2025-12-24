@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53640a429c51d5d89f000770",
+  "data": {
+    "id": "53640a429c51d5d89f000770",
+    "name": "Roles and Permissions",
+    "slug": "roles-and-permissions",
+    "category": "algorithms",
+    "publishedAt": "2014-05-02T21:42:34.459Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/53640a429c51d5d89f000770",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-02T21:12:34.925Z",
+    "createdBy": {
+      "username": "cgthornt",
+      "url": "https://www.codewars.com/users/cgthornt"
+    },
+    "description": "You are tasked with setting up a role and permissions system. The system contains two basic objects, a `Role` and a `Permission`. \n\nA `Permission` represents something that a user can do, such as *use a printer* or *add a new user*.\n\nA `Role` represents a group of permissions and **can have many other roles**. If a role has another role, then it will inherit its permissions from the other role.\n\nYour job is to implement the `Role#all_permissions` method, which returns an array of unique permissions.\n\n## Considerations\n\n* Ordering does not matter\n* The `#all_permissions` method may be called multiple times on a single object\n* It is possible for roles and permissions to be poorly configured:\n   * A role can reference itself\n   * A permission can be used in more than one role\n\n## Examples\nA basic example would look something like this:\n\n```ruby\n# Set up basic permissions\nlog_in        = Permission.new \"Log in to the system\"\nopen_programs = Permission.new \"Open basic programs\"\nuse_printer   = Permission.new \"Use Printer\"\nuse_usb       = Permission.new \"Use USB Drive\"\n\n# Roles\nbasic_user = Role.new \"Basic User\"\nbasic_user.permissions = [open_programs, log_in]\n\n# prints \"Log in to the system, Open basic programs\"\nputs basic_user.all_permissions.map(&:name).join(', ') \n\nelevated_user = Role.new \"Elevated user\"\nelevated_user.roles       = [basic_user]\nelevated_user.permissions = [use_usb, use_printer]\n\n# prints \"Log in to the system, Open basic programs, Use USB Drive, Use Printer\"\nputs elevated_user.all_permissions.map(&:name).join(', ') \n```\n\nHowever, it is possible for roles and permissions to be configured poorly: \n\n```ruby\nbasic_user.roles << elevated_user  # Cycle!\nbasic_user.permissions << use_usb  # Duplicate permission\n```\n\nRegardless of how they are configured, the output should still be sane:\n\n```ruby\n# now prints for a basic user \"Log in to the system, Open basic programs, Use USB Drive, Use Printer\nputs basic_user.all_permissions.map(&:name).join(', ') \n```\n\n## Permission Class\nThe Permission class is already provided for you\n```ruby\nclass Permission\n  attr_reader :name\n  def initialize(name)\n    @name = name\n  end\nend\n```",
+    "totalAttempts": 152,
+    "totalCompleted": 20,
+    "totalStars": 1,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

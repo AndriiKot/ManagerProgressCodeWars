@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60e53f78eefbd900068dc851",
+  "data": {
+    "id": "60e53f78eefbd900068dc851",
+    "name": "Decimal Separator Localization",
+    "slug": "decimal-separator-localization",
+    "category": "reference",
+    "publishedAt": "2021-07-07T07:50:30.379Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/60e53f78eefbd900068dc851",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-07-07T05:45:28.708Z",
+    "createdBy": {
+      "username": "Chiispiitas",
+      "url": "https://www.codewars.com/users/Chiispiitas"
+    },
+    "description": "# Introduction\n\nA *decimal separator* is a symbol used to separate the integer part from the fractional part of a number written in decimal form. The most used symbols worldwide are the point `\".\"` and the comma `\",\"`.\n\nNumbers with many digits are often divided into groups using a *thousands separator*, which is a symbol that separates the hundreds, thousands, millions and so on. The most used symbols for digit grouping are the point `\".\"`, the comma `\",\"` and the space `\" \"`.\n\n```html\n 34   ,   234   .   876\n      ^         ^\n  thousands   decimal\n```\n\nBy default, most programming languages don't support multiple types of decimal separators at once, the same with thousands separators. This can be troublesome when reading inputs from users that aren't familiar with this system, or come from foreign countries.\n\n# Task\n\nYour task is to create a method that converts a string containing a number with separators into a numerical value readable by the language.\n\n# Indications\n\n* You'll always be given a valid string, with correctly placed separators.\n* You'll only have to consider the symbols mentioned in the *introduction*: commas, points and spaces.\n* If there is only one separator symbol present in the number, treat it as a decimal separator. In contrast, if there are two different symbols, the left-most will be a thousands separator and the right-most will be a decimal separator.\n\n# Examples\n\n```ruby\n\"1,234.567\" #=> 1234.567 \n\"1.234,567\" #=> 1234.567\n\"1 234.567\" #=> 1234.567\n\"1234.567\"  #=> 1234.567\n\"1234567\"   #=> 1234567\n```\n\nGood luck, have fun!",
+    "totalAttempts": 210,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 24,
+    "tags": [
+      "Strings",
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

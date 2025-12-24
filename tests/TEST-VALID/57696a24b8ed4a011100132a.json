@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57696a24b8ed4a011100132a",
+  "data": {
+    "id": "57696a24b8ed4a011100132a",
+    "name": "Brainunpack",
+    "slug": "brainunpack",
+    "category": "games",
+    "publishedAt": "2016-06-21T16:24:16.173Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/57696a24b8ed4a011100132a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-21T16:24:04.493Z",
+    "createdBy": {
+      "username": "Artoria",
+      "url": "https://www.codewars.com/users/Artoria"
+    },
+    "description": "You may know brainf**k, but do you know brainunpack?\n\nFirst, `unpack` is an instance method of `String` class, it's used to decode a 'packed' string into other things. More information can be found at http://ruby-doc.org/core-2.3.1/String.html#method-i-unpack\n\nThe only `unpack` argument contains lots of directives, and `unpack` returns an array, even if there is only one directive. For example, \n\"\\0\\0\\0\\0\".unpack(\"L\") returns [0]. Because 'L' means one 32bit-long integer and its byte-representation has four null bytes. Now it's decoded from the four bytes. \"\\0\\0\\0\\0\\1\\0\\0\\0\".unpack(\"LL\") will return [0, 1] on little-endian machines.\n\nBut in this kata we only care about three directives:     \n\n* 'a'         arbitrary binary string     \n* 'X'         skip backward one byte    \n* 'x'         skip forward one byte    \n \nThe official document shows that:\n```ruby\n\"whole\".unpack('xax2aX2aX1aX2a')    #=> [\"h\", \"e\", \"l\", \"l\", \"o\"]\n```\nBecause directives can be followd with a number, the number is 1 when omitted. The directive string above can be recognized as :\nx, a, x2, a, X2, a, X1, a, X2, a\n \nThe problem is, we use `unpack` and `eval` to transform a hexdecimal number to a decimal one, say '6f', we can use the following way:\n\n```ruby\n  a = \"0123456789x+-*/\"\n  b = \"??\"\n  p eval(\"#{a}6f\".unpack(b).join)\n```\n\nnow please choose approperiate string b to finish this kata.\n\nhacking note:    \n\n*  b can be a `String`\n*  b can be things other than a `String` that implements `to_str` to return a `String` which can help to build your own DSLs.\n\n",
+    "totalAttempts": 38,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62eb8b7770f395003cc3cc21",
+  "data": {
+    "id": "62eb8b7770f395003cc3cc21",
+    "name": "Object-Oriented Programming with metatables",
+    "slug": "object-oriented-programming-with-metatables",
+    "category": "reference",
+    "publishedAt": "2022-08-08T09:49:05.892Z",
+    "approvedAt": null,
+    "languages": [
+      "lua"
+    ],
+    "url": "https://www.codewars.com/kata/62eb8b7770f395003cc3cc21",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-04T09:03:51.533Z",
+    "createdBy": {
+      "username": "fcr--",
+      "url": "https://www.codewars.com/users/fcr--"
+    },
+    "description": "The goal of this kata is to write a function for creating OOP style classes using metatables in Lua.  In general there are two common approaches for doing that, sharing the metatable with the class table or using two different tables, so in order to simplify the kata we will be using the same one (there are cons and pros for both options).\n\nSuggested reading material: [Chapter 16 of Programming in Lua](https://www.lua.org/pil/contents.html).\n\nYou might also consider doing [this exercise](https://www.codewars.com/kata/623c9f8b46dd2d00343440a2) first to familiarize with metatables.\n\n## Task\n\nImplement a `class` function that:\n* will optionally take a \"super-class\",\n* then will instantiate a new table for the class, this table will serve both as a metatable and as the normal class table where most methods are implemented; and speaking of methods,\n* a method called `new` will be added to the table (unless it exists in the super-class or in any of its parents), this `new` method will:\n  * Create a new object, associating `self` (`new`'s first parameter) as the metatable to this new object,\n  * Call the `_init` method on the object only if the `_init` method exists.\n  * Return the new object.\n  * Additionally the `new` method will take a variable number of arguments (`function mt:new(...)` ...) and those arguments must be passed to _init.\n\nThe goal is to be able to write code like this:\n```lua\nlocal MyParentClass = oo.class()\nlocal MyChildClass = oo.class(MyParentClass)\n\nfunction MyParentClass:_init(name)\n  self.name = name\nend\n\nfunction MyParentClass:hello()\n  print('Hello ' .. self.name)\nend\n\nfunction MyChildClass:_init(name)\n  -- we can override methods!\n  getmetatable(MyChildClass)._init(self, name .. '!')\nend\n\nlocal foo = MyChildClass:new 'Codewars User'\nfoo:hello()\n```",
+    "totalAttempts": 34,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": 8,
+    "tags": [
+      "Object-oriented Programming",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dc6a2f9425a2c0014101d24",
+  "data": {
+    "id": "5dc6a2f9425a2c0014101d24",
+    "name": "Create a Tic-Tac-Toe bot",
+    "slug": "create-a-tic-tac-toe-bot",
+    "category": "algorithms",
+    "publishedAt": "2019-11-09T15:44:31.788Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5dc6a2f9425a2c0014101d24",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-09T11:28:57.230Z",
+    "createdBy": {
+      "username": "sgerodes",
+      "url": "https://www.codewars.com/users/sgerodes"
+    },
+    "description": "Create a bot that will perform the best play in every situation. You bot will play against my bot. Your bot must at least tie every game.\n\nYour bot must implement the interface\n\n\n    public interface Game.Player {\n        public int[] move(String state);\n    }\n    \nThe Bot will br initialised with the symbol he will use through the game (\"X\" or \"O\").\n    \nString state is representing the board state. There are three lines each having three symbols (\"X\", \"O\" or \"-\"). Lines are separated with linebreaks \"\\n\".\nE.g:\n\n    OOX\\n-X-\\nO-X\nis the same as \n\n    OOX\n    -X-\n    O-X\n    \nYou must return an array with two elemnts, first one is the line number, second one is the column number of the cell you want to play in. Indexes are zero indexed\n\nThere are 200 Test with a strong bot, that you should at least Tie.\n\nThere are 1000 games with a random bot. 500 starting as first player ( 'X') and 500 as second ('O'). You should win at least 350 as 'X' and at least 200 as 'O'.\n\n\nIf you fail against the Strong bot, an array with game notation wil be give.\n\ne.g.\n\n    Failed game as X: [X11, O22, X20, O02, X00, O12, O_WON]\n    \nYou can decrypt it as:\n\nYou are playing as X\n\nmove 1: put X in 1 1\n\nmove 2: put O in 2 2\n\nmove 3: put X in 2 0\n\n...",
+    "totalAttempts": 74,
+    "totalCompleted": 12,
+    "totalStars": 5,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

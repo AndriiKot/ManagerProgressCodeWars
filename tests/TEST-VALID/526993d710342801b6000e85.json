@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/526993d710342801b6000e85",
+  "data": {
+    "id": "526993d710342801b6000e85",
+    "name": "Close only counts in Floats and Grenades",
+    "slug": "close-only-counts-in-floats-and-grenades",
+    "category": "reference",
+    "publishedAt": "2013-10-24T21:42:08.784Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/526993d710342801b6000e85",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-10-24T21:40:39.053Z",
+    "createdBy": {
+      "username": "constablebrew",
+      "url": "https://www.codewars.com/users/constablebrew"
+    },
+    "description": "Take a look at the following JavaScript expression. What is the result, `true` or `false`?\n```` javascript\n(0.1 + 0.2) === 0.3\n````\nYou may be surprised to learn that the answer is `false`. The key to this puzzle is in understanding the inherent limitations of representing floating point numbers in binary. The number '0.1' cannot be represented in binary, only a number that is very close to 0.1. The amount of potential error in a floating point number is measured by the [\"Unit of Least Precision\"](http://en.wikipedia.org/wiki/Unit_in_the_last_place). JavaScript guarantees that the results of basic mathematical operations (+, -, *, /, and sqrt) all result in values that are +/- 0.5 ULP of the correct value. Knowing this, we can account for this error when comparing floating point numbers.\n\nLets create two helper functions that will make it easy to determine if two floating point numbers are effectively equal to each other:\n\n<br />&bullet; Extend Number.prototype, adding the function `ulp()` that returns the precision of the floating point number.\n<br />&bullet; Add the static method `closeEnough(a,b)` to Number. This function will return true if the passed floating point numbers are within 0.5 ULP of each other, false otherwise.\n<br />&bullet; All tests will pass only floating point numbers, so you do not need to write the error handling.\n<br />\n<br />\n<h2>Understanding ULP</h2>\nTo create these functions we will need to understand ULP in greater detail, and to understand ULP we need to understand the binary format of floating point numbers.\n\nFloating point numbers are composed of three parts:<br />\n&bullet; 1 Sign bit that indicates whether the number is positive or negative. <br />\n&bullet; 11 Exponent bits. The value of the Exponent has the range [-1022, 1023]. This number defines the overall magnitude of the Floating point number. <br />\n&bullet; 52 Fraction bits (also called the significand, mantissa, or coefficient). This part of the number works very much like the binary integer numbers we are all familiar with, but instead of being whole numbers added together, we are adding together fractions.\n\n<div style=\"background-color:#aaaaaa;display:inline-block\"><a href=\"http://bartaz.github.io/ieee754-visualization/\"><img src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/618px-IEEE_754_Double_Floating_Point_Format.svg.png\" /></a></div>\n\n<br />\nPutting these three parts together into a single equation we get:\n<div style=\"text-align:center\">value = (-1)<sup>sign</sup> &times; (1+&sum;<sub>(i=1 to 52)</sub><i>bit</i><sub>52-i</sub> &times; 2<sup>-i</sup>) &times; 2<sup>exponent-1023</sup></div>\n<br />\n\nNow, with this understanding we can find the precision, which is simply:\n<div style=\"text-align:center\">precision = 2<sup>-52</sup> &times; 2<sup>exponent-1023 = 2<sup>exponent--1075</sup></div>\n<br />\n\nIf you thought this was a bitwise walk to the park now to find the value of the exponent, be warned that [JavaScript's bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) work in 32 bit space only! `Math.log()` will help. Can you find another solution without logs?\n\n\n<br />\n<br />\n<br />\n<h2>Additional Information</h2>\n<br />&bullet; http://bartaz.github.io/ieee754-visualization/ \n<br />&bullet; http://en.m.wikipedia.org/wiki/Double-precision_floating-point_format\n<br />&bullet; https://speakerdeck.com/bartoszopka/everything-you-never-wanted-to-know-about-javascript-numbers \n<br />&bullet; http://floating-point-gui.de/formats/binary/ \n<br />&bullet; http://en.wikipedia.org/wiki/Unit_in_the_last_place \n<br />&bullet; http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html\n<br />&bullet; http://stackoverflow.com/questions/9383593/extracting-the-exponent-and-mantissa-of-a-javascript-number\n\n",
+    "totalAttempts": 190,
+    "totalCompleted": 25,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

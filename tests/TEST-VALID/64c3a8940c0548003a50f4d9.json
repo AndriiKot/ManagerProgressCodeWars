@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64c3a8940c0548003a50f4d9",
+  "data": {
+    "id": "64c3a8940c0548003a50f4d9",
+    "name": "Decrypt Me - Affine Cipher",
+    "slug": "decrypt-me-affine-cipher",
+    "category": "algorithms",
+    "publishedAt": "2023-08-01T10:33:23.801Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64c3a8940c0548003a50f4d9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-28T11:37:56.130Z",
+    "createdBy": {
+      "username": "Dr Gabo",
+      "url": "https://www.codewars.com/users/Dr%20Gabo"
+    },
+    "description": "# A little bit of theory\n\nThe name of this kata is very straighforward if you know what an **_affine cipher_** is, but it can be quite challenging if that is not the case. If you want to know the theory, use the following box:\n\n<details style=\"border: 1px solid white; border-radius: 0.25em; padding: 0.5em; margin-bottom: 0.5em;\">\n  <summary>About <i>Affine Ciphering</i></summary>\n\n  An affine cipher is a cryptographic algorithm that transforms a readable text into an unreadable text by means of a mathematical function. For this to work, you need the following:\n  \n  1. An **alphabet**, which is a list of characters that your text uses.\n  2. A text to cipher.\n  3. A key which consists of two integers _a_ and _b_. The first one must be coprime to the length of the alphabet.\n  \n  Now you can reinterpret your text as a list of integers, where each one represents the position of the character in your alphabet:\n  \n  ```\n  Alphabet = [a b c d e]\n  Text = abdeabac\n\n  Transformed text = [0 1 3 4 0 1 0 2] (with 0 indexing)\n  ```\n  \n  Now we can transform each number using the following formula:\n  \n  ```\n  new = (old * a + b) mod length(alphabet)\n  ```\n  \n  And transform each integer to the character in that position inside the alphabet.\n</details>\n\n# Now some context...\n\nYou are a criptographer hired by a national security agency that has to intercept ciphered messages and decrypt them. You know for a fact that these messages were ciphered using an _affine cipher_, and you also have an decrypted example text from each source.\n\nThis is all you need.\n\n# The task\n\nYou have a class ```AffineCipher``` with the following attributes:\n\n* **_example_**: an unciphered example text from the same source as **_text_**. \n* **_alphabet_**: a string containing the alphabet used to cipher **_text_**. \n\nwrite a function ```AffineCipher.decrypt(text: str) -> str``` that takes two values and returns the deciphered input. Its parameters mean the following:\n\n* **_text_**: the text you have to decipher.\n\n> **Important note:** The fact that they come from the same source does not mean that ```AffineCipher.decrypt(text) == AffineCipher.example```. In fact, that will almost never be the case.\n\n# Important notes\n\n1. Since this kata is a cryptoanalysis, your algorithm may fail sometimes. Yours only needs to work 95% of the time.\n2. A _source_ is a place where a text comes from. Two pieces of text that come from the same source **may** share some statistical properties.\n3. The sources in this kata are fragments from popular books taken from Project Gutenberg. These texts are in Spanish, English and French.\n4. The _a_ and _b_ values will always be in the range [1, 15].\n5. There is a code size limit of 1500 characters in order to prevent hardcoding.\n\n# Hints\n\nSince this kata is a little bit mathematical, here are some hints if you need them:\n\n<details style=\"border: 1px solid white; border-radius: 0.25em; padding: 0.5em; margin-bottom: 0.5em;\">\n  <summary>Where do I begin with this exercise?</summary>\n  \n  Try to undo an affine cipher given the _a_ and _b_ values. The, you can start guessing keys for the ciphered text.\n</details>\n\n<details style=\"border: 1px solid white; border-radius: 0.25em; padding: 0.5em; margin-bottom: 0.5em;\">\n  <summary>I can't seem to undo an affine cipher...</summary>\n  \n  Try to reverse the process using modular inverses :)\n</details>\n\n<details style=\"border: 1px solid white; border-radius: 0.25em; padding: 0.5em; margin-bottom: 0.5em;\">\n  <summary>Which statistical properties can I use?</summary>\n  \n  * **_Short answer_**: anything that you imagine can help identify an unciphered text. There are **multiple answers**.\n  * **_Long answer_**: There are multiple ways to do this, you can try to use the relative frequencies of the characters inside the text or you can be a little bit more creative. You can also use the bigram frequencies or try to identify whole words.\n</details>\n\n<hr>\n\n<div style=\"margin: auto; width: fit-content;\">\n<pre>\n  __________\n< Good luck! >\n  ----------\n         \\   ^__^ \n          \\  (oo)\\_______\n             (__)\\       )\\/\\\\\n                 ||----w |\n                 ||     ||\n</pre>\n</div>",
+    "totalAttempts": 182,
+    "totalCompleted": 14,
+    "totalStars": 4,
+    "voteScore": 16,
+    "tags": [
+      "Cryptography",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

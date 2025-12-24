@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65a386f98041f745149287c8",
+  "data": {
+    "id": "65a386f98041f745149287c8",
+    "name": "Type-Level Sort",
+    "slug": "type-level-sort",
+    "category": "games",
+    "publishedAt": "2024-01-14T07:02:37.816Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/65a386f98041f745149287c8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-14T07:02:17.306Z",
+    "createdBy": {
+      "username": "Trouble-Truffle",
+      "url": "https://www.codewars.com/users/Trouble-Truffle"
+    },
+    "description": "The task is simple, create a sorting algorithm using the following \n\n`Nat` type\n```rust\nstruct Z {}\nstruct S<N>(N);\n\ntrait Nat {\n    const VAL: usize;\n}\n\nimpl Nat for Z {\n    const VAL: usize = 0;\n}\n\nimpl<N: Nat> Nat for S<N> {\n    const VAL: usize = N::VAL + 1;\n}\n```\n\n`List` type\n```rust\ntrait List {\n    type ListT;\n    const VAL: Self::ListT;\n}\n\nimpl List for Nil {\n    type ListT = ();\n    const VAL: Self::ListT = ();\n}\n\nimpl<X: Nat, XS: List<ListT = XST>, XST> List for Cons<X, XS> {\n    type ListT = (usize, XST);\n    const VAL: (usize, XST) = (X::VAL, XS::VAL);\n}\n```\n--------\n\nNote that whichever types you make must follow the following conventions. `Type::Value` for associated types you assigned as outputs, and `Type::VAL` for the const generics you use to convert type-level values into term-level.\n\nfor `Nat`, `Nat::VAL` is a transformation to `usize`\n```rust\n<S<S<Z>>>::VAL == 2 \n<Z>::VAL == 0\n<S<Z>>::VAL == 1\n```\n\nfor `List`, `List::VAL` is a transformation to a recursive tuple.\n```rust\ntype One = S<Z>;\ntype Two = S<S<Z>>;\ntype Three = S<S<S<Z>>>;\n\n...\n\n<Nil>::VAL == ()\n<Cons<Two, Cons<Three, Cons<One, Nil>>>>::VAL == (2, (3, (1, ())))\n```\n\nFor convenience you can use the following macro\n```rust\nmacro_rules! list {\n    () => (Nil);\n    ( $x:ty ) => (Cons<$x, Nil>);\n    ( $x:ty, $($xs:ty),+) => (Cons<$x, list!($($xs),+)>);\n}\n```\nto more easily create lists\n\n`list![One,Two]` == `Cons<One, Cons<Two, Nil>>`\n\n-----\n\nAbout Peano numbers and Cons-lists:\n\nhttps://brilliant.org/wiki/peano-axioms/\nhttps://en.wikipedia.org/wiki/Cons\n\n\n",
+    "totalAttempts": 23,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

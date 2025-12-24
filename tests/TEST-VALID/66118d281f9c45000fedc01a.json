@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66118d281f9c45000fedc01a",
+  "data": {
+    "id": "66118d281f9c45000fedc01a",
+    "name": "Ternary Operator in Scala!",
+    "slug": "ternary-operator-in-scala",
+    "category": "reference",
+    "publishedAt": "2024-04-06T18:02:49.445Z",
+    "approvedAt": null,
+    "languages": [
+      "scala"
+    ],
+    "url": "https://www.codewars.com/kata/66118d281f9c45000fedc01a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-06T17:58:00.439Z",
+    "createdBy": {
+      "username": "LegendaryFartMaster",
+      "url": "https://www.codewars.com/users/LegendaryFartMaster"
+    },
+    "description": "People learning Scala usually come across quite a surprise (I know I did): The fact that there is no ternary operator in Scala.\n\nHowever, Scala also lets you get very \"creative\", which is one of the many reasons I fell in love with it. In fact, it **IS** possible to make the following line compile in Scala (assuming the existence of an `Int` `age`):\n\n```\nval booze = (age < 21) ? \"Cranberry\" | \"Cosmo\"\n```\n\nWhile it's not the traditional `?:` combination known to all, I'd call `?|` a close enough substitute.\n\nSo here is your task:\n* First and foremost, make the above line of code compile.\n* Secondly, you must evalute only the block that you need. That is to say, if the condition was `true`, you MUST NOT evaluate the `false` block, regardless of whether or not you return its value, and vice-versa.\n\n\nThe test file will import every top level element that you place in the `Ternary` `package`, by using the following import line:\n\n`import Ternary._`\n\nA Note on Tests:\nTernary Operators is also expected to work in nested blocks, like so:\n`b1 ? (b2 ? 1 : 2) : 3`\nwhere `b1` and `b2` are `Boolean`s\n\n\n",
+    "totalAttempts": 29,
+    "totalCompleted": 7,
+    "totalStars": 4,
+    "voteScore": 20,
+    "tags": [
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

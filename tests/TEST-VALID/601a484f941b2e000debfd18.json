@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/601a484f941b2e000debfd18",
+  "data": {
+    "id": "601a484f941b2e000debfd18",
+    "name": "Floating point in base 2",
+    "slug": "floating-point-in-base-2",
+    "category": "reference",
+    "publishedAt": "2021-02-03T13:01:30.685Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/601a484f941b2e000debfd18",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-03T06:53:03.184Z",
+    "createdBy": {
+      "username": "davilla",
+      "url": "https://www.codewars.com/users/davilla"
+    },
+    "description": "Languages such as python, javascript, and C# include double-precision floating point as the default interpretation of decimal literals. Values like `1.0` are stored with 1 sign bit, 11 exponent bits, and 52 fractional bits. This universal standard is defined as \"binary64\" in IEEE-754.\n\nYour task is to convert a double-precision floating point number to base 2, where the only digits are zero and one. There are no bitwise rounding issues for binary representation, so the conversion should be precise.\n\nThe resulting string is prefixed with \"`0b`\" and must include a period as the radix point, preceded and followed by at least one digit. Apart from this requirement, do not include any leading or trailing zeros.\n```python\nbinary(64.0)  # returns '0b1000000.0'\nbinary(7.5)  # returns '0b111.1'\n```\nYour method must also accept and convert integer types to binary, without a radix point.\n```python\nbinary(15)  # returns '0b1111'\n```\nIn any case, if the value is negative, prepend a minus sign.\n```python\nbinary(-16)  # return '-0b10000'\nbinary(-.25)  # returns '-0b0.01'\n```\nTo be certain, do not use scientific notation. There will be some very long strings as a result, but that's OK for our purposes. Support for special values like infinity, `NaN`, and denormalized numbers is not required.\n\nBest of luck! `:~)`",
+    "totalAttempts": 178,
+    "totalCompleted": 38,
+    "totalStars": 1,
+    "voteScore": 38,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

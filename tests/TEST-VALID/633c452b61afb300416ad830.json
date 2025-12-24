@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/633c452b61afb300416ad830",
+  "data": {
+    "id": "633c452b61afb300416ad830",
+    "name": "Type-level  TypeScript: Array.prototype.map",
+    "slug": "type-level-typescript-array-dot-prototype-dot-map",
+    "category": "games",
+    "publishedAt": "2022-10-04T15:03:05.775Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/633c452b61afb300416ad830",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-04T14:37:31.152Z",
+    "createdBy": {
+      "username": "kelsny",
+      "url": "https://www.codewars.com/users/kelsny"
+    },
+    "description": "You're probably familiar with [`Array.prototype.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), but can you do the same with types? In this series of kata, you will be solving problems purely in the type system. Let's say you have a type `Foo`:\n\n```ts\ntype Foo<T> = { foo: T };\n```\n\nHow would you map a tuple of values to `Foo`?\n\n```ts\ntype Result = MapWithFoo<[1, 2, 3]>; // [Foo<1>, Foo<2>, Foo<3>]\n```\n\nBasically, you want to do this:\n\n```ts\nconst result = [1, 2, 3].map((t) => foo(t));\n```\n\nbut at the type-level!\n\n*Notes: must work for tuples an arrays, and input to your type can be readonly*\n\n[*Hint if needed*](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)",
+    "totalAttempts": 36,
+    "totalCompleted": 25,
+    "totalStars": 4,
+    "voteScore": 28,
+    "tags": [
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

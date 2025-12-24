@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a8382d5373c2ea42d00003c",
+  "data": {
+    "id": "5a8382d5373c2ea42d00003c",
+    "name": "Move the SVG!",
+    "slug": "move-the-svg",
+    "category": "algorithms",
+    "publishedAt": "2018-02-16T01:27:32.120Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a8382d5373c2ea42d00003c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-14T00:29:09.220Z",
+    "createdBy": {
+      "username": "pmarshall1993",
+      "url": "https://www.codewars.com/users/pmarshall1993"
+    },
+    "description": "Hello potential coders,\n\nI have just spent 15minutes drawing what I believe to be the perfect Cloud shape in Codepen. However I've now realised it's been drawn too close to the edges of the parent SVG!!! There are far too many commands for me to manually go through and change each value - let's write a function I can use.\n\nThe function will need to be able to move all SVG commands (i.e. M, m, A, a, S, s...), both absolute and relative, so whenever I decide to make my next cloud I don't run into the same problem.\n\nThe input will be the \"d\" attribute of the path element, followed by the number of pixels the SVG needs to be moved in the x and y direction. Assume all inputs will be valid.\n\n```JavaScript\nmoveSVG(dAttribute, \n        x, \n        y)\n```\nThe path command may or may not have a space after it and the values may be separated either by a space or a comma as both work in the browser. However, please give your answer as a space separated string.\n\n```JavaScript     \nmoveSVG(\"M 30,20 L50 60 L60.542,20\",\n        20, \n        40)\n        \n//----> \"M 50 60 L 70 100 L 80.542 60\"\n```\n\nYou can see your code in action by pasting the before and after d attributes into the respective path elements at:\n\nhttps://codepen.io/pen/KQvZKe\n\nRead up on SVG path commands here:\n\nhttps://www.w3.org/TR/SVG/paths.html#PathDataMovetoCommands",
+    "totalAttempts": 156,
+    "totalCompleted": 7,
+    "totalStars": 3,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/536fb0766b3aa2a5db000a7c",
+  "data": {
+    "id": "536fb0766b3aa2a5db000a7c",
+    "name": "Branch Prediction",
+    "slug": "branch-prediction",
+    "category": "algorithms",
+    "publishedAt": "2014-05-11T18:46:50.209Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/536fb0766b3aa2a5db000a7c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-11T17:16:39.107Z",
+    "createdBy": {
+      "username": "SteveRuble",
+      "url": "https://www.codewars.com/users/SteveRuble"
+    },
+    "description": "One optimization common on modern CPUs is called \"branch prediction\". When the CPU begins executing a branch instruction (like an `if` statement) it predicts what the next instruction will be before executing the branch test. The CPU can then begin fetching and decoding that instruction while the branch test is being executed. If the prediction turns out to be correct, the next instruction is already loaded and can be executed immediately; otherwise, the CPU flushes the incorrect branch and begins loading the correct instruction.\n\nIn this kata you will implement a `Predictor` type which is able to learn how to predict which branch will be executed next. Keep in mind that in a real life branch predictor these predictions are very fast and efficient, so if your algorithm starts getting too complicated you may be on the wrong track. If you're stuck, the Wikipedia page on branch prediction will give you a number of solutions, but if you want to preserve the challenge I'd recommend just reading down that page until you get an idea that will help you out, rather than reading the whole thing at once.\n\n#Predictor Contract\n\n##predict\n\nThe `predict` method will accept an array two or more numbers which represent the potential next instructions the current branch is going to choose between. The method will return one of the numbers from that array as the prediction of the next instruction.\n\n##update\nThe `update` method will accept an array of instruction addresses as well as the instruction address which actually turned out to be the next instruction. This allows the `Predictor` instance to update its prediction algorithms and improve the accuracy of its next prediction. \n\n#Tests\nThere is a method provided to aid in testing:\n\n`function runTestCase(title, predictor, instructions, reps, threshold, nextInstruction)`\n\n* title - a title which will be displayed in the output\n* predictor - a `Predictor` instance\n* instructions - an array of instructions to choose between\n* reps - the number of times to make and update predictions\n* threshold - the expected rate of correct predictions\n* nextInstruction - a callback with the signature `function(branches, index)` which will be called on each repetition to get the actual next instruction. You can provide different callbacks to test different patterns of branching.\n\nThis method will invoke `predict` on the provided `predictor`, record the prediction, then call `nextInstruction` to get the \"actual\" next instruction, which will be compared to your prediction and then passed to `update` on the provided `predictor`. After doing this `reps` times, the rate of correct predictions will be calculate and the test will pass if the frequency that your predictions are correct is higher than `threshold`.\n\nThe kata test cases use this method with a number of different instruction patterns to validate your solution. The tests cover patterns with two or three instructions.\n\n###Instruction patterns\nThe test cases cover several different patterns.\n\n* Constant: The same instruction is chosen every time. Your predictor must be very accurate for this pattern.\n* Random: Each instruction has a set probability of being chosen.  For this pattern your predictor must only be as accurate as chance +/- 5%.\n* Random blocks: Each instruction has a set probability of being chosen, but once a branch has been chosen it will repeat for a random number of times. Your predictor must be somewhat accurate for this pattern.\n* Cycle: The instructions will be chosen in a repeating pattern not longer than 3 instructions. Your predictor must be very accurate for this pattern.\n\n\nThe kata tests will be run twice: the first time all the tests will always be in the same order, the second time will be the same tests but in a random order. Because some of the tests use `Math.random()` to simulate branch selection, you may occasionally get a failing result even if your solution is generally correct. If this happens, try submitting again and it should work.\n\n\n\n\n\n\n\n",
+    "totalAttempts": 408,
+    "totalCompleted": 12,
+    "totalStars": 15,
+    "voteScore": 19,
+    "tags": [
+      "Machine Learning",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

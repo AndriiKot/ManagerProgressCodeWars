@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5305ea3ddc88098f570003aa",
+  "data": {
+    "id": "5305ea3ddc88098f570003aa",
+    "name": "Battery Charge!",
+    "slug": "battery-charge",
+    "category": "algorithms",
+    "publishedAt": "2014-02-21T14:58:49.357Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5305ea3ddc88098f570003aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-20T11:42:53.325Z",
+    "createdBy": {
+      "username": "ferlio",
+      "url": "https://www.codewars.com/users/ferlio"
+    },
+    "description": "Your phone is battery low! Find out if it lasts long enough for you to finish your affairs.\n\n<ul><li>The battery charges from 0 to 100 % in exactly 2 hours</li><li>It consumes 1% for 2 minutes of active usage and 1% for 3 hours of standby </li>(all time-parameters are given in <b>minutes</b>)</ul>\n\nYour task is to implement two functions:\n```afterIdle``` and ```hasJuice```\n\n\n\n<ol>\n<li>\"afterIdle\" should return the battery percent (rounded to the nearest integer) for the current battery (provided in the constructor), considering the ```idle``` time</li>\n<li>\"hasJuice\" should return false if the current battery runs out of juice through the ```needFor``` time, or true if it doesn't (either by using/not using the extra charges).\nThree parameters are given:\n<ul>\n<li>```needFor``` the time we need the phone to still run</li>\n<li>```activeUse``` the amount of active usage on the phone</br>(also take into consideration the idle time, when returning your solution)</li>\n<li>```extraCharges``` (optional parameter) a hash object, for example ```{extra:2, minutes:5}```, where <i>extra</i> is the number of times you may charge your phone on the fly for a specific number of <i>minutes </i> for each charge</br>\n</li></li> \n</ul>\n</ol>\n</br>\n<b>Now you're in charge!</b>\n\n",
+    "totalAttempts": 409,
+    "totalCompleted": 18,
+    "totalStars": 1,
+    "voteScore": 16,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

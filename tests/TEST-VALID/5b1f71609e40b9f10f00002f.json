@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b1f71609e40b9f10f00002f",
+  "data": {
+    "id": "5b1f71609e40b9f10f00002f",
+    "name": "Cracking CRC32",
+    "slug": "cracking-crc32",
+    "category": "algorithms",
+    "publishedAt": "2018-06-12T08:34:18.405Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b1f71609e40b9f10f00002f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-06-12T07:08:17.381Z",
+    "createdBy": {
+      "username": "dramforever",
+      "url": "https://www.codewars.com/users/dramforever"
+    },
+    "description": "(If this is too hard, you might be interested in doing [Cracking the digital hash lock][digital-lock] first. Also you might want to check out the backstory at the end.)\n\n[digital-lock]: https://www.codewars.com/kata/5f2c856bcae31d003185aabf\n\n[CRC (Cyclic\\_redundancy\\_check) (link to Wikipedia)](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) is a very popular hashing algorithm designed to detect unintended errors in binary data that are caused by, for example, transmission line interference or disk failure. However, CRC is a very insecure hash, and can be easily manipulated. We shall demonstrate this insecurity using a specific variant, CRC32, and 'crack' it by reversing it for integer strings.\n\n## Specification\n\nWrite a function `crack()`, taking a single argument `crc`, which is an **integer** in the range <code>0 &le; crc &lt; 2<sup>32</sup></code> (i.e. 32 bit unsigned integer). It should return an array of **integers** <code>[a<sub>0</sub>, a<sub>1</sub>, ... a<sub>n</sub>]</code> such that:\n\n1. <code>a<sub>0</sub></code>, <code>a<sub>1</sub></code>, etc. are within the range <code>0 &le; a<sub>i</sub> &lt; 10<sup>9</sup></code>\n2. The **ASCII byte representations** of all <code>a<sub>i</sub></code> (i.e. `a[i].toString()`) has a CRC32 hash of `crc` (Note: `0` through `9` have ascii values `30` through `39` hexadecimal, or `48` through `57` in decimal).\n3. The array contains *all* integers satisfying 1 and 2, and no more\n\nThe order of elements does not matter. Also, you will not need to handle invalid inputs. (Hopefully... If you find a bug in my tests just tell me.)\n\n### Notes\n\n1. **Performance is going to be a bit important.** You will be tested against about 10000 inputs, and the test itself takes about 3s, so you will have 9s to work with.\n2. Links on CRC32, Example code for computing CRC32 and an explanation of CRC32 are available after the example cases.\n3. Be careful with bitwise operators. You want to deal with unsigned integers, not signed ones, but some operators may return signed integers. `x >>> 0` is your friend.\n\n## Example cases\n\n```\ncrack(0x6101cea7)\n  => [33991146, 91329407]\nbecause crc32('33991146') = crc32('91329407') = 0x6101cea7\n\ncrack(0)\n  => [863045057]\n\ncrack(0xbada991e)\n  => []\n```\n\n## Some links on CRC\n\n- https://en.wikipedia.org/wiki/Cyclic_redundancy_check\n- https://reveng.sourceforge.io/crc-catalogue/all.htm#crc.cat.crc-32 (list of references)\n\n## CRC32 code examples\n\n<details>\n<summary>Expand code examples</summary>\n\n```if:javascript\nNote that these take arrays of bytes or something like `Uint8Array`. To convert ASCII string to byte array you can use `[... 'hello'].map(x => x.charCodeAt())`\n```\n\nBit-oriented:  \n\n```javascript\nconst POLY = 0xedb88320;\n\nfunction crc32(data) {\n    let res = ~ 0 >>> 0;\n    for (const byte of data)\n        for (let i = 0; i < 8; i ++)\n            res = (res >>> 1) ^ (((res ^ (byte >>> i)) & 1) && POLY);\n    return (~ res) >>> 0;\n}\n```\n\nByte-oriented with lookup table (more efficient):\n\n```javascript\nconst POLY = 0xedb88320;\nconst crc32_table = new Uint32Array(256);\n\nfunction make_table() {\n    for (let i = 0; i < 256; i ++) {\n        let crc = i;\n        for (let _ = 0; _ < 8; _ ++) {\n            if (crc & 1) crc = ((crc >>> 1) ^ POLY) >>> 0;\n            else crc = crc >>> 1;\n        }\n        crc32_table[i] = crc;\n    }\n}\n\nmake_table();\n\nfunction update_crc(crc, by) {\n    return ((crc >>> 8) ^ crc32_table[(crc & 0xff) ^ by]) >>> 0;\n}\n\nfunction crc32(bytes) {\n    return (~ bytes.reduce(update_crc, 0xffffffff)) >>> 0;\n}\n```\n\n</details>\n\n## CRC32: A primer\n\nThis primer is meant to unambiguously specify exactly what CRC32 is. I define and explain concepts that are not common, and I try to make it self-contained, but you should be able to find further explanations online.\n\nApplies to both descriptions below: For byte-oriented data, when converting into a binary string, put *lowest bit of each byte first*, and put the first byte first, then second byte, then so on. So `[0xf1, 0x40]` would be `1000 1111 0000 0010`.\n\n### CRC32 description ('bit-ish' version)\n\nThe algorithm of CRC32 is as follows:\n\n1. Convert the input data into a binary string `S`\n2. Let `POLY = 0xedb88320` be a constant 32-bit unsigned integer.\n3. Let `crc = 0xffffffff` be a 32-bit unsigned integer variable.\n4. For each bit `x` in `S`, consider `x ^ (crc & 1)`\n  - If it's 1, then `crc = (crc >> 1) ^ POLY`\n  - If it's 0, then `crc = crc >> 1`\n5. The CRC32 of the input data is `~ crc` (i.e. `0xffffffff ^ crc`)\n\n(In the above, `0x` means hexadecimal number, `^` means bitwise exclusive or, `>>` means (logical) shift right, `=` means assignment).\n\nIf from the above you can deduce enough properties of CRC32 to solve this kata, then great. Or maybe you want to search online for information on CRC now, which could turn out to be a great idea. If you want more theory, see below for the math of CRC:\n\n### CRC32 description ('math-ish' version)\n\nThe idea of a CRC is based on that of a 'polynomial mod'. The implementation is really short (so it's so simple even if in hardware), but this way of describing it in terms polynomials exposes the elegant principle of CRC and will provide you insight on why it is insecure.\n\nThe coefficients of the polynomials we're dealing with are integers modulo 2, which you might think of as 1-bit unsigned integers, or bits with addition and subtraction defined as xor etc. A polynomial in `x` can then have the usual operations like polynomial addition/multiplication.\n\nYou can represent binary strings as a polynomial, by the value of each bit to coefficients of decreasing powers of `$ x $`. For example, `100101` corresponds to `$ 1 x^5 + 0 x^4 + 0 x^3 + 1 x^2 + 0 x^1 + x^0 $`, or `$ x^5 + x^2 + x^0 $`.\n\nLet's define a constant polynomial for CRC32 called `$ M(x) $`. It's... behold:\n\n```plain\n1 0000 0100 1100 0001 0001 1101 1011 0111\n```\n\nIn hex it's `0x104c11db7`, and it's corresponds to this expression: `$ x^{32}+x^{26}+x^{23}+x^{22}+x^{16}+x^{12}+x^{11}+x^{10}+x^{8}+x^{7}+x^{5}+x^{4}+x^{2}+x^{1}+x^{0} $`.\n\nBy reducing our data polynomial in some way according to the constant polynomial, we can get a resulting small polynomial of limited degree, which will (hopefully) change when the original data is changed unintentionally. This is what 'polynomial mod' does, which we will talk about later.\n\nThe procedure of CRC32 contains a bit of pre- and post-processing:\n\n1. Convert the input into a binary string `S`.\n2. Add 32 zero bits to the end of `S`.\n3. Flip the first 32 bits of `S`.\n4. Convert `S` into a polynomial `$ p(x) $`.\n5. Calculate the polynomial mod `$ r(x) = p(x) \\bmod M(x) $` where `$ M(x) $` is the constant mentioned above.\n6. Convert `$ r(x) $` back to a 32-bit binary string, pad on the left with 0 if necessary.\n7. **Reverse** and **flip** the bits of the 32-bit string, and convert it to an unsigned 32-bit integer. That's the CRC32 of the input.\n\n(Flipping a bit means changing `1` to `0` and `0` to `1`)\n\n<details>\n<summary>Notes on pre-and post-processing</summary>\n\n- The purpose of step 3 is to ensure that leading zeros to the data will (likely) affect the result.\n- The most important purpose of step 2 here is to ensure that step 3 actually has 32 bits to flip. You can also say that it's an artifact of the implementation.\n- The flipping in step 7 is to ensure that... I'm honestly not sure why. Wikipedia says something about trailing zero bits, but I think this is much less of an issue here.\n- The reversing in step 7 is also an artifact of the implementation. During the actual computation, the lowest bit of the 32-bit integer represents the highest term of the polynomial. Which is why you see `0xedb88320`: It's the last 32 bits of the constant reversed.\n</details>\n\nThe crucial step here is of course the polynomial mod. You can find useful properties of it to help you search reverse CRC. In fact, it's the very fact that properties like this exist that makes CRC insecure. Try considering analogous properties of modular integer arithmetic, or doing some research online.\n\nAnyway, have's the promised description of polynomial mod:\n\n### Polynomial mod\n\n(The topic of this subsection is also in [the kata 'Constructing finite fields using binary polynoms'][polynoms]. You can check it out if you want to have some practice.)\n\n[polynoms]: https://www.codewars.com/kata/54f1b7b3f58ba8ee720005a8\n\n**Definition of polynomial mod**: For two polynomials `$ p(x) $` and `$ m(x) $`, consider all polynomials of the form `$ p(x) + q(x)m(x) $` (for some `$ q(x) $`). Then `$ p(x) \\bmod m(x)$` is the unique one of those with degree strictly less than that of `$ m(x) $`. (The degree of a polynomial, mind you, is the largest power of `$x$`). That was very similar to regular integer division.\n\nTo save space we'll just write polynomials as the corresponding binary strings.\n\nCalculating the polynomial mod is also very similar to schoolbook division. For an example, let's calculate `$ (x^5 + x^2 + 1) \\bmod (x^2 + 1) $`:\n\n```plain\n     ,------\n101 / 100101\n```\n\nSince we don't care about the quotient, we will focus on 'reducing' the dividend until the power of the highest term is less than 2 (so something like `$ ax + b $`). We can 'get rid of' the `$ 1 x^5 $` term by adding `$ x^3 (x^2 + 1) $`, which is `$ x^5 + x^3 $`:\n\n```plain\n     ,------\n101 / 100101\n      101\n      ---\n       01101\n```\n\nWe can 'get rid of' the `0 * x^4` term by adding `0 * (x^2 + 1)` which is `0`. Repeat for `x^3` and `x^2`:\n\n```plain\n       01101\n       000\n       ---\n        1101\n        101\n        ---\n         111\n         101\n         ---\n          10\n```\n\nTherefore `(x^5 + x^2 + 1) mod (x^2 + 1) = x`\n\n---\n\n## Backstory\n\n<details>\n\n<summary>Expand</summary>\n\nOn the popular video website Bilibili, on-screen comments, otherwise known as 'danmaku's can be posted. One day someone posted a danmaku saying that your favorite character isn't cute. Right-clicking on the danmaku gives you the option to block this particular poster, but without telling you who exactly they are.\n\nDesperate, you dive into the raw data and find that each dammaku looks a bit like this:\n\n```\n<d p=\"176.40100,1,25,16777215,1528299596,0,4e291766,606822038241282\">She isn't cute at all!</d>\n```\n\nAfter a bit of investigation, you understand that the `4e291766` part is the CRC32 hash of the poster's user id. User ids on Bilibili currently range from `0` (inclusive) to `1000000000` (exclusive) (That is, non-negative integers with `9` digits or less, and no leading zeros).\n\nWho is this poster?\n\nSeriously, this website is real, the danmakus are real, the hashes are real, and the cracker is real too (it's implemented in a few browser extensions). So, yeah, totally real-world coding problem.\n\nOh, and by the way, the post is not real, but the user is real.\n\n</details>",
+    "totalAttempts": 31,
+    "totalCompleted": 10,
+    "totalStars": 7,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Performance",
+      "Mathematics",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

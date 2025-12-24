@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64bb6857aaff1a2ab5182fbe",
+  "data": {
+    "id": "64bb6857aaff1a2ab5182fbe",
+    "name": "Password Hacker",
+    "slug": "password-hacker",
+    "category": "reference",
+    "publishedAt": "2023-07-22T05:26:07.293Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64bb6857aaff1a2ab5182fbe",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-22T05:25:43.563Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nA certain security system is responsible for maintaining a `code` capable of generating a key for each respective lock `key = code % lock` .This security system has a key (`main_key`) and its respective lock (`main_lock`) that are fixed and serve as a base to update all the others. To maintain security, after a certain lock is accessed 10 times with the wrong key they update its lock value `lock = lock + main_key`.\n\nA hacker was able to steal the `main_key` and the `main_lock` but he has no idea what the `code` is. \n\nWrite a function that returns how many attempts the hacker needs to be sure he is able to find certain lock key, if that is impossible return `\"System with a high level of security.\"`\n\n- Will be provided: main_key, main_lock and lock_x (the one you have to find how many attempts to figure the key_x).\n\n# Examples\n```\nhack(1, 2, 8) ➞ 4\n# With only four attempts it is possible to access the lock.\n\nhack(1, 2, 13) ➞ 17\n\nhack(5, 101, 111) ➞ 996\n\nhack(10, 101, 111) ➞ \"System with a high level of security.\"\n```",
+    "totalAttempts": 67,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

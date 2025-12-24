@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56a5491471b6f0d40a000001",
+  "data": {
+    "id": "56a5491471b6f0d40a000001",
+    "name": "Clue - Esoteric programming #4",
+    "slug": "clue-esoteric-programming-number-4",
+    "category": "reference",
+    "publishedAt": "2016-05-29T23:21:03.151Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56a5491471b6f0d40a000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-24T21:58:44.590Z",
+    "createdBy": {
+      "username": "matt c",
+      "url": "https://www.codewars.com/users/matt%20c"
+    },
+    "description": "# Clue - Esoteric programming #4\nClue is a simple, cyclic esoteric programming language. A clue program is made up of 0s and 1s, the program can modify itself and is unknown if it is turning complete or not.\n\n## Task\nYou must implement the Interpreter function which returns an object that has two properties ```cycle``` and ```run```. The function must be able to execute a valid Clue program and return the correct output for each iteration.\n\n## Properties\n```cycle``` will be a getter that must return the current iteration of the source code.\n\n```run``` is a function which must return a string of the current source code after it has been processed using the rules below.\n\n## Details\n0 removes the last character of the string.\n     \n1 takes the next two characters, NANDs them (resulting 0 if both inputs 1, otherwise 1), and adds the result in the beginning of the string. The program pointer then moves to just beyond the second input that was read for NAND.\n\n## Example\n\nFor example, the program `110` would work the following way (x marks where the program pointer is currently):\n    \n1x 1 0 (1 and 0 is NANDed, the resulting 1 is placed in the beginning)\n\n1x 1 1 0 (1 NAND 1, 0 added in the beginning)\n\n0 1 1 1 0x (the last character is removed, thus the 0 removes itself)\n\n0x 1 1 1 (the last character, 1, is removed)\n\n0 1x 1 (1 NAND 0, 1 is added in the beginning -- and so forth...)\n\n[Reference](https://esolangs.org/wiki/Clue_%28Keymaker%29)",
+    "totalAttempts": 475,
+    "totalCompleted": 23,
+    "totalStars": 3,
+    "voteScore": 23,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

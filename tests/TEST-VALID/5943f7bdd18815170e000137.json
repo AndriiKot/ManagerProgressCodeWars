@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5943f7bdd18815170e000137",
+  "data": {
+    "id": "5943f7bdd18815170e000137",
+    "name": "Prisoner's Dilemma ",
+    "slug": "prisoners-dilemma-1",
+    "category": "games",
+    "publishedAt": "2017-06-16T19:00:05.757Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5943f7bdd18815170e000137",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-06-16T15:22:37.295Z",
+    "createdBy": {
+      "username": "tiago47",
+      "url": "https://www.codewars.com/users/tiago47"
+    },
+    "description": "# Welcome to the first annual Prisoner's Dilemma Tournament!\n\nYou're in prison with 23 other prisoner's. One day, the warden announces that there is going to be a Prisoner's Dilemma tournament! The winner(s) of the competition get to walk out of prison free. \n\nIf you are unfamiliar with the game, Prisoner's Dilemma, here's a brief overview:\n\n![](https://blog.methodsconsultants.com/posts/images/prisoners-dilemma.jpg)\n\nAs the game board above shows, you and another prisoner decide, *independently*, whether to cooperate or defect. There are then four possible outcomes. Each results in a different number of points you can win. \n\n## Your Goal\nYour goal is to submit a Prisoner's Dilemma strategy into the tournament. If your strategy is strong, you can win the tournament, walk out of prison, and defeat this kata. You will write a function named `my_solution` which takes as input `history` (a list of tuples where th last tuple is the most recent round consisting of `(you,them)`), the play history of each round, and returns either `\"c\"` or `\"d\"`.\n\n### An Example Strategy\n```Python\ndef my_solution(history):\n    import random                #If you need to import random, do it inside your function.\n    number = random.randint(1,2)\n    if number == 2:\n        return \"d\"              #choose to defect\n    else:\n        return \"c\"              #choose to cooperate\n#This strategy randomly cooperates or defects.\n#It is not a very good strategy, you will likely need something more complex to win. \n#Note that you get access to the play history. This will be explained momentarily. \n```\n\n\n### Another Example Strategy\n```Python\n#Python strategy function that implements the following strategy:\n#Always defect, unless your opponent has ever cooperated, \n#in which case you make a random choice \n#(90% chance of cooperating, 10% chance of defecting).\n\ndef my_solution(history):\n    if len(history) == 0:        \n        return \"d\"    \n    if len(history) > 0:\n        check = []\n        (you, them) = history[-1] #Access the most recent move made by both players. History is always a list of tuples consisting of your move and then your opponent's move.\n        check.append(them)          \n        if \"c\" in check:    \n              import random\n              number = random.randint(1,10)\n              if number == 10:\n                  return \"d\"\n              else:\n                  return \"c\"\n        else:\n              return \"d\"\n```\n\n## Tournament Rules\nThis is an *elimination tournament*. This means that there can be up to 23 rounds. So, for instance, the first round begins with 24 strategies (Yours + the 23 other prisoners'). Each strategy will play every other strategy n times (```5<=n<=10```) and within each game there will be k turns (```50<=k<=100```). After all of the game are played in a round, the computer will determine who had the smallest percentage of points won. This is calculated by dividing a strategy's total points won divided by the maximum number of possible points. The strategy with the smallest percentage is eliminated. The computer will continue this until there is one man, woman, or bot standing. (Hopefully you!) Now, it is possible that there is a tie for the win, in which case all winners get to leave the prison free. \n\n#### Still confused?\nGo ahead and copy one of the sample solutions above and run the example test case. This will feature a mini tournament to help you get comfortable and confident with the real deal!\n\nIf you want more information on Prisoner's Dilemma [click here.](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma)\n\n## Hope to see you on the other side! Best of luck. \n\n\n\n",
+    "totalAttempts": 1306,
+    "totalCompleted": 24,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Games",
+      "Puzzles",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

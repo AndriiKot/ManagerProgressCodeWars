@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/556d55f46dbb07a5e900006c",
+  "data": {
+    "id": "556d55f46dbb07a5e900006c",
+    "name": "Linear Regression with One Variable",
+    "slug": "linear-regression-with-one-variable",
+    "category": "algorithms",
+    "publishedAt": "2015-06-23T20:42:13.599Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/556d55f46dbb07a5e900006c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-02T07:06:28.376Z",
+    "createdBy": {
+      "username": "tansaku",
+      "url": "https://www.codewars.com/users/tansaku"
+    },
+    "description": "Linear Regression by Gradient Descent\n======================================\n\n_Note: This Kata based with permission on an exercise from the [Coursera Machine Learning Course](https://www.coursera.org/course/ml) by Andrew Ng_\n\nIn *regression problems*, we are taking input variables and trying to map the output onto a *continuous* expected result function.\n\n[Linear regression](https://en.wikipedia.org/wiki/Linear_regression) with one variable is also known as \"univariate linear regression.\"\n\nUnivariate linear regression is used when you want to predict a single output value from a single input value, e.g. y's from x's. We already have an idea what the input/output cause and effect should be, so this is called *supervised learning*.\n\nThere are two parts to this kata: \n\n1) Implementing a \"cost function\", i.e. how close are we to being able to perfectly predict the output from the input (a zero means we can predict it perfectly)   \n2) Implementing [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent), so that from a starting high cost, we gradually change the parameters of our \"hypothesis function\" (see below) until we achieve the best possible prediction of output from input.    \n\nIf you want an easy ramp up to solving this kata please first have a go at this [cost-function only](http://www.codewars.com/kata/simple-linear-regression-cost-function-machine-learning) kata, which is a great warm up.   You might also find this more general [linear regression](http://www.codewars.com/kata/linear-regression-of-y-on-x/javascript) kata helpful in terms of thinking about the problem space, although it involves quite a different approach to the linear regression problem compared to gradient descent.\n\nThe Hypothesis Function\n-----------------------\n\nOur hypothesis function has the general form:\n\n```\nh_θ(x) = θ_0 + θ_1 * x\n```\n\nWe give to `h_θ` values for `θ_0` and `θ_1` to get our output `y`. In other words, we are trying to create a function called `h_θ` that is able to reliably map our input data (the x's) to our output data (the y's).\n\n\n| x (input) | y (output) |\n|---|---|\n| 0 | 4 |\n| 1 | 7 |\n| 2 | 7 |\n| 3 | 8 |\n\n\n\nNow we can make a random guess about our `h_θ` function: `θ_0 = 2` and `θ_1 = 2`. The hypothesis function becomes `h_θ(x) = 2 + 2x`.\n\nSo for input of 1 to our hypothesis, y will be 4. This is off by 3.\n\nCost Function\n-------------\n\nWe can measure the accuracy of our hypothesis function by using a cost function. This takes an average (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's compared to the actual output y's.\n\n```\nJ(θ_0,θ_1) = (1/2m) ∑_i=1^m (h_θ(x^(i)) − y^(i))**2\n```\n\nEquations like the above might seem daunting if you don't have a maths background, but most programmers will find them quite easy to understand once they've mastered a couple of bits of syntax.  The main item you might not be familiar with in the above is the ```∑_i=1^m```.  The first symbol, the Greek letter Sigma, means that we are summing over the range.  In this case for i = 1 to n.  So the main part of working out the above is to calculate the value of the expression after the Sigma for each of the values of i, i.e.\n\n```\ni=0 --> (h_θ(x^(0)) − y^(0))**2\ni=1 --> (h_θ(x^(1)) − y^(1))**2\ni=2 --> (h_θ(x^(2)) − y^(2))**2\ni=3 --> (h_θ(x^(3)) − y^(3))**2\n```\n\nwhere x^(0) represents the 0th input, and and y^(0) represents the 0th output, and x^(1) represents the 1st input and so on.  So calculating the complete cost function for the inputs and outputs in the example we saw earlier, we have:\n\n```\ni=0 --> (h_θ(0) − 4)**2\ni=1 --> (h_θ(1) − 7)**2\ni=2 --> (h_θ(2) − 7)**2\ni=3 --> (h_θ(3) − 8)**2\n```\n\nTo put it another way, the cost function equation is calculating `[x]/x` where `[x]` is the mean of the squares `h_θ(x^(i)) − y^(i)`, or the difference between the predicted value and the actual value.  The thing to note is that the bigger the difference between the predicted values of y (i.e. h_θ(x^(i))) and y itself, the larger the cost function result will be.  And it follows that if the predicted values exactly match the y values, then the result will be a sum of 0**2's; thus a cost function of zero represents a perfect prediction of the training data.\n\nThis function is otherwise called the \"Squared error function\", or Mean squared error. The mean is halved `(1/2m)` as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the `1/2` term.\n\nNow we are able to concretely measure the accuracy of our predictor function against the correct results we have so that we can predict new results we don't have.\n\nYou're first task is to implement the above cost function. \n\nGradient Descent\n----------------\n\nNow we have our hypothesis function and we have a way of measuring how accurate it is. What we also need is a way to automatically improve our hypothesis function. That's where gradient descent comes in.\n\nImagine that we graph our hypothesis function based on its fields `θ_0` and `θ_1` (actually we are graphing the cost function for the combinations of parameters). This can be kind of confusing; we are moving up to a higher level of abstraction. We are not graphing x and y itself, but the guesses of our hypothesis function.\n\nWe put `θ_0` on the x axis and `θ_1` on the z axis, with the cost function on the vertical y axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters.\n\n![graphing the cost function](https://www.dropbox.com/s/278305p3kvxjruh/Screen%20Shot%202015-06-27%20at%2018.24.32.png?dl=1)\n\nWe will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum.\n\nThe way we do this is by taking the derivative (the line tangent to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down that derivative by the parameter `α`, called the learning rate.\n\nThe gradient descent equation is:\n\n```\nrepeat until convergence:\n\nθ_j := θ_j − α ∂/∂θ_j J(θ_0, θ_1)\n\nfor j=0 and j=1\n```\n\nIntuitively, this could be thought of as:\n\n```\nrepeat until convergence:\n\nθj := θj − α[Slope of tangent aka derivative]\n```\n\nGradient Descent for Linear Regression\n-------------------------------------\n\nWhen specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We can substitute our actual cost function and our actual hypothesis function and modify the equation to:\n\n```\nrepeat until convergence: \n\nθ_0 := θ_0 − α/m ∑_i=1^m (h_θ(x^(i)) − y^(i))\n\nθ_1 := θ_1 − α/m ∑_i=1^m ((h_θ(x^(i)) − y^(i)) x^(i))\n```\n\nwhere m is the size of the training set, θ_0 a constant that will be changing simultaneously with `θ_1` and `x^(i),y^(i)` are values of the given training set (data).\n\nNote that we have separated out the two cases for `θ_j` and that for `θ_1` we are multiplying `x^(i)` at the end due to the derivative.  The derivation of the formulas are out of the scope of this document, but a really great explanation can be found here: http://math.stackexchange.com/questions/70728/partial-derivative-in-gradient-descent-for-two-variables/189792#189792)\n\nThe point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.\n\nThe second part of your task then is to implement 'Gradient Descent for Linear Regression' according to the equations above, in order to solve some linear regression problems.  Your gradient descent implementation should make use of the cost function you created first.\n",
+    "totalAttempts": 38,
+    "totalCompleted": 3,
+    "totalStars": 5,
+    "voteScore": -2,
+    "tags": [
+      "Machine Learning",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

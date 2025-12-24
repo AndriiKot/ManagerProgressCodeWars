@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/630f82810289bf9bfadb041d",
+  "data": {
+    "id": "630f82810289bf9bfadb041d",
+    "name": "Wordle Solver",
+    "slug": "wordle-solver-1",
+    "category": "algorithms",
+    "publishedAt": "2022-08-31T16:10:06.773Z",
+    "approvedAt": null,
+    "languages": [
+      "scala"
+    ],
+    "url": "https://www.codewars.com/kata/630f82810289bf9bfadb041d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-31T15:47:13.909Z",
+    "createdBy": {
+      "username": "LegendaryFartMaster",
+      "url": "https://www.codewars.com/users/LegendaryFartMaster"
+    },
+    "description": "Wordle is a [web-based word game](https://www.nytimes.com/games/wordle/index.html) created and developed by Welsh software engineer Josh Wardle, and owned and published by [The New York Times Company](https://www.nytco.com/). The objective of the game is to guess a five-letter word. Each guess from the player is given a clue in response, in the form of coloured tiles. The player has a maximum of 6 attempts to guess the correct word.\n\n# The Setup:\n\nAn instance of `Game` is loaded into memory, which has the following publicly accessible members:\n- `guess`: A method which accepts a guess(as a String) and returns the clue based on the current word.(See 'Clues' and 'Guessing')\n- `play`: A method used for triggering 'Solver.play' from the testing framework. Can be ignored for all intents and purposes\n- `words`: A sorted list of valid words that can be guessed\n- `answers`: A list of all the possible solutions.\n  - NOTE: answers holds the possible solution in a randomized order, so you can print it without the risk of spoiling upcoming wordle solutions\n  \n```if:scala\n`words` and `answers` are available in the companion object of `Game`. That is to say, they are accessible as `Game.words` and `Game.answers`.\n\n`guess` is defined in the class body, and is accessible only via the instance of `Game` passed to `Solver.play`\n```\n  \n  \n# Guessing:\n\nIn this Kata, Clues are given as an `Option`al String, by calling `Game.guess`\nNote that guesses can be in any case.\n\n- If `guess` has been already called 6 times, an exception is thrown with the message \"Too many attempts. Word was _____\"\n- If `guess` is called after receiving the 'all green' clue(see below), an exception is thrown with the message \"Guess after win\"\n- If the guess was not a valid word included in `Game.words`, `None` is returned\n- If none of the above is true, the clue for guessed word is returned wrapped in a `Some`\n\n# Clues\n\nThe clue is an `Option`al String which, if present, is five characters long. The clue is made from three characters:\n- G: Indicating the hidden word and the guess share a letter in this position\n- Y: Indicating the the character in this position of the guess occurs somewhere(that is not this position) in the hidden word\n- B: Indicating that the character in this position of the guess occurs nowhere in the hidden word\n\nNOTE: PLease check the last example, which specifically talks about repeated letters in the hidden word and the guess\n\n*Examples*\n\nFor the following examples the hidden word is \"SPARK\"\n\nGuess: ADIEU\nClue : YBBBB\n\nGuess: SLATE\nClue : GBGBB\n\nGuess: CRANE\nClue : BYGBB\n\nGuess: SPARK\nClue : GGGGG\n\nGuess: BLISS\nClue : BBBYB\n\n\nNote that in the last example only one of the `S`s was clued, since the hidden word has only one `S`.\nThis is described best in the next example, where the hidden word is \"BLISS\"\n\nGuess: SASSY\nClue : YBBGB\n\nNOTE:\n  - If a repeated letter can be clued with G, it will be, no matter where in the word(hidden or guessed) it is(Notice the `S` in fourth position\n  - Once all the G clues are addressed, the remaining Y clues are given to letters in the guess in FIFO order(Notice that the `S` in first poisition is Y, but in third position is B)\n  \n  \n# Objective\n\nImplement the `Solver.solve` method. It expects an instance of `Game` and should return the hidden word for that instance. It is also required that before returning the hidden word, it should have been guessed using 'Game.guess', which should have returned the all green clue\n\nNote that all 2315 words are tested as part of this Kata.\n\n\nNOTE:\n  - `Game.words` has 12972 words, all of which are ALL CAPS\n  - `Game.answers` has 2315 words\n  - 'Game.guess' can only be called a maximum of six times\n\n\n  \n\n\n\n",
+    "totalAttempts": 64,
+    "totalCompleted": 3,
+    "totalStars": 3,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

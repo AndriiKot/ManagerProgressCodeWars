@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6044c6981d144c001d0d882a",
+  "data": {
+    "id": "6044c6981d144c001d0d882a",
+    "name": "tricky swift: monadic bind operator",
+    "slug": "tricky-swift-monadic-bind-operator",
+    "category": "reference",
+    "publishedAt": "2021-03-07T15:34:19.247Z",
+    "approvedAt": null,
+    "languages": [
+      "swift"
+    ],
+    "url": "https://www.codewars.com/kata/6044c6981d144c001d0d882a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-07T12:27:04.376Z",
+    "createdBy": {
+      "username": "flaco",
+      "url": "https://www.codewars.com/users/flaco"
+    },
+    "description": "In this kata we will see how operators are defined in swift, and practice some useful functional programming concepts.\n\n# Task\n\nImplement the monadic bind operators `>>` and `>>=` in swift for optionals, lists and functions (similar to the [Reader monad](https://stackoverflow.com/questions/14178889/what-is-the-purpose-of-the-reader-monad)). They should behave just like the standard monad instances in haskell:\n\n- `>>=` for Optionals takes an *Optional of type A* and a *Function from A to an optional of type B* and returns an *Optional of type B*. It maps the function over A, if a is present, otherwise returns nil.\n- `>>=` for Lists takes a *List of A's* and a *Function from A to a List of B's* and returns an *List of B's*. It maps the function over every a and concatenates the results together.\n- `>>=` for Functions takes an *Function from A to B* and a *Function from B to a Function from A to C* and returns a *Function from A to C*. It returns a function that takes an A, that is then passed into the first function (from A to B), the result is passed into the second function (B -> (A -> C)) and the resulting function (A -> C) is again called with the input argument.\n- `>>` is just `>>=` but the function on the right is ignoring it's argument.\n\n*Tipp*\nPerhaps you can implement `>>=` first, and define `>>` in terms of it, \nas `>>` is basically `>>=` that ignores it's argument.\n\nThe Definition of the two operators is already `preloaded` for you:\n\n```swift\nprecedencegroup ForwardApplication {\n  associativity: left\n}\n\ninfix operator >> : ForwardApplication\ninfix operator >>= : ForwardApplication\n```\n\nFurther reading:\n\n- [Introduction to Functor, Applicative and Monad in Swift](https://mokacoding.com/blog/functor-applicative-monads-in-pictures/)\n- [List monad](https://en.wikibooks.org/wiki/Haskell/Understanding_monads/List)\n- [Reader/ \"function\" monad](https://stackoverflow.com/questions/14178889/what-is-the-purpose-of-the-reader-monad)\n- Here's a pretty cool functional programming library for swift: [https://github.com/typelift/Swiftz](https://github.com/typelift/Swiftz)\n- [A video series exploring functional programming in swift](https://www.pointfree.co/)\n",
+    "totalAttempts": 8,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": 11,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

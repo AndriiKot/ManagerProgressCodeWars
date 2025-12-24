@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/656b7ea3693ac002a57cf663",
+  "data": {
+    "id": "656b7ea3693ac002a57cf663",
+    "name": "Robot traveler",
+    "slug": "robot-traveler",
+    "category": "reference",
+    "publishedAt": "2023-12-02T20:08:55.218Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/656b7ea3693ac002a57cf663",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-02T18:59:48.027Z",
+    "createdBy": {
+      "username": "blackhercek",
+      "url": "https://www.codewars.com/users/blackhercek"
+    },
+    "description": "You have been assigned the task of developing a program to control a traveling robot that can move on a two-dimensional plane (x, y). The robot begins its journey at coordinates (0, 0) and can execute three types of commands: \"F\", \"R\", and \"L\".\n\nThe \"F\" command moves the robot one unit forward in the direction it is currently facing.\n\nThe \"R\" command rotates the robot 90 degrees to the right without any movement.\n\nThe \"L\" command rotates the robot 90 degrees to the left without any movement.\n\nYour goal is to write a function that takes a string commands containing a sequence of commands for the robot. The function should return the final coordinates of the robot after executing all the commands.\n\nThe output should be a tuple.\n\n# Examples:\n\n\"FFRFF\" # Returns (2, 2)\nExplanation: The robot moves forward twice (\"F\"), then turns right (\"R\"), and then moves forward two more times (\"F\").\nThe final coordinates of the robot are (0 + 2, 0 + 2) = (2, 2).\n\n\"RFRFRFRF\" # Returns (0, 0)\nExplanation: The robot turns right (\"R\"), then moves forward (\"F\"), then turns right again (\"R\"), and so on.\nSince the robot returns to the starting position, the final coordinates are (0, 0).\n\n\"FFLFF\" # Returns (-2, 2)\nExplanation: The robot moves forward twice (\"F\"), then turns left (\"L\"), and then moves forward two more times (\"F\").\nThe final coordinates of the robot are (0 - 2, 0 + 2) = (-2, 2).\n\n# Notes and rules:\n\nThe input string can only lowercase letters, uppercase letters or an empty string.\n\nThe robot's coordinates are represented as a pair of numbers (x, y), where x represents the horizontal coordinate and y represents the vertical coordinate.\n\nThe initial coordinates of the robot are (0, 0).\n\nThe robot always starts facing forward (in the positive y-direction) before executing the commands.\n\nIf there are other letters that do not answer for anything, skip them\n\nIf the string is empty then print (0, 0)",
+    "totalAttempts": 54,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Algebra"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

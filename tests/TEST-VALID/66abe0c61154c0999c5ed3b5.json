@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66abe0c61154c0999c5ed3b5",
+  "data": {
+    "id": "66abe0c61154c0999c5ed3b5",
+    "name": "Character Frequency Finder",
+    "slug": "character-frequency-finder",
+    "category": "reference",
+    "publishedAt": "2024-08-01T19:31:16.322Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/66abe0c61154c0999c5ed3b5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-08-01T19:23:50.258Z",
+    "createdBy": {
+      "username": "AnyoneClown",
+      "url": "https://www.codewars.com/users/AnyoneClown"
+    },
+    "description": "Your mission, should you choose to accept it, is to create a function that uncovers the secrets hidden in plain sight!\nYour task is to implement the `find_similar` function. This function takes two parameters:\n\n- `string`: A mysterious string that may contain repeated characters.\n- `number`: The minimum number of times a character must appear to be considered significant.\n\nThe function should return a `list` of all characters that appear at least `number` times in the given string. But beware, there are some twists:\n\n- The function should be case-insensitive in counting, but case-preserving in output. 'A' and 'a' are considered the same character for counting purposes, but the first occurrence's case should be preserved in the output.\n- Each character should only appear once in the returned list, even if it occurs more than number times.\n- The order of characters in the returned list should be based on when they reach the number threshold in the string.\n- If no characters appear at least number times, return an empty list.\n\nExamples:\n```python\nfind_similar(\"apple\", 2)  # Returns ['p']\nfind_similar(\"banana\", 2)  # Returns ['a', 'n']\nfind_similar(\"Mississippi\", 3)  # Returns ['i', 's']\nfind_similar(\"AaBbCc\", 2)  # Returns ['A', 'B', 'C']\nfind_similar(\"aAaAaA\", 3)  # Returns ['a']\n```",
+    "totalAttempts": 40,
+    "totalCompleted": 18,
+    "totalStars": 0,
+    "voteScore": 18,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

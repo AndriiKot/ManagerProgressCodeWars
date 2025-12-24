@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4558914a29200032b63aaf",
+  "data": {
+    "id": "5e4558914a29200032b63aaf",
+    "name": "The Poisoned Bottle",
+    "slug": "the-poisoned-bottle",
+    "category": "games",
+    "publishedAt": "2020-02-14T09:56:46.712Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e4558914a29200032b63aaf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-13T14:09:21.535Z",
+    "createdBy": {
+      "username": "anter69",
+      "url": "https://www.codewars.com/users/anter69"
+    },
+    "description": "***PLEASE RATE AND RANK THE KATA IF YOU SOLVED IT, TO HELP IT GET OUT OF BETA. THANKS!***\n\n---\n\n*This is a slightly more advanced version of [this kata](https://www.codewars.com/kata/58c47a95e4eb57a5b9000094/)*\n\n\n### Story\n\nIn a nut's shell: *the King receives a number of bottles of wine, but he suspects that one of them is poisoned. Luckily, he has some lab rats that he can use to taste the bottles, in order to find out which is the poisoned one. Unfortunately, he has time only for one round of testing...*\n\nYou may read the detailed story in the [original kata](https://www.codewars.com/kata/58c47a95e4eb57a5b9000094/).\n\n\n### Your task\n\nFind the poisoned bottle!\n\nYou receive the number of `bottles` and the number of `rats`. You can test the wines with the provided function (see the initial code), specifying the bottle numbers for each rat. The result of the testing is the list of rats that died (if any). Return the number of the poisoned bottle.\n\nNotes:\n* rat numbers and bottle numbers start from 1\n* the number of bottles can go as high as 30000 (and will be at least 2)\n* you will always have enough rats to identify the poisoned bottle\n\nAnd remember: you have **only one** round of test for each set of bottles. Make sure you save the King!\n\n\n### Examples\n\n* 4 bottles and 3 rats:\n```\n# rats:    #1   #2   #3\ntest_wines([1], [2], [3])  -->  [2]\n```\nAs rat #2 tasted bottle `2` and died, that is the poisoned bottle.\n\n\n* 6 bottles and 3 rats:\n```\n# rats:       #1         #2         #3\ntest_wines([1, 2, 3], [3, 4, 5], [5, 6, 1])  -->  [2, 3]\n```\nThe only bottle that rat #2 and #3 both tasted was bottle `5`, so that is the solution.\n\n---\n\n### My other katas\n\nIf you enjoyed this kata then please try [my other katas](https://www.codewars.com/users/anter69/authored)! :-)\n\n#### *Translations are welcome!*",
+    "totalAttempts": 208,
+    "totalCompleted": 22,
+    "totalStars": 2,
+    "voteScore": 24,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

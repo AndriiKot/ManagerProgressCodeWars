@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60c50de4bbb375003129d460",
+  "data": {
+    "id": "60c50de4bbb375003129d460",
+    "name": "Collecting Hailstones",
+    "slug": "collecting-hailstones",
+    "category": "games",
+    "publishedAt": "2021-06-12T19:42:51.383Z",
+    "approvedAt": null,
+    "languages": [
+      "scala"
+    ],
+    "url": "https://www.codewars.com/kata/60c50de4bbb375003129d460",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-12T19:41:24.689Z",
+    "createdBy": {
+      "username": "aldudalski",
+      "url": "https://www.codewars.com/users/aldudalski"
+    },
+    "description": "One day I was doodling when I looked up at the sky. I wondered why oh why are there heavy hailstones in the sky.\n\nThis got me thinking about algorithms.\n\nThe hailstone algorithm is defined by the function h(n) where n can be any positive integer\n\nh(n) = n/2 if n is even or 3n + 1 if n is odd\n\nA sequence is created by taking the last h(n) and re-inserting into the formula. So n' = h(n) which leads to the next h(n') etc.\n\nA hailstone sequence repeats once h(n) reduces to 1 (actually the sequence recurrs from there becoming 1, 4, 2, 1...)\n\nBut we'll finish the sequence once we find the first 1. We then count the terms that it took to find 1. \n\nSo for example H(6) = 6, 3, 10, 5, 16, 8, 4, 2, 1\nThe code that would generate H(6) has 9 terms\n\nMy interest was finding hailstones with a large number of terms by iterating through all known integers.\n\nLet's find some!",
+    "totalAttempts": 4,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

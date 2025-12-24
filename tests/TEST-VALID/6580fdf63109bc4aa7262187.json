@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6580fdf63109bc4aa7262187",
+  "data": {
+    "id": "6580fdf63109bc4aa7262187",
+    "name": "Sentence Assembler",
+    "slug": "sentence-assembler",
+    "category": "reference",
+    "publishedAt": "2023-12-20T13:36:08.346Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/6580fdf63109bc4aa7262187",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-19T02:20:38.419Z",
+    "createdBy": {
+      "username": "yusemog",
+      "url": "https://www.codewars.com/users/yusemog"
+    },
+    "description": "`Sentence.connect(...)` **must create a sentence from these parts:**\n- `String[] subject` contains the *people in the sentence*.\n- `String[] verb` contains the *verbs*.\n- `String[] other` contains the parts that are *not verbs or subjects*.\n\n**Here are the other parameters:**\n- `String end` contains the *punctuation of the sentence*.\n- `int[] priority` contains the *order* the sentence should go in\n  - a value of 0 represents the *other* array\n  - a value of 1 represents the *subject* array\n  - a value of 2 represents the *verb* array\n  \n**Now, how do we do that?**\n- We use the `int[] priority` to find what we should add first, we also need to capitalize it.\n  - `String[][] format` is for this purpose, the values of `int[] priority` correlates with `String[][] format`\n- We start with finding the FIRST index (0) of the selected sentence part (`format[priority[i]]`)\n  - `int[] index` is for this purpose, the values of the array should increase after repeated use of a sentence part.\n  - The indices/indexes may become larger than the length of the selected part's array, so check for that with `Math.min(...)`!\n- We add the text to the result and increment the appropriate index (from the `int[] index` provided)\n  - If the text is the FIRST word of the sentence, then capitalize the first letter!\n  - If a piece of text is fully capitalized (LIKE THIS), then do not change it!\n- For the next one and on, we use the index from `int[] index` (`index[priority[i]]`).\n- At the end, we add the punctuation from `String end`.\n\n**Here is an example!**\n```\nSentence.assemble(\n  new String[]{\"here\",\"already\"},     << String[] other\n  new String[]{\"he\"},                 << String[] subject\n  new String[]{\"is\"},                 << String[] verb\n  \".\",                                << String end\n  new int[]{1,2,0,0}                  << int[] priority\n);\n```\n**Let's work through this:**\n```\n1>>SUBJECT      |  2>>VERB        |  0>>OTHER         |   0>>OTHER              |\n\"He\"(index 0)   |  \"is\"(index 0)  |  \"here\"(index 0)  |   \"already\"(index 1)    |   \".\" (String end)\nindex[1]+1=(1)  |  index[2]+1=(1) |   index[0]+1=(1)  |   index[0]+1=(2)        |\n```\n*THE END RESULT IS:* \"He is already here.\"",
+    "totalAttempts": 65,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

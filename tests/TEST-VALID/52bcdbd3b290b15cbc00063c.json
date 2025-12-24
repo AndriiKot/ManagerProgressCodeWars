@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52bcdbd3b290b15cbc00063c",
+  "data": {
+    "id": "52bcdbd3b290b15cbc00063c",
+    "name": "Guess the Passtune",
+    "slug": "guess-the-passtune",
+    "category": "games",
+    "publishedAt": "2013-12-27T02:06:48.638Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/52bcdbd3b290b15cbc00063c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-12-27T01:45:55.312Z",
+    "createdBy": {
+      "username": "petersenallen",
+      "url": "https://www.codewars.com/users/petersenallen"
+    },
+    "description": "The passtune is an array of 5 notes which will open the castle drawbridge.\nEach note may be one of ['A','B','C','D','E','F','G']. (Each note could be used more than once)\nYou must create a class named Tourist to guess the correct passtune.\nThe improvise method will be used to guess a tune.\n\n```ruby\ntourist.improvise   # returns a 5-note array like ['B','C','C','F','A']\n```\n\nAfter each guess, tourist.callback will be passed a hash containing the number of tumbler clicks & gear turns heard coming from the castle.\n\n```ruby\ntourist.callback(  { :tumbler_clicks => 3, :gear_turns => 1 }  )\n```\n\nThere will be one tumber click for each correct note in the wrong place.\nThere will be one gear turn for each correct note in the correct place.\n\nHere is an example of how the Tourist class will be used:\n\n```ruby\ncastle  = Castle.new\ntourist = Tourist.new\nuntil castle.open? do\n  castle.open_drawbridge( tourist.improvise )\n  tourist.callback( castle.sounds )\nend\n```\n\nCan you guess the passtune in 38 turns or less?",
+    "totalAttempts": 234,
+    "totalCompleted": 18,
+    "totalStars": 3,
+    "voteScore": 13,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

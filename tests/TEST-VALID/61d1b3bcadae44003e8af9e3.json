@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61d1b3bcadae44003e8af9e3",
+  "data": {
+    "id": "61d1b3bcadae44003e8af9e3",
+    "name": "Election Count",
+    "slug": "election-count",
+    "category": "reference",
+    "publishedAt": "2022-01-02T15:20:52.939Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/61d1b3bcadae44003e8af9e3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-02T14:16:28.250Z",
+    "createdBy": {
+      "username": "yusufahmed-ya",
+      "url": "https://www.codewars.com/users/yusufahmed-ya"
+    },
+    "description": "Polling has just closed and the votes are in. Your task is to determine: \n\n1. Who is the next president \n2. Which candidates will form the next cabinet\n3. Which party will have the majority\n\nThe input is an array of objects in the following formats and passed into your function:\n\n```\n[\n  {\n    name: 'bob',\n    votes: 50,\n    party: 'Democrats'\n  }\n]\n```\n1. The next president is the candidate with the highest votes\n2. The cabinet is formed by the candidates with the 4 highest votes excluding the president and the input will always contain more than 5 candidates\n3. The party with the majority is the one with the most candidates in the cabinet including the president\n\nThe input will never be empty.\n\nCandidate names will be unique.\n\nAll candidates will have a unique number of votes.\n\nThere are only two parties in the election\n\nExamples:\n\nINPUT:\n\n```\n[\n    {\n        \"name\": \"Bob\",\n        \"votes\": 50,\n        \"party\": \"Democrats\"\n    },\n    {\n        \"name\": \"Alice\",\n        \"votes\": 10,\n        \"party\": \"Republicans\"\n    },\n    {\n        \"name\": \"Chad\",\n        \"votes\": 20,\n        \"party\": \"Democrats\"\n    },\n    {\n        \"name\": \"Ed\",\n        \"votes\": 60,\n        \"party\": \"Republicans\"\n    },\n    {\n        \"name\": \"James\",\n        \"votes\": 35,\n        \"party\": \"Democrats\"\n    },\n    {\n        \"name\": \"Jamal\",\n        \"votes\": 40,\n        \"party\": \"Republicans\"\n    }\n]\n```\nOUTPUT:\n\n```\n'The next president is Ed and the cabinet will be formed by Bob, Jamal, James and Chad with a majority held by the Democrats'\n```\n\nThe cabinet members are outputted in descending order in the string according to votes collected. \n\n",
+    "totalAttempts": 186,
+    "totalCompleted": 34,
+    "totalStars": 1,
+    "voteScore": 35,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5732367568118323dc001f54",
+  "data": {
+    "id": "5732367568118323dc001f54",
+    "name": "Privileged Array",
+    "slug": "privileged-array",
+    "category": "reference",
+    "publishedAt": "2016-05-14T12:54:13.742Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5732367568118323dc001f54",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-10T19:28:53.976Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Your task is to write a constructor function that returns a \"privileged array,\" as defined below.\n\n# _new PA()_ or _PA()_\n\nShould return a \"privileged\" function for accessing and manipulating the array. There should also be a \"frozen\" property on that function that is incapable of setting any values.\n\n# _new PA(length)_\nShould return a new PA, with the length set.\n\nThe `length` parameter must be an primitive number integer of 0 or higher. Otherwise, an exception should be thrown.\n\n# _new PA([arg1], [arg2], ... [argn])_\nShould insert each argument as an item within the array.\n\nEach function should behave similarly:\n\n# _instance(key)_ or _instance.frozen(key)_\n\nIf a valid key was given, the relevant value should be returned.\n\nIf the key is an index (**an integer 0 or greater, or a string of such an integer**), the corresponding value within the array should be returned. If no value has been set there, `undefined` should be returned.\n\nIf the key is **the string value \"length\"**, the length of the array should be returned.\n\nAll other keys are invalid, and should return `undefined`.\n\n# _instance(key, value)_ or _instance.frozen(key, value)_\n\nIf the key is an index (see above), the corresponding index within the array should be overwritten by the new value.\n\nIf the key is **the string value \"length\"**, and the value is an integer 0 or greater, the array's length should be changed to the given value.\n\nIf there were values stored in indeices from `length` onwards, those should not be accessible from then on; any attempt to read them should return `undefined`. Values can still be stored in those indices, just as before.\n\nIf using the `frozen` function, the new value should not be set.\n\nThe given `value` should always be returned.",
+    "totalAttempts": 179,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

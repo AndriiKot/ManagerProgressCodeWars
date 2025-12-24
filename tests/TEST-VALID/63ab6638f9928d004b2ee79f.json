@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63ab6638f9928d004b2ee79f",
+  "data": {
+    "id": "63ab6638f9928d004b2ee79f",
+    "name": "Throw like a Darts Machine",
+    "slug": "throw-like-a-darts-machine",
+    "category": "algorithms",
+    "publishedAt": "2022-12-28T00:51:51.693Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63ab6638f9928d004b2ee79f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-27T21:40:08.976Z",
+    "createdBy": {
+      "username": "dfhwze",
+      "url": "https://www.codewars.com/users/dfhwze"
+    },
+    "description": "## Description\n\nYou are a <a href=\"https://en.wikipedia.org/wiki/Darts\">Darts</a> enthousiast and want to take your skills to the next level. You do <b>not</b> wish to become a pro player, instead you want to become a Darts Machine, always adhering to the same strategy, whether it is the optimal strategy or not.\n\n---\n\n## Task\n\nGiven your score in a Darts game, return the preferred darts to throw in the next turn given your strategy explained below.\n\n### Input\n\n- score: your score in a Darts game: <code>2 &lt;= score &lt;= 501</code>.\n\n### Output\n\n- return an array of <code>1</code> upto <code>3</code> 2-ples, each 2-ple holding <code>2</code> positive integers representing the number to throw, and its section respectively.\n  - number: <code>1 - 20, 25 or 50</code>\n  - sections:\n    - <code>1</code>: regular section of a number, bull or bull's eye\n    - <code>2</code>: double ring (doubles value of a number)\n    - <code>3</code>: triple ring (triples value of a number)\n\n### Example\n\n- Given a score of <code>98</code>, you want to throw <code>[[20,3],[19,2]]</code>, which means the first dart is aimed at <code>20</code> at its <i>triple ring</i> and the second dart is aimed at <code>19</code> at its <i>double ring</i>. This would result in a checkout of <code>20 * 3 + 19 * 2 == 98</code>.\n\n### Input Constraints\n\n- 500 test cases of valid scores\n\n---\n\n## Darts\n\nThe leg of Darts is played between two players, who each take turns to throw upto three darts at the board. The starting score is <code>501</code>. Each dart that hits a valid section at the board reduces the score with a corresponding value. The first player that reaches a score of <code>0</code> wins the leg.\n\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/4/42/Dartboard.svg\" style=\"height:264px\">\n<small><a href=\"https://en.wikipedia.org/wiki/Darts#Scoring\">image source</a></small>\n\n- There are <code>20</code> numbers, each having their own section on the board. The score for hitting the section has the value of that number.\n- The triple ring is the smallest ring in a section of a number. Hitting it triples the value of the number.\n- The double ring is the bigger, outer ring in a section of a number. Hitting it doubles the value of the number.\n- The bull is the green circle in the center of the board. Hitting it has a value of <code>25</code>.\n- The bull's eye is the red circle in the center of the board. Hitting it has a value of <code>50</code>.\n- In each turn, a player can throw one, two or three darts. Once <code>0</code> is reached, the turn and leg ends. Going below <code>0</code> defaults the turn.\n- The final dart that reduces the score to <code>0</code> must be thrown by either hitting the bull's eye or any double ring. Any other value defaults the turn.\n\n---\n\n## Strategy\n\nYou are very strict about the strategy to use. It's optimal for higher scores, but very risky once a checkout is possible. You won't beat many pro players using this strategy.\n\n- if a checkout (can reach <code>0</code>) is possible, you will go for it\n- if no checkout is possible, you'd prefer to setup yourself for a final turn; you will try to reach any of the following scores in order of priority: <code>40, 32, 20, 16</code>.\n- if you can't setup yourself for a final turn, you want to score as heavily as you can leaving yourself at least a score of 8, or the next turn would become too risky to bust yourself. There will always be at least one option if you reach this point\n\n### Tie-breaking rules\n\nWhenever multiple options are available in any of the previous steps, you give priority as follows:\n\n- turn with least amount of darts used\n- highest value rendered by first dart (value = number * section)\n- highest value of number of first dart\n- highest value rendered by second dart (value = number * section)\n- highest value of number of second dart\n- highest value rendered by third dart (value = number * section)\n- highest value of number of third dart\n\n---\n\n## Examples\n\n#### One-Dart Checkout\n\n```\nscore = 40\nreturn [[20,2]]\ninfo: aim 1 dart at double ring of 20\n\nscore = 50\nreturn [[50,1]]\ninfo: aim 1 dart at bull's eye\n```\n\n#### Two-Dart Checkout\n\n```\nscore = 80\nreturn [[20,3],[10,2]]\ninfo: aim 1 dart at triple ring of 20 and 1 at double ring of 10\n\nscore = 101\nreturn [[17,3],[50,1]]\ninfo: aim 1 dart at triple ring of 17 and 1 at bull's eye\n```\n\n#### Three-Dart Checkout\n\n```\nscore = 149\nreturn [[20,3],[19,3],[16,2]]\ninfo: aim 1 dart at triple ring of 20 and 1 at triple ring of 19 and 1 at double ring of 16\n\nscore = 170\nreturn [[20,3],[20,3],[50,1]]\ninfo: aim 2 darts at triple ring of 20 and 1 at bull's eye\n```\n\n#### The Bogey Numbers\n\n```\nThe Bogey Numbers are scores that don't have a checkout available, while there exist higher scores that do have a checkout available.\n\nscore = 169\nreturn [[20,3],[20,3],[9,1]]\ninfo: aim 2 darts at triple ring of 20 and 1 at 9, leaving you with a score of 40\n```\n\n#### Setup the Final Turn\n\n```\nscore = 179\nreturn [[20,3],[20,3],[19,1]]:\ninfo: aim 2 darts at triple ring of 20 and 1 at 19, leaving you with a score of 40\n```\n\n#### Reducing Score\n\n```\nscore = 401\nreturn [[20,3],[20,3],[20,3]]\ninfo: aim 3 darts at triple ring of 20, leaving you with a score of 221\n```\n\n",
+    "totalAttempts": 16,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

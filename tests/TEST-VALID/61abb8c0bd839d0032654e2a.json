@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61abb8c0bd839d0032654e2a",
+  "data": {
+    "id": "61abb8c0bd839d0032654e2a",
+    "name": "Calculate distance between convex hulls",
+    "slug": "calculate-distance-between-convex-hulls",
+    "category": "algorithms",
+    "publishedAt": "2021-12-04T19:47:21.154Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61abb8c0bd839d0032654e2a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-04T18:51:44.627Z",
+    "createdBy": {
+      "username": "kwikandkwak",
+      "url": "https://www.codewars.com/users/kwikandkwak"
+    },
+    "description": "Collision detection plays an important role in simulating physics. Being able to tell if two objects are intersecting is very important, but it can be handy to know the distance between the convex hulls as well because we typically also want to handle almost colliding objects as colliding as well.\n\nI don't expect you to reinvent this, as it requires a pretty complicated algorithm. I would like you instead to just **implement the GJK (Gilbert-Johnson-Keerthi) algorithm** rather than reinvent it, this is the algorithm that is used everywhere as it is very efficient so it's worth learning how it works. The algorithm can be used in 2D and 3D (although 3D has a couple more steps it's pretty much the same) but this Kata will stick to 2D as it's much easier to debug and visualize.\n\nThere is plenty of code examples out on the web on how to implement it and how it looks in code. It's your choice to just copy a complete solution on the web or to just learn the algorithm steps and implement them yourself. Please remember that we also need the distance between two convex hulls and not only if they are colliding or not. You'll pretty much need two algorithms for this.\nA very good explanation video can be found [here](https://www.youtube.com/watch?v=Qupqu1xe7Io)(it's for 3D but 2D should be easier).\n\n## Your task\nYour task is to write a function named *distance*:\n* Input: Two lists with in them the points of each convex hull\n* Output: The minimal distance between the two convex hulls(0 if colliding)\n\nNotes:\n* GJK is used everywhere because of it's great efficiency, even though it's python I expect your algorithm to run 10000 random tests with 3-10 vertex convex hulls in time.\n* To help you with debugging I give you the function *show_polygons* that takes a list of polygons as \\[\\[\\[5, 3\\], \\[8, 5\\], \\[10, 89\\]\\], \\[3, 2... and shows you how they look.",
+    "totalAttempts": 56,
+    "totalCompleted": 4,
+    "totalStars": 4,
+    "voteScore": 0,
+    "tags": [
+      "Geometry",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

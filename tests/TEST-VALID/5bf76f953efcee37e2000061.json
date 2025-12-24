@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bf76f953efcee37e2000061",
+  "data": {
+    "id": "5bf76f953efcee37e2000061",
+    "name": "Special Calculations",
+    "slug": "special-calculations",
+    "category": "reference",
+    "publishedAt": "2018-11-24T23:39:11.187Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5bf76f953efcee37e2000061",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-23T03:10:13.642Z",
+    "createdBy": {
+      "username": "user7897247",
+      "url": "https://www.codewars.com/users/user7897247"
+    },
+    "description": "# WHAT ARE THESE STRANGE SYMBOLS?\n\nJoe's math textbook has some very strange operation symbols in its math problems: D, B, and I. It turns out that these symbols are based on simple math operations (addition, multiplication, etc.) that aren't found anywhere in the textbook. Although there are example problems for these operation, he can't figure out what they mean...\n\n# SO, UMMM... HOW DO WE DO THIS?\n\nFortunately for us, we happen to have the answer booklet to these problems. Based on the answers, the operations for these symbols are as follows:\n\n``` a D b is equivalent to 4a + b ```\n\n``` a B b is equivalent to a + 4b ```\n\n``` a I b is equivalent to (a * b) + a + b ```\n\n# YOUR MISSION\n\nCreate a calculator-like method for Joe that can perform these strange operations. The calculator should also handle the following operations that they rely on: addition and multiplication.\n\n# INPUT\n\nThe method must take the following:\n\n - a string variable such as follows: ``` \"3 + a D 7\" ```\n\n - _But wait a minute._ What's that variable ```a```? That is a special integer that the method must also supply. The operation, however, might not have the variable, in which case just code as normal.\n\n\n# OUTPUT\n\nThe method must return the result of the decrypted operation string. So ```\"4 I a``` (where a = 4) must return ```24```.\n\n# NOTES\n\n - The oprder of operations go as follows: I, D, B, Multiplication, Addition. Remember to compute going from left to right!\n - Don't worry about subtraction, division, exponents, or parenthesis.\n - Negative numbers will be included in the operations.\n - Since this is my first Kata, please let me know if anything seems off!\n\n",
+    "totalAttempts": 49,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Logic",
+      "Strings",
+      "Data Types",
+      "Parsing",
+      "Arithmetic",
+      "Mathematics",
+      "Numbers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

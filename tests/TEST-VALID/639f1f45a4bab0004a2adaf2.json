@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/639f1f45a4bab0004a2adaf2",
+  "data": {
+    "id": "639f1f45a4bab0004a2adaf2",
+    "name": "Chess ♟️: Calculate the score of the  chess player",
+    "slug": "chess-calculate-the-score-of-the-chess-player",
+    "category": "reference",
+    "publishedAt": "2022-12-19T08:34:15.223Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/639f1f45a4bab0004a2adaf2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-18T14:10:13.315Z",
+    "createdBy": {
+      "username": "Rakshitkumar",
+      "url": "https://www.codewars.com/users/Rakshitkumar"
+    },
+    "description": "__In this kata, your objective - if choose to accept - is to write the function `chessStats` that takes two parameters `(player, games)` and returns different scores of the chess player.__\n\n## Basic info on chess:\n\n1. A chess game is played between two players.\n2. Result of a game will either be 'Win', 'Lose', or 'Draw'.\n\n[Chess - Wikipedia](https://en.wikipedia.org/wiki/Chess)\n\n---\n__Now to the coding:__\n## Parameters:\n1. `player` integer parameter indicates whose stats you are going to return (_`1` = player 1 and `2` = player 2_).\n2. `games` array holds the result of the games played between player 1 and player 2. Each item represents a single game played between player 1 and player 2 (_e.g:_ `['1-0', '0.5-0.5', '0-1', '1-0']`). `1` means win, `0.5` is draw, and `0` indicates the player lost the game. So `'1-0'` means player 1 won and player 2, obviously, lost that game.\n\n## Your Task:\n__Return an `array` holding 4 _integer_ values & a _string_ value.__  \n\n   `[totalGamesPlayed, gamesWon, losePercentage, longestWinStreak, matchStatus]`  \n   \n\n    `totalGamesPlayed` = Total number of games played.  \n    `gamesWon` = Number of games won by the player.  \n    `losePercentage` = Games lost by the player in percentage.  \n    `longestWinStreak` = Longest winning streak by the player.  \n    `matchStatus` = Whether the player `\"Won\"`, `\"Lost\"` or `\"Drew\"` the match series. (See Notes)\n\n## Notes:\n\n1. Assume all the inputs are valid.\n2. Floor the value for `losePercentage`.\n3. To elaborate `matchStatus`: It is determined by comparing the scores of both players at the end of match series. If the player scores more than their opponent, they `\"Won\"`, or if the score is lower then they `\"Lost\"`, or if the scores are equal then it's `\"Drew\"`\n\n\n---\n\n## Examples:\n    chessStats(1, ['0.5-0.5', '1-0', '1-0', '0-1', '0.5-0.5', '1-0'])  // returns [6, 3, 16, 2, \"Won\"]  \n    \n    chessStats(2, ['0.5-0.5', '1-0', '1-0', '0-1', '0.5-0.5', '1-0'])  // returns [6, 1, 50, 1, \"Lost\"]",
+    "totalAttempts": 84,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Games",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

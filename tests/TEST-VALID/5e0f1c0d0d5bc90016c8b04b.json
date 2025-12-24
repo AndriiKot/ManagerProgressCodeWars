@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e0f1c0d0d5bc90016c8b04b",
+  "data": {
+    "id": "5e0f1c0d0d5bc90016c8b04b",
+    "name": "Worm adventures (Part 1)",
+    "slug": "worm-adventures-part-1",
+    "category": "reference",
+    "publishedAt": "2020-11-02T11:28:55.170Z",
+    "approvedAt": null,
+    "languages": [
+      "scala",
+      "java",
+      "haskell",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e0f1c0d0d5bc90016c8b04b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-03T10:48:45.236Z",
+    "createdBy": {
+      "username": "oybek",
+      "url": "https://www.codewars.com/users/oybek"
+    },
+    "description": "Hello! I'm a happy worm!\n\nI consist of cells (like in picture). My head is also a cell but with\nmy face in it. My head can move one cell right, down, left and up, and\nmy tail follows my head (as shown in second picture)\n\nWhen my head collides with other cells of my body - I become sad (as\nshown in first picture)\n\n![382xRa.png](https://iili.io/382xRa.png)\n\nYou are given body of the worm as list of `x`, `y` coordinates.\nThe first element of list is the head.\nAlso you got a list of directions:\n\n* right - move from (x, y) to (x+1, y)\n* left - move from (x, y) to (x-1, y)\n* up - move from (x, y) to (x, y+1)\n* down - move from (x, y) to (x, y-1)\n\nWorm interprets list of directions and moves; he ignores directions\nwhich makes him sad. Worm can move to point which is occupied by its\nlast cell, because when he moves there will be no collision, except\nthe cases when worm's length is 2 (including the head)\n\nYour task is to return worm after interpretation of directions is done.\nWrite optimal solution, cause worm can be long (10k), and there can be\na lot of instructions (7k).\n\n~~~if:scala,\nWorm is represented as `List[(Int, Int)]`\n\nThere is preloaded code to represent directions:\n\n```scala\nsealed trait Dir\ncase object Up extends Dir\ncase object Down extends Dir\ncase object Left extends Dir\ncase object Right extends Dir\n```\n~~~\n~~~if:java,\nWorm is represented as `Point[]`.\n\nDirections are given as `String[]` `\"up\", \"down\", \"left\", \"right\"`\n~~~\n~~~if:javascript,\nWorm is represented as `[ [Number,Number] .. ]`. All coordinates are integers.\n\nThere is preloaded code to represent directions:\n\n```javascript\nconst Up    = \"Up\"\nconst Down  = \"Down\"\nconst Left  = \"Left\"\nconst Right = \"Right\"\n```\n~~~\n~~~if:haskell,\nWorm is represented as `[(Int,Int)]`.\n\nThere is preloaded code to represent directions:\n\n```haskell\ndata Dir = Up | Down | Left | Right deriving (Eq,Show)\n```\n\n`Prelude` will have to be explicitly imported hiding `Either`. We apologise for the inconvenience.\n~~~\n\n---\n\nIf you like this Kata, also try others from me:\n\n- [Optimal sort](https://www.codewars.com/kata/5eb1767b3c435d001166d4c6)",
+    "totalAttempts": 391,
+    "totalCompleted": 25,
+    "totalStars": 7,
+    "voteScore": 43,
+    "tags": [
+      "Data Structures",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

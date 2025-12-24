@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5788e6b090b2f34e0e0000e4",
+  "data": {
+    "id": "5788e6b090b2f34e0e0000e4",
+    "name": "Just Another String Comparer",
+    "slug": "just-another-string-comparer",
+    "category": "algorithms",
+    "publishedAt": "2018-12-16T13:13:29.566Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5788e6b090b2f34e0e0000e4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-15T13:35:44.213Z",
+    "createdBy": {
+      "username": "Kaiyou",
+      "url": "https://www.codewars.com/users/Kaiyou"
+    },
+    "description": "Fundamentally this kata is about comparing two strings. <br />If they are the same return true, if they are not the same return false.<br /><br />\n\nThere's an extra rule, though. But only if the string is a number. See, some of them numbers have a really high precision. If two numbers differ after dozens of decimals we might just don't care and say they are the same anyway. This is indicated with an integer. If the integer is 9 we only care for the first 9 decimals. Cut the rest off. No rounding. \n\nIf it is 0  the strings \"3\" and \"3.1\" will be considered the same. If it's 1 they won't. <br /> All decimals must match if the integer is null.\n\nFor this kata only a dot indicates decimal places. A comma does not. \n\n<br /><br /><br />That's pretty much it. Happy coding. <br /><br /><br />\n\nOr wait,.. since for this kata it is important to differentiate between strings that are numbers and those who are not, I should make it really clear what constitutes a number: everything with only digits and at most one of the signs '-' and '.' each. <br /><br /><br />\n\n\n<h3><b>And there is one more thing.</b></h3> Sometimes a string begins with something like \"4:\", i.e. \"4:3.1415\". As far as this comparison goes, we do not care for this prefix. \"4:3.1415\" and \"3.1415\" are the same for us. \"4: 3.1415\" and \"3.1415, however, are not. (Notice the extra space after the colon.) So any <b>one or two digit number</b> followed by a colon at the beginning of the string isn't of any concern to us. <br />\n\nHint: \"9.999999999999999999andSomeText\" isn't a number.\n\nI've modified the test cases to take about 11500ms with my solution. If your code times out, optimization may be required.",
+    "totalAttempts": 91,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

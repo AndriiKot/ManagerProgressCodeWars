@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5989db666ea59c8077000001",
+  "data": {
+    "id": "5989db666ea59c8077000001",
+    "name": "How many workers are needed",
+    "slug": "how-many-workers-are-needed",
+    "category": "algorithms",
+    "publishedAt": "2017-08-09T11:28:06.412Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5989db666ea59c8077000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-08T15:40:22.081Z",
+    "createdBy": {
+      "username": "osofem",
+      "url": "https://www.codewars.com/users/osofem"
+    },
+    "description": "## Instruction\nWe have to dig a pit and will like to know the number of workers that will be needed to complete the job <b>within a day</b>.\n\nThe dimensions of the pit will be given as an object and the unit of measurement can be any of metres `m`, centimetres `cm` or millimetres `mm`. \n\nA pit with dimensions `length = 300m`, `width = 1000cm`, and `height = 1070mm` will be given as\n`{length:{value:300, unit:'m'}, width:{value:1000, unit:'cm'}, height:{value:1070, unit:'mm'}}`.\n\nThere will be various categories of workers which you can select from with their corresponding capabilities of digging in `volume/day`. The unit can be any of cubic metre `m^3`, cubic centimetre `cm^3` or cubic millimetre `mm^3` (the per day will be omitted from the unit).\n\nFor instance, if you have three categories of workers `a`, `b`, and `c` to select from and category `a` has 8 members who can <b>each</b> dig 400 cubic metres per day and category `b` has 20 members who can <b>each</b> dig 2,000,000 cubic centimetres per day, and category `c` has 10 members who can dig 1,000,000,000 cubic millimetre per day this will be given as\n`{a:{value:400, unit:\"m^3\", number: 8}, b:{value:2000000, unit:\"cm^3\", number: 20}, c:{value:1000000000, unit:\"mm^3\", number: 10}}`.\n\nYou are to return the `optimal` number of workers that will be required. That is, you have to make sure you use the maximum number possible of workers with higher capabilities before moving to workers will lower capabilities. \nBut if the work to be done is too small even for a worker with the lowest capability, you have to use a single worker from the lowest capability to complete the work.\n\n## Example\n### First Example\nFor instance,if you have to do <code>3210m<sup>3</sup></code> of work and have workers `{a:{value:400, unit:\"m^3\", number: 8}, b:{value:1000000000, unit:\"mm^3\", number: 10}, c:{value:2000000, unit:\"cm^3\", number: 20}}`. \n\nYou will first consider using category `a` workers since they have higher capabilities of 400m<sup>3</sup>. All 8 of them can do 8x400 = 3200m<sup>3</sup>.\n\n10m<sup>3</sup> left to be done. The next category of worker is category `c` (they can do 2000000cm<sup>3</sup> = 2m<sup>3</sup> as against `b`'s 1000000000mm<sup>3</sup> = 1m<sup>3</sup>). So you will need 5 more `c` workers to complete the 10m<sup>3</sup>. \n\nSo your answer will be `{a:8,c:5}` \n\n### Second Example\nBUT if you have to do <code>5m<sup>3</sup></code> of work and have workers `{a:{value: 10, unit: 'm^3', number: 5},b{value: 6, unit: 'm^3', number: 4}}`, your answer will be `{b:1}` and not `{a:1}`\n\n## Important\nYour result should be an object in the format of `{category of worker: number needed, category of worker: number needed,...}`. e.g. if you need 8 people from categoty `a` and 5 people from category `b` and nobody from category `c`, your answer will be `{a:8,b:5}` (If a category of work is not needed, it should not be included in the result).\n\n<b>Note:</b> \n<ol>\n<li>The job must be finished in a day\n<li>No work should be left undone\n<li>There is no fractional person. A person should be either 1 or 0\n<p>That is, if I have to do 5m<sup>3</sup> of work and a category of worker that can do 2m<sup>3</sup>/day. I won't need 2.5 people, I will rather need 3 people.</p>\n<li>All presented workers will always be able to finish the work in a day.\n<li>When no work is to be done, an empty object should be returned\n<li>No two group of worker will have the same digging capability.\n</ol>\n\n",
+    "totalAttempts": 127,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 13,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

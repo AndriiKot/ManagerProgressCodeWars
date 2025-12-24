@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ee2ae78c603d3001fc42f5e",
+  "data": {
+    "id": "5ee2ae78c603d3001fc42f5e",
+    "name": "Telephone Pictionary",
+    "slug": "telephone-pictionary",
+    "category": "algorithms",
+    "publishedAt": "2020-06-17T18:55:28.275Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5ee2ae78c603d3001fc42f5e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-11T22:21:44.376Z",
+    "createdBy": {
+      "username": "kplum",
+      "url": "https://www.codewars.com/users/kplum"
+    },
+    "description": "Due to a global pandemic your beloved bi-weekly game night with friends has been switched to an online-only event for the time being.\n\nIn person, one of your favourite games to play always was \"Telephone Pictionary\":\nYou and your nerd-friends sit in a circle and all have a piece of paper and a pen. First, everyone has to come up with a secret sentence and write it down, then pass it on to their right neighbour. In the second round the players translate the sentence in front of them to a picture and fold the paper so that the subsequent player will only be able to see the picture. The pieces of paper are passed on again in the same direction and now everyone tries to figure out what the hell the picture in front of them means, writes it down, folds, passes on, draws, folds, passes on, writes...\nThe ordeal is repeated ad nauseam or until the space runs out, whichever happens first. Finally the papers are unfolded and everyone can laugh about the evolution the sentences went through, haha.\n\nYou now have come up with the brilliant idea to develop a chat bot so that your friend group can play the game in a group chat without having to keep track of who sent what to whom when. Everyone should send their photos and sentences directly to the bot, who then takes care of forwarding the submissions in the correct order to the correct next player. When the game is terminated, the bot should optimally paste the submissions to the group chat, grouped nicely together and in the right order.\n\nIn order to kick it up a notch you have decided that under these conditions the game should not be required to be synchronous anymore, i.e. that rounds are not assigned to the entire group, instead, every player can be in their own round (round = # of submissions already submitted by player; even round means next submission should be a sentence, odd round means next submission should be a photo).\nWhen a player makes a valid submission to the chat bot, the chat bot should forward the message to the successor only if the successor is currently idle (waiting for next drawing / text prompt), and possibly forward the message next-in-line from the predecessor, if it exists. Submmissions are forwarded \"First In First Out\", so that the order in which the n \"papers\" reach a player always stays the same.\n\n\nYour Task\n=========\n\nImplement the struct `TPModerator`, which should be responsible for moderating a *single*  game of Telephone Pictionary with n > 2 players (`n` will be passed to `TPModerator`'s constructor). On top of its constructor (`new`), implement its two methods `respond` and `terminate`.\n\n## respond ##\n\nIts method `respond` should handle a single submission from a single player and either return potential forwarding messages that are triggered by the submission or an error message for an invalid submission.\n\nA submission is considered invalid in these cases:\n* submission is a picture when it should be a sentence or vice versa\n  * => return ```\"Expected <x> next, but got <y>.\"```, with ```picture```and ```sentence``` substituted correspondingly for ```<x>``` and ```<y>```\n* player submits something despite currently having no prompt because he has to wait    for predecessor\n  * => return ```\"Pace yourself!\"```\n* All of the above\n  * => ```\"Pace yourself!\"``` has precedence\n  \n### parameter ###\nrespond receives a single parameter `msg` of the preloaded type `InMessage`, which represents an incoming message from a player to the bot\n\n    #[derive(Debug, Clone, Copy, PartialEq)]\n    struct InMessage {  // receiver: your moderator bot\n        sender: usize,\n        msg_id: usize,\n        kind: MessageKind,\n    }\n    \n0 < `sender` < n identifies the sending player with `successor(x) = x + 1 % n` and `predecessor(x) = successor⁻¹(x)` describing the cyclical order of the players.\n\n`msg_id` identifies the sent message *within the conversation with the `sender`*. So the tuple (`sender`, `msg_id`) will always be unique within a game, but `msg_id` on its own is not guaranteed to be unique, the bot could receive a message with the same `msg_id` from another player.\n\nThe field `kind` specifies whether the player submitted a sentence or a picture. `MessageKind` is also preloaded:\n\n    #[derive(Debug, Clone, Copy, PartialEq)]\n    enum MessageKind {\n        Text,\n        Picture,\n    }\n\n### return value ###\n\n`respond` shall return a `Result<Vec<ForwardMessage>, String>`. The order of `ForwardMessage`s within the Vec is irrelevant. It is only important that the Vec contain all message forwarding events that are immediately triggered by `msg`. A forwarding event is characterized by the preloaded type `ForwardMessage`:\n\n    #[derive(Debug, Clone, Copy, PartialEq)]\n    struct ForwardMessage { // sender: your moderator bot\n        from: usize,   // from which player should be forwarded\n        to: usize,     // to which player should be forwarded\n        msg_id: usize, // which message from the chat with 'from' should be forwarded\n    }\n  \n\n## terminate ##\n\nThere is no limit to how many rounds may be played. Instead, a game ends when `TPModerator`'s terminate method is called. It takes no parameters and can only be called once on each instance.\nNote that the `TPModerator` could be asked to terminate the game and deliver the result at any point in time, even when no one has submitted anything yet or some players are far ahead of others with their number of submissions. \n\n### return value ###\nThe `terminate` method should return a representation of how each player's initial sentence evolved in the form of a Vec<Vec<(usize, usize)>>. The outer Vec should have the length n and be ordered by the initial player's id. So `tp_mod.terminate()[p]` should yield the submission history beginning with player `p`'s initial submission. A submission is characterized by a tuple (usize, usize), whose first element denotes the player who made the submission and whose second element denotes the message id  of the submission within the respective chat.\n\n\nExample with n = 3 (players p0, p1, p2)\n========================\nThis example uses unique strings to identify submissions instead of ids\n\n| Sender | Kind     | Submission                   | Moderator's response                                                 |\n|--------|----------|------------------------------|----------------------------------------------------------------------|\n| p0     | sentence | \"Ilove codewars\"             | -                                                                    |\n| p2     | photo    | \"mycat.jpg\"                  | Invalid submission                                                   |\n| p2     | sentence | \"My cat is cute\"             | forward \"My cat is cute\" to p0                                       |\n| p0     | photo    | \"p2_with_their_cat.jpg\"      | -                                                                    |\n| p1     | sentence | \"I'd rather play werewolves\" | forward \"I'd rather play werewolves\" to p2, \"I love codewars\" to p1  |\n| p0     | sentence | \"Come on, hurry up, folks\"   | Invalid submission                                                   |\n| p1     | photo    | \"p0_obsessing_over_kata.jpg\" | forward \"p2_with_his_cat.jpg\" to p1                                  |\n| p1     | sentence | \"An alien pets a grumpy cat\" | -                                                                    |\n\n## Game terminated, resulting presentation of evolution of players' initial sentences: ##\n\n| p0                           | p1                           | p2                           |\n|------------------------------|------------------------------|------------------------------|\n| \"I love codewars\"            | \"I'd rather play werewolves\" | \"My cat is cute\"             |\n| \"p0_obsessing_over_kata.jpg\" |                              | \"p2_with_his_cat.jpg\"        |\n|                              |                              | \"An alien pets a grumpy cat\" |",
+    "totalAttempts": 26,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

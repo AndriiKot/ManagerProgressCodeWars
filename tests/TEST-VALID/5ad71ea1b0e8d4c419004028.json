@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ad71ea1b0e8d4c419004028",
+  "data": {
+    "id": "5ad71ea1b0e8d4c419004028",
+    "name": "Superior Character",
+    "slug": "superior-character",
+    "category": "reference",
+    "publishedAt": "2018-04-18T10:32:01.372Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ad71ea1b0e8d4c419004028",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-18T10:32:24.427Z",
+    "createdBy": {
+      "username": "Belia",
+      "url": "https://www.codewars.com/users/Belia"
+    },
+    "description": "Given a string, a character is said to be superior if it has two neighboring letters that are strictly smaller than itself. We compare characters by their location in the alphabet.\n\nMore formally, we say that the character at the `ith` position is superior if a character exists at the `(i+1)th` position and `(i-1)th` position, and the character at the `ith` position is strictly greater than the character at both `(i+1)th`and `(i-1)th` positions.\n\nGiven the frequencies of the  lowercase English letters, form a string using all these characters, such that the resultant string has the maximum number of superior characters. You need to print the maximum number of superior characters.\n\nComplete the function maximumSuperiorCharacters which takes in an array of  integers denoting the frequencies of the English letters and returns an integer denoting the maximum number of superior characters. `freq` parameter take array with length 26, where freq[0] is the char `a` frequencys, freq[1] is char `b` frequencys, etc..\n\n`0 0 0 0 2 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0`\nwe have two `e`s, one `l`, one `s`, and none of the other letters. We can form a string with one superior character, for example, `else`. One can also show that this is the maximum number of superior characters that can be present. Thus, the answer is `1`. There are also many other permutations of characters possible to form a string with maximum superior characters.\n\n`a=1,b=2,c=3...` etc..<br>\nExample permutation can be made from the character<br>\nPermutation : Number of superior character<br>\nelse : 1<br>\neels : 0<br>\nesle : 1<br>\neesl : 1<br>\neles : 1<br>\nesel : 1<br>\nlsee : 1<br>\nlees : 0<br>\nlese : 1<br>\nseel : 0<br>\nslee : 0<br>\nsele : 1<br>",
+    "totalAttempts": 37,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

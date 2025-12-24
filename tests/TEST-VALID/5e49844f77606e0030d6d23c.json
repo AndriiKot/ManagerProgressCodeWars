@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e49844f77606e0030d6d23c",
+  "data": {
+    "id": "5e49844f77606e0030d6d23c",
+    "name": "Square root of a Double",
+    "slug": "square-root-of-a-double",
+    "category": "reference",
+    "publishedAt": "2020-02-17T09:51:21.271Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5e49844f77606e0030d6d23c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-16T18:05:03.613Z",
+    "createdBy": {
+      "username": "Paul Robertson",
+      "url": "https://www.codewars.com/users/Paul%20Robertson"
+    },
+    "description": "Write a function:\n\n```haskell\nestimateSqrt :: Double -> Double\n```\nwhich calculates the square root of any positive ```x :: Double``` to a first approximation\n\nIn the tests, ```x``` will always be greater than zero, but may be very large or very small.\n\nYour results should be accurate to within 10%, so they will be checked by a function something like this:\n\n```haskell\ncheckSqrt :: Double -> Bool\ncheckSqrt x = y <= 1.21 && y >= (recip 1.21)\n              where y = x / (estimateSqrt x)^2\n```\nThe functions ```sqrt``` ```log``` ```exp``` ```sin``` ```cos``` and ```(**)``` have been hidden.\n\nDon't worry, there are still some functions in ```Prelude``` which can help you.\n",
+    "totalAttempts": 63,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 10,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

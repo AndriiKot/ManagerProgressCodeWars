@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e750dd4626ac30012e35c77",
+  "data": {
+    "id": "5e750dd4626ac30012e35c77",
+    "name": "Escape the Aliens",
+    "slug": "escape-the-aliens",
+    "category": "games",
+    "publishedAt": "2020-03-20T19:41:05.436Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e750dd4626ac30012e35c77",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-20T18:39:16.746Z",
+    "createdBy": {
+      "username": "dajkatal",
+      "url": "https://www.codewars.com/users/dajkatal"
+    },
+    "description": "You are the best intergallactic assasin the galaxies have ever seen. However, this illegal profession of yours has caused the **IAOA** (Iltergallactic Association Of Aliens) to place the largest bounty in history on your head.\n\nOn your journey back to Earth, you enter a new galaxy and a set guardian ships begin to chase you. They all have one goal: To kill you and claim your bounty.\n\nYou want to stay here for as long as possible so you can buy time to plan you next move... but you do not want to get caught!\n\nThis galaxy is of size **R** x **C**; the rows are numbered from 1 to **R** from top to bottom, and the columns are numbered from 1 to **C** from left to right. You can start in any cell of the galaxy and must jump between cells until every cell has been visited *exactly* once. (You can never revisit a cell, including your starting cell)\n\nIn order to outsmart the guardian ships, each time you jump, the destination cell must not share a row, column or diagonal with the current cell. In other words, a jump from the current cell `[r,c]` to a destination cell `[r',c']` is invalid if any of these are true:\n\n* r = r'\n* c = c'\n* r - c = r' - c'\n* r + c = r' + c'\n\nGiven the values **R** and **C**, create a program that helps your ship navigate the galaxy while you think of a plan to escape the guardians.\n\n### Input\n\n2 ≤ **R** ≤ 50 <br>\n2 ≤ **C** ≤ 50\n\n### Format Of Output\n\nIf it is possible to visit every cell in the galaxy, return an array with arrays of `[r,c]` for every move made.\nIf it is not possible to visit every cell, return an empty array.\n\n### Sample\n\nIf **R** = 4 and **C** = 3, the expected answer is: <br>`[[1, 1], [3, 2], [1, 3], [4, 1], [2, 2], [4, 3], [3, 1], [1, 2], [3, 3], [2, 1], [4, 2], [2, 3]]`\n\n> If you do not know where to start, read about the [Knight's Tour](https://en.wikipedia.org/wiki/Knight%27s_tour).",
+    "totalAttempts": 146,
+    "totalCompleted": 8,
+    "totalStars": 6,
+    "voteScore": 2,
+    "tags": [
+      "Puzzles",
+      "Games",
+      "Lists",
+      "Arrays",
+      "Algorithms",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

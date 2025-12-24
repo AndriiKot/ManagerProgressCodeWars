@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53c308e5702fde529b00013e",
+  "data": {
+    "id": "53c308e5702fde529b00013e",
+    "name": "ES5 Generators(iii)",
+    "slug": "es5-generators-iii",
+    "category": "reference",
+    "publishedAt": "2014-07-13T23:00:35.200Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53c308e5702fde529b00013e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-13T22:32:05.086Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the third part of three ([part1](http://www.codewars.com/kata/es5-generators-i), [part2](http://www.codewars.com/kata/es5-generators-ii)).\n\nGiven the implementation of this functions (they are preloaded and it is not necessary to implement them):\n\n```javascript\n//generator\nfunction generator(sequencer) {\n   ...\n}\n\n//sequencers\nfunction factorialSeq() {...} // 1, 1, 2, 6, 24, ...\nfunction fibonacciSeq() {...} // 1, 1, 2, 3, 5, 7, 12, ...\nfunction rangeSeq(start, step) {...} // rangeSeq(1, 2)  -> 1, 3, 5, 7, ...\nfunction primeSeq() {...} // 1, 2, 3, 5, 7, 11, 13, ...\npartialSumSeq(1, 3, 7, 2, 0) {...} // 1, 4, 11, 13, 13, end\n\n//pipes\nfunction accumulator() {...} // var ac = accumulator() ac(1) -> 1, ac(4) -> 5, ac(2) -> 7\nfunction isEven(){...} // var ie = isEven(); ie(1) -> {status: false, number:1}, ie(4) -> {status: true, number:4}\nfunction printEven(prefix){...} // var pe = printEven('The number'); pe({status: false, number:1}) -> \"The number 1 is not even.\", pe({status: true, number:4}) -> \"The number 4 is even.\"\n```\n\nWe want to limit the infinite sequencers like `factorialSeq`. By doing this, we get an error if the limit is exceeded as in finite sequences.\n\nYou should implement the `addLimit(limiter)` method in `pipeSeq()` function to limit infinite sequences. This method receives a limiter function and some optionals arguments passed to the limiter.\n\nFor example, we can limit the prime sequence like this:\n\n```javascript\nvar pipedSeq = pipeSeq(primeSeq)\n      .addLimit(stepLimiter, 2) // limits the prime sequencer to two numbers\n      .invoke();\n    \nvar seq = generator(pipedSeq);\nseq.next(); // 1\nseq.next(); // 2\nseq.next(); // Error\n```\n\n`stepLimiter` is a function that receives the max number elements in the sequence and returns something? that allows to you limit the sequence (I do not want give to you more details).\n\nThere is another limiter function to implement, `resultLimiter`, that lmits the sequence by its returned value.\n\nThe same `pipedSeq` object can have more than one pipe and more than one filter.\n",
+    "totalAttempts": 381,
+    "totalCompleted": 56,
+    "totalStars": 12,
+    "voteScore": 45,
+    "tags": [
+      "Functional Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

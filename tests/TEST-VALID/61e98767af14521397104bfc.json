@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61e98767af14521397104bfc",
+  "data": {
+    "id": "61e98767af14521397104bfc",
+    "name": "Generalized Cipher Class",
+    "slug": "generalized-cipher-class",
+    "category": "reference",
+    "publishedAt": "2022-01-20T16:47:58.276Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "python",
+      "csharp",
+      "d"
+    ],
+    "url": "https://www.codewars.com/kata/61e98767af14521397104bfc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-20T16:01:43.852Z",
+    "createdBy": {
+      "username": "hackedtoad",
+      "url": "https://www.codewars.com/users/hackedtoad"
+    },
+    "description": "# Generalized Cipher Class \n```if:cpp\nCreate a class called Cipher that takes a constructor argument of `std::function<char(char)>` and is capable of encoding and decoding `std::string`s based on that function. The decoding function should be reverse engineered from the encoding one. The encoding/decoding functions are mapped on every `char` in a `std::string`.\n```\n```if:python\nCreate a class called Cipher that takes a constructor argument of a `lambda` and is capable of encoding and decoding strings based on that function. The decoding function should be reverse engineered from the encoding one. The encoding/decoding functions are mapped on every `chr` in a `str`.\n\nThe lambda function given will take a `chr` as an argument and return a `chr`.\n```\n```if:csharp\nCreate a class called Cipher that takes a constructor argument of `Func<char, char>` and is capable of encoding and decoding `string`s based on that function. The decoding function should be reverse engineered from the encoding one. The encoding/decoding functions are mapped on every `char` in a `string`.\n```\n```if:d\nCreate a class called Cipher that takes a constructor argument of `char delegate(char) pure` and is capable of encoding and decoding `string`s based on that function. The decoding function should be reverse engineered from the encoding one. The encoding/decoding functions are mapped on every `char` in a `string`.\n```\n\n\nAbstract structure of the class:\n```if:cpp\n~~~cpp\nclass Cipher{\n  public:\n    Cipher(std::function<char(char)> encoder);\n    std::string encode(std::string cleartext);\n    std::string decode(std::string ciphertext);\n};\n~~~\n\n\nExample usage:\n~~~cpp\nCipher ROT13([](char c){return c==' '?' ':((c-(isupper(c)?'A':'a'))+13)%26+(isupper(c)?'A':'a');});\n\nstd::string encoded = ROT13.encode(\"Hello World\"); //equals \"Uryyb Jbeyq\"\nstd::string decoded = ROT13.decode(\"Uryyb Jbeyq\"); //equals \"Hello World\"\n~~~\n```\n\n```if:python\n\n~~~python\nclass Cipher:\n  __init__(self, encoder) #takes lambda, returns None\n  encode(self, cleartext) #takes str, returns str\n  decode(self, ciphertext) #takes str, returns str\n~~~\n\nExample usage:\n~~~python\nfirst_case = lambda c: ord('A') if c.isupper() else ord('a')\n\nROT13 = Cipher((lambda c:chr(ord(' ')if c==' 'else(((ord(c)-first_case(c)))+13)%26+first_case(c))))\n\nprint(ROT13.encode(\"Hello World\")) #outputs \"Uryyb Jbeyq\"\nprint(ROT13.decode(\"Uryyb Jbeyq\")) #outputs \"Hello World\"\n\n```\n\n```if:csharp\n\n~~~csharp\nclass Cipher{\n  public Cipher(Func<char, char> encoder);\n  public string Encode(string cleartext);\n  public string Decode(string ciphertext);\n}\n~~~\nExample usage:\n~~~csharp\nCipher ROT13(c=>c==' '?' ':((c-(IsUpper(c)?'A':'a'))+13)%26+(IsUpper(c)?'A':'a'));\nConsole.WriteLine(ROT13.Encode(\"Hello World\")); //outputs \"Urryb Jbeyq\"\nConsole.WriteLine(ROT13.Encode(\"Uryyb Jbeyq\")); //outputs \"Hello World\"\n~~~\n```\n\n```if:d\n\n~~~d\nclass Cipher{\n  this(char delegate(char) pure encoder);\n  pure string encode(immutable string clear);\n  pure string decode(immutable string cipher)\n}\n~~~\nExample usage:\n~~~d\nimport std.stdio;\npackage Cipher ROT13;\n\nstatic this(){\n    ROT13=new Cipher(delegate char(char cc)pure{int c=cc;return cast(char)(c==' '?' ':(c-firstCase(c)+13 )%26+firstCase(c));});\n}\nwriteln(ROT13.encode(\"Hello World\")); //outputs \"Uryyb Jbeyq\"\nwriteln(ROT13.decode(\"Uryyb Jbeyq\")); //outputs \"Hello World\"\n~~~\n\n```\n\nNotes:\n- Do not worry about symbols besides the upper/lowercase alphabet.\n- Spaces will remain unaffected by all input functions. You do not need to code to exclude them. However, they will be included in test cases.\n\n```if-not:d\n- The encoding function is guaranteed to be pure.\n\n```\n",
+    "totalAttempts": 123,
+    "totalCompleted": 23,
+    "totalStars": 6,
+    "voteScore": 13,
+    "tags": [
+      "Ciphers",
+      "Cryptography",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58217d0b70ca289d24000965",
+  "data": {
+    "id": "58217d0b70ca289d24000965",
+    "name": "How many e's are written when one counts up to n?  1. Chinese",
+    "slug": "how-many-es-are-written-when-one-counts-up-to-n-1-chinese",
+    "category": "reference",
+    "publishedAt": "2016-11-08T08:29:54.769Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/58217d0b70ca289d24000965",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-08T07:21:47.891Z",
+    "createdBy": {
+      "username": "jungerstein",
+      "url": "https://www.codewars.com/users/jungerstein"
+    },
+    "description": "This serial of katas is a fork of Project Euler Problem 17 [https://projecteuler.net/problem=17]. \n\nIn different languages, people count differently. \nHere we look at standard Chinese (a.k.a. Mandarin) written in pinyin without tones. \n\nThe numbers 0 to 10 are written as _ling_, _yi_, _er_, _san_, _si_, _wu_, _liu_, _qi_, _ba_, _jiu_, _shi_. \n\nThere are no special words for any numbers from 11 to 99. \nTo say 11 to 19, one just thinks they are 11 = 10 + 1, 12 = 10 + 2 and so on, so 11 is _shiyi_, 12 is _shi'er_, 13 is _shisan_ etc. \nTo say 20 to 90, one just thinks they are 20 = 2 \\* 10, 30 = 3 \\* 10 ... so\n20 is _ershi_, 30 is _sanshi_. \n\nHence very logically 42 is _sishi'er_. \n\nSome larger numbers have their own names: \n\n* _Bai_ for 100\n\n* _Qian_ for 1000\n\n* _Wan_ for 10,000\n\n* _Yi_ for 100,000,000 [Actually 100,000,000 and 1 are in different tones. Do not worry if they are mistaken. ]\n\nThough a single _er_ immediately before _bai_, _qian_, _wan_, and _yi_ is often read as _liang_ in daily spoken Chinese [e.g. 120000 _shi'erwan_, 20000 _liangwan_], in this kata __we do not consider this change__ and \n__regard numbers like 20000 still as _erwan_ etc.__\n\nFor example, in this kata: \n\n* 207 erbailingqi: 2 * 100 + 7. _Ling_ is inserted just because it is accustomed. \n\n* 3005 sanqianlingwu: 3 * 1000 + 5. \n\n* 12345 yiwan'erqiansanbaisishiwu: 1 \\* 10,000 + 2 \\* 1000 + 3 \\* 100 + 4 \\* 10 + 5\n\n* 1048576 yibailing'siwanbaqianwubaiqishiliu: (1 \\* 100 + 4) \\* 10,000 + 8 \\* 1000 + 5 \\* 100 + 7 \\* 10 + 6\n\n* 299792458 eryijiuqianjiubaiqishijiuwanerqiansibaiwushiba: 2 \\* 100,000,000 + (9 \\* 1000 + 9 \\* 100 + 7 \\* 10 + 9) \\* 10,000 + 2 \\* 1000 + 4 \\* 100 + 5 \\* 10 + 8\n\nHere comes the kata question. \nWrite a function <code>n_e_count_up_to(n)</code>, \n\n* where n is a __positive__ integer guaranteed not to be more than _babaiwan_, \n\n* and the expected returned value is the total number of letter 'e'\nin all the pinyin of numbers from 1 to n (both inclusive). \n  \nExample: <code>n\\_e\\_count\\_up\\_to(3) == 1</code>, because writing them in a line gives\n_yi_, _**E**r_, _san_ ---> only one 'e' has been met. \n\nCan you think about some shortcuts to speed up the calculation? \nHint: do the Chinese units for counting really make difference to the solution?  \nPerhaps I will bring up a harder kata with larger n, not suitable for a fundamental kata. \n\nEven in this kata in C, I do not think it will finish within 12 seconds (_shi'er miao_) if every pinyin string is generated; but I am not sure, so you may try and succeed (or probably not).  \n\nThanks for your suggestions in advance. ",
+    "totalAttempts": 189,
+    "totalCompleted": 27,
+    "totalStars": 5,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

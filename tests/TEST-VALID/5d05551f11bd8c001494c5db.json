@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d05551f11bd8c001494c5db",
+  "data": {
+    "id": "5d05551f11bd8c001494c5db",
+    "name": "Van Eck",
+    "slug": "van-eck",
+    "category": "algorithms",
+    "publishedAt": "2019-06-15T20:31:37.115Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d05551f11bd8c001494c5db",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-15T20:29:19.644Z",
+    "createdBy": {
+      "username": "Tuhaj",
+      "url": "https://www.codewars.com/users/Tuhaj"
+    },
+    "description": "# Van Eck Sequence\n\n> What's the next term? Don't know  \nHow fast does it grow? Don't know  \nDoes every number appear? Don't know\n\n## Implement the Van Ecks sequence.\n\nConsider a sequence that is generated as follows:\n\n1. if an element has not previoiusly appeared in the sequence, the next element in the sequence is 0;\n\n2. if an element has previously appeared in the sequence, the next element in the sequence is the number of steps back in the sequence that it appeared.\n\n```Haskell\nThe sequence starts: 0, 0, 1, 0, 2, 0, 2, 2, 1, 6...\n- The first element is 0. Sequence is now [0]\n- Although 0 is the last element, since it has not previously appeared, we add 0 to the sequence. Sequence is now [0,0]\n- 0 appeared previously at index 0. That is 1-place from the current element. Sequence is now [0,0,1]\n- 1 has not appeared previously, so sequence is now [0,0,1,0]. \n- 0 has appeared previously at index 1. This is 2-places back from current index, so sequence is now [0,0,1,0,2].\n- 2 has not appeared prevoiusly. Sequence is now [0,0,1,0,2,0].\n- 0 has appeared previously at index 3 (2 places back). Sequence is now [0,0,1,0,2,0,2]\n- 2 already appeared 2-places back. [0,0,1,0,2,0,2,2]\n- 2 already appeared 1-place back. [0,0,1,0,2,0,2,2,1]\n- 1 already appeared 6 places back. [0,0,1,0,2,0,2,2,1,6]\n```\n\nYour task is to return the number for the given index of the sequence. For example, the index 4 points to 2\n\n### Assumptions\nThe sequence starts with zero \nand has then the basic length of 1.\n\n\nHave fun!\n\nResources:\nhttps://oeis.org/A181391\nhttps://www.youtube.com/watch?v=etMJxB-igrc",
+    "totalAttempts": 179,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Logic",
+      "Sequences",
+      "Arrays",
+      "Data Types"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

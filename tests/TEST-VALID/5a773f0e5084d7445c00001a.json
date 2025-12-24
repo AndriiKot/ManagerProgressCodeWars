@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a773f0e5084d7445c00001a",
+  "data": {
+    "id": "5a773f0e5084d7445c00001a",
+    "name": "self-organizing lists, move to front, transpose, frequency count",
+    "slug": "self-organizing-lists-move-to-front-transpose-frequency-count",
+    "category": "algorithms",
+    "publishedAt": "2018-02-04T17:46:55.002Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5a773f0e5084d7445c00001a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-04T17:12:46.541Z",
+    "createdBy": {
+      "username": "pointbazaar",
+      "url": "https://www.codewars.com/users/pointbazaar"
+    },
+    "description": "we want to have a list that we can search.\nwe want it to adapt, so that we find things easier if we search often for them.\n\nsmart people devised 3 ways of doing such.\n\nhttps://en.wikipedia.org/wiki/Self-organizing_list\n\nwe take the list, and some sequence of search operations.\n\nmove to front:\nafter each search operation, we move the item that was searched for to the front of the list\n\ntranspose:\nafter each search, we swap the searched item with it's left neighbor\n\nfrequency count:\nwe maintain a list for each item, telling us how often it has been searched for and maintain\na list that is sorted in desc. order of these numbers\n\n--------------------------------------------\nYou might be delighted to hear that you've been asked\nto implement some methods.\n\nint[] movefront(int[] arr,int[] searches) should return the list using that rule\nint[] transpose(int[] arr,int[] searches) should return the list using that rule\nint[] frequencycount(int[] arr,int[] searches) should return the list using that rule\n\nsuggestion from @ZED.CWT:\nwhat happens with frequency count if 2 elements have the same 'rank'?\nin this kata, you should preserve as much of the original order as possible,\nmeaning that if two elements were like [...,a,...,b,...] at the start, then they should\nbe that way in the result unless b has been accessed more than a.\n\nquestion: what happens with lists where theres the same element twice? \nanswer:   those lists wont be tested\n\nwhich rule leads to the quickest search time on average?\ncan you prove it?\n\nhappy coding ^^",
+    "totalAttempts": 18,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Lists",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

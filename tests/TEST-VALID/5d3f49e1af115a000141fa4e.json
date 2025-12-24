@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d3f49e1af115a000141fa4e",
+  "data": {
+    "id": "5d3f49e1af115a000141fa4e",
+    "name": "Thing describer",
+    "slug": "thing-describer",
+    "category": "reference",
+    "publishedAt": "2019-07-29T19:32:49.649Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d3f49e1af115a000141fa4e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-29T19:33:02.846Z",
+    "createdBy": {
+      "username": "SorenTheBrave",
+      "url": "https://www.codewars.com/users/SorenTheBrave"
+    },
+    "description": "It is well known that javascript is a weakly-typed language, and this can lead to issues with variables being coerced or resolved to unexpected types. For example:\n\n```\nfunction addValues(valueA, valueB){\n  return valueA + valueB;\n}\n```\n\nThis function seems to work perfectly to sum up numbers as long as it receives numeric values. However, as soon as another type is introduced, the results change drastically. If either `valueA` or `valueB` is a string, for example, the result becomes the string concatenation of the two, equivalent to `\"\" + valueA + valueB`. There can be more drastic issues, if either argument is provided `undefined`, an array, an object, or something else like `NaN`. Therefore, checking the type of variables can lead to fewer bugs and unexpected behavior. (Or at the very least, you'll find those bugs immediately!)\n\nThe practice of explicitly checking for unexpected data by default is called *defensive programming*, and it can assist us in preventing mistakes. For this kata, we will write a function `describeIt` that accepts one parameter, `value` and returns us one of the following describing what type of thing we are looking at:\n\n- `falsy` to indicate `null`, `undefined`, or `NaN`\n- `boolean` to indicate `true` or `false`\n- `string` to indicate text of any kind\n- `number` to indicate numbers of any kind (integers, floats, exponents, `Infinity`, etc.)\n- `array` to indicate arrays\n- `object` to indicate objects (but not arrays)\n- `function` to indicate functions, anonymous functions, or lambdas\n- Class name to indicate an instance of a class (provide the name of the class back)\n\nThe tests are case-sensitive, so your answer should always be entirely lowercase except for capitalization of class names (which should remain unchanged), therefore the only return values from your function should be one of: `['falsy','boolean','number','string','array','object']` or the name of a defined class.\n\nTo be perfectly clear, if you defined a class `classA`:\n\n```\nclass classA{\n  constructor(){ this.a = 1; }\n}\n```\n\nthen\n\n```\nconst a = new classA();\ndescribeIt(a);\n```\n\nshould produce the value:\n\n`'classA'` with a capital 'A'.\n\n\n\nWith this function defined, we can then use the function to assure that we get input we expect, and throw some kind of meaningful error if we receive something unexpected, like so:\n\n```\nfunction addValues(valueA, valueB){\n  if( describeIt(valueA) !== 'number' || describeIt(valueB) !== 'number' ){\n    // throw new TypeError('Non-numeric value given!') ||\n    // return 0 ||\n    // panic\n    // etc.\n  }\n  return valueA + valueB;\n}\n```\n\nAlong with unit testing, defensive programming can elminate many common errors. Happy coding!",
+    "totalAttempts": 232,
+    "totalCompleted": 18,
+    "totalStars": 0,
+    "voteScore": 16,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

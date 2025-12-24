@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59baf6676a9b6053950007b1",
+  "data": {
+    "id": "59baf6676a9b6053950007b1",
+    "name": "Exact p",
+    "slug": "exact-p",
+    "category": "reference",
+    "publishedAt": "2017-09-14T21:36:39.447Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59baf6676a9b6053950007b1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-14T21:37:07.182Z",
+    "createdBy": {
+      "username": "mentalplex",
+      "url": "https://www.codewars.com/users/mentalplex"
+    },
+    "description": "## Beta Kata\nThank you for trying this beta kata. Once you've completed it, please rate how satisfied you are with this kata and rank it. Katas can only get out of beta if they are rated very satisfied. If you don't give it a very satisfied rating, share your reasons for keeping the kata in beta in a comment as a suggestion or issue. Once the suggestion or issue is resolved, please re-rate as very satisfied. Note that a kata that is _too easy_ or _too hard_ should not be given a lower satisfaction rating, but given a kyu ranking that matches the kata's difficulty.\n\nPerformance is important for this kata. Input sizes are in the notes at the bottom.\n\n### Different lists?\nHere are two lists (vectors in R). They each represent a sample of observations of some value taken from some larger population of values:\n```python\ng1 = [127, 118, 78, 123, 124, 124]\ng2 = [127, 125, 125, 125, 172, 125]\n```\n```r\ng1 <- c(127, 118, 78, 123, 124, 124)\ng2 <- c(127, 125, 172, 125, 125, 125)\n```\nDid these come from the same population? It's hard to say. We don't know what they are. Maybe the number of people enrolled in an introductory statistics class? Maybe systolic blood pressure measurements? Maybe my golf scores? \n\n### Don't do it this way\nWe could compute a two-sided t-test on the sample means, but we'd be out on a limb with that one, since, again, we can't say anything about the distribution of the values in the population they come from. Lets do that (**DON'T DO THAT**): assuming equal variances (they're about equal), we get a p-value of `0.1392`. So they look a little different, but really not that different, and not different enough to satisfy the good folks at Guinness in 1908.\n\n### Do it this way\nLets try this: if they are from the same population, i.e., _if the measurement is independent of the group assignment_, then we can assign measurement values to whichever group we'd like. It's like probability with counting. We can partition the 12 measurements above, 6 in group g1 and 6 in g2, in all the different ways possible, and then _count how many times the sample statistic (absolute difference between sample means) is equal or greater than the sample statistic (absolute difference between sample means) in the observation we were given to begin with_.  This is what is known as a [permutation test](https://en.wikipedia.org/wiki/Resampling_%28statistics%29#Permutation_tests).  Do that. Make it exact.\n\n#### Some things to remember:\n1.  Given all possible partitions of the data into equal size groups, `p` is the proportion of those partitions with an ABSOLUTE difference in sample means EQUAL or GREATER than the original partition. \n2.  As implied by item 1, `0 < p < 1`\n3.  As with the example, samples g1 and g2 will always have the same length, and you can assume equal variances.\n4.  Your function will be tested with samples of length 2 to 12 (no empty lists, no lists of length 1) \n5.  Results are rounded to 6 decimal places when tested, so I suppose you have a chance with the Monte Carlo approach (I don't want to try it though) \n\nNote: Once you've tried this, you might see if can find the minimum possible p value for a two-sided permutation test here: [Minimum exact p](https://www.codewars.com/kata/59b8a1bc4f98a8f844000087)",
+    "totalAttempts": 174,
+    "totalCompleted": 13,
+    "totalStars": 9,
+    "voteScore": 13,
+    "tags": [
+      "Mathematics",
+      "Statistics",
+      "Fundamentals",
+      "Permutations",
+      "Probability"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

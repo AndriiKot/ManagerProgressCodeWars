@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/573d9c77ccea8a02300006f5",
+  "data": {
+    "id": "573d9c77ccea8a02300006f5",
+    "name": "Parse IPv6 Address",
+    "slug": "parse-ipv6-address-1",
+    "category": "algorithms",
+    "publishedAt": "2016-05-19T10:59:14.433Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/573d9c77ccea8a02300006f5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-19T10:59:03.721Z",
+    "createdBy": {
+      "username": "TheBMachine",
+      "url": "https://www.codewars.com/users/TheBMachine"
+    },
+    "description": "This kata is an extension to my previous kata, <a href='http://www.codewars.com/kata/shorten-ipv6-address'>Shorten IPv6 Address</a>. \n\nAn IPv6 address consists of 8 groups of 4 hexadecimal digits. It can never have more or less than 8 groups. Each group has at most 4 digits, but leading zeros can be removed.\nIf a group has only zeros, it can be shortened to ```::```. Multiple consecutive groups consisting of only zeros can also be shortened to ```::```\n<br>\nTherefore: <br>\n```a0cd:0:0:0:0:0:0:b4c1``` is equal to <br>\n```a0cd::0:0:0:0:0:b4c1``` is equal to <br>\n```a0cd::b4c1```. <br>\n<br>\n```a0cd::b4c1::0d3a``` is not valid, because there is uncertainty about the positions of the zero-groups. At most one instance of ```::``` can occur in any given IPv6 address.\n<br><br>\nTo convert IPv4 addresses to IPv6, an IPv6 addres can also contain an IPv4 addres. This is called an IPv4-mapped addres. It consist of five consecutive zero-groups, followed by an ```ffff``` group, followed by either:<br>\n- the IPv4 address itself, or<br>\n- the hexadecimal representation of the IPv4 address. For example:<br>\n```0000:0000:0000:0000:0000:ffff:192.168.1.1``` <br>\n```0000:0000:0000:0000:0000:ffff:c0a8:0101``` <br>\nThe above two addresses are equal, and both represent the IPv4 address ```192.168.1.1```. In the second case, ```192``` is converted to ```c0```, ```168``` to ```a8```, etc. These addresses can (and should) be shortened as usual.<br><br>\nYour job is to write the function ```parse()```, which will receive a string as input, and should<br>\n(1) check if the input string is a valid IPv6 address (or a valid IPv4-mapped address). If the input is not valid, return ```False```.<br>\n(2) convert the input address to its shortened form.<br>\n(3) if the input string is an IPv4-mapped addres, return both the hexadecimal and decimal representation, in that order. If it is an IPv6 address, simply return the shortened form.<br>\nNote that the given IPv6 address might not necessarily be shortened correctly. In the address ```a0c3::120c:ce1d:adcf:0:0:0:``` a single group of zeros has been shortened to ```::```, but it also has three consecutive groups of zeros. In this case your function should correct this and return ```a0c3:0:120c:ce1d:adcf::``` instead.\n<br><br>\nAll returned addresses should contain capital letters only.\n<br><br>\nSome examples:<br>\n\n```python\nparse('094c:00ec:f4ba:c2d9') = False             # Address does not contain enough groups \nparse('094c:00ec:0:0:0:0:0:0:c2d9') = False        # Address contains too many groups\nparse('094cd::c2d9') = False                     # First group contains too many digits\nparse('094h::c2d9') = False                      # Address contains an invalid character\nparse('094h::c2d9::f4ba') = False                # Address contains multiple '::'\nparse('1:2::3:4:5:6:7:8') = False                # Address contains too many groups when expanded\n\nparse('094C:0000:0000:00EC:0000:F4BA:C2D9:0003') = '94C::EC:0:F4BA:C2D9:3'  \nparse('0000:0000:0000:0000:0000:ffff:192.168.1.1') = ('::FFFF:C0A8:101', '::FFFF:192.168.1.1')       \nparse('::ffFF:c0a8:11') = ('::FFFF:C0A8:11', '::FFFF:192.168.0.17')\nparse('::ffff:c0a8:0101') = ('::FFFF:C0A8:101', '::FFFF:::192.168.1.1')\n```\n<br>If you have any feedback, bugs, suggestions or anything else, please leave it in the comments!",
+    "totalAttempts": 247,
+    "totalCompleted": 12,
+    "totalStars": 7,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

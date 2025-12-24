@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6320b05f269dbb001fb409f1",
+  "data": {
+    "id": "6320b05f269dbb001fb409f1",
+    "name": "Guess the (prime) number, digit by digit",
+    "slug": "guess-the-prime-number-digit-by-digit",
+    "category": "games",
+    "publishedAt": "2022-09-13T20:43:57.069Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/6320b05f269dbb001fb409f1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-13T16:31:27.055Z",
+    "createdBy": {
+      "username": "macambira",
+      "url": "https://www.codewars.com/users/macambira"
+    },
+    "description": "In this kata you'll need to guess a mysterious 5-digit prime number. You will not do it aimlessly, though. You will be accompanied by a helper which will tell you how close you are from the correct answer(the details will be explained at the end). See how easy it will be? In fact, it is too easy, so I will instruct the helper to only assist you up to 6 times. When you are sure of your answer make it the return value of your function. Good Luck!\n\n### How the helper works\nThe helper will be passed as an argument to the ```guess_the_number```/```GuessTheNumber``` function. It is a function, so you use by calling it.\nThe helper knows the correct answer and will tell you how each digit of your guess compares to the actual number. For each digit in your guess, it will compare to the digit in the same position on the mysterious number and will output a string with any position containing either ```<```(if the digit of your guess in the current position is lower than in the mysterious number), ```>```(if it is higher), or ```=```(if it is exactly the same).\n\n```python\n# The mysterious number is 21767\n> helper(58657)\n\">><<=\"\n```\n```ruby\n# The mysterious number is 21767\n> helper.call(58657)\n\">><<=\"\n```\n```csharp\n// The mysterious number is 21767\n> helper(58657);\n\">><<=\"\n```\n\nFor example, if the mysterious number is ```21767``` and you guess ```58657```, the helper will output ```>><<=```, because:  \n\n - 5 > 2, so 1st symbols is '>'\n - 8 > 1, so 2nd symbol is '>'\n - 6 < 7, so 3rd symbol is '<'\n - 5 < 6, so 4th symbol is '<'\n - 7 = 7, so 5th symbol is '='\n\nYou can only ask the helper to check your answer if your guess is 5-digit a prime number. If you give the helper a number that is not prime or does not have 5 digits, it will refuse to check it and raise an Exception. It will also only give you the help 6 times. After that, attempting to use the helper will raise an Exception.\n\nNote:The number that matters is the return value of the function.",
+    "totalAttempts": 638,
+    "totalCompleted": 37,
+    "totalStars": 13,
+    "voteScore": 75,
+    "tags": [
+      "Mathematics",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

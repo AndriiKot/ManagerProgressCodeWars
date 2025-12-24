@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ad9c360cc0f96ec3e00008d",
+  "data": {
+    "id": "5ad9c360cc0f96ec3e00008d",
+    "name": "Maximize Employes Work",
+    "slug": "maximize-employes-work",
+    "category": "algorithms",
+    "publishedAt": "2018-04-20T10:48:30.509Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ad9c360cc0f96ec3e00008d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-20T10:39:28.176Z",
+    "createdBy": {
+      "username": "Belia",
+      "url": "https://www.codewars.com/users/Belia"
+    },
+    "description": "a organization have `n` employess numbered from 1 to `n`, we want to divide it two 2 team, each team should not empty, but their number of employes can be unequal. each employes must belong to a team.\n\nfor a group, its known they will work more efficient if all member in a group are on the same team.\nthere are `m` groups, the `ith` of which consist `ki` employees and has a efficiency level `fi`\neach group all of whose members are on the same team,add `fi` to the total efficiency level.\n\nFind the maximum possible total efficient level.\n\nExplanation\n\nThere m group, they are `G1 = {1,2}, G2 = {1,3}, G3 = {2,3,4}` and their efficiency level = `f1 = 4, f2 = 5, f3 = 10`. There many possible way to select two team. Here some of the possible\n\n`{1,2} {3,4}` One team contain `G1` and the other team contain no group.total efficiency = `f1=4`\n`{1,2,3} {4}` One team contain `G1 and G2` and the other team contains no group. so its total efficiency is `f1 + f2 = 9`\n`{2,3} {1,4}` Both team contain no group.\n`{1} {2,3,4}` One team contain `G3` group, and the other team contain no group. total efficiency is `f3 = 10`\n\nWhat if two group with same employees, but different efficiency?\nfor a example\n`n = 4` `m = 3`\n`G1 = [1,2,3] F = 5`\n`G2 = [1,2,3] F = 10`\n`G3 = [4] F = 4`\nthis means that (effectively) you have 2 groups:\n`G1 = [1 2 3], F=15`\n`G2 = [4] F=4`",
+    "totalAttempts": 5,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

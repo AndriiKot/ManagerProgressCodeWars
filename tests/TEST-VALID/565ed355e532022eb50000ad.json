@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/565ed355e532022eb50000ad",
+  "data": {
+    "id": "565ed355e532022eb50000ad",
+    "name": "How to pronounce French.",
+    "slug": "how-to-pronounce-french",
+    "category": "reference",
+    "publishedAt": "2015-12-02T14:33:15.837Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/565ed355e532022eb50000ad",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-02T11:17:41.824Z",
+    "createdBy": {
+      "username": "tu6619",
+      "url": "https://www.codewars.com/users/tu6619"
+    },
+    "description": "In French pronunciation terminology, the *liaison* means that ususally silent letters at the end of a word should be fully pronounced. This happens when the next word in the phrase begins with a vowel or an \"h\". The usually silent letters affected by the *liaison* are:\n\n> \"s\",  \"x\",  \"z\",  \"t\",  \"d\",  \"n\",  \"m\"  \n\nSo for example, in the phrase:\n\n> \"trois amis\" (= \"three friends\")\n\nThe usually silent \"s\" of \"trois\" receives its full value because \"amis\" begins with a vowel.\n\nSimilarly, in:\n\n> \"vieux hôtels\" (= \"old hotels\")\n\nThe usually silent \"x\" of \"vieux\" receives its full value because \"hôtels\" begins with an \"h\".\n\nWrite a function that takes any two arguments and determines whether or not the liaison should be made. The first argument represents the last letter of the first word and the second argument represents the first letter of the second word. Both arguments should take the form of a single character string of any letter of the alphabet, lower or upper case. \n\n- If the first argument is either \"s\",  \"x\",  \"z\",  \"t\",  \"d\",  \"n\" or \"m\"   and the second argument is either a vowel or \"h\", return ``\"make the liaison\"``.\n\n- If the first argument is either \"s\",  \"x\",  \"z\",  \"t\",  \"d\",  \"n\" or \"m\" and the second argument is any character other than a vowel or \"h\", return ``\"letter is silent\"``.\n\n- If the first argument is any character other than \"s\",  \"x\",  \"z\",  \"t\",  \"d\",  \"n\" or \"m\"and the second argument is any character other than a vowel or \"h\", return ``\"normal pronunciation rules apply\"``.\n\n- If any of the two arguments are not single characters from the [roman alphabet](https://simple.wikipedia.org/wiki/Roman_alphabet) , return ``\"undefined letter\"``.\n\nFor example:\n\n```javascript\nfunction liaison (\"z\", \"a\") {}\n//should return \"make the liaison\"\n\nfunction liaison (\"z\", \"A\") {}\n//should return \"make the liaison\"\n\nfunction liaison (\"z\", \"b\") {}\n//should return \"letter is silent\"\n\nfunction liaison (\"z\", \"T\") {}\n//should return \"letter is silent\"\n\nfunction liaison (\"l\", \"b\") {}\n//should return \"regular pronunciation rules apply\"\n\nfunction liaison (\"u\", \"T\") {}\n//should return \"regular pronunciation rules apply\"\n\nfunction liaison (\"z1\", \"A\") {}\n//should return \"undefined letter\"\n\nfunction liaison (\"z\", \"Abcde\") {}\n//should return \"undefined letter\"\n```",
+    "totalAttempts": 102,
+    "totalCompleted": 37,
+    "totalStars": 0,
+    "voteScore": 55,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Arrays",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/589959bf5eda2c742f000177",
+  "data": {
+    "id": "589959bf5eda2c742f000177",
+    "name": "Alternative Truth Machine",
+    "slug": "alternative-truth-machine",
+    "category": "algorithms",
+    "publishedAt": "2017-02-07T15:19:25.469Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/589959bf5eda2c742f000177",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-07T05:23:11.571Z",
+    "createdBy": {
+      "username": "mbuscemi",
+      "url": "https://www.codewars.com/users/mbuscemi"
+    },
+    "description": "The liberal democracy you once enjoyed living in has been infiltrated by authoritarians, and the new ruling order needs your help to redefine the truth. Antiquated computer science notions of boolean \"true\" and boolean \"false\" need to be rigorously modernized, so that they better reflect the moral imperative of the new administration.\n\nThe regime is wasting a lot of time promulgating alternative truths, and the process would be a lot more efficient if they had an algorithm for generating them. Fact: they're not interested in small alternative truths. Ironically, the regime's zombie mass of adherents responds better to big alternative truths. The bigger the better!\n\nThey eventually want to manipulate ideas programmatically, but they'll start with numbers. Rot the foundation and work their way up. That's the ticket!\n\nThe administration wants an ```AlternativeTruth``` class with functions ```greaterThan```, ```lessThan```, ```equalTo```, and ```notEqualTo```. These functions perform their normal, expected boolean operations if the input parameters are reasonably different (e.g. 2 and 5), but will return the inverse of that expectation if the input parameters are radically different (e.g. 2 and 5,000).\n\nFrom time to time, the administration may find it necessary to adjust the critical ratio that causes falsehood to become alternative truth. So, the class constructor should take and store that threshold (e.g. a threshold of 0.5 means the ratio of the lesser term to the greater term must be less than 0.5 to become \"alternatively true\", and so ```equalTo(2, 3)``` (ratio 0.6~) would return ```false``` while ```equalTo(2, 4)``` (ratio 0.5) and ```equalTo(2, 6)``` (ratio 0.3~) would return ```true```).\n\nIf any calculation would result in a division by zero, or if either input parameter is ```Infinity```, just return ```true```, because zero and infinity are both liberal conspiracies against reason.\n\nWith your diligence, expertise, and devotion, your country will be well on its way to being truly great again! Or at least believing that is.\n\n### Notes:\n\n* The first large set of tests uses 0.5 as its ratio in the constructor.\n* A second set of tests will test other constructor values. You may assume that the following holds true for the ratio: 0 < r ≤ 1.\n* Assume that all values passed into methods will be real integers (or ```Infinity```).",
+    "totalAttempts": 118,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

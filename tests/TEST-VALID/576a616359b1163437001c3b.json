@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/576a616359b1163437001c3b",
+  "data": {
+    "id": "576a616359b1163437001c3b",
+    "name": "Rubik's Cube",
+    "slug": "rubiks-cube",
+    "category": "games",
+    "publishedAt": "2016-06-22T09:59:30.284Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/576a616359b1163437001c3b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-22T09:58:59.459Z",
+    "createdBy": {
+      "username": "guyon",
+      "url": "https://www.codewars.com/users/guyon"
+    },
+    "description": "In this Kata we are going to model a Rubik's cube and evaluate the final state\nof the cube after a given sequence of moves.\n\nTo do this you will implement an execute() function which takes an initial state and \nmove sequence as arguments and returns the resulting state:\n\n```javascript\nfunction execute(state, sequence) {\n  // your code here\n  return state;\n}\n```\n\nThe arguments are defined as follows:\n\n* state: a string containing comma separated face definitions in the order Up, Front, Left, Back, Right and Down\n  * Each face definition is given by 9 characters representing the state of each square on the face\n  * The 9 characters are organised on each face as per Fig.1 below\n  * The faces are oriented for mapping as per Fig.2 below\n  * The characters often represent colours (e.g. White, Green, Orange, Blue, Red, Yellow) but could be anything. However they will be consistent, having 6 distinct characters and 9 of each one\n  * E.g. \"WWWWWWWWW,GGGGGGGGG,OOOOOOOOO,BBBBBBBBB,RRRRRRRRR,YYYYYYYYY\"\n* sequence: a string in simple Rubik's Cube notation. The faces are identified by their initial letters U, F, L, B, R, D\n  * The letters are always upper case.\n  * A letter on its own specifies a 90 degree clockwise turn.\n  * If the number 2 follows the letter, it is a double turn, or 180 degrees.\n  * If a single quote (') follows the letter, it is a 90 degrees anticlockwise turn.\n  * There are no delimiters, spaces, or other characters\n  * E.g. \"RUD'F2\"\n\nFig. 1 - Character Mapping on a Face\n```\n+---------+\n| 0  1  2 |\n|         |\n| 3  4  5 |\n|         |\n| 6  7  8 |\n+---------+\n```\n\n\nFig. 2 - Face orientations for mapping the cube state string\n```\n                  +--------+\n                  |        |\n                  |   Up   |\n                  |        |\n+--------+--------+--------+--------+\n|        |        |        |        |\n|  Back  |  Left  |  Front |  Right |\n|        |        |        |        |\n+--------+--------+--------+--------+\n                  |        |\n                  |  Down  |\n                  |        |\n                  +--------+\n```",
+    "totalAttempts": 51,
+    "totalCompleted": 14,
+    "totalStars": 8,
+    "voteScore": 19,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

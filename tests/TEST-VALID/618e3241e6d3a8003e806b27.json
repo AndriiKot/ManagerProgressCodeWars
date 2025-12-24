@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/618e3241e6d3a8003e806b27",
+  "data": {
+    "id": "618e3241e6d3a8003e806b27",
+    "name": "Find Secret Cosine Formulas",
+    "slug": "find-secret-cosine-formulas",
+    "category": "algorithms",
+    "publishedAt": "2021-11-15T09:12:40.698Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/618e3241e6d3a8003e806b27",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-12T09:22:09.923Z",
+    "createdBy": {
+      "username": "Alpha Dead",
+      "url": "https://www.codewars.com/users/Alpha%20Dead"
+    },
+    "description": "# Introduction\n\nGreetings!\n\n*Sniff* - trigonometry - personally, I am sometimes astonished by it!\n\nAnd are you familiar with \"doubled angle\" formulas?\n\n```css\ncos(2 * x)  ==  cos(x)^2 - sin(x)^2  ==  - 1 + 2 cos(x)^2\n```\n\nAs you can see from above, if you know the value of the cosine or the sine of `x`, you can easily find the cosine of double the angle, `2 * x`. For instance, we know that cosine of `30` degrees (or `π / 6` radians) is `~0.866..` (or `sqrt(3) / 2`). Thus, by using one of the formulas above, you can compute cosine of `60` degrees (or `π / 3` radians), which is exactly `0.5`!\n\nHowever, what if we wanted to find the cosine of triple the angle? Or more generally, can we even somehow formulate `cos(m * x)` with `cos(x)` or `sin(x)`, where `x` is the angle and `m` is the multiplier? Perhaps unsurprisingly, we can! And even in two different formats! One format requires both cosine and sine, whereas the other consists of only cosines.\n\n# Task\n\nYou need to implement a function that has two parameters:\n\n1. An `integer` (`int multiplier`) that the angle is multiplied by.\n2. An `enum` (`Format format`) by which you should determine the format of the formula.\n\nAnd it should return the whole formatted formula as a `string`.\n\n## Examples\n\n```css\nInput: (2, Format.Cos)\nOutput: \"cos(2 * x)  ==  - 1 + 2 cos(x)^2\"\n\nInput: (2, Format.SinCos)\nOutput: \"cos(2 * x)  ==  - sin(x)^2 + cos(x)^2\"\n\nInput: (3, Format.Cos)\nOutput: \"cos(3 * x)  ==  - 3 cos(x) + 4 cos(x)^3\"\n\nInput: (3, Format.SinCos)\nOutput: \"cos(3 * x)  ==  - 3 sin(x)^2 cos(x) + cos(x)^3\"\n\nInput: (-5, Format.Cos)\nOutput: \"cos(-5 * x)  ==  5 cos(x) - 20 cos(x)^3 + 16 cos(x)^5\"\n\nInput: (-5, Format.SinCos)\nOutput: \"cos(-5 * x)  ==  5 sin(x)^4 cos(x) - 10 sin(x)^2 cos(x)^3 + cos(x)^5\"\n\n/* See some extra examples in the sample tests. */\n```\n\n# Important Notes\n\n1. Input range is [-500, 500], which can apparently cause `Overflow` in some languages.\n2. While the left and right operands of the equation should be separated by two whitespaces characters, terms should have only one in between (`x  ==  y + z - w`).\n3. The symbol `^` should be used to represent the exponentiation operation, but since raising anything to the power of `1` is redundant, do not include it in the formula. Any occurrences of `x^1` are invalid; instead, they should be interpolated as `x` alone.\n4. Exponents and bases should not be separated by space (`x^y`, not `x ^ y`).\n5. Do not include terms with exponents or coefficients equal to `0` in the formula due to redundancies, too.\n6. All terms should be ordered ascendingly by powers that cosines (if any) are raised to (`x  ==  3 - 10 cos(y)^5 + sin(z)^2 cos(w)^8` because `0 < 5 < 8`).\n7. All coefficients that are equal to 1 should be removed. Any occurrences of `1 x` are invalid; instead, they should be interpolated as `x` alone.\n8. Addition of terms with negative coefficients should be replaced by subtraction of terms with positive coefficients. `2 x - 3 y` is valid, but `2 x + -3 y` is not.\n9. You can have a unary minus sign at the beginning of the right-hand-side of the equation (reminder: also one space separated), but not a unary plus sign. `a  ==  - b - c + d` is correct, but `a  ==  + b - c + d` is not as it should instead be `a  ==  b - c + d`.\n10. You basically have to write two implementations, one for `Cos`, the other for `SinCos` (the former is supposedly more difficult).\n11. You may as well want to pay attention to the runtime of the function.\n\nBest of luck . . .",
+    "totalAttempts": 139,
+    "totalCompleted": 13,
+    "totalStars": 17,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Algebra",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

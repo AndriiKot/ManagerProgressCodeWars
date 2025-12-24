@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fd4ab789b9acf000dc4b69f",
+  "data": {
+    "id": "5fd4ab789b9acf000dc4b69f",
+    "name": "Did I survive?",
+    "slug": "did-i-survive",
+    "category": "reference",
+    "publishedAt": "2020-12-12T13:48:51.477Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5fd4ab789b9acf000dc4b69f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-12-12T11:37:28.967Z",
+    "createdBy": {
+      "username": "kuniku",
+      "url": "https://www.codewars.com/users/kuniku"
+    },
+    "description": "## Did i survive?\n\nImagine you are a **Hero**, you are going to take damage from your enemy. The damage can be fatal, you might die cause of it.\n\n### Task\nWrite a function that accept 3 parameters, `health`, `reduction`, and `damage`. Your task is calculate the damage taken from your enemy and return `'Survived!'` if `result > 0`, otherwise return `'Dead!'`.\n\nExample:\n\n`currentLife('246/977', 42, '322')`\n\nParameter explanation:\n\n- `'246/977'` is your health in the following format (`currentHealth/maximumHealth`)\n- `42` is your armor, it will reduce the damage taken by percentage (42 it's mean 42%). In this case it will reduce the incoming damage by 42% before take out your current health\n- `'322'` is your enemy damage, this value should be reduced by armor before taking your current health\n\n### note:\n- Final result of calculation must be rounded down!\n\nFrom above example the result must be `59`. So the function should return `'Survived!'`\n\nYou may notice the maximumHealth is do nothing. In another example there's will be used. If third parameter contain `%` this symbol the calculation will be different. See below:\n\n`currentLife('246/977', 42, '44%')`\n\nIf the third parameter contain `%`, the value of damage must be `maximumHealth * (44 / 100)`. The rest calculation remain same. From recent example the result must be `-4`, as you see, the function should return `'Dead!'`.\n\n### Good luck Hero!!",
+    "totalAttempts": 346,
+    "totalCompleted": 33,
+    "totalStars": 3,
+    "voteScore": 25,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

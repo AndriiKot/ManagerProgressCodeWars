@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/525a037c82bf42b9f800029b",
+  "data": {
+    "id": "525a037c82bf42b9f800029b",
+    "name": "Partition On",
+    "slug": "partition-on",
+    "category": "algorithms",
+    "publishedAt": "2013-10-13T02:25:55.621Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript",
+      "javascript",
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/525a037c82bf42b9f800029b",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-10-13T02:20:44.746Z",
+    "createdBy": {
+      "username": "jcorbin@wunjo.org",
+      "url": "https://www.codewars.com/users/jcorbin@wunjo.org"
+    },
+    "description": "Write a function which partitions a list of items based on a given predicate.\n\nAfter the partition function is run, the list should be of the form [ F, F, F,\nT, T, T ] where the Fs (resp. Ts) are items for which the predicate function\nreturned false (resp. true).\n\nNOTE: the partitioning should be **stable**; in other words: the ordering of the Fs (resp. Ts) should be preserved relative to each other.\n\nFor convenience and utility, the partition function should return the\nboundary index.  In other words: the index of the first T value in items.\n\nFor example:\n```coffeescript\nitems = [1, 2, 3, 4, 5, 6]\nisEven = (n) -> n % 2 == 0\ni = partitionOn isEven, items\n# items should now be [1, 3, 5, 2, 4, 6]\n# i     should now be 3\n```\n```javascript\nvar items = [1, 2, 3, 4, 5, 6];\nfunction isEven(n) {return n % 2 == 0}\nvar i = partitionOn(isEven, items);\n// items should now be [1, 3, 5, 2, 4, 6]\n// i     should now be 3\n```\n```c\nbool is_even(const void *ptr) { return *((const int *) ptr) % 2 == 0; } \nint items[] = {1, 2, 3, 4, 5, 6};\nsize_t i = partition_on(items, 6, sizeof(int), is_even);\n// items should now be {1, 3, 5, 2, 4, 6}\n// i     should now be 3\n```\n",
+    "totalAttempts": 55300,
+    "totalCompleted": 6689,
+    "totalStars": 115,
+    "voteScore": 231,
+    "tags": [
+      "Functional Programming",
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

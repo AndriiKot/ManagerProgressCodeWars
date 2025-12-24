@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52f67c98172a8b6c4600001a",
+  "data": {
+    "id": "52f67c98172a8b6c4600001a",
+    "name": "Create a JSON tree based on the dates contained within an array of filenames",
+    "slug": "create-a-json-tree-based-on-the-dates-contained-within-an-array-of-filenames",
+    "category": "reference",
+    "publishedAt": "2014-02-09T09:03:47.445Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52f67c98172a8b6c4600001a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-08T18:51:04.451Z",
+    "createdBy": {
+      "username": "off-beat",
+      "url": "https://www.codewars.com/users/off-beat"
+    },
+    "description": "Imagine we have an array of dated filenames for a user to pick from. Displaying these filenames as a tree is a good way to help them find the desired data as the number of files increases:\n\n* 2010\n  + March\n    - pickme-20100302.fun\n  + December\n    - pickme-20101202.fun\n    - pickme-20101215.fun\n    - pickme-20101217.fun\n* 2012\n  + January\n    - pickme-20120101.fun\n    \nLibraries such as jqTree provide a means of displaying a JSON tree structure so all we need to do is convert our array to a JSON object with the following structure:\n\n* An array containing year objects, in chronological order, each of which must have two properties:\n  + label: a string of the full year (\"2006\", not \"06\")\n  + children: an array containing month objects, in chronological order, each of which must have two properties:\n    - label: a string of the full (English) month name (January, not Jan or 1)\n    - children: an array containing filename objects, in chronological order according to the date within the filename, each of which must contain a single property:\n      * label: the full filename as provided in the original input array\n\nExample:\n\n```javascript\n// We start with an array of filenames:\nvar filenames = ['pickme-20120101.fun', 'pickme-20101215.fun', 'pickme-20101217.fun', 'pickme-20100302.fun', 'pickme-20101202.fun'];\n\nGetJsonTreeFromFilenames(filenames); // must return object shown below\n\nvar tree = [\n  {\n    label: '2010',\n    children: [\n    { \n      label: 'March', \n      children: [\n        { label: 'pickme-20100302.fun' }\n      ]\n    },\n    { \n      label: 'December', \n      children: [\n        { label: 'pickme-20101202.fun' },\n        { label: 'pickme-20101215.fun' },\n        { label: 'pickme-20101217.fun' }\n      ]\n    }]\n  },  \n  {\n    label: '2012',\n    children: [\n    { \n      label: 'January', \n      children: [\n        { label: 'pickme-20120101.fun' }\n      ]\n    }]\n  }\n];\n\n```\n\nThe test fixture provides two further examples should further clarification be needed.\n",
+    "totalAttempts": 452,
+    "totalCompleted": 50,
+    "totalStars": 6,
+    "voteScore": 29,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

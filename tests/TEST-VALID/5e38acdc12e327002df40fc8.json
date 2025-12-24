@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e38acdc12e327002df40fc8",
+  "data": {
+    "id": "5e38acdc12e327002df40fc8",
+    "name": "Heads or Tails - Which is stronger? And How Strong?",
+    "slug": "heads-or-tails-which-is-stronger-and-how-strong",
+    "category": "reference",
+    "publishedAt": "2020-02-04T00:29:57.765Z",
+    "approvedAt": null,
+    "languages": [
+      "prolog"
+    ],
+    "url": "https://www.codewars.com/kata/5e38acdc12e327002df40fc8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-03T23:29:32.635Z",
+    "createdBy": {
+      "username": "induhiu",
+      "url": "https://www.codewars.com/users/induhiu"
+    },
+    "description": "Given two arrays, can you find which array has the 'stronger' head, or the 'stronger' tail? And which of the two is the 'strongest'? And how 'strong' is it?\n\n1. Think of ```strongest``` as the largest/maximum value. The worked out example below should suffice for clarity.\n2. Think of ```Head``` and ```Tail``` in the literal sense; first and last respectively.\n3. To avoid ambiguity of answers as the lists will be randomly generated, follow this order when trying to find the strongest: Check ```Head_A```, if not strongest then check ```Head_B```; check ```Tail_A``` if not ```Head_B```; and if none of those were the strongest, ```Tail_B``` is definitely your answer.\n\n\nEXAMPLE:\n\n\nIf we have two arrays ```A = [1,2,3]``` and ```B = [4,5,6]```, then:\n\n```Head_A = 1, Head_B = 4, Tail_A = 3, Tail_B = 6```.\n\nClearly the 'strongest' is Tail_B as ```(Tail_B >= Tail_A & Tail_B >= Head_B & Tail_B >= Head_A)```\n\nJust how 'strong' is it though? We go to the list of which it's a member and take the sum of the remaining elements, add that to the sum of all the elements in the other list, and subtract the result from the 'strongest'. In this case, we would get:\n\n```Tail_B - (the_sum_of(remaining elements in B) + the_sum_of(A)) = -9```\n\nNot so 'strong' :-) but we don't care about that part. In the end, we just want to know how 'strong' it was. You get the idea. \n\nYou may need some helper predicates that can do the menial stuff for you :)",
+    "totalAttempts": 16,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 1,
+    "tags": [
+      "Arrays",
+      "Logic",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f8c8e1c018611879548317",
+  "data": {
+    "id": "64f8c8e1c018611879548317",
+    "name": "Self Checkout Stand",
+    "slug": "self-checkout-stand",
+    "category": "reference",
+    "publishedAt": "2023-10-12T15:30:46.070Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64f8c8e1c018611879548317",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-06T18:45:53.180Z",
+    "createdBy": {
+      "username": "p4songer",
+      "url": "https://www.codewars.com/users/p4songer"
+    },
+    "description": "# Make a class, SelfCheckout with the following methods:\n### Method #1: scan\nThis method should accept a list containing keys to a dictionary in preloaded named `PRICES`. Our scan method should be in charge of updating all other methods as required. In the simplest form, it keeps count of how many of each item we have scanned.\n### Method #2: coupon\nThis method should accept a tuple containing the coupon's name as a string, and a lambda function that applies the coupon. Once our machine has scanned every item, we will check for coupons. You can assume that the coupon method will never be run before the scan method. Coupons should be processed one at a time. All coupons should not modify the subtotal until *after* total is called for. Keep in mind that all of our prices are listed in **cents**.\n\nThere are two types of coupons, *`item types` and `order types`*. \n\n`item type` coupons should only have one discount per item. The first coupon with an associated item should apply the discount. Any future coupons for this item should be ignored. \n\n*`order type`* coupons should each be processed exactly once if they exist. See examples:\n\n```\nCustomer has: ['BOGO eggs', '25% off eggs'] \nCoupons applied: 'BOGO eggs'\n\nCustomer has: ['BOGO eggs', 'BOGO chicken']\nCoupons applied: 'BOGO eggs', 'BOGO chicken'\n\n___________________________________________________________________________\n\nOrder amount = 12300$ \nCoupons = ['10$ off 20$ or larger order', '10% off order', '10% off order'] \n\nTHIS IS CORRECT:\n10$ + 10% -> 2230 -> NEW SUBTOTAL 10070\n\nTHESE ARE WRONG:\n12300 - 10$ -> NEW SUBTOTAL 11300 $ - 10% -> NEW SUBTOTAL 10170\n\n10$ + 10% + 10% -> 3460 -> NEW SUBTOTAL 8840\n```\nAll coupons should be based on the **sub-total** and *NOT* the final total. All coupons come with a lambda function that you are free to use, but not required to. Either way, it is up to you to apply the coupon correctly. (For those unaware, BOGO is short for buy one, get one free.) See example: \n```python\n{\n# ITEM TYPE COUPONS\nf'BOGO {item}' : lambda x, y: y * (x // 2),\nf'2 for $5 {item}' : lambda x, y: y - (500 * (x // 2)),\nf'25% off {item}' : lambda x: x // 4,\n\n# ORDER TYPE COUPONS\nf'10% off order' : lambda x: x // 10,\nf'10$ off 20$ or larger order' : lambda x: 1000 if x >= 2000 else 0,\n\n# Reward points is a special order type coupon that gives $1 discount per 1000 points.\nf'Reward points: {0 <= n <= 100000}' : lambda x: 100 * x // 1000\n}\n```\n### Method 3: total\n**Important note for all calculations** All of our prices are given in *cents*. This is so that we can avoid floating point errors. For all intermediate calculations, you should use integer division, or else, round down.  Total does not need to take any arguments. It should be a callable method that will be used to check for the current total during various parts of the checkout process. The total is defined as:\n```\n(subtotal of all scanned items - applicable coupons) + 5% sales tax.\n```\nIt's important to know that the previous method, `coupon` is going to change this result when implemented properly. **Please note**, there may be a situation where the coupons are so good that you will have a negative total. If this is ever the case, **the total should instead return 0**\n### Method 4: payment\nPayment should recieve a tuple with two possibiliteis. Either a credit card number and pin number, or \"cash\" with the total amount of cash. These are examples:\n```\nWhen cash is used as payment:  (\"cash\", 100)\n\nWhen card is used as payment:  (292952842, 9707)\n```\n\nAssume all cards are valid, but all pin numbers are not. When a card is given, use the other preloaded nested dictionary, *`BANK`* to access a user's funds *(granted the pin is valid)*. You should account for any errors that may happen during the payment process. Funds will always be a positive integer. If user's payment is declined due to wrong PIN, or does not pay enough, return `'PAYMENT DECLINED'` otherwise, `'ACCEPTED'` \n\n\nWhen cash is given, and the amount given is >= total, return the difference as a float. There is no need to round this answer. If the amount is less than the total, return `'PAYMENT DECLINED'` \n\n\n## Examples of use:\n```\nEXAMPLE 1:\nAlice scans two apples, and one banana. \nHer sub-total is: (1.29 * 2) + (0.59 * 1) -> 3.17. \nShe has no coupons, so she is ready to checkout. \nHer total due at payment is: 3.17 + sales tax = 3.33\nShe pays $5 cash. Her change returned is: 5 - 3.33 -> 1.66833\n```\n```\nEXAMPLE 2:\nBrett has a few coupons she's planning on using. She picks her items as such:\nchicken * 4, eggs * 2, bread, pickles, potato and mustard.\nHer subtotal for this is:     34.20\n\nAfter scanning her items, she has the following coupons:\n\"BOGO eggs\",\"2 for $5 chicken\", \"10$ off 20$ or larger order\", \"BOGO chicken\"\nShe already scanned the 2 for $5 chicken, so the BOGO chicken didn't count.\nAfter putting in her coupons, she's ready to pay.\nWith her coupons added, her new subtotal is:    34.20 - 25.65 = 8.55\n\nBrett has some trouble paying. \nFirst she pulls out all the cash she has, but she doesn't have any change! \nSecond, she tries a card, but can't remember her pin number!\nThird, she tries a card with the right PIN. She doesn't have enough funds!\nFinally, she tries another card that has a correct pin, and enough funds.\n```\n### Note on random tests\nDo not be alarmed by the amount of random tests. There are 200 total random generations to ensure a good mix of variables. These tests are based on accuracy and not necessarily preformance.",
+    "totalAttempts": 169,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

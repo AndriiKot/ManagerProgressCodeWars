@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/568e111353952f6c82000014",
+  "data": {
+    "id": "568e111353952f6c82000014",
+    "name": "check UPC",
+    "slug": "check-upc",
+    "category": "algorithms",
+    "publishedAt": "2016-01-07T07:58:21.503Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/568e111353952f6c82000014",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-07T07:17:39.309Z",
+    "createdBy": {
+      "username": "andregomars",
+      "url": "https://www.codewars.com/users/andregomars"
+    },
+    "description": "**Description**\n\nIn the UPC-A system, the check digit is calculated as follows:\n\n1. Add the digits in the odd-numbered positions (first, third, fifth, etc.) together and multiply by three.\n2. Add the digits in the even-numbered positions (second, fourth, sixth, etc.) to the result.\n3. Find the result modulo 10 (i.e. the remainder when divided by 10.. 10 goes into 58 5 times with 8 leftover).\n4. If the result is not zero, subtract the result from ten.\n\nFor example, in a UPC-A barcode \"03600029145x\" where x is the unknown check digit, x can be calculated by:\n\n1. Adding the odd-numbered digits (0 + 6 + 0 + 2 + 1 + 5 = 14)\n2. Multiplying by three (14 × 3 = 42)\n3. Adding the even-numbered digits (42 + (3 + 0 + 0 + 9 + 4) = 58)\n4. Calculating modulo ten (58 mod 10 = 8)\n5. Subtracting from ten (10 − 8 = 2)\n\n**NOTE**\n\n* assume input has standard 12 UPC digits only\n* assume input is digits only, no characters, signs or controls\n* don't consider empty input verification\n\n**Example**\n\n```javascript\ncheckUPC('036000291452') == true\ncheckUPC('036000291450') == false\n```\n\n",
+    "totalAttempts": 326,
+    "totalCompleted": 51,
+    "totalStars": 3,
+    "voteScore": 51,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

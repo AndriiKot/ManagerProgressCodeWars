@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/547fb94931cce5f5de00024f",
+  "data": {
+    "id": "547fb94931cce5f5de00024f",
+    "name": "Tug-o'-War",
+    "slug": "tug-o-war",
+    "category": "reference",
+    "publishedAt": "2014-12-04T02:26:45.954Z",
+    "approvedAt": "2018-08-30T16:02:29.908Z",
+    "languages": [
+      "javascript",
+      "csharp",
+      "python",
+      "java",
+      "coffeescript",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/547fb94931cce5f5de00024f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-12-04T01:30:49.889Z",
+    "createdBy": {
+      "username": "edm2410",
+      "url": "https://www.codewars.com/users/edm2410"
+    },
+    "approvedBy": {
+      "username": "___i",
+      "url": "https://www.codewars.com/users/___i"
+    },
+    "description": "In this Kata we will play a classic game of Tug-o'-War!\n\nTwo teams of 5 members will face off, the strongest of which will prevail.  Each team member will be assigned a strength rating (1-9), with the most powerful members having a rating of 9.  Your goal is to determine, based on the cumulative strength of the members of each team, which team will win the war.   \n\nThe teams will be represented by an array of arrays:\n\n```javascript \n[[5,0,3,2,1], [1,6,8,2,9]]  // 11 < 26 ; \"Team 2 wins!\"\n```\n```csharp\nnew int[][] { new int[] {5,0,3,2,1}, new int[] {1,6,8,2,9} } // 11 < 26 ; \"Team 2 wins!\"\n```\n```java\nnew int[][]{new int[]{5, 0, 3, 2, 1}, new int[]{1, 6, 8, 2, 9}} // 11 < 26 ; \"Team 2 wins!\"\n```\n```python\n[[5,0,3,2,1], [1,6,8,2,9]]  # 11 < 26 ; \"Team 2 wins!\"\n```\n```ruby\n[[5,0,3,2,1], [1,6,8,2,9]]  # 11 < 26 ; \"Team 2 wins!\"\n```\n\nYour task is to return a string with which team won or if it was a tie.\n\n - If team one is stronger, return the string \"Team 1 wins!\"\n - If team two is stronger, return the string \"Team 2 wins!\"\n\nIf the two teams are of equal strength, the team with the strongest Anchor (the member furthest from the center of the rope (first member for Team 1, last member for Team 2)) will win. In the above example, the member with strength 5 is team one's Anchor and strength 9 is team two's Anchor.\n\n - If the teams and the Anchors are both of equal strength, return the string \"It's a tie!\" \n\nThe Anchors are members in each end of the rope:\n\n![anchors](http://i.imgur.com/w3MJF2V.jpg?1)\n\nmore examples:\n\n```javascript \n[[1,2,3,4,5], [1,2,3,4,5]] // Team 2 has stronger Anchor ; \"Team 2 wins!\"\n[[1,2,3,4,5], [5,4,3,2,1]] // Teams & Anchors are tied; \"It's a tie!\"\n```\n```csharp\nnew int[][] { new int[] {1,2,3,4,5}, new int[] {1,2,3,4,5} } // Team 2 has stronger Anchor ; \"Team 2 wins!\"\nnew int[][] { new int[] {1,2,3,4,5}, new int[] {5,4,3,2,1} } // Teams & Anchors are tied; \"It's a tie!\"\n```\n```java\nnew int[][]{new int[]{1, 2, 3, 4, 5}, new int[]{1, 2, 3, 4, 5}} // Team 2 has stronger Anchor ; \"Team 2 wins!\"\nnew int[][]{new int[]{1, 2, 3, 4, 5}, new int[]{5, 4, 3, 2, 1}} // Teams & Anchors are tied; \"It's a tie!\"\n```\n```python \n[[1,2,3,4,5], [1,2,3,4,5]] # Team 2 has stronger Anchor ; \"Team 2 wins!\"\n[[1,2,3,4,5], [5,4,3,2,1]] # Teams & Anchors are tied; \"It's a tie!\"\n```\n```ruby \n[[1,2,3,4,5], [1,2,3,4,5]] # Team 2 has stronger Anchor ; \"Team 2 wins!\"\n[[1,2,3,4,5], [5,4,3,2,1]] # Teams & Anchors are tied; \"It's a tie!\"\n```\n\nGood luck!\n",
+    "totalAttempts": 10234,
+    "totalCompleted": 1680,
+    "totalStars": 46,
+    "voteScore": 888,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

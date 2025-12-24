@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/588923d70c58352dc600020e",
+  "data": {
+    "id": "588923d70c58352dc600020e",
+    "name": "Stream cipher",
+    "slug": "stream-cipher",
+    "category": "algorithms",
+    "publishedAt": "2017-01-26T15:21:16.736Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/588923d70c58352dc600020e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-25T22:16:55.294Z",
+    "createdBy": {
+      "username": "user7657844",
+      "url": "https://www.codewars.com/users/user7657844"
+    },
+    "description": "Create a function `stream_cipher(msg, pwd)` to encrypt/decrypt a message with a given password.\n\nAllowed characters are: +/0-9a-zA-Z (0-63, similar to base64)\n\n`+/0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`\n\nKey generation\n----------------\n\nIf message length is greater than password length, a new one has to be generated from the previous one.\n\n    old: \"hello\"\n    a:   \"hello\"\n    b:   \"hloel\" (odd + even indices)\n    c:   \"olleh\" (reversed)\n    d:   \"olhle\" (reversed -> odd + even indices)\n    pos:  12345\n\n    new[i] = ((a[i]+b[i]) * pos) XOR ((c[i]+d[i]) * pos) mod 64\n    new: 'ggH+o'\n\nStream Cipher\n---------------\n\nPassword and message characters are combined using the logical operator `XOR`.\n\n    cipher[i] = msg[i] XOR pwd[i]\n    msg[i] = cipher[i] XOR pwd[i]\n    \nReturn the encrypted/decrypted message as a string.\n",
+    "totalAttempts": 86,
+    "totalCompleted": 2,
+    "totalStars": 3,
+    "voteScore": 0,
+    "tags": [
+      "Ciphers",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

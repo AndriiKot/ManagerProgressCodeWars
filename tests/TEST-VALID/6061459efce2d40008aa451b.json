@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6061459efce2d40008aa451b",
+  "data": {
+    "id": "6061459efce2d40008aa451b",
+    "name": "Probability #2 : The \"not\" Infinite Spinning Wheel",
+    "slug": "probability-number-2-the-not-infinite-spinning-wheel",
+    "category": "games",
+    "publishedAt": "2021-03-29T15:16:56.433Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6061459efce2d40008aa451b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-29T03:12:30.722Z",
+    "createdBy": {
+      "username": "bookdodo",
+      "url": "https://www.codewars.com/users/bookdodo"
+    },
+    "description": "# Story\nThe last game you created for your friend is too boring. [It's this game](https://www.codewars.com/kata/605d58ab7f229d001bac446e). Your friend request you to invent a new rule which there's no infinitely long game. You notice that the infinite game comes from spinning the wheel multiple times. So you will reduce it to only one time. The wheel is in the same format. If you land on __\"Win\"__ section, you win immediately. But if you land on __\"Not Win\"__ section, count how many sections you are away from the nearest __\"Win\"__ section. If the number is even, you win. And if it's odd, your friend wins.\n# Task\ngiven a string which each character represent a section of the wheel. *(Imagine getting that string up into the real world, and wrap it around a spinning wheel. The first character of the string is connected with the last character.)* the __\"Win\"__ section is transform to 'W' and the __\"Not Win\"__ section is transform to 'N'. Find the probability of you winning the game if you go first in percentage, rounding down.\n# Example\n### Ex.1\nGiven a string `\"WWWWWW\"`, all of the section is __\"Win\"__. If you goes first, you will always win. So in this example, you have to return `100` for 100% winning probability.\n### Ex.2\nGiven a string `\"NNN\"`, all of the section is __\"Not Win\"__. In this scenario, no one will win. So your probability of winning is 0%. So you have to return `0`.\n### Ex.3\nGiven a string `\"WWNNN\"`, there is 40% chance of landing on W and 20% chance of landing on the middle \"N\", which is 2 sections away from \"W\". So you have to return `60`.\n### Ex.4\nGiven a string `\"NWWNN\"`, this example is same as the previous one because the first `N` is connected to the last `N`. So you have to return `60`.\n### Ex.5\nIf you calculate the probability and get 31.6%, you have to return `31` because .6% gets round down.\n# Extra\n##### >The probability can never be more than 100% or less than 0%.\n##### >The string will only consists of 'W' or 'N'.\n",
+    "totalAttempts": 230,
+    "totalCompleted": 34,
+    "totalStars": 4,
+    "voteScore": 41,
+    "tags": [
+      "Strings",
+      "Mathematics",
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

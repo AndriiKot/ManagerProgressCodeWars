@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/562a5266c815be8311000018",
+  "data": {
+    "id": "562a5266c815be8311000018",
+    "name": "Balancing Ratios",
+    "slug": "balancing-ratios",
+    "category": "algorithms",
+    "publishedAt": "2015-10-23T15:30:02.573Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/562a5266c815be8311000018",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-23T15:29:43.309Z",
+    "createdBy": {
+      "username": "timothy-s-dev",
+      "url": "https://www.codewars.com/users/timothy-s-dev"
+    },
+    "description": "Explanation:\n===========\nYou run a factory which produces a number of different items for a particular consumer.  The consumer provides you with a ratio they want to maintain between the different sorts of items, as well as the number of each they currently possess.  Your job is to determine which item you should create to bring them as close as possible to their desired ratio.\n\nSpecification:\n=============\nYou will be provided with two arrays of integer values: desiredRatio and actualStock.  You need to return the index of the item you need to produce next to bring the ratio between the items in the actualStock as close as possible to the desiredRatio.  All production is done one item at a time.  If the actualStock already matches the ratio exactly return -1.\n\nThe closeness of the actualStock to the desiredRatio is determined by the difference in percentages.  See below for an example calculation.  If more than one item you could produce would bring you equally close to the desiredRatio, return the lowest index amongst the equal options.  (E.G. if producing item 5 or 7 would both bring you equally close, return 5).\n\nAll data passed to the NextProduct() method will be valid - the desired and actual array sizes will be the same, and neither will ever be empty.\n\nExample:\n=======\nYou are provided with a desired ratio of [3, 1, 1] - which is to say, for every three of item 0 you need to have 1 of item 1 and 1 of item 2.  For example, if the actual stock were [6, 2, 2] or [9, 3, 3] you would have an exact match.\n\nGiven this ratio, you are also provided with an actual stock of [6, 2, 1].  There are three items you could possibly produce: 0, 1, and 2.  For each of these we can calculate the percentage for each as compared to the percentages in the desired ratio.\n\n[3, 1, 1] becomes [60%, 20%, 20%]  \n[7, 2, 1] (produced item 0) becomes [70%, 20%, 10%]  \n[6, 3, 1] (produced item 1) becomes [60%, 30%, 10%]  \n[6, 2, 2] (produced item 2) becomes [60%, 20%, 20%]  \n\nThe difference between each item is summed up for each possibility:  \nitem 0 => 20%  \nitem 1 => 20%  \nitem 2 => 0%\n\nFor this example we would return 2, because producing item 2 brings us closest to the desired ratio. (Exactly to it in fact, though this won't always be the case).\n",
+    "totalAttempts": 309,
+    "totalCompleted": 24,
+    "totalStars": 3,
+    "voteScore": 20,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Mathematics",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

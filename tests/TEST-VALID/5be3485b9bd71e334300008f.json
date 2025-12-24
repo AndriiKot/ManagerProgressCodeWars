@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5be3485b9bd71e334300008f",
+  "data": {
+    "id": "5be3485b9bd71e334300008f",
+    "name": "Poor man's spreadsheet API",
+    "slug": "poor-mans-spreadsheet-api",
+    "category": "reference",
+    "publishedAt": "2018-11-07T20:33:58.257Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5be3485b9bd71e334300008f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-07T20:17:31.477Z",
+    "createdBy": {
+      "username": "user6793616",
+      "url": "https://www.codewars.com/users/user6793616"
+    },
+    "description": "We need an API for managing spreadsheets, much like available in popular spreadsheet software.\n\n# Task\n\nWrite a `Spreadsheet` and `Range` class:\n\n## The *Spreadsheet* class \n\nThe `Spreadsheet` class should have a `range(range)` method that takes a string and returns an instance of the `Range` class.\n\nThe string argument is a cell or range reference in the commonly used [A1 notation](https://en.wikipedia.org/wiki/Spreadsheet); \n\nExamples of valid range strings:\n\n    A1\n    ZZZZZZ999999999\n    B2:C4\n    EZ150:B30\n    $B$8\n    $C9\n    D$10\n\nThe range string syntax EBNF:\n\n    range = cell, [ \":\", cell ]\n    cell = [ \"$\" ], letter, { letter }, [ \"$\" ], digit, { digit } \n    letter = \"A\" | .. | \"Z\"\n    digit = \"0\" | \"1\" | .. | \"9\"\n \nRanges represent single cells or ranges of cells where the letters denote columns and the integers denote the rows. \"A\" is the first column, \"Z\" is column 26, \"AA\" is column 27, \"AB\" 28, ...etc. Row numbers start at 1.\nThe dollar prefix makes the row and/or column reference absolute, but in this context it makes no difference whether they are included or not.\nThe colon separates two opposite corner cells of a rectangular range of cells. The order in which these two corner cells are specified is not important.\n\n## The *Range* class \n\nThe `Range` instance returned by the above `range` method, should have the following three members:\n\n### The *value* getter/setter \n\nThe `value` property assigns/retrieves a decimal number to/from the range.\n\n### The *formula* getter/setter \n\nThe `formula` property assigns/retrieves an expression string. The syntax for this string is kept limited in this kata -- feel free to provide more advanced expression support ;-)\n\n    formula = \"=\", expression\n    expression = cell | unsigned number | sum, [ \"+\" | \"-\" | \"*\" | \"/\", expression ]\n    unsigned number = digit, { digit }, [ \".\", digit, { digit } ]  \n    sum = \"SUM(\", range, \")\"\n\nExamples of formulas:\n\n    =A1+1\n    =3-B34*2+8.3/A1\n    =CZ8-SUM(B2:AB3)\n    \nThe normal precedence rules apply, i.e. operations within parentheses (only used for the SUM argument) have highest precedence, then follow multiplication and division and finallly addition and subtraction. Where precedence is equal, evaluation happens from left to right.\n\nWhen the `Range` object represents more than one cell, then:\n\n- The getters will return the value of the range's \"primary\" cell, i.e. the cell in that range having the least row and column number.\n- The setters will make the assignment to all cells in the range.\n- The dollar sign in a cell reference has significance: if it is absent before a row (or column) indication, then that row (or column) is adapted relative to the range's primary cell.\n\nTo illustrate the last point, let's for example assign the formula \"=$A1+B$1\" to the range \"B3:C2\". The following statements are then true:\n\n- B2 is the range's primary cell, and therefore it gets the formula without change: \"=$A1+B$1\"\n- B3 is one row below it, and thus the relative row reference in the formula changes: \"=$A2+B$1\"\n- C2 is one column at its right, and thus the relative column reference in the formula changes: \"=$A1+C$1\"\n- C3 is one row and column away, and thus both relative indications change: \"=$A2+C$1\"\n\n### The *copyFrom* method\n\nThe `copyFrom(sourceRange)` method takes a string in A1 notation (see argument description of the `range` method of the `Spreadsheet` class).\n\nIt will set the `value` or `formula` of each cell in the main range to what can be found in `sourceRange` at the same offset.\nWhen there are fewer rows or columns in `sourceRange` than in the main range, proceed as if `sourceRange` was *tiled* to itself in order to produce as many rows and columns as needed.\nFormulas should be copied dynamically, i.e. not the actual A1 string, but the relative translation of it.\n\nSee for example the result of this code:\n\n```javascript\nconst sheet = new Spreadsheet();\nsheet.range(\"A1\").value = 1;\nsheet.range(\"A2:A10\").formula = \"=A1+1\";\nconsole.log(sheet.range(\"A10\").formula);   // \"=A9+1\"\nconsole.log(sheet.range(\"A10\").value);     // 10\nsheet.range(\"B1:C20\").copyFrom(\"A1:A10\");\nconsole.log(sheet.range(\"C20\").formula);   // \"=C19+1\"\nconsole.log(sheet.range(\"C20\").value);     // 10\n```\n\nNote that A1 has a value 1 and not a formula, so after `copyFrom` has been executed, the values of B1, C1, B11 and C11 are all 1. \nThe source range may overlap the target range. Make sure to make a consistent copy in that case.\n\n# Invalid Formulas\n\nAlthough the tests will always provide syntactically correct formulas, there can still be two instances where formulas become invalid.\n\n### 1. Cyclic Formulas\n\nA formula may depend on the cell it is assigned to, in that case there is a cycle. One cycle may involve several cells. \n\nIf a formula is cyclic, the involved and dependent cells should return `NaN` for their `value` property.\n\nWhen the cycle is somehow removed, the concerned cells should return normal values again.\n\n### 2. Off-the-grid References\n\nThe `copyFrom` method may lead to formulas that have invalid references. Consider this example:\n\n    sheet.range(\"C1\").formula = \"=B1\";\n    sheet.range(\"A1\").copyFrom(\"C1\");\n\nNow the formula of A1 refers to an non-existent cell at its left: this expression cannot be resolved. \nA1's `value` property should return `NaN` like above, but on top of that the `formula` property should return \"#REF\".\n\nTake care that the information of the formula should not be lost. A copy of the concerned cell to another cell may make that formula valid there. The above code could continue:\n\n    sheet.range(\"B2\").copyFrom(\"A1\");\n\nAlthough the formula was invalid for A1, it makes sense for B2, so its `formula` property should return \"=A2\", not \"#REF\".\n    \n# Defaults, side effects, and other rules\n\n* If a cell was never referenced before, it will have a default value of 0, and its formula property will be the empty string. The latter means that the cell has no formula.\n* When a cell is assigned a formula, its value property should reflect the outcome of that expression.\n* When a cell is assigned a value, its formula should be reset to the empty string.\n* When a cell's formula cannot be evaluated because of a reference to an unexisting cell, then its `value` property should return `NaN`.\n* When a cell's formula is cyclic, its `formula` property should return \"#REF\", and its `value` property `NaN`.\n* When a cell -- that is used in some other cell's formula -- gets a new value, then the value retrieved from the cell having that formula should correctly reflect this change.\n\nThe tests will check for some level of efficiency.\n\nGood luck!\n",
+    "totalAttempts": 74,
+    "totalCompleted": 6,
+    "totalStars": 7,
+    "voteScore": 12,
+    "tags": [
+      "Performance",
+      "Parsing",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

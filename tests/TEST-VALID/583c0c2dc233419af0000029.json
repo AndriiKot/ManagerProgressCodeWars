@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583c0c2dc233419af0000029",
+  "data": {
+    "id": "583c0c2dc233419af0000029",
+    "name": "Simple Numbers Conversion",
+    "slug": "simple-numbers-conversion",
+    "category": "algorithms",
+    "publishedAt": "2016-11-28T10:56:37.120Z",
+    "approvedAt": null,
+    "languages": [
+      "swift"
+    ],
+    "url": "https://www.codewars.com/kata/583c0c2dc233419af0000029",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-28T10:51:25.501Z",
+    "createdBy": {
+      "username": "nahive",
+      "url": "https://www.codewars.com/users/nahive"
+    },
+    "description": "Every integer number n is represented in positional number system of base r by a sequence of digits 0 ≤ di < r, so the value is equal to:\n\n```\nn = d0  + r * d1 + r2 * d2 + r3 * d3 + ...\n```\n\nYour task is to convert a given number in r-base represantation into s-base representation, for example: decimal 231 into binary 11100111. \n\nAssume that ```r ≤ 36``` and the digits are ```0,1,2,3,4,5,6,7,8,9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z.```\n\nFunction should throw an error if: \n\n- string contains characters not in (0<Z) range\n\n- string contains characters not included in ```from``` base\n\n- ```from``` or ```to``` base is ```1```.\n\n\nIf string is empty - return empty string.\n\n*Example*\n```swift\ntry? convert(string: \"231\", from: 10, to: 2) // 11100111\ntry? convert(string: \"ABC\", from: 15, to: 10) // 2427\ntry? convert(string: \"XYZ\", from: 36, to: 2) // 1010101111111011\ntry? convert(string: \"XYZ\", from: 10, to: 2) // nil\n```\n",
+    "totalAttempts": 95,
+    "totalCompleted": 13,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5845ccfd50be6363bd000047",
+  "data": {
+    "id": "5845ccfd50be6363bd000047",
+    "name": "Operationalism",
+    "slug": "operationalism",
+    "category": "algorithms",
+    "publishedAt": "2016-12-05T20:24:47.430Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5845ccfd50be6363bd000047",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-12-05T20:24:29.284Z",
+    "createdBy": {
+      "username": "Detecter",
+      "url": "https://www.codewars.com/users/Detecter"
+    },
+    "description": "You're given an int array \"n\". Every element is positive and bigger than 5. They are also consecutive. <br>\nExample of \"n\" : <br> [6,7,8,9,10] <br> [15,16,17,18] <br>\nYou have to turn each element of the array \"n\" to 1 by using the following operations in this order: <br>\n\n\"+\", \"-\", \"*\", \"/\"\n\nYou then return a multidimensional int array in which every row contains 4 numbers used to obtain the correct result for every element of the array \"n\". If the row has more or less than 4 numbers, an error will be returned.\n\nYou must not use in a row: <br>\n- Negative numbers <br>\n- 0 <br>\n- Repeats <br>\n- \"n\" <br>\n- Numbers bigger than \"n\" <br>\nTo get \"n\" to 1.\n\nYou also must not have more than 2 matching pairs between 2 consecutive rows no matter where they are positioned in the row.\n\nError Examples:\n\nCase 1: <br>\nn = 6 <br>\n=> ((6 + 0 - 5 )* 1) / 1 = 1 <br>\n1 is repeated, 0 is not allowed. Error!\n\nCase 2: <br>\nn = 6 | Row 1 <br>\n=> ((6 + 1 - 5 )* 2) / 4 = 1\n\nn = 7 | Row 2 <br>\n=> ((7 + 1 - 6 )* 2) / 4 = 1 <br>\n1,2,4 match! More than 2 pairs not allowed! Error!\n\nCorrect Example: (for n = [6,7])\n\nn = 6 <br>\n=> ((6 + 1 - 5 )* 2) / 4 = 1\n\nn = 7 <br>\n=> ((7 + 3 - 4 )* 1) / 6 = 1 <br>\nresult = { [1,5,2,4], [3,4,1,6] } <br>\n(first number is n, the rest of the numbers are part of the solution)\n\nYou can assume that \"n\" is never null and the first element is always > 5.  \nIf the description is unclear or you have found bugs in the code, let me know asap!\n\n\n\n\n",
+    "totalAttempts": 122,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Puzzles",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

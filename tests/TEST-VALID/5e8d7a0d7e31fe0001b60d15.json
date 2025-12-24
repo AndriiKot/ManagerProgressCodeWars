@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e8d7a0d7e31fe0001b60d15",
+  "data": {
+    "id": "5e8d7a0d7e31fe0001b60d15",
+    "name": "Simple Collatz Sequence generator",
+    "slug": "simple-collatz-sequence-generator",
+    "category": "algorithms",
+    "publishedAt": "2020-04-08T07:15:25.076Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e8d7a0d7e31fe0001b60d15",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-08T07:15:34.361Z",
+    "createdBy": {
+      "username": "WestwardLand968",
+      "url": "https://www.codewars.com/users/WestwardLand968"
+    },
+    "description": "Your task of this kata is easy - you need to generate the Collatz Sequence for a number, and output it as a mathematical equation.\n\n**How the sequence works**\n\nIn short words you need to reach 1, given a starting number.\n\nIf the number is odd, you multiply that number by 3 and add 1.\n\nIf the number is even, you divide the number by 2.\n\nBecause of these rules, the sequence will only have one solution per number.\n\n**How you should output your solution**\n\nYou'll need to output it mathematically, so:\n\nYour return equation should begin with the input number in parentheses: think of this as the first operation. Then, for each operation you do, it should be enclosed in an outer set of parentheses. \n\nIn case of dividing, put the previous operations in parentheses and divide by 2 like so:\n\n```(...) / 2```\n\nIn case of multiplying by 3 and adding 1, the x3 should be before the previous operations and the +1 should be after.\n\n```3 * (...) + 1```\n\nNumbers and parentheses should have no spaces in between. Everything else should have one space between.\n\nAs an example:\n\n10 should output\n\n```((((3 * ((10) / 2) + 1) / 2) / 2) / 2) / 2```.\n\nExpressed with words: 10 => 5 => 16 => 8 => 4 => 2 => 1\n\nMore examples within the sample tests.",
+    "totalAttempts": 66,
+    "totalCompleted": 29,
+    "totalStars": 1,
+    "voteScore": 29,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

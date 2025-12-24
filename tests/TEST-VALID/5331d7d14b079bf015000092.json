@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5331d7d14b079bf015000092",
+  "data": {
+    "id": "5331d7d14b079bf015000092",
+    "name": "JSON.stringify",
+    "slug": "json-dot-stringify",
+    "category": "reference",
+    "publishedAt": "2014-03-28T13:43:32.617Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5331d7d14b079bf015000092",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-03-25T19:24:01.565Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "To prevent usage of the real JSON object, you must write a function that returns a `JSON_stringify` function that will be an analogous to `JSON.stringify`. You can do whatever you like in this \"factory\" function, but it must return a function to be used for testing.\n\nThe function should accept three arguments:\n\n1. `value` is required, and should accept any kind of javascript value. This value should be turned into a string, a JSON representation of the data according to the JSON format, outlined below.\n2. `replacer` is optional, and should accept a function or Array value. More details on how this value should transform the properties of the `value` object are below.\n3. `space` is optional, and should accept any string. This string should then be used in formatting, or \"pretty-printing\" the JSON output. More details below.\n\n## value\nThe function should accept any possible javascript value, and convert it into a JSON string.\n\nPrimitive values should be turned into source-code-like strings. So the number `1` becomes the string `1`, the boolean `true` becomes the string `true`, and the string `\"the \\\"quoted\\\" string\"` becomes `\"the \\\"quoted\\\" string\"`. Similarly, a `null` value should be returned as the string `null`. If the value is `undefined`, it should not be converted at all.\n\n**NOTE:** Normally escaped characters should be escaped just as in regular javascript source-code (this includes \", \\, \\b, \\f, \\n, \\r and \\t characters). On top of that, any characters from Unicode-31 and below should be escaped. Eg. `\\u0012` for the Unicode-18 character (rememeber: unicode escapes are in 16-bit).\n\nObject forms of primitive values, such as `new Number(1)`, should be used as though they were primitive values, in this case returning the string `1`.\n\nArrays should be formatted just like an Array literal in source-code javascript. This means it should begin and end with square brackets, and have the values printed out in their JSON-escaped forms, separated by commas. So `[\"a\", \"b\"]` should convert to the string `[\"a\",\"b\"]`, for example.\n\nRegular objects are where it gets interesting. Just to recap, object literals can have properties. These properties have a name and a value, in the form `name:value`. Each property is separated by a comma after the value, like so: `name:value,name2:value2`. And an object is enclosed in curly braces, like this: `{name:value,name2:value2}`. Those properties can have further objects as their values, and those objects can have their own object properties, and so on, allowing for infinite nesting. So something like `{a:1,b:2}` is a valid object, as is `{}` and `{a:{b:{c:\"d\"}}}`.\n\nA JSON-formatted string of such an object looks pretty similar. The only real difference being that each property name (or \"key\") should be its own escaped string. So `{key:1,key2:2}` will become the string `{\"key\":1,\"key2\":2}`. A nested object, such as `{key:1,key2:{key3:3}}` would do the same: `{\"key\":1,\"key2\":{\"key3\":3}}`.\n\nIf an object has a toJSON method attached to it, whatever value is returned by this method should be used in place of the object as the currently rendered value. For example, the object `{a:1, toJSON:function(){return \"one\";}}` would be rendered as the string `\"one\"`.\n\nIf a value is `undefined`, a function, or an \"xml\" value, and it is a property of an object, the property should be skipped. If it is a value in an array, it should be treated as though it was a `null` value.\n\n(Anything that has a \"type\" of \"xml\", as in `typeof xml_object == \"xml\"`. This won't be tested, as node has no such objects, but you get extra brownie points if you include it. ;P)\n\n\n## replacer\n\nIf the `replacer` value is a function, it will be one that accepts two properties: `key`, the string value of a property's name, and `value`, the value of said property. It will then return the value to be used as in-place of the value currently being rendered. If the new value would usually be omitted or treated as a special case (see previous paragraph), the new value or property should be treated in the same way.\n\nIf the `replacer` value is an Array, it will be a simple list of strings. These strings should be used to find keys within any object literals being rendered. If a property's name is not in the array, it will not be rendered as part of the JSON string. If a name in the array is not found in the currently rendered object, it should simply be skipped. Any properties found in this way should be rendered in the same order as they were listed in the array. If the same property name was found in the array more than once, the property should be rendered twice, as found in the array.\n\n> I'm now aware this works differently from the current version of the built-in `JSON.stringify`, but changing this feature could invalidate a large number of solutions so I've left it as-is.\n\nSo the value `{a:1,b:{c:2,a:3},d:4}`, rendered with a replacer of `[\"a\", \"b\", \"a\"]`, would return the string `{\"a\":1,\"b\":{\"a\":3,\"a\":3},\"a\":1}`.\n\n\n## space\n\nIf the `space` value is defined as a string, it should be used to \"pretty-print\" the JSON output while rendering it. This means that when any nesting occurs, such as listing values in an array or rendering properties of an object, a new-line character (`\\n`) should be inserted, followed by the `space` string, using it as an indentation, the effect multiplying as the nesting level increases.\n\nAlso, a single space is inserted after each object property name. So `{a:1}`, with a `space` of `\\t`, would something like this:\n```javascript\n{\n  a: 1\n}\n```\n\nLet's look at a more complex example. The object `{a:1,b:{c:[1,2,3]},d:4}`, rendered with the `space` of `\\t` would result in something like this:\n```javascript\n{\n\t\"a\": 1,\n\t\"b\": {\n\t\t\"c\": [\n\t\t\t1,\n\t\t\t2,\n\t\t\t3\n\t\t]\n\t},\n\t\"d\": 4\n}\n```\nThe properties a, b, and d are at the first level of nesting, with a single `space` indentation of `\\t`. Property b.c is in the second level, with a double `space` indentation of `\\t\\t`. And the values found in the array b.c are in the third level, with a triple `space` indentation of `\\t\\t\\t`. After the opening character of the contining object (`{` for the object, `[` for the array), a new-line character (`\\n`) is inserted. A new-line character is also inserted after each new property or value.\n\nAll of this is ignored, however, for individual, primitive values.\n\n",
+    "totalAttempts": 742,
+    "totalCompleted": 20,
+    "totalStars": 3,
+    "voteScore": 10,
+    "tags": [
+      "JSON",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

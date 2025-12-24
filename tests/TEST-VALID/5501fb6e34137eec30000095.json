@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5501fb6e34137eec30000095",
+  "data": {
+    "id": "5501fb6e34137eec30000095",
+    "name": "Tower of Hanoi",
+    "slug": "tower-of-hanoi-2",
+    "category": "algorithms",
+    "publishedAt": "2015-03-12T21:03:54.340Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5501fb6e34137eec30000095",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-12T20:47:42.721Z",
+    "createdBy": {
+      "username": "karudedios",
+      "url": "https://www.codewars.com/users/karudedios"
+    },
+    "description": "## Your Task\nImplement a solution for the Tower of Hanoi.\n\n### Tower of Hanoi in a nutshell\n\nYou begin with an array of arrays of length 3, and the first array with an x amount of floors (ascending order)\n```javascript\nvar next_step;\nvar tower = [[1, 2, 3, ..., x], [], []]\n```\n\nYou can move one value at a time\n```javascript\nnext_step = [[2, 3, ..., x], [], [1]]\n```\n\nYou cannot move a number on top of a smaller one\n```javascript\nnext_step = [[3, ..., x], [], [2, 1]] // This cannot happen since 2 is bigger than 1\n```\n\nThe aim of the game is to move every value from the left-most array one by one to the right-most one, following the rules described above and (_*for this kata*_) the initial structure of the implementation explained below.\n\n### Implementation\n\nFor this Kata you will create a function hanoi that takes as a parameter the amount of disks the tower is going to have\n```javascript\nvar hanoi = function(disks) { }\n```\n\nThis function will posses a nextStep function in which you'll work the logic to move each individual disk one call at a time\n```javascript\nvar tower = hanoi(3)\ntower.nextStep() // [[2, 3], [], [1]]\ntower.nextStep() // [[3], [2], [1]]\n```\n\nAnd once it arrives to the last step, if called again it should throw an error\n```javascript\nvar tower = hanoi(3)\n/* Magic */\ntower.nextStep() // [[], [], [1, 2, 3]]\ntower.nextStep() // Error ==> Sequence contains no more elements.\n```\n\n#### More about the Tower of Hanoi\n* http://www.wikiwand.com/en/Tower_of_Hanoi",
+    "totalAttempts": 128,
+    "totalCompleted": 22,
+    "totalStars": 10,
+    "voteScore": 53,
+    "tags": [
+      "Puzzles",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

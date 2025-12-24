@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/566f22cd26939a938100002f",
+  "data": {
+    "id": "566f22cd26939a938100002f",
+    "name": "Genus Homo",
+    "slug": "genus-homo",
+    "category": "reference",
+    "publishedAt": "2015-12-14T20:13:30.652Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/566f22cd26939a938100002f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-14T20:13:02.502Z",
+    "createdBy": {
+      "username": "ivanmauricio",
+      "url": "https://www.codewars.com/users/ivanmauricio"
+    },
+    "description": "An archeologist has obtained some data regarding the genus Homo, of which Homo Sapiens are the last ones standing. She wants to manipulate the data slightly so that it is more suited to his needs. Create a function `clarify` that makes the following alterations:\n\n* The keys `number` and `name` should be changed to `timelineOrder` and `species` respectively. Their values should remain the same apart from adding a `#` before the `number`/`timelineOrder` values. \n\n* She is intersted in the last million years so any species extinct more than a million years ago should be expunged from the data. \n\n* Finally she would like combine the `begin` and `end` keys into a single `yearsOnEarth` key (the `begin` and `end` values' units are years before present).\n\nAs if that wasn't enough some pesky kids have disabled the `map()` and `filter()` array methods so they may not be used.\n\nThe data is preloaded and is shown below.\n```javascript\nvar genusHomo = [\n  { number: 1,  name: 'Homo habilis', begin: 2.6e6, end: 2e6 },\n  { number: 2,  name: 'Homo rudolfensis', begin: 2.5e6, end: 1.9e6 },\n  { number: 3,  name: 'Homo ergaster', begin: 1.9e6, end: 1.4e6 },\n  { number: 4,  name: 'Homo erectus', begin: 1.4e6, end: 5e4 },\n  { number: 5,  name: 'Homo heidelbergensis', begin: 8e5, end: 2.5e5 },\n  { number: 6,  name: 'Homo neanderthalensis', begin: 2e5, end: 3e4 },\n  { number: 7,  name: 'Homo sapiens', begin: 2e5, end: 0 } \n];\n```\nAs an example each entry in the new data should look something like this:\n```javascript\n{ timelineOrder: '#8', species: 'Homo examplus', yearsOnEarth: 660000 }\n```\n\n",
+    "totalAttempts": 251,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Objects",
+      "Data Types",
+      "Formatting",
+      "Algorithms",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

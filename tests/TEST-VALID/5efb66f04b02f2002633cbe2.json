@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5efb66f04b02f2002633cbe2",
+  "data": {
+    "id": "5efb66f04b02f2002633cbe2",
+    "name": "Fibonacci Lambda Calculus",
+    "slug": "fibonacci-lambda-calculus",
+    "category": "reference",
+    "publishedAt": "2020-06-30T16:24:15.407Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5efb66f04b02f2002633cbe2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-30T16:23:12.377Z",
+    "createdBy": {
+      "username": "Freddie C",
+      "url": "https://www.codewars.com/users/Freddie%20C"
+    },
+    "description": "(intro stolen from [Azuaron](https://www.codewars.com/kata/church-numbers-add-multiply-exponents))\n\n## Lambda Calculus\n\nLambda Calculus is a syntax for functional computing/mathematics. In Lambda Calculus, a function has one input, and one output. However, the input function can be another lambda function (which accepts another input), and this can somewhat simulate multiple inputs with some important differences; this is called \"currying\".\n\nSome languages (e.g. Haskell) naturally use curried functions. Other languages (e.g. Javascript) must have currying forced upon them. The solution starts with the functions properly curried, and will need to remain that way.\n\n## Church Encodings\n\nIn mathematics, Church encoding is a means of representing data and operators in the lambda calculus. Church numerals are a representation of the natural numbers using lambda notation.  \nTerms that are usually considered primitive in other notations (such as integers, booleans, pairs and lists) are mapped to higher-order functions under Church encoding. This is an important concept of Lambda Calculus, so naturally we had to talk about Lambda Calculus.  \n\n## The Task\n\nCreate a FIBONACCI function which has one parameter `n`, the index of the number in the sequence, that should return the n<sup>th</sup> Fibonacci number.\n\nIn this version the sequence goes:\n\n```python\n0,1,1,2,3,5,8 ...\n\n(FIBONACCI)(ZERO)  -> returns 0\n(FIBONACCI)(ONE)   -> returns 1\n(FIBONACCI)(TWO)   -> returns 1\n(FIBONACCI)(THREE) -> returns 2\n\n(FIBONACCI)(FALSE) -> returns 0\n(FIBONACCI)((ADD)(THREE)(THREE)) -> returns 8\n```\n```javascript\n0, 1, 1, 2, 3, 5, 8, ..\n\nFIBONACCI(ZERO)  => returns 0\nFIBONACCI(ONE)   => returns 1\nFIBONACCI(TWO)   => returns 1\nFIBONACCI(THREE) => returns 2\nFIBONACCI(FOUR)  => returns 3\nFIBONACCI(FIVE)  => returns 5\n```\n```haskell\n0, 1, 1, 2, 3, 5, 8, ..\n\nfibonacci `apply` zero  -> returns 0\nfibonacci `apply` one   -> returns 1\nfibonacci `apply` two   -> returns 1\nfibonacci `apply` three -> returns 2\nfibonacci `apply` four  -> returns 3\nfibonacci `apply` five  -> returns 5\n```\n\n## Syntax\n\nThis is Lambda Calculus, and so there are restrictions on the syntax allowed.\n\n~~~if:javascript\nIn Javascript, this means only definitions (without `const`, `let` or `var`). Functions can be defined using fat arrow notation only. Functions may take either zero or one argument.\n\nSome examples of *valid* syntax:\n```javascript\npair = a => b => c => c(a)(b)\nzero = f => x => x\ncons = pair\n```\n\nSome examples of *invalid* syntax:\n```javascript\nconst one = f => x => f(x); // const, and semicolon (;) are not allowed\nfunction head(l) { return l(true) } // functions must use fat arrow notation\nfold = f => x => l => l.reduce(f, x) // Only variables, functions and applications are allowed. Attribute accessing (.), and functions taking multiple arguments, are not allowed.\n```\n~~~\n~~~if:python\nIn Python, this means only definitions. Functions can be defined using lambda notation only. Functions must always take a single argument.\n\nSome examples of *valid* syntax:\n```python\npair = lambda a: lambda b: lambda c: c(a)(b)\nzero = lambda f: lambda x: x\ncons = pair\n```\n\nSome examples of *invalid* syntax:\n```python\none = lambda: lambda f,x: f(x) # Functions must take one argument\ndef head(l):\n    return l(true) # functions must use lambda notation\nchoose = lambda a: lambda b: lambda c: a if c else b # Only variables, lambda functions and applications are allowed. Anything else (eg. ... if ... else ... ) is not.\n```\n~~~\n~~~if:haskell\nYour code should look something like\n\n```haskell\nfibonacci :: Term\nfibonacci = lambda $ \\ n -> index `apply` fibs `apply` n\n```\n\nwhere you would normally write\n\n```\nfibonacci :: Int -> Int\nfibonacci n = fibs !! n\n```\n\n`lambda` wraps native single argument functions to Lambda Calculus terms. `apply` unwraps them again. See `Preloaded` below.\n\nYou cannot use any `Num` instances. No native number calculations!\n~~~\n\n## Preloaded\n\nYou will be given the following code:\n\n```python\nTRUE  = lambda a: lambda b: (a)\nFALSE = lambda a: lambda b: (b)\nZERO  = FALSE\nONE   = lambda f: lambda x: (f)(x)\nTWO   = lambda f: lambda x: (f)((f)(x))\nTHREE = lambda f: lambda x: (f)((f)((f)(x)))\nFOUR  = lambda f: lambda x: (f)((f)((f)((f)(x))))\nFIVE  = lambda f: lambda x: (f)((f)((f)((f)((f)(x)))))\n```\n```javascript\nTRUE  = t => f => t\nFALSE = t => f => f\nZERO  = s => z => z // = FALSE\nONE   = s => z => s(z)\nTWO   = s => z => s(s(z))\nTHREE = s => z => s(s(s(z)))\nFOUR  = s => z => s(s(s(s(z))))\nFIVE  = s => z => s(s(s(s(s(z)))))\n```\n```haskell\ndata Term = Lambda { apply :: Term -> Term }\n\ninfixl 1 `apply`\n\nlambda :: (Term -> Term) -> Term\nlambda = Lambda\n\nfalse,true,zero,one,two,three,four,five :: Term\nfalse = lambda $ \\ t -> lambda $ \\ f -> f\ntrue  = lambda $ \\ t -> lambda $ \\ f -> t\nzero  = lambda $ \\ s -> lambda $ \\ z -> z -- = false\none   = lambda $ \\ s -> lambda $ \\ z -> s `apply` z\ntwo   = lambda $ \\ s -> lambda $ \\ z -> s `apply` (s `apply` z)\nthree = lambda $ \\ s -> lambda $ \\ z -> s `apply` (s `apply` (s `apply` z))\nfour  = lambda $ \\ s -> lambda $ \\ z -> s `apply` (s `apply` (s `apply` (s `apply` z)))\nfive  = lambda $ \\ s -> lambda $ \\ z -> s `apply` (s `apply` (s `apply` (s `apply` (s `apply` z))))\n```\n\n### Help\n\nWikipedia: [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus)\n  \nWikipedia: [Church Encoding](https://en.wikipedia.org/wiki/Church_encoding)\n\n### _Beta Notes_\n\nPlease feel free to leave feedback, any way to improve this kata would be much appreciated.",
+    "totalAttempts": 171,
+    "totalCompleted": 25,
+    "totalStars": 5,
+    "voteScore": 37,
+    "tags": [
+      "Functional Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

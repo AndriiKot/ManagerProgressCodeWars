@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/624003de45722700255be22a",
+  "data": {
+    "id": "624003de45722700255be22a",
+    "name": "Monthly Library Reading List Compiler",
+    "slug": "monthly-library-reading-list-compiler",
+    "category": "algorithms",
+    "publishedAt": "2022-03-27T08:41:13.043Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/624003de45722700255be22a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-03-27T06:27:42.348Z",
+    "createdBy": {
+      "username": "AlejandorLazaro",
+      "url": "https://www.codewars.com/users/AlejandorLazaro"
+    },
+    "description": "The Humble Public Library (HPL) delivers themed monthly Reading Lists to its patrons. Each month, a library assistant goes through a bookshelf and compiles a list of books under a collective word limit.\n\nThis process is manually intensive, as the assistant may have to reorganize the potential reading lists multiple times if the books chosen together exceed the total word count limit.\n\nHPL has commissioned you to write a program that will return **ALL** possible reading lists given the following parameters:\n\n* A dictionary of books (the books have been serialized into strings for ease of use)\n* A word count limit\n\nThe output of the program should be a list of lists, with each inner list being the titles of the books in a valid reading list.\n\nE.g.:\n```\ndef compile_reading_lists(books, word_limit):\n  # Do magic here\n  \ncompile_reading_lists({\n  \"Book 1\": \"Book one\",                     # Has 2 words\n  \"Book 2\": \"The second book\"               # Has 3 words\n  \"Book 3\": \"This book has a lot of words\"  # Has 7 words\n  }, 8)\n# Returns [[\"Book 1\", \"Book 2\"], [\"Book 3\"]]\n\n#  Book 1       Book 2        Book 3\n#  2 words      3 words        7 words\n#    |------------|-------------|\n#                 |\n#            2+3+7=12 words, breaks limit \n#\n#    |------------|\n#         |\n#      2+3=5 words, fits limit -------------------> [Book 1, Book 2]\n#\n#    |--------------------------|\n#                |\n#             2+7=9 words, breaks limit\n#\n#                 |-------------|\n#                        |\n#                     3+7=10 words, breaks limit\n#  \n#    |\n#   2 words, but Book 1 is already in a bigger set [Book 1, Book 2]\n#\n#                 |\n#   3 words, but Book 2 is already in a bigger set [Book 1, Book 2]\n#\n#                               |\n#                        7 words, fits limit -----> [Book 3]\n```\n\n**NOTES:**\n* Each book has a unique title.\n* Return an empty list if no books fit under the word limit.\n* If any reading list would be a subset of another larger reading list, do not consider it.\n* Each book should only be used once per reading list. People don't want to be told they need to read the same Harry Potter book 9 times in a monthly list.\n\nExamples:\n```\ncompile_reading_lists({}, 10) # No Books\n# Returns []\n\ncompile_reading_lists({ # Only one book fits within the word count\n  \"Short Book\": \"book with just 5 words\",\n  \"Long Book\": \"This book's contents are beyond the limit that is required for this month's reading list\"\n  }, 10)\n# Returns [[\"Short Book\"]] \n\ncompile_reading_lists({ # 3 books with 3 words each would fit for a word limit of 10\n  \"Small Book Vol 1\": \"only three words\",\n  \"Small Book Vol 2\": \"makes these books\",\n  \"Small Book Vol 3\": \"hard to understand\"\n  }, 10) \n# Returns [[\"Small Book Vol 1\", \"Small Book Vol 2\", \"Small Book Vol 3\"]]\n```\n",
+    "totalAttempts": 129,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Combinatorics",
+      "Algorithms",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

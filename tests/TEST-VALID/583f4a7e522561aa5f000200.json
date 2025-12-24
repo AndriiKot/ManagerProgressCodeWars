@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583f4a7e522561aa5f000200",
+  "data": {
+    "id": "583f4a7e522561aa5f000200",
+    "name": "Is there an arrow missing ?  (Relations - Part1: Reflexivity)",
+    "slug": "is-there-an-arrow-missing-relations-part1-reflexivity",
+    "category": "games",
+    "publishedAt": "2016-11-30T21:54:18.694Z",
+    "approvedAt": null,
+    "languages": [
+      "php",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/583f4a7e522561aa5f000200",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-30T21:54:06.339Z",
+    "createdBy": {
+      "username": "jonneroelofs2",
+      "url": "https://www.codewars.com/users/jonneroelofs2"
+    },
+    "description": "## Relations\nRelations form a foundational topic in Logic, Math and Philosopy.\n\nHere are a few references to understand the importance of relations:\n\n[Objects, properties and relations](https://cas.umkc.edu/philosophy/vade-mecum/2-3.htm)\n\n[Math](https://en.wikipedia.org/wiki/Equivalence_relation)\n\nThere are many different categories of relations. In this kata we will focus on reflexivity.\n\n\n## Reflexivity\nReflexivity as explained on Stanford:\n>A relation R is reflexive iff,\n>everything bears R to itself.\n>For example, \"being the same height as\" is a reflexive relation: everything is the same height as itself.\n[Stanford](http://plato.stanford.edu/entries/set-theory/basic-set-theory.html)\n\n### The Model\nIn this exercise we will look at a Model consisting of points and arrows. The points will be given in an array `S`. For example `S = [1,2,3]` and the arrows will be given as a relation `R = [ [1,1], [1,2], [1,3] ]` . What this means is that there are arrows pointing from `1` to itself, from `1` to `2` and from `1` to `3`.\n\nIn the tests every arrow in `R` will always be unique.\n\n### Task\nWhat we want to know is whether the Relation is reflexive. `R` is a reflexive relation if every point in `S` has an arrow pointing from itself to itself\n\n### Examples\nSuppose you have `S` and `R` as in the first example below then this means that you have `3` points where every point has an arrow pointing from itself to itself.\n\nIn the second example the red arrow is missing from the relation `R`, i.e. `[1,1]` is not in `R`. Therefore the relation is not reflexive.\n\n* Example 1:\n  Suppose `S = [1,2,3]`.\n  Let `R` be `[[1,1],[2,2],[3,3]]`\n\n  Result: `R` is reflexive, return `true` in the kata.\n\n* Example 2:\n  Suppose `S` = `[1,2]`.\n  Let `R` be `[[1,2],[2,2]]`\n\n  Result: `R` is NOT reflexive, as you can tell point `1` has no arrow pointing from itself to itself, i.e. `[1,1]` is missing in the relation `R`. Return `false` in the kata.",
+    "totalAttempts": 143,
+    "totalCompleted": 58,
+    "totalStars": 3,
+    "voteScore": 65,
+    "tags": [
+      "Logic",
+      "Set Theory",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

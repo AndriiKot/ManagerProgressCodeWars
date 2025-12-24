@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66241e2c32f62c01d58693c5",
+  "data": {
+    "id": "66241e2c32f62c01d58693c5",
+    "name": "Transform string",
+    "slug": "transform-string",
+    "category": "reference",
+    "publishedAt": "2024-04-20T19:57:42.720Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/66241e2c32f62c01d58693c5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-20T19:57:32.552Z",
+    "createdBy": {
+      "username": "TimoNotThy",
+      "url": "https://www.codewars.com/users/TimoNotThy"
+    },
+    "description": "The function `transform(s)` will recieve a string and will asign a new letter to each letter. The first letter in the string will be changed into a, the second letter into b,...\nOnce all lowercase letters have been used up the code should start assigning uppercase letters.\n```\nabc       --> abc       | a=a b=b c=c\nxyz       --> abc       | x=a y=b z=c\nxxyyzzxyz --> aabbccabc | x=a y=b z=c\nxXx       --> aba       | x=a X=b\n```\nThe same will be done with digits in the string with the first digit being assigned to 0.\n```\n012       --> 012       | 0=0 1=1 2=2\n789       --> 012       | 7=0 8=1 9=2\n778899789 --> 001122012 | 7=0 8=1 9=2\n```\nPunctuation marks and other symbols will not be transformed.\n```\n.!?       --> .!?\n```\nWhen combining the above rules you should get something like this:\n```\nabc012!.? --> abc012!.? | a=a b=b c=c 0=0 1=1 2=2\nxyz789%.* --> abc012%.* | x=a y=b z=c 7=0 8=1 9=2\n!4xXx4!   --> !0aba0!   | 4=0 x=a X=b\n```\nTake a look at the test cases if you need more clarification.",
+    "totalAttempts": 59,
+    "totalCompleted": 17,
+    "totalStars": 1,
+    "voteScore": 15,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

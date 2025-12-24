@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58a1bce8d781ae52f9000090",
+  "data": {
+    "id": "58a1bce8d781ae52f9000090",
+    "name": "Refactor out a switch-statement to a Dictionary",
+    "slug": "refactor-out-a-switch-statement-to-a-dictionary",
+    "category": "refactoring",
+    "publishedAt": "2017-02-13T14:04:32.919Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/58a1bce8d781ae52f9000090",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-13T14:04:24.889Z",
+    "createdBy": {
+      "username": "dibley1973",
+      "url": "https://www.codewars.com/users/dibley1973"
+    },
+    "description": "## Mission\nThe aim of this kata is to refactor out the switch statement and replace it with a dictionary \"Jump Table\" \n\n## Problem\nAlthough switch statements can execute quickly and are a simple construct to grasp they can become unwieldly and a maintenance nightmare as they grow. \nAlso they do not readily encourage the \"Open Closed\" principle. With this in mind we will remove the switch statment from the code and replace it with a Dictionay which can be used like a \"Jump Table\".\n\n## Solution\nYour solution will replace the `switch case` statment in the `GetStatusDescription()` method with a call to the dictionary. The dictionary will be declared as beloww:\n```\nprivate readonly Dictionary<Status, string> _statusDescriptions;\n```\n\nWhere `Status` is the following enumeration:\n\n```\npublic enum Status\n{\n    Default = 0,\n    New = 1,\n    Active = 2,\n    Deactivated = 3\n}\n```\n\nNOTE:\nYes the tests will pass by doing nothing and leaving the `switch...case` construct present, but the idea of this kata is to give you an insight into removing `switch` statements from your code and looking for alternative constructs, in this case, a dictionary.\n\nEnjoy.\n\nP.S. If you like this kata then \"Refactor out a switch-statement using polymorphism\" is of a similar vein.",
+    "totalAttempts": 300,
+    "totalCompleted": 80,
+    "totalStars": 0,
+    "voteScore": 56,
+    "tags": [
+      "Fundamentals",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5aed76ed2c50614143000089",
+  "data": {
+    "id": "5aed76ed2c50614143000089",
+    "name": "Create an esolang interpreter",
+    "slug": "create-an-esolang-interpreter",
+    "category": "games",
+    "publishedAt": "2018-05-05T09:22:32.039Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5aed76ed2c50614143000089",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-05-05T09:18:37.182Z",
+    "createdBy": {
+      "username": "Madrobot",
+      "url": "https://www.codewars.com/users/Madrobot"
+    },
+    "description": "# Past , present and future :\n\nThis is the first kata of (hopefully) the series I intend to create on codewars for creating a golfing language. No story is given. \n\n---\n\n# Challenge :\n\nCreate a basic interpreter.\n\n---\n\n# Input / Output :\n\n- a string to interpret \n- The interprated string \n\n---\n\n# Description :\n\nYour job is to perform the following operations on the given input :\n\n1. If the string is empty output return the FizzBuzz program [1,99] (where every thing is separated by a new line just like it would be (inclusive inputs))\n2. If the string length is 1 and it is @ create a value holding variable and initialize to 1\n3. If the string length is 1 and it is not @ then return Hello, World! \n4. If it greater than 1 check whether it starts with @ if so keep going \n5. other wise do a primality test for the given number (provided via input and to make length atleast two space or something else will be used and you will only check for first value)\n6. If 4 is true then check if the next value is a number (float , positive) if so add its value to the stack \n7. Keep going till you reach the end of string and then return the value currently on stack. \n8. Every element of the string will be separated by spaces\n---\n\n# Examples :\n\n```\n\n'@'  ---> 1\n\n'a'  ---> 'Hello, World!'\n\n'@ 1 22 2 4 5 ' ---> 1 + 1 + 22 + 2 + 4 + 5 = 35\n\n\n```\n\n\n# Note :\n\nYou will write code in the interpreter constructor and input will be given via method `Input` and you must return your answer from there too\n\nUsing eval is forbidden and so are Functions\n\n---\n\n# NOTE :\n\nIf you managed to solve please consider leaving feedback , voting and writing a translation :)",
+    "totalAttempts": 15,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "Interpreters",
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f7e8e3ee2c95a00110b4a38",
+  "data": {
+    "id": "5f7e8e3ee2c95a00110b4a38",
+    "name": "When's My Cue?",
+    "slug": "whens-my-cue",
+    "category": "algorithms",
+    "publishedAt": "2020-10-08T05:50:28.685Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f7e8e3ee2c95a00110b4a38",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-08T03:57:50.191Z",
+    "createdBy": {
+      "username": "Rbaha07",
+      "url": "https://www.codewars.com/users/Rbaha07"
+    },
+    "description": "In [GarageBand](https://en.wikipedia.org/wiki/GarageBand) (an app where you can make music), you can see on what beat every instrument starts playing. Each bar represents one instrument.  \n![](https://th.bing.com/th/id/OIP.0reiPLfg4l3ZlLnbODCjKgHaFi?w=216&h=180&c=7&o=5&pid=1.7)\n\n\n# Task\nYour task is to create a function called `cue()` . It will take two parameters:\n- `bars` - a string\n- `instruments` - an list of strings\n\nThe goal of this function is to return the amount of beats that the musician playing the instrument has to wait. (This will make more sense once you read below)\n\n### The `bars` Parameter\nThe `bars` parameter is like a representation of the bars you see in the image above, except that `-` represents the fact that an instrument is being played, and a space represents no sound being played. Each character represents one beat.\n\n`bars` will be a string that will contain `\\n`. Each new line represents a new bar, and each new bar represents a new instrument.\n```python\n'    ----\\n--------\\n  ------'\n\nIS EQUAL TO\n\n    ----\n--------\n  ------\n```\n\n### The `instruments` Parameter\nThe `instruments` parameter lists the name of the instrument for every bar from top to bottom.\n```python\n['piano','drums','guitar']\n\n    ----    = 'piano'\n--------    = 'drums'\n  ------    = 'guitar'\n```\n\n### The Output\nThe output should be a dictionary with the instrument name, and then the amount of beats the musician needs to wait before playing their\ninstrument.\n```python\ndata = cue('    ----\\n--------\\n  ------',['piano','drums','guitar'])\n\n# The following is now true:\ndata = {'piano': 4, 'drums': 0, 'guitar': 2}\n```\n\n### Notes\n- Input will always be valid. There will always be the same amount of instruments and bars.\n- The dictionary will say how many beats they wait, **not** the beat they start playing on. \n- `bars` may differ in length between tests, but each new line within the same test will be the same length.\n- There will always be at least two instruments/bars.\n",
+    "totalAttempts": 159,
+    "totalCompleted": 71,
+    "totalStars": 0,
+    "voteScore": 110,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

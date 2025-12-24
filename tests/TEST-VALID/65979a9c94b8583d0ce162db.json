@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65979a9c94b8583d0ce162db",
+  "data": {
+    "id": "65979a9c94b8583d0ce162db",
+    "name": "Pot-tentially the Greatest Mancala Kata",
+    "slug": "pot-tentially-the-greatest-mancala-kata",
+    "category": "games",
+    "publishedAt": "2024-01-05T05:59:14.784Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65979a9c94b8583d0ce162db",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-05T05:58:52.062Z",
+    "createdBy": {
+      "username": "jmseren",
+      "url": "https://www.codewars.com/users/jmseren"
+    },
+    "description": "# Pot-tentially the Greatest Mancala Kata\n\nIn this Kata, you will be coding the base logic for how the stone's in mancala are moved. No fancy rules like capturing involved. Simply move the stones in the right direction, and only place the stones in the scoring pot of the player that moved.\n\n## Holla for Mancala\n\nFor the complete description of mancala, I recommend you read the wikipedia page at https://en.wikipedia.org/wiki/Mancala.\n\nThe simple rundown is that there is a board with pots of stones, each pot starting with 4. Each player also has a special pot into which their stones are placed, counting as score for the player. Players take their turn by selecting a pot on their side of the board, and removing all stones from this pot.\n\nAfter removing the stones, start going counter-clockwise around the board, placing a stone in each pot you pass. Do not place a stone in your opponents scoring pot, instead proceeding past it.\n\n\n## Your task\n\nYou will write a method called `move` that takes two arguments, `board` and `position`.\n\n`board` is a list of the 14 pots in a standard mancala board. \n\n```\n# Typical starting position in mancala, in this Kata's representation\n[ 0, 4, 4, 4, 4, 4, 4,\n     4, 4, 4, 4, 4, 4, 0 ]\n```\n\nIndex `0` of this list is the top player's scoring pot, and index `13` (or `-1`) is the bottom player's scoring pot.\n\n\n`position` is the position on the board that we will be moving the stones from.\n\n`move` shall return the state of the board after the turn is concluded. \n\nDo not concern yourself with any additional mancala rules. \n\n## Examples\n\n### Basic movement\n\n**Board**\n```\n[ 0, 4, 4, 4, 4, 4, 4,\n     4, 4, 4, 4, 4, 4, 0 ]\n```\n**Position**\n```\n5\n```\n**Output**\n```\n[ 0, 5, 5, 5, 5, 0, 4,\n     4, 4, 4, 4, 4, 4, 0 ]\n```\n\n### Wrapping Around\n\n**Board**\n```\n[ 0, 4, 4, 4, 4, 4, 4,\n     4, 4, 4, 4, 4, 4, 0 ]\n```\n**Position**\n```\n12\n```\n**Output**\n```\n[ 0, 4, 4, 4, 5, 5, 5,\n     4, 4, 4, 4, 4, 0, 1 ]\n```",
+    "totalAttempts": 190,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 15,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

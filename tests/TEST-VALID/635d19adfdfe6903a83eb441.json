@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/635d19adfdfe6903a83eb441",
+  "data": {
+    "id": "635d19adfdfe6903a83eb441",
+    "name": "Signature sequences",
+    "slug": "signature-sequences",
+    "category": "algorithms",
+    "publishedAt": "2022-10-31T12:01:27.645Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/635d19adfdfe6903a83eb441",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-29T12:16:45.171Z",
+    "createdBy": {
+      "username": "Paul Robertson",
+      "url": "https://www.codewars.com/users/Paul%20Robertson"
+    },
+    "description": "## Background\n[Signature sequences](https://mathworld.wolfram.com/SignatureSequence.html) are an example of [fractal sequences](https://en.wikipedia.org/wiki/Fractal_sequence). \n\nA fractal sequence contains a copy of itself as a proper subsequence - this can be seen by deleting the first occurrence of each number from the sequence. The remaining terms will be a copy of the original.\n\nAlthough a signature sequence is normally defined in terms of an _irrational_ number, we can define such sequences in terms of _rational_ numbers (aka _fractions_)\n\n## Definition\nThe *signature sequence* of any positive rational number `θ` is defined as follows:\n\nLet\n\n        S(θ) = the set of tuples (c + dθ, c) where c and d are positive integers\n\nThe signature sequence of `θ` is the sequence obtained by arranging the tuples of `S(θ)` in increasing order (where duplicate values occur in `S(θ)` sort them by arranging the values of `c` in increasing order), then taking the `c` value of each tuple.\n\n## Task\nWrite a function which returns a list of the first `n` terms of the signature sequence for a given rational number `θ`\n\n```haskell\nsignatureSeq :: Rational -> Int -> [Int]\n\n```\n```python\ndef signatureSeq(θ, n)\n```\n\n## Example - The first terms of the signature sequence for 1.5:\nFor the purposes of the example, we take `c` in the range `1..5`, and `d` in the range `1..3` and then calculate `c + d * 1.5` for each value of `c` and `d` in those ranges:\n\n```\nc    d    c + d * 1.5\n----------------------------\n1    1    2.5\n1    2    4.0\n1    3    5.5\n2    1    3.5\n2    2    5.0\n2    3    6.5\n3    1    4.5\n3    2    6.0\n3    3    7.5\n4    1    5.5\n4    2    7.0\n4    3    8.5\n5    1    6.5\n5    2    8.0\n5    3    9.5\n```\n\nNow, sort this list by the calculated values `c + d * 1.5` (where equal values occur, sort these by the corresponding value of `c`):\n```\nc    d    c + d * 1.5\n----------------------------\n1    1    2.5\n2    1    3.5\n1    2    4.0\n3    1    4.5\n2    2    5.0\n1    3    5.5\n4    1    5.5\n3    2    6.0\n2    3    6.5\n5    1    6.5\n4    2    7.0\n3    3    7.5\n5    2    8.0\n4    3    8.5\n5    3    9.5\n```\nThe values of `c` from the sorted list give the first terms of the sequence:\n```\n1, 2, 1, 3, 2, 1, 4, 3, 2, 5, ..\n```\nBe aware that not all the values of the list will be correct. In this case, only the first `10` values are correct. To generate a longer sequence you need to choose suitably large values of `c` and `d` - and that is the challenge of this kata.\n\n## Testing\n\nThe values of `θ` used in the tests will have numerator and denominator `0 .. 10000`\n\nThe values of `n` will be in the range `0 < n < 10000`\n\n## Hint\nIf the tests are failing or timing out for you, then try to choose the values of `c` and `d` optimally\n",
+    "totalAttempts": 22,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms",
+      "Lists",
+      "Number Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

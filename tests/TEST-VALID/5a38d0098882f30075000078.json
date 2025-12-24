@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a38d0098882f30075000078",
+  "data": {
+    "id": "5a38d0098882f30075000078",
+    "name": "Get girls shortlist",
+    "slug": "get-girls-shortlist",
+    "category": "reference",
+    "publishedAt": "2017-12-20T04:38:28.087Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a38d0098882f30075000078",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-19T08:38:33.825Z",
+    "createdBy": {
+      "username": "Dmitry Kudla",
+      "url": "https://www.codewars.com/users/Dmitry%20Kudla"
+    },
+    "description": "My name is Albert, I am 23 years old, and in the end I work hard in IT company. So I have no much time to flirt with many girls and I want to choose the best of those I know, or in other words, I need to create a shortlist of them.\n\nInput: \n* an array ```longlist``` where each element is an object with a description of specific girl.\n* ```topNumber``` is a number of top girls I need. \n\nOutput:\n* a new array with filtered ```topNumber``` girls (actually objects) that are sorted in the same order as my tastes below.\n\nSo what do I like about girls:\n\n* she doesn't have children\n* she is the younger (```longlist``` includs 21+ )\n* she is the taller\n* she lives in the same city\n* if all the previous equals sort them by name in alphabetical order \n\n\nFor Example:\n\n```\ninput: \n  longlist == [{\n                'name': 'Jesica',\n                'children': 1,\n                'age': 18,\n                'height': '180.3cm',\n                'theSameCity': true\n              },\n              {\n                'name': 'Klara',\n                'children': 0,\n                'age': 19,\n                'height': '165.2cm',\n                'theSameCity': true\n              },\n              {\n                'name': 'Monica',\n                'children': 0,\n                'age': 19,\n                'height': '175.0cm',\n                'theSameCity': false\n              }]\n              \ntopNumber == 2\n\nouput:\n              [{\n                'name': 'Monica',\n                'children': 0,\n                'age': 19,\n                'height': '175.0cm',\n                'theSameCity': false\n              },\n              {\n                'name': 'Klara',\n                'children': 0,\n                'age': 19,\n                'height': '165.2cm',\n                'theSameCity': true\n              }]\n```\n\n\nP.S. I'm a sociable guy, so the input array will always have more than 20 objects, the same structure and it will be correct as one above.\n\n```topNumber``` < ```longlistl.ength```\n",
+    "totalAttempts": 37,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 6,
+    "tags": [
+      "Fundamentals",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

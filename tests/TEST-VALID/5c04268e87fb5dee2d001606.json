@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c04268e87fb5dee2d001606",
+  "data": {
+    "id": "5c04268e87fb5dee2d001606",
+    "name": "Min Stack",
+    "slug": "min-stack",
+    "category": "reference",
+    "publishedAt": "2018-12-02T18:38:06.911Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c04268e87fb5dee2d001606",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-02T18:38:28.843Z",
+    "createdBy": {
+      "username": "sirRodge",
+      "url": "https://www.codewars.com/users/sirRodge"
+    },
+    "description": "A nice little interview question, implement a \"min-stack\".\n\n# So what is a min-stack?\n\n## First, what is a stack?\n\nIn Javascript and many other high-level languages the \"stack\" data structure does not natively exist, but it is basically an \"opaque\" array if you will. Imagine a dynamic array (length not set) where you cannot use an index to look at a value, but you CAN look at the top value in the stack (peek), pop values off of the top of the stack (pop), and push values onto the stack (push).\n\n## Now for the min-stack:\n\nIn addition to the peek(), push(val), and pop() methods, we would like to have a min() method returns the current minimum value in the stack.  \n\nAlso (and here's the kicker) each of these methods neds to be O(1) or else the interviewer will tell you to GTFO.\n\n\n#### Example\n```\nconst minStack = new MinStack();\n\nminStack.push(1);\nminStack.push(2);\nminStack.push(3);\n\nminStack.peak(); // returns 3\nminStack.pop(); // returns 3\nminStack.peak(); // returns 2\n\nminStack.min(); // returns 1!\n```\n\n",
+    "totalAttempts": 131,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Algorithms",
+      "Logic",
+      "Interview Questions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

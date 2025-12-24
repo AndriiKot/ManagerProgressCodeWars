@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63317a6ec21b21004a7bac8f",
+  "data": {
+    "id": "63317a6ec21b21004a7bac8f",
+    "name": "WeakStore",
+    "slug": "weakstore",
+    "category": "games",
+    "publishedAt": "2022-10-13T12:00:29.727Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63317a6ec21b21004a7bac8f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-26T10:09:50.629Z",
+    "createdBy": {
+      "username": "Alexander-jsdev",
+      "url": "https://www.codewars.com/users/Alexander-jsdev"
+    },
+    "description": "Here is a service that implements the storage of entities under password protection.\n\nThe service has the following API:\n- `read(pass:string, fieldName:string)`\n- `write(pass:string, fieldName:string, fieldValue:any)`\n- `addField(pass:string, fieldName:string, fieldValue:any)`\n\nHere is an example of work:\n```javascript\nconst service = GET_SERVICE('pass123');\n\nconst addRes = service.addField('pass123', 'fieldNameSecret', 'secretData');\nconsole.log(addRes); // { code: 0, msg: 'ok' }\n\n// ...\n\n// ok\nconst data = service.read('pass123', 'fieldNameSecret');\nconsole.log(data); // 'secretData'\n\n// wrong pass\nconst errorData = service.read('wrongPassBlaBla', 'fieldNameSecret');\nconsole.log(errorData); // { code: 1, msg: 'access forbidden' }\n\n// wrong field name\nconst missData = service.read('pass123', 'fieldNameSecret1234567');\nconsole.log(missData); // { code: 2, msg: 'not found' }\n\n// field already created\nconst alreadyCreatedData = service.addField('pass123', 'fieldNameSecret', '123');\nconsole.log(missData); // { code: 3, msg: 'already created' }\n\n// *many wrong pass entered*\nconst blockedData = service.read('wrongPassBla-bla', 'fieldNameSecret');\nconsole.log(blockedData); // { code: 4, msg: 'blocked' }\n\n// after blocking\nconst okDataAfterBlocking = service.read('pass123', 'fieldNameSecret');\nconsole.log(okDataAfterBlocking); // { code: 4, msg: 'blocked' }\n```\n\n**Your task is to access the secret string without having a password** (but having the name of the field with the secret string).\n\nHere are more facts about task parameters:\n- the password always is 62 characters long (with 62 possible characters per position)\n- the secret string is 512 characters long (with 62 possible characters per position)\n- password and secret string contain only letters and numbers (`[0-9A-Za-z]`)\n- the password is hashed during service initialization and then compared with the hash of the entered password\n\nSpoiler: Since the secret string has a large length and a large number of possible characters per position, the number of variants of the secret string is 512 to the power of 62. Or `943 490 600 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000`. And this is for every test. As you understand, it is impossible to pick up a secret string using brute-force in a reasonable time.\n\nAlso, the following global variables are available to you:\n\n`ALPHABET:string` is a string with a set of characters (62 pieces) that are used to generate passwords.\n\n`GET_SERVICE:function` is a function that returns a new service instance.\n\n`GET_RANDOM_HASH(length:number):string` is a function that returns a random set of characters from `ALPHABET` with a length equal to the length argument.\n\nAfter a detailed study, if you get stuck, remember these words: `pay attention to one of the items on the list \"more facts about task parameters\"`\n\n**Warning: This is a difficult kata. In it you have a whole study.**\n---\nI won't leave any more hints. This is your research. Good luck!",
+    "totalAttempts": 18,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Security"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

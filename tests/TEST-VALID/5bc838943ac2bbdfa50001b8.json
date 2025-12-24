@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bc838943ac2bbdfa50001b8",
+  "data": {
+    "id": "5bc838943ac2bbdfa50001b8",
+    "name": "Simple Fun #396: Count 1s In the Digital Spiral",
+    "slug": "simple-fun-number-396-count-1s-in-the-digital-spiral",
+    "category": "algorithms",
+    "publishedAt": "2018-10-18T08:50:38.781Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5bc838943ac2bbdfa50001b8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-10-18T07:39:00.611Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "# Task\n\nYou are given two non negative integers `n` and `k`. Now we make a digital spiral from inside to outside, the number is from `n` to `1`, or `0` if it's less than 1. Here is a spiral for `n=50`:\n\n```\n0 .........................\n0  8  7  6  5  4  3  2  1 .\n0  9 30 29 28 27 26 25  0 .\n0 10 31 44 43 42 41 24  0 .\n0 11 32 45 50 49 40 23  0\n0 12 33 46 47 48 39 22  0\n0 13 34 35 36 37 38 21  0\n0 14 15 16 17 18 19 20  0\n0  0  0  0  0  0  0  0  0\n```\n\nNo matter the spiral is clockwise or counter clockwise, it will not affect the task of kata.\n\nThe argument `k` represents the number of layers(from the center of spiral, 0-based).\n\nWhen k=0,1,2,3... we can got such squares:\n\n```\nk = 0\n\n           50\n\nk = 1\n\n        44 43 42\n        45 50 49\n        46 47 48\n\nk = 2\n\n     30 29 28 27 26\n     31 44 43 42 41\n     32 45 50 49 40\n     33 46 47 48 39\n     34 35 36 37 38\n\nk = 3\n\n\n   8  7  6  5  4  3  2\n   9 30 29 28 27 26 25\n  10 31 44 43 42 41 24\n  11 32 45 50 49 40 23\n  12 33 46 47 48 39 22\n  13 34 35 36 37 38 21\n  14 15 16 17 18 19 20\n\n```\nAs you can see, we can always get a square with a length of `k*2+1`.\n\nYour task is to count how many `1`s appear in the binary format of all the numbers of `k` layers of the spiral. \n\n# Note\n\n- `1 <= n <= 10^10`,`0 <= k <= 10^10`\n\n- `20` fixed testcases\n\n- `100` random testcases, testing for correctness of solution\n\n- `100` random testcases, testing for performance of code\n\n- All inputs are valid.\n\n- Pay attention to code performance.\n\n- If my reference solution gives the wrong result in the random tests, please let me know(post an issue). \n\n# Example\n\nFor `n=50, k=0`, the output should be 3.\n\nThere is only `1` number in `0` layer:\n```\n50\n\nbinary format of 50: '110010'\n\nthere are three 1s in '110010'\n```\n\nFor `n=50, k=1`, the output should be 31.\n\nThere are 9 numbers in `1` layer:\n```\n42 43 ... 50\n\nbinary format of 42, '101010'  3 1s\nbinary format of 43, '101011'  4 1s\nbinary format of 44, '101100'  3 1s\nbinary format of 45, '101101'  4 1s\nbinary format of 46, '101110'  4 1s\nbinary format of 47, '101111'  5 1s\nbinary format of 48, '110000'  2 1s\nbinary format of 49, '110001'  3 1s\nbinary format of 50, '110010'  3 1s\n\nthere are 31(3+4+3+4+4+5+2+3+3) 1s in total.\n```\n\n\n",
+    "totalAttempts": 5,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Puzzles",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

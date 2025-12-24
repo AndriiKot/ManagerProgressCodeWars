@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/537e8cbc53efd983c10001be",
+  "data": {
+    "id": "537e8cbc53efd983c10001be",
+    "name": "Hash With Indifferent Access",
+    "slug": "hash-with-indifferent-access",
+    "category": "reference",
+    "publishedAt": "2014-05-23T00:04:22.580Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/537e8cbc53efd983c10001be",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-22T23:48:13.440Z",
+    "createdBy": {
+      "username": "cgthornt",
+      "url": "https://www.codewars.com/users/cgthornt"
+    },
+    "description": "Because we are such good rubyists, we want to implement a hash where symbols and strings are treated the same (i.e. `'foo'` is the same as `:foo`). This way we can save time typing:\n\n```ruby\nhash[:foo] = 'bar'\nputs hash['foo']  # => bar\n```\n\nYour job is to implement the `HashWithIndifferentAccess` class, which does just that.\n\nWe also want to add the following criteria to our implementation:\n\n* This must extend the Hash class\n* This must *not* tamper with any non-String or non-Symbol keys\n\nAlso, because we love Ruby magic, we also want to monkey patch the Hash class to make it indifferent:\n\n```ruby\nh = { a: 'apple' }.with_indifferent_access\nputs h['a'] # => apple\n```\n\nBonus points if you don't cheat and look at the ActiveSupport::HashWithIndifferentAccess documentation!",
+    "totalAttempts": 560,
+    "totalCompleted": 45,
+    "totalStars": 3,
+    "voteScore": 34,
+    "tags": [
+      "Data Structures",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

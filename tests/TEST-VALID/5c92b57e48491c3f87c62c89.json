@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c92b57e48491c3f87c62c89",
+  "data": {
+    "id": "5c92b57e48491c3f87c62c89",
+    "name": "Reactive programming: #5 Observable juggling",
+    "slug": "reactive-programming-number-5-observable-juggling",
+    "category": "reference",
+    "publishedAt": "2019-03-20T23:55:47.839Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c92b57e48491c3f87c62c89",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-20T21:49:50.386Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the fifth part of the series on reactive programming.\n\nBefore facing your resolution, you must have completed the previous katas:\n* [#1 Create function](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de)\n* [#2 Basic observables creation](https://www.codewars.com/kata/5c90276a03b42343cb32e9bf)\n* [#3 Premier operators](https://www.codewars.com/kata/5c914f2ae041fe000e8964ee)\n* [#4 Pipelining operators](https://www.codewars.com/kata/5c91f503ac8b333aa73120d4)\n\n\nIn this kata we are going to implement three examples of operators that allow us to mix two observers: concat, merge and zipWith.\n\n# concat operator\n\nConcat two observables. Starting with the first observable and when finished, continue with the second.\n\nThe type definition would be:\n\n```typescript\nexport function concat<T>(o: Observable<T>): Operator<T, T> {\n  return (p: Observable<T>) => {\n    // Your code\n  }\n}\n```\n\nAlthough at first it may seem strange, to maintain consistency with the definition of the previous operator, first we issue the values of `p` observable and then the values of the `o` observable.\n\nHere you have an example.\n\n```typescript\n// emits 1,2,3\nconst sourceOne = of(1, 2, 3);\n// emits 4,5,6\nconst sourceTwo = of(4, 5, 6);\n// emit values from sourceOne, when complete, subscribe to sourceTwo\nconst example = sourceOne.pipe(concat(sourceTwo));\n// output: 1,2,3,4,5,6\nconst subscribe = example.subscribe({\n  onNext: val => console.log(val)\n});\n```\n\n# merge operator\n\nMix the values of two operators by interleaving their values as they arrive. The type definition is the same as `concat`.\n\n```typescript\nexport function concat<T>(o: Observable<T>): Operator<T, T> {\n  return (p: Observable<T>) => {\n    // Your code\n  }\n}\n```\n\nAn example would be:\n\n```typescript\n// emits 0,1,2,3,...\nconst sourceOne = interval(3);\n// emits 0,1,2,3,....\nconst sourceTwo = interval(7);\nconst example = sourceOne.pipe(merge(sourceTwo));\n// output: 0,1,0,2,3,1,4\nconst subscribe = example.subscribe({\n  onNext: val => console.log(val)\n});\n```\n\n# zipWith operator\n\nReturns an observable whose values result from applying a function with the values of two observables.\n\nThis is the first example that we propose of an operator that is not implemented in RxJS. The implementation is slightly more complicated than the previous ones.\n\nLet's see its type definition.\n\n```typescript\nfunction zipWith<T, R, S>(f: (x: T, y: R) => S) {\n  return (p: Observable<R>): Operator<T, S> => {\n    return (o: Observable<T>): Observable<S> => {\n      // put your code here\n    }\n  }\n}\n```\n\nThis is the example.\n\n```typescript\nconst sourceOne = of(1, 2, 3);\nconst sourceTwo = of(4, 5, 6);\nconst example: Observable<number> = sourceOne.pipe(\n  zipWith((x, y) => x + y)(sourceTwo)\n);\n\n// output: 5,7,9\nexample.subscribe({\n  onNext: val => console.log(\n});\n```\n\nWhen you are finished, you can continue with [#6 The Observable Monad](https://www.codewars.com/kata/5c92dc01a04bd50eeef86c15)",
+    "totalAttempts": 13,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

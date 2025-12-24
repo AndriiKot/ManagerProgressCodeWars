@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62c74680c529230064eeabe0",
+  "data": {
+    "id": "62c74680c529230064eeabe0",
+    "name": "100 prisoners riddle (Benevolent guard)",
+    "slug": "100-prisoners-riddle-benevolent-guard",
+    "category": "games",
+    "publishedAt": "2022-07-07T21:15:32.285Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/62c74680c529230064eeabe0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-07T20:48:00.573Z",
+    "createdBy": {
+      "username": "beyaz.frambuaz",
+      "url": "https://www.codewars.com/users/beyaz.frambuaz"
+    },
+    "description": "This kata is part of a series:\n- [100 prisoners riddle (Neutral guard)](https://www.codewars.com/kata/62c5c7d138f0cf002f577a15)\n- [100 prisoners riddle (Benevolent guard)](https://www.codewars.com/kata/62c74680c529230064eeabe0)\n- [100 prisoners riddle (Insidious guard)](https://www.codewars.com/kata/62c8014af6617400623b9512)\n\n# Background\nThis is a famous riddle, check out this [wiki](https://en.wikipedia.org/wiki/100_prisoners_problem) article or this neat [youtube](https://youtu.be/iSNsgj1OCLA) video if you are curious.\n\n100 death row prisoners numbered `0-99` are offered a chance to survive. There is a room with 100 boxes numbered `0-99`. Tickets with prisoners' numbers are placed randomly inside the boxes. In order to get pardon for all 100 prisoners each prisoner needs to enter the room and find their ticket in any `50` boxes of their choosing. If even one prisoner fails - they all fail. Prisoners can only communicate before they enter the room and leave the room in the same state as when they entered.\n\nSince the solution is publically available - it is merely a setup for this kata. The basic idea is that each prisoner has 1/2 chance for success, but all 100 prisoners would have a collective chance of each finding their ticket as (1/2)^100 which is not very optimistic. An optimal strategy is for each prisoner to \n1. find a box with their number on it\n2. if they find their ticket inside - they won and the search is over\n3. otherwise the box contains another prisoner's ticket and this number is used to repeat the steps until the prisoner finds their ticket or runs out of 50 attempts\n\nThis strategy ensures that when you start with your number you are guaranteed to be on the sequence that ends with that ticket. This simple strategy provides a 31.18% chanse for all prisoners to find their ticket.\n\n# Task\nHaving completed the [100 prisoners riddle (Neutral guard)](https://www.codewars.com/kata/62c5c7d138f0cf002f577a15) your perspective shifted and your heart melted. \"So much senseless death, what's the point? I should do something, I can and I will!\" - you said to yourself one day.\nYou are now in the shoes of a **benevolent** guard who is willing to risk it all and try to help the prisoners succeed. You know the arrangement of the tickets in the boxes. Given prisoners have no chance for success you can sneak in and swap two tickets to help them get pardoned. You don't want unnecessary risk and will do nothing if you know the prisoners can succeed even without your help.\n### Input\nYou will get an array of 100 integers `0-99` placed in random order (e.g. `[43,0,98,44,..,32,1,77]`). Each integer will appear only once. There is no need for any validations.\n### Output\nReturn the same array with no changes if you believe the prisoners can get their pardon. Otherwise, return a new arrangement that guarantees their success with **only two ints swapped** (e.g. `[11,..,99] -> [99,..,11]`).",
+    "totalAttempts": 24,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 20,
+    "tags": [
+      "Puzzles",
+      "Logic",
+      "Algorithms",
+      "Riddles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

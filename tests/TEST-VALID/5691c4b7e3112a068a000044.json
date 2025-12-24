@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5691c4b7e3112a068a000044",
+  "data": {
+    "id": "5691c4b7e3112a068a000044",
+    "name": "RuplesJS #4: String Formatting",
+    "slug": "ruplesjs-number-4-string-formatting",
+    "category": "reference",
+    "publishedAt": "2016-01-10T02:40:55.509Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5691c4b7e3112a068a000044",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-10T02:41:13.881Z",
+    "createdBy": {
+      "username": "NateBrady23",
+      "url": "https://www.codewars.com/users/NateBrady23"
+    },
+    "description": "The RuplesJS team has now added you in the credits as a contributor to the project, thanks to all the fine work you've done. They're hearing a lot of positive feedback from the Ruby community that this library is really helping them transition over to JavaScript easier. After your team meeting, you've come away with a high priority task: string formatting!\n\n##String.sprintf()\n\nWe're going to create a prototype method in JavaScript called sprintf() that will be similar in a way to Ruby's sprintf() function. In fact, many languages have string formatting via sprintf() or format(). Our method should accept any number of arguments, and return a new string. Example:\n\n````javascript\n\"This is RuplesJS number %d\".sprintf(4) -> \"This is RuplesJS number 4\"\n\"%d,%d,%d GO!\".sprintf(1,2,3) -> \"1,2,3 GO!\"\n\"Hello, %s! My name is %s.\".sprintf(\"CodeWars\", \"Nate\") -> \"Hello, CodeWars! My name is Nate.\"\n````\n\nThose were some pretty simple examples. Since we won't be copying Ruby's string formatting exactly, let's add some of our own stuff too. See the chart below:\n\n````\nFormat Code      Description\n%d               Print a number\n%s               Print a string\n%c               Print a character. If a string is given, only prints the first character.\n                 \"My initials are %c.%c.\".sprintf(\"Nate\",\"Brady\") -> \"My initials are N.B.\"\n%b               Prints true of false from a boolean\n                 \"It is $b!\".sprintf(1==1) -> \"It is true!\"\n%2f              Print a number to n decimal places.\n                 Ex. \"%3f\".sprintf(20) -> 20.000\n                     \"%1f\".sprintf(3.1415) -> 3.1 (Does not round)\n````\n\n####Other:\nA number may be inserted between % and the letter code (except % and f) to indicate the number of times that particular argument should be displayed.\nEx. \"%5d%2d%d\".sprintf(1,0,1) -> \"11111001\"\n\nArguments may come in any order, but there must be a proper number of arguments to match the codes given. If there are more arguments than codes, more codes than arguments, or they don't have the proper number of matches, throw an error. Strings arguments may only be used for %s & %c, while number arguments may only be used for %d and %(n)f. 0, 1, true or false may only be used for %b. % signs that appear but that are not part of a proper format code should be displayed as they appear.\n\nMore complex examples:\n````javascript\n\"%d: %s is out of order.\".sprintf(\"This\",1) -> \"1: This is out of order.\"\n\"%c here and %s here\".sprintf(\"One\",\"O\") -> \"O here and O here.\"\n\"%d,%d,%s,%s\".sprintf(1,2,3,\"GO!\") -> Throws Error\n\"%d - %1f - %s - %c\".sprintf(\"A\",\"B\",1,2)->\"1 - 2.0 - A - B\"\n\"%d: Does %t do anything?\".sprintf(2) -> \"2: Does %t do anything?\"\n// Boolean codes (%b) will consume 0's and 1's and may cause errors like:\n\"%b %d\".sprintf(0, false) -> Throws Error since 0 is consumed by %b and false then has no code\n// This is because %b looks for the first available match. 0, 1, true and false are all matches for %b\n````\n\nI've provided most of the test suite, excluding the random tests, in case of confusion about what's expected. Good luck and Happy coding!\n\n<div style=\"width: 320px; text-align: center; color: white; border: white 1px solid;\">\nCheck out my other RuplesJS katas:\n</div>\n<div>\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-1-n-times-do'><span style='color:#00C5CD'>RuplesJS #1:</span> N Times Do</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-2-string-delete'><span style='color:#00C5CD'>RuplesJS #2:</span> String Delete</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-3-string-eachchar'><span style='color:#00C5CD'>RuplesJS #3:</span> String EachChar</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-4-string-formatting'><span style='color:#00C5CD'>RuplesJS #4:</span> String Formatting</a><br />\n<a style='text-decoration:none' href='http://www.codewars.com/kata/ruplesjs-number-5-range'><span style='color:#00C5CD'>RuplesJS #5:</span> Range</a><br />\n</div>",
+    "totalAttempts": 231,
+    "totalCompleted": 31,
+    "totalStars": 6,
+    "voteScore": 29,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

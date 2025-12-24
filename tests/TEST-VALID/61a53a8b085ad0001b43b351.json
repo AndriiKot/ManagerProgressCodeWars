@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61a53a8b085ad0001b43b351",
+  "data": {
+    "id": "61a53a8b085ad0001b43b351",
+    "name": "Simple Baseball Score Calculator",
+    "slug": "simple-baseball-score-calculator",
+    "category": "games",
+    "publishedAt": "2021-11-29T21:45:10.976Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/61a53a8b085ad0001b43b351",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-29T20:39:39.642Z",
+    "createdBy": {
+      "username": "yule",
+      "url": "https://www.codewars.com/users/yule"
+    },
+    "description": "# Baseball scoring calculator\n\nThe game of baseball is usually played over 9 innnings and each team has a turn at batting and fielding in order to try and score runs by passing through 3 bases and back to Home plate before three outs in an inning are reached.\n\nIn this kata you will be given a simplified list of 'Pitches' that will be one of the following:\n\n* 'O': Out - The batter hit the ball and was out\n* 'S': A strike\n* 'F': A foul ball\n* 'B': A Ball\n* '1B': The batter hit the ball and advanced to first base\n* '2B': The batter hit the ball and advnaced to second base\n* '3B': The batter hit the ball and advanced to third base\n* 'HR': The batter hit a home run and made it all the way round back to home plate and scored a run.\n\n## Balls, strikes and foul balls\nDuring an 'At-bat' a batter can receive upto 6 pitches (balls or strikes). As soon as the number of balls reaches 4, this batter is automatically given first base - A 'Walk'. If the number of strikes reaches 3, this batter is out.\nIf a 'foul ball' is picthes, this counts as a 'strike'. Unless there is already 2 strikes, in which case it's disregarded.\n\nThe ball/strike count is reset after each batter.\n\n\n## Subsequent batters\nOnce on base, should a subsequent team mate hit the ball (1B, 2B, 3B or HR), the runner on base will advance the number of bases +1. e.g. a runner on first base will advance to 3rd base on a '1B' and score on a '2B', '3B' or 'HR'.\nIf a subseuqent batter gets a 'Walk' (See above), a batter one first base advances to 2nd base, if there is then also a batter on 2nd base, he advances to 3rd base. If there is also a batter on 3rd base, he scores. i.e. a batter on 2nd base with no one on 1st base will NOT advance on a walk.\n\nOnce there are 3 outs in a team, the bases are cleared and the next team takes their turn at batting. \n\nIt is assumed that there are no double plays, foul balls or sacrifice plays.\n\n## Input\nYou will receive a single array of pitches with the above outcomes.\nFor example:\n`['1B','O','B','B','B','2B',S','B','S','S','B','B','B','B',O','HR','S','1B',O','2B','O']`\n\n## Output\nCalculate the score of the game after all the outcomes have been resolved. In the above scenario:\n - 1B: First batter reaches first base\n - O: Next batter is out. 1st batter remains on base\n - B,B,B,2B: Next batter takes three balls then hits a double and reaches second base. The first runner advances home and scores a run. 1-0\n - S,B,S,S: Next batter takes first a strike, then a ball, then two more strikes and is struck out.\n - B,B,B,B: The next batter is walked and reaches first base. The runner on 2nd base does not advance.\n - O: The next batter is out. As this is the third out, the bases are cleared and the next team bats.\n After first team's inning: 1-0\n - HR: The batter hits a home run and scores a run: 1-1\n - S,1B: The batter takes a strike and then hits a single, reaching first base.\n - O: The next batter is out.\n - 2B: The Next batter hits the ball and reaches 2nd base. The runner on first base scores 1-2\n - O: The next batter is out.\n After the second team's innning: 1-2\n \n Return an array containing exactly 2 elements with the score `[1,2]`\n\n\n\n",
+    "totalAttempts": 165,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Object-oriented Programming",
+      "Data Structures",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

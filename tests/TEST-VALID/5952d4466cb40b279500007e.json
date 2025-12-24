@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5952d4466cb40b279500007e",
+  "data": {
+    "id": "5952d4466cb40b279500007e",
+    "name": "Lord Achour 10's financial balance",
+    "slug": "lord-achour-10-s-financial-balance",
+    "category": "reference",
+    "publishedAt": "2017-06-27T22:10:56.206Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5952d4466cb40b279500007e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-06-27T21:55:18.886Z",
+    "createdBy": {
+      "username": "KH!",
+      "url": "https://www.codewars.com/users/KH!"
+    },
+    "description": "<h1> from History </h1>\n\nThe medieval king Achour 10 has noticed major calculation mistakes on his kingdom's financial balance. His minister Qandil said: \"You seem to think we must hire a professional to prevent this kind of \nproblems in the future!!!\". The king said \"Yes that's what I was thinking\" </br>\n            \nThen minister said: \"I like your thinking my lord !!\"\n\n\n\nAs a medieval programmer, YOU have been chosen to solve this problem.\n\n<h1>Your task</h1>\n\nWrite a program that analyses a list of events occured in a certain perod in Achour empire and returns the amount of money gained/lost by the kingdom during this period.\n\nYou are given `info`, which is a list of strings, each string represents an event that happened\nin the kingdom (and which may have financial impact).\n\nEach string will be formed of words separated by one or more spaces and there will be no leading or trailing\nspaces in the strings.\n\nEach string may contain a word representing a numeric value (positive integer), this value will be either added or substracted from the total financial balance, according to a keyword found in the string, amongst those:\n<ul>\n\t<li>`\"gain`\", `\"gained\"` and `\"benefit\"` to signal that the amount is added to the balance</li>\n\t<li>`\"pay\"`, `\"paid\"`, `\"lost\"` and `\"lose\"` to signal that the amount is substracted from the balance</li>\n</ul>\n\nYou must also take in consideration that :\n<ul>\n  <li>The balance amount is initialized to 0 </li>\n  <li>A word formed from a mix of digits & alphabet characters (like \"Da7manus\") shall be considered qs non-numeric</li>\n  <li>All keywords will be in lowercase characters</li>\n  <li>A sentence will not contain more than ONE numeric value but may contain no numeric value\tand/or none of the keywords stated above, in that case, your program must ignore it</li>\n  <li>A sentence may contain more than one keyword. The one you must take in consideration is the\t'closest' to the numeric value (closest in terms of number of words between them).</br> _Example:_ in `\"the investments paid by the empire resulted in a benefit of 10000 DAch\"` the keyword `benefit` will be taken in consideration and not `paid`</li>\n  <li>If two words have the same 'distance', you must take the one before the numeric value</br>_Example:_ in `\"pay 1000 gained in the past\"`, the keyword `\"pay\"` will be taken in consideration (and not `\"gained\"`)</li>\n  <li>The balance will be returned as an integer</li>\n</ul>\nCourtesy of Lord ACHOUR 10 !!!!   :)",
+    "totalAttempts": 34,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

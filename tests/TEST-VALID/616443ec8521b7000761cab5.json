@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/616443ec8521b7000761cab5",
+  "data": {
+    "id": "616443ec8521b7000761cab5",
+    "name": "Perlin Noise",
+    "slug": "perlin-noise",
+    "category": "algorithms",
+    "publishedAt": "2021-10-11T14:05:05.653Z",
+    "approvedAt": null,
+    "languages": [
+      "c",
+      "javascript",
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/616443ec8521b7000761cab5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-11T14:02:21.221Z",
+    "createdBy": {
+      "username": "QuantumSheep",
+      "url": "https://www.codewars.com/users/QuantumSheep"
+    },
+    "description": "[Perlin Noise](https://en.wikipedia.org/wiki/Perlin_noise) is a pseudorandom procedural texture used in various visual effects generation but also procedural world generation. Noise algorithms are used for generating world in video games like Minecraft, No Man's Sky, Noita, etc...\n\n~~~if:c\nIn this kata you should use the **already implemented** `float perlin(float x, float y)` function to procedurally generate a 2D world of dimension `width * height`. This function returns a `float` between `0` and `1`.\n~~~\n~~~if:javascript,typescript\nIn this kata you should use the **already implemented** `function perlin(x: number, y: number): number` function to procedurally generate a 2D world of dimension `width * height`. This function returns a `float` between `0` and `1`.\n~~~\n\nThe coordinates passed to the `perlin` function must be offset from `startX` and `startY` and will be smoothed by multiplying by `scale`. `x` is considered to be the horizontal coordinate and `y` the vertical coordinate.\n\n`x=0` is left and `x=(width - 1)` is right.  \n`y=0` is top and `y=(height - 1)` is bottom.\n\n## Input\n- `startX`: An integer used as an offset for the `x` axis.\n- `startY`: An integer used as an offset for the `y` axis.\n- `width`: An integer representing the length of the `x` axis. Always `>= 0`.\n- `height`: An integer representing the length of the `y` axis. Always `>= 0`.\n- `scale`: A float used to smooth the coordinates. Always `>= 0`.\n\n### How `scale` works\nWithout smoothing, parameters `width=20, height=10` would render that:\n```\n.▒▒..▓▒▒▓.█░..░░.▓░.\n.█░..░░.▓░.░▒.▒.░..█\n░..█..▓▓▓.▓....▒▒..▓\n.█.░....░.▓..▓.░▒▓..\n█.█.░....░.▓..▓.░▒▓.\n▓░....░...█...▒.░█.█\n█...▒.░..█..▓▓▓.▓...\n█.▓░....░...█...▒.░█\n▓░.▒▒░█..░██.█..▒▓.▒\n....░.▓..▓.░▒▓..▒▒▒░\n```\n\nNot very great if you ask me. But when multiplying `x` and `y` by `scale`, we obtain smoother terrain (here `width=20, height=10, scale=0.08`):\n```\n........░░░▒▒▒▒▒▒▒▒▒\n........░░▒▒▒▒▒▒▒▒▒▒\n........░░▒▒▒▒▒▒▒▒▒▒\n........░░▒▒▒▒▒▒▒▒▒▒\n.......░░▒▒▒▒▒▒▒▒▒▒▒\n.......░░▒▒▒▓▓▓▒▒▒▒▒\n......░░▒▒▒▓▓▓▓▓▓▒▒▒\n.....░░░▒▒▓▓▓▓▓▓▓▓▒▒\n.....░░▒▒▒▓▓▓▓▓▓▓▓▒▒\n....░░░▒▒▓▓████▓▓▓▓▒\n```\n\nYou can smooth terrains by calling the `perlin` function like so:\n```c\nperlin(x * scale, y * scale);\n```\n\nDon't forget to addition the offsets in your code!\n\n## Output\n~~~if:c\nA pointer of 32-bit unicode characters representing the world. **Each line must be separated by a line jump.**\n\n**You should allocate the pointer yourself.**\n~~~\n~~~if:javascript,typescript\nA string representing the world. **Each line must be separated by a line jump.**\n~~~\nDifferent unicode characters will represent the height of each position. Those characters are deduced from the `perlin` function return value like so:\n```c\n>= 0.90: █\n>= 0.80: ▓\n>= 0.65: ▒\n>= 0.50: ░\n < 0.50: .\n```\n(`.` represents water.)\n\n",
+    "totalAttempts": 151,
+    "totalCompleted": 34,
+    "totalStars": 6,
+    "voteScore": 32,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63665b71b093a50064483a63",
+  "data": {
+    "id": "63665b71b093a50064483a63",
+    "name": "Reactive table",
+    "slug": "reactive-table",
+    "category": "algorithms",
+    "publishedAt": "2022-11-05T12:48:50.943Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/63665b71b093a50064483a63",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-11-05T12:47:45.636Z",
+    "createdBy": {
+      "username": "A-Z",
+      "url": "https://www.codewars.com/users/A-Z"
+    },
+    "description": "# Reactive table\n\n## Legend\n\nLet's imagine that you work for an audit company that check the financial activities of many corporations in your country. At first, everything was done manually by people, that is, your employees received reports in the form of an Excel file from the companies they checked, then your employee transformed this data into your internal reports. Most often there were several reports and the number of employees involved in audits was several too. For some time, this process suited everyone, and for the growth of the company, new employees were simply hired. But as time went on, things got worse and scaling at the expense of people became inefficient, so you decided to automate as many processes as possible.\n\nMost customer reports are just an excel file with a strict specification and detailed documentation. That is, extracting the data you need from these reports is not a problem, the problem is that it's not very convenient to script Excel the way you would. So you wanted to make some kind of simplified version of Excel that can script your internal reports and processes. Later, you can expand this system and make it more advanced for your needs.\n\nYou called the first prototype of your system - reactive table:\n\n```ruby\nrows = 5\ncolumns = 5\ndefault_value = 0\n\ntable = Reactive::Table.new(rows, columns, default_value)\n\ntable.set(\"a.1\", 1)\ntable.set(\"a.2\", 2)\ntable.set(\"c.3\", 3)\ntable.set(\"d.4\", 4)\ntable.set(\"a.0\", \"$a.1 + $a.2\")\n\nputs table.to_a.inspect\n# => \n# [\n#   [3, 0, 0, 0, 0],\n#   [1, 0, 0, 0, 0],\n#   [2, 0, 0, 0, 0],\n#   [0, 0, 3, 0, 0],\n#   [0, 0, 0, 4, 0],\n# ]\n```\n\n## Spec\n\n- The columns are indexed by lower Latin letters from 'a' to 'z', rows by numbers greater or equal than zero.\n- Cell index is a string composed by concatenation of two substrings `\"[COLUMN_INDEX].[ROW_INDEX]\"`, for example \"b.2\" mean cell in second column, and third row.\n- Table have `set` method with two params:\n  - cell index\n  - cell value\n- Table have two kinds of values:\n  - number\n  - string\n- String is simple math expressions with numbers and vars. Vars composed by '$' + `\"[CELL_INDEX]\"`.\n- First version of reactive table support only three math operations:\n  - `+` plus\n  - `-` minus\n  - `*` multiply\n- Expressions can include brackets\n- Every operator have [standard precedence](https://en.wikipedia.org/wiki/Order_of_operations) for math expressions  \n- More example of expressions:\n  - `1 + 2`\n  - `10 * $a.2`\n  - `3 * $a.2 - $z.0`\n- Table have `to_a` method without params to convert a table into an array of computed values.\n\n### Error handling\n\n- You must check bounds of table on initialization and raise `ArgumentError` if necessary\n- You must check bounds of cell index in method `set` and raise `IndexError` if necessary\n- You must check expressions in method `set` and raise `invalid expression: '[EXPRESSION]'` if necessary\n- You must check cell dependencies in expressions and if required raise error with next spec:\n  - Message must be \"dependencies cycle\"\n  - Error must have `cells` attribute with [`Set`](https://docs.ruby-lang.org/en/master/Set.html) of cells indexes in [loop](https://en.wikipedia.org/wiki/Loop_(graph_theory))\n\n  ```ruby\n  table = Reactive::Table.new(rows, columns, 0)\n  table.set(\"a.1\", \"$b.0\")\n\n  begin\n    table.set(\"b.0\", \"$a.0 + $a.1\")\n  rescue => ex\n    puts ex.message\n    puts ex.celles.inspect\n  end\n  ```\n\n  output :\n\n  ```ruby\n  # dependencies cycle\n  # <Set: {\"a.1\", \"b.0\"}>\n  ```\n\n- Every test case have only zero or one dependencies cycle error\n\n## Targets:\n\n1. write prototype\n2. pass all tests\n\nGood luck!\n\n",
+    "totalAttempts": 11,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Reactive Programming",
+      "Domain Specific Languages"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

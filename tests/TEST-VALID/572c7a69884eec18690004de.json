@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/572c7a69884eec18690004de",
+  "data": {
+    "id": "572c7a69884eec18690004de",
+    "name": "Damn those dwarves: A tale of gold nuggets",
+    "slug": "damn-those-dwarves-a-tale-of-gold-nuggets",
+    "category": "games",
+    "publishedAt": "2016-05-06T14:48:41.634Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/572c7a69884eec18690004de",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-06T11:05:13.388Z",
+    "createdBy": {
+      "username": "cresconio",
+      "url": "https://www.codewars.com/users/cresconio"
+    },
+    "description": "<h1>[Background]</h1>\n\nPounding. A loud noise comes from your friends whispering your name. \nYou tell yourself this is the last time you let your dwarven friends take you out to the local inn for a game of flabbajacks. Slowly you open your eyes and ponder about the gold you won. You open your backpack and notice it is empty! Your friends burst out in laughter as you try to hold in that fine roasted deer you had for dinner last night.\n\nCurse those dwarves! They took your winnings and hid them in a cave nearby! You pick up your backpack and waddle through the door to fetch your dearly beloved gold.\n\n<h1>[Rules]</h1>\n\nIn this Kata you will receive a maze in string form. The goal of this Kata is to find your way to the exit while picking up all the gold nuggets, keeping the amount of points it will cost to a minimum. All given mazes are perfect squares.\n\nA maze consists of the following characters:\n<table>\n  <tr> \n    <td> # </td>\n    <td> Wall </td>\n  </tr>\n\n  <tr> \n    <td> S </td>\n    <td> Start Point </td>\n  </tr>\n\n  <tr> \n    <td> E </td>\n    <td> End Point </td>\n  </tr>\n</table>\n\nAll other characters can be treated as an open space.\n\nYou begin at the square marked with S and you can only move horizontally or vertically. Every move made costs one point. A nugget has a certain PickupCost and a Movecost. The pickup cost tells you how many points it costs to pick up the nugget. The MoveCost affects the total cost for a single move. \n\nIf no solution can be found , for example, if a StartPoint, EndPoint or nugget is closed off, the program should return -1;\n\n<h1>[Example]</h1>\n<pre>\n#####\n#S E#\n#   #\n#. .#\n#####\n\nList of nuggets = new List<Nugget>() {\n  new Nugget() { X = 1, Y = 3, PickupCost = 2, MoveCost = 9 },\n  new Nugget() { X = 3, Y = 3, PickupCost = 7, MoveCost = 5 },\n};\n</pre>\n\n\nIn this example you would first move down 2 squares, adding 2 points to your total.\nPicking up the nugget at this location will cost you 2 extra points. Your total MoveCost now equals 10 (1+9).\nMoving 2 steps to the right costs you another 20 points. Picking up the second treasure will cost you 7 additional points. Now that you have collected all the nuggets it is time to go to the endpoint. Moving 2 steps up costs you 30 points (2\\*(1+9+5)). \n\nThe total costs now add up to 61: (2\\*1+2)+(2\\*10+7)+(2\\*15)\nThis is the most efficient route.\n\n\n\n\n\n",
+    "totalAttempts": 99,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms",
+      "Data Structures",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

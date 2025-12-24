@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d1d1e6606f92a000e479b25",
+  "data": {
+    "id": "5d1d1e6606f92a000e479b25",
+    "name": "Shortest string",
+    "slug": "shortest-string",
+    "category": "algorithms",
+    "publishedAt": "2019-07-04T13:58:18.267Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d1d1e6606f92a000e479b25",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-03T21:30:14.865Z",
+    "createdBy": {
+      "username": "Idan Hazan",
+      "url": "https://www.codewars.com/users/Idan%20Hazan"
+    },
+    "description": "Given data and keys, you have to return the shortest part of data that contains all the keys.\n\nFor example:<br>\n<code>data = 'abccXa1AbYc2baZaac'</code>\n<br>\n<code>keys = 'abca'</code>\n\nThe result can be one of them:<br>\n<code>Version 1: 'abccXa'</code>\n<br>\n<code>Version 2: 'c2baZa'</code>\n<br>\n<code>Version 3: 'baZaac'</code>\n\nAsk why? here the reason:<br>\n<code>The character <b>'a'</b> found <u>twice</u> in keys, so <b>'a'</b> should be found <u>twice or more</u> in your result.</code>\n<br>\n<code>The character <b>'b'</b> found <u>once</u> in keys, so <b>'b'</b> should be found <u>once or more</u> in your result.</code>\n<br>\n<code>The character <b>'c'</b> found <u>once</u> in keys, so <b>'c'</b> should be found <u>once or more</u> in your result.</code>\n\nThere are lots of possible combinations, you don't believe me? what about this one <code>'a1AbYc2ba'</code>?<br>\n<code>The character <b>'a'</b> found <u>twice</u>. (Well, that explains: <b>'A'</b> != <b>'a'</b>)</code>\n<br>\n<code>The character <b>'b'</b> found <u>twice</u>.</code>\n<br>\n<code>The character <b>'c'</b> found <u>once</u>.</code>\n\nWe don't take this answer because the question asks for the <u>shortest</u> one!<br>\n\nImportent notes:<br>\n<code>• The data contains the characters: (0-9), (a-z), (A-Z).</code>\n<br>\n<code>• When there is no solution, return None as default.</code>\n<br>\n<code>• There are 1000 random test cases, you have to solve all of them in 1 second.</code>\n\nThe idea behind \"1 second to solve 1000 test cases\" is avoid from brute-force algorithms, each test case generates <code>data</code> between <code>100-300</code> characters and <code>keys</code> between <code>5-10</code> characters.\n\nGood luck everyone ;)",
+    "totalAttempts": 333,
+    "totalCompleted": 21,
+    "totalStars": 9,
+    "voteScore": 25,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

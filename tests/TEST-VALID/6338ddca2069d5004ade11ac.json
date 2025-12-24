@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6338ddca2069d5004ade11ac",
+  "data": {
+    "id": "6338ddca2069d5004ade11ac",
+    "name": "Affine cipher",
+    "slug": "affine-cipher-1",
+    "category": "algorithms",
+    "publishedAt": "2022-10-02T14:33:20.755Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/6338ddca2069d5004ade11ac",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-02T00:39:38.798Z",
+    "createdBy": {
+      "username": "rezabungel",
+      "url": "https://www.codewars.com/users/rezabungel"
+    },
+    "description": "An affine cipher is a special case of a more general monoalphabetic substitution cipher.\n\nYour task is to write a function that encrypts the transmitted string taking into account two keys.\n\nThe encryption process. In an affine cipher, a number from the range 0...m-1 is assigned to each letter of the alphabet of size m. Then, using modular arithmetic, a new number is calculated for each number corresponding to the letter of the original alphabet, which will replace the old one in the ciphertext. The encryption function for each letter looks like this:\n```\nf(x) = (key_a * x + key_b) mod m\nwhere:\n    key_a - the first key\n    key_b - the second key\n    m - the size of the alphabet\n```  \nAn important fact is that the first key (key_a) must be mutually simple with the size of the alphabet. You need to check it and if it is not, then you should output : \"The first key and the size of the alphabet are not mutually simple!\"  \nExamples of how the program works:  \n```\naffine_encrypt(\"hello\", 3, 5) //armmv\naffine_encrypt(\"{Good morning!}\", 7, 9) //{Zdde pdywnwz!}\naffine_encrypt(\"goodbye\", 6, 10) //The first key and the size of the alphabet are not mutually simple!\n```\nNote: lowercase letters should remain lowercase, uppercase letters should remain uppercase.  \nNote: Punctuation marks and other symbols do not need to be encrypted.  \nNote: If there are no characters in the string, then you need to return this string unchanged. Checking an empty message takes precedence over checking a mutually simple key. That is, if the message is empty, return an empty string, even if key_a is not mutually prime with 26.   \nNote: Mutually prime numbers are integers that have no common divisors other than ±1.",
+    "totalAttempts": 177,
+    "totalCompleted": 26,
+    "totalStars": 3,
+    "voteScore": 17,
+    "tags": [
+      "Ciphers",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

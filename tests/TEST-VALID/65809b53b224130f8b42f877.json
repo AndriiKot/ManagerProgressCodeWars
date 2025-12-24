@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65809b53b224130f8b42f877",
+  "data": {
+    "id": "65809b53b224130f8b42f877",
+    "name": "Word Transformer",
+    "slug": "word-transformer",
+    "category": "reference",
+    "publishedAt": "2023-12-18T19:57:30.732Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/65809b53b224130f8b42f877",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-18T19:19:47.864Z",
+    "createdBy": {
+      "username": "kawaleo",
+      "url": "https://www.codewars.com/users/kawaleo"
+    },
+    "description": "# Word Transformer\n\nGiven two words, a start word, and an end word, along with a list of valid words (dictionary), the task is to find a sequence of transformations from the start word to the end word. A transformation sequence involves changing one letter at a time with each transformed word being present in the given dictionary.\n\nAssume that not all input will be valid, and each word in the dictionary will match the length of `start_word` and `end_word`\n\n## Rules\n\n1. Words in the dictionary are lowercase and consist only of alphabetical characters.\n2. The transformation sequence must follow these rules:\n    * At each step, only one letter can be changed.\n    * Each transformed word must exist in the dictionary.\n    * The length of the start and end words will be the same.\n    \n## Demonstration\n\nConsider the following case:\n\nStart word: `\"hit\"`\n\nEnd word: `\"cog\"`\n\nDictionary: `[\"hot\", \"dot\", \"dog\", \"lot\", \"log\", \"cog\"]`\n\nA valid transformation sequence from \"hit\" to \"cog\" can be:\n\n\"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\"\n\nExample test case:\n```rust\nword_transformer(\"lead\", \"gold\", &[\"lead\", \"load\", \"goad\", \"gold\"])\n// vec![\"lead\", \"load\", \"goad\", \"gold\"]\n```\n\n## Notes\n* Not all start and end words will have valid transformation sequences. If there is no valid transformation sequence, an empty list is returned.\n* The transformation sequence should adhere to the rules mentioned above, considering each intermediate word must exist in the dictionary.",
+    "totalAttempts": 21,
+    "totalCompleted": 8,
+    "totalStars": 6,
+    "voteScore": -3,
+    "tags": [
+      "Arrays",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

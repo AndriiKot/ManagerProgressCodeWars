@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/596dbbe518a7176a5900002d",
+  "data": {
+    "id": "596dbbe518a7176a5900002d",
+    "name": "Basic XOR and NOT Crypto",
+    "slug": "basic-xor-and-not-crypto",
+    "category": "games",
+    "publishedAt": "2017-07-18T07:42:53.660Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/596dbbe518a7176a5900002d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-18T07:42:30.055Z",
+    "createdBy": {
+      "username": "Bigg-T",
+      "url": "https://www.codewars.com/users/Bigg-T"
+    },
+    "description": "<p>\nThe password is send through an electrical wire and have hardware support to decrypt and encrypt the key. \n</p>\n<p>\nYou know that how the encryption works, but you need to figure out the xor value to decrypt it. You have collected many of the encrypted passwords from a recycle bin and tried to figure out the XOR value.\n</p>\n\n<p>\nThe <i><b>code</b></i>, is encrypted in the following way:\n\nThe <i><b>code</b></i> is subdivided into 8 bytes. The each byte is xored with some value between 0 - 255. Then reverse order of the byte. Final, each bit will get send through a NOT gate.\n<br>\n\nFor example, if the code is 2.\nThe table below show the value is being subdivided.\n<table>\n  \n  <tr>\n    <td>\n      1\n    </td>\n    <td>\n      2\n    </td>\n    <td>\n      3\n    </td>\n    <td>\n      4\n    </td>\n    <td>\n      5\n    </td>\n    <td>\n      6\n    </td>\n     <td>\n      7\n    </td>\n    <td>\n      8\n    </td>\n  </tr>\n  \n   \n  <tr>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n     <td>\n      00000000\n    </td>\n    <td>\n      00000010\n    </td>\n  </tr>\n</table>\n<br>\nTo simplify the example, xor value is 0b00000000 for everything. Though in the problem, you will have 8 different xor value to decipher.   \n<table>\n  \n  <tr>\n    <td>\n      8\n    </td>\n    <td>\n      7\n    </td>\n    <td>\n      6\n    </td>\n    <td>\n      5\n    </td>\n    <td>\n      4\n    </td>\n    <td>\n      3\n    </td>\n     <td>\n      2\n    </td>\n    <td>\n      1\n    </td>\n  </tr>\n  \n   \n  <tr>\n    <td>\n      00000010\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n     <td>\n      00000000\n    </td>\n    <td>\n      00000000\n    </td>\n  </tr>\n  \n \n</table>\n  Then NOT every bit in the table above. <br>\n0b11111101 follow by 56's 1 should be -72341280990234368.\n\n</p>",
+    "totalAttempts": 50,
+    "totalCompleted": 13,
+    "totalStars": 5,
+    "voteScore": 8,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

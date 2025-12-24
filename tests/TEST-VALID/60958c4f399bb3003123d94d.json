@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60958c4f399bb3003123d94d",
+  "data": {
+    "id": "60958c4f399bb3003123d94d",
+    "name": "Logarithm simplifier",
+    "slug": "logarithm-simplifier",
+    "category": "algorithms",
+    "publishedAt": "2021-05-07T19:51:00.329Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60958c4f399bb3003123d94d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-07T18:51:59.279Z",
+    "createdBy": {
+      "username": "Djacon",
+      "url": "https://www.codewars.com/users/Djacon"
+    },
+    "description": "Your task is to write a function that returns the logarithm in simplified form.\n\n\nFor example:\n\n```javascript\nsimplifyLog('log2(8)') // should return 3\nsimplifyLog('log2(49)') // should return 2log2(7)\nsimplifyLog('log6(144)') // should return 2 + 2log6(2)\n\nsimplifyLog('log2(1)') // should return 0\nsimplifyLog('log6(1013)') // should return log6(1013) - because '1013' doesn't decompose\nsimplifyLog('log9(54)') // should return 3/2 + 1/2log3(2)\n```\n\n```python\nsimplifyLog('log2(8)') # should return 3\nsimplifyLog('log2(49)') # should return 2log2(7)\nsimplifyLog('log6(144)') # should return 2 + 2log6(2)\n\nsimplifyLog('log2(1)') # should return 0\nsimplifyLog('log6(1013)') # should return log6(1013) - because '1013' doesn't decompose\nsimplifyLog('log9(54)') # should return 3/2 + 1/2log3(2)\n```\n\n### Explanation\n\nYour task is to simplify the logarithm, but in this kata you only need to decompose the resulting logarithm.\n\nThe **simplifyLog** function should return the simplified logarithm in the form:\n\n* ```math \n\\log_b{x} = \\log_{c^n}(c^a*y^k) = \\frac{1}{n} * (\\log_c{c^a}+\\log_c{y^k}) = \\frac{a}{n} + \\frac{k}{n}*\\log_c{y}\n``` \n\nWhere **b, c, x, y, k, n** are integers\n\n#### For example:\n* ```math\n\\log_9{54} = \\log_{3^2}(3^3*2^1) = \\frac{1}{2} * (\\log_3{3^3}+\\log_3{2^1}) = \\frac{3}{2} + \\frac{1}{2}*\\log_3{2}\n```\n \n### Notes:\n\n- ```math\n\\log_{a}a = 1\n```\n- ```math\n\\log_{a}b^c = c * log_{a}b\n```\n- ```math\n\\log_{a^c}b = \\frac{1}{c} * log_{a}b\n```\n- ```math\n\\log_{a}(b*c) = log_{a}b + log_{a}c\n```\n- ```math\n\\log_{a}1 = 0\n```",
+    "totalAttempts": 270,
+    "totalCompleted": 15,
+    "totalStars": 6,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

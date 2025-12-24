@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c0fcf02ccc957d91c00027d",
+  "data": {
+    "id": "5c0fcf02ccc957d91c00027d",
+    "name": "Find the Shifted Words",
+    "slug": "find-the-shifted-words",
+    "category": "reference",
+    "publishedAt": "2018-12-11T15:32:17.158Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c0fcf02ccc957d91c00027d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-11T14:51:46.739Z",
+    "createdBy": {
+      "username": "jessnology",
+      "url": "https://www.codewars.com/users/jessnology"
+    },
+    "description": "This kata is based on an NPR Sunday puzzle I solved with a little program. I thought it would be fun to build a kata around it. Here's the puzzle:\n\nThink of an article of apparel in eight letters. \n\nDrop the last 2 letters.\n\nMove what are the now the last 2 letters to the front. \n\nYou'll get an article of apparel in 6 letters. What is it?\n\nThe answer to the puzzle was Monokini => Kimono\n\nMonokini <----- Originial Word<br>\nMonoki<strike style=\"color:red\">ni</strike>   <----- Drop the last two letters<br>\n<strong style = \"color:red\">Ki</strong>mono   <----- Move the new last two letters to the front<br>\n\n\n\nYou will be supplied two arrays - one filled with 6 letter words, and one filled with 8 letter words. Inside of the 6 letter word array is ONE eight letter word that went through the shift above. Find it and output both the OLD WORD and NEW WORD in an array. \n\n```javascript\n var sixLetterWords = [\"Blabla\", \"Ladeeda\", \"Kimono\"];\n var eightLetterWords = [\"Randommm\", \"Monokini\", \"Examples\"];\n \n findShiftedWord(sixLetterWords, eightLetterWords) => [\"Monokini\", \"Kimono\"]\n```\n\nIf there is no solution you should output an empty array.\n\n```javascript\n var sixLetterWords = [\"Blabla\", \"Ladeeda\", \"Kimono\"];\n var eightLetterWords = [\"Randommm\", \"Noanswer\", \"Examples\"];\n \n findShiftedWord(sixLetterWords, eightLetterWords) => []\n```\nPay attention to capitalization in your result. The tests will have only zero or one matching word.",
+    "totalAttempts": 205,
+    "totalCompleted": 44,
+    "totalStars": 2,
+    "voteScore": 83,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

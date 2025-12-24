@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57ec4c00f670e9a47a0004f3",
+  "data": {
+    "id": "57ec4c00f670e9a47a0004f3",
+    "name": "Twice Their Age",
+    "slug": "twice-their-age",
+    "category": "games",
+    "publishedAt": "2016-09-29T22:47:57.873Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57ec4c00f670e9a47a0004f3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-28T23:02:24.838Z",
+    "createdBy": {
+      "username": "tachyonlabs",
+      "url": "https://www.codewars.com/users/tachyonlabs"
+    },
+    "description": "## A birthday dinner!\nMy older son just turned 28, and at his birthday dinner I noted that when I turn 56 in about three and a half months, I will be twice his age (for the about-eight-and-a-half months remaining until he turns 29). The thing is, the same thing had already happened before, because when he had turned 27 exactly a year earlier, I was 54, so for the about-three-and-a-half months until I turned 55, I was also twice his age. \n\n## Your mission\nIn this kata you will write a function that takes two people's birth days, months, and years, and returns the total number of days that one of them will be twice or half as old as the other. In most cases this will be 365 days, but there are two other factors you need to think about: \n\nFirst, a <a href=\"https://en.wikipedia.org/wiki/Leap_year\">leap year</a> may or may not increase the number of days from 365 to 366 -- the \"An Example\" section below goes into a little detail on this.\n\nSecond, there are also situations where the total number of days when one person will be twice or half as old as the other will be less than 365 days -- I'll let you think about that and figure it out for yourself.\n\nSome other rules: \n\n* We're only talking integer years here -- a 14-year-old is twice the age of a 7-year-old, but a 15-year-old is *not* twice the age of a 7½-year-old.\n\n* The two people's birthdates may have very large age gaps between them -- don't worry about whether either of the two are likely to actually still be alive on a date when one becomes twice or half the age of the other.\n\n* No people with February 29 birthdays will be included, so you don't have to worry about how to handle birthdays for them in non-leap years, when that date doesn't exist.\n\n* Birthdates will be strings formatted as MM/DD/YYYY.\n\n* All births in this kata will take place between the years 1753\\* and 2233\\*\\* inclusive, so you don't have to worry about things like when and where different calendars were adopted, or that in the BC/AD system there is not actually a year zero, or that a year might be a YYYYY, and so on. \n\nHave fun! More languages later!\n\n## An example\nAda Lovelace was born on December 10, 1815, and Alan Turing was born on June 23, 1912, so their birthdates as arguments would be the two strings `\"12/10/1815\"` and `\"06/23/1912\"`(in either order). On June 23, 1912, when Turing was born, Lovelace was (or would have been if she was still alive) 96 years old. On June 23, 2008, Turing would have turned 96 if he had still been alive, and Lovelace would be twice his age -- 192 -- until December 10, 2008, when she would turn 193. On June 23, 2009, Turing would turn 97, and then on December 10, 2009, Lovelace would once again be twice his age -- 194 -- until June 23, 2010, when Turing would turn 98. The two periods when she would be twice his age -- June 23 to December 9 in 2008, and December 10 of 2009 to June 22 of 2010 -- together add up to a whole year of 365 days, so your function would return the integer `365`. \n\nAlthough 2008 was a leap year, February 29, 2008, took place before rather than during the period in 2008 when Lovelace was twice Turing's age, so it does not increase the total from 365 to 366.\n\n\\*  The year *after* this happened: http://mentalfloss.com/article/51370/why-our-calendars-skipped-11-days-1752\n\n\\*\\* When Captain Kirk was born\n",
+    "totalAttempts": 448,
+    "totalCompleted": 9,
+    "totalStars": 12,
+    "voteScore": 5,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56c118ac87a9162ac70015a5",
+  "data": {
+    "id": "56c118ac87a9162ac70015a5",
+    "name": "Lazy sequence",
+    "slug": "lazy-sequence",
+    "category": "reference",
+    "publishedAt": "2016-02-16T00:28:07.996Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56c118ac87a9162ac70015a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-15T00:15:40.302Z",
+    "createdBy": {
+      "username": "czterystaczwarty",
+      "url": "https://www.codewars.com/users/czterystaczwarty"
+    },
+    "description": "Implement `lazySeq` function that generates lazy sequence.\n\nOtherwise to [Static sequences](http://www.codewars.com/kata/56ba8a9b022c16017d0001f3) every element should be evaluted only when needed.\n\n**Spec:**\n\n* function takes two parameters: `pattern` and `end`,\n* `pattern` is obligatory,\n* `pattern` is function, that takes two params `index` and `previousElement`, both optional,\n* `pattern` returns each sequence element,\n* `end` can be a `number`, in that case sequence will be lazy but fixed length,\n* `end` can be a `function` with two params `index`, `element` (both optional),\n  * `end` function is predicate (returns boolean),\n  * in that case sequence will finish on first element, for which returns `true` (itself NOT included, only describes the end),\n* if `end` is not specified, sequence should be infinite,\n* sequence sould be iterable by `for...of` loop,\n\n**Examples:**\n```javascript\nlet seq1 = lazySeq((index, prev) => index, 10);\n\nfor (let i of seq1) {\n  console.log(i); // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9\n}\n```\n\n```javascript\n// every given element is index increased by 1,\n// elements will return until `element` is not more than 5,\nlet seq2 = lazySeq((index, prev) => index+1, (index, element) => element > 5);\n\nfor (let i of seq2) {\n  console.log(i); // 1, 2, 3, 4, 5\n}\n```\n\n```javascript\n// elements starts from 100 and each next is 0.5 less\nlet seq3 = lazySeq((index, prev) => (prev ? prev : 100) - 0.5 );\nlet iterator = seq3[Symbol.iterator]();\n\nfor (let i=0; i<9; i++) {\n  iterator.next();\n}\ncondole.log(iterator.next()); // {value: 95, done: false}\n```\n\n**Reading:**\n\n* [Lazy_evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation),\n* [Iteration_protocols - MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Iteration_protocols)",
+    "totalAttempts": 189,
+    "totalCompleted": 23,
+    "totalStars": 3,
+    "voteScore": 30,
+    "tags": [
+      "Fundamentals",
+      "Functional Programming",
+      "Lists"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

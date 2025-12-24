@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5784874db35aa3e6760000e7",
+  "data": {
+    "id": "5784874db35aa3e6760000e7",
+    "name": "Stableford Score Calculator",
+    "slug": "stableford-score-calculator",
+    "category": "algorithms",
+    "publishedAt": "2016-07-13T15:30:03.054Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5784874db35aa3e6760000e7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-12T05:59:41.296Z",
+    "createdBy": {
+      "username": "robd2105",
+      "url": "https://www.codewars.com/users/robd2105"
+    },
+    "description": "### Stableford Scoring\nIn golf, Stableford scoring is a popular format for golf society competitions.  It helps to level the playing field more than just using pure handicaps.   Plus it helps to speed up game-play, ie, if you can't score on a hole, you just pick up and move on to the next hole.\n\nHere's more details about Stableford scoring.....\n\nhttps://en.wikipedia.org/wiki/Stableford\n\nIn summary, if you shoot par then you get 2 points.  If you shoot **one-over-par** you get 1 point - but for **two-over-par** or worse you score zero.\nIf you're playing well and shoot **one-under-par** then you get 3 points, **two-under-par** gets you 4 points .... and so on.\n\nAfter reading this, you'll understand why there are so many golf score calculator apps!!\n\n### Handicaps\nThe Stableford points described above are calculated after accounting for your handicap.\n\nYour handicap is the number of \"free shots\" you get.  Your handicap is distributed across the golf course according to the stroke index of each hole.  The hole which is \"Stroke Index 1\" can be viewed as the hardest hole with \"Stroke Index 18\" being the easiest hole.\n\nSo if your handicap is 10, then you get 1 free stroke on the holes with Stroke Index 1-10.\n\nIf your handicap is 18, then you get 1 free stroke on every hole, ie, Stroke Index 1-18.\n\nIf your handicap is 20, then you get 1 free stroke on each hole (1-18) - and then another free stroke on holes with Stroke Index 1 & 2.\n\nIf you handicap is 36, then you get 2 free strokes on each hole.\n\nIf your handicap is zero (aka \"scratch\") then you're pretty darn good and don't get any free shots.\n\nIt's possible to be so good that you have a negative handicap - but for this Kata we'll only allow handicaps in the range 0-36.\n\nNote: Stableford scores are calculated after accounting for your handicap, ie, after knocking off your \"free shots\" from your actual strokes.\n\n### Stableford Scoring Examples\nLet's say your handicap is 20.\nNow imagine you're playing a Par 5 and the stroke index is 4.  You take 7 shots to finish the hole.\nYour handicap gives you 1 free shot on a Stroke Index 4 (since your 20 handicap is used up by 1 shot on holes with stroke index 1-18 and another shot on holes with stroke index 1-2).\nSo your \"Net Strokes\" are 7 - 1 = 6.\n\n6 is **one-over-par** on a Par 5 .... so you get 1 point.\n\nNow let's say your handicap is 22 and on the same Par 5 hole you take 6 shots.  With a handicap of 22, you get 1 free shots on stroke index 1-18 and another free shot on stroke index 1-4.   So now, you have 2 free shots on this example hole.\n\nIf you took 6 shots your \"Net Strokes\" are reduced to 6 - 2 = 4.\n\n4 is **one-under-par** on a Par5 .... so you get 3 points.\n\n### Supplied Parameters\nThe function to calculate your Stableford score takes 3 parameters.\n\nThe first parameter `handicap` is your handicap and is an integer value in the range 0-36.\n\nThe second parameter `strokes` is an integer array of the strokes you took on each hole, eg:\n`[2,3,5,4,4,6,9,4,0,3,5,4,4,5,6,4,5,4]`\n\nA `0` in the array means you \"picked up\" (aka \"Blobbed\") - you get 0 Stableford points for that hole.\n\nThe third parameter `course` is a 2-dimension array which provides the Par and Stroke Index of each hole.  Here's a table showing an example course's Pars and SI's:\n\n| Hole | Par | Stroke Index | Hole | Par | Stroke Index |\n| --- | --- | --- | --- | --- | --- |\n| **1** | 3 | 16 | **10** | 4 | 9 |\n| **2** | 4 | 6 | **11** | 4 | 3 |\n| **3** | 5 | 10 | **12** | 3 | 15 |\n| **4** | 4 | 18 | **13** | 4 | 5 |\n| **5** | 4 | 12 | **14** | 3 | 17 |\n| **6** | 4 | 4 | **15** | 5 | 1 |\n| **7** | 4 | 14 | **16** | 4 | 7 |\n| **8** | 4 | 2 | **17** | 5 | 11 |\n| **9** | 3 | 8 | **18** | 3 | 13 |\n\nFor this example, the course array would be:\n\n`[[3,16],[4,6],[5,10],[4,18],[4,12],[4,4],[4,14],[4,2],[3,8],[4,9],[4,3],[3,15],[4,5],[3,17],[5,1],[4,7],[5,11],[3,13]]`\n\n### Input Constraints\nYou should throw an error in each of these circumstances....\n\n* Check that there's a hole for every stroke index 1 to 18 and no duplicates.\n* Ensure that the course only contains par 3, par 4, or par 5 holes.\n* We'll only allow a `handicap` in the range 0-36 (inclusive).\n* Validate that there's 18 scores in the `strokes` array and they're all positive integers.\n* Same for the `course` array - we only accept positive integers in the array.",
+    "totalAttempts": 183,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

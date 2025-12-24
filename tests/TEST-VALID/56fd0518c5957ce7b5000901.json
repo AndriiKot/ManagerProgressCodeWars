@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56fd0518c5957ce7b5000901",
+  "data": {
+    "id": "56fd0518c5957ce7b5000901",
+    "name": "Mahjong I: Is this a winning set?",
+    "slug": "mahjong-i-is-this-a-winning-set",
+    "category": "algorithms",
+    "publishedAt": "2016-03-31T11:08:13.582Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/56fd0518c5957ce7b5000901",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-31T11:08:08.477Z",
+    "createdBy": {
+      "username": "RedFog",
+      "url": "https://www.codewars.com/users/RedFog"
+    },
+    "description": "Mahjong is an ancient game in China, which spreads all over the world. But how can we check if a set of tiles is a winning set?\n\nTo simplify the question, we assume that the tiles have only one suit. And we ignore the situation that it has chi-ed, pon-ed and kan-ed. You will get a string like \"11122233344455\" to describe a set of tiles. Your algorithm should return a boolean to tell if it's a winning set.\n\n```ruby\nwinning_set?('11122233344455') #-> true\nwinning_set?('11123456789999') #-> true\nwinning_set?('11223556677788') #-> false\n```\n\n```haskell\nwinningSet [1,1,1,2,2,2,3,3,3,4,4,4,5,5] `shouldBe` True\nwinningSet [1,1,1,2,3,4,5,6,7,8,9,9,9,9] `shouldBe` True\nwinningSet [1,1,2,2,3,5,5,6,6,7,7,7,8,8] `shouldBe` False\n```\n\n#### Tips:\n\nA set without chii, pon and kan will have exactly 14 tiles, and at most 4 of a kind.  \n\nMost of winning sets are like XXX-XXX-XXX-XXX-YY, in which XXX is ABC or AAA.  \n```\n11122233344455 -> 111-222-333-444-55  \n11123456789999 -> 123-456-789-999-11  \n```\nA special set of tiles is AABBCCDDEEFFGG means seven pairs, like 11224455667788. there should not be any same pairs in it (Japanese Mahjong rules).  \n\n**Note:** Four of a kind like AAAA can not appear in this special form.\n\n",
+    "totalAttempts": 91,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

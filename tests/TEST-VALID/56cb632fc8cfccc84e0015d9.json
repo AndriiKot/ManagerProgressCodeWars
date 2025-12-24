@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56cb632fc8cfccc84e0015d9",
+  "data": {
+    "id": "56cb632fc8cfccc84e0015d9",
+    "name": "Bar Graph - Graphing #1",
+    "slug": "bar-graph-graphing-number-1-1",
+    "category": "reference",
+    "publishedAt": "2016-02-22T19:36:34.649Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56cb632fc8cfccc84e0015d9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-22T19:36:15.529Z",
+    "createdBy": {
+      "username": "matt c",
+      "url": "https://www.codewars.com/users/matt%20c"
+    },
+    "description": "<h1>Bar Graph - Graphs #1</h1>\n<p>\nA bar graph is a chart that uses either horizontal or vertical bars to show comparisons among categories. One axis of the chart shows the specific categories being compared, and the other axis represents a discrete value. Some bar graphs present bars clustered in groups of more than one (grouped bar graphs), and others show the bars divided into subparts to show cumulative effect (stacked bar graphs).\n</p>\n\n<h2>Input</h2>\nThe main function will be createBarGraph in the Graph class but the process to get there is as follows:<br>\n\n```javascript\nvar graph = new Graph();\ngraph.addGraph(item);\ngraph.createBarGraph(0);\nvar myBarGraph = graph.getGraph(0)\n```\n\nFirs the class must be initialized then the item must be added to the ```unprocessedGraph``` array by calling the ```addGraph``` function with the parameter of a RawGraph object. Finally the graph must be processed as a Bar Graph so ```createBarGraph``` with the input parameter of the ```id``` of the bar graph that was inputed into the ```addGraph``` function. Then to receive the ```getGraph``` function must be called with the id specified.\n\n<h2>Output</h2>\n<p>\nOutput for all functions listed below:<br>\n\n```getGraph``` this function must either return an object in the barGraphs array that matches the id or if none are found must return false.<br><br>\n```addGraph``` this function must search all arrays for an object that contains the same item id if some are found it is invalid and should return false. If you none are found then add the item to the ```unprocessedGrpahs``` array then return ```this```.<br><br>\n```createBarGraph``` this function must first search for the object with the matching id in the ```unprocessedGraphs``` array if none are found then return false. If one is found then you must process the raw graph data and convert it to the Bar Graph format.\n</p>\n<br>\n<h2>Preload</h2>\n<p>\n<strong>Data</strong>\n\nYou will be preloaded with a Data class this Data class has two properties \n ```name```,```value```.\n<br><br>\nThe ```name``` property will hold a string which will be a reference to each bar on the graph (for each data with a unique name there must be a seperate bar).\n<br><br>\nThe ```value``` property will be an array with data in it. Each piece of data must be of the same type as the ```type``` property in the RawGraph object which will be explained below.\n<br><br>\n<strong>RawGraph</strong>\nYou will also be preloaded with the RawGraph Class which will be your input for the function addGraph inside the Graph class.<br>\nParameters:<br><br>\n```title``` the title parameter is used to hold the title of the graph<br><br>\n```id``` the id paremter is what is used to reference the graph and must be passed on to the new graph objects you will create (examples to follow).<br><br>\n```compare``` the compare parameter is basically the title for each X and Y axis it is not used but must be passed on (examples to follow).<br><br>\n```type``` the type parameter is important because it defines the type of the input data if any of the input data does not match the type then ignore it.<br><br>\n```items``` the items parameter will be an array of Data Objects this is basically the datasource for the graph.<br><br>\n\n<strong>BarGraph</strong>\nThe BarGraph class is what the output is expecting from the function createBarGraph in the Graph class.<br>\nParameters:<br><br>\n```id``` the id parameter must be passed into this class the id should be the same as the input id.<br><br>\n```title``` the title parameter also must be passed from the input object to the output object.<br><br>\n```compare``` the compare parameter must be passed as well to the output parameter from the input parameter.<br><br>\n```graph``` the graph parameter must be a dynmaic object with specialised property names (examples below).\n</p>\n\n<h2>Examples</h2>\nThis is an example of the BarGraph object as an output.<br>\n\n```javascript\nInput: {title:'test',\n        id:0,\n        compare:{X:'X axis',Y:'Y axis'},\n        type:0,\n        items:[{name:'item1',value:5},\n        {name:'item1',value:7},\n        {name:'item1',value:5},     \n        {name:'item2',value:5},\n        {name:'item1',value:7},\n        {name:'item2',value:5}]}\n\nOutput: {  id:0,\n           title:'test',\n           compare:{X:'X axis',Y:'Y axis'},\n           graph:{\n             groups:{\n               'item1':{\n                 label:{\n                   '5':[1,1],\n                   '7':[1,1]\n                 }\n               },\n               'item2':{\n                 label:{\n                   '5':[1,1]\n                 }\n               }\n             }\n           }\n         }\n```\nSo as you can see from the input items groups are made for each type of name there is then inside each group there is a label which has a property name of that value and the arrays are generated from the amount of items that contain that label so in this example there are two items with a name of ```item1``` and a value of ```5``` so an array of ```[1,1]``` is created to represent a bar of height 2.\n\n<br><br>\n<strong>Reference:</strong> Wikipedia: <a href=\"https://en.wikipedia.org/wiki/Bar_chart\">Bar Graph</a>\n",
+    "totalAttempts": 49,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Graphs",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

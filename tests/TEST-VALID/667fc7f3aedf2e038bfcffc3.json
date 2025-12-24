@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/667fc7f3aedf2e038bfcffc3",
+  "data": {
+    "id": "667fc7f3aedf2e038bfcffc3",
+    "name": "Select you phone number",
+    "slug": "select-you-phone-number",
+    "category": "reference",
+    "publishedAt": "2024-06-29T16:08:55.095Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/667fc7f3aedf2e038bfcffc3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-06-29T08:38:11.031Z",
+    "createdBy": {
+      "username": "estem8",
+      "url": "https://www.codewars.com/users/estem8"
+    },
+    "description": "#### Task:\nCreate a function number_check for a web form on a telecommunications operator's website. The form allows users to input their favorite number and receive a list of available numbers for selection.\n#### Function Requirements:\nThe number_check function takes three inputs:\n* num: A vector of strings representing a list of available phone numbers.\n* mask: An integer representing the user's favorite number.\n* tail: A boolean indicating whether the user wants to search for numbers that end with their favorite number (tail = true) or contain their favorite number anywhere (tail = false).\n\n> Phone numbers from an operator can come in different formats with various separators, but they always consist of numbers.\n\n#### Function Behavior:\nThe function should filter the input vector num and return a new vector containing only those phone numbers that meet the following conditions:\n* If tail is true, the phone number should end with the string representation of mask.\n* If tail is false, the phone number should contain the string representation of mask anywhere.\n* The function should ignore any non-digit characters in the phone numbers.\n> So, you don't need to change the format of the input data.\n\n#### Example:\n\nIf the user inputs their favorite number as <span style=\"color:red\">123</span> and selects the option to search for numbers that end with 123, the function should return a list of available phone numbers that end with 123 (e.g., +3-124-451-3<span style=\"color:red\">1</span>-<span style=\"color:red\">23</span>, +3-124-55<span style=\"color:red\">1</span>-<span style=\"color:red\">23</span>, etc.). If the user selects the option to search for numbers that contain 123 anywhere, the function should return a list of available phone numbers that contain 123 (e.g., 8-918-<span style=\"color:red\">123</span>-45-61, +1-444-<span style=\"color:red\">123</span>-45-61, etc.).\n\n```rust\nnumber_check(vec![\"+7-999-123-45-67\",\"+7-999-123-45-68\",\"+7-999-123-45-69\"],42, true) -> []\nnumber_check(vec![\"8-999-123-12-12\",\"8-999-123-12-13\",\"8-999-123-12-14\"], 1212, true) -> [\"8-999-123-12-12\"];\nnumber_check(vec![\"+112345522121\",\"123-455-221-21\",\"+1\\345\\52\\21\\21\"], 221, false) -> [\"+112345522121\",\"123-455-221-21\",\"+1\\345\\52\\21\\21\"];\nnumber_check(vec![\"8-999-123-45-67\",\"8-999-123-45-68\",\"8-999-123-45-69\"],123, false) -> [\"8-999-123-45-67\",\"8-999-123-45-68\",\"8-999-123-45-69\"]\n```",
+    "totalAttempts": 6,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

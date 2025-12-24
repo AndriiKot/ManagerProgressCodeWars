@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c5cbd15fd9f1f530e1424b1",
+  "data": {
+    "id": "5c5cbd15fd9f1f530e1424b1",
+    "name": "User Database — Create, Evolve, and Clear Users with Filters (Predicates)",
+    "slug": "user-database-create-evolve-and-clear-users-with-filters-predicates",
+    "category": "algorithms",
+    "publishedAt": "2019-02-08T02:03:56.054Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c5cbd15fd9f1f530e1424b1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-07T23:19:49.693Z",
+    "createdBy": {
+      "username": "iREDMe",
+      "url": "https://www.codewars.com/users/iREDMe"
+    },
+    "description": "In this Kata, you will learn how to set a new user into a Database, then evolving and clearing with given Predicates required to do so.\n\nFirst off, you will create a Database, either with `class Database {}` or the pre-given `function Database() {}`; Whichever one you feel most comfortable with.\n\nIt should hold a property called `users`, which will be an instance of `Map`\n\nA `create(id)` method should push a user into the Map with the given ID. If there is no given ID, it should be the user size + 1\n\n* If the given ID already exists in the Database, it should throw a new `Error` instance, of any kind.\n* When called on, a new user should hold properties `age`, `veteran`. Respectively, their default values should be `0` and `false`.\n\nAn `evolve(fn)` method, when called, users in the `Map` should be checked to see if they meet the filter predicate given.\n\n* If they pass, their age should be incremented by 1.\n* When they evolve, if their age is at least `10`, their own Veteran status should become `true`.\n* Any time the `fn` argument is not passed, its default should evolve all.\n\nFinally, there should be a `clear(fn)` method. All users that pass the given filter should be deleted from the database.\n\n* If they pass, they should be deleted from the database.\n* Any time the `fn` argument is not passed, its default should delete all.\n\nPredicate Arguments:\n* `info` - The user's value in `users`.\n  * Example: `{ age: 9, veteran: false }`\n* `id` - The user's ID in `users`.\n  * Example: `2`\n* `index` - The zero-based index of the current iteration.\n  * Example: `1`\n\n**Extra Information**\n  * `create(id)` - The input will always be a string\n  * `evolve(fn)` & `clear(fn)` - The input will always be a function",
+    "totalAttempts": 59,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

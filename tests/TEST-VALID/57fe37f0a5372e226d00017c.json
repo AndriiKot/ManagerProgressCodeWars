@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57fe37f0a5372e226d00017c",
+  "data": {
+    "id": "57fe37f0a5372e226d00017c",
+    "name": "Text editor feature!",
+    "slug": "text-editor-feature",
+    "category": "algorithms",
+    "publishedAt": "2016-10-12T13:20:43.875Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57fe37f0a5372e226d00017c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-12T13:17:36.563Z",
+    "createdBy": {
+      "username": "Toderesa97",
+      "url": "https://www.codewars.com/users/Toderesa97"
+    },
+    "description": "Imagine you are requested to add a new feature into Brackets software. Given a .txt the feature must be able to separate in a new .txt all the non repeated words (Sensitive Case). The .txt can be full of weird characters.\nIn order to make it \"easier\" create a function, which allows that feature, and return a String array given by parameter a string ```function words(givenTxt) {  }```\n\nAlso, you MUST add information to the user, adding on ```result[result.length]``` how many valid words were found before the method separeAllWords erased the repeated words, and the difference between them (diff = words before(WB) - words now(WN)) \n\n\nSome examples:\n```\nvar text = \"Hello bud Bud, hello\";\nvar result = separateAllWords(text);\nconsole.log(result);\n//result array would be\nHello\nbud\nBud\nhello\nWB: 4, WN: 4, diff=0\n\ntext=\"hello, (police)kata   kata Kata\"\nresult = separateAllWords(text);\nconsole.log(result);\n//result array\nhello\npolice\nkata\nKata\nWB: 5, WN: 4, diff=1\n\ntext=\"   -->  hello u, (police)) how hOw!! make it noww... see u !!x3\"\nresult = separateAllWords(text);\nconsole.log(result);\n//result array\nhello\nu\npolice\nhow\nhOw\nmake\nit\nnoww\nsee\nx3\nWB: 11, WN: 10, diff=1\n```\n\nWARNING: its considered a valid word every set of characters [a-zA-Z0-9]+ non separated by a not valid character(eg , . - ^ & / spaces etc). If its a not valid character thats a new word.\nThis is a valid word: 54hgY7. \nThis is not a valid word: 85/65j (composed by two valid words: 85 and 65j)\n\nFor more information visit http://regexr.com/, type on jTextField: [a-zA-Z0-9]+ and you would see given a text what is considered a valid word. In this example: words before(WB)=109, words now(WN) = 85, the difference = 109-85=24.\n\nDo not forget: CANNOT USE UNDER ANY CIRCUMSTANCE REGULAR EXPRESSIONS, that involves not using split(), replace()... methods\n \n\n\n",
+    "totalAttempts": 425,
+    "totalCompleted": 36,
+    "totalStars": 8,
+    "voteScore": 31,
+    "tags": [
+      "Strings",
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

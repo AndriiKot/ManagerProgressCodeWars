@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59eec64d2a7acc0a20000023",
+  "data": {
+    "id": "59eec64d2a7acc0a20000023",
+    "name": "Parse and Evaluate an Arithmetic Expression",
+    "slug": "parse-and-evaluate-an-arithmetic-expression",
+    "category": "algorithms",
+    "publishedAt": "2017-10-24T05:58:16.158Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59eec64d2a7acc0a20000023",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-10-24T04:49:17.171Z",
+    "createdBy": {
+      "username": "jonbrunt",
+      "url": "https://www.codewars.com/users/jonbrunt"
+    },
+    "description": "Write an algorithm that takes an arithmetic expression in the form of a string, and returns a numerical solution, rounded to five decimal places. The expression may contain addition, subtraction, multiplication, and division. The evaluation must follow proper order of operation. The string will be structured as follows:\n\nSpaces will separate all operators and numbers in the string argument. No whitespace will precede the initial number or follow the final number\n\nNegative numbers will be represented by a leading ```\"-\"``` without a space (in example, negative five is represented as ```\" -5 \"```. Decimals may be present. Decimals will be led by a zero if there is no number in the ones place (example: ```0.123```)\n\nOperators will be represented in string format as the standard character for the operator. ```\" + \"``` represents addition, ```\" - \"``` represents subtraction, ```\" * \"``` represents multiplication, and ```\" / \"``` represents division.\n\nTherefore, a string will appear as the following:\n\n```javascript \n\"5 + 7 - 8 / 2.37 * -5 + 2\"\n```\n(understood as \"five plus seven minus eight divided by two point thirty seven multiplied by negative five plus two\") and should return a numerical value of ```30.87764```\n\nSimply allow for an error thrown on any argument that does not meet the string specifications (examples: ```parser(a) parser(200)``` etc\n\nAcademically correct order of operation involves evaluating the expression from left to right, first evaluating multiplication and division, simultaneously, as they appear from left to right, then evaluating addition and subtraction simultaneously, in the order they appear, once again from left to right.\n",
+    "totalAttempts": 10,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

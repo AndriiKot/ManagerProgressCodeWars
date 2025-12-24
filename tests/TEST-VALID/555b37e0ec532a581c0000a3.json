@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/555b37e0ec532a581c0000a3",
+  "data": {
+    "id": "555b37e0ec532a581c0000a3",
+    "name": "Partitions, big time",
+    "slug": "partitions-big-time",
+    "category": "algorithms",
+    "publishedAt": "2015-05-19T18:09:46.761Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/555b37e0ec532a581c0000a3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-19T13:17:20.138Z",
+    "createdBy": {
+      "username": "Absurdated",
+      "url": "https://www.codewars.com/users/Absurdated"
+    },
+    "description": "**Story**  \nThere is a vault of \"Evil, Inc.\" with a digital lock. Lock gives anyone entering a riddle - to find a number of distinct ways of getting specific number as a sum of a specific number of summands, write this number in given base and sum digits until you recieve a single-digit number. Open the door!  \n  \n**Formal problem**  \n*Input:*  \n`n` is a positive integer from 0 to `long.MaxValue`. `m` is a positive integer from 0 to 20. `b` is an integer from 2 to `short.MaxValue`.  \n*Output:*  \n*Digital root* of a number `N` in base `b` is a limit of a recursive sum of digits of `N`: sum(sum(sum(...(sum(N))...))). For example, digital root of number 4623694 in base 10 can be computed as 4623694->4+6+2+3+6+9+4->34->3+4->7. Digital root of the same number in base 16 is 0x468D4E->4+6+8+13+4+14->0x31->3+1->4.  \n`Kata.Partitions` should return digital root of {a number of different ways `n` can be split into sum of exactly `m` strictly positive integers} in base `b`. \"Different\" means that sums that differ only by order of summands are considered the same. For example, there are two and only two different ways to split 5 in sum of exactly 3 positive integers, namely 3+1+1 and 2+2+1. For another example, a number of different ways 1234 can be split into sum of exactly 5 strictly positive integers is 811663793, so `Kata.Partitions(1234, 5, 6)` should return 3 and `Kata.Partitions(1234, 5, 10)` should return 8.  \n  \n**Notes and hints**  \n-- The kata is strictly more difficult than <a href='http://www.codewars.com/kata/the-millionth-fibonacci-kata'>\"The millionth Fibonacci\"</a>, <a href='http://www.codewars.com/kata/explosive-sum'>\"Explosive sum\"</a> and <a href='http://www.codewars.com/kata/sum-of-digits-slash-digital-root'>\"Digital root\"</a>. Make sure you know how to solve these.  \n-- The whole deal with digital root is just to avoid using BigInteger-like types (absent in C#). There is no shortcut (that author is aware of) that would make the task significantly easier than computing number of partitions itself.  \n-- Wiki articles that may or may not be of use (in no particular order): <a href='https://en.wikipedia.org/wiki/Partition_%28number_theory%29'>partitions</a>, <a href='http://en.wikipedia.org/wiki/Exponentiation_by_squaring'>fast exponentiation</a>, <a href='http://en.wikipedia.org/wiki/Recurrence_relation'>recurrence relation</a>, <a href='http://en.wikipedia.org/wiki/Modulo_operation'>modulo operation</a>, <a href='http://en.wikipedia.org/wiki/Matrix_multiplication'>matrix multiplication</a>.  \n-- Don't forget that you have time *and* memory limit. Make use of the fact that `m` is small.  \n-- By a common agreement, sum of zero summands is defined and equals zero.  \n  \n**Credits**  \n",
+    "totalAttempts": 95,
+    "totalCompleted": 6,
+    "totalStars": 5,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

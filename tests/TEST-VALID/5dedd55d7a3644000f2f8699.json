@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dedd55d7a3644000f2f8699",
+  "data": {
+    "id": "5dedd55d7a3644000f2f8699",
+    "name": "Coding Classes in JS like it's 2015",
+    "slug": "coding-classes-in-js-like-its-2015",
+    "category": "reference",
+    "publishedAt": "2019-12-09T05:03:39.904Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5dedd55d7a3644000f2f8699",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-09T05:02:21.378Z",
+    "createdBy": {
+      "username": "gustavo-depaula",
+      "url": "https://www.codewars.com/users/gustavo-depaula"
+    },
+    "description": "# Coding Classes in JS like it's 2015\n\nAs the [*New Horizons*](https://en.wikipedia.org/wiki/New_Horizons) space probe approaches Pluto, NASA wants to make sure all the code on the receiving end here on Earth may capture all the incoming images via radio perfectly. As one of the most popular languages, they decided to write a part of their codebase in Javascript.\n\nHowever, as hardcore lovers of object-oriented programming and class-oriented syntax, they miss the class mechanics in JS. And, worse, this is a dealbreaker for them.\n\nIn light of this situation, you, as a JS-lover and a brilliant engineer, decide to take on this challenge and bring as much as the class mechanic into Javascript as possible. You have one week.\n\n---\n\nYour class implementation must adhere to the following specification, which is inspired (loosely) by the [*jsclass*](http://jsclass.jcoglan.com/) library:\n\nCreating classes is done by using the `Class` function. This function receives a JS object with all the methods of this class. Additionally, all classes must have an `init` function that will be used as the constructor function.\n\n```javascript\nvar SpaceProbe = new Class({\n  init: function(name, destination) {\n    this.name = name;\n    this.destination = destination;\n    this.storage = {};\n  },\n\n  takePhoto: function(subject = 'noSubject') {\n    return (\n      subject +\n      ': TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGl'\n    );\n  },\n\n  storePhoto: function(key, photo) {\n    this.storage[key] = photo;\n  }\n});\n```\n\nYour project must also support Inheritance. Inheritance is done by passing two parameters to the `Class` function. The first is the already created parent class and the second is an object with the child methods and overrides.\n```javascript\nvar NewHorizons = new Class(SpaceProbe, {\n  init: function() {\n    this.name = 'New Horizons';\n    this.destination = 'Pluto';\n    this.storage = {};\n  },\n\n  takePlutoPhoto: function() {\n    return this.super.takePhoto('from pluto');\n  },\n\n  storePlutoPhoto: function(photo) {\n    this.super.storePhoto.call(this, 'pluto', photo);\n  }\n});\n```\n\nIf a method is present both on the parent and child, the instance will use the child method, otherwise, the parent's one:\n```javascript\nvar instance = new NewHorizons();\ninstance.init() // comes from NewHorizons.takePhoto\ninstance.takePhoto() // comes from SpaceProbe.takePhoto\n\n```\n\nAs sometimes you'll want to access the \"original\" parent method, you must also give the child class access to all the parent methods via `this.super`:\n```javascript\nvar NewHorizons = new Class(SpaceProbe, {\n  init: function() {\n    this.super.init.call(this, 'New Horizons', 'Pluto');\n  },\n  ...\n});\n```\nAs seen above, you do not need to bind `this` on the methods available on `this.super`.\n\n---\n\n**Note**: It wasn't possible to disable ES6 features, and, although you may write a valid solution using ES6 features, I'd suggest not using them for a more complete JS \"bare bones\" experience.\n\nThis is an exercise based on the content of [Fourth Chapter of You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md). I highly suggest the reading before (*and after!*) this exercise.\n\nIf you feel stuck, take a look at this article about [*\"The History of Simulated Classes in JavaScript\"*](https://www.webreflection.co.uk/blog/2015/11/07/the-history-of-simulated-classes-in-javascript). This article describes multiple solutions on how developers solved this \"problem\" before ES6 classes. **Warning**: the article may spoil the fun of thinking of and doing a solution yourself.\n\n",
+    "totalAttempts": 13,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": -3,
+    "tags": [
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

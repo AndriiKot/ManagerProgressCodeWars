@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583cc8f2b0972b2b8e00015e",
+  "data": {
+    "id": "583cc8f2b0972b2b8e00015e",
+    "name": "How do I dilute this correctly?",
+    "slug": "how-do-i-dilute-this-correctly",
+    "category": "reference",
+    "publishedAt": "2016-11-29T10:00:07.801Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/583cc8f2b0972b2b8e00015e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-29T00:16:51.261Z",
+    "createdBy": {
+      "username": "DrWilliamsSteven",
+      "url": "https://www.codewars.com/users/DrWilliamsSteven"
+    },
+    "description": "#Background:\n\nIn molecular biology/pharmacology (and many branches of science) where we are testing whether a cell is sensitive to a drug, we often order in the drug or drug-like compound from a commercial supplier.\n\nUnfortunately, the manufacturers usually ship the drug as a powder, but for us to use it in the lab, we need to resuspend/dissolve the powder in a liquid.\n\nWhile we could measure the concentration of drug in liquid in 'normal' metric units such as g/ml, the difficulty is that commonly in science we don't..\n\nScientists like to use units of concentration called Molar, where \n\n  **1 Molar (or 1M) = 1 mole/litre**\n  \n  1 mole is a special value equal to 6.022 * 10^23 molecules.\n  \nSee this [wikipedia article](https://en.wikipedia.org/wiki/Molar_concentration) for more information. \n\n\nTo convert x grams of drug into moles we need to use the following formula:\n\n**_n = m/MW_**\n\nwhere:\n\n* _n_ = number of moles\n* _m_ = mass in grams\n* _MW_ = molecular weight (in moles/gram)\n\nOnce we have _n_, we can use the following formula to determine the concentration and for a given volume to dissolve in.\n\n**_C = n/V_**\n\n*For the purposes of this exercise say we always dissolve at 10mM*\n\nOnce we have our drug dissolved we can then dilute to an appropriate usage concentration, which may be orders of magnitude lower (eg. 1nM)\n\nTo do this use the formula: \n**_concentration1 \\* volume1 = concentration2 \\* volume2 _**\n\n#Instructions:\n\nFor a given drug that is purchased, you will be given either:\n\n* The mass (in grams), the molecular weight (MW), and the desired concentration2 (in uM).\n\nOR alternatively if the drug is purchased as a pre-dissolved liquid:\n\n* The concentration1 (in mM), the volume1, and the desired concentration2 (in uM).\n\n\nFor each purchase calculate and report an object with the following:\n\n* number of moles\n* concentration1 (in millimolar (mM))\n* volume1 (in mL)\n* concentration2 (in micromolar (uM))\n* volume2 (in mL)\n\n\n*All values will be >0*\n\n*Round all floats to 3 decimal places*\n\n\n\n\n  \n",
+    "totalAttempts": 116,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

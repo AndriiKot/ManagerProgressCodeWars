@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fda527cfb41260010be13f8",
+  "data": {
+    "id": "5fda527cfb41260010be13f8",
+    "name": "A Python iterator for people scared of Exceptions.",
+    "slug": "a-python-iterator-for-people-scared-of-exceptions",
+    "category": "reference",
+    "publishedAt": "2020-12-16T18:32:57.230Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5fda527cfb41260010be13f8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-12-16T18:31:24.540Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "Yeah... so sorry about this. :(\n\nWe all know that Python iterators keep looping until they throw an exception like so:\n\n```\n>>> l = [1, 2]\n>>> it = iter(l)\n>>> next(it)\n1\n>>> next(it)\n2\n>>> next(it)\nTraceback (most recent call last):\n   File \"<stdin>\", line 1, in <module>\nStopIteration\n```\n\nBut our boss Dave is strange, he's either scared of exceptions or he doesn't know how to use them, I'm not sure which...   \n\nEither way, he prefers to be un-Pythonic and ask for permission rather than forgiveness.  \n\nSo he wants an alternative that works like this for him:\n\n```\n>>> l = [1, 2]\n>>> it = DavesIterator(l)\n>>> while it.has_next():\n...     print(it.get_next())\n1\n2\n>>> print(it.get_next())\nSorry Dave, I can't let you do that.\n```\n\nAnd for the sake of the rest of us, we also want to support the Pythonic way like so:\n\n```\n>>> l = [1, 2]\n>>> it = DavesIterator(l)\n>>> for x in it:\n...     print(x)\n1\n2\n```\n\nWe don't want to wait for heat death of the universe...\n\n__NOTE:__ For safety, if someone tries to use both supported styles of use on one instance, for the love of all things holy, raise a `RuntimeError`, we have enough stupidity to deal with right now!\n\nAnyway, I've got way too much to do right now, and frankly I'm tired of Dave's nonsense. You're the new junior on the team so I'm delegating to you, I've written up a skeleton and test pack for you.\n\nIf there is any confusion the test pack should make it clear what the expected behaviour is.\n\nI'm sorry the spec is so poor, but this is how [Dave](https://www.wikiwand.com/en/Peter_principle#/The_Peter_Principle) is, and it's not worth arguing with him when he gets like this, he has a brittle ego and sees professional criticism as personal criticism. :(",
+    "totalAttempts": 388,
+    "totalCompleted": 27,
+    "totalStars": 3,
+    "voteScore": 34,
+    "tags": [
+      "Iterators",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

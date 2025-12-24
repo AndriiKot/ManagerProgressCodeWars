@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59418eb205b360495100018b",
+  "data": {
+    "id": "59418eb205b360495100018b",
+    "name": "Calculate the Area under the polynomial curve!",
+    "slug": "calculate-the-area-under-the-polynomial-curve",
+    "category": "algorithms",
+    "publishedAt": "2017-06-21T16:27:37.847Z",
+    "approvedAt": null,
+    "languages": [
+      "c",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/59418eb205b360495100018b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-06-14T19:29:54.674Z",
+    "createdBy": {
+      "username": "OliverGalt",
+      "url": "https://www.codewars.com/users/OliverGalt"
+    },
+    "description": "# Abstract:\n\n  Imagine you were trying to do a mobile aplication that could solve definite integrals of polynomials!\n  \n  The user would have to take a photo of a definite integral and the result would be given in his screen.\n  \n  This aplication could be decomposed in 2 tasks.\n  <ol>\n    <li>     Finding the valuable information in the photo (integration limits and function )</li>\n    <li>     Given a string with the function and the integration limits calculate the result</li>\n  </ol>\n  This Kata focuses on the second.\n\n# Description:\nYou will be given a string with a polynomial function such as ``` x^4 + 2x^2 + 1``` and in order to complete this kata your are supposed to determine the definite integral from a to b of this function and return it.\n(https://en.wikipedia.org/wiki/Integral)\n\nthe prototype of this function will be ..\n\n``` float Integrate_me(char variable, float a, float b, char* polynomial )```\n# Example: \n``` Integrate_me('y', 0, 1,\" y^7 + 2y^4 + 1  -y^7 \")``` should return 1.400000\n# Note :\n<p> Don't forget coeficients can be negative.\n<p> x to the power of n will come represented as  x^n (no spaces).\n<p> If the polynomial is ```-x^k + x^k ```.It's definite integral from any a to any b will be  0.\n<p>You might come up with a different solution to this problem that i didn't originaly expect. If you are able to do so ignore the following tips.\n\n  \n# Tips:\n\n  Take as granted the following propositions.\n  + Diferentiation can be seen as a <u>Linear transformation</u>, and as a consequence of that  it can be  represented as a  matrix.(http://mathworld.wolfram.com/LinearTransformation.html)\n  \n  + {1 , x , x^2 , x^3 .... , x^n } can form a base, for instance:\n      \n      If you decide that the base of the linear transformation should be``` {1, x , x^2} ```the vector``` [1  2  0]^T``` will represents the polynomial ```1 + 2x``` .\n      \n            \n  + The matrix that represents integration in the base above is:\n  \n            | 0  0  0 |  if you multiply this matrix for the vector above the result will be \n            | 1  0  0 |  [0  1  1]^T, x + x^2, the primitive of 1 + 2x\n            | 0 1/2 0 |\n            \n             ",
+    "totalAttempts": 199,
+    "totalCompleted": 22,
+    "totalStars": 9,
+    "voteScore": 22,
+    "tags": [
+      "Linear Algebra",
+      "Matrix",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

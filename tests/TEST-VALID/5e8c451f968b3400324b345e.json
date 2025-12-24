@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e8c451f968b3400324b345e",
+  "data": {
+    "id": "5e8c451f968b3400324b345e",
+    "name": "Adding a check key",
+    "slug": "adding-a-check-key",
+    "category": "reference",
+    "publishedAt": "2020-04-07T09:18:08.415Z",
+    "approvedAt": null,
+    "languages": [
+      "c",
+      "perl",
+      "raku"
+    ],
+    "url": "https://www.codewars.com/kata/5e8c451f968b3400324b345e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-07T09:17:19.792Z",
+    "createdBy": {
+      "username": "g964",
+      "url": "https://www.codewars.com/users/g964"
+    },
+    "description": "Input: a string `s` which may contain digits, letters, dashes, spaces, etc...\n\n   We will ignore non-numeric characters.   \n   We calculate a key for that string with the following process:\n   \n    - Write down the first eight digits (numeric characters) of the string\n       (Other digits than the first eight are ignored), hence an integer N.\n    - Multiply the first digit of N by 3, the second digit by 7 and the third digit by 1 (digits are numbered from the left).\n    - Multiply the fourth digit by 3, the fifth digit by 7 and the sixth digit by 1.\n    - Multiply the seventh digit by 3, the eight digit by 7.\n    - Add these products, say `P`\n    - Find the next multiple of 10 greater than `P` or equal to `P`, call it `A` (If `P` is a multiple of 10 `A` is `P`).\n    - Subtract `P` from `A` to get the key `k`.\n    - Add `k` as the last digit of `N`, hence an integer `M`.\nOutput M.\n\n```\nExample:\ns = \"789-456-;1x256\" hence the number N: 78945612 (only the first eight digits)\nP = 156\nA = 160\nk is 4\nM = 789456124\n```\nIf the string has less than 8 digits we will consider that we have the string \"00000000\".\n```\nExample\ns = \"123x-abcdefgh\"; we consider it as \"00000000\" since there are only 3 digits; N is 0\nP = 0\nA = 0\nk is 0\nM = 0\n```\nNote:\n- Please ask before translating.",
+    "totalAttempts": 206,
+    "totalCompleted": 36,
+    "totalStars": 2,
+    "voteScore": 41,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f0cd8a08c2b35001608dc1a",
+  "data": {
+    "id": "5f0cd8a08c2b35001608dc1a",
+    "name": "Matrix of Palindromes",
+    "slug": "matrix-of-palindromes",
+    "category": "algorithms",
+    "publishedAt": "2020-07-13T21:58:46.980Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f0cd8a08c2b35001608dc1a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-13T21:56:48.933Z",
+    "createdBy": {
+      "username": "GDimanov",
+      "url": "https://www.codewars.com/users/GDimanov"
+    },
+    "description": "Write a function to generate a matrix of 3 letters palindromes with x number of rows and y number of columns. \n\nFunction should return a string representation of the matrix\n\nFor example \n```java\nMatrixPalindromes.createMatrix(3,3) -> \"[[aaa, aba, aca], [bbb, bcb, bdb], [ccc, cdc, cec]]\"\n```\n```python\ncreate_matrix(3, 3) --> \"[[aaa, aba, aca], [bbb, bcb, bdb], [ccc, cdc, cec]]\"\n```\n```javascript \nFor JavaScript return matrix as a string.\nMatrixPalindromes(3,3) --> 'aaa,aba,aca,bbb,bcb,bdb,ccc,cdc,cec'\n\n```\n\nThe matrix builds by the following logic :\n\nThe row defines the first and the last letter.\n\nRow 0 -> \"a\", row 1 -> \"b\", row 2 -> \"c\" ... row 25 -> \"z\"\n\nRow + column defines the middle letter.\n\nColumn 0 : row 0 -> \"a\", \n\nColumn 0 : row 1 -> \"b\",\n\nColumn 1 : row 1 -> \"c\n\n...\n\nColumn 0 : row 25 -> \"z\".\n\nThe following restrictions are applied to all test cases :\n\nrow and col are in range 1 to 26 \n\nrow + col <= 27.\n\nThese restrictions are there to guarantee that the matrix will contain only chars from the alphabet.\n\nGood luck.\n\n\n",
+    "totalAttempts": 226,
+    "totalCompleted": 56,
+    "totalStars": 2,
+    "voteScore": 42,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

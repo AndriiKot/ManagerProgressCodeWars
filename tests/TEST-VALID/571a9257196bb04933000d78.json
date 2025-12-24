@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/571a9257196bb04933000d78",
+  "data": {
+    "id": "571a9257196bb04933000d78",
+    "name": "splitAny",
+    "slug": "splitany",
+    "category": "reference",
+    "publishedAt": "2016-04-22T21:07:08.123Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/571a9257196bb04933000d78",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-04-22T21:06:31.759Z",
+    "createdBy": {
+      "username": "r-walsh",
+      "url": "https://www.codewars.com/users/r-walsh"
+    },
+    "description": "### splitAny\n\nThis challenge is to write a function `splitAny` that can take in an array, string, number, object, or function and split it into an array based on the following structure:\n\n```\nsplitAny( [ 10, { test: `test` }, () => `hello` ] ); // Returns the split value of each item in the array [ [ 1, 0 ], [ [ `test`, `test` ] ], [ `h`, `e`, `l`, `l`, `o` ] ];\n\nsplitAny( `Hello` ); // Returns [ `H`, `e`, `l`, `l`, `o` ];\n\nsplitAny( `Hello world` ); // Returns [ [ `H`, `e`, `l`, `l`, `o` ], [ `w`, `o`, `r`, `l`, `d` ] ];\n\nsplitAny( -204672 ); // Returns [ '-', 2, 0, 4, 6, 7, 2 ];\n\nsplitAny({ test: 1, anotherThing: `hello` }); // returns [ [ `test`, 1 ], [ `anotherThing`, `hello` ] ];\n\nsplitAny( () => `MyString` ); // Returns the split value of the function's return value [ `M`, `y`, `S`, `t`, `r`, `i`, `n`, `g` ];\n\nsplitAny( false ); // Throws a TypeError\n```\n\nThe function should not modify the original argument in any way.",
+    "totalAttempts": 252,
+    "totalCompleted": 27,
+    "totalStars": 3,
+    "voteScore": 26,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

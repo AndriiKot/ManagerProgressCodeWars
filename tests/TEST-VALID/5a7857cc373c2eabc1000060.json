@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a7857cc373c2eabc1000060",
+  "data": {
+    "id": "5a7857cc373c2eabc1000060",
+    "name": "IK - Inverse Kinematics (2D)",
+    "slug": "ik-inverse-kinematics-2d",
+    "category": "algorithms",
+    "publishedAt": "2018-02-05T14:00:41.868Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a7857cc373c2eabc1000060",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-05T13:10:36.548Z",
+    "createdBy": {
+      "username": "pointbazaar",
+      "url": "https://www.codewars.com/users/pointbazaar"
+    },
+    "description": "You are asked to solve the inverse kinematics prolem.\n\n\ngiven a set of bones like [1,2,3] and an end position: (3,1),\ndetermine a correct set of angles on the joints (global angles)\n=[a1,a2,a3]\n\nso that (a1,1)+(a2,2)+(a3,3)=(3,1) where the former are polar coordinates.\n\nso adding up the bone lengths with their angles should arrive near the specified position. your first bone is always anchored at (0,0)\n\nall solutions that place the end part of the last bone within the distance of the goal are valid. (being near the goal := within 0.5 units)\n\nsome users sought to cheat by reassigning some functions i wrote.\ni'll try to check for that.\n\ngoal is encoded as (x,y) and angles are in radians relative\nto (1,0)\n\n------------------------------------\ni've found you can start with cyclic coordinate descent, simplified: you just adjust things along\nthe kinematic chain iteratively.\n--------------------------------------\na future hard version might be the 3d version, complete with more restrictions on the joint angles",
+    "totalAttempts": 15,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

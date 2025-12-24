@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53cae5949bbf4c3a25001395",
+  "data": {
+    "id": "53cae5949bbf4c3a25001395",
+    "name": "Haskell List Comprehension (vi)",
+    "slug": "haskell-list-comprehension-vi",
+    "category": "refactoring",
+    "publishedAt": "2014-07-19T22:46:05.917Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53cae5949bbf4c3a25001395",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-19T21:39:32.572Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the sixth part. You must do the previous part first [Haskell List Comprehension (v)](http://www.codewars.com/kata/haskell-list-comprehension-v).\n\nIf you've gotten this far, you may have noticed that lists we are building do not keep the state.\n\nFor example:\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..10\"\n});\n\nlist.take(2).value(); //[1, 2] Retrieves the first two elements\nlist.take(2).value(); //[1, 2] Retrieves the first two elements. The list does not keep the state\n```\nThis behavior may seem strange and unhelpful. But it is one of the principles on which functional programming is based. A function must always return the same result for the same input parameters. Functional programming dislikes mutability and avoid storing the state. This will get more reliability in code, reuse is improved and the tests are easier. In my point of view, this also makes our code less useful.\n\nIn this kata, we will allow our list can behave both ways: mutable or immutable.\n\nBy default the list is immutable, but, if when you create the list, pass the parameter `mutable = true`, the behavior will change and the list is mutable.\n\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..5\",\n  mutable: true\n});\nxº\nlist.take(2).value(); //[1, 2] Retrieves the first two elements\nlist.take(2).value(); //[3, 4] Retrieves the next two elements.\nlist.take(10).value(); //[5] Retrieves the last element.\nlist.take(1).value(); //[] Empty list. The list is exhausted.\n```\n\nSee another examples:\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..10\",\n  mutable: true\n});\n\nlist.take(2).take(1).value(); //[1] The first `take()` call, retrieves two first elements, the second get the first of them.\nlist.take(2).take(1).value(); //[3]\n\nlist = ArrayComprehension({\n  generator: \"1..10\",\n  mutable: true\n});\n\nvar l = list.take(2); //Gets the two firts elements\nl.take(1).value(); //[1] the first elements of them\nl.take(1).value(); //[2] the second element of them\n```\nOne more thing we can do is to implement the `next()` method. This method returns the next value in the list, or `null` if there are no values.\n\nFor example:\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..3\",\n  mutable: true\n});\n\nlist.next(); //1\nlist.next(); //2\nlist.next(); //3\nlist.next(); //null The list is exhausted. \nlist.next(); //null\n```\n\nIn immutable lists, `next()` always returns the first element.\n\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..3\",\n  mutable: false\n});\n\nlist.next(); //1\nlist.next(); //1\n```\n\nNote that `next()` and `value()` can be combined\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..3\",\n  mutable: true\n});\n\nlist.next(); //1\nlist.value(); //[2, 3]\nlist.next(); //null \nlist.value(); //[]\n\nvar list = ArrayComprehension({\n  generator: \"1..3\",\n  mutable: false\n});\n\nlist.next(); //1\nlist.value(); //[1, 2, 3]\nlist.next(); //1\n```",
+    "totalAttempts": 110,
+    "totalCompleted": 17,
+    "totalStars": 3,
+    "voteScore": 15,
+    "tags": [
+      "Functional Programming",
+      "Arrays",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

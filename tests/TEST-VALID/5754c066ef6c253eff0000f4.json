@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5754c066ef6c253eff0000f4",
+  "data": {
+    "id": "5754c066ef6c253eff0000f4",
+    "name": "toHonestlyFixed()",
+    "slug": "tohonestlyfixed",
+    "category": "refactoring",
+    "publishedAt": "2016-06-07T00:29:56.050Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5754c066ef6c253eff0000f4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-06T00:14:30.370Z",
+    "createdBy": {
+      "username": "njsfield",
+      "url": "https://www.codewars.com/users/njsfield"
+    },
+    "description": "In JavaScript, you can use the .toFixed() method to format a number using fixed point notation, and return the result as a string;\n\nFor example; \n```javascript\nvar num = 2016.2326;\nnum.toFixed());   // returns '2016'\nnum.toFixed(1));  // returns '2016.2'\nnum.toFixed(2));  // returns '2016.23'\nnum.toFixed(3));  // returns '2016.233'\n```\nNotice that in the last example, the third decimal digit is rounded up, so the method works by rounding up the last digit if the following digit is equal or greater than 5.\n\nYour task is to write an 'honest' toFixed method, called toHonestlyFixed, that when called behaves in the same way as toFixed, but without rounding up.\n\nThe method should be added as a Number prototype.\n\nFor example;\n```javascript\nvar num = 9434.3689;\nnum.toHonestlyFixed(1);  // should return '9434.3'\nnum.toHonestlyFixed(2);  // should return '9434.36'\nnum.toHonestlyFixed(3);  // should return '9434.368'\n```\n\nFor all other purposes, toHonestlyFixed should behave in this way;\n\n1. Accepts a number argument to represent the number of digits to appear   after the decimal (between 0-10), otherwise throws a range error with any message you choose.\nFor example;\n```javascript\nvar num = 3333;\nnum.toHonestlyFixed(-2);  // 'RangeError: toHonestlyFixed() digits argument must be between 0 and 10'\n```\n2. If the number argument is greater than the number of decimal digits     present, zeros are used as padding. For example;\n  ```javascript\n  var num = 3333;\n  num.toHonestlyFixed(4);  // should return '3333.0000'\n  ```\n3. If the number argument is undefined/empty, 0 is used as the argument.\n4. If the number passed in is not a valid number, a TypeError is thrown. This also means that you can't pass in a string with a number (e.g '20304'.toHonestlyFixed() will not work). You may pass in 0 as a number. \n\n\nNote that toFixed() allows up to 20 decimal places, but for this exercise simply allow up to 10 decimal places.\n\nAlso note that numbers tested against will NOT be large floating point values, they will be between 0.0000001 and 9999999.9999999. This is because this kata does not test your ability to deal with converting large numbers, just modifying toFixed so it doesn't round up.\n\nGood luck!\n\n",
+    "totalAttempts": 443,
+    "totalCompleted": 42,
+    "totalStars": 5,
+    "voteScore": 60,
+    "tags": [
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

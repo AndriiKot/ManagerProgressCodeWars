@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56842c87449b93801d00004b",
+  "data": {
+    "id": "56842c87449b93801d00004b",
+    "name": "Generate random integers which exactly sums to a given integer number",
+    "slug": "generate-random-integers-which-exactly-sums-to-a-given-integer-number",
+    "category": "algorithms",
+    "publishedAt": "2015-12-30T19:42:02.778Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56842c87449b93801d00004b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-30T19:12:07.645Z",
+    "createdBy": {
+      "username": "andzej.maciusovic",
+      "url": "https://www.codewars.com/users/andzej.maciusovic"
+    },
+    "description": "You must create function <b>randomSumArray(len, sum, d)</b> which returns integer array which sums to given sum.\n<ol> \n<li> <b>len</b> is length of integers to generate</li>\n<li> <b>sum</b> is sum of generated integers</li>\n<li> <b>d</b> is difference degree between the values (0..100). Default value d = 100. The bigger d value is the bigger chance to generate unique numbers, but even if d is 100 it is possible to have duplicate generated numbers because we generating them randomly so by increasing d you also increase range of random numbers to select from. Note that d value can be as big as you want, but for this kata it's enough to be max d = 100.</li>\n</ol>\n\nExample:\n```javascript\nrandomSumArray(5, 100) => [ 30, 23, 39, 7, 1 ]\nrandomSumArray(3, 12) => [ 5, 4, 3 ]\n```\n\nExample with d argument:\n```javascript\nrandomSumArray(3, 12, 0) => [ 4, 4, 4 ]\nrandomSumArray(3, 12, 50) => [ 5, 5, 2 ]\nrandomSumArray(3, 12, 100) => [ 1, 6, 5 ]\n\n//some times it is not possible to have 100 % unique values event if d = 100\nrandomSumArray(3, 2, 100) => [ 0, 1, 1 ]\n//same happens with d = 0, in this case not possible to have all duplicate values\nrandomSumArray(3, 2, 0) => => [ 0, 1, 1 ]\n//in such cases we need to put zero values in some places\n```\n\n<b>Note:</b> some times test <b>should generate different numbers with difference degree equals 100</b> can fail because we still have small chance to generate equal numbers, try run it again.\n",
+    "totalAttempts": 283,
+    "totalCompleted": 44,
+    "totalStars": 13,
+    "voteScore": 24,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5793268439f33a1b9e0000b0",
+  "data": {
+    "id": "5793268439f33a1b9e0000b0",
+    "name": "Parse the Cricket Score",
+    "slug": "parse-the-cricket-score",
+    "category": "reference",
+    "publishedAt": "2016-07-24T03:07:44.873Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5793268439f33a1b9e0000b0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-23T08:10:44.063Z",
+    "createdBy": {
+      "username": "leevigilstroy",
+      "url": "https://www.codewars.com/users/leevigilstroy"
+    },
+    "description": "Return the cricket score as a string with the format ```\"runs/wickets from overs.balls\"```, given an array of ball by ball scores. \n\nAn 'OVER' in cricket, is made of 6 'BALLS'.  Each BALL can either be: number of runs scored, wicket, or have 'EXTRA runs' rewarded.  \n\nAn example over might look like: \n\n```\n[0,1,4,6,'W',0]\n```\nReturned score: \n```\n'11/1 from 1.0'\n```\n(11 runs, one wicket/out from 1 over zero balls)\n\nIf a WIDE or a NOBALL is bowled, extra runs are assigned to the score, but the ball is re-bowled, meaning there is an extra ball in the array: \n```\n[0,3,'W','nb',4,'w',0,1] \n```\nReturned score: \n```\n'10/1 from 1.0'\n```\n\nKey: \n```\nnumber: number of runs scored that ball,\n'W': wicket  : increase wickets by 1\n'w': wide    : increase runs by 1, no change to ball / over count\n'nb': noball : increase runs by 1, no change to ball / over count\n```\nYou will be passed an array of balls that MAY or MAY NOT constitute an over.  You must always return the over count in the format 'overs.balls'.  The maximum balls is 5, the minimum is 6  For example: \n[0,0,0,1,1,0,4]\nScore: '6/0 from 1.1'\n\nExample over increments:\n```\n'5.0'\n'5.1'\n'5.2'\n'5.3'\n'5.4'\n'5.5'\n'6.0'\n```",
+    "totalAttempts": 235,
+    "totalCompleted": 45,
+    "totalStars": 1,
+    "voteScore": 70,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

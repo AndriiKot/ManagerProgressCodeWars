@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/613901cc6cb50f003977bf58",
+  "data": {
+    "id": "613901cc6cb50f003977bf58",
+    "name": "Format  phone number Endless",
+    "slug": "format-phone-number-endless",
+    "category": "algorithms",
+    "publishedAt": "2021-09-09T00:03:53.457Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/613901cc6cb50f003977bf58",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-08T18:32:44.519Z",
+    "createdBy": {
+      "username": "FrameMuse",
+      "url": "https://www.codewars.com/users/FrameMuse"
+    },
+    "description": "# Storyline\nYou work at \"PineApple inc.\" and you are mobile software developer.\nYour task is to write a code for app called \"Phone\" which will try the best to format given digits to a valid formated phone number.\n## Phone number breakdown\n<b style=\"color: #2a9d8f;\">+[country code]</b> [space] <b style=\"color: #ee6c4d;\">[zone code]</b> [space] <b style=\"color: #00b4d8;\">[personal code]</b>\n---\n---\n<!-- <b style=\"color: #2a9d8f;\">+7</b> [space] <b style=\"color: #ee6c4d;\">940</b> [space] <b style=\"color: #00b4d8;\">714 90 80 </b> -->\n#### Important parts*\nIn a number there may be parts you should format because they are treated as 'important'. These parts are country, zone, personal code:\n- <b style=\"color: #2a9d8f;\">[country code]</b> are digits in the very beginning. **May be any length**.\n- <b style=\"color: #ee6c4d;\">[zone code]</b> are exactly **3 digits** after country code.\n- <b style=\"color: #00b4d8;\">[personal code]</b> follows after these two. And always has the same pattern which is **3 digits**, **2 digits** and **2 digits**. And spaced as well. (i.e. <span style=\"color: #00b4d8;\">714 90 80</span>)\n\n#### However\nIt may be dedicated number, in that case you should return it without \"+\" sign and do not apply formatting (i.e. 911). **ATTENTION**: there also may be numbers like 474747, they **should be** formated (see below) ^_^\n\n---\n## Conditions\n  1. Should be with \"+\" sign at the beginning\n  1. **May be any length.**\n      * if number length is 1, 2 or 3, should return without \"+\" sign\n      * if number length is 6, should be formated as \"47 47 47\", without \"+\" sign\n  1. The input may be empty\n  1. Important parts* (country, zone code) of the number should be spaced [look at examples].\n---\n# Examples:\n```python\nEmpty => \"\"\n1 => \"1\"\n20 => \"20\"\n911 => \"911\"\n1234 => \"+1 234\"\n50060 => \"+5 00 60\"\n474747 => \"47 47 47\"\n7940714 => \"+7 940 714\"\n79407149080 => \"+7 940 714 90 80\"\n7160009407149080 => \"+716000 940 714 90 80\"\n```\n---\n# Note that:\n```\nAll numbers came from author's imagination ;)\nAPI`s, that could help you directly formate numbers, are disabled.\n```\n---\n## Check 'Format phone number' series:\n[Format phone number by template](https://www.codewars.com/kata/61393fd03e441f001ac9c7d4)\n\n[Format phone number Endless](https://www.codewars.com/kata/613901cc6cb50f003977bf58)",
+    "totalAttempts": 172,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Formatting",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 8,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

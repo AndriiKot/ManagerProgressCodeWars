@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63c705773cbf6601f49f57d6",
+  "data": {
+    "id": "63c705773cbf6601f49f57d6",
+    "name": "Ranking Up on codewars",
+    "slug": "ranking-up-on-codewars",
+    "category": "reference",
+    "publishedAt": "2024-03-23T18:59:56.254Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63c705773cbf6601f49f57d6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-17T20:30:47.859Z",
+    "createdBy": {
+      "username": "brodiemark",
+      "url": "https://www.codewars.com/users/brodiemark"
+    },
+    "description": "How many kata do you need to solve to reach the next rank on codewars? This depends on your current score and the difficulty of the kata. The explanation below is based on *https://docs.codewars.com/gamification/ranks/*. \n\nThe required scores to reach each rank are *{8: 0, 7: 20, 6: 76, 5: 229, 4: 643, 3: 1768, 2: 4829, 1: 13147, 0: 35759, -1: 97225}*. (0 denotes 1dan and -1 denotes 2dan.)<br>\nThe number of points earned for solving a kata of each difficulty are *{8: 2, 7: 3, 6: 8, 5: 21, 4: 55, 3: 149, 2: 404, 1: 1097}*.\n\nSo, if your current score is 50, which is 7kyu, you need another 26 points to reach 6kyu at 76 points. To achieve this by solving kata of difficulty 8kyu, you need to solve 13 of them, because they are worth 2 points each. You can also get the 26 points by solving 9 kata of difficulty 7kyu, 4 kata of difficulty 6kyu, and so on.\n\nCreate a function that takes a score (a positive integer <= 100,000) and returns a string showing the number of points needed to reach the next rank and the number of katas needed to do so. This should be done for 3 kyu levels, starting with the current rank or level 3kyu, whichever is higher. \n\nExamples:<br> \nscore = 50 -> *\"To reach 6kyu, you need 26 points. This can be achieved by solving 9 7kyu or 4 6kyu or 2 5kyu kata.\"*<br>\nscore = 10000 -> *\"To reach 1kyu, you need 3147 points. This can be achieved by solving 22 3kyu or 8 2kyu or 3 1kyu kata.\"*<br>\nscore = 50000 -> *\"To reach 2dan, you need 47225 points. This can be achieved by solving 317 3kyu or 117 2kyu or 44 1kyu kata.\"*<br>\nscore >= 97225 -> *\"Congratulations! You have reached 2dan!\"*\n\nNOTE: Your current score can be found at https://www.codewars.com/api/v1/users/YOURUSERNAME.\n\nRelated Kata: [Codewars Leaderboard Climber](https://www.codewars.com/kata/57d28215264276ea010002cf)\n\n\n\n",
+    "totalAttempts": 36,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

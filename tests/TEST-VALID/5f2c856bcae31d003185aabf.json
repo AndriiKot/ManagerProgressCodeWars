@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f2c856bcae31d003185aabf",
+  "data": {
+    "id": "5f2c856bcae31d003185aabf",
+    "name": "Cracking the digital hash lock",
+    "slug": "cracking-the-digital-hash-lock",
+    "category": "algorithms",
+    "publishedAt": "2020-08-06T22:35:44.236Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5f2c856bcae31d003185aabf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-06T22:34:19.126Z",
+    "createdBy": {
+      "username": "dramforever",
+      "url": "https://www.codewars.com/users/dramforever"
+    },
+    "description": "(After completing this kata, you might be interested in a harder one, [Cracking CRC32][cracking-crc32].)\n\n[cracking-crc32]: https://www.codewars.com/kata/5b1f71609e40b9f10f00002f\n\n## The task (story mode)\n\nYou've finally entered the headquarters of your rival. But things aren't over yet: You discover that almost everything there is locked behind a special digital lock.\n\nYou've hacked into their security contractor's computers before, so you were able to download their source code and deployment configurations.\n\nThere doesn't seem to be passwords in sight. You do see that the lock controller code is written in Java, the passcode are 10 digits long, and the configuration only contains the hashes. The lock logic is roughly like this:\n\n```java\n// Read 10-digit passcode as string\nString passcode = readPassCode();\n\nif (passcode.hashCode() == correctHash) {\n    // Open lock\n} else {\n    // Log security violation\n}\n```\n\nYou quickly research about `hashCode` for `String` and note it in the appendix of the kata description.\n\nLuckily, the contractors have detailed desciptions of which `correctHash` is deployed on which lock. Given that you have the `correctHash` for the locks, can you reverse it and deduce a passcode that would open the lock? The passcode doesn't have to be the original &mdash; anything that hashes to `correctHash` will do.\n\nTwo additional things: First, be sure that you can gracefully handle the case where there's no correct passcode, in case you got incorrect information. Also, since there are a few locks you need to crack, you'll likely want to have a program to find passcodes, and you better write one that's not too slow.\n\n## Specification\n\nWrite a function `crack`, given a **signed** 32-bit integer `hash`, find an integer in range `$ 0 \\le \\mathtt{passcode} \\lt 10^{10} $` such that `passcode` **in string form, left padded with zeros to 10 digits** has `hashCode` of `hash`. `hashCode` is described in the appendix. \n\n```if:java\nFor Java:\n\n- The function should be implemented as a static method `DeHashCode.crack`\n- If there is such a `passcode`, return any one as `OptionalLong.of(passcode)`\n- Otherwise, return `OptionalLong.empty()`\n\nNote: `passcode` is `long` because `int` cannot represent all 10-digit numbers.\n\nThere are 150 random tests for Java.\n```\n\n## Examples\n\n\n```\n-2054162789 => found 1234567890\n1419845120  => found 0 (means you found passcode 0000000000)\n2034368509  => impossible\n```\n\n(It's okay if you find other `passcode`s, as long as the hash is correct.)\n\n---\n\n## Appendix: Java's `hashCode` for `String`\n\nJava has a builtin method for strings called `hashCode()` that calculates a 'polynomial hash' for a string. The algorithm is:\n\n<pre><code><em>// 32-bit signed integer, wrap around on overflow</em>\nhash = 0\n<b>for each</b> character <b>in</b> string:\n    c = (the Unicode code point of character)\n    hash = hash * 31 + c\n<b>return</b> hash\n</code></pre>\n\nFor this kata, you will only need to know that the code point for `0` through `9` are `30` through `39` in hexadecimal, or `48` through `57` in decimal.\n\nIn formula form it is just a polynomial, which gives this hash its name. (Remember to **wrap around to negative numbers** for values too large.) (`$ s_i $` means code point of character on index `$ i $`.)\n\n```math\n\\begin{aligned}\n\\mathsf{hash}(s)\n  & = (((s_0 \\times 31 + s_1) \\times 31 \\dots ) \\times 31 + s_{n - 1}) \\bmod 2^{32}\\\\\n  & = (s_0 \\times 31^{n - 1} + s_1 \\times 31^{n - 2} + \\dots + s_{n - 1} \\times 31^{0}) \\bmod 2^{32}\n\\end{aligned}\n```",
+    "totalAttempts": 15,
+    "totalCompleted": 7,
+    "totalStars": 7,
+    "voteScore": 20,
+    "tags": [
+      "Performance",
+      "Strings",
+      "Algorithms",
+      "Security",
+      "Mathematics",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/658a0987dc801707c34dca9e",
+  "data": {
+    "id": "658a0987dc801707c34dca9e",
+    "name": "Photographer's Nightmare",
+    "slug": "photographers-nightmare",
+    "category": "reference",
+    "publishedAt": "2023-12-26T16:43:31.265Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/658a0987dc801707c34dca9e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-25T23:00:23.372Z",
+    "createdBy": {
+      "username": "alexlostorto",
+      "url": "https://www.codewars.com/users/alexlostorto"
+    },
+    "description": "# Photographer's Nightmare\n\nA photographer has an **image gallery** on their website, but the images won't align correctly on different sized screens no matter what he does!\n\nUse your web dev super powers to create a function that alters _(in place)_ a list of `Image` objects and changes the `width` and `height` property for each image so that all the images fit perfectly!\n\nNote that there is also a fixed `gap` between images, and the `max-height` of each row may change depending on the photographer's preference!\n\n### Criteria\n\n1) Images must maintain their **original** aspect ratio _(not be cropped or stretched)_\n2) Images on the same row must all be the **same** height _(but be as tall as possible)_\n3) Rows should **NOT** have gaps either side _(except for the last row which may have only 1 image)_\n3) Image height must **NOT** exceed `max-height` _(except for criteria 5)_\n4) Rows with only `1` image should have the image take the entire **width** of the row.\n5) For galleries with a `width < 700` there should be `1` image per row. \n6) For galleries with a `width >= 700`and only `1` image on the last row, the image should take up the `max-height` of the row.\n\n### Example 1:\n\n```python\nGap = 20\nGallery-width = 1120\nMax-height = 500\n\n# Width x Height\n500x250 480x1920 800x600\n+-----+ +-----+  +-------+\n|     | |     |  |       |\n+-----+ |     |  |       |\n        |     |  |       |\n        |     |  +-------+\n        +-----+\n\n-----SOLUTION-----\n978x489         122x489  # (rounded for clarity)\n+--------+      +----+\n|        |      |    |\n|        |<-20->|    |\n|        |      |    |\n+--------+      +----+\n667x500\n+-------+\n|       |\n|       |\n|       |\n+-------+\n```\n\n1) If `Image 1` took up the first row, the `height` of the row would be `560` `(1120/500*250)`, which is **greater** than `500`, so `Image 2` is also in that row.\n2) `Image 1` had to become **larger**\n3) `Image 2` had to become **smaller**\n4) Last image is **scaled down** to `max-height` since the gallery width is **greater** than `700`.\n\n### Example 2:\n\n```python\nGap = 20\nGallery-width = 600\nMax-height = 500\n\n# Width x Height\n500x250 480x1920 800x600\n+-----+ +-----+  +-------+\n|     | |     |  |       |\n+-----+ |     |  |       |\n        |     |  |       |\n        |     |  +-------+\n        +-----+\n\n-----SOLUTION-----\n600x300  # (rounded for clarity)\n+--------+  \n|        | \n|        |   \n+--------+      \n600x2400\n+--------+\n|        |\n|        |\n|        |\n|        |\n|        |\n|        |\n+--------+\n600x450\n+--------+\n|        |\n|        |\n|        |\n+--------+\n```\n\n1) All images have a `width` of `600` since the gallery width is **smaller** than `700`; `max-height` is ignored.\n2) `Image 1` had to become **larger**\n3) `Image 2` had to become **larger**\n4) `Image 3` had to become **smaller**\n\n# Input/Output\n\n- `[input]` List of `Image` objects\n- Constraint: `100 ≤ width/height ≤ 1920`\n- Constraint: `100 ≤ gallery-width ≤ 2000`\n- Constraint: `0 ≤ gap ≤ 50`\n- Constraint: `100 ≤ max-height ≤ 1000` \n- `[output]` `2D array` of `Image` objects\n\n_Partial pixels should NOT be ROUNDED and are tested with fuzzy assertion_",
+    "totalAttempts": 155,
+    "totalCompleted": 6,
+    "totalStars": 7,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56cf883b6160347a3000188f",
+  "data": {
+    "id": "56cf883b6160347a3000188f",
+    "name": "Parse python terminal output",
+    "slug": "parse-python-terminal-output",
+    "category": "reference",
+    "publishedAt": "2016-02-28T16:03:52.828Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/56cf883b6160347a3000188f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-25T23:03:23.692Z",
+    "createdBy": {
+      "username": "zellerede",
+      "url": "https://www.codewars.com/users/zellerede"
+    },
+    "description": "Write a method that inputs a string which is the output of a python command line session, and returns the list of pairs (executed command, command printout).\n\nIn such an output, an issued command starts with `>>>_` (where `_` stands for space). If the command takes more lines, those lines start with `..._`, and the block ends with `...`, i.e., without space in the end of line.  <br> \nA simple example of the input string is:\n\n    >>> print 42\n    42\n    >>> for x in 1,2,3:\n    ...   print x,\n    ...\n    1 2 3\n    \nOn this input, the method should return the following list.\n\n    [('print 42', '42'), \n     ('for x in 1,2,3:\\n  print x,', '1 2 3')]\n\nAlso, take care of *broken lines*. First identify the length of the longest line, and if it is above the default 80 characters, take this as `max_width`. Then, concatenate each line of length `max_width` to the next line.\n\nFor example, the method on input\n\n    >>> 'x'*80\n    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n    x'\n\nshould return the command result without line break:\n\n    [(\"'x'*80\", 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')]\n\nHowever, on the input:\n\n    >>> print '01234567890123456789012345678901234567890123456789012345678901234567890123456789\\nkeep linebreak'\n    01234567890123456789012345678901234567890123456789012345678901234567890123456789\n    keep linebreak\n\nit should keep the linebreak after the 80 chars long line in the answer, because the longest line in the whole input string is longer.\n\n\n*Note:* The empty commands should be ignored.\n",
+    "totalAttempts": 285,
+    "totalCompleted": 11,
+    "totalStars": 6,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6114e1ebf9b4810056f54d66",
+  "data": {
+    "id": "6114e1ebf9b4810056f54d66",
+    "name": "Implement Double For Loops!",
+    "slug": "implement-double-for-loops",
+    "category": "reference",
+    "publishedAt": "2021-08-12T08:56:53.089Z",
+    "approvedAt": null,
+    "languages": [
+      "kotlin"
+    ],
+    "url": "https://www.codewars.com/kata/6114e1ebf9b4810056f54d66",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-08-12T08:55:07.861Z",
+    "createdBy": {
+      "username": "el-f",
+      "url": "https://www.codewars.com/users/el-f"
+    },
+    "description": "In this kata you need to add support for iterating on a double range.\n\n```kotlin\n    for (i in 0.0..10.0 step 1.00003) {\n        print(\"$i \")\n    }\n    \n    // output:\n    // 0.0 1.00003 2.00006 3.00009 4.00012 5.00015 6.00018 7.00021 8.00024 9.00027 \n```\n\nAlso, support decreasing range: \n\n```kotlin\n    for (i in 10.0..0.0 step -0.5) {\n        print(\"$i \")\n    }\n    \n    // output:\n    // 10.0 9.5 9.0 8.5 8.0 7.5 7.0 6.5 6.0 5.5 5.0 4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0 0.5 0.0\n```\n#### Further Notes:\n* To deal with floating point precision, limit to 10 decimal places. ```(E-10)```\n* Validate arguments and throw for invalids, preferably with ```require()```\n  * Invalid arguments examples:\n    - infinite start/end \n    - start = endInclusive\n    - incorrectly signed step\n    - |step| < 1.0E-10\n\n### Good luck :)",
+    "totalAttempts": 2,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Debugging"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

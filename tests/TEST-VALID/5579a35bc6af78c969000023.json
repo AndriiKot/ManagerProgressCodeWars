@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5579a35bc6af78c969000023",
+  "data": {
+    "id": "5579a35bc6af78c969000023",
+    "name": "Graph Theory: Detect an arborescence ",
+    "slug": "graph-theory-detect-an-arborescence",
+    "category": "algorithms",
+    "publishedAt": "2015-06-11T18:35:37.573Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5579a35bc6af78c969000023",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-11T15:03:55.293Z",
+    "createdBy": {
+      "username": "chris_w",
+      "url": "https://www.codewars.com/users/chris_w"
+    },
+    "description": "Write a function that, given a rooted, directed graph, returns true if the graph is an [arborescence](http://en.wikipedia.org/wiki/Arborescence_%28graph_theory%29) or false otherwise.\n\nA graph is an arborescence if there is exactly one directed path from the root node to every other node. In other words, the graph forms a directed spanning tree.\n\n---\n\nA simple graph node data structure is provided which contains a collection, `Connections`, of all of the nodes that are linked to it. Each node is itself a subgraph.\n\nIn C#, it looks like this:\n\n```csharp\ninterface IGraph\n{\n  IEnumerable<IGraph> Connections { get; }\n}```\n\n# Background Reading\n\n* A [graph](https://en.wikipedia.org/wiki/Graph_%28mathematics%29) is a set of nodes in which pairs of nodes are connected to each other via a link.\n* A [directed graph](http://en.wikipedia.org/wiki/Directed_graph) is a graph in which the links can only be followed in one direction.\n* A [tree](http://en.wikipedia.org/wiki/Tree_%28graph_theory%29) is a connected graph without any cycles.\n* A [spanning tree](http://en.wikipedia.org/wiki/Spanning_tree) is a tree that includes all of the nodes in a graph.",
+    "totalAttempts": 510,
+    "totalCompleted": 16,
+    "totalStars": 6,
+    "voteScore": 5,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Data Structures",
+      "Recursion"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

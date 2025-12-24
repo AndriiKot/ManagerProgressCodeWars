@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54249d91c8386d1c0d0006dd",
+  "data": {
+    "id": "54249d91c8386d1c0d0006dd",
+    "name": "Re-entrant Mutex (aka Counting Mutex)",
+    "slug": "re-entrant-mutex-aka-counting-mutex",
+    "category": "reference",
+    "publishedAt": "2014-09-25T23:38:54.310Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54249d91c8386d1c0d0006dd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-09-25T22:56:17.622Z",
+    "createdBy": {
+      "username": "moonfly",
+      "url": "https://www.codewars.com/users/moonfly"
+    },
+    "description": "Implement a [re-entrant mutex](http://en.wikipedia.org/wiki/Reentrant_mutex) class `RMutex` that has the following methods:\n\n- `acquire`: \n  - if the mutex is acquired by some other thread, wait until it is released\n  - if the mutex is free, acquire it and set the counter to 1\n  - if the mutex is already acquired by the current thread, increment the counter\n- `release`:\n  - if the mutex is not acquired by the current thread, raise an error\n  - if the mutex is acquired by the current thread, decrement the counter; if the counter reaches 0, release the mutex.\n- `counter`: get the current counter\n- `owner`: get the thread that is holding the mutex or `nil` if it is released\n\n\nInitially, the re-entrant mutex must be in the released state.\n\nThe following code illustrates the expected behavior:\n```\nmx = RMutex.new\n\nmx.owner # => nil\nmx.counter # => 0\n\nmx.acquire # => returns immediately, acquire, counter: 0 -> 1\nmx.acquire # => returns immediately, counter: 1 -> 2\n\nmx.owner # => Thread.current\nmx.counter # => 2\n\nmx.release # => counter: 2 -> 1\n\nmx.owner # => Thread.current\nmx.counter # => 1\n\nother_thread = Thread.new do \n  mx.acquire\n  puts \"Acquired\" \n  sleep 20 \n  mx.release\nend\nsleep 1\n# other_thread waits on the mutex\n\nmx.release # => counter: 1 -> 0, release\n# at this moment other_thread wakes up and prints \"Acquired\"\n\nmx.owner # => other_thread\nmx.counter # => 1\n\nmx.acquire # hangs, waiting until other_thread releases the mutex\n# after other_thread sleeps for 20 seconds, the execution of the current thread continues\n\n\n\n\n```",
+    "totalAttempts": 95,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Threads",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

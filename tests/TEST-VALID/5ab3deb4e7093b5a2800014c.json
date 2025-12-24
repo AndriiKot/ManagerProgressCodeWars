@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ab3deb4e7093b5a2800014c",
+  "data": {
+    "id": "5ab3deb4e7093b5a2800014c",
+    "name": "Vanilla Neural Network from scratch",
+    "slug": "vanilla-neural-network-from-scratch",
+    "category": "algorithms",
+    "publishedAt": "2018-03-23T04:54:23.268Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ab3deb4e7093b5a2800014c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-22T16:49:56.944Z",
+    "createdBy": {
+      "username": "Aeolian",
+      "url": "https://www.codewars.com/users/Aeolian"
+    },
+    "description": "Here we will implement backpropagation and gradient descent from scratch (numpy).\n\nWe will solve a textbook problem, xor problem, namely,\n\n1 ^ 0 = 1;\n\n1 ^ 1 = 0;\n\n0 ^ 0 = 0;\n\n0 ^ 1 = 1.\n\nBut it is not a linear separable problem,\n\nneural networks are good at non-linear problems!\n\na two-hidden-layer vanilla neural network is\n```python\npred_y = lambda x: _sigmoid(w2 * f(w1 * (f(w0 * x + b0)) + b1) + b2)\n```\nwhose w and b are the parameters we hope the neural network learnt.\n\nlet's backprop and optimize it!\n\nIn this kata, \n\n1. We will implement the **train** function to learn w and b automatically.\n2. We will look for proper hyperparameters. I think this will help us find out what's happen in the neural network.\n\n\nif you don't know backprop and gradient descent, start from\n\n[ufldl forward propagate](http://ufldl.stanford.edu/wiki/index.php/Neural_Networks)\n\n[ufldl back propagate](http://ufldl.stanford.edu/wiki/index.php/Backpropagation_Algorithm)\n\nif you want to learn in depth,\n\n[deep learning book](http://www.deeplearningbook.org/)",
+    "totalAttempts": 255,
+    "totalCompleted": 11,
+    "totalStars": 9,
+    "voteScore": 6,
+    "tags": [
+      "Machine Learning",
+      "Neural Networks",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

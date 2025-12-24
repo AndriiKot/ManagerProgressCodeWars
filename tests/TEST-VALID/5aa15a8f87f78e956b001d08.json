@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5aa15a8f87f78e956b001d08",
+  "data": {
+    "id": "5aa15a8f87f78e956b001d08",
+    "name": "The Black Panther Language ",
+    "slug": "the-black-panther-language",
+    "category": "reference",
+    "publishedAt": "2018-03-08T15:45:19.636Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5aa15a8f87f78e956b001d08",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-08T15:45:24.626Z",
+    "createdBy": {
+      "username": "Prince ",
+      "url": "https://www.codewars.com/users/Prince%20"
+    },
+    "description": "=begin # you dont need to read this.\n\"Your plane has crash landed in an advanced technological village called wakanda (somehow). Less then five seconds later you were approached by the king, he welcomes you to his village because you are not a threat to his people, he offered you a place to stay or return you back to your home. You want to stay (obviously) but you must learn the language, thankfully they use the same letters as in english but they have a key the use, so you grabbed your laptop and started coding.\"\n=end\n\n[s t u d e n t ] \n[5 4 3 2 1 5 4 ] \n[x x x f f s x ] \n\n\n[t e a c h e r s]\n[1 2 3 4 5 1 2 3]\n[u g d g m f t v]\n# step one\nyou may assume all the letters are lowercase and the key is 5 numbers.\nif the letter is \"a\" and the key is 1 you must use the letter \"b\" instead\nif the letter is \"a\" and the key is 2 you must use the letter \"c\" instead\nbut once you are on the letter z and the key is 1 then you head back to \"a\"\n# it is wise to use a helper method but that is your choice\n\nexample = main(\"zzzz\",[1,2,3,4,5])\nwill out put \"abcd\"\n\neven tho there are 4 letters given and 5 keys, we will only use the keys of  1 2 3 4 and not use 5 \n\n # if the current word's length is odd you must reverse the key\n \n main(\"student teachers\",[1,2,3,4,5]) \n [s t u d e n t ] [t e a c h e r s]\n [5 4 3 2 1 5 4 ] [1 2 3 4 5 1 2 3]\n [x x x f f s x ] [u g d g m f t v]\n \n- you can see that student has a length of 7 which is an odd number, so we reversed the key     starting from 5 down to 1\n- once you hit the end of your key for a word you must start the keys all over again.\n    you can see for student we started with the key of 5 and ended at 1 on the letter e but we start our key again for the next letter which is n untill the end of the word.\n\nif the letter is even then keep the key the same as you can see \"teachers\" has 8 letters which is even, meaning we much keep the key the same way that was given.\n    \n",
+    "totalAttempts": 51,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": 21,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

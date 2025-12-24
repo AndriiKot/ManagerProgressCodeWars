@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/650190ccf534f6a71894df75",
+  "data": {
+    "id": "650190ccf534f6a71894df75",
+    "name": "Pokémon Types [Pokémon OOP #1]",
+    "slug": "pokemon-types-pokemon-oop-number-1",
+    "category": "reference",
+    "publishedAt": "2023-09-14T10:44:30.190Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/650190ccf534f6a71894df75",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-13T10:37:00.583Z",
+    "createdBy": {
+      "username": "ffdevv",
+      "url": "https://www.codewars.com/users/ffdevv"
+    },
+    "description": "# Pokémon Types \\[Pokémon OOP #1]\nLearn OOP in the Pokémon context, Level #1: *The types system*.\n\n## Types System\nThere are **18 types** in the Pokémon games. Some of them are more effective against others, e.g. *Fire* is strong against *Grass* and *Water* is really against *Fire*. The purpose of the system is to discipline how the base damage of a move will hit a particular target Pokémon. Moves and Pokémons both have types. Thus if a Pokémon of type *Fire* is hit by a move of type *Water* it will suffer double the base damage. Some types can be immune (take 0 damage) to other types.\n\nThe complete table of interactions can be found online ([here for example](https://cdn1.dotesports.com/wp-content/uploads/2019/07/14130353/image-10-770x468.png)).\n\n## Pokémon Type Class\nYou're demanded to code a `PokemonType` class implementing all the following methods:\n- **Class methods**:\n  - `all()`: Get a list of all types instances\n  - `get(name, default = None)`: Get a single type instance. If no instance is found returns either `None` or whatever the consumer has provided via the optional param `default`\n- **Instance attributes**:\n  - `name`: The name of the Pokemon Type itself\n- **Instance methods**:\n  - `is_weak_to(name_or_instance)`: Evaluate if the current instance is weak to the provided one\n  - `is_resistant_to(name_or_instance)`: Evaluate if the current instance is resistant to the provided one\n  - `is_immune_to(name_or_instance)`: Evaluate if the current instance is immune to the provided one\n  - `defense_vs(name_or_instance)`: Returns the right adjective to define how the current instance defends vs the provided one\n  - `attack_vs(name_or_instance)`: Returns the right adjective to define how the current instance attacks vs the provided one\n  - `is_supereffective_against(name_or_instance)`: Evaluate if the current instance is supereffective against the provided one\n  - `is_not_very_effective_against(name_or_instance)`: Evaluate if the current instance is not very effective against the provided one\n  - `is_uneffective_against(name_or_instance)` Evaluate if the current instance is uneffective against the provided one\n\n\n## Hints\nYou're provided with a dictionary from the `preloaded` package called `ATTACK_MULTIPLIERS`. The dictionary contains all the needed data for the interactions between types and is provided to save you the time to manually report every one of them, but you can build your own structure if you prefer to. It has the following form and for obvious reasons it does not contains the interactions between types that won't change the damage outcome (so assume that the multiplier is `1` if not specified otherwise):\n```python\nATTACK_MULTIPLIERS = {\n\"Fight\": {\n    \"Normal\": 2,   # supereffective against normal\n    \"Flying\": 0.5, # not very effective against flying\n    \"Ghost\": 0,    # uneffective against ghost\n    # ...\n  },\n  # ...\n}\n```\nThe keys of `ATTACK_MULTIPLIERS` dict are equals to the 18 types names, so feel free to use them if you're uncertain about that aspect.\n\nYou're also provided `MULTIPLIER_DESCRIPTIONS` which is a dictionary containing the adjective to describe the effectiveness of a move for both a Offensive and a Defensive point of view (it is helpful for `defense_vs` and `attack_vs` methods). Also in this case, you can just use whatever you prefer, but use these as a reference. Here it is:\n```python\nMULTIPLIER_DESCRIPTIONS = {\n    # multiplier:  ( offensive_pov, defensive_pov ),\n    0 :  (\"Uneffective\", \"Immune\"),\n    0.5: (\"Not very effective\", \"Resistant\"),\n    1:   (\"Effective\", \"Not resistant\"),\n    2:   (\"Supereffective\", \"Weak\"),\n}\n```",
+    "totalAttempts": 138,
+    "totalCompleted": 14,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

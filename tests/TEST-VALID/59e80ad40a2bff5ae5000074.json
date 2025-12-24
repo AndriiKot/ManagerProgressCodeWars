@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59e80ad40a2bff5ae5000074",
+  "data": {
+    "id": "59e80ad40a2bff5ae5000074",
+    "name": "Five Fundamental Comonads",
+    "slug": "five-fundamental-comonads",
+    "category": "reference",
+    "publishedAt": "2018-03-26T03:58:32.526Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/59e80ad40a2bff5ae5000074",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-10-19T02:15:48.069Z",
+    "createdBy": {
+      "username": "Voile",
+      "url": "https://www.codewars.com/users/Voile"
+    },
+    "description": "This is a dual to [Five Fundamental Monads](https://www.codewars.com/kata/five-fundamental-monads/haskell). A co-kata, maybe? ;-)\n\n---\n\nIn this kata we will implement five of the most fundamental comonads. \n\nNewcomers to Haskell find monads to be one of the most intimidating concepts but on a basic level - they are not too difficult to understand. Comonads, however, might not be the case ;-)\n\nA datatype forms a comonad if it is possible to complete the following definitions such that the comonad laws (described below) hold. There's nothing more to it! For a more intuitive understanding then there are **no** plethora of tutorials which use (sometimes wild) analogies to explain this concept, though (because everyone's attention is diverted to monads. A sad story for comonads ;-)).\n\n```\nclass Functor w => Comonad w where\n\textract :: w a -> a\n  -- you can choose to implement at least one of the below\n\textend :: (w a -> b) -> w a -> w b\n  duplicate :: w a -> w (w a)\n```\n\nComonad laws\n\n```haskell\n-- if you have implemented extract\nextend extract      = id\nextract . extend f  = f\nextend f . extend g = extend (f . extend g)\n\n-- if you have implemented extend\nextract . duplicate      = id\nfmap extract . duplicate = id\nduplicate . duplicate    = fmap duplicate . duplicate\n\n-- if you have implemented both extract and extend, you also need to satisfy these laws\nextract . duplicate      = id\nfmap extract . duplicate = id\nduplicate . duplicate    = fmap duplicate . duplicate\n```\n\nIt turns out that many different types of computation can be encapsulated by comonads. For example the `Store` comonad produces a getter and setter for a field in a larger structure (also called a `lens`) and `Stream` can produce a infinite stream of values.\n\nThe five we will implement here are `Identity` (i.e `Co-indentity`), `Stream` (i.e `Co-list`), `Store` (i.e `Co-state`), `Traced` (i.e `Co-reader`) and `Env` (i.e `Co-writer`).\n\nNote: `Control.Comonad` is disabled.",
+    "totalAttempts": 0,
+    "totalCompleted": 1,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

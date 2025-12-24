@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63195d3f0a30e900235a401c",
+  "data": {
+    "id": "63195d3f0a30e900235a401c",
+    "name": "NightmareScript #8  Morphing Pairs",
+    "slug": "nightmarescript-number-8-morphing-pairs",
+    "category": "reference",
+    "publishedAt": "2022-09-08T06:35:22.606Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63195d3f0a30e900235a401c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-08T03:10:55.250Z",
+    "createdBy": {
+      "username": "Simple Rick",
+      "url": "https://www.codewars.com/users/Simple%20Rick"
+    },
+    "description": "\nNightmareScript\n----\nNightmareScript is JavaScript without alpha-numeric characters.\n\nThe only permitted characters are:\n\n! @ # $ % ^ & * ( ) _ + - | < > . , ' ; : \" ` ~ = ? /\\ { } [ ]\n\nSpaces and new lines are also acceptable.\n\n----\nMorphing Pairs\n----\n\nYou will be given a list of varying length containing arrays of 8 digits composed of 1,s and 0's:\n\nLike this:\n\n```\n[\n[1,0,0,1,1,0,0,1],\n[1,1,0,0,1,1,1,1],\n[1,1,0,1,1,1,1,1],\n[0,1,0,1,1,1,1,1]\n]\n```\n\nIf any two indices are occupied by the same digit like ```1``` in: ```1, 1, X, X, X, X, X, X``` and the following array in the list has a pair in the same indices like ```0``` in: ```0, 0, X, X, X, X, X, X``` and both digits in the pair have flipped (from 0 to 1, or from 1 to 0), it is a morphing pair. \n\n```\n[\n[1, 0, 0, 0, 0, 0, 0, 1 ],\n |                    |\n v   morphing pair    v\n[0, 0, 0, 0, 0, 0, 0, 0 ],\n]\n```\n\n\n```\n[\n[ 1, 0, 0, 1, 1, 1, 1, 1 ]\n  |  |  |  |  |  |  |  |    NOT morphing pairs\n[ 1, 0, 0, 1, 1, 1, 1, 1 ]\n]\n```\n\nAll pairs that morph between adjacent arrays count.\n\nThe following two arrays have 6 morphing pairs between them because indices ```0 & 1```, ```0 & 2```, ```0 & 3```, ```1 & 2```, ```1 & 3```, and  ```2 & 3``` are all pairs that morph from one array to the next adjacent array.\n\n```\n[ 1, 1, 1, 1, 1, 1, 1, 1]\n  |  |  |  |\n  v  v  v  v\n[ 0, 0, 0, 0, 1, 1, 1, 1]\n\n```\n\nAn array of all 0's followed by an array of all 1's (or vice versa) will have 28 morphing pairs:\n\n``` \n[ 0, 0, 0, 0, 0, 0, 0, 0 ],\n[ 1, 1, 1, 1, 1, 1, 1, 1 ]\n```\n\n\n----\nTASK\n----\n\n**Return the total amount of morphing pairs in the list of arrays.**\n\n----\nRules\n----\n\nCharacter limit of 600 to prevent copy pasting from tools like JSF**CK.\n\nGolfing encouraged but not required. \n\n\n\n",
+    "totalAttempts": 40,
+    "totalCompleted": 7,
+    "totalStars": 3,
+    "voteScore": 7,
+    "tags": [
+      "Restricted",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

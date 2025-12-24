@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/536350c4c43aa788aa000cdd",
+  "data": {
+    "id": "536350c4c43aa788aa000cdd",
+    "name": "Create a linked list class and its methods",
+    "slug": "create-a-linked-list-class-and-its-methods",
+    "category": "algorithms",
+    "publishedAt": "2014-05-02T08:03:59.311Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/536350c4c43aa788aa000cdd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-02T08:01:08.866Z",
+    "createdBy": {
+      "username": "rayning0",
+      "url": "https://www.codewars.com/users/rayning0"
+    },
+    "description": "The linked list is a fundamental data structure in computer science, often used to help make other data structures. \n\nCreate a linked list class, Node, and write methods to: \n\n    * Reverse a linked list (reverse)\n    * Convert from an array to your linked list (from_a)\n    * Convert to an array from your linked list (to_a: make 2 methods---a class method and instance method)\n\nCreate the linked list class from scratch. Do NOT use anyone else's library or prewritten data type for this list.\n\nTest Examples (Ruby):\n\n    Node.to_a(nil) #=> []\n    Node.from_a([]) #=> nil\n    Node.reverse(nil) #=> nil\n    one = Node.new(1, nil)\n    one #=> <Node @name=1, @next=nil>\n    one.name #=> 1\n    one.next #=> nil\n    two = Node.new(2, one)\n    two #=> <Node @name=2, @next=<Node @name=1 @next=nil>>\n    Node.to_a(two) #=> [2, 1]\n    Node.reverse(two) #=> <Node @name=1 @next=<Node @name=2 @next=nil>>\n    range = Node.from_a(1..10)\n    range.name #=> 1\n    range.next.next.next.next.next.next.next.next.next.next.name #=> 10\n    Node.from_a([3, 4]).to_a #=> [3, 4]",
+    "totalAttempts": 286,
+    "totalCompleted": 17,
+    "totalStars": 3,
+    "voteScore": 1,
+    "tags": [
+      "Data Structures",
+      "Lists",
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

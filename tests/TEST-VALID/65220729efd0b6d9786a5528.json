@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65220729efd0b6d9786a5528",
+  "data": {
+    "id": "65220729efd0b6d9786a5528",
+    "name": "Top-notch Algorithmic Research for Data Integration Services",
+    "slug": "top-notch-algorithmic-research-for-data-integration-services",
+    "category": "games",
+    "publishedAt": "2023-10-08T01:35:52.654Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/65220729efd0b6d9786a5528",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-08T01:34:33.051Z",
+    "createdBy": {
+      "username": "fuyangli",
+      "url": "https://www.codewars.com/users/fuyangli"
+    },
+    "description": "**T**op-notch <br/>\n**A**lgorithmic <br/>\n**R**esearch for <br/>\n**D**ata <br/>\n**I**ntegration <br/>\n**S**ervices <br/>\n\n**Hi there! Would you like a jelly baby?**\n\nToday you have to help the Doctor on an adventure. Your job is to develop adventures e verify if the Doctor can execute it!\n\nYou only have those actions:\n  None, EnterTardis, LeaveTardis, TravelToFuture, TravelToPast, TravelInSpace, Attack, Run and MeetMaster\n\nHere are the rules:\n\n- The Action \"None\" does nothing.\n- The Doctor starts outside the TARDIS.\n- The Doctor can only Enter the TARDIS if he exited the TARDIS before.\n- The Doctor can only travel to the future, to the past or in space if them are in the TARDIS. If they goes to the future, they will travel 100 years in the future multiplied by the number of their regeneration. If they go to the past, they will travel 200 years in the past multiplied by the number of their regeneration.\n- Every time the Doctor Attacks and then Runs, they will regenerate.\n- If the Doctor Attacks and Run N times, it count as N regenerations.\n- If the Doctor attacks, then Runs N times, then enter the TARDIS, they will regenerate inside the TARDIS. If the Doctor regenerates inside the TARDIS, the TARDIS will travel (in months) the Factorial of their regeneration number .\n- If the Doctor meets the Master, the Master will stole the next regeneration of the Doctor, so the next time the Doctor regenerates they will have to skip the next iteration.\n\n# Input\nThe input is an array of object. The first index is the date that the adventure is set, the rest of the array is the actions.\n\n# Expected\nThe expected return is:\n- If the adventure can be done, it should return a string with this format: \n  - \"Regeneration: (x) | Date: DD/MM/YYYY\"\n- Other messages can be expected if the adventure can't be done:\n  - \"The Doctor can only Enter the TARDIS if they exited the TARDIS before.\"\n  - \"The Doctor can only Leave the TARDIS if they entered the TARDIS before.\"\n  - \"The Doctor can't travel if they are not in the TARDIS.\"\n\n# Examples\n[\"2023/10/07\", Action.TravelToPast, Action.LeaveTardis] => \"The Doctor can't travel if he's not on the TARDIS.\"\n\n[\"2023/10/07\", Action.EnterTardis, Action.TravelToPast, Action.LeaveTardis, Action.Attack, Action.Run, Action.EnterTardis] => Regeneration: 2 | Date: 12/07/1823\n",
+    "totalAttempts": 26,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

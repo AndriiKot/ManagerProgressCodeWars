@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5756dccb5916f7c41d0012ab",
+  "data": {
+    "id": "5756dccb5916f7c41d0012ab",
+    "name": "upperCasePlace()",
+    "slug": "uppercaseplace",
+    "category": "reference",
+    "publishedAt": "2016-06-07T15:13:55.181Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/5756dccb5916f7c41d0012ab",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-07T14:40:11.859Z",
+    "createdBy": {
+      "username": "njsfield",
+      "url": "https://www.codewars.com/users/njsfield"
+    },
+    "description": "Write a function called upperCasePlace, that takes a text string as an argument (string), and a number (n) as the second argument. The function should first process the string through .toLowerCase(), and should then capitalize the nth letter of each word and return the string result.\n\nFor example; \n```javascript\nupperCasePlace(\"HELLO\", 2) // returns \"hEllo\";\nupperCasePlace(\"HELLO\", 3) // return \"heLlo\";\nupperCasePlace(\"HELLO THERE\", 3) // return \"heLlo thEre\";\n```\nIf the n is 0, then the function should capitalise the first letter of the word (which is the same as if the number argument is 1)\n```javascript\nupperCasePlace(\"HELLO THERE\", 0) // return \"Hello There\";\n```\n\nIf the character to be capitalised is not a valid letter, the character is not altered. For example;\n```javascript\nupperCasePlace(\"H3LLO THERE M1 FRIEND\", 2) // return \"h3llo tHere m1 fRiend\";\n```\n\nIf n is less than zero, or greater than the length of each word, then the lower-cased string will be returned.\n\nFinally if n has a decimal remainder, it is rounded down first. For example;\n```javascript\nupperCasePlace(\"HELLO THERE\", 1.2) // returns \"Hello There\";\nupperCasePlace(\"HELLO THERE\", 0.453) // returns \"Hello There\" because it is converted to 0, which is then treated as 1;\n```\n\nFor this exercise, all test inputs will be of type string.\n\nHint: it may be worth first exploring how you can capture words in a string, before processing them with .toUpperCase() and .toLowerCase().\n\n\nGood luck!\n\n\n",
+    "totalAttempts": 1159,
+    "totalCompleted": 129,
+    "totalStars": 4,
+    "voteScore": 153,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/544fb5dd24d7878bd10004d2",
+  "data": {
+    "id": "544fb5dd24d7878bd10004d2",
+    "name": "The devil's chessboard",
+    "slug": "the-devils-chessboard",
+    "category": "games",
+    "publishedAt": "2014-10-28T17:05:39.247Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/544fb5dd24d7878bd10004d2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-10-28T15:27:25.924Z",
+    "createdBy": {
+      "username": "Dr Phil",
+      "url": "https://www.codewars.com/users/Dr%20Phil"
+    },
+    "description": "The devils is in the same room as you and he has a problem for you to solve. If you solve it you'll be free to go, otherwise you'll have to suffer an eternity in hell.\n\nThe problem is:\nThe devil has a chessboard where each square has a coin on it. The coin can have either tail or heads up. The devil selects a random square, saying \"This is the chosen square\". You have to flip a coin on the board (from heads to tails or vice versa) and then walk out from the room. Your best friend will then enter the room, see the board and tell the devil which square is the chosen one. You and your friend may not speak to each other once you've seen the board. However, you are free to discuss a strategy before entering the room to see the board.\n\nLuckily, both of you have your smartphones running Ruby on them. So you have the chance to write an algorithm choosing the coin to flip and an algorithm determining the chosen square. Unfortunately there's no cellular reception in Gehennom, so you can't text the magic square to your friend, you'll have to rely on your written algorithms.\n\nDefine two algorithms, ```flip_coin``` and ```magic_square``` that will help you!\n\nThe function ```flip_coin``` will take two arguments. The first argument being the coordinates of the square that the devils selects being 'magic'. It will be in the form ```[x, y]``` where x, y ∈ (0..7). The other argument will be the state of the chessboard, an array of length 64. Each element will either be 0, corresponding to tails; or 1, corresponding to heads.  The function should return the coordinates for the square to be flipped.\n\nThe function ```magic_square``` will only take one argument, the state of the chessboard (in the same format as above). The function should return the coordinates for the magic square.\n\nSee the example test cases for more information.",
+    "totalAttempts": 108,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 7,
+    "tags": [
+      "Logic",
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

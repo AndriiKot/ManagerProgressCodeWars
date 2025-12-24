@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6582888ddc8017ae764dca22",
+  "data": {
+    "id": "6582888ddc8017ae764dca22",
+    "name": "Cookie Shopping",
+    "slug": "cookie-shopping",
+    "category": "reference",
+    "publishedAt": "2023-12-20T06:51:47.683Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/6582888ddc8017ae764dca22",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-20T06:24:13.129Z",
+    "createdBy": {
+      "username": "WQMan",
+      "url": "https://www.codewars.com/users/WQMan"
+    },
+    "description": "# Description\n\nIn a delightful cookie shop, a variety of cookies is listed prices with different prices (`pl`). Alex, with `m` amount of cash in hand, wishes to purchase as many cookies as possible.\n\n## Task\n\nYour task is to create a function, `mostCookies`, which takes in:\n\n- `m`, a number representing the available cash Alex has.\n- `pl`, an **unsorted** list of numbers, where each element indicates the price of a cookie.\n\nThe function should return a numerical value indicating the maximum number of cookies Alex can purchase.\n\n### Example\n\n```typescript\nlet cashInHand = 10;\nlet cookiePrices = [1, 2, 3, 4, 5];\n\n// Purchase the first cookie (10 - 1 = 9)\n// Purchase the second cookie (9 - 2 = 7)\n// Purchase the third cookie (7 - 3 = 4)\n// Purchase the fourth cookie (4 - 4 = 0)\n// Out of cash to purchase the fifth cookie; thus, Alex can buy a maximum of 4 cookies.\n\nmostCookies(cashInHand, cookiePrices); // 4\n```\n\n## Constraints\n\n- `m >= 0`\n- `pl.length >= 0`\n- `m`, and the sum of `pl` will never exceed the maximum integer size.",
+    "totalAttempts": 19,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/556c138a49403cb0b30000c8",
+  "data": {
+    "id": "556c138a49403cb0b30000c8",
+    "name": "The cross-stitch Kata",
+    "slug": "the-cross-stitch-kata",
+    "category": "games",
+    "publishedAt": "2015-06-14T20:47:53.093Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/556c138a49403cb0b30000c8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-01T08:10:50.106Z",
+    "createdBy": {
+      "username": "kuragari",
+      "url": "https://www.codewars.com/users/kuragari"
+    },
+    "description": "# Introduction\n\nCross-stitch is a popular form of counted-thread embroidery in which X-shaped stitches in a tiled, raster-like pattern are used to form a picture. Cross-stitch is the oldest form of embroidery and can be found all over the world. Many folk museums show examples of clothing decorated with cross-stitch, especially from continental Europe and Asia.\n\n# Description\n\nThis kata tries to emulate a cross-stitch embroidery process. We start from a squared canvas where colored and empty tiles draw a pattern. The objective is to _embroider_ the canvas with strands (one per each row and one per each column) and color the tiles as the pattern requests. A tile is colored when it is filled with two strands and it takes the color of the _upper_ strand. This means that the order of the _embroider_ process is taken into account. The empty tiles can be filled with any color.\n\nTake the next picture as reference:\n\n![2x2 Canvas](https://carleshf87.files.wordpress.com/2015/06/kata01_021.png)\n\nFig-1 shows a 2x2 canvas with two colored tiles ((0,0) and (1,1)) and two empty tiles in white ((0,1) and (1,0)). What we know?\n\n * Since it is a 2x2 canvas we will need 4 strands.\n * The _last_ strand that will covers the tile 0x0 needs to be orange.\n * The _last_ strand that will covers the tile 1x1 needs to be green.\n\nThere are many ways to solve this cross-stitch canvas. Lets imagine we start _embroidering_ the first row with an orange strand (Fig-2) and the second row with a green strand (Fig-3). Now we want to color orange the tile (0,0). This is reached when we _embroider_ the first column with an orange strand (Fig-4). The next step is to color the tile (1,1). _Embroidering_ the second column with an orange strand (Fig-5a) will color orange this tile, not accomplishing the pattern (Fig-1). But _embroidering_ the second column with a green strand (Fig-5b) we accomplish the pastern (Fig-1).\n\n# Request\n\nWhat is requested in this kata is to return a solution given a patterned-canvas. Hence, you are requested to implement the function `find_solution` that has two arguments:\n\n * `canvas`: This is an array of arrays representing the cross-stitch canvas (an array of rows).\n * `colors`: This is an array of the colors of the pattern.\n\nAn example of `canvas` and `colors` is:\n\n```ruby\ncanvas = [['o', ' '], [' ', 'g']]\ncolors = ['o', 'g']\n```\n\nThis must be understood as:\n\n * The `canvas` has two rows and two columns.\n * The canvas has two `colors`, orange (`o`) and green (`g`).\n\nThe function `find solution` must return a valid solution to embroider the canvas and color the given pattern. This solution must follow a specific format:\n\n 1. It must be an array of hashes (ruby) or dictionaries (python).\n 2. Each hash must have three keys: `:type`, `:index` and `:color` for the ruby-version; and `\"type\"` `\"index\"` and `\"color\"` for the python-version.\n 3. The `:type`/`\"type\"` key can be `'r'` for rows and `'c'` for columns (string)\n 4. The `:index`/`\"index\"` key will be the index of the row or column to be colored (integer). It must be between 0 and number of rows minus 1.\n 5. The `:color`/`\"color\"` key will be used to fill the row or column (string).\n\n__Warning__: The canvas will be colored following the array's order\n\n# Examples\n\n## Example\n\nThe solution from the previous example, in ruby, is:\n\n```ruby\n[{:type=>\"r\", :index=>0, :color=>\"o\"}, {:type=>\"r\", :index=>1, :color=>\"g\"}, {:type=>\"c\", :index=>\"0\", :color=>\"o\"}, {:type=>\"c\", :index=>\"1\", :color=>\"g\"}]\n```\n\nAnother solution for the previous canvas, in python, can be:\n\n```python\n[{\"type\": \"r\", \"index\":0, \"color\": \"g\"}, {\"type\": \"c\", \"index\":0, \"color\": \"o\"}, {\"type\": \"r\", \"index\":1, \"color\": \"o\"}, {\"type\": \"c\", \"index\":1, \"color\": \"g\"}]\n```\n\nGraphically it is seen as:\n\n![solution_python](https://carleshf87.files.wordpress.com/2015/06/kata01_03.png)\n\n## Complex\n\nThe following is an example with a 3x3 canvas and 3 colors:\n\n![solution_complex](https://carleshf87.files.wordpress.com/2015/06/kata01_04.png)\n\nThis solution, in python, is:\n\n```python\n[{\"type\": \"c\", \"index\": 0, \"color\": \"p\"}, {\"type\": \"c\", \"index\": 2, \"color\": \"p\"}, {\"type\": \"r\", \"index\": 2, \"color\": \"p\"}, {\"type\": \"r\", \"index\": 0, \"color\": \"o\"}, {\"type\": \"c\", \"index\": 1, \"color\": \"g\"}, {\"type\": \"r\", \"index\": 1, \"color\": \"g\"}]\n```\n# Assumptions\n\n 1. The given `canvas` will always be __squared__.\n 2. The given `colors` will contain only colors in the canvas.",
+    "totalAttempts": 97,
+    "totalCompleted": 15,
+    "totalStars": 15,
+    "voteScore": 20,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

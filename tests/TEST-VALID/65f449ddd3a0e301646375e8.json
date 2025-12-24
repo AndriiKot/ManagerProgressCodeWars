@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f449ddd3a0e301646375e8",
+  "data": {
+    "id": "65f449ddd3a0e301646375e8",
+    "name": "Escapee Name Decoder!",
+    "slug": "escapee-name-decoder",
+    "category": "games",
+    "publishedAt": "2024-03-15T13:16:21.595Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65f449ddd3a0e301646375e8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-15T13:15:09.282Z",
+    "createdBy": {
+      "username": "IgorSilva0",
+      "url": "https://www.codewars.com/users/IgorSilva0"
+    },
+    "description": "# Escapee Name Decoder\n\n## Introduction\n\nThis JavaScript function aims to decode the name of an escaped prisoner given specific parameters: `Location`, a `string of numbers and letters`, and a `Hint`.\n\nThis function decrypts the name of an escaped prisoner based on the provided `Location`, `String of Numbers and Letters`, and `Hint`, providing a crucial tool for law enforcement to identify and apprehend the escapee.\n\n## Instructions\n\n### For the `Location`\n\n- Extract the first and last letter of the `Location`.\n  - Example: \"United Kingdom\" -> \"u\" and \"m\"\n  - Example: \"Manchester\" -> \"m\" and \"r\"\n\n### For the `String of Numbers and Letters`\n\n- Convert each letter to a corresponding number (A=1, B=2, ..., Z=26).\n  - Example: \"a111ab\" -> \"111112\"\n- Separate the numbers into pairs.\n  - Example: \"11 11 12\"\n  - Note: \n    - Every number will have a pair, so no need to handle single digits separately.\n    - The test won`t try using the number 0 or negative numbers.\n- Multiply the pairs.\n  - Example: 1 * 1 = 1 | 1 * 1 = 1 | 1 * 2 = 2\n  - Note:\n    - The test won`t try pairs that exceed the result of 26 after multiplication.\n- Convert the results back to letters.\n  - Example: 1=A, 1=A, 2=B\n  - Example result: \"AAB\"\n- Another Example:\n  - String = \"z111ab\" -> \"261 11 12\"\n  - Extracted to pairs = 26 * 1 = 26 / 1 * 1 = 1 / 1 * 2 = 2\n    - Example: 26=Z, 1=A, 2=B\n    - Result = \"ZAB\"\n\n### For the `Hint`\n\n- Check the length of the hint to determine the length of the prisoner's name only.\n\n## Implementation\n\n- Use the first and last letters from the `Location`.\n- Use the result from the `String of Numbers and Letters` to put the letters extracted from location around it.\n  - Example: Location = \"Manchester\" -> \"m\", \"r\".\n  - If Hint length is 6\n    - using those 2 letters from the location you have only 4 letters left to fill it.\n    - use the first 4 letters from String of Numbers and Letters result in thise case.\n  - String of Numbers and Letters Ex: `result` = \"illeaw\"\n  - First letter of the name to Capital.\n  - Example return result: \"Miller\"\n  - \n  - You will need to pass the Basic Test and a Random Test.\n  - :) Have fun!!",
+    "totalAttempts": 55,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

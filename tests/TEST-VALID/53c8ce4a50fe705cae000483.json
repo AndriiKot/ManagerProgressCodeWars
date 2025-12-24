@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53c8ce4a50fe705cae000483",
+  "data": {
+    "id": "53c8ce4a50fe705cae000483",
+    "name": "Haskell List Comprehension (iii)",
+    "slug": "haskell-list-comprehension-iii",
+    "category": "refactoring",
+    "publishedAt": "2014-07-18T08:06:42.511Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53c8ce4a50fe705cae000483",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-18T07:35:38.755Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the third part. You need to do the previous part first [Haskell List Comprehension (ii)](http://www.codewars.com/kata/haskell-list-comprehension-ii).\n\nHaskell can do things like this:\n\n```haskell\n[1..] //This is an infitite list\n```\n\nHaskell can deal with this because uses lazy evaluation. For example in Haskell:\n\n```haskell\ntake 4 [1,3..] //returns [1,3,5,7]\ntake 7 [90,89..] //returns [90,89,88,87,86,85,84]\n```\n\nYou need to refactor the code. Now we want infinite list support.\n\nTo do that, `ArrayComprehension` function has to return a new object (this).\n\nThere is two methods more:\n\n* `take(num)`: returns the first `num` numbers of the list. If the list has less numbers than *num*, returns all elements.\n* `value()`: returns all elements. It produces a infinite loop if the list is unbounded.\n\nFor example:\n\n```javascript\nvar list = ArrayComprehension({\n  generator: \"1..\"\n});\n\nlist.take(5); // return [1,2,3,4,5]\n```\n",
+    "totalAttempts": 344,
+    "totalCompleted": 38,
+    "totalStars": 3,
+    "voteScore": 26,
+    "tags": [
+      "Functional Programming",
+      "Arrays",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

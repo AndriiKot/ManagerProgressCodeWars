@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b308a5fd74b5be87c0000aa",
+  "data": {
+    "id": "5b308a5fd74b5be87c0000aa",
+    "name": "Integer Solutions For the Equation of an ellipse.(Brute Force Algorithm)",
+    "slug": "integer-solutions-for-the-equation-of-an-ellipse-dot-brute-force-algorithm",
+    "category": "reference",
+    "publishedAt": "2018-06-30T09:44:41.751Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b308a5fd74b5be87c0000aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-06-25T06:23:27.985Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "The equation : -9x<sup>2</sup> + 8xy -3y<sup>2</sup> + 25x - 5y - 10 = 0, is elliptical. It represents the ellipse we have below:\n\n<a href=\"https://imgur.com/7zc858C\"><img src=\"https://i.imgur.com/7zc858C.png\" title=\"source: imgur.com\" /></a>\n\nThe following pair values (x<sub>i</sub>, y<sub>i</sub>) will be some of the integer solutions for the equation given above:\n```(1,-1), (1,2), (2,4), (4,6) and (4,3)```.\n\nThat means that the points with these coordinates will be on the elliptical curve as shown below.\n\n<a href=\"https://imgur.com/8ZjND0v\"><img src=\"https://i.imgur.com/8ZjND0v.png\" title=\"source: imgur.com\" /></a>\n\nThe general form of an elliptic equation will be:\n\nAx<sup>2</sup> + Bxy + Cy<sup>2</sup> + Dx + Ey + F = 0\n\nThe task for this kata is the following:\n\nGiven an array, ```coeffL```, of length 6, with the coefficients of the equation,\n```coeffL = [A,B,C,D,E,F]```, in this order, create a code that can find these integer solutions and may output them as an array of pairs of coordinates.\n```python\nfind_int_sol_ellipt_eq([A,B,C,D,E,F]) === [[x1,y1], [x2,y2], ......[xk,yk]]\n```\n\nFor example the case given above will be:\n```python\nfind_int_sol_ellipt_eq([-9,8,-3,25,-5,-10]) === [[1, -1], [1, 2], [2, 4], [3, 1], [4, 3], [4, 6]]\n```\nIn the results, there is a new integer solution, [3,1], not presented in the second image.\nObserve the output should be sorted by the values of ```x```, first, and then, if there is coincidence, by the value of ```y```.\n\nOne method to do the task will be to determine the range of x values for which the ellipse is comprised. These range will be ```[xMin, xMax]```. Then extremes will be changed by the nearest integers. The range ```[xMin, xMax]``` may be found by analytical or numeric methods and it is part of the challenge of this kata.\n\nFor the given example the range will be aproximately:\n```[0.48, 4.52]```, see below:\n\n<a href=\"https://imgur.com/qqzR0R7\"><img src=\"https://i.imgur.com/qqzR0R7.png\" title=\"source: imgur.com\" /></a>\n\nIt's easy to see that our search range will be ```[1,4]```, both extremes included.\n\nThe code should manage cases for the values of ```A,B,C,D,E,F``` that do not represent an ellipse.\n\nFor example for the input ```[9,8,-3,25,-5,-10]``` we will have an hyperbolic equation, in fact it will represent the following hyperbola.\n\n<a href=\"https://imgur.com/U8AYFJ6\"><img src=\"https://i.imgur.com/U8AYFJ6.png\" title=\"source: imgur.com\" /></a>\n\nFor that cases the code should reject the calculations, returning \"No ellipse for these input!\".\n\nThe tool to check if we have an ellipse or not are the invariants\n\n<a href=\"https://imgur.com/tWb7871\"><img src=\"https://i.imgur.com/tWb7871.png\" title=\"source: imgur.com\" /></a>\n\nFor an ellipse, the determinant ```N```, should be negative.\n\nN = B<sup>2</sup> - 4*AC < 0\n\nAlso the determinant ```M```, should be different than ```0```\n\n```M ≠ 0```\n\nAnd also the product ```M*S```, should be negative, too.\n\n```M*S < 0```\n\nThe random tests will generate a coeffL with values ```A,B,C,D``` decimals and ```F = 1```. \n\nFeatures of the random tests:\n```\nnumber of tests: 300\nthe maximum length of the major axis of the ellipses for testing is 20.000 units.\n```\nIn some special cases, a huge ellipse of the tests may have more than 100 integer solutions.\n\nSee the example tests box with some edge cases.\n\nHappy coding!",
+    "totalAttempts": 121,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Algorithms",
+      "Mathematics",
+      "Algebra",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

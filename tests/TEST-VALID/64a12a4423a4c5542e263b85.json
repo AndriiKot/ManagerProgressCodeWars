@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64a12a4423a4c5542e263b85",
+  "data": {
+    "id": "64a12a4423a4c5542e263b85",
+    "name": "Trip Cost",
+    "slug": "trip-cost",
+    "category": "reference",
+    "publishedAt": "2023-07-02T12:59:59.686Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64a12a4423a4c5542e263b85",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-02T07:41:57.167Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Description\nYou are going on a trip with your friends, and you want to keep a record of all the expenses during the trip in order to share the cost equally.\n\n# Task\nCreate a class called `TripCost` that takes a list of `people` consisting of individuals who were part of the trip. \n\nYour class should have a method called `add` which takes two parameters: `person`, representing the name of the person, and `amount_spent`, representing the amount spent by that person during the trip. \n\nThe method should return a string containing the information of the cost divided equally among the participants.\n\nIf everyone has paid equal amount during the trip, your function should return `name1 has already paid their cost\\nname2 has already paid their cost` with names in sorted order.\n\n# Example\n```\ntrip1 = TripCost(['Ali', 'Walid', 'Ken', 'Clark', 'Sid', 'Laura', 'Maya']\n\ntrip1.add('Aqsa', 10) # Aqsa was not part of the trip\n\ntrip1.add('Ali', -5) # Spent amount should be greater than zero\n\ntrip1.add('Ali', 14) \n# Ali has paid $14 for the trip, and there are 7 people on the trip. Therefore, the amount to be divided equally among everyone is $14/7 = $2. Ali should receive a refund of $12 ($14 - $2), and everyone else should contribute $2.\n\n$12 to be paid to Ali\nClark has to pay $2\nKen has to pay $2\nLaura has to pay $2\nMaya has to pay $2\nSid has to pay $2\nWalid has to pay $2\n\ntrip2 = TripCost(['Ali', 'Walid'])\n\ntrip2.add('Ali', 10) \n$5 to be paid to Ali\nWalid has to pay $5\n\ntrip2.add('Walid', 10), \nAli has already paid their cost\nWalid has already paid their cost\n\n```\n\n# Sorting\nThe final result should include the individuals with the `highest payable amount` to them, listed in decreasing order. \n\nThis should be followed by the individuals with the `lowest amount to be paid` by them in increasing order. \n\nIf multiple individuals have the same amount to be paid, they should be sorted based on their `names`.\n\n# Notes\n- 2 < people <= 20",
+    "totalAttempts": 286,
+    "totalCompleted": 30,
+    "totalStars": 5,
+    "voteScore": 41,
+    "tags": [
+      "Puzzles",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a288fe68882f3cb420000e0",
+  "data": {
+    "id": "5a288fe68882f3cb420000e0",
+    "name": "Fiber Optic Network",
+    "slug": "fiber-optic-network",
+    "category": "algorithms",
+    "publishedAt": "2017-12-07T16:28:56.530Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5a288fe68882f3cb420000e0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-07T00:48:38.698Z",
+    "createdBy": {
+      "username": "drexduarte",
+      "url": "https://www.codewars.com/users/drexduarte"
+    },
+    "description": "## The Problem\n\nThe Tutuaçu tribe decided to create a fiber optic network designed to facilitate the communication within the village and the access to information. In order to do that, all houses must be connected directly (using a network branch) or indirectly (using more than one branch). They want to build a network with lowest cost, but they need some help to achieve that. The specialists have gathered all the requirements, including the costs to build each network branch, but they need your help to optimize it. \n\n### This is an example of optimization:\n\n\n<div style=\"overflow-y:hidden;margin-bottom:20px\"><img src=\"http://i63.tinypic.com/2w3n7gk.jpg\" border=\"0\" alt=\"fiber-optic-network-example\"></div>\n\nYour should create a method to receive their specifications and return the optimized network.\n\n### That is...\n\nGiven a number of houses `n`, a number of network branches `k` and a matrix `m` with `n` rows containing `{x,y,z}` where `z` is the cost to connect the house `x` to the house `y`, your method must return a list containing all the branches that must be kept to connect all the houses with lowest cost, e.g: `(1,3), (2,3)`, etc.\n\n### If there are multiple solutions, return only the first (order by house id).\n\n## Examples\n\n```c++\n* Input:\nn = 5, k = 6, \nm = |1 2 15|\n    |1 3 12|\n    |2 3  6|\n    |2 4 13|\n    |2 5  5|\n    |3 4  6|\n\nfiber_optic_net(n, k, m);\n    \n* Return list:\n\npair<int,int>(1,3)\npair<int,int>(2,3)\npair<int,int>(2,5)\npair<int,int>(3,4)\n\n* Input:\nn = 3, k = 3, \nm = |1 2 10|\n    |2 3 10|\n    |3 1 10|\n\nfiber_optic_net(n, k, m);\n    \n* Return list:\n\npair<int,int>(1,3)\npair<int,int>(2,3)\npair<int,int>(2,5)\npair<int,int>(3,4)\n  \n```",
+    "totalAttempts": 47,
+    "totalCompleted": 6,
+    "totalStars": 8,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms",
+      "Lists",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e619f2d30e9d00028d690fb",
+  "data": {
+    "id": "5e619f2d30e9d00028d690fb",
+    "name": "Threading: Boolean Flags Aren't Enough",
+    "slug": "threading-boolean-flags-arent-enough",
+    "category": "bug_fixes",
+    "publishedAt": "2020-11-10T17:25:58.904Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/5e619f2d30e9d00028d690fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-06T00:54:05.088Z",
+    "createdBy": {
+      "username": "bp1222",
+      "url": "https://www.codewars.com/users/bp1222"
+    },
+    "description": "# Threading: Boolean flags aren't enough for synchronization \n\n### Summary\nWhen starting off with threading sometimes it would seem that using boolean flags to protect critical sections should be enough.  That's not always the case, as demonstrated with this Kata.  Your task is to fix the bug so that we won't get into the critical section more than once.\n\n### Issue\nThe kata presents a solution, wherein your have `thread_code` which is executed in some number of threads.  In this code you make a call to a critical section, which should only be called by one thread at a time.  The example provided is subject to a race condition which needs to be mitigated to ensure we're calling the critical section in only one thread at a time.  The `critical_section` may be performing significant work.",
+    "totalAttempts": 131,
+    "totalCompleted": 32,
+    "totalStars": 2,
+    "voteScore": 18,
+    "tags": [
+      "Threads",
+      "Debugging"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

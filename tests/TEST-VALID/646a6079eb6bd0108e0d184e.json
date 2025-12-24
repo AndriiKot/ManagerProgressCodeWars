@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646a6079eb6bd0108e0d184e",
+  "data": {
+    "id": "646a6079eb6bd0108e0d184e",
+    "name": "Identify The Mystery Sorts",
+    "slug": "identify-the-mystery-sorts",
+    "category": "reference",
+    "publishedAt": "2023-05-22T10:46:18.861Z",
+    "approvedAt": null,
+    "languages": [
+      "rust",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/646a6079eb6bd0108e0d184e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-21T18:18:33.590Z",
+    "createdBy": {
+      "username": "potzko",
+      "url": "https://www.codewars.com/users/potzko"
+    },
+    "description": "# Concept\nDo you remember those colorful sorting algorithm visualizations on YouTube with blippy and bouncy animations? Have you ever wondered if you could identify the type of sort just by watching the video without the text description? Well, here's your chance to do just that!\n\nIn this kata, you'll be given a list of operations taken by a sorting algorithm chosen at random, and you have to identify the sort algorithm that was used, either Quick Sort, Heap Sort or Shell Sort  \n~~~rust\nSortType::QuickSort for Quick sort,  \nSortType::HeapSort for Heap sort,  \nSortType::ShellSort for Shell sort.  \n~~~\n~~~python\nsorts.Quick_Sort for Quick sort,  \nsorts.Heap_Sort for Heap sort,  \nsorts.Shell_Sort for Shell sort. \n~~~\n\n# Specifics \nThere are three sorting algorithms implemented in the tester: Quick sort, Heap sort, and Shell sort. Each of them is implemented in multiple different ways while still adhering to the \"spirit of the sort.\" All sorting algorithms produce an \"operation list\" in the format\n~~~rust\n(Action: Action, index_a: usize, index_b: usize);\n~~~\n~~~python\n(action: actions, index_a: int, index_b: int);\n~~~\nall arrays tested other then the sample tests will be of lengths between 1,000 - 3,000\n~~~rust\nenum Action {\n    Cmp,\n    Swap,\n}\nlet operation_list: Vec<(Action, usize, usize)>;\n~~~\n~~~python\nimport enum\nclass actions(enum.Enum):\n    Cmp = 0\n    Swap = 1\n#action arr is a List of tuples,\n#(action: actions, ind_a: int, ind_b: int)\n~~~\n\nwhere ```Cmp``` means the algorithm compared ```index_a``` to ```index_b```  \nall compares are inclusive, ie ```(Cmp, 1, 2)``` is equivalent to ```arr[1] <= arr[2]```  \nand ```Swap``` means the algorithm swaped ```index_a``` and ```index_b``` in the array  \n~~~rust\nenum SortType{\n    QuickSort,\n    HeapSort,\n    ShellSort,\n}\n~~~\n~~~python\nimport enum\nclass sorts(enum.Enum):\n    Quick_Sort = 0\n    Shell_Sort = 1\n    Heap_Sort = 2\n~~~\n\nHappy coding :)\n\n# links\nquick sort - https://en.wikipedia.org/wiki/Quicksort  \nheap sort  - https://en.wikipedia.org/wiki/Heapsort  \nshell sort - https://en.wikipedia.org/wiki/Shellsort  \n\n# blippy and bouncy animations:  \nquick sort - https://www.youtube.com/watch?v=8hEyhs3OV1w  \nheap sort  - https://www.youtube.com/watch?v=_bkow6IykGM  \nshell sort - https://www.youtube.com/watch?v=n4sk-SzGvZA  \nmore sorts - https://www.youtube.com/watch?v=vr5dCRHAgb0  \n",
+    "totalAttempts": 15,
+    "totalCompleted": 3,
+    "totalStars": 4,
+    "voteScore": 4,
+    "tags": [
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

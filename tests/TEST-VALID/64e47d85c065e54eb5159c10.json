@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64e47d85c065e54eb5159c10",
+  "data": {
+    "id": "64e47d85c065e54eb5159c10",
+    "name": "Electrical Grid Load Analyser",
+    "slug": "electrical-grid-load-analyser",
+    "category": "reference",
+    "publishedAt": "2023-08-22T09:19:24.292Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64e47d85c065e54eb5159c10",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-22T09:19:01.878Z",
+    "createdBy": {
+      "username": "KirillKudinov",
+      "url": "https://www.codewars.com/users/KirillKudinov"
+    },
+    "description": "# Objective\nYour kata is to create a Python function to analyze the loads in an electrical grid. The goal is to identify devices that are inefficient (based on their power factor) and list them in order of inefficiency, with the most inefficient device listed first.\n\n# Background\nThe efficient transmission and distribution of electrical power is paramount in the electrical industry. At the heart of this efficiency lies the concept of the power factor. To grasp its significance, it's crucial to understand the three types of power in an AC electrical system:\n\n- __1. Active Power (P):__ Measured in watts (W), this is the actual power that does the work in electrical devices, such as lighting a bulb or turning a fan. It's the power that consumers are generally billed for.\n\n- __2. Reactive Power (Q):__ Measured in reactive volt-amperes (VAR), this power doesn't perform any useful work but is essential in maintaining the voltage levels necessary for equipment to operate. Inductive loads like motors and transformers consume reactive power.\n\n- __3. Apparent Power (S):__ Measured in volt-amperes (VA), this is the vector sum of active and reactive power. It represents the total power in a circuit.\n\nThe __power factor__ is a measure of how effectively the electrical power is converted into useful work. It is mathematically expressed as:\n```math\nPF=P/S\n```\nA power factor of 1 (or 100%) indicates that all the power is active power, and thus, it's being used effectively. A power factor less than 1 suggests the presence of reactive power in the circuit, leading to inefficiencies.\n\n## Why is this important?\n\n- __Efficiency:__ A lower power factor means the electricity isn't fully utilised. This inefficiency may result in higher costs and potential power losses.\n\n- __Infrastructure Stress:__ Devices with low power factors draw more current than devices with high power factors for the same amount of active power. This increased current can cause additional wear and tear on the distribution infrastructure, including transformers, lines, and other components.\n\n- __Economic Implications:__ Commercial consumers might be penalised for maintaining a low average power factor as it impacts the overall efficiency of the electrical grid. Correction mechanisms, such as capacitors, might be used to improve the power factor.\n\nIn modern electrical systems, maintaining a high power factor is not just a matter of efficiency but also sustainability, as wastage of electrical power translates to higher carbon footprints in power generation.\n\n# Requirements\n1. Implement a function analyse_loads():\n* Takes in a list of devices. Each device is represented as a dictionary with the following keys:\n - name: a string representing the name of the device.\n - P: a float representing the active power in watts.\n - S: a float representing the apparent power in volt-amperes.\n* Returns a list of names of devices with power factors below 0.85, sorted in ascending order by their power factors.\n2. Remember to handle cases:\n - S and P is 0\n - List is empty\n - If power factor of one or more loads are close 0.85 (i.e. Load 1 has PF of 0.8499, another load has PF of 0.84999)\n\n# Example\n\n```python\ndevices = [\n    {\"name\": \"Device A\", \"P\": 100, \"S\": 200},\n    {\"name\": \"Device B\", \"P\": 200, \"S\": 220},\n    {\"name\": \"Device C\", \"P\": 50, \"S\": 200}\n    # This should return ['Device C', 'Device A'] since they have power factors below 0.85.\n]\n```\n\n__Good luck!__\n\n![alt text](https://blog.se.com/wp-content/uploads/2018/01/Beer-analogy-image-768x698.jpg)\n\n",
+    "totalAttempts": 16,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals",
+      "Mathematics",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

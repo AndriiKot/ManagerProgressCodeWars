@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/639e3f63bd96bd003062d9d7",
+  "data": {
+    "id": "639e3f63bd96bd003062d9d7",
+    "name": "Number of Digits in Numbers 1 to N",
+    "slug": "number-of-digits-in-numbers-1-to-n",
+    "category": "algorithms",
+    "publishedAt": "2022-12-18T19:42:49.021Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/639e3f63bd96bd003062d9d7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-17T22:15:00.047Z",
+    "createdBy": {
+      "username": "Cloud Walker",
+      "url": "https://www.codewars.com/users/Cloud%20Walker"
+    },
+    "description": "Code a program that will count all the \n digits in the numbers 1 to n without \n timing out for large inputs. \n \n * Requirement: Output in BigInt. \n \n *  1 <= Input n <= 10^15 \n \n Examples: \n \n (n) => total digits in numbers 1 to n \n \n (9) => 9. There are 9 digits in the \nnumbers 1 to 9. \n\n(10) => 11. There are 11 digits in the \nnumbers 1 to 10. \n\n\n (15) => 21. There are 21 digits in the \nnumbers 1 to 15. \n\nNotes: \nBrute force methods like below will \n work up to about 10 to the 8th power \n but will fail at 10 to the 9th power, so \n be sure to develop an efficient \n algorithm. The brute force function \n below was useful to me for defining \n the problem more clearly, so I would \n know what to code to. So you may \n want to use something like that to \n help you get there. \n By the way with n = 10 to the 15th power my\n code returns the solution in about 0.1\n milliseconds. So you can see memoization\n makes a huge difference. \n ```\nfunction bruteForceDigits(n) {\n  let myDigits = 0;\n  for ( let x=1; x <= n; x++ )\n    myDigits += String(x).length; \n  return myDigits; \n}\n\nconsole.log( bruteForceDigits(75) ); // 141 \n\n```",
+    "totalAttempts": 19,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 21,
+    "tags": [
+      "Performance",
+      "Memoization",
+      "Logic",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

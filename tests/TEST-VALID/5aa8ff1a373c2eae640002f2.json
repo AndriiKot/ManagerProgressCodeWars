@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5aa8ff1a373c2eae640002f2",
+  "data": {
+    "id": "5aa8ff1a373c2eae640002f2",
+    "name": "Morty-3000 Interpreter",
+    "slug": "morty-3000-interpreter",
+    "category": "algorithms",
+    "publishedAt": "2018-03-14T11:59:42.146Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5aa8ff1a373c2eae640002f2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-14T10:53:15.142Z",
+    "createdBy": {
+      "username": "Omiant",
+      "url": "https://www.codewars.com/users/Omiant"
+    },
+    "description": "`Rick`: Hey Morty! We are in CODE!!\n\n`Morty`: W-what? What code?\n\n`Rick`: JS-code, Morty. Millions of sites in the whole multiverse are uses Javascript code. It makes sites more interactive!\n\n`Morty`: But h-how did we get here?\n\n`Rick`: It doesn't matter now, Morty. We need to get out of here. I heard a huge amount of bugs dwells here, and they are dangerous, some of them are very dangerous. So they can turn beautiful and fast site into slow monsters.\n\n`Morty`: WHAT? RICK, I-I DON'T WANNA DIE HERE! AAAAA!\n\n`Rick`: Calm down, Morty. I have a teleport gun.\n\n*(One of bugs eats a teleport gun)*\n\n`Rick`: AAAAAAAAAA! RUN, MORTY!!\n\n# Task\n\nYour task is to help Rick and Morty to get out of JS-code. Rick is very clever and he has invented his own esoteric language to send message to other Ricks and ask for help. He loves his grandson Morty and called language *\"Morty-3000\"*. This language has potentially infinite array of bytes, initialized to 0 and this syntax:\n\n- `hey` moves pointer to right cell\n- `morty` moves pointer to left cell\n- `wubba` starts a loop, if the byte of data pointer is `0`, skip code before matching `lubba`\n- `lubba` ends a loop, if a byte of data pointer is not `0`, jump to matching `wubba`\n- `dub` increments the data pointer, handling overflow (255 + 1 = 0)\n- `lets` decrements the data pointer (0 - 1 = 255)\n- `get` gets ASCII code of character from input stream and stores it at the data pointer\n- `out` adds a character with code equals the data pointer to `output`\n\n# Input\n\nFunction `translateItMorty` takes in 2 arguments:\n\n- `code` - the string with the sequence of commands\n- `input`*(optional)* - input stream\n\n# Output\n\nFunction `translateItMorty` should return an `output`*(string)*.",
+    "totalAttempts": 15,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms",
+      "Interpreters",
+      "Logic",
+      "Esoteric Languages"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

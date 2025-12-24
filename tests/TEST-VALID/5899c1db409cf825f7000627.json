@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5899c1db409cf825f7000627",
+  "data": {
+    "id": "5899c1db409cf825f7000627",
+    "name": "Minimum number of terms needed to find sum in Geometric Series",
+    "slug": "minimum-number-of-terms-needed-to-find-sum-in-geometric-series",
+    "category": "reference",
+    "publishedAt": "2017-02-07T14:21:51.415Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5899c1db409cf825f7000627",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-07T12:47:23.292Z",
+    "createdBy": {
+      "username": "UppyMeister",
+      "url": "https://www.codewars.com/users/UppyMeister"
+    },
+    "description": "Hi everyone!\n\nI have a challenge for you. In a <a href=\"https://www.codewars.com/kata/589872ad402b3b2cef00058f\">previous kata</a> I made, the challenge was to find the sum of a geometric series. This was done with the formula:\n\n<img src=\"http://mathematicsi.com/wp-content/uploads/2011/03/sum-formula.png\" alt=\"Sum of Geometric Sequence Formula\"/>\n\nYour challenge is, when given a sequence and Sn (sum of the sequence) to solve for n, where n is the minimum number of terms needed to exceed (or equal) the sum of the sequence. I HIGHLY suggest you first read what all the letters in the formula mean by reading the description of my <a href=\"https://www.codewars.com/kata/589872ad402b3b2cef00058f\">previous kata</a> and then read the example below so you know what to do. More information can be found <a href=\"https://en.wikipedia.org/wiki/Logarithm\">here</a>\n\nBecuase many of you may not be familiar with how you can solve this, I will give you the steps. You must rearrange until you're left with r^n, and then use logarithms to get 'n' on it's own. You should ensure that r is positive, as trying to use logarithms on a negative number with result in a math error. If the list is empty the program must return None\n\nAs an example, say you have the sequence: 1, 2, 4, 8, 16.\n\nFirst, you find 'a', the first term in the sequence.\n\na = 1\n\nThen you find 'r', the common ratio:\n\nr = 2\n\nOnce you have these, you can begin to rearrange the formula.\n```python\n14 = 1((2**n)-1)/(2-1)\n14 = (2**n)-1\n2**n = 15\n```\nAfter rearranging, you should have:\n```python\n2**n = 15\n```\nIf you were to use one of the rules of logarithms you would be able to rearrange the above to this:\n```python\nn*log(2) = log(15)\n```\nand then could divide to get n:\n```python\nn = log(15) / log(2) = 3.906\n```\nwhich means the minimum amount of terms needed in this specific sequence is 4 terms.\n\nIf you have ANY questions or there are any issues in this kata, PLEASE let me know!",
+    "totalAttempts": 158,
+    "totalCompleted": 15,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

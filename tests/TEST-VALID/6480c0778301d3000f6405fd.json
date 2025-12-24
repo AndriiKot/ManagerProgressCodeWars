@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6480c0778301d3000f6405fd",
+  "data": {
+    "id": "6480c0778301d3000f6405fd",
+    "name": "Various Assignments",
+    "slug": "various-assignments",
+    "category": "reference",
+    "publishedAt": "2023-06-07T17:40:12.661Z",
+    "approvedAt": null,
+    "languages": [
+      "scala"
+    ],
+    "url": "https://www.codewars.com/kata/6480c0778301d3000f6405fd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-06-07T17:37:59.289Z",
+    "createdBy": {
+      "username": "LegendaryFartMaster",
+      "url": "https://www.codewars.com/users/LegendaryFartMaster"
+    },
+    "description": "This kata aims to teach a concept.\n\nYou are to define three generic classes: `NormalGeneric`, `StrictGeneric` and `WeirdGeneric` such that:\n  * A `NormalGeneric` of `Dog` can be assigned to a `NormalGeneric` of `Animal`, but not vice-versa\n    * i.e.: `val animal: NormalGeneric[Animal] = NormalGeneric[Dog]` compiles\n    * but `val animal: NormalGeneric[Dog] = NormalGeneric[Animal]` does not\n  * A `StrictGeneric` of `Animal` can only be assigned to a `StrictGeneric` of `Animal`\n    * i.e.: `val animal: StrictGeneric[Animal] = StrictGeneric[Animal]` compiles\n    * but `val animal: StrictGeneric[Animal] = StrictGeneric[Dog]` does not\n    * nor does `val animal: StrictGeneric[Dog] = StrictGeneric[Animal]`\n  * A `WeirdGeneric` of `Animal` can be assigned to a `WeirdGeneric` of `Dog`, but not vice-versa\n    * i.e.: `val animal: WeirdGeneric[Dog] = WeirdGeneric[Animal]` compiles\n    * but `val animal: WeirdGeneric[Animal] = WeirdGeneric[Dog]` does not\n\n\nwhere `Animal` and `Dog` are defined in the tests such that `Dog` extends `Animal`\n\n",
+    "totalAttempts": 11,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 25,
+    "tags": [
+      "Fundamentals",
+      "Tutorials"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

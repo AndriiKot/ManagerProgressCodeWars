@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/566b0ad71935ac8eb3000013",
+  "data": {
+    "id": "566b0ad71935ac8eb3000013",
+    "name": "Compute Nullable Non-Terminals",
+    "slug": "compute-nullable-non-terminals",
+    "category": "algorithms",
+    "publishedAt": "2015-12-11T23:58:59.420Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/566b0ad71935ac8eb3000013",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-11T17:41:43.359Z",
+    "createdBy": {
+      "username": "jgdodson",
+      "url": "https://www.codewars.com/users/jgdodson"
+    },
+    "description": "## Background\n\nContext-free grammars (CFGs) are used to define the structure of programming languages. Recall that a CFG has four parts:\n\n  + a set of **termial symbols**\n  + a set of **non-terminal symbols**\n  + a set of **productions**\n  + a **start symbol** which is one of the non-terminals\n  \nThere is also a special non-terminal called 'epsilon' which represents an empty string. Here's an example. A CFG could have {A, B, C, D, E} as non-terminals, {a, b, c} as terminals, A as the start symbol, and the following productions:\n\n  + A -> aB\n  + A -> cC\n  + B -> AB\n  + B -> epsilon\n  + C -> bc\n  + D -> ab\n  + D -> epsilon\n  + E -> BD\n\nA possible **derivation** with this CFG is: A => aB => aAB => acCB => acbcB => acbc. We started with the start symbol and used the productions to get a **string** of only terminal symbols. We say that 'acbc' is in the **language** of this grammar.\n\nNotice that in the last step of our derivation, B seemed to disappear without a trace. This is ok, becauase the grammar specifies that B may be transformed into the empty string. When a non-terminal can be transformed into the empty string, we say that it is **nullable**. It is possible for a non-terminal to be nullable even if epsilon does not appear directly in one of its productions. In our grammar, E is nullable! Here's proof: E => BD => D => (empty string)\n\n## The Problem\n\nYour challenge is to write a function that determines which non-terminals in a CFG are nullable. A grammar will be represented as a list of tuples. Each tuple corresponds to a production in the grammar. The first item in a tuple is the left hand side of the production. The second item is the right hand side. Your function should return the nullable non-terminals as a set. Here is a demo using our example CFG:\n\n```python\n>>> grammar = [\n      ('A', ['a', 'B']),\n      ('A', ['c', 'C']),\n      ('B', ['A', 'B']),\n      ('B', ['epsilon']),\n      ('C', ['b', 'c']),\n      ('D', ['a', 'b']),\n      ('D', ['epsilon']),\n      ('E', ['B', 'D'])\n    ]\n\n>>> nullables(grammar)\n{'E', 'D', 'B'}\n```\n\nThe string 'epsilon' is reserved. All other strings can be used to label non-terminals and terminals.",
+    "totalAttempts": 152,
+    "totalCompleted": 28,
+    "totalStars": 4,
+    "voteScore": 45,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

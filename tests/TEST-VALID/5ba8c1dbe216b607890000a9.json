@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ba8c1dbe216b607890000a9",
+  "data": {
+    "id": "5ba8c1dbe216b607890000a9",
+    "name": "Extended Credit Card Validation",
+    "slug": "extended-credit-card-validation",
+    "category": "algorithms",
+    "publishedAt": "2018-09-24T13:20:22.586Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ba8c1dbe216b607890000a9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-24T10:52:12.083Z",
+    "createdBy": {
+      "username": "TheJambo",
+      "url": "https://www.codewars.com/users/TheJambo"
+    },
+    "description": "You are required to make a program that determines the validity and card scheme of a credit card.\n\nThe ideal solution should first check for validity *(Google: Luhn Check)*, returning \"Invalid\" if it does not pass.\nAfter that, it should check for the Card scheme and return the name as a String (as shown in the table). The card scheme patterns are listed below.\n\nIt is important to note that Minor Schemes are subsections of Major schemes. **Where a single card matches two schemes, only the minor one should be reported.** There are no cases where a card matches two Minor Schemes.\n\n\n### Major Schemes\n\n<table>\n<thead>\n<tr>\n<th style=\"width: 15%\">Name</th>\n<th style=\"width: 15%\">Starts with</th>\n<th style=\"width: 15%\">Card Length (digits)</th>\n<th style=\"width: 15%\">Example</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"width: 15%\">AMEX</td>\n<td style=\"width: 15%\">34 or 37</td>\n<td style=\"width: 15%\">14 - 15</td>\n<td style=\"width: 15%\">371449635398431</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">Discover</td>\n<td style=\"width: 15%\">6011</td>\n<td style=\"width: 15%\">16</td>\n<td style=\"width: 15%\">6011111111111117</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">Mastercard</td>\n<td style=\"width: 15%\">51 to 55</td>\n<td style=\"width: 15%\">16</td>\n<td style=\"width: 15%\">5318273647283745</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">VISA</td>\n<td style=\"width: 15%\">4</td>\n<td style=\"width: 15%\">13 - 19</td>\n<td style=\"width: 15%\">4012888888881881</td>\n</tr>\n</tbody>\n</table>\n \n### Minor Schemes\n\n<table>\n<thead>\n<tr>\n<th style=\"width: 15%\">Name</th>\n<th style=\"width: 15%\">Starts with</th>\n<th style=\"width: 15%\">Card Length (digits)</th>\n<th style=\"width: 15%\">Example</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"width: 15%\">Dankort</td>\n<td style=\"width: 15%\">5019</td>\n<td style=\"width: 15%\">16</td>\n<td style=\"width: 15%\">5019717010103742</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">Unionpay</td>\n<td style=\"width: 15%\">62 or 88</td>\n<td style=\"width: 15%\">16 - 19</td>\n<td style=\"width: 15%\">6222821234560017</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">UATP</td>\n<td style=\"width: 15%\">1</td>\n<td style=\"width: 15%\">15</td>\n<td style=\"width: 15%\">108046752964787</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">Maestro</td>\n<td style=\"width: 15%\">50, 56 - 58, 63, 67</td>\n<td style=\"width: 15%\">12 - 19</td>\n<td style=\"width: 15%\">6759000000000018</td>\n</tr>\n<tr>\n<td style=\"width: 15%\">Visa Electron</td>\n<td style=\"width: 15%\">4026, 417500, 4405, 4508, 4844, 4913, 4917</td>\n<td style=\"width: 15%\">16 - 19</td>\n<td style=\"width: 15%\">4917300800000000</td>\n</tr>\n</tbody>\n</table>\n\n### Error cases\n\n* All cards that fail a Luhn check should return \"Invalid\"\n * 12345678910 --> Output: \"Invalid\"\n \n* All cards that pass a Luhn check but cannot whose card scheme cannot be determined should return \"Unknown\"\n * 210007296874267 --> Output: \"Unknown\"",
+    "totalAttempts": 96,
+    "totalCompleted": 14,
+    "totalStars": 9,
+    "voteScore": 18,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

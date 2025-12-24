@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6647b75aaddcc947d79b4da9",
+  "data": {
+    "id": "6647b75aaddcc947d79b4da9",
+    "name": "Stirling Numbers",
+    "slug": "stirling-numbers",
+    "category": "games",
+    "publishedAt": "2024-05-17T22:13:48.042Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6647b75aaddcc947d79b4da9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-17T20:00:26.876Z",
+    "createdBy": {
+      "username": "Angel !",
+      "url": "https://www.codewars.com/users/Angel%20!"
+    },
+    "description": "## Introduction\n\nStirling numbers are a fascinating concept in combinatorial mathematics, named after the Scottish mathematician James Stirling. They play a crucial role in various fields, including algebra, number theory, and computer science. Stirling numbers come in two distinct forms: Stirling numbers of the first kind and Stirling numbers of the second kind. [See more here](https://en.wikipedia.org/wiki/Stirling_number).\n\nThe Stirling Numbers of the First Kind (unsigned) and the Second Kind are defined by the following recursions:\n\n```\n------- Stirling Numbers of the First Kind (Unsigned) -------\nc(n, k) = (n - 1) * c(n - 1, k) + c(n - 1, k - 1)\nc(0, 0) = 1\nc(n, 0) = 0  for n > 0\nc(0, k) = 0  for k > 0\n\n\n------- Stirling Numbers of the Second Kind -------\nS(n, k) = k * S(n - 1, k) + S(n - 1, k - 1)\nS(0, 0) = 1\nS(n, 0) = 0  for n > 0\nS(0, k) = 0  for k > 0\n\n\n```\n\n## The Challenge.\n\nWrite a function `stirling_numbers(n, k)` that can compute both Unsigned Stirling Numbers of the First Kind and the Second Kind and return a tuple with two values `(firstKind, secondKind)`.\n\n\n## Examples.\n```python \nprint(stirling_numbers(0, 0)) # Output: (1, 1)\nprint(stirling_numbers(0, 1)) # Output: (0, 0)\nprint(stirling_numbers(5, 2)) # Output: (50, 15)\nprint(stirling_numbers(6, 2)) # Output: (274, 31)\n\n```\n\n**Note:  If you want a little more challenge, try to make `stirling_numbers(n, k)` recursive, and do not define any more functions than `stirling_numbers(n, k)`.**",
+    "totalAttempts": 15,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 7,
+    "tags": [
+      "Mathematics",
+      "Recursion",
+      "Performance",
+      "Dynamic Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

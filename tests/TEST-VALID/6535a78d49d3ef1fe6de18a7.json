@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6535a78d49d3ef1fe6de18a7",
+  "data": {
+    "id": "6535a78d49d3ef1fe6de18a7",
+    "name": "Will you get head?",
+    "slug": "will-you-get-head",
+    "category": "algorithms",
+    "publishedAt": "2023-10-23T00:06:16.128Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6535a78d49d3ef1fe6de18a7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-22T22:51:57.422Z",
+    "createdBy": {
+      "username": "Yushi.py",
+      "url": "https://www.codewars.com/users/Yushi.py"
+    },
+    "description": "## Introduction\n\nAs you are taking a stroll through the newly opened carnival in your city, you are approached by a man dressed in a magician suit.\n\n> Welcome, good sir! Care to play a game?\n\n> Just guess our act right and ...\n\nSorry, wrong site.\n\n> Observe me as I throw this **very special** coin into the air.\n\nAfter saying this, the man proceeds to flip the coin `total` times, landing `heads` heads out of those.\n\n> I've given you this information; now I ask you: Are you willing to bet `bet` dolars of your money for a chance to win the grand total of `prize` dolars, if the next throw lands heads again?\n\nKnowing that the coin **may be biased**. You must make a decision as to whether you will take this bet or not.\n\n## Task\n\nGiven that a **possibly biased coin** landed `heads` heads out of `total` throws, determine whether you should take a bet of `bet` dolars for a chance of getting `prize` dolars back.\n\n```python\n- heads: [0, 1000] (integer)\n- total: [0, 1000] (integer)\n```\n\n#### Notes\n\n- A bet should be taken if and only if **the expected value of the bet is greater than the prize**.\n\n- Consider that, **without any information**, all the possible biases of the coin are **equally likely**. In other words, the coin is **initially presumed to be fair**.\n\n- `heads` and `total` will always be **non negative integers** with `total` being **greater or equal** to `heads`\n\n- `bet` and `prize` will always be **real numbers**. A negative `bet` should be interpreted as **receiving money** to play the bet, while a negative `prize` should be interpreted as **paying money** upon winning. Using **expected value**, still works in these cases.\n\n### Examples\n\n```python\nprediction(0, 0, 1, 2) -> False\nprediction(3, 3, 10, 14) -> True\nprediction(0, 3, 1, 6) -> True\nprediction(10, 12, 1, 1.2) -> False\nprediction(100, 100, 1, .9) -> False\nprediction(0, 0, -1, -1.99) -> True\nprediction(0, 1_000, -1, 0) -> True\nprediction(1_000, 1_000, 0, -.9) -> False\n```",
+    "totalAttempts": 135,
+    "totalCompleted": 16,
+    "totalStars": 1,
+    "voteScore": 17,
+    "tags": [
+      "Mathematics",
+      "Probability"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

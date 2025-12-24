@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/531059719ad1fa3dea000176",
+  "data": {
+    "id": "531059719ad1fa3dea000176",
+    "name": "Waving the Stream",
+    "slug": "waving-the-stream",
+    "category": "algorithms",
+    "publishedAt": "2014-03-13T21:44:26.006Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/531059719ad1fa3dea000176",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-28T09:40:01.595Z",
+    "createdBy": {
+      "username": "mattdonut",
+      "url": "https://www.codewars.com/users/mattdonut"
+    },
+    "description": "# Waving the Stream\n\nThe goal here is to practice a very simple form of data stream processing. Given a simple stream of comparable elements, we want to produce and output stream that is modified in some way that changes the order of the elements to match a criteria.\n\n### Wiggle sort\nIn this case, we want to \"wiggle sort\" the stream. A wiggle sort stirves to ensure that the sequence goes up and then back down again in alternating patterns. This can only be done on a sequence of elements that can be compared with some form of >, <, or = operators to define what up and down mean.\n\nLets assume we have a sequence with elements **A**,**B**,**C**:\n\n**A** **B** **C**\n\nThis sequence is wiggle sorted if we *don't* have **A** > **B** > **C** or **A** < **B** < **C**\n\nThis must hold for any two consecutive pairs of elements. Effectively it must alternate < and >, with = counting as either one.\n\nSome examples:\n\n1 3 2 4 3 5 is wiggle sorted\n\n1 2 3 5 4 3 2 1 is *not* wiggle sorted\n\n1 1 1 2 2 3 3 *is* wiggle sorted (remember that it only applies to consecutive pairs)\n\n## Simulated Streams\n\nYour stream proccessor will be handed two objects, one is a source stream and the other is the output stream.\n\nThe source stream object has one method, .read(), which will return the next element of the stream. In this situation, we will only be using the characters '123456789' for our testing to keep things simple. If the stream is exhausted, it will return a falsy value.\n\nThe output stream has two methods, .write(item) and .close(). Write puts an element into the output, which should be wiggled. Close signals that you are done writing your output stream, and for your convenience it will also return a string representation of the output you constructed.\n\n### Time pressure\n\nIn order to simulate time pressure for potentially large streams, the Reader and Writer are actually keeping track of your reads and writes, and if you read too many elements without writing any, it will throw an error. In our testing, the number of reads can only exceed the number of writes by 5.\n\n### Testing\n\nFor testing purposes, you can create a stream testing object using the supplied makeStream() function. It takes a string as an argument and uses that string as the sequence to supply with .read(), one character at a time.\n\nThe stream object will throw errors if you write un-wiggled streams to it. For your convenience, the writer object has a .isWiggled() method, which will return true if the stream writen to it is wiggled.\n\n# Goal\n\nYour goal is to write an output stream to the Writer that contains all of the elements from the Reader in a wiggle sorted order! :)",
+    "totalAttempts": 155,
+    "totalCompleted": 18,
+    "totalStars": 1,
+    "voteScore": 14,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d6c352b2a1ef80011e9e316",
+  "data": {
+    "id": "5d6c352b2a1ef80011e9e316",
+    "name": "RL#1:  Restaurant menu format",
+    "slug": "rl-number-1-restaurant-menu-format",
+    "category": "reference",
+    "publishedAt": "2019-09-01T23:23:58.262Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d6c352b2a1ef80011e9e316",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-09-01T21:16:27.190Z",
+    "createdBy": {
+      "username": "pbldmngz",
+      "url": "https://www.codewars.com/users/pbldmngz"
+    },
+    "description": "# RealLife #1: RESTAURANT MENU FORMAT\nThe other day I was creating a menu for my parents restaurant \nas for the tenth time. I was working again in the repetitive task of **separating perfectly the name of the product and the price with dots so it can perfectly fit in one line**. Then I fugured that it can easily be solved by a program. And here we are.\n\n# What do we want?\nImagine you got limited space on a page, in Monospace 12 you can place 30 characters on each line, you will have to use all the space available. \n* If the product name and the price uses more than 30 characters you have no space to place in. \n* If product name and the price uses less than 30 characters you have to fill the gap with dots.\n\nSo, your task is to format ProductName and Price into something like this: \n```\n[CapitalizedProductName][Dots as filler][$Price]\n``` \nAnd join them into a single string separated by **\\n**\n\n# Here is an example:\nA program that given **DATA** (an array like this):\n```\n[[\"PRODUCT\", 1], [\"PRODUCT\", 10], [\"PRODUCT\", 100], [\"PRODUCT\", 1000]]\n```\nand **MX** (max line length) = 30, returns:\n```\nPRODUCT..................$1\nPRODUCT..................$10\nPRODUCT..................$100\nPRODUCT..................$1000\n```\n# String conditions\n* Return each line separated by **\\n** in a single string\n* Separate name and price with dots\n* There is at least one dot\n* Return empty string if there is no data\n* A line never can be longer than **MX**\n* No white spaces at the beginning or ending of product name\n* No white spaces at the end of each line\n* Product name has to be in capital letters\n* Im mexican so i want the **$** symbol before the price\n* If there is no space between name and price, return **None**\n",
+    "totalAttempts": 89,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": -5,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Logic",
+      "Strings",
+      "Data Types",
+      "Lists",
+      "Data Structures",
+      "Loops",
+      "Control Flow",
+      "Basic Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

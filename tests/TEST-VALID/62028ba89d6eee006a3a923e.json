@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62028ba89d6eee006a3a923e",
+  "data": {
+    "id": "62028ba89d6eee006a3a923e",
+    "name": "Jenkins One At A Time Hash",
+    "slug": "jenkins-one-at-a-time-hash",
+    "category": "reference",
+    "publishedAt": "2022-02-08T16:08:19.247Z",
+    "approvedAt": null,
+    "languages": [
+      "nasm"
+    ],
+    "url": "https://www.codewars.com/kata/62028ba89d6eee006a3a923e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-02-08T15:26:32.667Z",
+    "createdBy": {
+      "username": "vasile_programează",
+      "url": "https://www.codewars.com/users/vasile_programeaz%C4%83"
+    },
+    "description": "One At A Time Hash\n\nBob Jenkins describes this hash function (see http://www.burtleburtle.net/bob/hash/doobs.html):\n\n    uint32_t one_at_a_time(int8_t *key, uint32_t len)\n    {\n      uint32_t hash, i;\n      for (hash=0, i=0; i<len; ++i)\n      {\n        hash += key[i];\n        hash += (hash << 10);\n        hash ^= (hash >> 6);\n      }\n      hash += (hash << 3);\n      hash ^= (hash >> 11);\n      hash += (hash << 15);\n      return hash;\n    }\n\nWrite an implementation for this hash function.",
+    "totalAttempts": 66,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

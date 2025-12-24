@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63226b0d472994004a0ace58",
+  "data": {
+    "id": "63226b0d472994004a0ace58",
+    "name": "Find Value in Binary Search Tree",
+    "slug": "find-value-in-binary-search-tree",
+    "category": "algorithms",
+    "publishedAt": "2022-09-15T00:01:25.956Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/63226b0d472994004a0ace58",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-15T00:00:13.286Z",
+    "createdBy": {
+      "username": "TV4Fun",
+      "url": "https://www.codewars.com/users/TV4Fun"
+    },
+    "description": "A Binary Search Tree, according to [GeeksforGeeks](https://www.geeksforgeeks.org/binary-search-tree-data-structure/) is a node-based binary tree data structure which has the following properties:\n* The left subtree of a node contains only nodes with keys lesser than the node’s key.\n* The right subtree of a node contains only nodes with keys greater than the node’s key.\n* The left and right subtree each must also be a binary search tree.\n\nAn example Binary Search Tree might look like this:\n![Binary Search Tree example](https://media.geeksforgeeks.org/wp-content/uploads/BSTSearch.png)\n\nYou are given the root of a Binary Search Tree and a value to search for. If the value is in the tree, return the node object with that value. If it is not, return `null`.\n\nYou are given a tree node class as follows:\n```java\npublic class Node {\n  private Node left = null;\n  private Node right = null;\n  private int value;\n  \n  public int getValue() {\n    return value;\n  }\n  \n  public Node getLeft() {\n    return left;\n  }\n  \n  public Node getRight() {\n    return right;\n  }\n  \n  public Node(int value) {\n    this.value = value;\n  }\n   \n  public Node(int value, Node left, Node right) {\n    Node(value);\n    this.left = left;\n    this.right = right;\n  }\n}\n```\n\nNotes:\n* The tree may be balanced or unbalanced, but it is always sorted.\n* Node values can be any valid integer.\n* The `.left` or `.right` members of a node will be `null` if there are no further nodes in that direction.",
+    "totalAttempts": 25,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Binary Trees",
+      "Binary Search Trees",
+      "Searching",
+      "Trees"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

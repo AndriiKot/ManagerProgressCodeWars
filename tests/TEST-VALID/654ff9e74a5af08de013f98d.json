@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654ff9e74a5af08de013f98d",
+  "data": {
+    "id": "654ff9e74a5af08de013f98d",
+    "name": "Exploring the Trachtenberg System: Detailed Multiplication by Two",
+    "slug": "exploring-the-trachtenberg-system-detailed-multiplication-by-two",
+    "category": "reference",
+    "publishedAt": "2023-11-12T00:05:20.130Z",
+    "approvedAt": null,
+    "languages": [
+      "swift"
+    ],
+    "url": "https://www.codewars.com/kata/654ff9e74a5af08de013f98d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-11T22:02:15.607Z",
+    "createdBy": {
+      "username": "KuuuGR",
+      "url": "https://www.codewars.com/users/KuuuGR"
+    },
+    "description": "**Exploring the Trachtenberg System: Multiplication by Two**\n\n### Introduction:\nImagine young John, a middle school student, eager to impress his math teacher. He decides to learn the unconventional multiplication method known as the Trachtenberg System. This system, crafted by Jakow Trachtenberg while he was a prisoner in a concentration camp, was his mental escape and a way to retain sanity amidst chaos. To keep his mind occupied, Trachtenberg devised this innovative method to multiply long numbers by single digits using a set of simple rules. John starts with multiplying by 2, as multiplying by 1 is trivial, but he needs to ensure he's applying the procedure correctly.\n\n### Task:\nYour task is to help John by creating a function that takes any integer and breaks down the multiplication process according to the Trachtenberg System. The function should return an array where each digit of the multiplied number corresponds to a string describing the step-by-step calculation process.\n Exemplary array which your function should return. An array of tuples, each containing a digit and a string describing the multiplication step, including carryovers for the number 9870 should look that way:\n```swift\n[(0, \"0\"), (7, \"1/4\"), (8, \"1/7\"), (9, \"1/9\"), (0, \"1\")]\n```\n\n\n### The Trachtenberg System for Multiplication by Two:\n\n#### General rules:\n1. Prefix each number with a 0 (e.g., 3461 becomes 03461).\n- Next two are not required for this particular kata:\n2. \"Neighbor\" refers to the digit on the right of a given digit. If there is no neighbor, assume it to be 0.\n3. The \"half\" of a digit is its floor-divided value by 2 e.g., half of 9 is 4.\n\n**Multiplication by 2**\n\n1. Consider the number 9870. In accordance with note 2, we write it as 09870.\n2. Write down the digits of the number vertically, starting from the last digit and remembering the zero.\n3. Double each digit.\n4. If we get a number equal to or greater than 10 at any point, for example, 12, we keep 2, and carry over the 1 to the next lower digit.\n\nStep-by-Step Example of Multiplying 9870 by 2:\n- 0 — 0 x 2 = 0\n- 7 — 7 x 2 = 1/4\n- 8 — 8 x 2 + 1 (carryover) = 1/7\n- 9 — 9 x 2 + 1 (carryover) = 1/9\n- 0 — 0 x 2 + 1 (carryover) = 1\n\nIf Jonh reads the result from the bottom up, he has the resoult of multiplication 9870 by 2, which is 19740.\n\nThis kata is just the beginning of exploring the Trachtenberg system, which includes unique techniques for multiplication by other numbers, squaring, and division. More complex katas will follow to delve deeper into this fascinating system. If you find this kata engaging and want to learn more, you might be interested in \"The Trachtenberg Speed System of Basic Mathematics\" which elaborates on these techniques in detail.\n\n",
+    "totalAttempts": 34,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Mathematics",
+      "Algorithms",
+      "Number Theory",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

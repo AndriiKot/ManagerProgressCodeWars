@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654c7ea2b8466eb6e0ab7a58",
+  "data": {
+    "id": "654c7ea2b8466eb6e0ab7a58",
+    "name": "Custom format",
+    "slug": "custom-format",
+    "category": "algorithms",
+    "publishedAt": "2023-11-09T06:52:21.517Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/654c7ea2b8466eb6e0ab7a58",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-09T06:39:30.804Z",
+    "createdBy": {
+      "username": "cMardc",
+      "url": "https://www.codewars.com/users/cMardc"
+    },
+    "description": "In this kata you'll have to create your own string formatting function.\n\n# Arguments\n\nYour function must take a string, and then unknown count of parameters.\nEvery time you encounter `%x` for `y`-th time, you must print `y`-th element with type of `x`.\n\n#### Here are types according to `%x` representation:\n\n| Type     | Representation |\n| -------- | -------------- |\n| Integer  | %d             |\n| Float    | %f             |\n| Char     | %c             |\n| String   | %s             |\n\n# Return Type\nthe return type will be a `string` that is formatted as described before.\n\n# Examples\n```\n  format_string(\"Hello, %s World!\", \"My\") => \n      \"Hello, My World!\"\n      \n  format_string(\"%d is my %s number%c\", 10, \"favourite\", '!') => \n    \"10 is my favourite number!\"\n    \n  format_string(\"This is normal\\n\") =>\n    \"This is normal\\n\"\n```\n\n### Note\n\n#### 1. \nIt's 100% that counts of `y` is always same with count of parameters with `%x` type. If `x` does not match with any type shown on the table, just print `%x`. \n\n#### 2.\nAny argument that has `double` or `float` type's precision is not more than 6, and you must present it with 6 precision.\n\n#### 3.\nArguments that has `int` type are always positive.\n",
+    "totalAttempts": 7,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54a2daeb1817ec97d300121c",
+  "data": {
+    "id": "54a2daeb1817ec97d300121c",
+    "name": "Construct Javascript-method syntax in Ruby",
+    "slug": "construct-javascript-method-syntax-in-ruby",
+    "category": "reference",
+    "publishedAt": "2014-12-30T18:48:18.466Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54a2daeb1817ec97d300121c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-12-30T17:03:40.107Z",
+    "createdBy": {
+      "username": "user434017",
+      "url": "https://www.codewars.com/users/user434017"
+    },
+    "description": "I'm really (not really) in love with the following Javascript syntax for defining 'methods'.\n\n```javascript\nfunction MyClassFunction() {}\n\nMyClassFunction.prototype.doSomething = function(some, args) {\n\tconsole.log('something useless');\n}; \n\n// Here's you calling it\nnew MyClassFunction().doSomething(1, 2);\n```\nSo much in fact, I'd like to see something like it in Ruby. \n\nIn Ruby, I imagine it looking something like this:\n\n```ruby\nclass X\nend\n\nX.prototype.do_something -> (some, args) { puts 'something useless' }\n\n# Here's you calling it\nX.new.do_something(1,2)\n```\n\nThis is in-effect declaring `do_something` for the first time, as an instance method of X. \n\nIt should adhere to the following rules:\n\n1. Undefined methods called without a callable should return the original NoMethodError.\n2. You should accept Procs, Lambdas, and Methods to define the new method.\n3. Like normal method definition, it should return the name of the new method as a symbol.\n4. This only has to work on UNdefined methods. Does not need to overwrite existing ones. ",
+    "totalAttempts": 99,
+    "totalCompleted": 20,
+    "totalStars": 6,
+    "voteScore": 28,
+    "tags": [
+      "Metaprogramming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

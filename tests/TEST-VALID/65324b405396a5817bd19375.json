@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65324b405396a5817bd19375",
+  "data": {
+    "id": "65324b405396a5817bd19375",
+    "name": "Cryptography in Characters",
+    "slug": "cryptography-in-characters",
+    "category": "algorithms",
+    "publishedAt": "2023-10-20T11:21:33.886Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/65324b405396a5817bd19375",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-20T09:41:20.767Z",
+    "createdBy": {
+      "username": "alex.qm",
+      "url": "https://www.codewars.com/users/alex.qm"
+    },
+    "description": "Your task is to create two functions, **_encode_** and **_decode_** that will allow you to encrypt and decrypt a phrase using a **key**.\n\nThe scheme is as follows:\n\n> `phrase` + `key` = `encPhrase`\n\n> `encPhrase` + `key` = `phrase`\n\n**Mechanics of encryption and decryption**\n- A **phrase** and a **key** will be given.\n- By using these, the encrypted or decrypted phrase will be generated.\n- The mechanism consists of determining the ASCII code of each character of the phrase and the key.\n- To calculate offsets of each character of the key has to be add to the length of the key ([see example below](#encryption-example)).\n- Only ASCII ranges from **65-90** (uppercase) and **97-122** (lowercase) will be considered ([see the picture below](#ascii-table)).\n- Once all the ASCII values have been obtained, a run through of the phrase is performed, adding the offset for each character ([see example below](#encryption-example)).\n- The phrase and key will be read simultaneously, so that the first character of the phrase uses the first character of the key and so on.\n\n## **ASCII TABLE** :\n![ascii.png](https://i.postimg.cc/jS7DfbwR/ascci-Edit.png)\n\n**Important notes**\n- If the offset moves the ASCII code out of the set ranges it should start in the next range.\n\nFor example:\n> If ASCII code + OFFSET > 122, it should start from 65.\n\n> If ASCII code + OFFSET > 90 and < 97, it should start from 97.\n\n- The key length will not exceed 17.\n\n- The decoding procedure is the opposite of the encryption ([see the decryption example below](#encryption-example)).\n\n- If the phrase doesn't exist or is empty return an empty string.\n\n- If the key passed doesn't exist or is empty you'll not be able to encrypt the phrase so returns the phrase.\n\nPossible cases:\n\n> 1. `Phrase length = key length` Nothing should change.\n\n> 2. `Phrase length > key length` Once the end of the key is reached, the key should start back again at the first character ([see the example](#encryption-example)).\n\n> 3. `Phrase length < key length` Once the end of the phrase is reached, no more changes should be done.\n\n## Examples:\n\n### Encryption example:\n\n```java\nLegend:\n- LD     (Last Digit) \n- OFFSET (Last digit + Key length)\n- EC     (Encrypted Char)\n\nkey: \"fgh\" (length: 3)\n-------------------------------------\n| char  => ASCII => LD =>  OFFSET   |\n| 'f'   =>  102  =>  2 => 2 + 3 = 5 |\n| 'g'   =>  103  =>  3 => 3 + 3 = 6 |\n| 'h'   =>  104  =>  4 => 4 + 3 = 7 |\n-------------------------------------\n\nphrase: \"deargod\"\n------------------------------------------\n| char => ASCII => ASCII + OFFSET => EC  |\n| 'd'  =>  100  => 100 + 5 = 105  => 'i' |\n| 'e'  =>  101  => 101 + 6 = 107  => 'k' |\n| 'a'  =>   97  =>  97 + 7 = 104  => 'h' |\n| 'r'  =>  114  => 114 + 5 = 119  => 'w' |\n| 'g'  =>  103  => 103 + 6 = 109  => 'm' |\n| 'o'  =>  111  => 111 + 7 = 118  => 'v' |\n| 'd'  =>  100  => 100 + 5 = 105  => 'i' |\n------------------------------------------\n\n\"deargod\" + \"fgh\" = \"ikhwmvi\"\n```\n### Decryption example:\n\n```java\nkey: \"fgh\" (length: 3)\n-------------------------------------\n| Char  => ASCII => LD => OFFSET    |\n| 'f'   =>  102  =>  2 => 2 + 3 = 5 |\n| 'g'   =>  103  =>  3 => 3 + 3 = 6 |\n| 'h'   =>  104  =>  4 => 4 + 3 = 7 |\n-------------------------------------\n\nencryptedPhrase: \"ikhwmvi\"\n------------------------------------------\n| Char => ASCII => ASCII + OFFSET => EC  |\n| 'i'  =>  105  => 105 - 5 = 100  => 'd' |\n| 'k'  =>  107  => 107 - 6 = 101  => 'e' |\n| 'h'  =>  104  => 104 - 7 = 97   => 'a' |\n| 'w'  =>  119  => 119 - 5 = 114  => 'r' |\n| 'm'  =>  109  => 109 - 6 = 103  => 'g' |\n| 'v'  =>  118  => 118 - 7 = 111  => 'o' |\n| 'i'  =>  105  => 105 - 5 = 100  => 'd' |\n------------------------------------------\n\n\"ikhwmvi\" + \"fgh\" = \"deargod\"\n```\n\n**YOU'VE GOT THIS!!!**\n\nKata developed by **gonzalo.rc**, **_efrain.vm_**, **_sergio.gg_** and **alex.qm** from **metrica_sep23**",
+    "totalAttempts": 151,
+    "totalCompleted": 7,
+    "totalStars": 5,
+    "voteScore": -1,
+    "tags": [
+      "Strings",
+      "Ciphers",
+      "Fundamentals",
+      "Cryptography",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

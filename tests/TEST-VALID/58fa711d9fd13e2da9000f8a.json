@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58fa711d9fd13e2da9000f8a",
+  "data": {
+    "id": "58fa711d9fd13e2da9000f8a",
+    "name": "8-ball setup validation",
+    "slug": "8-ball-setup-validation",
+    "category": "reference",
+    "publishedAt": "2017-04-21T20:52:45.674Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/58fa711d9fd13e2da9000f8a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-04-21T20:53:07.259Z",
+    "createdBy": {
+      "username": "user9057704",
+      "url": "https://www.codewars.com/users/user9057704"
+    },
+    "description": "Two guys decided to play [Eightball](https://en.wikipedia.org/wiki/Eight-ball).\nTo play this game they need fifteen balls. Balls with numbers from 1 to 7 are called \"solid-colored\" and balls with numbers from 8 to 15 are \"striped balls\".\n\nTo start the game fifteen balls should be placed on the pool table and form a triangle.\nGuys decided to apply the following rules that describes valid balls setup in the triangle:\n\n* Ball with number eight must be placed in the center of the rack (i.e., the middle of the third row).\n\n* Balls in left and right bottom corners should be different colored.\n\n* Balls in one line parallel to one of triangle's sides should not have the same color.\n\nThe corners of the triangle does not need to be validated in terms of rule number three.\nLines with number of balls greather than one should be.\n\nYour task is to write function ```eightBallValid``` that checks if the specified setup is valid. For example the following input is a valid setup:\n```\n[[1], [3,11], [14,8,6], [2,4,15,13], [12,10,9,5,7]]\n```\n![b31b527cb38486f0df4475791a1ba393.png](https://pichoster.net/images/2017/04/22/b31b527cb38486f0df4475791a1ba393.png)\n\nThe following input is not valid:\n```\n[[1], [3,4], [14,8,6], [2,11,15,13], [12,10,9,5,7]]\n```\n![968fc9038d1a847fd25f6620b12483a7.png](https://pichoster.net/images/2017/04/22/968fc9038d1a847fd25f6620b12483a7.png)\n\nThis input is also invalid:\n```\n[[1], [3,11], [14,8,6], [2,9,5,13], [12,10,4,15,7]]\n```\n[![f64c8d705d05eb3c58c1f2412af3fdce.png](https://pichoster.net/images/2017/04/22/f64c8d705d05eb3c58c1f2412af3fdce.png)](https://pichoster.net/image/KF1h3)",
+    "totalAttempts": 24,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 2,
+    "tags": [
+      "Fundamentals",
+      "Arrays",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

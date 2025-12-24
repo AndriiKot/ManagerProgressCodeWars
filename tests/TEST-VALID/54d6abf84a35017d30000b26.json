@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54d6abf84a35017d30000b26",
+  "data": {
+    "id": "54d6abf84a35017d30000b26",
+    "name": "Gaussian primes",
+    "slug": "gaussian-primes",
+    "category": "algorithms",
+    "publishedAt": "2015-02-08T01:27:47.195Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/54d6abf84a35017d30000b26",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-02-08T00:21:12.728Z",
+    "createdBy": {
+      "username": "Bodigrim",
+      "url": "https://www.codewars.com/users/Bodigrim"
+    },
+    "description": "## Gaussian integers\n\n> A <a href=\"http://en.wikipedia.org/wiki/Prime_number\">prime number</a> (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.\n\nConsider the set of <a href=\"http://en.wikipedia.org/wiki/Complex_number\">complex numbers</a>\n<i>z</i> = <i>x</i> + <i>i</i><i>y</i> with integer coefficients <i>x</i> and <i>y</i>.\nThey are called <a href=\"http://en.wikipedia.org/wiki/Gaussian_integer\">Gaussian integers</a>.\nThe norm of Gaussian integer is a non-negative integer defined by <i>N</i>(<i>x</i> + <i>i</i><i>y</i>) = <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup>.\n\nThe multiplication of Gaussian integers is defined in a usual way:\n\n(<i>x</i><sub>1</sub> + <i>i</i><i>y</i><sub>1</sub>) (<i>x</i><sub>2</sub> + <i>i</i><i>y</i><sub>2</sub>) = (<i>x</i><sub>1</sub><i>x</i><sub>2</sub> − <i>y</i><sub>1</sub><i>y</i><sub>2</sub>) + <i>i</i> (<i>x</i><sub>1</sub><i>y</i><sub>2</sub> + <i>x</i><sub>2</sub><i>y</i><sub>1</sub>).\n\nE. g.,\n(1 + <i>i</i>) (2 − 3<i>i</i>) = (2 + 3) + <i>i</i> (−3 + 2) = 5 − <i>i</i>.\n\nOne may check that the norm of the product equals to the product of norms of factors.\nIn the example above \n<i>N</i>(1 + <i>i</i>) = 1<sup>2</sup> + 1<sup>2</sup> = 2, \n<i>N</i>(2 − 3<i>i</i>) = 2<sup>2</sup> + (−3)<sup>2</sup> = 13 and \n<i>N</i>(5 − <i>i</i>) = 5<sup>2</sup> + (−1)<sup>2</sup> = 26 = 2 · 13.\n\nIt appears that the notion of primality can be extended to Gaussian integers.\nGaussian integer <i>z</i> is called Gaussian prime if its norm is greater than 1 and it has no divisors with norms distinct from 1 and <i>N</i>(<i>z</i>).\n\nAs we saw above, 5 − <i>i</i> is not a Gaussian prime, because it has non-trivial divisors 1 + <i>i</i> and 2 − 3<i>i</i>. On contrary, one can check that 1 + <i>i</i> and 2 − 3<i>i</i> are Gaussian primes. Further, 2 and 5 are (rational) primes, but not Gaussian ones: 2 = (1 + <i>i</i>) (1 − <i>i</i>), 5 = (2 − <i>i</i>) (2 + <i>i</i>). But primes 3 and 7 appears to be Gaussian primes too. <a href=\"http://en.wikipedia.org/wiki/Table_of_Gaussian_integer_factorizations\">More examples</a>. \n\n## Task\n\nYour task in this kata is to check, whether a given Gaussian integer is Gaussian prime or not.\n\nUse preloaded data type\n```haskell\ndata Gaussian = Gaussian {realPart :: Integer, imagPart :: Integer}\n-- with norm\nnorm :: Gaussian -> Integer\nnorm (Gaussian x y) = x * x + y * y\n```\n```javascript\nnew Gaussian(x, y)\n  .multiply(smth)\n  .add(smth)\n  .subtract(smth)\n  .norm()\n```",
+    "totalAttempts": 119,
+    "totalCompleted": 26,
+    "totalStars": 7,
+    "voteScore": 34,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ab146668d28f66f00000120",
+  "data": {
+    "id": "5ab146668d28f66f00000120",
+    "name": "Mount Events in ReactJS",
+    "slug": "mount-events-in-reactjs",
+    "category": "reference",
+    "publishedAt": "2018-05-01T16:12:36.712Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ab146668d28f66f00000120",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-20T17:35:34.052Z",
+    "createdBy": {
+      "username": "steffinchen",
+      "url": "https://www.codewars.com/users/steffinchen"
+    },
+    "description": "In this kata you will build a component to time a run and display the stats of the last few runs. \n\nGoal of this kata: Learn about React Lifecycle methods `componentWillMount`, `componentDidMount`, `componentWillUnmount`:  https://reactjs.org/docs/react-component.html\n\nTasks\n - in the `componentWillMount` method you initialize a timer that calls a function every 1000ms. Store the timer's id (return value of `setInterval`) as a property on the class (Note that the method `setInterval` is mocked for this exercise to make it work with codewars' test framework). The method called by the timer should increase a `count` variable, stored on the component's state\n - the async `componentDidMount` should fetch the latest stats from '/timed-stats.json', using the provided function `fetch('/timed-stats.json')` and store them in the component's state as `timedStats` (as this is about lifecycle methods, no need to display the result right now - of course you can if you want to :) )\n - in componentWillUnmount call `clearInterval` with the timer's id to cancel the timer. This is to make sure any resources are cleaned up\n - render the current count of the timer",
+    "totalAttempts": 852,
+    "totalCompleted": 56,
+    "totalStars": 6,
+    "voteScore": 30,
+    "tags": [
+      "React",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

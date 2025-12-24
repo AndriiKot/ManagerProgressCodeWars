@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ab7d3ace7093b2dea0000a5",
+  "data": {
+    "id": "5ab7d3ace7093b2dea0000a5",
+    "name": "Horse race",
+    "slug": "horse-race",
+    "category": "games",
+    "publishedAt": "2018-03-25T19:08:36.131Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ab7d3ace7093b2dea0000a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-25T16:51:56.129Z",
+    "createdBy": {
+      "username": "vertighel",
+      "url": "https://www.codewars.com/users/vertighel"
+    },
+    "description": "This kata is based on a well-known puzzle:\n\n> You have 25 horses, and a race track where you can race up to 5 horses at a time. You have no means to measure time, so you only know the order in which the horses arrive at the finish line. How many races are needed at least to determine the fastest 3 horses?\n\nYour task will be to implement a method `solve()` inside a `class MyRace extends HorseRace` (the base class HorseRace is given to you), which returns an array with the fastest horses in descending order (fastest first). Note that the race track is very fragile, so it will become unusable after a number of races. Therefore, it is important to find the result with the least number of races possible. The numbers may be different from the example given above (25, 5, 3), but they will always be chosen so that a similar solution strategy can be applied. Details are given in the description of the setup() method below.\n\n## Methods available\n\nYou can use the following methods in your method solve():\n\n`public final int getHorseCount()` - use this method to know how many horses you have (example: 25). Horses are represented by Integers 0 through (getHorseCount() - 1) (they are computer horses).\n\n`public final int getTrackSize()` - use this method to know how many horses you can race at a time on the track (example: 5)\n\n`public final int getFastestCount()` - use this method to know how many fastest horses you should return (example: 3). This is the expected size of the return array of your solve() method\n\n`public final void race(Integer[] horses)` - use this method to actually race your horses. It will reorder the horses in place from fastest (index 0) to slowest. After a number of races (calls to this method), the race track becomes unusable. When that happens, this method will throw an `IllegalStateException` at subsequent calls. Moreover, it throws an `IllegalArgumentException` if the input array is larger than getTrackSize().\n\n## Testing\n\nTo test your implementation, create an instance of your class `MyRace`, then use the methods below to setup and run the race, and to verify your result.\n\n`public final void setup(int horseCount, int trackSize, int fastestCount)` - after instantiating your class, call this method on the instance to configure the race. The values passed to this method are then accessible by the getters shown above. Note that in order to enable a similar solution to the example given at the beginning, the following restrictions are enforced:\n\n- all parameters must be positive integers\n- trackSize >= fastestCount * (fastestCount + 1) / 2 - 1\n- horseCount must be an integer power (square, cube, etc.) of trackSize\n\n`public Integer[] solve()` - this is the method you implement. Call it on the instance after setup() to run your race algorithm.\n \n`public final boolean testResult(Integer[] winners)` - finally, use this method on the instance to check your result, by passing it the output of your solve() method. Note that you can call this method only once, from the second call on it will throw an `IllegalStateException`. Therefore, don't call it from your solve() method, and use it only once in your test code.\n\nA note on the test cases: since the races are random by nature, no randomized tests were included.",
+    "totalAttempts": 86,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

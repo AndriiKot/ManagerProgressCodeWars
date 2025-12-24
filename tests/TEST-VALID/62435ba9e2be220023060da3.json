@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62435ba9e2be220023060da3",
+  "data": {
+    "id": "62435ba9e2be220023060da3",
+    "name": "Is This Piece Under Threat?",
+    "slug": "is-this-piece-under-threat",
+    "category": "reference",
+    "publishedAt": "2022-03-29T19:19:27.137Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62435ba9e2be220023060da3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-03-29T19:19:05.990Z",
+    "createdBy": {
+      "username": "JustinBabyCoder",
+      "url": "https://www.codewars.com/users/JustinBabyCoder"
+    },
+    "description": "<h2>The task:</h2>\n\nThere are some pieces on the chessboard, but only two are used in this Kata: the chess knight (<code>K</code>) and any other piece (let's say <code>k</code>). \n\nYour task is to implement a function that returns <code>True</code> if the conditional piece(<code>k</code>) is threatened by the knight(<code>K</code>), and return <code>False</code> if the conditional piece(<code>k</code>) is not threatened by the knight(<code>K</code>).\n\n<h2>Some notes:</h2>\n<ul>\n<li>♘ Chess knight <code>K</code></li>\n<li>� Conditional chess piece <code>k</code></li>\n</ul>\n\nThe function parameter is a chessboard with different arrangements of the above two pieces.\n\nChessboard example:\n<ul>\n<li>1 - black cell</li>\n<li>0 - white cell</li>\n</ul>\n<pre><code>\n<code class=\"language-python\">\nchess_board = [\n    [<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n\t[<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>],\n\t[<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n\t[<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>], \n\t[<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n\t[<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>], \n\t[<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n\t[<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>]]\n</code>\n</code></pre>\n\nChessboard example with different arrangements of two pieces:\n<pre><code>\n<code class=\"language-python\">\nchess_board = [\n    [<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-string\">'k'</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n    [<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-string\">'K'</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>,<span class=\"cm-number\">0</span>], \n    [<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n    [<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>], \n    [<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n    [<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>], \n    [<span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>], \n    [<span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>, <span class=\"cm-number\">1</span>, <span class=\"cm-number\">0</span>]]\n</code>\n</code></pre>\n\nIf you suddenly forgot how a chess knight can walk, then here's a hint for you:\n<div>\n<img alt=\"example image\" src=\"https://ssqq.com/archive/images/chess02.jpg\">\n</div>",
+    "totalAttempts": 207,
+    "totalCompleted": 24,
+    "totalStars": 2,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms",
+      "Puzzles",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

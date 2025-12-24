@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54d02281a15d45798e00046b",
+  "data": {
+    "id": "54d02281a15d45798e00046b",
+    "name": "Logging (T)error",
+    "slug": "logging-t-error",
+    "category": "algorithms",
+    "publishedAt": "2015-02-12T14:32:12.552Z",
+    "approvedAt": null,
+    "languages": [
+      "clojure"
+    ],
+    "url": "https://www.codewars.com/kata/54d02281a15d45798e00046b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-02-03T01:21:05.524Z",
+    "createdBy": {
+      "username": "outergod",
+      "url": "https://www.codewars.com/users/outergod"
+    },
+    "description": "Background\n=========\nYou're working for BigCo., Ltd. and your job is to collect important logging information from client teams that are spread around the globe. The data is being ingested into cloud provider [Myrina](https://en.wikipedia.org/wiki/Amazons)'s data store from where you're going to process the logging records in billions of records.\nTo faciliate this, you've come up with a logging specification that has gone through several iterations and is being used by many different teams around the globe. However, the teams are struggling to communicate and ask for help and have been implementing their individual interpretations of your specification. Recently, a team from overseas told you that they have implemented \"something\" that's already gone live to customers, so you're trying to find out what they did and how you could support it and extract the relevant data.\n\nThe Specification\n----------------\nYou specified [EDN](https://github.com/edn-format/edn) to be the format that logging messages have to be serialized in. There are three versions of the specification that have a slightly different structure:\n\nVersion 1\n```clojure\n{:version 1 :payload \"Log message\"}\n```\n\nVersion 2\n```clojure\n{:version 2 :payload {:message \"Log message\" :sender \"John\"}}\n```\n\nVersion 3\n```clojure\n{:version 3 :log {:message \"Log message\" :sender \"John\"}}\n```\n\nThe Setup\n---------\nEach log entry will be read my Myrina's infrastructure as a line of text and passed into the function `parse-line` you're going to implement. You don't know the structure of the records, but you have the following clues:\n\n* The records are line-based and in clear text, and the encoding plays no relevance\n* Each record contains a logging payload that matches your specification, in any version available\n* Each record also contains a timestamp and log level outside the payload\n* There are four specified log levels for the application, which must be mapped to `:debug`, `:info`, `:warn` and `:error`\n* Records can contain random errors, such as string corruption, misuse of specification format versions, and unspecified log levels\n\n\nThe Task\n--------\nYou have to find out the structure of the records and extract as much uncorrupted data as possible from each record. The expected return values from `parse-line` are hash maps of the following structure:\n\n```clojure\n{:timestamp 1422795231 :level :debug :log {:message \"Foo\" :sender \"Bar\"}}\n```\n\n* `:timestamp` must be [Unix time](http://en.wikipedia.org/wiki/Unix_time), in seconds\n* In case of corrupted data, set the corresponding value to `nil`\n\nHints\n-----\n* You can use simple `println`s to investigate the data\n* The records contain some random bits and are very likely never the same\n* Use `clojure.edn/read-string` to parse the EDN payload and treat exceptions as `nil`\n* Codewars uses Java 8, which means you can use the latest `java.time.*` classes\n\n**Good Luck & Have Fun!**\n",
+    "totalAttempts": 287,
+    "totalCompleted": 3,
+    "totalStars": 4,
+    "voteScore": 1,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms",
+      "Date Time",
+      "Parsing"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

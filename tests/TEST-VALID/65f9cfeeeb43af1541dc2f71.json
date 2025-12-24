@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f9cfeeeb43af1541dc2f71",
+  "data": {
+    "id": "65f9cfeeeb43af1541dc2f71",
+    "name": "Linear interpolation of hex color codes",
+    "slug": "linear-interpolation-of-hex-color-codes",
+    "category": "reference",
+    "publishedAt": "2024-03-19T17:55:23.729Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65f9cfeeeb43af1541dc2f71",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-19T17:48:31.007Z",
+    "createdBy": {
+      "username": "SirSamiboi",
+      "url": "https://www.codewars.com/users/SirSamiboi"
+    },
+    "description": "*\"In mathematics, linear interpolation is a method of curve fitting using linear polynomials to construct new data points within the range of a discrete set of known data points.\"* - Wikipedia\n\nIn simpler terms, linear interpolation (or \"lerp\" for short) is when you find the coordinates of a point that lies on a straight line between two other points.\n\nYou are given two color codes in hexadecimal format, `color_1` and `color_2`. Your task is to find the hex color code that lies between these two colors, at distance `d` away from the first color.\n\nWhen `d = 0`, the desired color code has no distance from `color_1`, so you should simply return `color_1`.\n\nSimilarily, when `d = 1`, you should just return `color_2`.\n\n`d` can be any value from 0 to 1. The larger its value, the further away from `color_1` the desired color is and the closer it is to `color_2`. For example, `d = 0.5` means the desired color is exactly between the two given colors, whereas `d = 0.9` means the color is very close to `color_2`.\n\nIf the given color codes are not in hexadecimal format, return the message `\"Invalid color codes\"`. You can assume that `d` will always be in the range `0 <= d <= 1`.\n\nMake sure to round any values you use in your output to the nearest integer, or up if a value is equally close to two integers. Your output should also be in hexadecimal format.\n\nSome examples:\n```python\nhex_color_lerp(\"abcdef\", \"a\", 0.5) -> \"Invalid color codes\"\n\nhex_color_lerp(\"#abcde\", \"gggggg\", 0.5) -> \"Invalid color codes\"\n\nhex_color_lerp(\"000000\", \"ffffff\", 0.5) -> \"808080\"\n\nhex_color_lerp(\"000000\", \"ffffff\", 0.2) -> \"333333\"\n\nhex_color_lerp(\"a1b2c3\", \"6f5e4d\", 0.77) -> \"7a7168\"\n```\nGood luck!",
+    "totalAttempts": 60,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 6,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

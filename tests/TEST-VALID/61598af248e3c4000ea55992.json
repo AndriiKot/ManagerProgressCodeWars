@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61598af248e3c4000ea55992",
+  "data": {
+    "id": "61598af248e3c4000ea55992",
+    "name": "Arel: top five users",
+    "slug": "arel-top-five-users",
+    "category": "reference",
+    "publishedAt": "2021-11-05T19:52:44.104Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/61598af248e3c4000ea55992",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-03T10:50:26.901Z",
+    "createdBy": {
+      "username": "epeleh",
+      "url": "https://www.codewars.com/users/epeleh"
+    },
+    "description": "# Description\n\nImagine, you are developing a small site where users can post and view other users' posts. The application will only use three database tables. Here's the schema:\n```SQL\n                                +----------------+\n                                |     users      |\n                                +----------------+\n+------------------+     +----->| id     integer |<-----+\n|      views       |     |      | name   string  |      |\n+------------------+     |      | email  string  |      |\n| id       integer |     |      +----------------+      |\n| user_id  integer |-----+                              |\n| post_id  integer |--+         +------------------+    |\n+------------------+  |         |      posts       |    |\n                      |         +------------------+    |\n                      +-------->| id       integer |    |\n                                | user_id  integer |----+\n                                | title    string  |\n                                | body     string  |\n                                +------------------+\n```\n\nOn the home page of the site, we want to display the five most popular users, the users whose posts have the most views. We will use Arel for this, because we are too lazy to create ORM models.\n\n# Task\n\nTo Implement `top_five_users_query` method using Arel. The method should return an instance of the `Arel::SelectManager` class with an SQL query that produces the following table schema:\n```SQL\n+----------------------+\n|       \"Result\"       |\n+----------------------+\n| id           integer | # user id\n| views_count  integer | # the sum of all views of the user's posts\n| posts_count  integer | # how many posts the user has created\n+----------------------+\n```\n\nThe query result should contain five users, ordered by `views_count`. If several users have the same `views_count`, they should be ordered by `posts_count`. Here's an example:\n```SQL\n id | views_count | posts_count\n----+-------------+-------------\n 4  | 6           | 2\n 5  | 3           | 4\n 1  | 3           | 1\n 3  | 1           | 1\n 7  | 1           | 1\n```\n\nArel documentation: https://www.rubydoc.info/gems/arel\n",
+    "totalAttempts": 293,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": 12,
+    "tags": [
+      "Databases",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

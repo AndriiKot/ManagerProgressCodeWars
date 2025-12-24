@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6484e784eb5ee7103862bf0e",
+  "data": {
+    "id": "6484e784eb5ee7103862bf0e",
+    "name": "Identify List Type",
+    "slug": "identify-list-type",
+    "category": "reference",
+    "publishedAt": "2023-06-11T11:44:19.069Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6484e784eb5ee7103862bf0e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-06-10T21:13:40.628Z",
+    "createdBy": {
+      "username": "SmallWolfxDDD",
+      "url": "https://www.codewars.com/users/SmallWolfxDDD"
+    },
+    "description": "Task:\n\nIn task, there have five type  'all different' 'same length' 'same letter' 'same letter and length' 'exactly same'\nyour code need to identify their type and return ```'1', '2', '3', '4', '5'```\ncomputer will give you a list(at least 2 string inside)\n\nType:\n\n```1```:All drifferent, the list is not complies to type 2 - 5\n\n```2```:Same length, the strings in the list have same length\n\n```3```:Same letter, the strings in the list have same letter and haven't other letter```['abc', 'aabbcc'] -- have letter 'a' 'b' 'c' and haven't other letter```\n\n```4```:Same letter and length, the strings in the list complies 2 and 3 at the same time\n\n```5```:Exactly same, the strings in the list are exactly same and haven't any different\n\n```\n['bannana', 'cat', 'dog'] all different -- reture 1\n['abcdfghij', 'vbnmjklop', 'qwertyuio'] all strings have same length '9 letters' -- return 2\n['water', 'rreattwar', 'aaattteerrw'] all strings have same letter 'w' 'a' 't' 'e' 'r' -- return 3\n['apple', 'elppa', 'aaple'] same letter 'a' 'p' 'l' 'e', same length '5 letters' -- return 4\n['apple', 'apple'] same letter, same long, correct position -- return 5\n```\nNote:\n\nYou need to identify capital letter and small letter```A is not equal to a```\n\nThis list have at least 2 strings\n\nThe strings in the list must match the rule\n```['ban', 'ban', 'kjlm'] -- the 1st and 2nd are same but the 3rd is different to 1st and 2nd, reuturn 1```\n\nOrder of priority:\n```\n5 > 4 > 3 > 2 > 1\ne.g. ['apple', 'apple'] complies to 2, 3, 4, 5 --only return 5\n['bannana', 'nabbbbb'] complies to 2, 3, 4 --only return 4\n```\n\nMore Example:\n```\n['aaa', 'cccc', 'ccc', 'ccc'] -- reture 1\n['apple', 'bannana', 'apple'] -- return 1\n['abc', 'cbd', 'qwe'] -- return 2\n['video', 'apple', 'lemon'] -- return 2\n['abc', 'aabbcc', 'bca'] -- return 3\n['video', 'vvvidieeo', 'eevido'] -- return 3\n['abc', 'cba', 'bca'] -- return 4\n['video', 'idveo', 'oveid'] -- return 4\n['lemon', 'lemon', 'lemon'] -- return 5\n['enter', 'enter', 'enter'] -- return 5\n```",
+    "totalAttempts": 84,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Strings",
+      "Lists"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

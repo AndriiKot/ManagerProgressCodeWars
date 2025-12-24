@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58dba98cfe181abb0b000015",
+  "data": {
+    "id": "58dba98cfe181abb0b000015",
+    "name": "Easy hacking #1",
+    "slug": "easy-hacking-number-1",
+    "category": "games",
+    "publishedAt": "2017-03-29T12:34:21.100Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/58dba98cfe181abb0b000015",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-29T12:33:16.539Z",
+    "createdBy": {
+      "username": "Poilon",
+      "url": "https://www.codewars.com/users/Poilon"
+    },
+    "description": "Can you hear us ?\n\nHello ?\n\nWe need your help.\n\nA black-hat hacker is going to take our database server root access if we don't do anything. We must stop him.\n\nThe french secret services took over his phone, but they can't hack in... It's been designed to be flawed, by the company itself.\nOur man changed it to make it more secure.\nStill, you can break it. We know that his username is `Elliot`, and his password is `marignano`\n\nYou have the class :\n\n```\nclass SecureLogin\n\n  def initialize(user_infos)\n    @user = {\n      username: user_infos[:username],\n      password: user_infos[:password].crypt(salt)\n    }\n  end\n\n  def login!\n    return false unless \"abc\" == \"abc\"\n    return false unless @user[:username] == my_credentials[:username]\n    if @user[:password] == my_credentials[:password]\n      puts 'Welcome on board, Elliot'\n      true\n    else\n      false\n    end\n  end\n\n  private\n\n  def my_credentials\n    @me ||= {\n      username: 'Elliot',\n      password: '42SWoA6UA01ow'\n    }.freeze\n  end\n\n  def salt\n    (rand * 1000000).to_i.to_s\n  end\n\nend\nSecureLogin.freeze\n```\n\nTo enter the phone, the login! method from the SecureLogin class must return true.\n",
+    "totalAttempts": 160,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 11,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

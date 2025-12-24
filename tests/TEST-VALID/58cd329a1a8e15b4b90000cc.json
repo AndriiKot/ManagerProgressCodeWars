@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58cd329a1a8e15b4b90000cc",
+  "data": {
+    "id": "58cd329a1a8e15b4b90000cc",
+    "name": "Long Division",
+    "slug": "long-division",
+    "category": "algorithms",
+    "publishedAt": "2017-03-19T12:15:59.309Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58cd329a1a8e15b4b90000cc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-18T13:14:02.915Z",
+    "createdBy": {
+      "username": "xyfonix",
+      "url": "https://www.codewars.com/users/xyfonix"
+    },
+    "description": "<p>\n<h1>The problem</h1>\nThis kata is about division. With the division operator you get a limited amount of decimals, but we of course want infinite decimals because we can. We can do that using long division. This kata is thus about automating the long division method.\n</p>\n<hr>\n<p>\n<h1>The rules</h1>\nThe generator, <i>divide</i>, has the two parameters. Both parameters are between <i>Number.MIN_SAFE_INTEGER</i> and <i>Number.MAX_SAFE_INTEGER</i>. <br>\n\nThe generator should yield the answer back character by character, so also '.' and '-'.<br>\n\nThe generator should not yield \"useless\" zero's at the start of the answer. So if the answers that are going to be yielding are sequentially: <i>0, 0, 0, ' . ', 5, 0, 0...</i>, they should be: <i>0, ' . ' , 5, 0, 0</i><br>\n\nZero's in the calculation should be handled as described in the ECMAScript specifications:\n<ul>\n<li>Division of a zero by a zero results in NaN.</li>\n<li>Division of a nonzero finite value by a zero results in a signed infinity. The sign of the result is positive if both operands have the same sign, negative if the operands have different signs.</li>\n</ul>\n<blockquote>See ECMAScript® 2017 Language Specification: https://tc39.github.io/ecma262/#sec-applying-the-div-operator</blockquote>\nThe generator should <b>return</b>, not yield, the answer if the answer is NaN or Infinity, since neither have defined decimals. If it is -Infinity it shall first yield '-' and then return Infinity.\n</p>\n<hr>\n<p>\n<h1>Extra</h1>\nFor testing and debugging purposes I have included a function named _output with the sytax:<br>\n<blockquote>\n`_output( iter, characters = 50, separator = '' );`\n<b>Paremeters:</b><br>\n<i>iter</i>: A generator.<br>\n<i>characters</i>: A integer. <i>Optional.</i> The amound of iterations of the generator are going to be concatenated in one string. (default: 50)<br>\n<i>separetor</i>: A string. <i>Optional.</i> This string that separates the iterations (default: '')<br><br>\n<b>Returns:</b><br>\nA string containing a specified amount of iterations of the generator concatenated with a specified seperator\n</blockquote>\n</pre>\n</p>\n\n<p>\n<h1>Examples</h1>\n<code class=\"lang-javascript\">\n// 5/2 = 2.50000  \nvar div = divide(5, 2);\n_output(div, 5) //'2.500'\n</code>\n<code  class=\"lang-javascript\">\n// 0/0 = NaN  \nvar div = divide(0, 0);  \n_output(div, 5, ' | ') // 'NaN | undefined | undefined | undefined | undefined'\n</code>\n<code  class=\"lang-javascript\">\n// 5/-0 = -Infinity  \nvar div = divide(5, -0);  \n_output(div, 5, ' | ') // '- | Infinity | undefined | undefined | undefined'\n</code>\n</p>\n<p>\n<h1>Info for generators</h1>\nBecause generators are quite new I thought some of you might need to read about them first. So here are some sources to read about javascript generators:\n<ul>\n<li>The Basics Of ES6 Generators: https://davidwalsh.name/es6-generators\n<li>function\\*: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*\n<li>Iterators and generators: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators\n</ul>\n</p>\n<h1>GOOD LUCK AND HAVE FUN! ツ</h1>\n<p><small>ps. If you know any other method to achieve the same goal, that is allowed too.</small></p>",
+    "totalAttempts": 176,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 1,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d27fede89bffab4a48dedab",
+  "data": {
+    "id": "5d27fede89bffab4a48dedab",
+    "name": "Are Module Boundaries also Security Boundaries?",
+    "slug": "are-module-boundaries-also-security-boundaries",
+    "category": "games",
+    "publishedAt": "2019-07-12T03:31:44.657Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5d27fede89bffab4a48dedab",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-12T03:30:38.342Z",
+    "createdBy": {
+      "username": "DasBrain",
+      "url": "https://www.codewars.com/users/DasBrain"
+    },
+    "description": "I once asked if module boundaries are also security boundaries.  \nMore specifically, is it safe to grant `ReflectPermission(\"suppressAccessChecks\")` to untrusted code that is running in a named module?\n\nAfter some pondering about the problem I found that the answer is no.\nThere is still a way to escape the sandbox with this one additional permission.\n\nYour code is executed in the default java sandbox with one additional `Permission`: `ReflectPermission(\"suppressAccessChecks\")` and put into a named module.\n\nThe goal is to disable the `SecurityManager`.\n\nThe preloaded code is in [this gist](https://gist.github.com/DasBrain/85091d698c0a335d6d5c0a2045211dcf), but it is only needed on codewars.  \nNormally I would use the `java.policy` property and the `--illegal-access=deny` vm option.",
+    "totalAttempts": 50,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Reflection",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

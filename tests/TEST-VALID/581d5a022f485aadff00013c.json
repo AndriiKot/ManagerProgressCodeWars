@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/581d5a022f485aadff00013c",
+  "data": {
+    "id": "581d5a022f485aadff00013c",
+    "name": "Schedulability Test",
+    "slug": "schedulability-test",
+    "category": "algorithms",
+    "publishedAt": "2016-11-05T04:03:46.835Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/581d5a022f485aadff00013c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-05T04:03:14.671Z",
+    "createdBy": {
+      "username": "alex-sherman",
+      "url": "https://www.codewars.com/users/alex-sherman"
+    },
+    "description": "Given a set of tasks decide whether or not the set is schedulable using Rate Monotonic Scheduling (RMA). Each task is described as a computation time C that needs to be executed every D time units. So a task (C, D) = (1, 3) needs to run for 1 unit every 3 units. If each task cannot be run for its computation time for all of its deadlines, the task set is not schedulable.\n\nMost task sets have more than one task, so we need to be able to decide which task will get to execute. Under RMA the rule is simple, among tasks that need to be executed, the highest priority task (lowest index) is chosen. An example is as follows:\n\nFor tasks [(1, 3), (3, 5)], the executing task at each time instance is:\n\n```\n0-1: Task0\n1-2: Task1\n2-3: Task1\n3-4: Task0 #Task0 is re-activated at times 3, 6, 9 etc.\n4-5: Task1```\n\nThis task set is schedulable, both tasks will always meet their deadlines. Notice that Task1 just barely meets its deadline of 5, if Task1 were instead (4, 5) this set would not be schedulable.\n\nYour job is to write a function that takes as input a task set, and returns whether or not that task set is schedulable.\n\n[input] array.array.float tasks\n\nArray of tasks, where each task is a tuple (computation time, period)\n\n[output] boolean\n\nWhether or not the task set is schedulable",
+    "totalAttempts": 137,
+    "totalCompleted": 35,
+    "totalStars": 5,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

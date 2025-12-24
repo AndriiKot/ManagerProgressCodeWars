@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/661ed23a592e4d002f753d7f",
+  "data": {
+    "id": "661ed23a592e4d002f753d7f",
+    "name": "Pawn March",
+    "slug": "pawn-march",
+    "category": "games",
+    "publishedAt": "2024-05-19T19:13:45.684Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/661ed23a592e4d002f753d7f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-16T19:32:10.852Z",
+    "createdBy": {
+      "username": "Umarkhan42",
+      "url": "https://www.codewars.com/users/Umarkhan42"
+    },
+    "description": "Task\n===\n\nGiven a chessboard b return true if it is possible for the white pawn to reach the backrank (8th row)\n\n\n\nb is an 8x8 matrix with \n\n* \"W\" representing the white pawn\n\n* \"B\" representing blackpawns\n\n* 1 representing a wall\n\n* 0 representing an empty square\n\n_____\n\nConstraints:\n====\n\n1. White is the only side that moves, and there is always one white pawn present on the board.\n2. The white pawn can only move forward one square or capture diagonally one square.\n3. The white pawn cannot move backwards.\n4. The white pawn can capture black pawns diagonally and take their place.\n5. The white pawn cannot move through black pawns or walls and white pawns cannot capture walls.\n6. The only way to pass a wall is by capturing a black pawn diagonally and advancing diagonally.\n____\n\n**Example 1**\n\n```\nb = \n[\n[0, 0, 0, 0, 0, 0, 0, 0], <- back rank\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 1, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0,'W',0],\n[0, 0, 0, 0, 0, 0, 0, 0]\n]\n```\n\nWhich represents:\n\n<img src=\"https://imgur.com/oGH5QT5.png\" width=\"200\" height=\"200\">\n\n\nreturns false as we cannot pass the wall\n\n\n____\n\n**Example 2**\n\n```\nb = \n\n[0, 0, 0, 0, 0, 0, 0, 0], <- back rank\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 1,'B',0, 0, 0],\n[0, 0, 0,'W',0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0]\n\n```\n\nWhich represents:\n\n<img src=\"https://imgur.com/GtAhYw7.png\" width=\"200\" height=\"200\">\nreturns true as we can capture the black pawn and advance to the backrank (8th row)\n\n____\n\nIf you like this kata you should try:\n\n[Valid Checkmate 1](https://www.codewars.com/kata/661bcd7694e9cdec005203cc)\n\nGood luck!\n",
+    "totalAttempts": 65,
+    "totalCompleted": 17,
+    "totalStars": 0,
+    "voteScore": 17,
+    "tags": [
+      "Games",
+      "Arrays",
+      "Recursion"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

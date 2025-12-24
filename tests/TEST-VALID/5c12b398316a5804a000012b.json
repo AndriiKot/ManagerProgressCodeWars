@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c12b398316a5804a000012b",
+  "data": {
+    "id": "5c12b398316a5804a000012b",
+    "name": "Release the Grid Virus",
+    "slug": "release-the-grid-virus",
+    "category": "games",
+    "publishedAt": "2018-12-14T00:43:34.825Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c12b398316a5804a000012b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-13T19:31:36.775Z",
+    "createdBy": {
+      "username": "user9240328",
+      "url": "https://www.codewars.com/users/user9240328"
+    },
+    "description": "![banner](https://i.gyazo.com/ae161db726b9d8f8763317bc6ef8de9a.png)\n# Release the Grid Virus\nYou are equipped with a deadly grid virus. This virus can be deployed into a grid where it will replicate itself to the **above, below, left, and right** grid cell. If given a grid with **open cells**, and **walls which obstruct the virus**, can you infect the whole grid?\n\n## Infect the whole grid!\nGiven a grid (2d array) of `[space]` and `#`, can you return a set of coordinates that if infected, will spread to infect the entire grid?\n\n- `*`: Virus. Spreads up, down, left, right. (**not diagonally**)\n- `[space]`: Open grid cell that can be \"infected.\"\n- `#`: Wall that blocks the virus from spreading.\n\n## The Challenge\nComplete the function `infectionPoints`:\n\nInput:\n\n- 2d array of `[space]` and `#` (grid to infect)\n\nOutput:\n\n- array of coordinate points `[row, col]` (points to infect)\n\n## Example\nInput:\n```javascript\n[\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '],\n  [' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ']\n]\n```\nOutput:\n```javascript\n[ [0, 0], [0, 6], [5, 0], [5, 6] ]\n```\nDemonstration:\n\n![demo](https://media.giphy.com/media/jTqgnPWUCoRRTBptdO/giphy.gif)\n\nAs you can see, releasing the virus at these points causes the entire grid to become infected (**no space left**). This is not the only solution to this grid. For example,\n```javascript\n[ [0, 2], [0, 8], [5, 2], [5, 8] ]\n```\nwill also lead to the entire grid becoming infected, which makes it a valid solution.\n\n- **More examples of possible solutions in the \"Example Test Cases\"**\n\n## The Real Challenge\nSimply returning the coordinates of every empty grid cell will work for the basic tests, but a more harmonious solution must be found to avoid timing out in the randomized tests. You must use the virus' replication to your advantage. There are `6 basic tests` and `44 randomized tests`.\n\n## Test explanation\n- `assertInfects` runs `infectionPoints` (your solution) on the grid to get the list of points to infect.\n- next, the virus is 'released' at the points given by your solution.\n- finally, the grid is asserted to be a fully infected version of the original grid. (spaces **should** be replaced by virus and walls **should not** be replaced by virus)\n\n## Tips\n- In the case of nothing to infect, (full grid of `#` or `[[]]`), just return an empty list `[]`. Job done.\n- If you don't have CW Red for the live console, I recommend trying this challenge locally for the additional fun of animating the virus!\n\nHave fun!",
+    "totalAttempts": 47,
+    "totalCompleted": 14,
+    "totalStars": 4,
+    "voteScore": 26,
+    "tags": [
+      "Arrays",
+      "Algorithms",
+      "Puzzles",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

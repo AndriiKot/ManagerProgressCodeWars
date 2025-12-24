@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f6787948a3830002fc40077",
+  "data": {
+    "id": "5f6787948a3830002fc40077",
+    "name": "Expand the packed usernames (Boltabek's new job p.1)",
+    "slug": "expand-the-packed-usernames-boltabeks-new-job-p-dot-1",
+    "category": "reference",
+    "publishedAt": "2020-09-20T17:46:59.865Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f6787948a3830002fc40077",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-09-20T16:47:16.115Z",
+    "createdBy": {
+      "username": "Okto",
+      "url": "https://www.codewars.com/users/Okto"
+    },
+    "description": "Boltabek starts his first day at the new job. He is going to refactor some data structures created by his ancestor on this position, who seems to be not known about the data normalization.\n\nThe first task is rather easy, write a function that expands the usernames packed in the one string:\n\n### Input\n\n```js\n[\n  ['Marek,Honza',2],\n  ['Petr',4],\n  ['Marija,Daniel',8],\n  ['Mr. Karasek,Lukáš,Jan',16],\n  ['Igor',32],\n  ['Petra,Evgeniy',64],\n  ['Karel',128],\n]\n```\n\n<details>\n  <summary>Click to expand for the better visualisation</summary>\n  \n```\n Username              | Order id\n---------------------------------------\n Marek,Honza           | 2\t\n Petr                  | 4\n Marija,Daniel         | 8\t\n Mr. Karasek,Lukáš,Jan | 16\n Igor                  | 32\n Petra,Evgeniy         | 64\n Karel                 | 128\n```\n\n</details>\n \n### Result\n```js\n[\n  ['Marek', 2],\t\n  ['Honza', 2],\t\n  ['Petr', 4],\t\n  ['Marija', 8],\t\n  ['Daniel', 8],\t\n  ['Mr. Karasek', 16],\t\n  ['Lukáš', 16],\t\n  ['Jan', 16],\n  ['Igor', 32],\n  ['Petra',64],\n  ['Evgeniy',64],\n  ['Karel',128],\n]\n```\n\n      \n<details>\n  <summary>Click to expand for the better visualisation</summary>\n  \n```\n Username              | Order id\n--------------------------------------\n Marek                 | 2\t\n Honza                 | 2\n Petr                  | 4\n Marija                | 8 \n Daniel                | 8\n Mr. Karasek           | 16\n Lukáš                 | 16\n Jan                   | 16\t\t\t\n Igor                  | 32\n Petra                 | 64\n Evgeniy               | 64\n Karel                 | 128\n```\n\n</details>\n\n\n### Usernames\nUsernames are separated by commas and can contain any characters.\nUsername should be trimmed from the start/end.\n\n```\n[[',,,   John,,Boris  ,,     ,,', 64]] → [['John',64], ['Boris',64]]\n```",
+    "totalAttempts": 711,
+    "totalCompleted": 104,
+    "totalStars": 6,
+    "voteScore": 119,
+    "tags": [
+      "Arrays",
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

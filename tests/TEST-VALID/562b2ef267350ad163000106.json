@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/562b2ef267350ad163000106",
+  "data": {
+    "id": "562b2ef267350ad163000106",
+    "name": "Composed Integers Having Prime Factors Only Once",
+    "slug": "composed-integers-having-prime-factors-only-once",
+    "category": "reference",
+    "publishedAt": "2015-10-24T10:04:45.177Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/562b2ef267350ad163000106",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-24T07:10:42.573Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "The integers 6, 15 and 970 have a common property.\nIn their prime factorization, the prime factors occur only once.\nIn effect:\n```\nNumber   Prime Factorization\n6              2, 3\n15             3, 5\n970            2, 5, 97\n```\nNevertheless, the following numbers do not follow the presented property:\n```\nNumber    Prime Factorization\n25             5, 5\n50             2, 5, 5\n169           13, 13\n```\nWe are interested in collecting the positive integers that have prime factors with one occurrence.\nExpressing the previous condition using formulas it would be:\n\n<a href=\"http://imgur.com/vj5WPPe\"><img src=\"http://i.imgur.com/vj5WPPe.jpg?1\" title=\"source: imgur.com\" /></a>\n\nFor that purpose we need to make the function ```onceoccurr_primefac()``` (Javascript: ```onceoccurrPrimefac()```, that receives an argument, ```nMax < 20000```, as an upper limit (excluded from the result).\n\nOur function will output a list of one element dictionaries as follows (values as example purpose only):\n``` python\n[{\"amount numbers\": 317}, {\"total Sum\": 343544}, {\"odd\": 149}, {\"even\":168}]\n```\nLet's see some examples:\n``` python\nonceoccurr_primefac(100) == [{'amount numbers': 35}, {'total Sum': 1906}, {'odd': 16}, {'even': 19}]\n/// the found numbers with this property are : 6, 10, 14, 15, 21, 22, 26, 30, 33, 34, 35, 38, 39, 42, 46, 51, 55, 57, 58, 62, 65, 66, 69, 70, 74, 77, 78, 82, 85, 86, 87, 91, 93, 94 and 95 (35 numbers)\n\ntotal Sum = 6 + 10 + 14 + 15 + 21 + 22 + 26 + 30 + 33 + 34 + 35 + 38 + 39 + 42 + 46 + 51 + 55 + 57 + 58 + 62 + 65 + 66 + 69 + 70 + 74 + 77 + 78 + 82 + 85 + 86 + 87 + 91 + 93 + 94 + 95 = 1906\n\nodd = 15, 21, 33, 35, 39, 51, 55, 57, 65, 69, 77, 85, 87, 91, 93 and 95 (16 numbers) (We don't accept 1 as it can't be prime factorized - it has only one factor, itself.\n\neven = 6, 10, 14, 22, 26, 30, 34, 38, 42, 46, 58, 62, 66, 70, 74, 78, 82, 86 and 94 (19 numbers)\n///\n\nonceoccurr_primefac(150) == [{'amount numbers': 56}, {'total Sum': 4532}, {'odd': 26}, {'even': 30}]\n``` \nPrime numbers should be discarded for obvious reasons and it's advisable to have a fast way to do it to have faster code.\n\nEnjoy it!!",
+    "totalAttempts": 338,
+    "totalCompleted": 49,
+    "totalStars": 4,
+    "voteScore": 86,
+    "tags": [
+      "Fundamentals",
+      "Mathematics",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

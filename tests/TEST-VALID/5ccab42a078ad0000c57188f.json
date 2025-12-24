@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ccab42a078ad0000c57188f",
+  "data": {
+    "id": "5ccab42a078ad0000c57188f",
+    "name": "Is this event within this time?",
+    "slug": "is-this-event-within-this-time",
+    "category": "algorithms",
+    "publishedAt": "2019-05-02T09:12:53.881Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "typescript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ccab42a078ad0000c57188f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-02T09:11:06.678Z",
+    "createdBy": {
+      "username": "Arothe",
+      "url": "https://www.codewars.com/users/Arothe"
+    },
+    "description": "Your task is to return an array of events (determined by start and end time) which will be displayed in a calendar app, if they fall within the  given time space (again determined by start and end).\n\nThe aim of this Kata is to think about the mathematical problem, not a particular function.\n\n- End time is always higher or equal to start time\n- Events might be empty\n- Start and End time of time space are always set to positive value\n- The order of events in array does not matter\n\nAscii art thing for better imagination of our problem:\n```\n[---] <- Event\n\n      |                  |        \n      | [-----]          |          True\n  [---|------------------|------]   True\n      |                  | [----]   False\n    [-|---]              |          True\n      |           [------|---]      True\n      |                  [----]     True\n [--] |                  |          False\n      |                  |\n    start               end\n```\n\n\nVariables:\n```\n  start: integer - start time of the time space\n  end: integer - end time of the time space\n  events: array of events, where event consists of\n    a: integer - start of an event\n    b: integer - end of an event\n```\n\nE.g: \n```\n  withinTime(0, 10, [[5, 17],[0, 12], [10, 12]]) returns -> [[5, 17],[0, 12], [10, 12]]\n  withinTime(0, 9, []) returns -> []\n  withinTime(0, 5, [[6, 47],[0, 0], [6, 12]]) returns -> [[0, 0]]\n```\n\nBonus:\n- You are able to write this as a one-liner. Try your best ^.^",
+    "totalAttempts": 367,
+    "totalCompleted": 108,
+    "totalStars": 1,
+    "voteScore": 150,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

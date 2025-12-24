@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a792e73ba1bb5d8e80000d2",
+  "data": {
+    "id": "5a792e73ba1bb5d8e80000d2",
+    "name": "Student Aide Mohammed Ajao #3 - Currying",
+    "slug": "student-aide-mohammed-ajao-number-3-currying",
+    "category": "reference",
+    "publishedAt": "2018-02-06T04:26:28.788Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a792e73ba1bb5d8e80000d2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-06T04:26:27.142Z",
+    "createdBy": {
+      "username": "Warholm",
+      "url": "https://www.codewars.com/users/Warholm"
+    },
+    "description": "No, we're not talking about curry - the food! In fact, we can cook a new topic that involves functions in programming called currying. It's spicy, hot, and delicious when used properly.\n\nHere's an example of currying in action:\n\n```javascript\n\nvar initial = add(5) //The value of initial is a function\nvar result = initial(3) //The value is 8\nvar result2 = initial(7) //The value is 12\n```\n\nThe cool thing about currying is that it allows you to return a function with given arguments and use it throughout your code. We're simply reducing the amount of arguments needed for an event/action!\n\nLet's use this concept of \"currying\" with simple addition. Let's say I have a function to add numbers but I also want that function to be able to add a constant numeric value to other integers passed into it.\n\nThus, if I stated:\n\n```javascript\n\nvar addSeven = add(7) //Sets up a variable with a function that adds seven to all future passed arguments\nvar output1 = addSeven(5) //Gives us 12!\n\nvar sum = add(7)(5) // Also gives us 12!\n```\n\nI'll give you some code to start with! Have fun!\n\nHere are some hints also given in the code above:\n\n- The initial/high-order function should return a function\n- The returned function should be able to add the passed integer from the high-order function with the argument passed to itself\n- This requires knowledge of scope in programming and function calling\n- I recommend making a Control Flow chart to sketch the function's interactions!\n\nHope this helps!",
+    "totalAttempts": 15,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

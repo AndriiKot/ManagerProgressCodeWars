@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb89b4be7c54e003370fa73",
+  "data": {
+    "id": "5eb89b4be7c54e003370fa73",
+    "name": "Recursive Regex",
+    "slug": "recursive-regex",
+    "category": "algorithms",
+    "publishedAt": "2020-05-11T14:23:47.560Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5eb89b4be7c54e003370fa73",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-11T00:24:43.115Z",
+    "createdBy": {
+      "username": "lsnbr",
+      "url": "https://www.codewars.com/users/lsnbr"
+    },
+    "description": "# Your Task\n\nis to write a (very limited) Regular Expression Engine in form of a function\n\n```python\ndef recursive_regex(regex: str, test_string: str) -> Optional[str]\n```\n\nthat takes a regex pattern (syntax below), a string and returns the first match.\n* If there is more than one first match return the longest.\n* If there is no match return `None`.\n\n\n# Selected Regex Syntax\n\nThe regex pattern you get consists only of lower case letters and `'(?R)?'` strings. Like `'hey(?R)?ho'` or `'(?R)?xyz(?R)?abc(?R)?hi'`  <br>\n`'(?R)'` is the recursion point. It means: *copy the entire pattern right here*. For example:\n```\na(?R)z    ->    aa(?R)zz    ->    aaa(?R)zzz    ->    ...\n```\n`?` is the zero or one quantifier. Without it the recursion could never stop.\n\n* `?` is always after `(?R)` and never after a lowercase letter\n* There is always at least one lowercase letter in a pattern\n* The exact regex for the input pattern is (ignoring whitespace): \n```\n^  (\\(\\?R\\)\\?)?    [a-z]{1,5}    (\\(\\?R\\)\\?  [a-z]{0,5})*    (\\(\\?R\\)\\?)?  $\n```\n\n\n# Examples\n\n```python\nrecursive_regex('a(?R)?z', 'aaazzzz')         = 'aaazzz'\nrecursive_regex('a(?R)?z', 'zzaa')            =  None\nrecursive_regex('ah(?R)?', 'aahahahhh')       = 'ahahah'\nrecursive_regex('ah(?R)?', 'ahaahahahhh')     = 'ah'\nrecursive_regex('x(?R)?yz(?R)?', 'xxyzxyzyz') = 'xxyzxyzyz'\n```\n\n\nNote: The completion time can vary quite a lot, so if you time out it might just be bad luck",
+    "totalAttempts": 28,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Regular Expressions",
+      "Recursion"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

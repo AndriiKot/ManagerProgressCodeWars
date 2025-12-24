@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56fba2a707cff40aa800078a",
+  "data": {
+    "id": "56fba2a707cff40aa800078a",
+    "name": "List of pairs instead of dictionary",
+    "slug": "list-of-pairs-instead-of-dictionary",
+    "category": "bug_fixes",
+    "publishedAt": "2016-03-30T11:59:33.608Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/56fba2a707cff40aa800078a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-30T09:55:51.963Z",
+    "createdBy": {
+      "username": "zellerede",
+      "url": "https://www.codewars.com/users/zellerede"
+    },
+    "description": "You work with a legacy code base which you don't have access to modify.\n\nOnce you just spot a discrepancy in a particular legacy function `fill` that fills up the dictionary `d` - given as its argument - by thousands of commands like\n\n    d[key] = value\n\nThe problem is that the particular `key`you have to work with appears *multiple times* as key in the `fill` function, and of course you need to handle *each* belonging value, not just the last one.\n\nLuckily you have access to the initialization of this dictionary, the method called `the_dict`, which invokes this `fill` method. \n\nYour task is to hack `the_dict` so that the values for multiple keys in the result are all available when looping through the result 'dictionary'.\n\nYou have checked through the legacy code, and after its initialization the result dictionary `d` is only used in one of the following contexts:\n\n- `use(d[key])` for a particular key\n- `for key in d: use(key,d[key])`\n- `for key in d.keys(): use(key,d[key])`\n- `for key,value in d.items(): use(key,value)`\n\nIn the first case, any corresponding value `d[key]` will be accepted, but the loops are required to parse through the whole intended 'dictionary' - including the multiple keys - *in the original order* as `d` was filled in method `fill`. \n\nNote that the keys are integers or strings and might also be used in any numeric/string operation within the loop.\n\n<h2>Example</h2>\n\nSupposed that the untouchable `fill` is\n\n    def fill(d):\n        d[1] = 10\n        d[2] = 20\n        d[1] = 30\n        d[2] = 40\n\nthis loop should produce the following output:\n\n    >>> d = the_dict(fill) # find in working panel\n    >>> for key in d:\n    ...     print(key, d[key])\n    1 10\n    2 20\n    1 30\n    2 40\n\n\n",
+    "totalAttempts": 366,
+    "totalCompleted": 21,
+    "totalStars": 7,
+    "voteScore": 18,
+    "tags": [
+      "Debugging"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

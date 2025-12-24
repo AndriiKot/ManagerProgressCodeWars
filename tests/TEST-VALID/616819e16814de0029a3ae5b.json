@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/616819e16814de0029a3ae5b",
+  "data": {
+    "id": "616819e16814de0029a3ae5b",
+    "name": "Escape Vim",
+    "slug": "escape-vim",
+    "category": "games",
+    "publishedAt": "2021-10-14T13:00:14.304Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/616819e16814de0029a3ae5b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-14T11:52:02.017Z",
+    "createdBy": {
+      "username": "davidmaamoaix",
+      "url": "https://www.codewars.com/users/davidmaamoaix"
+    },
+    "description": "Thomas opened Vim on his computer, and now he is stuck in it! Help Thomas figure out how to __save the current file__ and __exit__ Vim!\n\n## Task\n\nVim is a text editor. Thomas' Vim is currently in \"Normal\" mode.\n\nYou are given a `Keyboard` object with the method `key_down` and `key_up`. Invoke the methods with the appropriate keys, so that you execute commands to save the current file and quit Vim.\n\nThe keys should be entered in string format:\n```python\nboard.key_down('a') # presses down the 'A' key\nboard.key_down('shift')  # presses down the 'shift' key\nboard.key_down('b') # presses 'b'; since 'shift' is already down, the input will be capital 'B'\nboard.key_up('a') # releases 'a' before pressing it again\nboard.key_up('shift') # re;eases the 'shift' key\nboard.key_down('a')\n```\n\nThe above code will enter `aBa` into Thomas' computer.\n\nGood luck!\n\n## Notes\n- Valid keys are `a` to `z`, `shift`, `enter` and `;`.\n- You must release a key before pressing it again, or Thomas will smash the key into his keyboard and break his computer! Similarly, you mustn't release a key that isn't pressed down.\n- All keys must be released at the end of the function!\n- For simplicity, all irrelevant commands and features are disabled.\n\n## Hints\n- Pressing `;` when `shift` is pressed will enter `:` into the computer.\n- Stuck? Check out [this Vim command guide](https://learnbyexample.gitbooks.io/vim-reference/content/Command_Line_mode.html).\n- Capitalization of commands matters! `:w` is different from `:W`.\n- Remember to press the `enter` key after entering commands ;)",
+    "totalAttempts": 119,
+    "totalCompleted": 56,
+    "totalStars": 2,
+    "voteScore": 72,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

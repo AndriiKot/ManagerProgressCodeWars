@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52191f3c35f5ecba960003f3",
+  "data": {
+    "id": "52191f3c35f5ecba960003f3",
+    "name": "Get config values of hash",
+    "slug": "get-config-values-of-hash",
+    "category": "reference",
+    "publishedAt": "2013-08-24T21:31:19.482Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/52191f3c35f5ecba960003f3",
+    "rank": {
+      "id": -4,
+      "name": "4 kyu",
+      "color": "blue"
+    },
+    "createdAt": "2013-08-24T21:01:48.501Z",
+    "createdBy": {
+      "username": "ineiti",
+      "url": "https://www.codewars.com/users/ineiti"
+    },
+    "description": "Write a simple method for the Hash-class that can get the configuration-value from a JSON-interpreted hash. Its signature is:\n```ruby\nHash.get_value( default, key1, ... )\n```\n\nkey1, ... refer to the hash-keys of the JSON-interpreted hash, which is a hash of hash values. If the path of keys is found, it should return the found value, else it should return the default value.\n\nHere are some examples on how to use it:\n\n```ruby\nconfig = { :files => { :mode => 0x777 }, :name => \"config\" }\n\nconfig.get_value( 0x0, :files, :mode ) == 0x777\nconfig.get_value( \"\", :name ) == \"config\"\nconfig.get_value( 80, :port ) == 80\nconfig.get_value( \"cfg\", :files, :extension ) == \"cfg\"\n```\n",
+    "totalAttempts": 16318,
+    "totalCompleted": 1103,
+    "totalStars": 35,
+    "voteScore": 63,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

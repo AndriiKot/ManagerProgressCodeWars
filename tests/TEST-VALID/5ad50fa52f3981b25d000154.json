@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ad50fa52f3981b25d000154",
+  "data": {
+    "id": "5ad50fa52f3981b25d000154",
+    "name": "Can the Premier League leaders be caught?",
+    "slug": "can-the-premier-league-leaders-be-caught",
+    "category": "reference",
+    "publishedAt": "2018-04-16T21:04:10.292Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ad50fa52f3981b25d000154",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-16T21:03:33.761Z",
+    "createdBy": {
+      "username": "alanbuchanan",
+      "url": "https://www.codewars.com/users/alanbuchanan"
+    },
+    "description": "In [association football](https://en.wikipedia.org/wiki/Association_football), teams compete domestically in leagues. Leagues are completed over seasons, and at the end of the season, the team with the most points wins the title.\n\nThe winner of the title can be determined prematurely, because if there are games remaining but the top team is out of reach of the teams below, we know they can't be beaten and are early champions of the league.\n\nIn England, the top league is the [Premier League](https://en.wikipedia.org/wiki/Premier_League). In the Premier League, there are **38 games per season**. A team is given **3 points** for a win. In this kata, we are going to take into account the teams and amount of games from England's Premier League.\n\nYou will be given an array of two objects. Each object will have the following schema:\n\n```\n{\n  name: string,\n  points: number,\n  gamesPlayed: number\n}\n```\n\n**TASK:**\n\nComparing the `gamesPlayed` value - **given that only 38 games are available** - as well as the `points` - **given that 3 points are awarded for a win** - you need to determine whether or not the leading team (the team with more points) can be caught by the team below it (the team with fewer points).\n\nIf there is no premature winner, return the following string:\n>`The title race between {leading team} and {trailing team} could be very close!`\n\nIf there is a premature winner, return the following string:\n>`{leading team} have won the title and can't be caught by {trailing team}!'`\n\n**NOTES:**\n- You will ALWAYS be passed an array of two objects, and the data will ALWAYS be valid.\n- If the two teams has the same amount of points then there is no premature winner, so return the 'premature winner' string with the teams in alphabetical order; the `leading team` is the team who comes first alphabetically.\n- If the two teams could finish on the same points, the Premier League uses [goal difference](https://en.wikipedia.org/wiki/Goal_difference) as a tie-breaker rule to determine a winner. Therefore, no winner has emerged yet.\n- In real life, a team below second could still win the title. This kata is restricted to the top two teams, so take my word for it that they are the only teams in the running for the title \n",
+    "totalAttempts": 123,
+    "totalCompleted": 20,
+    "totalStars": 0,
+    "voteScore": 24,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

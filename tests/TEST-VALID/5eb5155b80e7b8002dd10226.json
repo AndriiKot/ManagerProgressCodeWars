@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb5155b80e7b8002dd10226",
+  "data": {
+    "id": "5eb5155b80e7b8002dd10226",
+    "name": "Minimum Transactions",
+    "slug": "minimum-transactions",
+    "category": "algorithms",
+    "publishedAt": "2020-05-08T09:17:11.441Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5eb5155b80e7b8002dd10226",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-08T08:16:27.903Z",
+    "createdBy": {
+      "username": "lonkaan",
+      "url": "https://www.codewars.com/users/lonkaan"
+    },
+    "description": "This Kata is a bit more optimized version of minimum account balancing problem.\n\nYou are given a list of transactions between people in the form of `( payer, payee, amount )` .\n\nThis means `payer` pays `amount` to `payee`, so that `payee` owes `amount` to `payer`.\n\n**Return** the list of minimum number of transactions, with minimum amount of total money transferred, so that everyone pays back what they owed. Each transaction should be in the form of `( payer, payee, amount )` .\n\n# Example #1\n\n```python\nl = [(3, 0, 7), (3, 1, 5), (3, 2, 1), (4, 2, 7)]\nmin_transaction(l) = [(2, 3, 8), (0, 4, 7), (1, 3, 5)]\n```\n```haskell\nl = [(3, 0, 7), (3, 1, 5), (3, 2, 1), (4, 2, 7)]\nminTransaction l = [(2, 3, 8), (0, 4, 7), (1, 3, 5)]\n```\n```javascript\nl = [[3, 0, 7], [3, 1, 5], [3, 2, 1], [4, 2, 7]]\nminTtransaction(l) = [[2, 3, 8], [0, 4, 7], [1, 3, 5]]\n```\n\n## Input/Output means\n\n* Person `0` took `7`, so should give `7` in total\n* Person `1` took `5`, so should give `5` in total\n* Person `2` took `8`, so should give `8` in total\n* Person `3` gave `13`, so should get `13` in total\n* Person `4` gave `7`, so should get `7` in total\n\nWe can balance these transactions with the following `3` transactions:\n\n* Person `2` pays `8` to person `3`\n* Person `1` pays `5` to person `3`\n* Person `0` pays `7` to person `4`\n\n# Example #2\n\n```python\nl = [(4, 1, 7), (4, 8, 7), (1, 8, 22), (8, 2, 24), (1, 8, 21), (8, 1, 8)]\nPossible solution    -> [(2, 1, 24), (8, 1, 4), (8, 4, 14)]\nAlternative solution -> [(2, 4, 14), (2, 1, 10), (8, 1, 18)]\n```\n```haskell\nl = [(4, 1, 7), (4, 8, 7), (1, 8, 22), (8, 2, 24), (1, 8, 21), (8, 1, 8)]\nPossible solution    -> [(2, 1, 24), (8, 1, 4), (8, 4, 14)]\nAlternative solution -> [(2, 4, 14), (2, 1, 10), (8, 1, 18)]\n```\n```javascript\nl = [[4, 1, 7], [4, 8, 7], [1, 8, 22], [8, 2, 24], [1, 8, 21], [8, 1, 8]]\nPossible solution    -> [[2, 1, 24], [8, 1, 4], [8, 4, 14]]\nAlternative solution -> [[2, 4, 14], [2, 1, 10], [8, 1, 18]]\n```\n\n# Constraints\n\n* Number of people will not exceed `8`\n* Transaction list can contain up to `100` transactions\n* Transaction amount cannot be negative\n* In the resulting list, some people can owe money to someone that s/he didnt take money directly from. That is fine; we are trying to minimize the number oftransactions and ( then ) the minimum amount of money that should be transferred\n\nIf there is no one that should pay anything just return empty list.\n\nThere can be multiple solutions. It is enough to return one of them.  \nYour solution will be tested in terms of correct minimum transaction count, correct minimum transaction amount, and people paying or receiving exactly what they owe or are owed.  \nTransaction order is not important.  ",
+    "totalAttempts": 266,
+    "totalCompleted": 10,
+    "totalStars": 11,
+    "voteScore": 13,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

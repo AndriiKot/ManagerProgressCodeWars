@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53b2fd63bcfb1b82b900126e",
+  "data": {
+    "id": "53b2fd63bcfb1b82b900126e",
+    "name": "Sorter(getter)(order)",
+    "slug": "sorter-getter-order",
+    "category": "algorithms",
+    "publishedAt": "2014-07-01T19:19:39.210Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53b2fd63bcfb1b82b900126e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-01T18:26:44.703Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Write a helper function to create a comaparison function for use with the Array's sort method.\n\n> For the purposes of this description a \"null value\" will refer to any value `null` or `undefined`. A non-null value will refer to any value that is not a null value.\n\n## sorter(getter, order)\nThe `getter` parameter should be a function. This function should be used to extract or transform the value for use the returned `compareFunction`. If `getter` was a null value (`null` or `undefined`), the `compareFunction` should transform values to strings for sorting.\n\nThe `order` parameter should be a non-null value (not `null` or `undefined`). If its value is \"asc\" or \"ascending\", the `compareFunction` returned, when used in conjuction with an Array's sort method, should result in the items being sorted in an ascending order (lowest to highest). If its value is \"desc\" or \"descending\", the `compareFunction` should sort in descending order (highest to lowest). If any other non-null value is given, the `compareFunction` should sort in ascending order.\n\n## sorter(getter)\nThe `getter` parameter should be used as in the `setter(getter, order)` signature. There may be a second argument of value `null` or `undefined`.\n\nAn `awaitingOrder` function should be returned. This function should accept the following two signatures:\n\n- ### sorter(getter)(order)\nShould behave as though `sorter(getter, order)` was called. Any `compareFunction` returned this way should be efficient, that is to say, `sorterAwaitingOrder(\"asc\")` will always return the same `compareFunction` as `sorterAwaitingOrder(\"asc\")` or `sorterAwaitingOrder(\"ascending\")`. Same goes for descending, or other non-null values.\n\n- ### sorter(getter)(a, b)\nShould behave as though `sorter(getter, \"asc\")(a, b)` was called.\n\n# sorter(order)\nShould behave as though `sorter(null, order)` was called. There may be a second argument of value `null` or `undefined`.\n\nA `compareFunction` should be returned, using the default sorting behavio\n\n## sorter()\nShould behave as though `sorter(null)` was called.\n\n------\n\nLet's have a look at an example:\n\n```javascript\nvar input = [10, 2, 9];\nvar byValue = sorter(function(v) { return v; });\ninput.sort(byValue(\"desc\")); // == [10, 9, 2]\ninput.sort(byValue(null)); // == [2, 9, 10]\n\nbyValue(\"asc\") == byValue(\"ascending\"); // == true\n\ninput.sort(sorter()(\"desc\")); // == [9, 2, 10]\n```",
+    "totalAttempts": 315,
+    "totalCompleted": 19,
+    "totalStars": 2,
+    "voteScore": 14,
+    "tags": [
+      "Algorithms",
+      "Sorting",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

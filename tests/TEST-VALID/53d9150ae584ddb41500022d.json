@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53d9150ae584ddb41500022d",
+  "data": {
+    "id": "53d9150ae584ddb41500022d",
+    "name": "Countdown",
+    "slug": "countdown",
+    "category": "algorithms",
+    "publishedAt": "2014-07-30T21:52:44.179Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53d9150ae584ddb41500022d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-30T15:53:46.052Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Write a function that accepts on parameter, `time`. It will be an integer, and represents a period of time in milliseconds, much like the `Date` object.\n\nYour job is to return a \"countdown\" string, representing the approximate amount of time left in the `time` argument. A tilde (\"~\") should be added to the front of the string, reminding the recipient of the string that it is meant as an approximation only. Once you get down to individual seconds (t < 20 seconds), you can leave the tilde off.\n\nThere should only be one time measurement given, the largest whole unit (days/hours/minutes/seconds). It should adhere to the following logic:\n\n###Days\nEg. Time | Eg. Output\n-|-\n132:01:54:23 | \"~132 days\"\n005:16:34:12 | \"~5 days\"\n001:00:00:01 | \"~1 day\"\n\n### Hours\nRange (in hours) | Set to | Eg. Time | Eg. Output\n---|----|---|----\n12 <= t < 24 | 24 (1 day) | 13:09:45 | \"~1 day\"\n9 < t < 12 | 12 | 09:56:41 | \"~12 hours\"\n6 <= t <= 9 | 6 | 07:22:34 | \"~6 hours\"\n1 <= t < 6 | whole hours | 03:45:01 | \"~3 hours\"\n\"        | \"  | 01:00:00 | \"~1 hour\"\n\n### Minutes\nRange (in minutes) | Set to | Eg. Time | Eg. Output\n-------------|---------------------|----------|---------------\n50 <= t < 60 | 60 (1 hour)   | 00:50:32 | \"~1 hour\"\n40 <= t < 50 | 40 | 00:42:12 | \"~40 minutes\"\n20 <= t < 40 | 20 | 00:36:05 | \"~20 minutes\"\n1 <= t < 20  | whole minutes                   | 00:08:59 | \"~8 minutes\"\n\"             |   \"                  | 00:01:23 | \"~1 minute\"\n\n### Seconds\nRange (in seconds) | Set to | Eg. time | Eg. output\n-------------|---------------------|-------------|---------------\n50 <= t < 60 | 60 (1 minute) | 00:00:53    | \"~1 minute\"\n40 <= t < 50 | 40 | 00:00:47    | \"~40 seconds\"\n20 <= t < 40 | 20 | 00:00:32    | \"~20 seconds\"\n1 < t < 20   | whole seconds |  00:00:15    | \"15 seconds\"\n0 < t <= 1   | 1                   | 00:00:1.341 | \"1 second\"\n       \"      |  \"                   | 00:00:0.115 | \"1 second\"\n\n### Done\n\nRange (in milliseconds) | Output\n-|-\nt <= 0 | \"done\"",
+    "totalAttempts": 376,
+    "totalCompleted": 30,
+    "totalStars": 4,
+    "voteScore": 33,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

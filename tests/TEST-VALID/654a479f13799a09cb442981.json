@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654a479f13799a09cb442981",
+  "data": {
+    "id": "654a479f13799a09cb442981",
+    "name": "Triangle in a 2d array",
+    "slug": "triangle-in-a-2d-array",
+    "category": "algorithms",
+    "publishedAt": "2023-11-07T15:14:45.547Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/654a479f13799a09cb442981",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-07T14:20:15.891Z",
+    "createdBy": {
+      "username": "pea18013",
+      "url": "https://www.codewars.com/users/pea18013"
+    },
+    "description": "# Task\nWrite a function `triangles()` to accept a 2d `m` * `n` array which only contains spaces(` `) and `*`. Search the array each 2 by 2 square, and return how many triangles are in the array.\n\nFor example:\n```\n[[\"*\", \"*\"],\n [\"*\", \" \"]]     There is 1 triangle.\n \n[[\"*\", \"*\"],\n [\"*\", \"*\"]]     There are no triangles.\n\n[[\"*\", \"*\", \" \"],\n [\"*\", \" \", \"*\"],\n [\" \", \"*\", \"*\"]]     There are 2 triangles.\n\n[[\" \", \"*\", \" \", \"*\"],\n [\" \", \"*\", \"*\", \"*\"],\n [\"*\", \" \", \"*\", \"*\"],\n [\"*\", \"*\", \"*\", \"*\"]]     There are 5 triangles.\n```\nSearching example:\n```\n[[\"*\", \"*\"],\n [\"*\", \" \"]]\nThis is an example of a triangle and we are going to search it.\ncount = 0\narray =\n[[\" \", \"*\", \" \", \"*\"],\n [\" \", \"*\", \"*\", \"*\"],\n [\"*\", \" \", \"*\", \"*\"],\n [\"*\", \"*\", \"*\", \"*\"]]\n\nStep 1:\n[[\"#\", \"#\", \" \", \"*\"],\n [\"#\", \"#\", \"*\", \"*\"],\n [\"*\", \" \", \"*\", \"*\"],\n [\"*\", \"*\", \"*\", \"*\"]]\n\nSearch the 2 by 2 # square. The square is not a triangle since it is \n[[\" \", \"*\"],\n [\" \", \"*\"]]\n \nStep 2:\n[[\" \", \"#\", \"#\", \"*\"],\n [\" \", \"#\", \"#\", \"*\"],\n [\"*\", \" \", \"*\", \"*\"],\n [\"*\", \"*\", \"*\", \"*\"]]\n\nSearch the 2 by 2 # square again. The square is a triangle since it is \n[[\"*\", \" \"],\n [\"*\", \"*\"]]\nTherefore count += 1\n\nStep 3: ...\n\nResult: count = 5, so your function should return 5.\n```\n# Input\n- The array must only contains spaces(` `) and `*`\n- `2` <= `m` <= `50`\n- `2` <= `n` <= `50`\n\nThere are 200 random tests. Good luck and happy coding.",
+    "totalAttempts": 62,
+    "totalCompleted": 13,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

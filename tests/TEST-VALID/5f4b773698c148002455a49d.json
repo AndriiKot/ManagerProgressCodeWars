@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f4b773698c148002455a49d",
+  "data": {
+    "id": "5f4b773698c148002455a49d",
+    "name": "Ring container",
+    "slug": "ring-container",
+    "category": "reference",
+    "publishedAt": "2020-10-11T18:39:34.644Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5f4b773698c148002455a49d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-30T09:53:59.024Z",
+    "createdBy": {
+      "username": "balygaby",
+      "url": "https://www.codewars.com/users/balygaby"
+    },
+    "description": "### Task\nCreate a class that has an internal sequence container initialized upon construction. \nThe class should have a ```next()``` function that returns a (shallow) copy of the element of the container to which the internal ring pointer points to, and moves the pointer one step. So, the subsequent function call to it should return the next element, and the call thereafter the following one, and so on. \nWhen the pointer reaches the end of the container, it should return to the first element, and proceed from there.\nThe first call to ```next()``` after the constuction should return the first element.\nThe class should throw an error when constructed with a 0 sized container.\nThe container is not modifiable after construction.\n### Examples\nIf a container has one element, every call to ```next()``` returns a copy of the element.\nIf the container has the elements ```{1, 2, 3}```, the return values look like this:\n```\n1st call: 1\n2nd call: 2\n3rd call: 3\n4th call: 1\n```\n### Constraints\nThe container type can be any of the sequence containers: vector, list, deque, forward_list and array.\nThe underlying type can be any integral or user-defined type.",
+    "totalAttempts": 57,
+    "totalCompleted": 24,
+    "totalStars": 4,
+    "voteScore": 51,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

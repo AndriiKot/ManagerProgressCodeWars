@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59f95cc432b8b97d94000086",
+  "data": {
+    "id": "59f95cc432b8b97d94000086",
+    "name": "Alternating Operators",
+    "slug": "alternating-operators",
+    "category": "reference",
+    "publishedAt": "2017-11-01T05:35:22.743Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/59f95cc432b8b97d94000086",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-01T05:33:57.080Z",
+    "createdBy": {
+      "username": "F40PH",
+      "url": "https://www.codewars.com/users/F40PH"
+    },
+    "description": "Complete the function ```alternateOperators($numbers, $operators)``` where ```$numbers``` is an array of integers ```>0``` and ```$operators``` is a string of operators.\n\nThe ```$operators``` string is of variable length ```>=1``` and is guaranteed to be a sequence of the following symbols:\n\n```+```, ```-```, ```*```, ```/```, ```p```, ```r```.\n\n```p```: raise to the power of ```number```.\n\n```r```: root ```number```.\n\n\n\nStart from the first number in ```$numbers``` and calculate the outcome using the next operator (in the order given) in ```$operators``` and the next number in ```$numbers```. Repeat this for the result of the previous calculation and the remaining ```$numbers```. return the final result as an int.\n\nThe size of the ```$numbers``` array and the length of the ```$operators``` string is not always equal.\nIf there are more operators than numbers, you don't need to use every operator.\nIf there are fewer operators than numbers, start from the first operator after having used the last one.\n\nNotes:\n\n*The elements in ```$numbers``` are always integers greater than 0, so don't worry about division by 0.\n\n*After dividing or calculating the root of a number, round the result down before performing the next calculation.\n\nexample:\n\ngiven ```$numbers``` = [40, 25, 7, 2, 100, 500, 4, 7] and ```$operators``` = \"-/p++r\" the calculation would look as follows:\n\n```\n40 - 25 = 15\n15 / 7 = 2 (2.14... rounded down)\n2 ^ 2 = 4\n4 + 100 = 104\n104 + 500 = 604\n4th root of 604 = 4 (4.95... rounded down)\n4 - 7 = -3 (looped back to the first operator after reaching the end)\n\nresult: -3\n```",
+    "totalAttempts": 460,
+    "totalCompleted": 31,
+    "totalStars": 2,
+    "voteScore": 8,
+    "tags": [
+      "Mathematics",
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

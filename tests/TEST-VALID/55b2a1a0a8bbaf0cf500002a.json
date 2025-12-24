@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55b2a1a0a8bbaf0cf500002a",
+  "data": {
+    "id": "55b2a1a0a8bbaf0cf500002a",
+    "name": "Server: Connection Pool",
+    "slug": "server-connection-pool",
+    "category": "reference",
+    "publishedAt": "2015-07-24T20:36:09.790Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/55b2a1a0a8bbaf0cf500002a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-07-24T20:35:44.951Z",
+    "createdBy": {
+      "username": "5thWall",
+      "url": "https://www.codewars.com/users/5thWall"
+    },
+    "description": "Greetings monk, and welcome to the temple. As you may know, our temple has decided to break up many of our monolithic applications into microservices. Since different services can only respond to so many clients at a time, we need a generic `Server` class which will can hold a number of client connections, and refuse all other connection requests until resources are free. Your task will be to implement this.\n\nYou will need to create a `Server` class which implements the `accept_connection` method. This method will either return a `Connection` object, or the symbol `:connection_refused` (if there is no room in the connection pool) to potential clients. Clients will then use this `Connection` object for all communication with the server. The server should be initialized with a maximum number of connections, and the number of connections should have a default of `10`. The server initialization should fail if `max_connections` is not a positive integer.\n\nClients will send messages to the server via the `send_message` method. For now your server should respond with an array with the symbol `:ok` for the first element, and echo the message back for the last element. If your server recieves the `:disconnect` message from a client then it should free that resource, allowing more clients to connect.\n\nFor now you may assume that all clients will be well behaved and not attempt to send more messages after they have disconnected.\n\n##In summation:\n\n### Server class\nInitialized with max number of connections, default `10`  \n`accept_connection` method returns a `Connection` or `:connection_refused`\n\n### Connection class\nImplements `send_message` method, always returns `[:ok, message]`  \nConnection should be released if they receive the `:disconnect` message",
+    "totalAttempts": 135,
+    "totalCompleted": 19,
+    "totalStars": 2,
+    "voteScore": 39,
+    "tags": [
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

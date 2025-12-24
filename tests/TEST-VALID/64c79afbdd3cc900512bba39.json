@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64c79afbdd3cc900512bba39",
+  "data": {
+    "id": "64c79afbdd3cc900512bba39",
+    "name": "Number Translation",
+    "slug": "number-translation",
+    "category": "reference",
+    "publishedAt": "2023-07-31T12:12:41.939Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64c79afbdd3cc900512bba39",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-31T11:28:59.172Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nCreate a function that takes two numbers as an argument and returns the minimum number of steps that we need to do inside a range of numbers to obtain a secret number.\n\nThe first number, `ran`, allow us to define the range of numbers that will be used to determine the secret number. The range runs from `0` up to `ran^2` (the number ran^2 is part of the range).\n\nThe second number, `num`, is the number we will use to determine the secret number. The secret number will be the mirror of `num` in the range previously defined.\n\nFinally, we need to determine the _**minimum number of steps**_ we need to do from num to the secret number. We can move forward of backwards through the range.\n\n# Examples\n```\ntranslate(3, 0) ➞ \"-1 ---> 9\"\n# Here the range of numbers will be 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.\n# The secret number will be 9, since 9 is the mirror of 0 in the defined range.\n# The minimum number of steps to go from 0 to 9 is -1 (-1 < 9, being 9 the\n# number of required steps if we move forward).\n\ntranslate(3, 2) ➞ \"+5 or -5 ---> 7\"\n# In this case, we can move to the secret number doing 5 setps forward or 5\n# steps backwards, starting from 2.\n\ntranslate(3, 4) ➞ \"+1 ---> 5\"\n\ntranslate(9, 100) ➞ \"100 is not in the range [0:81]\"\n\ntranslate(10, 50) ➞ \"+0 ---> 50\"\n```\n### Input Constraints\n- Easy - 30 cases (3<= n <10)\n- Medium - 20 cases (500<= n <1000)\n- Hard - 20 cases (10^3<= n <10^5)",
+    "totalAttempts": 253,
+    "totalCompleted": 25,
+    "totalStars": 4,
+    "voteScore": 24,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

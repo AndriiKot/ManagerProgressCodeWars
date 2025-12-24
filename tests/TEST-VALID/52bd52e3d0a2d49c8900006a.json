@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52bd52e3d0a2d49c8900006a",
+  "data": {
+    "id": "52bd52e3d0a2d49c8900006a",
+    "name": "Maze generator",
+    "slug": "maze-generator",
+    "category": "algorithms",
+    "publishedAt": "2013-12-27T12:43:44.613Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52bd52e3d0a2d49c8900006a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-12-27T10:13:55.758Z",
+    "createdBy": {
+      "username": "christianhammer",
+      "url": "https://www.codewars.com/users/christianhammer"
+    },
+    "description": "This task is rather simple: Generate a random maze of dimensions width x height.\n\nThe maze should be a width x height matrix (array of arrays):\n\n* Each cell must be an object having an x,y (row/column). \n\n* Every cell in the maze must have at least one path to any other cell (No unreachable cells exist).\n\n* Each cell must have have an opening in one or more of the following direction: North, South, East and West. Eg. a cell A connected to its right neighbor B will have A.east = B (and B.west = A).\n\n* The border may contain no \"exits\" - that is, the border should be unbroken.\n\n* All rows (in the matrix) should be of the same length.\n\n* Width and height arguments are always legal and at least 2.\n\n* Two maze of same dimensions should be different - but in the rare circumstances where Math.random gives similar results. \n\nA simple 2 x 2 maze is generated through:\n\n```javascript\nvar maze = [[{x:0,y:0},{x:1,y:0}],[{x:0,y:1},{x:1,y:1}]];\nmaze.cell = function(x,y){return this[y][x]};\nmaze[0][0].south = maze.cell(0,1);\nmaze[0][0].east = maze.cell(1,0);\nmaze[0][1].west = maze.cell(0,0);\nmaze[1][0].north = maze.cell(0,0);\nmaze[1][0].east = maze.cell(1,1);\nmaze[1][1].west = maze.cell(0,1);\n```\n\nYour solution will be tested with random starting and end points.\n\nA few helper functions are provided:\n\ncheckMaze(maze) - Run a few path checks on the given maze.\n\ndisplay(maze) - Returns a string depicting the maze. \n\nstringify(maze) - Generate a string containing a piece of JavaScript code representing the given maze. This was used to generate the example 'maze' above.",
+    "totalAttempts": 271,
+    "totalCompleted": 30,
+    "totalStars": 13,
+    "voteScore": 24,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

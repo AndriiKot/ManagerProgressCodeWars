@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59778ef801fa32738d000158",
+  "data": {
+    "id": "59778ef801fa32738d000158",
+    "name": "Cutting Dubs",
+    "slug": "cutting-dubs",
+    "category": "algorithms",
+    "publishedAt": "2017-07-31T14:58:32.781Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59778ef801fa32738d000158",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-25T18:33:28.292Z",
+    "createdBy": {
+      "username": "ethaning",
+      "url": "https://www.codewars.com/users/ethaning"
+    },
+    "description": "Welcome to the Codewars Vinyl Cutting and Pressing Plant! This is the place to come to press your next hot EP or LP onto vinyl or dubplate. \n\n# BACKGROUND:\n\nWhen pressing vinyl, there are a few key things to consider: Cost, Loudness and Quality.\n\nThere are 3 sizes of vinyl records: 7\", 10\" and 12\". The smaller the disc, the lower the cost. \n\nThere are 2 speeds that vinyl records can play at: 33.3rpm and 45rpm. Records played at slower speeds have longer maximum runtimes, as shown below:\n```\n12\" @33 1/3 RPM                           12\" @45 RPM:\nOPTIMAL - 20< minutes per side \t       OPTIMAL - 12< minutes per side\nMAXIMUM - 25 minutes per side \t        MAXIMUM - 15 minutes per side\n\n10\" @33 1/3 RPM \t                      10\" @45 RPM\nOPTIMAL - 9< minutes per side \t        OPTIMAL - 8< minutes per side\nMAXIMUM - 14 minutes per side \t        MAXIMUM - 10 minutes per side\n\n7\" @33 1/3 RPM (not recommended) \t     7\" @45 RPM\nOPTIMAL - 5< minutes per side \t        OPTIMAL - 3< minutes per side\nMAXIMUM - 7 minutes per side              MAXIMUM - 5 minutes per side\n```\n(http://www.chicagomasteringservice.com/vinyl.html)\n\nIn order to achieve the best Loudness, we will always recommend an 'optimal' pressing.\n\nMoreover, faster playback speeds result in higher audio Quality. Hence, we will always recommend to press a record to 45rpm over 33.3rpm.\n\nAlso, we will never recommend a 7 inch vinyl pressing at 33.3rpm. \n\n# YOUR TASK:\n\nWe're currently adding a new feature to our website - an automatically-generated recommendation for vinyl pressings. \n\nGiven two arrays of user-submitted track durations (representing Side A and Side B), create a function that returns the recommended pressing setup.\n\nThis recommendation must be an array containing:\n\n - Two nested arrays, listing the track durations on each side of the record in their original order.\n - The recommended size\n - The recommended speed\n \nThe recommendation should:\n\n  - ALWAYS recommend an OPTIMAL pressing, whenever possible.\n  - Be as cheap as possible, but prioritise loudness and audio quality over cost\n  - Account for a 5-second gap between tracks \n  - Use both sides of the vinyl if possible. \n     - If one side of the record contains 2+ tracks and the other side 0 tracks, put the longest track on the empty side. \n     - If the array contains only a single track, it should be pressed on side A.\n     - An empty side of vinyl should return an empty array. \n  - Reject records whereby one or both sides exceed the maximum runtime (return -1).\n      \n\n\n# NOTES:\nThe record must contain at least 1 track.\nThe track times are provided in minutes and seconds, like so: \"MM:SS\". \nThere are no audio gaps before the first track, or after the last track.\n\n# EXAMPLE:\n\n``` javascript\nfunction myNewHitRecord([[\"3:30\", \"5:00\"], [\"7:00\"]]) => [[\"3:30\", \"5:00\"], [\"7:00\"], 12, 45]\n```\n  (Side A = 7 mins; Side B = 8.5 mins; There are two Optimal settings, but by prioritising quality over cost, our recommended size and speed is 12 inches and 45rpm.)\n\nGood luck!",
+    "totalAttempts": 85,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 12,
+    "tags": [
+      "Arrays",
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

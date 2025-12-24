@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5240e3a98d333f81950001ad",
+  "data": {
+    "id": "5240e3a98d333f81950001ad",
+    "name": "Fast Stats on an Array",
+    "slug": "fast-stats-on-an-array",
+    "category": "reference",
+    "publishedAt": "2013-09-27T00:15:11.392Z",
+    "approvedAt": "2017-05-14T15:44:44.011Z",
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5240e3a98d333f81950001ad",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-09-24T00:58:17.713Z",
+    "createdBy": {
+      "username": "constablebrew",
+      "url": "https://www.codewars.com/users/constablebrew"
+    },
+    "approvedBy": {
+      "username": "JohanWiltink",
+      "url": "https://www.codewars.com/users/JohanWiltink"
+    },
+    "description": "### Summary\n\nCreate an Array-like Object that calculates basic descriptive statistics for arrays of data.\nAll standard Array.prototype methods should be supported.\nIf the StatsArray is empty, all the descriptive stats should return NaN.\n\n### Syntax\n\nThe following constructors should be supported:\n````javascript\nnew StatsArray()\nnew StatsArray(arrayLength);\nnew StatsArray(element1, element2, ..., elementN)\nnew StatsArray([element1, element2, ..., elementN])\n````\n\n### Properties\n\n- `length` reflects the number of elements in the array\n- `sum` the sum of all the elements of the array\n- `mean` the average of all the elements of the array\n- `standardDeviation` the standard deviation of all the elements of the array\n\n### Hints\n\nCalculating the descriptive statistics can become a highly expensive process if performed naively. The first step to improve performance is to use the methods described here: http://en.wikipedia.org/wiki/Standard_deviation#Rapid_calculation_methods\n(The initial solution has properties already defined that implement this technique.)\n\nThe second step is to incrementally update the running sums when the values of the array are modified. Your class may work perfectly fine if you attempt to calculate the entire sums whenever the statistical properties are called on, but it won't pass the strict performance requirement! Normal arrays don't notify you when an array element is modified. The <b>_real_</b> challenge of this Kata is to figure out how to intercept every update to the array's values. Doing so will allow you to make your incremental changes to the running sums and not have to make the calculations across the entire array. \n\n### Test Fixture\n\n````javascript\ndescribe('Basic Functionality', function(){\n  it('Quick test', function(){\n    var obj = new StatsArray();\n    obj.push(3); console.log('push len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    obj[1] = 5; console.log('set len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    obj.unshift(7); console.log('unshift len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    obj.pop(); console.log('pop len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    obj.shift(); console.log('shift len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    Test.assertEquals(obj.sum, 3, 'sum should add up the values of all the items in the array.');\n    obj[0] = 5; console.log('set len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    obj[1] = 7; console.log('set len:' + obj.length + '[' + obj[0] + ',' + obj[1] + ',' + obj[2] + ']<br />');\n    Test.assertEquals(obj.sum, 12, 'sum should add up the values of all the items in the array.');\n  });\n});\n````\n\n#### Note\nOccasionally the test fixture times out. (Server load dependent?) If this happens, just submit again.",
+    "totalAttempts": 3250,
+    "totalCompleted": 111,
+    "totalStars": 69,
+    "voteScore": 38,
+    "tags": [
+      "Fundamentals",
+      "Properties",
+      "Basic Language Features",
+      "Object-oriented Programming",
+      "Programming Paradigms",
+      "Inheritance",
+      "Polymorphism",
+      "Scopes"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 7
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

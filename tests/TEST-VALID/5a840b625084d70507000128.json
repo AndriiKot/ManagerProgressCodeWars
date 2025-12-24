@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a840b625084d70507000128",
+  "data": {
+    "id": "5a840b625084d70507000128",
+    "name": "Stream To Image Step By Step",
+    "slug": "stream-to-image-step-by-step",
+    "category": "games",
+    "publishedAt": "2018-02-14T12:47:26.838Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5a840b625084d70507000128",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-14T10:11:46.994Z",
+    "createdBy": {
+      "username": "GianfriAur",
+      "url": "https://www.codewars.com/users/GianfriAur"
+    },
+    "description": "<h1>Stream To Image Step By Step</h1>\n\nWe imagine by absurdity that civilization has lost all its technology.\n\nThe project's chief engineer to create a new image format asks you to implement his algorithm. He gives you the specifications:\n\n\n\n<h3>Namespace:</h3> ```StreamToImageStepByStep ```\n\n<h3>Class Name:</h3>```Decode```\n\n<h3>Class Property:</h3>\n```\n// map of char   tolleracne:    0%-20%  20%-40%  40%-60%  60%-80%  80%-100%       \nstatic char[] Map = new char[] { ' '   , '░'    , '▒'    , '▓'    , '█'    };\n\nstring ImageString        // contains the image made of character map\n\nint[][] imageCahrMap      // contains a pattern for ImageString\n\nint[][][] imagePixelMap   // contains RBG pixel \n\nbyte[] Stream             // stream input \n```\n\n<h3>Class Method:</h3>\n```\npublic Decoder(String StreamStringInput)                          // ClassBuilder  !!do not touch :)\n\npublic byte[] GenerateStreamFromString(String StreamStringInput)  //this method must convert incoming stream from string to byte array \n\npublic int[][][] DecodeStreamForRBGPixel(byte[] Stream)           //this method must convert stramin in RGB pixels iamge \n\npublic int[][] GenerateCharMap(int[][][] PixelMap)                //this method must convert image in CharMap\n\npublic string DecodeCharMap(int[][] CharMap)                      //this method must convert CharMap in sting\n```\n\n\n<h1>instructions to build the image:</h1>\n\nIn de calss builder we have in input a strung ```StreamStringInput```, this string contains a bit of stream\n\n```00001111 00101001 01011110 01011100 00111111 01100000 01001000 01010011 ...```\n\nyou have to build all the methods that lead to the realization of the image\n\nin ```GenerateStreamFromString``` you have to turn the string into an actual stream of bytes\n\n```byte[] { 15, 41, 94, 92, 63, 96, 72, 83,...};```\n\nthen the data is formatted in the following way\n```\nstream[0] contain a heigth of image,\nstream[1] contain a whith of image\n\nstream[2-4] contains a RBG of 1° pixel;\nstream[5-7] contains a RBG of 2° pixel;\n...\nstream[n-(n+2)] cntains a RGB of ((n-2)/3)° pixel;\n```\n\nwith the ```DecodeStreamForRBGPixel``` method you have to transform the stream into a 3-dimensional array where the first and the height, the second the width and the third from the size of 3 with the RGB of the pixel\n\n```\nint[heigth][whith][3]\n```\n\nI our case\n\n\n```\nint[][][]{\n  new int[][] {new int[] {94,92,63},...},\n  ...\n};\n```\n\nwith ```GenerateCharMap``` the image must be transformed into a pattern that maps the image, where the pizels range from 0 to 4, respectively representing the percentage 0 = from 0% to 20%, 1 = from 20% to 40% ... average of the colors in RGB for example the medium 70, 255, 80 = 153 then the percentile is ```153: 255 = X: 100``` so it is 52% so 3\n\nI our case\n\n\n```\nint[][]{\n  new int[] {1,...},\n};\n```\n\nlastly we make a conversion to an actually visible image\n\nthe ```DecodeCharMap``` method transforms the pattern into an image must each line is separated by \\ n and each value is converted by following this rule:\n\n```\n0=' ' 1='░' 2='▒' 3='▓' 4='█'\n```\n\nI our case\n\n```\n\n░░░░░░░░░░░░░░░░░░░░░░█████████░░░░░░░░░░\n░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███░░░░░░░░\n░░█▒▒▒▒▒▒█░░░░░░░███▒▒▒▒▒▒▒▒▒▒▒▒▒███░░░░░\n░░░█▒▒▒▒▒▒█░░░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░\n░░░░█▒▒▒▒▒█░░░██▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒███░░\n░░░░░█▒▒▒█░░░█▒▒▒▒▒▒████▒▒▒▒████▒▒▒▒▒▒██░\n░░░█████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░\n░░░█▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒██░\n░██▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██░\n██▒▒▒███████████▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒▒██░\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒████████▒▒▒▒▒▒▒██░\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░\n░█▒▒▒███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░\n░██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█░░░░░░\n░░████████████░░░█████████████████░░░░░░░\n```\n\n<h1>Now, good luck, and FUN</h1>",
+    "totalAttempts": 9,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

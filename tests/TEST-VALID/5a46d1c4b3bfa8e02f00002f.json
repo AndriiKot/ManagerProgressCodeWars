@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a46d1c4b3bfa8e02f00002f",
+  "data": {
+    "id": "5a46d1c4b3bfa8e02f00002f",
+    "name": "Scan sort.",
+    "slug": "scan-sort",
+    "category": "algorithms",
+    "publishedAt": "2017-12-29T23:42:26.191Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5a46d1c4b3bfa8e02f00002f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-29T23:37:40.994Z",
+    "createdBy": {
+      "username": "Orace",
+      "url": "https://www.codewars.com/users/Orace"
+    },
+    "description": "You have to write a software that drive some hardware.\nThe hardware is used to perform some measurement of some physical quantities in different configuration.\nBetween two configuration there is multiples parameters that can be changed.\nBut some parameters can take more time to be changed.\n** And we only change one parameter at a time**\n\nAs an example, with a probe, we want to scan a two dimensional grid of 4 point.\n\n    A B\n    C D\n    \nBut the probe move faster in vertical than in horizontal.\nHence a good scan sequence can be `A C D B` with only one horizontal movement.\n\nAn other exemple:\n\n    A B C\n    D E F\n    G H I\n    \nWith a fast horizontal movement and a slow vertical movement give:\n\n    A B C F E D G H I\n\n\nYou are given an sequence of object and some parameter extractors.\nThe extractors are sorted from the slowest to the quickest parameters to change.\nYour job is to sort the sequence to a have the fastest scan.\n\nIn our first exemple, the object are a Point class with some coordinates:\n\n    class Point {\n      ...\n      public int X {get;}  // horizontal coordinate\n      public int Y {get;}  // vertical coordinate\n      ...\n    }\n    \nAnd the parameter extractors are:\n\n    new Func<Point, object>[] {\n      p => p.Z, // Slow has hell\n      p => p.Y  // Moving probe along Y is fast\n    };",
+    "totalAttempts": 8,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Sorting",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

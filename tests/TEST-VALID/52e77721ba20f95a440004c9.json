@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52e77721ba20f95a440004c9",
+  "data": {
+    "id": "52e77721ba20f95a440004c9",
+    "name": "Simulating a Multiserver Queue",
+    "slug": "simulating-a-multiserver-queue",
+    "category": "algorithms",
+    "publishedAt": "2014-01-28T09:23:50.667Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52e77721ba20f95a440004c9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-01-28T09:23:45.843Z",
+    "createdBy": {
+      "username": "constablebrew",
+      "url": "https://www.codewars.com/users/constablebrew"
+    },
+    "description": "Lines at the Department of Motor Vehicles (DMV) are notorious for being very long and wait times lasting for hours. We want to improve this process! The first step in looking for solutions is to build a model of these lines. We will model the DMV queue - the arrival of people (and their being <i>balked</i> and going away if the line is too long), the processing of the queue by the servers, and the departure of customers once their service needs have been completed.\n\nThis simulation will be housed in the DMVQueue class. First the DMVQueue will be seeded with a number of arriving customers. Once all the customers have been seeded into the DMVQueue, via the `Arrival(customer)` method, you will need to provide a report of how well the DMVQueue performed in the simulation.  Your job is to build the DMVQueue's constructor, the Arrival method, and the Report method. The inner workings of the simulation are up to you, but there are some specifics that you will need to handle, described below.\n\nThe DMVQueue is described by a number of servers (`numServers`) and how efficient each server is in processing customers (`serviceTime`). Customers will arrive at specified times and then will wait in the queue until a server becomes free, at which time the customer will go up to the server and wait there for the designated `serviceTime`. Once that time has passed, the customer will leave, freeing up the server for another customer.\n\nThe Test fixture will be seeding a DMVQueue object with a number of customers. Then the test fixture will call the report function and compare the output to the expected results.\n<br />\n\n<h3>DMVQueue</h3>\nThe DMVQueue describes the number of servers handling customers and how long the line currently is. The DMVQueue has the following properties:\n<ul>\n<li><b>new DMVQueue( numServers, serviceTime ):</b> The constructor takes two arguments:<ul>\n    <li><b>numServers:</b> The number of servers that process customers in the queue. Integer.</li>\n    <li><b>serviceTime:</b> The normal amount of time that a server will take to fulfill all of a customer's needs. This is an integer representing time in minutes. Note: Customers may specify a serviceTime that supersedes this value.</li></ul>\n<li><b>Arrival( customer ):</b> Describes a single customer that has arrived at the DMV. See the Customer object details below for more details. Note: Customer arrival times may not be in chronological order.</li>\n</ul>\n\n<h3>Customer</h3>\nCustomer Objects are provided to the simulation via the DMVQueue.Arrival method. Customers have the following properties:\n<ul>\n<li><b>arrivalTime:</b> The time of day that the customer arrived. This is an integer representing time in minutes</li>\n<li><b>serviceTime :</b> (<i>Optional</i>)  The service time required by the customer. This is an integer representing time in minutes. If specified, this value overrides the DMVQueue's default serviceTime property, but only in respects to this specific customer.</li>\n<li><b>balk:</b> (<i>Optional</i>) An integer describing the customer's tolerance for long lines. When the customer arrives, if the number of other Customers in the queue is not less than his <b>balk</b> threshold, the customer will simply leave. (E.g. not enter the queue and never receive service.)\n</ul>\n\n<h3>Report</h3>\nThe DMVQueue.Report() function provides details describing the DMV's performance for the day. This function returns an object with the following properties:\n<ul><li><b>numServed:</b> The total number of customers served. Customers who \"balked\" are not included here.</li>\n<li><b>avgTimeInQ:</b> The average wait time for customers that had been served. This is an integer representing the number of minutes. (Round any fractions.)</li></ul>\n\n<h3>Customer Events</h3>\nNote: Here we discuss customer \"events\". These are not explicit events _per se_, but simply a way to describe the actions or states of customers in our simulation. It is up to you to determine exactly how you handle the simulation.\n\nMultiple events may occur at the same time. (I.e. one customer moving from the queue to a server while another customer simultaneously arrives.) Handle simultaneous events in the following order:\n<ol>\n<li>Arrival</li>\n<li>Service</li>\n<li>Departure</li>\n</ol>\n\nIf multiple customers are attempting the same action at the same time, priority is given to the customer whom arrived first. Only one customer can ever arrive at any given time.\n\nA customer requires a minimum of one minute for each event. (E.g. A customer arriving to an empty queue must still wait one minute before the lazy clerk processes his needs.)\n\n<h3>Sample</h3>\nDMVQueue( numServers = 1, serviceTime = 60 )\nt0: Customer 0 arrives; ( Queue length == 1, Num Serviced == 0, Servers available == 1 )<br />\nt1: Customer 0 is seen by a service clerk (total wait = 1 minute) and Customer 1 arrives;  ( Queue length == 1, Num Serviced == 1, Servers available == 0 )<br />\nt2: Customer 2 arrives (Balk=0) and immediately leaves. Customer 1 pulls out some balls of yarn and begins to knit a sweater;  ( Queue length == 1, Num Serviced == 1, Servers available == 0 )<br />\nt61: Customer 0 has passed his test and departs. Customer 1 puts away the yarn and sweater;  ( Queue length == 1, Num Serviced == 1, Servers available == 0 )<br />\nt62: Customer 1 is seen by a service clerk (total wait = 61 minutes);  ( Queue length == 0, Num Serviced == 2, Servers available == 0 )<br />\nt122: Customer 1 departs; ( Queue length == 0, Num Serviced == 2, Servers available == 1 )<br />\n\n<b>Total Served:</b> 2<br />\n<b>Average Time in Queue:</b> 31",
+    "totalAttempts": 69,
+    "totalCompleted": 10,
+    "totalStars": 6,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

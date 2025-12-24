@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/631a5f7e0b9cb0bec1ecef43",
+  "data": {
+    "id": "631a5f7e0b9cb0bec1ecef43",
+    "name": "Path in a Map, Is It Long Enough?",
+    "slug": "path-in-a-map-is-it-long-enough",
+    "category": "algorithms",
+    "publishedAt": "2022-09-22T20:46:46.978Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/631a5f7e0b9cb0bec1ecef43",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-08T21:32:46.769Z",
+    "createdBy": {
+      "username": "LanXnHn",
+      "url": "https://www.codewars.com/users/LanXnHn"
+    },
+    "description": "# Finding the Path\nIt is still path finding, but now you need to find that if there is a path __long enough__.\n\nIn this Kata, a `map` is a `10 x 10` square.\n\nYour movement should follow the rules:\n* You can move in 4 directions: `up/down/left/right`.\n* There are some `blocks` on it, they will block your way.\n* You _cannot_ pass the same place more than once.\n\n___\n# Task\nYou will get a `map(a string)`, with 3 symbols : `@`, which  means you will start here; `#`, which means you cannot pass; `.`, which means you can pass it.\n\n30 <= number of `#` <= 40\n\nAnd your task is to find that if there is a path (the length includes `@` and `.`) in the `map` its length is at least `34` (which is `math.ceil(100/3)`), return `True` or `False` accordingly.\n___\n# Example:\nSee the following  examples of `maps`:\n\n```\n         v- start here        v--- start here        v-- start here\n.........@             .......@#.             .......@..\n........##             ........#.             ........##\n........#.             ........#.             ........#.\n........#.             ........#.             ........#.\n########..             ########..             ########..\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n```\nObviously, you can find the longest path with length of `34`, `32`, `32` for the above examples as the big rectangle you can go is `8*4` which has `32` points (the arrows just an example, there are many ways to do it).\n```\n34, True               32, False              32, False\n↓←←←←←←←←@             ↓←←←←←←@#.             ↓←←←←←←@..\n→→→→→→→↓##             →→→→→→→↓#.             →→→→→→→↓##\n↓←←←←←←←#.             ↓←←←←←←←#.             ↓←←←←←←←#.\n→→→→→→→→#.             →→→→→→→→#.             →→→→→→→→#.\n########..             ########..             ########..\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n..........             ..........             ..........\n```\n",
+    "totalAttempts": 167,
+    "totalCompleted": 7,
+    "totalStars": 4,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

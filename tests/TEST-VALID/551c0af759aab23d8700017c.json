@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/551c0af759aab23d8700017c",
+  "data": {
+    "id": "551c0af759aab23d8700017c",
+    "name": "Write Your Own Non-Templating Engine",
+    "slug": "write-your-own-non-templating-engine",
+    "category": "algorithms",
+    "publishedAt": "2015-04-01T15:14:21.740Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/551c0af759aab23d8700017c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-01T15:12:56.142Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Templating isn't that hard if you put your mind to it. Write a function that will compile any code (in the form of a string or function), turning any marked text into a regular string, then running the code and returning the result (a function should become a function, a string will become whatever the expression returns). Text is marked as a \"literal\" by starting with the characters `_/*` and ending with `*/`.\n\n(Don't worry about closures and whatnot with the functions.)\n\n```javascript\ncompile(\"_/* string \\\"with\\\" 'quotes' and \\\\ slashes */\") === \"string \\\"with\\\" 'quotes' and \\\\ slashes \";\n\ncompile(function(url, text) {\n  return _/*<tag>\n    <a href=\"*/ + url + _/*\">*/ + text + _/* \\ (new window)</a>\n  </tag>*/;\n})(\"http://www.google.com/\", \"Google\") === \"<tag>\\n    <a href=\\\"http://www.google.com/\\\">Google \\\\ (new window)</a>\\n  </tag>\";\n```\n\nSee how few lines you can manage to write a fully-working template compiler in without using any libraries whatsoever!",
+    "totalAttempts": 364,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

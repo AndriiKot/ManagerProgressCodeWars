@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c92dc01a04bd50eeef86c15",
+  "data": {
+    "id": "5c92dc01a04bd50eeef86c15",
+    "name": "Reactive programming: #6 The Observable Monad",
+    "slug": "reactive-programming-number-6-the-observable-monad",
+    "category": "reference",
+    "publishedAt": "2019-03-21T22:37:45.669Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c92dc01a04bd50eeef86c15",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-21T00:34:09.783Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the sixth part of the series on reactive programming.\n\nBefore facing your resolution, you must have completed the previous katas:\n* [#1 Create function](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de)\n* [#2 Basic observables creation](https://www.codewars.com/kata/5c90276a03b42343cb32e9bf)\n* [#3 Premier operators](https://www.codewars.com/kata/5c914f2ae041fe000e8964ee)\n* [#4 Pipelining operators](https://www.codewars.com/kata/5c91f503ac8b333aa73120d4)\n* [#5 Observable juggling](https://www.codewars.com/kata/5c91f503ac8b333aa73120d4)\n\nIn this kata we are going to deal with the *M word*. Yes, observables are also monads. But do not be scary. It is easier than it seems to be.\n\nSuppose we want to implement an operator that receives a function that receives a value and returns an observable. This is the function part:\n\n```typescript\nf: (x: T) => Observable<R>\n```\n\nThe operator will also receive an observable and it will apply the function to each value issued by the observable.\n\nWhy would we want something like that?\n\nLet's take an example:\n\nSuppose you want to implement the `repeat` operator. To do this, you could start from scratch, or you could define repeat from other operators.\n\n`repeat` receives a number and an observable and repeats one emission after another as many times as indicated.\n\n\n```typescript\nfunction repeat<T>(times: number): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n    ....\n  }\n}\n```\n\nAt first you might think that you could define `repeat` like this:\n\n```typescript\nconst repeat = times => observable => of(...Array(times).fill(null)).pipe(map(_ => concat(observable)));\n```\n\nThat is, we generate as many values as `times` param and replace each value with the `observable` param and then concatenate the observables.\n\nThis looks good, but we have a problem. The `map` operator preserves the structure (returns an observable) and the function it receives returns observables too, so we will end with an observable whose values are observables as well.\n\nWe can deal with this by subscribing to the outer observable, then subscribe to the inner observables. Of course we would have to deal with the unsubscriptions and with the complete and next states of all the observables. It seems a mess, right?\n\nBesides, implementing `repeat` in this way we lose the possibility of composing it with `pipe` operator. This is not going to work:\n\n```typescript\n// v does not match because is an observable of numbers, it is not a simple number\ninterval(500).pipe(take(3), repeat(4), map(v => v * 2));\n```\n\nThis is what we are talking about when we say that a structure is a monad: A monad is a structure for which there is a function that allows us to compose functions that receive a simple value and return a value within the structure.\n\nIn this kata we are going to deal with observables as a monads.\n\n# concatMap operator\n\nWe can define `concapMap` operator like this:\n\n```typescript\nfunction concatMap<T, R>(f: (x: T) => Observable<R>): Operator<T, R> {\n  return (o: Observable<T>) => {\n    ....\n  }\n}\n```\n\nAn example of use could be the `repeat` function that we have proposed before.\n\n```typescript\nfunction repeat<T>(times: number): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n    return of(...Array(times).fill(null)).pipe(concatMap(_ => observable));\n  };\n}\n```\n\nNow you can compose `repeat` operator:\n\n```typescript\ninterval(500).pipe(take(3), repeat(4), map(v => v * 2));\n```\n\nNow your job is to implement `concatMap`.\n\n# mergeMap operator\n\n`mergeMap` has the same definition as `concatMap`. The behavior differs in that the inner observables do not wait for the completion to begin issuing and they do so as they are available.\n\n```typescript\nfunction mergeMap<T, R>(f: (x: T) => Observable<R>): Operator<T, R> {\n  return (o: Observable<T>) => {\n    ....\n  }\n}\n```\n\nTo see the difference between `concatMap` and `mergeMap`, let's suppose that we impliment `repeat` with `mergeMap` in this way:\n\n```typescript\nfunction repeat<T>(times: number): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n    return of(...Array(times).fill(null)).pipe(mergeMap(_ => observable));\n  };\n}\n```\n\nLet's see the output of the following code:\n\n\n```typescript\nconst source = interval(2).pipe(take(3));\nconst example = repeat(3)(source);\n// output: 0,0,0,1,1,1,2,2,2\nexample.subscribe({\n  onNext: val => conssole.log(val)\n});\n```\n\nThe implementation with `concatMap` would have produced a very different result:\n\n```typescript\n// output: 0,1,2,0,1,2,0,1,2\n```\n\n# switchMap operator\n\nAnd finally we get to the last operator of the kata and the series: `switchMap` is one of my favorite operators because it allows us to simplify a task that is usually tedious as cancellations are.\n\nThe canonical example that is usually used to explain the problem of cancellations is an autocomplete search. How to ensure that as you type, previous searches that have been sent to the server are not displayed? This is a complex challenge since we can not be sure that the order in which the server resolves requests is preserved. `switchMap` and other cancellation operators are perfect for these situations.\n\nThis is the `switchMap` definition:\n\n```typescript\nfunction switchMap<T, R>(f: (x: T) => Observable<R>): Operator<T, R> {\n  return (o: Observable<T>) => {\n    ....\n  }\n}\n```\n\nWith `switchMap`, every time the external observable emits a new value, the current internal observable emission is canceled and a new inner observable is created with that value and the function, this new inner observable starts to emit again.\n\n\nFor example:\n\n```typescript\nconst outer = interval(50).pipe(take(3));\nconst inner = (x: number) => {\n  const interval$ = interval(20).pipe(\n    map(y => [x, y]),\n    take(4)\n  );\n  return interval$;\n};\nconst example: Observable<[number, number]> = outer.pipe(\n  switchMap(inner)\n);\n\n// output: [0, 0] [0, 1] [1, 0] [1, 1] [2, 0] [2, 1] [2, 2] [2, 3]\n// Note that [0, 2], [0, 3] are not emitted because the inner observable has been canceled by the arrival of a new value of the outer observable, which in this case has a value of 1.\n// [1, 2], [1, 3] are caceled by the 2 outer value.\n// However, [2, 0] [2, 1] [2, 2] [2, 3] are all emitted because the outer observable no longer emits more values after 2.\nexample.subscribe({\n  onNext: val => console.log(val),\n});\n```\n\nHere conclude this series on reactive programming. I hope you have enjoyed doing these katas.",
+    "totalAttempts": 19,
+    "totalCompleted": 6,
+    "totalStars": 5,
+    "voteScore": 4,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

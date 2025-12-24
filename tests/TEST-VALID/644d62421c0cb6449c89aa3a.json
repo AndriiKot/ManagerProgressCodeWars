@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/644d62421c0cb6449c89aa3a",
+  "data": {
+    "id": "644d62421c0cb6449c89aa3a",
+    "name": "Round Robin Job Scheduler",
+    "slug": "round-robin-job-scheduler",
+    "category": "algorithms",
+    "publishedAt": "2023-05-14T11:40:50.591Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/644d62421c0cb6449c89aa3a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-04-29T18:30:26.987Z",
+    "createdBy": {
+      "username": "MacStan",
+      "url": "https://www.codewars.com/users/MacStan"
+    },
+    "description": "# Description\nIn this kata you will create scheduler based on round robin algorithm.\n\nScheduler will receive list of jobs with `ArrivalTime` and `TimeToPerform`. Based on those, it'll create schedule in the following way:\n\n1. Jobs will be taken out of the list (first in - first out) and executed (new `Timeslot` created) for `window` of time.\n2. If they are not finished at the end of the `window` they will be moved to the end of the list. Otherwise they will be removed from the list.\n\nScheduler should track time, starting from provided date `startTime`. After every new `Timeslot` current time should be initial `startTime` and sum of all `ExecutionTime`s. Jobs with `ArrivalTime` greater than current time should not be performed untill other jobs are 'finished'. If there are no more jobs with valid `ArrivalTime`, idle record (`TimeslotType.Idle`) should be added to fill the gap in time. \n\nIf one `Job` finishes it's `window` exactly at the time the other job arrives, arriving job should be placed at the end of the list first, and the job that has just finished should be placed after it.\n\nResult should be a list (sorted by execution order) of `Timeslot`s describing execution order of Jobs (and `Idle` timeslots).\n# Example\n\n*Names were shortened for clarity. Solution will need to use proper Guids*\n## Inputs\nSize of the `window` is 00:00:02 in this example.\n`startTime` is 11/5/2007 12:00:00 AM\nName|ArrivalTime|TimeToPerform\n-|-|-\n111...|11/5/2007 12:00:00 AM|00:00:05\n444...|11/5/2007 12:00:08 AM|00:00:01\n\n## Expected Output\nName|ExecutionTime|TimeslotType\n-|-|-\n111...|00:00:02|Job\n111...|00:00:02|Job\n111...|00:00:01|Job\n5bc...|00:00:03|Idle\n444...|00:00:01|Job\n\n*Order of entries is important.* \n\n*Name of waiting period (`TimeslotType.Idle`) is irrelevant*\n\n# Structures \n```csharp\npublic enum TimeslotType {\n    Job, Idle\n} \n```\n\n```csharp\npublic readonly record struct Timeslot(Guid Name, TimeSpan ExecutionTime, TimeslotType Type);\n```\n\n```csharp\npublic struct Job\n{\n    public Guid Name { get; private set; }\n    public TimeSpan TimeToPerform { get; set; }\n    public DateTime ArrivalTime { get; }\n    public Job(Guid name, DateTime arrivalTime, TimeSpan timeToPerform)\n    {\n        Name = name;\n        TimeToPerform = timeToPerform;\n        ArrivalTime = arrivalTime;\n    }\n}\n```",
+    "totalAttempts": 38,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Scheduling",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

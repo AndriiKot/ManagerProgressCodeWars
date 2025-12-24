@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62984f7f85a012006999c9ea",
+  "data": {
+    "id": "62984f7f85a012006999c9ea",
+    "name": "Ruth and Aaron",
+    "slug": "ruth-and-aaron",
+    "category": "algorithms",
+    "publishedAt": "2022-06-02T05:58:10.352Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62984f7f85a012006999c9ea",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-02T05:49:51.143Z",
+    "createdBy": {
+      "username": "user5257673",
+      "url": "https://www.codewars.com/users/user5257673"
+    },
+    "description": "## Story\nTwo consecutive integers a and b are considered a Ruth-Aaron pair if the sum of the prime factors of **`a` is equal to the sum of the prime factors of `b`**.\n\n### First Definition:\n\nSumming up **distinct prime factors**. For example, 24 and 25 constitute a Ruth-Aaron pair by this definition. 8 and 9 do not.\n```\nP24 = [2, 3]  # sum = 5\n\nP25 = [5]  # sum = 5, equal to 24\n\nP8 = [2]  # sum = 2\n\nP9 = [3]  # sum = 3\n```\n### Second Definition:\n\nSumming up **repeated prime factors**. By this definition, 24 and 25 do not constitute a Ruth-Aaron pair. But 8 and 9 do.\n```\nP24 = [2, 2, 2, 3]  # sum = 9\n\nP25 = [5, 5]  # sum = 10\n\nP8 = [2, 2, 2]  # sum = 6\n\nP9 = [3, 3]  # sum = 6, equal to 8\n```\n\n### Third Definition:\n\nIf two consecutive numbers have only distinct prime factors and have equal sums of prime factors, they are considered Ruth-Aaron pairs by both definitions.\n```\nP77 = [7, 11]  # sum = 18\n\nP78 = [2, 3, 13]  # sum = 18\n```\n\n## Task\n\nCreate a function that takes a number `n` and returns:\n\n1. `\"Not a Ruth-Aaron pair\"` if it is not part of a Ruth-Aaron pair.\n\n2. A string `\"Ruth\"` if n is the smaller number in the pair, or `\"Aaron\"` if it is the larger followed by 1 if `n` is part of a Ruth-Aaron pair under the first definition (sum of distinct prime factors), 2 if it qualifies by the second definition, 3 if it qualifies under both.\n\n3. If the answer qualifies for both \"Aaron\" and \"Ruth\", your function should return \"Ruth\" part only. \n\n## Examples\n```\nruth_aaron(5) # \"Ruth-3\"\n\nruth_aaron(9) # \"Aaron-2\"\n\nruth_aaron(11) # \"Not a Ruth-Aaron pair\"\n\nruth_aaron(25) # \"Aaron-1\"\n\nruth_aaron(417163) # \"Ruth-2\"\n# Although both \"Ruth-2\" and \"Aaron-3\" are correct, your function should return \"Ruth-2\" only.\n```\n\n`Input : 2 <= n <= 10^6`\n\n## References\n[Ruth–Aaron pair](https://en.wikipedia.org/wiki/Ruth%E2%80%93Aaron_pair)",
+    "totalAttempts": 148,
+    "totalCompleted": 52,
+    "totalStars": 3,
+    "voteScore": 51,
+    "tags": [
+      "Puzzles",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

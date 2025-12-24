@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57d3236f43942a83ae000101",
+  "data": {
+    "id": "57d3236f43942a83ae000101",
+    "name": "Quick! Sort!",
+    "slug": "quick-sort",
+    "category": "algorithms",
+    "publishedAt": "2016-09-09T23:26:28.847Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57d3236f43942a83ae000101",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-09T21:02:39.350Z",
+    "createdBy": {
+      "username": "user6361752",
+      "url": "https://www.codewars.com/users/user6361752"
+    },
+    "description": "Your task is to implement so called \"Determinant quicksort\" algorithm and return number of comparisons between elements in array.\n\n<h3>Brief algorithm description:</h3>\n<ul>\n<li> Take array and determine pivot element as <b>the first element</b> in array </li>\n<li> Then make all elements that are smaller or equal than the pivot element to be in the left hand subarray and others in the right hand subarray</li>\n<div style=\"margin-left:10px\"> For example: <br>\nIf it was [3,4,5,7,2,0,6,1,8] <br>\nIt must become [3, 2, 0, 1, 4, 5, 6, 7, 8] <br>\ncomparisons: starting from '4'(second element):\nPivot is 3 <br> comparisons = 0\n4 < 3 ? do nothing, comparisons = 1; continue <br>\n5 < 3 ? do nothing, comparisons = 2; continue <br>\n7 < 3 ? do nothing, comparisons = 3; continue <br>\n2 < 3 ?  comparisons = 4; Yes. Exchange 4 <----> 2, so array becomes [3,2,5,7,4,0,6,1,8]<br>\n0 < 3 ?  comparisons = 5; Yes. Exchange 5 <----> 0, so array becomes [3,2,0,7,4,5,6,1,8]<br>\netc.<br>\n</div>\n<li>Then exchange first element with the last element of the left-handed array</li>\n<div style=\"margin-left:10px\"> In example: <br>\n[3, 2, 0, 1, 4, 5, 6, 7, 8] <br>\nMust become [1, 2, 0, 3, 4, 5, 6, 7, 8] , so 3 <---> 1\n</div>\n<li>Now you should recursively call algorithm on [1,2,0] and [4,5,6,7,8], i.e. on left-hand and right-hand subarrays, excluding pivot element 3</li>\n</ul><br>\n\nFinally you should return total number of comparisons, and an array must be sorted after quickSort(array) is called.<br>\n\n<h3> You can read about QuickSort here: https://en.wikipedia.org/wiki/Quicksort </h3>\n<h2>Good luck!</h2>\n\n<h3>Due to different possible implementations Task expects you to return number of comparisons that is in some range (for large random cases. For small cases number of comparisons must be exact)</h3>",
+    "totalAttempts": 60,
+    "totalCompleted": 6,
+    "totalStars": 9,
+    "voteScore": -2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

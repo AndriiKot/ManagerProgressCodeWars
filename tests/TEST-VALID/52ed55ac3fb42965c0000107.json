@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52ed55ac3fb42965c0000107",
+  "data": {
+    "id": "52ed55ac3fb42965c0000107",
+    "name": "Elevator with call buttons",
+    "slug": "elevator-with-call-buttons",
+    "category": "reference",
+    "publishedAt": "2014-02-01T22:21:31.931Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52ed55ac3fb42965c0000107",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-01T20:14:36.200Z",
+    "createdBy": {
+      "username": "mikrobi",
+      "url": "https://www.codewars.com/users/mikrobi"
+    },
+    "description": "There is a building with 4 levels. There is an elevator in that house and on every level there is a button to call the elevator. There are also buttons inside the elevator.\n\nYou have to program this elevator to go up or down,depending on what button the user touches,on what level was the call button touched and if the elevator is empty or not.\n\n\nparameters:\n'level' can be a number = 0,1,2,3\n'button' can be a string = '0','1','2','3', //inside the elevator\n                      'C0','C1','C2','C3' // call buttons, one on every level\n'empty' can be a bool = true, false\n\nreturn values can be numbers:\n-3,-2,-1,0,1,2,3\n\n\nTEST CASES:\n1.If the elevator is on the ground floor(0th level) \nand the user in it touches button '2'\nthe elevator must go 2 levels up,\nso our function must return 2.\n\n2.If the elevator is on the 1st level and somebody is in it,\nand the call button on the 3rd level is called (C3)\nthe elevator must remain on the 1st level,\nso we must return 0.\n\n3.If the elevator is on the 3rd level\nand the user touches the call button on the floor (C0), \nand the elevator is empty,\nthe elevator must go 3 levels down, so our program must return -3.\n\n4.If the elevator is on the 2nd level,\nand the user touches button '2' or 'C2'\nthe elevator must remain on the same level,\nno matter if it is empty or not.\n\n5.We cannot endanger the lives of our passengers, \nso if we get erronous inputs, \nour elevator must remain on the same level.\nSo for example goto(2,'4',false) must return 0, because there is no button '4' in the elevator.\ngoto(4,'C0',true) must return 0, because there is no level 4.\ngoto(3,undefined,false) must return 0.\ngoto(undefined,'C2',true) must return 0.\ngoto([],'2',false) must return 0 because the type of the input level is array instead of a number.\ngoto(3,{},false) must return 0 because the type of the input button is object instead of a number.\n\nHINT: You can use String.length to distinguish if a call button or a button inside the elevator was pushed.\n",
+    "totalAttempts": 214,
+    "totalCompleted": 18,
+    "totalStars": 6,
+    "voteScore": 12,
+    "tags": [
+      "State Machines",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

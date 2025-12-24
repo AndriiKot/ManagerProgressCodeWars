@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5500f2a3fed40fa2cd0005fe",
+  "data": {
+    "id": "5500f2a3fed40fa2cd0005fe",
+    "name": "CIDR block range calculation",
+    "slug": "cidr-block-range-calculation",
+    "category": "algorithms",
+    "publishedAt": "2015-03-13T00:10:16.357Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5500f2a3fed40fa2cd0005fe",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-12T01:57:55.966Z",
+    "createdBy": {
+      "username": "MindWanderer",
+      "url": "https://www.codewars.com/users/MindWanderer"
+    },
+    "description": "Given an address within an IPv4 CIDR prefix, return the first and last addresses within that range.\n\nRecommended prerequisites and background:\n\n* http://www.codewars.com/kata/ip-validation\n* http://www.codewars.com/kata/ip-address-to-number\n* http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\n\nCIDR notation is a way to designate a block of IP addresses by providing a _prefix length_.  The prefix is the set of bits that do not vary within that address block.\n\nFor instance, the CIDR block 192.168.1.0/24 has 24 fixed bits and 8 variable bits (32 bits total).  This means that the addresses range between 192.168.1.0 and 192.168.1.255 inclusive, or in binary:\n\n`11000000 10101000 00000001 00000000` through  \n`11000000 10101000 00000001 11111111`\n\nFor network configuration reasons, the first address in the block is referred to as the _network address_ and the last address is the _broadcast address_.\n\nThe input of your function will be a single address in CIDR notation.  It should return the array [_first address_, _last address_].\n\nExample: `ipRange('192.168.1.100/24')` should return `['192.168.1.0', '192.168.1.255']`\n\nYou can assume valid input for the purposes of this exercise.",
+    "totalAttempts": 178,
+    "totalCompleted": 28,
+    "totalStars": 5,
+    "voteScore": 22,
+    "tags": [
+      "Algorithms",
+      "Strings",
+      "Networks",
+      "Binary",
+      "Bits"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63348fc7ffea20002c020aa3",
+  "data": {
+    "id": "63348fc7ffea20002c020aa3",
+    "name": "Who can still win the league",
+    "slug": "who-can-still-win-the-league",
+    "category": "algorithms",
+    "publishedAt": "2022-09-28T18:32:36.365Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63348fc7ffea20002c020aa3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-28T18:17:43.624Z",
+    "createdBy": {
+      "username": "ondrfol",
+      "url": "https://www.codewars.com/users/ondrfol"
+    },
+    "description": "Who can still win.\nYou will be given list of match results in a form of string.\nYou only count with teams that are mentioned in match list.\n```python\n\"TeamA-TeamB>TeamA TeamC-TeamA>TeamC TeamB-TeamC>TeamB TeamB-TeamA>TeamA\"\n```\nTeam names divided by '-' is the matchup and the team behind '>' is the winner.\nWinning team gets 1 point.\nEvery team plays each other 2 times.\nWinner of the whole league is the team with the highest amount of points in case of 2 or more teams tied on points minitable will be formed consisting only of the results between the tied teams.\nIf even after minitable the teams are tied then each team will split equally the 1 scenario.(meaning if 2 teams tie they both get 0.5)\n\nYour task is to return the teams that can still place 1st in a list sorted by number of scenarios they are placed 1st.\nIf 2 or more teams have the same amount of scenarios they are sorted alphabetically.\n\nExample:\n```python\n\"TeamA-TeamB>TeamA TeamC-TeamA>TeamC TeamB-TeamC>TeamB TeamB-TeamA>TeamA\"\n```\nAfter those games played.\n  TeamA has 2 points\n  TeamB has 1 point\n  TeamC has 1 point\nAnd the matches left to play are.\n  TeamA vs TeamC\n  TeamC vs TeamB\nThere are 4 scenarios that can happen.\n  If TeamA beats TeamC it doesnt matter how will the second match end so TeamA has 2 scenarios.\n  But if Team C wins both matches they will win giving them also 1 scenario.\n  The last scenarios of TeamC beating TeamA and then loosing to TeamB threeway tie will happen\n  with all teams on 2 points and since there is no reason to build a minitable between the teams they will \n  split the point.\n\nThe final result will be.\n\n```python\n[\"TeamA\", \"TeamC\", \"TeamB\"]\n```\nSince TeamA has 2 + 1/3, TeamC has 1 + 1/3 and TeamB has 1/3 of a scenario when they win.\n\n\nThe maximum amount of teams will be 7.",
+    "totalAttempts": 174,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": 12,
+    "tags": [
+      "Mathematics",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

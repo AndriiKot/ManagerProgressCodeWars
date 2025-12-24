@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64e3b802c065e5298f159d5f",
+  "data": {
+    "id": "64e3b802c065e5298f159d5f",
+    "name": "Tower of Power('s of 2)",
+    "slug": "tower-of-power-s-of-2",
+    "category": "games",
+    "publishedAt": "2023-08-21T19:18:58.800Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/64e3b802c065e5298f159d5f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-21T19:16:18.468Z",
+    "createdBy": {
+      "username": "Spongebobby",
+      "url": "https://www.codewars.com/users/Spongebobby"
+    },
+    "description": "Given an int ```towerHeight```, I need you to construct a tower whose base is ```towerHeight * 2 -1``` spaces long and ```towerHeight ^ 2``` is at the very top of the tower. Each space is made up of a power of 2, the left most bricks being 2 and gradually increasing by a power of 2 as you build up. \n\n\nFor example, \n\n```towerHeight = 1```:\n```\n2 // <-- 2^1 = 2\n```\n```towerHeight = 2```:\n```\n2\n24 // <-- 2^2 = 4\n2\n```\n```towerHeight = 3```:\n```\n2\n24\n248 // <-- 2^3 = 8\n24\n2\n```\n```towerHeight = 5```:\n```\n2\n24\n248\n24816\n2481632 // <-- 2^5 = 32\n24816\n248\n24\n2\n```\n```towerHeight = 8```:\n```\n2\n24\n248\n24816\n2481632\n248163264\n248163264128\n248163264128256 // <-- 2^8 = 256\n248163264128\n248163264\n2481632\n24816\n248\n24\n2\n```\n\n```towerHeight``` will be an positive int ranging from 0 to 60. Your task will be to construct the tower and return a ```String``` that contains the tower. Watch out for whitespace, there should be none of it on any of the lines, nor at the beginning or end. You'll only be making a String that contais numbers and new lines, ```\"\\n\"```.\n\nKeep in mind the max value of an ```int``` and that the tests will go up to 2^78 (Hint: you may want to use an object that can handle \"Big\" numbers.\n",
+    "totalAttempts": 55,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Puzzles",
+      "Games",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

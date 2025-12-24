@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/582fe441fd25e9773e0009cb",
+  "data": {
+    "id": "582fe441fd25e9773e0009cb",
+    "name": "Unicode Math",
+    "slug": "unicode-math",
+    "category": "reference",
+    "publishedAt": "2016-11-19T06:56:10.600Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/582fe441fd25e9773e0009cb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-19T05:33:53.602Z",
+    "createdBy": {
+      "username": "zebulan",
+      "url": "https://www.codewars.com/users/zebulan"
+    },
+    "description": "In this kata, you must write a function that returns the result of simple mathematical operations on the characters with implicit values of a unicode string.\n\nThis function takes two arguments:\n\n* a unicode string of random characters\n    * *this string will always be unicode and at least two valid characters long*\n* a random list of operation functions (addition, multiplication and subtraction)\n    * *this list will never be empty and will only ever contain the three functions listed above (randomly ordered)*\n\nIf/when you run out of operations to apply, you must start at the beginning of the list of operations again.\n\n---\n#### Examples\n\n```python\nunicode_math(u'12', [lambda a, b: a + b]) == 3\nunicode_math(u'123', [lambda a, b: a + b]) == 6\nunicode_math(u'1234', [lambda a, b: a + b, lambda c, d: c - d]) == 4\nunicode_math(u'a1b2', [lambda a, b: a - b]) == -1\nunicode_math(u'\\uff17\\uff20\\uff15\\uff12', [lambda a, b: a * b]) == 70\nunicode_math('3½', [lambda a, b: a + b]) == 3.5\n\n```\n---\n***If you have any feedback, feel free to leave a comment and/or raise an issue!***\n\n---\n# **HINT**\n\n* https://docs.python.org/3/howto/unicode.html\n",
+    "totalAttempts": 296,
+    "totalCompleted": 25,
+    "totalStars": 1,
+    "voteScore": 25,
+    "tags": [
+      "Unicode",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

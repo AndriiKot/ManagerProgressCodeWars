@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62c8600d76acd600641203f9",
+  "data": {
+    "id": "62c8600d76acd600641203f9",
+    "name": "Callchain - Decorators",
+    "slug": "callchain-decorators",
+    "category": "reference",
+    "publishedAt": "2022-07-09T14:02:05.655Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62c8600d76acd600641203f9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-08T16:49:17.413Z",
+    "createdBy": {
+      "username": "chr3st5an",
+      "url": "https://www.codewars.com/users/chr3st5an"
+    },
+    "description": "# Callchain aka callbacks with style\n\nOne day you wake up and think *\"I wanna do something cool\"*. So you delete Kwitter and \nmake a python decorator instead. \n\nIt allows to declare functions as callback functions which get\ncalled when the \"root\" function gets invoked.\n\nThe \"root\" function is decorated by the `callchain` decorator\nand all callbacks make use of the `<func>.callback` decorator.\n\n```python\n@callchain\ndef root():\n    return \"hello world\"\n\n@root.callback\ndef foo(result_from_root):\n    return result_from_root.title()\n    \nprint(root())  # Hello World\n```\n\nBut, thats not cool enough, you think. So you add the feature that a callback function can\nalso have callback functions that are relative to it\n\n```python\n@foo.callback\ndef eggs(result_from_foo):\n    return result_from_foo.split()\n    \nprint(root())  # [\"Hello\", \"World\"]\n```\n\nSo now, when the `root` function is invoked, it passes its result to `foo` which then passes its result to `eggs`\n\n```txt\nroot |> foo |> eggs\n```\n\n---\n\nAs you are testing your callchain, you realize that a callback function will also call \nits callback functions when called without invoking the main function. Confused?\nBasically, you only want to call all functions in a chain when the main function\nis involved. If a callback functions gets directly invoked without the main function\nbeing involved, it shall not call its sub-callback functions\n\n```python\nprint(foo(\"hello world\"))  # Hello World; Does not call eggs\n```\n\n---\n\nThe root function and its callback functions can have unlimited sub-callback functions:\n\n```python\n@callchain\ndef root(param): ...\n\n@root.callback\ndef foo(res): ...\n\n@root.callback\ndef eggs(res): ...\n\n@foo.callback\ndef speed(res): ...\n\n@foo.callback\ndef spam(res): ...\n\n@spam.callback\ndef process_xy(res): ...\n```\n\nWhich raises the question in which order callbacks get invoked:\n\n```txt\nroot |> root.foo |> root.foo.speed |> root.foo.spam |> root.foo.spam.process_xy |> root.eggs\n```\n\nFrom the point of `main`, `foo` gets executed first as it got added to the chain first. Then\nthe first subcallback-function `speed` gets executed and then its subcallback-functions and so on... \n\n---\n\nAs you continue coding, you decide that `<func>.callback` should also have an optional\nparameter `n` which decides in which order a callback function is invoked. `n` is completly relative\nto its anchor and not necessarily to `root`. If `n == 0` its called first, if `n == 1` its called\nsecondly and so on. If `n > number of callbacks` then the callback is appended to the end\nof the callchain of its anchor. \n\n```python\n@callchain\ndef root(param): ...\n\n@root.callback  # NOTE parameterless use of the decorator should also work\ndef foo(res): ...\n\n@root.callback(0)  # Gets called before `foo`; relative to `root`\ndef eggs(res): ...\n\n@foo.callback(5)  # Appended to the end of the chain; relative to `foo`\ndef speed(res): ...\n\n@foo.callback(0)\ndef spam(res): ...\n```\n\n###### Expected callchain:\n\n```txt\nroot |> root.eggs |> root.foo |> root.foo.spam |> root.foo.speed\n```\n\nNote: A parameterless use of the `callback` decorator should act the same as a call with `n`,\ne.g. `@func.callback == @func.callback(n)`\n\n---\n\n## Task\n\nImplement `callchain`",
+    "totalAttempts": 112,
+    "totalCompleted": 13,
+    "totalStars": 6,
+    "voteScore": 19,
+    "tags": [
+      "Decorator"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

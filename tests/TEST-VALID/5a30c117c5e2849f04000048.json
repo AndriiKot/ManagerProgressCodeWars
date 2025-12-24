@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a30c117c5e2849f04000048",
+  "data": {
+    "id": "5a30c117c5e2849f04000048",
+    "name": "Spanish sentences #2",
+    "slug": "spanish-sentences-number-2",
+    "category": "reference",
+    "publishedAt": "2017-12-13T07:34:17.195Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a30c117c5e2849f04000048",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-13T05:56:39.684Z",
+    "createdBy": {
+      "username": "Dmitry Kudla",
+      "url": "https://www.codewars.com/users/Dmitry%20Kudla"
+    },
+    "description": "In Spanish, sentences not only end with exclamation and question marks, but also begin with them (actually flipped over version).\n\nIt looks like:\n\n```\n¿Cómo estás?      -> How are you?\n¡Es maravilloso!  -> It is wonderful!\n¡¿Qué haces?!     -> What are you doing?!\n¿¡Donde esta!?    -> Where is it!?\n```\nYou have an unput ```array``` with exclamatory or interrogative sentences inside. Your task is to check each each of tnem for \"Spanish way\", to convert them if they are not and to return new array with \"spanish\" elements in the same order as in the original array.\n\nFor example:\n\n```\ninput:  ['Are you fine?', 'Why not?!', 'So what!?', 'It is you!']);\noutput: ['¿Are you fine?', '¡¿Why not?!', '¿¡So what!?', '¡It is you!'];\n\ninput:  ['Are? you? fine????', 'Why no!!?t?!', 'So! what!?', 'It is you!!!']);\noutput: ['¿Are? you? fine????', '¡¿Why no!!?t?!', '¿¡So! what!?!?', '¡It is you!!!'];\n\ninput:  ['¿Are you fine?', '¡¿Why not?!', '¿¡So!!! what!?', '¡It is!?! you!']);\noutput: ['¿Are you fine?', '¡¿Why not?!', '¿¡So!!! what!?', '¡It is!?! you!'];\n\n```\nP.S. Array's length > 0. \nFor clarity, sentences ending with ```!?``` consider as a ```!?``` and ```!??``` consider as a ```?```",
+    "totalAttempts": 55,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

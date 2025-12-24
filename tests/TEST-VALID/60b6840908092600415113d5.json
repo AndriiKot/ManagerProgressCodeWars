@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60b6840908092600415113d5",
+  "data": {
+    "id": "60b6840908092600415113d5",
+    "name": "In the Mandelbrot Set?",
+    "slug": "in-the-mandelbrot-set",
+    "category": "algorithms",
+    "publishedAt": "2021-06-01T20:35:06.304Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60b6840908092600415113d5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-01T19:01:29.718Z",
+    "createdBy": {
+      "username": "Emilostuff",
+      "url": "https://www.codewars.com/users/Emilostuff"
+    },
+    "description": "<h2>Introduction</h2>\n\nThe <a href=\"https://www.youtube.com/watch?v=NGMRB4O922I\">Mandelbrot set</a> is the set of complex numbers c for which the function: \n\nf<sub>c</sub>(z) = z<sup>2</sup> + c\n\ndoesn't diverge (i.e. gets increasingly large in magnitide) when iterated from z = 0. Thus for a complex numbers to be in the Mandelbrot set it must remain bounded (more precisely |z| < 2) when iterated infinitely many times through the function.\n\nBut how then are we to decide whether a given complex number is in the set or not? We don't have forever, and even then <i>'infinitely many times'</i> is just one too many.\n\nSo instead of trying to do the impossible we set ourselves a limit for how many times a given complex number must be iterated (whilst remaining below 2 in magnitude) to be accepted into the Mandelbrot set. \n\nBut why are we interested in this in the first place you might ask? Well, here is a <a href=\"https://en.wikipedia.org/wiki/Mandelbrot_set\">visualisation</a> of an area in the Mandelbrot set in the complex plane. The colors indicate the amount of iterations before the complex number at that point began diverging. Pretty cool right?\n\n![Mandelbrot set](https://upload.wikimedia.org/wikipedia/commons/3/37/Mandel_zoom_14_satellite_julia_island.jpg)\n\n<h2>Task</h2>\n\nYour task is write a function that takes in a complex number c (as a string) and a positive integer n and returns a boolean value to indicate whether c is in the Mandelbrot set or not when f<sub>c</sub>(z) is iterated n times. Expect n to be as big as 10<sup>4</sup>.\n\nThe input string will always be valid and formatted like this:\n```python\n'x + yi'\n\n```\n\nExamples of input strings:\n```python\n'0.1 + 0.1i'\n'0.335339261 - 0.564117944i'\n'-1.22030 - 0.12806572658i'\n```\n\nGood luck and have fun!\n",
+    "totalAttempts": 140,
+    "totalCompleted": 41,
+    "totalStars": 2,
+    "voteScore": 68,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61702a7380f1da001ba07472",
+  "data": {
+    "id": "61702a7380f1da001ba07472",
+    "name": "N-Fibonacci: Forwards and Backwards",
+    "slug": "n-fibonacci-forwards-and-backwards",
+    "category": "reference",
+    "publishedAt": "2021-10-20T14:42:11.783Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/61702a7380f1da001ba07472",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-20T14:40:51.521Z",
+    "createdBy": {
+      "username": "myst-6",
+      "url": "https://www.codewars.com/users/myst-6"
+    },
+    "description": "<h1>Task</h1>\n\nGiven an array of starting values `start`:\n\n1. Write a generator function `forward` which generates the values `start[0], start[1], ..., start[i]`, and each element following that is the sum of the previous `n` elements, where `n` is the length of `start`, indefinitely. \n\n2. Write a generator function `backward` which generates the values `start[i], start[i-1], ..., start[0]` and each element following that is a number `x` such that `x` and the following `n-1` elements sum to the number preceding `x`, where `n` is the length of `start`, indefinitely\n\nThe numbers in `start` will be `BigInt`s.\n\nYour code **should not mutate** `start`.\n\n* * *\n\n<h1>Example:</h1>\n\n<pre>\nInput: [5n, 7n, 3n]\nFirst 10 values of forward: [5n, 7n, 3n, 15n, 25n, 43n, 83n, 151n, 277n, 511n]\nFirst 10 values of backward: [3n, 7n, 5n, -9n, 11n, 3n, -23n, 31n, -5n, -49n]\n</pre>\n\n* * *\n\n<h1>Tests</h1>\n\nThe numbers in the `start` array will always be integers. \nThe program will test anywhere between `800` and `1000` numbers in both directions. \nThe random tests will be of `start` length `n` in the range `0 < n <= 25`.\nThere will be `100` random tests for each direction.\n\n* * *\n\n<h1>Helpful Links</h1>\n\n<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*'>Generator Functions</a>\n\n<a href='https://en.wikipedia.org/wiki/Fibonacci_number'>Fibonacci Numbers</a>",
+    "totalAttempts": 58,
+    "totalCompleted": 18,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ca1ff4f86eed5000c0e5014",
+  "data": {
+    "id": "5ca1ff4f86eed5000c0e5014",
+    "name": "Some kind of CSS keyframes implementation",
+    "slug": "some-kind-of-css-keyframes-implementation",
+    "category": "reference",
+    "publishedAt": "2019-04-09T10:37:30.651Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ca1ff4f86eed5000c0e5014",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-04-01T12:08:47.816Z",
+    "createdBy": {
+      "username": "Nick Rimer",
+      "url": "https://www.codewars.com/users/Nick%20Rimer"
+    },
+    "description": "## Intro\n\nThis task was born as a production need. It is not the 100% CSS keyframes realisation but we are so close to it.\n\nUsually web-developer use CSS and its powerful keyframes to animate something. But also animation via JavaScript has its own advantages, e.g. direct animation control. What if we would like to merge this two methods together?\nThere are many of different animation libs to use with JavaScript. But just a little of them supports keyframes mechanism and no one supports it in the way we fall into a habit to do it with CSS.\nAnd Web Animations API hasn't got as good support as we want.\n\nSo one day we chose of animation lib and start to adopt its keyframes to something more familiar. I'll not provide you an animation lib name just 'cause it's not an advertisement.\n\nI'm sorry for a long introduction. But I hope it will help you to understand the task better.\n\n## The problem #1\n\nI got a simple test. First on CSS:\n```css\n@keyframes test {\n  50% {\n    background-color: #f00;\n  }\n  75% {\n    background-color: #0f0;\n  }\n  100% {\n    background-color: #00f;\n    opacity: 1;\n  }\n}\n```\nThen I wrote it in JS with lib.\n```javascript\n{\n  keyframes: [\n    { backgroundColor: \"#f00\" },\n    { backgroundColor: \"#0f0\" },\n    { backgroundColor: \"#00f\", opacity: 1 }\n  ]\n}\n```\nExpected for `opacity` to change during the whole animation (since it works so in CSS). But in real `opacity` starts to change only when the last keyframe begins; at the same time the `backgroundColor` starts to change its value to `#00f`. Two first keyframes `opacity === 0`.\n_This is not the behavior we are looking for._\n\n## The problem #2\n\nThis lib can't do nothing with the percentage timing. It asks for `duration` property for each key. So we need to calculate it by ourselves. If the whole animation time is 5000ms an example above need to be written like this:\n```javascript\n{\n  duration: 5000,\n  keyframes: [\n    { backgroundColor: \"#f00\", duration: 2500 },\n    { backgroundColor: \"#0f0\", duration: 1250 },\n    { backgroundColor: \"#00f\", opacity: 1, duration: 1250 }\n  ]\n}\n```\n_Deal with it._ We make a decision to convert percentage to float [0..1] (e.g. 10% === 0.1).\n\n## Solving all the problems\n\nFortunately this lib has another keyframes syntax. We can write a pack of keyframes for any property we want separately. So the example above can now be written like this:\n```javascript\n{\n  duration: 5000,\n  backgroundColor: [\n    { value: \"#f00\", duration: 2500 },\n    { value: \"#0f0\", duration: 1250 },\n    { value: \"#00f\", duration: 1250 }\n  ],\n  opacity: [\n    { value: 1, duration: 5000 }\n  ]\n}\n```\nIt finally solves all the problems. If we'll parse classic keyframes model correctly.\n\n## This will be your task!\n\nYour input will be an object like shown below. It very close looks like a classic CSS keyframe model.\n```javascript\nconst input = {\n  duration: 2000,\n  keys: [\n    {\n      offset: 0.25,\n      props: {\n        left: 0,\n        top: 0\n      }\n    },\n    {\n      offset: 1,\n      props: {\n        left: 100,\n        top: 100\n      }\n    }\n  ]\n};\n```\n- `duration` is the whole animation time\n- `keys` is an Array of keyframes\n- each keyframe has its `offset` and `props`\n  - `offset` is a Number, means keyframe selectors (from 0 to 1)\n  - `props` is an Object with a pack of any animatable properties (left, scale, rotation, etc.)\n  \nYour goal is to return another object. According to listed above the result will be:\n```javascript\n{\n  duration: 2000,\n  left: [\n    { value: 0, duration: 500 },\n    { value: 100, duration: 1500 }\n  ],\n  top: [\n    { value: 0, duration: 500 },\n    { value: 100, duration: 1500 }\n  ]\n}\n```\n\nBe sure you follow this simple rules.\n\n### Rules\n- time is in milliseconds\n- duration have to be >= 0; don't take care of 0, last animation frame applies automatically \n- parse all the properties to make of them separated keyframe arrays\n- offset is a Number between 0 and 1 including both; error else\n- offsets must be in ascending order; no necessity to sort them! the other way is an error\n- no duplicated offsets allowed; error else\n- some of offsets even all of them may be lacking; be sure to restore its value (divide parts with known offsets into equal parts; examples below)\n- `offset: 0` has no necessity to be animated; just cut it out! its values always uses as start values, but in fact we'll animate nothing real in this kata, so it is behind the task\n- last offset is always 1 if it was empty; first offset is 0 _only_ if it was set directly to 0 and _never_ if it is `undefined`\n- round all the offset & duration values to 3 digits after decimal point `(0.123789 is 0.124; 2.100 is 2.1; 5.000 is 5)`\n- in case of any error function returns `false`; also return `false` if there is nothing to animate\n\n### Offset restore examples:\n```\n[,,,]: [0.25, 0.5, 0.75, 1]\n[,,1]: [0.333, 0.667, 1]\n[,,,0.5,]: [0.125, 0.25, 0.375, 0.5, 1]\n[,,0.1,,,0.5,,]: [0.033, 0.067, 0.1, 0.233, 0.367, 0.5, 0.75, 1]\n[-1,,]: false\n[,,5]: false\n[0.5, 0.3]: false\n[0.5, 0.5, 0.6]: false\n```",
+    "totalAttempts": 37,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

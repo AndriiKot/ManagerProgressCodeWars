@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5954452fc0467e94bf000056",
+  "data": {
+    "id": "5954452fc0467e94bf000056",
+    "name": "Luhn Algorithm",
+    "slug": "luhn-algorithm",
+    "category": "algorithms",
+    "publishedAt": "2017-06-29T00:09:19.973Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5954452fc0467e94bf000056",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-06-29T00:09:33.871Z",
+    "createdBy": {
+      "username": "AWhitleyGA",
+      "url": "https://www.codewars.com/users/AWhitleyGA"
+    },
+    "description": "## Challenge: Validating Credit Card Numbers\n\nCredit card numbers can be validated with a process called the Luhn algorithm. Simply stated, the Luhn algorithm works like this:\n\n1. Starting with the next to last digit and continuing with *every other* digit going back to the beginning of the card, double the digit.\n2. Sum all untouched digits with the digits of the doubled numbers in the number.\n3. If that total is a multiple of 10, the number is valid.\n\n<br />\nFor example, given the card number 4408 0412 3456 7893:\n```\nOrig  :  4 4 0 8 0 4 1 2 3 4   5 6   7 8   9 3\nStep 1:  8 4 0 8 0 4 2 2 6 4  10 6  14 8  18 3\nStep 2:  8+4+0+8+0+4+2+2+6+4+1+0+6+1+4+8+1+8+3 = 70\nStep 3:  70 % 10 == 0\n```\n\n### To Do\nDefine a function `luhn` that takes a card number `card` and returns `true` if the card number is valid or `false` if it is not valid. \n\n\n\n\nFor your reference:\n* 1234567890123456 is not valid\n* 4408041234567893 is valid\n* 38520000023237 is valid\n* 4222222222222 is valid\n",
+    "totalAttempts": 49,
+    "totalCompleted": 15,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Logic",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

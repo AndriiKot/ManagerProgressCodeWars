@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/669f83634018e21b0fc2d706",
+  "data": {
+    "id": "669f83634018e21b0fc2d706",
+    "name": "ASCII Recamán's Sequence",
+    "slug": "ascii-recamans-sequence",
+    "category": "algorithms",
+    "publishedAt": "2024-07-23T10:18:57.098Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/669f83634018e21b0fc2d706",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-23T10:18:11.205Z",
+    "createdBy": {
+      "username": "LuggiStruggi",
+      "url": "https://www.codewars.com/users/LuggiStruggi"
+    },
+    "description": "### Task\n\nCreate a function `recaman_string(n)` that returns a string representation of the first `n` iterations of [Recamán's Sequence](https://en.wikipedia.org/wiki/Recam%C3%A1n%27s_sequence) using specific characters for a blocky visualization.\n\n#### Recamán's Sequence Overview:\n\nThe Recamán's Sequence is a mathematical sequence defined as follows:\n ```math\n a_n\n\\begin{cases}\n0, &\\text{  if  } n = 0 \\\\\na_{n−1} − n,&\\text{  if  } a_{n−1} − n > 0 \\text{  and not already in the sequence.} \\\\\na_{n−1} +n, &\\text{  otherwise}\n\\end{cases}\n```\n#### Rules for the Blocky Visualization:\n\n- Characters: `[' ', '│', '─', '┌', '┐', '┘', '└', '┤', '├', '┼', '\\n']`\n- In the visualization numbers are spaced out linearly with one space in between them as `. . . .`\n- Arcs alternate between upward and downward, starting with an upward arc at iteration 1.\n- Arcs consist of 2 vertical lines (at terms `a_n` and `a_n+1`) and one horizontal line between them.\n- Arcs always start and end at the same height and are connected to the last arc.\n- The horizontal line should be as close as possible to everything previously drawn in that section:\n    - It should always go above/below everything previously drawn in that section.\n    - Overlapping vertical lines are allowed. Horizontal lines should never overlap.\n\n#### Examples\n\n```\nn = 0\n```\n```\nn = 1\n┌─┐\n```\n```\nn = 2\n┌─┐\n  └───┘\n```\n```\nn = 3\n┌─┐   ┌─────┐\n  └───┘\n```\n```\nn = 4\n┌─┐   ┌─────┐\n  └─┼─┘     │\n    └───────┘\n```\n```\nn = 5\n    ┌─────────┐\n┌─┐ │ ┌─────┐ │\n  └─┼─┘     │\n    └───────┘\n```\n```\nn = 6\n    ┌─────────┐\n┌─┐ │ ┌─────┐ │\n  └─┼─┘     │ └───────────┘\n    └───────┘\n```\n\n## Note\n\n1. Every line but the last line ends with a newline character `\\n`.\n2. No row should have trailing whitespaces.\n3. The length of your code must be under 4000 characters to avoid hardcoded solutions.\n4. The tests can go up to `n = 500`",
+    "totalAttempts": 151,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "ASCII Art",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

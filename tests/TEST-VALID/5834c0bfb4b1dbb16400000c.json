@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5834c0bfb4b1dbb16400000c",
+  "data": {
+    "id": "5834c0bfb4b1dbb16400000c",
+    "name": "Counting paths",
+    "slug": "counting-paths",
+    "category": "algorithms",
+    "publishedAt": "2016-11-22T22:11:30.543Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5834c0bfb4b1dbb16400000c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-22T22:03:43.557Z",
+    "createdBy": {
+      "username": "Becojo",
+      "url": "https://www.codewars.com/users/Becojo"
+    },
+    "description": "You are given a grid that represents a map with obstacles. Your task is to count the number of possible paths from the top left corner to the bottom right corner with only two moves: either right or down. Some cells are occupied, you cannot go through these cells. A path that goes through an occupied cell should not be counted.\n\n## Example\n\nLegend:\n\n- `S`: Start cell\n- `E`: Finish cell\n- `X`: Occupied cell\n\nThe following map has only 2 possible paths since the center cell is occupied. \n```\n|S| | |\n| |X| |\n| | |E|\n```\n\nThe following map has 6 possible paths.\n```\n|S| | |\n| | | |\n| | |E|\n```\n\nThe following map has no possible paths since there's a wall in the middle of the map.\n```\n|S|X| |\n| |X| |\n| |X|E|\n```\n\n## Code\nYou have to implement the `solve` function. The `grid` is a two-dimension array of integers where `0` means free and `1` means occupied. \n\nThe following array\n```\n[[0, 0], [1, 0]]\n```\n\nis equivalent to\n\n```\n|S| |\n|X|E|\n```\n\n\n",
+    "totalAttempts": 29,
+    "totalCompleted": 3,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Recursion",
+      "Combinatorics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

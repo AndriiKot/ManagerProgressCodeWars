@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bec481d51b820371d0006b0",
+  "data": {
+    "id": "5bec481d51b820371d0006b0",
+    "name": "Equation Counter",
+    "slug": "equation-counter",
+    "category": "algorithms",
+    "publishedAt": "2018-11-14T16:29:48.712Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5bec481d51b820371d0006b0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-14T16:06:53.950Z",
+    "createdBy": {
+      "username": "davidbrear",
+      "url": "https://www.codewars.com/users/davidbrear"
+    },
+    "description": "In this challenge, you will be given an array of positive integers for example `[1,2,3,4,5]` and another positive integer such as `100` called total. For the array, you must either add the numbers (1 and 2 becomes 1+2), subtract the numbers (1 and 2 becomes 1-2), or combine them together (1 and 2 becomes 12) with the goal of creating an equation where the final solution is the total provided. An example would be:\n\nGiven the array [1,2,3,4,5,6,7,8,9] and the total 100\n- one equation would be 12+3-4+5+67+8+9 which equals 100\n- another equation would be 1+2+34-5+67-8+9 which also equals 100\n\nThe return value of this function should be the number of equations of the numbers in the array that match the total.\n\nex. `addsTo([1,2,3,4,5], 15)` // returns 2 (because `1+2+3+4+5 = 15` and `1+23-4-5 = 15`)\n\nex. `addsTo([3,4,5,6,7,8], 65)` // returns 0\n\nex. `addsTo([1,2,3,4,5,6,7,8,9], 100)` // return 11 because `12+3+4+5-6-7+89 = 100` and 10 others\n\n**IMPORTANT NOTES**:\n- Do not change the order of the numbers.\n- There is no limit on the length of the array.\n- **Do _not_ use leading zeros** so [1,2,3,0,2,3] should return 2: `123 - 0 - 23` and `123 + 0 - 23` but **NOT** `123 - 023`.\n\nFor an added challenge, try to complete this without using `eval`",
+    "totalAttempts": 140,
+    "totalCompleted": 19,
+    "totalStars": 2,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

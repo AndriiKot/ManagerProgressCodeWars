@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59d4fb429b769948a00008d6",
+  "data": {
+    "id": "59d4fb429b769948a00008d6",
+    "name": "[NCP] No Comments Please : erase all comments in a C/C++ code .",
+    "slug": "ncp-no-comments-please-erase-all-comments-in-a-c-slash-c-plus-plus-code",
+    "category": "algorithms",
+    "publishedAt": "2017-10-04T15:16:18.659Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/59d4fb429b769948a00008d6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-10-04T15:16:34.511Z",
+    "createdBy": {
+      "username": "jfet97",
+      "url": "https://www.codewars.com/users/jfet97"
+    },
+    "description": "Do you use **comments** when you are coding? I hope yes! \nIn this kata you have to do something weird: delete all C/C++ like comments. Yes, you have understood perfectly. \n\nExample (I-O):\n\n```c++\nint main() {\n  int a = 10; // a value is ten\n}\n```\n\n```c++\nint main() {\n  int a = 10; \n}\n```\n\nHere we can't work with cpp/h files (or probably idk how), so I have prepared some strings that contain a well formatted and working C++ code. You have to write a function that return another string, containing the same working C++ code but without comments.\n\nThird string is:\n```c++\n\"int main() {\\n\\tint hi; // 1) comment\\n\\tint hello; /* 2) comment */\\n\\n\\n\\tint ciao; /* 6) comment\\n*\\n*\\n*\\n*\\n*/\\n// 9) comment /*\\n\\n\\n\\tint isNotAComment;\\n/* 10) comment\\n//\\n*/\\tint i = 9; // 11) comment\\n}\\n\"\n```\nthat corresponds to this C++ code:\n```c++\nint main() {\n\tint hi; // 1) comment\n\tint hello; /* 2) comment */\n\n\n\tint ciao; /* 6) comment\n*\n*\n*\n*\n*/\n// 9) comment /*\n\n\n\tint isNotAComment;\n/* 10) comment\n//\n*/\tint i = 9; // 11) comment\n}\n\n```\n and right result is:\n \n  ```c++\n \"int main() {\\n\\tint hi; \\n\\tint hello; \\n\\n\\n\\tint ciao; \\n\\n\\n\\tint isNotAComment;\\n\\tint i = 9; \\n}\\n\"\n ```\n that corresponds to this C++ code:\n \n ```c++\nint main() {\n\tint hi; \n\tint hello; \n\n\n\tint ciao; \n\n\n\tint isNotAComment;\n\tint i = 9; \n}\n\n```\n\nFollow this guidelines:\n\n- if a line is void, it will be replaced by a '\\n' (void means with **ONLY** [space] or  [\\t] or [\\n] or a mix of them)\n\ninput:\n```c++\nint a = 10;\n[\\n]\n[\\t][\\n]\n[space][\\n]\n[\\t][space][space][\\n]\nint b = 12;\n```\noutput:\n```c++\nint a = 10;\n[\\n]\n[\\n]\n[\\n]\n[\\n]\nint b = 12;\n```\n\n- if there is a comment, all the comment's characters have to be erased (\"//\" \"/\\*\" \"\\*/\" included) and if a line is formed only by a comment, it will be erased. Other characters should not be deleted.\n\ninput:\n```c++\nint a = 10;//comment\n/* comment\ncomment2\n*/\n/*hi*/[\\t]int b = 12;[space]// hi to everyone\n```\noutput:\n```c++\nint a = 10;\n[\\t]int b = 12;[space]\n```\n\n- if there is a void line inside a multiline comment, it should not be deleted but replaced with a [\\n]\n\ninput:\n```c++\nint a = 10;\n/*\n*\n[\\t][space][\\n]\n[\\n]\n*\n*/\nint b = 12;\n```\noutput:\n```c++\nint a = 10;\n[\\n]\n[\\n]\nint b = 12;\n```\n\n- don't forget '\\' comments\n\ninput:\n```c++\nint a = 10;\n// comment\\\ncomment2\\\ncomment3\n[\\n]\nint b = 12;\n```\noutput:\n```c++\nint a = 10;\n[\\n]\nint b = 12;\n```\n\n- at the end of each output line must be [\\n], also last one\n\ninput:\n```c++\nint main() {[\\n]\n// comment\n}\n```\n\ninput:\n```c++\nint main() {[\\n]\n// comment\n}[\\n]\n```\n\noutput:\n```c++\nint main() {[\\n]\n}[\\n]\n```\n\nInput code is a compilable C++ code, so output code must be the same code: compilable but without comments!\n\nCan you do this?\n",
+    "totalAttempts": 493,
+    "totalCompleted": 13,
+    "totalStars": 17,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

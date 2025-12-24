@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e1d7da41e4f110023dc070f",
+  "data": {
+    "id": "5e1d7da41e4f110023dc070f",
+    "name": "Nullify All Empty Strings",
+    "slug": "nullify-all-empty-strings",
+    "category": "reference",
+    "publishedAt": "2020-01-14T09:37:59.715Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e1d7da41e4f110023dc070f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-14T08:36:52.951Z",
+    "createdBy": {
+      "username": "orderandchaos",
+      "url": "https://www.codewars.com/users/orderandchaos"
+    },
+    "description": "Navigate an object and it's and set all empty strings to null\n\nThis cropped up as a requirement for posting data to DynamoDB.\n\n\nExample `obj`\n\n```\n{\n    test: '',\n    aNumber: 14,\n    aBool: true,\n    aString: 'blah@example.com',\n    email: 'blah@example.com',\n    anObject: {\n        testOne: '',\n        otherNumber: 14,\n        otherBool: true,\n        otherString: 'blah@example.com',\n        testAnotherObject: {\n            testTwo: '',\n        },\n    },\n    anArray: [\n        {\n            testThree: '',\n            testAnotherObject: {\n                testFour: '',\n            },\n        },\n        {\n            testFive: '',\n            testAnotherObject: {\n                testSix: '',\n            },\n        },\n    ],\n    aNumberArray: [\n        1, 2, 3\n    ],\n    aStringArray: [\n        'One', 'Two', 'Three'\n    ]\n}\n```\n\nReturned result\n```\n{\n    test: null,\n    aNumber: 14,\n    aBool: true,\n    aString: 'blah@example.com',\n    email: 'blah@example.com',\n    anObject: {\n        testOne: null,\n        otherNumber: 14,\n        otherBool: true,\n        otherString: 'blah@example.com',\n        testAnotherObject: {\n            testTwo: null,\n        },\n    },\n    anArray: [\n        {\n            testThree: null,\n            testAnotherObject: {\n                testFour: null,\n            },\n        },\n        {\n            testFive: null,\n            testAnotherObject: {\n                testSix: null,\n            },\n        },\n    ],\n    aNumberArray: [\n        1, 2, 3\n    ],\n    aStringArray: [\n        'One', 'Two', 'Three'\n    ]\n}\n```",
+    "totalAttempts": 24,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

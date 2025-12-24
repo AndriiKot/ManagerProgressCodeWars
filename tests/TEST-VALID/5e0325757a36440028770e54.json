@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e0325757a36440028770e54",
+  "data": {
+    "id": "5e0325757a36440028770e54",
+    "name": "Find the row difference",
+    "slug": "find-the-row-difference",
+    "category": "algorithms",
+    "publishedAt": "2019-12-25T09:02:51.301Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e0325757a36440028770e54",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-25T09:01:41.970Z",
+    "createdBy": {
+      "username": "Svirskyi",
+      "url": "https://www.codewars.com/users/Svirskyi"
+    },
+    "description": "<h1>In first look it's easy, but isn't...</h1>\n\n<h2>Given the arguments of the two lines, you have to find the difference between them.</h2>\n\nYou have to write function which will find:\n1. Index where started changes\n2. Symbols which were added\n3. Symbols which were deleted\n\n<h2>\n  and return object with values:\n</h2>\n\n\n```javascript\n{ index: value, addedText: string, deletedText: string }\n```\n<h1>\n  Examples\n</h1>\n\n```javascript\nfindDifferent('Hello, world!', 'Harry, world!') // { index: 1, addedText: \"arry\", deletedText: \"ello\" }\n\n// User click mouse from position 1 and select text 'ello'\n// Then paste text arry.\n// that's why function have to return {index: 1, addedText: \"arry\", deletedText: \"ello\"}\n\nfindDifferent('It is hard task', 'It is easy task') // { index: 6, addedText: \"easy\", deletedText: \"hard\" };\nfindDifferent('Merry Christmas','Happy Christmas') // {index: 0, addedText: \"Happ\", deletedText: \"Merr\" };\nfindDifferent('33333','323') // {index: 1, addedText: \"23\", deletedText: \"3333\"}\n```\n\n<h2>If two string are the same then function has to return:</h2>\n\n```javascript\nfindDifferent('The same text', 'The same text') => {index: -1, addedText: '', deletedText: ''}; \n```\n\nIf you think that it's easy, then try to finish this. Remember about repeated words, a few algorithms can handle this.\n```javascript\nfindDifferent('added','added added') // {index: 5, addedText: \" added\", deletedText: \"\"}\n```\n\n",
+    "totalAttempts": 21,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

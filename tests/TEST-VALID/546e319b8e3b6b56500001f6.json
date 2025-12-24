@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/546e319b8e3b6b56500001f6",
+  "data": {
+    "id": "546e319b8e3b6b56500001f6",
+    "name": "BBQ Pitmaster",
+    "slug": "bbq-pitmaster",
+    "category": "algorithms",
+    "publishedAt": "2014-11-20T19:52:42.366Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/546e319b8e3b6b56500001f6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-11-20T18:23:23.746Z",
+    "createdBy": {
+      "username": "lkspencer",
+      "url": "https://www.codewars.com/users/lkspencer"
+    },
+    "description": "As one of the nerdiest pitmasters around, you've decided to build your own BBQ thermometer. After some research you find the <a href=\"http://en.wikipedia.org/wiki/Steinhart–Hart_equation\">Steinhart-Hart</a> equation and realize that you need a few things for the project.\n\nYou purchase a BBQ probe which has some pre-defined coefficients for the Steinhart-Hart equation. You also purchase a device which can read the voltage remaining of a 5v current after passing through the circuit with the BBQ probe and a 22k Ohm resistor in it.\n\nThe reading provided by the device is an arbitrary number measured from 0 to 1023 with 0 meaning 0 volts is reaching the other side of the circuit and 1023 meaning that the full 5 volts is reaching the other side of the circuit and there was no resistance in the circuit. \n\nYour task now is to write three functions ```getTemperature(a, b, c, reading)```, ```getVoltageFromReading(reading)``` and ```getResistance(Vin, Vout, resistance)```.\n\nThe ```getTemperature``` function must accurately calculate the temperature in fahrenheit rounded to the nearest 100th. This function should make calls out to the other two helper functions to assist in its calculation of the temperature readings.\n\nExample:\n```\nvar a = 2.3067434E-4;\nvar b = 2.3696596E-4;\nvar c = 1.2636414E-7;\ngetTemperature(a,b,c,1023)    //== -459.67\ngetTemperature(a,b,c,200)     //==  308.00\ngetTemperature(a,b,c,468.64)  //==  211.90 (boiling point of water @ 1 atmosphere of pressure)\n```\n```ruby\na = 2.3067434E-4;\nb = 2.3696596E-4;\nc = 1.2636414E-7;\ngetTemperature(a,b,c,1023)    #== -459.67\ngetTemperature(a,b,c,200)     #==  308.00\ngetTemperature(a,b,c,468.64)  #==  211.90 (boiling point of water @ 1 atmosphere of pressure)\n```\n\nThe ```getVoltageFromReading``` function should be able to accurately convert the reading from 0 to 1023 into a value representing voltage from 0 to 5.\n\nThe ```getResistance``` function should be able to accurately measure the resistance of the BBQ probe in the circuit when provided the voltage going in to the circuit, the voltage that came out of the circuit and the resistance of the 22k Ohm resistor (```22000```). Note: this circuit being used is known as a <a href=\"http://en.wikipedia.org/wiki/Voltage_divider\">voltage divider</a>. Here is a diagram of a voltage divider:\n\n<img src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Impedance_voltage_divider.svg/220px-Impedance_voltage_divider.svg.png\" alt=\"Voltage Divider\" style=\"background-color:#fff\" />\n\nIn this diagram, Z1 represents the 22k Ohm resistor and Z2 represents the BBQ thermometer probe.",
+    "totalAttempts": 247,
+    "totalCompleted": 18,
+    "totalStars": 6,
+    "voteScore": 39,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

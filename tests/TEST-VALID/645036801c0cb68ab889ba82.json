@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/645036801c0cb68ab889ba82",
+  "data": {
+    "id": "645036801c0cb68ab889ba82",
+    "name": "Sorting algorithm identification --deprecated",
+    "slug": "sorting-algorithm-identification-deprecated",
+    "category": "algorithms",
+    "publishedAt": "2023-05-03T13:26:00.073Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/645036801c0cb68ab889ba82",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-01T22:00:32.576Z",
+    "createdBy": {
+      "username": "potzko",
+      "url": "https://www.codewars.com/users/potzko"
+    },
+    "description": "# Concept\nDo you remember those colorful sorting algorithm visualizations on YouTube with blippy and bouncy animations? Have you ever wondered if you could identify the type of sort just by watching the video without the text description? Well, here's your chance to do just that!\n\nIn this kata, you'll be given a sorting algorithm at random, and you have to return the name of the relevant sort: \"quick sort\" for Quick sort, \"heap sort\" for Heap sort, and \"shell sort\" for Shell sort.\nyou will also need to create a struct to be sorted by the name of SortDataType that implements Sortable\n\n# Specifics \nThere are three sorting algorithms implemented in the tester: Quick sort, Heap sort, and Shell sort. Each of them is implemented in multiple different ways while still adhering to the \"spirit of the sort.\" All sorting algorithms work using the \"Sortable\" trait from the preloaded module, which consists of three functions.\n\n```rust\nfn cmp_index(&mut self, ind_a: usize, ind_b: usize) -> bool\n// Will return true if the item at index ind_a is less than or equal to the item at index ind_b.\nfn exchange(&mut self, ind_a: usize, ind_b: usize)\n// Will swap the items at index a and b.\nfn len(&self) -> usize\n//Will return the length of the data to be sorted.\n```\nNote that the sorting algorithms assume that the data is indexed from 0 to len().\n\n# General\nThe algorithms are guaranteed to have an average run time of `$O(N * \\log^2(N))$` at most however will not guarantee a worst case time complexity. It is advisable to avoid giving random input of over 5000 element\nThere will be 100 random tests so you can afford to use some time for each sorting algorithm\n\nFor your convenience the initial solution comes with an implementation of the Sortable trait using a Vec<i32>  \nHappy coding :)\n\n# links\nquick sort - https://en.wikipedia.org/wiki/Quicksort  \nheap sort  - https://en.wikipedia.org/wiki/Heapsort  \nshell sort - https://en.wikipedia.org/wiki/Shellsort  \n\nblippy and bouncy animations:  \nquick sort - https://www.youtube.com/watch?v=8hEyhs3OV1w  \nheap sort  - https://www.youtube.com/watch?v=_bkow6IykGM  \nshell sort - https://www.youtube.com/watch?v=n4sk-SzGvZA  \nmore sorts - https://www.youtube.com/watch?v=vr5dCRHAgb0  \n",
+    "totalAttempts": 49,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

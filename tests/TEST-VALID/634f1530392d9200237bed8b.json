@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/634f1530392d9200237bed8b",
+  "data": {
+    "id": "634f1530392d9200237bed8b",
+    "name": "FIFO-like waiting list smart contract",
+    "slug": "fifo-like-waiting-list-smart-contract",
+    "category": "algorithms",
+    "publishedAt": "2022-10-19T20:08:04.445Z",
+    "approvedAt": null,
+    "languages": [
+      "solidity"
+    ],
+    "url": "https://www.codewars.com/kata/634f1530392d9200237bed8b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-18T21:05:52.788Z",
+    "createdBy": {
+      "username": "fylkir",
+      "url": "https://www.codewars.com/users/fylkir"
+    },
+    "description": "Let's create a smart contract with a  [FIFO queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))-like interface that may serve as a simple waiting list.\n### Requirements:\n  1. The user should be able to add themselves (i.e. their address) to the end of the queue by calling the `push` method. It should take no arguments.\n  2. A deposit of at least **0.1 ether** is required for a push operation to succeed. The deposit should be kept by the contract and be returned to user on `pop` (see point 5.)\n  3. The contract should keep the number of items in the queue and serve it via `size()` method.\n  4. All items in the queue should be accessible via `get` method. It should take the index of an item as an argument and return the tuple containing address and deposit size. Trying to get an item from an empty queue should revert. Getting an item with non-existing index should also revert.\n  5. Calling the `pop` method should remove an item from the front of the queue. It should be callable only by the contract owner. Upon calling the method the deposit made by the user on `push` should be returned to them in the exact same amount. Popping an empty queue should revert.\n  6. The following gas limits should be met:\n| operation | gas limit |\n|:----------|----------:|\n| push      | 75000     |\n| pop       | 61000     |\n\n### Summary:\nYour task is to implement four interface methods according to the requiremens:\n- `push() external payable`\n- `pop() external`\n- `size() external view returns(uint256)`\n- `get(uint256 _index) external view returns(address, uint256)`\n\nKeeping the function signatures as specified above is also a requirement.",
+    "totalAttempts": 662,
+    "totalCompleted": 22,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Web3"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

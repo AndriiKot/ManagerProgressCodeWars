@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6514105ba07f6a5a8ee79a6e",
+  "data": {
+    "id": "6514105ba07f6a5a8ee79a6e",
+    "name": "Energy Gun DPS",
+    "slug": "energy-gun-dps",
+    "category": "reference",
+    "publishedAt": "2023-09-27T12:15:28.342Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6514105ba07f6a5a8ee79a6e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-27T11:22:03.137Z",
+    "createdBy": {
+      "username": "WQMan",
+      "url": "https://www.codewars.com/users/WQMan"
+    },
+    "description": "# Introduction\n\nMeet Derpman, a hero armed with a powerful energy gun to fight off monsters.<br>Your task is to calculate the  Damage-Per-Second (DPS) that Derpman deals based on his gun usage sequence.\n\n## The Energy Gun\n\n- **Starting Energy (`e`)**: The gun starts with `e` energy, capped at maximum of 100.\n- **Damage (`d`)**: Each shot from the gun deals `d` damage to the monster.\n  \n## Actions\n\nDerpman can perform two types of actions:\n\n1. **Shoot (`S`)**: Firing the gun for one second deals `d` damage but consumes 20 energy.\n2. **Charge (`C`)**: Charging the gun for one second restores 40 energy.\n\n-----\n\n# Objective\n\nGiven:\n- Integer `e`, representing the gun's initial energy value.\n- Integer `d`, representing the gun's damage.\n- String `seq`, representing Derpman's sequence of actions.\n\nCalculate the overall DPS he deals to the monster, rounded off to the nearest whole number.\n\n## Constraints\n\n- `0 <= e <= 100`\n- `0 <= d <= 10000`\n- `0 <= len(seq) <= 10000`\n- Firing the gun with insufficient energy will not deal any damage, but a second will still pass.\n- Charging the gun when it's already at maximum energy has no effect, but a second will still pass.\n- Return `0` if the sequence is either empty or results in Derpman inflicting no damage.\n\n---\n\n# Example\n\n```python\ne = 60  # Starting energy\nd = 10  # Damage per shot\nseq = \"SSCCCSSSSSS\"  # Derpman's action sequence\n\n# Should return 6\ndps_calculator(e, d, seq)\n```\n\n## Explanation\n\n1. Starts with 60 energy.\n2. Fires twice, dealing 20 damage and reducing energy to 20.\n3. Charges thrice, reaching 100 energy.\n4. Fires six more times, dealing 50 more damage (last shot is ignored due to insufficient energy).\n5. Total damage is 70, and the total time is 11 seconds.\n6. DPS = 70 / 11 = 6.36, rounded to 6.",
+    "totalAttempts": 74,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 20,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

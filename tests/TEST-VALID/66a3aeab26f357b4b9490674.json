@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66a3aeab26f357b4b9490674",
+  "data": {
+    "id": "66a3aeab26f357b4b9490674",
+    "name": "Validate Content-Type Header",
+    "slug": "validate-content-type-header",
+    "category": "reference",
+    "publishedAt": "2024-07-26T16:22:51.572Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66a3aeab26f357b4b9490674",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-26T14:11:55.991Z",
+    "createdBy": {
+      "username": "JavaScripts",
+      "url": "https://www.codewars.com/users/JavaScripts"
+    },
+    "description": "# Validate Content-Type Header\n\n## Task\n\nGiven an [http response object](https://developer.mozilla.org/en-US/docs/Web/API/Response), validate that is has a valid JavaScript [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) header. \nIf a valid Content-Type header is present, return `true`. Otherwise return `false`.\n\nThere are many non standard headers names so for our purposes we will look for the following patterns.\n\n```\ntext/javascript\ntext/ecmascript\napplication/javascript\napplication/ecmascript\n```\nAs per the HTTP standard, headers are not case sensitive so ignore case. Also by convention, this header can aslo contain encoding or other information following a semicolon followed by a space. So the following should be considered valid.\n\n```\ntext/javascript; charset=utf-8\ntext/javascript; somestuff you can ignore\n```\nAlso note that the Content-Type header is completely optional and may be missing entirely from the http response. A missing Content-Type header is not considered valid. The input object will always be a valid response object that contains a valid [headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) object.",
+    "totalAttempts": 60,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 7,
+    "tags": [
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

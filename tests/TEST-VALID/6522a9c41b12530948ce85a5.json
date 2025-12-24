@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6522a9c41b12530948ce85a5",
+  "data": {
+    "id": "6522a9c41b12530948ce85a5",
+    "name": "Evaluate Proposition",
+    "slug": "evaluate-proposition",
+    "category": "reference",
+    "publishedAt": "2023-10-08T15:59:07.090Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/6522a9c41b12530948ce85a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-08T13:08:20.824Z",
+    "createdBy": {
+      "username": "nachoMonllor",
+      "url": "https://www.codewars.com/users/nachoMonllor"
+    },
+    "description": "Given a proposition, evaluate whether it is true or false. The proposition may contain nested expressions, and each element is separated by a space.\n\n<strong>Input:</strong>\n```python\nproposition: \"( true implies false ) and ( true or false )\"\n```\n<strong>Output:</strong>\n```python\nfalse\n```\n<strong>Input:</strong>\n```python\nproposition: \"( true and false ) implies ( ( false and false ) iff true )\"\n```\n<strong>Output:</strong>\n```python\ntrue\n```\n<br>\n<strong>Operand Precedence:</strong> <br>\n<strong>1.</strong> not<br>\n<strong>2.</strong> and<br>\n<strong>3.</strong> or<br>\n<strong>4.</strong> implies<br>\n<strong>5.</strong> iff<br>\n<br>\n\n<strong>Operator \"not\":</strong>\n<table border=\"1\">\n    <tr>\n        <th>A</th>\n        <th>not A</th>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>true</td>\n    </tr>\n</table>\n\n<strong>Operator \"and\":</strong>\n<table border=\"1\">\n    <tr>\n        <th>A</th>\n        <th>B</th>\n        <th>A and B</th>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>false</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>true</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>false</td>\n        <td>false</td>\n    </tr>\n</table>\n\n<strong>Operator \"or\":</strong>\n<table border=\"1\">\n    <tr>\n        <th>A</th>\n        <th>B</th>\n        <th>A or B</th>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>false</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>false</td>\n        <td>false</td>\n    </tr>\n</table>\n\n<strong>Operator \"implies\":</strong>\n<table border=\"1\">\n    <tr>\n        <th>A</th>\n        <th>B</th>\n        <th>A implies B</th>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>false</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>false</td>\n        <td>true</td>\n    </tr>\n</table>\n\n<strong>Operator \"iff\":</strong>\n<table border=\"1\">\n    <tr>\n        <th>A</th>\n        <th>B</th>\n        <th>A iff B</th>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>true</td>\n        <td>true</td>\n    </tr>\n    <tr>\n        <td>true</td>\n        <td>false</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>true</td>\n        <td>false</td>\n    </tr>\n    <tr>\n        <td>false</td>\n        <td>false</td>\n        <td>true</td>\n    </tr>\n</table>\n\n\n\n\n",
+    "totalAttempts": 35,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65047959a3676c1bc041155f",
+  "data": {
+    "id": "65047959a3676c1bc041155f",
+    "name": "Count steps to school!",
+    "slug": "count-steps-to-school",
+    "category": "reference",
+    "publishedAt": "2023-09-16T09:08:27.416Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/65047959a3676c1bc041155f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-15T15:33:45.388Z",
+    "createdBy": {
+      "username": "Dragon20C",
+      "url": "https://www.codewars.com/users/Dragon20C"
+    },
+    "description": "Lucy has come into the computer class and asked an expert to write a function for her, Lucy wants to find out how many steps it took her to reach the school, she has nicely provided us with her route to school.\n\nA simple route looks like this.\n\n\"L _ _ _ _ S\" (Added spaces to make it readable final string path wont have whitespace)\n\n 0 4+4+4+4 0\n\n as you can see Lucy took 16 Steps to school we do not count the school as a step and lucy also does not count as a step.\n\nA little harder route.\n\n \"L _ B _ _ _ _ _ _ _ _ S _ T\"\n \n  0+4+4+0+0+0+0+0+0+0+0+0+0+4 then we go back 0+4+\n\nLucy also takes 16 steps here because she took the bus.\n\n \n Values in the path that you will receive is this.\n \n'L' is Lucy this is where she starts, she will move towards the school, (NOTE: this is not find the quickist way to school kata.)\n\n'_' is a path each path counts for 4 steps\n\n'A' is a bike, it takes 2 steps to get on and after that each path is counts as 2 steps instead of 4 also buses are ignored when riding a bike.\n\n'B' is a bus Lucy will take 4 steps to get onto the bus and 4 steps when she has reached a bus stop 'T'\n\n'T' is a bus stop and should be treated as a path if not on a bus\n\n'S' is the school, she will initally walk towards the school, she will not take the shortest path.\n\n\nAuthors note: This is my very first kata I am still learning rust and I super exited on creating this kata, also I hope people would be happy on commenting and reporting any issues they might see and I will attempt to fix it.",
+    "totalAttempts": 21,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

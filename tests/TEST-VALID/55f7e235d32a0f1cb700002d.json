@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55f7e235d32a0f1cb700002d",
+  "data": {
+    "id": "55f7e235d32a0f1cb700002d",
+    "name": "Extract Transform Load",
+    "slug": "extract-transform-load",
+    "category": "algorithms",
+    "publishedAt": "2015-09-15T09:18:59.373Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/55f7e235d32a0f1cb700002d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-15T09:17:42.165Z",
+    "createdBy": {
+      "username": "hassanmir92",
+      "url": "https://www.codewars.com/users/hassanmir92"
+    },
+    "description": "We are going to do the Transform step of an Extract Transform Load.\n\n# Our Goal\nWe're going to extract some scrabble scores from a legacy system.\n\nThe old system stored a list of letters per score:\n\n- 1 point: \"A\", \"E\", \"I\", \"O\", \"U\", \"L\", \"N\", \"R\", \"S\", \"T\",\n- 2 points: \"D\", \"G\",\n- 3 points: \"B\", \"C\", \"M\", \"P\",\n- 4 points: \"F\", \"H\", \"V\", \"W\", \"Y\",\n- 5 points: \"K\",\n- 8 points: \"J\", \"X\",\n- 10 points: \"Q\", \"Z\",\n\nThe new scrabble system instead stores the score per letter, which makes it much faster and easier to calculate the score for a word. It also stores the letters in lower-case regardless of the case of the input letters:\n\n- \"a\" is worth 1 point.\n- \"b\" is worth 3 points.\n- \"c\" is worth 3 points.\n- \"d\" is worth 2 points.\n- Etc.\n\nYour task is to write a program that transforms the legacy data format to the new format.\n\n# Example\n\nGiven the old data format `{ 1 => ['A', 'E', 'I', 'O', 'U']}`, your new format should return `{ 'a' => 1, 'e' => 1, 'i' => 1, 'o' => 1, 'u' => 1 }`\n",
+    "totalAttempts": 61,
+    "totalCompleted": 36,
+    "totalStars": 0,
+    "voteScore": 37,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

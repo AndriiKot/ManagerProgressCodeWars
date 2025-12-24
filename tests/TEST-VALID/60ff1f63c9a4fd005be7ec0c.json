@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60ff1f63c9a4fd005be7ec0c",
+  "data": {
+    "id": "60ff1f63c9a4fd005be7ec0c",
+    "name": "Engineering mechanics: reactions on a simply-supported beam",
+    "slug": "engineering-mechanics-reactions-on-a-simply-supported-beam",
+    "category": "algorithms",
+    "publishedAt": "2021-07-27T00:44:57.094Z",
+    "approvedAt": null,
+    "languages": [
+      "julia"
+    ],
+    "url": "https://www.codewars.com/kata/60ff1f63c9a4fd005be7ec0c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-07-26T20:47:31.530Z",
+    "createdBy": {
+      "username": "user9396321",
+      "url": "https://www.codewars.com/users/user9396321"
+    },
+    "description": "## Introduction\n\n*Mechanics* is the branch of physics that studies the effects of forces and motions on objects, and *statics* is the branch of mechanics that studies objects at rest.  Statics forms the basis of civil engineering and architectural engineering.\n\nA structure must remain at rest when it is subjected to external forces.  So that the structure can resist external forces and thus remain standing, the structure's supports that connect it to its foundation must be able to develop the necessary *reaction forces*.  How do we find these reaction forces, so we can design the supports?\n\nUsing [Newton's second law of motion](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion#Newton's_second_law), we can write a system of equations that governs the balance of forces (`$F$`) and moments/torques (`$M$`) on a body at rest:\n\n```math\n\\begin{cases}\n  \\Sigma F_x = 0 \\\\\n  \\Sigma F_y = 0 \\\\\n  \\Sigma M_o = 0\n\\end{cases}\n```\n\nor, in plain English:\n\n* All of the horizontal forces cancel each other out \n* All of the vertical forces cancel out\n* All of the moments around any point cancel out\n\nUpwards and rightwards forces are positive.  Downwards and leftwards forces are negative.\n\nThe moment around a point is equal to `$F \\cdot d$` -- the force times the perpendicular distance from the point.  Counterclockwise moments are positive, clockwise moments are negative.  The moment around a point of a force that passes through the point is 0.\n\n## Task description\n\n![A simply supported beam with two loads](https://i.imgur.com/EX1dbly.png)\n\nFor this kata, you will be finding the *reaction forces* (the forces at the fixed points on the beam that resist motion and keep the beam in place) at the two supports.  The left support is a *pinned support* that can resist both horizontal and vertical forces, and the right support is a *roller support* that can only resist vertical forces.\n\nYou will be provided with the following input:\n* the distance between the left support `$L$` and the right support `$R$`\n* the forces on the beam, an array of tuples of \n  * the horizontal distance of the load from the left support\n  * the vertical component of the force at that point\n  * the horizontal component of the force at that point\n  \nReturn an named tuple of the reaction forces that contains `$\\left(F_{Ly}, F_{Lx}, F_{Ry}\\right)$`, as shown in the initial function setup.\n\n## Notes and hints\n\n* The beam is assumed rigid.  Neglect any effects of deflection or deformation.\n* Only point loads will be applied, not distributed loads or torques.\n* All of the forces and lengths are provided in consistent units.\n* The beam may extend beyond the supports.\n* While the total moment/torque around any point is zero, it'll probably be the most convenient to calculate the moment around the left support.  \n* I really recommend drawing a picture to figure out the relationship between the moments and forces!",
+    "totalAttempts": 66,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 15,
+    "tags": [
+      "Linear Algebra",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

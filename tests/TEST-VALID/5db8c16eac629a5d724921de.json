@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5db8c16eac629a5d724921de",
+  "data": {
+    "id": "5db8c16eac629a5d724921de",
+    "name": "Rolling Substitution Cipher",
+    "slug": "rolling-substitution-cipher",
+    "category": "reference",
+    "publishedAt": "2019-10-29T23:35:41.596Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5db8c16eac629a5d724921de",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-29T22:47:10.147Z",
+    "createdBy": {
+      "username": "cl0wng1rl",
+      "url": "https://www.codewars.com/users/cl0wng1rl"
+    },
+    "description": "In this kata you are tasked with enciphering and deciphering messages with a rolling substitution cipher. To encrypt a message using a given key you write out the message, say, \"the quick brown fox jumps over the lazy dogs\". Then you write your key, say \"codewars\" in a loop beneath it:\n\n```\nthe quick brown fox jumps over the lazy dogs\ncodewarscodewarscodewarscodewarscodewarscode\n```\n   \nThen you apply a Ceaser cipher using the letter in the message and the letter beneath it (spaces are just mapped to spaces in this kata):\n\n```\nt == 20, c == 3 so t => 20 + 3 = 23 == w,\nh == 8, o == 15 so h => 8 + 15 = 23 == w,\n...\n```\n\nIn this way, the message is encrypted to give:\n\n```\nthe quick brown fox jumps over the lazy dogs\nwwi nvavn fwlxf idb gveiv sabs mkt qxaq gdkx\n   ```\n   \nTo decrypt this message, the same approach is taken, however instead of adding the value of the key character, you subtract it (modulo 26):\n\n```\nwwi nvavn fwlxf idb gveiv sabs mkt qxaq gdkx\ncodewarscodewarscodewarscodewarscodewarscode\n   ```\n   \n ```\nw == 23, c == 3 so w => 23 - 3 = 20 == t,\nw == 23, o == 15 so w => 23 - 15 = 8 == h,\n   ...\n   ```\n   \n```\nwwi nvavn fwlxf idb gveiv sabs mkt qxaq gdkx\nthe quick brown fox jumps over the lazy dogs\n```\n\nIn this kata you must make two methods: ```encrypt``` and ```decrypt``` both taking strings ```message``` and ```key```. The message and key will always be lower case and will not contain any punctuation (messages will contain spaces). \n\nGood luck and jdsi mmvn!",
+    "totalAttempts": 4,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Ciphers",
+      "Algorithms",
+      "Cryptography",
+      "Logic",
+      "Security"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b76f21af71e5d0dc100005b",
+  "data": {
+    "id": "5b76f21af71e5d0dc100005b",
+    "name": "Crazy Waiter",
+    "slug": "crazy-waiter",
+    "category": "algorithms",
+    "publishedAt": "2018-08-27T14:17:36.043Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b76f21af71e5d0dc100005b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-17T16:04:42.232Z",
+    "createdBy": {
+      "username": "charlielafosse",
+      "url": "https://www.codewars.com/users/charlielafosse"
+    },
+    "description": "You work in a restaurant, and the waiter has decided to take orders in an unusual fashion - one dish at a time. Write a function that will sort the individual orders into their respective tables (and also calculate the table's total bill).\n\nYou will be passed an array of objects, with each object representing a single dish:\n\n``` javascript\nlet orders = [{\n  table: 1,\n  dish: \"tomato salad\",\n  when: \"starter\",\n  price: 4\n},\n{\n  table: 1,\n  dish: \"mackerel\",\n  when: \"starter\",\n  price: 5\n},\n{\n  table: 3,\n  dish: \"beef burger\",\n  when: \"main\",\n  price: 8\n},\n{\n  table: 2,\n  dish: \"ham pizza\",\n  when: \"main\",\n  price: 9\n},\n{\n  table: 2,\n  dish: \"lemon pie\",\n  when: \"dessert\",\n  price: 5\n},\n{\n  table: 1,\n  dish: \"chocolate brownie\",\n  when: \"dessert\",\n  price: 5\n},\n{\n  table: 2,\n  dish: \"veggie burger\",\n  when: \"main\",\n  price: 8\n},\n{\n  table: 1,\n  dish: \"cottage pie\",\n  when: \"main\",\n  price: 8\n},\n{\n  table: 3,\n  dish: \"smoked salmon\",\n  when: \"starter\",\n  price: 6\n},\n{\n  table: 2,\n  dish: \"tomato salad\",\n  when: \"starter\",\n  price: 4\n}]\n```\n\nThe ```when ``` key will only ever have a value of either ```\"starter\" ```, ``` \"main\" ``` or ```\"dessert\" ```.\nYour job is to process all the orders and return them as an ordered, nested object, with the first level of objects representing tables:\n\n``` javascript\n     {\n      1: \n        { starters: [ 'tomato salad', 'mackerel' ],\n          mains: [ 'cottage pie' ],\n          desserts: [ 'chocolate brownie' ],\n          bill: 22 },\n      2: \n        { starters: [ 'tomato salad' ],\n          mains: [ 'ham pizza', 'veggie burger' ],\n          desserts: [ 'lemon pie' ],\n          bill: 26 },\n      3: \n        { starters: [ 'smoked salmon' ],\n          mains: [ 'beef burger' ],\n          desserts: [],\n          bill: 14 } \n       }\n```\n\nYou should accumulate the total bill and include this at the end of the table object. For the ```starters```, ```mains``` and ```desserts``` keys, the value will always be an array. If a table has not received any values for a particular key - i.e, no desserts - then simply leave an empty array.",
+    "totalAttempts": 156,
+    "totalCompleted": 40,
+    "totalStars": 4,
+    "voteScore": 40,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

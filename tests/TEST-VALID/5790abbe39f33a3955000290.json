@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5790abbe39f33a3955000290",
+  "data": {
+    "id": "5790abbe39f33a3955000290",
+    "name": "Boolean Postfix",
+    "slug": "boolean-postfix",
+    "category": "algorithms",
+    "publishedAt": "2016-07-21T11:02:27.488Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5790abbe39f33a3955000290",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-21T11:02:23.348Z",
+    "createdBy": {
+      "username": "provector",
+      "url": "https://www.codewars.com/users/provector"
+    },
+    "description": "This Kata was created as a part of monthly meetings by\nhttp://www.meetup.com/functional-kats-cork/?rv=wm1 FunctionalKats Cork.\n\nPostfix notation\n\nLogical Boolean expressions are typically written using infix notation, but an alternative called \"postfix notation” exists.\n\nIn infix notation,\n\nbinary operators ```(∧, ∨, ⊕, etc.)``` are placed between their operands;\nthe ```¬``` unary operator is placed before its operand;\nparentheses are used to indicate precedence.\nHere is a Boolean expression written in infix notation:\n\n```(a ∧ b) ∨ ¬ c```\nIt evaluates to true if both a and b are true, or if c is false. By contrast, in postfix notation,\n\nan operator is placed after its operand(s);\nparentheses are not needed.\nHere is the same Boolean expression as above, written in postfix notation:\n\n```a b ∧ c ¬ ∨```\nYour task\n\nWrite a function that takes a string corresponding to a Boolean expression written in postfix notation, parses that expression and evaluates it.\n\nInput\n\nA string corresponding to a Boolean expression written in postfix notation. For the sake of simplicity, you can assume that input strings all correspond to valid Boolean expressions. Each token is separated by a single space character. The possible tokens are\n```\n0 for false,\n1 for true,\nA for AND,\nR for OR,\nX for XOR (exclusive-or),\nN for NOT.````\nOutput\n\ntrue if the expression evaluates to true; false otherwise.\n\nExamples:\n```\nInput                Output\n0 1 R                true\n1 0 A 1 R N N        true\n1 0 A 1 N 0 N A R    false```",
+    "totalAttempts": 139,
+    "totalCompleted": 34,
+    "totalStars": 4,
+    "voteScore": 47,
+    "tags": [
+      "Algorithms",
+      "Stacks",
+      "Logic",
+      "Functional Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

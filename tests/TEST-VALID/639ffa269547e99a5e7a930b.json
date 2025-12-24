@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/639ffa269547e99a5e7a930b",
+  "data": {
+    "id": "639ffa269547e99a5e7a930b",
+    "name": "Banana Press #1: Censoring Phrases",
+    "slug": "banana-press-number-1-censoring-phrases",
+    "category": "algorithms",
+    "publishedAt": "2022-12-19T11:12:27.944Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/639ffa269547e99a5e7a930b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-19T05:44:06.768Z",
+    "createdBy": {
+      "username": "RachelBanana03",
+      "url": "https://www.codewars.com/users/RachelBanana03"
+    },
+    "description": "Congratulations! You have been promoted to assistant editor at the Banana Press! It is not a glamorous job, but everyone has to start somewhere. \n\nFor your first day at work, you are tasked with the menial job of censoring words on an article:\n\n<hr>\n\n## Task\n\nGiven an ``article (string)`` and a ``list of banned phrases (array of strings)``, create a function which censors every banned phrase in the article by replacing each word with a variable-length \"banana(s)\" (see example words below) based on the ``original word length and capitalization``. \n\n**Specifications:**\n\n1. The search for banned phrases should be case-insensitive but includes the exact punctuations/whitespaces. Example: Banned word \"naughty\" should match \"Naughty\" and also \"nAuGHtY\".\n\n2. When censoring a word, variable length of repeated letters \"na\" is added based on the original word length. Example: \"double\" is to \"banana\" (6 letters), and \"doubledouble\" is to \"bananananana\" (12 letters).\n\n3. To prevent a censored banana word to end in \"n\" like \"bananan\", the letter \"s\" is added to the \"banana\" if the word count is odd. Example: \"oddnumber\" => \"banananas\".\n\n4. The censored banana word should follow the original word's capitalizations. Example: \"CapITaLiZaTiOn\" = \"BanANaNaNaNaNa\".\n\n5. A ban phrase can have multiple words, and each word should be treated as a separate \"banana\". Example: \"Smoothie Pineapple\" => \"Bananana Banananas\".\n\n6. Censor only alphabets and digits. For digits, consider them as lowercase letters. Preserve all other characters, punctuations and whitespaces in a matched phrase. \n\n    Important note: All punctuations (defined as every symbol that is not an alphabet, a digit, or a whitespace) such as hyphens will keep the word as one, as long as there's no space/newline in between the characters. \n    \n    Example: \"ice-cream\" is considered one word, so it should be censored as \"ban-anana\" (preserves hyphen location), not \"banana-banana\". As a result of this rule, \"cake...cake\" is also considered only one word since there is no space/whiteline in between.\n\n7. If the censoring word length is shorter than \"banana\", capitalize the first few letters based on the censoring word but keep the minimum word \"banana\". Example: \"NUT\" => \"BANana\"\n\n8. Ban phrase cannot be part of another unbanned word. Example: \"ass\" does not match with the substring in \"assistant\".\n\n9. It is possible to have ban phrases that are subset of another longer ban phrase in the same list, so make sure to censor the longer one from the article.\n\n## Example Words\n\n    \"Naughty\" => \"Bananas\" (word length: 7)\n    \"1234567890\" => \"banananana\" (word length: 10)\n    \"censorShips\" => \"bananaNanas\" (word length: 11)\n    \"NoobMaster69\" => \"BanaNananana\" (word length: 12)\n    \"ice-cream\" => \"ban-anana\" (word length: 8)\n    \"NUT\" => \"BANana\" (word length: 3)\n    \"420-69\" => \"ban-ana\" (word length: 5)\n\n## Full Example\n\nInput Banned Phrases\n\n```js\n[\n    \"Ice-Cream\", \n    \"d33z nutz\", \n    \"targetCensoredWord\", \n    \"targetCensoredWord and a very long sentence follows\"\n]\n```\n\nInput Article\n\n```js\n`\nI love ice-cream! Ice-Creams are good especially \nfilled with d33z nutz and nutz... \n\ntargetCensoredWord and a very long sentence follows!\ntargetCensoredWord-MergedWithOtherWords\n`\n```\n\nOutput\n\n```js\n`\nI love ban-anana! Ice-Creams are good especially \nfilled with banana banana and nutz... \n\nbananaNanananaNana banana banana banana banana bananana bananas!\ntargetCensoredWord-MergedWithOtherWords\n`\n```\n\n",
+    "totalAttempts": 181,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Strings",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

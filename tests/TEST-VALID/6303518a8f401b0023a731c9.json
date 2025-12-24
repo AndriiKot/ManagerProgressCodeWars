@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6303518a8f401b0023a731c9",
+  "data": {
+    "id": "6303518a8f401b0023a731c9",
+    "name": "Alien decipher",
+    "slug": "alien-decipher",
+    "category": "algorithms",
+    "publishedAt": "2022-08-22T15:00:41.060Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/6303518a8f401b0023a731c9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-22T09:51:06.377Z",
+    "createdBy": {
+      "username": "eurydice5717",
+      "url": "https://www.codewars.com/users/eurydice5717"
+    },
+    "description": "As part of the SETI program, you think you have discovered an alien langage, where each digit from '0' to '9' would be encoded in a sequence of **3 or 4** symbols among `_` and `|`.\nOf course, there would be one **distinct** code for each digit.\n\nYou indeed received strange messages of two lines each, each line having:\n+ 10 digits with each digit from 0 to 9, only once,\n+ the corresponding encoded sequence with `|` and `_` (same ordering than the digits above).\n\n```\nExample:  \n  4573628901 _||_|___|_|_|____|||_||______||||__\n  0754296318 __||_|_||___||_|||________|_||___||\n```\n\nYou guess those two lines could be sufficient to decipher the alien code, and you intend to use the same code to reply to aliens, sending your own encoded message...\n\nBut you couldn't find a solution by hand, and asked a fellow developer for some help.\n\nYou want a function, that takes as parameters (see prototype):\n- the message to encode: a string of some digits from '0' to '9',\n- the clues: an array of two pairs, each pair containing :\n    - a string of 10 characters including all the numbers from '0' to '9',\n    - a string of characters composed with the symbols `_` and `|` corresponding to the first string, of course in the same order.\n\nThe function will return the encoded string corresponding to the message, using the same code that was used for the clues.\n\nExample: with inputs ...\n```\n585571121004456\n4573628901 _||_|___|_|_|____|||_||______||||__\n0754296318 __||_|_||___||_|||________|_||___||\n```\n.. your function should return :\n```\n|___|||__|___|_|||__||__|||||____||__||_||__||_|_____\n```\n... because the **only** possible code for encoding the first 2 lines is to associate to each digit the following code:\n```\n'0' -> \"__||\"\n'1' -> \"||__\"\n'2' -> \"|||\"\n'3' -> \"_|_\"\n'4' -> \"_||_\"\n'5' -> \"|__\"\n'6' -> \"___\"\n'7' -> \"_|_|\"\n'8' -> \"_||\"\n'9' -> \"____\"\n```\n\nNotes:\n\n1. All tests (including the random ones) are designed in order to give **ONLY one** solution. If you have time, figure out the cases when it should not be the case...\n2. All input strings are valid (the purpose of this kata is only to play with algorithms)\n3. Fixed tests: about 50 tests with msg length between 5 and 10 included\n4. Random tests: about 1000 tests with msg length between 10 and 30. Serves as performance test as well if you don't pass rethink your solution...\n\n**Enjoy !**",
+    "totalAttempts": 35,
+    "totalCompleted": 6,
+    "totalStars": 8,
+    "voteScore": 14,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

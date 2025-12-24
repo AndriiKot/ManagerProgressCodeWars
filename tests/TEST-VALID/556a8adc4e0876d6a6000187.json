@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/556a8adc4e0876d6a6000187",
+  "data": {
+    "id": "556a8adc4e0876d6a6000187",
+    "name": "Array Imposter (a.k.a. String Undercover)",
+    "slug": "array-imposter-a-dot-k-a-string-undercover",
+    "category": "reference",
+    "publishedAt": "2015-05-31T06:10:31.786Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/556a8adc4e0876d6a6000187",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-31T04:15:24.462Z",
+    "createdBy": {
+      "username": "sirRodge",
+      "url": "https://www.codewars.com/users/sirRodge"
+    },
+    "description": "Make it possible to treat a string as a comma-delimited array and avail array methods to it with a \"stringArray function\" in the following format:\n\n```javascript\nvar x = stringArray(array, jsFunction, argumentString)\n```\n\nFor example:\n```javascript\nvar blah = stringArray(\"1,2,3\", \"push\", \"10,10,10\"); // blah = \"1,2,3,10,10,10\"\n```\n<br>\n#####<b>Technical Notes:</b>\n\n* \"array\" argument should accept a comma-delimited array string or an integer \n* \"jsFunction\" argument should accept array function labels but also \"length\" and array indexes which should just return the corresponding array property value\n* \"argumentString\" argument should accept a comma-delimited array string or an integer \n* If the array function is a mutating function you should return the new mutated array, for example:\n```javascript\nvar blah = stringArray(\"1,hey,3\",\"pop\") // blah = \"1,hey\"\nvar blah = stringArray(\"1,hey,3\",\"splice\",\"2,1,add,this,stuff\") // blah = \"1,hey,add,this,stuff\"\n```",
+    "totalAttempts": 269,
+    "totalCompleted": 30,
+    "totalStars": 3,
+    "voteScore": 41,
+    "tags": [
+      "Arrays",
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 3
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a1b151d46d843522f000048",
+  "data": {
+    "id": "5a1b151d46d843522f000048",
+    "name": "Search and sort names",
+    "slug": "search-and-sort-names",
+    "category": "algorithms",
+    "publishedAt": "2017-11-26T19:29:54.557Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a1b151d46d843522f000048",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-26T19:25:17.751Z",
+    "createdBy": {
+      "username": "Torkel",
+      "url": "https://www.codewars.com/users/Torkel"
+    },
+    "description": "We're making a website for looking up statistics about academic authors and their papers. We want to implement search for the authors. In the academic world we're mostly interested in an authors last name, or the start of their last name.(Many authors shorten their foreign names).\nFirst names and their shortened version, and whole middle names are sometimes of interest as well. Matches on end or middle of names are probably not of interest, but we still want to show them in the result..\n\nGiven an array of strings(Names) and a string representing a search term. \nReturn an array with all names that contains a match sorted in the following order:\n\n0. Full match on last name.\n1. Partial match on start of last name.\n2. Full match on first name.\n3. Partial match on start of first name.\n4. Full match on a middle name\n5. Partial match on last name.\n6. All other matches (Every name that contains the search string)\n\nEach group should then be sorted by Last name, First name, Middle name.  \nE.g search('Leo Dicaprio') == ['A Leo Dicaprio','Leo Dicaprio', 'Leo Dicaprio A', 'Leo Dicaprio B']  \n'Leo Decaprio' comes second even though it's a full match on the whole name, we mostly care about last name and alphabethical order!\n\nWe're only interested in names that has a match for the whole search string! A search like \"n doe\" would be considered a full match on last name for \"Jon Doe\". While a search like 'j doe' would not be considered a match at all.\n\nWe care about where the match was found as well.   \nA search like 'n Doe' on ['Jon Doel Doe'] is not a match on last name. It's a match on part of first name and part of middle name (7. All other matches).  \n'n doe' on ['Jon Doen Doe'] has two matches, but we use last name as that has higher priority. (1)\n\nWhen someone has only one name, it's considered as both their first and last name.\n\nSearch is case-insensitive.\n\nExamples:\n\nnames=\n['Kate Leesley Lee'\n'Cale Lee Lincoln',\n'Kate She Leesley',\n'Abe Clee Lee',\n'E Lee Lincoln',\n'Kate Lesleey',\n'Oel Doe',\n'Jane Doe',\n'Kateb She LeesleyB',\n'Oe',\n'Katea She LeesleyB']\n\n\nsearch='e Lee'\n\n['Abe Cle**e Lee**',     // Match is on full last name (1)   \n'Kate Sh**e Lee**sleyA', // Match is on partial start of last name (2)   \n'Kata Sh**e Lee**sleyB', // Match is on partial start of last name (2)  \n'Katb Sh**e Lee**sleyB', // Match is on partial start of last name (2)  \n'**E Lee** Lincoln',     // Match is on full first name (3)   \n'Cal**e Lee** Lincoln',  // Match is on full middle name (5)   \n'Kat**e Lee**sley Lee']  // Has a match (7)  \n\n\nsearch='oe'\n\n['**Oe**',       // Match is on full last name (1)     \n'**Oe**l Doe',   // Match is on partial start of first name (4)     \n'Jane D**oe**']  // Match is on partial last name(6)    \n\n",
+    "totalAttempts": 352,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms",
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

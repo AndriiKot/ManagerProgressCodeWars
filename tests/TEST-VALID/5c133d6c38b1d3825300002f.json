@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c133d6c38b1d3825300002f",
+  "data": {
+    "id": "5c133d6c38b1d3825300002f",
+    "name": " Fluent Calculator C#",
+    "slug": "fluent-calculator-c-number",
+    "category": "games",
+    "publishedAt": "2018-12-14T05:20:30.382Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5c133d6c38b1d3825300002f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-14T05:19:41.194Z",
+    "createdBy": {
+      "username": "alex_cash",
+      "url": "https://www.codewars.com/users/alex_cash"
+    },
+    "description": "Based on Fluent Calculator (https://www.codewars.com/kata/fluent-calculator-1), but without reflection\n\nThe task at hand is to make a simple fluent calculator.\n\nThe design should be seperated into two builders to handle Values and Operations\nValues can call Operations, and Operations can call values, however they should not be able to call themselves.\n```c-sharp\nvar calculator = new FluentCalculator();\ncalculator.One.Times.Two.Result() //This should return 2\ncalculator.One.One //Should Error\n```\n\nThe Values should resolve implicitly to a double\n```c-sharp\ndouble myInt = 5.5 - Calculator.One.Plus.Two\n```\n\nA whole expression should be created before evaulation, and the evaluation should follow BEDMAS\n```c-sharp\n//0-4*3+2/8*1/9 = -11.972\ncalculator.Zero.Minus.Four.Times.Three.Plus.Two.DividedBy.Eight.Times.One.DividedBy.Nine\n```",
+    "totalAttempts": 8,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

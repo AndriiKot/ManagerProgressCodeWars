@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61c084896fc3770007d8eb66",
+  "data": {
+    "id": "61c084896fc3770007d8eb66",
+    "name": "Hex Color to RGB Color",
+    "slug": "hex-color-to-rgb-color",
+    "category": "reference",
+    "publishedAt": "2021-12-20T13:29:59.273Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/61c084896fc3770007d8eb66",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-20T13:26:33.266Z",
+    "createdBy": {
+      "username": "_thr_",
+      "url": "https://www.codewars.com/users/_thr_"
+    },
+    "description": "You are given a RGB or RGBA string in the format \"#RRGGBB\" or \"#RRGGBBAA\".\n\nWrite a function that returns an array of bytes with these informations: [D,R,G,B[,A]]\n\nWhere:\n\n**D** ... Mixing Depth - This value ranges from 0..2 and means:\n\n  - 0.. Pure Color (Zero Color Channels Mixed) - At least 2 of the RGB bytes had a value of zero\n  - 1.. Mixed Color 1st Degree (1 Color Channel Mixed) - Exactly one of the RGB Bytes has a value of zero\n  - 2.. All three of the RGB Bytes had a non-zero value\n\n**R,G,B** contains the binary representation of the R-G-B channels of the input string\n\n**A** ... The fifth Byte may only be returned, if the input string contained an alpha channel.\n\nThe input string has always a length of 7 or 9 characters, you do not need to check this.\nThe first character is always a #-Character, which is one of the standard formats for rgb-strings.\n\n**Note:** #000000 returns a depth of 0! (AT LEAST two of the RGB bytes have a zero value).\n\n## Examples ##\n\"#001100\" should return [0, 0, 17, 0]  (4 Bytes, Zero depth because pure green (R,B are zero), length of 4 bytes because the input string contained no alpha channel)\n\n\"#1200AF80\" should return [1, 18, 0, 175, 128] (5 Bytes, Depth 1 because R and B are non-zero, the fifth byte included because an alpha channel was present)",
+    "totalAttempts": 47,
+    "totalCompleted": 15,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms",
+      "Fundamentals",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/565c5e48072f02327a000036",
+  "data": {
+    "id": "565c5e48072f02327a000036",
+    "name": "Simplified object comparison",
+    "slug": "simplified-object-comparison",
+    "category": "reference",
+    "publishedAt": "2015-11-30T15:19:36.858Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/565c5e48072f02327a000036",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-30T14:33:44.585Z",
+    "createdBy": {
+      "username": "Katbow",
+      "url": "https://www.codewars.com/users/Katbow"
+    },
+    "description": "This is a simplified version of [Deep comparison of objects](http://www.codewars.com/kata/deep-comparison-of-objects).\n\nIt's not easy to compare objects in JavaScript. Even two objects with the same properties and values will be considered different.\n\n```javascript\n{a: 1, b: 2} === {a: 1, b: 2}\n// false\n```\n\nYour task is to create a function, `compareObjects(objectA, objectB)`, which compares 2 objects. The parameters will always be objects, and will not contain other objects or arrays, just strings and numbers. It will return `true` if the objects are the same, and `false` if they are not. \n\nIf both objects have the same values in a different order, they are considered the same. e.g.\n```javascript\ncompareObjects({a: \"bc\", d: \"ef\"}, {d: \"ef\", a: \"bc\"})\n// true\n```\n\nNB: The `JSON.stringify` method is invalid.\n\n\n\n\n\n",
+    "totalAttempts": 877,
+    "totalCompleted": 130,
+    "totalStars": 8,
+    "voteScore": 147,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

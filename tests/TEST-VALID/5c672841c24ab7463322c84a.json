@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c672841c24ab7463322c84a",
+  "data": {
+    "id": "5c672841c24ab7463322c84a",
+    "name": "BigArray",
+    "slug": "bigarray",
+    "category": "games",
+    "publishedAt": "2019-02-15T21:03:10.381Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c672841c24ab7463322c84a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-15T20:59:45.946Z",
+    "createdBy": {
+      "username": "OpenByte",
+      "url": "https://www.codewars.com/users/OpenByte"
+    },
+    "description": "# BigArray\n\nJavaScript arrays are limited to 2<sup>32</sup>-1 (=4.294.967.295).\nBut we want more, specifically up to Number.MAX_SAFE_INTEGER (=9.007.199.254.740.991) elements.\n\nYour task is to create `BigArray` with the following functionality:\n\n## Constructors\n- ```new BigArray()```\nCreates an empty BigArray with the default element value of 42.\n- ```new BigArray(defaultValue)```\nCreates an empty BigArray with the default element value of defaultValue.\n- ```new BigArray(defaultValue, length)```\nCreates an BigArray with the specified length and the default element value of defaultValue.\n\n## Indexing\nBig Array should support indexing like the default arrays:\n```\nconst bigArray = new BigArray();\nbigArray[0] = 43;\nconsole.log(bigArray[0]); // prints 43\n```\n\n## Methods\n- ```BigArray.from(iterable)```\nCreates an BigArray containing the elements from the given iterable (like Array.from)\n- ```BigArray.prototype.push(element)```\nAdds an elements to the end of the BigArray (like Array.prototype.push)\n- ```BigArray.prototype.pop()```\nRemoves the last element from the BigArray and returns it (like Array.prototype.pop)\n- ```BigArray.prototype.includes(element)```\nChecks if the array contains the given element (like Array.prototype.includes)\n\n## Operators\n- ```i in bigArray```\nChecks if bigArray contains an element at index i. (like x in array)\n- ```for i in bigArray```\nIterates over all indices of BigArray. (like for x in array)\n- ```for i of bigArray```\nIterates over all elements of BigArray. (like for x of array)\n\n## Other\n- A BigArray instance should have a length property, that reflects its current length.\n- The properties of BigArray should be assignable:\n```\nconst bigArray = new BigArray();\nbigArray.a = 1;\nconsole.log(bigArray.a); // prints 1\n```\n\n\n## Note\nMost features are analogous to the default Array ones. So if it is unclear how exactly something should be implemented, take a look at the default implementation.\n\n",
+    "totalAttempts": 43,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

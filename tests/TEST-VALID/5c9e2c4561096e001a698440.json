@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c9e2c4561096e001a698440",
+  "data": {
+    "id": "5c9e2c4561096e001a698440",
+    "name": "Soccer Fixtures Results Table",
+    "slug": "soccer-fixtures-results-table",
+    "category": "algorithms",
+    "publishedAt": "2019-03-29T16:48:03.530Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c9e2c4561096e001a698440",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-29T14:31:33.492Z",
+    "createdBy": {
+      "username": "CalvinNunes",
+      "url": "https://www.codewars.com/users/CalvinNunes"
+    },
+    "description": "You are in charge of creating the final table of a championship results.\n\nFirst of all, let's see the championship **RULES**:\n* **Winner team**: Get 3 points.\n* **Loser team**: Get no points.\n* **If Draw**: Each team get 1 point.<br>\n* The results table is sorted by the team with more points to the one with less points. If more than one team have the same amount of points, then compare their goals, the team who scored the most goals gets ahead.\n\nYou'll receive an array, `matches`, where each value is a string build like this:\n`\"TEAM A 2 x 1 TEAM B\"`<br>\nthis means that \"TEAM A\" scored 2 goals and \"TEAM B\" scored 1, so, \"TEAM A\" won the match and receive 3 points.\n\nYour mission here is to return a matrix, where each value is an array containing (all strings):<br>\n`[0] = team name`,<br>\n`[1] = team points`,<br>\n`[2] = team goals`.<br> This matrix must be sorted with the team with most points in the top, like the rules above said.\n\n**Note:** The first value of the matrix is a \"header\", it will always be: `[\"TEAM NAME\", \"PTS.\", \"GLS.\"]`, exactly like this.\n\n**Example:**<br>\nfor \n```SoccerFixturesFinalTable([\"TEAM A 1 x 1 TEAM B\", \"TEAM A 1 x 2 TEAM C\", \"TEAM B 2 x 3 TEAM C\"])```\n<br>The output must be:<br>\n```[[\"TEAM NAME\", \"PTS.\", \"GLS.\"],```<br>\n```[\"TEAM C\", \"6\", \"5\"],```<br>\n```[\"TEAM B\", \"1\", \"3\"],```<br>\n```[\"TEAM A\", \"1\", \"2\"]]```<br><br>\n`TEAM C` won two matches (**1**x0 and **3**x2). Receives 6 points and a total of 4 scored goals.<br>\n`TEAM B` lost one and draw another (**2**x3 and **1**x1), it means 1 point and 3 goals. <br>\n`TEAM A` lost one and draw another (**1**x2 and **1**x1), it means 1 point and 2 goals.<br>\nWith those values we can know that `TEAM C` got the first place, `TEAM B` is the second (because scored more goals than TEAM A) and `TEAM A` is the last. \n\n**Constraints**<br>\nAll games will have a score value (>= 0 && <= 9). <br>\nAll team names will be uppercase.<br>\nThere'll be at least two matches",
+    "totalAttempts": 165,
+    "totalCompleted": 20,
+    "totalStars": 3,
+    "voteScore": 24,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

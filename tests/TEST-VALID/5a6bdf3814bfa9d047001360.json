@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a6bdf3814bfa9d047001360",
+  "data": {
+    "id": "5a6bdf3814bfa9d047001360",
+    "name": "Can you dig it?",
+    "slug": "can-you-dig-it",
+    "category": "algorithms",
+    "publishedAt": "2018-01-27T02:08:56.040Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a6bdf3814bfa9d047001360",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-27T02:09:04.043Z",
+    "createdBy": {
+      "username": "tanglebones",
+      "url": "https://www.codewars.com/users/tanglebones"
+    },
+    "description": "Given an obj and a number arguments representing a series of dereferences (a `string` for a property, a `number` for an array offset) to execute on the object extract the value at the end of the dereferences.\n\nFor example:\n\n```\nconst obj = {a:{b:[4,{c:3}]},b:{c:2}};\ndig(obj,'a','b',1,'c'); // returns 3\ndig(obj,'b'); // returns {c:2}\n```\n\nIf the path doesn't exist in the object `dig` should return `null`.\nIf the path is invalid (contains something other than a `string` for a properoty or `number` for an array) `dig` should return `undefined`.\n\nFor example:\n```\ndig({},0); // returns undefined since 0 is a number and therefore we'd expect to be applying it to an array\ndig({},{}); // returns undefuned since {} isn't a valid property or array offset\ndig({},'a'); // returned null since 'a' is not in the object\n```\n",
+    "totalAttempts": 71,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 6,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

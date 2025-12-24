@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/577d6ad9311a249ff2000151",
+  "data": {
+    "id": "577d6ad9311a249ff2000151",
+    "name": "Burrows-Wheeler transform II. Decoding",
+    "slug": "burrows-wheeler-transform-ii-decoding",
+    "category": "algorithms",
+    "publishedAt": "2016-07-07T09:59:42.799Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/577d6ad9311a249ff2000151",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-06T20:32:25.829Z",
+    "createdBy": {
+      "username": "denesnori",
+      "url": "https://www.codewars.com/users/denesnori"
+    },
+    "description": "The Burrows-Wheeler transform (BWT) is useful for data compression.The algorithm tends to arrange runs of the same character together.  The BWT algorithm is used in bioinformatics and in the bzip3 data compression program.\n\nA remarkable feature of the Burrows-Wheeler transform is that it is reversible. This Kata discusses the inverse (decoding) Burrows-Wheeler algorithm. \nThe undestnding of the (coding) Burrows-Wheeler algorithm is a prerequisite for undestanding the inverse algorithm Before proceeding please read the first Kata on BWT (<https://www.codewars.com/kata/burrows-wheeler-transform-i-coding>) or <https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform>.\n\nThe inverse transform algorithm:  \nThe input text for the inverse BWT is the output of the BWT, which is obtained as the last column of the transformation table. The goal of the inverse algorithm is to reconstruct the transformation table, and choose the row containing the original message.\n\n1, the input, which was the last column of the transformation table has all the characters in the text. If one sorts the characters alphabetically, the first column of the transformation table can be reconstructed.\n2, the first and last column of each row together give all possible pairs of successive characters in the text. Pairs are taken cyclically so the last and first character form a pair. Sorting the list of pairs gives the first and second column of the coding table,  \n3, continuing in this manner one can reconstruct the entire text,  \n4, the row where the last character is the end of  text character (in this case '|') is the original text.  \n5, remove the '|' character from the end of the text, then return it.\n\nHint: note that Javascript's sort() method puts '|' after any letter of the alphabet.\n\n\nExample:  \nInput: |nnaaas (not every input starts with '|' character)  \n&nbsp;Add1&nbsp;|&ensp;Sort1&ensp;|&ensp;Add2&ensp;|&ensp;Sort2&ensp;|&ensp;Add3&ensp;|&ensp;Sort3&ensp;|&ensp;Add4&emsp;|&ensp;Sort4&emsp;|  \n &emsp;|&emsp;&nbsp; |&emsp;a&emsp;&emsp;|&emsp;|a&ensp;&emsp;|&emsp;an&emsp;&nbsp;|&emsp;|an&nbsp;&emsp;|&emsp;ana&emsp;|&emsp;|ana&emsp;|&emsp;anan&emsp;|  \n &emsp;n&emsp; |&emsp;a&emsp;&emsp;|&emsp;na&emsp;&nbsp;|&emsp;an&emsp;&nbsp;|&emsp;nan&emsp;|&emsp;ana&emsp;|&emsp;nana&ensp;&nbsp;|&emsp;anas&emsp;|  \n &emsp;n&emsp; |&emsp;a&emsp;&emsp;|&emsp;na&emsp;&nbsp;|&emsp;as&emsp;&nbsp;|&emsp;nas&emsp;&nbsp;|&emsp;as| &nbsp;&emsp;|&emsp;nas|&emsp;|&emsp;as|a&nbsp;&emsp;|  \n &emsp;a&emsp; |&emsp;n&emsp;&emsp;|&emsp;an&emsp;&nbsp;|&emsp;na&emsp;&nbsp;|&emsp;ana&emsp;|&emsp;nan&emsp;|&emsp;anan&ensp;&nbsp;|&emsp;nana&emsp;|  \n &emsp;a&emsp; |&emsp;n&emsp;&emsp;|&emsp;an&emsp;&nbsp;|&emsp;na&emsp;&nbsp;|&emsp;ana&emsp;|&emsp;nas&emsp;|&emsp;anas&emsp;|&emsp;nas|&emsp;&nbsp;|  \n &emsp;a&emsp;|&emsp; s&emsp;&emsp; |&emsp;as&emsp;&nbsp;|&emsp;s|&emsp;&ensp;&nbsp;|&emsp;as|&nbsp;&emsp;|&emsp;s|a&nbsp;&emsp;|&emsp;as|a&nbsp;&emsp;|&emsp;s|an&nbsp;&emsp;|  \n &emsp;s&emsp;|&emsp; |&emsp;&emsp; |&emsp;s|&ensp;&emsp;|&emsp;|a&emsp;&ensp;&nbsp;|&emsp;s|a&nbsp;&emsp;|&emsp;|an&nbsp;&emsp;|&emsp;s|an&nbsp;&emsp;|&emsp;|ana&emsp;|  \n\nAdd5&emsp;|&emsp;Sort5&emsp;|&emsp;Add6&emsp;&nbsp;|&emsp;Sort6&emsp;&ensp;&nbsp;| &emsp;Add7&emsp;&ensp;|&emsp;Sort7&emsp;&emsp;|  \n |anan&emsp;|&emsp;anana&ensp;&nbsp;|&emsp;|anana&ensp;&nbsp;|&emsp;ananas&ensp;&ensp;|&emsp;|ananas&ensp;&nbsp;|&emsp;ananas|&emsp;|  \n nanas&ensp;&nbsp;|&emsp;anas|&emsp;|&emsp;nanas|&emsp;|&emsp;anas|a&emsp;|&emsp;nanas|a&emsp;|&emsp;anas|an&emsp;|  \n nas|a&emsp;|&emsp;as|an&emsp;|&emsp;nas|an&emsp;|&emsp;as|ana&emsp;|&emsp;nas|ana&emsp;|&emsp;as|anan&emsp;|  \n anana&ensp;&nbsp;|&emsp;nanas&ensp;&nbsp;|&emsp;ananas&ensp;&nbsp;|&emsp;nanas|&emsp;|&emsp;ananas|&emsp;|&emsp;nanas|a&emsp;|  \n anas|&emsp;|&emsp;nas|a&emsp;|&emsp;anas|a&emsp;|&emsp;nas|an&emsp;|&emsp;anas|an&emsp;|&emsp;nas|ana&emsp;|   \n as|an&emsp;|&emsp;s|ana&emsp;|&emsp;as|ana&emsp;|&emsp;s|anan&emsp;|&emsp;as|anan&emsp;|&emsp;s|anana&emsp;|  \n s|ana&emsp;|&emsp;|anan&ensp;&nbsp;|&emsp;s|anan&emsp;|&emsp;|anana&emsp;|&emsp;s|anana&emsp;|&emsp;|ananas&emsp;| \n\nFirst row is the decoded text: ananas|  \nIt hold whichever letter is the first letter of the text, since the ASCII\ncode of '|' is bigger than any letter in the ABC, so javasxript's .sort() method puts it after any letter in the abc.\n\n\nFor further information read <https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform>\n",
+    "totalAttempts": 37,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 11,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

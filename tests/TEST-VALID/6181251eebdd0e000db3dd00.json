@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6181251eebdd0e000db3dd00",
+  "data": {
+    "id": "6181251eebdd0e000db3dd00",
+    "name": "Number the rationals",
+    "slug": "number-the-rationals",
+    "category": "algorithms",
+    "publishedAt": "2021-11-02T13:59:53.994Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6181251eebdd0e000db3dd00",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-02T11:46:38.999Z",
+    "createdBy": {
+      "username": "RealKenshiro",
+      "url": "https://www.codewars.com/users/RealKenshiro"
+    },
+    "description": "<h1><center>Number the rationals</center></h1>\n<br>\nThe Kata is based on this one :\n\n[List of all rationals](https://www.codewars.com/kata/5e4e8f5a72d9550032953717)\n\nBut now, we are dealing with some really large values ...\n\n<h2>Abstract :</h2>\n\nIt can be shown that every positive rational number appears only once in the infinite binary tree :\n```\n                                               1/1\n                                          /           \\ \n                                     1/2                 2/1\n                                   /    \\              /     \\\n                               1/3        3/2        2/3       3/1\n                              /   \\      /   \\      /   \\     /   \\\n                           1/4    4/3  3/5   5/2  2/5   5/3  3/4   4/1\n                         /   \\\n                     ....\n```\nFor each node of type ```a/b``` with ```a>0``` and ```b>0```\n\n1) The value of the left node below ```a/b``` is ```a/(a+b)```\n2) The value of the right node below ```a/b``` is ```(a+b)/b```\n\nFor example, the node ```3/2``` has two leaves ```3/(2+3) = 3/5``` and ```(3+2)/2 = 5/2```\n\nReading the values line by line, we get the rationals list :\n\n```[1/1, 1/2, 2/1, 1/3, 3/2, 2/3, 3/1, 1/4, 4/3, 3/5, 5/2, ... ]```\n<h2>Task :</h2>\n\n1) Define a function ```to_int``` that takes two positive integers ```a``` and ```b``` representing a positive rational ```a/b``` and returns the corresponding position in the list (1 based index)\n\nFor example :\n* ```to_int(1, 1) = to_int(5, 5) = 1```\n* ```to_int(1, 3) = 4```\n* ```to_int(4, 1) = to_int(8, 2) = 15```\n\n2) You must also define a function ```to_frac``` that takes a positive integer  ```n``` and returns a tuple ```(a, b)``` corresponding to the rational in the list (1 based index) and where ```a``` and ```b``` are relatively prime\n\nFor example :\n* ```to_frac(1) = (1, 1)```\n* ```to_frac(4) = (1, 3)```\n* ```to_frac(15) = (4, 1)```\n\nYou will aways get valid input.(@Chrono79)\n\nGood Luck!",
+    "totalAttempts": 14,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 12,
+    "tags": [
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

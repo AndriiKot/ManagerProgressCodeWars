@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f05e270fa2ae0001be4e345",
+  "data": {
+    "id": "5f05e270fa2ae0001be4e345",
+    "name": "Zero Sequence",
+    "slug": "zero-sequence",
+    "category": "algorithms",
+    "publishedAt": "2020-07-09T11:44:28.493Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5f05e270fa2ae0001be4e345",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-08T15:12:48.936Z",
+    "createdBy": {
+      "username": "zhangjunyan2580",
+      "url": "https://www.codewars.com/users/zhangjunyan2580"
+    },
+    "description": "### Description\n\nThere are some operations and a sequence. The steps for each operation are as follows:\n\n1. Find the index of the maximum value `i` in the sequence. If there are multiple choices, choose the minimal index.\n2. Decrease the `i`-th value, the `i-1`-th value, and the `i+1`-th value by 1.\n3. Change the negative elements to 0.\n\nWe have `m` modifications to the sequence. You need to calculate the times of the operations apply to the sequence when the all elements in this sequence are zero after every modification.\n\n### Implementation Details\n\nYou should implement the following functions:\n\n```cpp\nvoid initialize(const std::vector<int> &arr); // (1)\nlong long modify(int index, int value); // (2)\n```\n\n(1) The argument `arr` is the sequence. You should initialize things you need there. **Note the index of the first element in this vector is 1, and you should assume that `arr[0]` and `arr[arr.size() + 1]` are equal to 0**.\n\n(2) Modify the `index`-th element to value. It should return the times of the operations apply to the sequence.\n\n### Constraints\n\nEvery element in `arr` is greater than or equal to 0.\n\n`value` >= 0\n\n1 <= `index` <= `arr.size()`\n\n1 <= `arr.size()` <= 100000\n\n1 <= `m` <= 100000\n\nView Test Cases for additional information.\n\n### Examples:\n\nSee Example Test Cases.\n\n### Test Cases:\n\nExample_Test: 2 fixed tests. It's the same as Example Test Cases.\n\nEasy: 2 fixed tests. Every element in `arr` is less than or equal to 100. 1 <= `v` <= 5. 1 <= `arr.size()`, `m` <= 5.\n\nNormal: 3 random tests. 1 <= `arr.size()`, `m` <= 100\n\nHard: 3 random tests. No special properties.",
+    "totalAttempts": 1041,
+    "totalCompleted": 5,
+    "totalStars": 6,
+    "voteScore": 1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

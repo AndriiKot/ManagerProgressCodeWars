@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/570f3e06c983eb5d390008b8",
+  "data": {
+    "id": "570f3e06c983eb5d390008b8",
+    "name": "Some Tips For Quality Control I",
+    "slug": "some-tips-for-quality-control-i",
+    "category": "reference",
+    "publishedAt": "2016-04-15T09:52:01.258Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/570f3e06c983eb5d390008b8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-04-14T06:51:50.842Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "<a href=\"http://imgur.com/nuboljf\"><img src=\"http://i.imgur.com/nuboljf.jpg?1\" title=\"source: imgur.com\" /></a>\r\n\r\nFlipping a coin and making electic light bulbs.\r\n\r\nPerhaps we may think, at first glance, that both things have nothing in common, but think a bit, a coin may have two results: heads or tails, and for the Quality Control Department, an electric light bulb may be approved (A) or rejected (R).\r\n\r\nA programmer that may deal with some basic elements of stats is needed for an Electric Bulb Factory that has to do some investments but needs to perform some previous researchs.\r\n\r\nLet's explain some concepts flipping special coins.\r\nA \"charged\" coin is flipped a certain number of times.\r\nWhile a normal coin has balanced in 50 - 50 percent the probabilities for heads and tails, respectevely, a certain \"charged\" coin has (let's say) prob =```30%``` for heads, and of course, prob =```70%``` for tails.\r\n\r\nIf we flipped the coin 10 times, **what will be the probability for having 7 heads?**\r\n\r\nBernouilli studied many processes like this one, when there were only two possible results and his contribution is known as the ```Binomial Distribution``` or ```Distribution of Bernouilli```.\r\nHe named one result: ```Success``` and the other one ```Failure```.\r\n\r\nIf we name ```p```, the probability of ```Success```, and ```q```, the probability of ```Failure``` (```p + q should be always one```), having a certain number of trials, ```n```, and ```r```, the number of times having the result ```Success``` will be:\r\n\r\n<a href=\"http://imgur.com/WPGFn1V\"><img src=\"http://i.imgur.com/WPGFn1V.png?2\" title=\"source: imgur.com\" /></a>\r\n\r\nFor our example given above the unanswered question will be given applying this formula:\r\n```\r\np = 0.30 ; q = 0.7; n = 10; r = 7\r\n```\r\n<a href=\"http://imgur.com/JfUcfX9\"><img src=\"http://i.imgur.com/JfUcfX9.png?1\" title=\"source: imgur.com\" /></a>\r\n```\r\nP(x = 7) = 0.009001692\r\n```\r\nSuposse that now we change a bit the question **what is the probability of having at least 7 heads?** (case of cumulative probability)\r\n\r\nThis will be:\r\n```\r\nP(x≤7) = P(x=0) + P(x=1) + P(x=2) + P(x=4) + P(x=5) + P(x=6) + P(x=7)\r\n```\r\nWe show the calculation of the first two terms ```P(x=0) and P(x=1)``` and you can figure out the next ones doing the same:\r\n\r\n<a href=\"http://imgur.com/AjjV1am\"><img src=\"http://i.imgur.com/AjjV1am.png?1\" title=\"source: imgur.com\" /></a>\r\n\r\nDoing the calculation for the next terms we will have:\r\n```\r\nP(x≤7) = 0.0282475249 + 0.121060821 + 0.2334744405 + 0.266827932 + 0.200120949 + 0.1029193452 + 0.036756909 + 0.009001692 = 0.9894079216\r\n```\r\nNow let's make another question **what is the probability of having more than 7 heads?** (another case of cumulative probability)\r\n```\r\nP(x>8) = P(x=9) + P(x=10) + P(x=11) + ......... + P(x= +∞) (we don't do this)\r\n```\r\nAs the sum of the probabilities for the range of x ```[0,+∞)```, should be one.\r\n```\r\nP(x>8) = 1 - P(x≤7) = 1 - 0.9894079216 = 0,0105920784\r\n```\r\n\r\nLet's go to our production of lamps.\r\n\r\nEach machine has a electronic device that registers the approved bulbs ```(A) or (a)``` and the rejected ones ```(R) or (r)```.\r\n\r\nWe need a function ```prob_bernouilli()``` that may receive three or four arguments:\r\n\r\n(1) - ```sample```, an array with the approved and rejected bulbs for low numbers of produced bulbs.\r\nE.g. ```['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A']``` a sample of ```10 bulbs```, ```8``` approved and ```2``` rejected. ```sample``` will be used to calculate the probabilities ```p``` and ```q```\r\n\r\n(2) - ```n```, the total production\r\n\r\n(3) - ```x```, a certain number of rejected bulbs in the production\r\n\r\n(3) - ```op``` this is optional, it may be received or not. ```op``` will have a default value ```=x```(probability for a value) when there is not in the function, or if it is one of the following operators as strings: ```'>x', '>=x', '<=x', '<x'```(for cumulative probability).\r\n\r\nLet's see some examples:\r\ni) we want to know the probability of having ```0``` bulbs rejected in a production of 20.\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 20, 0) == 0.0115292150461\r\n# from the sample we calculate p = 0.2, q = 0.8\r\n# p is the probability of success, the probability of having a rejected bulb. It's seems a contradiction but it's not.\r\n```\r\n\r\nii) we want the probability of having 10 rejected bulbs in a production of 100\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 100, 10) == 0.00336281996958\r\n```\r\niii) we want to know the probability of having less or equal than 10 rejected bulbs\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 100, 10, \">=x\") == 0.00569638095579\r\n```\r\niv) we want to know the probability of having less than 10 rejected bulbs\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 100, 10, \">x\") == 0.00233356098621\r\n```\r\nv) we want to know the probability of having more than 20 rejected bulbs\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 100, 20, \"<x\") == 0.440538415127\r\n```\r\nvi) we want to know the probability of having more or equal than 20 rejected bulbs\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', 'A', 'A', 'A'], 100, 20, \"<=x\") == 0.539838629935\r\n```\r\n\r\nThe sample may have some \"noise\" (low amounts), so you should have a helper function to filter the undesired symbols.\r\n```python \r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', '&', 'A', 'A', 'A', '#'], 100, 20, \"<=x\") == 0.539838629935\r\n#  p = 0.2, q = 0.8\r\n```\r\nSome devices may give the letter 'A', 'R' in small case ('a', 'r') and are valid , too.\r\n```python\r\nprob_bernouilli(['A', 'A', 'A', 'A', 'R', 'A', 'R', '&', 'A', 'A', 'A', '#', 'a', 'r'], 100, 20, \"<=x\") == 0.900469589895\r\n# p = 0.25 and q = 0.75\r\n```\r\nIf the result of a probability is less than ```1e-6```, the function should output ```0```\r\n```python\r\nsample = ['&', '&', 'A', 'a', 'A', 'a', 'a', 'A', '', '&', 'a', 'r', 'r', 'a', '&', 'r', 'a', 'R', 'A', '&']\r\nn = 100\r\nx = 5\r\nprob_bernouilli(sample, n, x) == 0 # the result was 1.88026637839e-09\r\n```\r\nOn the other hand if ```|1 - prob| < 1e-6```, the function should output 1\r\n```python\r\nsample = ['A', 'r', 'R', 'A', 'a', 'A', 'R', 'a', '&', 'r', 'A', 'R', 'a', 'a', 'a', 'a', 'a', 'a', 'A', 'A', 'R', 'r', '&', 'R', 'a', 'a', 'A', '', 'A', 'A', 'A', 'a', 'A', 'A', 'R', 'R', 'R', 'A', 'A', 'A']\r\nn = 140\r\nx = 9\r\nprob_bernouilli(sample, n, x, op) == 1 # the result was 0.999999999999\r\n```\r\n\r\nAssumptions: There are many but let's point out the most important ones:\r\n\r\n- The machine produces under the same conditions always.\r\n\r\n- Even though the result of probability are expressed with more than 10 decimal digits, for practical purposes the values will not have more than six digits. We do it in that way to avoid cumulative errors\r\n\r\n- Your results will pass if fulfills the condition:\r\n```\r\n|your_value - expected_value|/expected_value < 1e-8\r\n```\r\nEnjoy it!!\r\n\r\n",
+    "totalAttempts": 189,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 29,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Statistics",
+      "Probability"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

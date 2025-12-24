@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61437e0c0bc29f003ab8c1ae",
+  "data": {
+    "id": "61437e0c0bc29f003ab8c1ae",
+    "name": "Find the sliced  sheet of paper",
+    "slug": "find-the-sliced-sheet-of-paper",
+    "category": "games",
+    "publishedAt": "2021-09-16T17:53:08.025Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61437e0c0bc29f003ab8c1ae",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-16T17:25:32.694Z",
+    "createdBy": {
+      "username": "LearningFTW",
+      "url": "https://www.codewars.com/users/LearningFTW"
+    },
+    "description": "# Context : \n\nSuppose you have a sheet of paper measuring `8 x 10`. You want to cut it exactly in half while maintaining its __rectangular shape__. You can do this in two ways. You can cut it in half preserving its long dimension of 10 (for our purpose we will refer to this as long cut from now on). Example : \n\n```math\n[8, 10] \\rightarrow \\text{long cut} \\rightarrow [4, 10]\n```\n\nOr you can cut it in half preserving its short dimension (we will refer to it as short cut). Example : \n\n```math\n[8, 10] \\rightarrow \\text{short cut} \\rightarrow [5, 8]\n```\n\nFor a square, the short and long cut are same. i.e : \n\n```math\n[12, 12] \\rightarrow \\text{long cut} \\rightarrow [6, 12]\\\\\n[12, 12] \\rightarrow \\text{short cut} \\rightarrow [6, 12]\n```\n\n----\n\n# Task : \n\nFor this challenge you are given two arguments.\n\n1. The first is a _string_ containing the __cuts to be made__ to a sheet of paper in sequence from __first to last__. A long cut is designated by \"__L__\" and a short cut by \"__S__\".\n2. The second is dimension of paper after said cuts were made (an array)\n\nGiven that devise a function that will find the all the possible original dimensions of the sheet of paper before any cuts were made.\n- The dimensions of a sheet are given as an array `[x,y]`  (no specific order)\n- For output return it as `[x, y]` for `$ y \\geq x $`\n- For output sort the array in ascending order\n- If its impossible to find original array given the cuts return an empty array.\n\n\n\n# Examples : \n\n```\ncuttingPaper(\"S\", [3, 7])      --> [[3, 14]]\ncuttingPaper(\"L\", [5, 7])      --> []\ncuttingPaper(\"S\", [5, 7])      --> [[5, 14], [7, 10]]\ncuttingPaper(\"LSSSSS\", [1, 2]) --> [[2, 64], [4, 32], [8, 16]]\n```\n\nFor example 2 : \n\n`L` for `[5, 7]` gives empty array since if it started `[5, 14]` then the long cut would result in `[2.5, 14]` and if it started with `[10, 7]` then the long cut would result in `[10, 3.5]`. so in this case the cut is simply not possible \n\nFor example 3 :\n\n`[5, 7]` for `S` cut gives 2 solutions since it could start as `[5, 14]` and then short cut would yield `[5, 7]` which is possible solution 1.\nAlternately you can start with `[7, 10]` and then cut and you would end up with `[5, 7]` which is possible solution 2.\nBecause of that you get 2 possible solutions.\n\n# Important Notes : \n- You are given tuples in python as input (for dim) (output is still array though)\n- The string will either be empty or contain any amount of `S` and `L`. The cuts at longest would be 20 cuts\n- The array will always contain two whole numbers. \n- Orientation of paper in each step does not matter (simply put, you are to give only unique results sorted so : [x, y] for x < y). so if you get `[5, 7] , [7, 5]` you will only output `[5, 7]` and that too once.",
+    "totalAttempts": 241,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 24,
+    "tags": [
+      "Geometry",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

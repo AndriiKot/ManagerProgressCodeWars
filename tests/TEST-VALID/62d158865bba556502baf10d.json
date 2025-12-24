@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62d158865bba556502baf10d",
+  "data": {
+    "id": "62d158865bba556502baf10d",
+    "name": "It's Magic",
+    "slug": "its-magic",
+    "category": "reference",
+    "publishedAt": "2022-07-15T13:25:06.405Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62d158865bba556502baf10d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-15T12:07:34.391Z",
+    "createdBy": {
+      "username": "chr3st5an",
+      "url": "https://www.codewars.com/users/chr3st5an"
+    },
+    "description": "# *Let's Do Magic 🎩*\n\n---\n\nYour task is as simple as coding a class `Magic` whose objects will get assigned to\n**class** attributes.\n\n```python\nclass Foo:\n  a = Magic(10)\n  b = Magic(20)\n```\n\n---\n\n## What Can \"Magic\" Do?\n\n1. The constructor should take in one parameter which is always of type `int`\n\n2. Instances of `Magic` should define three public properties: `whoami`, `whereami` & `magic_`\n  \n    - `whoami` - returns the name of the class attribute the instance is assigned to\n    \n    - `whereami` - returns the class name in which the instance is in\n    \n    - `magic_` - a special property as it should be able to handle numbers given with it:\n    \n        - Syntax: `magic_<number>` => `magic_10`, `magic_20`, `magic_30`\n        \n        - `magic_<number>` should return ` <number> * <number_given_by_constructor>`\n        \n            - e.g. `Magic(5).magic_10` => `50` , `Magic(1).magic_100` => `100`\n\n3. It should be impossible to assign **new** attributes to `Magic` instances outside of the instance\n\n    - e.g. `<class>.<magic_obj>.<attr> = <value>` should raise an Error if `<attr>` would need to be created first\n\n4. Classes (and hence their instances), which have `Magic` objects as class attributes, should have a `magic` property\n\n    - the value of that `magic` property equals `sum(magic_obj.constructor_number for magic_obj in class)`\n    \n---\n\n## Visualized Task\n\n```python\nclass Foo:\n  a = Magic(5)\n  b = Magic(10)\n  \n  def __init__(self, c):\n    self.c = c\n\n\nprint(Foo.a.whoami)    # 'a'\nprint(Foo.a.whereami)  # 'Foo'\n\nprint(Foo.b.whoami)    # 'b'\nprint(Foo.b.whereami)  # 'Foo'\n\nprint(Foo.a.magic_100) # 500\nprint(Foo.b.magic_6)   # 60\n\n# Assignmnets like this should be prohibited \nFoo.a.any_non_existing_attr = 10 # ERROR\nFoo.b.any_non_existing_attr = 5  # ERROR\n\nfoo_obj = Foo(8)\n\nprint(foo_obj.magic) # 15  <=  Foo.a.number + Foo.b.number + ... \nprint(foo_obj.c)     # 8\n```\n\nNote: The import of the `inspect` package is prohibited\n\n---\n\nHappy coding!",
+    "totalAttempts": 70,
+    "totalCompleted": 18,
+    "totalStars": 6,
+    "voteScore": 36,
+    "tags": [
+      "Metaprogramming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

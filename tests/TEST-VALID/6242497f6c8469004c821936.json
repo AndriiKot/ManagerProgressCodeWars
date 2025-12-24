@@ -1,0 +1,64 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6242497f6c8469004c821936",
+  "data": {
+    "id": "6242497f6c8469004c821936",
+    "name": "Defend the Empire: Identifying Essential Cities",
+    "slug": "defend-the-empire-identifying-essential-cities",
+    "category": "reference",
+    "publishedAt": "2022-03-29T18:33:16.484Z",
+    "approvedAt": "2025-11-03T22:02:13.913Z",
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6242497f6c8469004c821936",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-03-28T23:49:19.039Z",
+    "createdBy": {
+      "username": "Donvito-911",
+      "url": "https://www.codewars.com/users/Donvito-911"
+    },
+    "approvedBy": {
+      "username": "jaybruce1998",
+      "url": "https://www.codewars.com/users/jaybruce1998"
+    },
+    "description": "# Defend the Empire: Identifying Essential Cities\n<i>Right action is better than knowledge; but in order to do what is right, we must know what is right. Charlemagne</i>\n\nA good Emperor conquers, but a great one maintains his empire. Before expanding your domain, you must identify the essential cities—those whose loss would fracture your Empire.\n\n## Context\n### What is an Empire?\nAn Empire consists of cities connected by routes. Two fundamental rules apply:\n<ol>\n<li>You can travel from any city to any other city in your Empire</li>\n<li>Routes are bidirectional (it's the Middle Ages!)</li>\n</ol>\n\n### What are essential cities?\n\nAn essential city is one that, if conquered, would disconnect your Empire. When removed, some cities can no longer reach each other—your Empire fragments.\nFor example: if an essential city connects two regions, losing it means losing access to one entire region.\n\n## Your Resources\nYour cartographer provides a list of routes (tuples) connecting cities bidirectionally.\n```python\nroutes = [(0, 1), (0, 2), (1, 3), (2, 3)]\n# City 0 connects to 1 and 2\n# City 1 connects to 0 and 3\n# City 2 connects to 0 and 3\n# City 3 connects to 1 and 2\n```\n## Task\nIdentify all essential cities in your Empire using the cartographer's routes.\n## Input\nroutes: (`list[tuple[int, int]]`) List of bidirectional routes between cities. Number of cities (n): 2 ≤ n ≤ 3000\n## Output\n(`list[int]`) Sorted list of essential city IDs. Empty list if none exist.\n\n# Examples\n**Empire 1:** [(0, 1), (1, 2)]\n```python\nget_essential_cities([(0, 1), (1, 2)]) = [1]\n# City 1 is essential: its loss disconnects 0 from 2\n```\n**Empire 2:** [(0, 1), (0, 2), (1, 3), (2, 3)]\n```python\nget_essential_cities([(0, 1), (0, 2), (1, 3), (2, 3)]) = []\n# No essential cities: losing any city keeps others connected\n```\n**Empire 3:** [(0, 1), (1, 2), (1, 3), (2, 4), (3, 4)]\n```python\nget_essential_cities([(0, 1), (1, 2), (1, 3), (2, 4), (3, 4)]) = [1]\n# City 1 is essential: its loss separates {0} from {2, 3, 4}\n```\n\n**Note**: Be aware the size of the empire, so make your algorithm efficient\n",
+    "totalAttempts": 145,
+    "totalCompleted": 39,
+    "totalStars": 7,
+    "voteScore": 31,
+    "tags": [
+      "Algorithms",
+      "Puzzles",
+      "Games",
+      "Performance",
+      "Fundamentals",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

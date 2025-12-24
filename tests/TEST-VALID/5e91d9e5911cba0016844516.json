@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e91d9e5911cba0016844516",
+  "data": {
+    "id": "5e91d9e5911cba0016844516",
+    "name": "Understanding epidemic.",
+    "slug": "understanding-epidemic",
+    "category": "algorithms",
+    "publishedAt": "2020-04-12T22:37:07.244Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e91d9e5911cba0016844516",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-11T14:53:25.224Z",
+    "createdBy": {
+      "username": "Plajer",
+      "url": "https://www.codewars.com/users/Plajer"
+    },
+    "description": "A new virus appeared! The government asked you to build a model, that will tell us how the infection will spread.\n\nAfter initial breakout in another country the secret service collected a lot of useful data. However, our culture is different and disease will not spread exactly the same way among us.\n\nAfter talking with epidemiologist you know that there are many factors to take into account:\n```\nn - number of infected migrants, who has no fever. They can travel freely, but\nwe can estimate how many will come. They don't spread a virus yet (incubating),\nactive - the number of people who are spreading a virus. They can be isolated\n         as most of them has a fever. We need to know this number.\nrecovered - the number of people who got the infection and recovered. They can\n            go back to work, so our government wants to know this number too.\nmultiplier (infection rate) - if it is equal to 1,\n            one active person will infect one another each day,\n            so after incubation time one new person becomes active.\nincubation time - how long the virus is incubating.\n                  After this time a person starts to infect others,\ninfecting time - how long infected people spread the virus,\nrecovery time - total time the virus is in a body,\ndays - the time of our prediction since first infected arrive,\ndeath rate - as the disease doesn't kill more than 10%, it's not important.\n```\nEpidemiologist gave you example numbers to show, how the model should work.  \nFor n = 1, multiplier = 2 and incubation time = 1, infecting time = 5, days = 15:\n```\nday: 1, incubating: 1, active: 0\nday: 2, incubating: 0, active: 1\nday: 3, incubating: 1, active: 1\nday: 4, incubating: 1, active: 2\nday: 5, incubating: 2, active: 3\nday: 6, incubating: 3, active: 5\n```\nOn the first day there is one person with the virus, that doesn't infect others. Let's call him Robert. After incubation time, so on day 2 he becomes active and starts infecting. On day 3 to 7 Robert is still infecting and each day he infects one human (we don't care about dogs as they die before they can infect a human). On day 2 Robert kissed with Anya, so she is incubating on day 3 and she is infecting on day 4 together with Robert. And so on.\n\nInfecting time = 5, so Robert is spreading the virus for 5 days. Then he stays at home and he is no longer infecting other people.\n```\nday: 6, incubating: 3, active: 5 - 1 (isolated) = 4\nday: 7, incubating: 5, active: 7\n```\nRecovery time = 14. Finally, on day 15 Robert goes back to work. He no longer spreads the virus.\n\nWe need to return the number of active (those who spread the virus) and the number of recovered. For given example the result will be: (274, 1).  \nIn case multiplier is a fraction, round the result numbers only.\n\nNotes:  \nThe point of the task is to show how important is isolation and hygiene. Slowing down infection rate and isolating has an effect, that is hard to undestand. \n\nThe model is simplified, but should be accurate for the beggining of epidemic. If we would like to make it accurate for whole epidemic, we need to add containers (disease is spreading faster in container than between them) and consider that those who recovered are mostly immune to the virus (SIR model).  \n\nWe don't know exact numbers for infection like COVID-19 as they vary greatly among people. We can try to adjust parameters to fit infection data by country, as long as enough tests were performed - but it's not easy.",
+    "totalAttempts": 16,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53caa4c29bbf4caf5b00017b",
+  "data": {
+    "id": "53caa4c29bbf4caf5b00017b",
+    "name": "Haskell List Comprehension (v)",
+    "slug": "haskell-list-comprehension-v",
+    "category": "refactoring",
+    "publishedAt": "2014-07-19T18:07:48.520Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53caa4c29bbf4caf5b00017b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-19T17:02:58.485Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the fifth part. You must do the previous part first [Haskell List Comprehension (iv)](http://www.codewars.com/kata/haskell-list-comprehension-iv).\n\nNow we want `ArrayComprehension` has `map(fn)` and `filter(fn)`methods.\n\nTheir behavior is the same as the equivalent methods in Javascript Array.\n\n`map(fn)` transforms the elements in the array with the passed function. For example:\n\n```\nfunction addOne(value) {\n  return value + 1;\n}\n\n//in JavaScript\n[1,2,3].map(addOne); //[2,3,4]\n\n//in ArrayComprehension\nArrayComprehension({\n\tgenerator: '1..3'\n}).map(addOne).value(); //[2,3,4]\n```\n\n`filter(fn)` removes the elements when de passed function returns `false`. For example:\n\n```\nfunction isEven(value) {\n  return value % 2 === 0;\n}\n\n//in JavaScript\n[1,2,3].filter(isEven); //[2]\n\n//in ArrayComprehension\nArrayComprehension({\n\tgenerator: '1..3'\n}).filter(isEven).value(); //[2]\n```\n\nNote that the order of execution is important:\n\n```\nArrayComprehension({\n\tgenerator: '1..10'\n}).take(10).filter(isPrime).map(addOne).value(); //[ 2, 3, 4, 6, 8 ]\n\nArrayComprehension({\n\tgenerator: '1..'\n}).take(10).map(addOne).filter(isPrime).value(); //[ 2, 3, 5, 7, 11 ]\n\nArrayComprehension({\n\tgenerator: '1..',\n  filters[isPrime]\n}).take(10).map(addOne).filter(isPrime).value(); //[ 2, 3 ]\n\n\nArrayComprehension({\n\tgenerator: '1..',\n  filters[isPrime]\n}).map(addOne).filter(isPrime).take(10).value(); //System frozen. Probably there is no ten numbers wich such condition.\n\n\nfunction arrayWrapper(value) {\n\treturn [value];\n}\n\nArrayComprehension({\n\tgenerator: '1..',\n  filters[isPrime],\n\ttransform: arrayWrapper // <- Converts each number to an array of one number 1 -> [1]\n}).map(addOne).filter(isPrime).take(10).value(); //[ '11', '31', '71', '131', '191' ] <- map -> The elements are arrays, then array.toString() is called. For example [2] + 1 = 21\n\nfunction valueUnwrapper(value) {\n\treturn value[0];\n}\n\nArrayComprehension({\n\tgenerator: '1..',\n  filters[isPrime],\n\ttransform: arrayWrapper\n}).map(valueUnwrapper).map(addOne).filter(isPrime).take(10).value(); //[ 2, 3 ]\n\n\nArrayComprehension({\n\tgenerator: '1..',\n  filters[isPrime],\n\ttransform: arrayWrapper\n}).map(valueUnwrapper).map(addOne).filter(isPrime).take(10).map(arrayWrapper).value(); //[  [ 2 ], [ 3 ] ]\n```",
+    "totalAttempts": 138,
+    "totalCompleted": 20,
+    "totalStars": 3,
+    "voteScore": 21,
+    "tags": [
+      "Functional Programming",
+      "Arrays",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

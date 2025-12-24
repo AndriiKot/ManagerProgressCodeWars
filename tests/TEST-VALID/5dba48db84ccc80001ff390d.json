@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dba48db84ccc80001ff390d",
+  "data": {
+    "id": "5dba48db84ccc80001ff390d",
+    "name": "MusicTheory #1: Major Scales",
+    "slug": "musictheory-number-1-major-scales",
+    "category": "games",
+    "publishedAt": "2019-10-31T02:37:15.775Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5dba48db84ccc80001ff390d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-31T02:37:36.544Z",
+    "createdBy": {
+      "username": "ReachAM",
+      "url": "https://www.codewars.com/users/ReachAM"
+    },
+    "description": "In Music Theory there are 12 Major Scales, which can be extended to 17, in fact, the most known scale is the C Maj scale, which consists of:\n\n    C - D - E - F - G - A - B - C\n\nThis notes are arranged in the pattern T-T-S-T-T-T-S, where T stands for one whole Tone and S is a Semi-tone, in such a way that:\n\n    Notes:      [C]  C# [D]  D# [E] [F]  F# [G]  G# [A]  A# [B] [C]\n    Scale:       ↑ - o - T - o - T - S - o - T - o - T - o - T - S \n\nYour job is to create a function wich returns an Array with the scale of a given note, e.g:\n\n    Maj(C)    =>    [C, D, E, F, G, A, B, C]\n\nSimple enough right? Well, there’s a catch. As said before there are actually 17 scales, not 12, so the inputs will be:\n\n    C, C#/Db, D, D#/Eb, E, F, F#/Gb, G, G#/Ab, A, A#/Bb, B\n\nThe problem is that even tho C# and Db sound the same, the name of their notes are quite different:\n \n    Maj(C#)    =>    [C#, D#, E#, F#, G#, A#, B#, C#]\n    Maj(Db)    =>    [Db, Eb, F, Gb, Ab, Bb, C, Db]\n\nHow do you know which note follows the next one? Well, easy, if the last note was C, the next one MUST be D, and the next one E, and so on. So the correction is given by making it sharp (#) or flat(b), but sometimes this means you'll have a double sharp, e.g:\n\n    Maj(A#)    =>    [A#, B#, D, D#, E#, G, A, A#]\nShould return instead:\n\n    Maj(A#)    =>    [A#, B#, C##, D#, E#, F##, G##, A#]\n\nFor mor info on the Major Scales visit: https://www.pianoscales.org/major.html\n",
+    "totalAttempts": 30,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Fundamentals",
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

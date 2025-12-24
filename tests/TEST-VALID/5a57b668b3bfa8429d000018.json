@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a57b668b3bfa8429d000018",
+  "data": {
+    "id": "5a57b668b3bfa8429d000018",
+    "name": "Is it a Tree?",
+    "slug": "is-it-a-tree",
+    "category": "algorithms",
+    "publishedAt": "2018-01-13T18:29:39.132Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/5a57b668b3bfa8429d000018",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-11T19:09:28.737Z",
+    "createdBy": {
+      "username": "OliverGalt",
+      "url": "https://www.codewars.com/users/OliverGalt"
+    },
+    "description": "# Abstract:\n  In mathematics, and more specifically in graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path. In other words, any acyclic connected graph is a tree.\n  There are plenty of advantages of using tree instead of graphs. \n  So how can we find if a given graph is a tree?\n\n![alt text][logo1]\n\n[logo1]:https://upload.wikimedia.org/wikipedia/commons/2/24/Tree_graph.svg\n# Description:\nYou will be given a graph represented by an adjancy list and the number of vertices that graph has.\n \n```C \nint isTree (Graph * g, int NV);\n\n```\nAn adjancy list is and array where each indice represents a vertice, each indice will be pointer to a list of the type ... \n\n```C \ntypedef struct edge {\n  int dest ;\n  struct edge * prox;\n} * Graph , Node;\n```\nIn case you are with trouble understanding how adjancy lists work\nthe code bellow might give some intuitions. \n\n```C\nvoid print_edges(Graph *g, int NV) {\n    struct edge *e;\n    int i;\n    for (i = 0; i < NV; ++i)\n        for (e = g[i]; e; e = e->prox)\n            printf(\"%d - %d\\n\", i, e->dest);\n}\n```\nYou can find more about adjancy lists in the link bellow.\n(https://en.wikipedia.org/wiki/Adjacency_list)\n\nTo complete this task you will have to find if the given graph is a tree.\nYou should return 1 in the afirmitive case and 0 otherwise.\n\n```\nExample 1: True (1)\n```\n![alt text][logo2]\n\n[logo2]:https://www.tutorialspoint.com/graph_theory/images/tree.jpg\n\n\n```\nExample 2: True (1)\n``` \n![alt text][logo3]\n\n```\nExample 3: False (0)\n``` \n![alt text][logo4]\n\n[logo3]:http://d1hyf4ir1gqw6c.cloudfront.net/wp-content/uploads/image4.png\n\n[logo4]:https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Directed_graph,_cyclic.svg/2000px-Directed_graph,_cyclic.svg.png\n",
+    "totalAttempts": 254,
+    "totalCompleted": 17,
+    "totalStars": 10,
+    "voteScore": 30,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

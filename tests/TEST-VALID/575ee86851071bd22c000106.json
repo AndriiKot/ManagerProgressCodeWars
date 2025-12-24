@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/575ee86851071bd22c000106",
+  "data": {
+    "id": "575ee86851071bd22c000106",
+    "name": "Ball Launcher Robot",
+    "slug": "ball-launcher-robot",
+    "category": "reference",
+    "publishedAt": "2016-06-14T15:43:31.411Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/575ee86851071bd22c000106",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-13T17:07:52.934Z",
+    "createdBy": {
+      "username": "tmmmm",
+      "url": "https://www.codewars.com/users/tmmmm"
+    },
+    "description": "```\n                .\n           .         .\n        .               .\n      .                   o\n[ROBOT]                   \\_/\n       \n```\nMike is working on a funny little project, a ball launcher robot. The plan is that he will place a basket in front of the robot, and the robot will automatically shoot a ball in it. Mike already wired up a distance sensor, which returns a measure in meters from the robot to the basket. Now he needs to write a function that takes the distance and the shot speed as parameters. The function should then return an array containing the angle at which the ball should be shot, the maximum shot range, and a hit chance percentage. Can you write such a function for him?\n\n### Constraints\n\n``` \n|       |------------------|\n90°                        45°     ANGLE\n\n|       |------------------|       \n0       0.5m               ?m      RANGE\n\n|                          |\n100%                       0%      HIT CHANCE\n\n```\n\n- The parameter units are: *m* for distance, *m/s* for speed \n- The function has to return an array like ```[ 86.1, 3.67, \"87%\" ]``` containing: the angle in degrees with one decimal precision, the maximum range in meters with two decimal precision, a hit-chance percentage rounded upward including the % sign\n- The angle value has to be calculated from the vertical\n- The minimum shoot range is exactly 50cm\n- The maximum range should be calculated based on the speed parameter and the most efficient shot angle\n- The hit chance value is a percentage where 100% is the position of the robot and 0% is the maximum shooting range\n- The function returns ```false``` in case: the distance parameter is outside the shoot range, or the hit chance percentage is less than 5%\n\n### To do the math\n\n- Gravitational acceleration should be set to 9.81*m/s2*\n- Height of the box, friction, or other forces, can be ignored\n- If you need the formulas, refer to this Wikipedia article [https://en.wikipedia.org/wiki/Trajectory_of_a_projectile](https://en.wikipedia.org/wiki/Trajectory_of_a_projectile)",
+    "totalAttempts": 158,
+    "totalCompleted": 12,
+    "totalStars": 8,
+    "voteScore": 10,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

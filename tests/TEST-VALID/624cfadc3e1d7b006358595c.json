@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/624cfadc3e1d7b006358595c",
+  "data": {
+    "id": "624cfadc3e1d7b006358595c",
+    "name": "How Many Guesses to Find This Number!",
+    "slug": "how-many-guesses-to-find-this-number",
+    "category": "algorithms",
+    "publishedAt": "2022-04-12T16:15:17.823Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/624cfadc3e1d7b006358595c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-06T02:28:44.495Z",
+    "createdBy": {
+      "username": "Innominate1",
+      "url": "https://www.codewars.com/users/Innominate1"
+    },
+    "description": "In this kata, your task is to find out how many guesses it will take to find a given number from 0 to a given maximum, using the Binary Search Algorithm.\n\n\nBinary Search Steps (Given the minimum number is 0):\n1. Take the maximum number and find 1/2 of it.\n2. Find out if guess is larger, smaller, or equal to target number.\n3. If the guess is larger, set the maximum to the current guess. If there has been a previous guess, find the middle number between the new maximum and the minimum, then start over from step 2 with the middle number as the new guess. If there hasn't been a previous guess, then start over from step 1 with the new maximum.\n4. If the guess is smaller, set the minimum to the current guess. Then make the new guess the middle number between the maximum and the new minimum. If the new guess is a float, round down. Start over from step 3.\n5. If the guess is the target number, stop searching.\n\nExample:\n```python\nguess_calc(6, 10):\n  #logic: guess 5, guess, 7, guess 6, return 3 guesses\n  return 3\n```\n\nExample 2:\n```python\nguess_calc(57, 100):\n  #logic: guess 50, guess 75, guess 62, guess 56, guess 59, guess 57, return 6 guesses\n  return 6\n```\n\nMore Info Here: https://en.wikipedia.org/wiki/Binary_search_algorithm",
+    "totalAttempts": 91,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

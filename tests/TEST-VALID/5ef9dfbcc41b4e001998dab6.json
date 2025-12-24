@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ef9dfbcc41b4e001998dab6",
+  "data": {
+    "id": "5ef9dfbcc41b4e001998dab6",
+    "name": "MITM - Steal the credit cards",
+    "slug": "mitm-steal-the-credit-cards",
+    "category": "games",
+    "publishedAt": "2022-08-18T20:57:31.975Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ef9dfbcc41b4e001998dab6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-29T12:34:04.751Z",
+    "createdBy": {
+      "username": "zLuki",
+      "url": "https://www.codewars.com/users/zLuki"
+    },
+    "description": "# Background story\n\nYou work as a messenger for an online store. Every day you deliver sensitive data between the customer and the vendor. Your salary is very low and when you discover a security hole in the communication, you decide to steal the customers' credit cards for a better lifestyle.\nHowever, in order for your actions not to be noticed too quickly, the whole system should still work smoothly and the order should go through as usual.\n\n# Technical details\n\nIf you have no idea about asymmetric encryption, you should do some <a href=\"https://en.wikipedia.org/wiki/Public-key_cryptography\" target=\"_blank\">research</a> first.\n\nThe communication between the customer and the vendor goes like this:\n- Customer asks for the vendor's public key\n- Vendor hands over his public key\n- Customer sends his credit card encrypted with the vendor's public key\n- Vendor decrypts with his private key and debits the money\n- Vendor thanks the customer for the purchase\n\nImplement a class `Forwarder` with methods `forwardMessage()` and `getCreditCardInformation()`  \n`forwardMessage()` has two parameters: a `message` and a `receiver` who should receive the message.\nYou can send a message to the receiver with the `.send()` method.\n```javascript\nreceiver.send(message);\n```  \n`message` is an object with three properties: `info`, `publicKey` and `encrypted`  \n`info` stores general information about the message as string  \n`publicKey` is used to transport publicKeys (if there is no public key attached to the message it is `null`)  \n`encrypted` is used to transport encrypted data (if there is nothing encrypted it is `null`)  \n\n\n\n`getCreditCardInformation()` should return the credit card number in plain text, after you found a way to break the encryption\n\n# Some details of the encryption\n\n- RSA\n- 2048 modulus length\n- pkcs1 type\n- pem format\n- RSA_PKCS1_OAEP_PADDING padding\n- sha256 oaep hash\n- base64 encoded\n\n",
+    "totalAttempts": 56,
+    "totalCompleted": 16,
+    "totalStars": 20,
+    "voteScore": 20,
+    "tags": [
+      "Security"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52423db9add6f6fc39000354",
+  "data": {
+    "id": "52423db9add6f6fc39000354",
+    "name": "Conway's Game of Life  - Unlimited Edition",
+    "slug": "conways-game-of-life-unlimited-edition",
+    "category": "games",
+    "publishedAt": "2013-10-22T23:01:53.742Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript",
+      "python",
+      "haskell",
+      "java",
+      "csharp",
+      "swift",
+      "php",
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/52423db9add6f6fc39000354",
+    "rank": {
+      "id": -4,
+      "name": "4 kyu",
+      "color": "blue"
+    },
+    "createdAt": "2013-09-25T01:34:49.891Z",
+    "createdBy": {
+      "username": "constablebrew",
+      "url": "https://www.codewars.com/users/constablebrew"
+    },
+    "description": "Given a 2D array and a number of generations, compute n timesteps of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).\n\nThe rules of the game are:\n\n1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.\n2. Any live cell with more than three live neighbours dies, as if by overcrowding.\n3. Any live cell with two or three live neighbours lives on to the next generation.\n4. Any dead cell with exactly three live neighbours becomes a live cell.\n\nEach cell's neighborhood is the 8 cells immediately around it (i.e. [Moore Neighborhood](https://en.wikipedia.org/wiki/Moore_neighborhood)). The universe is infinite in both the x and y dimensions and all cells are initially dead - except for those specified in the arguments. The return value should be a 2d array cropped around all of the living cells. (If there are no living cells, then return `[[]]`.)\n\nFor illustration purposes, 0 and 1 will be represented as `░░` and `▓▓` blocks respectively (PHP: plain black and white squares). You can take advantage of the `htmlize` function to get a text representation of the universe, e.g.:\n\n```javascript\nconsole.log(htmlize(cells));\n````\n```coffeescript\nconsole.log htmlize(cells)\n````\n```python\nprint(htmlize(cells))\n````\n```haskell\ntrace (htmlize cells)\n```\n```java\nSystem.out.println(LifeDebug.htmlize(cells));\n```\n```swift\nprint(htmlize(cells))\n```\n```php\necho htmlize($cells) . \"\\r\\n\";\n```\n```c\nchar *universe = htmlize(cells, rows, columns);\nprintf(\"%s\", universe);\nfree(universe);\n```\n```csharp\nConsole.WriteLine(ConwayLife.Htmlize(cells));\n```\n\n~~~if:c\nIn **C**, the initial dimensions of the GoL universe are passed to your function *by reference* via the pointers `rowptr` and `colptr`. You have to update these two variables to report the dimensions of the universe you are returning.\n~~~",
+    "totalAttempts": 134948,
+    "totalCompleted": 6741,
+    "totalStars": 2005,
+    "voteScore": 1098,
+    "tags": [
+      "Games",
+      "Arrays",
+      "Puzzles",
+      "Cellular Automata"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 7
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

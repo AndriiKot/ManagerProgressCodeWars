@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6143b25a26b2c500078c8be1",
+  "data": {
+    "id": "6143b25a26b2c500078c8be1",
+    "name": "Transform the graph",
+    "slug": "transform-the-graph",
+    "category": "algorithms",
+    "publishedAt": "2021-09-16T21:08:55.715Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6143b25a26b2c500078c8be1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-16T21:08:43.004Z",
+    "createdBy": {
+      "username": "nevepura",
+      "url": "https://www.codewars.com/users/nevepura"
+    },
+    "description": "# Task\nGraphs can be represented in many ways.\nIn this problem, you are given a directed graph in the form of a dictionary of sets of successors, and you have to return the corresponding adjacency matrix. \n\nThis is our example graph:\n![Our graph](https://i.imgur.com/jPPdpZC.jpg)\n\n# Specifications\n## Input: dictionary of sets of successors\nThe input follows these rules:\n* it is a dictionary\n* the dictionary has N keys from 1 to N representing all the  N nodes (consecutive values, with no holes). N > 0.\n* every key has a value that is a set, possibly empty, of direct successor nodes (in other words, for each successor there is an arc that starts from the key and ends at the successor)\n\nOur example graph in this input form is:\n```\n{\n  1: {2},\n  2: {3},\n  3: {1,2},\n  4: set()\n}\n```\n\n\n## Output: Adjacency matrix\nAn adjacency matrix is a square matrix of zeros and ones. The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph. Every cell of the matris is an integer, zero (no link) or one (link).\n\nOur example graph as an adjacency matrix: \n```\n[\n  [0, 1, 0, 0],\n  [0, 0, 1, 0],\n  [1, 1, 0, 0],\n  [0, 0, 0, 0],\n]\n```\n\n# Notes\n* The output must be a matrix of integers. It can be a numpy's matrix or a list of lists. \n* There are around 500 random tests. The input graph can have up to 100 nodes. Each node can be connected up to 18 other nodes, included itself.\n* I hope you enjoy!\n\n",
+    "totalAttempts": 109,
+    "totalCompleted": 50,
+    "totalStars": 1,
+    "voteScore": 32,
+    "tags": [
+      "Data Structures",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

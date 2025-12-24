@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e1e405e72a2cf0019efff51",
+  "data": {
+    "id": "5e1e405e72a2cf0019efff51",
+    "name": "Regular Polygon Detector",
+    "slug": "regular-polygon-detector",
+    "category": "reference",
+    "publishedAt": "2020-01-14T22:27:52.446Z",
+    "approvedAt": null,
+    "languages": [
+      "elixir"
+    ],
+    "url": "https://www.codewars.com/kata/5e1e405e72a2cf0019efff51",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-14T22:27:43.105Z",
+    "createdBy": {
+      "username": "FilipH",
+      "url": "https://www.codewars.com/users/FilipH"
+    },
+    "description": "# Regular Polygon Detector\n\n> Our R&D department has developed a new IOT device that captures images of objects passing by.\nThe different surfaces of these images are plotted as 2D drawings; \nAnd these are translated into a list of cartesian coordinates containing the objects outline.\n\n> Your job is to detect if these objects are **regular polygons** by connecting these coordinates with straight lines in order of appearance.\n\n***definition***\n\n> In Euclidean geometry, a regular polygon is a polygon that is: \n> - **equiangular**: all angles are equal in measure, and \n> - **equilateral**: all sides have the same length.  \n>\n> Regular polygons may be either convex or star formed, but in our case we will only have convex polygons.\n\n***examples***\n```elixir\n> Polygon.is_regular([{1,1},{1,-1},{-1,-1},{-1,1}])  \ntrue\n```\n> all sides have length 2  \n> all angles are 90°\n```elixir\n> Polygon.is_regular([{2,1},{2,-1},{-2,-1},{-2,1}])\nfalse\n```\n> all angles are 90°  \n> but NOT all sides have the same length\n\n***input***\n> - list of {x, y} coordinates containing the polygon's corners\n> - at least 3 coordinates are needed to form a valid polygon\n\n```elixir\nList of Tuples\n[{1.0, 1.0},{1.0, -1.0},{-1.0, -1.0},{-1.0, 1.0}]\n```\n\n***output***\n> - return true when the list contains a regular polygon\n> - return false in all other cases (for irregular polygons, polygons with less then 3 coordinates, ...)\n\n***rounding & comparison rules***\n> - tests will use a precision of 6 decimals when comparing floats, to avoid comparison issues round your final calculations also to 6 decimals\n> - when comparing 2 floats rounded as specified in previous rule, a delta of 0.000001 is used:  \n>   - 2 floats will be equal when the difference is less than or equal 0.000001\n>   - 2 floats will NOT be equal when the difference is greater than 0.000001\n\nHave fun!\n",
+    "totalAttempts": 18,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": -2,
+    "tags": [
+      "Mathematics",
+      "Geometry",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

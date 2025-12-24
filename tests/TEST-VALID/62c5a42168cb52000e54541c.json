@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62c5a42168cb52000e54541c",
+  "data": {
+    "id": "62c5a42168cb52000e54541c",
+    "name": "robotic vacuum",
+    "slug": "robotic-vacuum",
+    "category": "algorithms",
+    "publishedAt": "2022-07-06T15:04:27.599Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/62c5a42168cb52000e54541c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-06T15:02:57.321Z",
+    "createdBy": {
+      "username": "david.pb",
+      "url": "https://www.codewars.com/users/david.pb"
+    },
+    "description": "We have a very lazy robot vacuum cleaner.\n\nWhen activated, it searches for the stain closest to its position and moves towards it to eliminate it. In case there are two equidistant places, choose the one that is closer to the top wall (smaller row) and then to the left wall (smaller column).\n\nThe vacuum cleaner can move diagonally and horizontally.\n\nThe room you have to clean can be considered rectangular.\n\nYou must calculate and return the distance the vacuum cleaner travels to clean each stain and return to the original position.\n\nThe input data is an array of characters where the X symbolizes the origin of the vacuum cleaner and each * a stain to be cleaned.\n\nIt can be considered that there is only one point of origin and at least one stain to be cleaned.\n\nEfficiency is mandatory, there is a solution in O(n^3) but there is one in O(log n *n^2).\nThe solution has a 0.01 margin to be accepted.\n\nFor example:\n\n```\nx   *\n    *\n    * \n```    \nclean (0,2) = + 2 moves\n\n```\nx    \n    *\n    * \n```     \nclean (1,2) = + 1 moves\n\n```\nx    \n     \n    * \n```    \nclean (1,3) = + 1 moves\n\n```\nx    \n     \n       \n```       \nreturn to base (0,0) = + 2.82 moves\n\ntotal = 2 + 1 + 1 +2.82 = 6.82 movements\n\n\n",
+    "totalAttempts": 52,
+    "totalCompleted": 10,
+    "totalStars": 5,
+    "voteScore": 9,
+    "tags": [
+      "Graphs"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

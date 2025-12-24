@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/579f8e5c72292d681e000083",
+  "data": {
+    "id": "579f8e5c72292d681e000083",
+    "name": "Pokemon Go - Extended Edition",
+    "slug": "pokemon-go-extended-edition",
+    "category": "reference",
+    "publishedAt": "2016-08-19T14:16:19.906Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/579f8e5c72292d681e000083",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-08-01T18:01:00.841Z",
+    "createdBy": {
+      "username": "tomhuhges",
+      "url": "https://www.codewars.com/users/tomhuhges"
+    },
+    "description": "![pokemon go](https://media.giphy.com/media/3oEduV4SOS9mmmIOkw/giphy.gif)\n\nNB. If you haven't already, you may want to try the [simplified version](https://www.codewars.com/kata/579387dc7cb7a1e592000112) of this kata.  This kata extends the simplified version to the general case.\n\nThis kata was created in collaboration with codewars warrior [danmarcus](https://www.codewars.com/users/575dde8d3212deb1b6000008).\n\n##Background\n\nIn Pokemon Go, an easy way to increase your XP level is to evolve Pokemon you've caught.  \n\nIn your possession you can have different Pokemon types. You can have more than one of the same Pokemon and you will also have some Candy you received for catching them. The Candy you receive matches the Pokemon family type (eg. a Squirtle will give you Squirtle Candy, as will a Wartortle and Blastoise because they evolved from a Squirtle).\n\nTo evolve a Pokemon you must spend a specific number of the correct Candy type, but you'll be rewarded with 500 XP and 1 extra Candy of the same type.  You will also receive the evolved form of the Pokemon.\n\nIf you need more Candy to be able to evolve a Pokemon, surplus Pokemon from that family can be transferred to Professor Willow in exchange for 1 Candy. You can't trade Candy with Professor Willow to get a Pokemon back.\n\n##Your job\n\nCreate a function that will take an object whose properties are the Pokemon to evolve and whose property values are an array of integers representing (in order) the number of that Pokemon you have and the amount of the relevant Candy type. If you have Pokemon in the same family, the Candy amount for each will be the same value, and should be treated as the total Candy you own for that type. For example, you could receive an input object that looks like the following:\n\n```javascript\n{Pidgey: [1, 11], Pidgeotto: [1, 11]} // this represents 1 Pidgey and 1 Pidgeotto, with 11 Pidgey family Candy\n{Pidgey: [13, 144], Rattata: [9, 150]} // this represents 13 Pidgeys and 9 Rattatas, with 144 Pidgey Candy and 150 Rattata Candy\n```\n\nThe function should return the maximum XP gained from evolving the highest possible number of Pokemon from the given input object.\n\nThe following tips may be helpful:\n- you'll need to take into account the extra Candy gained from transferring and evolving Pokemon;\n- an optimum strategy uses Candy gained from transferring more evolved Pokemon to Professor Willow to evolve less evolved Pokemon of the same family;\n- if you run out of less evolved Pokemon you may still be able to evolve more evolved Pokemon of the same type if you have enough Candy.\n\n##Example\n\nIf you have 2 Pidgeys and 23 Pidgey Candy, you can evolve 1 Pidgey for 12 Pidgey Candy. You have 11 Pidgey Candy left, but you received 1 Pidgey Candy for evolving the first Pidgey, making the 12 you need to evolve the 2nd. You will end up with 1000 XP.  I.e.:\n\n```javascript\nevolveCalc({Pidgey: [2,23]}) // => 1000\n```\n\n##The Pokedex\n\n![pokedex](http://25.media.tumblr.com/46b10f58389e6fd28150a8306b8f34f7/tumblr_mx6re14jMH1rpn9eno1_500.gif)\n\nTo help you, you can consult the Pokedex. You have access to the global variable `pokedex` which is an array of 151 objects with the following structure:\n\n```javascript\nvar pokedex = [\n  {\n    \"number\": \"001\",\n    \"name\": \"Bulbasaur\",\n    \"candy_type\": \"Bulbasaur\",\n    \"candy_amount\": 25,\n  },\n  {\n    \"number\": \"002\",\n    \"name\": \"Ivysaur\",\n    \"candy_type\": \"Bulbasaur\",\n    \"candy_amount\": 100,\n  },\n  {\n    \"number\": \"003\",\n    \"name\": \"Venusaur\",\n    \"candy_type\": \"Bulbasaur\",\n    \"candy_amount\": -1,\n  }\n  ...\n  {\n    \"number\": \"151\",\n    \"name\": \"Mew\",\n    \"candy_type\": \"Mew\",\n    \"candy_amount\": -1,\n  }\n];\n```\n\nThe Pokedex tells you which family the Pokemon is in and how much Candy is needed to evolve it. Pokemon can evolve into the next Pokemon in the Pokedex, providing they share the same `candy_type` property. However, Pokemon with a `candy_amount` of -1 cannot be evolved further.\n\nGood luck!\n\n##Other Kata\n\nCheck out the other kata we have authored individually below:\n\n- [Pokemon Go (simplified)](https://www.codewars.com/kata/579387dc7cb7a1e592000112)\n- [Traffic Police I](https://www.codewars.com/kata/578f660b75ffd1a588000041)\n- [IndexOf Array in Array](https://www.codewars.com/kata/5783ef69202c0ee4cb000265)",
+    "totalAttempts": 186,
+    "totalCompleted": 9,
+    "totalStars": 6,
+    "voteScore": 6,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

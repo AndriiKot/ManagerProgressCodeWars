@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62dfc7edc1e633b815fae046",
+  "data": {
+    "id": "62dfc7edc1e633b815fae046",
+    "name": "projection",
+    "slug": "projection",
+    "category": "algorithms",
+    "publishedAt": "2022-07-27T11:26:54.649Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62dfc7edc1e633b815fae046",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-26T10:54:37.197Z",
+    "createdBy": {
+      "username": "jakebaker",
+      "url": "https://www.codewars.com/users/jakebaker"
+    },
+    "description": "For animation and games it's often necessary to project 3D space onto 2D. A simple example if this is choosing one \"light source\" at a certain point in 3D space, and a \"screen\" as a plane at a distance from the light source. Then points in space distinct from the light source can be projected onto the plane.\n\nIn this problem, the light source is given by a 3-vector `light source`, the screen is placed at x-coordinate `screen_x`, and the point to be projected is at the 3-vector `point`.\n\nThe light source is guaranteed to be in the y-z plane so has x-coordinate zero. The screen is guaranteed to be at a positive x-value (and is parallel to the y-z plane, so will always have x-coordinate `screen_x`). The point to be projected is guaranteed to have a non-zero positive x coordinate which is less than the value of `screen_x`.\n\nYour task is to solve the geometric problem of finding the image point on the screen and implementing this in code.\n\nThe image point should be given as a 3-vector of integer coordinates, even though information is lost through rounding, as images will ultimately be pixels with discrete coordinate values. The x-coordinate will always be `screen_x`. The tests assume you will round down, maybe using `int`.",
+    "totalAttempts": 19,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Mathematics",
+      "Geometry"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

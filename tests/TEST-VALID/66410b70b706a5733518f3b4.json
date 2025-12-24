@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66410b70b706a5733518f3b4",
+  "data": {
+    "id": "66410b70b706a5733518f3b4",
+    "name": "Collatz Conjecture of Congruent Modulo M",
+    "slug": "collatz-conjecture-of-congruent-modulo-m",
+    "category": "algorithms",
+    "publishedAt": "2024-05-12T22:09:47.557Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/66410b70b706a5733518f3b4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-12T18:33:20.400Z",
+    "createdBy": {
+      "username": "Angel !",
+      "url": "https://www.codewars.com/users/Angel%20!"
+    },
+    "description": "## Collatz Conjecture Explained\n\nThe **Collatz Conjecture** is a mathematical hypothesis that applies to positive integers. It states that if you start with any positive integer `n`, the following sequence will always eventually reach 1:\n\n1. If `n` is even, divide it by 2.\n2. If `n` is odd, multiply it by 3 and add 1.\n\nThis process is repeated iteratively, with each number in the sequence being halved if even or tripled and incremented by 1 if odd, until the sequence eventually reaches 1. [See the wiki page.](https://en.wikipedia.org/wiki/Collatz_conjecture)\n\n## Collatz Sequence of Congruent Modulo M.\n\nWe can apply this same proccess for integers of Modulo M, there is the formula for Collatz Sequence of Modulo M that will be applied repeatealy:\n\n```math\n\nf(n)= \\begin{cases}\n   (n/2)\\mod{m} && \\text{if n is even}  \\\\\n   (3n+1)\\mod{m} && \\text{if n is odd} \n\\end{cases}\n\n```\n\nYour objective is create a function `collatz_module(m)` that will return tuple with two values `(value_verification_array, is_conjecture_true_at_M)` where `value_verification_array` is a array of `0` to `m-1` which the element of `value_verification_array[n]` is `true` if `n` eventually reaches 1 and `false` if it loops or go to 0.\n\nThe `is_conjecture_true_at_M` is a boolean, `true` if every `n` bigger than 0 in the `value_verification_array[n]` is `true` otherwise is `false`.\n\n# Function Signature:\n\n```python\ndef collatz_module(m):\n    \"\"\"\n    Generates a tuple containing Analysis of Collatz Conjecture of Congruent Modulo M.\n\n    Parameters:\n      m (int): Number which the sequence will be congruent.\n\n    Returns:\n      tuple: A tuple containing two values:\n          - value_verification_array (list)\n          - is_conjecture_true_at_M (bool)\n\n    \"\"\"\n    return ([], False)\n```\n\n# Input:\n\n**'m'** (2 ≤ m ≤ 80000) - Number which the sequence will be congruent.\n\n# Output:\n\nMust return tuple with two values `(value_verification_array, is_conjecture_true_at_M)`.\n\n# Example:\n```python\nprint(collatz_module(4)) # M=4, Outputs: ([False,  True,  True,  True], True)\nprint(collatz_module(5)) # M=5, Outputs: ([False,  True,  True, False,  True], False)\nprint(collatz_module(6)) # M=6, Outputs: ([False,  True,  True,  True,  True,  True], True)\nprint(collatz_module(7)) # M=7, Outputs: ([False,  True,  True, False,  True,  True, False], False)\n```\n\n\n## Notes\n\n- The `n=0` will be always `false` and `n=1` will be always `true` by the definitions, so you must ignore in the `is_conjecture_true_at_M` verification.",
+    "totalAttempts": 136,
+    "totalCompleted": 20,
+    "totalStars": 4,
+    "voteScore": 25,
+    "tags": [
+      "Performance",
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

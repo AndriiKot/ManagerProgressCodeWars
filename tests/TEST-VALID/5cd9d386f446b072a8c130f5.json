@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cd9d386f446b072a8c130f5",
+  "data": {
+    "id": "5cd9d386f446b072a8c130f5",
+    "name": "Magic Highschool: Sorting spell",
+    "slug": "magic-highschool-sorting-spell",
+    "category": "reference",
+    "publishedAt": "2019-05-24T09:53:04.979Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5cd9d386f446b072a8c130f5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-13T20:28:55.027Z",
+    "createdBy": {
+      "username": "adri326",
+      "url": "https://www.codewars.com/users/adri326"
+    },
+    "description": "It's been one week you've been in the **Magic Highschool**, and your magic spell teacher found out that you and your friend's bedrooms were a mess.\nLater that day, she decided to teach you a new, sorting spell: *onarij-ar* **\\[to make it clean\\]**. No more messy bedrooms!\n\nThis spell, like many others, comes in a lot of varieties; for instance, to sort objects by color, the spell will be *onarij-ar inarij* **\\[to make it clean colorwise\\]**. If you want them to be ordered by color and then by name, simply say *onarij-ar inarij yaxan-ij* **\\[to make it clean colorwise and by name\\]**.\n\nYour task will be to code such a sorting algorithm on your [magical computer](http://www.scp-wiki.net/scp-079).\nThe spell and its varieties all begin with `onarij-ar`, and are then followed by modifiers separated by spaces (there will be no conflict between modifiers):\n\n* `inarij` **\\[colored/colorwise\\]**: sort by color (think wavelength): first purple, then blue, green, yellow, orange, red and lastly colorless\n* `yaxan-ij` **\\[by name\\]**: sort by name, alphabetically\n* `niùn-ij` **\\[by type\\]**: sort by type, alphabetically\n* `onij` **\\[big\\]**: sort by size, from smallest to biggest\n\nYour algorithm will look at the first modifier, and sort it according to it.\nShould there be items sharing the same spot, the algorithm should then refer to the next modifier.\nAs such, *onarij-ar niùn onij* means that you have sort the items by their type and then by their size.\n\nObjects will have the following structure:\n\n```javascript\n{\n  color: \"red\", // may otherwise be \"purple\", ..., \"colorless\"\n  name: \"object's name\",\n  type: \"type\",\n  size: 32 // in centimeters\n}\n```\n\nYour function will be named `execute_spell` and will receive as arguments the `spell` and the `objects`.\n\nIf there are no objects in the room, return an empty array. Additionally, if the spell does not include any modifier or isn't `onarij-ar`, return the untouched array.",
+    "totalAttempts": 330,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Fundamentals",
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

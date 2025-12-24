@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/585a39677cb58d7f8e000078",
+  "data": {
+    "id": "585a39677cb58d7f8e000078",
+    "name": "Power 2",
+    "slug": "power-2",
+    "category": "algorithms",
+    "publishedAt": "2016-12-23T07:39:38.694Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/585a39677cb58d7f8e000078",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-12-21T08:12:23.188Z",
+    "createdBy": {
+      "username": "willin",
+      "url": "https://www.codewars.com/users/willin"
+    },
+    "description": "Prof. Twotwo as the name suggests is very fond powers of 2. Moreover he also has special affinity to number 800. He is known for carrying quirky experiments on powers of 2.\n\nOne day he played a game in his class. He brought some number plates on each of which a digit from 0 to 9 is written. He made students stand in a row and gave a number plate to each of the student. Now turn by turn, he called for some students who are standing continuously in the row say from index i to index j (i<=j) and asked them to find their strength.\n\nThe strength of the group of students from i to j is defined as:\n\n```\nstrength(i , j)\n{\n    if a[i] = 0\n        return 0; //If first child has value 0 in the group, strength of group is zero\n    value = 0;\n    for k from i to j\n        value = value*10 + a[k]\n    return value;\n} \n```\n\nProf called for all possible combinations of i and j and noted down the strength of each group. Now being interested in powers of 2, he wants to find out how many strengths are powers of two. Now its your responsibility to get the answer for prof.\n\n## Input Format\n\nNumber plates the students were having when standing in the row in the form of a string A.\n\n## Constraints\n\n1 ≤ len(A) ≤ 105 \n0 ≤ A[i] ≤ 9\n\n## Output Format\n\nOutput the total number of strengths of the form `2**x` such that 0 ≤ x ≤ 800.\n\n### Sample Input\n\n```\n#1: 2222222\n#2: 24256\n#3: 65536\n#4: 023223\n#5: 33579\n```\n\n### Sample Output\n\n```\nReusult \n#1: 7\n#2: 4\n#3: 1\n#4: 4\n#5: 0\n```\n\n## Explanation\n\nIn following explanations group i-j is group of student from index i to index j (1-based indexing)\n\n* In first case only 2 is of form power of two. It is present seven times for groups 1-1,2-2,3-3,4-4,5-5,6-6,7-7\n\n* In second case 2,4 and 256 are of required form. 2 is strength of group 1-1 and 3-3, 4 is strength of group 2-2 and 256 is strength of group 3-5.\n\n* In third case 65536 is only number in required form. It is strength of group 1-5\n\n* In fourth case 2 and 32 are of forms power of 2. Group 1-2 has values 0,2 but its strength is 0, as first value is 0.\n\n* In fifth case, None of the group has strength of required form.\n",
+    "totalAttempts": 47,
+    "totalCompleted": 11,
+    "totalStars": 4,
+    "voteScore": 10,
+    "tags": [
+      "Mathematics",
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fa7ed8b2ba8d80017f95982",
+  "data": {
+    "id": "5fa7ed8b2ba8d80017f95982",
+    "name": "Match Nested  HTML Snippet",
+    "slug": "match-nested-html-snippet",
+    "category": "reference",
+    "publishedAt": "2020-11-09T05:07:29.201Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5fa7ed8b2ba8d80017f95982",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-11-08T13:07:23.742Z",
+    "createdBy": {
+      "username": "safiir",
+      "url": "https://www.codewars.com/users/safiir"
+    },
+    "description": "## Description\nJust determine whether the specified nested html snippet like `<html><head></head><body><div></div></body></html>` is valid or not. You should provide a function signatured with `matches(String snippet)`, it should return true if it's vaild, return false else.\n\n## Explanation\n1. No need to consider the snippet like `<br>` or `<br/>`, as the tag is always paired & closed.\n2. No need to handle any blank characters & any nested text & any attributes.\n3. The original intention of the kata is to train the skill about regexp, but the regexp's capability is limited in some languages' default regexp engine implementation, so you can use any other approaches to solve the kata.\n4. The tag is unrestricted, including standard ones, and others.\n5. The tag is made up with only latin alphabets(a-z A-Z).\n6. <font color=\"yellow\">If you want to output test data to webpage for debugging, you need to replace \"<>\" to html entity like \"&amp;\tlt;&amp;\tgt;\" to bypass the anti-xss means of the platform. </font>In Ruby, you can use `snippet.gsub('<', '&lt;').gsub('>', '&gt;')`\n\n## Input\n`snippet: String`\n\n## Output\n`Boolean`\n",
+    "totalAttempts": 316,
+    "totalCompleted": 67,
+    "totalStars": 3,
+    "voteScore": 75,
+    "tags": [
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

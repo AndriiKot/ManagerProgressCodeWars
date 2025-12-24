@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bda234b354836ef3000001d",
+  "data": {
+    "id": "5bda234b354836ef3000001d",
+    "name": "Escape Prison!",
+    "slug": "escape-prison",
+    "category": "games",
+    "publishedAt": "2018-10-31T22:32:57.905Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5bda234b354836ef3000001d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-10-31T21:48:59.399Z",
+    "createdBy": {
+      "username": "Hallowizer",
+      "url": "https://www.codewars.com/users/Hallowizer"
+    },
+    "description": "In this kata, you will be escaping a prison using a bomb. However, the compiler will not let you throw this bomb:\n```java\nfinal class Bomb extends Exception {\n  public Bomb() {\n    this(checkCreateBomb());\n  }\n  \n  private Bomb(Void unused) {\n    checkCreateBomb();\n  }\n  \n  private static Void checkCreateBomb() {\n    System.getSecurityManager().checkPermission(new RuntimePermission(\"createBomb\"));\n    return null;\n  }\n}\n```\n\nAlso, the prison guard keeps you from creating bombs:\n```java\nfinal class PrisonGuard extends SecurityManager {\n  @Override\n  public void checkPermission(Permission perm) {\n    String name = perm.getName();\n    if (name.equals(\"createBomb\") || name.equals(\"setSecurityManager\"))\n      throw new SecurityException();\n  }\n}\n```\n\nTo pass this kata, you will need to throw an instance of `Bomb`.",
+    "totalAttempts": 82,
+    "totalCompleted": 13,
+    "totalStars": 6,
+    "voteScore": 17,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

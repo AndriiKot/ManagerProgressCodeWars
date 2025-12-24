@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/551e8c8e24b7a4eddd000441",
+  "data": {
+    "id": "551e8c8e24b7a4eddd000441",
+    "name": "Complex numbers",
+    "slug": "complex-numbers",
+    "category": "algorithms",
+    "publishedAt": "2015-04-03T15:30:47.919Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/551e8c8e24b7a4eddd000441",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-03T12:50:23.479Z",
+    "createdBy": {
+      "username": "edwardsnjd",
+      "url": "https://www.codewars.com/users/edwardsnjd"
+    },
+    "description": "# Introduction\n\nComplex numbers allow us to move from one dimensional to two dimensional maths by introducing an imaginary part tagged on to every real number:\n\nhttp://en.wikipedia.org/wiki/Complex_number\n\nIn this kata you will create a class `Complex` to represent a complex number and handle simple arithmetic.\n\n# Details\n\nAn instance can be constructed by passing in the real and imaginary parts:\n\n`var z = new Complex(real, imag)`\n\nOr an instance can be constructed by passing in just the real part (if there is no imaginary part):\n\n`var z = new Complex(real);`\n\nThe instance, z, then exposes the following members:\n\n- `z.real` = the real part of the number\n- `z.imag` = the imaginary part of the number\n- `z.modulus()` = returns the magnitude of the number\n  - A real number: `sqrt(z.real^2 + z.imag^2)`\n- `z.add(c)`= returns a new complex number representing the result of adding another complex number\n  - Real part: `z.real + c.real`\n  - Imaginary part: `z.imag + c.imag`\n- `z.add(real)`= returns a new complex number representing the result of add the given real number\n  - Real part: `z.real + real`\n  - Imaginary part: `z.imag` (i.e. unchanged)\n- `z.multiply(c)`= returns a new complex number representing the result of multiplying by another complex number\n  - Real part: `z.real * c.real - z.imag * c.imag`\n  - Imaginary part: `z.real * c.imag + z.imag * c.real`\n- `z.multiply(real)`= returns a new complex number representing the result of multiplying by a real number\n  - Real part: `z.real * real`\n  - Imaginary part: `z.imag * real`\n",
+    "totalAttempts": 466,
+    "totalCompleted": 85,
+    "totalStars": 9,
+    "voteScore": 120,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

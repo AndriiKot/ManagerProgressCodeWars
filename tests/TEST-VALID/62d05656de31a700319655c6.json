@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62d05656de31a700319655c6",
+  "data": {
+    "id": "62d05656de31a700319655c6",
+    "name": "Flatten json errors from a form body payload",
+    "slug": "flatten-json-errors-from-a-form-body-payload",
+    "category": "algorithms",
+    "publishedAt": "2022-07-14T17:47:45.581Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62d05656de31a700319655c6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-14T17:45:58.150Z",
+    "createdBy": {
+      "username": "Sigmanificient",
+      "url": "https://www.codewars.com/users/Sigmanificient"
+    },
+    "description": "You are given a python dictionnary this is representing a json response from an api.\n\n\nThe user request add some errors! You goal is to parse the errors from this dictionnary and return a list of the errors, containing the code, the message and the path (keys concatenated by dots) for each.\nYou must return an list of Error (`List[Error]`) using the class `Error` that is provided to you.\n\nThe input will always consist of a dictionnary with a first `errors` and a `message` key containing `Invalid Form Body`. Within the errors sub dictionnary is a path representations of the errors, and nested dictionnary, like how a json response would be formatted. And the leaf of each children of the tree is a list containing 1 or more errors.\n\n\n\n## Example\n*Code and messages are fictional and use only for checking that the solution is correct.*\n\nLet's say the iput is the following:\n```json\n{\n  \"errors\": {\n    \"input\": {\n      \"errors\": [\n        {\n          \"code\": 'BASE_TYPE_CHOICES',\n          \"message\": \"Value must be one of (0, 1, 2, 3, 4, 5).\"\n        },\n        {\n          \"code\": 'BASE_TYPE_INVALID',\n          \"message\": \"Value must be a valid integer.\"\n        }\n      ]\n    }\n  }\n}\n```\n\nYou goal would be to return \n```python\n[\n  Error(code='BASE_TYPE_CHOICES', message=\"Value must be one of (0, 1, 2, 3, 4, 5).\", path=\"input\"),\n  Error(code='BASE_TYPE_INVALID', message=\"Value must be a valid integer.\", path=\"input\")\n]\n```\n\n\n# Another exemple to showcase how the path is concanated.\n```json\n{\n  \"errors\": {\n     \"button\": {\n       \"label\": {\n         \"errors\": [\n          {\n             \"code\": 49804,\n             \"message\": \"Must be 80 or fewer in length.\"\n          }\n        ]\n      }        \n    }\n  }\n}\n```\n\n\nshoud output:\n```python\n[\n  Error(code=49804, message=\"Must be 80 or fewer in length.\", path=\"button.label\")\n]\n```\n\nThe tree length shold no exceed `20`.\nFinally, the returned list does not have to be sorted.\n\n",
+    "totalAttempts": 142,
+    "totalCompleted": 17,
+    "totalStars": 3,
+    "voteScore": 20,
+    "tags": [
+      "Parsing",
+      "JSON"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

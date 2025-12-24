@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5694a406e46d07e7b600001f",
+  "data": {
+    "id": "5694a406e46d07e7b600001f",
+    "name": "AOP - After",
+    "slug": "aop-after",
+    "category": "algorithms",
+    "publishedAt": "2016-01-12T06:58:18.173Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5694a406e46d07e7b600001f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-12T06:58:14.709Z",
+    "createdBy": {
+      "username": "mmaxwell",
+      "url": "https://www.codewars.com/users/mmaxwell"
+    },
+    "description": "Aspect-oriented programming (`AOP`) is programming that adds additional behavior (`advice`) to existing functionality without actually modifying that functionality.\n\nCreate a method called `adviseAfter`. This method will take three arguments, a function (`target`), the advising function (`advice`), and an optional boolean (`originalArguments`).\n\n`adviseAfter` should return a function that, when executed, will first execute the original method and then the advising function with the following conditions:\n\n* The arguments passed to the function returned by `adviseAfter` should be passed to the original method.\n* If `originalArguments` is `true`, the original arguments should be passed to the advising function, otherwise the return value of the original method should be passed as the sole argument to the adivising function.\n* The return value of the advising function should be returned.",
+    "totalAttempts": 159,
+    "totalCompleted": 21,
+    "totalStars": 4,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/582e2448fe38019857000038",
+  "data": {
+    "id": "582e2448fe38019857000038",
+    "name": "Power Trader [PART 1]: Product hours",
+    "slug": "power-trader-part-1-product-hours",
+    "category": "algorithms",
+    "publishedAt": "2016-11-26T12:15:00.201Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/582e2448fe38019857000038",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-17T21:42:32.710Z",
+    "createdBy": {
+      "username": "holmi.cz",
+      "url": "https://www.codewars.com/users/holmi.cz"
+    },
+    "description": "I have decided to create series of Katas based on real examples from power/utilities (and especially trading) area. I think that it may be refreshing to try something more practical. First we begin with something simple.\n\n<h1>Task</h1>\nYour task is to calculate how many hours are valid between two given dates for specified products.\n\nProducts are following:\n<ul>\n  <li>Base load</li> - all days, all hours\n  <li>Peak load</li> - only working days, 8:00-20:00\n  <li>Off-Peak load</li> - during working days 00:00 - 08:00 and 20:00 - 00:00, during weekends all hours\n</ul>\n\nInput will have form of two dates in [C++: dd.mm.yyyy, Java: dd.MM.yyyy) format and product as one of strings \"BASE\", \"PEAK\", \"OFFPEAK\".\n\n\n<h1>Example</h1>\nFirst example is to calculate number of valid hours between 1.11.2016 (Tuesday) and 7.11.2016 (Monday) for base load, which should return 168 <i>```number of days * number of hours```</i>\n\nFor same dates, but Peak load product, function should return <i>```{number of working days} * 12```</i>, which is in this case 5 * 12 = 60.\n\nFor offpeak product, it is <i>```{number of working days} * 12 + {number of weekend days} * 24```</i> = 5 * 12 + 2 * 24 = 108.\n\nDon't forget to take leap years into account! :-) Holidays are irrelevant (will be part 2), and bonus for you is, when you will solve it without using loops",
+    "totalAttempts": 99,
+    "totalCompleted": 22,
+    "totalStars": 7,
+    "voteScore": 22,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Parsing"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

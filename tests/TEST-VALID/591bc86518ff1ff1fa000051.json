@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/591bc86518ff1ff1fa000051",
+  "data": {
+    "id": "591bc86518ff1ff1fa000051",
+    "name": "Simple Fun #287: Multiply Numbers",
+    "slug": "simple-fun-number-287-multiply-numbers",
+    "category": "games",
+    "publishedAt": "2017-05-17T03:59:11.105Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/591bc86518ff1ff1fa000051",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-05-17T03:49:57.472Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "# Task\nBob has entered the primary school and is now learning to multiply non-negative numbers. Since he has just started to learn, he does not know what the carry is yet. To multiply two numbers, he goes through their digits from right to left one by one, multiples the corresponding digits in two numbers and writes down the last digit of the result. If one number has less digits than another one, he appends leading zeros to it.\n\nFor example, `15 x 43 = 45` for Bob, because `5 x 3 = 15` and Bod writes down `5`, and `1 x 4 = 4` so Bob writes `4`.\n\n`2016 x 100 = 0`, because `100` has only `3` digits and should be written as `0100`.\n\nSimilarly, `382 x 31 = 42`.\n\nBob's teacher gave him a list of pairwise distinct non-negative `numbers` not greater than 1000 and asked to find `the maximal number of integers` that can be chosen such that `the product of each pair of the chosen integers is equal to 0`.\n\nHelp Bob solve the task, but remember `to calculate products the same way Bob does`, so the teacher won't suspect that Bob cheated.\n\n\n# Input/Output\n\n`[input]` integer array `numbers`\n\nArray of pairwise distinct numbers.\n\n`1 ≤ numbers.length ≤ 20`\n\n`0 ≤ numbers[i] ≤ 1000`\n\n`[output]` an integer\n\nThe maximum number of integers to chose.\n\n# Example\n\nFor `numbers = [100, 25, 17, 52]`, the output should be `3`.\n\nEach pair of numbers from the group `[100, 25, 52]` has the product of 0 when calculated by Bob's method.\n\n`100 x 25 = 0, 100 x 52 = 0, 25 x 52 = 0`\n\nSo the output is the size of group `[100, 25, 52]`.\n\nFor `numbers = [0, 45, 502, 1000]`, the output should be `4`.\n\nThe product of all number pair in [0, 45, 502, 1000] are equal to 0.\n\n`0 x 45 = 0, 0 x 502 = 0, 0 x 1000 = 0,`\n\n`45 x 502 = 0, 45 x 1000 = 0, 502 x 1000 = 0`\n\nSo the output is `4`.\n\n\n",
+    "totalAttempts": 136,
+    "totalCompleted": 21,
+    "totalStars": 9,
+    "voteScore": 13,
+    "tags": [
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

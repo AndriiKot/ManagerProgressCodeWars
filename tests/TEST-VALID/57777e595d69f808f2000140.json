@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57777e595d69f808f2000140",
+  "data": {
+    "id": "57777e595d69f808f2000140",
+    "name": "Get the closure property",
+    "slug": "get-the-closure-property",
+    "category": "reference",
+    "publishedAt": "2016-07-02T08:52:13.644Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57777e595d69f808f2000140",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-02T08:42:01.080Z",
+    "createdBy": {
+      "username": "sonamu",
+      "url": "https://www.codewars.com/users/sonamu"
+    },
+    "description": "We'll give you an object **obj** like this:\n\n```javascript\nvar obj = (function(){\n  var proper = {\n    a: 1,\n    b: 2,\n    // ... \n  };\n  return {\n    getAttr: function(pro) {\n      return proper[pro];\n    }\n  }\n})()\n```\n\nYou can get proper's value through it's key like this:\n```javascript\nobj.getAttr('b'); // 2\n```\n\n**But, the proper's keys and values are ___randomized___.**\n\nDefine a function called `getAllKeysAndValues` to get an object. It will have attributes for **keys** and **values**, Both attributes will be array to save proper's keys and proper's values.\n\n```javascript\n\n// if the proper is\n{\n  a: 1,\n  b: 2,\n  c: 3\n}\n// getAllKeysAndValues() should return \n{\n  keys: ['a', 'b', 'c'],\n  values: [1, 2, 3]\n}\n```",
+    "totalAttempts": 544,
+    "totalCompleted": 18,
+    "totalStars": 3,
+    "voteScore": 0,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

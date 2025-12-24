@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5824672334c53a539a000408",
+  "data": {
+    "id": "5824672334c53a539a000408",
+    "name": "Trucks Driver Time.",
+    "slug": "trucks-driver-time",
+    "category": "reference",
+    "publishedAt": "2016-11-11T21:40:04.539Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5824672334c53a539a000408",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-10T12:25:07.906Z",
+    "createdBy": {
+      "username": "smolen",
+      "url": "https://www.codewars.com/users/smolen"
+    },
+    "description": "Its not uncommon for truck drivers in europe to get tickets for exceeding daily/weekly driving time without getting proper rests.\nThose limits are neccessary to provide safety on roads.\n\nYou can read about the limits here:\n\nhttps://ec.europa.eu/transport/modes/road/social_provisions/driving_time_en\n\nIn this kata you must write function which validates(returns true if its correct otherwise false) truck drivers activities in span of 24 hours maximum(I.E from 00:00 to 24:00).\nWe will assume that time before and after described activities is when\ntruck driver is resting.\n\nFunction input will be array of arrays which contains strings describing drivers activities.\n```javascript\n//before 8:00 and after 21:30 truck driver was resting\n var sheduleExample = [ [\"8:00-12:30\",\"Drive\"],\n                     [\"12:30-15:30\",\"Rest\"],\n                     [\"15:30-21:30\",\"Work\"]\n                                       ]\n//validateDrivingTime(sheduleExample) returns true\n```\n\nIn this kata we will use simple validation rules:\n\n-In each drivers daily shift,total driving time cannot exceed over 10 hours\n\n-Each drivers daily shift must end with uninterrupted rest minimum 9 hours\n\n-Maximum driving time without rest can be 4,5 hours after that period driver must take rest for 45 minutes minimum or it can be split for 2 rests 15 minutes minimum and then 30 minutes minimum(in that order 15->30,30->15 doesnt work).After that rest driver can drive another max 4,5 hours straight.\nTip:if truck driver did first 40 minutes rest,next rest must still be more than 30 minutes long,to reset 4,5 hours driving time limit.\n\nDaily shift is starting after last rest(minimum 9hours)when truck driver starting activity other than rest(in this kata \"Drive\" or \"Work\").Ends after uninterrupted daily rest(9hours).Daily shift can last maximum for 24 hours which includes daily rest.I.E if trucker starts at 0:00 he must end non-rest activities at 15:00 at the latest.\n\nProper dailyShift :\n\n```javascript\nvar dailyShedule = [ [\"7:00-10:30\",\"Drive\"], //3,5h drive\n             [\"10:30-10:45\",\"Rest\"], //15 minutes rest\n             [\"10:45-11:45\",\"Drive\"], //1h drive ->limit 4,5hours\n             [\"11:45-12:15\",\"Rest\"], //30 minutes rest -> reset limit,can go for another 4,5 hours without 45 minutes type rest.\n             [\"12:15-16:45\",\"Drive\"],//4,5h drive(must take 45 minutes rest to go further,maximum 1 hour to not exceed daily shift limit of 10 hours)\n             [\"16:45-20:15\",\"Work\"],//daily non-rest activities must end at 22:00 at latest to have daily rest of 9 hours included within 24 hours from starting daily shift(7:00)\n```\n\n\n\n\n",
+    "totalAttempts": 216,
+    "totalCompleted": 11,
+    "totalStars": 7,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58a5a575b6c660adca0000a7",
+  "data": {
+    "id": "58a5a575b6c660adca0000a7",
+    "name": "Are you Geometric or Arithmetic? No, I´m both of them.",
+    "slug": "are-you-geometric-or-arithmetic-no-im-both-of-them",
+    "category": "reference",
+    "publishedAt": "2017-02-16T21:45:09.748Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58a5a575b6c660adca0000a7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-16T13:13:25.793Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "See the sequences of the form:\n\n```math\na, \\ (a + d)r, \\ (a + 2d)r^2, \\ (a + 3d)r^3, \\ \\dots, \\ (a + (n - 1)d)r^{n-1}\n```\n\nMake a code that gives the result of the total sum of these `n` terms of the sequence.\n\nSee the example: ```a = 1; d = 2; r = 2; n = 4```\n\nThe terms are ```1, 6, 20, 56``` and the total sum of them is equal to ```83```.\n\nThe needed function will take in the arguments in the following order: ```tot_sum_arith_geom(a, d, r, n)```\n\nThe above case will be:\n```python\ntot_sum_arith_geom(1, 2, 2, 4) == 83\n```\n\n```javascript\ntotSumArithGeom(1, 2, 2, 4) ---> 83;\n```\n\nThe value of a, d or r may be a decimal value, too:\n```python\na = 1; d = 2; r = 0.5; n = 5\ntot_sum_arith_geom(a, d, r, n) == 5.1875\n\na = 0.99; d = 2; r = 0.777; n = 10\ntot_sum_arith_geom(a, d, r, n) == 25.6329345646\n\na = 0.99; d = 0.333333; r = 0.777; n = 100\ntot_sum_arith_geom(a, d, r, n) == 9.64768527243 \n```\n\n```javascript\nvar a = 1, d = 2, r = 0.5, n = 5;\ntotSumArithGeom(a, d, r, n) ---> 5.1875;\n\nvar a = 0.99, d = 2, r = 0.777, n = 10;\ntotSumArithGeom(a, d, r, n) ---> 25.6329345646;\n\nvar a = 0.99, d = 0.333333, r = 0.777, n = 100;\ntotSumArithGeom(a, d, r, n) ---> 9.64768527243; \n```\nYour code will be tested with a great amount of terms up to 5000 in 400 random tests.\n\nBrute force algorithms are not recommended.\n\nEnjoy it!!\n",
+    "totalAttempts": 404,
+    "totalCompleted": 50,
+    "totalStars": 3,
+    "voteScore": 53,
+    "tags": [
+      "Fundamentals",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

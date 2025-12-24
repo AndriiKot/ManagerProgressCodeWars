@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a63ca6380eba8bb5600005a",
+  "data": {
+    "id": "5a63ca6380eba8bb5600005a",
+    "name": "Store Smart Contract!",
+    "slug": "store-smart-contract",
+    "category": "reference",
+    "publishedAt": "2018-01-30T02:43:55.442Z",
+    "approvedAt": null,
+    "languages": [
+      "solidity"
+    ],
+    "url": "https://www.codewars.com/kata/5a63ca6380eba8bb5600005a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-20T23:01:55.235Z",
+    "createdBy": {
+      "username": "Larios953",
+      "url": "https://www.codewars.com/users/Larios953"
+    },
+    "description": "# Store Smart Contract\n\nCreate a smart contract called Store that will enable an owner to sell items in a store. This store will sell multiple items.\n\nDefault/initial code should not be removed, only added to.\n\nFinish the given endpoints so that they react accordingly.\n\n## addItem\n\n1.) Should only be accessible by the owner/creator of the contract.\n\n2.) Should save data about the item, and have the data be accesible by the getItem endpoint. Data `uint id, string name, uint256 price, address buyer`.\n\n3.) The items should be organized by id. With the first item having an id of 1 and incrementing by one every item after that. No two items should have the same id.\n\n4.) Should throw error if owner tries to add an item with price of 0 wei or lower.\n\n5.) Should trigger itemAddedEvent.\n\n## removeItem\n\n1.) Should only be accesible by the owner/creator of the contract.\n\n2.) Should prevent item from being bought through the buyItem function, and change the price of the item to 0. \n\n3.) Previously removed items' data should still be accesible though getItem function. This endpoint should not delete items, only prevent them from being bought.\n\n4.) Should throw error if owner tries removing an item that has already been sold.\n\n5.) Should trigger itemRemovedEvent.\n\n## buyItem\n\n1.) Should be able to purchase an item by id from store and send correct ether value to owner. Should save the buyers address.\n\n2.) Should throw error if user/customer tries to buy an item with an id that has not been assigned to an item. \n\n3.) Should throw error if owner tries to buy an item from his own store.\n\n4.) Should throw error if user/customer tries to buy an item that has previously been sold.\n\n5.) Should throw error if `msg.value` is not equal to the price of the item being purchased. Should be exact value.\n\n6.) Should trigger itemBoughtEvent.\n\n\n## getItem\n\n1.) Should return data of item by id as specified by default/initial code.\n\n2.) Here is the data it should return: `uint id, string name, uint256 price, address buyer`.\n\n\nWarning: If you come accross a compilation warning that contains the following message: \"Variable is declared as a storage pointer. Use an explicit \"storage\" keyword to silence this warning.\".\n\nThis is a bug with solidity version 0.4.13 which Codewars is currently using. This has been fixed in newer versions of solidity. Please ignore this warning as it will not prevent you from passing this kata. ",
+    "totalAttempts": 505,
+    "totalCompleted": 24,
+    "totalStars": 5,
+    "voteScore": 21,
+    "tags": [
+      "Web3",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

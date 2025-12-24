@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6190fb8be0997600082bc96c",
+  "data": {
+    "id": "6190fb8be0997600082bc96c",
+    "name": "Virtual Columns in pandas dataframe - Python",
+    "slug": "virtual-columns-in-pandas-dataframe-python",
+    "category": "algorithms",
+    "publishedAt": "2021-11-14T19:58:32.730Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6190fb8be0997600082bc96c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-14T12:05:31.763Z",
+    "createdBy": {
+      "username": "raulpy271",
+      "url": "https://www.codewars.com/users/raulpy271"
+    },
+    "description": "# Virtual columns in pandas dataframe\n\nYou have a table(`pandas.DataFrame`) with some values and you want create a new table with the old values and with a new column with information that you obtain with the old table. To do it you should implement the function `add_virtual_column`.\n\n## Inputs\n\n- df: any Dataframe\n- role: A mathematical expression that expresses the calculation needed to create the virtual column, example of a valid role `first_column - second_column`.\n- new_column: The name of the new virtual column.\n\n## Examples\n\n```py\n>>> print(sales)\n   name  quantity  price\n0   car         2  10000\n1  bike         3   1000\n```\n\n```py\n>>> sales_with_price_total = add_virtual_column(sales, \"quantity * price\", \"price_total\")\n>>> print(sales_with_price_total)\n   name  quantity  price  price_total\n0   car         2  10000        20000\n1  bike         3   1000         3000\n\n```\n\nthe signature of the function is:\n\n```py\ndef add_virtual_column(df: pandas.DataFrame, role: str, new_column: str) -> pandas.DataFrame:\n    pass\n```\n\n## Validations:\n\n> - The label of any column should be strings of letters without spaces. The words can be separatad by `_`, see examples:\n>   - Valid: `sales`, `sales_today`.\n>   - Invalid: `sales-today`, `sales today`, `sales@today`, etc...\n> - The function must support the three basic operations (addition, subtraction and multiplication).\n> - The result should be an empty dataframe when the `role` is incorrect or when any label are incorrect.\n",
+    "totalAttempts": 473,
+    "totalCompleted": 40,
+    "totalStars": 14,
+    "voteScore": 21,
+    "tags": [
+      "Data Frames",
+      "NumPy",
+      "Arrays",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

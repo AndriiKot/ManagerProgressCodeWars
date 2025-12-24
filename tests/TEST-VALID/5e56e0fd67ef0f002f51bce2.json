@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e56e0fd67ef0f002f51bce2",
+  "data": {
+    "id": "5e56e0fd67ef0f002f51bce2",
+    "name": "One for His Nob: Scoring Cribbage Hands",
+    "slug": "one-for-his-nob-scoring-cribbage-hands",
+    "category": "reference",
+    "publishedAt": "2020-05-05T01:49:30.272Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e56e0fd67ef0f002f51bce2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-26T21:19:57.384Z",
+    "createdBy": {
+      "username": "K3nH2l",
+      "url": "https://www.codewars.com/users/K3nH2l"
+    },
+    "description": "<p>\nThis Kata is concerned with the scoring of hands according to the rules of the card game Cribbage.  Specifically, this Kata is concerned only with the scoring that occurs at the end of each hand.  No prior familiarity with the game of Cribbage is required to complete this challenge.\n</p>\n<br>\n<h2><strong>Preamble</strong></h2>\n<p>\nCribbage is a card game for two persons, played with a standard 52-card deck of playing cards.  Hands are dealt, played and scored until one of the players' scores reaches 121-points, thereby winning the game.  During play, the deal alternates between the players.  At the start of each hand, the deck is shuffled and each player receives 6-cards of which they keep four, placing the discards face-down with their opponenet's to form another hand of 4-cards.  During play, this extra hand (known as <em>the crib</em> or <em>the box</em>) counts as an extra hand for the dealer.\n<br>\nBefore the hand is actually played and scored, the non-dealer cuts the deck and the dealer selects the top card and places it, face-up, atop the remainder of the deck.  This is the <em>start</em> or <em>common card</em>.  It is applied to each player's hand and the crib when determining the point value of each.\n</p>\n<br>\n<h2><strong>How to score a Cribbage Hand</strong></h2>\n<p>\nThe following rules apply when scoring a hand:\n<ul>\n  <li><strong>Fifteen</strong> -- For each unique combination of the hand and start card whose face-values total fifteen, 2-points are scored.</li>\n  <li><strong>Pair, Pair Royal and Double Pair Royal</strong> -- For each unique card pair in the hand and start card, score 2-points.  Three of-a-kind is called a <em>Pair Royal</em> and scores 6-points (It's 3-pairs: AB, AC, BC).  Four of-a-kind is a <em>Double Pair Royal</em> and scores 12-points (It's six pairs: AB, AC, AD, BC, BD, CD)\n  <li><strong>Run</strong> -- A run of three or more consecutive cards in the hand and start card (by rank) scores as many points as the run is long.  Runs cannot go 'round the clock (i.e., from king to ace).</li>\n  <li><strong>Flush (4-card or 5-card)</strong> -- If all cards in the 4-card hand are of the same suit, score 4-points.  Put another way, a 4-card flush <em>cannot</em> comprise 3-cards from the hand plus the start card.  If the start card and all four of the cards in the hand are of the same suit, score 5-points.  5-card and 4-card flushes are each mutually exclusive of the other.</li>\n  <li><strong>His Nob</strong> -- If the hand contains a Jack of the same suit as the start card, score 1-point (for his nob).</li>\n</ul></p>\n<br>\n<h2><strong>The Challenge</strong></h2>\n<p>\nImplement the <code>crib_hand_score()</code> function to correctly calculate and return Cribbage hand scores.\n\nThis function takes two arguments:\n<ol>\n  <li><code>theHand</code> -- A list of 4-strings representing a 4-card hand.</li>\n  <li><code>startCard</code> -- A string representing the start card to combine with the hand.</li>\n</ol><br>\nThe strings used to represent the cards are 2-character mnemonics where the first character indicates the card's rank and the second determines its suit.\n\nIn ascending rank order (1 - 13), the characters used to represent card rank are:\n\n  `{A, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K}`\n\nThe characters used to represent card suit are:\n\n  `{H, C, D, S}`\n\nSo, for example: `'AH'` is Ace of Hearts, `'4C'` is Four of Clubs, `'TD'` is Ten of Diamonds and `'QS'` is Queen of Spades.\n\nAside from the royal cards (Jack, Queen & King) which all have a face-value of 10, a card's face value is equal to its rank.\n</p><br>\n<h2><strong>Test Cases</strong></h2>\n<p>\nYou will be provided a few example test hands.  The full test will add an additional 4,000 randomly generated hands.  When running the full test suite, incorrectly scored hands will be followed by a correctly scored and fully annoted description of the hand.  The test will terminate with an AssertionError exception after 100 failed test cases. \n</p>\n",
+    "totalAttempts": 99,
+    "totalCompleted": 9,
+    "totalStars": 3,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55191a2bcd82ffd5070006fd",
+  "data": {
+    "id": "55191a2bcd82ffd5070006fd",
+    "name": "Sparse  Ruler",
+    "slug": "sparse-ruler",
+    "category": "algorithms",
+    "publishedAt": "2015-03-30T09:55:23.330Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55191a2bcd82ffd5070006fd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-30T09:40:59.404Z",
+    "createdBy": {
+      "username": "ransy",
+      "url": "https://www.codewars.com/users/ransy"
+    },
+    "description": "Your job is to create a minimal complete sparse ruler of length n.\n\n\nA sparse ruler is a ruler in which some of the distance marks may be missing.\n\n\nA complete sparse ruler allows you to measure any integer distance up to its full length by using the ruler once only. i.e the difference between two of its markings.\n\n\nA minimal sparse ruler is one in which if one less maring was used, we would not be able to measure all of the distances 1 to n.\n\n\nYou will be required to return a ruler in string format with 1 indicating mark present and 0 indicating mark missing for marks 0 to n.\n\nFor example when n=9 the below ruler suffices.\n\n 0123456789\n\n'1110001001'\n\n\n0-1 measures 1, 0-2 measures 2, 6-9 measures 3, 2-6 measures 4, 1-6 measures 5, 0-6 measures 6, 2-9 measures 7, 1-9 measures 8 and 0-9 measures 9 respectively.\n\n\n\n\nExamples of failing rulers:\n\nn=9, '1110001101', not minimal: can be done with 5 marks as seen above.\n\nn=9, '1110000101', not complete: can't measure a distance of 3.\n\n\nNote: n will always be a positive number and test cases will allow for different rulers that meet all conditions.\n\n\n\n```javascript\nperfectruler(3) //could return '1101' or '1011'\nperfectruler(8) //could return '111001001'...\n```\n\nGood luck!",
+    "totalAttempts": 208,
+    "totalCompleted": 11,
+    "totalStars": 4,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

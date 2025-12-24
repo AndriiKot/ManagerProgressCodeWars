@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/639e316b29d4990016ba6666",
+  "data": {
+    "id": "639e316b29d4990016ba6666",
+    "name": "[Code Golf] Collatz conjecture: Maximum, Steps and More Restriction",
+    "slug": "code-golf-collatz-conjecture-maximum-steps-and-more-restriction",
+    "category": "games",
+    "publishedAt": "2022-12-18T05:51:59.258Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/639e316b29d4990016ba6666",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-17T21:15:23.420Z",
+    "createdBy": {
+      "username": "LanXnHn",
+      "url": "https://www.codewars.com/users/LanXnHn"
+    },
+    "description": "# Collatz conjecture:\n\nIn the procedure of [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture), for the given number n, do the following:\n\n* If n is odd: times 3 and then add 1. `(n = 3 * n + 1)`\n\n* If n is even: divide n by 2. `(n = n / 2)`\n\n```\nexample, input n is 3\n\nn = 3               step 0\n\nn = 3 * 3 + 1 = 10  step 1\n\nn = 10 / 2 = 5      step 2\n\nn = 5 * 3 + 1 = 16  step 3 (maximum number)\n\nn = 16 / 2 = 8      step 4\n\nn = 8 / 2 = 4       step 5\n\nn = 4 / 2 = 2       step 6\n\nn = 2 / 2 = 1       step 7\n```\n\nAnd by repeating the above procedure, n will become `1` (Not proof yet, but true for the numbers used in this Kata).\n___\n\n# Task:\n\nGive an input `n`, return a tuple of the following:\n\n* First: the maximum number in the procedure, `n` is included.\n\n* Second: the steps needed to get to `1`.\n\n* Third: the steps needed to get the maximum number `(First)`.\n\nIn the above case, `n = 3`, should return `(16, 7, 3)`.\n\n`1 <= n <= 100`\n___\n\n# Restrictions:\n\n_While on Beta, it may be changed._\n\n* Your code length limit is 110, should be less or equal to it.\n\n* Your code can only have 1 or less whitespace `' '`.\n\n* Your code may not have tab `'\\t'`.\n___\n\n# Examples\n\n```\n1 -> (1, 0, 0)\n2 -> (2, 1, 0)\n3 -> (16, 7, 3)\n4 -> (4, 2, 0)\n5 -> (16, 5, 1)\n6 -> (16, 8, 4)\n7 -> (52, 16, 5)\n8 -> (8, 3, 0)\n9 -> (52, 19, 8)\n10 -> (16, 6, 2)\n\n```",
+    "totalAttempts": 123,
+    "totalCompleted": 17,
+    "totalStars": 2,
+    "voteScore": 23,
+    "tags": [
+      "Mathematics",
+      "Restricted"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/579e3ccee298a75c4b000075",
+  "data": {
+    "id": "579e3ccee298a75c4b000075",
+    "name": "Finish NxN Array Tic-Tac-Toe Game",
+    "slug": "finish-nxn-array-tic-tac-toe-game",
+    "category": "reference",
+    "publishedAt": "2016-07-31T19:40:23.638Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/579e3ccee298a75c4b000075",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-31T18:00:46.468Z",
+    "createdBy": {
+      "username": "Kayanda",
+      "url": "https://www.codewars.com/users/Kayanda"
+    },
+    "description": "The purpose of this kata is to find the final move needed for either player 1 or player 2 to win their game of Tic-Tac-Toe. Because the two players are veterans at Tic-Tac-Toe they increased the difficulty of their game by altering the size of the board to be a nxn array. the array will always be in the form of [[1,2,...,(n-1),n],[1,2,...,(n-1),n],...,[1,2,...,(n-1),n]], this array will have n nested lists within it (for a clearer picture check the test cases). \n\nAll of the boards given will either be one move away from winning for the selected player, unable to be solved in one move, or are already won by the selected player. Disregard whether or not the unselected player has won.The boards will only contain 0,1,2 as values within the lists. 1 indicates a mark made by player 1, 2 indicates a mark made by player 2, and 0 indicates a free space that has not been marked by either player.\n\nIf the board requires one more additional move for the player to win, reading the board from left->right and top->bottom, e.g for a board of [[1,0,2],[1,2,1],[0,2,0]] -> 1,0,2,1,2,1,0,2,0 select the first free space,0, that the selected player could choose in order to win the game.Then return the index position of the free space that the player chose in order to win. So in the above example the first free space player 2 could make to win is [0,1].\n\nIf the board has already been solved by the selected player return the index position of the first free space in the board.\n\nIf the board cannot be solved in one move by the selected player return -1.",
+    "totalAttempts": 206,
+    "totalCompleted": 12,
+    "totalStars": 4,
+    "voteScore": 0,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

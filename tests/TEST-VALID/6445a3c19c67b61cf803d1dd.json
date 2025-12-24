@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6445a3c19c67b61cf803d1dd",
+  "data": {
+    "id": "6445a3c19c67b61cf803d1dd",
+    "name": "No more duplicates in phone contacts!",
+    "slug": "no-more-duplicates-in-phone-contacts",
+    "category": "reference",
+    "publishedAt": "2023-04-23T21:34:39.128Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/6445a3c19c67b61cf803d1dd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-04-23T21:31:45.489Z",
+    "createdBy": {
+      "username": "alex_penza",
+      "url": "https://www.codewars.com/users/alex_penza"
+    },
+    "description": "<p>Duplicates in phone contacts can cause a lot of confusion and inconvenience. For instance, if you have two contacts with the same name on your phone, you may accidentally call the wrong person or send a message to the wrong contact. This could lead to misunderstandings or even serious consequences in certain situations, such as accidentally sending a sensitive message or contacting the wrong emergency contact. Additionally, having multiple contacts with the same name can make it difficult to keep track of your contacts, and can clutter your phone's contact list. Therefore, it's important to avoid duplicates in phone contacts to ensure that your contacts are accurate and easy to manage.</p>\n\n<p>Your task for this kata is to write a program that validates (and modifies if necessary) new names for your phone contacts list, in order to avoid duplicates.</p>\n\n<p>Input is an array of Strings that represents a phone's contacts list and a String \"name\", which is a new name, that requires validation.<br>\nIf the name isn't yet present in the contacts list, just return it, no modifications required.<br>\nBut if the name is present, you should first modify it, by adding a number in parentheses to it. This number will depend on how many times the \"name\" occurs in your contacts. Please see the examples below.</p>\n<hr>\n<p>Example 1:<br>\ncontacts list = {\"Maria\", \"John\", \"Steve\"}, name = \"Steve\";<br>\nYour function should return \"Steve (1)\";</p>\n\n\n<p>Example 2:<br>\ncontacts list = {\"Maria\", \"Steve\", \"Steve (1)\", \"Steve (2)\"}, name = \"Steve\";<br>\nYour function should return \"Steve (3)\";</p>\n\n\n<p>Example 3:<br>\ncontacts list = {\"Maria\", \"Steve (1)\"}, name = \"Steve\";<br>\nYour function should return \"Steve\";</p>\n<p></p>\n\n<p>If the contacts list or name are null - return null.<br>\nIf name is an empty String or composed of spaces only - also return null.</p>",
+    "totalAttempts": 46,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

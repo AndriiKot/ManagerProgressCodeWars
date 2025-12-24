@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/630ba90ff5800def3480c9c9",
+  "data": {
+    "id": "630ba90ff5800def3480c9c9",
+    "name": "Footie Formations",
+    "slug": "footie-formations",
+    "category": "reference",
+    "publishedAt": "2022-08-29T15:35:18.953Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/630ba90ff5800def3480c9c9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-28T17:42:39.916Z",
+    "createdBy": {
+      "username": "laurajayneharvey",
+      "url": "https://www.codewars.com/users/laurajayneharvey"
+    },
+    "description": "## The background ⚽\nAssociation Football / soccer rules state that the game must be played with a maximum of 11 players (not including substitutes). That is: one goalkeeper and a maximum of ten outfield players.\n\nThe rules do not specify any player positions apart from the goalkeeper, but the specialised roles for outfield players are typically\n- defenders\n- midfielders\n- forwards\n\nFormations can be expressed as the number of defenders, then the number of midfielders, then the number of forwards. For example 3-5-2 would be 3 defenders, 5 midfielders and 2 forwards.\n\n## The function\nFor this Kata, complete the function so that given the inputs of\n- a `position` and \n- a `count` of players in that given position\n\nit outputs all possible formations as '{number of defenders}-{number of midfielders}-{number of forwards}', with formations separated by a new line character.\n\n## The assumptions\n- The position name can only be one of 'Defender', 'Midfielder', 'Forward'\n- The count of players in that given position will be provided as an integer between 0 and 10\n- All formations will use the maximum 10 outfield players, i.e. the counts for the three positions should always have a sum of 10\n\n## The example\nWith the input of `position` 'Defender' and `count` 4, one possible expected output would be\n`'4-0-6\\n4-1-5\\n4-2-4\\n4-3-3\\n4-4-2\\n4-5-1\\n4-6-0'`\n\nExplanation: The defender count is provided so we know all formations will be expressed as '4-{number of midfielders}-{number of forwards}' with the sum of the midfielder count and the forward count being 6 (the 10 total outfield players less the 4 defenders already assigned).\n\n## The last note\nThe order of the formations in the output is not important e.g. for `position` Defender and `count` 9, both '9-0-1\\n9-1-0' and '9-1-0\\n9-0-1' would be acceptable outputs\n\n\n\n",
+    "totalAttempts": 26,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": 16,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

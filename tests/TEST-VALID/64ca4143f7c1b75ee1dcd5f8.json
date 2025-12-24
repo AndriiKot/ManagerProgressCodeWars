@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64ca4143f7c1b75ee1dcd5f8",
+  "data": {
+    "id": "64ca4143f7c1b75ee1dcd5f8",
+    "name": "Darts Solver",
+    "slug": "darts-solver",
+    "category": "reference",
+    "publishedAt": "2023-08-02T12:00:51.050Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64ca4143f7c1b75ee1dcd5f8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-02T11:42:59.754Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "You're given a dartboard divided into sections, each section has a **unique** score. That means there won't be two sections with the same score.\n\n![alt text](https://i.imgur.com/J8Q9Oxv.png)\n\nThrowing a certain amount of valid darts, find how many solutions there are to reach the target score. Your function will be passed three parameters...\n\n- **Sections**: An array of values for the sections (e.g. `[3, 6, 8, 11, 15, 19, 22]`, the array is already sorted).\n\n- **Darts**: The amount of darts to throw.\n\n- **Target**: The target score.\n\nReturn an empty array if no solution is found, otherwise an array of non-duplicate strings for each solution (e.g. `[\"3-11-18\", \"7-7-18\", \"7-11-14\"]`).\n\n### Examples\nIf there are duplicate values, keep only the one sorted from smallest to biggest.\n\n```\n\"8-19-8\"\n\n\"8-8-19\" <-- This is the one you would keep.\n\n\"19-8-8\"\n```\n\nMultiple solutions should be sorted before returning them.\n\n```\n[\"3-11-18\", \"7-7-18\", \"7-11-14\"] is ok.\n\n[\"7-11-14\", \"7-7-18\", \"3-11-18\"] is not ok.\n```\n\n### Notes\n- Multiple darts **can** land in the same section.\n\n- A dart **must** land in a valid section (it can't miss).",
+    "totalAttempts": 163,
+    "totalCompleted": 41,
+    "totalStars": 2,
+    "voteScore": 30,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

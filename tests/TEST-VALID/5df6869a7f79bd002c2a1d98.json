@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5df6869a7f79bd002c2a1d98",
+  "data": {
+    "id": "5df6869a7f79bd002c2a1d98",
+    "name": "H Shifter",
+    "slug": "h-shifter",
+    "category": "reference",
+    "publishedAt": "2019-12-16T15:51:18.253Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5df6869a7f79bd002c2a1d98",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-15T19:16:42.367Z",
+    "createdBy": {
+      "username": "user5236811",
+      "url": "https://www.codewars.com/users/user5236811"
+    },
+    "description": "For sports car drivers it is important to switch up H Shifter in time.\nH Shifter - it is a car system that helps you to drive safer (Also shifter protects motor). It is like this:\n```\n1  3   5  R\n|  |   |  |\n-----N-----\n|  |   |\n2  4   6\n```\nRULE:\n\nHigher stage - Longer time to next stage\n\nTASK:\n\nInput arguments are:\n\n1:   Number of stages in shifter       \n2:   Percent of time shifting from the first to the second stage      \n3:   Time of shifting from neutral stage to the first stage     \n\nWhrite a function what will return time of shifting from ```before last stage``` to ```lastStage```.\n\nEXSAMPLE:\n\n```\ntimeForShift(5, 120, 1);  ---->  2     becouse:\n\n// from 1 to 2 stage:\n\n1 * (120 %) = 1.2\n\n// from 2 to 3 stage:\n\n1.2 * (120 %) = 1.44\n\n// from 3 to 4 stage:\n\n1.44 * (120 %) = 1.728\n\n// from 4 to 5 stage:\n\n1.728 * (120 %) = 2.0736\n\n// Round the result number to lower number:\n// 2.0736 ---> 2\n// 3.567  ---> 3\n// 5.9999 ---> 5\n```\n\nIN PROCESS OF UPGRAGING!\n",
+    "totalAttempts": 25,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

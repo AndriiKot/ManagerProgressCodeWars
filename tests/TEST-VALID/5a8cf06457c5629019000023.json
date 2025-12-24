@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a8cf06457c5629019000023",
+  "data": {
+    "id": "5a8cf06457c5629019000023",
+    "name": "Slow Looping",
+    "slug": "slow-looping",
+    "category": "reference",
+    "publishedAt": "2018-02-21T04:08:43.717Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a8cf06457c5629019000023",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-21T04:07:01.259Z",
+    "createdBy": {
+      "username": "Pamblam",
+      "url": "https://www.codewars.com/users/Pamblam"
+    },
+    "description": "The task is to write a function that allows us to run an asynchronous function for each item in an array - the catch is, it must run the function sequentially - in other words, the asynchronous function for the first item must finish before the next one is started.\n\n### Rules...\n\nYour function (`slowLoop`) will take 2 arguments: \n - The array to be looped over\n - A (`loopBody`) function - the function that is executed once for each item in the array.\n \nThe `loopBody` function must receive 3 arguments:\n - The current item in the array\n - The index of the current item in the array\n - A callback function that is called after the async task is finished, to trigger the next iteration in the \"loop.\"\n \nYour function (`slowLoop`) must return a Promise, which must be resolved only after all items in the array have been iterated.\n\n### Example\n\nGiven the below example, your `slowLoop` function should log each item to the console, waiting a full second between each one, and then log \"done looping\" after all items have been logged.\n\n```javascript\nslowLoop([1,2,3], function(item, index, callback){\n  setTimeout(()=>{\n    console.log(`item number ${index} is ${item}`);\n    callback(); \n   }, 1000)\n}).then(()=>{\n   console.log(\"done looping\")\n});\n```",
+    "totalAttempts": 81,
+    "totalCompleted": 46,
+    "totalStars": 3,
+    "voteScore": 17,
+    "tags": [
+      "Recursion",
+      "Promises",
+      "Asynchronous",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6505a761a5de2b816b408bc6",
+  "data": {
+    "id": "6505a761a5de2b816b408bc6",
+    "name": "User Login",
+    "slug": "user-login",
+    "category": "algorithms",
+    "publishedAt": "2023-09-17T05:48:59.678Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6505a761a5de2b816b408bc6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-16T13:02:25.954Z",
+    "createdBy": {
+      "username": "light_the_light",
+      "url": "https://www.codewars.com/users/light_the_light"
+    },
+    "description": "## Explaination\nCreat a class that helps users log in.These are functions the class will include:  \n- ```__init__(self,password)```  \nThis will creat a user with password.All types are supported.The user is not logged in now.\n- ```login(self,password)```  \nIf the given password equals to the password that is registered,the user will log in and the function will return \"login\". If not, return \"try_again\".Note that one user only has 5 chances to log in.If the password is wrong for the fifth time,the user will be locked and the function will return \"lock!\".If a locked user tries to log in,return \"locked\".\n\n  If the user has already logged in,return \"You have already logged in!\"\n- ```logout(self)```  \nThis will log out the user and return \"logout\".If the user has already logged out,return \"You have already logged out!\"  \n## Example  \n```python\nuser1=user_login(123456)\nuser1.login(1)#should return \"try_agian\"\nuser1.login(2)#should return \"try_agian\"\nuser1.login(3)#should return \"try_agian\"\nuser1.login(4)#should return \"try_agian\"\nuser1.login(5)#should return \"lock!\"\nuser1.login(1)#should return \"locked\"\nuser2=user_login(123456)\nuser2.login(123456)#should return \"login\"\nuser2.login(123456)#should return \"You are already logged in!\"\nuser2.logout()#should return \"logout\"\nuser2.logout()#should return \"You are already logged out!\"\n```\n",
+    "totalAttempts": 16,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

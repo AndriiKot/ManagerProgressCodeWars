@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65dadfeaac0d2a8e856c6167",
+  "data": {
+    "id": "65dadfeaac0d2a8e856c6167",
+    "name": "Coins Balance Puzzle",
+    "slug": "coins-balance-puzzle",
+    "category": "games",
+    "publishedAt": "2024-02-25T15:28:40.373Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65dadfeaac0d2a8e856c6167",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-25T06:36:26.990Z",
+    "createdBy": {
+      "username": "lachesism",
+      "url": "https://www.codewars.com/users/lachesism"
+    },
+    "description": "# Task  \nGiven a balance and `$\\frac{3^n - 3}{2}$` coins (labeled **sequentially** from `0` using non-negative integers), **one** coin **may** have a different weight. Your task is to determine whether such a coin exists and, if so, whether it is **lighter** or **heavier** than the others, using the balance **no more than** `n` times.  \n\n### Input  \n- `n`, a positive integer greater than `1`, represents the maximum number of times the balance can be used. It also indicates that there are `$\\frac{3^n - 3}{2}$` coins.  \n\n- `balance(left, right)`, a function simulates a real-life balance. More details are in the *Note section*.  \n\n### Output  \n```if:python  \n- If all coins weigh the same, returns `None`.  \n\n- If the coin labeled `l` is **lighter** than the other coins, returns `(l, -1)`.  \n\n- If the coin labeled `l` is **heavier** than the other coins, returns `(l, 1)`.\n```\n\n---\n\n# Note  \n- <font color=99CCCC>If you find yourself doing some *micro-optimizations*, there's a high chance that you're choosing an **<font color=CCFF99>unintended hardcore</font>** path.</font>  \n\n- The two parameters `left` and `right` of the `balance` function must satisfy the following conditions:  \n\n  - They are both **sets**. For ease of description, denote them by `$L$` and `$R$`, respectively.  \n\n  - `$|L| = |R|$`.  \n\n  If any of the above conditions are not met, the `balance` function will **immediately** raise/throw an error indicating the problem.  \n\n  - Let `$A = \\mathbb{Z} \\cap \\left[0, \\frac{3^n - 3}{2} \\right)$`, then `$L \\cap R = \\empty \\land L \\subset A \\land R \\subset A$`.  \n\n  If the above condition is not met, and  \n\n  - the `HEAVY_VALIDATE` flag **is set**, the `balance` function will **immediately** raise/throw an error indicating the problem.  \n\n  - the `HEAVY_VALIDATE` flag **is not set**, the `balance` function's behavior is **undefined**.  \n\n- The output of the `balance` function is very similar to some programming langauges' `cmp` function. It returns one of `$\\{-1, 0, 1\\}$` according to the following rules:  \n\n  - If the weight on the `left` side of the balance is **less** than the weight on the `right` side, returns `-1`.  \n\n  - If the weight on the `left` side of the balance **equals** the weight on the `right` side, returns `0`.  \n\n  - If the weight on the `left` side of the balance is **greater** than the weight on the `right` side, returns `1`.  \n\n~~~if:python  \n- The type hint of the `balance` function is:  \n\n  ```python  \n  balance(left: frozenset[int], right: frozenset[int]) -> Literal[-1, 0, 1]  \n  ```\n\n  Make sure to follow the type hint.  \n~~~\n\n---\n\n# Examples  \n<center>The following table <b>completely</b> solves the <em>n = 2</em> case:</center>  \n\n|balance({0}, {1})|balance({1}, {2})|results|\n|:-:|:-:|:-:|\n|-1|-1|This will never happen|\n|-1|0|Coin `0` is lighter|\n|-1|1|Coin `1` is heavier|\n|0|-1|Coin `2` is heavier|\n|0|0|All coins weigh the same|\n|0|1|Coin `2` is lighter|\n|1|-1|Coin `1` is lighter|\n|1|0|Coin `0` is heavier|\n|1|1|This will never happen|\n\n---\n\n# Tests  \n```if:python  \n- Let `$T_n$` denote the number of tests for a particular `$n$`.  \n\n- For all tests, `$n \\in \\mathbb{Z} \\cap [2, 14) \\land T_n = \\min(3^n - 2, 46\\_ 667)$`.  \n\n- `111` fixed tests for `$n \\in \\{2, 3, 4\\}$`.  \n\n- `3_153` small random tests for `$n \\in \\{5, 6, 7\\}$`.  \n\n- `72_907` medium random tests for `$n \\in \\{8, 9, 10\\}$`.  \n\n- `140_001` big random tests for `$n \\in \\{11, 12, 13\\}$`.  \n```\n\n---\n\n# Appendix  \n<center>Provides two functions to help with <em>local debugging</em>. :)</center>  \n\n```python  \ndef generate_tests(n, cnt):\n    from random import sample\n    m = (3 ** n - 3) // 2\n    return (None, *(x < 0 and (~x, -1) or (x, 1) for x in sample(range(-m, m), min(2 * m, cnt - 1))))\n\n\ndef do_tests(heavy_validate, solve, n, tests):\n    def balance(left, right):\n        nonlocal count\n        count += 1\n        for s, name in (left, \"left\"), (right, \"right\"):\n            if type(s) is not frozenset: raise TypeError(f\"The '{name}' parameter should be a frozenset, instead of a {type(s)}.\")\n        if len(left) != len(right): raise ValueError(f\"{len(left) = } should be the same as {len(right) = }.\")\n        if heavy_validate:\n            if not left.isdisjoint(right): raise ValueError(\"The 'left' set should have no intersection with the 'right' set.\")\n            for s, name in (left, \"left\"), (right, \"right\"):\n                for x in s:\n                    if type(x) is not int: raise TypeError(f\"There exists an element '{x}' in the '{name}' set that is not an int, but a {type(x)}.\")\n                    if x < 0 or x >= m: raise ValueError(f\"There exists an int '{x:_d}' in the '{name}' set that is not in the interval [0, {m:_d}).\")\n        if fake is None: return 0\n        return fake[1] * ((fake[0] in left) - (fake[0] in right))\n\n    m = (3 ** n - 3) // 2\n    for fake in tests:\n        count = 0\n        ans = solve(n, balance)\n        if ans != fake: raise ValueError(f\"{ans} should be {fake}.\")\n        elif count > n: raise ValueError(f\"The balance should not be used more than {n} times. Actual times: {count}.\")\n```",
+    "totalAttempts": 151,
+    "totalCompleted": 7,
+    "totalStars": 3,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Puzzles",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

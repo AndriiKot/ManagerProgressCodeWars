@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b6c934983b76340bb00010f",
+  "data": {
+    "id": "5b6c934983b76340bb00010f",
+    "name": "Mental Math Confidence Series, Part 1: Product Decomposition of Squares of Numbers ending in 5",
+    "slug": "mental-math-confidence-series-part-1-product-decomposition-of-squares-of-numbers-ending-in-5",
+    "category": "reference",
+    "publishedAt": "2018-08-17T11:38:02.223Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b6c934983b76340bb00010f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-09T19:17:30.022Z",
+    "createdBy": {
+      "username": "saiyan91",
+      "url": "https://www.codewars.com/users/saiyan91"
+    },
+    "description": "*Longer-term learning outcome: This series focuses on developing basic but powerful mental arithmetic ideas. They accumulate through this Kata series with the intention being to enable the user to perform complex mental math. This is the first part of this series.*\n\n***\n\n**Definition:** We define the **_Head_** of an integer number (of more than 2 digits) as being all bar the last 2 digits. For example, the Head of 123 is 1.\n\n**Task:** Complete `productDecomp(inputNum)` to perform a 3 factor product decomposition of the Head, of an integer squared, and return the result as `solArray`. If the input integer does not end in 5, return `solArray` as empty.  This is best illustrated with examples.\n\n**Example 1:** `productDecomp(123) === []`. Explanation: 123 is an integer that does not end in 5, therefore we return an empty array. \n\n**Example 2:** `productDecomp(75) === [2,4,7]`. Explanation: If `inputNum === 75`, we note that 75<sup>2</sup> = 5625. We only care about the Head of the number, namely 56. We could decompose this into 2\\*4\\*7 and therefore a solution is `[2,4,7]`. We are restrictive on the output array solution, please see notes below for explanation.\n\n**Notes:**\n\n1. `inputNum` will always be an integer and will be 30 or greater.\n2.\tYou must not use 1 as one of the 3 factor decomposition numbers. That is why Example 2 cannot return `[1,2,28]`.\n3.\tYou must use 2 as one of the factor decomposition numbers which again alludes to why the output of Example 2 is as shown.\n4.\tYour solution method must not use squaring in any way. For example, do not use \\*, \\**, `Math.pow()`etc.\n5.\tYou must return `solArray` in ascending order.\n6. [Hints: Please click here if a bit stuck.](https://www.flickr.com/photos/141856599@N06/43357173954/in/dateposted-public/)\n",
+    "totalAttempts": 68,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Data Types",
+      "Arrays",
+      "Numbers",
+      "Mathematics",
+      "Algorithms",
+      "Logic",
+      "Integers",
+      "Arithmetic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bb0f5392ce5333b56000301",
+  "data": {
+    "id": "5bb0f5392ce5333b56000301",
+    "name": "Distributing Candies Fairly Pro",
+    "slug": "distributing-candies-fairly-pro",
+    "category": "algorithms",
+    "publishedAt": "2018-09-30T16:13:37.837Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5bb0f5392ce5333b56000301",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-30T16:09:29.787Z",
+    "createdBy": {
+      "username": "safiir",
+      "url": "https://www.codewars.com/users/safiir"
+    },
+    "description": "### *Description*\n  There are some candies which need to be distributed to some children as fairly as possible. Your assignment is to implement a function with signature `distribute(m, xs)` while `m` represents candies' amount and `xs` contains some weights which represents each child's weight to gain the candy. The function should return a List which holds the candies' amount each child should gains.\n### *Rule*\n- *Each child hold a weight which represents his deserved shares of the candies.*\n\n\n- *If children with share receiving weight == 0 don't deserve candies at all.*\n\n\n- *Each share is a integer, and may be different from each other, so you should guarantee that <font color=\"red\">the variance of share to be as small as possible.*</font>\n\n\n- *For fairness, we prescribe that <font color=\"red\">less weight, higher priority to gain shares.*</font>\n\n\n- *For fairness, if there are same weights for different children, we prescribe that <font color=\"red\">from left to right in xs, priority is getting lower and lower to gain shares.*</font>\n\n### Example & Explanation\n```ruby\ndistribute(50, [6, 4, 3, 0, 5, 2, 3]) should be [12, 8, 8, 0, 10, 6, 6]\n\nProof:\n\n∵ sum([6, 4, 3, 0, 5, 2, 3]) = 23 and divmod(50, 23) = (2, 4) \n∴ Each share can be 2 or (2 + 1 = 3) candies.\n\ncount(candies = 3) = 4 & count(candies = 2) = 23\n\nThe child with lower weight has higher priority to choose share, so...\nThe child with weight = 0 can be ignored.\nThe child with weight = 2 get 2 * 3 = 6 candies.\n\nThe child located at left has higher priority to choose share, so...\nThe 1st child with weight = 3 get 2 * 3 + 1 * 2 = 8 candies. 4 shares with candies = 3 have been distbuted.\nThe 2nd child with weight = 3 get 3 * 2 = 6 candies.\nand so on......\n\nps: Is it seems to be very confusing?\n\n```\n### *Notice*\n- `m < 0` is equivalent to `m = 0`\n- if `sum(xs) = 0` the algorithm should return `[0] * size(xs)`\n\n### *Input*\n1. `m: Integer 「 m ≤ 10 ^ 6」 ` represents the candies' total amount.\n2. `xs: [x: Integer] 「 x ≥ 0 & size(xs) ≤ 10 ^ 3 」` represents the weight each child holds.\n\n### *Output*\n`[Integer]`",
+    "totalAttempts": 33,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

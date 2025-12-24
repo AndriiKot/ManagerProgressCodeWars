@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5525507f2142d7947d001034",
+  "data": {
+    "id": "5525507f2142d7947d001034",
+    "name": "The Enigma Machine - Part 4: A Rotor Part II",
+    "slug": "the-enigma-machine-part-4-a-rotor-part-ii",
+    "category": "algorithms",
+    "publishedAt": "2015-04-08T17:27:41.282Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5525507f2142d7947d001034",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-08T15:59:59.321Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "In this series of Kata, we will be implementing a software version of the [Enigma Machine](http://en.wikipedia.org/wiki/Enigma_machine).\r\n\r\nThe Enigma Machine was a message enciphering/deciphering machine used during the Second World War for disguising the content of military communications.  [Alan Turing](http://en.wikipedia.org/wiki/Alan_Turing) - the father of computing - formulated and developed concepts that are the basis of all computers in use today, he did this in response to the vital need to break those military communications.  Turing and his colleagues at [Bletchley Park](http://en.wikipedia.org/wiki/Bletchley_Park) are generally recognised as being responsible for shortening WWII by two years and saving an estimated 22 Million lives.\r\n\r\nThe Enigma Machine consisted of a number of parts: Keyboard for input, rotors and plugboard for enciphering, and lampboard for output.\r\n\r\nWe will simulate input and output with strings, and build the rotors, plugboard and mechanism that used them in software.  As we progress the code will become more complex, so you are advised to attempt them in order.\r\n\r\nStep 1: The Plugboard [(Kata)](http://www.codewars.com/kata/5523b97ac8f5025c45000900)\r\n\r\nStep 2: A Rotor [(Kata)](http://www.codewars.com/kata/5523d69ec8f5025540000b47)\r\n\r\nStep 3: The Reflector [(Kata)](http://www.codewars.com/kata/5523f26ec8f5025286000d53)\r\n\r\nStep 2: A Rotor Part II [(Wikipedia)](http://en.wikipedia.org/wiki/Enigma_rotor_details)\r\n\r\nIn this Kata, you must extend your rotor component to support additional behaviour.  \r\n\r\n### Change\r\nIn step 2 we implemented the rotor, with support for a ring and rotor rotation, but in reality the rotors were not used in just one direction encoding from right to left.  In fact, a signal is passed from input to output, through other components, and **backwards** through the rotor from a second **output** to a second **input**, so left to right, then right to left.\r\n\r\n### Nomenclature\r\nFor the sake of clarity we will denote:\r\n\r\n* a rotor input position with *i*,\r\n* a rotor output position with *o*,\r\n* a reflector input/output position with *r*.\r\n\r\n### Physical description\r\nSince the connection between each input and output is just a single wire, the electrical connection between input and output is reversible.\r\n\r\nFor example if we have a rotor encoding: *i*A -> *o*Z, *i*B -> *o*Y, *i*C -> *o*X, etc.  Then this means we really have a bi-directional mapping: *i*A <-> *o*Z, *i*B <-> *o*Y, *i*C <-> *o*X.\r\n\r\nThus when encoding a single character, a single rotor performs two conversions one forwards, and one backwards, the (partial) electrical path through the machine would be:\r\n\r\n|Step|Component|Description|Mechanism Sends|Mechanism Receieves|\r\n|:---|:---|:---|:---|:---|\r\n|1|Rotor 3|Encode right-to-left|*i*A|*o*J|\r\n|2|Rotor 2|Encode right-to-left|*i*J|*o*N|\r\n|3|Rotor 1|Encode right-to-left|*i*N|*o*F|\r\n|4|Reflector|Reflect|*r*F|*r*P|\r\n|5|Rotor 1|Encode left-to-right|*o*P|*i*Q|\r\n|6|Rotor 2|Encode left-to-right|*o*Q|*i*A|\r\n|7|Rotor 3|Encode left-to-right|*o*A|*i*X|\r\n\r\nBecause of the reflector, there is guaranteed to be no clash between the forward and backward paths through the reflectors when encoding takes place.  Hence, no input or output on a single rotor is used more than once.\r\n\r\n### Note\r\nWhile in the actual usage of the original Enigma Machine, punctuation was encoded as words transmitted in the stream, in our code, anything that is not in the range A-Z will be returned unchanged and not affect the internal state of the machine.\r\n\r\n### Kata\r\nThe new version of the `Rotor` class you will implement, will:\r\n\r\n1. Construct with:\r\n* Rotor name,\r\n* List of cross-wired pairs as a 26 character string, e.g. \"ZYX...\" indicates *i*A -> *o*Z, *i*B -> *o*Y, *i*C -> *o*X,\r\n* List of notch positions as a string, e.g. \"AC\" indicates notches at positions one and three,\r\n* Position of the ring, e.g. \"D\" indicates the dot at position four,\r\n* Initial visible letter on the ring, e.g. \"F\" indicates the rotor is initially placed in the mechanism with \"F\" visible.\r\n\r\n2.&nbsp;Validate the state is legitimate. If it is not, raise an exception.\r\n\r\n3.&nbsp;Implement the method `process` to take a single mechanism input into the rotor and generate a mechanism output.\r\n\r\n4.&nbsp;Implement the method `reprocess` to take a single mechanism output into the rotor and generate a mechanism input.\r\n\r\n5.&nbsp;Maintain rotational state as appropriate.\r\n\r\n---\r\n\r\nPython example:\r\n    \r\n    rotorI = Rotor(\"I\", \"EKMFLGDQVZNTOWYHXUSPAIBRCJ\", \"Q\", \"Z\", \"O\")\r\n    print rotorI.process(\"A\", False), rotorI.reprocess(\"P\")\r\n    print rotorI.process(\"M\", True), rotorI.reprocess(\"C\")\r\n    print rotorI.process(\"T\", False), rotorI.reprocess(\"B\")\r\n    print rotorI.process(\".\", True), rotorI.reprocess(\".\")\r\n\r\nExpected output:\r\n\r\n    ('S', False) L\r\n    ('V', True) C\r\n    ('J', False) H\r\n    ('.', False) .\r\n",
+    "totalAttempts": 75,
+    "totalCompleted": 11,
+    "totalStars": 24,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

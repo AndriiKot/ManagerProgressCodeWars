@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57fbf3c460a4f6b45d00011c",
+  "data": {
+    "id": "57fbf3c460a4f6b45d00011c",
+    "name": "Matrices III: The ultimate matrix",
+    "slug": "matrices-iii-the-ultimate-matrix",
+    "category": "reference",
+    "publishedAt": "2016-10-30T20:23:30.261Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/57fbf3c460a4f6b45d00011c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-10T20:02:12.844Z",
+    "createdBy": {
+      "username": "MazTheMazy",
+      "url": "https://www.codewars.com/users/MazTheMazy"
+    },
+    "description": "This is the third member of a series of katas about matrices.\n\nIn the previous katas, we have made `Matrix` classes capable of setting and retrieving the elements in the matrix of performing operations on them. Now we will combine the mathematical functionality with the generic element type.\n\n# Task\n\nImplement the following methods and constructors in the generic `Matrix` class:\n\n* `Matrix()`: the constructor takes a two dimensional array and converts the values to store internally. The argument mustn't be null, mustn't contain null elements and the subarrays' length must be the same. Matrices cannot be of size 0 in any dimension. The second the constructor should take 2 int parameters, the number of rows and columns respectively, and intialize a matrix of the given size.\n\n* `get()`: returns the element in the matrix at position `(i, j)`. Indices range from 1 to the number of of rows/columns.\n\n* `set()`: changes the element at position `(i, j)` to the value passed to the method.\n\n* `transpose()`: returns the transpose of the matrix (rows and columns flipped)\n\n* `add()`: adds the argument to this matrix; only matrices with the same dimensions can be added.\n\n* `multiply()`: multiplies the argument with this matrix, so A.multiply(B) is equivalent to _AB_ (see the rules of matrix multiplcation in previous kata or wikipedia).\n\n* `multiplyLeft()` and `multiplyRight()`: multiplies this matrix with the given non-null argument, multiplying each element with the argument. The first method does __c\\*e__, the second __e\\*c__ for every element _e_ and the argument _c_.\n\n* `pow()`: raises this matrix to a positive integer power. Only defined for square matrices (number of rows and columns are equal).\n\n* `subMatrix()`: discards the _i_-th row and _j_-th column of the matrix.\n\n* `toArray()`: converts this matrix to a two-dimensional array with element type of the matrix' element type.\n\nAll methods that would modify the original matrix should return a new matrix instead, so the `Matrix` class should be __immutable__. If an argument doesn't hold to the requirements specified in the description of the method, you should throw an `IndexOutOfBoundsException` if it's an index issue, or an `IllegalArgumentException` otherwise. Only exception to that rule, is when you want to raise a non-square matrix to _any_ power: then you should throw an `UnsupportedOperationException`.\n\n# Generics\n\nKeep in mind that you need to write all the methods and constructors using generics, so that the matrix can contain any type of element. The type parameter of the matrix is the element type of the matrix. Now the problem is, how do you add or multiply together two objects which are not numbers?\n\nFor that purpose, you need to define the `MatrixElement` interface (outside the `Matrix`˙class), which has 2 abstract methods: `add` and `muliply`. In order to ensure type safety, the interface itself should be generic as well, and the two methods should take 1 argument and return an object both of the type specified by the type parameter.\n\nI let you figure out how to implement exactly those parameters, but the error messages given by the JVM will probably help you out. You also need to make it so that a matrix can contain other matrices in order to be able to nest matrices, which is just pretty cool IMO.\n",
+    "totalAttempts": 206,
+    "totalCompleted": 5,
+    "totalStars": 5,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Mathematics",
+      "Algebra",
+      "Linear Algebra",
+      "Arrays",
+      "Matrix"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

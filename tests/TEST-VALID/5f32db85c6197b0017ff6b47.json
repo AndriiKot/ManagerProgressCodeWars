@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f32db85c6197b0017ff6b47",
+  "data": {
+    "id": "5f32db85c6197b0017ff6b47",
+    "name": "Bresenham Circle Algorithm",
+    "slug": "bresenham-circle-algorithm",
+    "category": "algorithms",
+    "publishedAt": "2020-08-11T19:12:31.678Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f32db85c6197b0017ff6b47",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-11T17:55:17.776Z",
+    "createdBy": {
+      "username": "CopperFr",
+      "url": "https://www.codewars.com/users/CopperFr"
+    },
+    "description": "# Bresenham Circle Algorithm\n\n### Task\n\nCode function `circle` with bresenham algorithm without using any `floats`, `*`, `/`, `%`.\n\n`Algorithm using only integer arithmetic` can be found on the [wikipedia page](https://en.wikipedia.org/wiki/Midpoint_circle_algorithm#Variant_with_integer-based_arithmetic).\n\nFunction `circle` accepts 5 parameters: \n\nThe first two parameters ```xc, yc```, are coordinates of center for the circle of radius ``r`` to draw on ``screen`` using ``color``. \n\n``screen`` is a 2d array of char (or string length 1) for example ``screen(13, 7, '⬜')`` generate:\n\n```\n[\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n]\n```\n\n``color`` is the char to use to plot pixels of the circle on the screen. \n\n### Example :\n\n``circle(5, 3, 3, screen(13, 7, '⬜'), '⬛')``\n\nshoud return :\n\n```\n[\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n[\"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬛\", \"⬛\", \"⬛\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\", \"⬜\"],\n]\n```\n\nYou need to plot pixels of the circle in the screen array and returning it.\n\nPlease note:\n\n1. origin of screen is top / left (screen[0][0])\n2. new screen must be returned\n3. color will always be ``⬛`` and background will be ``⬜``\n4. screen could already have some pixels drawn (multicircle and random tests)\n5. all circles will be drawn entirely on screen (no clipping needed)\n6. screen function is a helper to generate a screen 2d array width x height pixels using a char as background color\n7. `floats`, `*`, `/`, `%` are not allowed in this kata. Bit shifting is.\n8. in tests expected screen is in green and actual wrong is in red. Screen is white when it's ok.",
+    "totalAttempts": 57,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Graphics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

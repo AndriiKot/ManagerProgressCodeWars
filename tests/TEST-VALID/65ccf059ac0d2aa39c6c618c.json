@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65ccf059ac0d2aa39c6c618c",
+  "data": {
+    "id": "65ccf059ac0d2aa39c6c618c",
+    "name": "Swinging factorials",
+    "slug": "swinging-factorials",
+    "category": "algorithms",
+    "publishedAt": "2024-02-15T07:42:28.437Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65ccf059ac0d2aa39c6c618c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-14T16:54:49.294Z",
+    "createdBy": {
+      "username": "jonb42",
+      "url": "https://www.codewars.com/users/jonb42"
+    },
+    "description": "## Introduction\n\nYou've probably heard of factorials and there's a chance you've written, or attempted, to create some code which can calculate them.  There is a lesser known variant of factorials known as swinging factorials, of which the first few are 1, 1, 2, 6, 6, ...\n\n\n## Definition\n\nSwinging factorials have a technical definition:\n\n>a(n) is the number of vertices of the polytope resulting from the intersection of an n-hypercube with the hyperplane perpendicular to and bisecting one of its long diagonals. - Didier Guillet, Jun 11 2018\n\nThat probably doesn't help much, so, to get you started, here's a definition:\n\n```math\n\\begin{cases}\n   s_0 = 1 \\\\\n   s_n = n^{n \\text{ mod } 2} * (4/n)^{(n+1)\\text{ mod } 2} * a_{n-1} &\\text{for } n \\geqslant 1\n\\end{cases}\n```\n\nIf recursive definitions just aren't your thing (no judgement here!) there are alternatives, the discovery of which I shall leave as a classic 'exercise for the student'...\n\n\n# The problem\n\nWrite a function which generates the swinging factorial for a given positive integer, n.\n\nAll of the tests inputs will be valid, so there's no need to validate them.\n\n## Hint\n\nSwinging factorials are one of the sequences in the [OEIS](https://oeis.org/).\n\n## Bigger Hint\n\n[This](https://oeis.org/A056040) is the OEIS page you're looking for.",
+    "totalAttempts": 116,
+    "totalCompleted": 27,
+    "totalStars": 2,
+    "voteScore": 36,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

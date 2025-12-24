@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66336c7bfeae6b189bde9624",
+  "data": {
+    "id": "66336c7bfeae6b189bde9624",
+    "name": "Get Next Monday",
+    "slug": "get-next-monday",
+    "category": "algorithms",
+    "publishedAt": "2024-05-02T10:37:12.432Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66336c7bfeae6b189bde9624",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-02T10:35:39.707Z",
+    "createdBy": {
+      "username": "Mackay",
+      "url": "https://www.codewars.com/users/Mackay"
+    },
+    "description": "# Challenge Details\nYour goal is to create a function `getNextMonday` that accepts a `dateString` as input (e.g. 2024-05-02 00:00:00) and returns the date object representing the next Monday after the given date.\n\n## Function Signature\n```javascript\nconst getNextMonday = (dateString) => {\n    // Your implementation here\n};\n```\n## Input\nThe function takes a single argument:\n`dateString`, a string representing a date in the format YYYY-MM-DD HH:mm:ss.\n\n## Output\nThe function should return a JavaScript Date object representing the date of the next Monday after the given date.\nThe time part of the returned date should be preserved as it is from the input date.\n\n## Requirements and Clarifications\n- The function should calculate the next Monday based on the provided date, not on the current date.\n- If the input date falls on a Monday, the function should return the date of the next Monday (i.e., 7 days later).\n- If the input date falls on any other day of the week, the function should calculate the number of days required to reach the next Monday and add it to the given date.\n- The time part of the returned date should remain the same as the time part from the input date.\n\n#### To ensure your function works correctly, write test cases for the following scenarios:\n\n- Dates that fall on Monday and the function should return the following Monday.\n- Dates that fall on other days of the week and the function should calculate the number of days to add to reach the next Monday.\n- Dates that are at the beginning or end of the year, including handling leap years.",
+    "totalAttempts": 205,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Date Time"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

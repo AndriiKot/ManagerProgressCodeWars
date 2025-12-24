@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5599569f1cd61a22c20000b8",
+  "data": {
+    "id": "5599569f1cd61a22c20000b8",
+    "name": "SQL Query Builder",
+    "slug": "sql-query-builder",
+    "category": "algorithms",
+    "publishedAt": "2015-07-05T16:12:31.312Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5599569f1cd61a22c20000b8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-07-05T16:09:04.229Z",
+    "createdBy": {
+      "username": "daniele-rapagnani",
+      "url": "https://www.codewars.com/users/daniele-rapagnani"
+    },
+    "description": "## Overview\n\nYour task in this kata is to create a SQL query builder.\n\nA query builder is a component that is used as an abstraction layer of the underlying SQL flavor such as MySQL, PostgreSQL or Transact-SQL, allowing the user to switch seamlessly between them. Another advantage of using the query builder, is that it will handle any escaping or sanitization needed to build the query.\n\nIn this kata you'll build a simplified version of a query builder that can only handle select statements and that will output the resulting MySQL query.\n\n## Methods\n\nHere's a list of the methods that must be implemented:\n\n### select(columns)\n\nTakes an array in which every item can be a string or an object representing the columns to be selected.\n\nObjects can be used to specify an alias and must follow this format:\n\n```javascript\n{ column: \"column_name\", alias: \"alias_name\" }\n```\n\nIf a column appears in the input more than once, only the last one will be used in the final query.\n\n**NOTE:** Your builder should default to selecting all columns if the **select**/**addSelect** method is never called.\n\n### addSelect(columns)\n\nActs exactly as the select method, the only difference being that columns are added to the existing select made with the **select** method or previous **addSelect** calls.\n\n### where(name, value, op = \"=\")\n\nAdds a where condition to the query, chained by an \"AND\" to the preceding ones. If value is a string it should be escaped in single quotes.\n\n**NOTE:** To chain multiple conditions, start your where with a \"1 = 1\" condition, so that you'll not need to worry about stripping the initial \"AND/OR\" from the first condition.\n\n### orWhere(name, value, op)\n\nSame as the where method, but the condition is chained by an \"OR\" to the previous one.\n\n### take(count, skip = false)\n\nSpecify that only the first **count** records should be taken and that, if so specified, **skip** should be skipped.\n\n### first()\n\nSpecify that only the first matching record should be selected.\n\n### toString()\n\nYour toString method should output the final MySQL query.\n\n## Final notes\n\nQueries are tested using regular expressions so you don't need to worry about whitespaces or casing, as long as your queries are valid they should pass. The only exception to this rule is that you must use single quotes over double quotes for strings.\n\nHave fun!\n",
+    "totalAttempts": 681,
+    "totalCompleted": 10,
+    "totalStars": 10,
+    "voteScore": 3,
+    "tags": [
+      "SQL",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

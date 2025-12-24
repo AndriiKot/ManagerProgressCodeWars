@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5703c332e55d300d310012bd",
+  "data": {
+    "id": "5703c332e55d300d310012bd",
+    "name": "DIY ActiveRecord a.k.a KataRecord",
+    "slug": "diy-activerecord-aka-katarecord",
+    "category": "reference",
+    "publishedAt": "2016-04-05T21:13:04.103Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5703c332e55d300d310012bd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-04-05T13:52:50.880Z",
+    "createdBy": {
+      "username": "khovansky-al",
+      "url": "https://www.codewars.com/users/khovansky-al"
+    },
+    "description": "Those warriors who worked with Ruby on Rails are familiar with ActiveRecord.\nRails is built on MVC pattern where M stands for Model. Model describes an entity which has a corresponding table in database. ActiveRecord is actually ORM library. And today - you're going to build your own... kind of.\n\nWe are going to use not a real database but an imitation. There are two `Hashes` prepared for you: `DB` and `DB_SCHEMA`. The first one is our \"Database\" while the second will serve as a definition of \"tables\" and \"columns\" there (a.k.a `schema.rb`).\n\nHere is and example of database and it's schema after creating `Person` model and a corresponding table. \n\n\n````ruby\nDB_SCHEMA = { person: [:id, :name, :address] } # our \"DB schema\"\nDB = { person: [] } # \"DB\" itself\n````\n\n\n_**For the sake of simplicity we:**_\n\n- Do not mess with table name pluralization. Person model will have \"person\" table.\n- Do not care about data types.\n\n**All the required code to \"create tables\" is handled by kata.**\n\nYour job is to create a class `KataRecord` which will be our kind-of ORM and give any of its' subclasses these abilites:\n\n- create instance of model from parameters `Hash`. Note that you should only pass parameters that exist in this model's DB schema entry. You should also raise exception if provided argument is not a `Hash`.\n- get and set entity attributes using methods named after these attributes (ex: `person.name`, `person.name = \"Warrior\"`\n- find record by id (every Model will have id as a \"primary key\") using `find(id)` method. Keep in mind that 1st record should have ID == 1 or at least pretend to.\n- find record by any other attribute name using corresponding method (ex: Person has name so we can use `find_by_name(name)` method)\n- save record to database with autoincrementing ID\n- delete record from database\n\nGood luck!",
+    "totalAttempts": 487,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 1,
+    "tags": [
+      "Metaprogramming",
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

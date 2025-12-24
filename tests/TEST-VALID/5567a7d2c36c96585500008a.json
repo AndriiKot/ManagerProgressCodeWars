@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5567a7d2c36c96585500008a",
+  "data": {
+    "id": "5567a7d2c36c96585500008a",
+    "name": "Future",
+    "slug": "future",
+    "category": "reference",
+    "publishedAt": "2015-05-31T13:20:09.972Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5567a7d2c36c96585500008a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-28T23:42:10.564Z",
+    "createdBy": {
+      "username": "zimmermann",
+      "url": "https://www.codewars.com/users/zimmermann"
+    },
+    "description": "# Future\n\nCreate a flow control for asynchronous functions using future. Future has two public methods, fulfill and when. The fulfill method will be called when the asynchronous function returns with the result, that result is passed as parameter to when function.\n\n- The future can be fulfilled just once. If fulfill function is called a second time it should raise an Exception.\n- It must hold state in case of when callback is attached after fulfill be called.\n\nIt will be like that:\n\n```javascript\nvar doSomethingAsync = function() {\n  var future = new Future();\n  process.nextTick(function() {\n    var err = false;\n    var value = \"Success\";\n    future.fulfill(err, value);\n  });\n  return future;\n};\n\ndoSomethingAsync().when(function(err, value) {\n  console.log(err, value);\n});\n```\n\n# Joining Futures\n\nYou must be able to join two or more future to do something. The Join waits untill all Future are fulffiled and aggregate their errors and responses as an array. \n\n```javascript\nvar join = new Join();\njoin.add(doSomethingAsync());\njoin.add(doSomethingAsync());\njoin.add(doSomethingAsync());\n\njoin.when(console.log);\n```\n\nIn the previous example the result received on when function is that:\n```javascript\n[false,false,false] [\"Success\", \"Success\", \"Success\"]\n```",
+    "totalAttempts": 309,
+    "totalCompleted": 16,
+    "totalStars": 8,
+    "voteScore": 7,
+    "tags": [
+      "Asynchronous",
+      "Promises",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

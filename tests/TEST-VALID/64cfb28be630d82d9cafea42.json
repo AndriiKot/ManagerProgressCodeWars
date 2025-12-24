@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64cfb28be630d82d9cafea42",
+  "data": {
+    "id": "64cfb28be630d82d9cafea42",
+    "name": "Catalog grocery store | Sorting | #1",
+    "slug": "catalog-grocery-store-sorting-number-1",
+    "category": "reference",
+    "publishedAt": "2023-08-06T14:49:13.620Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64cfb28be630d82d9cafea42",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-06T14:47:39.247Z",
+    "createdBy": {
+      "username": "3au4onok",
+      "url": "https://www.codewars.com/users/3au4onok"
+    },
+    "description": "You are working on a catalog of an online grocery store, and you need to create a function that will return a sorted array of products according to the following requirements:\n- At the beginning of the array should be products that will expire soon (field 'dayUntilExp')\n- If there are products with the same expiration date, then sort them by decreasing popularity (field 'popularity')\n- If the product has expired (dayUntilExp < 0), then create a field 'suggestion' with the text \"Exclusive offer just for you\" and set the popularity to 999\n\n\nThe input array will always be longer than one, there will always be an object with the necessary fields inside (the suggestion field must be created independently). The value in the fields dayUntilExp will be in the range [-100;1000], field population in the range [0;1000]\n\n\n<br>\n<br>\n\n\n# Example\n\n### #1\n``` javascript\n [ { name:'Cucumber', dayUntilExp:7, popularity:10 }, { name:'Tomato', dayUntilExp:1, popularity:0 } ]\n\n// Should return\n\n [ { name:'Tomato', dayUntilExp:1, popularity:0 }, { name:'cucumber', dayUntilExp:7, popularity:10 } ]\n```\n\n\n### #2\n``` javascript\n [ \n    { name:'Cucumber', dayUntilExp:7, popularity:10 },\n    { name:'Tomato', dayUntilExp:1, popularity:0 },\n    { name:'Potato', dayUntilExp:1, popularity:10 } \n ]\n\n// Should return\n\n [ \n    { name:'Potato', dayUntilExp:1, popularity:10 },\n    { name:'Tomato', dayUntilExp:1, popularity:0 },\n    { name:'Cucumber', dayUntilExp:7, popularity:10 } \n ]\n```\n\n\n### #3\n``` javascript\n [ \n    { name:'Cucumber-mini',      dayUntilExp:7, popularity:10 },\n    { name:'Cucumber-maxi',      dayUntilExp:7, popularity:31 },\n    { name:'Cucumber-avg',       dayUntilExp:7, popularity:0  },\n    { name:'Banana',             dayUntilExp:6, popularity:5  },\n    { name:'Banana-mini(<20cm)', dayUntilExp:1, popularity:34 },\n    { name:'Banana-avg',         dayUntilExp:1, popularity:4  },\n    { name:'Banana-dark',        dayUntilExp:1, popularity:43 },\n ]\n\n// Should return\n\n [ \n    { name:'Banana-dark',        dayUntilExp:1, popularity:43 },\n    { name:'Banana-mini(<20cm)', dayUntilExp:1, popularity:34 },\n    { name:'Banana-avg',         dayUntilExp:1, popularity:4  },\n    { name:'Banana',             dayUntilExp:6, popularity:5  },\n    { name:'Cucumber-maxi',      dayUntilExp:7, popularity:31 },\n    { name:'Cucumber-mini',      dayUntilExp:7, popularity:10 },\n    { name:'Cucumber-avg',       dayUntilExp:7, popularity:0  },\n ]\n```\n\n\n### #4\n``` javascript\n [ \n    { name:'Mandarine', dayUntilExp:1, popularity:100 },\n    { name:'Kilka', dayUntilExp:-1, popularity:0 },\n ]\n\n// Should return\n\n [ \n    { name:'Kilka', dayUntilExp:-1, popularity:999, suggestion: 'Exclusive offer just for you' },\n    { name:'Mandarine', dayUntilExp:1, popularity:100 },\n ]\n```\n   ",
+    "totalAttempts": 32,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Sorting",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

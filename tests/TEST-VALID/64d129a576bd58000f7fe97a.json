@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d129a576bd58000f7fe97a",
+  "data": {
+    "id": "64d129a576bd58000f7fe97a",
+    "name": "Your first use of ast: Inspecting Python Functions",
+    "slug": "your-first-use-of-ast-inspecting-python-functions",
+    "category": "reference",
+    "publishedAt": "2023-08-07T22:37:08.322Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64d129a576bd58000f7fe97a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-07T17:28:05.959Z",
+    "createdBy": {
+      "username": "Polymorbism",
+      "url": "https://www.codewars.com/users/Polymorbism"
+    },
+    "description": "\n## AST Series:<br>\n+ Your first use of ast: Inspecting Python Functions (this one!)\n+ [AST Series #2: Your First NodeTransformer](https://www.codewars.com/kata/64dbb4ab529cad81578c61e7)\n+ [AST Series #3: The Missing Link](https://www.codewars.com/kata/64dd031d9a9b8c1bc6972e9f)\n\n# Preamble\nThe ast module provides functions to parse Python source code and convert it into an abstract syntax tree. This AST representation allows you to analyze, manipulate, and transform Python code programmatically. It is particularly useful in scenarios where you need to perform static analysis, code generation, or code modification.\n# Task\nYour task is to write a function `describe_fn` to inspect a python function when given its source `source`, and return information about it.\n# Instructions\nYou will write a function `describe_fn` taking a function's source code `source` as input, and will use Python's [AST](https://docs.python.org/3/library/ast.html) to grab information about it.<br>\n`describe_fn` will return a `dict`:\n`{`<br>\n`'name': <The given function's name>`<br>\n`'argument_names': <The names of the arguments of the given function as a list>,`<br>\n`'statement_count': <The count of statements in the given function>`<br>\n`}`\n\n\n# Extras\nAll inputs will be valid functions.\n# Constraints\n`exec` and `eval` are disabled.\nImporting from `inspect` is considered cheating and will fail (inspect katas coming soon?).",
+    "totalAttempts": 208,
+    "totalCompleted": 61,
+    "totalStars": 7,
+    "voteScore": 87,
+    "tags": [
+      "Language Features",
+      "Metaprogramming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

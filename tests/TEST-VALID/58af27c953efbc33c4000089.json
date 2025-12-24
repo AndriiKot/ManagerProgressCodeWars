@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58af27c953efbc33c4000089",
+  "data": {
+    "id": "58af27c953efbc33c4000089",
+    "name": "Luhn",
+    "slug": "luhn",
+    "category": "algorithms",
+    "publishedAt": "2017-02-23T18:19:59.488Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "csharp",
+      "fsharp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/58af27c953efbc33c4000089",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-23T18:19:53.389Z",
+    "createdBy": {
+      "username": "Lusina",
+      "url": "https://www.codewars.com/users/Lusina"
+    },
+    "description": "# Luhn\n\nGiven a number determine whether or not it is valid per the Luhn formula.\n\nThe [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is\na simple checksum formula used to validate a variety of identification\nnumbers, such as credit card numbers and Canadian Social Insurance\nNumbers.\n\nThe task is to check if a given string is valid.\n\nValidating a Number\n------\n\nStrings of length 1 or less are not valid. Spaces are allowed in the input,\nbut they should be stripped before checking. All other non-digit characters\nare disallowed.\n\n## Example 1: valid credit card number\n\n```\n4539 1488 0343 6467\n```\n\nThe first step of the Luhn algorithm is to double every second digit,\nstarting from the right. We will be doubling\n\n```\n4_3_ 1_8_ 0_4_ 6_6_\n```\n\nIf doubling the number results in a number greater than 9 then subtract 9\nfrom the product. The results of our doubling:\n\n```\n8569 2478 0383 3437\n```\n\nThen sum all of the digits:\n\n```\n8+5+6+9+2+4+7+8+0+3+8+3+3+4+3+7 = 80\n```\n\nIf the sum is evenly divisible by 10, then the number is valid. This number is valid!\n\n## Example 2: invalid credit card number\n\n```\n8273 1232 7352 0569\n```\n\nDouble the second digits, starting from the right\n\n```\n7253 2262 5312 0539\n```\n\nSum the digits\n\n```\n7+2+5+3+2+2+6+2+5+3+1+2+0+5+3+9 = 57\n```\n\n57 is not evenly divisible by 10, so this number is not valid.\n\n## Source\n\nThe Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)\n",
+    "totalAttempts": 398,
+    "totalCompleted": 25,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

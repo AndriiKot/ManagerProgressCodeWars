@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b951bfa88d44ab0700000a1",
+  "data": {
+    "id": "5b951bfa88d44ab0700000a1",
+    "name": "Houda and Value Array",
+    "slug": "houda-and-value-array",
+    "category": "algorithms",
+    "publishedAt": "2018-09-09T13:12:07.448Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5b951bfa88d44ab0700000a1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-09T13:11:22.815Z",
+    "createdBy": {
+      "username": "mehdithe",
+      "url": "https://www.codewars.com/users/mehdithe"
+    },
+    "description": "Houda is looking for an internship in her dream company, the recruter asked her a question:\n\nGiven an array of size `n` and an integer `k`,we define the value of the array is the sum of all it's elements, except the first `floor(n/k)` elements. \n\ncan you partition the given array, into multiple subarrays such that the sum of the values of those subarrays is minimized ?\n\nfor example giving an array `[1, 4, 5, 6, 8]` and integer `k = 2` the value of the array is \n`sum([1, 4, 5, 6, 8]) - sum([1, 4, 5, 6, 8][0: floor(n/k)]) = 19`\n\nlet's look at an example, imagine you have the array `[1, 1, 10, 10, 10, 10, 10, 10, 9, 10, 10, 10]` and `k=10`\nyou can consider the value of the whole array and that will give you the sum of the array minus the sum of the `floor(n/k)` smallest elements so the value is going to be `sum([1, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10]) = 100` (we removed the smallest `floor(n/k) = 1` element which is `1`), but if we split the array into `[1, 1] and [10, 10, 10, 10, 10, 10, 9, 10, 10, 10]` the value is going to be `92` because we dont remove anything from the first array because `n/k = 2 / 10 = 0`, and we remove `9` from the second array because it's the smallest element and `n/k = 10/10 = 1`\nso the total value is `2 + 99 - 9 = 92` and that's the best partition possible .\n\n## Input \n\n- an array with size `n` and integer `k`\n- `1 <= n, k <= 5000`\n- `1 <= arr[i] <= 1000000000`\n\n## Output\n\n- The minimum value you can get after partitionning the array in to 1 or more subarrays\n\n",
+    "totalAttempts": 57,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

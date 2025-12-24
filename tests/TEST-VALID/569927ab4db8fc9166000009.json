@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/569927ab4db8fc9166000009",
+  "data": {
+    "id": "569927ab4db8fc9166000009",
+    "name": "University grade calculator!",
+    "slug": "university-grade-calculator",
+    "category": "reference",
+    "publishedAt": "2016-01-16T18:30:59.144Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/569927ab4db8fc9166000009",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-15T17:08:59.979Z",
+    "createdBy": {
+      "username": "tdowek1",
+      "url": "https://www.codewars.com/users/tdowek1"
+    },
+    "description": "All of the academics among us remember the schlepp of trying to work out our university grades before the official records came out.  Your task therefore is to create a function which returns the grades passed by three arrays of module results.\n\nThe grades will be passed in to the function in 3 arrays named ```first``` ```second``` and ```third```. They will contain up to 12 values, which represent the grades scored in each module taken that year.\n\nTo help you out, Codewars University have decided to make your worst three results worth only 5% of the year each. The rest of the grade will be weighted evenly among all of the other module results.\n\nThe grades for each year are weighted as follows:\nthe first year is worth 10% of the final grade,\nthe second year is worth 30% of the final grade and\nthe third year is worth 60% of the final grade.\n\nSometimes students have been known not to show up for their exams, the grades are therefore not present in the array values. Your function should assume that all missing values are 0 (if there are three or more of these can be the 3 lowest values worth 5% each).  This means that if any of the arrays have less than 12 values, you need to fill in the remaining values with zeros.\n\nResults also sometimes get scrambled, some numbers get placed in the array as strings, for these numbers we can assume that the module result is the number equivalent.  Sometimes we get random inputs, which are not numbers or strings of numbers - for these results we can assume that the result is 0.  \n\nThe machine passing the module results also sometimes adds random multiples of 100 to the result. We can therefore assume that module results over 100 are actually only represented by the last 2 digits if the grade is not a multiple of 100, if the grade passed is a multiple of 100, the grade will be marked as 100%.  For example ```121244``` is equivalent to ```44``` and ```1100``` will be marked as ```100```.\n\nUnfortunately for its students, the Codewars university actually doesn't let any of its students know whether or not they have failed a year until the end of their final year.  They also don't let anyone pass if they have failed any of the individual years.\n\nThe grade boundaries are as follows:\n\n-Under 40% is a fail.\n\n-40% or over and under 50% is a 3rd.\n\n-50% or over and under 60% is a 2:2.\n\n-60% or over and under 70% is a 2:1.\n\n-70% and over is a 1st.\n\n\nIf any individual year is failed we want the calculator to return the following results:\n\n-```\"I'm sorry, you failed your first year\"```\n\n-```\"I'm sorry, you failed your second year\"```\n\n-```\"I'm sorry, you failed your third year\"```\n\nIf you pass Codewars University. We want the result to read:\n\n-```\"Congratulations! You got a [your grade] with [your result]\"```\n\nWe always want the result to be rounded to 2 decimal places. An example return would be:\n\n-```\"Congratulations! You got a 1st with 87.43%\"```\n\n\nSome things to keep in mind: \n\n-You will be passed only positive numbers.\n\n-You will get up to 12 results but never more (the missing results should be filled in with zeros).\n\n\nExamples:\n\n```javascript\ngradeCalculator([60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60], [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60], [60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60]);\n// returns \"Congratulations! You got a 2:1 with 60%\"); \n\ngradeCalculator([99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99], [99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99], []);\n// returns \"I'm sorry, you failed your third year\");\n```\n\nEnjoy!",
+    "totalAttempts": 195,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 7,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

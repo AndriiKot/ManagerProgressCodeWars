@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56da27ae7955f2cfce000666",
+  "data": {
+    "id": "56da27ae7955f2cfce000666",
+    "name": "Counting E-Primes",
+    "slug": "counting-e-primes",
+    "category": "algorithms",
+    "publishedAt": "2016-05-25T18:41:04.091Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56da27ae7955f2cfce000666",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-05T00:26:22.927Z",
+    "createdBy": {
+      "username": "mmmaaatttttt",
+      "url": "https://www.codewars.com/users/mmmaaatttttt"
+    },
+    "description": "You may have heard that whole numbers have a nice property called unique factorization: every whole number greater than one can be written as a product of its prime factors. Moreover, ignoring any reordering of the prime factors, this decomposition is unique. For example:\n\n12 = 2 &times; 2 &times; 3,\n\n16 = 2 &times; 2 &times; 2 &times; 2, \n\n17 = 17\n\n115,236 = 2 &times; 2 &times; 3 &times; 3 &times; 3 &times; 11 &times; 97,\n\nand so on. In fact, this result is so beloved that it has been dubbed the [Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic). To really appreciate this result, it may help to consider an example of a set of numbers for which unique factorization fails.\n\nHere's a relatively simple example: consider the set of even numbers { 2, 4, 6, 8, 10, 12, ... }. A number in this set is called an _e-prime_ if it can't be written as a product of other even numbers. For example, 2 is an _e-prime_ (since it's prime), but 4 is not, since 4 = 2 * 2. \n\nThe first interesting case is 6. 6 is an _e-prime_. Even though 6 = 2 &times; 3, 3 is not in the set of even numbers. Since 6 can't be written as a product of even numbers, it must be an _e-prime_.\n\nUnlike the set of whole numbers, which have unique factorization into primes, even numbers *do not have* unique factorization into e-primes. For instance, we can decompose 36 as a product of _e-primes_ in two different ways:\n\n36 = 2 &times; 18 = 6 &times; 6.\n\nTherefore, there is no such thing as unique factorization of even numbers into e-primes.\n\nYour task here is to write a function called `factorizationCount(num)`, which takes in a positive integer and returns the number of ways to decompose that number into a unique product of e-primes. The order in the factorization does not matter; in other words, 2 &times; 18 and 18 &times; 2 count as the same factorization of 36, so `factorizationCount(num)` is equal to 2.\n\nHere are some examples:\n\n```javascript\nfactorizationCount(2) // 1  (2)\nfactorizationCount(4) // 1  (2 * 2)\nfactorizationCount(36) // 2 (2 * 18, 6 * 6)\nfactorizationCount(180) // 3 (2 * 90, 6 * 30, 10 * 18)\nfactorizationCount(504) // 4 (2 * 2 * 126, 2 * 6 * 42, 2 * 14 * 18, 6 * 6 * 14)\nfactorizationCount(3) // 0\nfactorizationCount(2.6) // 0\nfactorizationCount(-2) // 0\n```\n\nGood luck!\n\n(For more on e-primes, check out Joseph Silverman's _A Friendly Introduction to Number Theory_.)",
+    "totalAttempts": 215,
+    "totalCompleted": 7,
+    "totalStars": 5,
+    "voteScore": 6,
+    "tags": [
+      "Mathematics",
+      "Number Theory",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

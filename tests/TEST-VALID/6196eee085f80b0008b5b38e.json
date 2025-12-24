@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6196eee085f80b0008b5b38e",
+  "data": {
+    "id": "6196eee085f80b0008b5b38e",
+    "name": "Egg Dropping Puzzle (2 eggs only)",
+    "slug": "egg-dropping-puzzle-2-eggs-only",
+    "category": "games",
+    "publishedAt": "2021-11-19T00:43:39.890Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6196eee085f80b0008b5b38e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-19T00:25:04.375Z",
+    "createdBy": {
+      "username": "Crasty",
+      "url": "https://www.codewars.com/users/Crasty"
+    },
+    "description": "# Egg Dropping Puzzle (2 eggs only)\n\n## The task:\nYour task is to find the lowest floor, from which a dropped egg will break.\n\n## You can assume:\n* An egg will break if previous one broke from a lower floor.\n* An egg will not break if previous one ddidn't break from a higher floor.\n* The floors are indexed from `0` to `numberOfFloors - 1`.\n* You are always given exactly 2 eggs at the start.\n\n## Requirements\nYour solution needs to meet all 3 requirements:\n* The returned value needs to be the searcher for floor.\n* The number of eggs at the end needs to be higher or equal to 0.\n* The number of guesses can't exeed the maximum (based on the number of floors).\n\n## You are given getters for:\n* `numberOfFloors`: the number of floors.\n* `eggs`: the number of eggs left (can go negative, but won't make the test).\n* `guesses`: array of your previous guesses.\n* `lastBroke`: if the last dropped egg broke.\n\n## How to drop an egg?\nFor this purpose, there is the`dropFrom` method. This method will return `true` if the input given is the index of the searched-for floor. Otherwise, the returned value is `false`. This method will also update the getters accordingly.\n\n## Example:\n```js\nfunction solve(puzzle) {\n  for (let i = 0; i < puzzle.numberOfFloors; i++) {\n    if (puzzle.dropFrom(i)) return i;\n  }\n}\n```\nThis code will try all floors one by one starting from 0. It will return the right answer, but the number of guesses will be too high.\n\n## Links:\n\nMore info about the problem on [wiki](https://en.wikipedia.org/wiki/Dynamic_programming#Egg_dropping_puzzle) and [brilliant](https://brilliant.org/wiki/egg-dropping/).  \nSimilar kata: [Fabergé Easter Eggs crush test (3 kyu)](https://www.codewars.com/kata/54cb771c9b30e8b5250011d4)",
+    "totalAttempts": 14,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

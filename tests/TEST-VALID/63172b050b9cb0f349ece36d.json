@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63172b050b9cb0f349ece36d",
+  "data": {
+    "id": "63172b050b9cb0f349ece36d",
+    "name": "New car evaluation",
+    "slug": "new-car-evaluation",
+    "category": "reference",
+    "publishedAt": "2022-09-06T11:12:24.113Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/63172b050b9cb0f349ece36d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-06T11:12:05.573Z",
+    "createdBy": {
+      "username": "Greg83",
+      "url": "https://www.codewars.com/users/Greg83"
+    },
+    "description": "You're looking for a new car. Of course you wan't to approach this in a systematic way. You have to implement the evaluateCars function which takes a list of cars and a criteria object as inputs. As a return, a list of all cars satifying the criterias is expected.\n\nConditions:\n- The price should not exceed the maxPrice criteria\n- The power-to-weight ratio is calculated as follows (horsepower/weight)\n- The power-to-weight ratio of the car has to exceed that value from the criteria\n- Multiple colors are allowed as criteria, the cars have to match one of the colors from the criteria\n- Colors are not case-sensitive\n\nObject definitions:\n\nclass Car{\n  private String name;\n  private String color;\n  private int weight;\n  private int horsepower;\n  private int price;\n}\n\nclass Criteria {\n  String[] colors;\n  float powerToWeightRatio;\n  int maxPrice;\n}\n\nThe attributes are private and have to be accessed using GETTER methods.\ne.g. name -> getName, powerToWeightRatio -> getPowerToWeightRatio\n",
+    "totalAttempts": 15,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Arrays",
+      "Lists"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

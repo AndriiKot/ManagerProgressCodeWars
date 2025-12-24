@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57f40792bd7b541a3000033a",
+  "data": {
+    "id": "57f40792bd7b541a3000033a",
+    "name": "Swedish Tipping",
+    "slug": "swedish-tipping",
+    "category": "algorithms",
+    "publishedAt": "2016-10-04T20:23:12.570Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57f40792bd7b541a3000033a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-04T19:48:34.662Z",
+    "createdBy": {
+      "username": "SimplGy",
+      "url": "https://www.codewars.com/users/SimplGy"
+    },
+    "description": "In Sweden, tipping at restaurants is not done in a straight-forward 15-20% of the bill manner.\n\nInstead, people use a heuristic that \"Rounds Up\" to the next significant amount.\n\nFor example, in America, if you got a bill for $100 you might tip $17 on it, since $100 % .17 = $17. In Sweden, you'd probably tip `20` for a nice round amount of `120`. We're going to skip the currency formatting and deal only with the Number type for convenience and so we can focus on the meaty part of the problem.\n\nThe goal of this exercise is to build an algorithm that comes up with a good default tip amount to put in our application's UI.\n\nWhat people think of as \"significant\" varies from human to human, but when developing your heuristic keep these things in mind:\n\n* Sweden has 1, 5, and 10kr coins; and bills for 20, 50, and 100kr; although the 50 isn't used very often.\n* You should return the tip amount, not the total amount.\n* You should never tip less than 5%. That would be super rude.\n\nExample outputs:\n\n    getSwedishTip(1); // 9, since 1+9 === 10. This is similar to the \"never tip less than a dollar\" US pseudo-rule.\n    getSwedishTip(88); // 12, since 88+12 === 100. Round up to a nice even amount\n    getSwedishTip(1021); // 79 (79+1021 === 1100). Round up to a nice, even amount but with larger bills\n    \nOne thing to note is that as the bill gets more expensive, the idea of what is \"siginificant\" for rounding up changes.\n\nDon't forget about IEEE float representation rounding issues. Our application wants a suggestedd value for the UI, so exactly accurate currency math (eg: bankers rounding) is not necessary, but repeating digits are not acceptable.\n\n    getSwedishTip(8.2) // return 1.8, not 1.8000000000000007\n\nYou can return any amount `>=` 5% for bills larger than `10000` or so. If our app is processing orders like that we have new and high-quality problems.",
+    "totalAttempts": 213,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

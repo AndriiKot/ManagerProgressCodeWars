@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d31f6673e0d9003bba268c",
+  "data": {
+    "id": "64d31f6673e0d9003bba268c",
+    "name": "Split the String into Fibonacci Type of Sequence",
+    "slug": "split-the-string-into-fibonacci-type-of-sequence",
+    "category": "reference",
+    "publishedAt": "2023-08-09T06:59:26.192Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64d31f6673e0d9003bba268c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-09T05:08:54.566Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nThe task requires a function to process a given string of digits and construct a list of numbers that satisfy the following conditions:\n\n- The resulting list must contain a minimum of three numbers.\n- When all numbers are concatenated, they should form the original string. Therefore, the string can only be divided into segments without rearranging the digits.\n- Starting from the third number, each number must be the sum of the two preceding numbers, i.e., `lst[i - 2] + lst[i - 1] == lst[i]`.\n- A number cannot have a leading zero, except when the number itself is zero (e.g., 0 is allowed, but 01 is not).\n- The goal is to find a list of numbers that meets these criteria and return it. If it is not possible to create a sequence resembling the Fibonacci series, an empty list should be returned, [].\n\n\n# Examples\n```python\nsplit_fibonacci(\"11235813\") ➞ [1, 1, 2, 3, 5, 8, 13]\n\nsplit_fibonacci(\"112358130\") ➞ []\n\nsplit_fibonacci(\"123456579\") ➞ [123, 456, 579]\n\nsplit_fibonacci(\"0000\") ➞ [0, 0, 0, 0]\n\nsplit_fibonacci(\"1031316\") ➞ [10,3,13,16]\n```\n# Notes\n- Multiple solutions to some tests are possible. That is why there is a helper function `check_split` in the preloaded section to check that the output list satisfies the requirements. This allows freedom to finding a sequence.\n- First two numbers may not be in order (see last example).",
+    "totalAttempts": 135,
+    "totalCompleted": 29,
+    "totalStars": 3,
+    "voteScore": 58,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

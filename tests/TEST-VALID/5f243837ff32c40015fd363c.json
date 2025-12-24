@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f243837ff32c40015fd363c",
+  "data": {
+    "id": "5f243837ff32c40015fd363c",
+    "name": "counting in dot notation",
+    "slug": "counting-in-dot-notation",
+    "category": "algorithms",
+    "publishedAt": "2020-07-31T16:23:32.825Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5f243837ff32c40015fd363c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-31T15:26:48.066Z",
+    "createdBy": {
+      "username": "gui3",
+      "url": "https://www.codewars.com/users/gui3"
+    },
+    "description": "In forestry, when counting trees🌲🌳🌲🌳, to spare paper we use 'dot' notation, one dot for one to four and then join the dots from 5 to 10 :\n```\n. -> 1\n: -> 2\n:. -> 3\n:: -> 4\n|: -> 5\n⟔ -> 6\n⊓ -> 7\n☐ -> 8\n⧄ -> 9\n☒ -> 10\n```\n\nWe always finish a jointed square ☒ before starting a new one so the result is easily readable ( 34 -> ☒☒☒::)\n\n## your challenge\n\nwrite a function **write** that takes a positive integer and turns it into a string representing this number in dot notation, and a function **read** that does the opposite\n\nif the number is 0 or below, the write method shall return an empty string \"\" *(will never be below 0 in C++ or typed languages using unsigned int)*\n\nif the dot notation is invalid (not a sequel of ☒ followed by a valid dot \"digit\") the read method shall return 0\n```js\nwrite(19) === '☒⧄'\nread('☒☒☒:.') === 33\nwrite(-5) === ''\nread('::☒') === 0\n```\n\nthe exact symbols of the previous list will be used, and you can access a list of them as strings in the list **dictionary** provided in the solution template. \n\n> Beware that some digits (eg 3 -> `:.`) use 2 ASCII chars !\n\n> (in C++) beware that unicode digits like ☒ are 3 chars long!\n> you should be able to deal with it\n\n> Beware that indexes of the dictionary are not reflective of the digit\n\n```js\ndictionary[0] == '.' // 1\ndictionary[3] == '::' // 4\ndictionary[9] == '☒' // 10\n```\n\n> ⚠️ in response to comments, return values expected\n> for invalid arguments have been changed from false to\n> '' (empty string) for write and 0 for read.\n> My apologies if your answer is not valid  \n> due to this breaking change\n",
+    "totalAttempts": 340,
+    "totalCompleted": 44,
+    "totalStars": 3,
+    "voteScore": 75,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

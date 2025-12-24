@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5adf3cd70774db8e8c000007",
+  "data": {
+    "id": "5adf3cd70774db8e8c000007",
+    "name": "Testing the Porges hypothesis",
+    "slug": "testing-the-porges-hypothesis",
+    "category": "games",
+    "publishedAt": "2018-04-24T14:26:21.627Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "crystal",
+      "python",
+      "cpp",
+      "clojure",
+      "haskell",
+      "c",
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5adf3cd70774db8e8c000007",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-24T14:19:04.510Z",
+    "createdBy": {
+      "username": "GiacomoSorbi",
+      "url": "https://www.codewars.com/users/GiacomoSorbi"
+    },
+    "description": "[Arthur Porges](https://en.wikipedia.org/wiki/Arthur_Porges) was mostly known to be a novelist, but he also wrote a small paper about the mathematical hypothesis stating that recursively summing the squares of the digits of any number will either end up to 1 or go on cyclically.\n\nYour task is to write a simple function that tell return the first number of any cycle, `-1` otherwise:\n\n```c\nporges_cycle(1) == -1 // it stays 1, it is not considered a cycle\nporges_cycle(2) ==  4 // the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporges_cycle(4) ==  4 // same as above, just one less step\nporges_cycle(7) == -1 // 7=>49=>97=>130=>10=>1, no cycle!\nporges_cycle(9) == 37 // a cycle occurs, try to find it!\n\n```\n```javascript\nporgesCycle(1) === -1 //it stays 1, it is not considered a cycle\nporgesCycle(2) === 4  //the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporgesCycle(4) === 4  //same as above, just one less step\nporgesCycle(7) === -1 //7=>49=>97=>130=>10=>1, no cycle!\nporgesCycle(9) === 37  //a cycle occurs, try to find it!\n\n```\n```cpp\nporgesCycle(1) == -1 //it stays 1, it is not considered a cycle\nporgesCycle(2) == 4  //the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporgesCycle(4) == 4  //same as above, just one less step\nporgesCycle(7) == -1 //7=>49=>97=>130=>10=>1, no cycle!\nporgesCycle(9) == 37  //a cycle occurs, try to find it!\n\n```\n```python\nporges_cycle(1) == -1 #i#t stays 1, it is not considered a cycle\nporges_cycle(2) == 4  #the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporges_cycle(4) == 4  #same as above, just one less step\nporges_cycle(7) == -1 #7=>49=>97=>130=>10=>1, no cycle!\nporges_cycle(9) == 37  a cycle occurs, try to find it!\n\n```\n```ruby\nporges_cycle(1) == -1 #i#t stays 1, it is not considered a cycle\nporges_cycle(2) == 4  #the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporges_cycle(4) == 4  #same as above, just one less step\nporges_cycle(7) == -1 #7=>49=>97=>130=>10=>1, no cycle!\nporges_cycle(9) == 37  a cycle occurs, try to find it!\n\n```\n```crystal\nporges_cycle(1) == -1 #i#t stays 1, it is not considered a cycle\nporges_cycle(2) == 4  #the cycle starts with 4, then 16, then 37, then 58, etc going back to 4 in 8 moves\nporges_cycle(4) == 4  #same as above, just one less step\nporges_cycle(7) == -1 #7=>49=>97=>130=>10=>1, no cycle!\nporges_cycle(9) == 37  a cycle occurs, try to find it!\n\n```",
+    "totalAttempts": 307,
+    "totalCompleted": 106,
+    "totalStars": 4,
+    "voteScore": 182,
+    "tags": [
+      "Number Theory",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

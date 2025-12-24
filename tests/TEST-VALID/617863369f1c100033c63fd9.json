@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/617863369f1c100033c63fd9",
+  "data": {
+    "id": "617863369f1c100033c63fd9",
+    "name": "Super Tech Ball",
+    "slug": "super-tech-ball",
+    "category": "algorithms",
+    "publishedAt": "2021-10-26T20:21:45.852Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/617863369f1c100033c63fd9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-26T20:21:10.594Z",
+    "createdBy": {
+      "username": "Coderator",
+      "url": "https://www.codewars.com/users/Coderator"
+    },
+    "description": "-Imagine that you have a super-tech ball. The ball rises according to the number and power you say and then falls to the ground. Every time the ball lands on the ground, you reduce the number you say to it by 1, and when this number is 0, you stop.\n\n-Assume that the rate of rise and fall of the ball is 1 meter per second and constant.\n\n-Accordingly, record the distance of the ball from the ground in meters every second until you stop saying any number to the ball. And lastly, return a list which contains all of these height values.\n\n-Assume that the ball is on the ground before you say the first number to it.\n\n-The power you say to the ball will be constant, but the number should be decreased by 1 every time the ball lands on the ground.\n\n* _Your function should return a list._\n* _Note that the parameters will only be positive integers._\n* _super_tech_ball(number, power)_\n* _1 <= number <= 10_\n* _1 <= power <= 6_\n\n__Detailed Example__\n\n* _Let's solve the super_tech_ball(3, 2)._\n* _According to the parameters, number = 3 and power = 2. So the ball will rise to 3^2 meters which is 9 and then starts falling._\n* _So the list of height values will be [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]._\n* _We reduce the number by 1 and then say it to the ball when the ball falls on the ground._\n* _After decreasing the number by 1, we get number = 2 and power = 2. 2^2 = 4._\n* _The ball will rise to 2^2 meters which is 1 and then starts falling._\n* _So the list of height values will be [1, 2, 3, 4, 3, 2, 1, 0]._\n* _We reduce the number by 1 again and then say it to the ball when the ball falls on the ground._\n* _After decreasing the number by 1, we get number = 1 and power = 2. 1^2 = 1_\n* _So the list of height values will be [1, 0]._\n* _To get the final solution, We add up all the lists we get._\n* _And finally, The solution is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 3, 2, 1, 0, 1, 0]._\n\n-Examples:\n```\nsuper_tech_ball(1, 1) should return [0, 1, 0]\nsuper_tech_ball(2, 1) should return [0, 1, 2, 1, 0, 1, 0]\nsuper_tech_ball(3, 1) should return [0, 1, 2, 3, 2, 1, 0, 1, 2, 1, 0, 1, 0]\nsuper_tech_ball(2, 2) should return [0, 1, 2, 3, 4, 3, 2, 1, 0, 1, 0]\nsuper_tech_ball(3, 2) should return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 3, 2, 1, 0, 1, 0]\nsuper_tech_ball(2, 3) should return [0, 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1, 0, 1, 0]\n```\n",
+    "totalAttempts": 96,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": 25,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

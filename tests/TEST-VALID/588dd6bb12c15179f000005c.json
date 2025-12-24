@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/588dd6bb12c15179f000005c",
+  "data": {
+    "id": "588dd6bb12c15179f000005c",
+    "name": "Atbash Cipher",
+    "slug": "atbash-cipher",
+    "category": "algorithms",
+    "publishedAt": "2017-01-29T12:02:02.818Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/588dd6bb12c15179f000005c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-29T11:49:16.050Z",
+    "createdBy": {
+      "username": "Lusina",
+      "url": "https://www.codewars.com/users/Lusina"
+    },
+    "description": "# Atbash Cipher\n\nCreate an implementation of the atbash cipher, an ancient encryption system created in the Middle East.\n\nThe Atbash cipher is a simple substitution cipher that relies on\ntransposing all the letters in the alphabet such that the resulting\nalphabet is backwards. The first letter is replaced with the last\nletter, the second with the second-last, and so on.\n\nAn Atbash cipher for the Latin alphabet would be as follows:\n\n``` pl\nPlain:  abcdefghijklmnopqrstuvwxyz\nCipher: zyxwvutsrqponmlkjihgfedcba\n```\n\nIt is a very weak cipher because it only has one possible key, and it is\na simple monoalphabetic substitution cipher. However, this may not have\nbeen an issue in the cipher's time.\n\nCiphertext is written out in groups of fixed length, the traditional group size\nbeing 5 letters, and punctuation is excluded. This is to make it harder to guess\nthings based on word boundaries.\n\n## Examples\n- Encoding `test` gives `gvhg`\n- Decoding `gvhg` gives `test`\n- Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `The quick brown fox jumps over the lazy dog.`\n\nYou are expected to create `encode` function which will take in a string and encode it using atbash cipher\n\n``` javascript\nencode('Truth is fiction.'\n'gifgs rhurx grlm'\n\nencode('The quick brown fox jumps over the lazy dog.')\n'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt'\n```\n",
+    "totalAttempts": 199,
+    "totalCompleted": 26,
+    "totalStars": 1,
+    "voteScore": 35,
+    "tags": [
+      "Puzzles",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

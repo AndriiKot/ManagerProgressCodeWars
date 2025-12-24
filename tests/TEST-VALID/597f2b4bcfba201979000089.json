@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/597f2b4bcfba201979000089",
+  "data": {
+    "id": "597f2b4bcfba201979000089",
+    "name": "Css selectors builder",
+    "slug": "css-selectors-builder",
+    "category": "algorithms",
+    "publishedAt": "2017-07-31T13:09:42.717Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/597f2b4bcfba201979000089",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-31T13:06:19.795Z",
+    "createdBy": {
+      "username": "arhigod",
+      "url": "https://www.codewars.com/users/arhigod"
+    },
+    "description": "&ensp;Each complex selector can consists of type, id, class, attribute, pseudo-class and pseudo-element selectors:\n```\n    element#id.class[attr]:pseudoClass::pseudoElement\n              \\----/\\----/\\----------/\n              Can be several occurences\n```\n&ensp;All types of selectors can be combined using the combinators ```' ','+','~','>'``` .\n\n&ensp;The task is to design a single class, independent classes or classes hierarchy and implement the functionality to build the css selectors using the provided cssSelectorBuilder.<br>\n&ensp;Each selector should have the stringify() method to output the string repsentation according to css specification.<br>\n&ensp;Provided cssSelectorBuilder should be used as facade only to create your own classes, for example the first method of cssSelectorBuilder can be like this:\n ```\n   element: function(value) {\n       return new MySuperBaseElementSelector(...)...\n   },\n  ```\n\nExample:\n```\n  var builder = cssSelectorBuilder;\n\n  builder.id('main').class('container').class('editable').stringify()  => '#main.container.editable'\n\n  builder.element('a').attr('href$=\".png\"').pseudoClass('focus').stringify()  => 'a[href$=\".png\"]:focus'\n\n  builder.combine(\n      builder.element('div').id('main').class('container').class('draggable'),\n      '+',\n      builder.combine(\n          builder.element('table').id('data'),\n          '~',\n           builder.combine(\n               builder.element('tr').pseudoClass('nth-of-type(even)'),\n               ' ',\n               builder.element('td').pseudoClass('nth-of-type(even)')\n           )\n      )\n  ).stringify()        =>    'div#main.container.draggable + table#data ~ tr:nth-of-type(even)   td:nth-of-type(even)'\n  ```  \n&ensp;For more examples see unit tests.\n\n(c)RSS",
+    "totalAttempts": 732,
+    "totalCompleted": 70,
+    "totalStars": 6,
+    "voteScore": 29,
+    "tags": [
+      "Puzzles",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

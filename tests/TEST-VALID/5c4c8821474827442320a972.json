@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c4c8821474827442320a972",
+  "data": {
+    "id": "5c4c8821474827442320a972",
+    "name": "Letter calculator",
+    "slug": "letter-calculator",
+    "category": "reference",
+    "publishedAt": "2019-01-26T23:56:35.906Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c4c8821474827442320a972",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-26T16:17:37.795Z",
+    "createdBy": {
+      "username": "chkhc",
+      "url": "https://www.codewars.com/users/chkhc"
+    },
+    "description": "You are provided an input string which was generated on a device where them mathematical operation keys are not usable and had to be replaced with the dsma keys. \n\nYou are required to write a function which can parse that so generated string as input and performs the corresponding mathematical operations (d = /, a = +, m = *, s = -) :\n\n`d (e.g: 7d4 = 1.75)`\n\n`s (e.g: 4s2 = 2)`\n\n`m (e.g: 5m5 = 25)`\n\n`a (e.g: 16a3 = 19)`\n\n\nThe calculator function needs to handle both decimal or integer results (decimals need to be rounded up to **3 decimal points**). Any other non-relevant characters or whitespace should be **ignored.** (this includes dsma not inbetween numbers).\n\n`Any leading zeroes of a number in the math operation are to be ignored/removed `\nand division by zero number sequences in the operation, are to return \"NaN\".\n\n*Example usage1: stringCalc(\"473d3\") should output 157.666*\n\n*Example usage2: stringCalc(\"5 m 5 \") should output 25*\n\n*Example usage3: stringCalc(\"5umu5\") should output 25*\n\nThe calculator needs to also be able to handle **division, multiplication** cases where math operations are **inconsistent or non-existent** as such:\n\n*Examples1: *\n\n*\"md\" or \"dm\" changes to \"d\"*\n\n*\"dd\"         changes to \"d\"*\n\n*\"sd\"         changes to \"d\" (\"ds\" stays as-is)*\n            \n*\"ad\"         changes to \"d\" (\"da\" stays as-is)*\n\n&nbsp;&nbsp;\n*Example2: When there are no mathematical operators avail, only give the numbers in sequence.*\n\nNote :\n\n- there are cases with multiple operations\n- return \"NaN\" instead of NaN or Infinity",
+    "totalAttempts": 322,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

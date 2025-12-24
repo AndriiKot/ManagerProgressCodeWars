@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a89b1e936a4a003d0b659b",
+  "data": {
+    "id": "62a89b1e936a4a003d0b659b",
+    "name": "Yuddh - At War!!",
+    "slug": "yuddh-at-war",
+    "category": "algorithms",
+    "publishedAt": "2022-06-14T14:31:44.749Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62a89b1e936a4a003d0b659b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-14T14:28:46.580Z",
+    "createdBy": {
+      "username": "Rudr",
+      "url": "https://www.codewars.com/users/Rudr"
+    },
+    "description": "There will be no peace talk, no negotiations, there will only be Yuddh(War).\n\nGeneral, here you have troop composition of two armies given to you as 2 lists. These armies consist of equal number of regiments.\n\nEach element in the list represent a regiment, the numerical value of each element is the number of soldiers in the respective regiment.\nNote, the length of the two armies will always be equal.\n\nNow comes the interesting stuff,\n\nThe power of 1 soldier in a regiment = 2^(Position of regiment in the army list)\n\nThen power of entire regiment = Number of soldiers in regiment X Power of 1 Soldier\n\n\nFor example:\n[2000, 400]\n\nHere, Power of 1 soldier of Regiment 1 = 2^1 = 2,\n\nThen the Power of entire Regiment 1 = 2000 X 2 = 4000\n\nSimilarly, Power of 1 soldier of Regiment 2 = 2^2 = 4,\n\nThen the Power of entire Regiment 2 = 400 X 4 = 1600\n\nSo, the power of entire army = 4000 + 1600 = 5600\n\n\nNow, your task is to find which army will win the battle based on crude power and the winner's remaining crud power.\n\nExample: Army_1 = [2000, 400]; Army_2 = [1400,600]\n\nPower of Army_1 = (2000 X 2) + (400 X 4) = 5600\n\nPower of Army_2 = (1400 X 2) + (600 X 4) = 5200\n\nBattle: Army_1 > Army_2; Army_1 Won; 400 soldiers left\n\nOutput: \"Army_1:400\"\n\n\nIn case of a tie i.e. Power of Army_1 = Power of Army_2,\n\nOutput: \"Tie\"\n\n-----------------------------------------------------------x-----------------------------------------------------------\n\nThis is my first Kata, hope you enjoyed coding it :)\nKindly provide me your suggestions in the comments. Bye.",
+    "totalAttempts": 91,
+    "totalCompleted": 33,
+    "totalStars": 1,
+    "voteScore": 50,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

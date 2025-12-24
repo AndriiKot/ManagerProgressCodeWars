@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63b1b842c9e1ce13511e3051",
+  "data": {
+    "id": "63b1b842c9e1ce13511e3051",
+    "name": "Conway's Noise",
+    "slug": "conways-noise",
+    "category": "algorithms",
+    "publishedAt": "2023-01-01T17:19:34.520Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63b1b842c9e1ce13511e3051",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-01T16:43:46.982Z",
+    "createdBy": {
+      "username": "Falafel_",
+      "url": "https://www.codewars.com/users/Falafel_"
+    },
+    "description": "Conway's game of life can be used to generate noise! This is a type of noise that, with the same inputs, will generate the same output, but will still seem random. Useful, for example, in creating game maps just from a seed.\n\n<br>              \n                \n<b>Given a 2d array as your input, output the nth generation of a modified game of life.</b>\n\n<br>\n\nThe rules of the game are:\n\n  Each cell's neighborhood is the 8 cells immediately around it (see: Moore Neighbourhood)\n <pre>  1. Any live cell with two or three live neighbours lives on to the next generation.\n  2. Any live cell that doesn't, dies.\n  3. Any dead cell with exactly 3 live neighbours comes to life.</pre>\n  \n  Unlike the normal game, our version has one additional rule:<pre>\n  4. Any dead cell with exactly 2 live neighbours also comes to life.</pre>\n  \n  \nA dead cell is represented as an integer of the amount of live neigbours it has.<br>\nA live cell is represented the same way, but with a '1' infront. ( f. ex.:  13 - alive with 3 neighbors)\n<br>\n<br>\n<br>\nThe 2d array can be represented in html using the preloaded functions 'draw()' or 'draw_debug()'\n<br>\n<br>\n<i> \n  - Expand the array to the size given, with 'size' denoting the additional rows in all four        directions.\n  - Update the neigbours of each cell\n  - Update who lives and dies\n  \n  - Return the final map as an array.\n</i>\n<br><br><br>\n\nIMPORTANT: return the final array without updated neighbors! This provides a better noise result.\n  \n\nexample:\n<pre>\nstarterMap = [[12, 14, 13],\n              [ 5,  6, 14],\n              [12, 13,  3]]\n              \n=> draw(starterMap)\n┌─────────┐\n│░░░░░░░░░│         -> ░░░ means the cell is alive\n│▓▓▓███░░░│            other shades represent the how many neighbours the dead cell has.\n│░░░░░░▒▒▒│\n└─────────┘\n\n=> map = expand(starterMap, 1)\n=> draw(map)\n┌───────────────┐\n│               │\n│   ░░░░░░░░░   │\n│   ▓▓▓███░░░   │\n│   ░░░░░░▒▒▒   │\n│               │\n└───────────────┘\n\n=> iterate(map)\n=> draw(map)\n┌───────────────┐\n│▒▒▒░░░░░░░░░▒▒▒│\n│▒▒▒▒▒▒░░░░░░░░░│\n│░░░▓▓▓███░░░░░░│\n│▒▒▒▒▒▒░░░░░░▒▒▒│\n│▒▒▒░░░░░░▒▒▒   │\n└───────────────┘\n\n(Don't do this for the final step)\n=> update_weights(map)\n=> draw(map)\n┌───────────────┐\n│▒▒▒░░░░░░░░░▒▒▒│\n│▒▒▒▓▓▓░░░░░░░░░│\n│░░░▒▒▒▓▓▓░░░░░░│\n│▒▒▒▓▓▓░░░░░░▒▒▒│\n│▒▒▒░░░░░░▒▒▒▒▒▒│\n└───────────────┘\n</pre>\n",
+    "totalAttempts": 55,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

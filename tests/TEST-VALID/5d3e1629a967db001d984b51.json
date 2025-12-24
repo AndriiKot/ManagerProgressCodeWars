@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d3e1629a967db001d984b51",
+  "data": {
+    "id": "5d3e1629a967db001d984b51",
+    "name": "Tennis  service:  should I serve on the left service box?",
+    "slug": "tennis-service-should-i-serve-on-the-left-service-box",
+    "category": "games",
+    "publishedAt": "2019-07-28T21:42:42.639Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d3e1629a967db001d984b51",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-28T21:39:53.358Z",
+    "createdBy": {
+      "username": "Tuhaj",
+      "url": "https://www.codewars.com/users/Tuhaj"
+    },
+    "description": "My friend, a tennis beginner, asked me once annoyed: how can I really know which side to serve?\n\nIn tennis there is a legacy counting system that is quite irregular. It's not easy to find a pattern in it for a beginner.\n\nThe rules go as follows:\n- each game begins with serve on the left side at the state 0:0 (let's write it [0, 0]).\n- after each point the side changes until the game is over.\n\nWe want to write a simple code that will answer the question: Is it left side to serve? When it's the left side, the anwser is true. When it's the right side, the answer is false.\n\nWrite a function called `serveOnLeft` that will accept a score argument. The problem is we need to answer the question: \"Should I serve on the left side?\" basing on current score.\n\nThe scores for each player can be:\n0, 15, 30, 40. \nThere are also 3 situations to consider: \"advantage in\", \"advantage out\" and \"deuce\".\n\n\"Advantage\" comes when a player is one point forward after 40:40. 40:40 is also called \"deuce\". When the player loses next point after having advantate, the result goes back to \"deuce\", the game ends after winning the point and a new game starts with 0:0.\n\nExamples:\nIn case of 0:0 serve on the left side (true)\nIn case of 30:40 serve on the right side (false)\nIn case of \"deuce\" or in other words 40:40 it's the left side to serve (true).\n\nThe player who has at least 40 points and gets the second point of advantage wins the game. When the last result is 40:40 it's \"deuce\". When the serving player has advantage it's called \"advantage in\" and when the opponent \"advantage out\". For more details about the tennis scoring system check: https://en.wikipedia.org/wiki/Tennis_scoring_system\n\nThe input is an array of two numbers representing points of each player or a string.\n\nThe string might be \"deuce\", \"advantage in\" or \"advantage out\". \n\nAnd yes, there is a finite number of possible results.\nYou can brute force the solution, but it's more fun in trying to find a pattern.\n\nGood luck!",
+    "totalAttempts": 200,
+    "totalCompleted": 28,
+    "totalStars": 0,
+    "voteScore": 33,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

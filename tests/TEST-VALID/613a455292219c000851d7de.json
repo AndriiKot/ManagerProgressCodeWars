@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/613a455292219c000851d7de",
+  "data": {
+    "id": "613a455292219c000851d7de",
+    "name": "\"Shenzhen I/O\" MC4000 Emulator  - basic",
+    "slug": "shenzhen-i-slash-o-mc4000-emulator-basic",
+    "category": "algorithms",
+    "publishedAt": "2021-09-10T21:29:34.528Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/613a455292219c000851d7de",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-09T17:33:06.059Z",
+    "createdBy": {
+      "username": "akaipureya",
+      "url": "https://www.codewars.com/users/akaipureya"
+    },
+    "description": "![shenzen logo](https://upload.wikimedia.org/wikipedia/commons/1/1e/Shenzhen_IO_logo.png)\n\n## MC4000CW Emulator - basic №1 \n\n*It would be nice if, before training this kata, you would play SHENZHEN I/O*\n\n---\n# Storyline\n\nYou are a Chinese developer who needs to develop an emulator for debugging of microchips \"MC X000BB series\".\nNow you have been tasked to write an emulator for the \"MC4000CW\" chip.\n\n---\n# \"MC4000CW\" characteristics \n\n1. Сannot receive more than 9 commands\n2. This chip have 1 output\n\n---\n\n# I/O Definitions\n\n1. In the input, you get a string in which the commands are divided by \";\"\n    * ```python\n    input <= \"mov 100 p0;slp 1;mov 0 p0;slp 1;mov 100 p0;slp 3;mov 0 p0;slp 2\"\n    #that means:\n    mov 100 p0\n    slp 1\n    mov 0 p0\n    slp 1\n    mov 100 p0\n    slp 3\n    mov 0 p0\n    slp 2\n      ```\n1. Signal is integer, may be from 0 to 100\n    * ```python\n      mov 100 p0 #copy \"signal\" which has a power of 100 to port0\n      slp 2      #sleeps 2 ticks\n      mov 50 p0 #copy \"signal\" which has a power of 50 to port0\n      slp 2      #sleeps 2 ticks\n      \n      output => [100,100,50,50]\n      \n      ```\n1. In the output, you should send a \"list\" with \"signals\"\n    * ```python\n    output => [signal1,signal2,signal3,signal4,signal5,signal6,] #Check slp Explanation for more information about output \"list\"\n      ```\n\n---\n# Documentation\n\nOperand types:\n\n* <span style=\"color:#148F77\">R</span> - Register (variable)\n\n* <span style=\"color:#2E86C1\">I</span> - Integer    (int)\n\n* <span style=\"color:#148F77\">R</span>/<span style=\"color:#2E86C1\">I</span>  - Register or Integer\n\nRegisters:\n* acc - <span style=\"color:#148F77\">Register</span> (Initial value is 0)\n\n* p0 - <span style=\"color:#148F77\">Register</span> (Initial value is 0)\n\nBasic comands:\n\n* \"mov <span style=\"color:#148F77\">R</span>/<span style=\"color:#2E86C1\">I</span> <span style=\"color:#148F77\">R</span>\" - Copy the value of the first operand into the second operand.\n* \"add <span style=\"color:#148F77\">R</span>/<span style=\"color:#2E86C1\">I</span>\" - Add the value of the first operand to the value of the acc register and store the result in the acc register\n* \"sub <span style=\"color:#148F77\">R</span>/<span style=\"color:#2E86C1\">I</span>\" - Subtract the value of the first operand from the value of the acc register and store the result in the acc register.\n* \"slp <span style=\"color:#148F77\">R</span>/<span style=\"color:#2E86C1\">I</span>\" - Sleep for the number of time units specified by the operand.\n\nslp Explanation:\n\nOn `slp` command the emulator goes into the sleep mode for some number of ticks specified in the its argument. On every such tick the value that is currently stored in the `p0` register is written to the output. For example:\n\n```python\ninput = \"mov 7 p0;slp 3;mov 20 p0;slp 4\"\n\noutput = [7, 7, 7, 20, 20, 20, 20]\n```\n\n\n\n---\n\n# Examples\n\n```python\ninput: \"mov 0 p0;slp 4;mov 100 p0;slp 2;mov 0 p0;slp 1;mov 100 p0;slp 1\"\noutput: [0,0,0,0,100,100,0,100]\n```\n\n```python\ninput: \"mov 100 p0;slp 1;mov 0 p0;slp 1;mov 100 p0;slp 3;mov 0 p0;slp 2\"\noutput: [100,0,100,100,100,0,0]\n```\n\n```python\ninput: \"add 20;mov acc p0;slp 1;add 40;mov acc p0;slp 1;sub 50;mov acc p0;slp 1\"\noutput: [20,60,10]\n```\n\n```python\ninput: \"mov 50 p0;slp 5;add 25;sub 12;mov acc p0;slp 15\"\noutput: [50, 50, 50, 50, 50, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13]\n```\n\n---\n\n# Ending\n\nI hope you enjoy this kata <span style=\"color:#FF5733\">Good luck!</span>\n\n\n\n\n\n\n\n\n\n",
+    "totalAttempts": 135,
+    "totalCompleted": 39,
+    "totalStars": 7,
+    "voteScore": 46,
+    "tags": [
+      "Algorithms",
+      "Interpreters"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

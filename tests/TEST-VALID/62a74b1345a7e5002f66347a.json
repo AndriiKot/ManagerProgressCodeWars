@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a74b1345a7e5002f66347a",
+  "data": {
+    "id": "62a74b1345a7e5002f66347a",
+    "name": "Human Billboard",
+    "slug": "human-billboard",
+    "category": "games",
+    "publishedAt": "2022-07-25T21:09:47.758Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62a74b1345a7e5002f66347a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-13T14:34:59.071Z",
+    "createdBy": {
+      "username": "mohrizkyk",
+      "url": "https://www.codewars.com/users/mohrizkyk"
+    },
+    "description": "Ace is working as a Human Billboard.<br>\nHe has a task to walk in a field of ```w * h``` m<sup>2</sup> consisting of ```n``` people.<br>\nEach person in the field can view 360&deg; with visibility range of ```r```.\n\nIf Ace standing at ```[0, 0]```, to which direction (in angle degrees) he have to walk straight to attract most views?\n\n<strong style=\"font-size: larger;\">Input:</strong><br>\n```50 <= w <= 1000```: width of the field<br>\n```50 <= h <= 1000```: height of the field<br>\n```p```: an ```[x, y, r]``` array of ```1 <= n <= 100``` people , where:<br>\n\\- ```0 <= x <= w```: person's x location<br>\n\\- ```0 <= y <= h```: person's y location<br>\n\\- ```10 <= r <= 50```: person's visibility range\n\n<strong style=\"font-size: larger;\">Expected Output:</strong><br>\nAn array of ```possible directions```, where ```possible directions``` is ```[minAngle, maxAngle]```, for example:<br>\n```\n[\n  [minAngle1, maxAngle1],\n  ...,\n  [minAngleN, maxAngleN]\n]\n```\nBoth of ```minAngle``` and ```maxAngle``` is a whole number between ```0``` - ```90```.<br>\nSort the answer ```ascending``` according to ```minAngle```.\n\n<strong style=\"font-size: larger;\">Example:</strong><br>\n<strong>- Case 1:</strong>\n\n<figure style=\"margin: 0px;\">\n<img src=\"https://i.ibb.co/MRFdgD2/human-billboard-case1.png\" alt=\"human-billboard-case1\" border=\"0\" style=\"margin: 0px; max-width: 480px; max-height: 480px;\">\n<figcaption style=\"margin: 0px 0px 1em 0px;\"><i>Fig 1</i></figcaption>\n</figure>\n\nOn a field with dimension of ```90 x 90```, consisting of 2 people:<br>\n\\- ```p1``` with ```x```: 50, ```y```: 50, ```r```: 10<br>\n\\- ```p2``` with ```x```: 65, ```y```: 65, ```r```: 15<br>\nThe best direction for Ace to attract the most views is to walk straight between angle ```37°``` and ```53°```, so that both ```p1``` and ```p2``` could see Ace when he walk.<br>\nTherefore your solution should return\n```\n[\n  [37, 53]\n]\n```\n\n<strong>- Case 2:</strong>\n\n<figure style=\"margin: 0px;\">\n<img src=\"https://i.ibb.co/dQbJZV7/human-billboard-case2.png\" alt=\"human-billboard-case2\" border=\"0\" style=\"margin: 0px; max-width: 480px; max-height: 480px;\">\n<figcaption style=\"margin: 0px 0px 1em 0px;\"><i>Fig 2</i></figcaption>\n</figure>\n\nOn a field with dimension of ```90 x 90```, consisting of 4 people:<br>\n\\- ```p1``` with ```x```: 50, ```y```: 50, ```r```: 10<br>\n\\- ```p2``` with ```x```: 65, ```y```: 65, ```r```: 15<br>\n\\- ```p3``` with ```x```: 35, ```y```: 50, ```r```: 10<br>\n\\- ```p4``` with ```x```: 50, ```y```: 35, ```r```: 10<br>\nThe best direction for Ace to attract the most views happens to have 2 options, which is:<br>\n\\- Walk between angle ```37°``` and ```44°```, to attract views from ```p1```, ```p2```, and ```p4```.<br>\n\\- Walk between angle ```46°``` and ```53°```, to attract views from ```p1```, ```p2```, and ```p3```.<br>\nTherefore your solution should return\n```\n[\n  [37, 44],\n  [46, 53]\n]\n```\n\n<strong style=\"font-size: larger;\">Notes:</strong><br>\nYou should only check angle that is whole number.<br>\nBefore trying this kata, you might be interested to solve these katas first:<br>\n\\- <a href=\"https://www.codewars.com/kata/554dc2b88fbafd2e95000125\">[Geometry A-2]: Length of a vector</a> by <a href=\"https://www.codewars.com/users/MMMAAANNN\">MMMAAANNN</a><br>\n\\- <a href=\"https://www.codewars.com/kata/555f43d8140a6df1dd00012b\">Cartesian coordinates from degree angle</a><br>\n\\- <a href=\"https://www.codewars.com/kata/59c053f070a3b7d19100007e\">Line Safari : Point distance from a line</a> by <a href=\"https://www.codewars.com/users/dinglemouse\">dinglemouse</a>\n\n<strong style=\"font-size: larger;\">References:</strong><br>\n<a href=\"https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line\">Distance from a point to a line - Wikipedia</a>\n\n",
+    "totalAttempts": 58,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Puzzles",
+      "Mathematics",
+      "Geometry",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/630fe1fa0289bf000e958d0a",
+  "data": {
+    "id": "630fe1fa0289bf000e958d0a",
+    "name": "Make a templating engine!",
+    "slug": "make-a-templating-engine",
+    "category": "reference",
+    "publishedAt": "2022-09-01T15:03:22.324Z",
+    "approvedAt": null,
+    "languages": [
+      "lua"
+    ],
+    "url": "https://www.codewars.com/kata/630fe1fa0289bf000e958d0a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-31T22:34:34.128Z",
+    "createdBy": {
+      "username": "kakakiko",
+      "url": "https://www.codewars.com/users/kakakiko"
+    },
+    "description": "**Introduction**\n\nYou need to implement a transforming templating engine, implementation details below.\n\nThe grammar for templates is the following: `<~ [middleware_ident]? var_ident >` all identifiers are alphanumeric and accept underscores.\n\nExamples:\n\nGiven the template `Username: <~ username >`, the table `{ username = 'knnk' }` and `{ }` it should return `Username: knnk`.\n\nGiven the template `Username: <~ [uppercase] username >`, the table `{ username = 'knnk' }` and `{ uppercase = string.upper }` it should return `Username: KNNK`.\n\nIf given an unknown identifier your implementation should throw/return an `error` or equivalent.\n\nMiddlewares should be able to return strings containing additional to-be-rendered template bodies, those containing middleware tags shall be ignored.\n\nThere are a few static and 100 random tests.\n\nTry to make your solution as tiny as possible.\n\n*Note: spaces on template bodies are completely optional - this is a test case.*\n\n\n\n",
+    "totalAttempts": 76,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54cbc7c4424fa85fe5000164",
+  "data": {
+    "id": "54cbc7c4424fa85fe5000164",
+    "name": "Rubyfunge Interpreter ",
+    "slug": "rubyfunge-interpreter",
+    "category": "games",
+    "publishedAt": "2015-01-30T19:42:20.671Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54cbc7c4424fa85fe5000164",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-30T18:04:52.598Z",
+    "createdBy": {
+      "username": "SnooperSnayk",
+      "url": "https://www.codewars.com/users/SnooperSnayk"
+    },
+    "description": "Today you will be writing a [befunge](http://esolangs.org/wiki/Befunge) styled language! \n\nHere's the basics about this language:\nCode is a 2D field that will come in as a string. (Example: \"1234v\\n@765<\") Your entry point on this code will be 0,0 and you will head to the west (>) first. As you move, you will interpret and run the code at your current position. As you move you will get instructions to change movement direction. You have a stack to store numbers to memory.\n\nHere's a list of commands\n\n* **0-9** Push a number (0-9) onto the stack\n\n* **>** Change instruction direction right\n\n* **<** Change instruction direction left\n\n* **^** Change instruction direction up\n\n* **v** Change instruction direction down\n\n* **+** Pop a and b from stack, push a+b\n\n* **-** Pop a and b from stack, push a-b\n\n* \\* Pop a and b from stack, push a\\*b\n\n* **/** Pop a and b from stack, push a/b\n\n* **%** Pop a and b from stack, push a%b\n\n* **!** Pop a, if a is 0, push 1, otherwise push 0\n\n* **`** Pop a and b from stack, push 1 if b > a otherwise push 0\n\n* **_** Horizontal if, pop a, if a is 0, change direction to right, otherwise change direction to left\n\n* **|** Vertical if, pop a, if a is 0, change direction to down, otherwise change direction to up\n\n* **:** Push a duplicate of the top stack value\n\n* **=** Swap the two top stack values\n\n* **$** Dump the top stack value (pop)\n\n* **.** Pop stack and put it into the output\n\n* **,** Pop stack and put it into the output as a character\n\n* **&** Get a number (0-9) from the input and push it to the stack\n\n* **~** Get a character from the input and push it to the stack\n\n* **\"string\"** Push every character after beginning of \" to stack until another \" is encounters\n\n* **[number]** Push the number as an integer in between the [ and ] to the stack\n\n* **;** Pushes 0 if there is still input to be gathered, pushes 1 if there is no more input\n\n* **?** Pushes 0 if there are items on the stack, 1 if there are no items on the stack\n\n* **#** Jumps over the next command\n\n* **@** End program\n\nCharactors that are not the commands above should be ignored.\n\nNOTE: \"gnirts\" would push g first, then n, and so on. [123] would push 123 to the stack. Both behaviours can be changed by changing the direction.\n[examples of this](https://gist.github.com/redcodefinal/e1d2a1e1dc3b5ca6783b)\n\nNow a bit about the Rubyfunge class.\nI already added these methods and fields to prevent confusion.\n\n* **run_one_instruction** will run the instruction at the current position, then move. \"\" and [] are treated as one instruction\n\n* **run** runs your code from current position until the end is reached\n\n* **get_code** gets the code at the current position\n\n* **move** moves the current position in the current direction and number of spaces\n\n* **ended?** returns true if the program has ended, othjerwise return false.\n\nDon't worry about code validation or throwing errors, all tests should be safe as long as you wrote the code to the specification.\n\nBe forewarned, your code will be tested heavily for expected outputs and behaviours, so make sure it's feature complete!\n\nGood luck!\n",
+    "totalAttempts": 253,
+    "totalCompleted": 15,
+    "totalStars": 8,
+    "voteScore": 14,
+    "tags": [
+      "Interpreters",
+      "Stacks",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

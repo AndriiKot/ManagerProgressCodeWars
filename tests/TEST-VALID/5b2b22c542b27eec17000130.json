@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b2b22c542b27eec17000130",
+  "data": {
+    "id": "5b2b22c542b27eec17000130",
+    "name": "Array - Merge Every N items",
+    "slug": "array-merge-every-n-items",
+    "category": "reference",
+    "publishedAt": "2018-06-21T04:01:49.192Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b2b22c542b27eec17000130",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-06-21T04:00:05.414Z",
+    "createdBy": {
+      "username": "ventinus",
+      "url": "https://www.codewars.com/users/ventinus"
+    },
+    "description": "Write a function called `merge_every` that accepts 3 arguments: 2 arrays and a number which indicates the amount of items to insert the second arrays items into the first. The third argument is optional and should default to 4. \n\nThink of it as you have an array of normal events and array of featured events, and you want to merge the two to result in an array of events with a featured one showing up every, say, 3 items.\n\n```ruby\nevent_ids = [1, 2, 3, 4, 5, 6, 7]\nfeatured_event_ids = [10, 11]\nmerge_every(event_ids, featured_event_ids, 3)\n# => [1, 2, 3, 10, 4, 5, 6, 11, 7]\n```\n\nIf the first array should complete before the second, the rest of the second is dropped. Whereas, if the second runs out before the first, the entirety of the first array should be preserved. Should `count` be 0 or less, no items should be inserted and if the target array is empty, than an empty array should be returned.\n\n**More Examples**\n\n```ruby\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nletters = ['a', 'b', 'c', 'd']\nmerge_every(numbers, letters)\n# => [1, 2, 3, 4, 'a', 5, 6, 7, 8, 'b', 9, 10]\n\nmerge_every(letters, numbers)\n# => ['a', 'b', 'c', 'd']\n\nmerge_every(letters, numbers, 2)\n# => ['a', 'b', 1, 'c', 'd']\n```",
+    "totalAttempts": 565,
+    "totalCompleted": 71,
+    "totalStars": 4,
+    "voteScore": 81,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

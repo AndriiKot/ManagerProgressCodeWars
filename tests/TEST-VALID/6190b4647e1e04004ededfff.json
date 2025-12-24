@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6190b4647e1e04004ededfff",
+  "data": {
+    "id": "6190b4647e1e04004ededfff",
+    "name": "ASCII string compression & decompression",
+    "slug": "ascii-string-compression-and-decompression",
+    "category": "algorithms",
+    "publishedAt": "2021-11-14T18:32:23.264Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6190b4647e1e04004ededfff",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-14T07:01:56.577Z",
+    "createdBy": {
+      "username": "terry.simons",
+      "url": "https://www.codewars.com/users/terry.simons"
+    },
+    "description": "Your challenge is to write a pair of compression/decompression functions that takes a string containing only lowercase alphabetic characters and returning a compressed version of that string which can then be decompressed back into the original string.\n\nA string is considered compressed if the output is smaller than the input string, however, some strings may not be able to be compressed, and they should be returned as-is.\n\nCompression rules:\n\n1) The output of `compress()` must not be larger than the input string.\n2) `compress()` must handle a minimum of 3 or more subsequent characters. (i.e. aaa must compress but aa need not)\n3) Complex scenarios such as `abababa` need not compress, although you may implement such rules if you wish.\n\nThe rules for the decompress() function are:\n\n1) The output of `compress()` must be able to be decompressed back into the original input when passed to `decompress()`\n\nFor instance:\n\n* `len(compress('aabcd'))` should not be larger than `len('aabcd')`\n* `len(compress('aaa'))` must be smaller than `len('aaa')`\n* `decompress(compress('aaa'))` must be equal to `'aaa'`.\n\nAll inputs will be valid inputs (lowercase alpha characters only).\n",
+    "totalAttempts": 51,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": -5,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

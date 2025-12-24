@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55a65ad838c6381dfe000020",
+  "data": {
+    "id": "55a65ad838c6381dfe000020",
+    "name": "Extract currencyFormat / relevant information from given currencyString",
+    "slug": "extract-currencyformat-slash-relevant-information-from-given-currencystring",
+    "category": "reference",
+    "publishedAt": "2015-07-15T13:07:48.418Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55a65ad838c6381dfe000020",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-07-15T13:06:32.674Z",
+    "createdBy": {
+      "username": "sheuser",
+      "url": "https://www.codewars.com/users/sheuser"
+    },
+    "description": "## Task\n```javascript\ngetCurrencyFormat(currencyString)\n```\nAbove function should be able to extract relevant information from given (**valid**) currencyString and return and object with the following properties:\n\n* symbol (string) - what symbol or string is used to represent the currency ex: **'$'**\n* position (string) - does the symbol come before or after the value ex: **'left'** or **'right'**\n* spaceBetween (boolean) - do we have a whitespace between currency ex: **true** or **false**\n* thousandSeparator (string) - what character is used as a separator every 3 digits ex: **','**\n* decimalMark (string) - what character is used for marking decimals ex: **'.'**\n\n**Everything that can not be found / identified should remain default, ex: empty string / false**\n\n## Examples\n```javascript\nvar dollar = getCurrencyFormat('$1,234.56').symbol; // '$'\nvar euro = getCurrencyFormat('1.234,56 €').symbol; // '€'\n```\n\n## Helpful links on your way to the solution:\n\n* [String.replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)\n* [String.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)\n\n\n",
+    "totalAttempts": 454,
+    "totalCompleted": 26,
+    "totalStars": 2,
+    "voteScore": 40,
+    "tags": [
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

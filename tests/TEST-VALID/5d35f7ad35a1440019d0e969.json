@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d35f7ad35a1440019d0e969",
+  "data": {
+    "id": "5d35f7ad35a1440019d0e969",
+    "name": "Triad Chord Classifier",
+    "slug": "triad-chord-classifier",
+    "category": "algorithms",
+    "publishedAt": "2019-07-22T18:42:19.262Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "typescript",
+      "julia"
+    ],
+    "url": "https://www.codewars.com/kata/5d35f7ad35a1440019d0e969",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-22T17:51:42.236Z",
+    "createdBy": {
+      "username": "stellartux",
+      "url": "https://www.codewars.com/users/stellartux"
+    },
+    "description": "In tonal music, a [triad chord](https://en.wikipedia.org/wiki/Triad_(music)) is a set of three notes played simultaneously. These notes are the root note, the third, which is 3 or 4 semitones above the root, and the fifth, which is 3 or 4 semitones above the third. The [type of chord](https://en.wikipedia.org/wiki/Chord_(music)#Triads) depends on the pitch of the root notes and the sizes of the [intervals](https://en.wikipedia.org/wiki/Interval_(music)) between the root, third and fifth. A chord name is written as the letter of the root note, and suffix to denote the type of chord.\n\nMajor chords have a third 4 semitones above the root, and a fifth 3 semitones above the third and represented by the root note's letter alone without a suffix. Major chords have a third 3 semitones above the root, and a fifth 4 semitones above the third and represented by the root note then `m`. Diminished chords have intervals of 3 and 3 semitones, and have the suffix `dim`, and augmented chords have intervals 4 and 4 semitones, and have the `aug` suffix.\n\n```\nclassify(notes, flat)\n```\n\nIn this kata, we'll be writing a function that takes a list of [MIDI note numbers](http://computermusicresource.com/midikeys.html) and returns which chord is being played. It will also take a second parameter to denote whether [accidentals](https://en.wikipedia.org/wiki/Accidental_(music)) should be formatted as sharp or flat, e.g. whether the major chord with root `61` would be written as \"C♯\" or \"D♭\". \n\n```javascript\nclassify([60, 64, 67]) // MIDI numbers for notes \"C\", \"E\" and \"G\", returns \"C\"\nclassify([60, 63, 67]) // returns \"Cm\"\nclassify([60, 63, 66]) // returns \"Cdim\"\nclassify([60, 64, 68]) // returns \"Caug\"\nclassify([61, 64, 68]) // flat not specified, defaults to false, returns \"C♯m\"\nclassify([61, 64, 68], true) // returns \"D♭m\"\nclassify([58, 62, 66], true) // returns \"B♭aug\"\n```\n```julia\nclassify([60, 64, 67]) # MIDI numbers for notes \"C\", \"E\" and \"G\", returns \"C\"\nclassify([60, 63, 67]) # returns \"Cm\"\nclassify([60, 63, 66]) # returns \"Cdim\"\nclassify([60, 64, 68]) # returns \"Caug\"\nclassify([61, 64, 68]) # flat not specified, defaults to false, returns \"C#m\"\nclassify([61, 64, 68], true) # returns \"D♭m\"\nclassify([58, 62, 66], true) # returns \"B♭aug\"\n```\n* Only valid MIDI notes numbers will be passed to the function, `0 ≤ note ≤ 127`\n* There will always be three notes in the note array, and they will always form a valid major, minor, diminished or augmented chord.\n* If `flat` is not specified, assume notes have to be formatted as sharp.\n\n### MIDI note numbers\n\n<table width=\"600\" border=\"1\">\n            <tr> \n              <td><div align=\"center\"><strong>Octave</strong></div></td>\n              <td><div align=\"center\"><strong>C</strong></div></td>\n              <td><div align=\"center\"><strong>C♯/D♭</strong></div></td>\n              <td><div align=\"center\"><strong>D</strong></div></td>\n              <td><div align=\"center\"><strong>D♯/E♭</strong></div></td>\n              <td><div align=\"center\"><strong>E</strong></div></td>\n              <td><div align=\"center\"><strong>F</strong></div></td>\n              <td><div align=\"center\"><strong>F♯/G♭</strong></div></td>\n              <td><div align=\"center\"><strong>G</strong></div></td>\n              <td><div align=\"center\"><strong>G♯/A♭</strong></div></td>\n              <td><div align=\"center\"><strong>A</strong></div></td>\n              <td><div align=\"center\"><strong>A♯/B♭</strong></div></td>\n              <td><div align=\"center\"><strong>B</strong></div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">-2</div></td>\n              <td><div align=\"center\">0</div></td>\n              <td><div align=\"center\">1</div></td>\n              <td><div align=\"center\">2</div></td>\n              <td><div align=\"center\">3</div></td>\n              <td><div align=\"center\">4</div></td>\n              <td><div align=\"center\">5</div></td>\n              <td><div align=\"center\">6</div></td>\n              <td><div align=\"center\">7</div></td>\n              <td><div align=\"center\">8</div></td>\n              <td><div align=\"center\">9</div></td>\n              <td><div align=\"center\">10</div></td>\n              <td><div align=\"center\">11</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">-1</div></td>\n              <td><div align=\"center\">12</div></td>\n              <td><div align=\"center\">13</div></td>\n              <td><div align=\"center\">14</div></td>\n              <td><div align=\"center\">15</div></td>\n              <td><div align=\"center\">16</div></td>\n              <td><div align=\"center\">17</div></td>\n              <td><div align=\"center\">18</div></td>\n              <td><div align=\"center\">19</div></td>\n              <td><div align=\"center\">20</div></td>\n              <td><div align=\"center\">21</div></td>\n              <td><div align=\"center\">22</div></td>\n              <td><div align=\"center\">23</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">0</div></td>\n              <td><div align=\"center\">24</div></td>\n              <td><div align=\"center\">25</div></td>\n              <td><div align=\"center\">26</div></td>\n              <td><div align=\"center\">27</div></td>\n              <td><div align=\"center\">28</div></td>\n              <td><div align=\"center\">29</div></td>\n              <td><div align=\"center\">30</div></td>\n              <td><div align=\"center\">31</div></td>\n              <td><div align=\"center\">32</div></td>\n              <td><div align=\"center\">33</div></td>\n              <td><div align=\"center\">34</div></td>\n              <td><div align=\"center\">35</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">1</div></td>\n              <td><div align=\"center\">36</div></td>\n              <td><div align=\"center\">37</div></td>\n              <td><div align=\"center\">38</div></td>\n              <td><div align=\"center\">39</div></td>\n              <td><div align=\"center\">40</div></td>\n              <td><div align=\"center\">41</div></td>\n              <td><div align=\"center\">42</div></td>\n              <td><div align=\"center\">43</div></td>\n              <td><div align=\"center\">44</div></td>\n              <td><div align=\"center\">45</div></td>\n              <td><div align=\"center\">46</div></td>\n              <td><div align=\"center\">47</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">2</div></td>\n              <td><div align=\"center\">48</div></td>\n              <td><div align=\"center\">49</div></td>\n              <td><div align=\"center\">50</div></td>\n              <td><div align=\"center\">51</div></td>\n              <td><div align=\"center\">52</div></td>\n              <td><div align=\"center\">53</div></td>\n              <td><div align=\"center\">54</div></td>\n              <td><div align=\"center\">55</div></td>\n              <td><div align=\"center\">56</div></td>\n              <td><div align=\"center\">57</div></td>\n              <td><div align=\"center\">58</div></td>\n              <td><div align=\"center\">59</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">3</div></td>\n              <td><div align=\"center\">60</div></td>\n              <td><div align=\"center\">61</div></td>\n              <td><div align=\"center\">62</div></td>\n              <td><div align=\"center\">63</div></td>\n              <td><div align=\"center\">64</div></td>\n              <td><div align=\"center\">65</div></td>\n              <td><div align=\"center\">66</div></td>\n              <td><div align=\"center\">67</div></td>\n              <td><div align=\"center\">68</div></td>\n              <td><div align=\"center\">69</div></td>\n              <td><div align=\"center\">70</div></td>\n              <td><div align=\"center\">71</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">4</div></td>\n              <td><div align=\"center\">72</div></td>\n              <td><div align=\"center\">73</div></td>\n              <td><div align=\"center\">74</div></td>\n              <td><div align=\"center\">75</div></td>\n              <td><div align=\"center\">76</div></td>\n              <td><div align=\"center\">77</div></td>\n              <td><div align=\"center\">78</div></td>\n              <td><div align=\"center\">79</div></td>\n              <td><div align=\"center\">80</div></td>\n              <td><div align=\"center\">81</div></td>\n              <td><div align=\"center\">82</div></td>\n              <td><div align=\"center\">83</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">5</div></td>\n              <td><div align=\"center\">84</div></td>\n              <td><div align=\"center\">85</div></td>\n              <td><div align=\"center\">86</div></td>\n              <td><div align=\"center\">87</div></td>\n              <td><div align=\"center\">88</div></td>\n              <td><div align=\"center\">89</div></td>\n              <td><div align=\"center\">90</div></td>\n              <td><div align=\"center\">91</div></td>\n              <td><div align=\"center\">92</div></td>\n              <td><div align=\"center\">93</div></td>\n              <td><div align=\"center\">94</div></td>\n              <td><div align=\"center\">95</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">6</div></td>\n              <td><div align=\"center\">96</div></td>\n              <td><div align=\"center\">97</div></td>\n              <td><div align=\"center\">98</div></td>\n              <td><div align=\"center\">99</div></td>\n              <td><div align=\"center\">100</div></td>\n              <td><div align=\"center\">101</div></td>\n              <td><div align=\"center\">102</div></td>\n              <td><div align=\"center\">103</div></td>\n              <td><div align=\"center\">104</div></td>\n              <td><div align=\"center\">104</div></td>\n              <td><div align=\"center\">106</div></td>\n              <td><div align=\"center\">107</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">7</div></td>\n              <td><div align=\"center\">108</div></td>\n              <td><div align=\"center\">109</div></td>\n              <td><div align=\"center\">110</div></td>\n              <td><div align=\"center\">111</div></td>\n              <td><div align=\"center\">112</div></td>\n              <td><div align=\"center\">113</div></td>\n              <td><div align=\"center\">114</div></td>\n              <td><div align=\"center\">115</div></td>\n              <td><div align=\"center\">116</div></td>\n              <td><div align=\"center\">117</div></td>\n              <td><div align=\"center\">118</div></td>\n              <td><div align=\"center\">119</div></td>\n            </tr>\n            <tr> \n              <td><div align=\"center\">8</div></td>\n              <td><div align=\"center\">120</div></td>\n              <td><div align=\"center\">121</div></td>\n              <td><div align=\"center\">122</div></td>\n              <td><div align=\"center\">123</div></td>\n              <td><div align=\"center\">124</div></td>\n              <td><div align=\"center\">125</div></td>\n              <td><div align=\"center\">126</div></td>\n              <td><div align=\"center\">127</div></td>\n              <td><div align=\"center\">-</div></td>\n              <td><div align=\"center\">-</div></td>\n              <td><div align=\"center\">-</div></td>\n              <td><div align=\"center\">-</div></td>\n            </tr>\n          </table>\n",
+    "totalAttempts": 44,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dcb8729230f4100019d62a1",
+  "data": {
+    "id": "5dcb8729230f4100019d62a1",
+    "name": "Base 2½",
+    "slug": "base-2half",
+    "category": "algorithms",
+    "publishedAt": "2019-11-13T04:31:37.659Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5dcb8729230f4100019d62a1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-13T04:31:47.476Z",
+    "createdBy": {
+      "username": "phildinius",
+      "url": "https://www.codewars.com/users/phildinius"
+    },
+    "description": "In computing, we're taught about Binary, also known as Base 2, where we can count to any number using only the digits 0 and 1. In fact the premise behind any base `n` is that you count using only `n` unique numerals. But what happens when `n` isn't a whole number?\n\n**Task**\n\nGiven a number `x` in base 10, convert it to a `string` in base 2½.\n\n**Explanation**\n\nSince you can't have two and a half unique numerals, we will have to be more creative. We will count using the numerals `0`, `1`, `2`, `3`, and `4`. Just as each digit in binary represents a power of 2 (e.g. `110` in base 2 is equivalent to `1×2² + 1×2¹ + 0×2⁰`), each digit in our base 2½ numbers will represent a power of 2½. For example, the number `42` in base 2½ can be written as `4×(2½)¹ + 2×(2½)⁰`, showing that it equals `12` when converted to base 10.\n\n**Examples**\n\n```javascript\nbaseTwoPointFive(12) === \"42\";\nbaseTwoPointFive(29) === \"404\";\n```\n```haskell\nbaseTwoPointFive 12 == \"42\"\nbaseTwoPointFive 29 == \"404\"\n```\n\n**Input Range**\n\nInputs will be within the range `0 <= x < 100000`.",
+    "totalAttempts": 178,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 22,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

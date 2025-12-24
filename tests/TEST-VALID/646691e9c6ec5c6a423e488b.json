@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646691e9c6ec5c6a423e488b",
+  "data": {
+    "id": "646691e9c6ec5c6a423e488b",
+    "name": "Ruby blocks handling",
+    "slug": "ruby-blocks-handling",
+    "category": "reference",
+    "publishedAt": "2023-05-20T18:12:12.136Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/646691e9c6ec5c6a423e488b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-18T21:00:25.861Z",
+    "createdBy": {
+      "username": "Twilight_Sun",
+      "url": "https://www.codewars.com/users/Twilight_Sun"
+    },
+    "description": "Imagine, while learning Ruby you discovered its magic blocks and a lot of different awesome keywords. So, after reading docs you found there is different ways one could escape a running block and decided to write a simple class to test how blocks behave.\n\nTask is simple: implement a class BlockTester. Its constructor should take a block and instance of the class should have a method 'test'. Of course BlockTester#test should carefully call a block with any provided parameters and return a detailed result.\n\nFor your convenience there is already provided class CallResult in a preloaded code:\n```ruby\nVALID_STATUSES = %i[ok error break return throw]\n\nclass CallResult\n  attr_reader :status, :value, :tag, :error\n  \n  def initialize(status, value: nil, tag: nil, error: nil)\n    # some obvious code\n  end\n  \n  # some obvious code\nend\n```\nMethod BlockTester#test should return an instance of CallResult with an appropriate status and with other fields (where they make sense). Sample tests could explain how to use CallResult and what data is supposed to be returned in different cases.",
+    "totalAttempts": 31,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Language Features",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

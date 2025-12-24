@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d85b23c734e7c5e84557e5",
+  "data": {
+    "id": "64d85b23c734e7c5e84557e5",
+    "name": "Hearts (Card Game) Kata 3 of 3",
+    "slug": "hearts-card-game-kata-3-of-3",
+    "category": "games",
+    "publishedAt": "2023-08-15T00:18:56.889Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64d85b23c734e7c5e84557e5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-13T04:25:07.081Z",
+    "createdBy": {
+      "username": "p4songer",
+      "url": "https://www.codewars.com/users/p4songer"
+    },
+    "description": "## This is the final kata of a series I've made on Hearts the card game! \n### It is highly advised to at least complete Kata #2 before attempting this one to fully understand the scope of how \"playing a round\" works. \n\nThere will be refreshers on all important rules, but rules covered in previous katas will be brief, where the new rules specific to this kata will be more in depth.\n\n[Link for Kata #1](https://www.codewars.com/kata/64d16a4d8a9c272bb4f3316c) | [Link for Kata #2](https://www.codewars.com/kata/64d1d067e58c0e0025860f4b)\n \n### If you have completed Kata #2:\nPlan on refactoring your code. Most of the functionality will cross over, but we are now making a fully functional class to keep track of a simulated game of Hearts. You have been provided the names of your previous functions as `methods` of the `Hearts` class.\n\n### For warriors who have not trained on Kata #2:\nYou will need to implement correct code for evaluating a hand, and evaluating a round, but **you will not be directly tested on this**. This kata is focused primarily on scoring a whole game, and it is assumed that you are either able to work out valid player logic with a clever reading of the information given below, or have already worked it out in the previous Kata. If your logic for scoring a full round is faulty, it will be impossible to pass the random tests. I have included the most difficult unit test from Kata #2 to either help you troubleshoot the issue with your player logic, or to recommend solving Kata #2 first, since the tests in that Kata are directed towards that specific issue.\n\n#### Some key notes if you are choosing to start with this challenge.\nAll cards are given as strings, and four player's ```\"HANDS\"``` are given as a list of 13 cards each. The order a player recieves their cards is crucial to their player logic, so do not sort cards before evaluating a hand. These parameters will always be given, so no need to write error checking for this.\n\n### RULES FOR SCORING A HAND\nA ```HAND``` is defined as four cards, with one card given from each player according to the rules of play for a ```ROUND```.  To score a ```HAND``` properly, you MUST follow this logic: \n  \n  ```Which card was played first?``` | ```Which cards match that suit?``` | ```Which card has the highest value of that set?``` | ```return that card```\n\nThe first card played in a ```HAND``` sets the ```SUIT``` for that ```HAND```. If a card does not match the ```SUIT```, it is not considered for winning, despite having a higher value. Card values are: ```2 -> 10 | J | Q | K | A```\n### RULES FOR PLAYING A ROUND\nA round is defined by each player starting with 13 cards, and playing one card each, until there are no cards left in any players hand. (This description makes the most sense if you are using a removal method. You could also describe this as \"every card has now been seen\")\n#### STEP ONE\nDecide who plays first for this specific hand. If the two of clubs ```\"2C\"``` is present in any player's hand, that player MUST go first. Otherwise, the player who won the **previous** hand goes first. All rounds will be 13 cards long, so there is no need for logic to cover a \"partial round\".\n#### STEP TWO\nAfter a player has been decided to go first that player will play the `\"2C\"` if it exists, otherwise that player will play the first card in their hand. Every other player will play cards using this logic:\n```Check for \"2C\" | Check for suit | Check for point cards | Play the first card in hand```\n- Note, that a player does not have to be Alex (player 0) in order to go first. There are situations where Alex will play last, or third, or second. That is why checking for the ```\"2C\"``` is still included in this logic. \n\nIf they do not have the ```\"2C\"```, they will play the first instance of a card with a matching ```SUIT```. If they do not have a card matching the ```SUIT``` then they will play the first instance of a ```POINT CARD```. A ```POINT CARD``` is any heart ```\"_H\"``` card, or the Queen of Spades ```\"QS\"``` card. If they do not have a ```POINT CARD```, then they will play the first card in their hand. (Again, this is based off of a removal method. You could also call this the \"first unseen card\") \n#### STEP THREE\nSteps one and two will be repeated until *ALL CARDS HAVE BEEN PLAYED*. Each card should only be played once, and all 13 cards should have been played from each player. After that, the  ```ROUND``` will be scored. You could possibly increment the score as the round is being played, *but there are very important rules for scoring that should **only** be considered at the **end** of a round, and **before** the beginning of the **next** round (if there is still a next round)* A game of hearts is evaluated for losing conditions  **in between rounds**  This is to give the players time to shuffle and deal the next hand, but for our game, this is to prevent confusion on exactly which point to evaluate the score as described below. The second example test case \"```def score_50():```\" is given to show this as clearly as possible. If you score both hands incrementally only, without any evaluation between ```ROUNDS```, you will get a failed test.\n\n\n#   ---------------------------------------- NEW RULES  FOR SCORING ---------------------------------------- \n\n\nAs described in step three above, ```SCORING``` takes place **in between** ```ROUNDS```. That means that each one of the following conditions should be checked **after** a round of 13 hands has been completed, and **before** the next round has started. Here is a sequence for how scoring should be evaluated, as well as what defines a ```POINT CARD```:\n```\n| check for final POINT CARD locations -> check for Shooting the Moon -> \n-> add POINT totals to previous rounds -> check for 50 or 100 points  -> \n-> return final score of Round X |\n``` \n- ```POINT CARDS``` are defined as:  ANY Heart suited card: ```\"_H\"``` or the Queen of Spades: ```\"QS\"``` There are a total of 14 point cards, where each heart card is worth ```1 point each```, **regardless of face value**, and the Queen of Spades  ```\"QS\"``` is worth ```13 points``` **by itself**.\n\n- The winning player for each `HAND` takes all of the played cards during that `HAND`. This means that players are accumulating point cards during the `ROUND`, and score points based off of the `POINT CARDS` that they have won. For example, if a player wins a `HAND` with say, `['2H', '3H', '2C', 'QS']` they have scored 15 points on that `HAND`, which will be added to anything else they have scored that `ROUND`\n\n### RULES FOR SCORING WITH EXAMPLES.\n- Shooting the Moon is one of the iconic strategies of playing hearts. This is happens when one player wins **```ALL 14 POINT CARDS```** in any given round, which is quite the gamble. This would normally would add 26 to this players score, but because they risked it all, they instead recieve ```0 points``` and happily give **every other player ```26 points```**. If this player is short even ONE POINT, their attempt has failed, and they will score ```25 points``` that round. \n> - This should be evaluated after collecting the point cards that each player has won, and before adding a new score to any player's total.\n- We are playing with a common house rule, where if any player's score is exactly equal to  either 50 or 100 **at the end of scoring**, then that player's score is subtracted by 50. For example, if Alex scored ```26 points``` in Round 1, and ```24 points``` in Round 2, and finally ```4 points``` in Round 3, the combination of these rounds would go like this:\n> - Bob shot the moon in Round 1, giving Alex ```26 points``` after scoring Round 1.\n> - Alex tried to shoot the moon in Round 2, but failed. At the end of the round, he scored `24 points` giving him a total score of ```50 points```. This worked out in his favor though, since he scored exactly 50, we now subtract 50 from his total score, giving him a new total of ```0 points``` at the end of Round 2.\n> - Alex played it safe for Round 3, only scoring ```4 points```. At the end of these three rounds, **in this sequence** Alex's final score will come to ```4 points```.\nYou have also been given an alternate scenario where Alex starts by scoring 4 points in Round 1. You will see that by changing the order of these rounds, Alex would instead end up with ```54 points``` because he **never** had a score of ***exactly*** 50 points at the end of a ```ROUND```\n>   - If there is a situation where a player scores 100 exactly (reducing their score to 50) and then scoring 0 points on the next round (which would leave their evaluated score at 50) this will again reduce their score by 50, leaving them with a final total of `0 POINTS`\n- In hearts, you do not actually check for a win condition, but a *losing condition* This is because the winner of a game of hearts is the person who has the *lowest score* once the losing condition has been found. (**This is something the test code will evaluate. Do not worry about writing a check for this condition**) In our game, the losi is when any player has scored MORE THAN ```100 points``` Remember, if the score is evaluated at 100 points *EXACTLY*, the player's score is reduced to `50 points`, **and the losing condition is not triggered**.  \n\n## DETAILS ON CLASS METHODS\n\n  There are 2 methods that you will need to include as a part of your class. The first is `play_a_round`, which takes self, followed by 4 lists of player hands. This method is responsible for correctly evaluating a round, and updating players scores. This does not need to return anything, since player scores will be checked directly to test for valid scoring.\n\n  The second method that you need to include in your class is called `score`. This should return a dict containing the player's names as keys (titled), and their total points scored in that current instance as values. The `score` method should be updated as described in the other scoring rules. This will be the main method called for testing.",
+    "totalAttempts": 137,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 9,
+    "tags": [
+      "Puzzles",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

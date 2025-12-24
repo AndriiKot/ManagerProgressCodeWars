@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63c78554e996bc0031278b6b",
+  "data": {
+    "id": "63c78554e996bc0031278b6b",
+    "name": "Shifting base N numbers",
+    "slug": "shifting-base-n-numbers",
+    "category": "games",
+    "publishedAt": "2023-01-18T20:21:13.457Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/63c78554e996bc0031278b6b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-18T05:36:20.597Z",
+    "createdBy": {
+      "username": "smckaysmalley",
+      "url": "https://www.codewars.com/users/smckaysmalley"
+    },
+    "description": "# Helpful Background\n\n## Base N Numbers In Ruby\n\nIn Ruby, you can express a binary number with the `0b` prefix. You can see that in a rails console:\n\n```ruby\n> 0b10\n=> 2\n```\n\nHere you can see that `0b10` is the same thing as the `Integer` 2. You can represent other kinds of number in ruby as well:\n\n```ruby\n> 0o363 # octal\n=> 243\n> 0x1b # hexidecimal\n=> 27\n```\n\nThis way you can represent numbers in different bases, and Ruby automatically knows what `Integer` value it represents.\n\n## Bitwise Shift Operators\n\nIn boolean algebra, the shift operator can be quite useful. The left shift operator (`<<`) can be\nused to shift bits to the left, and the right shift operator (`>>`) can be used to shift bits to the\nright. For example:\n\n```ruby\n> 0b101 << 2\n=> 20\n```\n\nThis is because `0b101` (5 in decimal) is shifted 2 bits to the left (`0b10100`), which\nis binary for the number 20. You can also use the left shift operator on the `Integer` value:\n\n```ruby\n> 5 << 2\n=> 20\n```\n\nThe right shift operator does the opposite. Instead of adding 'bits' (or digits), it truncates them. For example:\n\n```ruby\n> 0b101 >> 1\n=> 2\n```\n\nThis is because `0b101` is shifted right 1 bit (0b10), and becomes 2. The right shift operator also works on `Integer` values.\n\n```ruby\n> 5 >> 1\n=> 2\n```\n\n# Your task\n\nThese operators are limited to only bitwise operations. Your task is to write 2 functions that would perform a similar 'shift' of a number's digits. To do this, you will write a `left_shift` function, and a `right_shift` function. These functions need to be able to shift the number's digits the correct number of times in the appropriate direction. These functions also need to perform the shift in a given numerical base. In other words, shifting bits in binary yeilds a different result than shifting digits in hexidecimal. For example:\n\n```ruby\n# this is a bitwise operation\n> 0xa1 << 2\n=> 644\n\n# this is a hexidecimal operation. See below for argument descriptions\n> left_shift(0xa1, 2, 16)\n=> 41216\n```\n\nIn the first example, `0xa1` (`0b10100001`) has it's bits shifted left 2 times. This results in\n`0b1010000100`, which is 644.\n\nIn the second operation, we treat `0xa1` as a hexidecimal number. Shifting it's digits left 2 times,\nyou get `0xa100`, which is 41216.\n\nThese functions will accept 3 arguments.\n  - The first argument, `num` is the number that you need to perform the shift on.\n  - The second argument, `by` is the number of 'bits' (or digits) to shift by. In the example above, this would be 2.\n  - The third argument, `base` is the base of the number. Base values will be `Integer` values between (2..50). For example:\n      - A `base` of 2 would mean to treat the number as binary (`0b10101000001111100`).\n      - A `base` of 8 would mean to treat the number octal (`0o250174`).\n      - A `base` of 10 means to treat it as a number in decimal (`86140`).\n      - A `base` of 16 would mean that the number is in hexidecimal (`0x1507c`).\n\nBoth of these functions should return the integer value of the resulting operation. Here are some\nexample outputs:\n\n```ruby\n> left_shift(86140, 4, 2)\n=> 1378240\n> left_shift(6543, 10, 8)\n=> 7025492754432\n> left_shift(123, 2, 10)\n=> 12300\n> left_shift(754375, 7, 16)\n=> 202500997120000\n> left_shift(432, 3, 40)\n=> 27648000\n\n> right_shift(555, 1, 2)\n=> 277\n> right_shift(876, 2, 8)\n=> 13\n> right_shift(99999, 3, 10)\n=> 99\n> right_shift(8578458578, 8, 16)\n=> 1\n> right_shift(47328473284973298, 6, 40)\n=> 11554803\n```\n\nGood luck!",
+    "totalAttempts": 74,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": 26,
+    "tags": [
+      "Algorithms",
+      "Algebra"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

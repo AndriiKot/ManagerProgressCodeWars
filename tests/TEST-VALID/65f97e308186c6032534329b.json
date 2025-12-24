@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f97e308186c6032534329b",
+  "data": {
+    "id": "65f97e308186c6032534329b",
+    "name": "Good Times With Zones",
+    "slug": "good-times-with-zones",
+    "category": "algorithms",
+    "publishedAt": "2024-03-21T15:01:25.781Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65f97e308186c6032534329b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-19T11:59:44.738Z",
+    "createdBy": {
+      "username": "conlonj25",
+      "url": "https://www.codewars.com/users/conlonj25"
+    },
+    "description": "We have a timezone offset expressed in a nice regular uniform string. Let's format that in bizarre new ways!\n\nSource Format `{sign}{hours}:{minutes}`\n- sign: Either `+` or `-`\n- hours: Hour component. Two digits. Leading zeros.\n- minutes: Minute component. Two digits. Leading zeros.\n\nTarget Format `UTC{sign}{hours}{separator}{minutes}`\n- sign: Either `+` or `-`\n- hours: Hour component. 1/2 digits. No leading zeros.\n- separator: Value is always `H`. Only present if there is a corresponding minute component.\n- minutes: Minute component. 1/2 digits. No leading zeros. Only present if greater than zero.\n\nExamples:\n- `+00:00` => `UTC+0`\n- `-00:00` => `UTC+0`\n- `+01:00` => `UTC+1`\n- `-01:00` => `UTC-1`\n- `+05:45` => `UTC+5H45`\n- `-02:30` => `UTC-2H30`\n\nPoints of Interest\n- There is no timezone on earth with a single-digit minute offset. i.e. there is no `+00:07`. But we're gonna test for that anyway. Just in case they invent it.\n- The source format is derived from moment-timezones [here](https://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/). The target format is custom made for some wacky Willy Wonka machine.",
+    "totalAttempts": 148,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

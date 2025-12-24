@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58efb11b5b77b37ced000001",
+  "data": {
+    "id": "58efb11b5b77b37ced000001",
+    "name": "Scrambled Numbers Sorting",
+    "slug": "scrambled-numbers-sorting",
+    "category": "games",
+    "publishedAt": "2017-04-13T17:11:23.467Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58efb11b5b77b37ced000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-04-13T17:10:51.893Z",
+    "createdBy": {
+      "username": "CamWalker",
+      "url": "https://www.codewars.com/users/CamWalker"
+    },
+    "description": "You wake up one morning, and all numbers have been scrambled. The clock even has its numbers in all the wrong places. What is going on?\n\nYou tell your friend, but they have no idea what you're talking about. After talking with your friend for a while, you get some information: a list of numbers (0-9) least to greatest.\n\nYour challenge is to now sort an array of numbers from least to greatest considering the list your friend gave you.\n\n\nYou will be given two arrays. The first will be the KEY (the list your friend gave you with the 10 digits [as strings] from least to greatest). The second will be an array of numbers [as strings] to sort according to the key you are given.\n\nYou will return an array of strings sorted according to the key given.\n\n// THE KEY //\n\nThe key will be a 9-digit array that corresponds to the new order of numbers. You will not need to validate the key. It will contain each of the digits 0-9.  Your code should accommodate any sequence of the digits 0-9.\n\n```\n     ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']\n       |    |    |    |    |    |    |    |    |    |\n       v    v    v    v    v    v    v    v    v    v\nKEY: ['6', '3', '8', '9', '0', '1', '5', '2', '4', '7']\n```\n\n// The Sorting //\n\nThe second argument in the function is an array that needs sorting. The sorting will be ascending according to the sequence passed to you through the key.\n\n\n// Examples //\n\n```\nKEY: ['6', '3', '8', '9', '0', '1', '5', '2', '4', '7']\nTo Sort: ['00', '0', '1', '4', '9', '10', '20', '25', '50', '75']\n\nResult: [ '9', '0', '1', '4', '00', '10', '50', '20', '25', '75' ]\n```\nThe \"9\" is first in the result because it corresponds to the number 3, which is less than both the \"1\" (5) and \"4\" (8). \n\nThe \"00\" represents the value 44 and must appear in the correct place as \"00\".\n\n```\nKEY: ['6', '3', '8', '9', '0', '1', '5', '2', '4', '7']\nTo Sort: [ '000', '100', '200', '300', '400', '500', '600', '700', '800', '900']\n\nResult: [ '00', '300', '800', '900', '000', '100', '500', '200', '400', '700' ]\n```\nThe \"50\" (converts to 64) comes after \"10\" (54) but before \"20\" (74) and \"25\" (76).\n\n\nThe \"600\" (044) must become \"00\" (44). This is because 6 evaluates to a \"0\" and zeroes are dropped on the front of numbers.\n\n```\nKEY: ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']\nTo Sort: [ '000', '100', '200', '300', '400', '500', '600', '700', '800', '900']\n\nResult: [ '00', '800', '700', '600', '500', '400', '300', '200', '100', '000']\n```\nThis is similar to the last example, except the key has changed. Notice the \"00\" in the front. This started as \"900\" but since 9 => 0 and 0 => 9, it evaluates to 99 which is less than \"800\" (100).\n",
+    "totalAttempts": 327,
+    "totalCompleted": 18,
+    "totalStars": 5,
+    "voteScore": 19,
+    "tags": [
+      "Strings",
+      "Arrays",
+      "Algorithms",
+      "Puzzles",
+      "Sorting"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

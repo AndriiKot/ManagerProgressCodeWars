@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c41e6d63dd41b23b71ca447",
+  "data": {
+    "id": "5c41e6d63dd41b23b71ca447",
+    "name": "The Goobles Challenge - Part 1",
+    "slug": "the-goobles-challenge-part-1",
+    "category": "games",
+    "publishedAt": "2019-01-18T16:14:16.845Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5c41e6d63dd41b23b71ca447",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-18T14:46:46.189Z",
+    "createdBy": {
+      "username": "remonvv",
+      "url": "https://www.codewars.com/users/remonvv"
+    },
+    "description": "*This is part 1 of a multi-part series of katas. Although not strictly necessary it is advised to complete the katas in order as they are designed to become increasingly difficult.*\n\n* **[Part 1](https://www.codewars.com/kata/the-goobles-challenge-part-1)**\n* [Part 2](https://www.codewars.com/kata/the-goobles-challenge-part-2)\n\n# Story #\nOn the planet *Gooble* a large group of lively little creatures, the *Goobles*, spend all their days building beautiful sand sculptures. As their town elder you are tasked with helping the *Goobles* build their sculptures as efficiently as possible. Each day, every *Gooble* wakes up, optionally trains to become extra strong, walk to the sand mines to get the special sculpting sand, return to town and then build their sculpture.\n\n# Problem #\nThe previous *Gooble* town elders have established the following laws for all *Goobles* :\n* Every *Gooble* must attempt to make a sand sculpture each day.\n* Each *Gooble* gets assigned a **square** spot with sides of **D** meters on the town square to build their sculpture (so the area of the spot is **D** x **D** or **D²** square meters).\n* Each sand sculpture must use exactly **100** kilograms of sand for every **square meter** of building space the *Gooble* was assigned. Building a sculpture always takes exactly **one hour**.\n* *Goobles* are allowed to bring more sand into town than they strictly need to finish their sculpture.\n* Each *Gooble* must carry their own sand from the sand mine back to town. The run to the mine, loading the sand and carry the sand back takes exactly **one hour** in total.\n* *Goobles* must finish their sculpture before the day ends. On the planet *Gooble* each day has an arbitrary amount of hours that only you, the town elder, knows exactly. Each *Gooble* is told at the start of the day how many hours they have to work with.\n\nEach *Gooble* wakes up with a random amount of strength, expressed in the amount of kilograms **S** of sand they can carry per trip. A *Gooble* can double their strength **S** for each **full hour** they spend training in town. If a *Gooble* does not train for exactly the full hour their strength is not increased.\n\nYour challenge is to provide each *Gooble* with the **shortest** possible schedule of instructions that allows them to build a sculpture without breaking any of the *Gooble* laws.\n\nThe schedule is a string of capital letters, each letter instructing the *Gooble* how to spend their time that hour. The allowed instructions are :\n\n```\nT : Spend the hour training, doubling Gooble strength.\nC : Carry sand back and forth to town. A Gooble will always bring exactly the amount of sand they can carry.\nB : Build the sculpture. This must be the last instruction on the schedule.\n```\n\nFor example, for a *Gooble* that starts with **S=100** and a schedule that reads ```TTCCB``` would instruct the *Gooble* to train for 2 hours and double its strength 2 times to 400 (after the first hour **S=200** and the second hour **S=400**). Then the *Gooble* would make two trips to the sand mine each time picking up 400 kilograms of sand for 800 kilograms in total. Thus, with this instruction set a *Gooble* can build a sculpture with at most 800 kilograms of sand and they can do it in 5 hours (remember, each instruction in the schedule represents exactly one hour).\n\nIf there is no possible schedule where the *Gooble* can construct the sculpture before the day ends your schedule should just read ```TBCB``` (Too Big, Can't Build). Note that due to there being two ```B``` instructions in this schedule this schedule is not valid, despite all letters corresponding to individual instructions.\n\n# Input #\nYou are tasked to implement the function ```instruct``` that has the following inputs :\n```\nS : The strength S with which the Gooble wakes up this day.\nD : The length of each side D of the square spot on the town square assigned to the Gooble.\nhoursInTheDay : The amount of hours that make up this day on the planet Gooble\n```\n\nYou can assume the values for ```S```, ```D``` and ```hoursInTheDay``` will be in the range of 0 to 1000. The following situations must result in a ```TBCB``` schedule :\n* If there are not enough hours in the day to construct the sculpture according to *Gooble* law\n* If there are zero (0) hours in the day\n* If a *Gooble* wakes up with 0 strength\n* If a *Gooble* gets assigned a spot with D = 0\n\n# Output #\nAs output your ```instruct``` function must return a string with the schedule for the *Gooble*. All instructions must be uppercase letters as described in the problem section. The output must either be a valid schedule or ```TBCB``` if no such schedule exists.",
+    "totalAttempts": 178,
+    "totalCompleted": 14,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Puzzles",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

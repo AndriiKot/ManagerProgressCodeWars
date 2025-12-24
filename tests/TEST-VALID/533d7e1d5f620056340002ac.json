@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/533d7e1d5f620056340002ac",
+  "data": {
+    "id": "533d7e1d5f620056340002ac",
+    "name": "Implement \"The Match\" to assign med school graduates to hospitals",
+    "slug": "implement-the-match-to-assign-med-school-graduates-to-hospitals",
+    "category": "algorithms",
+    "publishedAt": "2014-04-04T20:57:45.174Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/533d7e1d5f620056340002ac",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-04-03T15:28:29.678Z",
+    "createdBy": {
+      "username": "SteveRuble",
+      "url": "https://www.codewars.com/users/SteveRuble"
+    },
+    "description": "#The Match\n\nAfter graduating from med school, doctors in the USA typically spend three to seven years as a \"resident\" physician at a hospital or clinic before getting their medical license. Some hospitals are much more prestigious than others and the number of residents taken on each year is limited, so competition for resident positions is intense. Placement in resident programs is made through a process called \"The Match\", the results of which are announced on the third Friday of March each year. In this kata you will write an algorithm which performs a simplified version of The Match. (The real algorithm includes provision for couples who want to stay close to each other, which adds a lot of complexity.)\n\n##Algorithm for The Match\n\nBefore Match Day each student provides a list of their preferred hospitals, ordered by preference, and each hospital creates a similar list of their preferred students. The Match algorithm creates a matching of students to hospitals such that the following two conditions are *false* for all students:\n\n1. Student S would prefer to go to hospital H over the hospital s/he is currently matched with, or S is not matched with a hospital.\n2. Hospital H has a free slot or would prefer student S over one of the candidates currently filling one of its slots.\n\nIn addition, the following conditions must be true:\n\n1. If a student S is matched with a hospital H, then S must have a preference for H and H must have a preference for S.\n2. The number of students matched with a hospital may not exceed the hospital's number of slots.\n\n##Technical Details\nImplement the method `match(students, hospitals)`. Students and hospitals will be provided as arrays containing objects with the following form:\n\n###Student:\n```javascript\n{\n  name: 'student a',\n  preferences: [ 'hospital a', 'hospital b' ]\n}\n```\n###Hospital:\n```javascript\n{\n  name: 'hospital a',\n  preferences: [ 'student a', 'student b' ],\n  slots: 5\n}\n```\n\nThe method should return a object with the following form:\n\n###Return object\n```javascript\n{\n  'hospital a': [ 'student a', 'student b' ],\n  'hospital b': [ 'student c', 'student d' ]\n}\n```\n##Helpers\nThere is a preloaded function, ```getPreferences()```, which will return a generated set of students and hospitals with preferences to help with testing.\n\n\n",
+    "totalAttempts": 134,
+    "totalCompleted": 7,
+    "totalStars": 5,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64e3b05d710fcb1978fdb548",
+  "data": {
+    "id": "64e3b05d710fcb1978fdb548",
+    "name": "Metric Standard Notation Conversion",
+    "slug": "metric-standard-notation-conversion",
+    "category": "algorithms",
+    "publishedAt": "2023-08-22T13:30:02.459Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64e3b05d710fcb1978fdb548",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-21T18:43:41.254Z",
+    "createdBy": {
+      "username": "Adaxer",
+      "url": "https://www.codewars.com/users/Adaxer"
+    },
+    "description": "## Metric Standard Notation Conversion\n\nMetric units like meters **(m)**, grams **(g)**, amperes **(A)**, and others are often accompanied by prefixes like kilo- **(k)**, milli- **(g)**, micro- **(µ)**, and so on, which indicate a power of 10 by which the unit should be multiplied. For instance, `\"km\"` represents kilometers, where the `\"k\"` prefix stands for `10^3`, making `\"km\"` equivalent to 1000 meters.\n\nYour task is to implement a function `metric_standard_notation_conversion(notation)` that takes a metric notation as input and returns a simplified and standardized version of that notation. The input notation will consist of a numerical value, an optional prefix, and a unit. Your function should convert this notation into a format that consistently represents the numerical value and unit, accounting for any prefixes.\n\n### Units: \n* second | `s`\n* metre | `m`\n* gram | `g`\n* ampere | `A`\n* kelvin | `K`\n\n### Factors:\n* micro- | **µ** | `10^-6`\n* milli- | **m** | `10^-3` \n* centi- | **c** | `10^-2` \n* deci- | **d** | `10^-1`\n* deca- | **da** | `10^1` \n* hecto- | **h** | `10^2` \n* kilo- | **k** | `10^3` \n* mega- | **M** | `10^6` \n\n### Examples (input --> output):\n* `\"42km\" --> \"42*10^3m\"`\n* `\"9.5kA\" --> \"9.5*10^3A\"`\n* `\"1Mm\" --> \"1*10^6m\"`\n* `\"0.4µm\" --> \"0.4*10^-6m\"`\n* `\"32m\" --> \"32m\"`\n\nDon't forget to handle the case in which no prefix or factor is present. In such cases, the input should be treated as the base value and returned in its original form.\n",
+    "totalAttempts": 109,
+    "totalCompleted": 14,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Strings",
+      "Algorithms",
+      "Mathematics",
+      "Algebra"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

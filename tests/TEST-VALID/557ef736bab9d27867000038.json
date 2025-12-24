@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/557ef736bab9d27867000038",
+  "data": {
+    "id": "557ef736bab9d27867000038",
+    "name": "Startup valuation forecast",
+    "slug": "startup-valuation-forecast",
+    "category": "algorithms",
+    "publishedAt": "2015-06-15T18:47:22.682Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/557ef736bab9d27867000038",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-15T16:03:02.357Z",
+    "createdBy": {
+      "username": "chrizzzer",
+      "url": "https://www.codewars.com/users/chrizzzer"
+    },
+    "description": "#Preview\n\nJames just started working at a Venture Capital fund. One of the promising investments the fund is currently evaluating is a strongly growing e-commerce startup in Ireland. The team seems to be very ambitions and the market niche is great. <br>\nIn order to make sure the investment will be profitable the fund wants James to create a forecast of future revenues and a potential valuation.\nJames is currently requesting more detailed information about past revenues and investigating the appropriate multiple for the company's market niche.<br>\nCan you help him create a revenue and valuation forecast?\n\n#Problem\n\nHelp James by developing a forecast of revenues the startup will reach in 5 years. Calculate the valuation with the given revenue multiple and indicate if it will potentially exceed 50 Million (the amount the fund needs to justify their investment for 10% of the company).<br>\nPast revenues will be passed on to the function as an array of revenues (in thousands) for the last 5 years and the multiple as a float in the following form:\n```javascript\nrev = [46, 148, 576, 954, 2242]\nmultiple = 4.3\n```\nFuture revenues are expected to develop linearly.<br>\nThe solution is supposed to be passed as a string indicating if the revenues and valuation in year 10 will be enough (valuation of over 50 million) in the following form:\n```javascript\n'The revenue multiple valuation in year 10 will be below the required value at 19.06 million for 4.43 million of revenues in year 10.'\n```\n\n##Hint\nLooking up the formulas for linear regression might help to forecast the revenues.",
+    "totalAttempts": 51,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

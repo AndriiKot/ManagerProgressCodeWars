@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d741331d776cf001103fbfc",
+  "data": {
+    "id": "5d741331d776cf001103fbfc",
+    "name": "Exotic numeral systems",
+    "slug": "exotic-numeral-systems",
+    "category": "algorithms",
+    "publishedAt": "2019-09-07T20:36:13.902Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d741331d776cf001103fbfc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-09-07T20:29:37.320Z",
+    "createdBy": {
+      "username": "David Gildour",
+      "url": "https://www.codewars.com/users/David%20Gildour"
+    },
+    "description": "We all know every computer's favourite numeral system - the binary. Most of us probably heard of hexadecimal and octal as well. But how about some of their more exotic cousins?\n\nIn this kata your task is to write a function called `represent` that, given an integer `n` and another integer `base`, returns a string representation of `n` in a positional numeral system with base, um, `base`.\n\nExamples:\n```python\nrepresent(8, 2) == '1000'\nrepresent(24, 3) == '220'\nrepresent(12345, 13) == '5808'\nrepresent(41526331, 30) == '1l80b1'\n```\n\nIf you are unsure how the positional systems exactly work, go ahead and check the wiki article - https://en.wikipedia.org/wiki/Numeral_system.\n\nBe prepared for  `0 <= n <= 10^6` and `2 <= base <= 62`.\n\nAn important thing to mention is what order of symbols will we consider once we are beyond the realm of usual decimal representation. It's quite simple:\n\ndigits (0-9) < lowercase letters (a-z) < uppercase letters (A-Z)\n\nWhich gives us 62 different symbols per position (hence the upper limit of `base`).",
+    "totalAttempts": 36,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 1,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Logic",
+      "Numbers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

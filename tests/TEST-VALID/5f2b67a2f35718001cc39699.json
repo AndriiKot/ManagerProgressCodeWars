@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f2b67a2f35718001cc39699",
+  "data": {
+    "id": "5f2b67a2f35718001cc39699",
+    "name": "Balancing planes",
+    "slug": "balancing-planes",
+    "category": "algorithms",
+    "publishedAt": "2020-08-08T16:03:50.110Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5f2b67a2f35718001cc39699",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-06T02:14:58.832Z",
+    "createdBy": {
+      "username": "caleb731",
+      "url": "https://www.codewars.com/users/caleb731"
+    },
+    "description": "# The goal of this kata is to balance one or more planar objects. \n\n## Inputs: \nThe function find_balance takes 3 arguments:  \n  -n: number of columns in grid  \n  -m: number of rows in grid  \n  -grid: an array of integers  \n\n## Explanation: \nThe planar objects that must be balanced in this kata are of non-uniform mass and can be \"any\" shape; but are everywhere 1 unit thick. Each entry in \"grid\" represents 1 cubic unit of this solid, the value in \"grid\" represents that cubes mass. \nFor example the following input: n=3, m=4, grid = {1,1,1,0,0,1,0,0,0,0,1,2}, represents something like the below solid, viewed from the top. This solid consits of two pieces, the top piece has a total mass of 6 and the bottom a total mass of 3. Zeros are empty space as a block with no mass is nothing.\nFor the purposes of standardizing answers the bottom left of the grid is (0,0). In this manner, the center of the cube with mass 3 is at (1.5, 3.5), and the cube with mass 2 is at (2.5, .5).\n\n1 3 1   \n0 0 1   \n0 0 0   \n0 1 2   \n\nThis type of planar object can be balanced by suspending it with a string from its center of mass; or, in the above case, with strings from both its centers of mass.\nThe center of mass of each piece can be calculated by solving sum(Torques) = 0.\nWhere each torque acts from the center of the block, as each block is of uniform density.\nTorques can be further broken down into x and y components (This can be proven with a little vector algebra).\nIn the above grid, if the center of mass has coordinates (x, y), and g is acceleration due to gravity:    \nsum(Torques_x) = 0 = 1(g)(.5 - x) + 3(g)(1.5 - x) + ... +    \nsum(Torques_y) = 0 = 1(g)(3.5 - y) + 3(g)(3.5 - y) + ... +   \n\n## Returns\nfind_balance returns a vector of float containing the coordinates where each string should be attatched to balance the planar objects. In the above case, {1.6667, 3.3333, 2.16667, .5}. It doesn't matter if the object actually exists at that point; so if the solid is arranged in a hollow square and the center of mass is somewhere in middle, that is still the correct answer (Perhaps you have massless sticks to bridge the gap). The returned coordinates should be sorted according to the order the *piece* it belongs to first appears when moving left to right and top to bottom through \"grid\". In the grid below the center of mass of the *1's piece* should be first followed by the *2's piece* than the *3's* and finally the *4's*. Resulting in the output: {1.5, 3.5, 4.5, 2.5, 6.5, 1.5, 1.7, .7}\n\n1 1 1 0 2 0 0   \n0 0 0 0 2 0 3   \n4 0 0 0 2 0 3   \n4 4 4 4 0 0 3\n\n\n\n\n\n",
+    "totalAttempts": 17,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Physics",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

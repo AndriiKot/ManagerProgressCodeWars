@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58bb39ab39fdb4c4370005ac",
+  "data": {
+    "id": "58bb39ab39fdb4c4370005ac",
+    "name": "Enchant recursively",
+    "slug": "enchant-recursively",
+    "category": "reference",
+    "publishedAt": "2017-03-04T22:03:23.300Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/58bb39ab39fdb4c4370005ac",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-04T22:03:27.125Z",
+    "createdBy": {
+      "username": "obitech",
+      "url": "https://www.codewars.com/users/obitech"
+    },
+    "description": "### Task\n\nYour friend Peter has just finished his apprenticeship in Enchantment and is now ready to improve the items of all the adventurers passing by. In order for him to secure credit and set up his stall, he will need to present a business plan with a figure on how many items he will be able to enchant given his stock in magic dust, manticore feathers and magical essences. At his current skill he is able to offer the following enchantments:\n\n```\nLevel 3: 8 dust, 5 feather, 2 essence\nLevel 2: 4 dust, 3 feather, 1 essence\nLevel 1: 2 dust, 1 feather, 1 essence\n```\n\nGiven the current market, Peter needs to prioritise on higher level enchantments first.\n\nCreate a recursive function which takes the number of materials as input and returns the number of items Peter can enchant.\n\n### Example\n\n```\nenchant(15, 10, 10) --> 3\n\n(dust, feather, essence) = (15, 10, 10)\nlevel 3? dust >= 8, feather >= 5 and essence >= 2 ? -- > Yes\n\n(dust, feather, essence) = (7, 5, 8)\nlevel 3? dust >= 8, feather >= 5 and essence >= 2 ? -- > No\nlevel 2? dust >= 4, feather >= 3 and essence >= 1 ? -- > Yes\n\n(dust, feather, essence) = (3, 2, 7)\nlevel 3? dust >= 8, feather >= 5 and essence >= 2 ? -- > No\nlevel 2? dust >= 4, feather >= 3 and essence >= 1 ? -- > No\nlevel 1? dust >= 2, feather >= 1 and essence >= 1 ? -- > Yes\n\n(dust, feather, essence) = (1, 1, 6)\nlevel 3? dust >= 8, feather >= 5 and essence >= 2 ? -- > No\nlevel 2? dust >= 4, feather >= 3 and essence >= 1 ? -- > No\nlevel 1? dust >= 2, feather >= 1 and essence >= 1 ? -- > No\n\nResult: 3\n```\n",
+    "totalAttempts": 176,
+    "totalCompleted": 86,
+    "totalStars": 4,
+    "voteScore": 72,
+    "tags": [
+      "Recursion",
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

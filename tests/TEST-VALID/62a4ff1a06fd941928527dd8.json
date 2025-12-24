@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a4ff1a06fd941928527dd8",
+  "data": {
+    "id": "62a4ff1a06fd941928527dd8",
+    "name": "U.S. Electoral College",
+    "slug": "us-electoral-college",
+    "category": "algorithms",
+    "publishedAt": "2022-06-11T20:52:44.567Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62a4ff1a06fd941928527dd8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-11T20:46:18.839Z",
+    "createdBy": {
+      "username": "gfreundt",
+      "url": "https://www.codewars.com/users/gfreundt"
+    },
+    "description": "# Calculate the Electoral College Electors #\n\nAs many know, the United States uses an [Electoral College](https://en.wikipedia.org/wiki/United_States_Electoral_College) system to assign the number of electors (always totalling 538) for each of the 50 states* in the general election results.\nThe system is not as straightfoward as one might think. The steps used are the following:\n\n## First step is to calculate the number of House Representatives for each state + District of Columbia (DC) ##\n\n1. The total number of House representatives (not including DC) is 435.\n2. Every state, except DC, starts with 1 representative.\n3. The remaining 385 representatives are distributed using an [Apportionment](https://en.wikipedia.org/wiki/United_States_congressional_apportionment) method.\n4. Calculate fixed multipliers for each subsequent number using the formula:\n![](https://wikimedia.org/api/rest_v1/media/math/render/svg/4eaceff785b180cd897faeb8da1fd55d33554120)where P is the population of the state, and n is the number of seats it currently holds before the possible allocation of the next seat\n5. Then prepare a table with the product of each state's population and the multiplier.\n6. Finally assign the state that correspond to the first 385 highest priorities.\n7. Manually assign 3 House Representatives to District of Columbia.\n\n## Second step is to add 2 senators for each state (not District of Columbia).\n\nReturn a dictionary with {state:electoral_votes} for all states.\n\nNote:\n\n- *The input population data does not include District of Columbia\n- *The word \"states\" in this excercise refers to the 50 states + District of Columbia unless specified.\n\nInteresting Fact:\n- The population used by the U.S. Census to calculate approportionment does not match exactly the census results, because overseas military personnel are added to each state's total",
+    "totalAttempts": 24,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

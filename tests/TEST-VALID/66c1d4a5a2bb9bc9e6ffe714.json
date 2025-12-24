@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66c1d4a5a2bb9bc9e6ffe714",
+  "data": {
+    "id": "66c1d4a5a2bb9bc9e6ffe714",
+    "name": "Sum of Prime Factors",
+    "slug": "sum-of-prime-factors",
+    "category": "algorithms",
+    "publishedAt": "2024-08-18T15:16:11.618Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/66c1d4a5a2bb9bc9e6ffe714",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-08-18T11:01:58.003Z",
+    "createdBy": {
+      "username": "SmallWolfxDDD",
+      "url": "https://www.codewars.com/users/SmallWolfxDDD"
+    },
+    "description": "# Prime Factorization\n\n`$\\forall n \\in \\Z_{\\ge2}$`, there exists an unqiue prime factorization such that:\n\n```\nn = (p1^k1)(p2^k2)(p3^k3)...\n```\n\n[Prime Factorization in Wiki](https://en.wikipedia.org/wiki/Prime_number#Unique_factorization)\n\n# Task\n\nGiven a positive integer n, create a function, perform the following procedure:\n\nFactor n into its prime factors and calculate the sum of these factors.\n\nTake the resulting sum and factor it into its prime factors, then compute the sum again.\n\nRepeat this process until the result is a single prime number.\n\n# Example\n\n```\nsum_of_prime_factors(30) : (2)(3)(5) -> sum_of_prime_factors(2+3+5) : (2)(5) -> sum_of_prime_factors(2+5) : 7\n#  should return 7\n\nsum_of_prime_factors(18) : (2)(3^2) -> sum_of_prime_factors(2+3) : 5 #  The powers of prime numbers should be ignored.\n#  should return 5\n\nsum_of_prime_factors(314159) : 314159\n#  should return 314159\n```\n\n# Input/Output\n\n- Type of input : `int`\n\n- Range : `$2 \\le n \\le 10^7$`",
+    "totalAttempts": 21,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

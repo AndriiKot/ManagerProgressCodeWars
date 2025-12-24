@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55ceadf20f7ff25be1000026",
+  "data": {
+    "id": "55ceadf20f7ff25be1000026",
+    "name": "CIS 122  #2 Simple Input",
+    "slug": "cis-122-number-2-simple-input",
+    "category": "reference",
+    "publishedAt": "2015-08-15T17:05:09.304Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/55ceadf20f7ff25be1000026",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-15T03:11:46.191Z",
+    "createdBy": {
+      "username": "CIS 122",
+      "url": "https://www.codewars.com/users/CIS%20122"
+    },
+    "description": "Before proceeding, you should check out the `x_print` command described in [CIS 122 #1 Simple Printing](http://www.codewars.com/kata/55cd156ead636caae3000099). If you want to test code that uses x_print in Python 3 outside of the CodeWars site, add this line to the top of the code:\n```\nx_print = print\n```\n\nIn this challenge, we'll be learning about the pseudocode `Input` command, and how to translate it to Python. The pseudocode standard used in this challenge is based on the book [Starting Out with Programming Logic and Design, 3rd Edition](http://www.pearsonhighered.com/product?ISBN=0132805456) by Tony Gaddis.\n\n# Input\n\"Input\" means getting a value from outside the program. This value can come from many different places depending on the type of program. It could come from the user typing a value into the console window, from a database, or even reading values from a network connection. The important part (as far as the pseudocode is concerned) is that the value is being brought in from somewhere, and is being stored in a variable. For example, the pseudocode statements:\n```\nDeclare Integer age\n\nInput age\n```\ndeclare a variable named age that holds an Integer value, and then fetches the value of that variable from somewhere.\n\n# Python input statement\nOne important source of input for your program is from the user. If you want to get input from the user, the Python `input` statement will do that. For example, this program:\n```\n#  Declare String name\n#\n#  Input name\n\nname = input()\n```\nwill wait for the user to type their name. When the user types a piece of text and hits return, whatever the user typed is returned by `input` as a String and stored in the variable `name`.\n\nThere's a problem here, however. If you ran this program, it would just sit there waiting for something, and the user would have no idea that they were expected to type their name in. To solve this problem, programs usually \"prompt\" the user to enter a particular piece of information before waiting for them to enter it. In pseudocode, we do this using the `Display` statement to display a prompt, but in Python, this is such a common and important part of getting input, that the `input` command has this functionality \"built in.\" We prompt the user by passing in a prompt argument to `input`. For example:\n```\n#  Declare String name\n#\n#  Display \"Please type your name: \"\n#  Input name\n\nname = input(\"Please type your name: \")\n```\nNote that in Python, both the `Display` statement and the `Input` statement of the pseudocode are handled by a single `input` statement. Whatever String you pass in for the prompt, that is the message that will be displayed to the user before the program waits for the user to type their input, and whatever the user types will be returned as a String.\n\n# Inputting Numbers\nThe `input` statement works fine by itself if you are asking the user to type in a String. But, there's a problem if you ask the user to type in a number. The problem is that `input` will still return a String containing the text that the user typed in. For example, if the user types 33 and hits return, `input` will return the String \"33\" instead of the number 33. This is a problem because numbers and Strings are handled differently in many Python commands. For example:\n```\nval = 3 + 3\nx_print(val)\n# The value of val will be printed as the number 6\n\nval = \"3\" + \"3\"\nx_print(val)\n# The value of val will be printed as the String \"33\"\n\nval = 3 * 6\nx_print(val)\n# The value of val will be printed as the number 18\n\nval = \"3\" * 6\nx_print(val)\n# The value of val will be printed as the String \"333333\" (six copies of the String \"3\")\n```\nSo, when you are asking the user to enter a number, it is very important that you convert the String that `input` returns into a numeric value of the correct type (Real or Integer). In Python, Real numbers are called \"float\" (for \"floating-point decimal\") and Integer numbers are called \"int\" (for integer). There are functions called `int` and `float` which take String values and return either Integer numbers or Real numbers, respectively. Here's how we would ask the user to enter their age, assuming we were expecting a whole number (an Integer):\n```\n#  Declare Integer age\n#\n#  Display \"Please enter your age as a whole number: \"\n#  Input age\n#  Display \"You are\", age, \"years old.\"\n\nage = int(input(\"Please enter your age as a whole number: \"))\nx_print(\"You are\", age, \"years old.\")\n```\nNote that we've placed the call to `input` inside of a call to `int` to convert the String value to an Integer value. By the way, we don't have to do any of that in pseudocode because we've already declared the type of age to be an Integer - since it can only hold whole numbers, anything we store into it must be a whole number (or it will cause an error).\n\nHere's an example of asking the user to enter a Real number:\n```\n#  Declare Real cost\n#\n#  Display \"Please enter the cost of a mocha latte in dollars and cents: \"\n#  Input cost\n#  Display \"A mocha latte costs\", cost, \"dollars.\"\n\ncost = float(input(\"Please enter the cost of a mocha latte in dollars and cents: \"))\nx_print(\"A mocha latte costs\", cost, \"dollars.\")\n```\n\n# input for Codewars\nThe regular Python `input` function expects the user to type an answer into the console. Since we don't have a console for the user to type into, and since we need to feed the `input` statement specific values for testing purposes, the calls `input` in your program will be intercepted and fed a specific set of values. These values are in a specific order to match the inputs that the pseudocode is expecting, and there are just enough input values available for each of those inputs. If you try to read more values than are available, you'll get an EOFError displayed in the output window (so, if you get that error, you have an extra `input` statement somewhere). Your program is also expected to use all of the outputs, so if you get an error on that, you're probably missing an `input` statement.\n\n# Challenge\nTo complete this challenge, supply the Python translations (using `x_print` for your output) for the pseudocode provided in the comments.",
+    "totalAttempts": 1458,
+    "totalCompleted": 262,
+    "totalStars": 11,
+    "voteScore": 44,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

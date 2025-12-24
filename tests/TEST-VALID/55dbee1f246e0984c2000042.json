@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55dbee1f246e0984c2000042",
+  "data": {
+    "id": "55dbee1f246e0984c2000042",
+    "name": "Enhenced Fixnum.times method",
+    "slug": "enhenced-fixnum-dot-times-method",
+    "category": "refactoring",
+    "publishedAt": "2015-08-25T05:12:39.946Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/55dbee1f246e0984c2000042",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-25T04:25:03.739Z",
+    "createdBy": {
+      "username": "sunboshan",
+      "url": "https://www.codewars.com/users/sunboshan"
+    },
+    "description": "Fixnum.times takes an implicity block as an parameter.\n\nHere's some common use:\n```\n3.times { |i| print i } # 012\n5.times.reduce(:+) # 0+1+2+3+4 => 10\n```\n\nAs you can see, the index starts from 0. That's a little bit inconvenient sometime... \n\nLet's make it more convenient by taking a parameter as the initial value to start. Something like:\n```\n3.times(1) { |i| print i } # 123\n5.times(1).reduce(:+) # 1+2+3+4+5 => 15\n```\n\nHandy right?",
+    "totalAttempts": 180,
+    "totalCompleted": 13,
+    "totalStars": 0,
+    "voteScore": 11,
+    "tags": [
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

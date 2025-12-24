@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55636d7b9cc0d8a79e00009b",
+  "data": {
+    "id": "55636d7b9cc0d8a79e00009b",
+    "name": "Intro to Statistics - Part 2: Boxplots",
+    "slug": "intro-to-statistics-part-2-boxplots",
+    "category": "reference",
+    "publishedAt": "2015-05-25T21:35:20.193Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/55636d7b9cc0d8a79e00009b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-25T18:44:11.802Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "## Series\r\nThis kata is part of a series of kata about basis statistics, you are advised to tackle them in sequence.\r\n\r\nThe kata are:\r\n\r\n* [Intro to Statistics - Part 1: A Five figure summary](http://www.codewars.com/kata/intro-to-statistics-part-1-a-five-figure-summary)\r\n* [Intro to Statistics - Part 2: Boxplots](http://www.codewars.com/kata/intro-to-statistics-part-2-boxplots)\r\n\r\n\r\n## Background\r\nA simple statistical view of a series of samples can be done with a [Boxplot](http://en.wikipedia.org/wiki/Box_plot).\r\n\r\nThe boxplot comes in several forms:\r\n\r\n* In its simplest form it defines a box by the lower quartile (Q1) and upper quartile (Q3), and plots the median (M) as a line through the box, this helps identify any skew in the sample data.  Thus we see Q1, M, Q3 plotted.\r\n* Then there is the \"Box and whisker plot\", this shows the three previous values Q1, M & Q3, but has lines the come out to the extreme lower (El) and the extreme upper (Eu) samples.  Thus we see El, Q1, M, Q3, Eu plotted.\r\n* A variation on the \"Box and whisker plot\" displays the extreme deciles rather than the extremes plotted, thus we would see D1, Q1, M, Q3, D9 plotted.  Values smaller than D1 or larger than D9 are plotted as individual sybmbols, typically an asterisk.\r\n* Finally there is the [Tukey](http://en.wikipedia.org/wiki/John_Tukey) boxplot, where the whiskers extend to the limit of outliers, and individual outliers are plotted beyond these limits as a symbol as in the previous variation.\r\n\r\n## Kata\r\n\r\nIn this Kata you will be given a class outline to complete.  The class will be instantiated with a sequence of values, and you must implement the method to the required type of summary.\r\n\r\nYour method will supply the values used by a separate plotting system, so it only needs to return the numbers, not draw the plot.\r\n\r\nYou are expected to do the calculations yourself, using pandas or numpy will get you a squinty frown from your sensei! :)\r\n\r\n## Inputs\r\n1. At class instantiation you will be given a sequence of values.  This sequence may contain non-numerical values, these should be ignored.  If the values are tuples, the first element will be a group identifier, you will be expected to return a list of tuples, one per group.  If the data is not a `tuple`, the default group identifier should be `\"Sample\"`.\r\n1. At summary creation you will be given a boxplot type to create and a maximum precision for numerical results.  There are supplied constants for the types of plot these are `BOXPLOT`, `BOX_AND_WHISKER`, `BOX_AND_DECILE_WHISKER`, and `TUKEY_BOX_AND_WHISKER`.  \r\n1. If `None` is supplied for precision, assume full precision is to be returned, otherwise round the the required digits.\r\n\r\n## Calculations\r\n\r\n* N: Number of valid numeric values in the sequence.\r\n* Lower Extreme (El): The smallest value contained within the sequence.\r\n* Upper Extreme (Eu): The largest value contained within the sequence.\r\n* Median (M): The centre value of the sorted sequence of valid values.\r\n* Lower Quartile (Q1): The boundary value between the first and second quarters of the sorted sequence of valid values.\r\n* Upper Quartile (Q3): The boundary value between the third and fourth quarters of the sorted sequence of valid values.\r\n* First Decile (D1): The boundary value between the first and second tenths of the sorted sequence of valid values.\r\n* Last Decile (D9): The boundary value between the ninth and tenth tenths of the sorted sequence of valid values.\r\n* Inter quartile range (IQR): Q3 - Q1\r\n* Lower Outlier boundary (Ol): Smallest value > M - 1.5 * IQR\r\n* Upper Outlier boundary (Ou): Largest value < M + 1.5 * IQR\r\n\r\nThe median, quartiles, deciles may need to be a linear interpolation between two values.\r\n\r\n### Linear Interpolation Examples\r\nGiven a sequence of values `[2, 3, 4, 5, 6, 7, 8, 9]`\r\n\r\n1. Position `3.5` would return the mid-point between the values at index `3` and index `4` returning `5.5`.\r\n1. Position `1.25` would return the quarter-point between the values at index `1` and index `2` returning `3.25`.\r\n1. Position `6.75` would return the three-quarter-point between the values at index `6` and index `7` returning `7.75`.\r\n\r\n### Outputs\r\n\r\nWhen asked to produce a `BOXPLOT` you will return a list wuith a tuple per sample group with the calculated values in the following order:\r\n\r\n    [(GROUP_ID, Q1, M, Q3), ...]\r\n    \r\nWhen asked to produce a `BOX_AND_WHISKER` you will return a list wuith a tuple per sample group with the calculated values in the following order:\r\n\r\n    [(GROUP_ID, El, Q1, M, Q3, Eu), ...]\r\n    \r\nWhen asked to produce a `BOX_AND_DECILE_WHISKER` you will return a list wuith a tuple per sample group with the calculated values in the following order:\r\n\r\n    [(GROUP_ID, [x], D1, Q1, M, Q3, D9, [y]), ...] \r\n\r\nNote: 'x', and 'y' are the individual values falling below and above the deciles repectively.\r\n    \r\nWhen asked to produce a `TUKEY_BOX_AND_WHISKER` you will return a list wuith a tuple per sample group with the calculated values in the following order:\r\n\r\n    [(GROUP_ID, [x], Ol, Q1, M, Q3, Ou, [y]), ...] \r\n    \r\nAgain: 'x', and 'y' are the individual values falling below and above the Ol and Ou values repectively.\r\n    \r\nWhere no precision is defined, and given the rouding/quantization errors with floating point processing, your answers must be within `10 ** -10` of the correct answer.  Where precision is defined, your answer is expected to be exact.\r\n\r\n### Worked Examples\r\n    data = range(1, 33) + range(12, 21) + range(12, 21) + range(12, 21) + [16]\r\n    StatisticalSummary(data).boxplot(BOXPLOT)                \r\n      # => [(\"Sample\", 12.75, 16, 20)]\r\n    StatisticalSummary(data).boxplot(BOX_AND_WHISKER)        \r\n      # => [(\"Sample\", 1, 12.75, 16, 20, 32)]\r\n    StatisticalSummary(data).boxplot(BOX_AND_DECILE_WHISKER) \r\n      # => [(\"Sample\", [1, 2, 3, 4, 5, 6], 6.9, 12.75, 16, 20, 26.1, [27, 28, 29, 30, 31, 32])]\r\n    StatisticalSummary(data).boxplot(TUKEY_BOX_AND_WHISKER)  \r\n      # => [(\"Sample\", [1, 2, 3, 4, 5], 6, 12.75, 16, 20, 26, [27, 28, 29, 30, 31, 32])]\r\n    \r\n    \r\n    d1 = range(1, 33) + range(12, 21) + range(12, 21) + range(12, 21) + [16]\r\n    d2 = [d - 2 for d in d1[:len(data)//2]] + [d + 2 for d in d1[len(data)//2:]]\r\n    data = [(\"A\", n) for n in d1] + [(\"B\", n) for n in d2]\r\n    StatisticalSummary(data).boxplot(BOXPLOT)                \r\n      # => [('A', 12.75, 16, 20), \r\n      #     ('B', 13.75, 17, 21)]\r\n    StatisticalSummary(data).boxplot(BOX_AND_WHISKER)        \r\n      # => [('A', 1, 12.75, 16, 20, 32), \r\n      #     ('B', -1, 13.75, 17, 21, 34)]\r\n    StatisticalSummary(data).boxplot(BOX_AND_DECILE_WHISKER) \r\n      # => [('A', [1, 2, 3, 4, 5, 6], 6.9, 12.75, 16, 20, 26.1, [27, 28, 29, 30, 31, 32]), \r\n            ('B', [-1, 0, 1, 2, 3, 4], 4.9, 13.75, 17, 21, 24.1, [25, 26, 27, 28, 33, 34])]\r\n    StatisticalSummary(data).boxplot(TUKEY_BOX_AND_WHISKER)  \r\n      # => [('A', [1, 2, 3, 4, 5], 6, 12.75, 16, 20, 26, [27, 28, 29, 30, 31, 32]), \r\n            ('B', [-1, 0, 1, 2, 3, 4, 5, 6], 7, 13.75, 17, 21, 27, [28, 33, 34])]\r\n\r\n    \r\n",
+    "totalAttempts": 383,
+    "totalCompleted": 15,
+    "totalStars": 20,
+    "voteScore": 7,
+    "tags": [
+      "Statistics",
+      "Fundamentals",
+      "Data Science"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

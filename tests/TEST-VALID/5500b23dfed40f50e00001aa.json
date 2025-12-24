@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5500b23dfed40f50e00001aa",
+  "data": {
+    "id": "5500b23dfed40f50e00001aa",
+    "name": "Reverse DNS delegation (RFC4183)",
+    "slug": "reverse-dns-delegation-rfc4183",
+    "category": "algorithms",
+    "publishedAt": "2015-03-12T00:21:25.614Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5500b23dfed40f50e00001aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-11T21:23:09.649Z",
+    "createdBy": {
+      "username": "MindWanderer",
+      "url": "https://www.codewars.com/users/MindWanderer"
+    },
+    "description": "Given a correctly-formatted IPv4 CIDR prefix, return a valid RFC4183 formatted domain name for reverse DNS.\n\nA block of IPv4 addresses (or \"prefix\") in CIDR notation takes the form:\n\na.b.c.d/e\n\nwhere a, b, c, and d are numbers between 0 and 255 inclusive, and e is a number between 0 and 32 inclusive.  a, b, c, and d each represent an octet (8 bits) of a 32-bit value in \"dotted quad\" notation, and e represents the number of fixed bits in the address range.  For instance, 192.168.0.0/24 represents the range of addresses from 192.168.0.0 through 192.168.0.255.\n\nReverse DNS (rDNS) is used to look up what domain name corresponds to a particular IP address.  Because DNS was originally designed to do the opposite (look up an IP address given a domain name), rDNS is a bit of a hack.  The address has the octets reversed, with the domain name \"in-addr.arpa\" affixed to it.  For instance, the rDNS domain name of 192.168.0.0 would be 0.0.168.192.in-addr.arpa.\n\nFor ranges of addresses, this works very neatly if you're dealing with ranges on the octet boundaries, i.e. blocks that end in /0, /8, /16, /24, or /32, because the dots are already in useful places.  But if you want to create an rDNS zone that covers any other size of prefix, a bit of hackery is required.  There are a few methods for doing this, but one popular method used today is RFC4183, which prepends the block size to the octet on the range boundary with a hyphen.\n\nExamples:\n\n192.168.128.0/25 becomes 0-25.128.168.192.in-addr.arpa.\n192.168.128.0/23 becomes 128-23.168.192.in-addr.arpa.\n\nIt's also valid to use this technique for ranges on the octet boundary, e.g. 192.168.128.0/24 becomes 0-24.128.168.192.in-addr.arpa.\n\nNote that the final dot is required.\n\nFor this exercise, don't bother validating the input.  Assume it's a valid prefix that correctly identifies the first address in that block.\n\nFor further reading, see:\n\nhttp://www.ietf.org/rfc/rfc4183.txt\n\nhttp://en.wikipedia.org/wiki/Reverse_DNS_lookup",
+    "totalAttempts": 112,
+    "totalCompleted": 22,
+    "totalStars": 3,
+    "voteScore": 41,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

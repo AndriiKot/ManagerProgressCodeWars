@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64fdf3cf18692c9b4eebbb83",
+  "data": {
+    "id": "64fdf3cf18692c9b4eebbb83",
+    "name": "Quicksort Partitioning",
+    "slug": "quicksort-partitioning",
+    "category": "algorithms",
+    "publishedAt": "2023-09-11T15:21:13.213Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64fdf3cf18692c9b4eebbb83",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-10T16:50:23.311Z",
+    "createdBy": {
+      "username": "brodiemark",
+      "url": "https://www.codewars.com/users/brodiemark"
+    },
+    "description": "### Background\n\nQuicksort is probably the most widely-used sorting algorithm. The library sort method in many programming languages is a version of quicksort. The algorithm works by picking an element in the list, called the **pivot**, and then going through the list, interchanging elements so that all the elements less than the pivot are placed before it and all elements larger than the pivot are placed after it. This process is called *partitioning*.\n\nExample: If the list is <code>[5,9,3,8,2,7,1,0]</code>\nand the first element <code>5</code> is chosen as the pivot, the result of partitioning might be\n<code>[1,0,3,2, **5**, 8,7,9]</code>, or <code>[3,2,1,0, **5**, 7,8,9]</code>, or <code>[0,1,2,3, **5**, 8,9,7]</code> or various other possibilities.\n\nThe algorithm then repeats this procedure recursively on the two sublists separated by the pivot. The process continues until the list is completely sorted. Since partitioning is done quickly, by looking at each element only once, quicksort is fast. And since partitioning is done by swapping elements, quicksort requires minimal additional storage.\n\n### Task\n\nThis kata asks you to implement one pass of the partitioning process, assuming that the first element is the pivot. Write a function that, given a list of integers, returns the input list with its elements rearranged so that all the elements less than the pivot occur before it and all elements larger than the pivot occur after it.\n\n### Details\n\n(1) You should not sort the list (or any part of it). This defeats the whole purpose of implementing a sorting algorithm! And you shouldn't create any other lists inside the function. The idea is to minimize the use of additional storage by swapping elements around in the input list itself.\n\n(2) Test cases include lists up to 100,000 elements, so the function should be quick. It should do one pass through the list, looking at each element only once, and swapping elements when appropriate.\n\n(3) The case where the pivot element is duplicated needs to be handled carefully. Many implementations of quicksort on the Internet and in books don't do this correctly! All duplicates of the pivot should end up between the two sublists. \n\nExample: If the list is <code>[5,2,9,8,5,3,7,5]</code>, it should be modified into something like <code>[3,2, **5,5,5**, 9,7,8]</code>. \n\n### Related Kata\n\nOther kata related to quicksort are [Bug Fix - Quick Sort](https://www.codewars.com/kata/56bdaa2cbe8f29257c000085) and [Verified Sorting Algorithms - Quicksort](https://www.codewars.com/kata/5d2f292b496f8d001c224972). A similar kata for a different sorting algorithm, [Bubblesort Once](https://www.codewars.com/kata/56b97b776ffcea598a0006f2), was the inspiration for this one.",
+    "totalAttempts": 51,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 7,
+    "tags": [
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

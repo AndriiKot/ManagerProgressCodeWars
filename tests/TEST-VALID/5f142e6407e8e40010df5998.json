@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f142e6407e8e40010df5998",
+  "data": {
+    "id": "5f142e6407e8e40010df5998",
+    "name": "The Messenger's Oracle",
+    "slug": "the-messengers-oracle",
+    "category": "games",
+    "publishedAt": "2020-07-19T15:21:24.702Z",
+    "approvedAt": null,
+    "languages": [
+      "elixir",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f142e6407e8e40010df5998",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-19T11:28:36.661Z",
+    "createdBy": {
+      "username": "Greatlemer",
+      "url": "https://www.codewars.com/users/Greatlemer"
+    },
+    "description": "# Your Background\n\nAs a master spy, you have been embedded in a rival kingdom in order to monitor communications between their top General and the monarch and risen to the role of messenger between the two of them.\n\nUnfortunately, the messages you've been delivering are all encrypted. You have gathered some intel (listed below) in your time here, as the General can be quite talkative whilst decoding their messages, but you have been unable to find a list of the keys in use. Worried that your cover might be starting to wear thin you need to find another way to read the messages from the intel you have.\n\n# Gathered Intel\n\n## Mood of the General\n\nThe General's mood does not seem to be affected by the quantity of messages they receive. However, you have noticed that when the General receives a message they seem to have one of following three reactions:\n\n* If the message has been signed by the monarch then they always seem to be **_happy_**;\n* If the message has come from someone else and so has not been signed by the monarch then they seem to be **_angry_** and just discard it;\n* If the message doesn't seem to have been written correctly then they seem to be **_confused_**;\n\n## Decryption Process\n\n1. The messages you deliver first need to be base64 decoded\n2. The result is then split with the first 16 bytes noted as the initialisation vector (IV) for the decryption\n3. The message is then decrypted using the IV from step 2 and a key from a secret book the General always keeps on themselves. The encryption method is AES-128 CBC\n4. Finally there's always some padding to be removed, the General looks at the value of the last byte and removes that many copies of the byte from the end of the message (it's at this point the General occasionally seems **_confused_**)\n\n_In code, this equates to:_\n\n```elixir\n@key \"Secret 16 bytes!\"\n\ndef decrypt_message(message) do\n    # Base 64 decode (1) and split into IV and message data (2)\n    << iv::binary-16, data::binary >> = Base.decode64!(message)\n    # Perform AES-128 CBC decryption (3)\n    :crypto.block_decrypt(:aes_cbc128, @key, iv, data)\n    |> OracleHelpers.unpad() # Remove padding using helper function (4) and return\nend\n```\n```python\nimport base64\nfrom Crypto.Cipher import AES\n\nKEY = b\"Secret 16 bytes!\"\n\ndef decrypt_message(message):\n    # Base 64 decode (1)\n    data = base64.decodebytes(message)\n    # Split into IV and message data (2)\n    iv, data = data[:16], data[16:]\n    # Perform AES-128 CBC decryption (3)\n    cipher = AES.new(KEY, AES.MODE_CBC, iv)\n    # Remove padding using helper function (4) and return\n    return OracleHelpers.unpad(cipher.decrypt(data))\n```\n\n_Note: this is the process when you know the key, sadly you haven't got your hands on the book of keys so won't be able to use it this way in this kata_\n\n\n## Known Examples\n\nYou have found a handful of early examples of encoded/decoded messages along with their key which has allowed you to verify the encryption process (these make up the example tests). From this you know that the monarch's signature is `\" - HRH\"` at the end of a message.\n\n# Solving This Kata\n\nIn order to solve this kata you must provide a function `spy_on_message/2` the arguments to this function will be:\n\n1. `message` - a base64 encoded string representing the message to decode;\n2. `deliver_fn/1` - a function that allows you to deliver a message to the General and observe their response. The response will be one of:\n```elixir\n[:angry, :confused, :happy]\n```\n```python\n[\"angry\", \"confused\", \"happy\"]\n```\n\nThe output of the function should be the decrypted message with no added padding.\n\nThere is a utility function available to you `OracleHelpers.unpad/1` which follows the process detailed above to remove message padding (so you don't have to write it yourself).\nIt will return the unpadded message if all is fine, or `:nil` / `None` if something was wrong with the padding.\n\nIf you wish to work on this via a local IDE, the example test section should have everything you need to get started with testing your code.\n\nNote: For python, predefined kata functions output/receive _bytes_ rather than strings.\n\n# Test Constraints\n\n* The decrypted messages may be any length from 0 bytes to 160 bytes long;\n* The decrypted messages will sometimes result in a readable string but most of the time they will not.",
+    "totalAttempts": 41,
+    "totalCompleted": 7,
+    "totalStars": 7,
+    "voteScore": 12,
+    "tags": [
+      "Cryptography",
+      "Puzzles",
+      "Algorithms",
+      "Security"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5522a4c1e1be1e77f4000a88",
+  "data": {
+    "id": "5522a4c1e1be1e77f4000a88",
+    "name": "Function Wrappers: pool",
+    "slug": "function-wrappers-pool",
+    "category": "reference",
+    "publishedAt": "2015-04-06T17:15:52.889Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5522a4c1e1be1e77f4000a88",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-06T15:22:41.462Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "JavaScript has a built-in Garbage Collector. When the application is using too much memory, it looks around for any object still in memory that aren't being used any more. This is great, because instead of your machine crashing when it runs out of memory, it's all cleaned up and you can carry on using it. It does have a cost, however.\n\nIt takes a little time for the GC to find those old bits of memory, mark them as unused, and clean them up. If you're writing a performant application like a game or a real-time simulation, this can freeze your program while GC runs. \n\nThere is a way around this, a way to minimize how often GC has to run. And that is to reuse the objects instead of leaving them laying around the place. We could create a common pool that the objects can wait around in until another one is needed. Then, an old instance can be taken from the pool, initialised as per usual, and returned as if it were a brand-new instance.\n\nYour job is to write a function wrapper that will create a nice \"class\"-like function and return it. It should be used like so:\n\n```javascript\nvar NamedClass = pool(\n  \"Name\",\n  true, // isClass\n  function scratch() { },\n  function init() { },\n  function destroy() { },\n  {} // prototype\n);\n```\n\nPool will set everything up and return the new constructor function. Then, the \"class\" should work as follows:\n\n## NamedClass.name\nThis should be the provided name. Up to you to figure out how to do that, though.\n\n## new NamedClass()\nThis will throw an error of some kind, perhaps recommending that `NamedClass.new()` should be used instead.\n\n## NamedClass.new()\nIf there is a `prototype` provided, and `isClass` is truthy, a new object should be created using that prototype, and should be used as the new instance object. (NOTE: You shouldn't addd anything to this prototype; if the user wants to have a `destroy` method on each instance, that's up to them to add.)\n\nIf a `scratch` function has been provided, it should be run, passing in the same arguments and setting the context to the object (this should only happen if a completely new object is created). If `isClass` is falsy, and the `scratch` function returns a non-`undefined` value, that value should be used as the object going forward.\n\nIf there's an old instance laying around in the pool, however, that object should be used instead, and the `scratch` call skipped entirely.\n\nWhichever the case, if an `init` function has been provided, it should be run, also preserving the arguments and using the object as the context. Again, if `isClass` is falsy, and the `init` function returns a non-`undefined` value, that should be used as the object going forward.\n\nThen the object should be returned.\n\n(NOTE: If `isClass` is truthy, `NamedClass.new() instanceof NamedClass` should always be true, and any `scratch` and `init` returned values should be ignored.)\n\n## NamedClass.destroy(instance)\nIf `isClass` is truthy, and the instance value is not an instance of the generated class, throw an error.\n\nIf provided, the `destroy` function should be run, setting the context to the passed in instance. Then the instance should be put it into the pool, for later reuse.\n\n## NamedClass.maxPoolSize = Infinity\nThis value should be used to figure out how many instances should be kept in memory after they've been destroyed. For example, if it has been set to `10`, there never be no more than 10 instances in the pool. The value should default to `Infinity`, allowing any number of instances to remain in memory after destruction.\n\nIf there are already more than that number of instances in the pool, the pool should be truncated, letting any extra instances be GC'd later on.\n\n(NOTE: Each class created using `pool` should have it's own pool and properties and so on.)",
+    "totalAttempts": 517,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 10,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

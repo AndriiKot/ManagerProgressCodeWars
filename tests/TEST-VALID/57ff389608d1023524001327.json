@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57ff389608d1023524001327",
+  "data": {
+    "id": "57ff389608d1023524001327",
+    "name": "Compare by value",
+    "slug": "compare-by-value",
+    "category": "algorithms",
+    "publishedAt": "2016-10-13T17:19:08.846Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57ff389608d1023524001327",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-13T07:32:39.051Z",
+    "createdBy": {
+      "username": "JohanWiltink",
+      "url": "https://www.codewars.com/users/JohanWiltink"
+    },
+    "description": "# Compare by value\n\nThe `==` and `===` operators work .. differently .. for `array`s and `object`s (including `date`s) in JavaScript.  \n`[] === [] => false`, `{} === {} => false`, `new Date() === new Date() => false`, while `{} !== {}` et cetera `=> true`.  \nHowever, `a = {}; b = a; a === b => true`, and the same for `[]` and `new Date()`.\n\nThis makes a certain kind of sense, but sometime you want to compare values, not references.\n\n### Task\n\nImplement `Date`, `Array` and `Object` methods `.eq()` which compare by value, recursively if necessary. Note that `Date` and `Array` inherit from `Object`; this may be leveraged, or not.  \nInputs should not be modified; the output should be a `Boolean`.\n\nIf `a.eq(b) => true` then `b.eq(a)` must be valid, and must also return `true`.\n\n### Examples\n\n```javascript\n    [0].eq([0])     => true        {0:0}.eq({0:0})     => true    new Date(0).eq(new Date(0))   => true\n    [0].eq([1])     => false       {0:0}.eq({0:1})     => false   new Date(0).eq(new Date(1))   => false\n[0,[0]].eq([0,[0]]) => true    {0:{0:0}}.eq({0:{0:0}}) => true    new Date(0).eq(new Date(0,0)) => false\n[0,[0]].eq([0,[1]]) => false\n  [0,1].eq([0,[1]]) => false          et cetera                           et cetera\n```\n\n### Input validation\n\nThese being class methods, the `this` input will always be valid. The parameter can be anything. Of course, the method will only return `true` if it is of an appropriate type (and maybe not then).  \n`Array` elements and `Object` values should be compared for identity, not equality, i.e. with `===`, not `==`. A `String` is not a `Number` is not a `Boolean` (although (a `String` is not a `Number`) _is_ a `Boolean`. that's `true` :] ).  \n`Array` and `Object` type elements and values, when being compared, should be compared by value. `Function` and `Symbol` type elements and values, however, should be compared by reference.\n\n### Preloaded\n\n`JSON.stringify` has been \"fixed\". Similarly, `require` has been disabled.  \nThe intention of this kata is to compare by value, not by representation.\n\n### Closing remarks\n\nThe scope of this kata is comparing objects by value. While this redefines one particular aspect of default JavaScript behaviour, that is where it _stops_ redefining JavaScript.  \n`NaN !== NaN`; there is no need to evaluate `NaN === NaN => true`.  \nAlso, there is no need to enumerate non-enumerable properties of objects. Inherited properties may or may not be enumerated; when defining enumerable inheritable properties on global objects, you deserve whatever you get.  \nApart from comparing objects by value instead of by reference, expected behaviour is default JavaScript behaviour. However, to prevent confusion when enumerating userspace objects and/or arrays, defined class methods should not be enumerable.",
+    "totalAttempts": 642,
+    "totalCompleted": 16,
+    "totalStars": 4,
+    "voteScore": 22,
+    "tags": [
+      "Arrays",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

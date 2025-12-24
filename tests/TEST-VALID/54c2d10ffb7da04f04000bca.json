@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54c2d10ffb7da04f04000bca",
+  "data": {
+    "id": "54c2d10ffb7da04f04000bca",
+    "name": "The ugly truth about reduce (iii)",
+    "slug": "the-ugly-truth-about-reduce-iii",
+    "category": "reference",
+    "publishedAt": "2015-01-24T00:13:42.097Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/54c2d10ffb7da04f04000bca",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-23T22:54:07.530Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the third part. You need to resolve the [first part](http://www.codewars.com/kata/54c29efd6fd290c8140017d7) before to start doing this kata.\n\nIn the first part, we did a recursive implementation of the `foldr` function. You should use your own `foldr` implementation in this kata.\n\nWe used this function to implement another functions like `map`, or `some`:\n\n```javascript\nfunction map(arr, fn) {\n  return foldr(arr, function (value, arr) {\n    return [fn(value)].concat(arr);\n  }, []);\n}\n\nfunction some(arr, fn) { did\n  return foldr(arr, function (value, exists) {\n    return fn(value) || exists;\n  }, false);\n}\n```\n\nAll works fine with `map` amd `filter`, but `some` implementation is not very efficient. See what happens with an example:\n\n```javascript\nfunction isOdd(x) {\n  return x % 2 !== 0;\n}\n\nfunction some(arr, fn) {\n  var times = 0;\n  return foldr(arr, function (value, exists) {\n    console.log('Checked ' + (++times) + ' times');\n    return fn(value) || exists;\n  }, false);\n}\n\nsome(arr, isOdd); //true\n```\n\nIn the console, we will see:\n\n```javascript\nChecked 1 times\nChecked 2 times\nChecked 3 times\nChecked 4 times\nChecked 5 times\nChecked 6 times\n```\nThat is, we perform a check for each element of the array even though we have already found an odd number.\n\nThe reason for this is that `foldr` always traverse all elements of the array and we have implemented `some` using `foldr`.\n\nIn StackOverflow is usually [asked](http://stackoverflow.com/questions/8779799/how-to-break-the-each-function-in-underscore-js) how to abort the iteration in `reduce` or `forEach` native array functions. However there is not a clean answer to this.\n\nHaskell or Scala deal with this with [non-strict evaluation](http://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_evaluation). Sadly, JavaScript does not support non-strict evaluation of function arguments.\n\nIn this kata, we are going to mimic this behavior in JavaScript. We are going to do something similar to what is done in Scala.\n\nIn non-strict evaluation, arguments to a function are not evaluated unless they are actually used in the evaluation of the function body.\n\nJavaScript has limited support for non-script evaluation. `||` and `&&` operators avoid to evalute the second operand when is possible. See some examples:\n\n```javascript\nvar a = function() {\n  return true;\n}\n\nvar b = function() {\n  return false;\n}\n\na() || b(); // true <- b is never executed because JavaScript knows the result is true\nb() && a(); // false <- a is never executed because JavaScript knows the result is false\n```\n\nWe can exploit this behavior to short circuit the execution of the `foldr` function. But we want to do it with the least impact on the implementation and the definition of all functions.\n\nSee how you could implement the `some` function:\n\n```javascript\nfunction some(arr, fn) {\n  var checked = 0\n  return foldr(arr, function (value, exists) {\n    return fn(value) || exists();\n  }, false);\n}\n```\n\nIf you look closely, you see that there is a subtle difference in the implementation that we did above.\n\nThe only difference is that now `exists` is not a boolean parameter but a function that produces a boolean when the function is called. Thus, the `exists` function will not become executed when the `fn(value)` parameter is true. We can place the recursive process of `foldr` function inside `exists` and thus have a mechanism to stop the recursion.\n\nYour job is to implement the `foldr` function, so `some` function implementation is correct and efficient.\n\nYou also have to reimplement the other functions to use the same technique: `map`, `filter`, `take` and `takeWhile`. You can not change the given implementation of `some` function since it is used in the tests.",
+    "totalAttempts": 428,
+    "totalCompleted": 18,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

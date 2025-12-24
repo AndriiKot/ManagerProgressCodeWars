@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb94b5cb604c70037e491a5",
+  "data": {
+    "id": "5eb94b5cb604c70037e491a5",
+    "name": "Cyclic Notation Permutations",
+    "slug": "cyclic-notation-permutations",
+    "category": "reference",
+    "publishedAt": "2020-05-12T13:44:35.180Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5eb94b5cb604c70037e491a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-11T12:55:56.970Z",
+    "createdBy": {
+      "username": "cl0wng1rl",
+      "url": "https://www.codewars.com/users/cl0wng1rl"
+    },
+    "description": "This kata is about permutations.\n\nIn algebra we often study permutations. A permutation is defined as a _bijection from a set to itself_. A bijection is a function that uniquely maps each element in a set to an element in another set.\n\nFor simplicity, we often use the set `{1,...,n}` to model permutations of finite sets. There is a simplistic notation for this.\n\n_Example:_ The permutation that maps each element in `{1,...,8}` to iself plus one modulo 8 can be written as follows, where the top row is the set and the bottom row is the set reordered subject to the permutation.\n```\n(1 2 3 4 5 6 7 8)\n(2 3 4 5 6 7 8 1)\n```\n\nHowever this notation is overly verbose. We algebraists prefer to use a simpler notation called _cyclic notation_. In cyclic notation we break the permutation into cycles. If an element `x` is mapped to `y` and `y` is mapped to `z` and then `z` maps to `x` we write this as the cycle `(x y z)`. In doing this we can rewrite the above permutation as\n\n```(1 2 3 4 5 6 7 8)```\n\nA more complex example is\n```\n(1 2 3 4 5 6 7 8)\n(2 3 7 8 4 6 1 5)\n```\nwhich is equivalent to\n\n```(1 2 3 7)(4 8 5)```\n\nNB: 6 is ommitted as it maps to iself\n\n_Task:_ Your task is to write a function that takes a string representation of a permutation in cyclic notation and returns a function that describes this permutation. The returned function should take a list as an argument and return that list reordered subject to the permutation. i.e.\n\n```javascript\nfunction getPermutation(cycles) {\n  ...\n  function permutation(dataset) {\n    ...\n  }\n  return permutation;\n}\n\npermutation = getPermutation(\"(1 2 3)\");\nreorderedList = permutation(['a', 'b', 'c']);\n\n// reorderedList == ['b', 'c', 'a']\n```\n```python\ndef get_permutation(cycles):\n    ...\n    def permutation(data_set):\n        ...\n    return permutation\n    \npermutation = get_permutation(\"(1 2 3)\")\nreordered_list = permutation(['a', 'b', 'c'])\n#  reordered_list == ['b', 'c', 'a']\n```",
+    "totalAttempts": 56,
+    "totalCompleted": 19,
+    "totalStars": 2,
+    "voteScore": 34,
+    "tags": [
+      "Permutations",
+      "Algebra",
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

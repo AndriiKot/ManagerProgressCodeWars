@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f1fb37b8516b00243b7323",
+  "data": {
+    "id": "64f1fb37b8516b00243b7323",
+    "name": "Car Debugging: Speedometer",
+    "slug": "car-debugging-speedometer",
+    "category": "reference",
+    "publishedAt": "2023-09-01T16:10:11.487Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64f1fb37b8516b00243b7323",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-01T14:54:47.912Z",
+    "createdBy": {
+      "username": "p4songer",
+      "url": "https://www.codewars.com/users/p4songer"
+    },
+    "description": "Your car measures speed by simply counting how many times the tire (more specifically the axel) makes a full rotation in one second. It is converted to miles per hour by comparing the car's internal rev/mile to what is measured. Here's an example:\n```\nA tire gets 672 rev/mile.\nWe measure a speed of 12.13 rev/sec\nThis is equal to 728 rev/min or 43680 rev/hr\n43680 revolutions in an hour divided by 672 miles per revolution gives us: 65 mph\n```\nTire revolutions per mile are calculated with a simple formula. First you get the diameter by multiplying the tire circumfrence by pi. Then you divide the total number of inches in a mile (`63,360`) by the circumference, and you have the rev/mile for that tire. The thing about tires is that they use a very specific numbering system that is logical, but not intuitive to most car owners. [See more here](https://tiresize.com/calculator/). If our tire size is: `200-70-R19`, to get the acutal diameter of the tire (not the diameter of the wheel) we need to make the following calculation:\n```\n(200 * 70 / 2540 * 2) + 19\n```\nWrite a function that returns our current speed in miles per hour as an integer. It should accept two arguments: tire size as a string, and speed measured in revolutions per second as a float. Some example inputs are below:\n```\nTire Size: \"200-70-R19\" rev/sec: 12.13  ->  65\n\nTire Size: \"155-15-R13\" rev/sec: 24.80  ->  65\n\nTire Size: \"315-80-R30\" rev/sec: 7.35  ->  65\n\n```\n",
+    "totalAttempts": 33,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

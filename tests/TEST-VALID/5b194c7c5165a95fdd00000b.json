@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b194c7c5165a95fdd00000b",
+  "data": {
+    "id": "5b194c7c5165a95fdd00000b",
+    "name": "Scraping CW Top 500: Calculate Statistics",
+    "slug": "scraping-cw-top-500-calculate-statistics",
+    "category": "reference",
+    "publishedAt": "2018-06-18T03:56:07.813Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b194c7c5165a95fdd00000b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-06-07T15:17:16.771Z",
+    "createdBy": {
+      "username": "Firefly2002",
+      "url": "https://www.codewars.com/users/Firefly2002"
+    },
+    "description": "<center><img src=\"https://www.qualified.io/shared/images/codewars-black-large-24a9d355.png\"></center>\n\n---\n```if:python\nPlease note that there are some kinks in the Python version that are being worked out atm. Sorry! ```\n<br>\nSince there are already so many CodeWars scrapers out there scraping one specific thing or another, I thought I'd make one that scrapes a wide range of things in the hopes we don't keep getting these scrape-one-feature kata. Most of the work is setting up the scraper anyway, so let's get more for our efforts :)\n\nFor this kata, you will have to scrape the top 500 Codewars users. (If you're a beta tester, this likely means you'll be scraping yourself ;) \n\n<h2>Preloaded for you:</h2>\n```if:ruby\n* Nokogiri and open-uri have been required for you.*\n```\n```if:python\n* BS4, re, and urlopen have all been required for you* (feel free to use others if you wish)\n```\n* The <a href=\"https://www.codewars.com/users/leaderboard\">link to the codewars top 500</a> is a global variable `URL`\n* The number of 'active users' is in the solution setup if you wish to use it.\n```if:ruby\n*A quick guide to using Nokogiri can be found <a href=\"http://ruby.bastardsbook.com/chapters/html-parsing/\">here</a>. You can skip the part about installing Nokogiri/open-uri and you don't need to `require` anything else.\n```\n```if:python\n*Documentation for BeautifulSoup can be found <a href=\"https://www.crummy.com/software/BeautifulSoup/bs4/doc/\">here</a>\n```\n\n<h3>In addition to getting their honor, rank and name, for the top ten users you will also be determining:</h3>\n\n* Their honor/solved kata ratio\n* Their kata creation-to-consumption ratio\n* Their honor percentile (based on a fixed, somewhat arbitrary estimation of total active users)\n\n<h3>Additionally, your Scraper class should also have methods which:</h3>\n\n* Sort all users by name\n* Sort the top ten by honor/solved ratio (descending)\n* Sort the top ten by kata creation/completed ratio (descending)\n\n<h2>Specifications</h2>\nThe above sorting methods should return lists of names sorted by specific properties; so the first 5 users sorted by total honor would be [\"g964\", \"myjinxin2015\", \"Voile\", \"SteffanVogel\", \"smile67\"], rather than a list of numbers.\n\n\"Honor/solved kata ratio\" refers to the ratio between a user's honor score, and the number of kata they've completed.\n\n\"Kata creation-to-consumption\" ratio should be expressed as a percent. Basically it answers the question \"For every hundred kata a user solves, how many do they create?\" As a result of how this question is phrased, this should _exclude_ kata they have created from their 'total solved'.\n\nThe estimation of active users is pretty arbitrarily derived from looking at the total number of \"Multiply\" solves, and dividing by 20.* This should be expressed as a percent, rounded to two decimal places. This number, 40113, is supplied for you as `@active_users` (`active_users` in Python).\n\n<h2>Example of how the scraper will be used:</h2>\n```ruby\nScraper.scrape #test will call your scrape function, which should populate its list.\n\nScraper.list[0].name  => 'g964'\nScraper.list[2].level => '2 dan'\nScraper.sort_by_creation_ratio[0] => 'myjinxin2015'\n\n```\n```python\nScraper.scrape() #test will call your scrape function, which should populate its list.\n\nScraper.list()[0].name  => 'g964'\nScraper.list()[2].level => '2 dan'\nScraper.sort_by_creation_ratio()[0] => 'myjinxin2015'\n```\n\n---\n\nNote that because multiple threads (using the Thread class in Ruby) don't appear to be supported on CodeWars (someone correct me if I'm wrong), this scraper's performance suffers considerably due to having to scrape multiple user pages. On some occasions it may time out. Just try again. \n\n**Translations (especially async JavaScript) are very welcome.**\n\n*If anyone's got a better source for active users, let me know (I thought I remembered seeing some stats on this site somewhere but couldn't find them again).",
+    "totalAttempts": 93,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 7,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

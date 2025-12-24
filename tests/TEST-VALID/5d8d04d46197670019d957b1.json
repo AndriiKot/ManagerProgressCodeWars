@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d8d04d46197670019d957b1",
+  "data": {
+    "id": "5d8d04d46197670019d957b1",
+    "name": "Alien Logo",
+    "slug": "alien-logo",
+    "category": "algorithms",
+    "publishedAt": "2019-09-28T13:46:44.341Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5d8d04d46197670019d957b1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-09-26T18:35:00.885Z",
+    "createdBy": {
+      "username": "eptaceps",
+      "url": "https://www.codewars.com/users/eptaceps"
+    },
+    "description": "<h2><font color = \"lightblue\">DESCRIPTION</font></h2>\nOur proud leader demands a new banner for the Vy-phin faction.<br>\nYou are asked to formulate a function which composes this lordly artifact.<br>\n\n<sub>representation of the return value of alien_logo(3, 7);</sub>\n```cpp\n     /                      \\\n     -                      -\n   /-/                      \\-\\\n   -                          -\n   -      /            \\      -\n/--/      -            -      \\--\\\n-       /-/            \\-\\       -\n-       -       /\\       -       -\n-       -       --       -       -\n|-------|-------||-------|-------|\n-       -       --       -       -\n-       -       \\/       -       -\n-       \\-\\            /-/       -\n\\--\\      -            -      /--/\n   -      \\            /      -\n   -                          -\n   \\-\\                      /-/\n     -                      -\n     \\                      /\n```\n<sup>representation of a <font color=\"orange\">tree</font> and 7 <font color=\"lightgreen\">skips</font></sup>\n```cpp\n     /\n     -\n   /-/\n   -\n   -\n/--/\n-\n-\n-\n|-------\n```\n```cpp\nalien_logo(3, 7); returns -> std::vector<std::vector<char>>\n```\n<br>\n<b>In general :</b> \n<ul>\n<li>the first parameter <font color=\"lightgreen\">N</font> represents the number of <font color=\"orange\">trees</font> on each side of the item.</li>\n\n<li>the second parameter <font color=\"lightgreen\">skip</font> represents the number of characters which separate the <font color=\"orange\">trees</font></li>\n</ul>\n<br>\n<b>Referring to the above example :</b> \n<ul>\n\n<li><font color=\"lightgreen\">N = 3</font> and there are <font color=\"lightgreen\">3</font> <font color=\"orange\">trees</font> on each side (for a total of 12 <font color=\"orange\">trees</font>)</li>\n<li><font color=\"lightgreen\">skip = 7</font> and there are <font color=\"lightgreen\">7</font> <code>-</code> which separate each <code>|</code></li>\n\n</ul>\n<br>\n\n<h2><font color = \"lightblue\">NOTES</font></h2>\n<ul>\n\n<li>Input will be always: <font color=\"lightgreen\">N &gt= 0</font> and <font color=\"lightgreen\">skip &gt= 0</font></li>\n<li>if <font color=\"lightgreen\">N = 0</font> you should return <code>No Logo ;-;</code>\n<li><font color=\"orange\">tree</font> -> each structure above OR under a <code>|</code></li>\n<li>\n  Used characters\n  <ul>\n    <li><code>/</code> <code>|</code> <code>\\</code> <code>-</code></li>\n    <li><code>N</code> <code>o</code> <code>L</code> <code>g</code> <code>;</code></li>\n  </ul>\n</li>\n\n</ul>\n\n<br>\n\n<h2><font color = \"lightblue\">ANOTHER EXAMPLE</font></h2>\n\n```cpp\nalien_logo(4, 2);\n```\n```cpp\n         /        \\\n         -        -\n       /-/        \\-\\\n       -            -\n       -            -\n    /--//          \\\\--\\\n    -   -          -   -\n    - /-/          \\-\\ -\n    - -              - -\n/---/ - /          \\ - \\---\\\n-  /--/ -          - \\--\\  -\n-  -  /-/          \\-\\  -  -\n-  -  -  /        \\  -  -  -\n-  -  -  -        -  -  -  -\n|--|--|--|        |--|--|--|\n-  -  -  -        -  -  -  -\n-  -  -  \\        /  -  -  -\n-  -  \\-\\          /-/  -  -\n-  \\--\\ -          - /--/  -\n\\---\\ - \\          / - /---/\n    - -              - -\n    - \\-\\          /-/ -\n    -   -          -   -\n    \\--\\\\          //--/\n       -            -\n       -            -\n       \\-\\        /-/\n         -        -\n         \\        /\n```",
+    "totalAttempts": 25,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Data Types",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

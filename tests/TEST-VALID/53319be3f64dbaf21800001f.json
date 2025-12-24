@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53319be3f64dbaf21800001f",
+  "data": {
+    "id": "53319be3f64dbaf21800001f",
+    "name": "Point in a polygon",
+    "slug": "point-in-a-polygon",
+    "category": "algorithms",
+    "publishedAt": "2014-03-25T15:19:17.461Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53319be3f64dbaf21800001f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-03-25T15:08:19.187Z",
+    "createdBy": {
+      "username": "wfleet",
+      "url": "https://www.codewars.com/users/wfleet"
+    },
+    "description": "# Point in a Polygon\nGiven a 2d polygon description and a point coordinate, determine whether the point exists inside or outside the polygon.\n\nThe polygon may be simple or complex, and can include curves. The polygon description must be for a closed polygon, in which the first and last point\ndescribed are the same.\n\nThe polygon description will use two operators: moveto and lineto, similar to a subset of Postscript path operators.\n\n'moveto' sets the current x y point\n\n'lineto' draws a boundary to the next x y point, which becomes the new current x y point\n\nA typical polygon descriptor\n```javascript\n  var thisPolygon = {'polygon' : [\n\t\t{'moveto' : {'x' : 10, 'y' : 10}},\n\t\t{'lineto' : {'x' : 20, 'y' : 10}},\n\t\t{'lineto' : {'x' : 20, 'y' : 20}},\n\t\t{'lineto' : {'x' : 10, 'y' : 20}},\n\t\t{'lineto' : {'x' : 10, 'y' : 10}}\n\t]}; ```\n\nA typical point descriptor\n```javascript\n\tvar thisPoint = {'x' : 12, 'y' : 18}; ```\n\nA good starting point for the point in polygon algorithm test can be found here: http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html\nThere are other examples as well. It will require that any curves be rendered into straight-line segments.\n\nGiven a polygon and a point, the pointInPoly function will return true if the point is in side the polygon, false if it is outside, or a string: 'Error!'\nif the polygon is not closed properly. (This last because the Test.expectError() call does not seem to handle errors as stated.)\n\n",
+    "totalAttempts": 188,
+    "totalCompleted": 23,
+    "totalStars": 5,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

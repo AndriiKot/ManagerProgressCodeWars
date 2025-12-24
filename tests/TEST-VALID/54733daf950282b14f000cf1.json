@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54733daf950282b14f000cf1",
+  "data": {
+    "id": "54733daf950282b14f000cf1",
+    "name": "Tile Map Path Finding",
+    "slug": "tile-map-path-finding",
+    "category": "algorithms",
+    "publishedAt": "2014-11-24T14:16:22.157Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54733daf950282b14f000cf1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-11-24T14:16:15.257Z",
+    "createdBy": {
+      "username": "Mackay",
+      "url": "https://www.codewars.com/users/Mackay"
+    },
+    "description": "A game map is represented by a 2d array containing only integers, and can be a grid of any size. Each number in the 'map' represents an entity:\n\n```\n0 is an empty space\n1 is the player\n2 is a wall or object that can not be passed\n```\n\nFor example:\n```\nmap = [[0, 0, 1, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 0, 0, 0]]\n```\n\nWould be a map with the player at ```map[0][2]``` and 3 walls/objects at ```map[1][2], map[2][2] and map[3][2]```.\n\nYour task is to implement a method ```find_path(map, end_point)``` which finds the most efficient path from the players position to the given end_point for the given map, moving only up, down, left or right.\n\nThere are a few noteable exceptions, which will require you to return an empty array ```[]``` i.e. there is no possible path. These are:\n```\nNo player exists on the map (1)\nThe end_point location is already occupied with a wall/object (2)\nIt is impossible to create a path from the player to the end point\nA nil end_point is given\nThe end_point is out of bounds of the map array\n```\n\nIn all other cases a path should be returned as a 2d array, where the values are the co-ordinates for each step taken on the path, for example:\n```ruby\nmap = [[0, 1, 2, 0, 0]]\nfind_path(map, [0, 4]) # Should return [] as it is impossible.\nfind_path(map, [0, 0]) # Should return [[0, 0]]\nmap = [[0, 1],\n       [0, 0]]\nfind_path(map, [1, 0]) # Should return [[0, 0], [1, 0]] or [[1,1],[1,0]] depending on your code\nmap = [[0, 0, 0, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 2, 0, 0],\n      [0, 0, 1, 0, 0]]\nfind_path(map, [1, 2]) # Should return [] as the end_point tile is occupied.\nfind_path(map, [0, 2]).length # Should be 6, as the path is 6 steps.\nfind_path(map, [0, 2]) # Should return either [[4,1],[3,1],[2,1],[1,1],[0,1],[0,2]] or [[4,3],[3,3],[2,3],[1,3],[0,3],[0,2]] depending on your code\n```",
+    "totalAttempts": 143,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Games",
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

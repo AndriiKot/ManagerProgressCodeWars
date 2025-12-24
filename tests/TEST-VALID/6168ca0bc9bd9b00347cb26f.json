@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6168ca0bc9bd9b00347cb26f",
+  "data": {
+    "id": "6168ca0bc9bd9b00347cb26f",
+    "name": "Finite automation 1: DFA Runner",
+    "slug": "finite-automation-1-dfa-runner",
+    "category": "reference",
+    "publishedAt": "2021-10-15T02:43:23.955Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6168ca0bc9bd9b00347cb26f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-15T00:23:39.216Z",
+    "createdBy": {
+      "username": "aland97",
+      "url": "https://www.codewars.com/users/aland97"
+    },
+    "description": "# What is DFA\n\n[DFA (Deterministic Finite State Machine)](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) is a mathematical model that contains:\n\n- Set of states `Q`\n- Set of transitions `transitions`\n- Starting state of `startState` from `Q`\n- The set of accepted states `acceptStates`, a subset of `Q`\n\nEach transition consists of two states (s1, s2) and a symbol (a):\n`s1 -a-> s2`\n\nThere can be only one transition for each `s1` and `a`.\n\nDFA can accept some character sequences or not.\n\nWhen the string is received:\n\n1) Current state become `startState`\n2) Read next character of `input`\n3) If in `transitions` no element of the form `[current state, current character, next state]`, then `input` is not accepted\n4) Current state become next state from trinsition\n5) If `input` are over and current state from `acceptStates`, then `input` is accepted, else go to (3)\n\n# Task\n\nWrite a function that takes:\n\n- Start state (number)\n- Transitions (array of [number, symbol, number])\n- Accepted states (array of numbers)\n- Input (string)\n\nReturn `true` if this input is accepted, and `false` if not.\n\nIf there are no transition for the current state and next character, return `false`.\n\n## Example\n\n![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FTwVxh.png&f=1&nofb=1)\n\nEach state will coresponding with number:\n```\n 0 for q0\n 1 for q1\n 2 for q2\n```\n```\nstartState = 0  \ntrinsitions = [  \n   [0, '0', 1], // q0 -0-> q1    \n   [0, '1', 2], // q1 -1-> q2    \n   [1, '0', 0], // q1 -0-> q0    \n   [1, '1', 2], // q1 -1-> q2  \n   [2, '0', 2], // q2 -0-> q2    \n   [2, '1', 2], // q2 -1-> q2\n]\nacceptStates = [2] \n```\n\nThis DFA accepts \"0011\" and does not accept \"000\".\n\nSuccession of states for the `input` \"0011\", starting in `startState`:  \n   - q0 -0-> q1\n   - q1 -0-> q0\n   - q0 -1-> q2\n   - q2 -1-> q2\n\nWhen characters are over, DFA is in state q2 which is accepted.\n\nSuccession of states for the `input` \"000\", starting in `startState`: \n  - q0 -0-> q1\n  - q1 -0-> q0 \n  - q0 -0-> q1\n\nWhen characters are over, DFA is in state q1 which is not accepted.\n\n# More\n\n- Finite automation 1: DFA Runner\n- [Finite automation 2: NFA Runner](https://www.codewars.com/kata/6168a55ac9bd9b003e799673)\n- [Finite automation 3: Convert NFA to DFA](https://www.codewars.com/kata/616beb11ccceda002c421dec)",
+    "totalAttempts": 762,
+    "totalCompleted": 60,
+    "totalStars": 6,
+    "voteScore": 87,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

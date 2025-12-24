@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f2958b6e568cf00014069e8",
+  "data": {
+    "id": "5f2958b6e568cf00014069e8",
+    "name": "Can You Open Rachel's Gate?",
+    "slug": "can-you-open-rachels-gate",
+    "category": "games",
+    "publishedAt": "2020-08-04T12:46:46.968Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f2958b6e568cf00014069e8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-04T12:46:55.535Z",
+    "createdBy": {
+      "username": "GodfreyTz",
+      "url": "https://www.codewars.com/users/GodfreyTz"
+    },
+    "description": "The gates found in Rachel’s building turned out to be only half the job to enter inside as she was asleep and the gates were locked. The young woman protected herself against uninvited guests in an additional way - ```a four-digit code``` on each of the gates. Thanks to the NOTE found next to you, you managed to recognize that code, but what was written on the NOTE?\n\nThe note shows that we have a four-digit number, for example 4223. From it we can make two new four-digit numbers by sorting the original number's digits once in non-increasing order and once in non-decreasing order - in this case 4322 and 2234. Then we need to subtract these numbers from each other. When repeating the procedure after some time, a certain number started to repeat itself and this is the required code to open the gate ... Anyway, Just to confirm for a number ```4223```. There isn't much time, hopefully this property shows up quickly.\n```\n4322 - 2234 = 2088\n8820 - 0288 = 8532 (You can append zeros to ensure its a four digit-0288)\n8532 - 2358 = 6174 (the code to open the gate, after 3rd routine)\n7641 - 1467 = 6174\n```\nHelp the guest to know after how many ```iterations``` he/she will get the code to open the gate, if they will never find the code then show them ```-1``` That means Rachel does not need any guest at that particular time, you need to go back home.\n\nNotes: The code can't be formed by all 4 repeated digits and the number given by Rachel should be verified atleast once, to ensure it's a correct code as the gate will be locked permanently after your first failure.\n\nMore examples in test cases.\n\nGood Lucky.\n",
+    "totalAttempts": 532,
+    "totalCompleted": 52,
+    "totalStars": 4,
+    "voteScore": 54,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

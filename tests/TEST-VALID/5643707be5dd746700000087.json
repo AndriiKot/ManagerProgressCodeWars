@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5643707be5dd746700000087",
+  "data": {
+    "id": "5643707be5dd746700000087",
+    "name": "Binary Search Tree Part 1",
+    "slug": "binary-search-tree-part-1",
+    "category": "algorithms",
+    "publishedAt": "2015-11-11T17:20:28.936Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5643707be5dd746700000087",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-11T16:44:44.182Z",
+    "createdBy": {
+      "username": "everett980",
+      "url": "https://www.codewars.com/users/everett980"
+    },
+    "description": "Binary Search Trees are an excellent introduction to graphs.\n\nUpon construction, the root of the Binary Search Tree:\n\n  (1) should contain the value passed during construction\n\n  (2) should have a size of 1\n\n  (3) should have a null left child tree\n\n  (4) should have a null right child tree\n\nBinary search trees should have a function called contains, that when called returns true if any value in the Binary search tree is equal to the the value passed as a parameter to the contains method, otherwise false.\n\nBinary search trees can add more elements when asked to.\n\nWhen adding an element, the binary search tree compares the value of the added element to the value in the root.\n\nIf the value of the added element is less than the value in the root, the element gets added to the root's left child tree.\n\nIf the value of the added element is greater than the value in the root, the element gets added to the root's right child tree.\n\nA single node in a binary search tree can only have a maximum of two children. If a node already has two children, the value to be added has to be added to one of this node's childrens' children.\n\nBinary search trees can also remove a specified element.\n\nThis involves finding the specified element, and removing the element. If the node containing the specified element has children, one of these children has to 'bubble up' and take the place the specified element was in.\n\nHere is an example of a binary search tree: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Unbalanced_binary_tree.svg/2000px-Unbalanced_binary_tree.svg.png\n\nI have already written the Binary search tree constructor function, and a function that returns the size of the binary search tree:\n```javascript\nvar BST = function(value) {\n  this.value = value;\n  this.left = null;\n  this.right = null;\n  this._size = 1;\n}\n\nBST.prototype.size = function() {\n  return this._size;\n}\n```",
+    "totalAttempts": 160,
+    "totalCompleted": 16,
+    "totalStars": 9,
+    "voteScore": 25,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Data Structures",
+      "Trees",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

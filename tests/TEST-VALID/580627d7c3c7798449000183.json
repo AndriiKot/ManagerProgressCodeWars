@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580627d7c3c7798449000183",
+  "data": {
+    "id": "580627d7c3c7798449000183",
+    "name": "String: return formatted string",
+    "slug": "string-return-formatted-string",
+    "category": "reference",
+    "publishedAt": "2016-10-18T14:51:26.222Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/580627d7c3c7798449000183",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-18T13:47:03.560Z",
+    "createdBy": {
+      "username": "lilsweetcaligula",
+      "url": "https://www.codewars.com/users/lilsweetcaligula"
+    },
+    "description": "Challenge:\nGiven a buffer string, the length of the buffer string, the format string and the variable number of arguments, return a fully formatted string. The format rules are the same as those for the \"printf\" family of functions:\n\nhttp://www.cplusplus.com/reference/cstdio/printf/\n\nHowever, for this kata, you surprisingly don't need any particular knowledge of these formatting rules. You are not required to reimplement the functionality, instead you should simply do some \"re-routing\".\n\nExample:\n```\nchar buffer[SCHAR_MAX];\nsize_t bufferLength = sizeof(buffer) / sizeof(buffer[0]);\nchar *message = formatString(buffer, bufferLength, \"%d bottles of %s!\", 99, \"Ovaltine\");\n(void)puts(message); // outputs: 99 bottles of Ovaltine!\n```\n\nAddendum:\nThis kata is actually very simple. Hint: consult the C standard library documentation.\n\nTo successfully complete this challenge, you might want to be familiar with the *variable arguments* in C.\n\nThis kata does not require any memory allocation/de-allocation or error checking. You are guaranteed to receive valid parameters.",
+    "totalAttempts": 123,
+    "totalCompleted": 46,
+    "totalStars": 3,
+    "voteScore": 67,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

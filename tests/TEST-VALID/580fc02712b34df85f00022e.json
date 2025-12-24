@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580fc02712b34df85f00022e",
+  "data": {
+    "id": "580fc02712b34df85f00022e",
+    "name": "Horror Top Trumps (card game)",
+    "slug": "horror-top-trumps-card-game",
+    "category": "games",
+    "publishedAt": "2016-10-30T21:08:54.894Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/580fc02712b34df85f00022e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-25T20:27:19.132Z",
+    "createdBy": {
+      "username": "adamdharrington",
+      "url": "https://www.codewars.com/users/adamdharrington"
+    },
+    "description": "### Horror Top Trumps\n\n![Sample cards](//2.bp.blogspot.com/-S8nibogoDHA/VbN7LdtGdrI/AAAAAAAAI3k/oRhiPK-t35E/s1600/Dracula-Top-trumps-opener.jpg)\n\nTop Trumps is a card game where two or more players play with themed decks of cards wage battle until one player has all the cards. Each card in a deck contains a character and a number of attributes and corresponding values.\n\nThis Kata challenges you to script the behaviour of a 'Player' who will always make the 'best' choices in a game of Top Trumps given the information available at the time. Your 'Player' should track all cards played and keep track the card order in each deck. \n\nTo do this your Player must be able to respond to a few specific commands and the starter-code explains exactly what responses are expected:\n\n- name\n- play\n- win\n- lose\n- tie\n\nThis Halloween special will use a [Horror Top Trumps of the 1970's](http://hypnogoria.blogspot.ie/2015/07/tomb-of-trumps-0-packs.html) using the following attributes:\n\n - Physical Strength\n - Fear Factor\n - Killing Power\n - Horror Rating\n\n...and featuring:\n\n- Ape Man\n- Circus of Death\n- Dracula\n- Fu Manchu\n- Gargantua\n- The Gorgon\n- Granite Man\n- Man Eating Plant\n- and more\n\n### The rules\n\n1. Each 'Player' will be given a half deck of cards (exactly half,\n   there's no odd numbers)\n2. You must choose the strongest attribute on the card you have been \n   given unless you know what card your opponent has, then you should \n   always pick the strongest attribute that would beat your opponent.\n3. Attributes have values of 1-100 (not identical to cards shown in \n   the linked page) and you win if the attribute on your current card \n   has a higher value than the same attribute on your opponent's current\n   card\n4. During gameplay, imagine the 'active' player places a card in the \n   centre of the table, and challenges their opponent by choosing an \n   attribute. The opponent then places a card on top. the winner takes \n   both these cards and appends them to their deck in that order.\n   ```\n   playerA = [a0, a1, a2, a3, a4] // Active player\n   playerB = [b0, b1, b2, b3, b4]\n    \n   activeCards = [b0, a0] // Prize pile\n    \n   // if playerA wins:\n   playerA = [a1, a2, a3, a4, b0, a0] // Active\n   playerB = [b1, b2, b3, b4]\n    \n   // if playerB wins\n   playerA = [a1, a2, a3, a4]\n   playerB = [b1, b2, b3, b4, b0, a0] // Active\n   ```\n5. The winner then has control to play next.\n6. When a round results in a tie, both cards remain in the centre of the\n   table and the active player takes another turn. The next winner takes all\n   cards in the centre of the table and adds them to their deck.\n   ```\n   activeCards = [b1, a1, b0, a0] // Prize pile\n   ```\n7. The game is over when one player has all cards.\n\nYour 'Player' must implement the API provided in the starter code, these are the methods that will be called on it.\n\n \n### Tips:\n\n- You should track the cards that are played so you know when they are coming around again. This means tracking both your own 'hand' and that of your opponent.\n- Your job isn't to win every game, just to play the perfect game within the rules outlined above. \n\n[Horror Top Trumps of the 1970's - Dracula Pack](http://hypnogoria.blogspot.ie/2015/07/tomb-of-trumps-0-packs.html)",
+    "totalAttempts": 247,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 3,
+    "tags": [
+      "Logic",
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

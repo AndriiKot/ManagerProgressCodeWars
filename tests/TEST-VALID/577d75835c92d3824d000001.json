@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/577d75835c92d3824d000001",
+  "data": {
+    "id": "577d75835c92d3824d000001",
+    "name": "Blackjack, should I hit?",
+    "slug": "blackjack-should-i-hit",
+    "category": "algorithms",
+    "publishedAt": "2016-07-06T21:20:22.708Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/577d75835c92d3824d000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-06T21:17:55.971Z",
+    "createdBy": {
+      "username": "davidhu2000",
+      "url": "https://www.codewars.com/users/davidhu2000"
+    },
+    "description": "The game of [blackjack](https://en.wikipedia.org/wiki/Blackjack) is an extremely popular game. Your goal is to get as close to 21 as possible and be higher than the dealer. \n\nWe will simplify this kata and elminate the dealer completely. \n\n\nYou are given two inputs: an array of two values, representing the your cards' values, and the next card you will get. The card values are selected from the array below:\n```\n['A', 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'J', 'Q', 'K']\n```\n\nYou need to follow the following (albeit extremely simplified) rules: \n* Always **hit** if total value is less than 17.\n* Always **stay** if total value is more than 17. \n* If total is 17, **stay** if it is a hard 17 (a 17 without an Ace). \n* If total is 17, **hit** if it is a soft 17 (6 with an Ace). \n\nRemember Ace can be worth 1 or 11, depending on the situation. \n\nFor example, if you have a soft 17 (Ace, 6), and you hit and get an 8, your total is now 15 (1 + 6 + 8). \n\nAlso, Ten, Jack, Queen, and King are all worth 10. \n\nYour goal is to output an array of your action ('hit' or 'stay') and your final score.\n\n\n## Examples \n\n```\n[ hand ], next  -->   [action, score]\n['A', 6],  8    -->    ['hit',  15]\n['K', 9],  5    -->    ['stay', 19]\n```\n\nGood luck and have fun!!\n",
+    "totalAttempts": 2326,
+    "totalCompleted": 131,
+    "totalStars": 23,
+    "voteScore": 117,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

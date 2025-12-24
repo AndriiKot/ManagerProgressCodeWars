@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/603545a7fe5c8700183166dc",
+  "data": {
+    "id": "603545a7fe5c8700183166dc",
+    "name": "Method Overloading: Operating on basic data types.",
+    "slug": "method-overloading-operating-on-basic-data-types",
+    "category": "reference",
+    "publishedAt": "2021-03-10T23:18:09.069Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/603545a7fe5c8700183166dc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-23T18:12:55.918Z",
+    "createdBy": {
+      "username": "Deathbycalculus3",
+      "url": "https://www.codewars.com/users/Deathbycalculus3"
+    },
+    "description": "# Explanation\n\nMethod overloading is useful when accepting multiple different data types. Many objects have multiple different methods with the same name: the input that the method receives determines which method is used.\n\nMethod overloading allows the same named method to output different results depending on the parameters. Alternatively, returning generic Objects works fine too, so long as the Objects returned are the correct types. In strongly-typed languages, like Java and C#, overloading is more important than it is in languages like Python and Ruby. Overloading is similar to overriding, except that it occurs inside the class itself, as opposed to taking a method from a parent class and redefining it.\n\n## Problem\n\nIn this problem, you are given a helper class by the name of Operate. You need to define four methods, Add, Sub, Mult, and Div. Each method will have a different output based on the input given. There also will be a base method that will be called if the inputs do not fall into the allowed categories that should output \"Invalid Types.\"\n\n### Addition\n\n```C#\n// This is what addition should look like\nOps.Operate.Add(10, 10) == 20; // Integers\nOps.Operate.Add(2.5, 3.3) == 5.8; // Doubles\nOps.Operate.Add(\"C\", \"#\") == \"C#\"; // Strings\nOps.Operate.Add('a', 3) == 'd'; // Char\nOps.Operate.Add(true, false) == true; // Bool is an OR statement for add\n```\n\nAny other parameter combinations should output \"Invalid Types\"\n\n### Subtraction\n```C#\n// This is what subtraction should look like\nOps.Operate.Sub(5, 3) == 2; // Integers\nOps.Operate.Sub(6.4, 2.3) == 4.1; // Doubles\nOps.Operate.Sub('d', 2) == 'b'; // Char\nOps.Operate.Sub(\"Hello World!\", \"orl\") == \"He Wd!\"; // String\nOps.Operate.Sub(true, false) == false; // Bool is a NOR statement for subtract\n```\n\n### Multiplication\n```C#\n// This is what multiplication should look like\nOps.Operate.Mult(5, 3) == 15; // Integers\nOps.Operate.Mult(1.2, 1.2) == 1.44; // Doubles\nOps.Operate.Mult(\"Hello\", 3) == \"HelloHelloHello\"; // Strings\nOps.Operate.Mult(true, false) == false // Bool is an AND statement for multiplication\n```\n### Division\n```C#\n// This is what division should look like\nOps.Operate.Div(7, 5) == 1; // Integers\nOps.Operate.Div(9.0, 5.0) == 1.8; // Doubles\nOps.Operate.Div(true, false) == true; // Bool is an XOR statement for division\n```\n\nThe only data types that you need to worry about are ints, chars, strings, bools, and doubles (in C#). All other data types do not matter in this problem, and should return \"Invalid Types.\"",
+    "totalAttempts": 163,
+    "totalCompleted": 15,
+    "totalStars": 4,
+    "voteScore": -2,
+    "tags": [
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

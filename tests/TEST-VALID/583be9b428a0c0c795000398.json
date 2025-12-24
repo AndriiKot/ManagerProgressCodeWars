@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583be9b428a0c0c795000398",
+  "data": {
+    "id": "583be9b428a0c0c795000398",
+    "name": "The Overlap Time",
+    "slug": "the-overlap-time",
+    "category": "games",
+    "publishedAt": "2016-11-29T08:43:04.162Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/583be9b428a0c0c795000398",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-28T08:24:20.698Z",
+    "createdBy": {
+      "username": "Phlegz",
+      "url": "https://www.codewars.com/users/Phlegz"
+    },
+    "description": "Given an hour <code>h</code> on the 12-hour clock and the number of minute divisions <code>n</code>, return the time (in hour and minutes) at which the hour and minute hands overlap or make the smallest angle. \n\n<h3>NOTE:</h3>\n<p>1. The <code>findOverlapTime(h,n)</code> function takes two integers as an input: The first one, <code>h</code>, represents the hour ranging from <code>[1-12]</code>. The second input <code>n</code> is the number of minute divisions and it should satisfy the following condition:<br>\n<code>(60/n)==integer</code>; otherwise the follownig error should be thrown:<pre><code>\"n did not pass the test!\"</code></pre>\n\nWHAT DO YOU MEAN BY MINUTE DIVISION???!!!!!<br>\n\nthe regular clock has <code>60</code> divisoins for the minute hand which means there are <code>60</code> numbers from <code>0</code> to <code>59</code> that you can use to tell the minute! However, If <code>n=20</code>, there will be <code>20</code> numbers around the clock from <code>0</code> to <code>57</code> (multiples of <code>3</code>)that you can use to report the minute(i.e. <code>01:03, 06:42, 11:57</code>).\n</p>\n<p>2. The clock's hands jump in discreet steps. The smallest steps for the minute and hour hands are equal to the angle that each hand sweeps in <code>60/n</code> minutes.</p>\n<p>3. The returned time is a string in the following format: <code>\"hh:mm\"</code>. The hour ranges from <code>[1-12]</code>, and minute should be an integer in the range of <code>[0-59]</code>.</p>\n<p>4. For the specific case when <code>h=12</code>, you may need to convert <code>12</code> to <code>0</code> in order to get the right answer. The results should still be in the correct format. </p>\n5. The hour part of the returned time (i.e. \"hh\" in \"hh:mm\") should always be the same as the input hour. \n",
+    "totalAttempts": 194,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

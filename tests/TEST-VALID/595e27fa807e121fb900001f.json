@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/595e27fa807e121fb900001f",
+  "data": {
+    "id": "595e27fa807e121fb900001f",
+    "name": "Summer camp",
+    "slug": "summer-camp",
+    "category": "algorithms",
+    "publishedAt": "2017-07-06T12:09:47.255Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/595e27fa807e121fb900001f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-06T12:07:23.076Z",
+    "createdBy": {
+      "username": "kingkombs",
+      "url": "https://www.codewars.com/users/kingkombs"
+    },
+    "description": "You are the instructor in charge of multiple boy-scouts wanting to play a game. You have been given a list of different games to play, including each boy-scouts required in order to start a game.\n\nYour job is to choose which game to play depending on the present boy-scouts and your required list. \n\nRULES:\n1. You are given two inputs:\n  -  boy-scouts (A list of boy-scouts who want to play, as an array)\n  -  games (list of expected boy-scouts per game, as a multidimensional array, each element in the first array represents a game)\n2. If present boy-scouts don't match the requirements to start any game, return success false, valid false and the missing boy-scouts that are required to start the game, per game, as a multidimensional array.\n3. If present boy-scouts match the requirements for one game and only the first one, return success true, the valid game as an array, and the list of missing boy-scouts that are required to start the game.\n4. If there are more boy-scouts than what is expected for a game, as well as the boy-scouts expected to start that game, return success true, the first valid game as an array, and the list of missing boy-scouts that are required to start the game.\n5. If you are able to start more than one game, return success true, the first valid game as an array, and the list of missing boy-scouts that are required to start the game.\n6. If there are no missing boy-scouts for all the games, return success true, the first valid game and missing to false.\n7. If no boy-scouts shown up, return success false, valid false and the missing boy-scouts that are required for all the games as a multidimensional array.\n\n  Example 1\n  ```\n    var boyscouts = ['jonas','andre','nathalie'],\n        games = [['mathiew','severine','paul'], ['jonas','andre','nathalie']];\n    \n    match(boyscouts, games) {\n       //....\n      return {\n        success: true,\n        valid: ['jonas','andre','nathalie'],\n        missing: [['mathiew','severine','paul']]\n      }\n    };\n  ```\n  Example 2\n  ```\n    var boyscouts = ['jonas','andre','nathalie','mathiew','severine','paul'],\n        games = [['mathiew','severine','paul'], ['jonas','andre','nathalie']];\n    \n    match(boyscouts, games) {\n       //....\n      return {\n        success: true,\n        valid: ['mathiew','severine','paul'],\n        missing: false\n      }\n    };\n  ```\n  Example 3\n  ```\n    var boyscouts = ['jonas','andre','nathalie','paul'],\n        games = [['mathiew','severine','paul'], ['jonas','andre','nathalie']];\n    \n    match(boyscouts, games) {\n       //....\n      return {\n        success: true,\n        valid: ['jonas','andre','nathalie'],\n        missing: [['mathiew','severine','paul']]\n      }\n    };\n  ```\n  Example 4\n  ```\n    var boyscouts = ['jonas'],\n        games = [['jonas','severine','paul'], ['jonas','andre','nathalie']];\n    \n    match(boyscouts, games) {\n       //....\n      return {\n        success: false,\n        valid: false,\n        missing: [['severine','paul'],['andre','nathalie']]\n      }\n    };\n  ```\n\nGood Luck !",
+    "totalAttempts": 169,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

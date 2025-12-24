@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5541bcc1f2db58bded000023",
+  "data": {
+    "id": "5541bcc1f2db58bded000023",
+    "name": "Promise me a Rose Garden",
+    "slug": "promise-me-a-rose-garden",
+    "category": "reference",
+    "publishedAt": "2015-04-30T19:48:09.859Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/5541bcc1f2db58bded000023",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-30T05:25:21.743Z",
+    "createdBy": {
+      "username": "PandaWhisperer",
+      "url": "https://www.codewars.com/users/PandaWhisperer"
+    },
+    "description": "# Promise me a Rose Garden\n\nPromises have now officially arrived in ES6, but sadly, CodeWars is lagging a bit behind. Let's fix that! \n\nThe goal of this kata is to write your *own* promise implementation. Don't worry, we've simplified the spec for you a little bit.\n\n## Requirements\n\nA promise is a value that wraps an asynchronous operation. Instead of passing a callback to an asynchronous function, it can return a promise, which is a proxy for the as-of-yet undetermined value. \n\nA promise *always* has one of three states:\n\n- `pending`\n- `fulfilled`\n- `rejected`\n\nEvery promise starts out as `pending`. When the asynchronous operation that it stands for completes succesfully, the promise's state changes to `fulfilled`. If the asynchronous operation fails, the state changes to `rejected`.\n\n**NOTE**: a promise can only change states *once*. `pending` is a temporary state. As soon as the state changes to `rejected` or `fulfilled` it stays there, and never changes again.\n\nA promise is created using the `Promise` constructor, which takes a single function argument. This function will be invoked using *two* function arguments, `resolve` and `reject`. You will use these callbacks to change the promise's state. \n\nFinally, a promise has two *instance* methods: `then` and `catch`. Both functions take another function as an argument. A function passed to `then` will be executed *if and only if* the promise resolves successfully. Conversely, a function passed to `catch` will be executed *if and only if* the promise is rejected. Both functions will be called with exactly one argument - the success or error value, respectively.\n\n## Example\n\nFor example, let's say you're wrapping an `XMLHttpRequest` into a promise. You might do something like this:\n\n```javascript\nfunction ajaxGetAsync(url) {\n    return new Promise(function (resolve, reject) {\n        var xhr = new XMLHttpRequest;\n        xhr.addEventListener(\"error\", reject);\n        xhr.addEventListener(\"load\", resolve);\n        xhr.open(\"GET\", url);\n        xhr.send(null);\n    });\n}\n```\n```coffeescript\najaxGetAsync = (url) ->\n    new Promise (resolve, reject) ->\n        xhr = new XMLHttpRequest\n        xhr.addEventListener(\"error\", reject)\n        xhr.addEventListener(\"load\", resolve)\n        xhr.open(\"GET\", url)\n        xhr.send(null)\n```\n\nThe `ajaxGetAsync` function takes a `url` argument, and uses `XMLHttpRequest` to retrieve that URL. If the call is successful, the promise resolves with the response. If an error occurs, the promise is rejected with the error.\n\nYou would use this method as follows:\n\n```javascript\najaxGetAsync('/data.json').then(function(response) {\n  // do something with response\n}).catch(function(error) {\n  // do something with error\n});\n```\n```coffeescript\najaxGetAsync('/data.json')\n.then (response) ->\n  // do something with response\n.catch (error) ->\n  // do something with error\n```\n\n## Hint\n\nIt *is* possible for a Promise to be resolved or rejected immediately from the setup functions (i.e. without any asynchronicity). However, if a handler is attached using `then` or `catch`, it will still have to be executed. Keep that in mind if the test cases are failing.",
+    "totalAttempts": 308,
+    "totalCompleted": 31,
+    "totalStars": 8,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals",
+      "Promises",
+      "Design Patterns",
+      "Design Principles",
+      "Asynchronous"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

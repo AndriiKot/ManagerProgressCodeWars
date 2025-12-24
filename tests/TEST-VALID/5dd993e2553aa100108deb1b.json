@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dd993e2553aa100108deb1b",
+  "data": {
+    "id": "5dd993e2553aa100108deb1b",
+    "name": "Folding trees",
+    "slug": "folding-trees",
+    "category": "reference",
+    "publishedAt": "2019-11-23T20:18:22.570Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5dd993e2553aa100108deb1b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-23T20:17:38.469Z",
+    "createdBy": {
+      "username": "haspience",
+      "url": "https://www.codewars.com/users/haspience"
+    },
+    "description": "One way of thinking about `foldr` is that it replaces every data constructor with a given function or a value.\nHere is an example for a `list`:\n```haskell\nfoldr \n  :: (a -> b -> b) -- (:)\n  -> b             -- []\n  -> [a] \n  -> b \n  \nfoldr (+) 0 [1..5]\n==> (1 : 2 : 3 : 4 : 5 : []) \n==> (1 + 2 + 3 + 4 + 5 + 0) -- parentheses are omitted for clarity\n==> 15\n\n```\nSo let us implement folds for other data structures!\n\nNote 1: \nThere is an \"obvious\" law those folds should satisfy:\n```haskell\nfoldr (:) [] == id\nfold Cons1 Cons2 ... == id\n```\n\nNote 2:\nYou may be tempted to simply derive `Foldable` but that won't work.\nWhy? Because `Foldable` is a misnomer and what it does is destructively transforms your data structure to a list.\n\nNote 3:\nAll `fold`s should be as much general as they can be.\n\nNote 4:\nA nice paper on somewhat similar topic, and it's not that difficult to read!\nhttps://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf",
+    "totalAttempts": 260,
+    "totalCompleted": 26,
+    "totalStars": 3,
+    "voteScore": 40,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

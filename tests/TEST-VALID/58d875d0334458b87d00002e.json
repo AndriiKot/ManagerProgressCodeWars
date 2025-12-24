@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58d875d0334458b87d00002e",
+  "data": {
+    "id": "58d875d0334458b87d00002e",
+    "name": "The Cube Structure",
+    "slug": "the-cube-structure",
+    "category": "algorithms",
+    "publishedAt": "2017-03-27T02:16:02.453Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58d875d0334458b87d00002e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-27T02:15:44.904Z",
+    "createdBy": {
+      "username": "TheUberKid",
+      "url": "https://www.codewars.com/users/TheUberKid"
+    },
+    "description": "**Overview**\n---\nYou are asked to create a 3-dimensional structure (a rectangular prism) with dimensions `w` x `h` x `d` using cubes of dimension `y` x `y` x `y`. **However, you want to use as few cubes as possible, and therefore only fill in the outside (visible) layers of the structure, leaving the inside hollow.**\n\n**Objective**\n---\nWrite a function `cubecalc([w, h, d], y)` that will return the minimum amount of cubes you will need to make the structure, or `null` if such a structure cannot be made using cubes of that dimension.\n\nYou will be given the dimensions of the structure (`w`, `h`, and `d`) as an array, and you will be given the side length `y` of a cube.\n\n* You must return the minimum number of cubes (as an integer) needed to create the structure.\n* All dimensions are in whole numbers.\n* If you cannot create the structure with the given cube size, you must return `null`\n* Cubes cannot change shape or size, or be cut into multiple parts.\n\n**Examples**\n---\n```\na 3x3x3 structure requires 26 1x1x1 cubes to build, leaving a 1x1x1 area hollow.\ncubecalc([3, 3, 3], 1) -> 26\n\nan 8x6x10 strucure takes a total of 54 2x2x2 cubes to build\ncubecalc([8, 6, 10], 2) -> 54\n\nthese structures cannot be made\ncubecalc([9, 14, 15], 2) -> null\ncubecalc([1, 1, 1], 10) -> null\n```",
+    "totalAttempts": 239,
+    "totalCompleted": 29,
+    "totalStars": 2,
+    "voteScore": 26,
+    "tags": [
+      "Algorithms",
+      "Geometry"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

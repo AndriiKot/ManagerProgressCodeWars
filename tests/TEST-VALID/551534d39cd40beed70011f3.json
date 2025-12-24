@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/551534d39cd40beed70011f3",
+  "data": {
+    "id": "551534d39cd40beed70011f3",
+    "name": "Bullseye!",
+    "slug": "bullseye",
+    "category": "algorithms",
+    "publishedAt": "2015-04-01T09:52:10.409Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/551534d39cd40beed70011f3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-27T10:45:40.272Z",
+    "createdBy": {
+      "username": "paragonHex",
+      "url": "https://www.codewars.com/users/paragonHex"
+    },
+    "description": "Write an object constructor for darts games!\n============================================\n\nYou should probably read or refresh your knowledge about the rules your games will be played from:\nhttp://www.flyordie.com/games/help/darts/en/game_rules_501.html\n\n( So 'double out' will be needed. Also, I didn't implement most of the `III. End of the game` section to the tests, so you guys won't have to worry about counting rounds.)\n\nArguments for the constructor:\n------------------------------\n- `players`, an  array of player names, eg.:\n```javascript\n['Huey','Dewey','Louie']\n```\n\n- `game`\n - a starting score for each player to begin with, should be 301,501,701 or 901\n - if it isn't one of thoose, set it to 501\n\nProperties and Methods I will test for:\n---------------------------------------\n- `.points`\n - an object, its keys shall be the player names, and the values should equal the current points of the players\n ```javascript\n{'Player1':321, 'Player2':501, 'Player3':501}\n```\n \n\n- `.score(player, [value1, value2, value3])`\n - removes points of the player if it isn't a bust\n\n - values given will ALWAYS be VALID strings, following the notation:\n ```\nsimple 7    => '7'\nsimple 20   => '20'\ndouble 20   => 'd20'\ntriple 20   => 't20'\nsimple bull => '25'\nbullseye    => 'd25'\nmiss\t    => '0'\n```\n\n- `.state()`, returns 'Game still in progress'\n\tor 'Game won by Y'",
+    "totalAttempts": 202,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

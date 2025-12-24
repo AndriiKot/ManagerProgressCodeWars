@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/544e866f2d7b76b28000071e",
+  "data": {
+    "id": "544e866f2d7b76b28000071e",
+    "name": "Loop Through Conway's Game of Life",
+    "slug": "loop-through-conways-game-of-life",
+    "category": "algorithms",
+    "publishedAt": "2014-10-27T17:52:56.124Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/544e866f2d7b76b28000071e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-10-27T17:52:48.120Z",
+    "createdBy": {
+      "username": "bellmyer",
+      "url": "https://www.codewars.com/users/bellmyer"
+    },
+    "description": "Conway's Game of Life is a zero-player game where you start with a square grid, of any size. Each cell in the grid can either be \"alive\" (denoted by a 1) or \"dead\" (denoted by 0).\n\nFrom here, the game decides whether each cell lives or dies in the next generation, based on how many living neighbors it has. Each cell has eight neighbors: the cells that surround it. Cells on the edges should wrap around the grid pacman-style to complete their \"neighborhood\". So in this example:\n\n    a b c d e\n    f g h i j\n    k l m n o\n    p q r s t\n    \ncell **j** still has eight neighbors: **d,e,a,i,f,n,o, and k**.\n\nThe rules for living/dying are explained here:\n\nhttp://en.wikipedia.org/wiki/Conway%27s_Game_of_Life\n\nYour mission, should you choose to accept it, is to code a **Life** class which accepts a starting grid in the the initializer, like so:\n\n    game = Conway::Life.new([[1, 0, 1], [0, 0, 0], [1, 0, 1]])\n\nIn this game, the starting grid is 3x3, and only the corners are alive. As the grid changes from one generation to the next, it will inevitably start to repeat itself. The wikipedia article above is loaded with pretty, animated gifs that show this.  \n\nYour **Life** class needs to implement the basic game rules, **and** provide two instance methods, *tail_size* and *loop_size*. The tail size is how many generations the grid most go through before it starts looping (repeating). The loop size is the number of generations that keep repeating in the cycle.  So using the example grid above:\n\n    game.tail_size  #=> 2\n    game.loop_size  #=> 1\n\nThe looping aspect is similar to this kata:\n\nhttp://www.codewars.com/kata/52a89c2ea8ddc5547a000863\n\nEnjoy!",
+    "totalAttempts": 128,
+    "totalCompleted": 12,
+    "totalStars": 6,
+    "voteScore": 24,
+    "tags": [
+      "Algorithms",
+      "Cellular Automata"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

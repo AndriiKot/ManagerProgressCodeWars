@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c45a6ae1c072027108a46eb",
+  "data": {
+    "id": "5c45a6ae1c072027108a46eb",
+    "name": "Bitcoin. Merkle Root",
+    "slug": "bitcoin-merkle-root",
+    "category": "algorithms",
+    "publishedAt": "2019-01-22T21:53:22.388Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5c45a6ae1c072027108a46eb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-21T11:02:06.325Z",
+    "createdBy": {
+      "username": "iozoo",
+      "url": "https://www.codewars.com/users/iozoo"
+    },
+    "description": "For calculate Bitcoin block hash, we have to determine its block header's fields.\n\nLet's see the [Bitcoin block 181](https://www.blockchain.com/en/btc/block/00000000dc55860c8a29c58d45209318fa9e9dc2c1833a7226d86bc465afc6e5)\n\nThere we have some already known parameters such as timestamp, version, previous block hash and some else.\n\nAnd we need a parameter for transactions. It's called Merkle Tree Root and we are about to create function\n`merkle_root`, that will calculate this root.\n\n**What is the Merkle Tree**\n\n\nMerkle tree is a tree in which every leaf node is labelled with the hash of a data block and every non-leaf node is labelled with the cryptographic hash of the labels of its child nodes.\n\nA Merkle tree is recursively defined as a binary tree of hash lists where the parent node is the hash of its children, and the leaf nodes are hashes of the original data blocks.\n\n[Wiki](https://en.wikipedia.org/wiki/Merkle_tree)\n\n![Merkle Tree](https://chrispacia.files.wordpress.com/2013/09/merkle-tree.jpg)\n\n**How to calculate root**\n\nAssume we have a transaction's hashes list [tx0, tx1, tx2, tx3], then:\n```python\n\nhash0 = hash(tx0)\nhash1 = hash(tx1)\nhash2 = hash(tx2)\nhash3 = hash(tx3)\n\nhash01 = hash(hash0+hash1) # \"+\" means concatenation\nhash23 = hash(hash2+hash3)\n\nroot = hash(hash01+hash23)\n\n```\n\n**Features**:\n\n- hash algorithm is SHA256 of SHA256: `hash(x) = sha256(sha256(x))`\n- [LSB(least significant bit)](https://en.wikipedia.org/wiki/Bit_numbering) convention is used, all hashes must be converted from MSB to LSB\n- operation \"+\" means string concatenation\n- if count of transaction's hashes is odd(`[tx0, tx1, tx2]`), then duplicate the last element(`[tx0, tx1, tx2, tx2]`)\n- but if count of transaction's hashes is one(`[tx0]`), this one is the root\n\n**Input**:\n\n- list of transaction's hashes `tx_hashes = [tx0, ..., txN]`, each `tx` stored in a string\n\n**Output**:\n- merkle root hash, string\n\n**Examples**:\n\n[Bitcoin block 1](https://www.blockchain.com/en/btc/block/00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048) - 1 transaction\n```python\ntx_hashes = [\"0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098\"]\n\nmerkle_root(tx_hashes) == \"0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098\"\n\n```\n\n[Bitcoin block 181](https://www.blockchain.com/en/btc/block/00000000dc55860c8a29c58d45209318fa9e9dc2c1833a7226d86bc465afc6e5) - 2 transactions\n```python\ntx_hashes = [\"8347cee4a1cb5ad1bb0d92e86e6612dbf6cfc7649c9964f210d4069b426e720a\",\n             \"a16f3ce4dd5deb92d98ef5cf8afeaf0775ebca408f708b2146c4fb42b41e14be\"]\n\nmerkle_root(tx_hashes) == \"ed92b1db0b3e998c0a4351ee3f825fd5ac6571ce50c050b4b45df015092a6c36\"\n\n```\n\n[Bitcoin block 48918](https://www.blockchain.com/ru/btc/block/0000000005a561a886aee5c7b58ac4b9a1cd4dfda8099c00ad593ab92b2ddd7c) - 3 transactions\n```python\ntx_hashes = [\"ed6252fe043aa44a7900280cff0a0b0e297c9fd9948c15a445f6adeaa146384a\",\n             \"aa8dbfaef5d42957f65b0786402aa102032f573e7f731adcc4289827be908d21\",\n             \"d54d6fcd37905a86629c647b2c63da9b55e3e664623b10ac07e5f53ca7086ed6\"]\n\nmerkle_root(tx_hashes) == \"4f04dfbf4c1dab2324006a6d05881a14bbdad17927663ac452d38fe216ec2041\"\n\n```\n\n",
+    "totalAttempts": 42,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 7,
+    "tags": [
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

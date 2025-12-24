@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6677321fa38f24e046712569",
+  "data": {
+    "id": "6677321fa38f24e046712569",
+    "name": "Write unit-test of simple class",
+    "slug": "write-unit-test-of-simple-class",
+    "category": "refactoring",
+    "publishedAt": "2024-07-05T20:33:56.438Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6677321fa38f24e046712569",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-06-22T20:20:47.751Z",
+    "createdBy": {
+      "username": "playerO1",
+      "url": "https://www.codewars.com/users/playerO1"
+    },
+    "description": "Write **unit-test** for simple arifmetic operation class. You'r test should check all operation of this class and return bug description when need.\n\n## Complete the unit-test method:\n\n```javascript\nfunction testCFunction(cFunction) {\n  try {\n    if (fun.f(2,2) != 4) return 'Test failed on f(a,b)'\n  } catch(error) {\n    return error.toString()\n  }\n}\n```\nShould do:\n* return `undefined` when cFunction work correctly.\n* return text when cFunction work wrong\n* return text when cFunction do not throw error when it should be throw\n* return text when cFunction throw unexpected error\n\nThe returned text should contain name of method with bug, if is it a possible determinate method. Text may contain single name of method or big sentence with contain name of wrong function. Kata will be check specific substrings appear in the return result in any order.\nWhen, due to an error in a function, it is impossible to continue, then it is enough to return the name of this function. For example setSign did not work - can not do test other method.\n\n### Example (reason | text):\n\n    no error    |   undefined\n    f(1,1)=7    |   f(a,b)\n    setSign('-') then getSign()='+'    |   setSign or getSign\n    f(1,1)=7    |   f(a,b)\n    f(99999,99999) throw Error with small number   |   f(a,b)\n    first call of getSign() return '-'   |   constructor\n\nUsualy in test case the bug will be contain on single method, so it will be possible determinate what method had bug and what has not a bug.\nFor example: setSign(s) work incorrect, and getSign() and toString() return same sign, it mean that error only in setSign(s).\n\nText may contain \n-----------------------------------\n\n## Description of the class being tested:\n\n* getSign()  return current arifmetic operation, default operation is \"+\"\n* setSign(sign)  define arifmetic operation; when new sign is not allowed should throw error\n* f(a,b)     calculate defined, when a or b is not a Number should throw Error\n* toString() return text with formul \"a+b\" or \"A+B\": may use a,b in nany case and should use defined arifmetic sign in text representation. Do not contains unused arifmetic symbol, for example wrong answer: \"f=a+-*/b\"\n\nOnly next arifmetic symbol is allowed: `+-*/`\nFunction `f(a,b)` will be return Number as math operation between `a` and `b`. The number can be integer or float, infinite. In test number allow in range `[Number.MIN_SAFE_INTEGER , Number.MAX_SAFE_INTEGER]`, value out of range can be apply, but result was not coverage by test case. Not allowed `NaN` in `a` and `b`. Not alloved divide by zero.\n\n\n### Sample correct class for write test:\n```javascript\nclass CFunc {\n    sign=\"+\"\n\n    getSign = function() {\n      return this.sign\n    }\n    setSign = function(newSign) {\n      if (\"*\"==newSign || \"/\"==newSign || \"+\"==newSign || \"-\"==newSign) {\n        this.sign=newSign\n      } else {\n        throw new Error(\"Wrong sign \"+newSign)\n      }\n    }\n    f = function(a, b) {\n      if (a==undefined) throw new Error(\"Parameter a was undefined\");\n      if (b==undefined) throw new Error(\"Parameter b was undefined\");\n      if (!(typeof a == 'number')) throw new Error(\"Parameter a=\"+a+\" is not a number type\");\n      if (!(typeof b == 'number')) throw new Error(\"Parameter b=\"+a+\" is not a number type\");\n      if (Number.isNaN(a)) throw new Error(\"Parameter a is Not a Number\");\n      if (Number.isNaN(b)) throw new Error(\"Parameter b is Not a Number\");\n      if (\"*\"==this.sign) return a*b\n      if (\"/\"==this.sign) {\n        if (0==b) throw new Error(\"Parameter b=\"+b+\", divide by zero\");\n        return a/b\n      }\n      if (\"+\"==this.sign) return a+b\n      if (\"-\"==this.sign) return a-b\n    }\n    toString = function() {\n      return \"function(a,b) = a\"+this.sign+\"b\"\n    }\n}\n```\n\n\n_Usualy in Kata we do write function for pass exist test case. Now you write test for exist function's._",
+    "totalAttempts": 202,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

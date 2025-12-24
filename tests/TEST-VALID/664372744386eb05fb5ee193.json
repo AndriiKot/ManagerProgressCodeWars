@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/664372744386eb05fb5ee193",
+  "data": {
+    "id": "664372744386eb05fb5ee193",
+    "name": "Minas Tirith under assault!",
+    "slug": "minas-tirith-under-assault",
+    "category": "algorithms",
+    "publishedAt": "2024-05-16T14:40:10.720Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/664372744386eb05fb5ee193",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-14T14:17:24.211Z",
+    "createdBy": {
+      "username": "francisco.ls",
+      "url": "https://www.codewars.com/users/francisco.ls"
+    },
+    "description": "*You are the commander of the army of the capital of Gondor, the city of Minas Tirith, when suddenly the orc army approaches the fortress. You rush out with your troops to defend the city, but everything happens so quickly that there's no time to organize. The soldiers, archers, and wizards are scattered, so the battle does not progress as it should.\nFor the sake of simplicity both Maiar and Nazgul are here named as Wizards.*\n\n\nTwo arrays are given showing how the armies have been able to organize themselves: the warriors of Gondor and the orc army.\n\nEach army will fight beginning from the index 0. If an army is larger than the other, the **remaining troops will survive for the next strike.**\n\n**Both armies will fight until the annhilation of the other.**\n\nYou should return an array with the survivors in correct order.\n\nYou must consider:\n\n     - Wizard defeats Soldier\n     - Soldier defeats Archer\n     - Archer defeats Wizard\nEncounters between the same type result in both being defeated.\n__________________________________________________________________________________________________\n\nExample: Which army will win the battle?\n\nInitial position:\n```\nGondor: [\"Wizard\",\"Soldier\",\"Soldier\"]\nOrcs:   [\"Archer\", \"Wizard\"]\n```\nThe battle goes on...\n\n````\nGondor------Orcs------Wins-----Remaining:---Gondor------Orcs\nWizard  vs  Archer   Archer      ->           -         Archer\nSoldier vs  Wizard   Wizard      ->           -         Wizard\nSoldier vs    -      Soldier     ->        Soldier        -\n\n````\n> Here, Wizard and Soldier from gondor are defeated, while the other Soldier remains without joining the fight. So the battle continues:\n\nSecond Round:\n```\nGondor: [\"Soldier\"]\nOrcs:   [\"Archer\", \"Wizard\"]\n```\n````\nGondor------Orcs------Wins-----Remaining:---Gondor------Orcs\nSoldier  vs  Archer   Soldier     ->        Soldier       -\n  -      vs  Wizard   Wizard      ->           -        Wizard\n````\n\n> Now Soldier defeats the orc's Archer, while Wizard awaits its turn.\n\nThird Round:\n```\nGondor: [\"Soldier\"]\nOrcs:   [\"Wizard\"]\n```\n````\nGondor------Orcs------Wins-----Remaining:---Gondor------Orcs\nSoldier vs Wizard    Wizard       ->          -         Wizard\n````\n> This time the Wizard annihilates Gondor's Soldier.\n\nSo the return is:\n`\n[\"Wizard\"]\n`\n\n________________________________________________________________________\n\nAs said before,  **equal troops will erradicate each other** :\n\nInitial position:\n```\nGondor: [\"Wizard\",\"Soldier\"]\nOrcs:   [\"Wizard\", \"Soldier\"]\n```\n\n> Wizards fight and destroy each other. Same happens between Soldiers, so no one survives.\n\nReturn: `[]`\n\n\n\n***Good luck, and save the Middle Earth!***\n",
+    "totalAttempts": 91,
+    "totalCompleted": 19,
+    "totalStars": 4,
+    "voteScore": 11,
+    "tags": [
+      "Arrays",
+      "Fundamentals",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

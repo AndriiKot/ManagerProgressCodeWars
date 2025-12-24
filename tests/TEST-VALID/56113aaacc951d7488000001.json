@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56113aaacc951d7488000001",
+  "data": {
+    "id": "56113aaacc951d7488000001",
+    "name": "Implement a client for an API",
+    "slug": "implement-a-client-for-an-api",
+    "category": "reference",
+    "publishedAt": "2015-10-04T20:05:28.182Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/56113aaacc951d7488000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-04T14:41:49.766Z",
+    "createdBy": {
+      "username": "mikezaby",
+      "url": "https://www.codewars.com/users/mikezaby"
+    },
+    "description": "# Overview\nWe have an api that responds to the following 4 endpoints:\n\n- GET Post\n- GET Categories\n- GET Category\n- GET Category Posts\n\nFor this kata we will be building a client to interact with these endpoints. \n\n\n# Client Details\n\nWe want to implement a `Client` class that should be responsible for the requests and parsing of the responses. After this we want to implement a `Model` class that should have the base functionality of defining methods for the attributes of json responses. \nWe want to implement the equality method `==` so we can compare if two object are the same.\nAlso we want to provide an interface for the associations:\n\n* `belongs_to` example: `belongs_to :category`\n* `has_many` example: `has_many :categories`\n* `find` example: `Category.find(1)` that find one category or `Category.find` that finds all categories\n\nLast we want to Implement the `Category` and `Post` classes that should inherit the `Model` class.\n\nThe `active_support` is already required.\n\n# API Endpoints\n\n## GET Post \n\n`www.myblog.com/posts/:id`\n\n> ### Example: \n> `GET www.myblog.com/posts/1`\n> ```\n{ id: 1, title: \"my post\", category_id: 1 }\n```\n\n## GET Categories \n\n`www.myblog.com/categories`\n\n> ### Example:\n> `GET www.myblog.com/categories`\n> ```\n[{ id: 1, name: \"category1\" }, { id: 2, name: \"category2\" }]\n```\n\n## GET Category\n\n`www.myblog.com/categories/:id`\n\n> ### Example:\n\n> `www.myblog.com/categories/1`\n> ```\n{ id: 1, name: \"category1\" }\n```\n\n## GET Category Posts\n\n`www.myblog.com/categories/:id/posts`\n\n> ### Example:\n> `www.myblog.com/categories/1/posts`\n> ```\n[{ id: 1, title: \"my post\", category_id: 1 }, { id: 5, title: \"my post5\", category_id: 1 }]\n```",
+    "totalAttempts": 96,
+    "totalCompleted": 5,
+    "totalStars": 6,
+    "voteScore": 9,
+    "tags": [
+      "Metaprogramming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

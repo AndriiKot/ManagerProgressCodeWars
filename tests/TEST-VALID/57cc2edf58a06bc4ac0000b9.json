@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57cc2edf58a06bc4ac0000b9",
+  "data": {
+    "id": "57cc2edf58a06bc4ac0000b9",
+    "name": "There can be only one: Numeric Extension",
+    "slug": "there-can-be-only-one-numeric-extension",
+    "category": "refactoring",
+    "publishedAt": "2016-09-04T14:26:27.331Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/57cc2edf58a06bc4ac0000b9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-04T14:25:35.811Z",
+    "createdBy": {
+      "username": "lucky3",
+      "url": "https://www.codewars.com/users/lucky3"
+    },
+    "description": "#Note:\nThis is <span style=\"color:red;font-weight: bold;\">C# specific</span> kata.\n\n#Description:\nDid you ever try to create extension methods, supporting all [ .Net numeric data types](https://msdn.microsoft.com/en-us/library/s1ax56ch.aspx) (ignore non-numeric types, such as bool)?\n\nTypically, you would need to have something like this:\n```csharp\npublic static class DummyExtensions\n{\n    public static decimal DummyConversion(this int i, decimal d, float factor)\n    {\n        return i * d * (decimal)factor;\n    }\n\n    public static float DummyConversion(this double i, decimal d, float factor)\n    {\n        return (float)(i * (double) d * factor);\n    }\n}\n```\nI'm fully aware, this is a bad example, hence the name of it (dummy). But, I'm sure you got the point of potential explosion of such extensions.\n\nWouldn't it be nice, if we can have only one extension method, wich would accept any numeric type as its arguments, so that we need to write its logic only once?!\n\nWell... that is your task now.\n\n#Task:\nWrite **exactly one** FeetToCentimeters extension method and **exactly one** CentimetersToFeet extension method (`1 foot = 30.48 centimeters`), so that they can be consumed like this:\n\n```csharp\nvar initialDouble = 32.43;\nvar endResult =(float)((decimal)((double) ((float) initialDouble.FeetToCentimeters()).CentimetersToFeet()).FeetToCentimeters()).CentimetersToFeet();\n\nDebug.Assert(initialDouble == endResult);\nConsole.WriteLine($\"initial: {initialDouble} end result: {endResult}\");\n\nConsole.WriteLine($\"32.2 as double to centimeters: {32.2D.FeetToCentimeters()}\");\nConsole.WriteLine($\"32.2 as decimal to centimeters: {32.2M.FeetToCentimeters()}\");\nConsole.WriteLine($\"32.2 as float to centimeters: {32.2F.FeetToCentimeters()}\");\nConsole.WriteLine($\"32 as byte to centimeters and back to feet: {(byte)32.FeetToCentimeters().CentimetersToFeet()}\");\n```\nwhere the output would than be:\n```\ninitial: 32.43 end result: 32.43\n32.2 as double to centimeters: 981.456\n32.2 as decimal to centimeters: 981.456\n32.2 as float to centimeters: 981.456\n32 as byte to centimeters and back to feet: 32\n```\n#Rules:\n  * Both extensions are not allowed to call any other method\n  * There can be only one static class in the namespace named NumberExtension\n  * There can be only one additional class or struct in the namespace (non static)\n  * No private or nested classes\n  * You have to support sbyte, short, int, long, byte, ushort, uint, ulong, decimal, double and float numeric types. Types from System.Numerics namespace (BigInteger for example) are not subject of this kata.\n  * Attempt to call those extension methods with non-numeric type, should throw Exception\n  * Fractions will be evaluated by 0.05 precision (tests will have 0.005 delta, when comparing equality of results), due to possible precission loss when converting from float do decimal and back (for example).",
+    "totalAttempts": 258,
+    "totalCompleted": 27,
+    "totalStars": 5,
+    "voteScore": 16,
+    "tags": [
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

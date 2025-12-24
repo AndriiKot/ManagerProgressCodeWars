@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bda276a06a8a606d9000039",
+  "data": {
+    "id": "5bda276a06a8a606d9000039",
+    "name": "Superb resource access control configuration",
+    "slug": "superb-resource-access-control-configuration",
+    "category": "algorithms",
+    "publishedAt": "2018-10-31T22:43:03.889Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5bda276a06a8a606d9000039",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-10-31T22:06:34.588Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "In this kata, you must implement a function that verifies if with certain credentials you can access some resources.\n\nAccess to resources is protected with a very flexible access configuration.\n\nFor example, in the following code, only the user `root` can access the resource (in this case, the resource is an object with a` value` equals `1`)\n\n```javascript\nconst config = [\n    {\n      resource: { value: 1 },\n      allow: {\n        user: 'root',\n      },\n    },\n  ]\nconst mychecker = resourceChecker(config)\n```\n\nCredentials is an object with some key-value pairs. Only if the credentials contain the user `root` the resource can be accessed:\n\n```javascript\nconst rootCredentials = { user: 'root' }\nmychecker(rootCredentials) // returns { value: [1]}\n\nconst guessCredentials = { user: 'guess' }\nmychecker(guessCredentials) // returns null. This means that the resource is not allowed\n\nconst guessCredentials = { }\nmychecker(guessCredentials) // returns null. If you do not pass the user, the resource is denied\n\n```\n\nThe resource configuration can have an arbitrary number of keys:\n\n```javascript\nconst config = [\n    {\n      resource: { value: 1 },\n      allow: {\n        user: 'root',\n        ip: '127.0.0.1'\n      },\n    },\n  ]\nconst mychecker = resourceChecker(config)\n\nmychecker({user: 'root', ip: '127.0.0.1'}) // returns { value: [1] }\nmychecker({user: 'guess', ip: '127.0.0.1'}) // returns null\nmychecker({user: 'root'}) // returns null\n```\n\nNote that the resource results are keys that allways contain plain arrays of simple values.\n\nThe resource configuration can have multiple resource configs:\n\n```javascript\nconst config = [\n    {\n      resource: { value: 1 },\n      allow: {\n        user: 'root'\n      },\n    },\n    {\n      resource: { value: [2, 3] },\n      allow: {\n        ip: '127.0.0.1'\n      },\n    },\n  ]\nconst mychecker = resourceChecker(config)\n\nmychecker({user: 'root'}) // returns { value: [1] }\nmychecker({ip: '127.0.0.1'}) // returns { value: [2, 3] }\nmychecker({user: 'root', ip: '127.0.0.1'}) // returns { value: [1, 2, 3] }\nmychecker({user: 'guess', ip: '127.0.0.1'}) // returns { value: [2, 3] }\nmychecker({user: 'john', ip: '127.0.0.2'}) // returns null\n```\n\n`allow` key could be an array in which case the resource can be accessed if the credentials match one of its values\n\n```javascript\nconst config = [\n    {\n      resource: { value: 1 },\n      allow: [\n       {user: 'root'},\n       {ip: '127.0.0.1'},\n      ],\n    },\n  ]\nconst mychecker = resourceChecker(config)\n\nmychecker({user: 'root', ip: '127.0.0.1'}) // returns { value: [1] }\nmychecker({user: 'guess', ip: '127.0.0.1'}) // returns { value: [1] }\nmychecker({user: 'root'}) // returns { value: [1] }\nmychecker({user: 'guess'}) // returns null\n```\n\n\nBy default, resources are denied:\n\n```javascript\nconst config = [\n    {\n      resource: { value: 1 },\n    },\n  ]\nconst mychecker = resourceChecker(config)\nmychecker({user: 'root', ip: '127.0.0.1'}) // returns null\n```\n\nBut you can give explicit access to any credentials even to empty credentials\n```javascript\nconst config = [\n    {\n      allow: {},\n      resource: { value: 1 },\n    },\n  ]\nconst mychecker = resourceChecker(config)\nmychecker({}) // returns { value: [1] }\n```\n\nResources may be empty and that is ok:\n```javascript\nconst config = [\n    {\n      allow: { user: 'root' },\n      resource: {},\n    },\n  ]\nconst mychecker = resourceChecker(config)\nmychecker({ user: 'root' }) // returns {}\nmychecker({ user: 'guess' }) // returns null\n```\n\nThere are many more configuration possibilities that are explained in the tests. Here I am simply going to list the main ones:\n\n* You can explicitly deny access to some credentials\n* There may be nested resource configurations\n* Access checking is not limited to comparing text strings or other simple types, but you can use regular expressions, objects, arrays, and functions.\n\nNote: Keep in mind that to solve this kata I have used the TDD methodology, so the tests follow a bottom-up approach.",
+    "totalAttempts": 44,
+    "totalCompleted": 3,
+    "totalStars": 4,
+    "voteScore": -2,
+    "tags": [
+      "Recursion",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5272ad53b149fa71e400081f",
+  "data": {
+    "id": "5272ad53b149fa71e400081f",
+    "name": "Polynomial Class",
+    "slug": "polynomial-class",
+    "category": "reference",
+    "publishedAt": "2013-10-31T23:39:53.401Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5272ad53b149fa71e400081f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-10-31T19:19:47.406Z",
+    "createdBy": {
+      "username": "eugene-bulkin",
+      "url": "https://www.codewars.com/users/eugene-bulkin"
+    },
+    "description": "Your task will be to write a Polynomial class/object that takes an array of coefficients and does polynomial things! These include:\n\n- `degree`: A degree method that returns the degree of the polynomial. The degree of a term of a polynomial is the exponent to which the variable is raised to: the degree of `4x^5` is 5, the degree of `3` is 0, the degree of `2x` is 1, etc. The degree of a polynomial is the highest degree of the non-zero terms of the polynomial: the degree of `x^2 + 2x - 1` is 2, the degree of `x^3 - 4x^5` is 5, and so on. Note that the order does not matter!\n- `add`, `subtract`, and `multiply`: Methods that perform the necessary arithmetic for polynomials. We of course do not include division, because that does not necessarily result in a polynomial! This method should take a polynomial and return a new polynomial result. Note that subtraction means you are subtracting the *other* polynomial from *the current* one. **NOTE: ** do not worry about handling scalar multiplication. Assume that any argument passed to these methods is a polynomial.\n- `pow`: Returns this polynomial raised to a nonnegative power `n`. Don't forget that anything to the zeroth power is 1. **Throw an error for negative exponents!**\n- `evaluate`: A method that evaluates the polynomial at the given `x` value. For example, `new Polynomial([1,2,1]).evaluate(1) = 1(1)^2 + 2(1) + 1 = 4`.\n- `toString` (`to_s` in ruby version): A method which prints the polynomial without zero terms in descending order of degree. For example, `new Polynomial([0,0,-1,0,2,0,3,-4]).toString() = '-x^5+2x^3+3x-4'`. Note that if the coefficient is 1 you do not put 1 there. If the polynomial is constant, simply print out the constant term. You may add spaces for readability; all whitespace will be stripped on testing. Please use the variable `x`!\n\nThe array passed in will be in descending order of exponent: `[1,2,1]` means `x^2 + 2x + 1`, `[0,0,0,2,1,0]` means `0x^5 + 0x^4 + 0x^3 + 2x^2 + x + 0` or simply `2x^2 + x`.",
+    "totalAttempts": 686,
+    "totalCompleted": 24,
+    "totalStars": 5,
+    "voteScore": 27,
+    "tags": [
+      "Mathematics",
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

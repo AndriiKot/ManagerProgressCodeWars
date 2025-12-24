@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/624702e758ad06006b64fe62",
+  "data": {
+    "id": "624702e758ad06006b64fe62",
+    "name": "Squirrel Sports Ranking",
+    "slug": "squirrel-sports-ranking",
+    "category": "reference",
+    "publishedAt": "2022-04-01T13:51:33.945Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/624702e758ad06006b64fe62",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-01T13:49:27.230Z",
+    "createdBy": {
+      "username": "hotpotato69",
+      "url": "https://www.codewars.com/users/hotpotato69"
+    },
+    "description": "**CURRENTLY ONLY PYTHON**\n\nSquirrel High School has just completed their sports carnival and need someone to help rank the squirrels in each class.\n\nWrite a function `rank_competitors(squirrels)` which takes an argument - dictionary of competitors - and returns a sorted list of squirrels.\n\n```\n{\"Sonya\": (1, 0, 3), \"Sofia\": (0, 3, 0), ...}  # example input dictionary\n```\n\nThe 'squirrels' dictionary will have keys be the names of squirrels, and values be a tuple containing medal counts.\nEach class has squirrels who may have scored gold, silver or bronze medals. Gold medals are worth 3 points, silvers worth 2 points and bronze worth 1 point.\n\nTally up each students' points and return a list that contains the squirrels ranked from most points to least.\nIf there is a tie in points, the competitor with more high value medals should be sorted first.\nIf there is a tie in all medals, sort the squirrels in alphabetical order.\nYou may assume that all medal counts are non-negative.\n\n**Example:**\n```\nSonya: 1 Gold, 0 Silver, 3 Bronze => 6 points\nSofia: 0 Gold, 3 Silver, 0 Bronze => 6 points\n```\n\nFirst compare golds. Sonya has more golds than Sofia, so Sonya is sorted ahead of Sofia. If golds are equal, then compare silvers and so forth.",
+    "totalAttempts": 65,
+    "totalCompleted": 21,
+    "totalStars": 0,
+    "voteScore": 13,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

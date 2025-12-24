@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f1e9ff168a3a88f2945e93",
+  "data": {
+    "id": "65f1e9ff168a3a88f2945e93",
+    "name": "Calculate the server load",
+    "slug": "calculate-the-server-load",
+    "category": "algorithms",
+    "publishedAt": "2024-03-13T18:02:02.443Z",
+    "approvedAt": null,
+    "languages": [
+      "swift"
+    ],
+    "url": "https://www.codewars.com/kata/65f1e9ff168a3a88f2945e93",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-13T18:01:35.682Z",
+    "createdBy": {
+      "username": "UtkaXL",
+      "url": "https://www.codewars.com/users/UtkaXL"
+    },
+    "description": "**Task:**\n\nImagine that you're a server administrator who needs to know how much power it would \ntake from server to load multiple Kata solutions. Your task is to write a function\nthat would calculate how much power (in average) it would take to load all of the\nKata solutions. The function will take as input the array in which each element\nmeans the amount of power required to load the corresponding Kata solution and the\nmax server power as an Int.\n\n**Example 1:**\n```swift\nserverLoad([5, 5, 3, 4, 1], 5) >= 3.6 >= rounding to 4\n```\n**Explanation:**\n\n`5 + 5 + 3 + 4 + 1 = 18 / 5 = 3.6` (***rounding*** to 4) so the server will load all 5 Kata solutions.\n\n**Example 2:**\n```swift\nserverLoad([6, 8, 7], 3) >= 4\n```\n**Explanation:**\n\n`6 + 8 + 7 = 21 / 3 = 7` but server will load none of 3 Kata solutions because it's\npower is too low. So simply return `7 - 3 = 4`.\n\n**Very important:**\n\nThe average calculates like this: `x + y = z / amount of all numbers = average`",
+    "totalAttempts": 6,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

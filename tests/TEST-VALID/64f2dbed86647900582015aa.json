@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f2dbed86647900582015aa",
+  "data": {
+    "id": "64f2dbed86647900582015aa",
+    "name": "ATM Machine",
+    "slug": "atm-machine",
+    "category": "games",
+    "publishedAt": "2023-09-02T07:53:11.783Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64f2dbed86647900582015aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-02T06:53:33.407Z",
+    "createdBy": {
+      "username": "peppapig_pig",
+      "url": "https://www.codewars.com/users/peppapig_pig"
+    },
+    "description": "ATM Machine Class/Constructor\n\n# Task\n\nCreate a class or a constructor named `ATMMachine` that accepts an object as a parameter, i.e., the stored account information.\n\n# Parameter\n\n```\n{\nusername: {\nmoney: int,\npassword: any\n}\n...\n}\n```\n# Return\n```javascript\nATMMachine [object]\naccountInfo: {/* Parameter */}\nconfirm: ƒ (password)\nloggedInUser: null // can change\nlogin: ƒ (username, password)\nlogout: ƒ ()\nneedConfirm: false // can change\npay: ƒ (touser, money)\nunreg: ƒ (password)\n```\n\n# Functions\n\n## ATMMachine.login\n\nLogin to a registered account.\n\n### Inputs\n\n*   `username`: the username of the account to log in\n*   `password`: the password of the account to log in\n\n### Outputs\n\n*   `Please log out before logging in to another account`: if the user is already logged in and trying to log in to another account without logging out first\n*   `Account not found`: if there is no account associated with the provided username\n*   `Incorrect password`: if the password provided is incorrect\n*   `Login OK`: if the login was successful\n\n\n## ATMMachine.logout\n\nLog out of the currently logged-in account.\n\n### Inputs\n\nNo inputs required\n\n### Outputs\n\n*   `You are not logined`: if there is no account currently logged in\n*   `Logout OK`: if the logout was successful\n\n## ATMMachine.unreg\n\nUnregister the currently logged-in account.\n\n### Inputs\n\n*   `password`: the password of the account to unregister\n\n### Outputs\n\n*   `Please login`: if there is no account currently logged in\n*   `Incorrect password`: if the password provided is incorrect\n*   `Please confirm`: if the correct password was provided and confirmation is required before unregistering\n\n## ATMMachine.confirm\n\nConfirm unregistering the currently logged-in account.\n\n### Inputs\n\n*   `password`: the password of the account to unregister\n\n### Outputs\n\n*   `Please login`: if user is not logged in, return it\n*   `Do not need confirm`: if confirmation is not required before unregistering\n*   `Incorrect password`: if the password provided is incorrect\n*   `Unregistered`: if the correct password was provided and the account has been successfully unregistered\n\n### Notes\n*   Use a flag to determine if confirmation is required\n\n## ATMMachine.pay\n\nTransfer funds from the currently logged-in account to another registered account.\n\n### Inputs\n\n*   `touser`: the username of the account to transfer funds to\n*   `money`: the amount of money to transfer (a positive integer)\n\n### Outputs\n\n*   `Please login`: if user is not logged in, return it\n*   `Account not found`: if there is no account associated with the provided username\n*   `Balance insufficient`: if the balance of the currently logged-in account is less than the requested transfer amount\n*   `Pay OK`: if the transfer was successful\n\n# Go!\n\n<big>Good luck!</big>",
+    "totalAttempts": 36,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -3,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

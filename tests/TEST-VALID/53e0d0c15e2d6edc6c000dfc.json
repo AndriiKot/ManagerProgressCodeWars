@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53e0d0c15e2d6edc6c000dfc",
+  "data": {
+    "id": "53e0d0c15e2d6edc6c000dfc",
+    "name": "Trumps - The Classic Card Game",
+    "slug": "trumps-the-classic-card-game",
+    "category": "games",
+    "publishedAt": "2014-08-05T12:40:35.598Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53e0d0c15e2d6edc6c000dfc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-08-05T12:40:33.176Z",
+    "createdBy": {
+      "username": "Mackay",
+      "url": "https://www.codewars.com/users/Mackay"
+    },
+    "description": "Trumps or Top Trumps is a card game, in which each card contains a list of numerical data, and the aim of the game is to compare these values to try to trump and win an opponent's card. A wide variety of different packs of Top Trumps have been published over the years.\n\nGiven the following card class:\n\n```javascript\nfunction Card(stats) {\n  this.stats = stats;\n}\n```\n\nIn which 'stats' is an array of integers, your method \"checkWinner\" must calculate whether the player or the opponent wins for a given index of the stats array (the highest value wins) and return either \"player\", \"opponent\" or \"tie\". If the stat index is out of bounds of the stats array for the player or opponent card return \"invalid\".\n\nFor example:\n```javascript\nvar playerCard = new Card([181, 78, 76, 5, 1987]);\nvar opponentCard = new Card([185, 98, 85, 12, 1985]);\n\n//Returns 'opponent'\nvar winner = checkWinner(playerCard, opponentCard, 0);\n```\n  ",
+    "totalAttempts": 605,
+    "totalCompleted": 95,
+    "totalStars": 1,
+    "voteScore": 86,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

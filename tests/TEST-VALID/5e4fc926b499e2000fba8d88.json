@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4fc926b499e2000fba8d88",
+  "data": {
+    "id": "5e4fc926b499e2000fba8d88",
+    "name": "Dijkstra's Dilemma",
+    "slug": "dijkstras-dilemma",
+    "category": "algorithms",
+    "publishedAt": "2020-02-24T16:32:24.984Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e4fc926b499e2000fba8d88",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-21T12:12:22.107Z",
+    "createdBy": {
+      "username": "Danchieke",
+      "url": "https://www.codewars.com/users/Danchieke"
+    },
+    "description": "# Dijkstra's Dilemma\n\nThis kata challenges you to solve a version of [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)\n\nYou will be given a top-down map, respresented as an M x N grid of integers. These integers are the heights of the grid square they sit in.\n\nYour task is to complete the function `getFastestTime()` find the quickest route for a person at a starting location on the grid to travel to a finish location. The exact route taken is not tested for, only the time taken.\n\nValues in the grid will be of the format `grid[y][x] = *number*` as below.\n\n|  | 0 | 1 | 2 | 3 | .. | x-1 |\n|----|----|-----|-----|---|----|----|\n| <b>0</b> | 1 | 5 | 3 | -1 | .. | 6 |\n| <b>1</b> | 5 | Infinity | Infinity | 6 | .. | 4 |\n| <b>2</b> | 2 | -2 | -6 | 4 | .. | 2 |\n| <b>3</b> | 6 | 2 | 3 | 6 | .. | 8 |\n| .. | .. | .. | .. | .. | .. | .. |\n| <b>y-1</b> | 2 | 5 | 6 | 2 | .. | 8 |\n\nSo `grid[3][0] = 6` for example.\n\nThe time taken to travel to an adjacent square is as follows:\n - If the two squares are of the same height, time taken is `10`\n - If the target square is lower than the start square, time taken is (`10 + difference`)\n - If the target square is higher, time taken is (`10 + (2 * difference)`)\n - If the target square is `Infinity`, it cannot be travelled to\n  \nMoves can also be diagonal. A diagonal move is treated as two moves, one from the start to the average of the two adjacent squares in the direction of the diagonal, and the second from this average to the target square. Also, the base time taken for the three cases above will be `7` instead of `10` (roughly equal to `(10/2) * sqrt(2)`). This is 7 for each of the two parts of a diagonal move.\n\nFor example:\n\n```\n 0   3 \n 7  12 \n```\nMoving diagonally from the 0 to the 12 should move treated as:\n\n - `0 ==> 5` (average of 3 and 7)\n - `5 ==> 12`\n\nDiagonals cannot be taken if any of the involved squares are `Infinity`.\n\n\n## Inputs\n- `grid: number[][]`: the map on which the person moves\n- `start: number[]`: the start location of the person, represented as `[y,x]`.\n- `end: number[]`: the start location of the person, represented as `[y,x]`.\n- `limit: number`: the maximum time allowed for the journey. You can assume the journey is impossible if this is exceeded.\n- `loop: boolean`: optional parameter. If true the person can loop round the map. For example, they can walk off of the left side and appear on the right edge at the same vertical position. If false or not provided, the edges of the map are impassable.\n\n\n## Outputs\n - `time: number`: the total time of travelling from `start` to `finish`. If it is impossible, output `Infinity`.\n\n### Notes\n\n - You do not need to handle starting or ending on a `Infinity` square.\n - All calculations will result in either an integer or a half-integer (grid-aligned movements, diagonal movements and the final result). No rounding of numbers is required.\n - Some test cases may be complex. Cases can in theory be solved by checking every possible path, but this will cause timeouts. Ensure your solution is somewhat optimised.\n - Due to the structured nature of the square travel times, an [A* search](https://en.wikipedia.org/wiki/A*_search_algorithm) could be implemented over Dijkstra's, which may speed up more complex solutions. Don't be afraid to give it a go!\n - A simple helper function `draw()` has been included to aid with visualising the starting grid.\n\n\nGood luck!",
+    "totalAttempts": 116,
+    "totalCompleted": 10,
+    "totalStars": 4,
+    "voteScore": 1,
+    "tags": [
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

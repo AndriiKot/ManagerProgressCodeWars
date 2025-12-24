@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60ffb0bad80e47003b21331f",
+  "data": {
+    "id": "60ffb0bad80e47003b21331f",
+    "name": "Clock Singularity",
+    "slug": "clock-singularity",
+    "category": "algorithms",
+    "publishedAt": "2021-07-27T11:26:43.423Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/60ffb0bad80e47003b21331f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-07-27T07:07:38.209Z",
+    "createdBy": {
+      "username": "Jomopipi",
+      "url": "https://www.codewars.com/users/Jomopipi"
+    },
+    "description": "You are given a certain assortment of clocks. You need to tell me how long it will take for all the clocks to read the same time.\n\n<br>\n<h1 style=\"color:orange\"> Input </h1>\n\n`clocks`: An array of integers, each one representing the maximum value of a clock. After reaching the absolute value (see note below) of it, the clock's time wraps back to 0.\n\n- Integers in the `clocks` array may be negative - these represent clocks that run in reverse.\n\n<br>\n<h1 style=\"color:orange\"> Output </h1>\n\n`time`: A non-zero number - the amount of time it will take to reach the Clock Singularity.\n\n- The Clock Singularity is the amount of time it will take for all the clocks to reach the same time, after the beginning.\n- All clocks start at the same time, at zero.\n\n<br>\n<h1 style=\"color:orange\"> Example </h1>\n\n```javascript\nsingularity([2,5,-4]) // 8\n```\n\n![oops, please raise an issue about this broken image](https://raw.githubusercontent.com/JomoPipi/codewars-images/main/images/clock-singularity.gif)\n\n```javascript\n/*\ninput:           [2, 5, -4]\nmax_values:      [2, 5, 4]\nruns_in_reverse: [false, false, true]\n\nTime    current_clock_values\nt=0:    [0,  0,  0] <- The beginning, not quite the singularity we're looking for.\nt=1:    [1,  1,  4]\nt=2:    [2,  2,  3]\nt=3:    [0,  3,  2]\nt=4:    [1,  4,  1]\nt=5:    [2,  5,  0]\nt=6:    [0,  0,  4]\nt=7:    [1,  1,  3]\nt=8:    [2,  2,  2] <- The coveted singularity, indeed a rare event.\n*/\n```\n# Tests setup: \n\nFixed tests:\n\n- 10 tests: `N <= 12`; `X <= 3400`\n\n- 2 tests: `N <= 24`; `X <= 128`\n\nRandom tests:\n\n- 40 small tests: `N <= 11`; `X <= 10`\n- 40 medium arrays tests: `N <= 26`; `X <= 20`\n\n- 40 tests - 1 backward clock, 2 forward: `X <= 2500`\n\n- 10 tests - 2 backward clocks, 1 forward: `X <= 1000`\n\n- 10 tests - 2 backward clocks, 2 forward: `X <= 3500`\n\n- 40 large tests: `N <= 6`; `X <= 800`\n\n- 40 large tests 2: `N <= 14`; `X <= 50`\n\n(where `N` is the number of clocks and `X` the maximum absolute value found in those clocks)\n\n<br>\n\nif you're stuck, try <a title=\"this kata\" href=\"https://www.codewars.com/kata/spinning-rings-fidget-spinner-edition\">this one</a> first.\n\n<hr>\n\n<center> <h1> Goodluck! </h1> </center>\n\n",
+    "totalAttempts": 332,
+    "totalCompleted": 11,
+    "totalStars": 14,
+    "voteScore": 20,
+    "tags": [
+      "Arrays",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

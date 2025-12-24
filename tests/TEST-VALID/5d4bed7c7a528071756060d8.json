@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d4bed7c7a528071756060d8",
+  "data": {
+    "id": "5d4bed7c7a528071756060d8",
+    "name": "Tragic: the Maddening",
+    "slug": "tragic-the-maddening",
+    "category": "algorithms",
+    "publishedAt": "2019-08-08T12:38:20.171Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d4bed7c7a528071756060d8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-08T09:38:04.749Z",
+    "createdBy": {
+      "username": "kurokikaze",
+      "url": "https://www.codewars.com/users/kurokikaze"
+    },
+    "description": "# Introduction\n\nYou are one of several prodigy players chosen to play the new game that got everyone crazy lately. The game is as follows:\n\nYou have a pool of resources (represented by symbols) and some Cards that exchange one set of resources for another. For example:\n\nYour resources: \n```\nCA\n```\nPositions of resources in string do not matter. Resources represented by same symbol are indistinguishable. You can have any number of any resource.\n\nCard: \n```\n{name: 'Altar', in: 'C', out: '++'}\n```\nThe \"Altar\" Card exchanges one `C` for two `+`. After applying it, your resources are:\n```\n++A\n```\n\nAnother example:\n```\n{name: 'Builder', in: 'AB', out: 'C'}\n```\n\"Builder\" card consumes A and B from your resource pool, and adds C. You cannot apply \"Builder\" if you don't have both A and B resources. \n\n```\nNMXZAVTB --\"Builder\"--> NMXZVTC\n```\n\nSingle card can have any number of resources as \"in\" and \"out\".\n\nOne application of a card exchanges the resources only once.\n\n```\nCCCCC --\"Altar\"--> ++CCCC\n```\n\nAny Card you have can be applied any number of times. The resource you seek for victory is `D`, for Damage. Throw enough Damage at your opponent and you're the winner.\n\n\"But sir\", you say, \"that's a pretty simple game. Why is it named the Maddening?\"\n\nWell, because of one tiny complication.\n\n*The opponent is at infinite life.*\n\nThat's right, he needs infinite Damage to be taken down. But worry not, we have just the Cards you need to do exactly that. To win, we need to combo out.\n\nComboing out means that we need to set up a loop of Card applications that can be carried out indefinitely and will produce Damage as a byproduct. By demonstrating the setup sequence and the loop sequence to the opponent, we secure the win and eternal glory.\n\n# The task\n\nYour task is to write a function that, given the initial resources (as a string) and a set of Cards (as array of `{name: '', in: '', out: ''}` objects), finds an infinite loop of Card applications that produces infinite `D`, as well as any applications needed to setup the loop. The function should output two sequences of Card names: one for `preparation` and one for the `loop` itself. If no such loops can be found, function should return `null`.\n\n# Example of the comboing out\n\nOur starting resources: `B`\nOur Cards:\n```\n  {name: 'Card 1', in: 'B', out: 'W'},\n  {name: 'Card 2', in: 'W', out: 'G'},\n  {name: 'Card 3', in: 'G', out: 'J'},\n  {name: 'Card 4', in: 'J', out: 'WD'},\n```\n\nAs you can see, you can combo out as follow:\n\nPreparation:\n- apply Card 1: our resources are `W`\n\nLoop:\n- apply Card 2: our resources are `G`\n- apply Card 3: our resources are `J`\n- apply Card 4: our resources are `WD`\n\nAt this point you can apply Card 2 again (`GD`), and Card 3 (`JD`), and Card 4 (`WDD`),.. with each loop gaining one `D`. Congratulations, you have combo assembled.\n\nFor this result, your function should return the following object:\n```\n{\n  preparation: ['Card 1'],\n  loop: ['Card 2', 'Card 3', 'Card 4'],\n}\n```\n\nRemember, comboing out means the amount of `D` resource should grow. If the loop produces `D` but then uses it up, it's no use for us -- the opponent does not take damage!",
+    "totalAttempts": 176,
+    "totalCompleted": 9,
+    "totalStars": 9,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

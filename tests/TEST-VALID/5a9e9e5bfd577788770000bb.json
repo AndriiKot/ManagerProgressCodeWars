@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a9e9e5bfd577788770000bb",
+  "data": {
+    "id": "5a9e9e5bfd577788770000bb",
+    "name": "Space Journey (1): If only i knew where to land..",
+    "slug": "space-journey-1-if-only-i-knew-where-to-land-dot",
+    "category": "algorithms",
+    "publishedAt": "2018-03-08T22:07:46.539Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5a9e9e5bfd577788770000bb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-06T13:57:47.904Z",
+    "createdBy": {
+      "username": "LucxMangaJet",
+      "url": "https://www.codewars.com/users/LucxMangaJet"
+    },
+    "description": "<h1>Space Journey (1): If only I knew where to land...</h1> \n\n<h2> Prologue: </h2>  \n\nAs you are reaching your target planet the alarm goes off, the trajectory of your spaceship seems to be off by a fraction of a degree. You start wondering on how to fix this bug for future missions but as you start working through the code you realize that the new trajectory is on a collision course with that planet. \"What are the odds?\" you think to yourself. \n\n```Avoiding the collision``` doesn't seem to be an option but your engines would be strong enough to allow a survivable landing ```if you could land on a liquid``` such as water. Luckily water is the exact reason for which you find yourself in this mess: <br> \n\nYour research had proven the formation of water vapor clouds on this planet!<br> \nSadly, you have no further data on the planet except for a ```height map``` of the surface that you had gathered during your study... \nAs your time starts running short you come up with a ```brilliant idea```. Maybe you can calculate the most probable area for a water deposit on your landing range the same way it was done for rivers and lakes back in the day:<br> by calculating where the rain water would flow based on the height map! \n\nYou can deviate your landing site by about 250m in every direction.<br> This gives you a possible landing area of 250 000 m^2 and with the height maps details being down to 2500m^2 you have ```100 possible landing areas``` to examine... <br> \nIt's time to hurry up!<br> \n\n\n<h2>The Task:</h2> \nYou will be given a 2 dimensional int array ```int[10,10]``` representing the average height of your 100 possible landing sites. The task is to calculate the most suitable area for landing: The area where water is more likely to form something like a lake or a river based on the rains flow and to return its coordinates. \n\n\nFor a matter of simplicity following rules apply:<br> \n1) The rain falls completely evenly on the area <br> \n2) Everything outside of the 10x10 area is NOT to be considered:<br> \n   -Water cannot flow outside of the 10x10 area <br> \n   -No Water will enter the 10x10 area from the outside <br> \n3) No 2 neighboring tiles will have the same height <br> \n4) Water can only flow horizontally and vertically and NOT diagonally <br> \n5) Water will flow completely to the neighboring tile with the lowest height <br>\n6) The given numbers will always result in only 1 correct answer \n<br> \n\nExample in a 3x3 environment:<br> \nInput as Height Map: <br> \n3 4 5 <br> \n8 1 6 <br> \n6 2 4 <br> \n\nmaking a \"Flow Map\" out of the Height Map:<br> [(>: flow to the right) (<: flow to the left) (^: flow up) (v: flow down)(o: no flow) ] <br> \n  __x0|x1|x2 <br> \ny0) o v < <br> \ny1) > o < <br> \ny2) > ^ < <br> \n\nAssuming that 1 unit of water falls on every tile before applying the flow: <br> \n1 0 0 <br> \n0 8 0 <br> \n0 0 0 <br> \nArea (1,1) is the most suitable for landing so i return the string (1,1):  \n```return \"(1,1)\"``` \n ",
+    "totalAttempts": 63,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 16,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

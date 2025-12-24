@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cd291c01931d33c558f2f17",
+  "data": {
+    "id": "5cd291c01931d33c558f2f17",
+    "name": "Noise detector",
+    "slug": "noise-detector",
+    "category": "reference",
+    "publishedAt": "2019-05-10T09:21:00.504Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5cd291c01931d33c558f2f17",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-08T08:22:24.618Z",
+    "createdBy": {
+      "username": "manianis",
+      "url": "https://www.codewars.com/users/manianis"
+    },
+    "description": "A noise detector can detect noise in the form of a code (string) formed at most by (n) vibrations in a zone. Each vibration gathers to 1 and each silence to 0.\n\nAn industrial computer engineer wants to realize a system that allows to measure the vibrations in several places of a factory and to know the most disturbing zone or zones.\n\nWe ask to write three functions:\n- generate_noise(n): which allows to generate n bits in a random way, this function should return a string containing random '0' and '1' as stated in the examples below\n- fill_noise_dict(zones, n): which returns a dictionary of the noise to be recorded in the given zones, this function should use the previous `generate_noise` function, the parameters of the function are :\n   - zones: is the a list containing the names of zones in the factory\n   - n: is the number of bits recorded in each zone\n- most_noisy_zones(nz, n): which takes the dictionary filled by the last function `fill_noise_dict` and returns the first n most disturbing areas, the more number of '1' in the dictionary the more the zone is disturbing.\n\n# Exemples\n```python\ngenerate_noise(10) #==> '1100011001' generate a random sequence of 10 bits\ngenerate_noise(5) #==> '10110' generate a random sequence of 5 bits\n```\n\n```python\nfill_noise_dict(['z1','z2', 'z3'],6) #==> { 'z1': '100010', 'z2': '111100', 'z3': '000111' }\n```\n\n```python\nmost_noisy_zones({ 'z1': '100010', 'z2': '111100', 'z3': '000111' }, 3) #//==> ['z2', 'z3', 'z1']\n```\n\n",
+    "totalAttempts": 282,
+    "totalCompleted": 32,
+    "totalStars": 1,
+    "voteScore": 34,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

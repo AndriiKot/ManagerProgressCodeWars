@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e02871f2964c8002d66aa48",
+  "data": {
+    "id": "5e02871f2964c8002d66aa48",
+    "name": "Find difference in two strings.",
+    "slug": "find-difference-in-two-strings",
+    "category": "algorithms",
+    "publishedAt": "2019-12-24T21:48:54.244Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e02871f2964c8002d66aa48",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-24T21:46:07.691Z",
+    "createdBy": {
+      "username": "Svirskyi",
+      "url": "https://www.codewars.com/users/Svirskyi"
+    },
+    "description": "When I started working for my company, I was tasked with recording all users activity in our redactor - click, move, keypress, everything.\nAnd i had to create algorithm which had to understand which changes there were in string after user action and write their down like object with properties:\nindex - index where started change string,\nadd - symbols which was added,\ndeleted - symbols which was deleted.\nUser could copy and paste text in editor that's why you have to handle cases with added more than 1 symbol\nfor example:\n\nfindDifferent('Hello, world!', 'Harry, world!') => {\n  index: 1,\n  addedText: \"arry\",\n  deletedText: \"ello\"\n}\n\nUser click mouse from position 1 and select text 'ello' and paste text arry.\n\nthat's why function have to return {index: 1, addedText: \"arry\", deletedText: \"ello\"}\n\nfindDifferent('It is hard task', 'It is easy task') => {\n  index: 6,\n  addedText: \"easy\",\n  deletedText: \"hard\"\n};\n\nfindDifferent('My first task', 'My second task for you') => {\n  index: 3, \n  addedText: \"second task for you\", \n  deletedText: \"first task\"\n}\n\nif two string are the same then function has to return false.\n\nfindDifferent('The same text', 'The same text') => false;",
+    "totalAttempts": 55,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

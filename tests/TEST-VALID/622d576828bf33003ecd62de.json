@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/622d576828bf33003ecd62de",
+  "data": {
+    "id": "622d576828bf33003ecd62de",
+    "name": "Odds and evens",
+    "slug": "odds-and-evens",
+    "category": "reference",
+    "publishedAt": "2022-03-13T02:31:17.011Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/622d576828bf33003ecd62de",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-03-13T02:31:04.554Z",
+    "createdBy": {
+      "username": "mgjoseruben",
+      "url": "https://www.codewars.com/users/mgjoseruben"
+    },
+    "description": "**Odds and evens** is a simple game of chance and hand game, involving two people simultaneously revealing a number of fingers and winning or losing depending on whether they are odd or even. The game may be used to make a decision or played for fun.\n\nExamples:\n\n|         | Player 1 | Player 2 | Result |\n|---------|----------|----------|--------|\n| Fingers |     1    |     1    |  evens |\n| Fingers |     1    |     2    |  odds  |\n| Fingers |     2    |     2    |  evens |\n\nNote: There is no chance to tie; since, if one player chooses even the other it is up to him odd and vice versa.\n\nKnown, the **Player** class determines who is the winner by completing the **whoWin** function.\n\nclass **Player** {\n\n\tprotected $name;\n\tprotected $decision;\n\tprotected $fingers;\n\n\tpublic function __construct($name){\n\t\t$this->name = $name;\n\t\t$this->fingers = random_int(1,2);\n\t}\n\n\tpublic function getName()\n\t{\n\t\treturn $this->name;\n\t}\n  \n\tpublic function getFingers()\n\t{\n\t\treturn $this->fingers;\n\t}\n\n\tpublic function getDecision()\n\t{\n\t\treturn $this->decision;\n\t}\n}",
+    "totalAttempts": 151,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Classes",
+      "Basic Language Features",
+      "Object-oriented Programming",
+      "Programming Paradigms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

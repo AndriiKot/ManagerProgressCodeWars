@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6265a7400fe6db8188a65147",
+  "data": {
+    "id": "6265a7400fe6db8188a65147",
+    "name": "Wordle: Determine all possible words that match a pattern",
+    "slug": "wordle-determine-all-possible-words-that-match-a-pattern",
+    "category": "reference",
+    "publishedAt": "2022-04-24T20:50:31.459Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6265a7400fe6db8188a65147",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-24T19:38:40.168Z",
+    "createdBy": {
+      "username": "scottned",
+      "url": "https://www.codewars.com/users/scottned"
+    },
+    "description": "Wordle (example of the game [here](https://wordlegame.org/)) is a guessing game where the player is presented with an unknown, 5-letter word that must be guessed in 6 tries.  After each guess the player is given some information about whether each letter was 1) in the right place, 2) in the wrong place, or 3) doesn't exist in the word.\n\nYou will be provided a Scrabble dictonary with around 9000 5-letter words.  You can access it in your code with the constant `WORDS`.\n\nThe goal is to complete a single function:\n\n1. `possibleWords` - Return an array of all words that match an array of patterns and exclude words with some letters to ignore.\n\n## Attempt patterns\n\n- Upper case letter: right letter, right place\n- Lower case letter: right letter, wrong place\n- '?': Letter doesn't exist in the word\n\nExample:\n\n```\nSecret word: CODER\n1st guess: REACT, responds with pattern 're?c?', ignore letters 'AT'\n2nd guess: SCORE, responds with pattern '?core', ignore letters 'S'\n3rd guess: CORED, responds with pattern 'COrEd', ignore letters ''\n```\n\nEach attempt accumulates, so on the 3rd attempt you would pass in:\n    \n```js\npossibleWords(['re?c?', '?core', 'COrEd'], 'ATS')\n```\n\nGood luck!  Be sure to try the other challenges, leading up to a full Wordle puzzle solver.\n",
+    "totalAttempts": 188,
+    "totalCompleted": 13,
+    "totalStars": 2,
+    "voteScore": 9,
+    "tags": [
+      "Games",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

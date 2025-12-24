@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/569260e1096a6545fb00004c",
+  "data": {
+    "id": "569260e1096a6545fb00004c",
+    "name": "PatternCraft  - Command",
+    "slug": "patterncraft-command",
+    "category": "reference",
+    "publishedAt": "2016-01-10T14:49:58.079Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "csharp",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/569260e1096a6545fb00004c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-10T13:47:15.195Z",
+    "createdBy": {
+      "username": "brunolm",
+      "url": "https://www.codewars.com/users/brunolm"
+    },
+    "description": "The [Command Design Pattern](https://www.youtube.com/watch?v=l0P8q0gWsR8) can be used, for example, in the StarCraft game to queue actions. \n\nThe pattern consists in isolating a command logic in a class, so it can be:\n\n  - queued: you can queue actions to move a probe to different locations \n  - undone: you can tell a probe to build something and then undo the action stopping it. \n  - validated: you can check if the action can be executed or not, you cannot move to a location if now there is a building over it\n\n## Your Task\n\nComplete the code so that a `Probe` can move and gather with a queue of commands.\n\n  - In this kata there are no limitations for the move command\n  - The probe is only allowed to gather if the current amount of minerals is `0`\n  - Probe should only queue commands without running them\n  - Move will set the probe's position to x,y\n  - Gather will increment the probe's minerals by 5\n\n```javascript\nclass Probe {\n  constructor() {\n    this.commands = [];\n    this.position = { x: 0, y: 0 };\n    this.minerals = 0;\n  }\n  move(x, y) { this.commands.push(...); }\n  gather() { this.commands.push(...); }\n}\n\nclass MoveCommand {\n  constructor(unit, x, y) { }\n  execute() { }\n  canExecute() { }\n}\n\nclass GatherCommand {\n  constructor(unit) { }\n  execute() { }\n  canExecute() { }\n}\n```\n```csharp\npublic class Probe : IUnit\n{\n    public Queue<ICommand> Commands { get; set; }\n    public int Minerals { get; set; }\n    public Point Position { get; set; }\n\n    public void Move(int x, int y) { Commands.Enqueue(...) }\n    public void Gather() { Commands.Enqueue(...) }\n}\n\npublic class MoveCommand : ICommand\n{\n    private IUnit unit;\n    private int x;\n    private int y;\n\n    public MoveCommand(IUnit unit, int x, int y) { }\n    public bool CanExecute() { }\n    public void Execute() { }\n}\n\npublic class GatherCommand : ICommand\n{\n    private IUnit unit;\n\n    public GatherCommand(IUnit unit) { }\n    public bool CanExecute() { }\n    public void Execute() { }\n}\n```\n```coffeescript\nclass Probe\n  constructor: () ->\n    @commands = []\n    @position = { x: 0, y: 0 }\n    @minerals = 0\n\n  move: (x, y) -> @commands.push(...)\n  gather: () -> @commands.push(...)\n\nclass MoveCommand\n  constructor: (@unit, @x, @y) ->\n  execute: () ->\n  canExecute: () ->\n\nclass GatherCommand\n  constructor: (@unit) ->\n  execute: () ->\n  canExecute: () ->\n```\n\n## Notes\n\nIn C# you have these pre-loaded:\n\n```csharp\npublic interface ICommand\n{\n    void Execute();\n    bool CanExecute();\n}\n\npublic interface IUnit\n{\n    int Minerals { get; set; }\n    Point Position { get; set; }\n\n    void Move(int x, int y);\n    void Gather();\n}\n\npublic class Point\n{\n    public int X { get; set; }\n    public int Y { get; set; }\n}\n```\n\n## Resouces\n\n  - [PatternCraft > Command](https://www.youtube.com/watch?v=l0P8q0gWsR8)\n  - [SourceMaking > Command](https://sourcemaking.com/design_patterns/command)\n  - [Wikipedia > Command](https://en.wikipedia.org/wiki/Command_pattern)\n\n# PatternCraft series\n\n  - [State Pattern](http://www.codewars.com/kata/patterncraft-state/)\n  - [Strategy Pattern](http://www.codewars.com/kata/patterncraft-strategy/)\n  - [Visitor Pattern](http://www.codewars.com/kata/patterncraft-visitor/)\n  - [Decorator Pattern](http://www.codewars.com/kata/patterncraft-decorator/)\n  - [Adapter Pattern](http://www.codewars.com/kata/patterncraft-adapter/)\n  - **Command Pattern**\n\nThe original [PatternCraft series (by John Lindquist)](https://www.youtube.com/playlist?list=PL8B19C3040F6381A2) is a collection of Youtube videos that explains some of the design patterns and how they are used (or could be) on StarCraft. ",
+    "totalAttempts": 2091,
+    "totalCompleted": 170,
+    "totalStars": 25,
+    "voteScore": 103,
+    "tags": [
+      "Design Patterns",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

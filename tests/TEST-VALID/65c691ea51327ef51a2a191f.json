@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65c691ea51327ef51a2a191f",
+  "data": {
+    "id": "65c691ea51327ef51a2a191f",
+    "name": "52 Card Pick Up (old)",
+    "slug": "52-card-pick-up-old",
+    "category": "games",
+    "publishedAt": "2024-02-12T20:35:57.801Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65c691ea51327ef51a2a191f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-09T20:58:18.494Z",
+    "createdBy": {
+      "username": "rdtheriault",
+      "url": "https://www.codewars.com/users/rdtheriault"
+    },
+    "description": "Want to play some solitaire? Welcome to 52 card pick up. I always wondered why they never made an online version of the game. So I made one, [try it](https://sagefirellc.net/solitaire/). However, I feel it's time for you to enjoy the pain as well. \n\nI have \"thrown\" your deck of cards into a multidimensional array of unknown width and height. You need to find all of the cards on the \"ground\". Problem, they might not all be there and you might find some \"garbage\" as well.\n\n\n```\npile = [\n  ['GB', 0, 0, 0, 'S2', 'SJ', 'SQ', 0, 'CJ', 'H4', 0, 0, \"\"WB\"],\n  ['S3', 0, 'S4', 'D4', 0, 'D2', 0, 0, 'C2', 0],\n  [0, 'D7', 0, 'C9', 0, 0, 'S1', 'C8', 'D3'],\n  [0, 0, 'HQ', 0, 0, 0, 'H6', 0, 'H3', 'S9', 0],\n  ['D9', 'CK', 'H5', 'D6', 'D8', 0, 0, 0, 0, 'C4'],\n  [0, 0, 'H8', 0, 0, 0, 'C5', 'D5', 'C7', 'H2'],\n  [0, 0, 0, 'HJ', 'S7', 'S6', 'C10', 'S10', 0, 'H9'],\n  ['H7', 0, 0, 'S5', 0, 'HK', 'C1', 0, 'D1', 'C6'],\n  ['SK', 0, 0, 0, 0, 'C3', 0, 'DK', 0, \"0a\", 0],\n  ['DQ', 'DJ', 'S8', 'CQ', 0, 'D10', 0, 'H1', 0, 'H10', 0, 'H1a']\n]\n\n```\n\nCards are represented by the first letter of their suit and then either the number or the first letter of the royalty. Examples, Queen of Hearts = HQ, Queen of Spades = SQ, Queen of Diamonds = DQ, Queen of Clubs = CQ, Ace of Hearts = H1, 2 of Hearts = H2, and so on and so on.\n\n\nRules:\n\nEmpty space on the \"ground\" is indicated with a zero.\nAll real cards will be uppercase\nThere may be multiple of the same card\nIgnore \"garbage\" (GB/0a) and \"fake\" cards (S3 is a real card S3a is not)\nZeros (0) are blank space to be ignored.\n\n\nYou need to determine if the pile on the \"ground\" has all of the cards. If it does, return True, else, return False.\n",
+    "totalAttempts": 68,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": -3,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

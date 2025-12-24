@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52dbc1d063175b09250001d2",
+  "data": {
+    "id": "52dbc1d063175b09250001d2",
+    "name": "Timers",
+    "slug": "timers",
+    "category": "reference",
+    "publishedAt": "2014-01-20T20:24:06.964Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52dbc1d063175b09250001d2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-01-19T12:15:12.407Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Timers are kinda tricky to get your head around at first. So let's explore exactly how things work by recreating it all in JavaScript!\n\n---\n\n**TL;DR:** `setTimeout` and `setInterval` should add to a queue. `clearTimeout` and `clearInterval` should remove from the queue. Nothing should actually run until the `runTimers()` function is called. When `runTimers()` is called, time should be simulated, going through all queued timers until there are none left. The `getTime()` function should return whatever the current time is within the simulation. `block()` should simulate the thread being blocked for the specified number of miliseconds.\n\n---\n\nTimers are basically special types of events that the programmer can use to schedule their own events, miliseconds into the future. They can also be \"cleared\", or removed from the queue of events, and so these events will no longer be called.\n\nThe thing with events is, they can be blocked. As JavaScript is single-threaded, if something is still being processed, by the environment (Garbage Collection) or in the code itself (complex event handlers), the rest of the thread is blocked, making any shceduled events wait until processing is finished.\n\nTimers follow that same principle. `setTimeout(action, ms)` adds an event into the queue, to be called `ms` from the current time. If when that time comes there is something else still being processed, though, the timer's `action` will not be run until after processing has finished. This means that the time `action` is called will be `ms` into the future _or later_, being affected by other tasks on the same thread.\n\n`setInterval(action, ms)` works in a similar way, but if the `action` cannot be immediately run, that particular interval will be skipped altogether. Whether the interval was skipped or not, it is then shceduled `ms` more into the future after the previous interval, so that it repeats indefinitely.\n\nBoth of these functions take an `action` parameter, which can be a function to be run, or a string that should be used as a function body. Then, `ms` will be an integer indicating how many miliseconds into the future the timer should be scheduled. Any further parameters should be passed to the `action` function as arguments, unless the `action` was converted from a string. The functions should then return an id for the timer (this is usually an integer, but doesn't matter so long as it can be used with the clearTimeout and clearInterval functions explained below).\n\nIf more than one timer (or event) is scheduled for the same moment (or milisecond for the purposes of this kata), the order in which the events were scheduled should be adhered to. So if timer \"A\" was scheduled for 1032ms, and then timer \"B\" was shceduled for 1032ms, timer \"A\" should be triggered before timer \"B\".\n\n`clearTimeout` and `clearInterval` should accept a timer's id (whether timeout _or_ interval), and remove it from the event queue. A timer's event should not be triggered after its id has been cleared.\n\nFor the purposes of this kata, and to keep things a little easier to test, you should also implement a `getTime()` function. This should return the current simulated time in miliseconds as an integer. If `runTimers()` has not yet been called, the simulated time should be `0`. If the simulation has already been run, the simulated time should carry over to the next simulation. For example, after `runTimers()`, the sim-time is 100ms. At the beginning of the next `runTimers()` call, the sim-time should still be 100ms. If that second call takes another 50ms of simulation to complete, the sim-time will be 150ms afterwards.\n\nAlso, you should implement `block(ms)`. This should affect the running of the timers and `getTime()` as described above, as if a process has blocked the thread for `ms` miliseconds.\n\nFinally, you should implement a `runTimers()` function that should run all the queued timers.\n\n----\n\nYou should make sure that any of these functions can be called successfuly from within other `setTimeout` and `setInterval` actions, without any infinite loops and such.\n\nThis kind of timer simulation could be very useful for testing timers server-side, without having to wait for timers to actually go off, and so forth. You'd probably have to hack about with the Date object to get it working correctly, but I thought I'd spare you that for this kata.\n\nFor more information on this subject, John Resig wrote a great article on [How JavaScript Timers Work](http://ejohn.org/blog/how-javascript-timers-work/) you should check out.\n",
+    "totalAttempts": 308,
+    "totalCompleted": 14,
+    "totalStars": 7,
+    "voteScore": 6,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

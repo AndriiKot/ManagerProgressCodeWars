@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/617eca13d24342000e643819",
+  "data": {
+    "id": "617eca13d24342000e643819",
+    "name": "Validate C arithmetic types",
+    "slug": "validate-c-arithmetic-types",
+    "category": "algorithms",
+    "publishedAt": "2021-11-10T03:14:38.473Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/617eca13d24342000e643819",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-31T16:53:39.444Z",
+    "createdBy": {
+      "username": "trashy_incel",
+      "url": "https://www.codewars.com/users/trashy_incel"
+    },
+    "description": "# C Arithmetic types\n*skip to the Task section if you already know this*\n\nThe C programming language comprises the following arithmetic types:\n\n## Booleans:\n* `bool`\n\n(technically `_Bool` with `bool` as a convenience macro, but using `_Bool` directly is bad style so we will use `bool` in this kata)\n\n## Characters:\n* `char`\n* `signed char`\n* `unsigned char`\n\n## Integers:\n* `short int` aka `short`\n* `int`\n* `long int` aka `long`\n* `long long int` aka `long long`\n\nInteger types can be either `signed` or `unsigned`. By default they are `signed`, so `signed int` is the same as `int`.\n\n⚠ This is not true for character types ! `char` is different from either `unsigned char` and `signed char`.\n\n## Floating Point:\n* `float`\n* `double`\n* `long double`\n\n## Grammar Rules\n\nFor the purpose of this kata, we will call `sign` either of these tokens :\n* `signed`\n* `unsigned`\n* (empty)\n\nAnd `width` either of these tokens :\n* `short`\n* `long`\n* `long long`\n* (empty)\n\nFor a given type T, of sign S, and width W:\n* T cannot be duplicated \n** (e.g. `int int` is invalid)\n* `W S` is the same as `S W`\n** (e.g. `long signed int` is the same as `signed int long`)\n* `S T` is the same as `T S`\n** (e.g. `signed long int` is the same as `long int signed`)\n* S may appear only once\n** (e.g. `signed signed int` and `signed unsigned int` are invalid)\n\n## Canonical form of a type\nFor the purpose of this kata we will call \"canonical form\" of a type the following format:\n`\"{sign} {width} {base type}\"`\n\nThe sign must be explicit. The string should be trimmed (no double spaces when `width` and/or `sign` is empty).\n`int` must be explicit as well, for types `short int`, `long int` and `long long int`.\n\n### Examples\n\n| Declaration      | Canonical Form        |\n|------------------|-----------------------|\n| `long int long`  | `signed long long int`|\n| `unsigned short` | `unsigned short int`  |\n| `double long`    | `long double`         |\n| `char`           | `char`                |\n\n# The task:\nGiven a string containing a C type declaration, with space-separated keywords:\n* if the type is invalid, return `false`\n* if it is valid, return its canonical form\n\nThe input will always be valid : non-empty, no invalid tokens, no stray characters.",
+    "totalAttempts": 128,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

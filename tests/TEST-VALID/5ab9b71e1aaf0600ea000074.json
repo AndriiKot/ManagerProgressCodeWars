@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ab9b71e1aaf0600ea000074",
+  "data": {
+    "id": "5ab9b71e1aaf0600ea000074",
+    "name": "The Alphabet Cipher",
+    "slug": "the-alphabet-cipher",
+    "category": "reference",
+    "publishedAt": "2018-03-27T03:29:41.127Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ab9b71e1aaf0600ea000074",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-27T03:14:38.586Z",
+    "createdBy": {
+      "username": "tobyfee",
+      "url": "https://www.codewars.com/users/tobyfee"
+    },
+    "description": "You and your friend have come up with a simple way of storing a complex encoding system in a single remembered word called 'The Alphabet Cipher'\n\nFirst you'll need this key, which isn't a secret:\n```\n   ABCDEFGHIJKLMNOPQRSTUVWXYZ\n A abcdefghijklmnopqrstuvwxyz A\n B bcdefghijklmnopqrstuvwxyza B\n C cdefghijklmnopqrstuvwxyzab C\n D defghijklmnopqrstuvwxyzabc D\n E efghijklmnopqrstuvwxyzabcd E\n F fghijklmnopqrstuvwxyzabcde F\n G ghijklmnopqrstuvwxyzabcdef G\n H hijklmnopqrstuvwxyzabcdefg H\n I ijklmnopqrstuvwxyzabcdefgh I\n J jklmnopqrstuvwxyzabcdefghi J\n K klmnopqrstuvwxyzabcdefghij K\n L lmnopqrstuvwxyzabcdefghijk L\n M mnopqrstuvwxyzabcdefghijkl M\n N nopqrstuvwxyzabcdefghijklm N\n O opqrstuvwxyzabcdefghijklmn O\n P pqrstuvwxyzabcdefghijklmno P\n Q qrstuvwxyzabcdefghijklmnop Q\n R rstuvwxyzabcdefghijklmnopq R\n S stuvwxyzabcdefghijklmnopqr S\n T tuvwxyzabcdefghijklmnopqrs T\n U uvwxyzabcdefghijklmnopqrst U\n V vwxyzabcdefghijklmnopqrstu V\n W wxyzabcdefghijklmnopqrstuv W\n X xyzabcdefghijklmnopqrstuvw X\n Y yzabcdefghijklmnopqrstuvwx Y\n Z zabcdefghijklmnopqrstuvwxy Z\n   ABCDEFGHIJKLMNOPQRSTUVWXYZ\n```\nthen you and your friend need to agree on a secret word or 'key-word' that you don't write down but carry only in memory.\n\nIn sending a message, write the key-word over it, letter for letter, repeating it as often as may be necessary: the letters of the key-word will indicate which column is to be used in translating each letter of the message, the symbols for which should be written underneath. \n\nFor example you if want to encode: `meet me on Tuesday evening at seven` and your key-word was `vigilance` your encoding would look like:\n\n```\nv i g i l a n c e v i g i l a n c e v i g i l a n c e v i\nm e e t m e o n t u e s d a y e v e n i n g a t s e v e n\nh m k b x e b p x p m y l l y r x i i q t o l t f g z z v\n```\n\nyour friend should be able to take the string `h m k b x e b p x p m y l l y r x i i q t o l t f g z z v` and decode it by writing the key-word above it as many times as necessary.\n\nYou will create a function `encrypt` that takes two parameters: a key-word and a string, without spaces, to encrypt. The encrypted string should be returned\n\nso that the input:\n`encrypt(\"soap\", \"everyonelovesadog\")`\n\nwill return `\"wjegqcntdcvtkoddy\"`",
+    "totalAttempts": 123,
+    "totalCompleted": 39,
+    "totalStars": 1,
+    "voteScore": 59,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62ca854aedc75c2d07960012",
+  "data": {
+    "id": "62ca854aedc75c2d07960012",
+    "name": "Safer UTF-8 decoder",
+    "slug": "safer-utf-8-decoder",
+    "category": "algorithms",
+    "publishedAt": "2022-07-10T10:16:54.564Z",
+    "approvedAt": null,
+    "languages": [
+      "lua"
+    ],
+    "url": "https://www.codewars.com/kata/62ca854aedc75c2d07960012",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-10T07:52:42.953Z",
+    "createdBy": {
+      "username": "fcr--",
+      "url": "https://www.codewars.com/users/fcr--"
+    },
+    "description": "Soon after [UTF-8](https://en.wikipedia.org/wiki/UTF-8) was designed, it was realized that there might be multiple encodings for the same character, which if not correctly validated can be a [security issue](https://en.wikipedia.org/wiki/UTF-8#Overlong_encodings).  The need to properly validate could have been avoided if it would were designed a bit differently, so here in this kata we propose a new encoding, **Safer UTF-8**, that  removes overlong encodings by design:\n\nContext: every unicode codepoint is represented as a non-negative number, usually written as `U+XXXX` where `XXXX` is its hexadecimal representation, a unicode string is usually a sequence of code points.\n\nSafer UTF-8 encodes each code point to the following 1 to 4 bytes using this format:\n\n| Code point | Safer UTF-8 encoding |\n| ---------- | ---------------------|\n| n = 0 .. 0x7f | `0aaaaaaa`, where `aaaaaaa` is the binary representation of n |\n| n = 0x80 .. 0x87f | `110aaaaa 10bbbbbb` where `aaaaabbbbbb` is the binary representation of n-0x80 |\n| n = 0x880 .. 0x1087f | `1110aaaa 10bbbbbb 10cccccc` where `aaaabbbbbbcccccc` is the binary representation of n-0x880 |\n| n = 0x10880 .. 0x10ffff | `111100aa 10bbbbbb 10cccccc 10dddddd` where `aabbbbbbccccccdddddd` is the binary representation of n-0x10880 |\n\n#### Task\n\nThe `decode` function must decode the string passed by parameter using the \"Safer UTF-8\" encoding, and then return the same string encoded in the real UTF-8 format.\n\nWe want to throw an error if we find:\n* invalid bytes or multibyte sequences encoding characters outside valid ranges.  UTF-16 surrogates (code points U+D800 through U+DFFF, which are ilegal in UTF-8) and characters beyond U+10FFFF must be considered errors.\n* unexpected continuation bytes (a continuation byte is a byte whose binary representation has the form 10xxxxxx).\n* incorrect number of continuation bytes.\n\n```if:lua\nTo throw an error in lua consider using [error(message)](https://www.lua.org/manual/5.3/manual.html#pdf-error) or [assert(condition, message)](https://www.lua.org/manual/5.3/manual.html#pdf-assert).\n```\n\nBoth the parameter and return value must be byte strings, not a string of '1's and '0's chars.\n\n#### Example\n\nIf we receive bytes with a binary representation of `11011110 10010001` = \"\\xDE\\x91\" we know that we have to use the rule (0x80..0x87f) since the first byte starts with `110`.  By selecting the appropriate bits we get `11110010001` = 0x791, which corresponds (after adding the rule's offset: 0x80) to the character U+0811 ('ࠑ').\n\nThe main difference with UTF-8 is that we don't have to add/subtract offsets when decoding/encoding.\n\nSo then U+0811 = `100000010001` (in binary) would get encoded as `11100000 10100000 10010001` = \"\\xE0\\xA0\\x91\" in UTF-8, once we extract the corresponding bits and prepend `1110` on the first byte (length 3) and `10` to the continuation bytes.\n\n#### Hints\n\nHint: read the [UTF-8](https://en.wikipedia.org/wiki/UTF-8) wikipedia page.\n\nAfter doing this kata you'll hopefully realize how it's easier to just validate overlong encodings in UTF-8 than supporting this weird safer utf-8 variation.  If anything, **don't forget to validate!**",
+    "totalAttempts": 119,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 20,
+    "tags": [
+      "Strings",
+      "Unicode",
+      "Bits",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

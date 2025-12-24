@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5de83380b2079b0028568f25",
+  "data": {
+    "id": "5de83380b2079b0028568f25",
+    "name": "Arithmetic Sequence - find hidden",
+    "slug": "arithmetic-sequence-find-hidden",
+    "category": "algorithms",
+    "publishedAt": "2019-12-04T22:38:24.660Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5de83380b2079b0028568f25",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-04T22:30:24.467Z",
+    "createdBy": {
+      "username": "Zymurge",
+      "url": "https://www.codewars.com/users/Zymurge"
+    },
+    "description": "This is part of what will be a series based around code that finds arithmetic sequences embedded within a group of unique numbers. It was inspired by a puzzle in a publication titled Giant Book of Mensa Mind Challenges.\n\nThis first kata is to create an algorithm to identify such sequences. It's expected that this algorithm can be used for some of the subsequent, more complex katas.\n\nAn \"Arithmetic Sequence\" for this kata is defined as a sequence of 3 integers such that the difference of any two successive members of the sequence is a constant. Specifically:\n- given three distinct integers a, b and c\n  - where a < b < c\nthen to be considered a valid Arithmetic Sequence:\n- b - a must equal c - b. \n\nIn this kata, you are given an array of unique integers. Your code should find the first valid Arithmetic Sequence that can be constructed from any 3 integers in the group. \n- The response must be in sequence order (lowest to highest integer)\n- By first, that means processing should preserve order of the array, such that the first located member of the sequence will have the lowest indexed first member from the array, or the lowest indexed second located member should two sequences start with the same first member \n- If no valid sequence is found, the function should return an empty array. An input group containing less than 3 numbers is considered as not found.\n\nExamples:\n\n- [1,4,7,9,13] returns [1,4,7]\n  - the only valid sequence\n- [4,13,9,1,7] returns [1,4,7]\n  - the only valid sequence\n- [1,4,7,9,11] returns [1,4,7]\n  - the first valid sequence\n    - member 1 at index 0 for set[1,4,7]\n    - member 7 at index 2 for set[7,9,11]\n- [99,11,4,7,9,1] returns [7,9,11]\n  - the first valid sequence\n    - member 11 at index 1 for set[7,9,11]\n    - member 4 at index 2 for set[1,4,7]\n- [13,20,17,9,27] returns [13,20,27]\n  - the first valid sequence\n    - member 13 at index 0 for both valid sets [9,13,17] and [13,20,27]\n    - second member 20 at index 1 for set [13,20,27]\n    - second member 17 at index 2 for set [9,13,17]\n- [1,2,4,9,25] returns []\n  - no sequence found\n",
+    "totalAttempts": 347,
+    "totalCompleted": 47,
+    "totalStars": 3,
+    "voteScore": 51,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59fe01658ba91417880000a0",
+  "data": {
+    "id": "59fe01658ba91417880000a0",
+    "name": "Replace the extension",
+    "slug": "replace-the-extension",
+    "category": "reference",
+    "publishedAt": "2017-11-04T19:59:06.735Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/59fe01658ba91417880000a0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-04T18:05:25.733Z",
+    "createdBy": {
+      "username": "marrakchino",
+      "url": "https://www.codewars.com/users/marrakchino"
+    },
+    "description": "We define a filename's extension as the substring following the last occurence of '.' in it.\n\n## Examples:\n\n* \"file1.txt\" -> \"txt\"\n\n* \"file2.abc.ijk\" -> \"ijk\"\n\n* \"file3\" -> \"\"\n\nYour task is to implement the function `replace_extension`.\nThis function replaces the string parameter's original extension with `new_ext`, and returns the result:\n\n```C\n* replace_extension(\"file\", \"txt\") -> \"file.txt\"\n\n* replace_extension(\"file.abc.markdown\", \"md\") -> \"file.abc.md\"\n\n* replace_extension(\"file.a.b.c.d.e.f.g.h.i\", \"a\") -> \"file.a.b.c.d.e.f.g.h.a\"\n\n* replace_extension(\"file.txt\", \"\") -> \"file\"\n\n* replace_extension(\".file.hidden\", \"abc\") -> \".file.abc\"\n```\n\n## Notes:\n\n* If any of the parameters is NULL, the function's output should be NULL.\n\n* Filenames which are not 'valid' (containing `\\`, `/`, or `:`) should be treated, and the function must return NULL in such cases.\n",
+    "totalAttempts": 827,
+    "totalCompleted": 40,
+    "totalStars": 6,
+    "voteScore": 69,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

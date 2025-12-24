@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66a8ad03d2a2a2307855693e",
+  "data": {
+    "id": "66a8ad03d2a2a2307855693e",
+    "name": "Inspector Fu & Sergeant Bar: Years with dates of a given weekday",
+    "slug": "inspector-fu-and-sergeant-bar-years-with-dates-of-a-given-weekday",
+    "category": "algorithms",
+    "publishedAt": "2024-08-01T08:02:15.625Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66a8ad03d2a2a2307855693e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-30T09:06:11.884Z",
+    "createdBy": {
+      "username": "tayloia",
+      "url": "https://www.codewars.com/users/tayloia"
+    },
+    "description": "# The Case of the Weekday Kidnappers\n\nInspector Fu slammed the pile of dog-eared letters and envelopes back on the desk. \"This is hopeless, Bar; we'll never solve this cold case. All these historical ransom demands were postmarked without years, just the day of the week, the day of the month and the month. We'll never find a pattern. Nor the kidnappers!\"\n\n\"Are you saying, Sir,\" asked Sergeant Bar patiently, \"that it would help if we had some mechanism to list the possible years for a given weekday, day and month for each ransom demand?\"\n\n\"Precisely, Sergeant Bar! Precisely!\"\n\n## The Problem\n\nGiven a string containing a weekday name, numeric day of month and month name, generate a sequence of years for which the date is valid. The minimum and maximum years for the sequence will also be provided.\n\nWeekday names will be one of `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` or `Sunday`.\n\nThe day of the month will be an integer between `1` and `31` inclusive.\n\nMonth names will be one of `January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`.\n\nThe first and last candidate years for the sequence will be integers between `1600` and `4000` inclusive.\n\nThe returned sequence should be in chronological order, unless the first date is *after* the last date, in which case the sequence should be in reverse chronological order.\n\n## Your Solution\n\nWrite a generator function of the form\n\n```function* yieldYears(yearlessDate, firstYear, lastYear) { ... }```\n\nwhich yields the integer years (between `firstYear` and `lastYear` inclusive) that contain the date specified by `yearlessDate`. `yearlessDate` will be a string containing the space-separated triplet of weekday name string, day of month integer and month name string. For example: `\"Monday 1 January\"` and `\"Sunday 29 February\"`.",
+    "totalAttempts": 150,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 1,
+    "tags": [
+      "Language Features",
+      "Date Time",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

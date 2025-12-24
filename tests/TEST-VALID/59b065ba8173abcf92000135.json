@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59b065ba8173abcf92000135",
+  "data": {
+    "id": "59b065ba8173abcf92000135",
+    "name": "Parsing JSON leaves",
+    "slug": "parsing-json-leaves",
+    "category": "reference",
+    "publishedAt": "2017-09-06T22:05:58.225Z",
+    "approvedAt": null,
+    "languages": [
+      "crystal",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59b065ba8173abcf92000135",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-06T21:16:42.148Z",
+    "createdBy": {
+      "username": "opensas",
+      "url": "https://www.codewars.com/users/opensas"
+    },
+    "description": "Your task is to develop the json_leaves function, which takes a json string as input and returns an array with the fully qualified name of each leave followed by an equal sign and it's value.\n\nFor arrays you should use the `[0]`, `[1]`, `[2]`, `[x]` notation.\n\nExample\n\nGiven\n\n```json\n{\n  \"name\": \"john\",\n  \"age\": 22,\n  \"colors\": [\"red\", \"green\", \"blue\"],\n  \"title\": null,\n  \"validated\": true,\n  \"location\": { \n    \"lat\": 12.3, \n    \"lng\": 34.5 \n  }\n}\n```\n\nShould return the following array:\n\n```crystal\n[\n  \"name=\\\"john\\\"\", \n  \"age=22\", \n  \"colors[0]=\\\"red\\\"\", \n  \"colors[1]=\\\"green\\\"\", \n  \"colors[2]=\\\"blue\\\"\", \n  \"title=null\", \n  \"validated=true\", \n  \"location.lat=12.3\", \n  \"location.lng=34.5\"\n]\n```\n\n```javascript\n[ \n  'name=\"john\"',\n  'age=22',\n  'colors[0]=\"red\"',\n  'colors[1]=\"green\"',\n  'colors[2]=\"blue\"',\n  'title=null',\n  'validated=true',\n  'location.lat=12.3',\n  'location.lng=34.5' \n]\n```\n\nTake into account that the function should handle deeply nested objects and arrays.\n",
+    "totalAttempts": 249,
+    "totalCompleted": 22,
+    "totalStars": 5,
+    "voteScore": 51,
+    "tags": [
+      "JSON",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

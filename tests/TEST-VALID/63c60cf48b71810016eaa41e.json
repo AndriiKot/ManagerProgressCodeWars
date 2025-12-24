@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63c60cf48b71810016eaa41e",
+  "data": {
+    "id": "63c60cf48b71810016eaa41e",
+    "name": "Cardwars - Part 1: One Card Fight",
+    "slug": "cardwars-part-1-one-card-fight",
+    "category": "games",
+    "publishedAt": "2023-01-17T02:51:42.087Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63c60cf48b71810016eaa41e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-17T02:50:28.685Z",
+    "createdBy": {
+      "username": "RileyHunter",
+      "url": "https://www.codewars.com/users/RileyHunter"
+    },
+    "description": "Cardwars is a new digital trading card game.\n\nThe creator needs you to help implement some of the functionality for their game. In this Kata, you will create a function which takes two cards and returns the state of those cards at the end of a fight between them.\n\nCards have two properties; power and toughness. \nThese are represented as a list of two integers like so: `[power, toughness]`.\n\nA fight between two cards works like this:\n\n1) Each card's `toughness` is reduced by the other card's `power`\n2) If either card's toughness is equal to or below zero the fight is over. Else, repeat until it is.\n\nYou must implement the function `fight(card_a, card_b)` which accepts two cards and returns a tuple of the state of those two cards after they have fought.\n\nThere are also some special rules to consider:\n\n - A card's toughness cannot be below zero; if a card's toughness is reduced below zero it should be set to zero before being returned.\n\n - A fight may get stuck in a loop (if, for example, both cards have zero power). If a fight is in a state where it will never resolve the cards should be returned in that state.\n \n - With respect to the rule above, it is not acceptable to simply try a certain number of iterations and break out if the fight is not finished. Very long fights that will still resolve should do so.\n\n**Example fight:**\n\n```\nmy_big_rat = [1,4]\nyour_small_dog = [2,3]\nfight(my_big_rat,your_small_dog)\n```\n|Round|My \"Big Rat\" card|Your \"Small Dog\" card|\n|---|---|---|\n|Init.|`[1 , 4]`|`[2 , 3]`|\n|1|`[1 , 4-2=2]`|`[2 , 3-1=2]`|\n|2|`[1 , 2-2=0]`|`[2 , 2-1=1]`|\n|End|`[1,0]`|`[2,1]`|\nTherefore the function should return `([1,0],[2,1])`\n\n**Constraints:**\n\n- All inputs will be in a valid format\n- No card's power will be less than 0\n- No card's initial toughness will be less than 1",
+    "totalAttempts": 116,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 12,
+    "tags": [
+      "Games",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

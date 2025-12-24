@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6491cfb857507300580e5109",
+  "data": {
+    "id": "6491cfb857507300580e5109",
+    "name": "Car Number Plate Calculator  Reversed",
+    "slug": "car-number-plate-calculator-reversed",
+    "category": "algorithms",
+    "publishedAt": "2023-06-20T16:37:20.694Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6491cfb857507300580e5109",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-06-20T16:11:36.666Z",
+    "createdBy": {
+      "username": "Bazwell",
+      "url": "https://www.codewars.com/users/Bazwell"
+    },
+    "description": "This kata is based on <a href=\"https://www.codewars.com/kata/5f25f475420f1b002412bb1f/train/javascript\">Car Number Plate Calculator</a> authored by <a href=\"https://www.codewars.com/users/W_2004\">W_2004</a>\n\n<p>Here we do the reverse. You start with the license plate number and return the customer ID.</p>\n\n<h2>Introduction</h2>\n\n<p>Let’s assume that when you register a car you are assigned two numbers:</p>\n\n<ol>\n<li><p>Customer ID – number between <code>0</code> and <code>17558423</code> inclusively. It is assigned to car buyers in the following order: the first customer receives an ID of <code>0</code>, the second customer receives an ID of <code>1</code>, the third - <code>2</code>, and so on;</p>\n</li>\n<li><p>A Number Plate – 6-character combination composed of the <strong>series</strong> - three Latin lowercase letters from a to z; and the <strong>serial number</strong> - three digits from 0 to 9. <strong>Example:</strong> <code>aaa001, xyz123, tok469</code>;</p>\n</li>\n</ol>\n\n<p>Each License Plate is related to the given Customer ID. For example:</p>\n\n<p>License Plate of aaa001: <code>0</code></p>\n\n<p>License Plate of aaa022: <code>21</code></p>\n\n<p>License Plate of aaa170: <code>169</code></p>\n\n<h2>Your Task</h2>\n\nWrite a function\n\n<p><code>findCustomerID</code></p>\n\n<p>which takes the License Plate as an argument, calculates the corresponding Customer ID and returns it as an integer.</p>\n\n<h3>Rules</h3>\n\n<ol>\n<li><p>The serial number changes first. For each 3-letter series it goes through 001 to 999, such as: \n<code>aaa001, aaa002, aaa003, ......, aaa998, aaa999</code></p>\n</li>\n<li><p>The leftmost letter in the series switches alphabetically each time after the serial number has moved through 001 to 999 inclusively;</p>\n<pre><code>aaa001...aaa999\n</code></pre>\n<p><em>at this point the leftmost letter will switch alphabetically, while the serial number repeats the same cycle again;</em></p>\n<pre><code>baa001...baa999,\n...... ,\nzaa001...zaa999\n</code></pre>\n</li>\n<li><p>The middle letter switches alphabetically each time after the leftmost letter has moved through a to z and the <strong>z**</strong> series has moved through 001 to 999.</p>\n<pre><code>zaa001...zaa999\n</code></pre>\n<p><em>at this point the middle letter will switch alphabetically, while the leftmost letter and the serial number repeat the same cycle again;</em></p>\n<pre><code>aba001...aba999,\nbba001...bba999,\n......,\nzza001...zza999\n</code></pre>\n</li>\n<li><p>The rightmost letter switches alphabetically each time after the middle letter has moved through a to z and the <strong>zz*</strong> series has moved through 001 to 999.</p>\n<pre><code>zza001...zza999\n</code></pre>\n<p><em>at this point the rightmost letter will switch alphabetically, while the middle letter, the leftmost letter, and the serial number repeat the same cycle again;</em></p>\n<pre><code>aab001...aab999,\nbab001...bab999,\n......,\nzab001...zab999,\nabb001...abb999,\nbbb001...bbb999,\n......,\nzbb001...zbb999,\nacb001...acb999,\n......, \nzzz001...zzz999\n</code></pre>\n</li>\n</ol>\n\n<h3>Good luck!</h3>\n",
+    "totalAttempts": 40,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

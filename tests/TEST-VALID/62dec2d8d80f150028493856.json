@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62dec2d8d80f150028493856",
+  "data": {
+    "id": "62dec2d8d80f150028493856",
+    "name": "Creating the Ranking List - Dice Roll Competition ",
+    "slug": "creating-the-ranking-list-dice-roll-competition",
+    "category": "algorithms",
+    "publishedAt": "2022-07-26T12:04:47.479Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/62dec2d8d80f150028493856",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-25T16:20:40.887Z",
+    "createdBy": {
+      "username": "FlyingCheburek",
+      "url": "https://www.codewars.com/users/FlyingCheburek"
+    },
+    "description": "To solve this Kata, you must create a ranking list of all participants, based on their scores.  Each player will bet on only one number between 1 and 6, and will score 1 point if the die result matches their bet.  There is no maximum limit for both the number of players and the number of dice rolls.  That way, the function you created should return an array containing the players IDs in their respective ranks, from the highest to the lowest according to their scores. The ID code of each player will be assigned according to their array key (position). \n\n======================================\n\n # EXAMPLE \n \nArrays provided --> players_bet[  ] = {1,4,6,5};\n\n//player 0's bet is 1, because players_bet[0] = 1 \n\n//player 1's bet is 4, because players_bet[1] = 4 \n\n//and so on...\n\nrolls [  ] = {1,1,6,6,4,6};   \n\nExpected result --> {2,0,1,3}; \n\n//player 2's place = [0], score: 3\n\n//player 0's place = [1], score: 2 \n\n//player 1's place = [2], score: 1 \n\n//player 3's place = [3], score: 0  \n\n\n======================================\n\n# ESPECIAL CASES \n\n1. If there is no player, your function should return an empty array. \n\n\n2. If two or more players have the same score, the player with the lowest ID value must be moved forward in the ranking list. For example: \n\nArrays provided --> players_bet [  ] = {1,1,4,4,6,5};\n\nrolls [  ] = {4,4,4,1,1,1,5,5,5};\n\nExpected result --> {0,1,2,3,5,4};\n\n\n====================================== \n\nAnd that's it, hope you'll enjoy :)\n\n\n\n\n\n",
+    "totalAttempts": 73,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 25,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

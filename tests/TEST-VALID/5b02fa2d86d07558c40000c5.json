@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b02fa2d86d07558c40000c5",
+  "data": {
+    "id": "5b02fa2d86d07558c40000c5",
+    "name": "Pythagorean Triples",
+    "slug": "pythagorean-triples-3",
+    "category": "algorithms",
+    "publishedAt": "2018-05-21T17:33:03.026Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b02fa2d86d07558c40000c5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-05-21T16:56:13.070Z",
+    "createdBy": {
+      "username": "MichaelSel",
+      "url": "https://www.codewars.com/users/MichaelSel"
+    },
+    "description": "The pythagorean theorm has the form a^2+b^2=c^2\n\nWrite the function <b>pytrip</b> that gets an <i>integer</i> (num) representing the side of a triangle(could be the short or the long side) and returns all the possible primitive right triangles (Pythagorean Triples) with a side of length <i>num</i> as <i>arrays</i>.\n\nPrimitive right triangles have no common divisors. \n\nFor instance, for the input 12 we can create 2 right triangles with one of the sides equal to 12:\n\n1) 12, 5, 13 <code>(12^2 + 5^2 = 13^2)</code> <br>\n2) 12, 35, 37 <code>(12^2 + 35^2 = 37^2)</code><br>\n<br><br>\n\nNote: <code>12, 16, 20 (12^2 + 16^2 = 20^2)</code> isn't legal because 12, 16, and 20 have a common divisor (2)<br>\n\n<br><br>\nThe function should return all trangles in the form of [side,side,hypotenuse]<br>\nSo, for the input 12, return:\n<pre><code>[\n  [5,12,13], // Smallest triangle: triangle with sides 5 and 12 and hypotanuse 13\n  [12,35,37] // Largest triangle: triangle with sides 12 and 35 and hypotanuse 37\n]</code></pre>\n\n\nNotice, each triangle should be in the form of [smallest side, larger side, hypotenuse]\nAnd every triangle within the array should be sorted by the size of the triangle (size of the hypotenuse) from smallest to largest  (see example above)\n\n\n<br><br>\n\nAlso notice, all triangles must be made out of integers. \n\n\n",
+    "totalAttempts": 156,
+    "totalCompleted": 20,
+    "totalStars": 2,
+    "voteScore": 11,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

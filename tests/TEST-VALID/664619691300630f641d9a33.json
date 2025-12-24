@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/664619691300630f641d9a33",
+  "data": {
+    "id": "664619691300630f641d9a33",
+    "name": "Mondrian regions",
+    "slug": "mondrian-regions",
+    "category": "algorithms",
+    "publishedAt": "2024-05-17T11:30:13.241Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/664619691300630f641d9a33",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-16T14:34:18.035Z",
+    "createdBy": {
+      "username": "mario.gg",
+      "url": "https://www.codewars.com/users/mario.gg"
+    },
+    "description": "My friend Theo is a renowned art collector. He has many works in his collection in very different styles. Some of them are abstract paintings by Piet Mondrian, who is well known for the very recognizable minimalist and geometric style of his most famous works.\n\n![A Mondrian painting](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoBAMAAACIy3zmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURf7+/od/gwYDBdAGBVI8RX+Ae5ycnPvJCn6DhBAxs6YdO78AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQrSURBVHja7d3BbtpAFIVhE5GIZSMh2mU1QJtuMQ+QOEmr7JoKVJZNVFldR1V5gVJ5HWXjt+1gAjHUcz3EZmqT/+wSbswnC1/jyYztJWko1fWNGSr11ltGqZ5nyKFS37z8HCg1zc+dUqfydvYQPQANes8+06BBgwa9V+hD0KBBVx09AA0aNGjQoEGDBg0aNOgKoGs5Pt0CDRo06B2gh6BBg3aBdv0/l68F0RfzBConvYtl1n5YT2B+aaNM1+W9pbQxT9UwoF0FdOkxHK2rlteLjXlYb3lSLFveuZ8b/S3ts7wd3WE/VA99WgQdl472d49+qCa6UUd0Lfd0CzRo0KBBgwYN2iHa9ffpohcB43lG+nJLJQMx/2QxrNKfjR8joy/H+fliNaaj37Vv2gJX464C2lXqiQ7DsBO2lXoXGqNf7Y+SQ3o80t2j9yezqtPRdWdhbjq6e0x+hOFNtJGZ5gTp7vHx5k32JhZ9r5XuxFld/P1qsFseVH9l16cz2/nR2sni3uaMCFrMwXIEcSPbohuloJvWp/Fq7WnQoIU60KCFOtCghTrQoIU60KCFOtCghTrQoIU60KCFOtCghTrQoIU60KCFOtCghTrQoIU60KCFOkfoZPpVW6kT8/Su0cbSPkPZbGQ9Wyzz97/1pufbX63/O7u+zt4C04FcBbSr1BOdzEYd5rW8p1cDseVZLFOe3lp1xgNhgfXWaFUYfWeLPneE/uQQ7b/cPd10u6dr+fGoJroLGvTLQvsvF92s4xmxyZ4GTfcQ0VU6EG+Lo4ePQyPC4pzv6Vc1WqizHKyxQ28sAFyA/999mOzQxoC2DmhXKYpOcqT7g7lH/dQH8qrd6L+5ip+fh6v5yLMdOuc+TK30sHkWulsWOo5LQx9uhY4dofP/fVE/NHsaNGjQoEGDBg0aNGjQoHeCboAGDRo0aNCgQTtE8y0PNGjQoEGDBg0aNGjQoHeC5sIWtJDtJhO6Qpvn5SVTmkfi00qeHikbJIvdi6MvrWZZG6ueM9e0OLpgQIPeW7T9kpFdtbyjdGf1g9qgU2uIBqBBgwYNGjRo0KBBgwYNGjRo0KBBgwYNGjRo0KBBgwYNGjRo0KBBgwYNGjRo0KBBO0IXvMFwUN6s3joFtKuAdhVv+VDMnBVFvdTjM13FCFp0m60eVKr8YhlYdfp7m1Vy9UO3QIMGDRo0aNCg7dBXZaAboPPRsXv0eTXQuZ/p1e0dfhVHB1Yfj0BCR9FsMmkrdRJF0XFWOtft1MXYpRKvzGwSWG1Bv8/ZZJJ5/4ZjrsZdBbSrWN5Jpf94DESRrjTd4eTC7kmUI6sjOZDupLLs011zjxquD/VKDyq1uBnN/G40r6e5ubM5uThFT0GDBg0a9FboFmjQ5nAgggYNGjRo0KBBgwYNGjRo0KBBM8IEGjTodGh5u0Z73l+AAfog4n+hsAAAAABJRU5ErkJggg==)\n\nTheo has recently decided to put several Mondrian paintings up for auction, but he doesn't know what starting price he should put on each painting.\n\nHe had the brilliant idea that the value of each painting will depend on the number of color regions it has. But Theo is a bit lazy, so he has commissioned me to create a program that can analyze a painting and automatically determine the number of color regions that make it up.\n\n## Task\n\nYour task is to write a function that is passed a picture to analyze in the form of a two-dimensional array, and you have to return the number of color regions it has.\n\nSome notes about the input:\n\n * The passed in picture **will always be valid** (i.e. no `null`/`nil`/whatever).\n\n * The passed in picture can however be **of any size**, even 0x0, so take that into account\n   (blame Theo, he is not very good at preparing his own data).\n   Obviously for a 0x0 picture there will be 0 regions, as there is no picture to analyze!\n\n * The data for the painting to analyze has been simplified by a very powerful AI to just\n   integer values. You're not forced to interpret colors or anything complicated. **You just\n   need to compare numbers**.\n\n * Some of the pictures may not be true Mondrian paintings, as they seems to be simple\n   solid color rectangles. So **don't assume picture size correlates with region count**.\n\n * A picture may have several non-contiguous blocks with the same value. This is equivalent\n   to the Mondrian painting having several areas painted with the same color. You should\n   count each of these blocks as an individual region. \n\n * The colored blocks **are rectangular**. If you find an oddly shaped blob that is not\n   rectangular, _maybe_ it is composed of more than one adjacent rectangular regions.\n\nThe output should be just a **positive (obviously) number indicating how many colored\nregions the painting has**. More specifically, what's the minimum amount of rectangles required to fill the entire picture, where each rectangle consists of only one color.\n\nFor example, this is one of the paintings Theo has sent us:\n\n```\n 9   6\n 4  14\n```\n\nIt is a simple 2x2 painting with just 4 color regions, so the function **should return 4** for this painting.\n\nAnother painting from Theo's collection:\n\n```\n 1  1  1  0\n 1  1  2  2\n 3  3  1  1\n```\n\nIn this one there are 6 regions. That stray `1` in the 1st row, 3rd column is a single 1x1\nregion, as it can't be part of any contiguous rectangle, even if it is adjacent to another\nregion colored also with `1`.\n\n-----------------------------------------------------\n\n## A bit of history\n\n[Piet Mondrian](https://en.wikipedia.org/wiki/Piet_Mondrian) was a Dutch painter and art theoretician who is regarded as one of the greatest artists of the 20th century. He is known for being one of the pioneers of 20th-century abstract art, as he changed his artistic direction from figurative painting to an increasingly abstract style, until he reached a point where his artistic vocabulary was reduced to simple geometric elements.\n",
+    "totalAttempts": 143,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 20,
+    "tags": [
+      "Algorithms",
+      "Matrix",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

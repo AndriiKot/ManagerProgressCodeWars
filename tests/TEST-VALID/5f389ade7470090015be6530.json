@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f389ade7470090015be6530",
+  "data": {
+    "id": "5f389ade7470090015be6530",
+    "name": "Manage Video Conference Tiles",
+    "slug": "manage-video-conference-tiles",
+    "category": "algorithms",
+    "publishedAt": "2020-08-16T02:52:19.362Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5f389ade7470090015be6530",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-16T02:33:02.152Z",
+    "createdBy": {
+      "username": "Berkyle",
+      "url": "https://www.codewars.com/users/Berkyle"
+    },
+    "description": "## Introduction\n\nThe tech company you work for has asked everyone to work from home. To facilitate communication, the company's executives decided to create an internal video conferencing solution. The exciting part is you have been tasked with creating it!\n\n## Explanation\n\nThe conference may have an unlimited number of participants, but you only have so much space on the screen so you must limit the number of video tiles, where each tile is a participant's video stream. Your goal is to write a function that manages the video conference's user interface. This function will be given a list of participants in the video conference and determine which of them should be visible, based on their voice activity. Your solution must determine which participants to show on the screen and in what order. \n\nRequirements:\n1. Create a function `orderParticipantTiles` that accepts a list of currently visible participants, a set of participant activity scores, and a maximum number of visible participants. This function then returns the new list of visible participants.\n2. The maximum number of participants will be an integer greater than or equal to 2, depending on the size of the user's device.\n3. The list of currently visible participants is passed to your function because you must ensure that the participants stay in the same position (index) between function calls if they are active during both invocations. To put things simply, the last return value of your function would be the next list of currently visible participants.\n   - In practice, this function would be called several times per second.\n4. When a visible participant is no longer speaking, their spot will be taken by the most active participant not yet shown, so long as that participant has a higher voice activity score.\n5. If two participants have the same score and both are eligible for a spot in the list of visible participants, and neither exist yet in the list of visible participants, their order will be determined by alphabetizing their identifier (Anna will have greater priority than Zachary).\n6. You are guaranteed that all participants have a unique identifier, represented as a string.\n7. Your company decided the self-view tile will always be displayed, so the current user won't be part of the function input.\n\n## Example\n\nYou are video chatting with your coworkers - Abraham, Brittany, and Candace. Because the self-view tile is always displayed, you won't be part of the function input. You are video chatting on a small device and the maximum number of visible participants is 2.\n\nYour solution starts with the following invocation:\n\n```javascript\norderParticipantTiles(\n  [],\n  { Abraham: 0.445, Brittany: 0.600, Candace: 0.000 },\n  2,\n);\n// return value: ['Brittany', 'Abraham']\n```\n\nThere are three total participants and only two can be displayed, and Brittany and Abraham are the most active in the call, and therefore will be the two visible participants. The order matters here - because both Brittany and Abraham were added, and neither were in the previous list, Brittany will be first (index 0) because she is more active in the conference.\n\nYour solution is called just as Candace and Abraham both start to speak at once:\n```javascript\norderParticipantTiles(\n  ['Brittany', 'Abraham'],\n  { Abraham: 0.600, Brittany: 0.100, Candace: 0.400 },\n  2,\n);\n// return value: ['Candace', 'Abraham']\n```\n\nBrittany is no longer one of the two most active speakers so she will not be visible. Candace is less active than Abraham (`0.400 < 0.600`) but Candace will still take the first spot because we don't want to move Abraham while he is already visible.\n\nFinally, your coworkers all mute their microphones so the third invocation goes like this:\n\n```javascript\norderParticipantTiles(\n  ['Candace', 'Abraham'],\n  { Abraham: 0.0, Brittany: 0.0, Candace: 0.00 },\n  2,\n);\n// return value: ['Candace', 'Abraham']\n```\n\nCandace and Abraham remain visible because nobody is more active than them and they have existing spots on the list of current visible participants.\n",
+    "totalAttempts": 31,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

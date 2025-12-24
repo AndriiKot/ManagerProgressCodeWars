@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb71c5981e686000105ad61",
+  "data": {
+    "id": "5eb71c5981e686000105ad61",
+    "name": "Resolving the Goldbach conjecture! (Part 2)",
+    "slug": "resolving-the-goldbach-conjecture-part-2",
+    "category": "bug_fixes",
+    "publishedAt": "2020-05-09T21:10:49.309Z",
+    "approvedAt": null,
+    "languages": [
+      "lean"
+    ],
+    "url": "https://www.codewars.com/kata/5eb71c5981e686000105ad61",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-09T21:11:07.454Z",
+    "createdBy": {
+      "username": "b-mehta",
+      "url": "https://www.codewars.com/users/b-mehta"
+    },
+    "description": "It seems like the [original kata](https://www.codewars.com/kata/5eb718d0e7c54e001a6e03b8) had a mistake... \n\nHere's a statement of the Goldbach conjecture says:\n\n```lean\ndef goldbach : Prop := ∀ n, even n → 2 ≤ n → ∃ p q, prime p ∧ prime q ∧ p + q = n\n```\n\nIt turns out this version can actually be proved!\n\nThe `Preloaded.lean` file is empty, and the test case is\n```\nimport Solution\n\nopen nat\n\ntheorem submission : ∀ n, even n → 2 ≤ n → ∃ p q, prime p ∧ prime q ∧ p + q = n := \ngoldbach_proof\n\n#print axioms submission\n```\n\nWithout a mathematical breakthrough, why is this still provable? ",
+    "totalAttempts": 16,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Debugging"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

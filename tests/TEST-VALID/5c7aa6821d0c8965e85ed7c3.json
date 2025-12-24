@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c7aa6821d0c8965e85ed7c3",
+  "data": {
+    "id": "5c7aa6821d0c8965e85ed7c3",
+    "name": "Create a Bridge",
+    "slug": "create-a-bridge",
+    "category": "games",
+    "publishedAt": "2019-03-02T15:52:59.940Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5c7aa6821d0c8965e85ed7c3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-02T15:51:31.010Z",
+    "createdBy": {
+      "username": "Anton Kolosok",
+      "url": "https://www.codewars.com/users/Anton%20Kolosok"
+    },
+    "description": "The game \"Create a Bridge\" is a step-by-step game for two players. The goal of the game is to be the first player to create a bridge from one side to another. Its not possible to make a draw so either first or second player win. Players can create parts of the bridge only horizontally or vertically on points of their chosen color. It's not possible to create diagonally. It's also not possible to cross over another player's part of the bridge.\n\n![alt text](https://i.imgur.com/ghWsg2S.png)\n\n\n\nThe game field is numbered. \n\n![alt text](https://i.imgur.com/ZH5Pcec.png)\n\n\nThe input is the resulted field of the ended game(so either first or second player wins) in the form of an array. The values of array elements: 1, 2, or 0. Where \n1 represents the bridge part of player 1 (Red).\n2 represents the bridge part of player 2 (Blue). \n0 represents an empty cell.\n`Exp:`\n\n     0, 1, 2, 0, 1,\n      0, 1, 2, 1,\n     2, 2, 1, 2, 0,\n      0, 1, 1, 2,\n     0, 1, 2, 0, 2,\n      0, 0, 0, 0,\n     0, 1, 0, 0, 0,\n      0, 2, 0, 0,\n     0, 1, 0, 0, 0\n     \n![alt text](https://i.imgur.com/PJfkNq2.png)\n\n\n\nThe output should be the array int[] like: 1, 1, 6, 11, 15, 19, 28, 37, in which the first number is the player number whose succeeded to make bridge first, and the other numbers are the shortest victorious path. If several shortest paths are possible, the output can be any of them.\n\n![alt text](https://i.imgur.com/T3VveQp.png)",
+    "totalAttempts": 79,
+    "totalCompleted": 8,
+    "totalStars": 10,
+    "voteScore": 11,
+    "tags": [
+      "Games",
+      "Algorithms",
+      "Arrays",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

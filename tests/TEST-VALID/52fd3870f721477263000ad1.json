@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52fd3870f721477263000ad1",
+  "data": {
+    "id": "52fd3870f721477263000ad1",
+    "name": "Burrows-Wheeler Transform",
+    "slug": "burrows-wheeler-transform",
+    "category": "algorithms",
+    "publishedAt": "2014-02-13T22:55:00.222Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/52fd3870f721477263000ad1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-13T21:26:08.157Z",
+    "createdBy": {
+      "username": "osuushi",
+      "url": "https://www.codewars.com/users/osuushi"
+    },
+    "description": "The Burrows-Wheeler transform is the transform used by bzip to make text easier to compress. It tends to form long runs of the same character.\n\nYou can assume the input string will be terminated by a special character \"|\", which will not appear elsewhere in the string.\n\nTo perform the transform, you create a table whose rows are every rotation of the input string, including the termination character. So for the input string \"tutu|\", then the table would be like this:\n\n    tutu|\n    |tutu\n    u|tut\n    tu|tu\n    utu|t\n    \n    \nYou then sort these rows:\n\n    tutu|\n    tu|tu\n    utu|t\n    u|tut\n    |tutu\n\nFinally you take the last column, and that is your output string:\n  \n    |uttu\n\nYour task is to implement this simplified version of the forward transform function `bwt`. You can assume that the input is valid and terminated properly.\n\nAll of the input strings tested are relatively short, so you are not required to provide a particularly well optimized solution.\n\nThe inverse transform `ibwt` is preloaded for your testing purposes.",
+    "totalAttempts": 57,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 18,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

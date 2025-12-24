@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bf6a23af8c527c2f0001d94",
+  "data": {
+    "id": "5bf6a23af8c527c2f0001d94",
+    "name": "Find The Rabbit",
+    "slug": "find-the-rabbit",
+    "category": "algorithms",
+    "publishedAt": "2018-11-22T12:34:02.435Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5bf6a23af8c527c2f0001d94",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-22T12:34:24.236Z",
+    "createdBy": {
+      "username": "madmonl",
+      "url": "https://www.codewars.com/users/madmonl"
+    },
+    "description": "From the Zoo of Rabbitland, a rebelious rabbit has escaped. \n\nCan you help the zoo keepers find him?\n\nWrite a function that recieves an Object -  world, and searches  for the rabbit.\n\nworld Object has just 1 key - pointing at the index where the rabit is at. \n\nExample:\n\n```\nworld = {\n  \"352\": \"Rabbit\"\n}\n```\n\nsearch(world) shoult return the number 352.\n\n```\nworld = {\n  \"-12\": \"Rabbit\"\n}\nworld[\"-12\"] === \"Rabbit\" // True\nworld[\"8\"] // undefined\n```\n\nsearch(world) shoult return the number -12.\n\n* All indexes are whole numbers.\n\n* You can assume index is an integer between minus Infinity to Infinity\n\n* notice: world is a proxy, meaning Object.keys(world) returns [], but world[352] may return \"Rabbit\" - hence: don't try and solve this kata with recieving the single world key",
+    "totalAttempts": 119,
+    "totalCompleted": 35,
+    "totalStars": 0,
+    "voteScore": 18,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c693ac5a425fc7afee20637",
+  "data": {
+    "id": "5c693ac5a425fc7afee20637",
+    "name": "Arithmetic function plotter",
+    "slug": "arithmetic-function-plotter",
+    "category": "reference",
+    "publishedAt": "2019-02-17T12:03:15.651Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c693ac5a425fc7afee20637",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-17T10:43:17.098Z",
+    "createdBy": {
+      "username": "ivosdc",
+      "url": "https://www.codewars.com/users/ivosdc"
+    },
+    "description": "# John's calculator has no function-plotter.\n\nTo get a better knowledge about arithmetic functions it is good to see a graph, not only numbers.\n\n\n---\n\n\nCan you help John to write an ASCII-plotter for arithmetic functions?\n\nGive every possible x-value in the matrix a dot (+).\n\n---\n\n\nHe want to call a function like:\n\n\n`plot(\"x * x + 0.5 * x - 1\", 0, 0.1, 10);`\n\nThis means `f(x) = x * x + 0.5 * x - 1; (x: 0) (step: 0.1)  (range: +-10)`\n\n`range = 10` means that you look at 10 positions before and 10 positions after `x`, stepping by `0.1`.\nYour coordinates will go in this example from  -1 to 1.\n\n\n- If zero in the coordinates is no value from the function it will be printed as `0`.\n- A value is a `+`.\n- No value is a `.`.\n- `y = 0` is a `|`.\n- `x = 0` is a `-`.\n\nThis will create an array of strings:\n```javascript\n[ '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|.........+',\n  '..........|..........',\n  '..........|........+.',\n  '..........|..........',\n  '..........|..........',\n  '----------0-------+--',\n  '..........|..........',\n  '..........|......+...',\n  '..........|.....+....',\n  '..........|..........',\n  '+.........|....+.....',\n  '.+........|...+......',\n  '..........|..........',\n  '..+.......|..+.......',\n  '...++.....|++........',\n  '.....++..++..........' ]\n\n\nExample 2:   \nf(x) = x * x * x;  (x: 0)  (step: 0.1)  (range: 5)\n\n[ '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|...++',\n  '--+++++++--',\n  '++...|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....' ]\n  \nExample 3:\nf(x) = x * x * x - 0.6 * x; (x: 0.5)  (step: 0.1)  (range: -0.5 / 1.5)\n\nNotice the display is centered to `x = 0.5`\n\n[ '.....|...............',\n  '.....|............+..',\n  '.....|...............',\n  '.....|...............',\n  '.....|...............',\n  '.....|...........+...',\n  '.....|...............',\n  '.....|...............',\n  '.....|..........+....',\n  '.....|...............',\n  '.....|...............',\n  '.....|.........+.....',\n  '.....|...............',\n  '+++..|........+......',\n  '...++|...............',\n  '-----+-------+-------',\n  '.....|++...++........',\n  '.....|..+++..........',\n  '.....|...............',\n  '.....|...............',\n  '.....|...............' ]\n\n```\n```typescript\n[ '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|..........',\n  '..........|.........+',\n  '..........|..........',\n  '..........|........+.',\n  '..........|..........',\n  '..........|..........',\n  '----------0-------+--',\n  '..........|..........',\n  '..........|......+...',\n  '..........|.....+....',\n  '..........|..........',\n  '+.........|....+.....',\n  '.+........|...+......',\n  '..........|..........',\n  '..+.......|..+.......',\n  '...++.....|++........',\n  '.....++..++..........' ]\n\n\nExample 2:   \nf(x) = x * x * x;  (x: 0)  (step: 0.1)  (range: 5)\n\n[ '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|...++',\n  '--+++++++--',\n  '++...|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....',\n  '.....|.....' ]\n  \nExample 3:\nf(x) = x * x * x - 0.6 * x; (x: 0.5)  (step: 0.1)  (range: -0.5 / 1.5)\n\nNotice the display is centered to `x = 0.5`\n\n[ '.....|...............',\n  '.....|............+..',\n  '.....|...............',\n  '.....|...............',\n  '.....|...............',\n  '.....|...........+...',\n  '.....|...............',\n  '.....|...............',\n  '.....|..........+....',\n  '.....|...............',\n  '.....|...............',\n  '.....|.........+.....',\n  '.....|...............',\n  '+++..|........+......',\n  '...++|...............',\n  '-----+-------+-------',\n  '.....|++...++........',\n  '.....|..+++..........',\n  '.....|...............',\n  '.....|...............',\n  '.....|...............' ]\n\n```",
+    "totalAttempts": 223,
+    "totalCompleted": 11,
+    "totalStars": 4,
+    "voteScore": 2,
+    "tags": [
+      "Arrays",
+      "Strings",
+      "ASCII Art",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 4
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

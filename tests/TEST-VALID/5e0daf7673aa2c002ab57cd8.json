@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e0daf7673aa2c002ab57cd8",
+  "data": {
+    "id": "5e0daf7673aa2c002ab57cd8",
+    "name": "Create an Evaluator Function Creator",
+    "slug": "create-an-evaluator-function-creator",
+    "category": "algorithms",
+    "publishedAt": "2020-01-02T10:05:33.336Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e0daf7673aa2c002ab57cd8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-02T08:53:10.320Z",
+    "createdBy": {
+      "username": "dmercertaylor",
+      "url": "https://www.codewars.com/users/dmercertaylor"
+    },
+    "description": "In this kata, you must write a function which takes an expression (as a string), and returns a function which will evaluate a set of values based on that expression, returning a number. The expression string will us `$N` to denote which number should be filled in in the expression, where N is the argument's index (starting at one). Expressions may also contain plain numbers, which should be interpreted as numbers and not filled in with values at all. Constants may include decimal values.\n\nEx: `createEvaluator(\"$1 + $2\")(2, 3) == 5`\n\nWhile `N` will never be negative, constant values might be. Patterns such as `1 + -$1` will not be tested.\n\nExpressions should follow the correct order of operations, evaluating parentheses, then multiplication/division, then addition/subtraction from left to right. Whitespace should be ignored.\n\nAll inputs to createEvaluator will use valid syntax. If the returned function is passed too many arguments, the excess should be ignored. If passed too few, then `$N` should wrap to the first argument again. For these tests, -0 is equivalent to 0.\n\nEx: `createEvaluator(\"$1 + $2 + $3\")(2) == 6`\n\nExtra examples:\n```\ncreateEvaluator(\"3 + 2\")() == 5\ncreateEvaluator(\"$1 + $2 * 3\")(3, 2) == 9\ncreateEvaluator(\"(2.5 + $1) * $2\")(1, -2) == -7\ncreateEvaluator(\"($1 --2) + $1\")(2) == 6\n```",
+    "totalAttempts": 164,
+    "totalCompleted": 25,
+    "totalStars": 0,
+    "voteScore": 17,
+    "tags": [
+      "Strings",
+      "Parsing",
+      "Recursion",
+      "Functional Programming",
+      "Reactive Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

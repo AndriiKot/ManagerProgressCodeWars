@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646d2c50373e1d003cb25b1d",
+  "data": {
+    "id": "646d2c50373e1d003cb25b1d",
+    "name": "Equivalent Arithmetic Expressions",
+    "slug": "equivalent-arithmetic-expressions",
+    "category": "algorithms",
+    "publishedAt": "2023-05-25T14:52:50.454Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/646d2c50373e1d003cb25b1d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-23T21:12:48.528Z",
+    "createdBy": {
+      "username": "brodiemark",
+      "url": "https://www.codewars.com/users/brodiemark"
+    },
+    "description": "### Background\n\nProfessor Jerry Attrick tests his students' understanding of order of operations in an unusual way - he gives them arithmetic expressions, and they have to change the operators while keeping the value the same. For example, 1+2\\*3-4\\*5 evaluates to -13, as does 1-2-3-4-5. To make grading easy, he needs a quick way to check how many correct expressions each student finds.\n\nThe order of operations is the usual one: multiplication and division are done first, then addition and subtraction. Any repeated operator is executed left-to-right. So, 1+2\\*3-4\\*5 = 1+(2\\*3)-(4\\*5) = 1+6-20 = -13. Meanwhile 1-2-3-4-5 = (1-2)-3-4-5 = -1-3-4-5 = (-1-3)-4-5 = -4-4-5 = -13.\n\n### Task\n\nWrite a function that takes a string representing an arithmetic expression and returns a list of other arithmetic expressions containing the same numbers in the same order which evaluate to the same value as the given expression. The list should be sorted lexicographically by operator order, as explained in (3) below.\n\n### Details\n\n(1) Expressions contain only positive integers and the operators multiplication, division, addition and subtraction, in infix format.  Since the integers are positive, there is no need to worry about division by 0. Division means real division. Operators are binary (no unary negative). There will always be at least one operator.   \n\n(2) The given expression can be modified only by replacing one or more of the operators by one of the other operators. Consider 1/1+3, which evaluates to 4. The / can be replaced by \\* or + or - while the + can be replaced by \\* or / or - . This generates the following expressions  to be considered: \n\n1\\*1\\*3,  1\\*1/3,  1\\*1+3 , ........... , 1-1/3,  1-1+3,  1-1-3\n\nThere are 15 of them, since the original expression is not included. The only ones that also evaluate to 4 are 1\\*1+3 and 1+1\\*3.\n\n(3) The returned list should be sorted lexicographically by operator order - all expressions whose first operator is \\* should come first, followed by all expressions whose first operator is / , followed by all expressions whose first operator is + , and finally the expressions whose first operator is - . In this example 1\\*1+3 comes before 1+1\\*3. \n\nExpressions with the same first operator should be sorted by their second operator in the same way, and so on. For example, *a+b-c\\*d* comes before *a+b-c/d*, because their first two operators are the same and its third operator \\* comes before the other expression's third operator / . \n\n### Examples\n\n\"1+2\\*3\" should return  [ ]\n\n\"1+2\\*3-4\\*5\" should return [\"1-2-3-4-5\"]\n\n\"1/1+3\" should return [\"1\\*1+3\", \"1+1\\*3\"]\n\n\"5+8+4\\*3\\/5-4-4\" should return [\"5+8/4-3/5+4\\/4\", \"5+8+4-3/5\\*4\\*4\", \"5+8-4\\*3/5\\*4+4\", \"5+8-4+3/5\\*4-4\", \"5+8-4-3/5-4/4\", \"5-8+4\\*3/5+4+4\", \"5-8+4+3/5\\*4+4\"]\n\n\n\n",
+    "totalAttempts": 21,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Sorting",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

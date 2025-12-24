@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57848b5785078154c9000376",
+  "data": {
+    "id": "57848b5785078154c9000376",
+    "name": "Slugs for snails with puppydog tails",
+    "slug": "slugs-for-snails-with-puppydog-tails",
+    "category": "reference",
+    "publishedAt": "2016-07-12T06:17:20.271Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57848b5785078154c9000376",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-12T06:16:55.795Z",
+    "createdBy": {
+      "username": "sheriffderek",
+      "url": "https://www.codewars.com/users/sheriffderek"
+    },
+    "description": "While building a Content Management Admin panel for a project, you realize you're going to need some unique URLs for each collection of content. Pages, posts, projects, and items will need to have a browser friendly URL. The common name for a string like this, is a \"slug.\" Slugs historically have non-word charicters stripped out - and spaces or double --'s are swapped with single dashes. They are also lowercased. <em>site.com/projects/project-name</em>\n\nYou can take the title of each piece of content and return a slug.\n\nOne way to do this, is with \"Regular expressions\" and the replace() method. Here are some regex you may need to use.\n\n.replace(/\\s+/g, '-')           // Replace spaces with -<br>\n.replace(/[^\\w\\-]+/g, '')       // Remove all non-word chars<br>\n.replace(/\\-\\-+/g, '-')         // Replace multiple - with single -<br>\n.replace(/-+$/, '');            // Trim - from end of text<br>\n\nYou never know what the admin is going to type into the title field, so this needs to deal with pretty much every scenario. They may forget to even put something in the input field, in which case - return the message \"You must input something from which to build a slug.\"",
+    "totalAttempts": 58,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

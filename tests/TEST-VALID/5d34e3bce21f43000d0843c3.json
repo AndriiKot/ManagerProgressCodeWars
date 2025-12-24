@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d34e3bce21f43000d0843c3",
+  "data": {
+    "id": "5d34e3bce21f43000d0843c3",
+    "name": "Merge by Inset",
+    "slug": "merge-by-inset",
+    "category": "algorithms",
+    "publishedAt": "2019-07-21T22:21:53.411Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d34e3bce21f43000d0843c3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-21T22:14:20.867Z",
+    "createdBy": {
+      "username": "lhguerra",
+      "url": "https://www.codewars.com/users/lhguerra"
+    },
+    "description": "Given a primary and a secondary list, merge them with an inset telling how many items of the primary list should be added before adding one of the secondary list.\n\nSo lets say, given the lists `['a', 'b', 'c', 'd']` and `[1, 2]` and the inset value `2`, the merged list should be equal to `['a', 'b', 1, 'c', 'd', 2]`.\n\nBut there are some other rules:\n\n1) Primary list is very important, and if the secondary list runs out of items, we keep adding primary list's items. So if primary list is `['a', 'b', 'c', 'd', 'e']`, secondary list is `[1]` and inset is `2`, the expected result should be `['a', 'b'. 1, 'c', 'd', 'e']`.\n\n2) Secondary list is not so important, and we never want to see two items of it together. If primary list is `['a', 'b', 'c', 'd']`, secondary list is `[1, 2, 3, 4]` and inset is 2, we expect `['a', 'b', 1, 'c', 'd', 2]`.\n\n3) If primary list is empty, the result should also be an empty list.",
+    "totalAttempts": 16,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": -7,
+    "tags": [
+      "Algorithms",
+      "Lists",
+      "Data Structures",
+      "Arrays",
+      "Data Types",
+      "Sorting",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

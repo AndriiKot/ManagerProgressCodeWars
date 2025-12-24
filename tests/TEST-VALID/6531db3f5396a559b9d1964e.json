@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6531db3f5396a559b9d1964e",
+  "data": {
+    "id": "6531db3f5396a559b9d1964e",
+    "name": "The Hitchhiker’s Guide To The Crazy Message Table",
+    "slug": "the-hitchhikers-guide-to-the-crazy-message-table",
+    "category": "reference",
+    "publishedAt": "2023-10-20T07:53:24.821Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/6531db3f5396a559b9d1964e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-20T01:43:27.945Z",
+    "createdBy": {
+      "username": "christian.packenius",
+      "url": "https://www.codewars.com/users/christian.packenius"
+    },
+    "description": "My best friend Arthur Dent and I have a crazy way\nof writing messages of any kind to each other: Instead of words,\nour e-mails and WhatsApp messages only contain\nnumbers.\n\nLast night, for example, I received the following (extremely short)\nmessage from him, when I asked him which movie we would like to see at our\nnext movie night:\n\n```text\n2 0 50 99 92 55 3 1\n```\n\nAfter decoding this message (it read \"42\"), it was clear to me\nthat he wanted to watch our favorite movie again:\n\"The Hitchhiker's Guide to the Galaxy\".\n\nYou probably want to learn how we encrypt and decrypt our messages,\nso here is a short explanation of what these numbers mean in detail:\n\nThe first number (2) is the size of a table, in which we write all\nthe characters of a message. This table is always\nsquare, so that it initially looks empty as follows:\n\n```text\n +---+---+\n +   +   +\n +---+---+\n +   +   +\n +---+---+\n```\n\nThe following number (0) represents the start of our (admittedly quite simple)\nencryption algorithm: On the first character in our table this number 0 is\nadded, then 1 to the second, 2 to the third and so on.\n\nThe next numbers (as many as the table has cells)\nare then our encoded characters themselves, where we have used Unicode to\nget the character of every number:\n\n```text\n50 99 92 55\n```\n\nThey have to be interpreted as follows:\n\n```text\n2 -> 50 + 0 = 50\nb -> 98 + 1 = 99\nZ -> 90 + 2 = 92\n4 -> 52 + 3 = 55\n```\n\nWhich results in the following table:\n\n```text\n+---+---+\n+ 2 + b +\n+---+---+\n+ Z + 4 +\n+---+---+\n```\n\nThe remaining numbers (3 1) are our actual message.\nWe use a cursor that starts at the top left corner cell of the table. Each\nnumber indicates how many cells we have to move it line by line.\nIf we leave the table at the bottom right, we start\nagain at the top left.\n\nSo number 3 moves the cursor down to the right to the number \"4\"\nand the last number 1 finally pushes it back up to the left to the \"2\",\nresulting in the message \"42\".\n\nBy the way, I answered Arthur as follows:\n\n```text\n6 0 106 112 105 72 112 114 107 49 81 119 96 127 122\n118 131 85 137 121 90 89 140 110 134 137 140 125 134\n145 74 113 63 63 84 101 90 132 29 8 24 10 17 15 3 33\n27 6 13 23 3 18 32 22 16 6 25 25 7 33 5 31 21 32 14\n```\n\n\"Today 8 p.m. in the galaxy!\"\n\n## Tasks and Hints\n\n- Your task is to write the decoding code for a given array\n  of integer values.\n- The tests will never contain incomplete or incorrect\n  messages, so you don't have to write tests that will\n  throw exceptions.\n- All given numbers are positive or zero. No negative\n  numbers are used.\n- Hidden tests contain random message tests with big tables.\n- The initial code contains a method \"printTable\" which\n  you can use to print a quadratic char[][] table if this\n  could be helpful for you.\n",
+    "totalAttempts": 20,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

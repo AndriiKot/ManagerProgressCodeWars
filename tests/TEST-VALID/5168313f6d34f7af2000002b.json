@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5168313f6d34f7af2000002b",
+  "data": {
+    "id": "5168313f6d34f7af2000002b",
+    "name": "Custom Enumerators - Fibonacci",
+    "slug": "custom-enumerators-fibonacci",
+    "category": "reference",
+    "publishedAt": "2013-04-12T17:44:12.863Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5168313f6d34f7af2000002b",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-04-12T16:07:27.486Z",
+    "createdBy": {
+      "username": "pugio",
+      "url": "https://www.codewars.com/users/pugio"
+    },
+    "description": "Ruby has very powerful [enumerator](http://ruby-doc.org/core-1.9.3/Enumerator.html) [support](http://ruby-doc.org/core-1.9.3/Enumerable.html), including the ability to create your own custom enumerators on the fly. \n\n``` ruby\ndigits = Enumerator.new do |y|\n  i = 0\n  loop do\n    y.yield i\n    i += 1\n  end\nend\n\ndigits.next # => 0\ndigits.next # => 1\n\ndigits.take_while {|n| n < 13} # => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] \n```\n\nCreate an enumerator \"fib\" that outputs successive [fibonacci numbers](http://en.wikipedia.org/wiki/Fibonacci_number).\n\nFor example:\n\n``` ruby\nfib.next # => 1\nfib.next # => 1\nfib.next # => 2\n\nfib.take_while {|n| n < 100} # => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] \n```\n\n** NOTE: The first value returned from the enumerator will be 1, not 0**",
+    "totalAttempts": 4547,
+    "totalCompleted": 1074,
+    "totalStars": 21,
+    "voteScore": 44,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

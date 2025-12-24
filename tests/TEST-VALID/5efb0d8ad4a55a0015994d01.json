@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5efb0d8ad4a55a0015994d01",
+  "data": {
+    "id": "5efb0d8ad4a55a0015994d01",
+    "name": "Build your own dice",
+    "slug": "build-your-own-dice",
+    "category": "reference",
+    "publishedAt": "2020-06-30T11:47:19.895Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/5efb0d8ad4a55a0015994d01",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-30T10:01:46.078Z",
+    "createdBy": {
+      "username": "heagerty",
+      "url": "https://www.codewars.com/users/heagerty"
+    },
+    "description": "# Build your own dice #\n\nIn this kata we'll practice using multi-dimensional arrays. If we think of a simple array as a one-dimensional object, we can create 2D or 3D objects using arrays of arrays or arrays of arrays of arrays, respectively. Here, we'll create 3D dice, which mimic some properties of real dice.\n\nYou'll be given an integer n, and you'll need to make a cubic-shaped die which has sides of length n. In the exact center of each 'side', you'll place an integer, from 1 to 6. The orientation isn't important, as long as the sums of the opposite sides add to 7, as with a normal die. The other spaces should contain zeros.\n\nFor example, a 3x3x3 die (n=3) would have one side resembling the following, with a 5 in the middle and zeros in the eight spaces all around it:\n```\n    - - -\n  | 0 0 0 |\n  | 0 5 0 |\n  | 0 0 0 |\n    - - -  \n```\nwhich would be represented in the code as: \n\n```[ [0,0,0], [0,5,0], [0,0,0] ]```\n\n \nIn this example, it helps to think of the n=3 die as a cube of 27 smaller blocks, each containing an integer, which should help you identify where the non-zero numbers should go.\n \nIf integer n doesn't allow you to create exact centers on the sides, you should return an empty array [].\n\n",
+    "totalAttempts": 50,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Arrays",
+      "Geometry",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

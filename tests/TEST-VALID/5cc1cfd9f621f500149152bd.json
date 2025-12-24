@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cc1cfd9f621f500149152bd",
+  "data": {
+    "id": "5cc1cfd9f621f500149152bd",
+    "name": "Researcher impact (h-index)",
+    "slug": "researcher-impact-h-index",
+    "category": "algorithms",
+    "publishedAt": "2019-04-25T15:50:11.904Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5cc1cfd9f621f500149152bd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-04-25T15:18:49.335Z",
+    "createdBy": {
+      "username": "Gustav-Rasmussen",
+      "url": "https://www.codewars.com/users/Gustav-Rasmussen"
+    },
+    "description": "The h-index is a metric that aims to measure the impact of a researcher’s published work.\\\nOne can calculate their h-index based on a list of the number of citations for each publication.\\\nThe h-index is determined to be the highest number of publications with a given number of citations.\\\nSee the following examples:\n\n| h-index       |                                               |\n| ------------- |:-------------:                                |\n| 0             | 0 publications with 0 citations.              |\n| 1             | 1 publication with minimum 1 citation.        |\n| 2             | 2 Publications each with minimum 2 citations. |\n| 3             | 3 Publications each with minimum 3 citations. |\n| N             | N publications each with minimum N citations. |\n\n\n\nProblem definition\n\nCreate a function named hindex that takes as input a vector of arbitrary length. Each element in the vector corresponds to the number of citations\nfor a given publication.\\\nThe function should return the calculated h-index given the vector with citations.\\\nYou can assume that the vector only contains integers greater than or equal to zero.\\\nInput, c:\\\nVector containing the number of citations per publication (vector).\\\nOutput, h:\\\nThe calculated h-index (integer)\\\nExample\\\nConsider the following input vector:\\\nc = [10, 8, 2, 5, 4, 1, 0, 1, 0]\\\nThe vector shows that a researcher has a total of 9 publications.\\\nThe first publication has 10 citations, the next publication has 8 citations, the next 2 citations and so on.\\\nWe can start by sorting the vector from high to low:\\\nc = [10, 8, 5, 4, 2, 1, 1, 0, 0]\\\nThen we can check how many elements that fulfil the requirement of N publications each with minimum N citations:\\\nIt turns out that 4 is the highest number of publications with minimum 4 citations.\\\nThe h-index is therefore calculated to be h = 4.\\\nOther examples:\\\n\n| c             |       h        |\n| ------------- |:-------------: |\n| [1, 1, 0]     |       1        |\n| [0, 0]        |       0        |\n",
+    "totalAttempts": 225,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52cda7e28d673a597c00091a",
+  "data": {
+    "id": "52cda7e28d673a597c00091a",
+    "name": "Identifying identifiers",
+    "slug": "identifying-identifiers",
+    "category": "algorithms",
+    "publishedAt": "2014-01-10T22:55:45.209Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52cda7e28d673a597c00091a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-01-08T19:32:50.098Z",
+    "createdBy": {
+      "username": "christianhammer",
+      "url": "https://www.codewars.com/users/christianhammer"
+    },
+    "description": "Department of Theoretical Computer Science has put out a request for a small tool to help their work.\nBeing true theoretical nerds, they have no real clue how to solve their problem in the real world.\n\nThe problem is, given a mathematical expression the variable names should be identified.\n\nThat is, for \"a+b\" they need [\"a\",\"b\"] returned from the \"unbound\" function.\nAn identifier must appear only once in the output - while preserving order of the first met identifier instance!\n(\"a+b+a\" should return [\"a\",\"b\"]).\n\nNotice, the epression need not be evaluated - they just need the identifiers :-)\n\nAllowed operators are:<pre><code>- No assignment operators are allowed\n- No bitwise operators\n- No comma-operator\n- No operators like \"typeof\", \"new\", \"instanceof\" etc.\n- All javascript arithmetic operators\n- All compare operators\n- Boolean operators, with following conventions: \n    && AND   should be &\n    || OR    should be |\n    !  NOT   should be ~\n</code></pre>\n\nWe do not have to make explicit tests for any of the \"No ...\" cases above.\n\nThat is, all the following expressions must return [\"a\",\"b\"] :\n\n<pre><code>- unbound(\"a+b\")\n- unbound(\"a&b\")\n- unbound(\"a&~b\")\n- unbound(\"a|b\")\n- unbound(\"a|~b\")\n- unbound(\"a===b\")\n- unbound(\"a===~b\")\n\n- unbound(\"x+7+x\")  ==> [\"x\"]\n- unbound(\"Math.PI*rad*rad\")  ==> [\"rad\"]\n- unbound(\"Math.pow(Math.cos(v),2)+Math.pow(Math.sin(v),2)\")  ==> [\"v\"]\n</code></pre>\n\nInput will always be a string but may not be valid mathematical expressions and should throw an exception in that case - such a \"(1+2\".\n",
+    "totalAttempts": 245,
+    "totalCompleted": 26,
+    "totalStars": 2,
+    "voteScore": 18,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

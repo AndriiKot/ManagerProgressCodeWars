@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/556eccbced5a989438000051",
+  "data": {
+    "id": "556eccbced5a989438000051",
+    "name": "Workaholics' schedule",
+    "slug": "workaholics-schedule",
+    "category": "algorithms",
+    "publishedAt": "2015-06-03T09:45:42.285Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/556eccbced5a989438000051",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-03T09:45:33.413Z",
+    "createdBy": {
+      "username": "romanzes",
+      "url": "https://www.codewars.com/users/romanzes"
+    },
+    "description": "Roman is a high-professional manager. He manages a team of programmers and, to increase their productivity, he develops a personal complex schedule for each of them. He doesn't want his subordinates to waste time and energy on counting when to start and finish their shift, so let's help him to improve his system even more.\n\nWorker's schedule is presented in array of objects like this:\n```javascript\n[\n\t{ day: MONDAY, start: \"14:00\", end: \"22:00\" },\n\t{ day: TUESDAY, start: \"07:15\", end: \"14:04\" },\n\t{ day: TUESDAY, start: \"15:15\", end: \"03:00\" },\n\t{ day: WEDNESDAY, start: \"20:00\", end: \"08:00\" },\n\t{ day: FRIDAY, start: \"08:00\", end: \"23:00\" },\n\t{ day: SUNDAY, start: \"21:00\", end: \"04:00\" }\n];\n```\n\nWhere day is an integer value representing day of week, SUNDAY is 0, MONDAY is 1, etc. As you can see:\n\n* There can be more than one shift in the same day (see **TUESDAY**).\n* There could be days when there are no shifts (see **THURSDAY**... well, you can't see it, because there are no shifts on Thursday).\n* Shift can pass through the midnight and end on the next day (see **WEDNESDAY**). In that case, \"start\" field will be larger than \"end\" (unfortunately, shift cannot be longer that 24 hours).\n\nAlso:\n\n* It is guaranteed to be at least one shift\n* Shifts cannot intersect\n* Timezones should not be taken into account\n\nYou should create a function which accepts an *array* of worker's shifts and *Date object* which represents the current time and date. It should return a *string* of one of the following types:\n\n1. If some shift is in progress right now, then return **\"Shift ends at HH:mm\"** (where HH and mm are hours and minutes like \"08:15\")\n2. If there are no shifts in progress and the nearest shift is within 24 hours, then return **\"Next shift is at HH:mm\"**\n3. If there are no shifts in progress and the nearest shift is NOT within 24 hours, then add month and day to the previous output, example: **\"Next shift is on 06/21 at 07:15\"**\n\nHave fun and don't forget about your next working shift!",
+    "totalAttempts": 216,
+    "totalCompleted": 12,
+    "totalStars": 9,
+    "voteScore": -1,
+    "tags": [
+      "Date Time",
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

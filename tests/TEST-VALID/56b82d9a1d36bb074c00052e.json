@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56b82d9a1d36bb074c00052e",
+  "data": {
+    "id": "56b82d9a1d36bb074c00052e",
+    "name": "Leaves",
+    "slug": "leaves",
+    "category": "algorithms",
+    "publishedAt": "2016-02-10T06:49:45.608Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/56b82d9a1d36bb074c00052e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-08T05:54:34.122Z",
+    "createdBy": {
+      "username": "32bits",
+      "url": "https://www.codewars.com/users/32bits"
+    },
+    "description": "Given a flat array of singly linked \"node\" objects return a tuple of the root node and a list of leaf nodes:\n\n```\nreturn (root, [leaf, leaf, ...])\n```\n\nFor example; given a tree linked as such:\n\n```\n     0\n    / \\\n   1   2\n  / \\ / \\\n 3  4 5  6\n```\n\nin an array of node objects:\n\n```\n[Node_1, Node_0, Node_3, Node_2, Node_6, Node_5, Node_4]\n```\n\nyou would return:\n\n```\n(Node_0, [Node_3, Node_4, Node_5, Node_6])\n```\n\nThe node object is generally defined as:\n\n```\nclass Node:\n\n  def __init__(self, ref_to_node_parent):\n      # None for the root node only\n      self.parent = ref_to_node_parent\n```\n\n(You'll notice that I provide a `solution_normalizer` method in the example test case. Use this method since the order of the leaf node array is not part of this solution)\n",
+    "totalAttempts": 233,
+    "totalCompleted": 34,
+    "totalStars": 6,
+    "voteScore": 55,
+    "tags": [
+      "Trees",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

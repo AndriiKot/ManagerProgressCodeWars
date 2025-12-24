@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/51f9d3a6e5a42591ae0001eb",
+  "data": {
+    "id": "51f9d3a6e5a42591ae0001eb",
+    "name": "Object extend",
+    "slug": "object-extend",
+    "category": "reference",
+    "publishedAt": "2013-08-01T03:19:06.610Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/51f9d3a6e5a42591ae0001eb",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-08-01T03:19:02.990Z",
+    "createdBy": {
+      "username": "kylehill",
+      "url": "https://www.codewars.com/users/kylehill"
+    },
+    "description": "Let's make a function that returns a new object, containing all of the properties of any objects passed in as parameters.\n\nThe returned object should include the first instance of each property seen on any parameter object, and any other instance of that property should be ignored.\n\nAlso, if any parameter is not an object, it should be ignored. You can use the function **isObject(object)** to determine if a parameter is an object or not (it will return true or false).\n\n```javascript\nextend( {a: 1, b: 2}, {c: 3} ) // should === {a: 1, b: 2, c: 3}\nextend( {a: 1, b: 2}, {c: 3}, {d: 4} ) // should === {a: 1, b: 2, c: 3, d: 4}\nextend( {a: 1, b: 2}, {a: 3, c: 3} ) // should  === {a: 1, b: 2, c: 3}\nextend( {a: false, b: null}, {a: true, b: 2, c: 3} ) // should  === {a: false, b: null, c: 3}\n```",
+    "totalAttempts": 18831,
+    "totalCompleted": 1542,
+    "totalStars": 52,
+    "voteScore": 136,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

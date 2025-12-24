@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5416f2504c2460a75000062d",
+  "data": {
+    "id": "5416f2504c2460a75000062d",
+    "name": "Cycle detection: Brent's The Tortoise and The Hare",
+    "slug": "cycle-detection-brents-the-tortoise-and-the-hare",
+    "category": "algorithms",
+    "publishedAt": "2014-09-16T15:57:10.093Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5416f2504c2460a75000062d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-09-15T14:06:08.116Z",
+    "createdBy": {
+      "username": "user3482173",
+      "url": "https://www.codewars.com/users/user3482173"
+    },
+    "description": "For a general presentation of Cycle detection Problem see this kata: http://www.codewars.com/kata/5416f1834c24604c46000696\n\nThis kata follow: http://www.codewars.com/kata/cycle-detection-floyds-tortoise-and-the-hare\n\nIn Floyd Algorithm, tortoise and hare both move at one or two step at a time in the main part of the program wich can be a problem for big cycle as the tortoise and hare may visit the cycle multiple times before meeting. An important area of computer science where cycle appears is PRNG (Pseudo Random Number Generator). Big cycles are an important feature of PRNG for security. And even the simplest PRNG has a cycle lenght in millions. So we need to move faster. It will also be good to avoid too much evaluation of f as it may be a complicated function. \n\nBrent's algorithm also require only two pointers, It is based on a different principle: searching for the smallest power of two `$ 2^i $` that is larger than both `$ \\lambda $` and `$ \\mu $`. For i = 0, 1, 2, etc., the algorithm compares the tortoise still at `$ x_{2^{i-1}} $` with each subsequent sequence value up to the next power of two visited by the hare while incrementing lambda, stopping when it finds a match. It has two advantages compared to Floyd's tortoise and hare algorithm: it finds the correct length `$ \\lambda $` of the cycle directly, rather than needing to search for it in a subsequent stage, and its steps involve only one evaluation of `$ f $` rather than three.\n\nFor finding `$ \\mu $`, you can proceed simply: tortoise starting at `$ x_0 $`; hare starting at `$x_\\lambda$`, move them forward at the same pace untill they agree. \n\nYour goal is to code a function that will take a function and a starting point as input and return an array [mu, lambda]. Every function passed as argument will be periodic after some point.\n\n",
+    "totalAttempts": 238,
+    "totalCompleted": 47,
+    "totalStars": 9,
+    "voteScore": 31,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

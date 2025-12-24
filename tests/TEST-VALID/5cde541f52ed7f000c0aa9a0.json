@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cde541f52ed7f000c0aa9a0",
+  "data": {
+    "id": "5cde541f52ed7f000c0aa9a0",
+    "name": "Flatten A Nested Dictionary That Contains Lists",
+    "slug": "flatten-a-nested-dictionary-that-contains-lists",
+    "category": "algorithms",
+    "publishedAt": "2019-09-03T04:59:38.487Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5cde541f52ed7f000c0aa9a0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-17T06:26:39.505Z",
+    "createdBy": {
+      "username": "el-iot",
+      "url": "https://www.codewars.com/users/el-iot"
+    },
+    "description": "# Task\nYour task is to create a function that takes a (possibly nested) dictionary as input and returns a second \"flattened\" dictionary as an output. \n\nA \"flattened\" dictionary is a dictionary who's keys are a string of the nested keys for each dictionary \"endpoint\", seperated by a \".\" character. By this definition, a flattened dictionary cannot be nested (i.e. every \"value\" in the dictionary is not a dictionary itself).\n\nFor instance, the following dictionary:\n```\n{\n  \"a\": {\n      \"b\": {\"c\": 1, \"d\": 2},\n      \"e\": 3\n  }, \n  \"f\": 4\n}\n```\nwould \"flatten\" into:\n```\n{'a.b.c': 1, 'a.b.d': 2, 'a.e': 3, 'f': 4}\n```\n\nAdditionally, your function should be able to handle nested dictionaries where some of the keys are *lists of dictionaries* (these keys can occur at any level of nesting). In this case, the \"key\" is considered to be the index/position of each dictionary in the list, and this key should be enclosed in list brackets ('\\[' and '\\]'). \n\nFor instance, the following dictionary:\n```\nd = {\n  \"a\": {\n      \"b\": {\"c\": 1, \"d\": 2},\n      \"e\": 3\n  },\n  \"f\": 4,\n  \"g\": [\n      {\"h\": 5}, \n      {\n        \"i\": 6, \n        \"j\": [\n            {\"k\": 7}, \n            {\"l\": 8}\n        ],\n      } \n  ]\n}\n```\nwould flatten to:\n```\n{\n  'a.b.c': 1, \n  'a.b.d': 2, \n  'a.e': 3, \n  'f': 4, \n  'g[0].h': 5, \n  'g[1].i': 6, \n  'g[1].j[0].k': 7, \n  'g[1].j[1].l': 8}\n}\n```\n# Caveats\n\n - The nested dictionary structure may contain empty-lists and empty-dictionaries, though these will always be at endpoints.\n- All nested keys will be hashable, though the values at the end-points may not be, i.e.:\n```\n  {\n       'a': {\n          'b': []\n        }\n  }\n ```\n is valid, because `'a'` and `'b'` are both hashable, and empty-lists are not but the empty-list is an endpoint. In this case, the above dictionary would `flatten` to become:\n ```\n{\n       'a.b': []\n}\n```\n- An empty dictionary `flatten`s into another empty dictionary\n\nGood luck!",
+    "totalAttempts": 629,
+    "totalCompleted": 55,
+    "totalStars": 9,
+    "voteScore": 60,
+    "tags": [
+      "Recursion",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

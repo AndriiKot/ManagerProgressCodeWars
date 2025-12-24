@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63bbf3289a074d004d054aa6",
+  "data": {
+    "id": "63bbf3289a074d004d054aa6",
+    "name": "Cubic polynomials are point symmetric",
+    "slug": "cubic-polynomials-are-point-symmetric",
+    "category": "reference",
+    "publishedAt": "2023-01-09T10:58:20.306Z",
+    "approvedAt": null,
+    "languages": [
+      "lean"
+    ],
+    "url": "https://www.codewars.com/kata/63bbf3289a074d004d054aa6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-09T10:57:45.027Z",
+    "createdBy": {
+      "username": "Madjosz",
+      "url": "https://www.codewars.com/users/Madjosz"
+    },
+    "description": "Please give a proof that every cubic polynomial is symmetric to a point, i.e. if `$f\\colon \\mathbb{R}\\rightarrow\\mathbb{R}$` is a cubic polynomial `$f(x) = ax^3+bx^2+cx+d$` with real coefficients and `$a\\neq0$` then there exists a point `$(x,y)$` such that for all `$h\\in\\mathbb{R}$`\n```math\nf(x+h) - y = -\\bigl(f(x-h)-y\\bigr).\n```\n\n# Task\n\n```lean\nlemma cubic_symmetric (a b c d : ℝ) (ha : a ≠ 0) {f : ℝ → ℝ} (hf : f = λ x, a * x^3 + b * x^2 + c * x + d) :\n     ∃ (x y : ℝ), ∀ (h : ℝ), f(x + h) - y = -(f(x - h) - y) :=\nsorry\n```\n\n# Preloaded\n\n```lean\nimport data.real.basic\n```",
+    "totalAttempts": 7,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": 10,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

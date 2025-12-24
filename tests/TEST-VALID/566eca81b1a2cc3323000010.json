@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/566eca81b1a2cc3323000010",
+  "data": {
+    "id": "566eca81b1a2cc3323000010",
+    "name": "Compound interest calculator",
+    "slug": "compound-interest-calculator",
+    "category": "algorithms",
+    "publishedAt": "2016-01-06T14:56:07.787Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/566eca81b1a2cc3323000010",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-14T13:56:17.076Z",
+    "createdBy": {
+      "username": "matthewglover",
+      "url": "https://www.codewars.com/users/matthewglover"
+    },
+    "description": "Simple interest rates are, well, simple. 3% of a 1000 is 30, which is easy enough to understand. 5.6% of 1510 is 84.56, which might require a calculator but the concept remains the same. However it all gets much harder to think about when the interest gets compounded.\n\n[Wikipedia](https://en.wikipedia.org/wiki/Compound_interest) defines compound interest as follows:\n\n\"<i>Compound interest is interest added to the principal of a deposit or loan so that the added interest also earns interest from then on. This addition of interest to the principal is called compounding.</i>\"\n\nIn order to calculate the total compound interest earned, you need four variables:\n\n1. an initial value ('P' for Present Value)\n\n2. a nominal interest rate ('i')\n\n3. a compounding frequency ('n'), which determines how regularly the interest is compounded\n\n4. a duration over which to calculate the interest ('t')\n\n<br>\nOnce you have these four variables, there are then two steps to calculate the amount of interest earned in a given period. First, you need to calculate the future value, using the formula:\n\nF = P(1+i/n)<sup>nt</sup>\n\nThe compound interest can then be calculated by finding the difference between the future value and the present value (i.e. CI = F - P).\n\nTheory is all well and good, but when you're making an investment, what you really want to know is \"how much am I going to earn?\" What we need is a bit of code to do the heavy lifting for us.\n\nOne way to do this would be to have a function that took four variables P, i, n and t and simply calculated the interest rate. But if we wanted to re-use the compound interest rate for different initial values and durations, that would mean we would have to re-type the interest rate and compounding frequency every time we called the function! That is just wasteful. What we want is a generic compound interest function that takes a compound interest rate and returns a new function which then takes an initial value and duration and calculates the compound interest earned to two decimal places.\n\nA code example is worth a thousand words, so let's see how this should work:\n\n```javascript\n\n// A simple example with annual compounding\nconst annually_4_3 = \n  { rate: '4.3%'\n  , frequency: 'annually'\n  }\n\nconst calculateAnnually_4_3 = compoundInterest(annually_4_3)\n\ncalculateAnnually_4_3(1500, 6) // returns 431.07\ncalculateAnnually_4_3(2000, 5) // returns 468.6\n\n\n// A more complex example with compounding every two years\nconst biennially_4_3 = \n  { rate: '4.3%',\n    frequency: 'biennially'\n  }\n\nconst calculateBiennially_4_3 =\n  compoundInterest(biennially_4_3)\n\ncalculateBiennially_4_3(1500, 6) // returns 421.24\ncalculateBiennially_4_3(1500, 7) // still returns 421.24\n\n```\n\n```\n{ rate: 'i%'\n, frequency: 'daily/weekly/monthly/quarterly/annually'\n}\n```\n\n\n\nThe compoundInterest function should take an object in the format:\n\n```\n{ rate: 'i%'\n, frequency: 'daily/weekly/monthly/quarterly/annually/biennially'\n}\n```\n\nWhere rate is a string and i > 0 and frequency is one of 'daily', 'weekly', 'monthly', 'quarterly', 'annually', 'biennially'.\n\nThe returned function should then take an amount (P) and a period of 't' years, where P is a number greater or equal to 0 (we're only looking at earnings on investments here) and t is an integer greater than 0.\n\nWe will keep the error handling basic, so the final function should return the following string when invalid data is provided:\n\n- Invalid rate:'Invalid interest rate'\n- Invalid frequency: 'Invalid rate frequency'\n- Invalid present value: 'Invalid present value'\n- Invalid duration: 'Invalid duration'\n",
+    "totalAttempts": 205,
+    "totalCompleted": 21,
+    "totalStars": 7,
+    "voteScore": 17,
+    "tags": [
+      "Functional Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

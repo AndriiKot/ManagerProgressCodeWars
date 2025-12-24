@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f1ca8acb8975618bddd239",
+  "data": {
+    "id": "64f1ca8acb8975618bddd239",
+    "name": "Choosing the Appropriate Checkout Counter Based on Number of People and Friends",
+    "slug": "choosing-the-appropriate-checkout-counter-based-on-number-of-people-and-friends",
+    "category": "algorithms",
+    "publishedAt": "2023-09-01T11:51:49.713Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64f1ca8acb8975618bddd239",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-01T11:27:06.090Z",
+    "createdBy": {
+      "username": "peppapig_pig",
+      "url": "https://www.codewars.com/users/peppapig_pig"
+    },
+    "description": "# Tasks\n## Function Purpose\nThis function accepts two arguments: \"already\" and \"friends\". The function's purpose is to determine which register a new newcomer should choose.\n\n## General Rule\nThe general rule is that the newcomer should choose the register with the least number of people. If there are multiple registers with the same number of people, the newcomer should choose the one closest to index 0.\n\n## Exception Rule\nHowever, there is an exception to this rule. If a register has the newcomer's friends, it should be given priority, regardless of the number of people in that register. If there are multiple registers with the newcomer's friends, the function should prioritize the one with the fewest number of people. Again, if there are multiple registers with the same number of people, the one closest to index 0 should be chosen.\n\n## Summary\nIn summary, the function follows a set of rules to determine the best register for the new newcomer, considering the number of people and the presence of friends in the registers.\n## Input\n* The `already` parameter: information about the people already in line at each register, like `[[\"Tom\", \"July\", \"Pinding\"], [\"Damon\", \"Rexing\", \"Pars\", \"Dof\"], [\"Sadan\", \"Mix\"]]`.\n* The `friends` parameter: a list of friends of the new person, similar to `[\"July\", \"Pars\"]`.\n## Output\nIndex of checkout counters where the new joiner goes.\n## Example\n```javascript\nwhichCashier([[\"July\", \"Sand\", \"Desong\", \"Linda\"],[\"Goly\"],[\"Keven\", \"Lax\"]],[\"Linda\", \"Keven\"])\n//output need is 2\n```\n# Tests\n* 3 fixed tests\n* 100 random tests\n# Note\nInput range:\n* 10 cashiers\n* 100 < `already.element.length` < 1000\n* 0 < `friends.length` < 10",
+    "totalAttempts": 155,
+    "totalCompleted": 28,
+    "totalStars": 5,
+    "voteScore": 26,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

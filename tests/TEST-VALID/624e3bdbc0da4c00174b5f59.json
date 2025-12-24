@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/624e3bdbc0da4c00174b5f59",
+  "data": {
+    "id": "624e3bdbc0da4c00174b5f59",
+    "name": "Prostate cancer recurrence rates (Phoenix)",
+    "slug": "prostate-cancer-recurrence-rates-phoenix",
+    "category": "reference",
+    "publishedAt": "2022-04-07T01:25:14.146Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/624e3bdbc0da4c00174b5f59",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-07T01:18:19.201Z",
+    "createdBy": {
+      "username": "GitQuick",
+      "url": "https://www.codewars.com/users/GitQuick"
+    },
+    "description": "Although its use in screening healthy patients is debatable, Prostate Specific Antigen (PSA) is a very useful blood test for following the response of prostate cancer to treatment.\n\nFor patients treated with radiation therapy alone for prostate cancer, the PSA tends to take 2-3 years to reach a minimum value (nadir). If the PSA begins to rise again after the nadir value, this may represent a recurrence of prostate cancer.\n\nThe 2006 \"Phoenix\" definition (1) of a *biochemical recurrence* is:\nPSA level of at least 2.0 above the nadir (lowest value) occuring after reaching the nadir.\n\nYou are given a list of PSA values for one patient.\nThe list consists of 12 PSA values in ng/mL (as a float with 2 decimal places) each taken 6 months apart. The first value is taken immediately before treatment. The nadir (minimum value) will only occur once in the list.  \n\nReturn ``True`` if the values meet the Phoenix criteria (PSA at least 2 higher than the lowest value, occuring any time *after* the lowest value is reached) or ``False`` if they do not.\n\nNote: Be careful with comparing float values for equality due to representation errors. It may make sense to check that the PSA is >1.999 of the nadir in your code.\n\n\nExamples:\n```if:python\n    Input:\n    [7.91, 2.43, 1.49, 0.99, 0.74, 0.48, 0.52, 0.50, 0.66, 1.26, 1.36, 1.35]\n    Ouput:\n    False\n    # Nadir 0.48, highest subsequent value 1.36 is less than 2 + 0.48\n    \n    Input:\n    [9.98, 8.56, 4.62, 1.16, 0.26, 0.37, 0.32, 1.02, 0.99, 1.56, 1.41, 2.35],\n    Ouput:\n    True\n    # Nadir 0.26, highest subsequent value 2.35 is greater or equal to 2 + 0.26\n\n    Input:\n    [12.57, 6.86, 1.86, 1.93, 0.60, 1.46, 1.58,1.58, 0.86, 0.72, 0.88, 2.1]\n    Output:\n    False\n    # Nadir 0.60, highest subsequent value 2.1 is less than 2 + 0.60\n```\n\n(1) Roach M 3rd, Hanks G, Thames H Jr, et al. Defining biochemical failure following radiotherapy with or without hormonal therapy in men with clinically localized prostate cancer: recommendations of the RTOG-ASTRO Phoenix Consensus Conference. Int J Radiat Oncol Biol Phys. 2006;65:965–974.",
+    "totalAttempts": 211,
+    "totalCompleted": 61,
+    "totalStars": 2,
+    "voteScore": 57,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

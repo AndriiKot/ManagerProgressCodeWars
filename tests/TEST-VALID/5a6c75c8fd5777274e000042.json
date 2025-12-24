@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a6c75c8fd5777274e000042",
+  "data": {
+    "id": "5a6c75c8fd5777274e000042",
+    "name": "PythonSlice",
+    "slug": "pythonslice",
+    "category": "games",
+    "publishedAt": "2018-01-27T12:51:27.632Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a6c75c8fd5777274e000042",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-27T12:51:21.612Z",
+    "createdBy": {
+      "username": "0xjgv",
+      "url": "https://www.codewars.com/users/0xjgv"
+    },
+    "description": "We are going to extend Python's slicing functionality into JS.\n\nArray slicing is very different from the javaScript slice method.\n\n# Basic Python slicing\nLet's start with a normal, everyday list.\n\n```\narray = [1, 2, 3, 4, 5, 6, 7, 8]\n\narray[1:4] => [2, 3, 4]\n```\n\nThis returns exactly what we want. What the heck does that syntax mean? Good question.\n\nLet me explain it. The 1 means to start at second element in the list (note that the slicing index starts at 0). The 4 means to end at the fifth element in the list, but not include it. The colon in the middle is how Python's lists recognize that we want to use slicing to get objects in the list.\n\n# Advanced Python slicing\nThere is also an optional second clause that we can add that allows us to set how the list's index will increment between the indexes that we've set.\n\nIn the example above, say that we did not want that ugly 3 returned and we only want nice, even numbers in our list. Easy peasy.\n```\narray[1:4:2] => [2, 4]\n```\nAlright, how about if we wanted our list to be backwards, just for the fun of it? Let's try something crazy.\n```\narray[::-1] => [8, 7, 6, 5, 4, 3, 2, 1]\n```\nLists have a default bit of functionality when slicing. If there is no value before the first colon, it means to start at the beginning index of the list. If there isn't a value after the first colon, it means to go all the way to the end of the list. This saves us time so that we don't have to manually specify len(a) as the ending index.\n\nOkay. And that -1 I snuck in at the end? It means to increment the index every time by -1, meaning it will traverse the list by going backwards. If you wanted the even indexes going backwards, you could skip every second element and set the iteration to -2. Simple.\n\nWith all this in mind, our task is to write a JS function that can extend this slicing functionality into javaScript arrays.\n\nSee test cases for examples...",
+    "totalAttempts": 247,
+    "totalCompleted": 20,
+    "totalStars": 2,
+    "voteScore": 43,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

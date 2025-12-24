@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f3b7f8568cd2b001f95e7ef",
+  "data": {
+    "id": "5f3b7f8568cd2b001f95e7ef",
+    "name": "Base 75",
+    "slug": "base-75",
+    "category": "reference",
+    "publishedAt": "2020-08-18T08:28:32.341Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f3b7f8568cd2b001f95e7ef",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-18T07:13:09.598Z",
+    "createdBy": {
+      "username": "dolamroth",
+      "url": "https://www.codewars.com/users/dolamroth"
+    },
+    "description": "```if:python\nIn this kata we will create functions to encode byte-string into base75, i.e. a string, consisting of only 75 printable ASCII characters.\n```\n```if:javascript\nIn this kata we will create functions to encode a string into base75, i.e. into a string, consisting of only 75 printable ASCII characters.\n```\n\n## How to\n\nConsider a sequence of bytes `[119, 63, 164, 14, 147, 155, 54, 28, 149, 68]`, or alternatively `'01110111001111111010010000001110100100111001101100110110000111001001010101000100'`. \n\nPython representation: `b'w?\\xa4\\x0e\\x93\\x9b6\\x1c\\x95D'`  \nJavaScript representation: \"w?¤\\u000e\\u0093\\u009b6\\u001c\\u0095D\"\n\nIt is a sequence of 8-bit groups, where each group maps to a character 0-255. The ASCII standard, however, only supports characters 0-127, so we may not directly map byte-string to regular text-string. Furthermore, some of the characters 0-127 are reserved and are not considered print-safe. There are only 95 printable characters: https://en.wikipedia.org/wiki/ASCII#Printable_characters. \n\nThis is why standards like Base64 or Base85 came into being. Base64 allows regrouping bits in groups of 6 instead of 8, and then mapping result to bytes, which correspond to \"good\" characters. This allows to code any binary data as text, which is safe to transfer via wire, insert into URL, etc.\n\nNow, we are going to make up our own encoding algorithm, Base75. It is very similar to Base64 in principle, and only differs by lengths of chunks and by alphabet. Because 75 is less than 256, we need more characters to represent the original byte-string. In fact, we would need at least 9 characters in base75 to represent 7 characters in base256. This is due to:\n\n`75 ^ 9` == `75084686279296875` >= `72057594037927936` == `(256 ^ 7)`\n\n## The algorithm\n\n1. Divide original byte-string into chunks of 7 bytes. If the last chunk does not have enough bytes, append bytes `b'\\x00'` to the end, to have exactly 7, and memorize, how many bytes you have appended (0-6).\n2. Consider the binary representation of a chunk as a single huge number (big-endian). In a loop, on each iteration take modulo 75, then divide by 75. You will get 9 numbers in range 0..74.\n3. Map those numbers to your array of `BASE_75` characters and concatenate into a single string (big-endian). Number 0 maps to BASE_75[0], number 1 maps to BASE_75[1], etc.\n4. Encode the resultant string into bytes.\n5. Append one byte in the end, that indicates, how many zero-bytes you have appended to original string. Interpret that byte as one of `[b'0', b'1', ..., b'6']` for `[0, 1, ..., 6]`, respecting. (Note, `b'0'` has code 048)\n\n## The task at hand\n\nImplement functions `b75encode` and `b75decode`. b75encode must implement the abovementioned algorithm. b75decode must implement its reverse. The algorithm is NOT required to be efficient. All strings will be non-empty and valid, i.e. corner-cases handling is NOT required.\n\nArray of characters `BASE_75` is preloaded for you.\n\n```if:javascript\n## Note (JavaScript)\n\nIn JavaScript, you work with regular strings instead of byte datatypes, since strings can contain unprintable characters. You are given helper functions `ord` (Get character's code) and `chr` (Get character by code). See sample tests for examples.\n```",
+    "totalAttempts": 168,
+    "totalCompleted": 26,
+    "totalStars": 9,
+    "voteScore": 24,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

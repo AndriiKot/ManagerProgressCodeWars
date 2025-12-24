@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54c15f2a3f0696311a000c56",
+  "data": {
+    "id": "54c15f2a3f0696311a000c56",
+    "name": "Sparkle Interpreter",
+    "slug": "sparkle-interpreter",
+    "category": "algorithms",
+    "publishedAt": "2015-01-24T03:34:44.080Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/54c15f2a3f0696311a000c56",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-22T20:35:54.548Z",
+    "createdBy": {
+      "username": "Mihail-K",
+      "url": "https://www.codewars.com/users/Mihail-K"
+    },
+    "description": "Sparkle Interpreted Language\n---------------------------\n\nFor this one, you'll need to write a parser, and eventually an interpreter for a simple little language called Sparkle. Sparkle is made up mostly of variables and lambdas (named functions simply being lambdas stored as variables), and operates only on integer types. It doesn't have control structures or conditional expressions, but it's still a fun little toy language to get working.\n\nHere's a little snippet of Sparkle, to give you an idea of what you're in for:\n```\n/* An add function */\nlet add = fn(a, b) ->\n    a + b\n\nreturn add(5, 10)\n```\nYeah, it might be a little daunting, but we've already provided you with a lexer to break up code into useful tokens! The rest you'll have to care of yourself, however.\n\nWe've already set you up with a pair of classes; `Parser` and `Sparkle`, although the former is more of a guideline. The really important function is `interpret()`, in the Sparkle class, which should return the result of the execution of the Sparkle program and a `Long`, or null if no result was produced. Ultimately, the details of implementing Sparkle are up to you.\n\nDetails\n-------\n\n### Expressions\n\nExpressions in Sparkle can broken down into a couple of basic types; assignment expressions which use the `=` operator, algebraic expressions which use the `+ - * / %` operators, lambda expressions, and terminal expressions (integer literals, identifiers, and parenthesized expressions). A couple of simple mathematical expressions might look like:\n```\na = b = 100 - c\nb = b * 2\n\nreturn a * b + (c % 2) + 100;\n/* We managed to calculate nothing useful! */\n```\nMake sure that you follow proper order of operations, with division and multiplication happening before addition and subtraction!\n\n### Statements\n\nIn Sparkle, every expression is a valid statement, even if it doesn't produce a value, nor cause any side effects. There are however, three specialized types of statements; `let` statements which declare variables, `return` statements which return a value from a function, and `{` block statements `}`, which encapsulate multiple statements (and create a new context). Here's a few example statements, for taste:\n```\nlet x = 5       /* Let (variable declaration) */\n\n{               /* Block (creates a new scope) */\n    let x = 5\n    x = x * 2\n}\n\nreturn x        /* Return (produces 5, in this case) */\n```\nNote that statements in Sparkle may be terminated by a `;`, although the syntax itself is optional. As a special note on return statements: A return statement will exit a lambda (or scope), and produce result based on the expression. All return statements must have a value in Sparkle! Finally, if a return is reached in the global scope (outside of a lambda or block), the program exits and the returned value is the result of execution.\n\n### Variables\n\nVariables in Sparkle are declared using the `let` keyword, followed by an `identifier` and a value to be assigned to the variable. Variables must always be must assigned during declaration, and must be declared before being referenced. Furthermore, if a variable with a given name already exists in some scope, declaring another one with the same name will produce an error. So, in a nutshell:\n```\nlet x = 5       /* Okay! */\nlet y           /* Nope, needs a value. */\nlet x = 10      /* Nope, ducplicate declaration. */\n\n{\n    let x = 10  /* Okay! This is in its own scope. */\n}\n\nlet a = x + 5   /* Okay! */\nlet b = z - 3   /* Nope, z hasn't been declared. */\n```\n\n### Lambdas (and Functions)\n\nLambdas in Sparkle are declared using the `fn` keyword, followed by the parameter list (in parentheses, which may be empty), a lambda arrow `->`, and finally, the lambda body. The body itself is any valid statement or expression. Functions in Sparkle are simply lambdas that have been assigned to a variable. As an added benefit, you can also pass along a lambda as a parameter, too!\n```\n/* Short function */\nlet foo = fn(x, y) ->\n    x + y\n\n/* Long function */\nlet bar = fn(func, x) -> {\n    return func(x, x + 1) + func(x + 1, x + 2)\n}\n\nreturn bar(foo, x)\n```\nIf the body of a lambda is an expression, the value produced becomes the return value of the call. If the body of the lambda is a block statement, the statements inside the block should be executed until a return is reached. If no return statement is encountered and the end of the block is reached, the lambda is said to be void, and produces no result.\n\n### Remarks\n\nA lexer to tokenize input has already been provided for you, and is ready to go in the starter code. And no worries, it'll take care of whitespaces and `/*` comments `*/` on its own. The tokens created by the parser contain two public properties; `text` and `symbol`. The `text` property contains the text that the Token was matched to, while `symbol` contains an enum constant corresponding to the token type. Here's a table of token types along with the regex patterns they match, for reference:\n```\nenum Symbol {\n    Whitespace(\"[ \\t\\r\\n]+\"),\n    Comment(\"\\\\/\\\\*(.*?)\\\\*\\\\/\"),\n    \n    Return(\"return\"),\n    Let(\"let\"),\n    Fn(\"fn\"),\n\n    Integer(\"[0-9]+\"),\n    Ident(\"[a-zA-Z_$][a-zA-Z0-9_$]*\"),\n    \n    Comma(\"[,]\"),\n    LParen(\"[(]\"), RParen(\"[)]\"),\n    LBrace(\"[{]\"), RBrace(\"[}]\"),\n    Semicolon(\"[;]\"),\n    Function(\"->\"),\n    \n    Plus(\"[\\\\+]\"), Minus(\"[\\\\-]\"),\n    Times(\"[\\\\*]\"), Divide(\"[\\\\/]\"),\n    Modulo(\"[%]\"),\n    Assign(\"[=]\"),\n    \n    $;\n}\n```\nAll of the types should be fairly self explanatory, although there are a few notes to make; `Whitespace` and `Comment` are skipped by the lexer, so you'll never have to interact with them. The `$` is a special type used to mark the end of input, and always appears as the last token in the list provided by the lexer.\n\n# Grammar Reference\n\nHere's a quick look at Sparkle's grammar, in no particular syntax:\n```\nstart      -> statement*\n\nstatement  -> expression ';'?\n           -> 'return' expression  ';'?\n           -> 'let' identifier '=' expression ';'?\n           -> '{' statement* '}'\n\nexpression -> assignment\n           -> 'fn' '(' (identifer (',' identifier)*)? ')' -> statement\n\nassignment -> additive ('=' expression)*\n\nadditive   -> multiply (('+'|'-') multiply)*\n\nmultiply   -> postfix (('*'|'/'|'%') postfix)*\n\npostfix    -> terminal\n           -> terminal '(' (expression (',' expression)*)? ')'\n\nterminal   -> integer\n           -> identifier\n           -> '(' expression ')'\n\ninteger    -> [0-9]+\n\nidentifier -> [a-zA-Z_$][a-zA-Z0-9_$]*\n\n```",
+    "totalAttempts": 121,
+    "totalCompleted": 13,
+    "totalStars": 18,
+    "voteScore": 14,
+    "tags": [
+      "Parsing",
+      "Interpreters",
+      "Strings",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

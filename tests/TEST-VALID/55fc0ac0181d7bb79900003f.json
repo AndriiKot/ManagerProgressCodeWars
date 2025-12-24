@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55fc0ac0181d7bb79900003f",
+  "data": {
+    "id": "55fc0ac0181d7bb79900003f",
+    "name": "Common error catcher",
+    "slug": "common-error-catcher",
+    "category": "reference",
+    "publishedAt": "2015-09-18T13:42:51.841Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55fc0ac0181d7bb79900003f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-18T12:59:44.662Z",
+    "createdBy": {
+      "username": "JMurphyWeb",
+      "url": "https://www.codewars.com/users/JMurphyWeb"
+    },
+    "description": "An English teacher is writing an online spelling checker and she knows of some common spelling mistakes where students will give an incorrect number of consecutive letters (\"possible\" is regularly misspelled \"posible\"). \n\nShe wants a function that she can pass the word that needs to be checked (\"posible\"), as well as the letter that is commonly given an incorrect number of times (\"s\"), and the exact number of times that that letter should appear (2). **This final argument is optional - if given it can range from 1 to 3 or if no  argument is given, then it should be assumed that exactly 1 of the given letter is desired.**\n\n```javascript\nfunction checkLetters(word,letter,correctNumber) {...}\n```\n\nIf the word has exactly the correct number of consecutive letters being tested, the function should return true.\n\n```javascript\n-> checkLetters(\"hello\",\"e\") => true\n\n-> checkLetters(\"kata\",\"t\",1) => true \n\n-> checkLetters(\"hello\",\"l\",2) => true\n\n-> checkLetters(\"goddessship\",\"s\",3) => true\n```\n\nIf the word doesn't contain only the exact substring of letters that is desired, the function should return false.\n\n```javascript\ncheckLetters(\"necesary\",\"s\",2) => false\n\ncheckLetters(\"disapointed\",\"p\",2) => false\n\ncheckLetters(\"accommmodate\",\"m\",2) => false\n\ncheckLetters(\"athyist\",\"e\",1) => false\n\n```\n\n_______________________\n\n##Notes:\n\n* All characters in the given word and letter will be lowercase letters.\n\n* If the correctNumber parameter is given, it can be 1, 2 or 3, if it is not given then it assumed that exactly 1 of the letter is supposed to appear.\n\n* A word to be checked will only have 1 substring of the given letter.  **The following word/letter pairs will not be tested:**\n\n  * \"undefined\" , \"d\" (since there are 2 seperate substrings containing \"d\")\n\n  * \"letter\" , \"e\" (since there are 2 seperate substrings containing \"e\")\n\n  * \"people\" , \"p\" (since there are 2 seperate substrings containing \"p\")\n\n\n* **The following word/letter pairs could be tested:**\n\n  * \"undefined\" , \"f\"\n\n  * \"letter\" , \"t\"\n\n  * \"people\" , \"l\"\n \n  * \"gobbledegooooppp\", \"p\" ",
+    "totalAttempts": 1068,
+    "totalCompleted": 107,
+    "totalStars": 1,
+    "voteScore": 159,
+    "tags": [
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

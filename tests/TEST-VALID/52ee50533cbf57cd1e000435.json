@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52ee50533cbf57cd1e000435",
+  "data": {
+    "id": "52ee50533cbf57cd1e000435",
+    "name": "Serialize Function Arguments",
+    "slug": "serialize-function-arguments",
+    "category": "reference",
+    "publishedAt": "2014-02-02T15:19:56.769Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52ee50533cbf57cd1e000435",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-02T14:04:03.660Z",
+    "createdBy": {
+      "username": "aymanfarhat",
+      "url": "https://www.codewars.com/users/aymanfarhat"
+    },
+    "description": "Serializing data in Javascript is a common practice, usually that is done to form values before sending them through a request. But consider this scenario. \n\nGiven a function with arguments, we would like to serialize its values and parameters into a string of key/value pairs, while optionally ommiting some keys(parameters).\n\nExample usage:\n\n```javascript\nfunction someFunction (name, family, position, n_children) {\n    data = serializeFunc(someFunction, arguments, ['family', 'n_children']);\n    // data's value would be: name=joe&position=developer\n    // rest of the function...\n}\n```\n\nImplement the serialize function so that it serializes the function's arguments into a string of parameter/argument pairs. Keys being the parameter names and values being the respective argument values. \n\nThe function should take three parameters: function, arguments, and optional list of excluded keys.\n\nTo make it simple, lets consider that all the values being passed are either string or number.",
+    "totalAttempts": 841,
+    "totalCompleted": 100,
+    "totalStars": 9,
+    "voteScore": 74,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

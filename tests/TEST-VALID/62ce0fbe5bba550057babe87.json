@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62ce0fbe5bba550057babe87",
+  "data": {
+    "id": "62ce0fbe5bba550057babe87",
+    "name": "osu! Accuracy calculator",
+    "slug": "osu-accuracy-calculator",
+    "category": "reference",
+    "publishedAt": "2022-07-13T00:20:50.912Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62ce0fbe5bba550057babe87",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-13T00:20:14.064Z",
+    "createdBy": {
+      "username": "оkabe",
+      "url": "https://www.codewars.com/users/%D0%BEkabe"
+    },
+    "description": "There is a <a href=\"https://en.wikipedia.org/wiki/Rhythm_game\">Rhythm game</a> called <a href=\"https://en.wikipedia.org/wiki/Osu!\">osu!</a> (not to be confused with Ohio State University) in which your main task is to click circles that appear on your screen to the beat of the music.\n\nWithout getting into unnecessary detail, depending on how precise your click was, you either get a score of 300, 100 or 50. Or, if your cursor wasn't over the circle at the moment, you miss. Miss counts as a score of 0.\n\n<img src=\"https://i.imgur.com/WetD49m.jpeg\" width=640 height=236>\n\nIf you hit all the circles perfectly, your accuracy will be 100%. However, 100 hits only count as a 0.33 of a perfect hit, since `100/300 ≈ 0.33`\n\nSame goes for the 50s, which are 0.16 of a flawless hit `50/300 ≈ 0.16`\n\nAfter you finished playing a song, you can see your `accuracy`, the value that represents how precise and close to the music your clicks were. It ranges from 0% (You literally didn't hit anything) to 100% (So called SS rank, when you was perfectly synced with the music) \n\nYour task is to implement a function `get_accuracy(perfect, hundreds, fifties, misses)` that calculates the accuracy of a play and returns a string formatted as shown below:\n\n<p style=\"color:#99b545\">\"99.62%\"</p>\n<p style=\"color:#99b545\">\"7.13%\"</p>\n<p style=\"color:#99b545\">\"89.01%\"</p>\n<p style=\"color:#99b545\">\"100.00%\"</p>\n\nSimply rounded to 2 decimal places and with a percent sign at the end.\n\nNotice that each song must have at least one object in it, so plays without hits are not allowed and for inputs `(0, 0, 0, 0)` the function should return `None`\n\n<small style=\"color:#777\">Also, if somebody here plays osu! and has over 8k pp, we can go multi anytime.</small>\n",
+    "totalAttempts": 30,
+    "totalCompleted": 16,
+    "totalStars": 0,
+    "voteScore": 26,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

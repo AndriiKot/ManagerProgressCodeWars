@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61c5a8768d2847000e057b01",
+  "data": {
+    "id": "61c5a8768d2847000e057b01",
+    "name": "Calculate Kata Satisfaction",
+    "slug": "calculate-kata-satisfaction",
+    "category": "reference",
+    "publishedAt": "2021-12-24T14:02:20.746Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61c5a8768d2847000e057b01",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-24T11:01:10.937Z",
+    "createdBy": {
+      "username": "HelloWorld!!!!!",
+      "url": "https://www.codewars.com/users/HelloWorld!!!!!"
+    },
+    "description": "<h2>Description</h2>\n\nIn codewars, Kata's satisfaction is divided into \"`Very Satisfied`\", \"`Somewhat Satisfied`\", and \"`Not Satisfied`\", each \"`Very Satisfied`\" vote is equivalent to 100% satisfaction, each \"`Somewhat Satisfied`\" vote is equivalent to 50% satisfaction and each \"`Not Satisfied`\" vote is equivalent to 0% satisfaction.\n\nYour task is to write a function `kata_satisfaction` and recieve a list as a parameter, which contains \"`Very Satisfied`\", \"`Somewhat Satisfied`\" and \"`Not Satisfied`\", others should be ignored. Then calculate the satisfaction of the Kata.\n\n+ <h4>About the calculation process</h4>\n\n  ```\n  Kata's final satisfaction (your answer) is the average of all valid votes, \n  As we mentioned earlier: “each \"`Very Satisfied`\" vote is equivalent to 100% satisfaction, \n                            each \"`Somewhat Satisfied`\" vote is equivalent to 50% satisfaction \n                            and each \"`Not Satisfied`\" vote is equivalent to 0% satisfaction.”\n  \n  Therefore your task is to calculate kata's final satisfaction according to the above data\n  \n  For Example: kata_satisfaction([\"Very Satisfied\", \"Somewhat Satisfied\", \"Somewhat Satisfied\"])\n      1) According to the above data, the contents can be written as [100%, 50%, 50%]\", which is equivalent to [1, 0.5, 0.5]\n      2) Calculate the average of the three figures, 3 means the length:  (1 + .5 + .5) / 3 ≈ 0.666667\n      3) Then multiply this number by 100 because we need to use percentages: 0.6666667 * 100 = 66.6667\n      4) Finally, with the following notes, the final answer is \"66%\"\n  \n  If you need more examples, you can look at Sample tests or Examples below\n  ```\n\n<h2>Notes</h2>\n\n + If the answer is a floating point number, the answer should be floored to the whole number\n + After irrelevant (which means elements exclude \"`Very Satisfied`\", \"`Somewhat Satisfied`\" and \"`Not Satisfied`\") characters are deleted, If there are >= 4 consecutive \"`Not Satisfied`\", your function should return “Retired!” \n + Return \"0%\" if the array excludes [\"Very Satisfied\", \"Somewhat Satisfied\", \"Not Satisfied\"]\n + See `Examples` below or `Sample tests` for the format of the return value\n + This is NOT the real way to calculate Kata satisfaction. This is just the most basic calculation, ignoring many crucial details. The description above is very different from the real way to calculate Kata satisfaction. I hope you don't misunderstand\n\n<h2>Examples</h2>\n\n```python\nkata_satisfaction([\"Very Satisfied\", \"Very Satisfied\"]) -> \"100%\"\nkata_satisfaction([\"Somewhat Satisfied\", \"Not Satisfied\", \"Not Satisfied\"]) -> \"16%\"\nkata_satisfaction([\"Somewhat Satisfied\", \"Not Satisfied\", \n                   \"Not Satisfied\", \"Not Satisfied\", \"Not Satisfied\"]) -> \"Retired!\"\n                   \n```",
+    "totalAttempts": 71,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

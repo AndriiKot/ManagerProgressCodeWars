@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f16df1e8939100645b31ea",
+  "data": {
+    "id": "65f16df1e8939100645b31ea",
+    "name": "Compile-time `std::tuple` overwriter",
+    "slug": "compile-time-std-tuple-overwriter-1",
+    "category": "reference",
+    "publishedAt": "2024-03-13T09:12:24.242Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/65f16df1e8939100645b31ea",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-13T09:12:17.982Z",
+    "createdBy": {
+      "username": "neitz",
+      "url": "https://www.codewars.com/users/neitz"
+    },
+    "description": "Consider a tuple of types [`std::tuple<Ts...>`](https://en.cppreference.com/w/cpp/utility/tuple), your task is to define a type trait which, when passed a tuple along with a range and a list of types, effectively 'overwrites' the types that are in that range in the tuple with the given list of types.\n\nA range is defined as a class `range<From, To = From + 1>` where `From` and `To` are the respective indices of the range.\n\nIf `From < To` then `tuple_overwriter` will overwrite the range of types in the tuple in the normal order whereas if `From > To` then `tuple_overwriter` will overwrite the range of types in the tuple in the reverse order.\n\n**Note:** The class `range<From, To>` has already been predefined, so you don't need to define it again.\n\nDo note that the last index in the range is ignored, so passing something like `range<M, N>` where `M < N` actually replaces the types within `[M, N - 1]` and **not** within `[M, N]`.\n\nSimilarly, passing a reversed range like `range<M, N>` where `M > N` replaces the types within `[N + 1, M]`.\n\nIf a range `range<M, N>` is such that `M == N`, then it simply returns back the same tuple it was passed.\n\nHere are some examples:\n\n```cpp\n// Single-indexed range as input\ntuple_overwriter_t<std::tuple<char, int, float, short>, range<0>, float, int> // == std::tuple<float, int, int, float, short>\n//                            ^^^^ gets replaced with (float, int)\n\n// Double-indexed range as input\ntuple_overwriter_t<std::tuple<char, int, float, short>, range<1, 3>, float> // == std::tuple<char, float, short>\n//                                  ^^^^^^^^^^ gets replaced with (float)\n\n// Equal-indexed range as input (Should return the exact same tuple)\ntuple_overwriter_t<std::tuple<char, int, float, short>, range<1, 1>, short> // == std::tuple<char, int, float, short>\n\n// Reversed range as input\ntuple_overwriter_t<std::tuple<char, int, float, short>, range<3, 1>, float, char, short> // == std::tuple<char, int, short, char, float>\n/*                                       ^^^^^^^^^^^^ the list of types will be written in reverse order,\n                                                      i.e., gets replaced with (short, char, float)       */\n\n// Empty inputs mean that the types in the range get erased instead\ntuple_overwriter_t<std::tuple<char, int, float, short>, range<1, 3>> // == std::tuple<char, short>\n//                                  ^^^^^^^^^^ These types get erased\n```\n\nAll sample inputs given will be valid. All your indices should be of type `std::size_t`.",
+    "totalAttempts": 36,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 4,
+    "tags": [
+      "Metaprogramming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ae0f482c5a452fc4e0000bd",
+  "data": {
+    "id": "5ae0f482c5a452fc4e0000bd",
+    "name": "Hack-the-Exception",
+    "slug": "hack-the-exception",
+    "category": "games",
+    "publishedAt": "2018-04-25T22:26:04.196Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ae0f482c5a452fc4e0000bd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-25T21:34:58.176Z",
+    "createdBy": {
+      "username": "Hallowizer",
+      "url": "https://www.codewars.com/users/Hallowizer"
+    },
+    "description": "In this kata, you will be given an exception. Your job will be to throw that exception and cause it to bubble up through the stack, without using a throws declaration. The tester is designed so that it will generate a compiler error if you have a throws declaration. The idea is that a user could change the following:\n\n```java\ntry {\n  // generate some errors\n} catch (Exception e) {\n  e.printStackTrace();\n}\n```\n\nto the following:\n\n```java\ntry {\n  // generate some errors\n} catch (Exception e) {\n  HackTheException.sneakyThrow(e);\n}\n```\n\nso that the exception bubbles up and crashes the thread if necessary, without wrapping it in a `RuntimeException`, so that if it gets printed it doesn't print as a `RuntimeException`.",
+    "totalAttempts": 129,
+    "totalCompleted": 20,
+    "totalStars": 2,
+    "voteScore": 6,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c6847a9f1ed756453298223",
+  "data": {
+    "id": "5c6847a9f1ed756453298223",
+    "name": "Mac address converter",
+    "slug": "mac-address-converter",
+    "category": "algorithms",
+    "publishedAt": "2019-02-17T11:50:08.857Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c6847a9f1ed756453298223",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-16T17:26:01.823Z",
+    "createdBy": {
+      "username": "chkhc",
+      "url": "https://www.codewars.com/users/chkhc"
+    },
+    "description": "Ethernet Format to Token-Ring Format converter\n----------------------------------------------\n\nDuring data link phase in a computer network, mac address exchange is performed by sending mac addresses in binary format.\n\nBy default, most network mac exchanges are performed in their canonical 802 (IEEE) format.\n\n``Note: Canonical form means that the least significant bit in the MAC is the first bit that maps to binary data in memory - e.g: In a LAN, the least significant bit is set to the corresponding first bit of the initial byte part in the binary form of data to be transferred -``\n\nIn token ring-based networks, when circulating mac addresses the bit ordering is ***reversed*** and every first bit of bytes in memory during transfer are set to the most significant (or leftmost memory bits).This causes a left-to-right bit transfer outlined in the example below:\n\n\n                In memory,      12       34       56       78       9A       BC\n                canonical:   00010010 00110100 01010110 01111000 10011010 10111100\n\n                1st bit appearing on LAN (group address indicator)\n                |\n                On LAN:      01001000 00101100 01101010 00011110 01011001 00111101\n\n                In memory,\n                MSB format:  01001000 00101100 01101010 00011110 01011001 00111101\n                                48       2C       6A       1E       59       3D\n\nYou are required to prepare the function **revOrderMark** that can convert a mac address from canonical-format to token-ring format and vice-versa.\n The output of the function should be a mac address in IEEE format. In a case where an error input is found, a mac of  00-00-00-00-00-00 should be returned.\n\nError input types are descibed below:\n\n                Alphanum tokens:   \"ijsj38j2j4920xjc93202\"\n                Numeric input:     \"77553516586165\"\n                Non-mac addresses: \"90-B3-IK-23-44-7C\" Or \"90-BB-7829-900-A7-09\" \n\n Output sample shown below:\n\n                 11-22-33-44-55-66\n\n&nbsp;\n<br />\n## Relevant websites:\n* [Mac Address](https://en.wikipedia.org/wiki/MAC_address)\n* [IEEE Standards for MAC](https://standards.ieee.org/content/dam/ieee-standards/standards/web/documents/tutorials/eui.pdf)",
+    "totalAttempts": 158,
+    "totalCompleted": 41,
+    "totalStars": 6,
+    "voteScore": 39,
+    "tags": [
+      "Algorithms",
+      "Binary",
+      "Bits",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/588fa08b1223c3ee42000062",
+  "data": {
+    "id": "588fa08b1223c3ee42000062",
+    "name": "Create a password hashing function.",
+    "slug": "create-a-password-hashing-function",
+    "category": "algorithms",
+    "publishedAt": "2017-01-31T03:54:06.456Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/588fa08b1223c3ee42000062",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-30T20:22:35.919Z",
+    "createdBy": {
+      "username": "int3_0xcc",
+      "url": "https://www.codewars.com/users/int3_0xcc"
+    },
+    "description": "Create a password hashing function that turns any 1-20 character string into a hash.\n\nYou are free to design any hashing function you please as long as you follow the guidelines:\n\n1) Hashes should be always 8 characters long.\n\n2) Hashes shouldn't resemble the input:\n\n```javascript\n// returns 's3cr3tAA' which resembles the original too much!\nvar hashed = badHash('secret');\n\n// returns 'XMDERT21' which doesn't resemble the original, except for length\nvar hashed = betterHash('secret');\n```\n\n3) Hashing the same input should result in the same result:\n```javascript\n// results in 'af12FKla'\nvar hashed = badHash('secret');\n\n// the next call result is 'af12FKl1'\nvar hashed = badHash('secret');\n\n// this should return true:\nbetterHash('secret') == betterHah('secret')\n\n```\n\n4) Hashes of two slightly differing passwords shouldn't look similar:\n\n```javascript\n// returns 'abcf12le'\nvar hash1 = badHash('secret_1');\n\n// returns 'abcf12li'\nvar hash2 = badHash('secret_2');\n\n// returns 'abcf12le'\nvar hash3 = goodHash('secret_1');\n\n// returns 'cdaf2fAG'\nvar hash4 = goodHash('secret_2');\n\n\n```\n\nDuring the final test, there should be less than 3 <a href=\"https://en.wikipedia.org/wiki/Collision_(computer_science)\">collisions</a> among the 25,000 generated hashes:\n\n```javascript\n// results in 'cd12mal0'\nvar hashed1 = badHash('word1');\n\n// also results in 'cd12mal0' which is a collision\nvar hashed2 = badHash('word2');\n```\n\nYour hashing function will be tested for collisions on a randomly generated array of 25,000 strings. Your algorithm is allowed to create at most 3 collisions. Anything above that will make the tests fail.\n\n\nNote: In real life, implementing your own password hashing functions is not a good idea. Always rely on the work of people who are skilled in cryptography - your unique solution here is likely to have multiple vulnerabilities which would make it unsafe to use in real products. Treat this kata just as a fun exercise.",
+    "totalAttempts": 632,
+    "totalCompleted": 38,
+    "totalStars": 11,
+    "voteScore": 40,
+    "tags": [
+      "Cryptography",
+      "Security",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b7c17fabd29b22df000004f",
+  "data": {
+    "id": "5b7c17fabd29b22df000004f",
+    "name": "Pi approximation fractions",
+    "slug": "pi-approximation-fractions",
+    "category": "algorithms",
+    "publishedAt": "2018-08-21T13:49:25.634Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b7c17fabd29b22df000004f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-21T13:47:39.166Z",
+    "createdBy": {
+      "username": "polluxCast0r",
+      "url": "https://www.codewars.com/users/polluxCast0r"
+    },
+    "description": "# Description\n\nHave you heard about Archimedean approximation? It's a nice way to approximate π number by a simple fraction `22/7`.\nYou can see that `22/7` covers 2 decimal points of π:\n```\nπ:    3.14_15926535897932\n22/7: 3.14_2857142857143\n```\n\nIn ancient China common π approximation was `355/113`, that covers 6 decimal points:\n\n```\nπ:       3.141592_6535897932\n355/113: 3.141592_9203539825\n```\n\n# Task \n\nYour goal is to write a function `get_fraction` that accepts `eps` as it's argument. The function returns tuple of fraction's numerator and denominator `(n, d)`, so that `|n/d - π| < eps`.\nBasically, you need to write a function that finds two *smallest* numbers, which fraction is closest to π with given precision.\n\n# Examples\n```\nget_fraction(1)      #=> (3, 1)\nget_fraction(0.1)    #=> (22, 7)\nget_fraction(0.001)  #=> (333, 106)\nget_fraction(1e-5)   #=> (355, 113)\n```\n\n# Limitations\n\n`eps` won't be bigger that `1` and smaller than `10 ^ -110`:\n```\n1e-110 <= eps <= 1\n```\n\n# Notes\n* For Python users: module `fractions` is forbidden, while `decimal` precision is changed to 150 points\n* Tests precision may exceed your language's standart π limit, so you have preloaded Pi (for Python) constant that is 110 digit pi decimal\n* First 110 digits of π is: `3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651`\n* Hint: If you're stuck, <a href=\"https://en.wikipedia.org/wiki/Continued_fraction\">Continued fraction</a> may help ",
+    "totalAttempts": 148,
+    "totalCompleted": 16,
+    "totalStars": 7,
+    "voteScore": 19,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ed2eed87a7eb0002ffa49a7",
+  "data": {
+    "id": "5ed2eed87a7eb0002ffa49a7",
+    "name": "Explode the Array",
+    "slug": "explode-the-array",
+    "category": "reference",
+    "publishedAt": "2020-05-31T01:06:35.420Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ed2eed87a7eb0002ffa49a7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-30T23:40:09.100Z",
+    "createdBy": {
+      "username": "Fbasham",
+      "url": "https://www.codewars.com/users/Fbasham"
+    },
+    "description": "# Task\n\nWrite a function that 'explodes' any elements that are lists in each row of an array.  The returned list should only contain rows that have integer values. Each row should also have the same length as the widest row.  Fill any missing values in each row with `0`. \n\n\n# Example\n\n```\narr = [[0,[1,2]],        # contains nested list in row\n       [3],              # no nested list, but length != widest row  \n       [[4,5],[6,7]]     # 2 nested lists in row\n]\n       \nexplode(arr) == [[0,1],  # nested [1] gets reduced to integer 1\n                 [0,2],  # same as above, keeps 0 from 1st index\n                 [3,0],  # 0 is added because the widest row is len=2\n                 [4,6],  \n                 [4,7],\n                 [5,6],\n                 [5,7]\n]\n\n```\n\n#### Notes\n\n- an empty list should return `[]`, but `[[]]` should return `[[0]]`\n- every element in a row will either be an integer or a list",
+    "totalAttempts": 421,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 15,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

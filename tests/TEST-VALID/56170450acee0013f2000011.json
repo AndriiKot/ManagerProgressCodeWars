@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56170450acee0013f2000011",
+  "data": {
+    "id": "56170450acee0013f2000011",
+    "name": "Binary Object Insertion.",
+    "slug": "binary-object-insertion",
+    "category": "algorithms",
+    "publishedAt": "2015-10-09T00:32:43.367Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56170450acee0013f2000011",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-09T00:03:30.234Z",
+    "createdBy": {
+      "username": "finetype",
+      "url": "https://www.codewars.com/users/finetype"
+    },
+    "description": "When given a sorted array of objects, each of which has a 'value' property, like so:\n\ndemo = [{value:0},{value:10},{value:11}]\n\nand one wishes to insert a new corresponding object into this array, while preserving the sorted nature of it, one might simply\n\ndemo.push({value:8});<br/>\ndemo.sort(function(a,b){return a.value > b.value});\n\nHowever, this is a very inefficient method on larger lists. Instead, you should write a method that performs a binary insertion. \n\nThe way this works is the following:\n\nWhen I am looking for someone named \"Oprah\" in an alphabetically sorted list of names, I might open it up to the middle. Upon seeing that I'm in the M's, I would then check halfway between my current position and the end. There, I might land in the T's. So I would check halfway between my current position and the middle.\n\nAnd so on, until I find the name I'm looking for.\n\nWrite a function that works this way. The test case given to you is the only type of test case you'll have; you won't need to sort strings, and they will always be object with a value property.\n",
+    "totalAttempts": 100,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Binary",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

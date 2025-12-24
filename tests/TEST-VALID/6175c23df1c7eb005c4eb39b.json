@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6175c23df1c7eb005c4eb39b",
+  "data": {
+    "id": "6175c23df1c7eb005c4eb39b",
+    "name": "Roman numerals extended",
+    "slug": "roman-numerals-extended",
+    "category": "algorithms",
+    "publishedAt": "2021-10-24T20:35:19.284Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6175c23df1c7eb005c4eb39b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-24T20:29:49.324Z",
+    "createdBy": {
+      "username": "valerioio",
+      "url": "https://www.codewars.com/users/valerioio"
+    },
+    "description": "### Task\nThe [roman numeral system](https://en.wikipedia.org/wiki/Roman_numerals) uses the letters ```['I','V','X','L','C','D','M']``` to represent numbers from ```1``` up to ```3999```.\nA converter function takes in a decimal number and translates it to a roman numeral. Your task is to create a function that takes in an array of symbols and returns a converter for that array.\n\n### Examples\n```\nto_roman_classic = to_roman(['I', 'V', 'X', 'L', 'C', 'D', 'M'])\nto_roman_classic(2021)\n# returns: 'MMXXI'\n\nto_roman_reduced = to_roman(['I', 'V', 'X', 'L'])\nto_roman_reduced(89)\n# returns: 'LXXXIX'\n\nto_roman_alphabet = to_roman(['A', 'B', 'C', 'D', 'E', 'F', 'G'])\nto_roman_alphabet(2021)\n# returns: 'GGCCA'\n\nto_roman_extended = to_roman(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])\nto_roman_extended(9876543210)\n# returns: 'SURQQQPOONMLIJGGGEEC'\n```\n\n### Input\nAn array of uppercase letter of the english alphabet.\nThe value of the symbol in the array (0-indexed) at index ```i``` is:\n* if ```i``` is even: ```10**(i / 2)```\n* if ```i``` is odd: ```10**((i - 1) / 2) * 5```\n\n### Constraints\n* the number tested are always representable with the given array of symbols\n* the number tested are positive integers under 9e12\n* the symbols are upper case letters of the english alphabet\n* the length of the array of symbols is between 1 and 26",
+    "totalAttempts": 72,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

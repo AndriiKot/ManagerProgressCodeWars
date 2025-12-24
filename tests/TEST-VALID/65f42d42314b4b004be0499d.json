@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f42d42314b4b004be0499d",
+  "data": {
+    "id": "65f42d42314b4b004be0499d",
+    "name": "Asynk/Yield",
+    "slug": "asynk-slash-yield",
+    "category": "reference",
+    "publishedAt": "2024-03-15T11:59:01.938Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65f42d42314b4b004be0499d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-15T11:13:06.411Z",
+    "createdBy": {
+      "username": "DMACD",
+      "url": "https://www.codewars.com/users/DMACD"
+    },
+    "description": "### Asynk/Yield\n\nYou may have heard that `async/await` is just syntatic sugar in JS. Well, I'm sorry to have to report this, but the JavaScript factory has run out of sugar! We have no more asyncs and we're fresh out of all awaits to give to users, so you'll have to re-implement it with a sugar alternative. Let's call it something legally distinct like `asynk` so that we don't get sued by Big Sugar.\n\nYour task is to build a function called `asynk` that takes a generator factory that `yield`s promises wherever there would have been an `await` before. An example of how this would look is below.\n\n```javascript\nconst id = 5;\nconst offsetID = asynk(function* () {\n  const num = yield getID(id); // getID :: number => Promise<number>\n  return num + 10;\n})\n// offsetID :: Promise<number>\n\n```\n\nOr a more real world example might be:\n\n```javascript\n// User :: { name: string, age: number, experience: number, colleagues: number[] }\n\nconst sumOfExperience = (id) => asynk(function* () {\n  const user = yield getUserById(id);\n  if (user.colleagues.length > 0) {\n    // userId[]\n    const ids = user.colleagues\n    // user[]\n    const colleagues = yield Promise.all(ids.map(getUserById));\n    const sumColleagues = colleagues.reduce((acc, x) => acc + x.experience, 0);\n    return sumColleagues + user.experience;\n  }\n  return user.experience\n});\n\n```\n\nRemember, we're _emulating_ async/await with **generators** (albeit not perfectly - there is a difference as mentioned below), so there will be some basic requirements!\n\nIt should:\n  - Take a generator function as its argument\n  - Return a promise\n  - Automatically wrap returned non-Promises in a resolved Promise\n  - Correctly yield a promise\n  - Catch errors and turn them into rejections\n    - Make sure errors in the body of the generator aren't throw in place\n  - Should return a rejection right away, without continuing\n  - Support try/catch in the generator function\n  - Throw an error if trying to yield a non-promise (unlike async/await, where one can await anything)\n    - **This should be the only time that `asynk` throws in place. Actual async errors should not throw in place**\n  \nGood luck!",
+    "totalAttempts": 52,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Promises"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

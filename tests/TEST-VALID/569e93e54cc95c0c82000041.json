@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/569e93e54cc95c0c82000041",
+  "data": {
+    "id": "569e93e54cc95c0c82000041",
+    "name": "Pub/Sub",
+    "slug": "pub-slash-sub",
+    "category": "algorithms",
+    "publishedAt": "2016-01-19T19:52:14.173Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/569e93e54cc95c0c82000041",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-19T19:52:06.301Z",
+    "createdBy": {
+      "username": "mmaxwell",
+      "url": "https://www.codewars.com/users/mmaxwell"
+    },
+    "description": "The `publish-subscribe` pattern is one that allows communication between two or more things (modules, functions, etc.) without having them be tightly coupled.  In this pattern, the communication happens through a `hub` over channels (`topics`), which are generally identified by a string.  When a user wants to `subscribe` to a topic, they will provide a function (`handler`) that will be executed when the topic is published.  When a user wants to `publish` a topic, they will need only call the hub's `publish` method, indicating the topic identifier, and passing in any other relevant information as additional arguments.\n\nCreate a pub/sub system that allows a user to:\n\n* Subscribe to a topic\n* Publish to a topic\n\nWhen a user publishes to a topic, any arguments provided to the `publish` method, not including the `topic`, should be passed to the handler(s).\n\n```javascript\nvar handle = hub.subscribe(\"user/added\", function (user) {\n  console.log(\"A user named \" + user.name + \" was added!\");\n});\n\nvar user = {\n  name: \"Matt\"\n};\n\nusers.add(user);\n\nhub.publish(\"user/added\", user); // logs \"A user named Matt was added!\"\n```\n\n\nWhen a user subscribes to a topic, the subscription method should return an object (`handle`) that has a `remove` method on it.  That method should remove that subscription.  If there are multiple handles subscribed to a topic and a handle's `remove` method is called, only that handle's subscription should be removed.  All other handles should operate as normal.\n\n```javascript\nvar handle = hub.subscribe(\"test/remove\", function () {\n  console.log(\"Testing handle\");\n});\n\nhub.publish(\"test/remove\"); // Testing handle\n\nhandle.remove();\n\nhub.publish(\"test/remove\"); // Nothing is logged\n```",
+    "totalAttempts": 185,
+    "totalCompleted": 14,
+    "totalStars": 7,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f60c6a2cecf9e0016e4fb37",
+  "data": {
+    "id": "5f60c6a2cecf9e0016e4fb37",
+    "name": "Recursive map",
+    "slug": "recursive-map",
+    "category": "algorithms",
+    "publishedAt": "2020-09-16T09:40:29.424Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5f60c6a2cecf9e0016e4fb37",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-09-15T13:50:26.606Z",
+    "createdBy": {
+      "username": "ldeld",
+      "url": "https://www.codewars.com/users/ldeld"
+    },
+    "description": "What if Ruby was a functional language?\n\nFunctional languages such as Haskell rely heavily on recursion and do not have any of the loop constructs common in imperative languages. The goal of this kata is to write our own version of Array#map but using recursion as we would in Haskell!\n\nThis `rmap` method will take one argument (an array) and a block.\nIt should have the same behavior as the regular `map`:\n\n```ruby\n  rmap([1, 2, 3]) { |num| num * 2 } #=> [2, 4, 6]\n\n```\nTo make it more Haskell-like, it cannot use any of the methods from the [Enumerable module](https://ruby-doc.org/core-2.5.0/Enumerable.html) that you would normally use on arrays! This means no `.each`, `.map`,`.first`, `.last`, `.reduce`, etc. You can still use `array[i]` to access elements.\n\nAlso, for testing purposes, you should not modify the first parameter (it should stay named 'array' and be required). You can however add other parameters if needed. \n",
+    "totalAttempts": 136,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c42747cdbd9953ab86d2a38",
+  "data": {
+    "id": "5c42747cdbd9953ab86d2a38",
+    "name": "Arthur's Wallpaper",
+    "slug": "arthurs-wallpaper",
+    "category": "games",
+    "publishedAt": "2019-01-19T02:38:04.208Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5c42747cdbd9953ab86d2a38",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-19T00:51:09.062Z",
+    "createdBy": {
+      "username": "blu.knite",
+      "url": "https://www.codewars.com/users/blu.knite"
+    },
+    "description": "Arthur wants to put wallpaper on the walls of his room. He found a teacup pattern that he really likes, and has also convinced his friend Ford to help him put it up.\n\nHe is having a hard time figuring out exactly how many rolls he is going to need. Whenever he asks Marvin for the answer, Marvin's replies are quite unhelpful.\n\nTheir conversations go something like this:\n> **Arthur** : One roll of wallpaper is _50 centimeters_ wide and _10 meters_ long.\n\n> **Marvin** : Here I am, brain the size of a planet and you're telling me how big a roll of wallpaper is. Call that job satisfaction? 'Cos I don't.\n\n> **Arthur** : Anyways... How many rolls will I need to cover the walls of my room? Its length is _10.0 meters_, its width is _5.0 meters_, and the ceiling is _3.0 meters_ high.\n\n> **Marvin** : I’ve got this terrible pain in all the diodes down my left side.\n\n> **Arthur** : ಠ_ಠ\n\nCan you help fix Marvin's personality so that he is more helpful?\n\n---\n\n# Requirements\n- When Arthur tells Marvin the dimensions of the roll, Marvin should reply by saying:\n  > \"So you're telling me the roll has an area of 5.00 square meters. Got it!\"\n  \n  The area should be rounded to two-decimal places.\n\n\n- When Arthur asks Marvin how many rolls he should use, Marvin should respond by saying:\n  > \"You're going to need 18 rolls of wallpaper.\"\n  \n  The number of rolls must be a whole number (_see below for more details_).\n\n- Ford can be a little careless sometimes and Arthur wants Marvin to also take this into account when giving him the answer. Marvin's answer should allow for 15% more wallpaper than Arthur needs.\n\n# Wallpaper Details\n- wallpaper dimensions are given as:\n  - width in cm  `width > 0`\n  - length in m  `length > 0`\n- room dimensions are given in m\n  - `length, width >= 0`\n    - if `length == 0`, this means that the long walls in the room are made of glass and will not need any wallpaper\n    - if `width == 0`, this means that the short walls in the room are made of glass and will not need any wallpaper\n  - `height > 0`\n- Vertically split wallpaper will be discarded and not reused to cover part of another wall (see example 3 below).\n\n---\n\n# Examples\nIn all the examples below, roll dimensions are given as `(width, length)` and room dimensions are given as `(length, width, height)`.\n\n## Example 1\n- The wallpaper roll is (50cm, 3m)\n- The room is (6m, 4m, 3m)\n\nIn this case the answer should be **46** rolls.\n### Explanation\n- The long walls require **12** rolls each\n- The short walls require **8** rolls each\n\n**40** rolls to cover the walls + **6** rolls because of Ford = **46** rolls total\n\n## Example 2\n- The wallpaper roll is (50cm, 60m)\n- The room is (6m, 4m, 5m)\n\nIn this case the answer should be **4** rolls.\n### Explanation\n- The long walls require **1** roll each\n- The short walls require **⅔** of a roll each\n\n**3⅓** rolls to cover the walls + **½** a roll because of Ford = **4** rolls total\n\n## Example 3\n- The wallpaper roll is (50cm, 3m)\n- The room is (5.3m, 4.2m, 4m)\n\nIn this case the answer should be **62** rolls.\n### Explanation\n- The long walls require **14⅔** rolls each\n- The short walls require **12** rolls each\n\n_Note that there is a partial strip of wallpaper used for each of the walls. The other part of the strip is not reused. But the rest of the roll is still perfectly fine to use._\n\n**53⅓** rolls to cover the walls + **8** rolls because of Ford = **62** rolls total",
+    "totalAttempts": 49,
+    "totalCompleted": 13,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

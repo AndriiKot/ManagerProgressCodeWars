@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62bb4e2ddb9bc9003da26055",
+  "data": {
+    "id": "62bb4e2ddb9bc9003da26055",
+    "name": "Hungarian Present Indefinite Conjugator",
+    "slug": "hungarian-present-indefinite-conjugator",
+    "category": "reference",
+    "publishedAt": "2022-07-01T08:49:45.603Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62bb4e2ddb9bc9003da26055",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-28T18:53:33.787Z",
+    "createdBy": {
+      "username": "HelloWorld!!!!!",
+      "url": "https://www.codewars.com/users/HelloWorld!!!!!"
+    },
+    "description": "# Hungarian Present Indefinite Conjugation\n\nIn Hungarian, the conjugated verb changes by adding suffixes and according to the person we're talking about. \n\nHungarian has 14 vowels, they are `a, á, o, ó, u, ú, e, é, i, í, ö, ő, ü, ű`\n\nHungarian has 30 consonant, they are `b, c, cs, d, dz, dzs, f, g, gy, h, j, k, l, ly, m, n, ny, p, q, r, s, sz, t, ty, v, w, x, y, z, zs`. Some of them consist of two or three ascii letter(`cs, gy...`), but we should consider them as one letter in this kata\n\n### About the conjugating process\n\n\nIf the last vowel is backvowel (`a, á, o, ó, u, ú`) , we add `\"ok\", \"sz\", \"\", \"unk\", \"tok\", \"nak\"` for each person(I, you, he/she/it, we, you(plural), they)\n\nfor example:\n```\ntud (can, know)\n\nÉn (I)          tudok   |   Mi (We)      tudunk\nTe (You)        tudsz   |   Ti (You)     tudtok\nŐ  (He/She/It)  tud     |   Ők (They)    tudnak\n```\n\nIf the last vowel is in `e, é, i` , we add `\"ek\", \"sz\", \"\", \"ünk\", \"tek\", \"nek\"` for each person(I, you, he/she/it, we, you(plural), they)\n\nfor example:\n```\nszeret (like)\n\nÉn (I)          szeretek   |   Mi (We)      szeretünk\nTe (You)        szeretsz   |   Ti (You)     szerettek\nŐ  (He/She/It)  szeret     |   Ők (They)    szeretnek\n```\n\nIf the last vowel is in `ö, ő, ü, ű` , we add `\"ök\", \"sz\", \"\", \"ünk\", \"tök\", \"nek\"` for each person(I, you, he/she/it, we, you(plural), they)\n\nfor example:\n```\nül (sit)\n\nÉn (I)          ülök   |   Mi (We)      ülünk\nTe (You)        ülsz   |   Ti (You)     ültök\nŐ  (He/She/It)  ül     |   Ők (They)    ülnek\n```\n\nIf the word ends with `ít` or 2 consonant, you should add `\"a\", \"e\" , \"o\" or \"ö\"` according to the vowel harmony in `\"Te\", \"Ti\", \"Ők` before regular conjugating. As in the example, the suffixes are `-ok, -asz, -, -unk, -otok, -anak`, `-ek, esz, -, -ünk, -etek, -enek` and `-ök, esz, -, -ünk, -ötök, -enek`(according to the last vowel which had already mentioned earlier. If the word ends with `\"ít\"`, you should skip vowel `\"í\"` before judging the last letter.)\n\nFor example:\n```\n                mond (say)  segít (help)  küld (send)\nÉn (I)          mondok      segítek       küldök\nTe (You)        mondasz     segítesz      küldesz\nŐ  (He/She/It)  mond        segít         küld\nMi (We)         mondunk     segítünk      küldünk\nTi (You)        mondotok    segítetek     küldötök\nŐk (They)       mondanak    segítenek     küldenek\n``` \n\nIf the word ends with `\"ik\"`, you should delete `\"ik\"` and then conjugate as normal. But you should add the suffix `\"ik\"` in third person singular (`\"Ő\"`) and `\"om\"`, `\"em\"` or `\"öm\"` instead of `\"ok\"`, `\"ek\"`, `\"ök\"` in the first person singular(`\"Én\"`)\n\nFor example:\n```\n                lakik (live)  történik (happen)   vösösödik (redden)\nÉn (I)          lakom         történem            vösösödöm\nTe (You)        laksz         történsz            vösösödsz\nŐ  (He/She/It)  lakik         történik            vösösödik\nMi (We)         lakunk        történünk           vösösödünk\nTi (You)        laktok        történtek           vösösödtök\nŐk (They)       laknak        történnek           vösösödnek\n```\n\nIf the word ends with `\"z\"`, `\"sz` or `\"s\"`, in second person singular we add `\"ol\"`, `\"el\"` or `\"öl\"` instead of `\"sz\"`. Other conjugations are the same.\n\nFor example:\n```\n                hoz (bring)   vesz (buy)   tűz (pin)\nÉn (I)          hozok         veszek       tűzök\nTe (You)        hozol         veszel       tűzöl\nŐ  (He/She/It)  hoz           vesz         tűz\nMi (We)         hozunk        veszünk      tűzünk\nTi (You)        hoztok        vesztek      tűztök\nŐk (They)       hoznak        vesznek      tűznek\n```\n\nSome words ends with `-zik`, `szik` or `sik`, they're a combination of the `-ik` verbs and with `–s`, `-sz`, `-z`. Some of them even have double consonant.\n\nFor example:\n```\n                mászik (climb)   esik (fall)   ütközik (clash)   játszik (play)\nÉn (I)          mászom           esem          ütközöm           játszom\nTe (You)        mászol           esel          ütközöl           játszol\nŐ  (He/She/It)  mászik           esik          ütközik           játszik\nMi (We)         mászunk          esünk         ütközünk          játszunk\nTi (You)        másztok          estek         ütköztök          játszotok\nŐk (They)       másznak          esnek         ütköznek          játszanak\n```\n\n\n## Your Task\n\nYour task is to write a function, recieve a hungarian verb as an argument and return the full conjugation for each person as a list.\n\n### Sample Input:\n\n```python\n\"mond\"\n```\n\n### Sample Output:\n\n```python\n[\"mondok\", \"mondasz\", \"mond\", \"mondunk\", \"mondotok\", \"mondanak\"]\n```\n\n## Notes\n\n + Every letter is lowercased, every word is at least 2 characters.\n + There're actually many irregular verbs(or some words doesn't fit the rule above) in Hungarian, these will not appear in test cases, just ignore it in this kata.\n\n\n",
+    "totalAttempts": 117,
+    "totalCompleted": 8,
+    "totalStars": 12,
+    "voteScore": 11,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

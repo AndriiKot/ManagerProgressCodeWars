@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/581fc6055acfe5b0aa000155",
+  "data": {
+    "id": "581fc6055acfe5b0aa000155",
+    "name": "Minimal Squarewave PCM Synthesizer",
+    "slug": "minimal-squarewave-pcm-synthesizer",
+    "category": "algorithms",
+    "publishedAt": "2016-11-07T06:41:27.659Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/581fc6055acfe5b0aa000155",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-07T00:08:37.128Z",
+    "createdBy": {
+      "username": "benzrf",
+      "url": "https://www.codewars.com/users/benzrf"
+    },
+    "description": "# Overview\nWrite a function that accepts a list of notes and synthesizes raw PCM output of square wave tones.\n\n# Background Info\n## About Square Waves\nSquare waves are discontinuous waves that jump between constant high and low points (as opposed to, e.g., sine waves, which are continuous and aren't constant on any nontrivial interval). They look like this:\n\n![A square wave (via https://tex.stackexchange.com/q/113046)](https://i.imgur.com/pY55vIn.gif)\n\nIn this kata, the sound waves you will generate will be built out of square waves.\n\n## Some Music Theory\nLoosely speaking, if you double the frequency of a tone, the new tone will sound sort of \"the same\". This is why there is more than one \"C\" or \"E flat\"; \"C\" is not a specific frequency, it's a collection of frequencies that all differ by a factor of 2^k and which therefore all sound like \"the same note\". An \"octave\" is just the space between one frequency and the frequency double it; going \"up an octave\" is just doubling frequency.\n\nThe \"chromatic scale\" is a naming system for carving up a given octave. It consists of 12 note names or \"pitch classes\". Any 12 consecutive keys on a piano (white *and* black) correspond to the chromatic scale.\n\n![The chromatic scale]\n\nIts usage is reminiscent of counting mod 12; the note after G sharp is A again (but an octave higher than the previous A).\n\nIn the modern day, the general convention is that moving from one note to the next always multiplies frequency by the same factor; e.g., in a given octave, the ratio between the frequencies of C and C sharp is the same as the ratio between the frequencies of C sharp and D. In the A440 pitch standard, the A above middle C is defined to be **440Hz**, so, e.g., the A below middle C is 220Hz.\n\n[The chromatic scale]: https://upload.wikimedia.org/wikipedia/commons/d/d0/Pitch_class_space.svg\n\n## About (1-channel) PCM\nPCM (pulse-code modulation) is a common (WAV files are just PCM with a metadata header), straightforward way of digitally representing audio. It's analogous to bitmaps as a way of digitally representing images. You represent a hypothetical (analog) picture as a bitmap by picking regularly spaced points in a grid, \"sampling\" the color value at each point, and storing an array of samples; you represent a hypothetical (analog) sound wave in PCM by picking regularly spaced *points in time*, \"sampling\" the amplitude of the wave at each time, and storing an array of samples. For example, this wave:\n\n![A sound wave, with samples marked (via Ktims on Wikipedia)][sound wave]\n\nis represented as:\n\n```[8, 9, 11, 13, 14, 15, 15, 15, 14, 13, 12, 10, 8, 7, 5, 3, 2, 1, 0, 0, 0, 1, 2, 4, 6, 7]```\n\nEach of these samples is a 4-bit unsigned int, so packing them into actual binary data might look like:\n\n```\n00000000: 89bd efff edca 8753 2100 0124 67         .......S!..$g\n```\n\nThe *sample rate* of some PCM data is analogous to the *resolution* of a bitmap: it represents how closely packed the sample points are. To generate, e.g., 10KHz PCM, you take 10,000 samples for each second of audio: first a sample at time 0, then a sample at time 0.0001, then at 0.0002, etc. The *audio bit depth* is analogous to a bitmap's *color depth*: it's how precise each sample is. The example above has a bit depth of 4.\n\nThere's one significant distinction between sample rate and image resolution: increasing image resolution usually results in a physically larger image with the same level of detail, while increasing sample rate results in an equally long sound with a higher level of detail, like increasing image resolution while keeping the display size constant.\n\nPCM samples are generally stored as little-endian integers; the amplitude range of a sound wave is treated as ranging from the minimum integer value to the maximum one. Both signed and unsigned integers can be used. The example above is unsigned 4-bit PCM; signed 16-bit PCM data, on the other hand, would consist of a sequence of pairs of bytes, each of which is to be treated as a little-endian signed integer.\n\n[sound wave]: https://upload.wikimedia.org/wikipedia/commons/b/bf/Pcm.svg\n\n# Spec\n## Input format\nIn Haskell:\n\n```haskell\ndata Chromatic =\n  A | As | B | C | Cs | D | Ds | E | F | Fs | G | Gs\n  deriving (Eq, Enum, Bounded, Show)\ntype Octave = Int\ntype Note = (Chromatic, Octave)\ntype Melody = [Note]\n```\n\nIn Python:\n```python\nclass Chromatic(Enum):\n    A  = 0\n    As = 1\n    B  = 2\n    C  = 3\n    Cs = 4\n    D  = 5\n    Ds = 6\n    E  = 7\n    F  = 8\n    Fs = 9\n    G  = 10\n    Gs = 11\n\n# you get a list of \"notes\" - e.g.:\n# [(Chromatic.C, 0), (Chromatic.D, 0), (Chromatic.E, 0)]\n```\n\nEach note is represented by a pair of a pitch class from the chromatic scale and a choice of octave. Octave `0` is the one *above* middle C; middle C is written `(C, -1)`.\n\nThe audio represented by the input is 1 second of a square wave of each note in the list, in sequence.\n\n## Output format\nGenerate 1-channel 8-bit unsigned PCM with a sample rate of 44100 Hz. Frequencies should be based on A440.\n\nIn Python, return `bytes`, not `string`.\n\nThe testing code is pretty naïve and definitely doesn't produce nice error messages. It's recommended that you test out your code by actually listening to its output! Here's a (base64'd) WAV header you can concatenate to the front of your output to get a playable file:\n\n`UklGRrRKQwBXQVZFZm10IBAAAAABAAEARKwAAESsAAABAAgAZGF0YZBKQwA=`\n\nThis is technically not the correct header unless your output is actually 100 seconds long, but most players should still get it right.\n\n",
+    "totalAttempts": 261,
+    "totalCompleted": 9,
+    "totalStars": 7,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

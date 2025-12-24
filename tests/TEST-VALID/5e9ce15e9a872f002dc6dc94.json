@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e9ce15e9a872f002dc6dc94",
+  "data": {
+    "id": "5e9ce15e9a872f002dc6dc94",
+    "name": "Side-Sorting Robot",
+    "slug": "side-sorting-robot",
+    "category": "algorithms",
+    "publishedAt": "2020-04-19T23:40:43.032Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e9ce15e9a872f002dc6dc94",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-19T23:40:15.059Z",
+    "createdBy": {
+      "username": "Cépagrave",
+      "url": "https://www.codewars.com/users/C%C3%A9pagrave"
+    },
+    "description": "Side-Sorting Robot\r\n\r\nYou've built a robot, with this special ability:<br>\r\nIt can handle balls with numbers written on them standing on a track in front of it.<br>\r\nImage recognition is quite good, and the robot can see all the balls and the numbers on them.<br>\r\nThe robot has one arm, but the actions it can make with the balls are limited to 2:<br>\r\n- Choose a specific ball, take it and drop it at the leftmost end of the balls line.\r\n- Choose a specific ball, take it and drop it at the rightmost end of the balls line.\r\n\r\nYou need to implement an AI to enable the robot to sort the balls:<br>\r\nNo matter what numbers are on the balls, you want the robot to sort the balls, according to these numbers, into a non-increasing order, with the minimal number of moves.<br>\r\nThe word \"minimal\" is important here.<br>\r\nThere can be duplicates in the numbers.<br>\r\n\r\nexamples:<br>\r\n\r\n2 3 1 <br>\r\n-> 3 goes left<br>\r\n3 2 1<br>\r\n(1 move needed)<br>\r\n=> 1<br>\r\n\r\n1 5 9 5 1:<br>\r\n-> 9 goes left<br>\r\n9 1 5 5 1<br>\r\n-> 1 goes right<br>\r\n9 5 5 1 1<br>\r\n(2 moves needed)<br>\r\n=> 2<br>\r\n\r\n2 1 2 5 0 0 1 1:<br>\r\n-> 5 goes left<br>\r\n5 2 1 2 0 0 1 1<br>\r\n-> 1 goes right<br>\r\n5 2 2 0 0 1 1 1 <br>\r\n-> 0 goes right<br>\r\n5 2 2 0 1 1 1 0 <br>\r\n-> 0 goes right<br>\r\n5 2 2 1 1 1 0 0<br>\r\n(4 moves needed)<br>\r\n=> 4<br>\r\n\r\nThere can be up to 100.000 balls, <br>\r\nintegers i on them can be negative, <br>\r\n1.000.000 < i < 1.000.000<br>\r\n\r\nINPUT:<br>\r\nan array of integers\r\n\r\nOUTPUT:<br>\r\nThe minimal number of moves needed to sort the balls.\r\n",
+    "totalAttempts": 20,
+    "totalCompleted": 5,
+    "totalStars": 6,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Sorting",
+      "Logic",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

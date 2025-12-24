@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52a4545199b32d4074000176",
+  "data": {
+    "id": "52a4545199b32d4074000176",
+    "name": "\"string\".forEachMatch(regex, callback, [context]);",
+    "slug": "string-dot-foreachmatch-regex-callback-context",
+    "category": "reference",
+    "publishedAt": "2013-12-08T11:13:21.400Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52a4545199b32d4074000176",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-12-08T11:13:23.369Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Implement a method for string instances called \"forEachMatch\", to mimic the string's `.replace()` method. Oh-- and _**don't use the string's replace method!**_\n\nIt should take a regular expression, a callback function, and an optional context for the function to be called in. If no context was given, it should default to the global context.\n\nThe callback should be called for every match in the string. It should receive the following arguments: the matched string, every group match as separate arguments, and then the index of the first character of the matches string, and finally the input string itself.\n\nSo something like this:\n```javascript\n\"string\".forEachMatch(/(str)|(ing)/g, function(match, str, ing, index, input) {\n    console.log(\"'\" + input + \"' has '\" + (str || ing) + \"' at index \"+index);\n});\n```\nShould log out something like this:\n```\n'string' has 'str' at index 0\n'string' has 'ing' at index 3\n```",
+    "totalAttempts": 898,
+    "totalCompleted": 23,
+    "totalStars": 4,
+    "voteScore": 27,
+    "tags": [
+      "Regular Expressions",
+      "Fundamentals",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

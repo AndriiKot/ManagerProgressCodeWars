@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57d287d1900f6e219d00000c",
+  "data": {
+    "id": "57d287d1900f6e219d00000c",
+    "name": "Counting Sort",
+    "slug": "counting-sort",
+    "category": "algorithms",
+    "publishedAt": "2016-09-09T09:58:41.290Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57d287d1900f6e219d00000c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-09T09:59:02.635Z",
+    "createdBy": {
+      "username": "user6361752",
+      "url": "https://www.codewars.com/users/user6361752"
+    },
+    "description": "Your task is to implement <b>Counting sort</b> algorithm.\n\nWhat is known about initial array is that all it's members are integers that are greater or equal 0.\n\nMind that it should be faster than O(n*logn) that is provided by Array.prototype.sort.\n\n<h3>Brief description of algorithm:</h3>\n<ol>\n<li>determine min and max values</li>\n<li>for each value from min to max count how many times it shows up in array and place corresponding values in another array. for example: <ul>\n<li>array: [3,4,5,4,3,7]</li>\n<li>counted array: [2,2,1,0,1] (corresponds to [3,4,5,6,7])</li>\n</ul></li>\n<li>From that you can count displacement of every value by getting number of values that are smaller than current:</li>\n<div id=\"moving_block\">In an example above<br>\nfor '3': (0 numbers are smaller than '3') -> places are 0,1<br>\nfor '4': (places of numbers that are smaller) -> places are 2,3<br>\netc.<br>\n</div>\n<br>\n<br>\n\n\n\nAlgorithm itself can be found here<br> https://en.wikipedia.org/wiki/Counting_sort <br>\nor anywhere else on the Internet<br>\n\nP.S. don't try to commit sth like array.sort() - it's of no use.\n",
+    "totalAttempts": 338,
+    "totalCompleted": 36,
+    "totalStars": 9,
+    "voteScore": 30,
+    "tags": [
+      "Algorithms",
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cb9e90e1453980014ecd189",
+  "data": {
+    "id": "5cb9e90e1453980014ecd189",
+    "name": "Interpreter with error handling ",
+    "slug": "interpreter-with-error-handling",
+    "category": "algorithms",
+    "publishedAt": "2019-04-19T15:42:26.895Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5cb9e90e1453980014ecd189",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-04-19T15:28:14.802Z",
+    "createdBy": {
+      "username": "coderaiser",
+      "url": "https://www.codewars.com/users/coderaiser"
+    },
+    "description": "Simplest possible interpreter to a languge similar to `x86 assembly`, that supports instructions:\n\n- `mov register, register/value`\n- `add register, register/value`\n- `inc register`\n\n\nThere is no registers, but variables. Variable should be declared using `mov`:\n\n```js\nmov a, 5\n```\n\nWill declare variable `a=5` in `state`.\n\n```js\nmov a, 2\nmov b, 5\nadd a, b\n```\n\nWill set `a=7, b=5` in `state`.\n\nFunction `interpret` returns array contains two arguments: `error` and `result`.\n\n\n```js\ninterpret(`\n   mov a, 5\n   inc a\n`);\n// returns\n[null, {a: 6}]\n```\n\n# Error\n\nWhen instruction not supported, or first parameter is wrong, function should return an array with first item `Error` with a format:\n\n- `Error` should be instanceof `Error`;\n- The error message should be in format \"line N: ...\", where `N` is line number with instruction containing error;\n\nPossible errors:\n- `line N: first operand can't be a number`\n- `line N: bad instruction NAME`\n- `line N: NAME is not declared`\n\nWhere `N` is line number, `NAME` it is instruction or variable name.\n\nOperand can be:\n- `identifier`\n- `number`\n\n# Hints\n- no correct instructions with wrong number of arguments;\n- lexer should ignore any count of whitespaces and empty lines. \n",
+    "totalAttempts": 41,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Logic",
+      "Interpreters",
+      "Compiler Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

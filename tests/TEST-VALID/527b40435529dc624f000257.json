@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/527b40435529dc624f000257",
+  "data": {
+    "id": "527b40435529dc624f000257",
+    "name": "Doubly Linked List",
+    "slug": "doubly-linked-list",
+    "category": "algorithms",
+    "publishedAt": "2013-11-07T07:24:53.834Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/527b40435529dc624f000257",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-11-07T07:24:51.961Z",
+    "createdBy": {
+      "username": "eugene-bulkin",
+      "url": "https://www.codewars.com/users/eugene-bulkin"
+    },
+    "description": "Your task is to create a *doubly linked list*. A description of linked lists can be found [here](https://en.wikipedia.org/wiki/Linked_list). The structure of a doubly linked list looks like this:\n\n![Doubly Linked List](http://i.imgur.com/16eWwln.png)\n\nThe way we will handle it is with two classes. One is the `Node` class, which represents a node with some data (which can be anything and is instantiated with the node). It has two pointers: `prev` and `next`, which point to the previous and next items in the list, respectively. If there is no previous/next element, then the corresponding pointer is `null` (e.g. the box with an X in the diagram).\n\nOur `LinkedList` class will take care of these `Node`s. We can create a new linked list with or without an initial element, which will be a node (you may assume that `LinkedList` will only be called without an argument or with a `Node` object). The linked list keeps track of the `head` (the first element) and the `tail` (the last element). But knowing the first and last element doesn't tell us anything about what's in between! And how do we add nodes? Well, we will implement two methods: `append` and `prepend`, both taking a `Node` instance, which will add a `Node` object to the end or beginning of the linked list, respectively. We will also need to remove nodes, so you will have to implement a `remove` method, which takes the node out of the list, and for convenience a `pop` method which removes the last element of the list and returns it. Trying to remove or pop from an empty list should throw an exception. Trying to remove a node that isn't in a list should do nothing.\n\nNote that all of the previously mentioned methods must maintain linkages! The head's previous element must always be null, the tail's next element must always be null, and an empty list have a head and tail of null. If a `Node` object is not in any list, it's `prev` and `next` properties must also be null. Adding an element always means rearranging arrows; imagine that an empty list is a head and a tail connected to each other, but both X boxes.\n\nLastly, add a `toArray` method that will return an array of the linked list's elements' data, in order. This can be done before any other method because all it requires is knowing how to traverse a linked list: follow the diagram, starting from the head element, and it'll make sense! Note that this array will be filled with the *data* of each corresponding element.",
+    "totalAttempts": 458,
+    "totalCompleted": 19,
+    "totalStars": 4,
+    "voteScore": 3,
+    "tags": [
+      "Object-oriented Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/582c5e80fc090baf3c00015a",
+  "data": {
+    "id": "582c5e80fc090baf3c00015a",
+    "name": "Barbell racking calculator",
+    "slug": "barbell-racking-calculator",
+    "category": "algorithms",
+    "publishedAt": "2016-11-17T15:56:50.280Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/582c5e80fc090baf3c00015a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-16T13:26:25.119Z",
+    "createdBy": {
+      "username": "ohmoses",
+      "url": "https://www.codewars.com/users/ohmoses"
+    },
+    "description": "Your task is to write a function calculating which weight plates we need to load onto a lifting bar to achieve the desired total weight. \n\nThe function takes as arguments the total weight needed, the weight of the empty bar (optional argument, default is 20), and an array of plate sizes available in the gym (optional, default is [1.25, 2.5, 5, 10, 20]).\n\nYou can assume that all the numbers in the input will be valid positive numbers. The array will *not* necessarily be sorted.\n\nThe output is an array of plates, ordered from heaviest to lightest, representing **one side of the bar** (the other side will be loaded symetrically with the same). Multiple plates of the same size will get listed each.\n\nThe function should follow these rules:\n\n* If the function is called without arguments, return `[]`\n* If the desired weight equals the weight of the empty bar, return `[]`\n* If the desired weight is less than the weight of the empty bar, return `[null]`\n* The *number* of plates should be the smallest possible\n* If the desired weight is unattainable given the available plates, try adjusting it by 5 % in both directions:\n  * If there is weight in that range which can be racked with the given plates, proceed with that as the desired weight\n  * If there is more than one, choose the one closest to the original desired weight\n  * If there are two possible solutions the same distance from the original weight, choose the smaller\n  * If there is no solution even with the 5 % adjustment, return `[null]`\n\n## Examples\n\n```javascript\ngetWeights( 107.5 ) --> [20, 20, 2.5, 1.25] \n// ( 107.5 kg - 20 kg ) / 2 = 43.75 kg on one side\n\ngetWeights( 25, 20, [1.25, 2, 5, 10] ) --> [1.25, 1.25] \n// 2.5 kg plate not available, substitute two 1.25 kg ones\n\ngetWeights( 26, 20, [1, 2.5]) --> [2.5]\n// can rack 25 kg or 27 kg, both are the same distance from 26, but lower is better\n\ngetWeights( 22.5, 20, [2, 5, 10, 20] ) --> [null] \n// even with the 5 % adjustment, there is no way to rack that\n```",
+    "totalAttempts": 34,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

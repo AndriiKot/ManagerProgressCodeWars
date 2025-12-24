@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e23eadb0879110028b96424",
+  "data": {
+    "id": "5e23eadb0879110028b96424",
+    "name": "[The Wizard Book Lectures: 1A] Hero's Square Root",
+    "slug": "the-wizard-book-lectures-1a-heros-square-root",
+    "category": "algorithms",
+    "publishedAt": "2020-01-19T07:14:56.751Z",
+    "approvedAt": null,
+    "languages": [
+      "racket",
+      "javascript",
+      "python",
+      "go"
+    ],
+    "url": "https://www.codewars.com/kata/5e23eadb0879110028b96424",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-19T05:36:27.229Z",
+    "createdBy": {
+      "username": "booniepepper",
+      "url": "https://www.codewars.com/users/booniepepper"
+    },
+    "description": "This kata is based on the video lecture [1A: Overview and Introduction to Lisp](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/1a-overview-and-introduction-to-lisp/). More information on the \"Wizard Book\" series at the bottom of the description.\n\n---\n\n# Hero's Square Root\n\nThe Greek mathematician and engineer [Hero of Alexandria](https://en.wikipedia.org/wiki/Hero_of_Alexandria) (also known as \"Heron\") contributed, among other things, this [method for approximating a square root](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method):\n\nFor some number *n*, to approximate its square root:\n\n1. Begin with some arbitrary positive number *g* (for \"guess\").\n2. Take the average of *g* and *n/g*. The result will be closer to the square root.\n3. Continue taking successive averages, updating the guess until *g* and *a/g* are within some acceptable margin of error.\n\n# Implementation Strategy\n\nPart of the learning objectives here are abstraction and composition. As such, you will be tasked with implementing a number of small composable pieces. Your language probably has libraries or built-in standard functions for some of these pieces, but take the time to implement them yourself.\n\n*(Note: Exact function names will vary by language, but will be provided.)*\n\n- `square` Given a number, return its square.\n\n- `average` Given two numbers, return their average.\n\n- `abs` (Absolute Value) Given a number, return its absolute value.\n\n- `improve` Given a number *g* and a target number *n*, based on Hero's method above, return a number closer to *√n* than *g*.\n\n- `good-enough?` Given a number *g* and a target number *n*, return true if *g<span style=\"vertical-align: center; font-size: .75em\">2</span>* is within ±0.001 of *n*.\n\n- `try` Given an initial number *g* and a target number *n*, return a number whose square is within ±0.001 of *n*.\n\n- `sqrt` (Square Root) Given a number *n*, return a number whose square is within ±0.001 of *n*.\n\n# Notes on Accuracy\n\nFor the level of accuracy, we'll target a square root that, when squared, is within 0.001 of the target number. \n\nSome examples:\n\n- For a square root of 4, given that 2.0002 * 2.0002 is about 4.0008, we could accept 2.0002 as a square root.\n- For a square root of 4, given that 2.00025 * 2.00025 is about 4.001, we would reject 2.00025 as a square root.\n\n---\n\n### About the \"Wizard Book\"\n\nThe 1984 book [***Structure and Interpretation of Computer Programs***](https://mitpress.mit.edu/sites/default/files/sicp/index.html) (Also known as the ***Wizard Book*** or its acronym ***SICP***), by Hal Abelson, Gerald Jay Sussman, and Julie Sussman, remains highly influential in the fields of software engineering, computer science, programming language design, and hacker culture in general.\n\n### Video Series\n\nThis Kata series is based on MIT Open Courseware video lectures which can be viewed for free here: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/\n\nWhile following along with the video lectures is not necessary to complete the Katas, it's highly recommended.",
+    "totalAttempts": 63,
+    "totalCompleted": 17,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Algorithms",
+      "Logic",
+      "Mathematics",
+      "Numbers",
+      "Abstraction"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

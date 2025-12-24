@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/657949fadc8017268f4dd380",
+  "data": {
+    "id": "657949fadc8017268f4dd380",
+    "name": "Custom Alarm Scheduler",
+    "slug": "custom-alarm-scheduler",
+    "category": "games",
+    "publishedAt": "2023-12-13T06:07:50.831Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/657949fadc8017268f4dd380",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-12-13T06:06:50.577Z",
+    "createdBy": {
+      "username": "Tawfiq@405",
+      "url": "https://www.codewars.com/users/Tawfiq@405"
+    },
+    "description": "# Custom Alarm Scheduler\n\n## Description\n\nYou are building a custom alarm scheduling feature for your app, and you need to implement the core logic. The goal is to allow users to set alarms on specific days of the week.\n\nThe days of the week are represented as an array of 7 elements, where each element corresponds to a day (0-indexed). A binary value of 1 at a specific index indicates that the alarm is scheduled for that day.\n\nYour task is to write a function `custom` that takes a binary array representing the selected days for an alarm and returns a formatted string indicating on which days the alarm is scheduled.\n\n## Examples\n\n- **Input:** `[1, 1, 0, 1, 0, 0, 0]`\n  - **Output:** \"sun, mon and wed\"\n  \n- **Input:** `[0, 1, 0, 0, 1, 1, 0]`\n  - **Output:** \"mon, thu and Fri\"\n\n- **Input:** `[1, 1, 1, 1, 1, 1, 1]`\n  - **Output:** \"everyday\"\n\n## Additional Instructions\n\n1. The input list `days` will always have a length of 7.\n2. The output string should be formatted with three-letter abbreviations for each day.\n3. If an alarm is scheduled for more than 2 consecutive days, the output should indicate a range (e.g., \"mon to wed\").\n4. If an alarm is scheduled for non-consecutive days, separate the days with commas and use \"and\" appropriately.\n5. order must be non-consecutive first and consecutive days next if consecutive days more than 2 else put the close days first. \n6. output sholud be in lower case\n\nFeel free to explore different test cases and scenarios to ensure your solution handles various scheduling configurations.\n\nHave fun coding and happy alarm scheduling!\n",
+    "totalAttempts": 267,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

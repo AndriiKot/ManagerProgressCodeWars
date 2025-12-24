@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57ae56837cb1f3550500025e",
+  "data": {
+    "id": "57ae56837cb1f3550500025e",
+    "name": "Gym Bike Calorie Calculator",
+    "slug": "gym-bike-calorie-calculator",
+    "category": "reference",
+    "publishedAt": "2016-08-14T17:59:57.081Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57ae56837cb1f3550500025e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-08-12T23:06:43.289Z",
+    "createdBy": {
+      "username": "samjam48",
+      "url": "https://www.codewars.com/users/samjam48"
+    },
+    "description": "You are a gym owner and the computers on your new bikes have gone tits up. No one knows how fast they are going or how many calories they are burning. People feel like there is no point using the bikes if they aren't burning any calories so this is your first thing to fix!\n\n## Working out Calories\n\nPedalling turns a dynamo which outputs electricity measured in W (watts) this powers a timer which records the duration of the session in s (seconds). The W value provided will be the average for the session. One Watt for one second equals one Joule.\n\nOne Joule = 0.24 calories at when no energy is lost (100% efficiency). But the human body is inefficient so this only happens when the mass of human on the bike is 0 Kg.\n\nFor a 100Kg mass biker we will assume 24% efficiency so this nicely converts the ratio of Joules to calories to 1:1.\n\nWe will take the relationship between Joules counted by the machine and the extra Calories burnt by the person to be a linear relation with the weight of that person.\n\n### Special outcomes\n\nIf the average Watts produced exceeds 500W, this is insane and something isn’t right. Provide this instruction to the user => “Easy tiger, this is far too much power! Something is broken or you are a God, either way report this to reception please\"\n\nIf the mass value provided is; null, text or over 350Kg then there is a problem. Request the user to input their mass again => “Please provide your mass in Kg\"\n\n### Return Format\n\nThe bike computer should return Calories(Kcal) to 1d.p. in the following format:\n\nW = 100, s = 50, KG = 100     =>   return “5.0 Kcal\"",
+    "totalAttempts": 162,
+    "totalCompleted": 16,
+    "totalStars": 4,
+    "voteScore": 9,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

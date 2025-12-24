@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64fd720b18692c67f8ebc177",
+  "data": {
+    "id": "64fd720b18692c67f8ebc177",
+    "name": "Format Hyperlinks",
+    "slug": "format-hyperlinks",
+    "category": "reference",
+    "publishedAt": "2023-09-10T07:41:28.497Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64fd720b18692c67f8ebc177",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-10T07:36:43.095Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "### Task\nUsing markdown, it's possible to format links such as `https://www.codewars.com/users/leaderboard`, into something tidier like [this](https://www.codewars.com/users/leaderboard \"Go to the leaderboard!\"). Notice how the text _\"Go to the leaderboard!\"_ appears when hovering over the link.\n\nThis was achieved by using this code:\n\n```\n[this](https://www.codewars.com/users/leaderboard \"Go to the leaderboard!\")\n```\n\nGiven the `url`, the new `name` and **optionally** the `hover_text`, return the tidied up hyperlink as a string.\n\n### Examples\n```\ntidy_link(\"https://www.codewars.com/users/leaderboard\", \"this\", \"Go to the leaderboard!\") ➞ \"[this](https://www.codewars.com/users/leaderboard \"Go to the leaderboard!\")\"\n\ntidy_link(\"https://www.google.com\", \"Google\", \"Google Search\") ➞ \"[Google](https://www.google.com \"Google Search\")\"\n\ntidy_link(\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \"Click Me!\") ➞ \"[Click Me!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)\"\n```\n\n### Notes\n- Supply **double quotes** for the hover text.\n- Keep in mind that some tests will not include an argument for `hover_text`.",
+    "totalAttempts": 15,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

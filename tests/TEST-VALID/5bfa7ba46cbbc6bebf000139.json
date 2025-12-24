@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bfa7ba46cbbc6bebf000139",
+  "data": {
+    "id": "5bfa7ba46cbbc6bebf000139",
+    "name": "[Code War] The Weapon Factory: Assembly Line",
+    "slug": "code-war-the-weapon-factory-assembly-line",
+    "category": "reference",
+    "publishedAt": "2018-11-25T20:06:25.962Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5bfa7ba46cbbc6bebf000139",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-25T10:38:28.340Z",
+    "createdBy": {
+      "username": "CYin",
+      "url": "https://www.codewars.com/users/CYin"
+    },
+    "description": "<center><h1><u>The Weapon Factory: Assembly Line</u></h1></center>\n\nThe world is at war! This time, everyone fights with codes. You work as an assembly line worker in the nation's largest weapon factory. Your job is to assemble various types of weapons (methods) and their individual components (arguments) together to form a working unit (return a method) before they are sent to the front line. Design an algorithm to help you out on the task.\n\n<center><h2>Problem Statement</h2></center>\n\nGiven a method with n number of parameters, and a list of k number of arguments, modify and return a modified method that accepts only (n-k) parameters. The indices of the (n-k) parameters will be provided in the format of a string as \"i:j\" (from i to j-1).\n\nExample:\n```python\n# The inputs\ndef function(x, y, z):\n    return x + y + z  \narguments = (\"G\",\"U\")\nunmodified_indices = \"2:3\"\n\n# Applying the algorithm\nmodified_function = assembler(function,arguments,unmodified_indices)\n\n# The output\nprint(modified_function(\"N\")) # => \"GUN\"\n\n```",
+    "totalAttempts": 185,
+    "totalCompleted": 55,
+    "totalStars": 8,
+    "voteScore": 44,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

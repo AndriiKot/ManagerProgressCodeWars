@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e2c952fe37ed600157916a2",
+  "data": {
+    "id": "5e2c952fe37ed600157916a2",
+    "name": "Localization validation",
+    "slug": "localization-validation",
+    "category": "reference",
+    "publishedAt": "2020-01-26T13:41:14.911Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e2c952fe37ed600157916a2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-25T19:21:19.323Z",
+    "createdBy": {
+      "username": "Torkel",
+      "url": "https://www.codewars.com/users/Torkel"
+    },
+    "description": "Based on a problem I had at work:\n\nYou're working on an iOS app supporting many different languages. You download the translations from a translations management system in a `.plist` format. \n\nYou often notice that the translations are wrong. You don't know all the languages, but you can see that the form of them are not the same.\n\nYou need to automate validation of the translations before we can use them in our app.\n\nWe download our files in this format:\n\n```\n[\n  {\n  locale: \"en-GB\",\n  content: `\n\"map_locationButton\" = \"Go to my location\";\n\"map_voucherButton\" = \"Refer %1$@ friends for %2$@% off\";\n\"user_title\" = \"Hello %1$@\";`\n  },\n  {\n    locale: \"NO\",\n    content: `\n\"map_locationButton\" = \"Gå til min lokasjon\";\n\"map_voucherButton\" = \"Få %2$@ avslag ved å referere %1$@ venner\";\n\"user_title\" = \"Hei %1$@\";`\n  },\n  {\n    locale: \"RU\",\n    content: `\n\"map_locationButton\" = \"Перейти к моему местоположению\";\n\"map_voucherButton\" = \"Пригласите %1$@ друзей\";\n\"user_title\" = \"привет %1$@\";`\n  },\n  {\n    locale: \"FI\",\n    content: `\n\"map_voucherButton\" = \"Mene sijaintiini\";\n\"user_title\" = \"Hei %2$@\";`\n  }\n]\n```\n\n`content` can have comments(`/* */`) and empty lines, however the actual key/val pairs will always be on their own line and will always have the format:  \n`\"key\" = \"val\";`\n\nA value can contain a substitution, which looks like `%1$@`, `%2$@`, `%3$@`... Not necessarily starting at `1`.\n\nWe will write `function validateLocalization(files)` which returns an array with errors.  \n\nThere are two different possible errors:\n\n'K only has X translations, expected N' (A language is missing a translation for that key)  \n'K has translations with varying substitutions' (All languages should have the same substitutions, but order does not matter)  \nE.g `\"Hola %2$@ %1$@ %1$@\"` and `\"Hei %1$@ %1$@ %2$@\"` with the same key are valid together, but `\"Hola %1$@ %1$@ %2$@ \"` and `\"Hei %1$@ %2$@ %2$@\"` are not.\n\n\nIn the above example we should return (sorted alphabetically):\n```\n[\n'\"map_locationButton\" only has 3 translations, expected 4',\n'\"map_voucherButton\" has translations with varying substitutions',\n'\"user_title\" has translations with varying substitutions',\n]\n```",
+    "totalAttempts": 133,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6322304a4550f785214dbbf6",
+  "data": {
+    "id": "6322304a4550f785214dbbf6",
+    "name": "Manipulating objets",
+    "slug": "manipulating-objets",
+    "category": "reference",
+    "publishedAt": "2022-09-14T20:19:47.272Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6322304a4550f785214dbbf6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-14T19:49:30.402Z",
+    "createdBy": {
+      "username": "KarimMakhloufi",
+      "url": "https://www.codewars.com/users/KarimMakhloufi"
+    },
+    "description": "We have an API that sends us data we want to use in our front end. The issue is that the data is not formatted the way the front end team designed they application.\n\nYour task as a developper is to take the data from the API and change it so the front end team can exploit it as intended.\n\nThis is the data you get from the API:\n\n```\n[\n  {\n    \"id\": 1,\n    \"name\": \"Ringo\",\n    \"grades\": [\n      {\n        \"id\": 2,\n        \"grade\": 8,\n        \"skill\": {\n          \"id\": 2,\n          \"name\": \"React\"\n        }\n      },\n      {\n        \"id\": 1,\n        \"grade\": 10,\n        \"skill\": {\n          \"id\": 1,\n          \"name\": \"JS\"\n        }\n      }\n    ]\n  },\n  {\n    \"id\": 2,\n    \"name\": \"John\",\n    \"grades\": [\n      {\n        \"id\": 3,\n        \"grade\": 9,\n        \"skill\": {\n          \"id\": 3,\n          \"name\": \"PHP\"\n        }\n      },\n      {\n        \"id\": 4,\n        \"grade\": 9,\n        \"skill\": {\n          \"id\": 4,\n          \"name\": \"Symfony\"\n        }\n      }\n    ]\n  },\n  {\n    \"id\": 3,\n    \"name\": \"George\",\n    \"grades\": [\n      {\n        \"id\": 6,\n        \"grade\": 8,\n        \"skill\": {\n          \"id\": 1,\n          \"name\": \"JS\"\n        }\n      },\n      {\n        \"id\": 5,\n        \"grade\": 10,\n        \"skill\": {\n          \"id\": 5,\n          \"name\": \"Ruby\"\n        }\n      }\n    ]\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Paul\",\n    \"grades\": [\n      {\n        \"id\": 8,\n        \"grade\": 8,\n        \"skill\": {\n          \"id\": 7,\n          \"name\": \"Rust\"\n        }\n      },\n      {\n        \"id\": 7,\n        \"grade\": 10,\n        \"skill\": {\n          \"id\": 6,\n          \"name\": \"C++\"\n        }\n      }\n    ]\n  }\n]\n```\n\nAnd this is how the data should be made available to the front end team:\n\n```\n[\n    {\n      name: \"Ringo\",\n      skills: [\n        { title: \"JS\", votes: 10 },\n        { title: \"React\", votes: 8 },\n      ],\n    },\n    {\n      name: \"John\",\n      skills: [\n        { title: \"PHP\", votes: 9 },\n        { title: \"Symfony\", votes: 9 },\n      ],\n    },\n    {\n      name: \"George\",\n      skills: [\n        { title: \"Ruby\", votes: 10 },\n        { title: \"JS\", votes: 8 },\n      ],\n    },\n    {\n      name: \"Paul\",\n      skills: [\n        { title: \"C++\", votes: 10 },\n        { title: \"Rust\", votes: 8 },\n      ],\n    },\n  ]\n```",
+    "totalAttempts": 99,
+    "totalCompleted": 6,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Arrays",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

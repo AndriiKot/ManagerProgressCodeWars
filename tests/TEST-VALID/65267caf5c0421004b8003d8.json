@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65267caf5c0421004b8003d8",
+  "data": {
+    "id": "65267caf5c0421004b8003d8",
+    "name": "A Chicken Needs Her Egg",
+    "slug": "a-chicken-needs-her-egg",
+    "category": "games",
+    "publishedAt": "2023-10-11T10:46:07.878Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65267caf5c0421004b8003d8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-11T10:45:03.708Z",
+    "createdBy": {
+      "username": "Reflexor",
+      "url": "https://www.codewars.com/users/Reflexor"
+    },
+    "description": "On a 2D map of dimensions 200*200, you start at the origin (0,0). Somewhere on this map, there's a chicken that's placed at least 8 units away from your starting position. There are also 3 eggs scattered around the map at given coordinates.\n\nYour task is to determine the minimum number of steps required to pick up any one of the eggs and deliver it to the chicken. You can move either up, down, left, or right, and each move counts as a single step.\n\nFunction Signature: ```int min_steps_to_deliver_egg(List[Dict[str, int]] eggs, Dict[str, int] chicken)```\n\n\nInput:\nA list of dictionaries representing the coordinates of the 3 eggs:\n\n`[{'x' : 2, 'y':3}, {'x' : -5, 'y':8}, {'x' : 8, 'y':-3}]`\n\nA dictionary representing the coordinates of the chicken which is guaranteed to be at least 8 units away from the origin:\n\n`{'x': 10, 'y': 10}`\n\n\nOutput:\n\nAn integer representing the minimum number of steps required to pick up any one of the eggs and deliver it to the chicken.\n\nExample:\nInput/Output:\n\n```\neggs = `[{'x' : 2, 'y':3}, {'x' : -5, 'y':8}, {'x' : 8, 'y':-3}]`\n\n\nchicken = {'x': 10, 'y': 10}\n\n\nmin_steps_to_deliver_egg(eggs, chicken) = 20\n```\n\nExplanation:\nIn the example above, the closest egg to the chicken is at (2,3). It takes 5 steps to get to the egg (2 steps to the right and 3 steps upwards) and 15 steps to deliver the egg to the chicken (8 steps to the right and 7 steps upwards). So, the total is 20 steps.",
+    "totalAttempts": 157,
+    "totalCompleted": 60,
+    "totalStars": 4,
+    "voteScore": 80,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

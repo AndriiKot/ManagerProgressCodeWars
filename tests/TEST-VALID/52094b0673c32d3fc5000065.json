@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52094b0673c32d3fc5000065",
+  "data": {
+    "id": "52094b0673c32d3fc5000065",
+    "name": "Imperfect Network #2 (out-of-order messages)",
+    "slug": "imperfect-network-number-2-out-of-order-messages",
+    "category": "algorithms",
+    "publishedAt": "2013-08-12T21:16:19.734Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52094b0673c32d3fc5000065",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-08-12T20:52:22.540Z",
+    "createdBy": {
+      "username": "nklein",
+      "url": "https://www.codewars.com/users/nklein"
+    },
+    "description": "You are given the outline of a network client.  The network client as it is assumes that the network will never corrupt any data, will never lose any data, will never duplicate any data, and will always deliver data in the order it was sent.\n\nFor the purposes of this Kata, assume that the network will never corrupt any data, will never lose any data, but that it may not deliver data in the order it was sent, and that it may send duplicate data.  Ensure that the callback function is invoked with the data in-order and without duplicates.  Note: there will be two instances of the network client.  You should not try to coordinate order between the clients.  You should only guarantee that client B invokes its callback in the same order that client A sends and vice-versa.\n\nThe data sent into the network client's send() method will always be a string.  The data sent into the sendFunction must also be a string. That data eventually will be received by the peer one or more times in this Kata.\n\nHere is an example of a perfect network that would use your network class:\n```javascript\nfunction PerfectNetwork(callbackA, callbackB) {\n    var network = this;\n    this.clientA = new NetworkClient(\n        function (data) { network.clientB.recv(data); }, callbackA);\n    this.clientB = new NetworkClient(\n        function (data) { network.clientA.recv(data); }, callbackB);\n};\n\nvar network = new PerfectNetwork(\n    function (data) { console.log(\"CLIENT-A Got: \" + data); },\n    function (data) { console.log(\"CLIENT-B Got: \" + data); }\n);\n\nnetwork.clientA.send(\"abcd\");\nnetwork.clientA.send(\"wxyz\");\nnetwork.clientB.send(\"1234\");\nnetwork.clientA.send(\"EOF\");\n```\n\nThis would output:\n```\nCLIENT-B Got: abcd\nCLIENT-B Got: wxyz\nCLIENT-A Got: 1234\nCLIENT-B Got: EOF\n```\n\nIn this Kata, the naive client outline could very well produce the following output with a less-than-perfect network for that same sequence of send calls:\n```\nCLIENT-B Got: abcd\nCLIENT-A Got: 1234\nCLIENT-A Got: 1234\nCLIENT-B Got: EOF\nCLIENT-B Got: wxyz\nCLIENT-B Got: EOF\n```\n",
+    "totalAttempts": 20510,
+    "totalCompleted": 675,
+    "totalStars": 77,
+    "voteScore": 79,
+    "tags": [
+      "Networks",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

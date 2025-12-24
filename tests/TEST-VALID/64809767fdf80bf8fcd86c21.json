@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64809767fdf80bf8fcd86c21",
+  "data": {
+    "id": "64809767fdf80bf8fcd86c21",
+    "name": "Help John test his Cleaning Robot",
+    "slug": "help-john-test-his-cleaning-robot",
+    "category": "games",
+    "publishedAt": "2023-07-03T15:07:48.233Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64809767fdf80bf8fcd86c21",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-06-07T14:42:47.364Z",
+    "createdBy": {
+      "username": "Fenekito",
+      "url": "https://www.codewars.com/users/Fenekito"
+    },
+    "description": "John is a person who's really interested in cleaner robots, however where he lives they are an expensive commodity so he decided to make his own cleaner robot. Due to not being too experienced he has made it so that everytime he wants to use it, he has to set a cleaning routine for the robot, due to that the robot is prone to bumping into walls, and due to his amateurishly build, the battery could fall if he's not too careful.\n\nInput:\n\nYou will be given the room size, defined by a tuple (1 ≤ width ≤ 64, 1 ≤ height ≤ 64), the walls are located at -1 and value+1 of any given axis, with the valid positions of the robot being (0 ≤ X ≤ width, 0 ≤ Y ≤ height). The cleaner robot starting position is constrained by (1 ≤ X ≤ width, 1 ≤ Y ≤ height), and it's movement will be given as a string, such as \"UDLLRD\".\n\nEx:\n\n```\n  #####             #####  \n  #───#             #───#\n  #───#             #───#\n  #──@#  ------->   #───#\n  #───#             #─@─#\n  #####             ##### \n  \n  @ = Robot\n  # = Wall\n  ─ = floor\n  \nVisual representation of a (5, 5) room with the robot at (3, 3) using the command string given above.\n```\n\nU = UP (-y)\n\nD = DOWN (+y)\n\nL = LEFT (-x)\n\nR = RIGHT (+x)\n\nif his movement takes him to the any of the walls he will bump into it instead of moving to the next position, bumping 3 times will make his battery fall and have him stuck where he is.\n\nThe movement string will always be valid. \n\nOutput:\n\n Your output is expected to be the last position it will be after executing all of it's commands. \n\nEx:  \n \n ```python\n clean((5, 5), (2, 2) ,\"UDLRR\") = (3, 2) \n```\n In this example the instructions are completed without any issues and it's last position is returned.\n \n If the robot's battery falls you should return the position it's stuck at\n and not execute any further commands.\n \n Ex: \n ```python\n clean((3,4), (2, 2), \"UUUUUUDURRLR\") = (2, 0)\n ```\n In this example after bumping thrice at the wall, the robot will stop working and won't execute the other instructions given to it, returning the position where it got stuck at.",
+    "totalAttempts": 100,
+    "totalCompleted": 16,
+    "totalStars": 0,
+    "voteScore": 9,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

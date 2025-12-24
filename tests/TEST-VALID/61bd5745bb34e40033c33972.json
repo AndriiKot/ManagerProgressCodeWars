@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61bd5745bb34e40033c33972",
+  "data": {
+    "id": "61bd5745bb34e40033c33972",
+    "name": "Cold Turkey",
+    "slug": "cold-turkey",
+    "category": "algorithms",
+    "publishedAt": "2021-12-18T04:31:15.474Z",
+    "approvedAt": null,
+    "languages": [
+      "fsharp"
+    ],
+    "url": "https://www.codewars.com/kata/61bd5745bb34e40033c33972",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-18T03:36:37.871Z",
+    "createdBy": {
+      "username": "user5272014",
+      "url": "https://www.codewars.com/users/user5272014"
+    },
+    "description": "Leftovers are tasty when properly prepared! Output the durations required to reheat the accumulated contents of a refrigerated meal.\n\nEach item needs to spend a certain amount of time in the microwave. You begin with the item that needs the longest time, then add items to your plate at the appropriate times so that they all finish together.\n\nInput is a sequence of tuples of type `(string * int)`, where `string` describes an item of the meal, and `int` is the number of seconds required to reheat it.\n\nOutput should be a JSON string representing an array of rounds of accumulated reheating.  A round is defined as a JSON object in the format `{\"n\":[items]}`, where `n` is a reheating duration in seconds, and `items` is an array of all items on the plate for that round.  The rounds must be sorted from least number of items on the plate to a full plate, and for each round, the items on the plate must be sorted alphabetically.  An empty collection of rounds should output an empty array (`[]`).\n\nFor example, considering a meal in which the stuffing takes 30 seconds, the turkey takes 90 seconds, the roll takes 30 seconds, and the potatoes take 15 seconds, the output would be:\n\n```\n[{\"60\":[\"turkey\"]},{\"15\":[\"roll\",\"stuffing\",\"turkey\"]},{\"15\":[\"potatoes\",\"roll\",\"stuffing\",\"turkey\"]}]\n```",
+    "totalAttempts": 21,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

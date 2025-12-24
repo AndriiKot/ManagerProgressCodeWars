@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/568866dfc9062227ae00004d",
+  "data": {
+    "id": "568866dfc9062227ae00004d",
+    "name": "Select The Wanted Products",
+    "slug": "select-the-wanted-products",
+    "category": "reference",
+    "publishedAt": "2016-01-03T05:16:31.327Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/568866dfc9062227ae00004d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-03T00:10:07.414Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "See the following list(array):\n```\nlst = [3, -2, 2, 4, 5]\n```\nThink in all the products that you may form with the numbers of the above list. This will be the result:\n```\n[-240, -120, -80, -60, -48, -40, -30, -24, -20, -16, -12, -10, -8, -6, -4, -2, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]\n```\nOnce we have the result, we are interested in all the values that are higher or equal than 10.\n\nSo the final result is :\n\n**[10, 12, 15, 20, 24, 30, 40, 60, 120]**\n\nMake the function ```prod_maker()```, that receives a list(or array) and a constraint, or constraints, as a lambda function and ouputs a sorted list with the values of all the possible products that you can form with the elements of the given list.\n\nLet's see some cases:\n```python\nlst = [3, -2, 2, 4, 5]\nf = lambda x: x >= 10\nprod_maker(lst, f) == [10, 12, 15, 20, 24, 30, 40, 60, 120]\n\nlst = [3, -2, 2, 4, 5, 1]\nf = lambda x: - 20 < x < 80\nprod_maker(lst, f) == [-16, -12, -10, -8, -6, -4, -2, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60]\n```\n\nYour code should handle float numbers in the array making the substitution by the closest integer.\n\nLet's see a case  with the given list having some float numbers:\n```python\nlst = [3, -2, 2, 4, 5, 0.84, 2.07] # it will be transformed to [3, -2, 2, 4, 5, 1, 2]\nf = lambda x: abs(x) > 35\nprod_maker(lst, f) == [-480, -240, -160, -120, -96, -80, -60, -48, -40, 40, 48, 60, 80, 120, 240]\n\nlst =             [3, -2, sqrt(2), log(20, e), tan(45* pi/180.0), cos(pi), sin(pi/2.0)]\n# transformed to  [3, -2,   1,         3,             1,            -1,        1      ]\nf = lambda x: 10 <= abs(x) < 60 and x % 2 == 0\nprod_maker(lst, f) == [-18, 18]\n```\nObserving carefully these examples you will have all the needed functions, and specials numbers that have to be imported from the math library.\n\nFinally, all the strings and undefined values, if they are present in the given list, should be discarded.\n```python\nlst =             ['', -1, pi, e, None, 'product', 0, log(60, 10)]\n# transformed to  [    -1, 3,  3           ,       0,       2      ]\nf = lambda x: x > 0 and x % 3 == 0\nprod_maker(lst, f) == [3, 6, 9, 18]\n```\nEnjoy it!!",
+    "totalAttempts": 167,
+    "totalCompleted": 31,
+    "totalStars": 2,
+    "voteScore": 35,
+    "tags": [
+      "Fundamentals",
+      "Mathematics",
+      "Sorting",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

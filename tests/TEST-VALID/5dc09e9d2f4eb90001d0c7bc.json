@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5dc09e9d2f4eb90001d0c7bc",
+  "data": {
+    "id": "5dc09e9d2f4eb90001d0c7bc",
+    "name": "Pyramid Negative Space",
+    "slug": "pyramid-negative-space",
+    "category": "games",
+    "publishedAt": "2019-11-04T21:56:45.985Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5dc09e9d2f4eb90001d0c7bc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-04T21:56:56.396Z",
+    "createdBy": {
+      "username": "phildinius",
+      "url": "https://www.codewars.com/users/phildinius"
+    },
+    "description": "Imagine you have 4 identical regular tetrahedrons (a pyramid whose base and faces are all congruent, equilateral triangles). You could (theoretically) arrange three of them on a table so that their bases form a larger triangle like a triforce -- a symbol from The Legend of Zelda, it might help to google this if you're not familiar -- and the 4th tetrahedron could sit on top, each point of its base touching one of the top vertices of the 3 tetrahedrons sitting on the table. Here's a rough picture of what it would look like:\n\n![](https://cdn.thingiverse.com/renders/0a/77/5f/54/d1/2ad5432350ae87544ec33a6647e7064e_preview_featured.jpg)\n\nThis structure would indicate a larger tetrahedron that is similar to the smaller ones but where each edge would be twice as long. Furthermore, you could continue this pattern adding a third layer underneath. This new base layer would again extend the larger tetrahedron formed by the many smaller tetrahedrons, each edge of which would now be 3 times as long as the edges of the small, individual tetrahedrons. As you can imagine (and see in the linked picture above) this creates interesting negative space inside the tetrahedron.\n\n**Task**\n\nGiven the total volume (`v`) of a tetrahedron made up of smaller tetrahedrons as described above, and the number of layers (`l`) that it comprises, return the volume of the 'hollow space' within the tetrahedron, that is, how much of the larger tetrahedron's volume is _not_ composed of smaller, similar tetrahedrons.\n\n**Example**\n\n```javascript\nhollowSpace(8,2) === 4\n/* a tetrahedron with volume of 8 units³ that\ncomprises 2 layers of similar tetrahedrons\nwould have 4 units³ of empty space within it */\n```\n```haskell\nhollowSpace 8 2 == 4\n{- a tetrahedron with volume of 8 units³ that\ncomprises 2 layers of similar tetrahedrons\nwould have 4 units³ of empty space within it -}\n```",
+    "totalAttempts": 111,
+    "totalCompleted": 26,
+    "totalStars": 3,
+    "voteScore": 14,
+    "tags": [
+      "Mathematics",
+      "Geometry",
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

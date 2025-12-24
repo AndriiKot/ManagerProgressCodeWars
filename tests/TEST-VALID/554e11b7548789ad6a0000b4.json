@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/554e11b7548789ad6a0000b4",
+  "data": {
+    "id": "554e11b7548789ad6a0000b4",
+    "name": "Except the Unexpected #1",
+    "slug": "except-the-unexpected-number-1",
+    "category": "reference",
+    "publishedAt": "2015-05-09T14:31:48.516Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/554e11b7548789ad6a0000b4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-09T13:55:03.749Z",
+    "createdBy": {
+      "username": "moyiz",
+      "url": "https://www.codewars.com/users/moyiz"
+    },
+    "description": "In this kata you will implement a wrapper class, used to catch every exception risen from any object or method, returned by this class.\nYour class should also catch exceptions risen from inner classes, and method of any object returned by method of the wrapped class.\nFor example, assume the following:\n```python\nclass A(object):\n  @property\n  def inner(self):\n  \treturn A()\n    \n  def do_stuff(self):\n     \"\"\"\n     This function does a lot of stuff, but sometimes it crashes\n     \"\"\"\n     raise Exception(\"Oh Noes!!\")\n```\n`do_stuff` can raise an exception in any depth!\n\n\nFor example, if you wrap class A, your wrapper will catch exceptions risen from any object returned by any method of A.\n\n```python\na = Wrapper(A)()\nb = a.method()  # Assume method() returns an instance of another class (not wrapped).\nb.this_will_raise()  # This method should raise an exception, but your wrapper will catch it.\n```\n\n\nWhen is it useful?\n==================\nIf, for example, you use a try/except phrase in your code to establish a connection to a DB or another service, you can catch an exception if it fails. But, if the connection fails sometime after the it was established, you have no convenient way to avoid this (It's bad to try/except any use of the connection). Therefore, one way to avoid this, is to catch every exception risen from anything returned from this connection (including it). A better way to avoid this (not in this kata), is to catch specific exceptions.\n\n\nPS: This is the first part, no need to support access to members, only methods :)\n\n(Hint: Consider using ```__getattr__``` and ```__call__```).",
+    "totalAttempts": 85,
+    "totalCompleted": 14,
+    "totalStars": 5,
+    "voteScore": 11,
+    "tags": [
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

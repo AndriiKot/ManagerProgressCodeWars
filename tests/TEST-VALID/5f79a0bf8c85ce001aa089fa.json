@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f79a0bf8c85ce001aa089fa",
+  "data": {
+    "id": "5f79a0bf8c85ce001aa089fa",
+    "name": "Make very big numbers readble for humans",
+    "slug": "make-very-big-numbers-readble-for-humans",
+    "category": "algorithms",
+    "publishedAt": "2020-10-04T12:10:30.893Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5f79a0bf8c85ce001aa089fa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-04T10:15:27.615Z",
+    "createdBy": {
+      "username": "Yoreni",
+      "url": "https://www.codewars.com/users/Yoreni"
+    },
+    "description": "For this kata you will be making very big numbers easily readble for humans. Its kind of hard to explain in words so i will add some exsamples aswell hopefuly you will get what i mean in the examples. you have problay already seen numbers displayed in this way on websites such as YouTube and other social media websites.\n\nthe output will mostly consist of two parts\n\n - the first part will be the number divided by a power of 1000 that is rounded down to 3sf*\n - the second part will be a suffix that is determined by which power 1000 the number got divided by \n \nUse the following suffixes below! (this code wont be preloaded)\n```java\nString[] suffixes = {\"\",\"K\",\"M\",\"B\",\"T\",\"q\",\"Q\",\"s\",\"S\",\"O\",\"N\",\"d\",\"U\",\"D\"};\n```\n\n if the number is so big that there isnt a suffix for that power of 1000 then the number will be displayed in standard form/scientific notation** (not be be confused with engineering notation) with the mantissa rounded down to 2dp\n\nif the number is less than 1000 then, it will return the number rounded down to the nearest integer.\n\n**Examples**\n```java\nshorten(235643);  //will output  \"235K\"\nshorten(1937234); //will output \"1.93M\"\nshorten(1500000); //will output \"1.5M\"\nshorten(5000);    //will output \"5K\"\nshortem(-20.3454321) //will output \"-20\" (yes make sure it works for negitive numbers too)\n```\n\n**Notes**\n\n*3sf stands for 3 significant figures which means the 3 \"biggest\" digits of a number for example in the number \"1234567\" \"123\" are the 3 \"biggest digits\" and when its rounded down to 3 dignificant figures it will be \"1230000\"\n\n**standard form or (scientific notation as its callled outside the UK) is a way of expressing numbers in the form of (mantissa)e(exponent) the mantissa will be a number divided by a power of 100 and an exponent is the order of manguitude of the number. for example 4.7e2 is the same as 470, 7e9 is the same is 7,000,000 and 1e50 is the same as 100,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 (a 1 followed by 50 zeros)\n\n",
+    "totalAttempts": 325,
+    "totalCompleted": 6,
+    "totalStars": 4,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

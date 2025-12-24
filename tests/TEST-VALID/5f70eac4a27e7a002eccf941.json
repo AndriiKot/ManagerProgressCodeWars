@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f70eac4a27e7a002eccf941",
+  "data": {
+    "id": "5f70eac4a27e7a002eccf941",
+    "name": "Four Color Theorem for Cylindrical Projection",
+    "slug": "four-color-theorem-for-cylindrical-projection",
+    "category": "algorithms",
+    "publishedAt": "2020-09-27T21:17:50.942Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f70eac4a27e7a002eccf941",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-09-27T19:40:52.876Z",
+    "createdBy": {
+      "username": "doooom",
+      "url": "https://www.codewars.com/users/doooom"
+    },
+    "description": "### Beta Note:\n* I think all test answers are correct. I checked many scenarios. But there could be something missing. If you find errors, please inform me of them. \n* Suggestions for fixed tests are welcome. Also looking for faster algrithms, esp. map gen;\n* Added JS translation. JS runs much faster than python. So the more random tests in JS cover special cases better. (24Dec2020)\n* Corrected an error in my algrithm, which gave wrong answer 3 instead of 4 in some special cases;\n* Add `~` as water into the map. It reduced map size needed for special graphs; To avoid maintaining two languages, I deleted python for now, and will add back when everything becomes stable.\n\n---\n\n# Four Color Theorem\n\nIn mathematics, the four color theorem, or the four color map theorem, states that, given any separation of a plane into contiguous regions, producing a figure called a map, no more than four colors are required to color the regions of the map so that no two adjacent regions have the same color. Adjacent means that two regions share a common boundary curve segment, not merely a corner where three or more regions meet. It was the first major theorem to be proved using a computer.\n<div align=\"center\">\n<img width=600 src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Map_of_United_States_vivid_colors_shown.png'>\nFig. 1: A four-coloring of a map of the states of the United States (ignoring lakes).\n</div>\n\nWhile every planar map can be colored with four colors, it is NP-complete in complexity to decide whether an arbitrary planar map can be colored with just three colors.[1] For some cases, even three colors are not required, for example two colors are enough to distinguish the squares on a chessboard.\n\n---\n# Task\nFind the minimum amount of colors needed to fill a map with no neighboring territories having the same color.  \n\n### Input\nThe test map will be inputed as a string. For example the map below has 9 different territories. It needs 3 colors to seperate them. Usually there is more than one way to color a map.  \nA possible color pattern for the map below is:\n* Color 1: A, C, D, H\n* Color 2: B, b, E\n* Color 3: F, G\n\n```python\n\"\"\"             \nAABBCC          \nAABBCC          \nbbDDEF          \nbbDDGH          \n\"\"\"        \n```\n#### Input Notes:\n- The territory names are case sensitive, B and b are different territories;\n- Territories are considered adjacent only if they share an edge, A is adjacent to B, but Not D;\n- One territory is always connected, there are no discrete islands;\n- Chars of ASCII 33~126 will be used (see...no 32)\n- Inputs are always rectangular, ignore tailing spaces if any\n\n### Output\nThe output should be an `int`.\n\n---\n\nWarriors who solve this kata need think big. The map is not for a county, or a city. They are all maps of planets. There are several projection ways to map a sphere to a flat rectangular. The approach we use here is the cylindrical projection. ***So the left and right edges of the map are connected.*** Since cylindrical projection brings big distortions on two polar areas. We did not include polar areas in the map. ***Don't worry about the top and bottom edges of the map. They connect to nothing.***\n\nUse the above input string as the example again. A and C are adjacent to each other; same to b, F and H. But G and b are not connected; they won't meet at the south pole.\n<div align=\"center\">\n<img src='https://upload.wikimedia.org/wikipedia/commons/2/22/Usgs_map_miller_cylindrical.PNG'>\nFig. 2: A Miller cylindrical projection maps the globe onto a cylinder.\n</div>\n\nMore about the tests:\n* There are about 50 fixed tests and 1000 random tests. Fixed tests are not necessarily easier, they include some special cases. Please don't hard code them;\n* Maps can be big. If we call the sample input above a 6x4 = 24 pixel map, a large map in random tests could have 2,500 pixels;\n* All tests will have no more than 90 territories;\n* There may be lakes, rivers, seas or oceans which need a certain color, i.e. blue; so **ignore water areas during coloring; water is represented by `~`;** water's blue should not be counted into your result;\n* Some planets have one territory only; some planets do not have lands, just water surface only;\n* A planet that was destroyed by the Death Star doesn't have any territories. In this case, the input will be an empty string.\n* The oldie but goodie: you will find more in sample tests.\n\nHere are more examples:\n```\nSample input strings:\n1) \"ABCD\"      2) \"ABC\"    3) \"AAA\\nDBC\\nDBC\"\n4) \"AAAA\\nACCA\\nDBCA\"      5) \"ABAA\\nABCA\\nDBCA\"\n6) \"~A~\\n~~~\\n~C~\"\n```\n1. A is adjacent to B; B is adjacent to C; C is adjacent to D; while in the end D is adjacent to A since is a cylindrical projection; in this case, two colors are enough to distinguish all the territories. Your code should return `2`;\n1. It's the first case without D. Now A is adjacent to B and C. Two color are not enough. Your code should return `3`;\n1. C is touching D, because it's a circle. Your code should return `4`;\n1. B is not adjacent to A anymore, while A extended between C and D. In this case, two colors is enough to distinguish them. Your code should return `2`;\n1. While B touches A again, your code should return `3` for this input. However, B cuts thru A. Should all territories be connected to itself? Remember, the input represents a cylindric map not a rectangular map. If we wrap the input around a cylinder, A becomes one connected territory. So this input is valid. (BTW, the \"A\"s on the right and \"A\"s on the left should have a same color.)\n1. Water, i.e. `~`, should be ignored; Though there are two islands, they can have a same color, while your code should return `1` not `2`;\n\n<div align=\"center\">\n<img  width=600     src='https://github.com/GaryDoooo/public_codewar_info/raw/main/4color3.jpeg?raw=true'>\nFig. 3: The minimum amount of colors needed to fill a map\n</div>\n\nParsing a map to graph is not what this Kata wants to test. Cylindrical projection and water will introduce more special cases in graphs.\n\n\n---\n<sup>[1] Dailey, D. P. (1980), \"Uniqueness of colorability and colorability of planar 4-regular graphs are NP-complete\", Discrete Mathematics, 30 (3): 289–293<br><br>Not to reduce the Kata's fun and challenges, I put more hints [HERE](https://github.com/GaryDoooo/public_codewar_info/blob/main/hint/4color.md), in case you need it. <br><br>\n\n</sup>",
+    "totalAttempts": 263,
+    "totalCompleted": 13,
+    "totalStars": 11,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

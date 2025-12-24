@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5835dea5b468c0099a000091",
+  "data": {
+    "id": "5835dea5b468c0099a000091",
+    "name": "Swedish National Identity Number",
+    "slug": "swedish-national-identity-number",
+    "category": "algorithms",
+    "publishedAt": "2016-11-23T20:30:07.757Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5835dea5b468c0099a000091",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-23T18:23:33.190Z",
+    "createdBy": {
+      "username": "phille97",
+      "url": "https://www.codewars.com/users/phille97"
+    },
+    "description": "> In Sweden a Personal Identity Number (Swedish: personnummer) is used in dealings with public agencies, from health care to the tax authorities. It is also used as a customer number in banks and insurance companies. It is written on all approved identity documents, making the risk of mixing up people low.\n\nThe number can be either \n\n- `YYMMDDXXXX` 10 digits or\n- `YYYYMMDDXXXX` 12 digits\n\nIt's usally separated by a `-` hyphen. Then it's  formatted like this: \n\n- `YYMMDD-XXXX`\n- `YYYYMMDD-XXXX`\n\nWhere `YYMMDD` or `YYYYMMDD` is the year of birth.\n\nValid dates is between 1800-01-01 and 2099-12-31.\n\nWhen the year is formated with two digits `YY` expect that the year is `19YY`.\n\n`XXXX` is divided into three parts. The first two are random, the third is also random but is __odd for men__ and __even for women__.\n\nThe fourth digit is a control digit that checks if the complete number is valid.\n\nTo calculate this digit you take the first nine digits __excluding the first 2 digits of the year if the number is twelve digits__, and multiply each digit with 1 and 2 alternately.\n\nAfter that you sum the digit sum of each answer and from that you subtract the sum with the nearest highest tenth of that sum. From that you get the last(fourth) digit.\n\n## Example\n\nSo if a _girl_ is born January 4, 1897 the first part is `18970104`. We take two random digits and append a random _even_ integer `2`.\n\nWe get the number `18970104792`.\n\nWhen we calculate the control digit we want to exclude the first two digits of the year, so we get the number: `19970104792`\n\nMultiplies each digit with 1 and 2 alternately\n\n```\n9  7  0  1  0  4  7  9  2\nx  x  x  x  x  x  x  x  x\n2  1  2  1  2  1  2  1  2\n```\nYou get the results and sum them up.\n```\n1 + 8 + 7 + 0 + 1 + 0 + 4 + 1 + 4 + 9 + 4 = 39\n```\n\nSubtract 39 with the nearest highest 10 `40 - 39 = 1` and you get the last control digit.\n\nThis leaves you with the complete identity number `9701047921`\n\n## The problem\n\nWe want a function given a identity number to return `true` if it's valid and `false` if it's not valid.\n\nAllowed formats for the parameter are\n\n- `YYMMDDXXXX`\n- `YYMMDD-XXXX`\n- `YYYYMMDDXXXX`\n- `YYYYMMDD-XXXX`\n\n`19YYMMDD` or `YYYYMMDD` needs to be a valid date between 1800-01-01 and 2099-12-31\n\n1800-01-01 and 2099-12-31 are valid dates.\n\nIf you encounter a 10 digit number, the first two digits are `19`.\n\nMake sure you check for leap years.\n\nIf the parameter is not correctly formated, it should return false.",
+    "totalAttempts": 249,
+    "totalCompleted": 18,
+    "totalStars": 6,
+    "voteScore": 9,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

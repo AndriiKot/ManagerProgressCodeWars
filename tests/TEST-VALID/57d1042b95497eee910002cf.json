@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57d1042b95497eee910002cf",
+  "data": {
+    "id": "57d1042b95497eee910002cf",
+    "name": "I guess this is a 6kyu kata #2: Merge strings",
+    "slug": "i-guess-this-is-a-6kyu-kata-number-2-merge-strings",
+    "category": "games",
+    "publishedAt": "2016-09-08T07:24:48.327Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57d1042b95497eee910002cf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-08T06:24:43.724Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "## I guess this is a ?kyu kata. series #2: Merge strings\n\n### Description\nThere are many strings in front of you, you need to merge them and remove the duplicate characters. For example:\n\n```\nstrings=[\"abc\",\"abd\",\"bcdxx\",\"bcey\",\"bcez\"]\n```\n\n### The rules:\n\nStep 1: You need to group them by the first letter and merge each group to a string. In the example above, the first group is \"abc\" and \"abd\", they are all starting with letter \"a\"; the second group is \"bcdx\", \"bcey\" and \"bcez\", they are all starting with letter \"b\";\n\n```\ngroup 1:  \"abc\"  \"abd\"   ---->  \"a???\"\n//They all starting with \"a\"\n\ngroup 2:  \"bcdxx\"  \"bcey\"  \"bcez\" ---->  \"b??????\"\n//They all starting with \"b\"\n```\nStep 2: Pick out the characters that are repeated in all the strings, according to the order of the first string:\n\n```\ngroup 1:  \"abc\"  \"abd\"   ---->  \"ab??\"\n//\"b\" appear in all strings\n\ngroup 2:  \"bcdxx\"  \"bcey\"  \"bcez\" ---->  \"bc?????\"\n//\"c\" appear in all strings\n```\nStep 3: Pick out the duplicate characters in the first string and the other string, and then pick out the duplicate characters in the second string and the other string, and then third.. and so on..:\n\n```\ngroup 1:  \"abc\"  \"abd\"   ---->  \"ab??\"\n//no such letters found\n\ngroup 2:  \"bcdxx\"  \"bcey\"  \"bcez\" ---->  \"bce????\"\n//e appear in 2nd string and 3rd string\n```\nStep 4: Append the rest characters to the end of merged string, according to the order of their index of array, some duplicate characters in one string only keep one character(such as `\"xx\"` in string `\"bcdxx\"`):\n```\ngroup 1:  \"abc\"  \"abd\"   ---->  \"abcd\"\n\ngroup 2:  \"bcdxx\"  \"bcey\"  \"bcez\" ---->  \"bcedxyz\"\n\n```\nStep 5: return the result:\n\n```\nreturn [\"abcd\",\"bcedxyz\"]\n```\n\nOK, that's all. I guess this is a 6kyu kata. If you agree, please rank it as 6kyu and vote `very`;-) If you think this kata is too easy or too hard, please `shame me` by rank it as you want and vote `somewhat` or `none` :[\n\n### Task\nComplete function `mergeString` that accepts a argument `strings`, return an array that contains the merged strings.\n\nYou can assume that all the strings contain only the letters.",
+    "totalAttempts": 138,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 20,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

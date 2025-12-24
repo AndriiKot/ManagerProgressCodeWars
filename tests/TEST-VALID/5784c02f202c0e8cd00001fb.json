@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5784c02f202c0e8cd00001fb",
+  "data": {
+    "id": "5784c02f202c0e8cd00001fb",
+    "name": "Manipulating financial time-series",
+    "slug": "manipulating-financial-time-series",
+    "category": "algorithms",
+    "publishedAt": "2016-07-12T22:31:07.430Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5784c02f202c0e8cd00001fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-12T10:02:23.840Z",
+    "createdBy": {
+      "username": "jackchambers",
+      "url": "https://www.codewars.com/users/jackchambers"
+    },
+    "description": "<b>'OHLC'</b> stands for <b>Open-High-Low-Close</b> and is used in finance to help illustrate the movement of time-series data, typically the trading price of financial instruments. Whilst we will only loosely be using the concept in this Kata, for a more complete explanation please see:\n\n```\nhttps://en.wikipedia.org/wiki/Open-high-low-close_chart\n```\nFor this Kata you are given the task of creating a function called <b>'generateOHTC'</b> that takes an <b>array</b> of prices as its only argument and returns an <b>object</b> containing 5 arrays: <b>'Date', 'Open', 'High', 'Low' and 'Close'</b>.\n\nThe <b>'Date', 'Open', 'High', 'Low' and 'Close'</b> calculations will be based on a <b>TRAILING PERIOD OF 3 UNITS.</b> For the sake of simplicity, the 'Date' array only needs to be populated with the index of the original prices array. <b>However,</b> it can only begin when there is enough data to compute the trailing period calculations. Therefore if the input array has a length of 8, the OHLC and Date arrays will have a length of 5. To hopefully make things much clearer...\n\n```\nGiven an array = [2,5,6,3,4,5,9,7,8,6,10]\n\n'Date' =  [3,4,5,6,7,8,9,10]\n'Open' =  [2,5,6,3,4,5,9,7 ]\n'High' =  [6,6,6,5,9,9,9,8 ]\n'Low' =   [2,3,3,3,4,5,7,6 ]\n'Close' = [6,3,4,5,9,7,8,6 ]\n```",
+    "totalAttempts": 53,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

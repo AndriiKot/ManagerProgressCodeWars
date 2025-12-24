@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6330e274defafd9708ec0c7e",
+  "data": {
+    "id": "6330e274defafd9708ec0c7e",
+    "name": "ID Number Validation",
+    "slug": "id-number-validation",
+    "category": "algorithms",
+    "publishedAt": "2022-09-25T23:22:39.782Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6330e274defafd9708ec0c7e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-25T23:21:24.315Z",
+    "createdBy": {
+      "username": "hmrbll",
+      "url": "https://www.codewars.com/users/hmrbll"
+    },
+    "description": "A country uses an unique 11 digit id number for its citizens. This id number has some characteristics and in this kata you should write a function that takes id number as input, and returns whether it is valid or not.\n\nID number has following characteristics:\n- Never starts with 0\n- Last 2 digits are calculated digits:\n  - 10th digit is remainder from division by 10 of the number calculated by subtracting sum of every even digit from 7 times of sum of every odd digit.\n  - 11th digit is the remainder from division by 10 of the sum of first 10 digits.\n\nExample:\n-\nFor the number 10562272296, first 9 digits are: 105622722\n\nCalculation of 10th digit:\n- Sum of odd digits: 1 + 5 + 2 + 7 + 2 = 17\n- Multiply by 7: 17 * 7 = 119\n- Sum of even digits: 0 + 6 + 2 + 2 = 10\n- Subtracting sum of even digits from 7 times of sum of odd digits: 119 - 10 = 109 \n- Remainder from division by 10: 109 % 10 = 9 gives the 10th digit.\n\nCalculation of 11th digit:\n- Sum of first 10 digits: 1 + 0 + 5 + 6 + 2 + 2 + 7 + 2 + 2 + 9 = 36\n- Remainder from division by 10: 36 % 10 = 6 gives the 11th digit.\n\nFor the example both 10th and 11th digits are correct. Hence the validation function should return True.\n\nYou can guarantee input will always be 11 digit number.\n",
+    "totalAttempts": 22,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": 7,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f3792a153f391002e8245b9",
+  "data": {
+    "id": "5f3792a153f391002e8245b9",
+    "name": "Build a Bridge",
+    "slug": "build-a-bridge",
+    "category": "algorithms",
+    "publishedAt": "2020-08-15T12:34:25.248Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f3792a153f391002e8245b9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-15T07:45:37.888Z",
+    "createdBy": {
+      "username": "kvbc",
+      "url": "https://www.codewars.com/users/kvbc"
+    },
+    "description": "Translations appreciated ^_^\n\n___\n\n# Input\n\nYou will be given a matrix of `x` strings, with each character being:\n  - `'*'` : Solid block,\n  - `' '` : Empty space\n  \nand the material to build the bridge with:\n```\nsteel     ->  '='\nconcrete  ->  '-'\nstone     ->  's'\nwood      ->  'x'\n```\nIf the material is none of the above, use the `'?'` character\n\n___\n\n# Output\n\nYou have to return the given matrix containing the bridge \"built\"\n\n___\n\n# Objective\n\nYour objective is to build a bridge in the gap between 2 **highest** and **closest** solid blocks. For example, for a given input:\n```\n***          ***\n***          ***\n***          ***\n```\nThe output should look like that:\n```\n***??????????***\n*** ?      ? ***\n***?        ?***\n```\nWith `?` replaced with the given material. (if it's a valid one)\n\n___\n\n# Specifications\n\n- The matrix and it's elements will never be empty (\"\"),\n- The y position of the bridge will always be lower than (height - 2):\n```\ny < height - 2\n```\n- There will **not** always be a solution to a given matrix, in that case just return the given matrix,\n- There will always be only one possibility of building a bridge per row. For example, there will never be given a matrix like this one:\n```javascript\n[\n    '***      ***       ***',\n    '***      ***       ***',\n    '***      ***       ***',\n    '***      ***       ***'\n]\n```\n- If the gap between the 2 solid blocks is lower than 8 - there's no bridge support, otherwise there is,\n- Bridge support extends to direction:\n    - Left one:  `SW - South West`\n    - Right one: `SE - South East`\n    \n  until it hits an solid block, or hits the edge of the matrix. See below for an example\n\n___\n\n# Examples\n\n```javascript\n// The gap is equal to 6,\n// 6 ≤ 8 - there's no bridge support.\nvar matrix = [\n  '            ',\n  '            ',\n  '***      ***',\n  '***      ***',\n  '***      ***'\n];\nvar material = 'steel';\nbuildBridge(matrix, material) == [\n  '            ',\n  '            ',\n  '***======***',\n  '***      ***',\n  '***      ***'\n];\n```\n\n```javascript\n// The gap is equal to 13,\n// 13 ≥ 8 - there's a bridge support.\nvar matrix = [\n  '                   ',\n  '                   ',\n  '***             ***',\n  '***             ***',\n  '***             ***'\n];\nvar material = 'wood';\nbuildBridge(matrix, material) == [\n  '                   ',\n  '                   ',\n  '***xxxxxxxxxxxxx***',\n  '*** x         x ***',\n  '***x           x***'\n];\n```\n\n```javascript\nvar matrix = [\n  '      *         *      ',\n  '                       ',\n  '                       ',\n  '                       ',\n  '                       '\n];\nvar material = 'stone';\nbuildBridge(matrix, material) == [\n  '      *sssssssss*      ',\n  '        s     s        ',\n  '       s       s       ',\n  '      s         s      ',\n  '     s           s     '\n];\n```\n\n```javascript\nvar matrix = [\n  '      *---------*      ',\n  '                       ',\n  '               *       ',\n  '      *                ',\n  '                       '\n];\nvar material = 'concrete';\nbuildBridge(matrix, material) == [\n  '      *---------*      ',\n  '        -     -        ',\n  '       -       *       ',\n  '      *                ',\n  '                       '\n];\n```\n\n___\n\n# Note\n\n- See example tests for more examples.",
+    "totalAttempts": 180,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

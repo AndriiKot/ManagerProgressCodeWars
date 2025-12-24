@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/665524cd7729cd2925660b05",
+  "data": {
+    "id": "665524cd7729cd2925660b05",
+    "name": "Word Ladder Transformation",
+    "slug": "word-ladder-transformation",
+    "category": "algorithms",
+    "publishedAt": "2024-05-28T00:27:29.521Z",
+    "approvedAt": null,
+    "languages": [
+      "swift"
+    ],
+    "url": "https://www.codewars.com/kata/665524cd7729cd2925660b05",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-28T00:26:53.718Z",
+    "createdBy": {
+      "username": "maxwellt23",
+      "url": "https://www.codewars.com/users/maxwellt23"
+    },
+    "description": "<h1>The Problem</h1>\n\nYou are given two words ```beginWord``` and ```endWord```, and a dictionary of words ```wordList```.\n\nYour task is to write a function ```ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int``` that finds the length of the shortest transformation squence from ```beginWord``` and ```endWord```, such that:\n\n<ol>\n  <li>1. Only one letter can be changed at a time.</li>\n  <li>2. Each transformed word must exist in the word list.</li>\n</ol>\n\nReturn the length of the shortest transformation sequence, or ```0``` if no such transformation is possible.\n\n<h1>Rules and Constraints</h1>\n<ol>\n  <li>All words have the same length.</li>\n  <li>All words contains only lowercase alphabetic characters.</li>\n  <li>No duplicates in the word list.</li>\n  <li>`beginWord` and `endWord` are non-empty and are not the same.</li>\n</ol>\n</br>\n<h1>Example</h1>\n\n```swift\nlet beginWord = \"hit\"\nlet endWord = \"cog\"\nlet wordList = [\"hot\", \"dot\", \"dog\", \"lot\", \"log\", \"cog\"]\n\nprint(ladderLength(beginWord, endWord, wordList)) // Output: 5\n```\n\nThe shortest transformation sequence is \"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\", which is 5 words long.\n\n<h1>Notes</h1>\n<ul>\n  <li>Ensure to handle edge cases such as no possible transformation and the end word not being in the word list</li>\n</ul>\n</br>\n<h1>Solution Approach</h1>\n<ol>\n  <li>Use Breadth-First Search (BFS) to explore the shortest path in the word transformation sequence.</li>\n  <li>Initialize the BFS from the `beginWord` and explore all possible one-letter transformations.</li>\n  <li>Maintain a queue to process each word and keep track of visited words to avoid cycles.</li>\n  <li>Return the length of the path when the `endWord` is reached.",
+    "totalAttempts": 13,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Graphs",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6659ed769a09737b183a86c5",
+  "data": {
+    "id": "6659ed769a09737b183a86c5",
+    "name": "Mate with King & Queen",
+    "slug": "mate-with-king-and-queen",
+    "category": "games",
+    "publishedAt": "2024-05-31T21:01:55.263Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6659ed769a09737b183a86c5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-31T15:32:06.165Z",
+    "createdBy": {
+      "username": "brodiemark",
+      "url": "https://www.codewars.com/users/brodiemark"
+    },
+    "description": "### Task: \n\nCheckmate the opponent's king using a king and queen.\n\n### Input: \n\nThree strings representing the locations of your king, your queen and the opponent's king (in that order). There are no other pieces on the board. The position is guaranteed to be legal, and the opponent's king will not be in check. It is your move. \n\nSquares are indicated using algebraic notation, where <code>\"a1\"</code> is the bottom-left corner of the board and <code>\"h8\"</code></code> is the top-right. \n\nExample: The input <code>\"e5\", \"b2\", \"d7\"</code> represents the following position:\n```\n8 ........\n7 ...k....\n6 ........\n5 ....K...\n4 ........\n3 ........\n2 .Q......\n1 ........               \n  abcdefgh\n```\n\n### Output:\n\nThe move you want to play, a string of 3 characters. The first character shows the piece moved, either <code>\"K\"</code> or <code>\"Q\"</code>. The remaining 2 characters identify the square to move it. \n\nFor example, in the position above the move <code>\"Qb7\"</code>leads to the following position, checking (but not mating) the opponent's king:\n```\n8 ........\n7 .Q.k....\n6 ........\n5 ....K...\n4 ........\n3 ........\n2 ........\n1 ........               \n  abcdefgh\n```\n\n### Testing:\n\nFirst your function is called on the initial position. After its output is received, the testing framework makes a move for the opponent's king. It then calls your function on the updated position to get your next move. This process continues until the opponent's king is checkmated. Your function does not need to determine if mate occurs - the testing framework does this.\n\nThe function fails if any of the following occur:\n<ol>\n<li>It makes a illegal move. </li> \n<li>Its move leaves the king in stalemate i.e. has no legal moves but is not in check. </li>\n<li>Its move allows the king to capture your queen. The opponent will do so! </li>\n<li>50 moves elapse without the king being checkmated. </li>\n</ol>\n\n#### Example: \n\nHere is a sequence of moves from the first position above resulting in checkmate. The move numbers are not part of the kata requirement - they just make the moves easier to read.\n\n<code>1.Qb8 ke7 2.Qc8 kf7 3.Qd8 kg7 4.Qe8 kh7 5.Kf6 kh6 6.Qg6</code> is the following checkmate:\n```\n8 ........\n7 ........\n6 .....KQk\n5 ........\n4 ........\n3 ........\n2 ........\n1 ........               \n  abcdefgh\n```\n\n##### Related kata:\n\nThis kata was inspired by\n[Valid Checkmate](https://www.codewars.com/kata/661bcd7694e9cdec005203cc).\n\nAlso related are [Check and Mate?](https://www.codewars.com/kata/52fcc820f7214727bc0004b7) and [Is the King in check ?](https://www.codewars.com/kata/5e28ae347036fa001a504bbe)\n\nFor a much harder checkmating problem, break your brain on [Chess - checkmate with rook in 16 moves](https://www.codewars.com/kata/5b9ecec33c5b95e2b00000ba)\n\nTo program a problem-solving agent for a non-chess puzzle, try [Play Nerdle - It's Wordle for Calculations](https://www.codewars.com/kata/64b84ed4b46f91004b493d87).\n\n\n\n",
+    "totalAttempts": 12,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Games",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

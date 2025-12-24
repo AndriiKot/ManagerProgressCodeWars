@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/630a5a897dd58d7984a7ee7a",
+  "data": {
+    "id": "630a5a897dd58d7984a7ee7a",
+    "name": "Decipher mysterious message (string manipulation)",
+    "slug": "decipher-mysterious-message-string-manipulation",
+    "category": "reference",
+    "publishedAt": "2022-08-28T07:18:53.482Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/630a5a897dd58d7984a7ee7a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-27T17:55:21.365Z",
+    "createdBy": {
+      "username": "piocyg",
+      "url": "https://www.codewars.com/users/piocyg"
+    },
+    "description": "One of the search engine results about topic that interested you points to the strangely looking web page.\n\nAt first glance it's just plain text with random characters.\n\nBut like all humans you are good with patterns matching, quite exceptional actually, and immediately recognize some familiarities:\n\nYou spot a few words, when letters are sorted by their occurrence:\n\n```\nIIHHHH -> HI  # H: 4; I: 2;\nREEEAADDDD -> DEAR  # D: 4; E: 3; A: 2; R: 1;\n```\n\nFollowing that rule you discover that the capitalization does not matter, because words `HI` and `DEAR` can be found also as:\n\n```\niIHHh -> HI  # H/h: 3; I/i: 2;\neEErAaDddd -> DEAR  # D/d: 4; E/e: 3; A/a: 2; R/r: 1;\n```\n\nYou are intrigued. Most of the text seems like a noise, invalid characters.\n\nBut after some time you notice that everything that is not an ASCII letter or digit can be actually ignored:\n```\n^%iIHHh#$ -> HI  # H/h: 3; I/i: 2;\n!!@#eEErAaDddd; -> DEAR  # D/d: 4; E/e: 3; A/a: 2; R/r: 1;\n```\n\nThat directly leads you to another discovery: the words are separated by `-` sign:\n\n```\n^%iIHHh#$-!!@#eEErAaDddd; -> HI DEAR # H/h: 3; I/i: 2; -; # D/d: 4; E/e: 3; A/a: 2; R/r: 1;\n```\n\n... and it does not really matter how many times this sign occurs, or if it is mixed with invalid characters:\n\n```\n^%iIHHh---!--#$!!@#eEErAaDddd; -> HI DEAR # H/h: 3; I/i: 2; -; # D/d: 4; E/e: 3; A/a: 2; R/r: 1;\n```\n\nSo it looks like the words are hidden in blocks of texts between `-` sign.\n\nThe `alphameric` characters are mixed with `invalid` characters and `randomly shuffled`, all that matters is when they are `sorted by their occurrence`:\n\n```\n^I%Hh#iH$-!eE!D@EdrdA#ad; -> HI DEAR\n^%iIHHh----#$!!---@#eEErAaDddd; -> HI DEAR\n```\n\nBut what in case when the specific letter occurs more than once in a word?\n\nYou look through the messy text and finally find the answer.\n\nThe word `BELLY` is split to avoid letter duplication, so that each part has unique letters:\n\n```\n^e@#EBlB!!b-#lLy -> BEL LY\n```\n\nAnother word seems to have a typo on purpose:\n\n```\n\\L#wW?eeW->DDoDoDonNe -> WEL DONE\n```\n\nIt turns out there is no special rule in case when a word consists of non-unique letters.\n\nIt is either split or written wrongly on purpose to meet the ciphering algorithm criteria.\n\nYou have a feeling you cracked the code! Yay!\n\nAll that is left is to decipher the message. But the text is quite long. \n\nWorking on this with pencil and paper would be a nightmare.\n\nObviously, you decide to copy the web page content and write a program! :)\n\nFortunately, performance should not be an issue - text is just a few pages.\n\nTask: Write a function that will take immutable string as input argument, and will return string with deciphered message. Assume input is correctly ciphered.\n",
+    "totalAttempts": 135,
+    "totalCompleted": 27,
+    "totalStars": 5,
+    "voteScore": 14,
+    "tags": [
+      "Algorithms",
+      "Ciphers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a4104f432a465716b000327",
+  "data": {
+    "id": "5a4104f432a465716b000327",
+    "name": "The 196-Problem",
+    "slug": "the-196-problem",
+    "category": "reference",
+    "publishedAt": "2017-12-25T14:02:28.327Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5a4104f432a465716b000327",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-25T14:03:09.445Z",
+    "createdBy": {
+      "username": "Ahsant",
+      "url": "https://www.codewars.com/users/Ahsant"
+    },
+    "description": "The 196-algorithm takes a natural number and adds its reverse number to it. This is repeated until the result is a palindrome. Given a natural number n, write a function that returns the number of iterations needed for the 196-algorithm to terminate.\n\nFor example:\n```java\nf(1) = 0. Because 1 is already a palindrome.\nf(12) = 1. Because 12 + 21 = 33, which is a palindrome.\nf(59) = 3. Because 59 + 95 = 154. 154 + 451 = 605. 605 + 506 = 1111. This one took 3 iterations.\n```\n\n*The original 196-algorithm starts with at least 1 iteration, even if the first number is palindromic.*\n\nFor most numbers the algorithm terminates after only few iterations. However, for some numbers (like 196 and other <a href=\"https://en.wikipedia.org/wiki/Lychrel_number\">Lyrchel-numbers</a>) the algorithm does not terminate even after hundreds of millions of iterations. The proof that the algorithm does not terminate for this numbers has not been found yet. **So you need to make use of an upper bound.**\n\n```java\nIf the algorithm does not terminate after 30 iterations, return -1.\n```\n\n",
+    "totalAttempts": 12,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

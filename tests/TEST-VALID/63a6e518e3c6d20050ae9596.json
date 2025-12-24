@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63a6e518e3c6d20050ae9596",
+  "data": {
+    "id": "63a6e518e3c6d20050ae9596",
+    "name": "Decode the ship's distress signal",
+    "slug": "decode-the-ships-distress-signal",
+    "category": "reference",
+    "publishedAt": "2022-12-25T08:50:23.813Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63a6e518e3c6d20050ae9596",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-24T11:40:08.955Z",
+    "createdBy": {
+      "username": "Rakshitkumar",
+      "url": "https://www.codewars.com/users/Rakshitkumar"
+    },
+    "description": "You have been appointed as a software engineer in a Marine Patrol Bureau. On your first day, your superior has assigned you a task to write a function to relay the ship's distress signals to the concerned department.\n\n## Kata\nYour objective - if choose to accept - is to write the function `decodeDistressSignal(signal)` to decode the distress signal into human-readable `string` and return it.\n\n### Input\nThe parameter provided is a `string` representing a distress signal which consists of 3 parts viz. `shipcode`, `ship_coordinates`, and `distress_codes` which are separated by the letter '-'.\n\nYour output should be in the follwing format:  \n`Distress from 'shipcode' at 'coords' for: decoded_codes`\n\n### Examples\n\n```\n#1  \ninput: 86529-113°0'0\"E:51°0'0\"S-SIS\noutput => Distress from '86529' at '113°0'0\"E:51°0'0\"S' for: 'Ship is Sinking'\n\n#2  \ninput: 376-69°0'0\"E:11°0'0\"S-SIS,MUR\n=> Distress from '376' at '69°0'0\"E:11°0'0\"S' for: 'Ship is Sinking' and 'Murder'\n    \n#3  \ninput: 7105-50°0'0\"W:40°0'0\"N-FIR,MUR,HRC,SIS\n=> Distress from '7105' at '50°0'0\"W:40°0'0\"N' for: 'Fire in the Ship', 'Murder', 'Hurricane' and 'Ship is Sinking'\n```\n\n__Remember__,\n- Decoded distress codes should be joined by `', '` string except for the last two which should be joined by `' and '`, instead.\n    \n### Distress Codes and Messages\nThis is already preloaded in the initial solution. So no need to copy and paste.\n\n    'CID': 'Captain is Dead',\n    'ICE': 'Collision with Iceberg',\n    'FIR': 'Fire in the Ship',\n    'MUR': 'Murder',\n    'SIS': 'Ship is Sinking',\n    'TXL': 'Toxic Leakage',\n    'OLL': 'Oil Leakage',\n    'WRL': 'Water Leakage',\n    'HRC': 'Hurricane',\n    'KIJ': 'Kaiju Attack',\n    'RYR': 'Royal Rumble between Workers',\n    'PIR': 'Followed by Pirates',\n    'JSN': 'Jason in the Ship',\n    'SMF': 'System Malfunction'\n    \n### Notes\n- All inputs are valid",
+    "totalAttempts": 47,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Games",
+      "Puzzles",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

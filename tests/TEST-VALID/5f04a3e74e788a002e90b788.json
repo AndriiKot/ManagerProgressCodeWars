@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f04a3e74e788a002e90b788",
+  "data": {
+    "id": "5f04a3e74e788a002e90b788",
+    "name": "Matchmaking Algorithm for Competetive Game",
+    "slug": "matchmaking-algorithm-for-competetive-game",
+    "category": "algorithms",
+    "publishedAt": "2020-07-07T17:04:06.902Z",
+    "approvedAt": null,
+    "languages": [
+      "kotlin"
+    ],
+    "url": "https://www.codewars.com/kata/5f04a3e74e788a002e90b788",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-07T16:33:44.112Z",
+    "createdBy": {
+      "username": "FRedEnergy",
+      "url": "https://www.codewars.com/users/FRedEnergy"
+    },
+    "description": "You're writing a matchmaking algorithm for a competetive online game.\n\nThis game can be played either in single mode, or with friends in party which size can go up to 5 players, but eventually the game is played team vs team where each team has 5 players (think about MOBAs like League of Legends or Dota 2).\n\nEach player has an individual rating which approximately represents his skill and it is adjusted based on the result of each game.\n\nGiven a list of parties in matchmaking queue, you have to create two teams for a game and make sure that delta of sum of ratings of these team is as low as possible. If it's not possible to create a game from given queue then system just waits until more players join the queue.\n\nEach party is represented as:\n\n```kotlin\ndata class Party(val partySize: Int, val sumRating: Double)\n```\n\nExample behaviour of matchmaking system:\n```kotlin\nval queue = listOf(Party(2, 1500.0),\n                   Party(3, 1562.0), \n                   Party(5, 2523.0), \n                   Party(4, 1482.0), \n                   Party(1, 1523.0))\n\nval TEAM_SIZE = 5\ndata class Game(val leftTeam: List<Party>, val rightTeam: List<Party>)\n\nval game = makeGameIfPossible(queue)\nprintln(game) \n// -> Game(leftTeam=[Party(partySize=2, sumRating=1500.0), Party(partySize=3, sumRating=1562.0)],\n//         rightTeam=[Party(partySize=4, sumRating=1482.0), Party(partySize=1, sumRating=1523.0)])\n\n```\n\n\n",
+    "totalAttempts": 64,
+    "totalCompleted": 6,
+    "totalStars": 6,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

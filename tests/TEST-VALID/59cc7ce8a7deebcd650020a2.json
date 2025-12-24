@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59cc7ce8a7deebcd650020a2",
+  "data": {
+    "id": "59cc7ce8a7deebcd650020a2",
+    "name": "Validate WEP Keys",
+    "slug": "validate-wep-keys",
+    "category": "algorithms",
+    "publishedAt": "2017-09-28T04:39:04.812Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59cc7ce8a7deebcd650020a2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-28T04:39:16.705Z",
+    "createdBy": {
+      "username": "spcbrn",
+      "url": "https://www.codewars.com/users/spcbrn"
+    },
+    "description": "<h3>TASK:</h3>\ncreate a function that checks whether a set of WEP keys, passed in as multiple keys (two-character pairs) concatenated into a single string, are valid in representing ONLY words (characters a-z and A-Z), spaces, and integers 1-9\n\n<br/>\n<h3>RULES:</h3>\nif it is determined that each WEP key in the string represents an allowed character, return true\n\nif any of the keys contain OR represent invalid characters, return false\n\nif the input string does not contain only two-character pairs, return false\n\n<br/>\n<h3>KEY CONSTRAINTS:</h3>\n<li>in any given WEP key pair, the first character must only be an integer in the range 2-7</li>\n<li>if the first character is the integer 2, the second character must only be the integer 0 (this pair represents a space)</li>\n<li>if the first character is the integer 3, the second character must only be an integer 0-9 (these pairs represent integers)</li>\n<li>if the first character is an integer in the range 4-6, the second character must only be an integer in the range 0-9, OR an alphabetic character in the range A-F (these pairs represent alphabetic characters a-o and A-Z)</li>\n<li>if the first character is the integer 7, the second character must only be an integer in the range 0-9, OR the alphabetic character A (these pairs represent alphabetic characters p-z)</li><br/>\n<strong>*note that WEP keys are not case sensitive, so input strings may contain both capital and lowercase letters!</strong><br/>\n(for example, '6E' === '6e')<br/><br/>\n\n<h3>EXAMPLES:</h3>\n<li>example WEP key breakdown:</li>\n'H' => '48'<br/>\n'h' => '68'<br/>\n'4' => '34'<br/>\n' ' => '20'<br/>\n'Hello World' => '48656C6C6F20576F726C64'<br/>\n\n<li>example test case:</li>\nvalidate('686920687579')<br/><br/>\n\n\nGood luck!  And if you'd like to add another language to this kata, please let me know!",
+    "totalAttempts": 48,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

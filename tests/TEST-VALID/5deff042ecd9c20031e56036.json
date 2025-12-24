@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5deff042ecd9c20031e56036",
+  "data": {
+    "id": "5deff042ecd9c20031e56036",
+    "name": "character N-gram generator",
+    "slug": "character-n-gram-generator",
+    "category": "algorithms",
+    "publishedAt": "2019-12-11T03:41:39.349Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5deff042ecd9c20031e56036",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-10T19:21:38.844Z",
+    "createdBy": {
+      "username": "David Snyder",
+      "url": "https://www.codewars.com/users/David%20Snyder"
+    },
+    "description": "According to Wikipedia: \"an n-gram is a contiguous sequence of n items from a given sample of text or speech. The items can be phonemes, syllables, letters, words or base pairs according to the application.\"\n\nthe goal in this kata is to take a string and generate a set of n grams of the characters in the text.  for any n that is <= the length of the text. If the given n is greater than the length of the text the \"N_gram\" function should should return \"N is to large\". If the given n is less than or equal to 0 the function should return an empty list. The function shouldn't change the input text in any way, keep spaces and capital letters as they are.\n\nfor example:\n```python\nN_gram(\"sample text\", 3) -> ['sam', 'amp', 'mpl', 'ple', 'le ', 'e t', ' te', 'tex', 'ext'] \nN_gram(\"short\", 8) -> \"N is to Large\" # N > len(txt)\nN_gram(\"n is to small\", -5) -> [] # N <= \n```",
+    "totalAttempts": 10,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

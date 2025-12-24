@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/664613dd56c9a3f2be81bb0e",
+  "data": {
+    "id": "664613dd56c9a3f2be81bb0e",
+    "name": "\"La Liga\" Ranking",
+    "slug": "la-liga-ranking",
+    "category": "algorithms",
+    "publishedAt": "2024-05-16T14:23:52.198Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/664613dd56c9a3f2be81bb0e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-16T14:10:37.829Z",
+    "createdBy": {
+      "username": "alejandro.dm",
+      "url": "https://www.codewars.com/users/alejandro.dm"
+    },
+    "description": "This Kata simulates the scoring style of a football league.\nThe league is complete when 10 games have been played to obtain the team's final score (no more or less).\n \n___Input:___  \nAn array of strings representing the results of each match played. \ne.g. ```String [] {\"0-1\",\"1-1\",\"1-0\"...}```.  And a boolean indicating whether the first match is at home ```true/false```.\n \n___Output:___\nAn ```int``` that indicates the team's final score.\n \n### - Scores\n \n- If it's *\"home match\"*, our goals scored are reflected on the __left side__ of the hyphen(```-```).\n- If it's *\"away match\"*, our goals scored are reflected on the __right side__ of the hyphen(```-```).\n \nThe goals of the opposing team are reflected on the opposite side. (e.g.)\n \n```\n\"3-0\" Home match -> VICTORY (3 goals scored)\n\"0-3\" Away match -> VICTORY (3 goals scored)\n\"1-2\" Home match -> DEFEAT (1 goal scored but 2 goals scored by the opposing team )\n```\n \n### - Matchs\n \nThe matches are decided whether they are away or at home by alternation.\n \nOne away and one at home, it will depend on the boolean parameter passed to the function. If it's true, the __first__ game is a *\"home match\"*. If false, it's *\"away match\"*. (e.g.)\n \n```\nisHomeMatch=true;         isHomeMatch=false; \n\"3-0\" Home match          \"0-3\" Away match\n\"0-3\" Away match          \"3-2\" Home match\n\"1-2\" Home match          \"3-3\" Away match\n\"0-3\" Away match          \"1-0\" Home match\n\"1-2\" Home match          \"0-0\" Away match\n[...]                     [...]\n```\n \n### - Scoring\n- Victory = ```+3 points```\n- Draw = ```+1 points```\n- Defeat = ```+0 points```\n \n##### Note: the array of matches may be incomplete (less than 10 matches played), empty/null or invalid (more than 10 matches played). In this case ```return -1```\n \n \nGood luck! ;)",
+    "totalAttempts": 42,
+    "totalCompleted": 18,
+    "totalStars": 2,
+    "voteScore": 2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

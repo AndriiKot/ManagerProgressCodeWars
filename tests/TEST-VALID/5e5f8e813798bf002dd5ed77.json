@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e5f8e813798bf002dd5ed77",
+  "data": {
+    "id": "5e5f8e813798bf002dd5ed77",
+    "name": "Chess Pains",
+    "slug": "chess-pains",
+    "category": "games",
+    "publishedAt": "2020-03-04T11:20:55.233Z",
+    "approvedAt": null,
+    "languages": [
+      "elixir"
+    ],
+    "url": "https://www.codewars.com/kata/5e5f8e813798bf002dd5ed77",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-04T11:18:25.745Z",
+    "createdBy": {
+      "username": "edchancellor",
+      "url": "https://www.codewars.com/users/edchancellor"
+    },
+    "description": "In this kata, you will be given a chessboard with two pieces on it: a king and a queen. The queen can take pieces horizontally and diagonally. Your task is to determine, given the board setup you have been provided, whether the king is in check or not. To be more precise, you must determine whether it would be possible for the queen to take the king, given its current position, in a single move.\n\nA 4 x 4 chessboard is represented in a list of lists as follows:\n\n```elixir\n[[:x,:x,:x,:x],\n [:x,:K,:x,:x],\n [:x,:x,:x,:x],\n [:x,:x,:x,:Q]]\n```\n\nWhere ```:x``` represents an empty space, ```:K``` represents the king's position, and ```:Q``` represents the queen's position. \n\nChessboards can be of any size, and need not necessarily be square.\n\nIn the case of the example above:\n\n```elixir\ncheck([[:x,:x,:x,:x],[:x,:K,:x,:x],[:x,:x,:x,:x],[:x,:x,:x,:Q]])\n# returns true\n\ncheck([[:x,:x,:x,:x],[:x,:K,:x,:x],[:x,:x,:x,:x],[:x,:x,:Q,:x]])\n# returns false\n```\n\nYou can assume that both king and queen are always present on the board.\n\n",
+    "totalAttempts": 14,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Puzzles",
+      "Search",
+      "Algorithms",
+      "Logic",
+      "Lists",
+      "Data Structures",
+      "Graphs"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

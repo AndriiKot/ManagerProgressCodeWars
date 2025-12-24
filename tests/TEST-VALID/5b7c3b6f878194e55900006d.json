@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b7c3b6f878194e55900006d",
+  "data": {
+    "id": "5b7c3b6f878194e55900006d",
+    "name": "Average Everything (Deep Recursive Search)",
+    "slug": "average-everything-deep-recursive-search",
+    "category": "algorithms",
+    "publishedAt": "2018-08-21T17:28:47.378Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b7c3b6f878194e55900006d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-21T16:19:00.278Z",
+    "createdBy": {
+      "username": "lpabst",
+      "url": "https://www.codewars.com/users/lpabst"
+    },
+    "description": "Write a function that returns an average of all numbers (or strings that are string representations of numbers) found in the arguments. \n  - The function should accept any number of arguments\n  - Any argument that is a number should be considered for the average\n  - Any argument that is a string should only be considered for the average if it is a direct representation of a number i.e. you should ignore any strings that contain any characters other than digits (The negative \"-\" symbol is allowed at the beginning of a string): \n    * '-12' WOULD be considered because it only contains digits and the negative symbol at the beginning of the string\n    * '12-' would NOT be considered because there is a negative symbol in a location other than the beginning of the string\n    * '51' contains only digits (the digits 5 & 1) so we would consider the 51 for the average (see examples below)\n    * '5f' contains characters other than digits, so we would not consider '5f' or any part of the string '5f' for the average\n    * \"'5'\" contains characters other than digits, so we would not consider \"'5'\" or any part of the string \"'5'\" for the average \n    * The string \"[4, 2]\" would not be considered, nor would any part of it since it is not a direct representation of a number\n  \n  \n  - Any argument that is an array should be traversed to find additional numbers/strings that need to be considered for the average. Arrays will be nested multiple levels deep\n  - Any argument that is an object literal should be traversed to find additional numbers/strings that need to be considered for the average. Objects will be nested multiple levels deep\n    *Note: only consider values in the key-value pairs of object literals; ignore any keys that happen to be numbers\n  - 0 and '0' should both be considered for the average i.e. the average of 6, 0, & '0' would be 2\n  - All test cases will contain at least one valid argument that can be considered for the average\n\n\nExamples:\n1. averageEverything(5, 3) // 4 (8 / 2)\n2. averageEverything(5, '3') // 4 (8 / 2)\n3. averageEverything(5, 3, '7g', 'hello') // 4 (8 / 2)\n4. averageEverything(5, 3, 6, '6', 0, '0') // 3.333333... (20 / 6)\n5. averageEverything([6, 0, '0', [2, '2', [10, 8]], 8], 8, 3) // 4.7 (47 / 10)\n6. averageEverything(5, 3, 6, '6', 0, '0', [5, 6, 7, true, false, null, undefined, NaN, '2f3', [8, 3, {name: 'test', a: 10, g: 6, c: false}, []]]) // 5 (65 / 13)\n7. averageEverything({name: 'test2', a: 10, g: 6, c: false}, 5, {nested: {a: 4, b: 6}}) // 6.2 (31 / 5)\n8. averageEverything(1, 2, [3, {a: 4, b: 5}, 6, {c: 7, nested: {d: 8, e: [9, 10]}}, 11]) // 6 (66 / 11)\n\n\nWalk Through Examples:\n\n1. averageEverything( {a: 1, b: \"[4,2]\", c: [5, {d: '6'}]} ) // 4 (12 / 3) \n    - the only argument passed in is an object literal, so we traverse it and check each key/value pair. The value in the first pair, a:1, is a number (1) so we consider that for the average. b is a string that contains characters other than digits, so we do not consider it for the average. c is an array, so we traverse the array and check each index. Index 0 is a number (5) so we consider that for the average. Index 1 is an object literal, so we check each key/value pair. d is a string that contains only digits (the digit 6) so we consider 6 for the average. That leaves us with (1 + 5 + 6) / 3 which equals 4",
+    "totalAttempts": 96,
+    "totalCompleted": 17,
+    "totalStars": 1,
+    "voteScore": 15,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

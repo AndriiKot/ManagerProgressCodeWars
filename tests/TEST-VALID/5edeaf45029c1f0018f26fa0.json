@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5edeaf45029c1f0018f26fa0",
+  "data": {
+    "id": "5edeaf45029c1f0018f26fa0",
+    "name": "Coping with NP-Hardness #1: 2-SAT",
+    "slug": "coping-with-np-hardness-number-1-2-sat",
+    "category": "algorithms",
+    "publishedAt": "2020-06-09T04:12:01.635Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5edeaf45029c1f0018f26fa0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-08T21:36:05.745Z",
+    "createdBy": {
+      "username": "ALowVerus",
+      "url": "https://www.codewars.com/users/ALowVerus"
+    },
+    "description": "## Your task: \n- Write a function that takes in a series of logical expressions in 2-CNF as inputs. \n- Each logical expression \"clue\" will contain one or two strings naming variables. \n- Those strings may be preceded by a `-` character to denote a FALSE assignment, or lack such a character to denote a TRUE assignment.\n- If it is possible to devise some assignment of variables to True or False such that all clues are satisfied, return a set of strings, formatted as the clues are, denoting a valid assignment that satisfies all clues.\n- If it is impossible to assign the variables values that satisfy all clues, i.e. the clues are self-contradictory, just return `None`.\n\nThis is sort of a lot, so it makes sense to do some research before tackling the problem.\n\n## ...so what is 2-CNF?\n\nConjunctive normal form (CNF) is a way of expressing boolean equations as a bunch of ANDed sets of ORed variables. See below examples:\n\n1. `(a OR b) AND (b OR NOT c) AND (NOT b OR a OR c)`  \n  There are three sets of ORed terms, i.e. (a OR b), (b OR NOT c), and (NOT b or a or c). A matching set of values might be a, -b, -c. A failing set of assignments might be -a, -b, -c. If a is False and b is False, the first set of ORed terms, (a or b), fails.  \n  \n2. `(a OR b) and (NOT b OR NOT a)`  \n  This equation could be fulfilled by assignments (a, -b) or (-a, b). Assignments (a, b) and (-a, -b) will fail either the first or second groupings, which must both resolve to True for the equation as a whole to be True.  \n  \n3. `(a) AND (NOT a)`  \n  This equation will ALWAYS fail, regardless of what assignments you apply to it. If a is True, the second term fails. If a is False, the first term fails.  \n  \n2-CNF is a subset of CNF, where each ANDed part of the CNF equation has only up to 2 terms. Examples 2 and 3 are valid 2-CNF, as no part has over 2 terms. Example 1 is not valid 2-CNF, as the final part, (NOT b or a or c), has 3 terms, which is more than 2 terms.\n\nFor a more in-depth discussion of CNF, see here (https://www.wikiwand.com/en/Conjunctive_normal_form).\n\n## What are my inputs?\n\nInputs for this kata are 2D arrays containing 2-CNF equations, each of which is a lists of parts containing up to 2 terms. Rather than saying `variable_a is True` or `variable_b is False`, this kata uses the `-` character to denote that the variable name after it is FALSE, and the LACK of a `-` character to denote that a variable name is TRUE. The examples above might be given as:\n\n1. You won't see Example 1. It's not in 2-CNF, but in 3-CNF, because the final term, `(NOT b or a or c)`, has 3 variables (a, b, and c) in it.\n2. `(a OR b) and (NOT b OR NOT a)`  becomes `[[\"a\", \"b\"], [\"-a\", \"-b\"]]`\n3. `(a) AND (NOT a)` becomes `[[\"a\"], [\"-a\"]]`\n\nAgain: note that `NOT v` is given as `-v`, and `v` is given simply as `v`.\n\nAlso, note that while the example input variables are single letters (like `a` and `b` above), the variable names could potentially be any alphabetic sequences of up to 10 letters (e.g. `AbcThaeiGV`, or `-AbcThaeiGV` if it were being negated).\n\n## What are my outputs?\n\nYour goal here is to assign output values to each of the variables mentioned in the input clues. There are two cases that can occur when you look for a valid set of variable assignments. \n- Sometimes, that goal is possible, like in Example 2 above, which can be satisfied by either (a, -b) or (-a, b). \n  - Your output should be a SET of STRINGS denoting whether each variable mentioned in the clues is true (in which case you provide a string with the variable name, and no `-`) or false (in which you provide a string with the variable name, preceded by a `-`, as shown above). This is the same way the variables are denoted in the clues.\n  - For Example 2, you should return `{\"a\", \"-b\"}` or `{\"b\", \"-a\"}`.\n- Sometimes, it impossible to satisfy all clues, like in Example 3 above, which can be satisfied neither by `{\"a\"}` nor by `{\"-a\"}`.\n  - In that case, return a simple `None`, to show that nothing can satisfy the given clues.\n\n```if:python\nTests start out with revealed single-letter tests, then move to:\n- 20x tests of 5-letter variables, of which there are 5, defined by 5 clues.\n- 20x tests of 5-letter variables, of which there are 50, defined by 60 clues.\n- 20x tests of 5-letter variables, of which there are 500, defined by 600 clues.\n- 10x tests of 10-letter variables, of which there are 1000, defined by 1100 clues.\n\nInitial tests have descriptive output showing where answers are wrong, but later tests cannot do that, as there is a hard cap on terminal output length.\n```\n\n## Kata in this Series\n\n1. **Coping with NP-Hardness #1: 2-SAT**\n2. [Coping with NP-Hardness #2: Max Weight Independent Set of a Tree](https://www.codewars.com/kata/5edfad4b32ebb000355347d2)\n3. [Coping with NP-Hardness #3: Finding the Minimum Hamiltonian Cycle](https://www.codewars.com/kata/5ee12f0a5c357700329a6f8d)\n4. [Coping with NP-Hardness #4: 3-Recoloring](https://www.codewars.com/kata/5ee17ff3c28ec6001f371b61)\n",
+    "totalAttempts": 186,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 18,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

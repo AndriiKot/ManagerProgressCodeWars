@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56ab6c9ccfc71dca5d000040",
+  "data": {
+    "id": "56ab6c9ccfc71dca5d000040",
+    "name": "Let's Go Motor Racing!",
+    "slug": "lets-go-motor-racing",
+    "category": "reference",
+    "publishedAt": "2016-01-29T16:26:37.897Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56ab6c9ccfc71dca5d000040",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-29T13:43:56.712Z",
+    "createdBy": {
+      "username": "RichAWarren",
+      "url": "https://www.codewars.com/users/RichAWarren"
+    },
+    "description": "You are the manager of a motorsport team and must work out the quickest pitstop and tyre strategy for your car for each given racetrack.\n\n\n**Due to the differing tracks you will be racing at, you are given the following variables:**\n\n```laps``` - The total number of laps to be completed during this race. Races are between 40 and 75 laps.\n\n```pitstop``` - The total time in seconds to complete a pitstop. Assume that this does not affect the time of the in or out lap and is an independant addition to the total race time. Pitstops are between 10 to 55 seconds.\n\n```soft``` - The difference in seconds between the Hard and the Soft tyre per lap. E.g. if ```soft = 1.5``` a car on soft tyres will travel 1.5 seconds per lap quicker than car on hard tyres. Time difference should be taken as a constant throughout a stint. Soft will be an number between 0 and 2.\n\n\n**Race Rules**\n\nEach car must start on brand new hard tyres and there are no limits on the number of pitstops you are allowed to make, and stints do not have to be the maximum laps the tyre will last. After starting on the Hard tyre, there are no rules on the order of tyres to be used. Tyres must be changed at every pitstop.\n\nThe **Hard tyre lasts a maximum of 30 laps** and the **Soft tyre a maximum of 15 laps**. You must pit once these maximums are reached if you have not already elected to do so. \n\n**The Function**\n\nFor the defined function ```bestStrategy(laps, pitstop, soft)``` you must return a string containing the optimum tyre strategy, which each tyre change (pitstop) is indicated by either ```H``` or ```S``` in a string. Tyre choices are order from left to right. If strategys take equal time, return the strategy with the least pitstops and with hard tyres first in order.\n\nE.g. ```\"HHS\"``` = Hard tyre at the start, pitstop to change to another set of Hard tyres followed by a final pistop to change to Soft tyres. \n\n\n",
+    "totalAttempts": 57,
+    "totalCompleted": 3,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals",
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

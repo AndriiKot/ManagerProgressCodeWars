@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62f1637ff65208006495047e",
+  "data": {
+    "id": "62f1637ff65208006495047e",
+    "name": "CPF generator",
+    "slug": "cpf-generator",
+    "category": "reference",
+    "publishedAt": "2022-08-08T21:10:48.334Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62f1637ff65208006495047e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-08T19:26:55.518Z",
+    "createdBy": {
+      "username": "Fábio Casanova",
+      "url": "https://www.codewars.com/users/F%C3%A1bio%20Casanova"
+    },
+    "description": "CPF is a Brazilian identification document.</br>\nIt consists of 11 digits, where the 10th and 11th are checked against a calculation of the others.</br>\nIn this kata you need to create out the 10th and 11th numbers, basic front-end developers validations method</br>\n</br>\n10th element is the of the sum of (`first*10+second*9...ninth*2`) multiplied 10 mod 11, if is 10 = 0\n</br></br>\n11th element is the of the sum of (`first*11+second*10...tenth*2`) multiplied 10 mod 11, if is 10 = 0\n</br></br>\nExample1:</br>\ninput (\"cpf\") is \"123.456.789-xx\"</br>\nTo check the 10th you must:</br>\n`1*10 + 2*9 + 3*8 + 4*7 + 5*6 + 6*5 + 7*4 + 8*3 + 9*2` multiply this by 10, and do the modulus by 11, giving 10 , which will be considered 0, from 1-9 the 10th CPF number will be the result itself</br>\nTo check the 11th you must:</br>\n`1*11 + 2*10 + 3*9 + 4*8 + 5*7 + 6*6 + 7*5 + 8*4 + 9*3 + 0*2` multiply by 10 and then find its modulus by 11\nThus, the CPF of this case will be:</br>\nOutput result is \"123.456.789-09\"</br></br>\nExample2:</br>\ninput (\"cpf\") is \"111.111.111-xx\"</br>\nFor 10th:</br>\n`1*10 + 1*9 + 1*8 + 1*7 + 1*6 + 1*5 + 1*4 + 1*3 + 1*2` multiply by 10 and then find its modulus by 11</br>\n10th=1</br>\nFor 11th:</br>\n`1*11 + 1*10 + 1*9 + 1*8 + 1*7 + 1*6 + 1*5 + 1*4 + 1*3 + 1*2` multiply by 10 and then find its modulus by 11</br>\n11th=1</br>\nOutput result is \"111.111.111-11\"",
+    "totalAttempts": 72,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 8,
+    "tags": [
+      "Strings",
+      "Mathematics"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

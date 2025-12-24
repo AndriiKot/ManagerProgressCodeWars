@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6178aebb9f1c100008cd0ac3",
+  "data": {
+    "id": "6178aebb9f1c100008cd0ac3",
+    "name": "Universal Function",
+    "slug": "universal-function",
+    "category": "algorithms",
+    "publishedAt": "2021-10-27T03:56:42.794Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6178aebb9f1c100008cd0ac3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-10-27T01:43:23.247Z",
+    "createdBy": {
+      "username": "rds009",
+      "url": "https://www.codewars.com/users/rds009"
+    },
+    "description": "In this Kata, you will be presented with the task of unifying addition and multiplication of integers, in other words you will need to express both of these operations in terms of a single universal function.\n\nStep 1:\n\nDefine ```f```  - the universal function.\nIt should take two integers as parameters and return an integer.\n\n```f``` should be a pure function. Meaning that its output should only depend on the arguments.\n```python\n#this is used to enforce the 'int, int -> int' signature\n@enforce_signature\ndef f(a, b):\n    #write code here\n    pass\n```\nStep 2:\n\nDefine functions ```s``` and ```m```. They should both take two integers ```a``` and ```b``` as parameters and return an integer.\n\n```s``` should return the sum of it's parameters and ```m``` should return their product.\n\n```python\ndef s(a, b):\n  #write code here\n  pass\n  \ndef m(a, b):\n  #write code here\n  pass\n```\nAdditionally, ```s``` and ```m``` should only consist of one return statement followed by an expression, that may only consist of calls to ```f```, parameters ```a``` and ```b``` and constants. In other words, ```s``` and ```m``` should be defined in terms of ```f```.\n\nExamples of valid ```s``` and ```m``` functions:\n```python\ndef s(a, b):\n  return f(a, b)\n\ndef m(a, b):\n  return f(a, f(b, 1))\n```\n\nGood luck!",
+    "totalAttempts": 320,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 9,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

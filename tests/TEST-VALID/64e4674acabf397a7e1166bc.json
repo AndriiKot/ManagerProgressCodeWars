@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64e4674acabf397a7e1166bc",
+  "data": {
+    "id": "64e4674acabf397a7e1166bc",
+    "name": "Windows File Class (Very Easy)",
+    "slug": "windows-file-class-very-easy",
+    "category": "algorithms",
+    "publishedAt": "2023-08-22T07:44:57.085Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64e4674acabf397a7e1166bc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-22T07:44:10.861Z",
+    "createdBy": {
+      "username": "pig100",
+      "url": "https://www.codewars.com/users/pig100"
+    },
+    "description": "# Task\nCreate the ```File``` class, for more information see <u>Detail</u>\n\n# Detail\n## Name\n### Basic Name\nSet Function: ```File.prototype.rename(name)```\n\nGet It: ```File.name1```\n\nDefault: ```file```\n#### Example\n```javascript\nlet Test = new File();\nTest.rename(\"test\");\nconsole.log(Test.name1) // test\n```\n### Extend Name\nSet Function: ```File.prototype.setExpandname(expand_name)```\n\nGet It: ```File.name2```\n\nDefault: ```txt```\n#### Example\n```javascript\nlet Test = new File();\nTest.setExpandname(\"exe\");\nconsole.log(Test.name2) // exe\n```\n### Full Name\nGet It: ```File.fullname```\n#### Example\n```javascript\nlet Test = new File();\nTest.rename(\"example\");\nTest.setExpandname(\"html\");\nconsole.log(Test.fullname) // example.html\n```\n## Link File\nIf file's expand name is ```lnk``` then allow use it.\n### To\nSet Function: ```File.prototype.setattr_linkto(linkto)```\n\nGet It: ```File.linkto```\n#### Example\n```javascript\nlet Test = new File();\nTest.setExpandname(\"lnk\");\nTest.setattr_linkto(\"1.exe\")\nconsole.log(Test.linkto) // ./1.exe\n```\n#### Special\nIf this attribute is set to begin with anything other than ```/```, the display begins with the insertion of ```./```\n## Content\n### File Content\nSet Function: ```File.prototype.write(content)```\n\nGet It: ```File.content```\n\nDefault: ```.```\n#### Example\n```javascript\nlet Test = new File();\nTest.write(\"hello world\");\nconsole.log(Test.content) // hello world\n```\n## Action: Delete\nFunction: ```File.prototype.delete()```\n### Example\n```javascript\nlet Test = new File();\nTest.delete();\nconsole.log(Test.fullname,Test.content) // undefined undefined\n```",
+    "totalAttempts": 50,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54c26ee86fd2903443001394",
+  "data": {
+    "id": "54c26ee86fd2903443001394",
+    "name": "Circumference Pathing",
+    "slug": "circumference-pathing",
+    "category": "reference",
+    "publishedAt": "2015-01-23T16:37:41.383Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/54c26ee86fd2903443001394",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-23T15:55:21.006Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Starting from a given position in a circle of a particular circumference, calculate the vector (distance and direction) to take to get to the target position.\n\nSo say the circle has a circumference of 7. The circle would be drawn from position 0, round in an arc, moving through positions 1, 2, 3, 4, 5, 6 and finally ending where it began, at position 7 (position 0 and 7 are interchangeable in this circle).\n\nNow, if we start from position 2 and wish to reach position 6, we could either move 4 steps round the circumference in the positive direction... or move 3 steps round in the negative direction, passing 1, 0 (or 7), and then reaching 6 (looping through the starting point of the circle).\n\nSo the answer in this case would be -3.\n\nYour function, `circPath` will recieve 3 arguments:\n\n+ `start`, the starting position on the circle.\n+ `target`, the target position on the circle.\n+ `circumference`, the length of the circle's circumference.\n\nYou should return the vector needed to most efficiently travel from `start` to `target`, as demonstrated above.\n\nHere are some code examples:\n\n```javascript\ncircPath(1, 3, 5);\n// The circle has a circumference spanning position 0 to 5.\n// Starting from position 1, going in the positive direction around the circle,\n//   you can move 2 distance to get to position 3.\n// Going in the negative direction around the circle,\n//   you can move 3 distance to get to position 3. (Counting from 1, 0 (or 5), 4 (looping round), and finally 3.)\n// So the answer would be 2, as adding 2 is the quickest way around the circle to get to 3.\n\ncircPath(1, 4, 5);\n// Same circle, same starting position.\n// Moving positive, we can move 3 distance to get to 4.\n// Moving negative, we can move 2 distance. (Counting from 1, 0 (or 5), 4 (looping round).)\n// So the answer is -2, as subtracting and moving through 0/5 is the quickest way to reach position 4.\n\ncircPath(0, 5, 5);\n// As 0 and 5 are the same position on the circle, the answer is 0.\n\ncircPath(1.5, 4, 5);\n// As position 1.5 is directly opposite position 4 in a circle with a circumference of 5,\n//   the answer can be positive _or_ negative 2.5.\n```\n```haskell\ncircPath 1 3 5\n{- The circle has a circumference spanning position 0 to 5.\n   Starting from position 1, going in the positive direction around the circle,\n     you can move 2 distance to get to position 3.\n   Going in the negative direction around the circle,\n     you can move 3 distance to get to position 3. (Counting from 1, 0 (or 5), 4 (looping round), and finally 3.)\n   So the answer would be 2, as adding 2 is the quickest way around the circle to get to 3.\n-}\n\ncircPath 1 4 5\n{- Same circle, same starting position.\n   Moving positive, we can move 3 distance to get to 4.\n   Moving negative, we can move 2 distance. (Counting from 1, 0 (or 5), 4 (looping round).)\n   So the answer is -2, as subtracting and moving through 0/5 is the quickest way to reach position 4.\n-}\n\ncircPath 0 5  5\n-- As 0 and 5 are the same position on the circle, the answer is 0.\n\ncircPath 1.5 4 5\n-- As position 1.5 is directly opposite position 4 in a circle with a circumference of 5,\n-- the answer can be positive _or_ negative 2.5.\n```",
+    "totalAttempts": 658,
+    "totalCompleted": 61,
+    "totalStars": 2,
+    "voteScore": 52,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5841bfd463b25e48ee000037",
+  "data": {
+    "id": "5841bfd463b25e48ee000037",
+    "name": "Implement Debounce",
+    "slug": "implement-debounce",
+    "category": "reference",
+    "publishedAt": "2016-12-06T20:33:46.245Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5841bfd463b25e48ee000037",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-12-02T18:39:16.572Z",
+    "createdBy": {
+      "username": "dcsmith",
+      "url": "https://www.codewars.com/users/dcsmith"
+    },
+    "description": "Implement the function `debounce`, which takes 2 parameters: `fn` (a function to be debounced), and `delay` (a delay in milliseconds of how long the function should be debounced for), and which returns a new function that, when called, will only execute if it has been at least `delay` milliseconds since the last time it was called. For example:\n\n```javascript\nconst myFn = () => console.log('hello!');\nconst myDebouncedFn = debounce(myFn, 1000);\n\nmyDebouncedFn();\nsetTimeout(myDebouncedFn, 100);\nsetTimeout(myDebouncedFn, 200);\n\n// 'hello!' will be logged only once, 1200 ms after the code block is run\n```\n\nEach time a debounced function is called, it delays its execution until however many milliseconds the user specified have passed. If it is called again, before the delay time interval has passed, the previous call is cancelled, and the delay is reset. In our example above, we call it 3 times: once immediately, second 100 ms later, and third 100 ms after than (200 ms after the code block is run). The 2 subsequent calls happen less than 1000 ms after their respective previous calls, so the delay time is reset to 1000 after each call, and the function only gets executed once, 1000 ms after the final call.\n\nThe delaying of the execution of the function until the **end** of the delay interval is referred to as executing the function on the **trailing edge** of the interval. This should be the default behavior of `debounce`. However, you should also be able to pass an optional third parameter, `immediate`, which, if truthy, will signify that the user wants the function to be executed on the **leading edge** of the interval:\n\n```javascript\nconst myFn = () => console.log('hello!');\nconst myDebouncedFn = debounce(myFn, 500, true);\n\nmyDebouncedFn();\nsetTimeout(myDebouncedFn, 100);\nsetTimeout(myDebouncedFn, 700);\n\n// 'hello!' will be logged twice\n// The first time, it will be logged immediately after the first call to myDebouncedFn()\n// The second time, it will be logged 700 ms after the code block is run\n```\n\nAbove, we define a debounced function with a delay time of 500 ms. We also indicate that it should be executed on the leading edge of the interval. Next we call it. So our function is immediately executed, and the delay timer starts counting down from 500. 100 ms later, we call it again. Since the timer is only at 400, we do not execute the function, and we reset the timer back to 500. 600 ms after this (700 ms after the initial code block is run) we call it again. Since more than 500 ms have passed since the previous call, we immediately execute the function.\n\nWatch out for `this`! Sometimes you want a method of an object to be a debounced function. Make sure that if somebody uses `debounce` to assign a debounced method to an object, `this` will resolve to the correct context:\n\n```javascript\nconst obj = {\n  foo: 42\n};\n\nobj.debouncedFn = debounce(function() {\n  console.log(this.foo);\n}, 500);\n\nobj.debouncedFn();\n\n// 42 will be logged once, 500 ms after the call to obj.debouncedFn()\n```\n\nFinally, the debounced function should be able to accept the same parameters that the original function accepts. For example:\n\n```javascript\nconst printSum = (a, b) => console.log(a + b);\nconst dbPrintSum = debounce(printSum, 100);\ndbPrintSum(1, 2);\n\n// 3 will be logged 100 ms after the call to dbPrintSum(1, 2)\n```\n\nFYI: I've designed the tests to take 3-4 seconds to complete. So don't worry if it seems like it's taking a long time for your code to run. Good luck!",
+    "totalAttempts": 745,
+    "totalCompleted": 35,
+    "totalStars": 11,
+    "voteScore": 32,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

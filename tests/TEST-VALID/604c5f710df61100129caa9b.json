@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/604c5f710df61100129caa9b",
+  "data": {
+    "id": "604c5f710df61100129caa9b",
+    "name": "Laser box",
+    "slug": "laser-box",
+    "category": "algorithms",
+    "publishedAt": "2021-03-13T06:52:41.476Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/604c5f710df61100129caa9b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-13T06:45:05.886Z",
+    "createdBy": {
+      "username": "kuchaguangjie",
+      "url": "https://www.codewars.com/users/kuchaguangjie"
+    },
+    "description": "<h3>Laser Box:</h3>\nThere is a rectangle box containing <b style=\"color: green;\">W</b> vertical pipelines.  \nEach pipeline can contain up to <b style=\"color: green;\">H</b> balls as a single column, balls are of the same size.  \n\nWhen drop a ball into the box, it will get into one of the pipelines, or when all pipelines are full, it will slip on to the ground, (aka. the box can contain up to <b style=\"color: green;\">W * H</b> balls).\n\nInitially the box is closed. Once the box is open, a laser scanner will start running, and you should start filling the box with balls.  \nAfter a timeout, if every pipeline contains exactly the same amount of balls (including 0), then a switch will be triggered, and the box will be heated & melt; otherwise the box will be fine.\n\nA rough hand drawing of the box:\n<img src=\"https://i.ibb.co/6wLS4X5/laser-box.jpg\" style=\"margin-left: 50px;\" alt=\"laser-box\" border=\"0\">\n\n<h3>Task:</h3>\n\nGiven <b style=\"color: green;\">N</b> balls, you may take any amount of them, and put into a just opened box.  \nHow many ways can balls be arranged in the box, without triggering the switch after timeout?\n\nThe result may be huge, divide it by <b style=\"color: green;\">1,000,000,007</b>, and return the remainder.\n\n\n<h3>Tips:</h3>\n\n- Treat the box as 2D (aka. <b style=\"color: green;\">W * H</b>), not 3D.\n- There may be more than enough balls to fulfill the box, or not enough.\n- You don't need to take all balls, you may take any number between <b style=\"color: green;\">[0, N]</b>.\n- Since our computers have limited resource, when the box is kinda huge (e.g <b style=\"color: green;\">2<sup>9</sup> * 2<sup>20</sup></b>), the test case only check the cases when there are enough balls to fulfill the box.\n",
+    "totalAttempts": 58,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f44257d01e9c60010a3b58a",
+  "data": {
+    "id": "5f44257d01e9c60010a3b58a",
+    "name": "Using Java libraries #1: Food to JSON and back",
+    "slug": "using-java-libraries-number-1-food-to-json-and-back",
+    "category": "reference",
+    "publishedAt": "2020-08-26T18:27:28.909Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5f44257d01e9c60010a3b58a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-24T20:39:25.683Z",
+    "createdBy": {
+      "username": "markus.benko",
+      "url": "https://www.codewars.com/users/markus.benko"
+    },
+    "description": "### Your task\n\nA new feature has to be added to your company's food database: Exporting entries as [JSON](https://tools.ietf.org/html/rfc7159#section-13) and importing entries from JSON.\n\nYour team has decided to use [Jackson](https://github.com/FasterXML/jackson) for mapping `Food` objects _(which are the DB entries)_ to JSON and back as it has successfully used that library for exactly that purpose before.\n\n`Food` objects have a `name` and nutritional information `protein`, `carbohydrates` and `fat` stored as grams per 100. The `Food` class is maintained by a different team and must not be changed in order to prevent compatibility issues that are expected to arise somewhere else.\n\nOne of your colleagues has already worked on JSON input and output capabilities but is struggling with getting `ObjectMapper` _(i.e. Jackson's primary class used for reading and writing JSON)_ work the way as required. Can you help by changing the `ObjectMapperFactory` so it provides exactly that kind of `ObjectMapper` that is needed?\n\n### Requirements\n\n1. Don't touch the `Food` class! _(preloaded code, see below)_\n2. Generated JSON must be formatted as shown in the example test _(pretty print, human readable)_\n3. JSON must be parsable to `Food` objects even if it contains a `calories` field which is obsolete and a leftover from a previous version of the class, at which time the calories have not been calculated from `protein`, `carbohydrates` and `fat`.\n\n### `Food` class\n\n```java\nclass Food {\n  private final String name;\n  private final double protein;\n  private final double carbohydrates;\n  private final double fat;\n\n  @java.beans.ConstructorProperties({\"name\", \"protein\", \"carbohydrates\", \"fat\"})\n  Food(String name, double protein, double carbohydrates, double fat) {\n    this.name = name;\n    this.protein = protein;\n    this.carbohydrates = carbohydrates;\n    this.fat = fat;\n  }\n\n  // Getters\n  String getName() { return name; }\n  double getProtein() { return protein; }\n  double getCarbohydrates() { return carbohydrates; }\n  double getFat() { return fat; }\n\n  // Calories calculation\n  int getCalories() {\n    return (int) Math.round(protein * 4 + carbohydrates * 4 + fat * 9);\n  }\n}\n```\n\n### Hints\n\n1. Knowledge about [access levels](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) and their visibilities will be useful to get you on the right track.\n2. `ObjectMapper` is highly configurable and also provides support for plugging in additional modules.\n3. It will come in very handy if you are able to express your problems using the right terminology when asking Google or StackOverflow for help.\n\nGood luck! :-)",
+    "totalAttempts": 40,
+    "totalCompleted": 22,
+    "totalStars": 5,
+    "voteScore": 17,
+    "tags": [
+      "JSON",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

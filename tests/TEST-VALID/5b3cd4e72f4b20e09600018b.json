@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b3cd4e72f4b20e09600018b",
+  "data": {
+    "id": "5b3cd4e72f4b20e09600018b",
+    "name": "HTML DOM: Part 1 - Tree",
+    "slug": "html-dom-part-1-tree",
+    "category": "reference",
+    "publishedAt": "2018-07-06T07:49:08.281Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b3cd4e72f4b20e09600018b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-07-04T14:08:39.648Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Your task is to create a simple DOM structure, based on the one found in browsers. Create an instantiatible object, `DOM`, and give it the methods below.\n\n> There are summaries below, but for more information on how these features work in the browser, check out the [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node) page.\n\n> Note that while this spec is based on the way the browser's DOM works, not all methods are tested, and not all features are tested. The spec for a complete DOM is very extensive, and would take a long time to fully test and fully pass. These katas are intended to give you an idea of how different effects might be achieved, rather than build a feature-complete virtual DOM. Though if you're having fun making this, you can always carry on to add more features from the spec.\n\n# .createElement(tag)\nReturns a new HTML element node with the specified tag. Each node should have the features outlined below.\n\n## node.tagName\nThe tag set at the time of the node's creation. Always uppercase.\n*read-only*\n\n```javascript\nnew DOM().createElement(\"div\").tagName === \"DIV\";\n// <div></div>\n```\n\n## node.parentNode\nThe node this is contained in. If there is no containing node, this will be `null`.\n*read-only*\n\n```javascript\n// <div>\n//    <span></span>\n// </div>\nspan.parentNode === div\n```\n\n## node.appendChild(child)\nAdds the specified child node into the node it's being appended to.\n\n> NOTE: A node cannot be within two parent nodes at once. If a node is appended to a node other than the one it's already a child of, it should no longer be considered to be within that original parent node.\n\n```javascript\n\n// <header><strong></strong></header>\n// <div>\n//   <span></span>\n// </div>\nspan.appendChild(strong);\n// <header></header>\n// <div>\n//   <span></span>\n//   <strong></strong>\n// <div>\n```\n\n## node.childNodes\nA special object that lets you see what's inside the node, without being able to affect it directly.\n\nThis is *not* an array, which would allow mutation of which child nodes are in the list. As such, it should not expose array-like methods that allow this to happen.\n\nThis is the equivalent of a \"live nodelist\" in the browser, but you only need to implement the following methods...\n\n### .item(index)\nReturns the child node at that index (the first child is at index 0).\n\n```javascript\n// <div>\n//   <span></span>\n//   <strong></strong>\n//   <em></em>\n// </div>\ndiv.childNodes.item(1) === strong\n```\n\n### .length\nHow many child nodes are within this node.\n*read-only*\n\n```javascript\n// <div><span></span><em></em></div>\ndiv.childNodes.length === 2\n```\n\n## node.nextSibling\nThe node with the next lowest index that is within the same containing node. If there is none, this will be `null`.\n*read-only*\n\n## node.previousSibling\nThe node with the next highest index that is within the same containing node. If there is none, this will be `null`.\n*read-only*\n\n---\n\n*This is part 1 of the HTML DOM series.* [Part 2 - Attributes](http://www.codewars.com/kata/5b3f207a6be5d8b2d20000b5)\n\n### Author's Note\nThis is the first part of a series going over the HTML DOM and how it might be implemented programmatically. I am planning on creating more of these soon, but would appreciate feedback on the first installment so I can fix any stylistic problems in the way I put these together.",
+    "totalAttempts": 187,
+    "totalCompleted": 9,
+    "totalStars": 14,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

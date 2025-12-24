@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a3350bf55519e9cf50000a3",
+  "data": {
+    "id": "5a3350bf55519e9cf50000a3",
+    "name": "Reimplement destructuring assignment",
+    "slug": "reimplement-destructuring-assignment",
+    "category": "algorithms",
+    "publishedAt": "2017-12-15T13:25:12.838Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a3350bf55519e9cf50000a3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-15T04:34:07.517Z",
+    "createdBy": {
+      "username": "benpigchu",
+      "url": "https://www.codewars.com/users/benpigchu"
+    },
+    "description": "In JavaScript, we have a [destructuring assignment syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) like this:\n\n```javascript\nlet [a,{x:[b],c,...d},...e]=[1,{x:[2],c:3,d:4},5]\n//here a=1,b=2,c=3,d={d:4},e=5\n```\n\nWe will implement something similar to the destructuring assignment syntax, but we generate an object instead of assignment the values to variables, like this:\n\n```\ndestructuring`[a,{x:[b],c,...d},...e]`([1,{x:[2],c:3,d:4},5])\n//return {a:1,b:2,c:3,d:{d:4},e:[5]}\n```\n\nWe also support default values, since we're using [tagged template string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals)\n\n```\ndestructuring`[a=${1}]`([])\n//return {a:1}\n```\n\nYou can read [sections in ecma262 specification](https://tc39.github.io/ecma262/#sec-destructuring-assignment) and [sections in object rest/spread proposal](https://tc39.github.io/proposal-object-rest-spread/) for the syntax specification. But to be simple, we only support simple identifiers as assign target, and we only use identifiers matched by `/[a-zA-Z_$][a-zA-Z0-9_$]*/`.Also, we only pass in the default values by `${}`, you should throw when `[a=1]` is used instead of `[a=${1}]`\n\nThe full syntax we support is listed below:\n\n```\nPattern: ArrayPattern | ObjectPattern\n\nArrayPattern: '[' Elision? RestElement? ']' | '[' ElementList ']' | '[' ElementList ',' Elision? RestElement? ']'\nElementList: ElisionElement | ElementList ',' ElisionElement\nElisionElement: Elision? Element\nElement: Target Initializer?\nRestElement: '...' Target\nElision: /,+/\n\nObjectPattern: '{' RestProperty? '}' | '{' PropertyList '}' | '{' PropertyList ',' RestProperty? '}'\nPropertyList: Property | PropertyList ',' Property\nProperty: Target Initializer? | Name ':' Element\nRestProperty: '...' Target\n\nTarget: Name | Pattern\nName: /[a-zA-Z_$][a-zA-Z0-9_$]*/\nInitializer: '=' Value\nValue: //something in the ${}\n```\n\nYou should omit spaces just like what JavaScript do\n\nYou should throw for any syntax error. You should also throw for any thing that is not unpackable.\n\n```\ndestructuring`{a==1}`//throws\ndestructuring`[a=${1}]`(1)//throws\n```\n\nNote:\n- We do not test special names like `__proto__`, so you can use normal plain object as map.\n- In fact, ArrayPattern matches and only matches everything iterable. \n- Since iterator may throw, you should throw if and only if it throws when you are extracting the element you need. \n- In real javascript, iterator used by array destructuring assignment will be closed after used, but here we do not test it.\n- ObjectPattern do not match null and undefined, you should throw.\n- In ObjectPattern you can assign variable from not own or not enumerable property, but rest destructuring act just like `Object.assign`\n- When one name is assigned multiple times, use the right-most one. \n- Node.js do not support object rest/spread properties before 8.6.0, this means you can not use it currently in codewars.",
+    "totalAttempts": 252,
+    "totalCompleted": 13,
+    "totalStars": 7,
+    "voteScore": 16,
+    "tags": [
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

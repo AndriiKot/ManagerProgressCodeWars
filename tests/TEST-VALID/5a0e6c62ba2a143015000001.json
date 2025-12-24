@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a0e6c62ba2a143015000001",
+  "data": {
+    "id": "5a0e6c62ba2a143015000001",
+    "name": "Toying with Core.logic",
+    "slug": "toying-with-core-dot-logic",
+    "category": "reference",
+    "publishedAt": "2017-11-17T04:58:16.866Z",
+    "approvedAt": null,
+    "languages": [
+      "clojure"
+    ],
+    "url": "https://www.codewars.com/kata/5a0e6c62ba2a143015000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-17T04:58:11.529Z",
+    "createdBy": {
+      "username": "TheBookmarkKnight",
+      "url": "https://www.codewars.com/users/TheBookmarkKnight"
+    },
+    "description": "# Toying with Core.logic\n\n__Core.logic__ is a Clojure implementation\nof the __miniKanren__ logic programming language.\n\nIn this kata you will practice simple logic\nprogramming problems through __core.logic__. With\nthat said, this kata only features beginner level\nproblems and aims to be a reasonable excuse\nfor Clojure hobbyists to have a taste\nof logic programming; users with previous experiences\nwith __miniKanren__ or __Prolog__ might find the\nproblems trivial.\n\n## Learning Core.logic\n\nClojure features quite some complete\nintroductions. __Core.logic__ much less so. Here\nare some well-written resources that would\nget you started (and googling around would\nreveal more):\n\n - https://github.com/swannodette/logic-tutorial\n - [A Core.logic Primer](https://github.com/clojure/core.logic/wiki/A-Core.logic-Primer)\n - https://web.archive.org/web/20170822021646/http://objectcommando.com/blog/2011/11/04/the-magical-island-of-kanren-core-logic-intro-part-1/\n\n## Beyond the Most Basic\n\nThis kata will use some features of __core.logic__\nthat is beyond what has been mentioned in some\nonline tutorials. I will try to run a quick recap\nof basic __core.logic__ and then introduce the features.\n\n### Setup\n\nIn this section, we assume that we are in a namespace\nwith the setup below:\n\n```clojure\n(ns logic-playground.core\n  [:refer-clojure :exclude [==]]\n  [:require\n    [clojure.core.logic :refer :all]\n    [clojure.core.logic.fd :as fd]])\n```\n\n### Recap\n\nRecall the unification operator ```==```, and\nthe ```run``` variants:\n\n```clojure\n(run 1 [q]\n    (== q 3)) ;; (3)\n```\n\nRecall the ```conde``` operator:\n```clojure\n(run* [q]\n    (conde\n        [(== q :banana)]\n        [(== q :wire)]\n        [fail]\n        [succeed])) ;; (:banana :wire _0)\n```\n\nRecall that ```fresh``` creates new logic variables:\n```clojure\n(run* [q]\n    (fresh [p]\n        (== p q)\n        (== p 3))) ;; (3)\n```\n\n\nRecall that ```defn``` can be used to define\nnew goals\n\n```clojure\n(defn fake-firsto [l x]\n    (== (first l) x))\n\n(run* [q]\n    (fresh [p]\n        (fake-firsto [q 10 100] p))) ;; (_0)\n```\n\nRecall the following goals:\n\n - ```conso```\n - ```resto```\n - ```membero```\n - ```distincto```\n\n### ```core.logic.fd```\n\n> The information in this section is all based on https://github.com/clojure/core.logic/wiki/Features\n\nArithmetic functions ```+ - *``` are not\nby default defined for logic variables. Thankfully\ninstead of using ```project``` or building our\nown natural number system, ```core.logic.fd```\ndefines the arithmetic operations for us.\n\n```clojure\n(run* [q]\n    (fresh [a b]\n        (fd/in a b (fd/interval 1 100))\n        (fd/* a b 30)\n        (fd/<= a b)\n        (== q [a b]))) ;; ([1 30] [2 15] [3 10] [5 6])\n```\n\n### ```defne```\n\n```defne``` is a macro extending ```defn```, providing pattern-matching for logic\ngoals.\n\nA contrived example is that we are to define\naddition in the ℤ<sub>2</sub> ring, or equivalently the ```xor``` function.\n\n```clojure\n(defne z2+ [a b c]\n    ([0 0 0])\n    ([0 1 1])\n    ([1 1 0])\n    ([1 0 1]))\n```\n\nThe definition\nis just listing all the possibilities of ```a b c```: 0 + 0 = 0, 0 + 1 = 1, 1 + 1 = 0, 1 + 0 = 1.\n\n```defne```'s strength becomes more obvious when matching on sequences.\n\nFor example, suppose we are to write a\nrelation called ```(lasto l x)``` that\nsucceeds when ```x``` is the last element of ```l```.\n\nA way to write this \"from scratch\" is to write it\nin the traditional functional programming way\nvia pattern-matching:\n```clojure\n(defne lasto\n        [xs x]\n        ([[x . ()] _])\n        ([[_ . a] _]\n            (lasto a x)))\n```\n\nThe pattern ```[x . ()]``` matches cons lists\nin the form ```x :: nil```, a one-element list\nthat has only the element ```x``` (the same ```x```\nin the arguments).\n\nUnfortunately, this does not work as well\nas ```firsto``` in reality: ```(lasto v 1)``` can yield infinite\nmany results (as opposed to one result in the case of the built-in ```firsto```). For this kata, however, we wil\nonly extract and test a finite amount of results,\nso this problem does not matter.\n\nAs the last example, here is a naive implementation\nof the fibonacci sequence:\n\n```clojure\n(defne fib [input output]\n    ([0 1])\n    ([1 1])\n    ([n r]\n        (fresh [n1 n2 r1 r2]\n            (fd/- n 1 n1)\n            (fd/- n 2 n2)\n            (fib n1 r1)\n            (fib n2 r2)\n            (fd/+ r1 r2 r))))\n```\n\n## Goals\n\nImplement the following goals\n\n```clojure\n;; ntho, \"coll\" will only be vectors in the input\n(ntho coll i ele) ;; (= ele (nth coll i))\n\n;; reverseo, \"a\" and \"b\" will only be vectors in the input\n(reverseo a b) ;; (= b (reverse a))\n\n;; sets implemented as vectors, A must be a subset of B to succeed, both inputs only contain distinct elements\n(subseto a b)\n```\n\nNote that the ```core.logic``` library used in this kata\nonly contains the ```clojure.core.logic``` and\n```clojure.core.logic.fd``` namespace. The\nothers are not included.",
+    "totalAttempts": 40,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Logic Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/612ef3bb1ec3b10056034384",
+  "data": {
+    "id": "612ef3bb1ec3b10056034384",
+    "name": "Free Monads",
+    "slug": "free-monads",
+    "category": "reference",
+    "publishedAt": "2021-09-03T19:16:01.437Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/612ef3bb1ec3b10056034384",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-01T03:30:03.809Z",
+    "createdBy": {
+      "username": "quasarbright",
+      "url": "https://www.codewars.com/users/quasarbright"
+    },
+    "description": "In this kata, we will implement free monads. In order to complete this kata, some basic familiarity with the Reader, Writer, and State monads is recommended, but not required.\n\nThe `Free f a` type can provide a monad instance for any functor `f`. This is similar to how the list type (`[a]`) provides a [`monoid`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#t:Monoid) instance for any type `a`. In fact, the list type is considered a \"free monoid\".\n\n`Free f a` is defined as follows:\n\n```\ndata Free f a\n  = Pure a\n  | Free (f (Free f a))\n```\n\nThe `Pure` case represents the end of a computation with an answer. The `Free` case is where things get interesting. We have an `f` of `Free f a`s. Remember, `f` is going to be a `Functor`. So inside of this `f`, there may be a final answer, there may be another `f` which contains `Free f a`s. Sequencing of commands corresponds to nested `f`s. Now this `f` isn't one of the functors you usually deal with like list or Maybe, but functors that represent \"commands\" or \"effects\", so to speak. And usually a functor contains values like a list's elements, but in this case, the functor contains either more of itself, or a pure answer.\n\n`Free f a` represents a computation as an abstract syntax tree, only knowing about the structure of a computation. How to interpret or \"run\" `Free f a` is a separate matter. This is in contrast with traditional implementations where the representation of the effect imposes a specific interpretation\n\nFirst, we implement instances for `Functor`, `Applicative`, and `Monad`, given `f` is a `Functor`\n\nWith `Free`, we can implement reader, writer, and state effects. We create cases of the types for each core operation, such as reader's `ask`, writer's `tell`, and so on. Operations like state's `modify` can be implemented in terms of `get` and `put`, so we exclude it from the command type.\n\nin addition to declaring our commands, we must also specify how to interpret or \"run\" them. We will write a few interpreters:\n\n1. the mtl-like Reader interpreter. The same value of the parameter is passed to all occurrences of `Ask`. This interpretation is used to automate parameter passing\n2. the mtl-like Writer interpreter. Occurrences of `Tell` accumulate a monoid `w`. The first \"told\" `w` should be first/leftmost in the monoid accumulation\n3. a Writer interpreter where all \"told\" values are accumulated in a list, in order\n4. the mtl-like State interpreter. Occurrences of `Get` use the current state, `Put` sets the current state, and the interpreter takes in the initial state and returns the final state, in addition to the answer\n\nThe sum of two functors is a functor. This can be used to compose effects. We will explore this by writing and interpreting a short program using reader and writer at the same time.\n\nThe task is as follows:\n\n1. Implement Functor, Applicative, and Monad instances for `Free f a` when `f` is a Functor\n2. Implement the reader, writer, and state effects in terms of `Free f a`\n3. Write and interpret short programs using these effects\n4. Compose Reader and Writer\n",
+    "totalAttempts": 255,
+    "totalCompleted": 20,
+    "totalStars": 4,
+    "voteScore": 48,
+    "tags": [
+      "Fundamentals",
+      "Monads"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

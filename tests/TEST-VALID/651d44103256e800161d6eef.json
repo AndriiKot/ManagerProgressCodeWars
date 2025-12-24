@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/651d44103256e800161d6eef",
+  "data": {
+    "id": "651d44103256e800161d6eef",
+    "name": "End of the season!",
+    "slug": "end-of-the-season",
+    "category": "algorithms",
+    "publishedAt": "2023-10-04T11:07:48.016Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/651d44103256e800161d6eef",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-04T10:53:04.165Z",
+    "createdBy": {
+      "username": "YoloMozart",
+      "url": "https://www.codewars.com/users/YoloMozart"
+    },
+    "description": "This kata simulates the process of ranking teams at the end of a soccer season. You are provided with information about multiple teams, including the number of matches they have won, drawn, and lost and goals scored and conceded.\n\nYou must write a function called `calcLeaderboard` that takes an object representing several teams and their statistics and returns an object containing a sorted list of team names based on their performance at the end of the season.\n\n<b>Tie breakers</b> <br>\nFor the tiebreaker, the team with the most goals scored (goalsFor) will be used first, and if there is a tie, the team with the fewest goals conceded (goalsAgainst) will be used.\n\nIn this exercise, winning a match is worth 3 points, drawing a match is worth 1 point, and losing a match is worth 0 points. The function should calculate the total points for each team based on their match results and then rank the teams accordingly. Additionally, the modified function will include two new properties in the output object for each team: \"relegation\" (True for the last 3 teams) and \"top3\" (True for the top 3 teams), and False to the rest of teams.\n\nExample (teams1):\n```javascript\nconst teams1 = {\n  \"Barcelona\": {\n    wins: 26,\n    draws: 9,\n    losses: 3,\n  },\n  // ... (other teams)\n};\n\n// Expected result:\n// {\n//   \"Barcelona\": { score: 87, relegation: false, top3: true },\n//   \"Atletico Madrid\": { score: 76, relegation: false, top3: true },\n//   \"Real Madrid\": { score: 71, relegation: false, top3: true },\n//   ...\n// }\n```\n\nIn this example, the `calcLeaderboard` function calculates the total points for each team, taking into account the 3 points for a win and 1 point for a draw, and then ranks the teams based on their points. The function also includes the \"relegation\" and \"top3\" properties for each team in the output object, indicating their relegation status and top 3 status, respectively.\n\nGood luck!",
+    "totalAttempts": 29,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Algorithms",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

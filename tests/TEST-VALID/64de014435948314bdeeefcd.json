@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64de014435948314bdeeefcd",
+  "data": {
+    "id": "64de014435948314bdeeefcd",
+    "name": "A Lonely Class for Lonely Numbers",
+    "slug": "a-lonely-class-for-lonely-numbers",
+    "category": "algorithms",
+    "publishedAt": "2023-08-17T11:39:52.132Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64de014435948314bdeeefcd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-17T11:15:16.874Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nIn this challenge, write a funcion `loneliest_number` to find the last Lonely number inside a sequence. A number is Lonely if the distance from its **closest** Prime sets a new record of the sequence.\n```\nSequence = from 0 to 3\n\n# Any number lower than 3 doesn't have a Prime preceeding it...\n# ...so that you'll consider only its next closest Prime.\n\n0 has distance 2 from its closest Prime (2)\n# It's a new record! 0 It's the first lonely number of the sequence\n1 has distance 1 from its closest Prime (2)\n2 has distance 1 from 3\n3 has distance 1 from 2\n\n# The sequence 0 to 3  has only one Lonely number: 0\n```\n\n```\nSequence = Numbers from 5 to 10\n\n5 has distance 2 from its closest Prime (3 or 7)\n# It's a new record! 5 It's the first lonely number of the sequence\n6 has distance 1 from 5 or 7\n7 has distance 2 from 5\n8 has distance 1 from 7\n9 has distance 2 from 7 or 11\n10 has distance 1 from 11\n\n# The sequence 5 to 10  has only one Lonely number: 5\n```\n```\nSequence = Numbers from 19 to 24\n\n19 has distance 2 from its closest Prime (17)\n# It's a new record! 19 It's the first lonely number of the sequence\n20 has distance 1 from 19\n21 has distance 2 from 5\n22 has distance 1 from 23\n23 has distance 4 from 19\n# It's a new record! 23 is the second lonely number of the sequence\n24 has distance 1 from 23\n\n# The sequence 19 to 24  has two Lonely numbers: 19 and 23\n```\n\nThe function `loneliest_number` must accept two integers `lo` and `hi` being the inclusive bounds of the sequence to analyze, and returns a dictionay (dict) object with the following keys and values:\n\n`number`: is the last Lonely number found in the given sequence;\n`distance`: is the distance of the number from its closest Prime;\n`closest`: is the Prime closest to number (if two Primes are equally distant from `number`, return the higher Prime).\n\n# Examples\n```python\nloneliest_number(0, 22) ➞ {\n  number: 0, distance: 2, closest: 2\n}\n\nloneliest_number(8, 123) ➞ {\n  number: 53, distance: 6, closest: 59\n}\n\nloneliest_number(938, 1190) ➞ {\n  number: 1140, distance: 11, closest: 1151\n}\n\nloneliest_number(120, 1190) ➞ {\n  number: 211, distance: 12, closest: 223\n}\n```\n# Notes\n- The numbers 0, 1 and 2 have no previous Prime to check, so that you'll consider only the next Prime to set the distance, as in Example #1.\n- Remember that you are searching for the closest Prime when establishing if the distance is a record: 7 has a distance equal to 2 because its closest Prime is 5.\n- If a Lonely number is equally distant from two Primes, you have to return the higher Prime, as in Example #2 (53 has distance 6 from either 47 and 59).\n- The first Lonely number of a sequence is (trivially) always equal to the sequence lower bound.\n- You can expect valid non-negative integers as input, without exceptions to handle.\n\n# Input Constraints\n- 0 <= lo, hi <=10^4",
+    "totalAttempts": 42,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

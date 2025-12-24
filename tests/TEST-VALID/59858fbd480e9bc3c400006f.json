@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59858fbd480e9bc3c400006f",
+  "data": {
+    "id": "59858fbd480e9bc3c400006f",
+    "name": "Chess - Pawn move generator",
+    "slug": "chess-pawn-move-generator",
+    "category": "reference",
+    "publishedAt": "2017-08-05T10:31:53.508Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/59858fbd480e9bc3c400006f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-05T09:28:30.226Z",
+    "createdBy": {
+      "username": "phaul",
+      "url": "https://www.codewars.com/users/phaul"
+    },
+    "description": "A Pawn on the chess board has the most complex rules defining its\nmovement. The following rules define how it moves:\n\nIn the followings ahead means upwards the board (higher ranks) for\nwhite pawns, and downwards the board (lower ranks) for black pawns. Ranks are the \"rows\" on the chessboard. Files are \"columns\" on the chessboard.\n\n * a pawn always moves ahead and can never move backwards.\n * from the second (seventh) rank a white (black) pawn can move\n   either two or one rank forward\n * it cannot capture pieces on the squares it normally moves to\n   following the previous rules\n * when it moves two squares, the square in between its original\n   position and the new position has to be empty\n * it can capture opponents pieces on the squares one rank ahead\n   and one file to the right or to the left\n * if a pawn moves two ranks forward from the second rank (or\n   seventh rank in case of a black pawn), bypassing an opponent pawn\n   that could have captured it if it was moving only one rank, the\n   opponent can still capture it on the next half move. This is\n   called \"en passant\". If the pawn is not captured on the following\n   half move, then the right to capture it is lost.\n * when a pawn reaches the first or eights rank (the base rank of\n   the opponent, it promotes to either a Rook, Knight, Bishop or Queen.\n\n\nThe `Square` type comprises a file and a rank, and represents one of\nthe 64 squares of a chess board. The `Move` type has two squares,\none where the piece moves from and one that the piece moves to. It also optionally contains the promotion piece type.\n\nYour function has to list all possible pawn moves. Feel free to extend to above classes with your convinience functions or define new classes.\n\n",
+    "totalAttempts": 14,
+    "totalCompleted": 3,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

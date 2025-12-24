@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62fc6bac8cc8c9000e97dc86",
+  "data": {
+    "id": "62fc6bac8cc8c9000e97dc86",
+    "name": "Tune Pianos",
+    "slug": "tune-pianos",
+    "category": "reference",
+    "publishedAt": "2022-08-17T23:21:11.331Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62fc6bac8cc8c9000e97dc86",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-17T04:16:44.755Z",
+    "createdBy": {
+      "username": "Simple Rick",
+      "url": "https://www.codewars.com/users/Simple%20Rick"
+    },
+    "description": "\nMaking cents of it all:\n-------\n------\n\n\n\n\n**PIANO:**\n---------------------\nA standard 88-key Grand Piano will typically start from ```A0``` on the first key, all the way up to ```C8``` on the final key.\nThis will be the range of key names given to you. Frequencies given will never be below or above the standard tuning frequencies of these keys. \n\n--------------\n**SCALE:**\n-------------\n\nThe ascending notes of a chromatic scale are ```C, C#, D, D#, E, F, F#, G, G#, A, A#, B``` and the next octave starts over from ```C```, add infinitum\n\n---------\n**OCTAVES:**\n---------\nThe octave of a note is indicated by a number after the letter name:\n\nThe letter in ```A0``` is the musical *note.* The number is the *octave.*\n\nOctaves reset on C. In order, the note directly after ```B5``` would be ```C6```.\n\n\n\n \n-------------------\n**EQUAL TEMPERAMENT TUNING:**\n-------------------\n\nThe global standard for A4 is 440 (Hz)\n\nIn Equal Tempered Tuning, which we will be using in this exercise, all notes are tuned to a relative standard pitch of A4 = 440Hz\n\nA4 is tuned to 440Hz\n\nA5 is tuned to 880Hz \n\nA6 is tuned to 1760Hz\n\n--------------\n**SEMITONES:**\n-------------\n\nA semitone is the distance between two chromatic notes. \n\nFor example, \n\n```A1``` to ```A#1``` is 1 semitone. \n\n```A1``` to ```B1``` is 2 semitones. \n\nThe distance between semitones is not linear. It is logarithmic.\n\n*hint*: 1 octave is 12 semitones\n\nThe frequency of semitones is rounded to the nearest 2 decimal places. \n\n\n----------------\n**CENTS:**\n--------------\n\nA cent is another unit of measurement used to calculate finer distances between two semitones. When adjusting detuned strings with frequencies that do not coincide with a semitone in the chromatic scale, a *different* logarithm is used to calculate the distance between frequency 1 and frequency 2. \n\n*hint:* 1200 cents = 1 octave, and 100 cents = 1 semitone\n\n\n-----------------\n**THE ARRAY:**\n------------\n\nEach element in the array will look like\n\n```[noteName, CurrentStringFrequency]```\n\n\nExample:```[A4, 440]```\n\n**Frequency is given in Hz.***\n\nFor each of these elements you will want to calculate the amount that frequency needs to be adjusted (in cents) in order to be in tune. \n\nExample: ```[A3, 440]``` \n\nIf we know ```A4``` is ```440``` and that ```A3``` is exactly half of ```440```, we know that the ```A3``` *should* be tuned to ```220```. Since the distance in this case is exactly 1 Octave. That is a total of 12 semitones needed to adjust this strings frequency. Which adds up to ```1200``` cents.\n\n-----------------\n**YOUR TASK:**\n----------\n\nJourney all the way to the depths and tune the dark lords' golden grand piano. \n\nAdd up the total amount of cents needed to adjust each key on the piano. \n\nYou conveniently charge your customers 1 penny per cent. Rounded to the nearest penny.\n\nReturn your customers bill in standard USD $0.00 format. \n\n--------------\n**HELP:**\n--------------\n\nIf you are having difficulty finding the correct ratio between notes the answer lies in understanding how *Equal Temperament* is calculated. Also sometimes refered to as 12-TET or 12 Tone Equal Temperament. \n\nThe formula to find the distance in **cents** between the frequency of a detuned string and the desired frequency is not the same as the one used to calculate equal temperament. \n\nRound your bill to the nearest penny *after* you've totalled everything.\n\n-----------\n**PERFORMANCE:**\n------------\n\nRan-**DOOM**  tests\n\n[|===**I'm too young to die.**===|]- The easiest difficulty starts with 100 small tests of pianos with 88 random strings each.\n\n[|===**Ultra-Nightmare**===|]- The hardest difficulty will be a single piano with 2,500,000 random strings to tune. \n\n\n\n",
+    "totalAttempts": 14,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Performance",
+      "Arrays",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

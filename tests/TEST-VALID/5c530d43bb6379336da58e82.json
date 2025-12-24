@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c530d43bb6379336da58e82",
+  "data": {
+    "id": "5c530d43bb6379336da58e82",
+    "name": "Cryptography - Hide in plain sight",
+    "slug": "cryptography-hide-in-plain-sight",
+    "category": "algorithms",
+    "publishedAt": "2019-01-31T21:11:52.785Z",
+    "approvedAt": null,
+    "languages": [
+      "c",
+      "python",
+      "java",
+      "nasm"
+    ],
+    "url": "https://www.codewars.com/kata/5c530d43bb6379336da58e82",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-31T14:59:15.157Z",
+    "createdBy": {
+      "username": "avarayab",
+      "url": "https://www.codewars.com/users/avarayab"
+    },
+    "description": "You will have to create a function to \"encrypt\" a message by hiding it into a larger message. You will create n random letters for each letter of the original message, and hide that letter in a specific position among those randomly generated.\n\nThe function will receive a key array indicating the indexes in which the letters will be hidden (if there are more letters than keys you will have to use the key from start again). And the size of the chunks of random letters to be generated.\n\nTime for an example:\n```\nencrypt(\"hello world!\", [2, 4, 3, 1], 5)\n```\nSince \"hello world\" is 12 chars long, it will generate 12 * 5 random letters (including lower case letters (a-z), spaces (' ') and puntuation marks ('!?.'), For example:\n```\n  xa ?u\n  lxkmq\n  dv!wq\n  pkdfc\n  imn i\n  z!goc\n  ljkiy\n  zf?sy\n  nbqpp\n  rj.vz\n  n mvp\n  qpqvv\n```\nNow we will take each letter of the original message \"hello world!\" and hide it in the corresponding chunk in the index indicated by the array of indexes, since the array length is only 4, and the message is 12 characters long, then we will have to use the array 3 times, giving each char its corresponding position, like this:\n\n```\n  h e l l   o   w o   r l d !\n  2 4 3 1   2 4 3 1   2 4 3 1\n```\n\nNow we hide each letter in the correponding chunck of random text, in the corresponding position. For example: \n\n```\n  - Letter 'h' will be hidden in the position 2 of \"xa ?u\", thus having: \"xah?u\"\n  - Letter 'e' will be hidden in the position 4 of \"lxkmq\", thus having: \"lxkme\"\n  - Letter 'l' will be hidden in the position 3 of \"dv!wq\", thus having: \"dv!lq\"\n  - Letter 'l' will be hidden in the position 1 of \"pkdfc\", thus having: \"pldfc\"\n  - Letter 'o' will be hidden in the position 2 of \"imn i\", thus having: \"imo i\"\n```\n\nAt the end we return all chunks concatenated as one, with the complete message hidden in it:\n```\n  xah?ulxkmedv!lqpldfcimo iz!go ljkwyzo?synbrpprj.vln mdpq!qvv\n```\n\nWe follow the inverse process, with same key array and n chunk size, to decrypt the message.\n\nNOTE: in C language, the resulting char* of both functions will be freed\n\nHave fun!",
+    "totalAttempts": 286,
+    "totalCompleted": 48,
+    "totalStars": 8,
+    "voteScore": 93,
+    "tags": [
+      "Algorithms",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

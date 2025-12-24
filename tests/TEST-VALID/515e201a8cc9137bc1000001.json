@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/515e201a8cc9137bc1000001",
+  "data": {
+    "id": "515e201a8cc9137bc1000001",
+    "name": "Upper Case Processor",
+    "slug": "upper-case-processor",
+    "category": "bug_fixes",
+    "publishedAt": "2013-04-05T00:59:19.966Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/515e201a8cc9137bc1000001",
+    "rank": {
+      "id": -6,
+      "name": "6 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-04-05T00:51:38.581Z",
+    "createdBy": {
+      "username": "jhoffner",
+      "url": "https://www.codewars.com/users/jhoffner"
+    },
+    "description": "The following code is supposed to use the Processor class (defined for you, code shown below) to do an upper case conversion on any string value contained within the hashes passed to it. Can you figure out why the code is not executing properly?\n\n```ruby\nclass Processor\n  attr_reader :items_processed\n  \n  def initialize(&block)\n    @block = block\n    @items_processed = 0\n  end\n  \n  # attempts to process the item. Only counts the item as processed \n  # if the block returns true\n  def process(*args)\n    args.each do |item|\n      @items_processed += 1 if @block.call(item)\n    end\n  end\nend\n```\n\nThe following is an example of how this processor instance would be used:\n```ruby\nmars = {name: 'mars', type: 'planet'}\nearth = {ignore_processing: true, name: 'Earth', type: 'Planet'}\n\n# only mars will have its values made all uppercase\nprocessor.process(mars, earth) \n```",
+    "totalAttempts": 2844,
+    "totalCompleted": 450,
+    "totalStars": 2,
+    "voteScore": 19,
+    "tags": [
+      "Bugs"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

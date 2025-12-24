@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ba58763924c945f950000a5",
+  "data": {
+    "id": "5ba58763924c945f950000a5",
+    "name": "RDS (Radio Data System) Splash Text Concatenation",
+    "slug": "rds-radio-data-system-splash-text-concatenation",
+    "category": "algorithms",
+    "publishedAt": "2018-09-22T02:20:27.941Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ba58763924c945f950000a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-22T00:05:55.497Z",
+    "createdBy": {
+      "username": "RedBorg",
+      "url": "https://www.codewars.com/users/RedBorg"
+    },
+    "description": "## RDS (Radio Data System) Splash Text Concatenation\n\nIf you've ever used a radio with a screen, then you probably realised that most stations will broadcast text in addition to sound. The system used to do this is called [**Radio Data System**](https://en.wikipedia.org/wiki/Radio_Data_System) or *Rds*. \n\nHowever, you can only tranmit a little bit of text at a time, so if you have a long sentence like:\n\n> I love potatoes by DJ Kale ft Medium Pump\n\nso if your character limit is, let's say, 10, you'll have to split it and display each part for like 2 second and then repeat, like this:\n\n`I love ` ... `potatoes ` ... `by DJ Kale ` ... `ft Medium Pump` ... `I love ` *etc.*\n\nThis is fine, but in this case you'd have to wait ~6s to read the sentence, which is way more than just plainly reading it. To counter this problem, most modern radios system will concatenate the little pieces together to build the sentence back, and then display it: \n\n> I love potatoes by DJ Kale ft Medium Pump\n\n### Task\n\nYour task is simple, create an algorithm that concatenates the pieces together. The algorithm is a class named RdsConcatenator and that has two functions/methods; one that gets called to input the different text bits, and another one that returns the completed string.\n\n##### Specifications\n\n- Create class *RdsConcatenator*.\n  \n  - In this class create function *input_rds_text* or *inputRdsText* taking a string for argument.\n  \n  - Create another function *get_text* or *getText* that returns the concatenated string\n  \n\n\n- Do not remove or inject spaces or treat in any way the strings\n\n- Remember, the strings will sometimes repeat, so you wrap have to wrap up somewhere (example 2 and 5).\n\n- Sometimes the first strings are not relevant (example 5).\n\n- If the strings don't repeat themselves, then you just assume the text is the sum of all strings (example 1 3 4).\n\n  - Sometimes, a repeated text will change to a string that doesn't repeat, so you need to remember that (example 6 7)\n\n\n- Sometimes, the text will change and the text will be requested multiple times (example 6)\n\n##### Examples\n\nExamples in python-like code, but represents pretty much other languages.\n\n1\n```python\nrds.input_rds_text(\"Hello \")      # Remembers \"Hello \"\nrds.input_rds_text(\"darkness, \")  # Remembers \"darkness, \"\nrds.input_rds_text(\"my old \")     # Remembers \"my old\"\nrds.input_rds_text(\"friend.\")     # Remembers \"friend.\"\n\nprint(rds.get_text())             # Returns the elements concatenated together\n\n# Returns\n# >>> Hello darkness, my old friend.\n```\n2\n```python\nrds.input_rds_text(\"1 \")    \nrds.input_rds_text(\"2\")     \nrds.input_rds_text(\"1 \")    # \"1 \" is in the list, this means the message has repeated, so list is now [\"1 \", \"2\"]\nrds.input_rds_text(\"2\")     # \"2\" is the message repeated, so we ignore\n\nprint(rds.get_text())\n\n# Returns\n# >>> 1 2\n```\n3\n```python\nrds.input_rds_text(\"cool.\")\nrds.input_rds_text(\"Potatoes \")\nrds.input_rds_text(\"are \")\n\nprint(rds.get_text())\n\n# Returns\n# >>> cool.Potatoes are\n```\n4\n```python\nrds.input_rds_text(\"I love \")\nrds.input_rds_text(\"spaces \")\nrds.input_rds_text(\"           \")\nrds.input_rds_text(\"very much!\")\n\nprint(rds.get_text())\n\n# Returns\n# >>> I love spaces            very much!\n```\n\n5\n```python\nrds.input_rds_text(\" this text won't be returned because the '1 2' has repeated \")\nrds.input_rds_text(\"1 \")\nrds.input_rds_text(\"2\")\nrds.input_rds_text(\"1 \")              # \"1 \" was already there, this means the text is repeating, so the text is what is between the                                         1st \"1 \" and the 2nd \"1 \" (including the first, but not the 2nd): [\"1 \", \"2\"]\n\nprint(rds.get_text())\n\n# Returns\n# >>> 1 2\n```\n\n6\n```python\nrds.input_rds_text(\"music \")\nrds.input_rds_text(\"#1\")\nrds.input_rds_text(\"music \")  # \"music \" already submitted, create [\"music \", \"#1\"]\n\nprint(rds.get_text())\n\nrds.input_rds_text(\"#1\")      # \"#1\" already in repeated text, do nothing\nrds.input_rds_text(\"song \")   # !! song not in repeated text, this means a new text started, remembering \"song \"\nrds.input_rds_text(\"#2 \")     # remembering \"#2\"\n\nprint(rds.get_text())\n\n# returns\n# >>> music #1\n# >>> song #2\n\n```\n\n7\n```python\nrds.input_rds_text(\"Hello \")\nrds.input_rds_text(\"world!\")\nrds.input_rds_text(\"Hello \")    # Creating \"Hello world!\" text\nrds.input_rds_text(\"world!\")    # part of repeating text\n\nprint(rds.get_text())\n\nrds.input_rds_text(\"Hello \")    # part of repeating text\nrds.input_rds_text(\"banana, \")  # !! not part of repeating text, create new text\nrds.input_rds_text(\"potato\")    # remember \"potato\"\n\nprint(rds.get_text())\n\n# returns\n# >>> Hello World!\n# >>> banana, potato\n\n```\n\n\n",
+    "totalAttempts": 402,
+    "totalCompleted": 28,
+    "totalStars": 0,
+    "voteScore": 26,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

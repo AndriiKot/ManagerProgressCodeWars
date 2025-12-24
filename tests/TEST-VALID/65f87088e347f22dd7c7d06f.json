@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65f87088e347f22dd7c7d06f",
+  "data": {
+    "id": "65f87088e347f22dd7c7d06f",
+    "name": "Heliotropic?",
+    "slug": "heliotropic",
+    "category": "reference",
+    "publishedAt": "2024-03-18T17:06:19.658Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/65f87088e347f22dd7c7d06f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-03-18T16:49:12.920Z",
+    "createdBy": {
+      "username": "GregW",
+      "url": "https://www.codewars.com/users/GregW"
+    },
+    "description": "# Description\n\nYou've been contracted by a few botanists to validate some data!\nYou'll need to write a function that shows each botanist whether or not the ratio of **heliotropic** flowers and non-heliotropic flowers.  \n\nYou can tell the difference between the two based on whether they face the sun or not (or rather, if they are round characters like `O`, `0`, and `@`).\nNon-heliotropic flowers will have flat character representations, like `-`, `_`, and `|` for example.  \nYou are given a string `flowers` to parse for these characters, and a float `tolerance` that dictates how much the ratio must be (at the very least).  \nOh, and if you're given an empty string, you can safely return `false` because a field of **nothing** isn't heliotropic! Same goes for a `tolerance` value of `NULL` or `0`.\n\n# Examples\n\n`heliotropic(\"O O | O O | O\", 0.5)` -> `true`, because the number of total number of flowers divided by the number of heliotropic flowers results in a number greater than (or equal to) 0.5, which was given as the `tolerance` value.  \n\n`heliotropic(\"@ 0 | - 0 _ O\", 0.75` -> `false`, because the number of total number of flowers divided by the number of heliotropic flowers results in a number less than 0.75, you get the idea.",
+    "totalAttempts": 60,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

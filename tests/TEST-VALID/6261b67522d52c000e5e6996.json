@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6261b67522d52c000e5e6996",
+  "data": {
+    "id": "6261b67522d52c000e5e6996",
+    "name": "Percentage of primary color in HEX color",
+    "slug": "percentage-of-primary-color-in-hex-color",
+    "category": "reference",
+    "publishedAt": "2022-04-21T19:56:56.449Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/6261b67522d52c000e5e6996",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-21T19:54:29.402Z",
+    "createdBy": {
+      "username": "BorisTB",
+      "url": "https://www.codewars.com/users/BorisTB"
+    },
+    "description": "Your goal is to return rounded percentage of primary color (red, green or blue) relative to other primary colors (and to alpha channel) in hex color definition.\n\nSo for example:\n - if you have hex `#ff0000` there's 100% of red color, 0% of green color, 0% of blue color\n - if you have hex `#ff00ff` there's 50% red color, 0% green color, 50% blue color\n - if you have hex `#ff00007f` there's a 100% of red color, 0% of green color, 0% of blue color, BUT alpha channel is rounded to 50%, so 50% of each value is red 50%, green 0%, blue 0%\n\n## Input\n- #### `color` _(hex string, always starts with `#`)_\n  - #### 3-digit hex code\n  e.g.: `#f0c`, `#631`, `#ccc`\n  - #### 6-digit hex code\n  e.g.: `#ff00cc`, `#631c28`, `#cfa901`\n  - #### 8-digit hex code\n  e.g.: `#ff00cca4`, `#631c28ff`, `#cccccccc`\n- #### `primaryColorName` _(`\"red\"`, `\"green\"` or `\"blue\"`)_\n  - name of the primary color for which you have to return percentage relative to other colors and to alpha channel\n  \n## Rules\n- only lower case letters will be used in color arg\n- `color` will always start with `#`\n- hex code after `#` will always have 3, 6 or 8 characters\n- alpha channel is only defned in 8-digit hex code\n- if alpha channel is not defined, it's 100% (`\"ff\"`)\n\n## Examples\n```\ngetPrimaryColorPercentage(\"#f00\", \"red\") // 100\ngetPrimaryColorPercentage(\"#f00\", \"blue\") // 0\ngetPrimaryColorPercentage(\"#ffffff\", \"red\") // 33\ngetPrimaryColorPercentage(\"#ff00007f\", \"red\") // 50\ngetPrimaryColorPercentage(\"#ff00ff7f\", \"blue\") // 25\n```",
+    "totalAttempts": 111,
+    "totalCompleted": 15,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

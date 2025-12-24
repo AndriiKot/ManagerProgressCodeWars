@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64696add05eaef8df94b87a1",
+  "data": {
+    "id": "64696add05eaef8df94b87a1",
+    "name": "Whatever",
+    "slug": "whatever",
+    "category": "reference",
+    "publishedAt": "2023-05-21T00:51:08.705Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/64696add05eaef8df94b87a1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-21T00:50:37.448Z",
+    "createdBy": {
+      "username": "safiir",
+      "url": "https://www.codewars.com/users/safiir"
+    },
+    "description": "## Background\n\nPerl6 ( Raku ) introduces a very amazing grammar suger named whatever expression, like this:\n```perl\nmy @fib = 1, 1, * + * ... *;\nsay @fib[0..10];\n$> (1 1 2 3 5 8 13 21 34 55 89)\n```\nIt's self-evident that the above code can generate an infinite lazy Fibonacci sequence, which really is cool! You can try it in [https://glot.io/new/raku](https://glot.io/new/raku).\n However it's unfortunate that such an amazing syntax is not supported in Ruby. Can we try to implement it in ruby? That's the challenge!\n\nImplement a function which supports the calculation of such expressions.\n\n## Illustration\n1. There's no need to handle error cases, as all inputs are guaranteed to be valid & well formatted.\n2. The whatever expression can be arbitrary and complicated.\n3. Your implementation must be lazy, just like Perl6 does. It should generate a lazy and infinite sequence.\n\n## Definition\n`$x[0], \\quad x[1], \\quad .. \\quad x[n], \\quad \\sum_{i=m}^{n} x_i \\quad ... \\quad *$`\n\n1. `$0 \\leq m \\leq n$`\n2. `$x[i]$` can be an arbitrary valid Ruby object\n3. `$\\sum{}$` can be any valid polynomial calculation expr, and there is no extra commas( , ) for the simplication of the parsing, eg: `[1, 2], [3, 4], * + [5, 6] ... *` wouldn't to be tested so that there is no any need to implement a complete & complicated parser, that's too trivial & boring ... anyway in the left side of the last comma, that's initial items.\n\n## Happy coding!\n![](https://glot.io/static/img/perl6.svg?etag=jyDmhz1R)",
+    "totalAttempts": 44,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Language Features",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

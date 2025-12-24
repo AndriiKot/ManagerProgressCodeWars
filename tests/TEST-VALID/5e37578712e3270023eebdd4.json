@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e37578712e3270023eebdd4",
+  "data": {
+    "id": "5e37578712e3270023eebdd4",
+    "name": "Binary Clock",
+    "slug": "binary-clock",
+    "category": "reference",
+    "publishedAt": "2020-02-03T17:27:46.231Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5e37578712e3270023eebdd4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-02T23:13:11.926Z",
+    "createdBy": {
+      "username": "maks23",
+      "url": "https://www.codewars.com/users/maks23"
+    },
+    "description": "Create method wich take time in seconds and return binary representation of it in array.                                                                \nseconds always >= 0                                                          \nif seconds > 24 hours \nreturn binary representation of rest of seconds wich < 24 hours,\nfor examle 2 days 12 hours and 12 seconds should return binary representation of 12 hours and 12 seconds.\n\nEach column represent each number of given time.\n\n1  2  3                                                                     \n--------                                                                    \n0   0   0                                                                   \n0   0   0                                                                   \n0   1   1                                                                  \n1   0   1                                                                     \n\n\n.........\n\n\nExamples:\n\n//0 seconds                                                                 \n(0)=>    \n        [[0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,0]]                                                    \n\n//1 seconds                                                                 \n(1)=>    \n        [[0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,0],                                                    \n         [0,0,0,0,0,1]]                                                    \n\n//1 hour                                                                    \n(3600)=>\n         [[0,0,0,0,0,0],                                                    \n          [0,0,0,0,0,0],                                                    \n          [0,0,0,0,0,0],                                                    \n          [0,1,0,0,0,0]]                                                    \n\n//12 hours 34 minutes and 56 seconds                                        \n(42296)=>\n          [[0,0,0,0,0,0],                                                   \n           [0,0,0,1,1,1],                                                   \n           [0,1,1,0,0,1],                                                   \n           [1,0,1,0,1,0]]                                                                                                   \n1 minute = 60 seconds                                                       \n1 hour = 60 minutes                                                         \n1 day = 24 hours                                                            ",
+    "totalAttempts": 7,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Binary",
+      "Date Time"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

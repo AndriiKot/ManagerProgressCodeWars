@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5280f37d2687a6a9f2000b64",
+  "data": {
+    "id": "5280f37d2687a6a9f2000b64",
+    "name": "Command-line Option Parser",
+    "slug": "command-line-option-parser",
+    "category": "algorithms",
+    "publishedAt": "2013-11-11T16:24:06.455Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5280f37d2687a6a9f2000b64",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-11-11T15:10:53.095Z",
+    "createdBy": {
+      "username": "benzrf",
+      "url": "https://www.codewars.com/users/benzrf"
+    },
+    "description": "Write a class to parse a command-line option string. The string will take the form of a series of space-separated fields. Any individual field in the string can be:\n\n* A boolean flag (e.g. `-f`).\n* A cluster of boolean flags, which is equivalent to each flag separately (e,g, `-nr` is equivalent to `-n -r`).\n* An argument-taking flag; the next field should be the flag's argument (e.g., `-l 3`, where `3` is the argument to `-l`).\n* An argument (any non-flag field that isn't an flag's argument is a regular argument).\n\nYour class should be called  `OptionParser`. It should have the following methods:\n\n* `add_boolean_flag(name[, flag])` Adds a boolean flag for the parser to recognize. Takes a symbol (`name`) and optionally a single-character string (`flag`). `flag` is the character used in an option string and defaults to the first character of `name.to_s`. Passing anything other than a single alphanumeric character as `flag` should raise an error.\n* `add_argument_flag(name[, flag])` Adds an argument flag for the parser to recognize. Otherwise behaves just like add_boolean_flag.\n* `add_argument(name)` Adds an argument for the parser to recognize. Takes a symbol (`name`). Arguments should be parsed in the order they were added.\n* `parse(input)` Parses an option string according to the description above. Encountering an unknown flag or having more or fewer regular arguments than were specified should raise an error. The return value should be a hash mapping boolean flag names to `true` or `false`, argument flag names to their given value or `nil` (if they weren't specified), and argument names to values.\n\nCode samples:\n\n```ruby\nparser = OptionParser.new\nparser.add_argument_flag(:lines)  # flag defaults to 'l'\nparser.add_boolean_flag(:quiet)\nparser.add_boolean_flag(:invert, 'in') # error; in is not a 1-char alphanumeric\nparser.add_boolean_flag(:invert, 'v')\nparser.add_argument(:file)\nparser.parse('foo')\n#=> {:quiet=>false, :invert=>false, :lines=>nil, :file=>\"foo\"}\nparser.parse(\"-vq -l 3 bar\")\n#=> {:quiet=>true, :invert=>true, :lines=>\"3\", :file=>\"bar\"}\nparser.parse(\"-v -q baz\")\n#=> {:quiet=>true, :invert=>true, :lines=>nil, :file=>\"baz\"}\nparser.parse(\"-l 2\") # error; missing argument\n```\n",
+    "totalAttempts": 286,
+    "totalCompleted": 18,
+    "totalStars": 3,
+    "voteScore": 20,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

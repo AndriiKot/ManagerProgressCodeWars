@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56a103884e10643fa5000003",
+  "data": {
+    "id": "56a103884e10643fa5000003",
+    "name": "Lists and Objects - Top Trump Optimizer",
+    "slug": "lists-and-objects-top-trump-optimizer",
+    "category": "reference",
+    "publishedAt": "2016-01-28T19:03:03.446Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56a103884e10643fa5000003",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-21T16:12:56.295Z",
+    "createdBy": {
+      "username": "matthewglover",
+      "url": "https://www.codewars.com/users/matthewglover"
+    },
+    "description": "Top Trumps is a card game for kids. For this example we'll use dinosaur top trumps. Each dinosaur card contains the following properties:\n\n- Name\n- Height\n- Weight\n- Length\n- Killer Rating\n- Intelligence\n- Age\n\n\nThe rules of the game can be found at http://www.toptrumps.com/how-to-play-top-trumps/ but, for the purposes of this kata, all you need to know are:\n\n\"<i>To start the game, shuffle and deal all the cards face down. Each player holds their cards so that they can see the top card only.\n\nThe player to the dealer’s left starts by reading out a category from the top card (e.g. Height, value 5) The other players then read out the same category from their cards. The one with the best or highest value wins, and that player collects all the top cards, including their own, and moves them to the bottom of their pile. It is then their turn again to choose a category from the next card.</i>\"\n\nYour job is to write a function that will advise the best property to play for a given card based on its score relative to the other cards in the pack. Where two properties are equally good, choose the first property listed on the card. Your function will take two arguments: (1) the card you are choosing from and (2) a list of the other cards in the game. The advice should be in the format:\n\nYou should play \\[Property\\]: your card is the \\[joint\\] \\[second\\] best for \\[Property\\].\n\nFor example:\n\n```javascript\nconst cardA =\n  { name: 'TestDinosaurus3', height: 1,  weight: 1,  length: 25,  killerRating: 1,  intelligence: 1,  age: 1 }\n  \nconst cardB = \n  { name: 'TestDinosaurus2', height: 1,  weight: 1,  length: 1,  killerRating: 8,  intelligence: 1,  age: 1 }\n\nconst cardC = \n  { name: 'TestDinosaurus1', height: 1,  weight: 1,  length: 1,  killerRating: 1,  intelligence: 1,  age: 1 }\n\n\nconst otherCards = \n  [   { name: 'Coelophysis',   height: 2,   weight: 27,   length: 3,   killerRating: 4,  intelligence: 7,  age: 225 }\n  ,   { name: 'Diplodocus',    height: 8,   weight: 8,    length: 27,  killerRating: 0,  intelligence: 2,  age: 225 }\n  ,   { name: 'Anothersaurus', height: 11,  weight: 10,    length: 10, killerRating: 8,  intelligence: 9,  age: 150 }    \n  ]\n\n\nadviseMe(otherCards, cardA)  // 'You should play Length: your card is the 2nd best for Length.'\n\nadviseMe(otherCards, cardB)  // 'You should play Killer Rating: your card is the joint best for Killer Rating.'\n\nadviseMe(otherCards, cardC)  // 'You should play Height: your card is the 4th best for Height.'\n\n\n```\n\nWhilst the example above uses dinosaurs, your function needs to be able to deal with any valid top trump pack. All cards will have values greater than or equal to zero.  All cards in a deck will have the same properties. A card is represented by an object, with the card's property name being camel-cased for the key name, so 'Intelligence' becomes ```intelligence```, 'Killer Rating' becomes ```killerRating``` and 'Team Player' becomes ```teamPlayer```. All cards, regardless of deck, have a name property, which does not have a rating and cannot be played.\n\n\n\n\n",
+    "totalAttempts": 120,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 14,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

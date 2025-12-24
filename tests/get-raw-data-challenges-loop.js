@@ -7,10 +7,10 @@ import { getUserCodeChallenges, getCodeChallenge } from '#services';
 const USER_NAME = 'Voile';
 const MAX_PAGES = 63;
 const MAX_CHALLENGES = 200;
-const STEPS = 200;
-const INTERVAL = 15_000; //  15 sec. (optimal option)
+const STEPS = 50;
+const INTERVAL = 30_000; //  30 sec. (optimal option)
 
-let currentPage = 0;
+let currentPage = 16;
 let start = 0;
 let end = STEPS;
 
@@ -51,6 +51,22 @@ async function processPage() {
     }
     const task = await getCodeChallenge(id);
 
+    if (!task.success) {
+      const fileDATA = await open(`./TEST-DATA/${id}.json`, 'w+');
+      const fileRES = await open(`./TEST-RES/${id}.json`, 'w+');
+      await fileDATA.write(JSON.stringify(task.data, null, 2));
+      await fileRES.write(JSON.stringify(task, null, 2));
+      await fileDATA.close();
+      await fileRES.close();
+    }
+
+    if (task.success && !task.isValid) {
+      const fileVALID = await open(`./TEST-VALID/${id}.json`, 'w+');
+      await fileVALID.write(JSON.stringify(task, null, 2));
+      await fileVALID.close();
+    }
+    
+  /*
     if (task.success) {
       const file = await open(`./Challenges/${id}.json`, 'w+');
       try {
@@ -66,8 +82,8 @@ async function processPage() {
         await err.close();
       }
     }
+*/
   }
-
   start += STEPS;
   end += STEPS;
 

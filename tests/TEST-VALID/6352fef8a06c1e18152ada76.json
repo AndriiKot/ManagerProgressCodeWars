@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6352fef8a06c1e18152ada76",
+  "data": {
+    "id": "6352fef8a06c1e18152ada76",
+    "name": "Time of Flight Mass Spectrometry: Electron Impact",
+    "slug": "time-of-flight-mass-spectrometry-electron-impact",
+    "category": "games",
+    "publishedAt": "2022-10-26T10:41:26.523Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6352fef8a06c1e18152ada76",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-21T20:20:08.308Z",
+    "createdBy": {
+      "username": "myst-6",
+      "url": "https://www.codewars.com/users/myst-6"
+    },
+    "description": "<h1>Introduction</h1>\n\nTime of flight mass spectrometry is a useful method of analysing the mass of a substance. One of its uses and the one this kata will focus on is to find the **relative abundances** and **m/z** values of **isotopes of an element** in a sample. Henceforth the **relative atomic mass** may be calculated.\n\nNote: If you already know about atomic mass, isotopes, relative abundances and relative atomic mass you can skip those sections.\n\nAnd if you already know about time of flight mass spectrometry you can skip the section on that, but please read the section about the catch.\n\n<hr>\n\n<h1>Basic Atomic Structure</h1>\n\n<details>\n\n<summary>Atomic Mass</summary>\n\nAtomic mass refers to the number of **grams** in **one mole** (6.022 x 10<sup>23</sup>) of the atom. For example, if the atomic mass of an atom were **35**, you would find that **1.2044 * 10<sup>24</sup>** atoms had a mass of **0.070kg**.\n\nAn atomic mass of a **specific isotope** is always an integer. However, **relative atomic masses** are not always integers.\n\n</details>\n\n<details>\n\n<summary>Isotopes</summary>\n\nAn **isotope** is a form of an element that contains an **equal number of protons** but a **different number of neutrons**. Put simply, it is a version of an element with a **different atomic mass** to other versions of the element. For example, chlorine atoms are usually said to exist in two isotopes: one with an atomic mass of **35**, and another with an atomic mass of **37**. (Note: this is not *exactly* true, but they are the most common by far). We can denote these two isotopes by writing **Chlorine-35** and **Chlorine-37** respectively. \n\nWhen considering the **natural** isotopes, they tend to have atomic masses **close to one another**. They will definitely not differ by more than a factor of **100%** or more. That is, an element **X** will not exist in an isotope of **X-10** and **X-20** at the same time, for example. The only exception to this rule is **Hydrogen**, which has the natural isotopes of **Hydrogen-1** and **Hydrogen-2**.\n\n</details>\n\n<details>\n\n<summary>Relative Abundances</summary>\n\nCertain isotopes are more common than other isotopes. When I refer to **relative abundances**, I am referring to how often one isotope appears in a sample **compared to other isotopes** of the same element in a sample. For example, Chlorine-35 appears **three times as often** as Chlorine-37 in nature. We could have the relative abundance of Chlorine-35 in a sample be **74%** (meaning **74%** of the isotopes happened to be Chlorine-35), and the relative abundance of Chlorine-37 be **26%**, and this is a standard result and what gives Chlorine its **relative atomic mass** of **35.5** in the periodic table.\n\n</details>\n\n<details>\n\n<summary>Relative Atomic Mass</summary>\n\nThe relative atomic mass of an element is the **weighted average** of the **atomic masses** of all its isotopes based on their **relative abundances**. <small>relative to the 1/12th the mass of the mass of a Carbon-12 atom, if you're being pedantic (or you're taking a chemistry exam ;))</small>\n\nFor example, let's say in a sample we had **74% of Chlorine-35** and **26% of Chlorine-37**. Then the relative atomic mass would be **74% * 35 + 26% * 37 = 35.52**.\n\n</details>\n\n<hr>\n\n<h1>Time of Flight Mass Spectrometry</h1>\n\n<details>\n\n<summary>Time of Flight Mass Spectrometry</summary>\n\nA time of flight mass spectrometer can be split up into four stages:\n<ol>\n  <li>Ionisation</li>\n  <li>Acceleration</li>\n  <li>Flight</li>\n  <li>Detection</li>\n</ol>\n\nIn stage one, the isotopes in the sample are given a charge. For the small isotopes that we are considering in this kata, we will just use **electron impact**, which is when you fire a **high energy electron** at each atom in order to **knock one of its electrons** out of orbit, so it gains a **positive charge**. This does not change its **atomic mass**, since electrons have **negligible atomic mass** (~1/1800 atomic mass units).\n\nIn stage two, the now-charged atoms (technically not **atoms** since they are now charged, and are now called **ions** instead) are accelerated by an electric field of **known strength**. That is, each ion will gain the exact same **kinetic energy**.\n\nIn stage three, the moving ions will now travel through a flight tube of **known length**. The larger the **atomic mass** of the ion, the **longer it will take** to move through the flight tube.\n\nIn stage four, the charged ions hit a detector, and create a current. The **magnitude of the current** will determine the number of ions which hit it at the **same time** (and hence the number of ions with the **same atomic mass**).\n\nTherefore, with all things considered, we can calculate the **relative atomic mass** of an element with a given sample, given we know the **kinetic energy each ion was accelerated to**, the **magnitudes of the currents** in the detector and the **time** that the currents were detected in. These will be the exact three inputs to your function.\n\nRemember that the **atomic mass** of any isotope/ion should be a **whole number**. The calculations you perform may yield **slightly inaccurate** results because of the accuracy of the measurements taken by the spectrometer, but you should know to **round** these values.\n\n</details>\n\n<details>\n\n<summary>The Catch: Electron Impact</summary>\n\nThe intention of electron impact is to give a **1+** charge to each ion (that is, **one electron** is knocked off orbit for each ion). However, rarely, **two electrons** may be accidentally knocked off orbit for some of the ions! This means that some ions may gain a **2+** charge! \n\n**Double the charge** means that the electric field gives the ion **double the kinetic energy**, which means it moves **sqrt(2) as fast** and has **1/sqrt(2) the flight time**! The ion appears to be **twice** as light as it actually is!\n\nThis is why the mass spectrometer is said to measure **m/z** (mass / charge) instead of just **m** (mass). We may find that there are some ions that appear to be **twice as light** as others since they hit the detector in **1/sqrt(2) the time**, when in fact it is **not their mass** that has changed, it is actually their **charge**.\n\nBut we know from the section on isotopes that two natural isotopes of the same element should **never differ by that much**! We know that this may happen for hydrogen, but hydrogen atoms **only have one electron**, so it is ***impossible for this mistake to happen for hydrogen atoms!***\n\nSo, your program should know to consider the detection of **halved m/z values** as the actual detection of the **doubled m/z whole values** in your calculation of the relative atomic mass.\n\nFurthermore, even when the m/z values are **halved**, since the **atomic mass** is a whole number, the m/z values will always be a **multiple of 0.5**.\n\n**Each isotope/ion** that is detected may have an equivalent **halved m/z value** associated with it. There is **not necessarily only one** of these.\n\n</details>\n\n<hr>\n\n<h1>The Kata</h1>\n\nYour function `calculateRAM` will be given the following parameters in order:\n\n<ul>\n  <li>The <b>kinetic energy</b> (E) that the electric field accelerates all <b>1+</b> ions to, in <b>aJ (10<sup>-18</sup>J)</b></li>\n  <li>The <b>length</b> (d) of the flight tube, in <b>mm (10<sup>-3</sup>m)</b></li>\n  <li>An array of two-tuples (D), the first in each tuple representing the <b>magnitude of the current</b> (I) detected by the detector, in <b>µA (10<sup>-6</sup>A)</b>, and the second in each tuple repesenting the <b>time</b> (t) that the current was detected after, in <b>ns (10<sup>-9</sup>s)</b></li>\n</ul>\n\nand you must return the **relative atomic mass** of the sample given. Your answer will be tested to **±0.01**, as is standard in the periodic table.\n\n```math\nE, d, I, t \\in \\N \\\\\n50 \\leq E \\leq 10^3 \\\\\n50 \\leq d \\leq 10^3 \\\\\n1 \\leq I \\leq 10^4 \\\\\n50 \\leq t \\leq 10^5 \\\\\n2 \\leq |D| \\leq 8 \\\\\n```\n\nIf an entry where the m/z is **half** the expected value exists, an entry with the **whole** value **definitely exists**, since a **2+** charge is quite unlikely to happen.\n\n**Each isotope/ion** that is detected may have an equivalent **halved m/z value** associated with it. There is **not necessarily only one** of these.\n\nRemember that the **atomic mass** of any isotope/ion should be a **whole number**. The calculations you perform may yield **slightly inaccurate** results because of the accuracy of the measurements taken by the spectrometer, but you should know to **round** these values.\n\nFurthermore, even when the m/z values are **halved**, since the **atomic mass** is a whole number, the m/z values will always be a **multiple of 0.5**.\n\nFor small species (atomic mass <= 15), they will <b note=\"not sure why stars didn't work here\">only exist</b> in their <b>two most common</b> isotopes (as they would in nature). However, for larger species (atomic mass >= 16), their isotopes may range by **±4** atomic mass (which although is unnatural, makes it simpler to generate tests rather than storing a list of natural isotopes).\n\n<hr>\n\n<h1>Helpful Equations</h1>\n\n```math\nKE = \\frac{1}{2}mv^2\n```\n```math\nv = \\frac{d}{t}\n```\n```math\nm = \\frac{A_r}{N_A}\n```\n\nwhere **A<sub>r</sub>** = [relative] atomic mass\n\nand **N<sub>A</sub>** = number of things in one mole ; **6.022 * 10<sup>23</sup>** for this kata\n\nfurthermore note that the mass in the **first** equation is measured in **kilograms** (kg) but the mass in the **third** equation is measured in **grams** (g)",
+    "totalAttempts": 171,
+    "totalCompleted": 9,
+    "totalStars": 5,
+    "voteScore": 15,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

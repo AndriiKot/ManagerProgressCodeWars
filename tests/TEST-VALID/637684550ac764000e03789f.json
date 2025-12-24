@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/637684550ac764000e03789f",
+  "data": {
+    "id": "637684550ac764000e03789f",
+    "name": "Old Hamiltonian Dragon",
+    "slug": "old-hamiltonian-dragon",
+    "category": "algorithms",
+    "publishedAt": "2022-11-17T22:00:32.617Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/637684550ac764000e03789f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-11-17T18:58:29.776Z",
+    "createdBy": {
+      "username": "Pepengu",
+      "url": "https://www.codewars.com/users/Pepengu"
+    },
+    "description": "## Legend\n***Hamiltonian Dragon is a legendary creature. To hunt for gold, dragon visits all the island nations around the world. But the dragons is kind, so it gives everyone a chance. He asks people to lead him through every island of the nation. On every island dragon leaves a mark, and if he visits every island without seeing the same mark twice, he leaves the nation and never comes back. The dragon is old ant therefore refuses to fly from one island to another, so he only uses bridges to travel from one island to another.***\n\n## Task\nPeople of island nations are extreamly tired of this dragon, so they ask you, to help them.\n\nEvery nation numbered their island from 1 to n and gave you the amount of islands and a list of every bridge they have.\n````if:cpp\nThe list of bridges are given to you as a vector of a stuct. Struct is defined as:\n```cpp\nstruct bridge{\n   int start;\n   int end;\n\n   bridge(int a, int b): start(a), end(b){}\n};\n```\n````\n````if:python\nThe list of bridges are given to you as a list of a class. Class is defined as\n```python\nclass Bridge:\n    start = 0\n    end = 0\n    \n    def __init__(self, a, b) -> None:\n        self.start = a\n        self.end = b\n```\n````\nYou need to give the nation path in a form of a string, where every island number is separated by \"->\", or to tell them \"Accept your faith\" if there is no possible solution.\n\n## Example\nIf the map looks like this:\n```\n 1--4\n | /\n |/\n 2--3\n```\nYou need to give a string 4->1->2->3\n\n## Note\n\n* If there are multiple paths, you can use any of them as an answer\n* Bridge can not connect an island to itself\n* Every island has at least 1 bridge\n",
+    "totalAttempts": 100,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

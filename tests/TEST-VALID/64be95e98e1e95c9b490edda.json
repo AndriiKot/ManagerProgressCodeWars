@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64be95e98e1e95c9b490edda",
+  "data": {
+    "id": "64be95e98e1e95c9b490edda",
+    "name": "The Classic Stack Data Structure",
+    "slug": "the-classic-stack-data-structure",
+    "category": "reference",
+    "publishedAt": "2023-07-25T01:36:00.453Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64be95e98e1e95c9b490edda",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-24T15:16:57.700Z",
+    "createdBy": {
+      "username": "Polymorbism",
+      "url": "https://www.codewars.com/users/Polymorbism"
+    },
+    "description": "# Prelude\nThe Stack is one of the most classic and fundamental examples of a data structure. Today, you will implement one.\n# Constructor:\n+ The constructor should take one argument, `capacity`, which represents the maximum number of elements the stack can hold.\n+ If the capacity is not a positive integer greater than 0, or if it's not a number at all, the constructor should throw an error.\n+ The constructor should initialize the stack with the given capacity and set the initial length to 0.\n+ **Part of the constructor has been given to you.**\n# Methods:\n\n+ `push(item)`: This method should add an element to the top of the stack.\n    If the stack is already full (i.e., the number of elements is equal to the capacity), the method should throw an error.\n    If the push operation is successful, the method should return the new length of the stack.\n\n+ `pop()`: This method should remove and return the element from the top of the stack.\n  If the stack is empty (i.e., there are no elements to pop), the method should throw an error.\n  If the pop operation is successful, the method should return the popped element.\n\n+ `isEmpty()`: This method should return a boolean value indicating whether the stack is empty or not.\n\n+ `isFull()`: This method should return a boolean value indicating whether the stack is full (reached its capacity) or not.\n\n# Examples\n```javascript\nconst myStack = new Stack(5); // Create a stack with capacity of 5\n\nmyStack.push(1); // Add 1 to the stack, length is now 1\nmyStack.push(2); // Add 2 to the stack, length is now 2\nmyStack.push(3); // Add 3 to the stack, length is now 3\n\nmyStack.isFull(); // => false\nmyStack.isEmpty(); // => false\n\nmyStack.pop(); // => 3 (Top element popped), length is now 2\nmyStack.length; // => 2 (New length after pop)\n\nmyStack.push(4); // Add 4 to the stack, length is now 3\nmyStack.push(5); // Add 5 to the stack, length is now 4\nmyStack.push(6); // Add 6 to the stack, stack is now full!\n\nmyStack.isFull() // => true\n\n// myStack.push(6); // => Throws an error.\n\nmyStack.pop();  //  =>  6 (Top element popped)\nmyStack.length; // => 4 (New length after pop)\n\nmyStack.isEmpty(); // => false\n\nmyStack.pop(); // => 5, new length 3\nmyStack.pop(); // => 4, new length 2\nmyStack.pop(); // => 2, new length 1\nmyStack.pop(); // => 1, stack is now empty!\n\nmyStack.pop(); // => error.\n```",
+    "totalAttempts": 36,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": -4,
+    "tags": [
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

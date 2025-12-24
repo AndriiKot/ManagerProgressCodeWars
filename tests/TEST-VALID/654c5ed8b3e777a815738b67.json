@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654c5ed8b3e777a815738b67",
+  "data": {
+    "id": "654c5ed8b3e777a815738b67",
+    "name": "Island Hopper",
+    "slug": "island-hopper",
+    "category": "algorithms",
+    "publishedAt": "2023-11-09T04:24:16.613Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/654c5ed8b3e777a815738b67",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-09T04:23:52.889Z",
+    "createdBy": {
+      "username": "Reflexor",
+      "url": "https://www.codewars.com/users/Reflexor"
+    },
+    "description": "Welcome to the Island Hopper challenge, where you must navigate a treacherous archipelago filled with tiny islands and vast stretches of water. Your task is to find the shortest path from the northwest corner of the map (top left) to the southeast corner (bottom right) using a series of bridge-building actions.\n\nThe archipelago is represented by a 2D grid: '0's are water, and '1's are pieces of land (islands). You can construct bridges on water to create a path but cannot build on land. However, bridges can only be built in a straight line horizontally or vertically, and cannot cross over land or other bridges.\n\nYour goal is to determine the minimum number of bridges needed to create a path from the starting point to the destination. If it's not possible to build such a path, return -1.\n\n<b>Rules:</b>\n\n1. You may only travel horizontally or vertically, not diagonally.\n\n2. You can only build on water, and bridges cannot overlap.\n\n3. You cannot pass through islands (represented by '1's).\n\n4. You start at the top left corner (0,0) and must reach the bottom right corner (n-1,m-1), where n and m are the dimensions of the grid.\n\n5. Use only the allowed Python libraries to solve this challenge.\n<br>\n\n<b>Example Grids:</b>\n\n\nExample 1:\n\nInput:\n```\nnp.array(\n[[0, 0, 1, 0],\n[1, 0, 0, 0],\n[0, 1, 0, 0],\n[0, 0, 0, 0]]\n)\n```\n          \nExpected Output: 6\n\nExample 2:\n\nInput: \n```\nnp.array(\n[[0, 1, 1, 0],\n[0, 1, 0, 1],\n[0, 0, 0, 1],\n[1, 0, 1, 0]]\n)\n```\n          \n\nExpected Output: -1\n\n\nThe maximum size of the island grid will be 25*25.\n\n<br>\n<b>Allowed Libraries:</b>\n\n1. NumPy\n\n2. Queue from the standard library\n\n\n<b>Hints:</b>\n\nThink of the grid as a graph, and use search algorithms like BFS (Breadth-First Search) to find the shortest path.\n\nKeep track of the bridges built and avoid overlapping by maintaining a set of coordinates where bridges exist.\n\nRemember to check if the destination is immediately unreachable due to being surrounded by land.",
+    "totalAttempts": 19,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

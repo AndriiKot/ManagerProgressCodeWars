@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/631e6fde0b9cb0e7b3ecf72c",
+  "data": {
+    "id": "631e6fde0b9cb0e7b3ecf72c",
+    "name": "First in First out Page Replacement Algorithm (PRA FIFO)",
+    "slug": "first-in-first-out-page-replacement-algorithm-pra-fifo",
+    "category": "algorithms",
+    "publishedAt": "2022-09-11T23:33:13.788Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/631e6fde0b9cb0e7b3ecf72c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-11T23:31:42.606Z",
+    "createdBy": {
+      "username": "Manlx",
+      "url": "https://www.codewars.com/users/Manlx"
+    },
+    "description": "  <p>\n      For this kata you are working at Microsoft and they have assigned you the task of writing a memory management algorithm. <br>\n      Without going into unnecessary detail this is the overall what you need to know. <br>\n      They requested that you implement the FIFO (First In First Out) Page Replacement Algorithm (PRA).\n  </p>\n\n  <h1>This is the main concepts:</h1>\n  <ul>\n      <li>Memory is divided into Frames. A Frame is a block of memory.</li>\n      <li>To keep track of all of these Frames the Operating system has a <b>Frame Table.</b></li>\n      <li>A frame table keeps a record of all loaded Frames and what Pages are loaded into them.</li>\n      <li>In this scenario a page is just an integer representing a page value.</li>\n      <li>\n          The frame table can have two operations carried out:\n          <ul>\n              <li>The frames can be looked through to see if a value requested is still loaded into the frame table at which point it will only be referenced.</li>\n              <li>If the value is not found then the PRA will be used to decide which frame will be updated to have the new Page Value and Load time of said Value.</li>\n              <li>When a Page is referenced it is just called a Reference, when a frame changes value it is called a Page Fault</li>\n          </ul>\n      </li>\n      <li>Each entry in the Frame table consists of two integers representing: Load time and Page value.</li>\n      <li>Load time is the time at which the frames data has been updated.</li>\n  </ul>\n  <a href=\"https://www.geeksforgeeks.org/page-replacement-algorithms-in-operating-systems/#:~:text=First%20In%20First%20Out%20(FIFO,queue%20is%20selected%20for%20removal.\">To have a more indepth read about this feel free to read through:</a>\n\n  <h1>Objective:</h1>\n  <p>\n      Now you need to write an algorithm to figure out how the frames will look after a list of page requests have taken place. <br>\n      You need to modify the solveMemory function which will receive an array of Frame objects (they number of which can vary from 1-500),<br>\n      representing the starting Frames available and then an array of integers representing a list of page requests (Number of requests can be between 1 - 2000).<br>\n      The Load times of each Frame can be anything between 1-9999 <br>\n      The Page Value can range anywhere between 1-100 <br>\n      We also assume that each page Request takes 1 unit of time to execute. <br>\n      We also assume that the time starts at the last loaded frame + 1 time <br>\n      <b>Note:</b><br>\n      The number of frames available may not change. If four frames are given only four can be available at the end, however the pageValue may change as well as the LoadTime. <br>\n      solveMemory Needs to return an Object with the following Attributes: <br>\n      <ul>\n          <li>Frames: an Array Containing a list of all frames (The same number of frames as given in the parameters)</li>\n          <li>References: Number of references that have taken place after all of the Page Requests have taken place</li>\n          <li>PageFaults: The number of page faults that have taken place after all of the Page Requests have taken place</li>\n      </ul>\n      <p>All of the data will be given in an array where the first Element is an array of FrameNodes and the second Element is an Array of Page Requests</p>\n  </p>\n\n  <h1>Example:</h1>\n  <p>\n      Frames Given:\n  </p>\n  <table style=\"border: solid 3px black\">\n      <tr>\n          <th>Load Time</th>\n          <th>Page Value</th>\n      </tr>\n      <tr>\n          <td>14</td>\n          <td>6</td>\n      </tr>\n      <tr>\n          <td>17</td>\n          <td>4</td>\n      </tr>\n      <tr>\n          <td>9</td>\n          <td>7</td>\n      </tr>\n  </table>\n  <h3>Example of a Page Request Array:</h3>\n  <table>\n      <tr >\n          <td style=\"border: solid 3px black; padding:3px\">7</td>\n          <td style=\"border: solid 3px black; padding:3px\">5</td>\n      </tr>\n  </table>\n  <!-- <p>Lets say a page is requested with a page Value of:7</p> -->\n  <p>Then the given frames should be searched for any frame for a page of 7</p>\n  <p>\n      <b>\n          If found the referenced counter should go up else <br>\n          the PRA should be used to change the target Frame to have the requested frame loaded\n      </b>\n  </p>\n  <p>\n      In this case we will just increment the referenced counter as a frame with the page value of 7 is already in the given frames\n  </p>\n  <p>\n      <b> Please note instead of saying \"the frame with the page value of N\", I will just be refering to the frame as \"Frame N\"</b>\n  </p>\n  <p>\n      If a page with the value of 5 is requested then Frame 7 will change from having {LoadTime:9,PageValue:7} to {LoadTime:19,PageValue:5} <br>\n      As Frame 7 was loaded first and will be the first one to be changed if a non loaded page is requested. <br>\n      The LoadTime is 19 because the last loaded frame was Frame 2 with a load time of 17. Then Page request 5 was handled in Time slot 18. <br>\n      And now time slot 19 is used for request 2 (Requesting page 5). <br>\n      At the end the Frame Table looks like this:\n  </p>\n  <table style=\"border: solid 3px black\">\n      <tr>\n          <th>Load Time</th>\n          <th>Page Value</th>\n      </tr>\n      <tr>\n          <td>14</td>\n          <td>6</td>\n      </tr>\n      <tr>\n          <td>17</td>\n          <td>4</td>\n      </tr>\n      <tr>\n          <td>19</td>\n          <td>5</td>\n      </tr>\n  </table>\n  <p>\n      And the output of solveMemory should look like: <br>\n      {<br>\n          &nbsp;&nbsp;&nbsp;&nbsp;frames: [<br>\n          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameNode { loadTime: 14, pageValue: 6 },<br>\n          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameNode { loadTime: 17, pageValue: 4 },<br>\n          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameNode { loadTime: 19, pageValue: 5 }<br>\n          &nbsp;&nbsp;&nbsp;&nbsp;],<br>\n          &nbsp;&nbsp;frameNode: 1,<br>\n          &nbsp;&nbsp;frameNode: 1<br>\n      }<br>\n  </p>",
+    "totalAttempts": 57,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

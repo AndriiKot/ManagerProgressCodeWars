@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54e5c9d892449ce3a2000920",
+  "data": {
+    "id": "54e5c9d892449ce3a2000920",
+    "name": "\"Classes\" in Javascript",
+    "slug": "classes-in-javascript",
+    "category": "reference",
+    "publishedAt": "2015-02-19T11:36:35.605Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/54e5c9d892449ce3a2000920",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-02-19T11:32:40.641Z",
+    "createdBy": {
+      "username": "MentalAtom",
+      "url": "https://www.codewars.com/users/MentalAtom"
+    },
+    "description": "Your mission, should you choose to accept it is to make a \"createClass\" function in JavaScript. By \"class\" I mean a constructor function which will return a new instance of the given class. Naturally, all instances should use the 'new' keyword.\n\nIt will behave as the following:\n```javascript\n// Base is the class to extend.\n// Proto is an object of class methods.\ncreateClass = function (Base, proto)\n```\nIf base is not supplied, it will create a new class entirely from Proto.\n\nAll classes call their \"init\" function when they are called:\n```javascript\nvar Person = NS.createClass({\n      init: function (name) {\n        this.name = name;\n      }\n    });\n\nvar george = new Person(\"George\");\ngeorge.name; // George\n```\nIf there is no init function, the code should error.\n\nThe \"toString\" method on a constructor should return the string of the init function for that class.\n\nYou should be able to extend classes with new methods. Methods will be overwritten if they are in both Base and proto:\n```javascript\nvar Person = NS.createClass({\n      init: function (name) {\n        this.name = name;\n      }\n    }),\n    BetterPerson = NS.createClass(Person, {\n       greet: function () {\n         return \"Hello, my name is \" + this.name;\n       }\n    });\n    \n// Then if we make a new BetterPerson it will work\nvar bob = new BetterPerson(\"Bob\");\nbob.greet() // \"Hello, my name is Bob\"\n```\n\nAll classes which are extended will have the parent in their \"parent\" property so they can call functions higher up the tree. For example:\n```javascript\nvar Level1 = NS.createClass({\n       init: function () {},\n       returnLevel: function () { return \"Level 1\"; }\n    }),\n    Level2 = NS.createClass(Level1, {\n      init: function () {},\n      returnLevel: function () { return \"Level 2\"; }\n    }),\n    l1 = new Level1(),\n    l2 = new Level2();\n    \nl2.parent.returnLevel(); // \"Level 1\"\n```\nThere are more examples of this in the test cases.\n\n**Test cases are the same for example as they are for the actual submission. Make them pass and you're all good!**",
+    "totalAttempts": 152,
+    "totalCompleted": 23,
+    "totalStars": 11,
+    "voteScore": 20,
+    "tags": [
+      "Fundamentals",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

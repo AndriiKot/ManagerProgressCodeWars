@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/539f08fbd9b5c2652a00076b",
+  "data": {
+    "id": "539f08fbd9b5c2652a00076b",
+    "name": "Manage event strings",
+    "slug": "manage-event-strings",
+    "category": "algorithms",
+    "publishedAt": "2014-06-17T14:53:49.932Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/539f08fbd9b5c2652a00076b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-06-16T15:10:51.511Z",
+    "createdBy": {
+      "username": "KGA",
+      "url": "https://www.codewars.com/users/KGA"
+    },
+    "description": "Imagine us writing a plugin for a well-known framework which supports events' namespaces (i.e. \"event1.namespace event2.namespace\").\n\nIn this kata we have a predefined string representing namespace and manageEventsStrings() function with 3 signatures:\n\n    1) manageEventsStrings(doActions, undoActions, toggleActions);\n    2) manageEventsStrings(doActions, undoActions);\n    3) manageEventsStrings(toggleActions).\n\nwhere \"doActions\", \"undoActions\" and \"toggleActions\" are whitespace-separated strings.\n\nAll we need to do is:\n\n    - remove duplicate values within each string;\n    - find intersection between doAction and undoAction and if any - remove matches \n    from both strings and add this match to the toggleAction string;\n    - add some predefined namespace to each event within all the strings.\n\n\"manageEventsStrings\" function must return array of 3 modified strings: [doActionsWithNamespaces, undoActionsWithNamespaces, toggleActionsWithNamespaces]\n\nThe namespace variable is preloaded as:\n```javascript\nvar namespace = \"codeWars\";\n```\nbut you can define your own namespace.\n\nConsider performance: 100 calls must run within 10ms.\n\nExamples:\n```javascript\nmanageEventsStrings(\"foo\");\n//returns [\"\", \"\", \"foo.codeWars\"]\n```\n\n```javascript\nmanageEventsStrings(\"foo\", \"bar\");\n//returns [\"foo.codeWars\", \"bar.codeWars\", \"\"]\n```\n\n```javascript\nmanageEventsStrings(\"open mouseenter\", \"close mouseleave\", \"toggle click\");\n//returns [\"open.codeWars mouseenter.codeWars\", \n//         \"close.codeWars mouseleave.codeWars\",\n//         \"toggle.codeWars click.codeWars\"]\n```\n\n```javascript\nmanageEventsStrings(\"foo baz\", \"bar baz\");\n//returns [\"foo.codeWars\", \"bar.codeWars\", \"baz.codeWars\"]\n```\n\n```javascript\nnamespace = \"myNamespace\";\nmanageEventsStrings(\"open foo baz\", \"close bar baz\", \"toggle baz\");\n//returns [\"open.myNamespace foo.myNamespace\", \n//         \"close.myNamespace bar.myNamespace\",\n//         \"toggle.myNamespace baz.myNamespace\"]\n```",
+    "totalAttempts": 132,
+    "totalCompleted": 27,
+    "totalStars": 6,
+    "voteScore": 29,
+    "tags": [
+      "Strings",
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

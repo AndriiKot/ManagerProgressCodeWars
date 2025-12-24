@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5890c676c17bb682ef0000a7",
+  "data": {
+    "id": "5890c676c17bb682ef0000a7",
+    "name": "Crypto Square",
+    "slug": "crypto-square",
+    "category": "algorithms",
+    "publishedAt": "2017-01-31T17:30:16.901Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5890c676c17bb682ef0000a7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-31T17:16:39.192Z",
+    "createdBy": {
+      "username": "Lusina",
+      "url": "https://www.codewars.com/users/Lusina"
+    },
+    "description": "# Crypto Square\n\nImplement the classic method for composing secret messages called a square code.\n\nWrite a program that, given an English text, outputs the encoded version\nof that text.\n\nFirst, the input is normalized: the spaces and punctuation are removed\nfrom the English text and the message is downcased.\n\nThen, the normalized characters are broken into rows.  These rows can be\nregarded as forming a rectangle when printed with intervening newlines.\n\nFor example, the sentence\n\n> If man was meant to stay on the ground, god would have given us roots.\n\nis normalized to:\n\n> ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots\n\nThe plaintext should be organized in to a rectangle.  The size of the\nrectangle (`r x c`) should be decided by the length of the message,\nsuch that `c >= r` and `c - r <= 1`, where `c` is the number of columns\nand `r` is the number of rows.\n\nOur normalized text is 54 characters long, dictating a rectangle with\n`c = 8` and `r = 7`:\n\n``` \nifmanwas\nmeanttos\ntayonthe\ngroundgo\ndwouldha\nvegivenu\nsroots\n```\n\nThe coded message is obtained by reading down the columns going left to\nright.\n\nThe message above is coded as:\n\n``` \nimtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau\n```\n\nOutput the encoded text in chunks.  Phrases that fill perfect squares\n`(r X r)` should be output in `r`-length chunks separated by spaces.\nImperfect squares will have `n` empty spaces.  Those spaces should be distributed evenly across the last `n` rows.\n\n```\nimtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau\n```\n\nNotice that were we to stack these, we could visually decode the\ncyphertext back in to the original message:\n\n```\nimtgdvs\nfearwer\nmayoogo\nanouuio\nntnnlvt\nwttddes\naohghn\nsseoau\n```\n\nYou are expected to create 4 functions: `normalizePlaintext`, `ciphertext`, `size` and `plaintextSegments`\n\n`normalizePlaintext` must normalize the text as shown above\n\n``` javascript\n> var crypto = new Crypto('s#$%^&plunk');\n> crypto.normalizePlaintext()\nsplunk\n```\n\n`size` should return the 'size' of the normalized text in order to determine rows and columns\n\n``` javascript\n> var crypto = new Crypto('123456789');\n> crypto.size()\n3\n```\n\n`plaintextSegments` should return plain text segments as an array\n\n``` javascript\n> var crypto = new Crypto('Never vex thine heart with idle woes');\n> crypto.plaintextSegments()\n['neverv', 'exthin', 'eheart', 'withid', 'lewoes']\n```\n\nand finally `ciphertext` should return the actual cipher of the text\n\n``` javascript\n> var crypto = new Crypto('We all know interspecies romance is weird.');\n> crypto.ciphertext()\n'wneiaweoreneawssciliprerlneoidktcms'\n```\n\n\n## Source\n\nJ Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)\n\nEnjoy!",
+    "totalAttempts": 71,
+    "totalCompleted": 16,
+    "totalStars": 4,
+    "voteScore": 18,
+    "tags": [
+      "Cryptography",
+      "Puzzles",
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/660d00cb3e49283fecb00a2e",
+  "data": {
+    "id": "660d00cb3e49283fecb00a2e",
+    "name": "Universal odometer (Transform a list into an odometer)",
+    "slug": "universal-odometer-transform-a-list-into-an-odometer",
+    "category": "reference",
+    "publishedAt": "2024-04-03T07:11:12.971Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "rust",
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/660d00cb3e49283fecb00a2e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-03T07:10:03.143Z",
+    "createdBy": {
+      "username": "codermarcos",
+      "url": "https://www.codewars.com/users/codermarcos"
+    },
+    "description": "# Task\n\nCreate a custom odometer that operates on a list of characters. The odometer will increment through the characters in the list, and when it reaches the end, it will loop back to the beginning and increase the output length, similar to how a car's odometer rolls over like an odometer in a car.\n\n![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Odometer_rollover.jpg/280px-Odometer_rollover.jpg)\n\nBut with a sightly difference that the output length increases on demand so when you add a new char to your output you need to return all chars to initial position.\n\n## How it works\n\n1. The characters list could have any char:\n\n```\nlist_a = ['a', 'b', 'c']\nlist_b = ['.', '!', '#']\nlist_c = ['0', '1', '2']\n```\n\n2. When you input a number, the odometer returns the corresponding sequence of characters based on the input number.\n\n3. The length of the output increases when the input number exceeds the total number of possible combinations with the current output length. When this happens, the output length increases by one, and all characters in the output reset to the first character in the list.\n\nFor example the outputs for the `list_a = ['a', 'b', 'c']` with these inputs would be:\n\n```\n|     list_a     |\n------------------\n| input | output |\n| 1     | 'a'    |\n| 2     | 'b'    |\n| 3     | 'c'    |\n| 4     | 'aa'   | > it is bigger than the list size so we need to add a new char\n| 5     | 'ab'   |\n| 6     | 'ac'   |\n| 7     | 'ba'   |\n| 8     | 'bb'   |\n| 9     | 'bc'   |\n| 10    | 'ca'   |\n| ...   | ...    |\n| 13    | 'aaa'  | > the next char is inserted only after all sequential combinations\n| 14    | 'aab'  |\n| 15    | 'aac'  |\n| 16    | 'aba'  |\n| ...   | ...    |\n| 39    | 'ccc'  |\n| 40    | 'aaaa' |\n| 41    | 'aaab' |\n| ...   | ...    |\n| 100   | 'caca' |\n```",
+    "totalAttempts": 89,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": -5,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

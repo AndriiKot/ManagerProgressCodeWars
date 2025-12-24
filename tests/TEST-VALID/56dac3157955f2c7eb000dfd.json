@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56dac3157955f2c7eb000dfd",
+  "data": {
+    "id": "56dac3157955f2c7eb000dfd",
+    "name": "No unknown variables!",
+    "slug": "no-unknown-variables",
+    "category": "reference",
+    "publishedAt": "2016-03-05T12:58:01.302Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/56dac3157955f2c7eb000dfd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-05T11:29:25.766Z",
+    "createdBy": {
+      "username": "zellerede",
+      "url": "https://www.codewars.com/users/zellerede"
+    },
+    "description": "<h2>Task</h2>\n\nWe are given a python code snippet as a single text.\n\nYour task is to execute this code  and return a dictionary which contains all variable (and function, class, etc.) names that were defined meanwhile, in format (`variable_name : value`). <br>\nYou can use the built in `exec` statement. However, there are two additional requirements while parsing the code:\n\n1. The code snippet may refer to any previously defined variable from the global scope.\n2. The code snippet may also refer to *undefined* variables. Such variables has to be evaluated as a string `~name~` where `name` stands for the undefined variable name. \n\n\nNote that an undefined identifier itself should not be part of the resulting dictionary (unless it gets redefined later in the code snippet).\n\nA python identifier consists of alphanumerical characters and potentially underscore (i.e. matches regexp `[a-zA-Z0-9_]+`) and must not start with a digit.\n\n<h2>Example</h2>\n\nAssume there is a predefined variable `predefined=42`, but identifer `undefined` is undefined. If the input code is the following,\n\n    def f():\n        return predefined-2\n    x = 25\n    y = f()\n    z = undefined\n\nthe return dictionary should be something like\n\n    {'f':<function f at 0x021F46B0>, 'x':25, 'y':40, 'z':'~undefined~'}",
+    "totalAttempts": 223,
+    "totalCompleted": 13,
+    "totalStars": 4,
+    "voteScore": 20,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

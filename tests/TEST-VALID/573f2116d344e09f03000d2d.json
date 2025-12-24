@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/573f2116d344e09f03000d2d",
+  "data": {
+    "id": "573f2116d344e09f03000d2d",
+    "name": "Timmy goes to college",
+    "slug": "timmy-goes-to-college",
+    "category": "algorithms",
+    "publishedAt": "2016-05-24T13:46:30.227Z",
+    "approvedAt": "2022-01-03T19:56:58.491Z",
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/573f2116d344e09f03000d2d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-20T14:37:10.743Z",
+    "createdBy": {
+      "username": "juliankolbe",
+      "url": "https://www.codewars.com/users/juliankolbe"
+    },
+    "approvedBy": {
+      "username": "Welpy",
+      "url": "https://www.codewars.com/users/Welpy"
+    },
+    "description": "## Introduction\n\nTimmy is an American student studying at a German university. He just finished his first semester abroad and is getting results for the exams he took. The professors however, lazy as they can be, didn't enter the grades into the university's grade collection software and instead just posted a pdf containing a list with all the grades online. Timmy would like to get several statistics about the exam, but counting up all the results and doing manual calculations with them is tedious and prone to errors. He has an idea, surely there are some eager programmers out there that can help him write a piece of software that can take the entire list as a string and return the relevant statistics.\n\n***\n\n## Important Information:\n\n### The German grading system:\n\n* **Matrikel number**: Student Id (Always a 5-digit number)\n* **Best passing grade**: 1.0\n* **Worst passing grade**: 4.0\n* **Grade you get if you fail**: 5.0\n* **A grade can therefore only be** between 1.0 and 4.0 or simply 5.0 (0.9, 4.1 or 6.0 don’t exist)\n* **N.E.** : Didn’t attend\n* **F.N.B.**: Failed free attempt (counts as 5.0 for grade average purposes)\n* **Average grade**: can be 4.73 for example\n\n### Input\n\n* **Timmy's matrikel number**: A 5-digit number\n* **Grade List**: String in the format: `\"53235 5.0 41232 3.3 43456 F.N.B. 52354 N.E.\"` ...\n\nSo the entry for one student would be: `\"54356 5.0\"`\n\nAccount for varying input:\n\n* **No/several whitespaces between matrikel number and grade**\n* **No/several whitespaces between grade and next matrikel number**\n\nWith this in mind, single entries could look like this ...:\n\n* `\"432535.0\"`\n* `\" 232342.6\"`\n* `\"  98763 3.5 \"`\n* `\"24532N.E\"`\n* `\"75443 F.N.B. \"`\n\n... or with more than one space in those places. So the clue here is: make sures there's always a pair of: 5 digits and a grade (1.0-4.0, 5.0, N.E., F.N.B.). Lists always start with a matrikel number and then a grade, anything else is invalid.\n\n**Invalid Input: Check below**\n\n### Expected Return\n\nA string containing the following statistics ...:\n\n* **Timmy's grade**\n* **The average grade of all the _participants_ to 2 decimal places (N.E. does not count as failed student/participant)**\n* **The number of students that failed**\n* **The best grade from all the _participants_ to 1 decimal place (check above)**\n* **The number of participants**\n\n... in the following format:\n\n`\"Grade => 5.0, Average => 4.46, Failed => 7, Best => 3.0, Participants => 13\"`\n\n### Invalid Input - Expected Errors:\n\nIf any of the entries are invalid, the entire list will be considered invalid and an error should be returned. (One could of course account for these errors, but Timmy doesn't accept a grade list with invalid input.)\n\nEach error returned should be in the following format:\n\n`\"Error => Error Message Here\"`\n\nExample: `\"Error => Invalid list\"`\n\nOnly one error should be returned, so if a list has several errors, the following order should be kept:\n\n\n**1. First check if the list is valid with all its variations. This means that the list respects the following format: 5 digits number + Grade ('F.N.B.', 'N.E.' or the format digit+point+digit). At this step only the format of the grade will be validated, not the value of it(for example: 5.4 is a valid format, but 5.44 is not). If the format of the list is not correct, return this error:**\n\n* Error Message = `\"Invalid list\"`\n\n**2. If the list is valid, make sure that Timmy is in the list. If he is not return this error:**\n\n* Error Message = `\"Timmy's matrikel number not found\"`\n\n**3. If the list is valid and Timmy is in it, check if the previous matrikel is equal to the current one you're checking (duplicate matrikel numbers only appear adjacent to each other, so only `\"32324 4.0 32324 3.0\"`), if it is return this error:**\n\n * Error Message = `\"Double matrikel number entry\"`\n\n**4. Make sure every grade is valid, a Grade not being: equal to 5.0, between 1.0 and 4.0, N.E., F.N.B. should return this error:**\n\n* Error Message = `\"Matrikel X has an invalid grade: Z\"` _(X being the matrikel that caused the error and Z being the invalid input for the grade)_\n\n**IMPORTANT:** You need to check for pairs of matrikel number and grade, after passing the first two check of invalid list and Timmy's number. For each pair check if the previous matrikel number is equal to the current one, then check if the grade is valid or not, then repeat for the next pair.\n\nExtra note 1: 'N.E.' should be treated as absence. It does not count in the average calculation of the grades, it does not count as participant. \n\nExtra note 2: 'F.N.B' should be considered `5.0` in the calculations (in the average field and in the best grade)\n\nExamples:\n\n**Timmy's matrikel: 52018**\n\n* `52018 5.0 32324 6.0 32324 3.0` should return: `\"Error => Matrikel 33423 has an invalid grade: 6.0\"`\n* `52018 2.7 32324 3.0 32324 6.0` should return: `\"Error => Double matrikel number entry\"`\n* `32324 5.0 32324 6.0 33423 2.7 4253 3.0` should return: `\"Error => Invalid list\"`\n* `32324 5.0 32324 5.0 33423 6.0 42534 3.0` should return: `\"Error => Timmy's matrikel number not found\"`\n* `52018 F.N.B.` should return: `\"Grade => 5.0, Average => 5.0, Failed => 1, Best => 5.0, Participants => 1\"`\n\n**Note:**\nIf a list has a duplicate matrikel number and an invalid grade like such `42352 5.0 42352 6.0` it should return the `Double matrikel number entry` error as it occured before the invalid grade.\n\nSo if a list has several errors, such as `\"Invalid list\"` and `\"Double matrikel number entry\"`, `\"Error => Invalid list\"` should be returned.\n\n\n***\n\n## Fun Facts\n\nIn case you were wondering, I did write similar code in PHP back in the day when I was in uni to solve this problem. I made this example as accurate as possible to the real life scenario, with some twists to keep it interesting.\n\n\n\n\n\n",
+    "totalAttempts": 322,
+    "totalCompleted": 27,
+    "totalStars": 7,
+    "voteScore": 24,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms",
+      "Fundamentals",
+      "Strings",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

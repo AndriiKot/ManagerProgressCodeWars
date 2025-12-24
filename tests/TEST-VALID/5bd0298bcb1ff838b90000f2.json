@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bd0298bcb1ff838b90000f2",
+  "data": {
+    "id": "5bd0298bcb1ff838b90000f2",
+    "name": "The 8 Elements Of Spells",
+    "slug": "the-8-elements-of-spells",
+    "category": "games",
+    "publishedAt": "2018-10-25T00:24:35.139Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5bd0298bcb1ff838b90000f2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-10-24T08:13:01.286Z",
+    "createdBy": {
+      "username": "WaveSplash",
+      "url": "https://www.codewars.com/users/WaveSplash"
+    },
+    "description": "Welcome to a make-belief world in which magic runs based upon the serveral principles listed below.\n\n1. There are four basic elements: Water (W), Earth (E), Air (A), and Fire (F).\n2. There are four complex elements: Light (Li), Shadow (Sh), Aether (Ae), and Void (Vo).\n3. Each element has a unique energy requirement.\n4. To use one unit of an element (W = 1 unit of water; W2 = 2 units of water), there must be enough energy.\n5. A spell must have more than the required energy. (Use EPSILON = 1e-14 to compare the doubles.)\n6. If a spell requires no elements (compound.length() == 0), then the function returns true.\n7. If a spell is cast with an incorrect formula (example: W3T5) it will not cast.\n<br>  \nYour objective in this Kata is to complete a function that returns whether or not a given spell can be completed when provided with its Elemental Formulae (similar to how carbon dioxide is written as CO2) and a value of energy available. You will find more information about each element below.\n\nThe Four Basic Elements\n-----------------------\n  <font color = #0066ff>Water: Written as \"W\" with energy requirement of 20</font></br>\n  <font color = #00cc00>Earth: Written as \"E\" with energy requirement of 10</font></br>\n  <font color = #ffffff>Air: Written as \"A\" with energy requirement of 15</font></br>\n  <font color = #ff6600>Fire: Written as \"F\" with energy requirement of 5</font></br>\n\nThe Four Complex Elements\n-------------------------\n  <font color = #ffff99>Light: Written as \"Li\" with energy requirement of 17.3</font></br>\n  <font color = #999999>Shadow: Written as \"Sh\" with energy requirement of 17.3</font></br>\n  <font color = #99ffff>Aether: Written as \"Ae\" with energy requirement of 30.2</font></br>\n  <font color = #ff99ff>Void: Written as \"Vo\" with energy requirement of -10.5</font></br>\n  \n  Below are all of the test cases used in samples. Note: You will be required to test 1000 random compounds to complete this kata.\n  \n```java\n        assertEquals(true, SpellCast.castSpell(\"\", 0));\n        assertEquals(true, SpellCast.castSpell(\"W\", 20.1));\n        assertEquals(false, SpellCast.castSpell(\"Vo\", -100));\n        assertEquals(false, SpellCast.castSpell(\"Li\", 17.299));\n        assertEquals(false, SpellCast.castSpell(\"F\", -4));\n        assertEquals(false, SpellCast.castSpell(\"F\", 5.0));\n        assertEquals(false, SpellCast.castSpell(\"W2\", 39.0));\n        assertEquals(true, SpellCast.castSpell(\"WVo2\", 0));\n        assertEquals(true, SpellCast.castSpell(\"AeF10Vo\", 70.1));\n        assertEquals(false, SpellCast.castSpell(\"LiShAe\", 13));\n        assertEquals(true, SpellCast.castSpell(\"Li4Vo5E10\", 123.935));\n        assertEquals(false, SpellCast.castSpell(\"FW\", 25.0));\n        assertEquals(false, SpellCast.castSpell(\"cookie\", -1));\n        assertEquals(false, SpellCast.castSpell(\"Li4Vo5T\", 999));\n```\n ",
+    "totalAttempts": 80,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 19,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

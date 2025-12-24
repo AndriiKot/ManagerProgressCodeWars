@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cc0360b701f0d002505fbc5",
+  "data": {
+    "id": "5cc0360b701f0d002505fbc5",
+    "name": "Almost prime numbers",
+    "slug": "almost-prime-numbers",
+    "category": "reference",
+    "publishedAt": "2019-04-24T10:10:59.417Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5cc0360b701f0d002505fbc5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-04-24T10:10:20.119Z",
+    "createdBy": {
+      "username": "KenKamau",
+      "url": "https://www.codewars.com/users/KenKamau"
+    },
+    "description": "An integer `(>1)` is k-almost-prime if it is the product of `k` primes, as follows:\n```\nk   |\tOEIS       | k-almost primes\n-------------------------------------\n1   |\tA000040\t| 2, 3, 5, 7, 11, 13, ...\n2   |\tA001358\t| 4, 6, 9, 10, 14, 15, 21, 22, ...\n3   |\tA014612\t| 8, 12, 18, 20, 27, 28, 30, 42, 44, 45, 50, 52, ...\n4   |\tA014613\t| 16, 24, 36, 40, 54, 56, 60, 81, 84, 88, 90, 100, ...\n5   |\tA014614\t| 32, 48, 72, 80, 108, 112, 120, 162, 168, 176, 180, ..\n\nFor example, for k = 2, the series is as follows: 2*2, 2*3, 3*3, 2*5, etc.\n```\nIn this Kata, you will be given `n` and `k`, and your task is to return the `n-th` number in the k-almost prime series.\n```\nFor example, solve(n,k) => solve(4,2) = 10, because 10 is the 4th number in the k=2 series.\n```\n`1 <= n <= 1000` and `2 <= k <= 15`. We will only test for numbers __less than 150,000__. If a result falls outside this range or there is no `n` for that position, return `-1`.\n\nMore examples in the test cases. Good luck!\n\nMore reading at [wolfram](http://mathworld.wolfram.com/AlmostPrime.html) and [wikipedia](https://en.wikipedia.org/wiki/Almost_prime).",
+    "totalAttempts": 87,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e29d57ac6b9af00333abd19",
+  "data": {
+    "id": "5e29d57ac6b9af00333abd19",
+    "name": "Forth",
+    "slug": "forth",
+    "category": "reference",
+    "publishedAt": "2020-01-23T21:30:34.530Z",
+    "approvedAt": null,
+    "languages": [
+      "crystal",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5e29d57ac6b9af00333abd19",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-23T17:18:50.219Z",
+    "createdBy": {
+      "username": "canhascodez",
+      "url": "https://www.codewars.com/users/canhascodez"
+    },
+    "description": "Forth is a simple stack-based language, with few rules and fewer data types. For this kata you will create a Forth interpreter. Don't worry, it's easier than it sounds.\n\nIn Forth there are only numbers and operators. Both are separated by spaces. Numbers are pushed onto the stack, and operators manipulate the stack. Some examples:\n```\n5 3 +\n# => 8\n\n9 5 -\n#=> 4\n\n2 5 * 6 3 -\n#=> 10 3\n```\nOperators are case-insensitive:\n```\n5 DUP\n#=> 5 5\n\n10 dup dup\n#=> 10 10 10\n```\n\n**For this kata you will create a Forth interpreter that will accept input as a string, and return an array of numbers representing the final state of the stack.**\n\nTo take some of the previous examples:\n```ruby\nForth.evaluate(\"9 5 -\") == [4]\nForth.evaluate(\"5 DUP\") == [5, 5]\nForth.evaluate(\"10 dup dup\") == [10, 10, 10]\n```\n\n**Specifications**\n\nYour interpreter must support the following operators:\n\n* +\n  - adds the last two numbers on the stack\n* -\n  - subtracts the last number on the stack from the previous one\n* *\n  - multiplies the last two numbers on the stack\n* /\n  - performs floor division using the last number as divisor and the previous number as the dividend\n* DUP\n  - repeats the last number on the stack\n* SWAP\n  - swaps the positions of the last two numbers on the stack\n* OVER\n  - repeats the second-to-last number on the stack\n* DROP\n  - removes the last number on the stack\n\nSounds easy enough? Forth has one more feature, though: you can add new operators, or redefine existing operators (numbers cannot be redefined). To add or redefine an operator, you use the following syntax:\n```\n: identifier statement ;\n```\n`:` begins a definition. `identifier` can be any sequence of non-whitespace, non-numeric characters. `statement` can be an arbitrarily-long sequence of any valid forth statements. `;` terminates the definition.\n```\n: dup-twice dup dup ; 7 dup-twice\n#=> 7 7 7\n\n: forty-two 42 ; forty-two 7 /\n#=> 6\n\n: * + ; 5 5 *\n#=> 10\n```\nIf an operator is redefined, it should only affect subsequent uses:\n```\n2 3 + : + * ; 2 3 +\n#=> 5 6\n```\n\n**Errors**\n\nAn attempt to redefine numbers should raise an exception. The type of this exception is not specified.\n\n**Lexical Scope**\n\nOperators used within definitions should preserve their meanings if those operators are redefined.\n```ruby\nForth.evaluate(\": plus + ; : + * ; 3 6 + 3 6 plus\") == [18, 9]\n```\n\n**Hint**\n\nA dual-mode interpreter is probably easier than a two-pass interpreter.",
+    "totalAttempts": 86,
+    "totalCompleted": 13,
+    "totalStars": 3,
+    "voteScore": 21,
+    "tags": [
+      "Interpreters",
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

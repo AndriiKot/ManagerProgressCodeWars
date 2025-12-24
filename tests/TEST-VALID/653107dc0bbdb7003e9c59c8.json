@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/653107dc0bbdb7003e9c59c8",
+  "data": {
+    "id": "653107dc0bbdb7003e9c59c8",
+    "name": "GroupBy Polyfill",
+    "slug": "groupby-polyfill",
+    "category": "reference",
+    "publishedAt": "2023-10-19T10:42:25.245Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/653107dc0bbdb7003e9c59c8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-19T10:41:32.831Z",
+    "createdBy": {
+      "username": "maxsinyakov",
+      "url": "https://www.codewars.com/users/maxsinyakov"
+    },
+    "description": "Your task is to implement the [Object.groupBy()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy) polyfill.\n\nThe `groupBy` function accepts two arguments: `items` and `cb`. The function calls `cb` once for each element in `items`, in ascending order, and constructs an object of arrays.\n\nEach value returned by `cb` is coerced to a property key, and the associated element is included in the array in the constructed object according to this property key.\n\nThe `cb` function is called with two arguments: the value of the element and the index of the element.\n\n\n```javascript\n// group integers by the number of digits\n\nconst items = [1, 4, 123, 44444, 88888, 12345];\nconst cb = x => x.toString().length;\nconst result = Object.groupBy(items, cb);\n\n// result === {\n//     \"1\": [1, 4],\n//     \"3\": [123],\n//     \"5\": [44444, 88888, 12345],\n// }\n```\n\nFollow-up kata: [GroupBy Advanced](/kata/652e9d603a9be5122adbfdbf/)",
+    "totalAttempts": 583,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/584207a563b25efbb2000076",
+  "data": {
+    "id": "584207a563b25efbb2000076",
+    "name": "Simple BDD testing utility",
+    "slug": "simple-bdd-testing-utility",
+    "category": "reference",
+    "publishedAt": "2016-12-03T21:53:04.525Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/584207a563b25efbb2000076",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-12-02T23:45:41.949Z",
+    "createdBy": {
+      "username": "rjbergerud",
+      "url": "https://www.codewars.com/users/rjbergerud"
+    },
+    "description": "We want to create a testing utility called 'ito' that can take a message and a callback, returning true if every use of expecto returns true in the callback.\n\nAn example of usage:\n```\nito(\"feels good after eats a pickle\", ()=> {\n  var forestWeasel = new Weasel();\n  var pickle = new Pickle();\n  forestWeasel.eat(pickle);\n  expecto(forestWeasel.feeling).toBe(\"good\"); \n})\n```\nNote we use the names expecto instead of expect, and ito instead of it, so as not to overwrite the kata testing framework's it and expect.\n\nRequirements:\n- expecto and ito should be functions in the global namespace.\n- expecto.toBe should compare using strict equality ===\n\n",
+    "totalAttempts": 34,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

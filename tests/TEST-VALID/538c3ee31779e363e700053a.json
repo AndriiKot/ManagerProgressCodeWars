@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/538c3ee31779e363e700053a",
+  "data": {
+    "id": "538c3ee31779e363e700053a",
+    "name": "new IntStorage(byteLength).write(value, length)",
+    "slug": "new-intstorage-bytelength-dot-write-value-length",
+    "category": "reference",
+    "publishedAt": "2014-06-02T10:56:30.072Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/538c3ee31779e363e700053a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-06-02T09:07:47.097Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Write an IntStorage object/class, which makes storing bit-level data easy by combining values into a number of integer values (explained below). The class should have the following features:\n\n**NOTE:** For the purposes of this explanation, \"data\" will refer to the number of bits in `value` as covered by `length`. Similarly, a \"byte\" is the part of an integer (`byteLength`) bits from the end onward, where data can be allocated.\n\n# new IntStorage(byteLength)\nThe parameter `byteLength` is an optional argument. If it is omitted, its value should be defaulted to 32. If it is invalid (not a primitive, positive integer), an error should be thrown. Each integer value used by the IntStorage instance should only have data allocated to the last (`byteLength`) bits.\n\n## _instance_.ints\nAn instance should have an \"ints\" property. This should be an array, containing 0 or more primitive integer values. This is where any data written should be stored, using the last `byteLength` bytes in each integer stored there. It should start empty, as no data has been allocated.\n\n## _instance_.length\nAn instance should have a \"length\" property. This should be an integer value, representing the number of bits allocated in total. It should start as 0, as no data has been allocated.\n\n## _instance_.write(value, length, at)\nIn this kata, this is the only method that needs to be implemented. It should accept two arguments, `value` and `length`, and one optional argument, `at`. It should write data to the ints stack (detailed below), and return the original IntStorage instance.\n\nThe `value` argument should be a primitive integer value. If it is invalid, an error should be thrown.\n\nThe `length` argument should be a primitive integer value of 0 or greater. It represents the number of bits in the `value` integer that contains the data to be inserted (counted from the right, smallest-to-largest). If there is data (ones) beyond the limit set by `length`, it is deemed invalid. If the `length` value is invalid, an error should be thrown.\n\nThe optional `at` value should be an integer value of 0 or greater (`null` or `undefined` are allowed values and should be ignored for processing). This indicates which bit in the IntStorage should be the first bit written to. If the bit referenced is any number of bits beyond the end of the currently allocated data, the value is considered invalid. If the `at` value is invalid, an error should be thrown.\n\nIf no \"at\" parameter was given, the data should be written to the last available integer, after any data already present. If an \"at\" parameter was given, the data should be written to that position in the IntStorage's int stack (counting byte positions only). Therefore, with a byteLength of 6 and an \"at\" value of 15, data should be written starting at the 3rd int, in its 3rd bit position in the byte. If there is not enough room, the data should overflow into a new byte. If the data requires more than one byte to store it, then bytes (and therefore ints) should be added and written to until all the data is written successfully. **NOTE:** There should never be an empty integer (with no data allocated) in the ints array.\n\nLet's have a look at an example:\n\n```javascript\n// b = start of allowed bits (from byteLength) in storage integer\n// w = start of writing new data in storage integer\n// f = start of unallocated (free) bits in storage integer\n// d = start of data (length onward) in value integer to be written\n// ^ = marks data written\n\nvar instance = new IntStorage(6);\n// == { ints: [], length: 0 }\n\ninstance.write(17, 5); // == instance\n// value (17) : 000000000000000000000000000 10001\n//                                         d\n\n// there is no last integer; add a byte\n\n// last integer (0): 00000000000000000000000000 000000\n//                                             b\n// write data:       00000000000000000000000000 10001 0\n//                                             w^^^^^f\n// last integer becomes 34, with 1 bit unallocated.\n\n// length is now 5.\n\ninstance.write(211, 8); // == instance\n// value (211) : 000000000000000000000000 11010011\n//                                       d\n\n// last integer (34): 00000000000000000000000000 10001 0\n//                                              b     f\n// write data:        00000000000000000000000000 10001 1\n//                                              b     w^\n// last integer becomes 35.\n\n// value (211) : 00000000000000000000000001 1010011\n//                                        d\n// data remaining; add a byte\n\n// last integer (0): 00000000000000000000000000 000000\n//                                             b\n// write data:       00000000000000000000000000 101001\n//                                             w^^^^^^\n// last integer becomes 41.\n\n// value (211) : 00000000000000000000000001101001 1\n//                                               d\n// data remaining; add a byte\n\n// last integer (0): 00000000000000000000000000 000000\n//                                             b\n// write data:       00000000000000000000000000 1 00000\n//                                             w^f    \n// last integer becomes 32, with 5 bits unallocated.\n\n// length is now 13.\n\ninstance.write(17, 5); // == instance\n// value (17) : 000000000000000000000000000 10001\n//                                         d\n\n// last integer (32): 00000000000000000000000000 1 00000\n//                                              b f    \n// write data:        00000000000000000000000000 1 10001\n//                                              b w^^^^^\n// last integer becomes 49.\n\n// length is now 18.\n\ninstance.write(5, 3, 14);\n// value (5) : 00000000000000000000000000000 101\n//                                          d\n\n// at bit position places the writing point in the 3rd int,\n// at byte position 2.\n\n// target integer (49): 00000000000000000000000000 11 0001\n//                                                b  w\n// write data:          00000000000000000000000000 11 101 1\n//                                                b  w^^^\n// target integer becomes 59.\n\n// length remains 18, as no new memory was allocated.\n\ninstance;\n// == { ints: [33, 41, 59], length: 18 }\n// int data == 100001 101001 111011\n```",
+    "totalAttempts": 239,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Bits",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

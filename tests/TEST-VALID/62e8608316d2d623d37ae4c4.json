@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62e8608316d2d623d37ae4c4",
+  "data": {
+    "id": "62e8608316d2d623d37ae4c4",
+    "name": "Data Structures - Implement a hashmap",
+    "slug": "data-structures-implement-a-hashmap",
+    "category": "reference",
+    "publishedAt": "2022-08-02T14:56:31.771Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62e8608316d2d623d37ae4c4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-01T23:23:48.035Z",
+    "createdBy": {
+      "username": "Sigmanificient",
+      "url": "https://www.codewars.com/users/Sigmanificient"
+    },
+    "description": "The goal of this kata is to implement a functionnal hashmap class, to learn about how this data strutucre works under the hood and have some fun. We will recreate basic feature of the hashmap, such as inserting and updating items as well as handling collisions.\n\nYou can read about hashmap on this Wikipedia article: <https://en.wikipedia.org/wiki/Hash_table>\n\nYou may also need some basics with the manipulation of linked lists: <https://en.wikipedia.org/wiki/Linked_list>\n\n\nHashmap use a fixed list to store key at specific indexes. \nThis index is determined using python `hash` function.\n\n*This list will be referred as the bucket*.\n\n\n**Requirements**\n\nThe `Hashmap` class will contains the following:\n- a `__init__` method with an optional `size` for the keys list size.\n- a list, defined at instanciation, containing LinkedLists. That list size can be set by the user, using an optional `size` argument when instanciating the hashmap. You will need an attribute holding a list within the Hashmap, named as you want, but there should be only one.\n- a `__getitem__` and `__setitem__` dunders to set, update and retrieve values using a key.\n- Three methods `keys`, `values` and `items` that return a Tuple of either keys, values or items (key, val) of the hash map.\n- a `get` method to retrieve a key or a return default value if the key doesn't exist. If the value is not precised, it should be `None` by default.\n\n\nFor the purpose of this kata, It will only be asked to manipulate `str` keys and `int` values.\nYou can also use the builtin `hash` function as the focus is on the hashmap and not the hashing function itself.\n\n\n**Handling collisions**\n\nWhen adding your key within the buckets, index is determined by an hash function.\nHowever, there can be collisions when 2 key are assign to the same index.\n\nIn order to handle this, the bucket will contains linked-lists. When a key is insert, it will be added to the linkedList. The order where it inserted will not be check, but you need to use a list of LinkedList for your bucket.\n\nFinally, you will raise a `KeyError` when someone tries to retrieve a non-existing key.\n\n\n**Restrictions**\n\nDo not change the LinkedList class\n\nAny usage of dictionary as Hashmap attribute or within the globals is forbidden.\n\n*For instance, using something like `Hashmap = {}` would get your solution refused*\n\n\nThe usage of imports are forbidden. Word such as `import` or `loader` are prohibited.\nYou shall not use `exec`/`eval` keywords as well as `builtins`, `getattr`, `vars`, `global`, `locals` or `__self__`.\n",
+    "totalAttempts": 68,
+    "totalCompleted": 6,
+    "totalStars": 4,
+    "voteScore": 6,
+    "tags": [
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

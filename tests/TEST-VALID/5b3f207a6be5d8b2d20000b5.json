@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b3f207a6be5d8b2d20000b5",
+  "data": {
+    "id": "5b3f207a6be5d8b2d20000b5",
+    "name": "HTML DOM: Part 2 - Attributes",
+    "slug": "html-dom-part-2-attributes",
+    "category": "reference",
+    "publishedAt": "2018-07-07T08:51:05.092Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b3f207a6be5d8b2d20000b5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-07-06T07:55:38.703Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Your task is to create a simple DOM object, based on the one found in browsers. Create an instantiatible object, `DOM`, and give it the methods below.\n\n*This is part 2 of the HTML DOM series.* [Part 1 - Tree](http://www.codewars.com/kata/5b3cd4e72f4b20e09600018b)\n\n> NOTE: No features beyond those listed below will be tested, including edge cases. There is a naive implementation provided to get you started for this kata. Though you may copy across code you've made in other parts of this series to expand its functionality if you wish.\n\n> There are summaries below, but for more information on how these features work in the browser, check out the [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element) page.\n\n> Note that while this spec is based on the way the browser's DOM works, not all methods are tested, and not all features are tested. The spec for a complete DOM is very extensive, and would take a long time to fully test and fully pass. These katas are intended to give you an idea of how different effects might be achieved, rather than build a feature-complete virtual DOM. Though if you're having fun making this, you can always carry on to add more features from the spec.\n\n# .createElement(tag)\nReturns a new HTML element node with the specified tag. Each node should have the features outlined below.\n\n## node.attributes\nA special object that lets you see the attributes attached to the node, without being able to affect it directly. (There are other methods that allow you to add or remove attributes.) The values accessed using .attributes are \"live,\" always up-to-date.\n\n> Note that all attribute names should be used as lowercase.\n\n### node.attributes.item(index)\nReturns the attribute object at the specified index--though the order of the attributes are not necessarily in any particular order (you can implement how the order works however you wish).\n\nEach attribute object has two properties:\n\n- \"name\": The name of the attribute.\n- \"value\": The value of the attribute.\n\n\n```javascript\n// <span title=\"this is the span\"></span>\nspan.attributes.item(0) == { name: \"title\", value: \"this is the span\" }\n```\n\n### node.attributes.length\nHow many attributes there are attached to the node.\n\n```javascript\n// <input type=\"radio\" name=\"set1\" />\ninput.attributes.length === 2\n```\n\n## node.setAttribute(name, value)\nSets the value of an existing attribute with the specified name, or adds a new attribute with the specified name and value.\n\n```javascript\n// <input type=\"radio\" />\ninput.setAttribute(\"type\", \"text\");\n// <input type=\"text\" />\ninput.setAttribute(\"name\", \"address1\");\n// <input type=\"text\" name=\"address1\" />\n```\n\n## node.removeAttribute(name)\nRemoves the attribute with the specified name, is there is one attached to the node.\n\n```javascript\n// <input type=\"text\" name=\"address1\" />\ninput.removeAttribute(\"type\");\n// <input name=\"address1\" />\n```\n\n## node.getAttribute(name)\nReturns the value of the attribute with the specified name. If there is no matching attribute, returns `null`.\n\n```javascript\n// <input type=\"text\" name=\"address1\" />\ninput.getAttribute(\"name\") === \"address1\"\ninput.getAttribute(\"tabindex\") === null\n```\n\n\n## node.id\nThis is a special property that is tied to the attribute \"id\". Its value defaults to an empty string.\n\nIf the value of one is changed, the value of the other will reflect that change. If there is no attribute and the property's value is set, a new \"id\" attribute will be added. If the attribute is removed, the property's value is reset to default.\n\n```javascript\n// <div></div>\ndiv.id === \"\"\ndiv.getAttribute(\"id\") === null\n\ndiv.id = \"main\";\n// <div id=\"main\"></div>\ndiv.getAttribute(\"id\") === \"main\"\n\ndiv.removeAttribute(\"id\");\n// <div></div>\ndiv.id === \"\"\ndiv.getAttribute(\"id\") === null\n```\n\n## node.className\nThis is a special property that is tied to the attribue \"class\". Its value defaults to an empty string.\n\nIf the value of one is changed, the value of the other will reflect that change. If there is no attribute and the property's value is set, a new \"class\" attribute will be added. If the attribute is removed, the property's value is reset to default.\n\n```javascript\n// <div></div>\ndiv.className === \"\"\ndiv.getAttribute(\"class\") === null\n\ndiv.className = \"author heading\";\n// <div class=\"author heading\"></div>\ndiv.getAttribute(\"class\") === \"author heading\"\n\ndiv.removeAttribute(\"class\");\n// <div></div>\ndiv.className === \"\"\ndiv.getAttribute(\"class\") === null\n```\n\n## node.classList\nThis is a special object that is tied to the .className property and \"class\" attribute. It allows the access and manipulation of individual classes (consecutive non-whitespace characters) within the property, using the properties below.\n\n### node.classList.item(index)\nReturns the class found in the curent .className or \"class\" value (a class nearer the start of the value will have a lower index).\n\n```javascript\n// <div class=\"author heading\"></div>\ndiv.classList.item(1) === \"heading\"\n```\n\n### node.classList.add(class1, class2, ...)\nAccepts any number of classes as arguments. For each class *not already in the .className and \"class\" values*, they are added to the values.\n\n```javascript\n// <div class=\"author heading\"></div>\ndiv.classList.add(\"heading\", \"new-class\", \"author\");\ndiv.className === \"author heading new-class\";\n```\n\n### node.classList.remove(class1, class2, ...)\nAccepts any number of classes as arguments. They are each removed from the .className and \"class\" values, if found.\n\n```javascript\n// <div class=\"author heading\"></div>\ndiv.classList.remove(\"author\", \"new-class\");\ndiv.className === \"heading\";\n```\n\n### node.classList.length\nThe number of individual classes found in the current .className or \"class\" value.",
+    "totalAttempts": 112,
+    "totalCompleted": 11,
+    "totalStars": 8,
+    "voteScore": 19,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

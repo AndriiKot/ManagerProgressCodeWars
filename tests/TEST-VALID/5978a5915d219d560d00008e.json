@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5978a5915d219d560d00008e",
+  "data": {
+    "id": "5978a5915d219d560d00008e",
+    "name": "Countdown",
+    "slug": "countdown-1",
+    "category": "algorithms",
+    "publishedAt": "2017-07-26T14:22:18.258Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5978a5915d219d560d00008e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-26T14:22:09.651Z",
+    "createdBy": {
+      "username": "Juĉjo",
+      "url": "https://www.codewars.com/users/Ju%C4%89jo"
+    },
+    "description": "Create a solver for the Countdown game.\n\nIn the French and American version (at least), a list of 24 numbers is available: 25, 50, 75 and 100 appear once, and numbers from 1 to 10 appear twice. At every round, a set of 6 of the numbers are picked and a target number between 100 and 999 is generated, players must then use the picked numbers (not necessarily all of them, but at most once each) to form the target with the usual arithmetic operations (+, -, * and /, division being allowed only when the remainder is zero and subtraction being allowed only when the result is positive).\n\nExample: with the numbers 1, 2, 6, 7, 25, 100 and the target 910, a possible solution is:\n\n6 * 7 = 42\n\n25 - 1 = 24\n\n42 * 24 = 1008\n\n1008 - 100 = 908\n\n908 + 2 = 910\n\nIf the target is unreachable, the goal is to be as near as possible.\n\nYour program should return a list of operations that can be done in the right order and use numbers of the list at the corresponding step, each operation being a tuple with a first number, a string for the operation and a second number, in the order of the operation.\nIn other words, for the example, the return list should be\n[[6, 'x', 7], [25, '-', 1], [42, 'x', 24], [1008, '-', 100], [908, '+', 2]] (the code for multiplication may also be a star or a dot, the code for division may use one bar or two).\n\nIn the particular case where the target is one of the numbers (TV version: 100), the return list should contain the common value.\n\nBe aware that the tests are only run with valid examples from the TV version, but you may as well write a version that works for any list of numbers and any target.",
+    "totalAttempts": 101,
+    "totalCompleted": 17,
+    "totalStars": 14,
+    "voteScore": 15,
+    "tags": [
+      "Data Structures",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

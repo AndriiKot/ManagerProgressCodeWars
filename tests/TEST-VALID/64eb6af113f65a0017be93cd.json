@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64eb6af113f65a0017be93cd",
+  "data": {
+    "id": "64eb6af113f65a0017be93cd",
+    "name": "Buyer Jack needs your help",
+    "slug": "buyer-jack-needs-your-help",
+    "category": "reference",
+    "publishedAt": "2023-08-27T18:49:07.240Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64eb6af113f65a0017be93cd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-27T15:25:37.829Z",
+    "createdBy": {
+      "username": "glovastefan",
+      "url": "https://www.codewars.com/users/glovastefan"
+    },
+    "description": "# TASK\nYour friend Jack is a buyer working for ```ABCDEFGHIJ``` company which sells 10 products which make up company name. His role is to manage inventory and make sure the company always have enough products based on the target called ```safety_stock```. He is calculating this manually once a week and asked you for help to write a script, which can save himn a lot of time. \n\nYour task is to create a function ```total_cost``` which return ```total_cost: int```. The function takes only one argument ```current_stock: dict```, the rest is preloaded for you ```safety_stock``` and ```cost```, so you can use them directly in your code.  \n\n# Process you need to follow:  \n1. Compare ```safety_stock``` dict which is preloaded for you (see below) with ```current_stock``` which is provided as an argument. There are two possible scenarios for each product. First, current_stock is same or higher than safety_stock - in this case, you can ignore the product. Second, current_stock is lower than safety_stock and you need to order quantity to get current_stock back to level of safety_stock. You need to do this check for each product in the list.\n2. Once you know which product and what quantity you need to order, you need to calculate cost, using preloaded ```cost``` dictionary. As all inputs are integers, the outcome needs to be integer as well, so you do not need to worry about rounding.\n\n# PROMISE  \n```current_stock``` dict as argument will have product code as a key and current stock quantity as value. It will **ALWAYS** have all correct products and quantity will always be non-negative integer. You **do not need** to validate this input.\n\n\n# PRELOADED\n```safety_stock``` is your target stock for each product  \n```cost``` is cost per 1 piece of each product\n```\nsafety_stock = {\n    \"A\": 100,\n    \"B\": 250,\n    \"C\": 50,\n    \"D\": 75,\n    \"E\": 1500,\n    \"F\": 980,\n    \"G\": 25,\n    \"H\": 50,\n    \"I\": 40,\n    \"J\": 1200\n}\n\ncost = {\n    \"A\": 1,\n    \"B\": 12,\n    \"C\": 7,\n    \"D\": 9,\n    \"E\": 1,\n    \"F\": 1,\n    \"G\": 2,\n    \"H\": 2,\n    \"I\": 8,\n    \"J\": 3    \n}\n```\n\n# Example\n## Input\n```\ncurrent_stock = {\n    \"A\": 10,\n    \"B\": 251,\n    \"C\": 500,\n    \"D\": 80,\n    \"E\": 0,\n    \"F\": 980,\n    \"G\": 30,\n    \"H\": 50,\n    \"I\": 50,\n    \"J\": 1200   \n}\n```\n## Output\n```1590```\n## Explanation\nTwo products in ```current_stock``` are under ```safety_stock```: ```\"A\"``` and ```\"B\"```. ```\"A\" is 90 short``` and cost is 1 per each, so total_cost for product \"A\" is ```90```. ```\"B\" is 1500 short``` and cost is again 1 per each, so total_cost for product \"B\" is ```1500```. Finally, adding up both costs, final ```total_cost``` is ```1590```.",
+    "totalAttempts": 22,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 6,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

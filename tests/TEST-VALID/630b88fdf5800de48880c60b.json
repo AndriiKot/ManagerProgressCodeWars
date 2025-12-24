@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/630b88fdf5800de48880c60b",
+  "data": {
+    "id": "630b88fdf5800de48880c60b",
+    "name": "Timed Function Morsing",
+    "slug": "timed-function-morsing",
+    "category": "algorithms",
+    "publishedAt": "2022-08-28T15:26:13.165Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/630b88fdf5800de48880c60b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-28T15:25:49.978Z",
+    "createdBy": {
+      "username": "LuggiStruggi",
+      "url": "https://www.codewars.com/users/LuggiStruggi"
+    },
+    "description": "# Overview\n\nIn this kata you will implement a whacky way to transmit messages via [Morse-code](https://en.wikipedia.org/wiki/Morse_code) over the duration of the execution of a function.\n\n# Task\n\nImplement the class `Morser` with the functions `beep` and `append_to_buffer`.\n\n1. Buffer Management:  \n   - The `add_to_buffer(msg)` method appends the given string `msg` to the Morser’s internal buffer.  \n   - The `beep()` method, when called repeatedly, will send the Morse code for each character in the buffer until it is fully transmitted.\n\n2. Morse Timing Rules:  \n   - Each Morse character is made up of dots (`.`) and dashes (`-`).\n   - A dot lasts 1 \"dit\" unit (about 1 ms).\n   - A dash lasts 4 \"dit\" units (about 4 ms).\n   - After a full character is sent, there is an 8-dit (8 ms) pause before the next character.\n   - Spaces between words are transmitted as a 12-dit (12 ms) pause.\n\n3. Empty Buffer Behavior:  \n   - Once the entire buffer has been transmitted, any further calls to `beep()` should finish as quickly as possible, signaling to the `Decoder` that the transmission has ended.\n\n4. Character Encoding:  \n   - All letters should be treated as uppercase.\n   - A predefined dictionary `MORSE` maps each character (A-Z, 0-9) to its Morse code sequence.\n\n# Example\n```\nm = Morser()\nm.add_to_buffer(\"HELLO\")\n```\n\nThe Morse code for `H` is `....` (four dots). Calling `m.beep()` four times will each take 1 ms (for each dot). After sending these four dots, the next `m.beep()` call will take 8 ms to indicate that `H` is complete.\n\nThen for `E` (which is `.`), one `m.beep()` call takes 1 ms for the dot, followed by another `m.beep()` of 8 ms to mark the end of the character.\n\nThis pattern continues for `L` (`.-..`) and `O` (`---`), each time sending dots and dashes with their respective timings, and then an 8 ms pause after the character.\n\nWhen all characters have been sent, subsequent calls to `m.beep()` complete as quickly as possible to signal that the entire message has been transmitted.\n\nUsing the preloded `Decoder`, a message of a `Morser` with a filled buffer, can be decoded:\n\n```\nd = Decoder()\nresult = d.decode(m.beep)\n```\n\nHere `result` should be `\"HELLO\"`.\n",
+    "totalAttempts": 144,
+    "totalCompleted": 24,
+    "totalStars": 13,
+    "voteScore": 23,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

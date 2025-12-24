@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e53e301083ab4000fedbfce",
+  "data": {
+    "id": "5e53e301083ab4000fedbfce",
+    "name": "Configuration settings - just use a map",
+    "slug": "configuration-settings-just-use-a-map",
+    "category": "bug_fixes",
+    "publishedAt": "2020-02-24T15:32:58.980Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5e53e301083ab4000fedbfce",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-24T14:51:45.763Z",
+    "createdBy": {
+      "username": "g73",
+      "url": "https://www.codewars.com/users/g73"
+    },
+    "description": "# Save configuration settings\n\nA configuration class exists which saves entries in a map using the some magic configurationwords as keys.\n\n```\nconfig['TargetURLString'] = \"foo.bar.com\";\nconfig['TimeoutInMs'] = 1000;\n```\n\nThe class Configuration will be initialized with values from another map.\n```\nstd::map<std::string,std::string> InitValuesMap;\n[...]\nConfiguration config(InitValuesMap);\n```\n\nFix the method ```std::map<std::string, int> getConfigValues( const std::list<string> keys )``` so it will return a map with all entries specified by the content of list keys.\n\nBe sure to only add valid entries.",
+    "totalAttempts": 19,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

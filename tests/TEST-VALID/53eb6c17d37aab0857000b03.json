@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53eb6c17d37aab0857000b03",
+  "data": {
+    "id": "53eb6c17d37aab0857000b03",
+    "name": "Dynamic Advertorial  Headlines",
+    "slug": "dynamic-advertorial-headlines",
+    "category": "reference",
+    "publishedAt": "2014-08-13T13:58:17.847Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/53eb6c17d37aab0857000b03",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-08-13T13:45:59.954Z",
+    "createdBy": {
+      "username": "Mackay",
+      "url": "https://www.codewars.com/users/Mackay"
+    },
+    "description": "An online advertising platform allows users to use dynamic headlines in their advert, which adapt to what the user is searching for.\n\nFor example if somebody makes a search online for \"Cheap Computers Online\" the headline for the advert would also read \"Cheap Computers Online\".\n\nThe problem is that the headlines only allow a maximum of 25 characters, so if the search term from the user exceeds this length then the headline appears truncated.\n\nTo avoid this they want to implement a method that replaces the headline with a default headline of 25 or less characters specified by the advertiser if the users query exceeds 25 characters.\n\nThey also want to allow the user to choose what capitalisation they want including: lowercase, Sentence case, Title Case or UPPERCASE.\n\nThe format for the title will be given as:\n``` javascript\n{keyword:default headline} # All Lowercase\n{Keyword:Default headline} # Sentence case\n{KeyWord:Default Headline} # Title case\n{KEYWORD:DEFAULT HEADLINE} # Uppercase\n```\n\nComplete the method so that it returns the default headline for queries that are too long, or returns any 25 or less character headlines with their preferred method of capitalisation. If the rule is invalid the value returned should be nil.\n\nExample:\n``` ruby\nget_headline(\"buy a cheap computer online\", \"{KeyWord:Cheap Computers Online}\") # returns \"Cheap Computers Online\"\nget_headline(\"buy a cheap computer online with free delivery\", \"{Keyword:Cheap computers online}\") # returns \"Cheap computers online\"\nget_headline(\"buy a cheap computer in new york\", \"{KeyWord:Cheap Computers New York}\") # returns \"Cheap Computers New York\"\nget_headline(\"cheap computers\", \"{KEYWORD:CHEAP COMPUTERS!}\") # returns \"CHEAP COMPUTERS\"\nget_headline(\"testing an invalid rule\", \"{KeYwOrD:beAns}\") # returns nil\nget_headline(\"testing an invalid rule\", \"{bacon:eggs}\") # returns nil\n```\n",
+    "totalAttempts": 718,
+    "totalCompleted": 36,
+    "totalStars": 3,
+    "voteScore": 10,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

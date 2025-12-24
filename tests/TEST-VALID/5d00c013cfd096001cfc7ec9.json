@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d00c013cfd096001cfc7ec9",
+  "data": {
+    "id": "5d00c013cfd096001cfc7ec9",
+    "name": "Car Wars",
+    "slug": "car-wars",
+    "category": "reference",
+    "publishedAt": "2019-06-12T09:06:09.143Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/5d00c013cfd096001cfc7ec9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-12T09:04:20.235Z",
+    "createdBy": {
+      "username": "GMarco24",
+      "url": "https://www.codewars.com/users/GMarco24"
+    },
+    "description": "Car Wars is very old game for ZX Spectrum. You have to make something like that.\n\nPlayer drives a car on a straight road with 3 lanes. You'll get a set of commands in array like ['S', 'S', 'L', 'S', 'RR', 'S', 'R']. There are 3 basic commands player can use: L, R and S. L is for left and R for right. There is also command S which does nothing - car stay where they are. L and R move car one step left and right. For each command in array car moves one step forward. <b>Whenever you move a car left or right car first moves that way, then go step forward.</b> Player can also move two steps left or right. Those commands are LL and RR. Same as for L and R, for LL and RR player's car first moves two steps left or right, then one step forward. \n\nSecond input you get is road. It's array with two types of obstacles: O and C. O is fixed obstacle which doesn't move. C is a car. Other cars moves twice slower than your car in same direction. That means they would move one step on every second step player's car make. They don't have to avoid obstacles, they go over obstacle and continue with no damage on car or obstacle. Double colon (:) means just road is free and safe to drive. Road input looks like this:\n<pre>\n[\n    [':', ':', 'O'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n    ['C', 'O', ':'],\n    [':', 'O', 'O'],\n    [':', ':', 'O'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n    ['O', ':', 'C'],\n    ['O', 'O', ':'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n    [':', ':', ':'],\n]\n</pre>\n\nPlayer's car always starts in a middle lane in the bottom and moves upwards. One step per move. That means player starts in the last road subarray and for each command car moves into previous subarray. If player's car \"hit\" obstacle or another car, game is over - you should return total points. Game is also over if you hit left or right boundary. Third way to finish the game is to reach finish line. It should be clear what's finish line - it comes after first road subarray (for player's car that would be the last, because he starts from the end and moves towards beginning). For each \"step\" forward player gets 5 points. Each subarray we count as a step. For each obstacle passed player gets additional 3 points. For each car passed player gets additional 7 points. For both, obstacles and cars, it counts as passed <b>if it's at least one step behind.</b> If you move step forward and hit the obstacle, previous step with all obstacles counts as passed.\n\nLet's make a couple of things a bit more clear:\n<ul>\n<li>The player gets points for <strong>every</strong> obstacle in the passed subarray</li>\n<li>This happens right <strong>after leaving the subarray</strong> with some obstacles</li>\n<li>Passing a car means <strong>moving 1 step away</strong> from it; if both the player and the other car move to the same subarray at the same time, there will be no bonus</li>\n</ul>\n\nReturn is integer with player's total points :)",
+    "totalAttempts": 145,
+    "totalCompleted": 5,
+    "totalStars": 6,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

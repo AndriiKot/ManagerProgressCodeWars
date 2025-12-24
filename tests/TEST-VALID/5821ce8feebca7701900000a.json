@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5821ce8feebca7701900000a",
+  "data": {
+    "id": "5821ce8feebca7701900000a",
+    "name": "Junior Flag Football Player Rankings ",
+    "slug": "junior-flag-football-player-rankings",
+    "category": "reference",
+    "publishedAt": "2016-11-08T13:37:55.005Z",
+    "approvedAt": null,
+    "languages": [
+      "php",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5821ce8feebca7701900000a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-08T13:09:35.809Z",
+    "createdBy": {
+      "username": "cbcbcb",
+      "url": "https://www.codewars.com/users/cbcbcb"
+    },
+    "description": "You are the coach of a group of youth football players. You've been tasked with ranking their performance at the beginning of the season. \n\nYou've been given individual rankings of their `speed`, `agility`, and `quickness` skills on a scale from `1` to `10` by your assistant coach. \n\nUsing the data provided by your assistant coach, calculate the overall rank of each individual player as the mean (average) of their skills.\n\n**For PHP:** Return an `array` of players in the order they rank, from highest rank (largest `float`) to lowest rank (smallest `float`).\n\n**For JavaScript:** Return an `object` of players in the order they rank, from highest rank (largest `Number` with a precision of 2) to lowest rank (smallest `Number` with a precision of 2).\n\n**Examples:**\n\nBelow are examples in both PHP and JavaScript:\n\n```php\n// PHP\n\n$players = [\n  'Jack Johnson' => ['speed'=>5,'agility'=>4,'quickness'=>3],\n  'Jane Doe' => ['speed'=>5,'agility'=>8,'quickness'=>6],\n  'John Doe' => ['speed'=>6,'agility'=>5,'quickness'=>7]\n];\n\n// successful response:\n// ['Jane Doe' => 6.33, 'John Doe' => 6, 'Jack Johnson' => 4]\n$response = rankPlayers($players);\n\n$players = [\n  'Jack Johnson' => ['speed'=>5,'agility'=>4,'quickness'=>3],\n  'Jane Doe' => ['speed'=>5,'agility'=>8,'quickness'=>6],\n  'John Doe' => ['speed'=>6,'agility'=>5,'quickness'=>7]\n];\n\n// successful response:\n// ['Jane Doe' => 6.33, 'John Doe' => 6, 'Jack Johnson' => 4]\n$response = rankPlayers($players);\n```\n\n```javascript\n// JavaScript\nconst players = {\n  'Jack Johnson': { 'speed': 5,'agility': 4,'quickness': 3 },\n  'Jane Doe': { 'speed': 5,'agility': 8,'quickness': 6 },\n  'John Doe': { 'speed': 6,'agility': 5,'quickness': 7 }\n};\n\n// successful response:\n// { 'Jane Doe': 6.33, 'John Doe': 6, 'Jack Johnson': 4 }\nconst response = rankPlayers(players);\n\nconst players = {\n  'Jack Johnson': { 'speed': 5,'agility': 4,'quickness': 3 },\n  'Jane Doe': { 'speed': 5,'agility': 8,'quickness': 6 },\n  'John Doe': { 'speed': 6,'agility': 5,'quickness': 7 } \n};\n\n// successful response:\n// { 'Jane Doe': 6.33, 'John Doe': 6, 'Jack Johnson': 4 }\nconst response = rankPlayers(players);\n```\n\nAssumptions: \n\n* Your training set will contain `0` or more players\n* In the event you receive `0` players, return an empty array in PHP or an empty object in JS\n* Each individual ranking (`speed`, `agility`, and `quickness`) will always be an integer from `1` to `10`\n* Each individual ranking (`speed`, `agility`, and `quickness`) is equally weighted\n* In the event two players have the same rank, return them in the order they were received\n* Your calculated player rankings should be returned as `float` with a precision of two decimal places (use `round()` for PHP or `toFixed()` for JS)\n* No two players will have the same name\n\nFurther Details:\n\n* Please refer to the test cases for expected output.",
+    "totalAttempts": 578,
+    "totalCompleted": 115,
+    "totalStars": 2,
+    "voteScore": 59,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

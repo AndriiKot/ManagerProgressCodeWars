@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58d6f2270859584ab1000114",
+  "data": {
+    "id": "58d6f2270859584ab1000114",
+    "name": "Major Chords",
+    "slug": "major-chords",
+    "category": "games",
+    "publishedAt": "2017-03-26T02:07:40.562Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58d6f2270859584ab1000114",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-25T22:41:43.075Z",
+    "createdBy": {
+      "username": "Rafa Mel",
+      "url": "https://www.codewars.com/users/Rafa%20Mel"
+    },
+    "description": "# Scale\n\nMajor chords are one of the building blocks of our contemporary music, so let's build some! They are comprised of a root note, a major third, and a perfect fifth from that root note. Let's unpack that.\n\nWe have 7 notes to build from (A, B, C, D, E, F, G). The distance between each of these notes is of 2 semitones, except for two intervals. The intervals that go from B to C and from E to F are of only 1 semitone.\n\nEach of those notes can be made \"sharp\" (written as #), which will make them 1 semitone higher in pitch; or \"flat\" (written as b), which will lower them 1 semitone. And so, the interval from C to D would be of 2 semitones, but of only 1 semitone from C# to D, and of three semitones from Cb to D:\n\n```\nC to D = 2 semitones\nC# to D = 1 semitone\nCb to D = 3 semitones\nC# to D# = 2 semitones\nC# to Db = Equivalent\n```\n\nKeep in mind the intervals from B to C and from E to F are originally of only 1 semitone, therefore:\n\n```\nE to F = 1 semitone\nE# to F = Equivalent\nE to Fb = Equivalent\n```\n\n# Major Chords\n\nAs an example, to build the major chord for E (E major) we would need to find its major third and its perfect fifth.\n\n- For a major third, we would **count two notes forward** in the scale (A, B, C, D, E, F, G) from the root (in this case, E), arriving at G. A major third needs to have **4 semitones**, but the interval from E to G only has 3. We'd therefore need to make our G sharp (G#) to get an extra semitone, for a total of 4.\n- For a perfect fifth, we would **count four notes forward**. As our reference scale ends at G, we would continue with A again after that (the distance from G to A also being of 2 semitones), arriving at B. A perfect fifth has **7 semitones**, which is exactly how many we get from E to B.\n\nThe chord of E major would therefore be comprised of E, G#, and B.\n\n# Task\n\nYou will be given a root note as a string, either by itself (natural), sharp, or flat (examples: \"G\", \"Gb\", \"G#\"). Your task is to write a function that programatically returns a list containing the three notes that would make the major chord for that root.\n\n```javascript\nmajorChord('Db') = ['Db', 'F', 'Ab' ]\n```\n\n# Rules\n\n- Any input string other than the notes (A, B, C, D, E, F, G) by themselves, or with a sharp (#) or flat (b) symbol should be considered invalid and return an empty list.\n- Due to their special nature, and for simplicity, E#, Fb, B#, and Cb should always be treated as their natural equivalents. E# will be taken as F, Fb as E, B# as C, and Cb as B.\n\n```javascript\nmajorChord('Fb') = [ 'E', 'G#', 'B' ]\nmajorChord('C#') = [ 'C#', 'F', 'G#' ]\n```\n\n- If we need to add more than 1 semitone up or down to our third or fifth to reach the 4 or 7 semitones needed, we'll jump one whole note forward or backwards. For example, when obstaining the third of D# we'd arrive at F. However, there are only 2 semitones between D# and F. Instead of adding two sharps to F, we'd jump to G, for a total of 4 semitones.\n\n```javascript\nmajorChord('D#') = [ 'D#', 'G', 'A#' ]\n```",
+    "totalAttempts": 176,
+    "totalCompleted": 24,
+    "totalStars": 1,
+    "voteScore": 30,
+    "tags": [
+      "Regular Expressions",
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

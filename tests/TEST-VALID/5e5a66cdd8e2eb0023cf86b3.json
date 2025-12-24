@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e5a66cdd8e2eb0023cf86b3",
+  "data": {
+    "id": "5e5a66cdd8e2eb0023cf86b3",
+    "name": "Polish prefix notation calculator",
+    "slug": "polish-prefix-notation-calculator",
+    "category": "reference",
+    "publishedAt": "2020-02-29T13:54:53.062Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e5a66cdd8e2eb0023cf86b3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-29T13:27:42.087Z",
+    "createdBy": {
+      "username": "interphx",
+      "url": "https://www.codewars.com/users/interphx"
+    },
+    "description": "Your task is to write a function `calculate`, which accepts a string with a mathematical exprssion written in [Polish prefix notation](https://en.wikipedia.org/wiki/Polish_notation). This means that all operations are placed before their operands. For example, the expression `3 + 5` is written in Polish notation as `+ 3 5`, and `(3 + 5) / (2 * 2)` is `/ + 3 5 * 2 2`.\n\nThe function must return a number resulting from evaluating this expression. Note that operators are applied as they are written, without precedence rules: for example, `* + 2 3 4` computes `+ 2 3 (== 5)` first and `* 5 4` second, while `+ * 2 3 4` calculates `* 2 3 (== 6)` and then does `+ 6 4`.\n\nThe only valid operations are `+`, `-`, `*` and `/`. Because all of them accept exactly 2 arguments, no parentheses are used for grouping. The input string is guaranteed to be a valid expression.\n\n### Examples:\n\n    calculate('+ 3 5') === 8\n    calculate('* + 2 2 3') === 12\n    calculate('/ + 3 5 * 2 2') === 2\n\n### Input:\n\nA non-empty string consisting of numbers and arithmetic operators separated by spaces. This string is a valid arithmetic expression written in prefix polish notation.\n\n### Output\n\nA number, result of evaluation of the expression.",
+    "totalAttempts": 49,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals",
+      "Parsing",
+      "Algorithms",
+      "Logic",
+      "Strings",
+      "Mathematics",
+      "Numbers",
+      "Lists",
+      "Data Structures",
+      "Data Types"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

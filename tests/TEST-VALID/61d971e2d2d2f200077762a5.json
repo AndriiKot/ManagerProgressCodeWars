@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61d971e2d2d2f200077762a5",
+  "data": {
+    "id": "61d971e2d2d2f200077762a5",
+    "name": "F-score",
+    "slug": "f-score",
+    "category": "reference",
+    "publishedAt": "2022-01-08T13:12:11.877Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61d971e2d2d2f200077762a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-08T11:13:38.417Z",
+    "createdBy": {
+      "username": "Djacon",
+      "url": "https://www.codewars.com/users/Djacon"
+    },
+    "description": "## Overview\n\nImagine that you work as a Data Scientist and you are tasked with creating an algorithm that will classify a huge amount of data. But how do we test the accuracy of that algorithm?\n\nThere are many ways to do this. In our case, we will use such a popular thing as [F-score](https://en.wikipedia.org/wiki/F-score).\n\nThe input will be a ready report of the algorithm. Based on this information you will need to write an F-score function that will evaluate the performance of the algorithm.\n\nTo calculate the F-score use the formula:\n\n* ```math\n\\displaystyle F = 2\\cdot \\frac{\\mathrm{precision} \\cdot \\mathrm{recall}}{\\mathrm{precision} + \\mathrm{recall}}\n```\n\nTo calculate precision and recall use the formulas:\n* ```math\n\\displaystyle \\mathrm{Precision} = \\frac{TP}{TP+FP}\n```\n* ```math\n\\displaystyle \\mathrm{Recall} = \\frac{TP}{TP+FN}\n```\n\n**Note:**\nIf one of the `TP+FP` or `TP+FN` is zero, then the F-score should be zero. But if both values are zero, the function should return 0.5 (because the accuracy will be 50%).\nAlso, if *Precision* and *Recall* are zero, F-score should return zero\n\n### Input:\n\nThere are 4 values at the input:\n* `TP` (True Positive) - values that were correctly classified as positive\n* `FP` (False Positive) - values that were correctly classified as negative\n* `TN` (True Negative) - values that were wrongly classified as positive\n* `FN` (False Negative) - values that were wrongly classified as negative\n\nHappy coding :)",
+    "totalAttempts": 409,
+    "totalCompleted": 66,
+    "totalStars": 3,
+    "voteScore": 77,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

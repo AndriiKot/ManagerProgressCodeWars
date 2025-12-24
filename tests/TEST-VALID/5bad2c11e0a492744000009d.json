@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bad2c11e0a492744000009d",
+  "data": {
+    "id": "5bad2c11e0a492744000009d",
+    "name": "ADFGX UN-Simplified",
+    "slug": "adfgx-un-simplified",
+    "category": "algorithms",
+    "publishedAt": "2018-10-01T19:57:45.764Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5bad2c11e0a492744000009d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-27T19:14:25.783Z",
+    "createdBy": {
+      "username": "Caders",
+      "url": "https://www.codewars.com/users/Caders"
+    },
+    "description": "`THIS KATA IS PART TWO OF:` <a href=\"https://www.codewars.com/kata/57f171f618e9fa58ef000083\">ADFGX Simplified</a>, ` SO YOU SHOULD COMPLETE IT FIRST!!!`\n\nThe <a href='https://en.wikipedia.org/wiki/ADFGVX_cipher' target='_blank'>ADFGX Cipher</a> is a pretty well-known Cryptographic tool, and is essentially a modified <a href=\"https://en.wikipedia.org/wiki/Polybius_square\" target=\"_blank\">Polybius Square</a>.\n\nRather than having numbers as coordinates on the table, it has the letters:\n\n `A, D, F, G, X`\n\nAlso, because this is the `SECOND` step, and to help `UN-`simplify things, you `WILL` have to worry about a key, `AND` the corresponding columnar transposition. In this kata ;)\n\nYou will have to encrypt and decrypt a string into `ADFGX` format, and then rearrange it according to a given `key`.\n\n`adfgx_encrypt()` and `adfgx_decrypt()` will be passed a string, `plaintext` and `ciphertext` respectively, an adfgx `square`, and a `key`, all of which will guide your operations. \n\nNow for some examples to clear confusion:\n\n```python\nadfgx_encrypt(\"helloworld\", \"bchigklnmoqprstuvwxyzadef\", \"key\")\n\n    A D F G X\n   \nA   b c h i g\nD   k l n m o     \nF   q p r s t  -> square (PLEASE NOTE, j SHOULD BE TREATED AS i)  \nG   u v w x y  \nX   z a d e f\n\n\"helloworld\"   -> plaintext\n\nEVALUATES TO:\n\n      F  \n          -> \"AF\"\nA     h\n--------------\n          G \n               -> \"XG\"  \nX         e \n\nAND SO FORTH...\n\nUntil you have: \"AFXGDDDDDXGFDXFFDDXF\"\n\nAt this point, you use the key to transpose the ADFGX text into the final ciphertext.\n\nK E Y      -> key\n\nA F X\nG D D\nD D D \nX G F      First you divide the letters among the columns of the key.\nD X F\nF D D\nX F\n\nThen you rearrange the columns according to the alphabetical order of the key.\n\nE K Y (key -> eky in ascending order [a-z])\n\nF A X\nD G D\nD D D\nG X F\nX D F\nD F D\nF X\n\nWhich results in the output ciphertext being:\n\nadfgx_encrypt(\"helloworld\", \"bchigklnmoqprstuvwxyzadef\", \"key\") \n==\n\"FDDGXDF AGDXDFX XDDFFD\"\n```\n\nNow you must reverse the process through decryption:\n\n```python\nadfgx_decrypt(\"GADFXFGDG FGGGAGFAX XDXXXGAG\", \"aczlmuqngoipvstkrwfxhdbey\", \"key\") \n\n\"GADFXFGDG FGGGAGFAX XDXXXGAG\"   -> ciphertext\n\nArrange ciphertext in alphabetical columns of the key:\n\nE K Y\n\nG F X\nA G D\nD G X\nF G X\nX A X\nF G G\nG F A\nD A G\nG X\n\nRearrange to the original order of the key:\n\nK E Y\n\nF G X\nG A D\nG D X\nG F X\nA X X\nG F G\nF G A\nA D G\nX G\n\nReduce the columns:\n\n\"FGXGADGDXGFXAXXGFGFGAADGXG\"\n FGXGADGDXGFXAXXGFGFGAADG\n\nSolve coordinates using square:\n\n    A D F G X\n\nA   a c z l m\nD   u q n g o     \nF   i p v s t  -> square (PLEASE NOTE, j SHOULD BE TREATED AS i)  \nG   k r w f x  \nX   h d b e y\n\n\"FG\" == \"s\"\n\"XG\" == \"e\"\n\nAND SO ON:\n\nadfgx_decrypt(\"GADFXFGDG FGGGAGFAX XDXXXGAG\", \"aczlmuqngoipvstkrwfxhdbey\", \"key\") \n==\n\"secretmessage\"\n```\nPLEASE NOTE: ALL INPUT WILL BE VALID, NO NEED TO ERROR CHECK :D\n\nTO AVOID SORTING INCONSISTENCIES, THERE WILL BE NO REPEATED LETTERS IN `key`\n\nWhat are you waiting for?!\nGo create `adfgx_encrypt() and adfgx_decrypt()`!\n\nGood Luck!",
+    "totalAttempts": 139,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 13,
+    "tags": [
+      "Cryptography",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

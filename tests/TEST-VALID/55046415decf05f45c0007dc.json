@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55046415decf05f45c0007dc",
+  "data": {
+    "id": "55046415decf05f45c0007dc",
+    "name": "List Students by Class",
+    "slug": "list-students-by-class",
+    "category": "algorithms",
+    "publishedAt": "2015-03-14T17:49:36.356Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55046415decf05f45c0007dc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-14T16:38:45.893Z",
+    "createdBy": {
+      "username": "codethings77",
+      "url": "https://www.codewars.com/users/codethings77"
+    },
+    "description": "Say you have a web app for a school.  You are tasked with building a class roster list.  For each class, you need to display a list of students.\n\nYou have access to two API's.  One for class info and one for students.  Each class in your collection has an array of student IDs corresponding to each item in the students array. \n\nAssume you have already acquired the JSON from the APIs.  Write a method called displayClassRosters() that consumes both arrays, and outputs a flat list of students.  \n\nThe JSON format is as follows:\n```javascript\nvar students = [\n  { id:1, name:\"Student Name\" },\n  ...\n];\n \nvar classes = [\n  { id:1, name:\"Class Name\", students:[studentID, studentID, ...] },\n  ...\n]; \n```\n\nYour method should output a list of classes in this format: \n```\nClass Name 1: Student Name 1, Student Name 2/n\nClass Name 2: ...\n```\n\nMake sure your account for:\n```\n- /n line breaks after all classes\n- commas after all students but the last one\n- Classes with no students should say \"No Students\" in place of students\n```\n\n__Note:__ You could obviously use only for(Each) loops to do this, but that's boring.  Find another way to build the list of students.   \n\n",
+    "totalAttempts": 164,
+    "totalCompleted": 45,
+    "totalStars": 0,
+    "voteScore": 28,
+    "tags": [
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

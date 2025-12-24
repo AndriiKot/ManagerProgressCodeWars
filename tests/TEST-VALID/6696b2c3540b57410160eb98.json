@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6696b2c3540b57410160eb98",
+  "data": {
+    "id": "6696b2c3540b57410160eb98",
+    "name": "Perfect Faro Shuffle",
+    "slug": "perfect-faro-shuffle",
+    "category": "reference",
+    "publishedAt": "2024-07-16T18:58:16.105Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6696b2c3540b57410160eb98",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-16T17:49:55.705Z",
+    "createdBy": {
+      "username": "johnbutlergames",
+      "url": "https://www.codewars.com/users/johnbutlergames"
+    },
+    "description": "# Perfect Faro Shuffle\n\nA Faro Shuffle is a type of card shuffle in which the deck of cards is split perfectly in half, and each half is then perfectly shuffled with the other half.\n\n`Deck                        Shuffled`  \n`_____                          _____`  \n`_____                       _____   `  \n`_____     Left    Right        _____`  \n`_____ --> _____   _____ --> _____   `  \n`_____     _____   _____        _____`  \n`_____     _____   _____     _____   `  \n\n## Your Task:\n\nYou will be given an array of strings representing cards, and your task is to perform a Faro Shuffle and return the shuffled cards. If the number of cards is odd, the left half gets the extra card.\n\n## Example:\n\nGiven the array of cards `[\"QH\",\"JS\",\"JC\",\"2D\",\"5H\",\"5C\",\"7D\",\"8S\",\"9S\"]`\n\nSplit the deck into two halves:  \nLeft half: `[\"QH\",\"JS\",\"JC\",\"2D\",\"5H\"]`  \nRight half: `[\"5C\",\"7D\",\"8S\",\"9S\"]`  \n\nStart adding cards from alternating halves, starting with the left half:  \n`[\"5H\"]`  \n`[\"9S\",\"5H\"]`  \n`[\"2D\",\"9S\",\"5H\"]`  \n`[\"8S\",\"2D\",\"9S\",\"5H\"]`  \n...  \n`[\"QH\",\"5C\",\"JS\",\"7D\",\"JC\",\"8S\",\"2D\",\"9S\",\"5H\"]`  \n\nAnd finally return the shuffled deck.\n\n## Notes:\n\n- If there is an odd number of cards, the left half gets the extra card.\n- Start adding cards from the left half first.",
+    "totalAttempts": 40,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 6,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

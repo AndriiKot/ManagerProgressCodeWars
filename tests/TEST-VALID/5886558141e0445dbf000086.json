@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5886558141e0445dbf000086",
+  "data": {
+    "id": "5886558141e0445dbf000086",
+    "name": "String Calculator With Different Input Types",
+    "slug": "string-calculator-with-different-input-types",
+    "category": "reference",
+    "publishedAt": "2017-01-23T19:16:18.358Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5886558141e0445dbf000086",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-23T19:12:02.698Z",
+    "createdBy": {
+      "username": "alesur",
+      "url": "https://www.codewars.com/users/alesur"
+    },
+    "description": "<h1>String Calculator With Different Input Types</h1>\n\nWrite a calculator that calculates a sum of integers passed in a form of string.\nIt should return a sum represented as a string.\n\n```java\nExample input: \n\"1, 2, 3\"\nExample output: \n\"6\"\n```\n\nAlso, there are two different invalid input types:\n\n```java\n1. StringCalculatorFunctional.sum(\"\") -> \"Calculation failed\"\n2. StringCalculatorFunctional.sum(\"bad input\") -> \"Calculation failed\"\n\n```\n\nIf a string contains integers, but also an element which isn't an integer, sum should be calculated\nfrom remaining numbers.\n\n```java\nE.g.:\nInput: \"1, 2, bad input, 3\"\nOutput: \"6\"\n```\n\n<h2>Hints:</h2>\n\n\n1. Develop a helper method with the following signature:\n    ```java \n    private static Optional<Integer> parseIntHelper(String number);\n    ```\n2. Convert split string into a stream\n3. Use map-reduce paradigm: \n    * http://www.techspot.co.in/2011/07/mapreduce-for-dummies.html\n4. APIs for use:\n    * https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html   \n    * https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html\n    * https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html\n",
+    "totalAttempts": 319,
+    "totalCompleted": 66,
+    "totalStars": 4,
+    "voteScore": 33,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

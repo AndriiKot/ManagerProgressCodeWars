@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66adf0cad3c3c14026fafe16",
+  "data": {
+    "id": "66adf0cad3c3c14026fafe16",
+    "name": "Inspector Fu & Sergeant Bar: Ambiguous Dates",
+    "slug": "inspector-fu-and-sergeant-bar-ambiguous-dates",
+    "category": "algorithms",
+    "publishedAt": "2024-08-07T14:06:29.349Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66adf0cad3c3c14026fafe16",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-08-03T08:56:42.546Z",
+    "createdBy": {
+      "username": "tayloia",
+      "url": "https://www.codewars.com/users/tayloia"
+    },
+    "description": "# The Case of the Ambiguous Postmarks\n\nInspector Fu slammed the pile of dog-eared letters and envelopes back on the desk. \"This is hopeless, Bar; we'll never solve this cold case. All these historical ransom demands were found in envelopes with only partial postmark dates. We'll never find a pattern, nor the kidnappers, at this rate!\"\n\n\"Are you saying, Sir,\" asked Sergeant Bar, looking up from his almanack, \"that it would help if we had some mechanism to list the possible dates for a potentially ambiguous postmark?\"\n\n\"Precisely, Sergeant Bar! Precisely!\"\n\n## The Problem\n\nGiven a postmark containing *at least* two components, generate a sequence of valid dates in chronological order. There are four categories of component:\n\n1. Weekdays will be one of `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` or `Sunday`.\n2. Days of the month will be integers between `1` and `31` inclusive.\n3. Months will be integers between `1` and `12` inclusive or one of `January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November` or `December`.\n4. Years will be integers between `1600` and `9999` inclusive.\n\nThe postmark will be made up of *at most* one component from each category.\n\nIf a year is not specified, the sequence should start at year `1600` for all valid years.\n\nSome sequences may be infinite, but the tests will never ask for dates beyond the year `9999`.\n\nRemember, a number from `1` to `12` could be interpretted as a month *and* a day of the month. So `\"1 2 2000\"` could be the first day of February 2000 and the second day of January 2000. Similarly, `\"12 2024\"` could be the twelfth day of any month of 2024 and any day of December 2024.\n\n## The Task\n\nWrite a generator function of the form\n\n```javascript\nfunction* yieldDates(postmark) { ... }\n```\n\nwhich yields strings for all valid dates for `postmark` in the form `yyyy-mm-dd` in strict chronological order. The `postmark` string will be two, three or four space-separated components, in any order.",
+    "totalAttempts": 144,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 8,
+    "tags": [
+      "Language Features",
+      "Date Time",
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6322aee742a86f003d3c80d8",
+  "data": {
+    "id": "6322aee742a86f003d3c80d8",
+    "name": "Check if graph is bipartite",
+    "slug": "check-if-graph-is-bipartite",
+    "category": "algorithms",
+    "publishedAt": "2022-09-15T05:20:45.268Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6322aee742a86f003d3c80d8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-15T04:49:43.855Z",
+    "createdBy": {
+      "username": "TV4Fun",
+      "url": "https://www.codewars.com/users/TV4Fun"
+    },
+    "description": "A [Bipartite Graph](https://en.wikipedia.org/wiki/Bipartite_graph) is a graph whose vertices can be divided into two disjoint sets *U* and *V* such that every edge connects a vertex in *U* to one in *V*.\n\n![Example Bipartite Graph](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Simple_bipartite_graph%3B_two_layers.svg/2880px-Simple_bipartite_graph%3B_two_layers.svg.png)\nThis graph is bipartite because the numbered vertices and the lettered vertices can each be put into their own set such that there are no edges internal to either set.\n\n![Example not Bipartite Graph](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Complete_graph_K3.svg/1920px-Complete_graph_K3.svg.png)\nThis graph is not bipartite, because no matter which way you split up the 3 vertices into two groups, there will always be at least one edge within a group.\n\nYou are given an undirected graph passed as a list of edges like so:\n```python\n[\n  (1, 2),\n  (2, 3),\n  (3, 1)\n]\n```\nEach edge is a 2-tuple of integers with each element being the ID of a node at one end of the edge. Given this graph, write a method that returns `True` if the graph is bipartite and `False` if it is not.\n\nNotes:\n* The partitioning of a bipartite graph into two distinct sets is not necessarily unique.\n* You may assume that the vertices of the graph are exactly the numbers that appear in at least one edge.\n* The same edge may or may not appear more than once.\n* The edges `(1, 2)` and `(2, 1)` are the same edge. The list of edges might have one or both.\n* It is possible for an edge to connect a node to itself.\n* The graph is not necessarily a single connected component.",
+    "totalAttempts": 30,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Graph Theory",
+      "Graphs"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61a1b6973411ca000fad026e",
+  "data": {
+    "id": "61a1b6973411ca000fad026e",
+    "name": "Affine Cipher",
+    "slug": "affine-cipher",
+    "category": "reference",
+    "publishedAt": "2021-11-27T05:08:53.458Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61a1b6973411ca000fad026e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-27T04:39:51.837Z",
+    "createdBy": {
+      "username": "sid114",
+      "url": "https://www.codewars.com/users/sid114"
+    },
+    "description": "The affine cipher is a type of monoalphabetic substitution cipher, where each letter in an alphabet is mapped to its numeric equivalent.\n\n## Encryption\n\nEach letter is enciphered with the function `(ax + b) mod n` where, \n\n* `x` is the index of the letter\n* `n` is the length of the alphabet used\n* `a` and `b` are part of the key, where `a` is always coprime to `n` and `b` is any arbitrary value.\n\nExample;\n\nLet the alphabet used be the basic English alphabet. Since `n=26`, the possible values of `a` are 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, and 25. If the input values are `a=5` and `b=8`, the encryption function becomes `(5x + 8) mod 26`. Suppose the plaintext is 'AFFINECIPHER'.\n\n| plaintext      | A | F | F | I | N | E | C | I | P | H | E | R |\n| ----------- | ----------- | | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- \n| x      | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |\n| (5x + 8) mod 26   | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |\n| ciphertext   | I | H | H | W | V | C | S | W | F | R | C | P |\n\n\nHence, the cipher text is 'IHHWVCSWFRCP'.\n\n## Decryption\n\nEach letter is deciphered with the function `a^-1*(x-b) mod n**`, where,\n\n* `x` is the index of the letter\n* `n` is the length of the alphabet used\n* `a` and `b` are part of the key, where `a` is always coprime to `n` and `b` is any arbitrary value.\n* `a^-1` is the  [modular multiplicative inverse](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) of  `a` in respect of `n` (a number which satisifes the equation `1 = (a*a^-1) mod n` and is **not** numerically equal to `a` raised to `-1`). \n\nExample;\n\nLet the alphabet used be the basic English alphabet. Since `n=26`, the possible values of `a` are 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, and 25. If the input values are `a=5` and `b=8`, the decryption function becomes `5^-1*(x-8) mod 26`. Suppose the ciphertext is 'IHHWVCSWFRCP'.\n\n| ciphertext      | I | H | H | W | V | C | S | W | F | R | C | P |\n| ----------- | ----------- | | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- \n| x      | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |\n| `$5^{-1}$`\\*(x-8) mod 26   | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |\n| plaintext   | A | F | F | I | N | E | C | I | P | H | E | R |\n\nHence, the plaintext is 'AFFINECIPHER'\n\n## Input:\n1. `a, b` (These are random keys which are to be used in the encryption/decryption formulae.\n\n2. `plaintext`/`ciphertext` (in the case of encoding and decoding respectively).\n\n3. The `alphabet` to be used.\n\n## Output:\n\nThe encoded/decoded text as the case may be.\n\n## Note:\n\nThe alphabet to be used will consist of uppercase English alphabets and digits **without** any repeats. Do not modify the order of the input alphabet (e.g., if the input alphabet is CYOKBDF, assume that the 'Y' comes before 'O' in the alphabet).\n\nThe input plaintext will only consist of random choices **only** from the input alphabet.\n\nYou can assume that 'a' will always be a coprime of the length of the alphabet.\n\n\n\n",
+    "totalAttempts": 49,
+    "totalCompleted": 22,
+    "totalStars": 1,
+    "voteScore": 9,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5828266f86f3b05f4b00018c",
+  "data": {
+    "id": "5828266f86f3b05f4b00018c",
+    "name": "How far away is it ?",
+    "slug": "how-far-away-is-it",
+    "category": "algorithms",
+    "publishedAt": "2016-11-13T08:41:26.645Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5828266f86f3b05f4b00018c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-13T08:38:08.151Z",
+    "createdBy": {
+      "username": "ebreton",
+      "url": "https://www.codewars.com/users/ebreton"
+    },
+    "description": "The idea is to calculate the distance between two cities (or more\npragmatically, between any two given points on the earth). For this matter,\nthe earth will be considered as a perfect sphere (R=6371km), the result is\nexpected in kilometers, with a precision rounded to the meter.\n\nWite a class City which will accept a couple of coordinates, and provide a\nmethod haversine_distance to compute the distance to another City.\n\n```python\nclass City(object):\n    def __init__(self, latitude, longitude):\n        pass\n\n    def haversine_distance(self, city):\n        pass\n```\n\nCould it be of any help, the class Coordinates is provided as an helper, which will accept human\nwritten coordinates and return degrees (or radians) for your benefit. If you wish you had coded it, do not hesitate to pass by this other kata: [Multi Poly Coordinate](https://www.codewars.com/kata/multi-poly-coordinates)\n\n```python\n$ paris_lat = Coordinates('N', 48, 51, 52.9776)\n$ paris_lat.degrees\n48.864716\n$ paris_lat.radians\n0.85285018\n```\n\nThe City constructor can accept either tuples or Coordinates instances, i.e.:\n\n```City((('N', 48, 51, 52.9776), ('W', 2, 20, 56.4504)))``` and\n```City(Coordinates('N', 48, 51, 52.9776), \n        Coordinates('W', 2, 20, 56.4504))```\nare equivalent.\n\nAs a final word, an example:\n\n```python\n$ paris = City(('N', 48, 51, 52.9776), ('W', 2, 20, 56.4504))\n$ new_york = City(('N', 40, 42, 51), ('E', 74, 0, 21))\n$ new_york.haversine_distance(paris)\n5836.588\n```",
+    "totalAttempts": 153,
+    "totalCompleted": 22,
+    "totalStars": 5,
+    "voteScore": 33,
+    "tags": [
+      "Puzzles",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

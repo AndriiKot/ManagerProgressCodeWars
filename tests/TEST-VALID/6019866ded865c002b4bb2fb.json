@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6019866ded865c002b4bb2fb",
+  "data": {
+    "id": "6019866ded865c002b4bb2fb",
+    "name": "Is it possible to white-it-out?",
+    "slug": "is-it-possible-to-white-it-out",
+    "category": "reference",
+    "publishedAt": "2021-02-02T17:32:37.098Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6019866ded865c002b4bb2fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-02T17:05:49.663Z",
+    "createdBy": {
+      "username": "user6880868",
+      "url": "https://www.codewars.com/users/user6880868"
+    },
+    "description": "Given the length of a correction tape <code>l</code>, consider whether a word can be whited out, considering that the correction tape has a height of 5mm and letters are 10mm high(vertical) and 5mm long(horizontal)<i>(letters i,l,t,f are only 1mm long)</i>and we can only tape horizontally. All letters will be passed lower-cased, and all words are 10mm high, even though e,h are different size\nSo, can you white-out the word? Return true or false and the remaining length, or the one that wou would need in order to finish exactly inside an array\n\n<h1>Example 1:</h1>\n\n<code>whiteOut(\"hello\", 70)</code>\n<p>\nSince for h,e,o we need 15mm * 2=30, 2 because 10/5=2. For l,l we need 2mm * 2?4,\nSo 70-30-4=36.\nAnd you return an array with true and how much has not been used of the 70 mm (Which is 36)</p>\nAnswer: [true, 36]\n\n<h1>Example 2:</h1>\n\n<code>whiteOut(\"something\", 70)</code>\n<p>\nNow, we have the word something instead of hello. So, for s,o,m,e,h,n,g we need 35mm * 2 = 70, 2 because 10/5=2. For t,i we need 2mm * 2=4,\nSo 70-70-4=-4.\nSo, we can see that it is impossible to white it out with only 70 mm of tape, so we return an array where we write false (Because we can't white it) and 4, which would be how much more tape you would need in order to white it out completely</p>\nAnswer: [false, 4]\n\n\n\nFor any doubts ask",
+    "totalAttempts": 200,
+    "totalCompleted": 58,
+    "totalStars": 2,
+    "voteScore": 89,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

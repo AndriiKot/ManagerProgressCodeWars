@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5db443c9e609590017b5b3b7",
+  "data": {
+    "id": "5db443c9e609590017b5b3b7",
+    "name": "Reformat data and build dynamic objects",
+    "slug": "reformat-data-and-build-dynamic-objects",
+    "category": "algorithms",
+    "publishedAt": "2019-10-26T13:02:49.955Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5db443c9e609590017b5b3b7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-26T13:02:02.141Z",
+    "createdBy": {
+      "username": "Thor_Ironhack",
+      "url": "https://www.codewars.com/users/Thor_Ironhack"
+    },
+    "description": "Write a function that reformats the ` unstructuredArr ` to a more readible format. \nThe returned value should be a nested object where the timestamps are the keys. Look at the example for clarification.\n\nIf the 'master' or 'slave' value is not present, set the value to ` null `\n\nThis is the data that will passed. The structure will always be the same, but the length of the array might change.\n\n` unstructuredArr ` passed as argument through `dataMassager`:\n\n``` \nconst unstructuredArr = [\n  {\n    'Events.timeStamp': 2019,\n    'Actor.roles': '{/slave/}',\n    'Actor.age': 22\n  },\n{\n    'Events.timeStamp': 2019,\n    'Actor.roles': '{/master/}',\n    'Actor.age': 34\n  },\n  {\n    'Events.timeStamp': 2020,\n    'Actor.roles': '{/master/}',\n    'Actor.age': 39\n  }\n ]\n```\n\nexpected return value:\n```\nconst myStructuredObj = {\n  2019: {\n    slave: 22,\n    master: 34\n  },\n  2020: {\n    slave: null,\n    master: 39\n  }\n}\n```\n\nFeel free to give feedback and I'll handle them asap. Contribution are more than welcome!\nGood luck!",
+    "totalAttempts": 40,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Objects",
+      "Data Types",
+      "Dynamic Programming",
+      "Programming Paradigms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

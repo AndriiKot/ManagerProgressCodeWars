@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/563287ba5ff63e03f80000bc",
+  "data": {
+    "id": "563287ba5ff63e03f80000bc",
+    "name": "Integer to string deciphering",
+    "slug": "integer-to-string-deciphering",
+    "category": "algorithms",
+    "publishedAt": "2015-10-29T23:30:58.636Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/563287ba5ff63e03f80000bc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-29T20:55:23.356Z",
+    "createdBy": {
+      "username": "girianshiido",
+      "url": "https://www.codewars.com/users/girianshiido"
+    },
+    "description": "You have to write a function decipher().\n\nInput: an integer (no limit in size)\n\nOutput: an 8-bit string\n\n-----------------------------------------\nA message (an 8-bit string with any length) has been encoded using a key (a non-empty 8-bit string whose length is less than 256).\n\nThese two strings can be seen as two lists of bytes.\n\nA list L of bytes is created by putting the length of the key at the beginning, then the key itself, then encoded data.\n\nFinally, the list L itself is considered as an integer I formed by concatenating all the bytes of L, the first byte of L being the least significant byte of I and the last byte of L being the most significant byte of I.\n\nHere is how the message is encoded:\n\nEach character C of the message (seen as a byte) is \"bitwise XORed\" with the corresponding character C' of the key (the first character of the message with the first character of the key, etc., modulo the length of the key) and then its bits are rotated to the left by C' bits. \n\nHere is an example: \n\nC = \"A\" = 65d = 01000001b\n\nC' = \"!\" = 33d = 00100001b\n\nThen C XOR C' = 01100000b and since 33 = 8 x 4 + 1, we have to rotate to the left by just one bit, so it gives 11000000b = 192d\n\nNow let's say we want to encode the message \"A\" with \"!\" as the key.\nThen the length of the key is 1, and so the integer obtained is\n1 + 256 x 33 + 65536 x 192 = 12591361.\n\nSo decipher(12591361) should give the string \"A\"\n\nHere is another example, where the message is 'kata' and the key is '123'.\nThe length of the key is 3.\n\n'a' -> 97  -> 01100001\n'k' -> 107 -> 01101011\n't' -> 116 -> 01110100\n'1' -> 49  -> 00110001\n'2' -> 50  -> 00110010\n'3' -> 51  -> 00110011\n\nWe have 'k' -> 01101011 and '1' -> 00110001 in binary, so 'k' xor '1' is \n01011010 and since 00110001 in decimal is equal to 1 mod 8, we rotate 01011010 by 1 byte to the left and get 10110100, which is 180.\n\nDoing the same with other characters, we get :\n'a' xor '2' rotl '2' = 77\n't' xor '3' rotl '3' = 58\n'a' xor '1' rotl '1' = 160\n\nHence we get the integer:\n3  {the length of the key} + 2^8 * 49 + 2^16 * 50 + 2^24 * 51 {the key itself} + 2^32 * 180 + 2^40 * 77 + 2^48 * 58 + 2^56 * 160 {the encoded message} = 11545626031066067203\n\nSo decipher(11545626031066067203) should give the string \"kata\"",
+    "totalAttempts": 134,
+    "totalCompleted": 9,
+    "totalStars": 3,
+    "voteScore": 15,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Ciphers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b3f264819b10e6bfa0000a2",
+  "data": {
+    "id": "5b3f264819b10e6bfa0000a2",
+    "name": "The shortest path between two cities",
+    "slug": "the-shortest-path-between-two-cities",
+    "category": "algorithms",
+    "publishedAt": "2018-07-06T10:21:27.766Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b3f264819b10e6bfa0000a2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-07-06T08:20:25.042Z",
+    "createdBy": {
+      "username": "titelhalter",
+      "url": "https://www.codewars.com/users/titelhalter"
+    },
+    "description": "<p>I hope you love graphs! because today we\\`re going to train it a little bit. I also hope you love ES6 features especially classes because we\\`ll train it too. First of all, you will be provided a preloaded 2D array <span style=\"color: magenta\">pathes</span> which contains pairs of cities and the distance between them (please note that distance will always be positive). Your final task is to find the shortest way between two cities. For this purpose we will create a special class called Graph:</p>\n\n<ol>\n<li>It should contain at least one property - \"storage\" which should be an object which contains vertexes as keys and edges of this vertex as values of this vertex. For example, if storage: {\"A\": {\"B: 500\", \"C\": 300}} it means that point \"A\" is connected with two point: \"B\" (distance between them 500) and point \"C\" (distance is 300). Of course, in this example storage also should contain keys \"C\" and \"B\" because since graph is undirected, you can travel both ways \"A\" -> \"B\" and \"B\" -> \"A\", etc. So, the whole property should be {\"A\": {\"B: 500\", \"C\": 300}, \"B\": {\"A\": 500}, \"C\": {\"A\": 300}}.\n<li>Should contain method add() which takes array of vertexes and add them to our graph. For example, if you add [\"A\", \"B\", \"C\"], storage should be {\"A\": {}, \"B\": {}, \"C\": {}}. Of course, if vertexes have not been added before.\n<li>Should contain method addConnection() which takes array of two vetexes and weight of edge between them and create connection. Very the same to the previous one, if we create connection [\"A\", \"B\", 500], we should add to the storage vertexes \"A\" and \"B\", than for each we create connection to the second one, so storage become {\"A\": {\"B\": 500}, \"B\": {\"A\": 500}}. Of course, if these vertexes has been already connected to any other, these connections should be saved.\n<li>Method findShortestWay() which takes as arguments vertex from which we are looking the way and the vertex of the final destination and return the shortest weighted way between them.\n</ul>\n\n<p>For example for the array [[\"A\", \"B\", 500], [\"B\", \"C\", 300], [\"B\", \"D\", 200], [\"A\", \"C\", 900]] the shortest way between \"A\" and \"D\" will be \"A\" -> \"B\" -> \"C\" -> \"D\", 500 + 300 + 200 = 1000, since \"A\" -> \"C\" -> \"D\" will be 900 + 200 = 1100, so it\\`s longer way.\n\n\nP.S If you are stuck with this problem, google for Dijkstra :)",
+    "totalAttempts": 158,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

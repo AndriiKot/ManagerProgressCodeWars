@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64b92dcd64f31a00311c6494",
+  "data": {
+    "id": "64b92dcd64f31a00311c6494",
+    "name": "Ctrl + C, Ctrl + V",
+    "slug": "ctrl-plus-c-ctrl-plus-v",
+    "category": "algorithms",
+    "publishedAt": "2023-09-06T12:44:33.894Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64b92dcd64f31a00311c6494",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-20T12:51:25.073Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "### Task \nYou are given a sentence containing occurrences of \"Ctrl + C\" and \"Ctrl + V\" keyboard shortcuts. Your goal is to process these shortcuts to generate the final sentence, following specific rules:\n\n- \"Ctrl + C\" will copy all text that precedes it.\n- \"Ctrl + V\" will paste the copied text.\n- A subsequent \"Ctrl + C\" will overwrite the existing copied text.\n\n### Examples\n```\n\"the egg and Ctrl + C Ctrl + V the spoon\" ➞ \"the egg and the egg and the spoon\"\n\n# The input sentence starts with \"the egg and\" which is copied by the first \n\"Ctrl + C,\" and then pasted twice using \"Ctrl + V,\" resulting in \"the egg \nand the egg and\" The last part, \"the spoon,\" remains unchanged.\n\n\"WARNING Ctrl + V Ctrl + C Ctrl + V\" ➞ \"WARNING WARNING\"\n\n\"The Ctrl + C Ctrl + V Town Ctrl + C Ctrl + V\" ➞ \"The The Town The The Town\"\n```\n\n### Output\n\nA string representing the modified sentence after processing the keyboard shortcuts.\n\n### Rules\n\n- Keyboard shortcut commands will appear like normal words in a sentence but should not be copied themselves.\n- Pasting should add a space between words.",
+    "totalAttempts": 64,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 21,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

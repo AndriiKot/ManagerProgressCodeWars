@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d4f4521b7c3ea000db68e27",
+  "data": {
+    "id": "5d4f4521b7c3ea000db68e27",
+    "name": "Ask the Audience",
+    "slug": "ask-the-audience",
+    "category": "algorithms",
+    "publishedAt": "2019-08-10T23:38:31.306Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d4f4521b7c3ea000db68e27",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-10T22:28:49.887Z",
+    "createdBy": {
+      "username": "Etoneja",
+      "url": "https://www.codewars.com/users/Etoneja"
+    },
+    "description": "# Ask the audience\nLet's imagine that you are a programmer in a team that develops software for a new television show. At one of the meeting, the general producer told you that it is planned to add a new option — hint \"Ask the Audience\", like in the TV-game \"Who Wants to Be a Millionaire?\", but the project budget is not enough to invite a real audience to the show each time.\n\nSo your task is to simulate a virtual voting model!\n# Task\nWrite a function that will return an array containing number of votes for each answer option.  \n# Input\n`votes` - number of voters  \n`options` - number of answer options\n# Ouput\n`[]` - generated sequence of n (`options`) random numbers, the sum of which will be equal to a certain value (`votes`).\n# Examples:\n```python\n# sum and len are variable!\nask_the_audience(100, 4) -> [4, 57, 21, 18] # sum = 100, len = 4\nask_the_audience(50, 2) -> [6, 44] # sum = 50, len = 2\n\n# zero votes for one or more answer options is possible\nask_the_audience(3, 3) -> [0, 2, 1] # sum = 3, len = 3\n\n# numbers in resulting list must be random generated!\nask_the_audience(25, 2) -> [8, 17] # sum = 25, len = 2\nask_the_audience(25, 2) -> [11, 14] # sum = 25, len = 2\n\n# edge cases\nask_the_audience(10, 0) -> []\nask_the_audience(10, 1) -> [10]\nask_the_audience(0, 3) -> [0, 0, 0]\nask_the_audience(1, 2) -> [1, 0]\n```  \n# Notes and some edge cases\n* `votes` and `options` can be any integers greater than or equal to `0`\n* The length of the returned list must be equal to `options` (if there are no votes for any option, then it should be `0`)\n* The sum of the returned list must be equal to `votes` (each voter must vote once)\n* If `options` is `0`, then the expected result is `[]` (no voting)\n* If `options` is `1`, then the expected result is `[votes]` (all votes for one option)\n* If `votes` is `0`, then the expected result is `[0, 0, ...]` (all options without votes)\n* If `votes` is `1`, then the expected result is `[0, 1, ...]` (one vote for any one of the options)\n* Voting results must be random! Do not specifically prioritize any option. Indexes of min/max in resulting array should not always be the same\n* On a large amount of test iterations, the number of votes for each option should tend to `votes / options`. Allowed `+/-20%` from that value on 1000+ iterations.",
+    "totalAttempts": 414,
+    "totalCompleted": 32,
+    "totalStars": 1,
+    "voteScore": 25,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Puzzles",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

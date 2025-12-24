@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6046d30cca38d300166f550e",
+  "data": {
+    "id": "6046d30cca38d300166f550e",
+    "name": "3D Sudoku Builder (a.k.a. multisize skyscraper puzzle)",
+    "slug": "3d-sudoku-builder-aka-multisize-skyscraper-puzzle",
+    "category": "reference",
+    "publishedAt": "2021-03-10T19:35:53.502Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6046d30cca38d300166f550e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-09T01:44:45.005Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "In this kata you have to resolve a sudoku puzzle given the views of each of its four sides.\n\nAs usual, a sudoku puzzle is a square matrix of NxN (N from 0 to 7) where its values are from 1..N and in each row and column there is no repetition of any number. Suppose further that each number represents the height of a block and that the number of blocks seen from each side (top, down, left, and right) is given. Logically, the taller blocks hide the smaller ones. See image and example.\n\nYour job is to find a Sudoku puzzle that fits the view. This is provided with an array in which the order of the rows are:\n\n* row 0: up\n* row 1: down\n* row 2: left\n* row 3: right\n\n\n<img src=\"https://i.ibb.co/HTbX7Rz/sudoku2.png\" style=\"background-color: #ddd\"/>\n\n<span style=\"color:yellow; background-color:black\">❒ Yellow is a 4 hight block</span>\n<br/>\n<span style=\"color:red; background-color:black\">❒ Red is a 3 hight block</span>\n<br/>\n<span style=\"color:green; background-color:black\">❒ Green is a 2 hight block</span>\n<br/>\n<span style=\"color:blue; background-color:#555\">❒ Blue is a 1 hight block</span>\n\n<img src=\"https://i.ibb.co/XtkPdNq/sudoku.png\" style=\"background-color: #ddd\"/>\n\nYou have to implement the function `sudoku_builder`. This function receives a sodoku view and returns a compatible sudoku with this view. If there is no a sudoku compatible with the view, the funtion must raise an exception.\n\n```python\n\n\n# And the view will be\n\nsudoku_view = [\n  [1, 2, 3, 2], # from up\n  [3, 2, 1, 2], # from down\n  [1, 2, 2, 2], # from left\n  [4, 1, 3, 2]  # from right\n]\n\nsudoku_builder(sudoku_view)\n        \nsudoku_compatible = [\n  [4, 3, 2, 1],\n  [3, 2, 1, 4],\n  [1, 4, 3, 2],\n  [2, 1, 4, 3]\n]\n",
+    "totalAttempts": 212,
+    "totalCompleted": 6,
+    "totalStars": 5,
+    "voteScore": 0,
+    "tags": [
+      "Fundamentals",
+      "Game Solvers",
+      "Algorithms",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

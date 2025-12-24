@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4937cfdd38d0003366099c",
+  "data": {
+    "id": "5e4937cfdd38d0003366099c",
+    "name": "3D Maze Solver",
+    "slug": "3d-maze-solver",
+    "category": "algorithms",
+    "publishedAt": "2020-02-24T18:41:47.994Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5e4937cfdd38d0003366099c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-16T12:38:39.620Z",
+    "createdBy": {
+      "username": "0.5LiterBier",
+      "url": "https://www.codewars.com/users/0.5LiterBier"
+    },
+    "description": "# 3D Maze Solver\n## Task\nFind a valid way to the finish.\n\n## Input\nThe input is a 3 dimensional char array `char[z][y][x]`.  \nEach coordiate can vary in total length!  \n`'.'`: Path  \n`'#'`: Wall  \n`'S'`: Start  \n`'F'`: Finish  \n\nStart point will always be S(0|0|0). (Top left corner of the maze)   \nFinish point is a random cell in the maze.\n\n## Output\nA char array containing the moves that lead to the finish.\n\n### Valid Moves\n`'F'`: Forwards (Move in the direction you're currently looking at (y-coordinate - 1 in starting orientation))  \n`'B'`: Backwards (Turn around and move forwards (y-coordinate + 1 in starting orientation))  \n`'R'`: Right (Turn right and move one forwards (x-coordinate + 1 in starting orientation))  \n`'L'`: Left (Turn left and move one forwards (x-coordination - 1 in starting orientation))  \n`'U'`: Up (Look up and move one forwards (z-coordinate - 1 in starting direction))  \n`'D'`: Down (Look down and move one forwards (z-coordinate + 1 in starting orientation))    \n\nYour starting orientation is defined by the fact, that you can't go 'L', 'U' or 'F' at the beginning, because you would be outside of the maze afterwards. Cell (1|0|0) is beneath you, cell (0|1|0) is behind you, and cell (0|0|1) is on your right hand side.\n\nAfter one move the orientation changes. For example, when your first move is `'R'`, afterwards `'F'` and `'B'` change the x-coordinate of the maze. `'R'` and `'L'` now change the y-coordinate.  \n--> The maze basically rotated according to your line of sight.\n\nReturn an empty char array, if the maze is unsolvable.\n\n## Example 2D\n![Imgur](https://i.imgur.com/W8b09DK.png)  \nThe solution would be: \n`{ 'B', 'L', 'F', 'R', 'L', 'F', 'R', 'F', 'R', 'F', 'F', 'F' }`\n\n## Example 3D\nThink of the maze as a cube that is turned around when you move in it according to your current line of sight.  \n`{ 'U', 'U', 'U', 'U' }` will do a looping for example. \n```\nLevel 1 (z-coordinate: 0)\nS..#..#\n.#..#...#\n...#..\n\nLevel 2 (z-coordinate: 1)\n...#..\n#.....#\n..#....#\n...F..#...\n\nFinish position: F(1|3|3)\n(Valid Solution: D,R,D,F,F,U,F)\n```\nHave fun :)",
+    "totalAttempts": 11,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

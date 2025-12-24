@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60ab5f7fccc4440014dcdc2f",
+  "data": {
+    "id": "60ab5f7fccc4440014dcdc2f",
+    "name": "Value at Risk for an equity portfolio",
+    "slug": "value-at-risk-for-an-equity-portfolio",
+    "category": "reference",
+    "publishedAt": "2021-05-24T15:23:52.502Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60ab5f7fccc4440014dcdc2f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-24T08:10:39.234Z",
+    "createdBy": {
+      "username": "Marty3000",
+      "url": "https://www.codewars.com/users/Marty3000"
+    },
+    "description": "One of the most common risk measurements in financial industries is the \"Value at Risk\" ( VAR ).\n\nValue at Risk is a single number, stating the maximal loss you might see, when holding your unchanged position for a given timeframe and for a certain confidence level (= probability that the preditcion is correct).\nIn this Kata we will restrict us to a timeframe of 1 (Business-) day, and to measuring VAR for equity positions, only.\n\nSince we are using the more common \"historical Simulation\" - approach ( instead of simple variance - covariance ), we do need to import some historical data ( rates of equities and currencies ), first.\n\nAlways remember: the assumption we use for our prediction is\n```\nthe future will behave similar to the past\n```\nTherefore, knowing the past will allow us to predict the worst case ( for a certain confidence-level )\n\nLet's work on a first example, step by step.\n\n## Initialisation of the portfolio\n\nAt startup, we define the base-currency and the length of the historical data, that we want to use.\ne.g.:\n```\nmypos = ValueAtRisk('USD', 11)\n```\n\nthe name of the base-currency will be given by a 3-Letter abbrieviation.\nThe length of the history to use, will specify the length of the historical rates to be imported in the next step.\n\n\n## Import of historical rates\n\nNow we will import the historical data.\nWe do import 2 types of rate-histories: for Equities and for Currencies\ne.g:\n```\nmypos.asset_import('MartyCorp', 'USD', (90.0, 94.0, 93.0, 91.0, 90.0, 100.0, 104.0, 103.0, 101.0, 99.0, 100.0))\nmypos.asset_import('XYZ', 'EUR', (57.0, 54.5, 57.0, 55.0, 57.0, 55.5, 57.0, 56.0, 57.0, 55.5, 57.0))\nmypos.curr_import('EUR', (0.90, 0.87, 0.90, 0.88, 0.94, 0.91, 0.91, 0.99, 0.90, 0.92, 0.92))\n```\n\nfor Assets/Equities the import-method should take 3 parameters:\n- Name of the Equity\n- Name of the Currency\n- List of the end-of-day rates of that Equity (last rate is the latest = actual rate)\n\nfor Currencies the import-method should take only 2 parameters:\n- Name of the Currency\n- List of the end-of-day rates for Base-Currency / Currency (last rate is the latest = actual rate)\n\n\n## Calculate the past relative shifts\n\nDevelop a method that return the relative-shifts that happened in the past.\nThe method should be named \"get_shift\", and should take 1 argument: Name of the Equity/Currency\nUsing our previously imported data\n```\nmypos.get_shift('MartyCorp')\n```\nshould return the un-sorted list of relative shifts (from one day to the next one ) of the rate of Equity \"MartyCorp\" (for better readability, i rounded to 6 digits):\n```\n[0.044444, -0.010638, -0.021505, -0.010989, 0.111111, 0.04, -0.009615, -0.019417, -0.019802, 0.010101]\n```\n\n## Maintain your Equity position\n\nProvide methods \"buy\" and \"sell\", that allows to build our equity position/portfolio.\nThe methods should take 2 parameters:\n- Name of the equity\n- Number of equities\n\ne.g.:\n```\nmypos.buy('MartyCorp', 100)\nmypos.buy('XYZ', 20)\n```\nThe total number of equities in your portfolio should be stored in the object.\n\n\n## Calculate the VAR\n\nProvide a method \"get_var\" which calculates the Value At Risk for an equity-position or your whole portfolio.\nThe methods has to take 3 parameters into account:\n- String 'ALL' or a name of an equity in your portfolio\n- Riskclass ( one of these strings 'Total', 'Equity', 'Forex' )\n- Confidence level ( as a float number in between 0 and 1 )\n\nand should return a value rounded to 2 digits.\n\ne.g.:\n```\nmypos.get_var('MartyCorp', 'Total', 0.80)\n```\n\nshould return the maximum loss that might occur for the 'MartyCorp'-Equities in your portfolio.\n\nSince we assume that the past rates provide a good estimation of the probability distribution of the next-days rate ( based on the relative shifts that occured ), our approach is to create a sorted list of the relative shifts for equity 'MartyCorp' multiplied with the up-to-date rate and the amount of equities in your portfolio.\n\nFor Riskclass = 'Total', we have used the shifts of the asset and the curreny\n\nFor Riskclass = 'Equity', we have only have to take the equity-shifts into account\n\nFor Riskclass = 'Forex', we just use the currency-shifts, in order to calculate the Forex-risk\n\nin our example:\n```\nmypos.get_var('MartyCorp', Total, 0.80)\n```\nthe sorted predicted gain/loss list would look like (i rounded to 2 digits for better readability):\n```\n[-215.05, -198.02, -194.17, -109.89, -106.38, -96.15, 101.01, 400.0, 444.44, 1111.11]\n```\nWe assume that any of that elements identifies the mean of a 1 / (length of list) - quantil of the profit/loss distribution.\n\nPlease note that this definition is a little different than the One used for the numpy.quantile method, which is sorted reversed and will use the first and last value of the sorted list as 0%-quantile and 100% - quantile.\n\nIn VAR-Calculaton, the first ( smallest ) Value of the list is used as 1 - (0.5 / (length of list)) - quantile.\n\nFor our example ( where length of list is 10 ), this means:\n- -215.05 is the 95% Quantile\n- -198.02 is the 85% Quantile\n- -194.17 is the 75% Quantile\n- and so on\n\nWe calculate the VAR for the 0.80 confidence level ( = 80% ) as the linear approximation between the 2 losses -198.02 and -194.17:\n\n1-Day Value at Risk for your 100 MartyCorp - Equities and a confidence level of 80% is 196.10 USD.\n\nWe had no Forex risk involved in this example, since the equity was listed in your base-currency.\nPlease ensure that the shifts of the foreign currency are taken into account, as well, when calculating the 'Total'-VAR for a foreign-currency-equity-positions.\n\nYou then might notice some kind of strange behaviour of your VAR-results: VAR is not additive and not sub-additive ( in position- and risk-class- dimension )!\n\nSo neither\n```\ntotal VAR = equity VAR + currency VAR\ntotal VAR <= equity VAR + currency VAR\n```\nnor\n```\nVAR(EQ_all) = VAR(EQ1) + VAR(EQ2)\nVAR(EQ_all) <= VAR(EQ1) + VAR(EQ2)\nfor an Equity position EQ_all that consists of 2 distinct sub-positions ( EQ1 and EQ2)\n```\nhas to be true.\n\n\nKeep in mind, that the Value-at-Risk measurement is based on the potential top losses (relative shifts) only ( according to the confidence level ). And these top losses ( for individual equities or riskclasses ) may have occurred on different historical days ( for the equities/riskclasses ) involved.\n\n\n\nPS:\n\nVAR-calculation based on a history of only 10 days, is pretty useless, though. In \"real life\" (and the extended tests) the rate history will be >200 and confidence level will be around 99% - 95%.\n\n\nIn order to keep it simple, i used following restrictions:\n- Timeframe for the VAR-Prediction/Calculation is fixed to 1 Day\n- No need for cross-calculation of the for currency-rates (rate-history is always provideed as Base-Curreny/XXX)\n- we only calculate 'one-sided' VAR (= only taking the biggest losses ( not the biggest changes (loss and win) ) into account)\n\n\n\n",
+    "totalAttempts": 110,
+    "totalCompleted": 11,
+    "totalStars": 13,
+    "voteScore": 10,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

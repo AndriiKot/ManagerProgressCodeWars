@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4bbbc872d95500118b607f",
+  "data": {
+    "id": "5e4bbbc872d95500118b607f",
+    "name": "Deferred calculations.  Simple version.",
+    "slug": "deferred-calculations-simple-version",
+    "category": "reference",
+    "publishedAt": "2020-02-18T10:41:22.720Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5e4bbbc872d95500118b607f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-18T10:26:16.058Z",
+    "createdBy": {
+      "username": "7097511",
+      "url": "https://www.codewars.com/users/7097511"
+    },
+    "description": "## We use the capabilities of C ++ 17.\n\n1. We create a function **make_lazy** that receives a functor and arguments to call this functor, and returns an object.\n2. When accessing this object by methods **call**, the function value is calculated with the given arguments.\n\n## Simple:\n1. Functor arguments - only values (not other functors, not pointers, not references).\n2. Return values - only values (not functors, not pointers).\n3. At least three solutions are known (When using various objects of the standard library).\n\n## PS: For multiple calls, you can cache the result.\n\n\nExamples:\n```\nauto f1 = make_lazy([](auto x, auto y) {return 2 * x + y; }, 2, 3);\nauto r1 = f1.call(); // r1 == 7\n\nauto f2 = make_lazy([](auto x, auto y, auto z) {return 2 * x + y - z; }, 2.1, 3.0, 0.5);\nauto r2 = f1.call(); // r2 == 6.7\n\nauto f3 = make_lazy([](void) {return std::vector<int>(10, 10); });\nauto r3 = f3.call(); // r3 == {10, 10, 10, 10, 10, 10, 10, 10, 10, 10}\n```\nAttention: function call is not always carried out!\n\n```\n#include <vector>\nauto f4 = make_lazy([](auto size) {return std::vector<int>(size, 0)}, 1000000);\n```",
+    "totalAttempts": 56,
+    "totalCompleted": 20,
+    "totalStars": 5,
+    "voteScore": 37,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

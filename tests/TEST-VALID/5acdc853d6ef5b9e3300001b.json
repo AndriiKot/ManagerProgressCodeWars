@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5acdc853d6ef5b9e3300001b",
+  "data": {
+    "id": "5acdc853d6ef5b9e3300001b",
+    "name": "Foolproof Objects",
+    "slug": "foolproof-objects",
+    "category": "reference",
+    "publishedAt": "2018-04-13T05:51:59.428Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5acdc853d6ef5b9e3300001b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-11T08:33:24.292Z",
+    "createdBy": {
+      "username": "docgunthrop",
+      "url": "https://www.codewars.com/users/docgunthrop"
+    },
+    "description": "<!--Foolproof Objects-->\n<p>Mr. Mental wants you to write a function that can create \"foolproof\" objects that can be called to create new instances. Instances are only supposed to possess properties \"allowed\" by its object prototype.</p>\n\n<h2 style='color:#f88'>Input</h2>\n\n```if:javascript\n<p>Your function `foolproof` will receive up to one argument — an array containing properties to add to the object prototype (which are in turn inherited by each instance). The array's values will be in the form `[key,value]` where `key` is the allowed key and `value` is the value on the object prototype.</p>\n```\n```if:python\n<p>Your function `foolproof` will receive a list containing properties to add to the object instance properties. The list's values will be in the form `[key,value]` where `key` is the allowed key and `value` is the value for the key on each instance.</p>\n```\n\n<h2 style='color:#f88'>Output</h2>\n\n```if:javascript\n<p>Your output will be a new object used to create new instances. These instances can be instantiated with or without an array of properties (in the same form as the input for `foolproof`).</p>\n```\n```if:python\n<p>Your output will be a new object used to create class instances. These instances can be instantiated with or without a list of properties (in the same form as the input for `foolproof`).</p>\n```\n\n<h2 style='color:#f88'>Technical Details</h2>\n\n```if:javascript\n<p>The function `foolproof` takes the values from an input array and sets them as property values on the prototype of the returned object.</br>\nGiven a foolproof object `FP`, instance `inst`, and property `prop`, the rules are as follows:</p>\n<ul>\n<li>`inst[prop]` can only be retrieved if `FP.prototype[prop]` exists and both property values are of the same \"type\" (string, boolean, number, function, array, object, null)</li>\n<li>`inst[prop]` can be overwritten any number of times, even if `FP.prototype[prop]` doesn't exist.</br>\nIf `FP.prototype[prop]` does exist, however, `inst[prop]` can only be overwritten if both property types match</li>\n<li>If the types for `inst[prop]` and `FP.prototype[prop]` do not match, delete `inst[prop]` (except when `FP.prototype[prop] === null`)</li>\n<li>If `FP.prototype[prop] === null`, `inst[prop]` should return `null` (while retaining its own `prop` value)</li>\n<li>If `inst[prop]` is assigned a `null` value, delete `inst[prop]`</li>\n<li>There will not be tests where properties are set to `undefined`</li>\n<li>Instances are always created using the `new` keyword</li>\n<li>Inputs will always be valid</li>\n</ul>\n```\n```if:python\nThe function `foolproof` takes the values from an input list and sets them as the default inherited properties for each instance.\n```\n\n<h2 style='color:#f88'>Test Examples</h2>\n```javascript\nconst wardrobe = [['headwear','baseball cap'],['footwear','sneakers'],['outerwear','bomber jacket']];\nconst Mister = foolproof(wardrobe);\nconst mrScatterbrain = new Mister();\nconst mrWrong = new Mister([['headwear','bowler hat'],['footwear','penny loafers']]);\n\nMister.prototype.headwear; //'baseball cap'\nmrScatterbrain.neckwear = 'scarf';\nmrWrong.neckwear = ['neck tie','noose'];\nmrScatterbrain.headwear; //'baseball cap'\nmrWrong.headwear; //'bowler hat'\nmrScatterbrain.neckwear; //undefined\nmrWrong.neckwear; //undefined\n\nMister.prototype.neckwear = 'ascot';\nMister.prototype.neckwear; //'ascot'\nmrScatterbrain.neckwear; //'scarf'\nmrWrong.neckwear; //'ascot'\n```\n```python\nwardrobe = [['headwear','baseball cap'],['footwear','sneakers'],['outerwear','bomber jacket']]\nMister = foolproof(wardrobe)\nmr_scatterbrain = Mister()\nmr_wrong = Mister([['headwear','bowler hat'],['footwear','penny loafers']])\n\nmr_scatterbrain.neckwear = 'scarf'\nm_wWrong.neckwear = ['neck tie','noose']\nmr_scatterbrain.headwear #'baseball cap'\nmr_wrong.headwear #'bowler hat'\nmr_scatterbrain.neckwear #None\nmr_wrong.neckwear #None\n\nMister.neckwear = 'ascot'\nMister. #'ascot'\nmr_scatterbrain.neckwear #'scarf'\nmr_wrong.neckwear #'ascot'\n```\n\n<div style='background:#111'>\n\t<p style='color:#8df'>If you find any errors with this kata or if the description is unclear, please post a comment in the Discourse section with the relevant details.</p>\n</div></br>\n\n<p>If you enjoyed this kata, be sure to check out <a href='https://www.codewars.com/users/docgunthrop/authored' style='color:#9f9;text-decoration:none'>my other katas</a></p>",
+    "totalAttempts": 202,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": 16,
+    "tags": [
+      "Object-oriented Programming",
+      "Metaprogramming"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

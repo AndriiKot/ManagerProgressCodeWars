@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5474ad03b2bc28ae0d00103f",
+  "data": {
+    "id": "5474ad03b2bc28ae0d00103f",
+    "name": "Roulette Bet Calculator",
+    "slug": "roulette-bet-calculator",
+    "category": "reference",
+    "publishedAt": "2014-11-26T10:24:34.633Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5474ad03b2bc28ae0d00103f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-11-25T16:23:32.352Z",
+    "createdBy": {
+      "username": "Mackay",
+      "url": "https://www.codewars.com/users/Mackay"
+    },
+    "description": "Dave thinks he's come up with a Roulette bet that pays out in his favour in the long run.\n\nDave's an idiot.\n\nProve that Dave is an idiot by writing the RouletteBet class, which acts as a hash with the following keys:\n```\n:total_bet => The total amount bet (Will always be a whole number for simplicity)\n:max_profit => The maximum profit that could be won from the spin (maximum win - total bet)\n:odds_of_max_profit => The % chance of winning the maximum profit (A float rounded to 2 places)\n:odds_of_winning => The % chance of hitting (A float rounded to 2 places)\n:average_profit => The average profit returned from the bet (hint: this should always be negative, proving Dave wrong)\n```\nAssumptions you can make for this kata:\n```\nThe wheel has a total of 37 numbers, 0-36, with an equal chance of hitting each number\nThe bet will always be a whole number (integer) on each number\nThe payout for hitting a winning number is 35/1 (equal to 36 times the bet)\nBoth the keys and values for the 'bet' hash will be integers\nThe hash will never be empty and the values will always be 1 or more\n```\n\nThe bet will be passed as a hash in the following format:\n```{number=>bet_amount, number=>bet_amount}```\n\nFor example,\n```ruby\nrb = RouletteBet.new({0=>5}) # A bet of 5 coins/chips/dollars on the number 0\nrb[:total_bet] => 5\nrb[:max_profit] => 175 # 180 maximum win minus the 5 bet\nrb[:odds_of_winning] => 2.7 # 2.7% chance of hitting a winning number (rounded)\nrb[:odds_of_max_profit] => 2.7 # 2.7% chance of hitting the maximum profit (rounded)\nrb[:average_profit] => -0.14 # Rounded to 2 places\n```\nDave's 'fool proof' bet that 'always' wins in the long run:\n```ruby\nrb = RouletteBet.new({1=>1, 3=>1, 5=>1, 7=>1, 9=>1, 12=>1, 14=>1, 16=>1, \n18=>1, 19=>1, 21=>1, 23=>2, 25=>1, 27=>1, 30=>2, 32=>1, 34=>1, 36=>1}) # A total bet of 20, covering 18 numbers\nrb[:total_bet] => 20\nrb[:max_profit] => 52\nrb[:odds_of_winning] => 48.65 # 48.65% chance of hitting a winning number, rounded to 2 places\nrb[:odds_of_max_profit] => 5.41 # 5.41% chance of winning the maximum profit, rounded to 2 places\nrb[:average_profit] => -0.54 # Rounded to 2 places\n```\n",
+    "totalAttempts": 80,
+    "totalCompleted": 23,
+    "totalStars": 5,
+    "voteScore": 17,
+    "tags": [
+      "Algorithms",
+      "Games",
+      "Probability",
+      "Mathematics",
+      "Data Science",
+      "Statistics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

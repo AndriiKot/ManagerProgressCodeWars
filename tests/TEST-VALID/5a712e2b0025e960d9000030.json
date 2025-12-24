@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a712e2b0025e960d9000030",
+  "data": {
+    "id": "5a712e2b0025e960d9000030",
+    "name": "Another day with Fibonacci",
+    "slug": "another-day-with-fibonacci",
+    "category": "algorithms",
+    "publishedAt": "2018-01-31T19:34:57.704Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a712e2b0025e960d9000030",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-31T02:47:07.141Z",
+    "createdBy": {
+      "username": "Chiffie",
+      "url": "https://www.codewars.com/users/Chiffie"
+    },
+    "description": "# Welcome to Another day with Fibonacci! #\n\nGiven : \n- two non-negative integers in array `start` (one is non-zero), `start[0] <= start[1]`\n- `array` of random length and values\n\nCalculate\n- `sum` from `Arr[index1]` to `Arr[index2]` *(given by pairs of fibonacci)* including `Arr[index2]` \n- if `sum` is a multiple of random non-zero positive number `d`, this pair will be represented as `1` otherwise `0`. \n\nFunction should return *decimal number* from binary representation of pairs that passed test of multiple.\n\n### Example ###\nInput\n```javascript\n  var start = [0, 1];\n  var array = [0, 1, 2, 3, 4, 5];\n  var d = 2\n```\nOutput\n```javascript\n  \n  0   1   1   2   3   5 <- FIB\n  ---------------------\n  0   1   2   3   4   5 <- ARR\n  |SUM|       |  SUM  |\n      |SUM|\n  ---------------------    \n    0   0         1     <- SUM%d\n    \n  Return toDecimal(001)\n```\nThen check if each sum is a multiple of `d` add to binary (`=001`) and `return Number(1)`\n\n*Notes*\n```javascript\n  FIB -> 1 1 2 3\n  ARR -> 0 1 2 \n           ^\n           | Sum of (Arr[1] + Arr[1]) == 2\n```\n\n- If you have fibonacci given `0 1 1 2 3 5 8` pair are `01` `12` `35`\n- Sum for pair any pair is calculated `Arr[start]+Arr[start+i]+..+Arr[end]`\n  so sum of pair `35` is `Arr[3]+Arr[4]+Arr[5]`\n- If any number of pair is out of index, this is not a valid pair\n  ",
+    "totalAttempts": 3,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Arrays",
+      "Fundamentals",
+      "Algorithms",
+      "Logic",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

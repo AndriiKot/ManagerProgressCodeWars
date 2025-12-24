@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d4ea07404caea00133d99fd",
+  "data": {
+    "id": "5d4ea07404caea00133d99fd",
+    "name": "Computer problem series #3: Hacha software split",
+    "slug": "computer-problem-series-number-3-hacha-software-split",
+    "category": "reference",
+    "publishedAt": "2019-08-16T09:19:41.426Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/5d4ea07404caea00133d99fd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-10T10:46:12.546Z",
+    "createdBy": {
+      "username": "albertogcmr",
+      "url": "https://www.codewars.com/users/albertogcmr"
+    },
+    "description": "Your task is to determine the outputs of the Hacha Software. Hacha (Axe in spanish) is used to slice a file in small parts in order to be able to send it in an email, save it in small devices, etc. \r\n\r\nThe function will receive a file (dictionary) and a size then you will have create a code to divide the original file in smaller parts of the size given and with their own names based in the original file. \r\n\r\nIf you are going to separate a file named `filename.ext` in two, those files will be named: `filename.ext.1` and `filename.ext.2`. If you are going to create more than 9 files, all the new file names should have the same lenght with leading zeros: `filename.ext.01`, `filename.ext.02`, ..., `filename.ext.10`. The same concept applies to 100, 1000, etc files. \r\n\r\nAt least the first n-1 files should have the same size (the one given to the function) and be as big as possible, only the later could have a smaller size. \r\n\r\nIf the file data is empty you should return an empty array `[]`\r\n\r\n### Input:\r\n\r\n* file: (dictionary) \r\n  * name (string)\r\n  * data (string))\r\n* size of the output files (integer)\r\n\r\n### Output: \r\n\r\n* List of dictionaries\r\n\r\n### Examples: \r\n\r\n1. Basic case\r\n\r\n```\r\nfile = {\"name\": \"ex.py\", \"data\": \"abcdefghijkl\"}\r\nsize = 6\r\n\r\nhacha(file, size) -> [{\"name\": \"ex.py.1\", \"data\": \"abcdef\"}, {\"name\": \"ex.py.2\", \"data\": \"ghijkl\"}]\r\n```\r\n\r\n2. More than 9 files\r\n\r\nAs you can see the new names add `.X` to the original file name. You should add the minimun number of characters that will be needed. In order to name 10, 100, 1000, etc. files, 2, 3 of 4 characters will be needed at the end. \r\n\r\n```\r\nfile = {\"name\": \"ex.py\", \"data\": \"1234567890\"}\r\nsize = 1\r\n\r\nhacha(file, size) -> [{\"name\": \"ex.py.01\", \"data\": \"1\"}, ... {\"name\": \"ex.py.10\", \"data\": \"0\"}]\r\n```\r\n\r\n3. Output size is not multiple of file size\r\n\r\nEvery file should have the same size except for the last. \r\n\r\n```\r\nfile = {\"name\": \"ex.py\", \"data\": \"12345678\"}\r\nsize = 3\r\n\r\nhacha(file, size) -> [{\"name\": \"ex.py.1\", \"data\": \"123\"}, {\"name\": \"ex.py.2\", \"data\": \"456\"}, {\"name\": \"ex.py.3\", \"data\": \"78\"}]\r\n```\r\n\r\n4. Empty data\r\n\r\nIn this case an empty array should be returned. \r\n\r\n```\r\nfile = {\"name\": \"ex.py\", \"data\": \"\"}\r\nsize = 3\r\n\r\nhacha(file, size) -> []\r\n```\r\n\r\nDo not expect any invalid inputs. \r\n\r\n### Specifications: \r\n```\r\n5 <= len(name) <= 25\r\n0 <= len(data) <= 100000\r\n0 < size <= 100\r\n```",
+    "totalAttempts": 877,
+    "totalCompleted": 107,
+    "totalStars": 3,
+    "voteScore": 109,
+    "tags": [
+      "Lists",
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

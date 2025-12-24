@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b830cce4a6acaddf90000b8",
+  "data": {
+    "id": "5b830cce4a6acaddf90000b8",
+    "name": "Saint Petersburg Paradox Model",
+    "slug": "saint-petersburg-paradox-model",
+    "category": "reference",
+    "publishedAt": "2018-08-29T17:25:38.790Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "crystal",
+      "ruby",
+      "python",
+      "cpp",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5b830cce4a6acaddf90000b8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-26T20:25:50.254Z",
+    "createdBy": {
+      "username": "GiacomoSorbi",
+      "url": "https://www.codewars.com/users/GiacomoSorbi"
+    },
+    "description": "The [Saint Petersburg Paradox](https://en.wikipedia.org/wiki/St._Petersburg_paradox) is a relatively famous example of the divergence between mathematical models and human \"rationality\".\r\n\r\nIn few words, assume that you can go on with a bet that works this way: you toss a coin as long as you don't get tails and at each new launch you double the prize which starts from the value of 2.\r\n\r\nYou will then have a lottery worth (1st toss) `1/2` (chances) `* 2` (prize) `+` (2nd toss) `1/4` (chances) `* 4` (prize) + `1/8` (chances) `* 8` (prize), etc.\r\n\r\nIt easy to spot that this succession will go up to infinite, assuming that the lottery can pay any sum of money, thus the ticket that is ideally convenient to pay for it will be anything short of infinite (which can be infinite itself).\r\n\r\nNo player would pay, in reality, much more than something in the range of `20` - `25` units of the same currency of the prize.\r\n\r\nAmong all the hypotesis, I would gladly go with the work of Tversky & Kahneman and attribute this poor \"rationality\" to how humans devaluate chances the further they get.\r\n\r\nTo simplify, let's say that a given player will consider fully the chances of a full toss (which then still values as 1), then it will start to decrease them as unlikely by a given probability weight factor at each successive toss, in a multiplicative way.\r\n\r\nSo, if the the factor is, say, `0.5`, the first toss will be still worth `1`, the second will be worth `0.5`, the third `0.25`, the fourth `0.125` and so on.\r\n\r\nYour goal is to write a function that will compute the perceived value of such a lottery, given such a probability weight factor and the number of steps that are deemed of interest to the player.",
+    "totalAttempts": 308,
+    "totalCompleted": 63,
+    "totalStars": 8,
+    "voteScore": 55,
+    "tags": [
+      "Probability",
+      "Data Science",
+      "Statistics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

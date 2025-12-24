@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66aa0174bb3a114b2cdc9f00",
+  "data": {
+    "id": "66aa0174bb3a114b2cdc9f00",
+    "name": " GPS  Locations Within a Shape",
+    "slug": "gps-locations-within-a-shape",
+    "category": "algorithms",
+    "publishedAt": "2024-08-02T17:09:11.436Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66aa0174bb3a114b2cdc9f00",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-31T09:18:44.072Z",
+    "createdBy": {
+      "username": "bohdanparis",
+      "url": "https://www.codewars.com/users/bohdanparis"
+    },
+    "description": "GPS coordinates are given in decimal values.\n\nYou will be given two sets of data in the form [locations,consecutiveShapeBounds]\n\nThe first is an array of each location with GPS coordinates with each a latitude and longitude value.\nThe second array is the corners of the shape given as latitude and longitude coordinates.\n\nYour mission is to determine whih coordinates are within the shape and which are not. Returning an array of the locations which are as either true or false.\n\nSo if the first location in the array is not in the shape this will be represented as false, if the second location was in the shape this would be true and if a third location was again in the shape it would be represented as true so you would need to return [true,false,true]\n\nThe corners of the shape will be at least 3 coordinates in length and at most 120 coordinates in length and may not be regular shapes and each consecutive corner is assumed to be connected by a straight line from the previous corner!\nThe first and last corners are connected by a straight line too.\n\nNo lines from corners will cross and the shape will always be closed due to the condition above.\n\nAll coordinate pairs are distinct in each array so there are NO loops, etc.\n\nAny coordinates on the boundary (i.e. the line representing the edge of the shape) are inside the shape.\n\n\n",
+    "totalAttempts": 121,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

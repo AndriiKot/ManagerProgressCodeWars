@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/645e3f70cd49a70065f184b6",
+  "data": {
+    "id": "645e3f70cd49a70065f184b6",
+    "name": "dromedaryCase",
+    "slug": "dromedarycase",
+    "category": "algorithms",
+    "publishedAt": "2023-05-12T13:30:28.836Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/645e3f70cd49a70065f184b6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-12T13:30:24.455Z",
+    "createdBy": {
+      "username": "crouzet",
+      "url": "https://www.codewars.com/users/crouzet"
+    },
+    "description": "# Dromedary case\n\n> \"Dromedary Camels only have one hump on its back.\"\n\n**Your task is to produce a 'dromedary_case' function formatting any string input with a single hump on the proper place \n\n## What's the proper place for the hump\n\nOn the 1st letter of a word. This letter should be as close as possible to the middle of the dromedarized sentence.\n\n## Examples\n\nLet's start with an easy one:\n(8 characters before the hump, 8 after)\n```ruby\n\"i am a nice dromedary\".dromedary_case\n# -> \"iamaniceDromedary\"\n```\n\nBut sometimes, the hump balance can be more complex:\n(7 characters before the hump and 16 after. But still the better possibility)\n```ruby\n\"camelus-dromedarius for you\".dromedary_case\n# -> \"camelusDromedariusforyou\"\n```\n\nOnly one word? no problem! Let's dromaderize the characters \n```ruby\n\"hump\".dromedary_case\n# -> \"huMp\"\n```\n\nWhen the hump lands on a digit, that's fine\n```ruby\n\"you can't find 3 humps camels\".dromedary_case\n# -> \"youcantfind3humpscamels\"\n```\n\nNothing to display? 'dromedary' as a backup!\n```ruby\n\"%%%% **** $$$$\".dromedary_case\n# -> \"dromEdary\"\n```\n\n## Detailed example\n\nLet's list all possibilities for an example. Count letters before and after the capital letter. Then calculate the diff. The best solution is the possibility with the lowest diff.\n \n```text\nFrom: \"i wish to do some xenotransplantation on some new planets\"\n\nIwishtodosomexenotransplantationonsomenewplanets => 0 (before) / 47 (after) => 47 (diff)\niWishtodosomexenotransplantationonsomenewplanets => 1 / 46 => 45\niwishTodosomexenotransplantationonsomenewplanets => 5 / 42 => 37\niwishtoDosomexenotransplantationonsomenewplanets => 7 / 40 => 33\niwishtodoSomexenotransplantationonsomenewplanets => 9 / 38 => 29\niwishtodosomeXenotransplantationonsomenewplanets => 13 / 34 => 21\niwishtodosomexenotransplantationOnsomenewplanets => 32 / 15 => 17 [Best Solution]\niwishtodosomexenotransplantationonSomenewplanets => 34 / 13 => 21\niwishtodosomexenotransplantationonsomeNewplanets => 38 / 9 => 29\niwishtodosomexenotransplantationonsomenewPlanets => 41 / 6 => 35\n\n```\n\nThis is one way to do the implem, maybe not the best one ^_^\n\n## Additional Rules\n\nCharacters:\n- word separators: spaces ' ', dashs '-' and underscrores '_'\n- words are composed with: letters and digits\n- other characters (example: $€,;:/\\!§}) should be removed before the dromedarization process\n- if there are some digits (on the hump position or not), nevermind\n\nHump position:\n- hump on the right if have to choose (example: 'huMp')\n\nRescue value:\n- returns \"dromEdary\" if nothing left to process (example: '%% %%')\n\n```text\n        _   ___ goodLuck\n    .--' | /\n   /___^ |     .--.\n       ) |    /    \\\n      /  |  /`      '.\n     |   '-'    /     \\\n     \\         |      |\\\n      \\    /   \\      /\\|\n       \\  /'----`\\   /\n       |||       \\\\ |\n       ((|        ((|\n       |||        |||\njgs   //_(       //_(\n```\n\n### Sources\n- camel ascii art: https://www.asciiart.eu/animals/camels\n\n### Versions\n\n- 2023-05-13: bug-fixes & doc\n- 2023-05-12: initial\n",
+    "totalAttempts": 201,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

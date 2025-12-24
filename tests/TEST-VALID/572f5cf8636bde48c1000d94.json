@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/572f5cf8636bde48c1000d94",
+  "data": {
+    "id": "572f5cf8636bde48c1000d94",
+    "name": "Warrior's adventure",
+    "slug": "warriors-adventure",
+    "category": "algorithms",
+    "publishedAt": "2016-05-09T16:33:31.763Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/572f5cf8636bde48c1000d94",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-08T15:36:24.967Z",
+    "createdBy": {
+      "username": "Wittybit",
+      "url": "https://www.codewars.com/users/Wittybit"
+    },
+    "description": "###Warrior's adventure\nOnce upon time one brave warrior was captured by Arkhil's knights. He was locked in the dungeon. Now he have a chance to escape this gloomy place.\n\n###Goal\nYour goal is to escape the Arkhil's castle.\n\n###Input\nYou have a function called 'Move'. it takes 4 parameters:\n\n1. ```map``` - map of current level represented as 2 dimensional array filled with ```true``` - empty cell and ```false``` - wall\n2. ```playerPosition``` - current player position\n3. ```exitPosition``` - position of the exit. You need to reach it\n4. ```enemies``` - enimies is an array filled with objects(enemies) that have next fields:\n```\nposition - object with fileds 'x' and 'y'\nlastPosition - object with fileds 'x' and 'y'\ndirection - Enemie's movement direction. It can have 4 states:\n  0 - UP\n  1 - RIGHT\n  2 - DOWN\n  3 - LEFT\n```\n\n###Output\nWhen you function calculated all thing that it needs, it can make decision where player need to move.\nFunction need return movement direction as Object with fileds ```x``` and ```y```.\n\n###Preloaded\nTo draw map you can use function ```printMap( map, playerPosition, exitPosition, enemies )```\n\nPreloaded movement\n```javascript\nSTAY       = { x:  0, y:  0 }\nMOVE_UP    = { x:  0, y: -1 }\nMOVE_DOWN  = { x:  0, y:  1 }\nMOVE_LEFT  = { x: -1, y:  0 }\nMOVE_RIGHT = { x:  1, y:  0 }\n```\n\nIf you need to compare positions you can use preloaded function called ```comparePositions```. It will return ```true``` if positions are equal otherwise it will return ```false```\n\nTo work with positions you can use 2 preloaded functions. ```sumPositions( pos1, pos2 )``` and ```subPositions( pos1, pos2 )```\n\n### Preconditions\n```map``` always have borders\n\n```exit``` it always reachable",
+    "totalAttempts": 125,
+    "totalCompleted": 9,
+    "totalStars": 7,
+    "voteScore": -1,
+    "tags": [
+      "Artificial Intelligence",
+      "Puzzles",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

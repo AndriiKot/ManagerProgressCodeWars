@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58d286404ffe7781600000a5",
+  "data": {
+    "id": "58d286404ffe7781600000a5",
+    "name": "Multiplying Binomials",
+    "slug": "multiplying-binomials",
+    "category": "games",
+    "publishedAt": "2017-03-22T21:09:37.751Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/58d286404ffe7781600000a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-03-22T14:12:16.470Z",
+    "createdBy": {
+      "username": "guberti",
+      "url": "https://www.codewars.com/users/guberti"
+    },
+    "description": "As you likely learned in school, you can square a binomial such as (2x - 5) to get an expression like 4x^2 - 20x + 25. While such an operation is easy for a human to do (see http://bit.ly/2n5O8xq if you have not seen these types of problems before), it is much more complicated to multiply binomials by themselves hundreds of times.\n\nYou will have to write a program that will parse a binomial given to you as a string in the form of \"(ax + b)\", multiply the binomial by itself a given number of times, and return a string containing each term and its coefficient sorted by the value of the exponent to which x is raised.\n\nFor example, if your program recieved \"(2x - 5)\" and the power 3, it should return \"8x^3 - 60x^2 + 150x - 125\".\n\nNotes:\n\nSpaces will always be included in the binomial you are given. For example, you would never be given \"2x-5\", instead, you will be given \"2x - 5\".\n\nDo not include a term if its coefficient is zero. For example, your program should never return \"3x^2 + 0x - 5\", it should instead return \"3x^2 - 5\". \n\nDo not include a coefficient if the coefficient is one. For example, your program should never return \"1x + 5\", it should instead return \"x + 5\". Additionally, your program should never return \"-1x + 5\", it should instead return \"-x + 5\".\n\nSpacing may be included in the returned string, but is not required. For example, \"3x-5\" is just as valid as \"3x - 5\".\n\nYour program should work for all integer, non-negative powers (including zero). Note that anything to the zeroth power is always one.",
+    "totalAttempts": 1131,
+    "totalCompleted": 53,
+    "totalStars": 21,
+    "voteScore": 51,
+    "tags": [
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

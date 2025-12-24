@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bdb2aae4a8a174a53000053",
+  "data": {
+    "id": "5bdb2aae4a8a174a53000053",
+    "name": "Secret Agents Comunication",
+    "slug": "secret-agents-comunication",
+    "category": "games",
+    "publishedAt": "2018-11-01T17:15:07.291Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5bdb2aae4a8a174a53000053",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-01T16:32:46.390Z",
+    "createdBy": {
+      "username": "CalvinNunes",
+      "url": "https://www.codewars.com/users/CalvinNunes"
+    },
+    "description": "As a good secret agent, you know that you can't be communicating with other agents using a common alphabet or any kind of simple messaging systems. Because of that, you and other secret agents are using a small code alphabet to send minimal messages to each other when some meeting between agents are needed.\n\nThe alphabet consists of 20 symbols that represents real world characters, words or even punctuations. Nobody should know, but here's a clue to the code alphabet, where the left value is the code and the right value is the character that it represents:<br>\n```\"0\" = \"a\"```<br>\n```\"9\" = \"e\"```<br>\n```\"8\" = \"i\"```<br>\n```\"7\" = \"o\"```<br>\n```\"6\" = \"u\"```<br>\n```\"5\" = \"y\"```<br>\n```\"4\" = \"w\"```<br>\n```\"10\" = \"t\"```<br>\n```\"11\" = \"d\"```<br>\n```\"12\" = \"s\"```<br>\n```\"13\" = \"n\"```<br>\n```\"14\" = \"m\"```<br>\n```\"15\" = \"r\"```<br>\n```\"16\" = \"b\"```<br>\n```\"17\" = \"k\"```<br>\n```\"18\" = \"p\"```<br>\n```\".\" = \" \"```<br>\n```\"*\" = \"morning\"```<br>\n```\"@\" = \"afternoon\"```<br>\n```\"#\" = \"night\"```<br>\n```\"?\" = \"-\"```<br>\nYou can use the preloaded object ```code``` to access the symbols above.\n\n\nEach received message (incomingMessage) is used to send a question to know if it will be possible to arrange a meeting and always will consists of three words separeted by a ```\"-\"```. The message is built this way: \"date-period-location\".<br>\n\"date\" will be one of those three: ```\"today\"```, ```\"tomorrow\"``` or ```\"twodays\"```.<br>\n\"period\" will be ```\"morning\"```, ```\"afternoon\"``` or ```\"night\"```.<br>\n\"location\" is one of the three places that the agents always met: ```\"bar\"```, ```\"park\"```, ```\"restaurant\"``` or ```\"house\"```.\n\nSome received messages comes with a ```\"_\"``` which means that the next code numbers are modified. Use codeNumberDiff to modify the code number to get it's real value, increasing or subtracting. (in the examples more ahead it will be better to understand)\n\nBeing an Agent means that you need to be cautious about your movements, so there is some combination of dates, periods and locations that you can't agree with the meeting proposal, there is:\n\nIf incomingMessage says today, you only be able to go if it will be in the park, the period doesn't care.<br>\nIf it says tomorrow, then you can go if it is night when at bar or afternoon when at park.<br>\nIf it says twodays, you can only meet with the other agent if it is at restaurant in the morning.<br>\nIf it says today and the place is indecipherable, then it means a meeting at your house, so you are able to meet if it is night. (in this case, return ```\"house\"``` as the place in the return)<br>\nAll other combinations you can't go.\n\nTo answer to the other agent you must send a encrypted message with a yes or no (remember to send it encrypted).\n\nTo save some time, you decided to create a system that decrypts the message and already answer it, so the expected output is a string array with two values:<br>\n[0] = The decrypted message<br>\n[1] = the encrypted answer (encrypted \"yes\" or \"no\")\n\nEXAMPLE:<br>\nFor ```incomingMessage = \"10.7.11.0.5.?.#.?._.15.-1.14\"``` and ```codeNumberDiff = 1```. The output should be ```[\"today-night-bar\", \"13.7\"]```\n\nThe first parts you can get easily just by changing the code by the representing character or word. Then you find a ```\"_\"``` which means that the next numbers until the end or until the next ```\"_\"``` must be increased by the value of codeNumberDiff to get it's real code number. So \"15\" + 1 becomes 16, which is the code for letter \"b\". \"-1\" becomes \"0\" that represents letter \"a\", and so on...\nThe answer for the message is \"no\", because for today you only can show up for the meeting if it was in the park, since it is at the bar, you can't go. So encrypted \"no\" is \"13.7\"\n\nNOTE: ```\"_\"``` is incremental, so if ```codeNumberDiff = 2``` and you find two ```\"_\"``` in the message, the first will increase the codes by 2, the second by 4, and so on...\n\nAnother Example:<br>\nFor ```incomingMessage = \"10.4.7.11.0.5._.10.?.*.?._.11.5.8.6.-4.2.11.-4.9.6\"``` and ```codeNumberDiff = 2```. The output should be ```[\"twodays-morning-restaurant, 5.9.12\"]```\nThere's two \"_\" in the message, after the first one show up, every code number after it should be increased by 2, then more ahead there is another, so each code number after it should be increased now by 4 (2+2). Decrypting the message it shows that the meeting will be in two days, in the morning at the restaurant, this combination allows you to go, so you answer with a encrypted \"yes\" (\"5.9.12\")",
+    "totalAttempts": 10,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

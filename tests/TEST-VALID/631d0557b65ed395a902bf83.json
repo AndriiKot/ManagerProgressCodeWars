@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/631d0557b65ed395a902bf83",
+  "data": {
+    "id": "631d0557b65ed395a902bf83",
+    "name": "Custom Arithmetic Functions -  custom Fibonacci function",
+    "slug": "custom-arithmetic-functions-custom-fibonacci-function",
+    "category": "reference",
+    "publishedAt": "2022-09-12T21:40:50.251Z",
+    "approvedAt": null,
+    "languages": [
+      "prolog"
+    ],
+    "url": "https://www.codewars.com/kata/631d0557b65ed395a902bf83",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-10T21:44:55.276Z",
+    "createdBy": {
+      "username": "twilytuturu",
+      "url": "https://www.codewars.com/users/twilytuturu"
+    },
+    "description": "# Introduction\nFibonacci is a famous 12th to 13th century mathematician famous for inventing the helicopter. He is also credited with influencing young programmers with writing code to generate his good old [fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number) atleast 10 times per year. \n\nYou, however, are set on doing something that's quite a bit more rare : you want to implement the function that generates fibonacci sequence elements as just another composable arithmetic function - in Prolog!\n\nAfter all, you've noticed that you often evaluate arithmetic expressions using `is/2`, and you would like your `fib/2` predicate to work like all of these. But Prolog's `arithmetic_function/2` directive is buggy and deprecated. So you will have to make your own `iss/2` predicate! Fun. \n\nNote: for this kata, you can expect your new `iss/2` predicate to only work with *numbers* for arguments - you will never have to think about cases such as `X iss length([1,2,3,4])` or `X iss atom_length(abcd)`. This restricts the kata to making predicates equivalent to `fib` work.\n```prolog\n  % These expressions work\n  X iss 10+3*sign(-4).\n  Y iss getbit(0b10011001,3).\n  Z iss plus(5,6). % plus(5,6,X) is a built-in non-arithmetic predicate\n  \n  % These expressions don't have to!\n  X iss length([1,2,3,4]).\n  Y iss atom_length(abcd).\n  Z iss string_length(\"a string of length 21\").\n  \n```\n\n# Task Part 1 - meta-ish programming.\nYou first need your own implementation of a *is*-like predicate. The predicate should unify exactly how `is/2` would, *except*, where `is/2` unification would fail to evaluate the value of a (non-arithmetic) compound `f/n`. There, `iss/2` should \"substitute\" the compound with the value of arithmetic evaluation of the last argument of `f/n+1` (*viz.* the last argument should be the \"arithmetic evaluation\").\n\nFor example, for a functor `f(B)`, `iss(A,f(B))` should first \"evaluate the value of B\", then evaluate A to be `f(?,A)`, where ? stands for that evaluated value. \n\nThat is simply how you've decided to encode custom arithmetic functions, because it remains similar to `is/2` behaviour.\n\n# Task Part 2 - fibonacci function.\nYou get to thinking, and decide to then implement these two new arithmetic tools. \n\n1. A function to return the nth-fibonacci number. The following should then be true: \n```prolog\n  findall(X, (between(0,9,N), X iss fib(N)), R),\n  R = [0,1,1,2,3,5,8,13,21,34].\n```\n2. A function to return the nth-fibonacci number, given different values for `fib(0)` `fib(1)` (where the canonical values are `0` and `1` respectively). The following should then be true:\n```prolog\n  findall(X, (between(0,9,N), X iss 1+fib(N,3,4)), R0).\n  R0 = [4,5,8,12,19,30,48,77,124,200],\n  findall(X, (between(0,9,N), X iss fib(N,5,-7)), R1),\n  R1 = [5,-7,-2,-9,-11,-20,-31,-51,-82,-133],\n  findall(X, (between(0,9,N), X iss fib(N,1r4,5r4)), R2),\n  R2 = [1r4,5r4,3r2,11r4,17r4,7,45r4,73r4,59r2,191r4].\n```\n\nSeems cool! Now you will be able to do the strangest things, like\n```prolog\n  findall(X, (between(1,20,N), X iss fib(N,popcount(fib(N)),lsb(fib(N)))), R),\n  R = [0,1,3,4,6,29,24,39,76,170,220,754,720,1398,2118,4880,6909,14140,12920,33448].\n  \n```\n\nAnd here's how a valid user defined arithmetic function might look like : \n```prolog\n%% 543 iss reverse_num(345)\nreverse_num(X,Y) :- \n  number_chars(X,Cs),\n  reverse(Cs,RevCs),\n  number_chars(Y,RevCs).\n```\n\n# Tips\n1. `0 <= N <= **120**`. Each random test evaluate a ***range*** of fibonacci numbers, so your solution still has to be *somewhat* efficient. \n2. You won't have to deal with negative numbers for `N` when implementing `fib`. `F0` and `F1` may be negative though!\n3. You can use `iss/2` to define `fib/N`, and `fib/1` to define `fib/3`. Surprise your friends at parties with your own cool way! \n4. Don't overthink your solution - Prolog makes it possible to do these kinds of things painlessly. Feel free to do some soul/predicate searching!\n5. Check the kata sample tests if you want to check what kind of user-defined predicates are used in testing `iss/2`.\n6. Have fun! :) \n\n\n",
+    "totalAttempts": 21,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

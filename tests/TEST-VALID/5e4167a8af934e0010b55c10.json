@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4167a8af934e0010b55c10",
+  "data": {
+    "id": "5e4167a8af934e0010b55c10",
+    "name": "Encrypted Code",
+    "slug": "encrypted-code",
+    "category": "reference",
+    "publishedAt": "2020-02-10T14:37:46.328Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e4167a8af934e0010b55c10",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-10T14:24:40.992Z",
+    "createdBy": {
+      "username": "PoulYak",
+      "url": "https://www.codewars.com/users/PoulYak"
+    },
+    "description": "## Encrypted Code\nAn encrypted letter has come to you and you must decrypt it.\nThe encryption method is as follows:\n\n  1) Each letter of the English alphabet is assigned a code - a sequence of fixed length. Each letter of the original letter is replaced with its code. (Other characters in the encoding are not taken into string, but in the resulting string they will stand in the same places as in the original line) After that, you will get one long sequence of zeros and ones.\n  \n   2)All numbers that stand in the places with numbers from the fibonacci series (numbers are numbered starting from 1) are inverted (units are replaced by zeros and zeros by units).\n    \n   3)Then the numbers are divided into pairs from left to right and in each pair the numbers are swapped. If the last digit is not enough for the pair, then it remains unchanged.\n    \n   4)After that, the code is replaced by letters. The remaining characters that are in the source text remain in their places.\n\n## Task\nYour task is to decrypt the letter that was encrypted in this way.\n\n### Input data\nThe input is encoded letters that will occur in the text. And the text to be decoded, it consists of capital letters, punctuation marks, spaces and other various characters.\nAt least one letter in the text is guaranteed\n\n### Output data\n\n\nOnly one line - decrypted text\n\n## Example\n\n\n```\nencoding = (('O', '00'), ('H', '01'), ('E', '10'), ('L', '11'))\n```\n\n\n```\ncipher text = 'HOEHO!'\n```\n\n\nAfter decryption, we get the string 'HELLO!'\n\n\nmore examples in sample tests...\n",
+    "totalAttempts": 152,
+    "totalCompleted": 27,
+    "totalStars": 7,
+    "voteScore": 26,
+    "tags": [
+      "Fundamentals",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

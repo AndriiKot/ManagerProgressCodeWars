@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65295171b6f2df0024ed65b2",
+  "data": {
+    "id": "65295171b6f2df0024ed65b2",
+    "name": "Classy Pokémon",
+    "slug": "classy-pokemon",
+    "category": "reference",
+    "publishedAt": "2023-10-13T23:16:33.646Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65295171b6f2df0024ed65b2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-13T14:17:21.168Z",
+    "createdBy": {
+      "username": "Rodrigo-Coloma",
+      "url": "https://www.codewars.com/users/Rodrigo-Coloma"
+    },
+    "description": "\n### Pokemon Battle Simulation\n\nIn a world inhabited by diverse creatures known as Pokémon, you are tasked with creating a class, Pokemon, to simulate Pokémon battles. Pokémon are characterized by their names, elemental types, and combat abilities. Your class is designed to manage these attributes and simulate interactions between Pokémon. Here's a detailed description of the problem this code seeks to address:\n\n### Pokémon Attributes:\n\nPokémon have names (e.g., Pikachu, Charizard), elemental types (e.g., Grass, Water, Fire), and a maximum health points (HP) value.\nEach Pokémon has a group of combat abilities which they can learn and forget with the corresponding methods.\n\n### Elemental Interactions\n\nPokémon elemental types have strengths and weaknesses against other types, creating a type advantage or disadvantage.\nFor example, grass is strong against water but weak against fire. To simplify this system in this kata there will only be 4 elemental types:\nnormal, fire, grass and water that interact in the following way:\n\n              fire > grass\n              grass > water\n              water > fire\n              normal is neutral against every type\n\n\n### Battle Mechanism:\n\nPokémon can engage in battles with other Pokémon by selecting moves from their abilities.\n\nDamage calculation is based efficiency (type advantages) and power of the chosen move:\n\n#### Effectiveness:\n\nAttacks can be super effective, neutral, or not very effective depending on the matchup between the attack's elemental type and the type of the target pokemon. For example, water would be super effective against fire, but not very effective against grass.\n\n              Super effective: 2x damage\n              Neutral: 1x damage\n              Not very effective: 0.5x damage\n\nWhen a Pokémon's HP drops to 0, it faints in battle.\n\n### Methods:\n\n#### learn\n\nIt takes a move name(string), the elemental type of the move(string), and the power of the move(positive integer) and stores it inside the given Pokemon object. The output should be a string in the from of:\n\n'Pokemon name learned move name.'\n\nShould generate error:\n\n- If Pokemon tries to learn a move that neither matches their elemental type nor is of type 'normal'.\n- If Pokemon tries to learn a move that he already knows.\n\n#### forget\n\nIt takes a move name(string) and eliminates that move if stored inside the given Pokemon object. The output should be a string in the from of:\n\n'Pokemon name forgot move name.'\n\nShould generate error:\n\n- If Pokemon tries to forget a move that he doesn't know.\n\n#### attack\n\nIt takes a target(pokemon object) and a move name(string). If there is a move with that name stored inside the given pokemon object he will use it against target. Damage will be calculated according to battle mechanism rounded down to the closest integer and substracted from. Method should return a string in the form of:\n\n 'Pokemon name has hit target Pokemon name for damage HP!'\n\nIf target pokemon HP drop to 0 (they can't drop further) add '. target Pokemon has fainted...' to the print\n\nShould generate error:\n\n- If a Pokemon with 0 HP tries to attack.\n- If a Pokemon that doesn't know any move tries to attack\n\n#### restore\n\nIt takes an amount(positive integer). The current HP is healed for the specified amount. Current HP can never be higher than maximun HP. The output should be a string in the form of :\n\n'Pokemon name has healed for the actual healed amount HP'\n\nFainted Pokemons can be brought back to normal state by this method\n\n#### Examples:\n\n    charmander.learn('ember', 'fire', 40) -> 'Charmander learned ember.'\n              charmander.forget('tackle') -> 'Charmander forgot tackle.'\n     charmander.attack(bulbasaur,'ember') -> 'Charmander has hit Bulbasaur for 80 HP!'\n     charmander.attack(bulbasaur,'ember') -> 'Charmander has hit Bulbasaur for 80 HP! Bulbasaur has fainted...'\n                    bulbasaur.restore(80) -> 'Bulbasaur has healed for 80 HP.'\n                    bulbasaur.restore(80) -> 'Bulbasaur has healed for 60 HP.'\n                    \n",
+    "totalAttempts": 201,
+    "totalCompleted": 29,
+    "totalStars": 3,
+    "voteScore": 40,
+    "tags": [
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

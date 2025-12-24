@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5abce4e520746ba4c2000194",
+  "data": {
+    "id": "5abce4e520746ba4c2000194",
+    "name": "Deduplicate a sentence: remove remove duplicate words",
+    "slug": "deduplicate-a-sentence-remove-remove-duplicate-words",
+    "category": "algorithms",
+    "publishedAt": "2018-03-30T01:02:04.048Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5abce4e520746ba4c2000194",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-29T13:06:46.368Z",
+    "createdBy": {
+      "username": "DominicDigital",
+      "url": "https://www.codewars.com/users/DominicDigital"
+    },
+    "description": "Create a function that, given an input string, will return a string where any duplicated \"words\" from the input have been removed.\n\nFor this kata, a \"word\" is defined as follows: \n- Starts with a letter (a-z): upper- or lower-case\n- If longer than 1 character, the rest of the word should only contain lower-case letters and/or hyphens (\"-\")\n- Example words: \"A\", \"Z\", \"Hello\", \"hello\", \"htdrg-drg--rt\"\n- Example non-words: \"-w-\", \"HELLO\", \"helloThere\"\n\n\nWord boundaries (before):\n- The start of a word should conform to a standard JS RegEx word boundary, i.e. it is preceded by nothing (as it's at the start of the string) or a non-word character. \n- \"Any non-word character\" means anything apart from A-Z (upper and lower case), numbers and underscores.\n- E.g. \"-hello hello\" -> \"-hello\", but \"WWWhello hello\" and \"_hello hello\" remain unchanged.\n\nWord boundaries (after):\n- A word should be immediately followed by whitespace (or the end of the entire string), a closing parenthesis (\")\"), a full stop (\".\"), comma (\",\") or an exclamation mark (\"!\").\n- E.g. \"hello\" counts as a duplicate word in \"(hello hello!\" but not in \"hello hello(\" or \"_hello hello\".\n\nFor this kata, a \"duplicate word\" is defined as: \n- A word (see above) that appears twice in a row, separated by at least one whitespace character, but nothing else (e.g. the word \"one\" counts as a duplicate in the string \"one    \\n one\", but not in the string \"one. one\").\n\nOnly assess one pair of words at a time: deduplication should remove *one* (just the second) instance of the duplicated word, as well as any excess whitespace before it, e.g. \"hello      hello hi\" -> \"hello hi\". This also means that - for this exercise - \"two two two two\" would be returned as \"two two\". I believe this makes the solution a little easier :).\n\nDeduplication should be case-sensitive (e.g. the string \"Hello hello Hello hello\" would be returned unchanged).\n\nAdditional assumptions:\n- You may assume that the input will always be a string\n- You may assume that input strings will only contain a mix of: whitespace, numbers, letters (upper-case and lower-case), and the characters in the below bullet point:\n- _-!().,:\n\nScrapped rules (FOR REFERENCE ONLY. NOT PART OF ALGORITHM SPEC):\n- The below rule was initially put in place for the second revision of this kata, but has been scrapped as Codewars doesn't currently support lookbehinds (added in ES2018). I've included it below for reference/interest:\n- \"A word should be immediately preceded by whitespace (or be at the very beginning of the entire string) or an open parenthesis (\"(\") only.\"",
+    "totalAttempts": 335,
+    "totalCompleted": 16,
+    "totalStars": 5,
+    "voteScore": 14,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

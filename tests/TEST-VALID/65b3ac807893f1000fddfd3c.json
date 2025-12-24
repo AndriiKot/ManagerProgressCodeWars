@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b3ac807893f1000fddfd3c",
+  "data": {
+    "id": "65b3ac807893f1000fddfd3c",
+    "name": "Dance of Letters",
+    "slug": "dance-of-letters",
+    "category": "algorithms",
+    "publishedAt": "2024-01-26T13:04:20.620Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/65b3ac807893f1000fddfd3c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-26T12:58:40.492Z",
+    "createdBy": {
+      "username": "furkan.gokirmak",
+      "url": "https://www.codewars.com/users/furkan.gokirmak"
+    },
+    "description": "Assuming we have two words, \"FURKAN\" and \"CATAL,\" and we want to create a new string by comparing the ASCII values of corresponding characters in both words. The goal is to select the character with the smaller ASCII value at each position. If the lengths of the words are different, the remaining characters of the longer word are appended to the end of the new string.\n\nNote: Use only capital letters.\n\nLet's break down the process step by step:\n\nStep 1: Comparison of ASCII Values\n\n```javascript\nF vs C: ASCII value of 'F' is greater than 'C,' so we choose 'C.'\nU vs A: ASCII value of 'A' is smaller than 'U,' so we choose 'A.'\nR vs T: ASCII value of 'R' is smaller than 'T,' so we choose 'R.'\nK vs A: ASCII value of 'A' is smaller than 'K,' so we choose 'A.'\nA vs L: ASCII value of 'A' is equal to 'A,' so we choose 'A.'\nN vs (No corresponding character): Since 'CATAL' is shorter, the remaining characters 'L' are appended.\n```\n\nStep 2: Concatenation\nCombine the selected characters: CF + AU + RT + AK + AL + N = CFAURTAKALN\n\nTherefore, the resulting string is \"CFAURTAKALN\"\n\nThis process ensures that at each position, the character with the smaller ASCII value is selected, and any remaining characters from the longer word are appended at the end.",
+    "totalAttempts": 31,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

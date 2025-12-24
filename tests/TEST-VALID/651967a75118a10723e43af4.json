@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/651967a75118a10723e43af4",
+  "data": {
+    "id": "651967a75118a10723e43af4",
+    "name": "Needle in the Magic Haystack",
+    "slug": "needle-in-the-magic-haystack",
+    "category": "reference",
+    "publishedAt": "2023-10-03T10:32:39.259Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/651967a75118a10723e43af4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-01T12:35:51.120Z",
+    "createdBy": {
+      "username": "QKiryu",
+      "url": "https://www.codewars.com/users/QKiryu"
+    },
+    "description": "## Description\nFarmer Brown needs you to find needles in his recatngular haystack; however, Farmer Brown's haystack is magical and as a result, each piece of hay you pluck, points you in the direction of the nearest needle. Also Farmer Brown Forgot how many needles there were in the haystack __(You are not given how many needles there are, but there can be up to 32 of them)__. Plucking a needle out though will __not__ change the direction the hay points to. Additionally, You can only pluck coordinates that are within the haystack Failing to do so will make Farmer Brown lose his pateience and yell at you. This results in a failure. Additionally, Farmer Brown expects you to be able to find the needle in a timely manner even if the haystack is large. __(Test cases can be big)__ \n\n* `x` coordinate corresponds with the width. \n* `y` coordinate corresponds with the height.\n* `z` coordinate corresponds with the depth.\n\n```if:java\n* The dimensions of the haystack and the coordinates are represented using the `long` data type.\n\n```\n## Methods of MagicHaystack\n`pluck(x,y,z)` :\n  * plucks the hay at the location and returns an array of strings telling you which coordinates are higher , lower, or equal to needles coordinates,  the format being `[x,y,z]`.\n  * If you test Farmer Brown's patience though, it will tell you why he yelled at you instead. \n  * If you pluck the needle, you will get a `null` value as the hay is magical not the needle.\n\n`dimensions()`\n  * returns the dimensions of the MagicalHayStack in format `[width, height, depth]`.\n\n## Examples\n\n#### Example 1\n```java \n    MagicHaystack haystack = MagicHayStack(new long[][]{{4,4,3}},5,5,5)\n  ```\n* declares a new `MagicHaystack` where a needle coordinates is (4,4,3) \n* width = 5, height = 5, depth = 5\n\n`haystack.pluck(2,4,4)`\n\n* will result in the array `[\"higher\", \"equal\" ,\"lower\"]` being returned as `2` is less than `5`, `4` equals `4`, `4` is greater than `3`  \n\n`haystack.pluck(5,5,5)`\n* will result in Farmer  Brown yelling `\"Stop wasting your time on trying to pluck the air!!!\"` at you, as it is out of range.\n\n\n#### Example 2\n\n`MagicHaystack haystack = MagicHayStack(0,0,0,2,2,2)` \n* declares a new `MagicHaystack` where the needle coordinates are (0,0,0) \n* width = 2, height = 2, depth = 2\n\n`haystack.pluck(0,0,0)` \n* will result in the needle being found, as that is where the needle is. It will also return `null`.\n* Calling it again however, will result in Farmer Brown yelling  `\"You already found the needle stop plucking more hay!!!!\"`  at you.\n",
+    "totalAttempts": 5,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d129652fdfc750001cd568a",
+  "data": {
+    "id": "5d129652fdfc750001cd568a",
+    "name": "Choose new Colors for Company Logo",
+    "slug": "choose-new-colors-for-company-logo",
+    "category": "algorithms",
+    "publishedAt": "2019-06-25T21:46:58.413Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d129652fdfc750001cd568a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-25T21:47:10.722Z",
+    "createdBy": {
+      "username": "ThomasMeichelböck",
+      "url": "https://www.codewars.com/users/ThomasMeichelb%C3%B6ck"
+    },
+    "description": "# New Colors for Company Logo\n#### The company **'binaryIT'** wants to change the colors of its current logo, which looks like this:\n<div style=\"position: relative; height: 210px; width: 200px; margin: 50px auto;\">\n  <div style=\"position: absolute; background-color: #ed7f2a; top: 0; left: 0; width: 50px; height: 40px;\"></div>\n  <div style=\"position: absolute; background-color: #ed7f2a; top: 60px; left: 0; width: 50px; height: 100px;\"></div>\n  <div style=\"position: absolute; width: 200px; border-left: 50px dotted transparent; border-right: 50px solid transparent; border-top: 50px solid #f24c00; top: 160px\"></div>\n  <div style=\"position: absolute; background-color: #ed7f2a; top: 50px; left: 150px; width: 50px; height: 110px;\"></div>\n    <div style=\"position: absolute; width: 140px; border-right: 50px solid transparent; border-bottom: 50px solid #f24c00; top: 0; right: 0;\"></div>\n    <div style=\"position: absolute; background-color: #ed7f2a; top: 60px; left: 80px; width: 50px; height: 80px;\"></div>\n</div>\n\nAs you can see, it consists of two colors that go well together.<br><br> You are a designer hired to choose two new colors to replace the old ones. You choose from a set of colors you receive from the company. The idea is to find pairs of colors that go well together, so that the company CEO is satisfied. Each color is defined through a hex code, e.g. `'#4682B4'`. The colors are given as an array, e.g. `['#4682B4', '#3782B4', '#827a56', '#828a59']` and are supposed to be returned as an array of pairs, e.g. `[['#4682b4', '#3782B4'], ['#827a56', '#828a59']]`.<br><br> \n\n# To satisfy the CEO and return matching colors, the following criteria must be met:\n\n* As you may know, a hex code can be broken down into three parts. The first two digits represent red, the second two green and the last two blue. Each of these three parts is only allowed to be 20 less or 20 more or somewhere in between (in decimal).\n<br> **Example:** `'#4682B4'` and `'#4a71B6` are a valid match, because `46` and `4a` have a decimal difference of 4, `82` and `71` of 17 and `B4` and `B6` of 2.<br><br>\n\n* The firs color of a pair of colors must always be the color that has the smaller value when viewed as a whole hexadeciml number.\n<br> **Example:** The input `['#4A71B6', '#4682B4']` must return `[['#4682B4', '#4A71B6']]` instead of `[['#4A71B6','#4682B4']]` because `#4682B4` is smaller than `#4A71B6`.<br><br>\n\n* The array of pairs must be in ascending oder.\n<br> **Example:** `[['#271285', '#232189'], ['#AA728B', '#BB7281']]` is a valid return value because the first pair has a smaller first color than the second one. `[['#AA728B', '#BB7281'], ['#271285', '#232189']]` is an invalid return value because the first pair has a bigger first color than the second one. In the case of two pairs with the same first color, the 2nd color must be in ascending order. <br><br>\n\n* A color can not be paired with itself.\n<br>**Example:** `[['#AA728B', '#AA728B']]` is invalid.<br><br>\n\n\n# More Examples\n* `[]` returns `[]`.\n* `['#AA728B', '#AA728B']` returns `[]` , because identical colors can not be a match.\n* `['#AA728B', '#AA7276']` returns `[]` because `8B` and `76` has a difference of 21.\n* `['#656565', '#010101', '#000000', '#646464']` returns `[['#000000', '#010101'], ['#646464', '#656565']]`. Notice how the input is not properly ordered, but the returned array is ordered ascendingly (both inside each pair and across all pairs).<br>\n",
+    "totalAttempts": 198,
+    "totalCompleted": 19,
+    "totalStars": 1,
+    "voteScore": 18,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 3
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

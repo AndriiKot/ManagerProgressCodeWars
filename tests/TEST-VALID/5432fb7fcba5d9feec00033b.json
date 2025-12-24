@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5432fb7fcba5d9feec00033b",
+  "data": {
+    "id": "5432fb7fcba5d9feec00033b",
+    "name": "Hash Keys Substitutes",
+    "slug": "hash-keys-substitutes",
+    "category": "reference",
+    "publishedAt": "2014-10-06T21:16:33.584Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5432fb7fcba5d9feec00033b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-10-06T20:28:48.935Z",
+    "createdBy": {
+      "username": "moonfly",
+      "url": "https://www.codewars.com/users/moonfly"
+    },
+    "description": "Implement a class called `HashKeySubstitute`, instances of which can be used in place of instances of other types when getting keys from Hash. The class should have the cinstructor that accepts the single parameter - the instance of some arbitrary class it is supposed to substitute. \n\nSimplifications:\n\n- [Ruby limitation] The class is NOT required to support substuting instances of `BasicObject`, `Symbol` and `Float` classes.\n- [Ruby limitation for some of the classes] The class will be used only to **read** from the hash. When storing in the hash the actual values will be used. You are not required to support the case when some value is put in the hash using a substitute object and then is read from it using the real object. I'm sure you can monkey-patch, no need to test that :) Besides, it would further limit the set of Ruby classes, for which this trick would work (all Numerics would be gone, for example).\n\nBesides, the instance of `HashKeySubstitute` should also behave like the object it substitutes in the following sense:\n\n- It should have the same class reported by the `class` method.\n- Equality (==,eql?), comparisons(<,<=,>,>=) should continue to work. Also, an unary \"bang\" method (`!obj`) should continue to work.\n- Any method callable on the original object should be callable on the substitute, with the same result. No methods should be missing, and **no methods added**.\n- If a method changes the internal object state, if you call this method both on the substitute and the original object, the resulting objects should continue to be \"interchangeable\" in the sense defined above. (See the String example below if you are not sure what I mean.)\n\nIf it all still sounds gibberish, see the example below. The idea is really simple:\n\n```ruby\nhash = {}\n\n# for Fixnums\nhash[10] = 100\nhash[HashKeySubstitute.new(10)] # => 100\n10 == HashKeySubstitute.new(10) # => true -- equality works\n9 < HashKeySubstitute.new(10) # => true -- comparison works\nHashKeySubstitute.new(10).succ # => 11 - calling methods works\n\n# for Strings\nhash[\"some string\"] = 1000\nhash[HashKeySubstitute.new(\"some string\")] # => 1000\n\ns = \"   other string \"\ns_subst = HashKeySubstitute.new(s)\ns.swapcase!  # change the internal state of the original object\ns_subst.swapcase!  # change the internal state of the substitute object\nhash[s] = 500\nhash[s_subst] # => 500 -- should continue to work after calling internal-state-changing methods\n\n# for Arrays\narray = [1,2,3]\nhash[array] = 10000\nhash[HasKeySubstitute.new(array)] # => 10000\n\n# etc... and yes, exotic hash keys should be supported too\nsio = StringIO.new(\"string io\")\nhash[sio] = \"yes\"\nhash[HasKeySubstitute.new(sio)] # => \"yes\"\n\n# Supporting Symbols is not required\nhash[:a] = \"yes\"\nhash[HasKeySubstitute.new(:a)] # => ??? -- this is not supported\n\n# Substitutes are only required to support reading the values\n# put in the hash using real objects. Never vice versa.\n# Also substitutes are always on the left side of comparisons,\n# never on the right side.\n# So, here is what should be supported\nhash[\"a\"] = true\nhash[HasKeySubstitute.new(\"a\")] # => true -- this should work\nHasKeySubstitute.new(\"a\") == \"a\" # => true -- this should work\n# And supporting the reverse is not required\nhash[HasKeySubstitute.new(\"b\")] = true\nhash[\"b\"] # => ??? -- this is not required to be supported\n\"b\" == HasKeySubstitute.new(\"b\") # => ??? - this is not supported\n```\n",
+    "totalAttempts": 278,
+    "totalCompleted": 20,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

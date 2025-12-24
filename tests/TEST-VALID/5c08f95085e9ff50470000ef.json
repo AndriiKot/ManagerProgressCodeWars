@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c08f95085e9ff50470000ef",
+  "data": {
+    "id": "5c08f95085e9ff50470000ef",
+    "name": "Broken seven-segment display",
+    "slug": "broken-seven-segment-display",
+    "category": "games",
+    "publishedAt": "2018-12-06T10:26:35.168Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5c08f95085e9ff50470000ef",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-06T10:26:24.777Z",
+    "createdBy": {
+      "username": "0xbba",
+      "url": "https://www.codewars.com/users/0xbba"
+    },
+    "description": "[sev_seg]: https://raw.githubusercontent.com/SADragonMaker/codewars-katas/master/ssd.png\n[seven-segment display]: https://en.wikipedia.org/wiki/Seven-segment_display\nA [seven-segment display] (SSD), or seven-segment indicator, is a form of electronic display device for displaying decimal numerals.\n\n<Enter>\n![alt text][sev_seg]\n<Enter>\n\nAbove is a diagram of the seven-segment display I am using. However, some of its segments are broken. When I try to display the number `a`, it becomes the number `b` instead.\n## Task\nYour task is to find the possible broken segments given the numbers `a` and `b` as strings.\n<Enter>\nThere will be multiple SSDs forming a number, so you must return the broken segments of an SSD in a set, return an empty set if an SSD does not seem to be broken.\n<Enter> \n\nIf `a` can not become `b`, throw an exception.\n<Enter>\n## Examples\n```Python\nsev_seg('1000','1007') should equal [set(),set(),set(),{'D','E','F'}]\nsev_seg('888','123') should equal [{'A','D','E','F','G'},{'C','F'},{'E','F'}]\nsev_seg('-23',' 23') should equal [{'G'},set(),set()]\nsev_seg('123','123') should equal [set(),set(),set()]\nsev_seg('123','888') should throw Exception 'Invalid input'\n```\n## Important notes\n- If an SSD is not displaying anything, it will be `' '`.\n- If an SSD is displaying `'-'`, only the `G` segment is working.\n- `a` and `b` will always be strings of valid characters with the same length.\n- You may report to me if the description is too confusing. ",
+    "totalAttempts": 37,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

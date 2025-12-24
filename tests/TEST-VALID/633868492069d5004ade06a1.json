@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/633868492069d5004ade06a1",
+  "data": {
+    "id": "633868492069d5004ade06a1",
+    "name": "How many layers of inheritance are you on?",
+    "slug": "how-many-layers-of-inheritance-are-you-on",
+    "category": "reference",
+    "publishedAt": "2022-10-01T16:22:43.125Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/633868492069d5004ade06a1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-01T16:18:17.220Z",
+    "createdBy": {
+      "username": "Vesninovich",
+      "url": "https://www.codewars.com/users/Vesninovich"
+    },
+    "description": "This kata will require you to dip your feet into deep JS prototyping water.\n\nCan you implement a function that calculates the length of prototype inheritance chain?\n\n# What???\n\nHere is a little explanation if you do not understand what that means:\n\nEvery JS object is an instance of some prototype (which are now usually called classes, which is not exactly accurate). Prototype is simply an object that is getting cloned in order to create an instance of it. It also holds methods for it's instances.\n\nWe say that some prototype `A` *directly inherits* some other prototype `B` if `A`'s prototype is, well, `B`. `B` can also inherit prototype `C`, which means that `A` inherits it too and inheritance chain looks something like this:\n```\nA -> B -> C -> ... -> Object\n```\n\nIf an object is not of some specified prototype, then it is of prototype `Object`. Since every prototype is an object itself, simplest prototype's prototype will be `Object`, which means that it *inherits* prototype `Object`. So, every prototype actually inherits `Object` through inheritance chain (except for `Object` prototype itself, which has `null` prototype, and prototypes created with `Object.create(null)`).\n\nSo, the real question in this kata is: how many prototypes did we have to inherit to actually create an object?\n\n# Pro tip\n\nOpen a console in your browser's devtools or fire up a Node.JS REPL and inspect objects of different kinds to get an idea on what you can do.",
+    "totalAttempts": 160,
+    "totalCompleted": 52,
+    "totalStars": 2,
+    "voteScore": 47,
+    "tags": [
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

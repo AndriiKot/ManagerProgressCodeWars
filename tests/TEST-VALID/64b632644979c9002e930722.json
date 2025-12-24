@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64b632644979c9002e930722",
+  "data": {
+    "id": "64b632644979c9002e930722",
+    "name": "Heroes vs. Monsters",
+    "slug": "heroes-vs-monsters",
+    "category": "games",
+    "publishedAt": "2023-08-01T06:17:33.829Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64b632644979c9002e930722",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-18T06:34:12.092Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nYou are implementing a battle system for a simple role-playing game. A hero is fighting various monsters, and you have to determine the battle's outcome for each engaged skirmish. The hero and monsters share some stats:\n\n- `HP or Health Points`: The amount of damage the character can sustain. If it reaches 0 (or less), the character dies.\n- `ATT or Attack`: The character's offensive capacity.\n- `DEF or Defense`: The character's defensive capacity.\n\nFor both the hero and monsters, the damage inflicted is calculated by subtracting the opponent's defense score from the attacker's doubled attack score.\n\nIn each round, the hero attacks first, and his damage rate is subtracted from the monster's HP. If the monster survives (HP > 0), it is his turn to attack. If the hero survives (HP > 0), a new round starts. The hero can also have some `POT`, or Healing Potions, in his backpack. Only when his HP is equal to or lower than 10, a potion can (and must) be used to regain 10 HP at the start of a new round. When the hero heals, he can't attack, but he receives only half damage from the monster's attack (when monster damage is odd, half damage means rounded down). Every potion can be used only once, then it must be discarded.\n\nGiven a dictionary containing the character's stats (with p-prefix ones being the hero's stats and m-prefix ones being the monster's), you must return a string:\n\n- \"Victory in x rounds\" if the hero wins.\n- \"Game Over in x rounds\" if the monster wins.\n\n(with x being the number of rounds elapsed)\n\n# Examples\n```\nbattle({\n  \"pHP\": 12,\n  \"pATT\": 10,\n  \"pDEF\": 10,\n  \"pPOT\": 0,\n  \"mHP\": 20,\n  \"mATT\": 6,\n  \"mDEF\": 14\n}) ➞ \"Victory in 4 rounds\"\n\n# Hero's damage rate = (10 * 2) - 14 = 6\n# Monster's damage rate = (6 * 2) - 10 = 2\n# Round 1: mHP - 6 = 14, pHP - 2 = 10\n# Round 2: No potions to use! mHP - 6 = 8, pHP - 2 = 8\n# Round 3: mHP - 6 = 2, pHP - 2 = 6\n# Round 4: mHP - 6 = -4 ... the monster is dead\n\nbattle({\n  \"pHP\": 10,\n  \"pATT\": 10,\n  \"pDEF\": 10,\n  \"pPOT\": 2,\n  \"mHP\": 10,\n  \"mATT\": 8,\n  \"mDEF\": 14\n}) ➞ \"Victory in 3 rounds\"\n\n# Hero's damage = 6, monster's damage = 6\n# Round 1: mHp - 6 = 4, pHP - 6 = 4\n# Round 2: Player uses a potion, heals 10 HP, receives half the monster damage, pHP = 11\n# Round 3: mHP - 6 = -2 ... the monster is dead\n\nbattle({\n  \"pHP\": 12,\n  \"pATT\": 7,\n  \"pDEF\": 6,\n  \"pPOT\": 2,\n  \"mHP\": 30,\n  \"mATT\": 8,\n  \"mDEF\": 10\n}) ➞ \"Game Over in 5 rounds\"\n\n# Hero's damage rate = 4, Monster's damage rate = 10\n# Round 1: mHP - 4 = 26, pHP - 10 = 2\n# Round 2: Hero heals 10 hp, monster hits for 5 HP, pHP = 7\n# Round 3: Hero heals 10 hp, monster hits for 5 HP, pHP = 12\n# Round 4: mHP - 4 = 22, pHP - 10 = 2\n# Round 5: No potions to use! mHP - 4 = 18, pHP - 10 = -8 ... the hero is dead\n```\n# Notes\n- The hero attacks (or heals) first in each round.\n- A potion must be used when HP is equal to or less than 10, except on the first round.\n- When the hero uses a potion, he can't attack the monster in the same round, but he can defend from the monster's attack, receiving only half the damage.\n- Remember to discard the potion after using it.",
+    "totalAttempts": 234,
+    "totalCompleted": 21,
+    "totalStars": 3,
+    "voteScore": 22,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

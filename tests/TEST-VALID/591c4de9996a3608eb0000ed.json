@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/591c4de9996a3608eb0000ed",
+  "data": {
+    "id": "591c4de9996a3608eb0000ed",
+    "name": "Extract Fixed-Width Records",
+    "slug": "extract-fixed-width-records",
+    "category": "algorithms",
+    "publishedAt": "2017-05-22T06:39:12.374Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/591c4de9996a3608eb0000ed",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-05-17T13:19:37.383Z",
+    "createdBy": {
+      "username": "GrahamD",
+      "url": "https://www.codewars.com/users/GrahamD"
+    },
+    "description": "Consider the following class:\n\n```cs\npublic class Member\n{\n  public string Surname { get; set; } \n  public string FirstName { get; set; }\n  public DateTime MembershipStartDate { get; set; }\n  public int NumberOfDependents { get; set; } \n  public decimal MonthlyPremiumRands { get; set; }\n}\n```\n\nWrite a method that accepts a list of ```Member``` objects, and returns a string containing a list of records (one record per line) with fixed-width fields.\n\nFor interest's sake, the program that this method plugs into will write the resulting string to a plain-text file.\n\nThe field widths are as follows:\n```\nSurname: 15 characters\nFirstName: 15 characters\nMembershipStartDate: 8 characters (in the format YYYYMMDD)\nNumberOfDependents: 2 characters (with a leading zero)\nMonthlyPremiumRands: 8 characters (no leading zeroes, no cents)\n```\n\n```MonthlyPremiumRands``` must be right-aligned. All other fields must be left-aligned. \n\n```Surname``` and ```FirstName``` must be converted to uppercase before writing. Furthermore, if either of them are more than 15 characters in length, truncate them to 15 characters.\n\nThe file must include a single space after each field, except the last one, and each record must end with a carriage-return/line-feed combination.\n\nIn other words, the record terminator in your output will be ```\\r\\n```. If there are no records (i.e. no lines), they must not be terminated.\n\nFor example, the record:\n\n```cs\nnew Member\n{\n  Surname = \"Downs\",\n  FirstName = \"Graham\",\n  MembershipStartDate = new DateTime(1998, 1, 1),\n  NumberOfDependents = 1,\n  MonthlyPremiumRands = 5120\n}\n```\n\nshould be written as follows:\n\n```\nDOWNS           GRAHAM          19980101 01     5120\n```\n\nYou may assume that the list will never be ```null```, but it may be empty, in which case you should return an empty string.",
+    "totalAttempts": 229,
+    "totalCompleted": 23,
+    "totalStars": 2,
+    "voteScore": 14,
+    "tags": [
+      "Strings",
+      "Lists",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

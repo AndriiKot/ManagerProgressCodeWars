@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e579f65712fdf002e4ca9df",
+  "data": {
+    "id": "5e579f65712fdf002e4ca9df",
+    "name": "Tower Hop",
+    "slug": "tower-hop",
+    "category": "algorithms",
+    "publishedAt": "2020-02-27T19:43:36.587Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e579f65712fdf002e4ca9df",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-27T10:52:21.297Z",
+    "createdBy": {
+      "username": "M_Jacobsen",
+      "url": "https://www.codewars.com/users/M_Jacobsen"
+    },
+    "description": "You are given a list of integers between 0 and 9 (inclusive) with the length of n:\n\n    example: [4, 2, 0, 1, 3, 2]\n\nEvery integer represents a tower (or the height of it).\nVizualized the previous example would look like this:\n\n       _\n      |_|          _\n      |_| _       |_| _ \n      |_||_|    _ |_||_|\n      |_||_|   |_||_||_|\n\nNow there is a person standing on top of the first tower.\nHe wants to get to the other side of the towers.\nHe however can't climb up the towers, he needs to jump from tower to tower.\nHis ability to jump depends on the height of the tower, a tower with the height of 4, allows him to jump to the next four towers (regardless of their height).\n\nThis means, in the given example he is able to jump from the tower of index 0 to towers with indices of 1, 2, 3 or 4.\n\nIt is your job to write a function to decide whether it is doable or not (meaning return True or False) to get to the index after the last tower or further.\n\nExamples:\n\n    tower_hop([4, 2, 0, 1, 3, 2]) => True\n    because he can (for example) hop from 0 to 4 to 6 (6 is out of bounds and thus counts as finished, 5 would not count)\n    \n    tower_hop([1, 0, 3, 5, 6]) => False\n    \n    tower_hop([0, 1, 1, 1, 1]) => False\n    \n    tower_hop([1, 9, 3, 3, 3, 0]) => True\n\nYou can always expect valid input with a maximum length of 100.\n    \n    ",
+    "totalAttempts": 44,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Recursion"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

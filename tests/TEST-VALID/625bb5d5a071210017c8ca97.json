@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/625bb5d5a071210017c8ca97",
+  "data": {
+    "id": "625bb5d5a071210017c8ca97",
+    "name": "Binary Sudoku - Part I",
+    "slug": "binary-sudoku-part-i",
+    "category": "algorithms",
+    "publishedAt": "2022-04-17T06:38:49.290Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/625bb5d5a071210017c8ca97",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-04-17T06:38:13.240Z",
+    "createdBy": {
+      "username": "jebreen",
+      "url": "https://www.codewars.com/users/jebreen"
+    },
+    "description": "Binary Sudoku is a little different to normal sudoku.\n\nIn Binary Sudoku, you're given a square grid, the sides of which are always an even number of squares, which is to be filled with ones and zeroes (ticks and crosses, X and O, whatever) according to the following rules:\n\n* There must be the same number of each symbol in each row and column.\n* There cannot be more than two of any symbol together in any row or column.\n* No row or column can be repeated.\n\nSimple!\n\nIf the cells are filled in as ones and zeroes, it should be obvious that a puzzle of size n can be represented as a series of n-bit binary numbers which conform to the above rules.\n\nIf we consider the four-bit binary numbers, we can see which are valid for rows or columns in the puzzle and which are not. (At this stage, we're only looking at *numbers* being valid for use, not at combinations of numbers being valid or not.)\n\n```\nDec Binary Valid?\n 0   0000    No\n 1   0001    No\n 2   0010    No\n 3   0011   Yes\n 4   0100    No\n 5   0101   Yes\n 6   0110   Yes\n 7   0111    No\n 8   1000    No\n 9   1001   Yes\n10   1010   Yes\n11   1011    No\n12   1100   Yes\n13   1101    No\n14   1110    No\n15   1111    No\n```\n\nIn this first kata in the series, your job is simply to say whether a given decimal number represents a valid configuration for a row (or column) in a Takuzu puzzle of a given size.\n\nTo do this, we need to convert the decimal number to binary and then, if the binary representation has less bits than the size, add leading zeroes.\n\nYou can assume that no negative numbers will be given, and that the size will be less than or equal to 50.\n\nSome examples:\n\n```ruby\nvalid_row? 92, 8 = false\nThe 8-bit binary representation of 92 is 0101 1100\n0101 1100 contains 4 1 bits and 4 0 bits, so the first rule is passed\n0101 1100 has three one bits in a row, so the second rule fails.\n\nvalid_row? 154, 8 = true\nThe 8-bit binary represenation of 154 is 1001 1010\n1001 1010 contais 4 1 bits and 4 0 bits, so the first rule is passed\n1001 1010 has no strings of three of the same bit value in a row, so the second rule is passed.\n\nvalid_row? 154, 10 = false\nThe 10-bit binary representation of 154 is 00 1001 1010\n00 1001 1010 contains 4 1 bits and 6 0 bits, so the first rule fails\n```",
+    "totalAttempts": 89,
+    "totalCompleted": 14,
+    "totalStars": 2,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

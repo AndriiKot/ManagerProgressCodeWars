@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a3b4a84f28b82cbca000301",
+  "data": {
+    "id": "5a3b4a84f28b82cbca000301",
+    "name": "Rational Zeros",
+    "slug": "rational-zeros",
+    "category": "algorithms",
+    "publishedAt": "2017-12-21T06:35:57.351Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a3b4a84f28b82cbca000301",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-21T05:45:40.444Z",
+    "createdBy": {
+      "username": "jfellows",
+      "url": "https://www.codewars.com/users/jfellows"
+    },
+    "description": "You must write a function that finds the rational zeros of a given polynomial function.\n\nThe polynomial will be passed as a string, such as ```x2 + x - 6```, with the power after the variable and spaces between each term. The variable will always be ```x```. The polynomial will always consist only of integer coefficients and be simplified as much as possible already (e.g. ```x2 + 3x2``` will always be ```4x2```).\n\nTo use the above polynomial as an example, ```x2 + x - 6``` = ```0``` when ```x = -3``` and ```x = 2```. Therefore, your function should return ```[-3, 2]```.\n\nA few notes:\n- Your function should return the zeros in ascending order.\n- Rational zeros must be returned as instances of class `Fraction`, e.g., `x = .5` as `x = Fraction(1, 2)`. (Integer zeros such as `x = 5` can be returned either as integers or instances of `Fraction`.)\n- Each zero must be included as many times as its root multiplicity is. For example, polynomial `x3 - 3x - 2` has a rational root `x = -1` with multiplicity two, and a rational root `x = 2` with multiplicity one, so `rational_zeros('x3 - 3x - 2')` should return `[-1, -1, 2]`.\n- If the polynomial has no rational zeros, return an empty list (```[]```).\n- Don't worry about if the polynomial has any other irrational or imaginary roots - just return the rational roots that exist.\n\nIf you're stuck, check out https://en.wikipedia.org/wiki/Rational_root_theorem.",
+    "totalAttempts": 335,
+    "totalCompleted": 14,
+    "totalStars": 4,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

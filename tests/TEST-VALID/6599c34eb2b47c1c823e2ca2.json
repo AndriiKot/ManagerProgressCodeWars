@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6599c34eb2b47c1c823e2ca2",
+  "data": {
+    "id": "6599c34eb2b47c1c823e2ca2",
+    "name": "Implement an STL-Like star_map Algorithm in C++",
+    "slug": "implement-an-stl-like-star-map-algorithm-in-c-plus-plus",
+    "category": "algorithms",
+    "publishedAt": "2024-03-21T10:26:57.161Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/6599c34eb2b47c1c823e2ca2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-06T21:17:02.571Z",
+    "createdBy": {
+      "username": "o2001",
+      "url": "https://www.codewars.com/users/o2001"
+    },
+    "description": "# Background\n## About tuples\nA [`std::tuple`](https://en.cppreference.com/w/cpp/utility/tuple) is a data structure that can store a fixed number of elements of potentially different types. For example, a rectangle’s dimensions (length and width) can be represented as a tuple:\n\n```cpp\nstd::tuple<int, int> rectangle{ 2, 7 }; // Represents a rectangle of length 2 & width 7.\n```\n\nBy nature, the size and types of a `std::tuple` are known at compile-time, which is key to our task today.\n\n## About starmap\nThe principle behind Python's [**`starmap`**]([`starmap`](https://docs.python.org/3/library/itertools.html#itertools.starmap) is to apply a function to each item in an iterable, where each item is a collection (such as a tuple) of arguments for the function.\n\nConsider an array of tuples, each representing a rectangle’s dimensions `(length, width)`. We want to map each rectangle tuple into its area. `starmap` helps us do this by unpacking each of our tuples into separate arguments for our `calc_area` function. Here’s how it looks in Python:\n\n```python\n# List of rectangle dimensions as tuples (length, width).\nrectangles = [(2, 7), (3, 3), (10, 5), (6, 3)]\n\n# Function to calculate area of a rectangle.\ndef calc_area(length, width): return length * width\n\n# Map each (length, width) tuple into an area.\nrectangle_areas = starmap(calc_area, rectangles)  # yields back 14, 9, 50, 18   \n```\n\n# Your Task\nYour task is to implement `star_map` in C++, but with an [STL-like interface](https://en.cppreference.com/w/cpp/algorithm#Transformation_operations). It should be called as so:\n\n```cpp\nstar_map(first, last, d_first, n_ary_op);\n```\n\nThe function accepts three iterators and a function _(or a [functor](https://en.cppreference.com/w/cpp/utility/functional))_ as an argument, returning an iterator. Here is a more detailed description of the signature:\n\n1. `first`: An iterator to the beginning of a slice of the source (container containing the tuples).\n2. `last`: An iterator to the end of the slice of the source.\n3. `d_first`: An iterator to the destination to which you want to write the mapped results.\n4. `n_ary_op`: A function that takes the contents of each tuple as its arguments.\n5. Return an iterator one-past the last element you wrote to the destination. This iterator is of the **SAME** type as the destination iterator, `d_first`. If you wrote 4 elements to the destination, then return an iterator to the 5th element. \n\nYou can use _templates_ for the types and refer to other STL algorithms for implementation ideas.\n\n# Usage Example:\n```cpp\nint calc_area(int length, int width) // Function\n{\n    return length * width;\n}\n\nconst std::vector<std::tuple<int, int>> rectangles{ { 2, 7 }, { 3, 3 }, { 10, 5 }, { 6, 3 } };\nstd::vector<int> destination{};\n\nauto past_end_itr = star_map(rectangles.begin(), // For each tuple from the beginning,\n                             rectangles.end(), // to the end,\n                             std::back_inserter(destination), // insert into the destination,\n                             calc_area); // the areas as mapped via calc_area.\n\n// destination is now = { 14, 9, 50, 18 }.\n```\n# Assumptions:\n1. To simplify things, you can assume all inputs will be iterables containing `std::tuple`s only.\n2. No test case will be provided where `d_first` is in the exclusive range `(first, last)`. Therefore, `d_first` will either be outside that range or strictly equal to `first`.\n3. Depending on the test, I may provide `d_first` to you either as an:\n   1. Output iterator that overwrites (like [`std::begin`](https://en.cppreference.com/w/cpp/iterator/begin)).\n   2. Output iterator that inserts (like a [`std::back_insert_iterator`](https://en.cppreference.com/w/cpp/iterator/back_inserter)).\n4.  On a type level, you may assume all inputs provided to you will be valid and compatible with each other _(no need for SFINAE/concepts/type or property validation)_.\n5. The random tests will pretty much use the same functions you see in the sample fixed tests. This is to make debugging easier from your side, and testing easier from mine :\\).\n6. No function given to you will use default arguments.",
+    "totalAttempts": 24,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 6,
+    "tags": [
+      "Functional Programming",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

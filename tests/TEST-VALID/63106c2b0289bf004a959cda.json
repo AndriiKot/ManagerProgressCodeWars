@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63106c2b0289bf004a959cda",
+  "data": {
+    "id": "63106c2b0289bf004a959cda",
+    "name": "Cryptogram Solver",
+    "slug": "cryptogram-solver",
+    "category": "algorithms",
+    "publishedAt": "2024-01-01T02:08:39.424Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63106c2b0289bf004a959cda",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-01T08:24:11.051Z",
+    "createdBy": {
+      "username": "mwilliams123",
+      "url": "https://www.codewars.com/users/mwilliams123"
+    },
+    "description": "A cryptogram is a word puzzle consisting of a short encrypted phrase that must be decoded. For example:\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\n```\nThe encryption scheme is a simple substitution cipher (https://en.wikipedia.org/wiki/Substitution_cipher). In a substitution cypher each letter in the alphabet is replaced by another letter. \n\nEach cryptogram may have up to three hints that are given to help solve the puzzle. Each hint is a substition for one letter. For example, I might tell you that J=I. This means the letter 'J' in the cryptogram should be replaced by the letter 'I'.\n\nYour task is to write a function `solve` that takes a cryptogram string and a dictionary of hints and returns the decoded message.\n\nFor example\n```\nsolve('B CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI', {'J':'I', 'X':'W', 'E':'D'}) => 'A BIRD IN THE HAND IS WORTH TWO IN THE BUSH'\n```\n\nHow can the decoded message be deciphered? Consider the Cryptogram from above. We want to fill in the blanks below. \n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\n_ ____ __ ___ ____ __ _____ ___ __ ___ ____\n```\nEach blank is a valid English word. We also know that J=I, X=W, and E=D, so we can make those substitutions:\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\n_ _I_D I_ ___ ___D I_ W____ _W_ I_ ___ ____\n```\n\nCan you solve it now? One approach would be to start with the first word 'B', which has only 1 letter. There are only two words in the English language that have one letter: A and I. Looking at our hints, we already know that J=I. Letters in a simple substition cipher cannot be repeated, and since I is taken, we can deduce that B=A. We assign all of the Bs in the cryptogram to A:\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\nA _I_D I_ ___ _A_D I_ W____ _W_ I_ ___ ____\n```\n\nWe can also solve the eighth word `_W_`. There are only three valid 3-letter words that could match that pattern: TWO, OWE, and OWN. We don't know which one it is, but we can try guessing 'OWN'.\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\nA _I_D I_ ___ _A_D I_ WN_O_ OWN I_ O__ ____\n```\nBut now notice the seventh word is WN_O_, and there are no valid words that match this pattern, so we know our guess of OWN was wrong. Using similar logic we can also rule out OWE, so TWO must be the eighth word. Substitutiong S=T and P=O gives\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\nA _I_D I_ T__ _A_D I_ WO_T_ TWO I_ T__ ____\n```\nThe seventh word, `WO_T_` now has most of its letters. The only valid word it can be is 'WORTH'.\n```\nB CJSE JM UIF IBME JT XPSUI UXP JM UIF CVTI\nA _IRD I_ TH_ HA_D I_ WORTH TWO I_ TH_ ___H\n```\n\nFrom there we can guess the common idiom:\n```\nA BIRD IN THE HAND IS WORTH TWO IN THE BUSH\n```\n\n\nThe cryptogram will always be a single string consisting of multiple space-delimited words. In keeping with traditional cryptograms, the input will always be CAPITALIZD. There will be between 1 and 3 hints.\n\nI have provided you with a `DICTIONARY` global variable that is an array of all possible words that may appear within the Kata.\n \nThe test cases for this Kata will be:\n* 5 fixed tests\n* 100 random tests\n\nThe random tests may have more than one solution, and in this case any valid solution will be accepted.\n\nIf you enjoyed this Kata, a challenge version will be coming soon!\n\n",
+    "totalAttempts": 74,
+    "totalCompleted": 2,
+    "totalStars": 4,
+    "voteScore": 4,
+    "tags": [
+      "Strings",
+      "Puzzles",
+      "Game Solvers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/543346bb913a6589fb000744",
+  "data": {
+    "id": "543346bb913a6589fb000744",
+    "name": "Simple Linear Regression",
+    "slug": "simple-linear-regression",
+    "category": "algorithms",
+    "publishedAt": "2014-10-07T02:14:47.565Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/543346bb913a6589fb000744",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-10-07T01:49:47.431Z",
+    "createdBy": {
+      "username": "moonfly",
+      "url": "https://www.codewars.com/users/moonfly"
+    },
+    "description": "Given a set of points, find the equation of the straight line that best approximates the data (in the ordinary least square sense, see http://en.wikipedia.org/wiki/Simple_linear_regression). \n\nWrite a function called `lin_reg` that gets an array of points. Each point in that array is in turn an arrays of 2 values, where the first is x, and the second is y.\n\nYour function should return an array `[s,t]` where `s` (\"s\" for \"__s__lope\") and `t` are the parameters of the function `y = sx+t` that provides the best linear approximation.\n\nPlease note that the points may not lie on the same line, so your approximation will be indeed an approximation, not the exact formula for calculating `y` based on `x`. The error in calculating `s` and `t` (the difference between your `s` and the `s` of the actual best approximation; same for `t`) should be less than 0.001.\n\nExample:\n\n```\npoints = [\n  [0.0, 1.0], # x = 0, y = 1, or f(0) = 1\n  [1.0, 3.0], # x = 1, y = 3, or f(1) = 3\n  [2.0, 5.0]  # x = 2, y = 5, or f(2) = 5\n]\ncoef = lin_reg(points)\ncoef[0] # => 2.0, or s = 2\ncoef[1] # => 1.0, or t = 1\n# That means that the best approximation is y = 2x+1\n```",
+    "totalAttempts": 203,
+    "totalCompleted": 16,
+    "totalStars": 3,
+    "voteScore": 7,
+    "tags": [
+      "Mathematics",
+      "Algorithms",
+      "Data Science"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

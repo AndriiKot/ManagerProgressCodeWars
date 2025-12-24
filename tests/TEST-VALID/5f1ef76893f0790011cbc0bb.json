@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f1ef76893f0790011cbc0bb",
+  "data": {
+    "id": "5f1ef76893f0790011cbc0bb",
+    "name": "Python Recipes #2 : Finalize",
+    "slug": "python-recipes-number-2-finalize",
+    "category": "reference",
+    "publishedAt": "2020-07-29T11:47:42.303Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f1ef76893f0790011cbc0bb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-27T15:48:56.472Z",
+    "createdBy": {
+      "username": "G_kuldeep",
+      "url": "https://www.codewars.com/users/G_kuldeep"
+    },
+    "description": "_yet another easy kata!_\n\n\n## Backstory\n&ensp;&ensp;&ensp;&ensp;  Bob is building a class **Final** that is supposed to work like a private class (somewhat similar to final class from java), and he just finished yesterday the first half of the implementation but he was completely exhausted, definitely in need of some sleep . So he went confidently to his bed... But a hacker entered the game during the night and tried to hack the unfinished production code by adding classes extending Final and accessing or modifying various unauthorized properties!\n\nThis morning Bob went back to his work and quickly realized that his class had been compromized. Success is at stake! And he knows that this hacker will come again at this, so he asked you to help him securize his implementation, forbiding (***to some extent***)  any user to access the hidden fields or modify any property of the original class and to analyze the information about the classes which will try to access his class by extending it. \n\n_(The story will continue in another episode...)_\n\n<hr>\n\n## Setup\n\n\n&ensp;&ensp;&ensp;&ensp; Bob needs you to update his class so that it keeps track of any class that would try to extend the Final class. For each one trying to do so, you have to store some informations related to that class, in the order of the subclasses creations (see Analyzed information). The result must be accessible by iterating on the Final class itself (see example below).\n\n&ensp;&ensp;&ensp;&ensp; In addition to that, Bob want's you to make sure that the fields and methods of the Final class cannot be modified when they are public, and hidden fields or hidden methods have to stay hidden from the subclasses too.\n\n***Note : don't modify the given code inside Final class.***\n\n<hr>\n\n## Details\n\n * The class is defined inside the build function. Bob said it has to be \"final\". He never said it was supposed to be unique! The build function will return the fully implemented Final class.\n * You must not modify the existing parts of the Finalclass.\n * The resulting class should be modifiable neither at class level nor at instance level once which means once a property of class is set then it cannot be changed and doing so should raise the exception (_see Exception section_).\n * we will allow creation of fields/methods on the Final class though (_yeah, it's not that \"final\", true...). But once a field is created any attempt to modify it should result in an Exception.\n * **Final** class must keep track dynamically of all the classes ***in order*** which they tried to extend **Final** class with all the analyzable information of that class.\n\n<hr>\n\n## Exceptions\n \n * If one tries to access any hidden properies then it should raise an exception of type `Exception` with message `Accessing hidden property is not allowed.`.\n * If one tries to modify any existing properties (including any hidden property) then it should raise an exception of type `Exception` with message `Modification to Final class is not allowed.`.\n\n<hr>\n\n## Properties\n\n   ##### You need to keep track of all the possible properties and methods of the subclasses. Those might have:\n\n\n  * Properties\n  * Hidden properties\n  * Instance, static or class methods\n  * Instance, static or class hidden methods\n  * Magic methods\n  * Methods using ***property*** decorator\n     \n     \n <hr>\n \n## Analyzable information\n     \n   ##### You need to keep track of those information in a dict organized in the following way:\n   * Format : `{name:str, body:dict}` \n     * name : Name of class which tried to access **Final** class by extending it.\n     * body : Consist of variables and functions of type dict `{body:{variables:list, functions:list}}`\n       * variables : Information about variables of that class in format `{name:str, hidden:bool}`.\n         * name : Name of variable.\n         * hidden : `True` if variable is hidden else `False`.\n       * functions : Information about various methods of that class in format `{name:str, args:tuple, static:bool, class:bool, hidden:bool}`.\n         * name : Name of method.\n         * args : Tuple of name of parameters passed to method.\n         * static : `True` if method is staticmethod else `False`.\n         * class :  `True` if method is classmethod else `False`.\n         * hidden : `True` if method is hidden else `False`.\n         \n<hr>         \n\n## Output\n\n* The build function should return the fully implemented **Final** class.\n* **Final** class should not be modifiable at all neither at class level nor at instance level.\n* **Final** class should keep track of subclasses as per above guidelines.\n*  **Final** class itself (not its instances) must be iterable. Iterating on it must give access to the data tracked by the class.\n\n<hr>\n\n## About hidden behavior\n\n### Generalities \n\n * In python you can define hidden properties by using `__` precedes the name of property(see below example).\n * We can access hidden properties by using `'_' + class_name + '__' + property_name`.\n * Trying to access or modify the hidden property using defined name results in  raising Exception.\n \n ```python\n class Hidden:\n       __var1 = 1\n       var2 = 2\n       \n       def __func1(self):\n           return \n       \n       def func2(self):\n           return\n  \n  #- Variable var1 and method func1 is hidden whereas var2 and func2 is not hidden.\n  \n  Hidden.var2 # gives 2\n  Hidden.var1 # throws an error\n  Hidden.__var1 # throws an error\n  \n  Hidden.func2() # gives None\n  Hidden.func1() # throws an error\n  Hidden.__func1() # throws an error\n  \n  # We can access hidden properties by '_'+classname+'__'+propertyname.\n  \n  Hidden._Hidden__var1 # gives 1\n  Hidden._Hidden__func1() # gives None\n ```\n \n### Requirements\n \n* Access to hidden properties of **Final** class using above described format (`'_'+classname+'__'+propertyname`) should be granted to the subclasses too.\n* Property with name like `__var1` and `var1` are considered the same so, if `__var1` is already defined in class then access to `var1` or `__var1` should result in raising exception with message.\n* If one tries to modify any property (hidden or non-hidden) should result in raising exception with message.\n* Class level properties can be accessed by object of class so, trying to access hidden properties at class level using object of class should raise an exception (e.g consider hidden property `__x` defined at class level and if object of Final class try to access that by using `__x` or `x` then it should result in raising exception).\n\n_(You can see behavior of this in sample tests)_\n\n<hr>\n\n## Example:\n  \n  ```python\n\n    def build():\n        class Final():\n              x = 'I am class level variable'\n              __y = 'I am hidden class level variable'\n      \n              def __init__(self):\n                  self.a = 1\n                  self.b = 2\n                  self.__k = 4\n                  self.__m = lambda: 1\n      \n              def method1(self):\n                  return 'method1'\n      \n              @staticmethod\n              def method2():\n                  return 'method2'\n      \n              @classmethod\n              def __method3(cls):\n                  return 'method3'\n      \n              def __hidden(self, *args):\n                  return 'hidden'\n        return Final\n     \n    #---------------------------------------------\n    \n    Final = build()\n    obj = Final()\n    \n    \n    # --Should not raise an exception--\n    Final.x\n    Final.method3()\n    FInal.method2()\n    obj.method1()\n    obj.method2()\n    obj.a\n    Final._Final__y\n    obj._Final__hidden()\n    \n    # --Should raise an exception with appropriate message-- (see Exception section for message)\n    Final.y  # accessing hidden property\n    obj.k\n    obj.m\n    Final.__y\n    obj.__k\n    obj.__m\n    obj.hidden()\n    obj.__hidden()\n    Final.x = 1\n    Final.method3 = lambda : ''\n    obj.a = 5\n    obj.method1 = lambda : '' #(for more see sample cases)\n    obj.y # -->> see last point of 'About hidden behavior'\n\n    \n    class A(Final):\n        __a = 1\n        b = 2\n        \n        def non(self, x):\n            return x\n            \n        @staticmethod\n        def __hidden(x, y):\n            return x+y\n    \n    class B(A):\n        \n        @classmethod\n        def __non(cls, *args):\n            return sum(args)\n        \n    \n    #'Final class should be iterative and should give access to all the classes'\n    \n    data = [subcls for subcls in Final]\n    data[0] # = informations about class A\n    data[1] # = informations about class B\n    \n    #in specific,\n     data[0] = {'name':'A', 'body':{'variables':[{'name':'a', 'hidden':True}, {'name':'b', 'hidden':False}],\n                                   'functions':[ {'name':'non', 'args': ('x',), 'static':False, 'class':False, 'hidden':False}, \n                                                 {'name':'hidden', 'args':('x', 'y'), 'static':True, 'class':False, 'hidden':True} ]\n\n     data[1] = {'name':'B', 'body':{'variables':[],\n                                   'functions':[{'name':'non', 'args': ('args',), 'static':False, 'class':True, 'hidden':True}]\n  \n  \n  #(For more pay attention to sample tests)\n  \n  ```\n\n_Good luck._\n\n<hr>\n\n_Special thanks to [Blind4Basics](https://www.codewars.com/users/Blind4Basics) for his assistance._\n\n  _If you pass sample tests then you will pass random tests too so, pay more attention to fixed tests._\n\n\n\n\n\n\n\n\n",
+    "totalAttempts": 207,
+    "totalCompleted": 11,
+    "totalStars": 8,
+    "voteScore": 10,
+    "tags": [
+      "Metaprogramming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

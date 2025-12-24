@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64a09372dc1b2c00244f8d93",
+  "data": {
+    "id": "64a09372dc1b2c00244f8d93",
+    "name": "Stochastic Rats",
+    "slug": "stochastic-rats",
+    "category": "algorithms",
+    "publishedAt": "2023-07-03T01:53:50.085Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64a09372dc1b2c00244f8d93",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-01T20:58:26.378Z",
+    "createdBy": {
+      "username": "myst-6",
+      "url": "https://www.codewars.com/users/myst-6"
+    },
+    "description": "<h1>Task</h1>\n\nA poor rat called Whiskers is very hungry, and is searching for a piece of cheese. However, Dr. Vermin, being a keen statistician, decides to take advantage of the famined rat and chooses to perform a cruel experiment on Whiskers in order to model a stochastic process.\n\nDr Vermin, opulent from his previous scientific breakthroughs, has created a series of rooms for his rat 'friend' to navigate through. The rooms are labeled from `1..N`, and some are connected by vents. Vents connect a single room `a` to another room `b` and can only be traversed one way (from `a` to `b`).\n\nWhiskers is not a very clever rat. Every minute, starting from minute `1`, he *uniformly* chooses a random vent to enter, and may end up going in rooms he's already visited; the structure of the maze is convoluted. Once he reaches his piece of cheese, the rat will begin to munch his food.\n\nDr. Vermin has placed the block of cheese in room `x` and wants to find out the *expected value* of the number of minutes for Whiskers to reach his block of cheese, from *every single* room in his labyrinth.\n\nDr. Vermin has other places to be and more evil experiments to set up, so he bestows the task of collecting the data upon you. However, being the benelovent individual you are, you decide you want to save the rat. You free the rat from its setup, but you need to fabricate some data to give to Dr. Vermin so he does not repeat the experiment.\n\nDr. Vermin expects you to get wonderful data and expects you to analyse the data in order to come up with the *exact* result for each expected value. If Dr. Vermin is unpleased with your analysis, he will repeat the experiment without you in order to gain *better* results - and who knows what will happen to poor little Whiskers and his friends...\n\n<h1>Input / Output</h1>\n\nThe rooms are indexed from `1..N`. Your task is to implement the following function:\n\n`solve(vents, target)`\n\n- `vents`: an array of size `N`, where the `k`-th element is an array of rooms which are reachable from room `k` via a vent (but not necessarily the other way around) - it is guaranteed that a vent does not connect a room to itself, and that there is a maximum of one vent going from one room to another **in each direction**\n- `target`: an integer from `1..N`, the room with the cheese in it\n\nYou must return an array of size `N`, where the `k`-th element is the expected value of the number of minutes for Whiskers to reach the end of the maze.\n\nSince expected values will be fractions, and to avoid floating point inaccuracy, return your answer in the form `[p, q]`, where `p` and `q` are integers representing the irreducible fraction `p/q`.\n\n**It is guaranteed that the rat will always be able to reach the cheese, no matter which room it starts in.**\n\nTo store results of calculations, you should use `BigInt`, since the numbers can get very large.\n\n<h1>Example</h1>\n\n```js\nsolve([[2],[3,4],[1,4],[1,2,3]],4);\n```\n\n<img src=\"https://i.imgur.com/owswPJD.png\" />\n\nThe node in red has the cheese. \n- Suppose Whiskers starts at node 4 - then the rat will take zero moves to get there and start eating, ignoring all vents connected to it, so the expected value is `0`\n- Suppose the rat starts at node 3 - then after one minute, the rat has a 50% chance to be taken straight to node 4 and a 50% chance to be taken to node 1. Overall, the expected value can be calculated to be `8/3`\n- Suppose Whiskers starts at node 2 - then after one minute, the rat has a 50% chance to be taken to node 3, and a 50% chance to be taken to node 4. Overall, the expected value can be calculated to be `7/3`\n- Suppose Whiskers starts at node 1 - then after one minute, the rat has an 100% chance to be taken to node 2. Therefore, the expected value starting from node 1 is exactly one higher than the expected value starting from node 2, which comes out to be `10/3`\n- Therefore, your answer should be `[[10n,3n], [7n,3n], [8n,3n], [0n,1n]]`\n\n<h1>Tests</h1>\n\n- There will be various sample tests, to help you understand the problem.\n- It is guaranteed that: there is a maximum of one vent connecting one room to another **in each direction**; all rooms are connected by some sequence of vents; no vent connects a room to itself.\n- There will be `100` small tests with the constraint `1 <= N <= 10`, to help you debug.\n- There will be `25` performance tests with the constraint `40 <= N <= 50`, to test the speed of your algorithm.",
+    "totalAttempts": 85,
+    "totalCompleted": 8,
+    "totalStars": 7,
+    "voteScore": 20,
+    "tags": [
+      "Probability",
+      "Statistics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

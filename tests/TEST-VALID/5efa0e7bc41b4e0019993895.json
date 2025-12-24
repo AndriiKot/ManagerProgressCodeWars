@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5efa0e7bc41b4e0019993895",
+  "data": {
+    "id": "5efa0e7bc41b4e0019993895",
+    "name": "Sungka",
+    "slug": "sungka",
+    "category": "games",
+    "publishedAt": "2020-06-30T12:39:16.561Z",
+    "approvedAt": "2025-01-15T16:02:46.489Z",
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5efa0e7bc41b4e0019993895",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2020-06-29T15:53:31.956Z",
+    "createdBy": {
+      "username": "tenick",
+      "url": "https://www.codewars.com/users/tenick"
+    },
+    "approvedBy": {
+      "username": "dfhwze",
+      "url": "https://www.codewars.com/users/dfhwze"
+    },
+    "description": "<h2>Sungka is a Philippine variant of the mancala. </h2>\n\n<i>If you don't know mancala you can read about it here:</i> https://www.instructables.com/id/How-to-play-MANCALA/<br>\n<i>You can also try playing mancala here to understand it better:</i>\nhttps://mancala.playdrift.com/\n<h3>Sungka differ very slightly from mancala:</h3>\n<h1>Setup</h1>\n<p>In mancala, you start with 2 homes, which are big holes representing each player's marble storage. Between the 2 homes are holes distributed in 2 rows and 6 columns (2x6), a total of 12 holes. In sungka, the only difference is it's 2x7 holes instead, a total of 14 holes.</p>\n\n```python\n  Mancala:                  Sungka:\n    0  0  0  0  0  0          0  0  0  0  0  0  0\n  0                  0      0                     0\n    0  0  0  0  0  0          0  0  0  0  0  0  0\n```\n<p>In mancala, each holes are filled with 4 marbles, mancala has 2x6 holes, so a total of 48 marbles. In sungka, each holes are filled with 7 marbles instead, so a total of 98 marbles.</p>\n\n```python\n  Mancala:                  Sungka:\n    4  4  4  4  4  4          7  7  7  7  7  7  7\n  0                  0      0                     0\n    4  4  4  4  4  4          7  7  7  7  7  7  7\n```\n\nBoth mancala and sungka have 2 players facing both the long side of the board. Each player has 1 home that is located on their rightmost side of the board, and each player also have 1 row of holes where they can select their marbles from, which is the row closest to the player.\n```javascript\n  Mancala:                                              Sungka:\n      Player_2                                               Player_2\n  4  4  4  4  4  4   /*Player 2's row of holes --->*/   7  7  7  7  7  7  7      \n0                  0     /*Player 2's home   --->*/   0                     0  //<--- Player 1's home\n  4  4  4  4  4  4                                      7  7  7  7  7  7  7    //<--- Player 1's row of holes\n      Player_1                                               Player_1\n```\n\n<h1>Objective</h1>\nThe objective of the game is to get more marbles in your home than your opponent. If both players got the same amount of marbles then it's a draw.\n\n<h1>Gameplay</h1>\n<i> Note: Both mancala and sungka have almost the same exact gameplay, except for the last rule. </i><br>\n<p> <u>You can choose any hole from your side and distribute the marbles from that hole to other holes in a counter-clockwise manner.</u> Let's say you chose the 3rd hole from your row, you will now grab all the marbles from that hole (4 marbles in mancala, 7 marbles in sungka) and distribute it to each holes in counter-clockwise manner until you're out of marbles. So it will look like this: </p>\n\n```python\n  Mancala:                  Sungka:\n    4  4  4  4  4  4          7  7  7  7  7  8  8\n  0                  1      0                     1\n    4  4  0  5  5  5          7  7  0  8  8  8  8\n```\n\n<p> Then it's the other player's turn (the result from the example above for mancala actually indicates you will repeat a turn, this rule will be explained afterwards). <u>But there is one hole where you can't distribute the marble onto, which is your opponent's home.</u> You can't do this obviously because you don't want to give free points to your opponents, do you? So what happens when you reach your opponent's home is just skip that hole and continue distributing to the next holes. </p>\n\n<p>There are 2 special outcomes when distributing the <b>last marble</b> to a hole that we need to apply rules to:</p>\n  <ol>\n  <li>The last marble is distributed to an <b>empty hole in your row</b>, while the <b>opponent's hole directly across from the empty hole in your row was not empty.</b>\n  <ul><li>\n  Then you will grab the <b>last marble</b> along with <b>all the marbles</b> (if any) from the opponent's hole directly across the hole in your row where your last marble landed, then add all those marbles to your home.</li></ul>\n  \n  <li>The last marble is distributed to <b>your home</b>.</li>\n  <ul><li>Then you will repeat your turn.</li></ul>\n  </ol>\n\n<p>Finally, this last rule is different for mancala and sungka. In mancala, when you're out of marbles in your row, the opponent will get all of the marbles in his row and add it to his home. In sungka, when you're out of marbles in your row, you will keep on skipping turns until a marble reaches in one of your holes in your row.</p>\n\n<p>Game ends when there are no marbles left in all the holes, except the homes.</p>\n<hr>\n<h1>Input</h1>\n<p><i>We're going to be focusing on the sungka rules.</i><p>\n\n<ul>\n<li>You will be given a list of \"moves\", where each move represents a positive integer pertaining to which hole the current player will distribute from: 1 if it's the 1st hole, 2 if the 2nd hole, and so on.</li>\n<li>Player 1 will always start distributing first.</li>\n<li>If the current player's whole row is empty, then it should only skip his turn but the move is not skipped. (of course if both players whole row is empty, then game ends)</li>\n<li>If the current player's whole row is not empty, but the move number points to an empty hole, then skip that move but it's still the current player's turn.</li>\n</ul>\n\n<h1>Example:</h1>\n\n```python\nmoves = [1, 3, 7, 4, 1, 3, 4, 1, 7]\n```\n\nThis means it's 9 moves in total\n\nThis will be our starting sungka board:\n```python\n    7  7  7  7  7  7  7\n  0                     0\n    7  7  7  7  7  7  7\n```\nPlayer 1 always starts first\n```python\nMove_1: 1\n\n    7  7  7  7  7  7  7\n  0                     1\n    0  8  8  8  8  8  8\n```\nThe last marble landed on player 1's home, so it's player 1's turn again, meaning the next move in the list still pertains to a hole from the player 1's row.\n\n```python\nMove_2: 3\n\n    7  7  7  7  8  8  8\n  0                     2\n    0  8  0  9  9  9  9\n```\nNow it's player 2's turn\n\n```python\nMove_3: 7\n\n    0  7  7  7  8  8  8\n  1                     2\n    1  9  1  10 10 10 9\n```\n  Player 1's turn next\n```python\nMove_4: 4\n\n    0  8  8  8  9  9  9\n  1                     3\n    1  9  1  0  11 11 10\n```\n  Player 2's turn next\n```python\nMove_5: 1\n\n    1  9  9  9  10 10 0\n  2                     3\n    2  10 1  0  11 11 10\n```\nPlayer 1's turn next\n```python\nMove_6: 3\n\n    1  9  9  9  10 10 0\n  2                     3\n    2  10 0  1  11 11 10\n```\n  When you moved the last marble, it landed in an <b>empty hole in your row</b>, while the <b>opponent's hole directly across from the empty hole in your row was not empty.</b>. So the rule for that special outcome will apply: You will grab the <b>last marble</b> along with <b>all the marbles</b> (if any) from the opponent's hole directly across the hole in your row where your last marble landed, then add all those marbles to your home. So the sungka board should actually look like this:\n```python\n    1  9  9  0  10 10 0\n  2                     13\n    2  10 0  0  11 11 10\n```\nPlayer 2's turn next\n```python\nMove_7: 4\n\n    1  9  9  0  10 10 0\n  2                     13\n    2  10 0  0  11 11 10\n```\nThe 4th hole in player 2's row is empty, so what you will do is skip that move, but it's still player 2's turn, until it gets to a valid move.\n\n```python\nMove_8: 1\n\n    1  9  9  0  10 10 0\n  2                     13\n    2  10 0  0  11 11 10\n```\nEmpty hole so skip that move, but still player 2's turn.\n```python\nMove_9: 7\n\n    0  9  9  0  10 10 0\n  3                     13\n    2  10 0  0  11 11 10\n```\nThe last marble landed on player 2's home, so it's player 2's turn again.\n\nThat was the last move. All moves were carried out successfuly so you're done. Now this will be the resulting sungka board, which is what you will be returning (along with which player won):\n```python\n    0  9  9  0  10 10 0\n  3                     13\n    2  10 0  0  11 11 10\n```\n<h1>Output</h1>\n\nWhat you will be returning is a list containing 3 elements in this order. ```[[Player 1], [Player2], winner]```.<br>\n```Player 1``` and ```Player 2``` are lists both 8 in length, the 1st-7th elements are the player's holes and the 8th element is the player's home. The ```winner``` is a nonnegative integer that can only be <b>1 (if player 1 won), 2 (if player 2 won), or 0 (if it's a draw).</b> So if I convert the above resulting sungka board into the correct output format, it should look like this:\n\n```python\nreturn\n[[2, 10, 0, 0, 11, 11, 10, 13], # player 1\n [0, 10, 10, 0, 9, 9, 0, 3],    # player 2\n 1]                             # winner\n```\n\n\n",
+    "totalAttempts": 190,
+    "totalCompleted": 22,
+    "totalStars": -270,
+    "voteScore": 23,
+    "tags": [
+      "Games",
+      "Puzzles",
+      "Simulation"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "totalStars",
+      "message": "Value -270 is less than minimum 0"
+    }
+  ]
+}

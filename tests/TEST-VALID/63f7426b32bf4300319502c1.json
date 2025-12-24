@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63f7426b32bf4300319502c1",
+  "data": {
+    "id": "63f7426b32bf4300319502c1",
+    "name": "Brain replica",
+    "slug": "brain-replica",
+    "category": "algorithms",
+    "publishedAt": "2023-02-24T19:17:59.418Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "typescript",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63f7426b32bf4300319502c1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-02-23T10:39:40.044Z",
+    "createdBy": {
+      "username": "olderor",
+      "url": "https://www.codewars.com/users/olderor"
+    },
+    "description": "Congratulations with your new job!\n\nWe believe that your experience and skills can provide a huge scientific impact on the society. Thus, you are getting hired in our top secret laboratory for brain research!\n\nIn this Kata you will dive into **Neuroscience** by replicating **brain functionality**.\n\n_Any work you do for our laboratory is under strict NDA. Do not share your research with non-laboratory members as it may cause chaos and spoil their brains!_\n\n![brain](https://dana.org/wp-content/uploads/2019/08/how-brain-works-basics-2.jpg)\n\nFor your project, you will be given a few test subjects. Your goal is to create a simulation of their thoughts system. Whenever a test subject is given a task, their brain must analyze the information to generate a thought. \n\nYou will be given a brain represented as a graph of neural connections for each test subject. Since each brain of test subjects is different, the graph for each test subject may be different as well.\n\nA thought can be represented as some amount of data transferred through the brain. The thought begins at the receptor stage when it starts going into the [sensory neuron](https://en.wikipedia.org/wiki/Sensory_neuron). After that, the thought can be spread accross the brain to be processed, and finally, it should end up in the react neuron.\n\nEach neuron in the brain has a specific task that is to process some amount of data and transfer it to some of the connected neurons. The amount of data a neuron can process is limited for each neuron and it can be different for each neuron. At the same time, each neuron requires some energy to push the data to the next neuron using the [neurotransmission system](https://en.wikipedia.org/wiki/Neurotransmission).\n\n`neurons` - a number of neurons in the brain of the current test subject. Guaranteed that `2 <= neurons`. Additionally, `neurons <= 10000` for C++ and JavaScript, `neurons <= 1500` for TypeScript. So each neuron can be represented as a number in range of `1...neurons`, e.g. for `5` neurons the list of neurons will be `1,2,3,4,5`. The first neuron is always the sensory neuron, the last neuron is always the react neuron, the rest of the neurons are regular neurons.  \n\nYou are also given `neurons_capacity` - a list of size `neurons` that represent capacity of each neuron - that is the amount of data that a neuron can process. Capacity is always a positive number.\n\nYou are also given `neurons_connections` - the [neurotransmission system](https://en.wikipedia.org/wiki/Neurotransmission) that is represented as a list of values `A, B, E` that denotes that there is a connection between neuron `A` and neuron `B`, where `1 <= A < B <= neurons`. In order to push the data from one neuron to another, the brain needs to spend `E` amount of energy to transfer the data. Energy is always a positive number. It is guaranteed that the number of connections between two neurons does not exceed `1`.\n\nYour goal is to create a simulation of the brain thought system. The thought begins at the sensory neuron that always starts at position `1`, then the thought should go through the brain, and end up in the final react neuron which is always at position `neurons` (the last neuron).\n\n**Your brain replica must maximize the amount of data that is transferred from the sensory neuron to the react neuron to produce the very best thought (which means that the react neuron received as much data bits as possible) while minimizing the amount of energy the brain needs to spend to process the thought (if there are multiple ways to simulate the very best thought, you should use the one that spends as low energy as possible).**\n\nThe output must include:\n1) The maximum amount of data that can be processed by the brain.\n2) The amount of energy that was spent by processing the thought.\n3) The path of the thought in the brain represented as a list of values `A B T` which means that neuron `A` transfers `T` bits of data to neuron `B`. You should only include the path for the neurons that are used in the thought process.\n\nIf there are multiple ways to simulate the brain, you can output any of the working simulation, but remember: the thought must process as much data as possible spending as low energy as possible.\n\nWhile working on the simulation, make sure your brain replica avoids going into the [disorder of consciousness](https://www.nhs.uk/conditions/disorders-of-consciousness/) stage when the thought gets \"stuck\" at the brain. When there is a connection between neuron `A` and neuron `B`, it also means there is a connection between neuron `B` and neuron `A`, thus it may lead to the brain being overloaded with the thought spending too much energy to process it. You should also not leave any bits of unprocessed data in the brain that does not reach the react neuron. Use the amount of data that is only neccessary to produce the very best thought.\n\nRight now our laboratory does not have enough funds to validate if all brains of the test subjects are healthy. If you find the brain was damaged during the simulation, you should return 1) the amount of data - `0`; 2) the amount of energy - `0`; 3) empty path of the thought. _The brain may be considered as damaged if the thought process cannot reach the react neuron from the sensory neuron._\n\nBefore giving you access to the human brain simulation, you will be given a few animal brains to experiment with:\n\n- The [Etruscan shrew](https://en.wikipedia.org/wiki/Etruscan_shrew) is the smallest terrestrial mammal and, with a weight of only 64 mg, has one of the smallest brains of all mammals. Their brain can be represented as the following:\n  ```\n  neurons - 2\n  neurons capacity - [3, 4]\n  neurons connections - [[1, 2, 1]]\n  ```\n\n  The representation of the Etruscan shrew brain:\n  ```\n  C-3  E-1  C-4\n  (1).......(2)\n  ```\n\n  The simulation of this brain will include the following:\n  1) The sensory neuron `1` receives some data. The neuron can only process `3` bits of data.\n  2) The sensory neuron `1` transfers `3` bits of data to the react neuron `2` while spending `1` energy.\n  3) The react neuron `2` receives `3` bits of data. The neuron can process `4` bits of data. So the neuron ends up processing `3` bits of data that it was given.\n  4) Brain simulation stops.\n\n  The output of the brain simulation will be the following:\n  1) The amount of data that can be processed by the brain - `3` as `3` bits of data were received and processed by the react neuron.\n  2) The amount of energy that was spent - `1` as the brain spent `1` energy transferring the data from neuron `1` to neuron `2`.\n  3) The path of the thought in the brain: `[[1, 2, 3]]`\n\n\n- [Hog-nosed skunk](https://en.wikipedia.org/wiki/Hog-nosed_skunk) brain:\n  ```\n  neurons - 9\n  neurons capacity - [100, 10, 5, 7, 5, 10, 20, 20, 100]\n  neurons connections - [[1, 2, 4], [1, 3, 1000], [1, 4, 1], [2, 5, 123], [2, 6, 2], [3, 6, 24], [4, 9, 1], [6, 7, 10000], [6, 8, 5000], [5, 8, 50], [5, 7, 40], [7, 9, 10], [8, 9, 10]]\n  ```\n\n  The graph of the brain for the hog-nosed skunk:\n  ```\n                C-10   E-123   C-5    E-40    C-20\n               .(2). . . . . . (5). . . . . . (7) .  .\n           .         .            .          .         . E-10\n   E-4 .            E-2 .       E-50  .   .  E-10000      .\n   .                      .            . .                  .\n  C-100         C-5         .  C-10 .       . C-20           . C-100\n  (1). . . . . .(3). . . . . . (6). . . . . . (8). . . . . . (9)\n     .    E-1000       E-24           E-5000         E-10   .\n       .                                                   .\n         .       E-1             C-7         E-1          .\n           . . . . . . . . . . . (4). . . . . . . . . . . \n  ```\n\n  The simulation of this brain will include the following:\n  1) The sensory neuron `1` receives some data. The neuron can only process `100` bits of data, then it transfers `10` bits of data to the neuron `2` while spending `4` energy, also it transfers `5` bits of data to the neuron `3` while spending `1000` energy, and transfers `7` bits of data to the neuron `4` while spending `1` energy. The rest of the data cannot be processed by the brain neurons, so it will be ignored.\n  2) The neuron `2` receives `10` bits of data, and it transfers `5` bits of data to the neuron `5` while spending `123` energy and `5` bits of data to the neuron `6` while spending `2` energy.\n  3) The neuron `3` receives `5` bits of data, and it transfers `5` bits of data to the neuron `6` while spending `24` energy.\n  4) The neuron `4` receives `7` bits of data, and it transfers `7` bits of data to the react neuron `9` while spending `1` energy.\n  5) The neuron `5` receives `5` bits of data, and it transfers `5` bits of data to the neuron `7` while spending `40` energy.\n  6) The neuron `6` receives `10` bits of data, and it transfers `10` bits of data to the neuron `8` while spending `5000` energy.\n  7) The neuron `7` receives `5` bits of data, and it transfers `5` bits of data to the react neuron `9` while spending `10` energy.\n  8) The neuron `8` receives `10` bits of data, and it transfers `10` bits of data to the react neuron `9` while spending `10` energy.\n  9) Brain simulation stops.\n\n  This will result in processing `22` bits of data while spending `6215` energy overall.\n\n- [Striped skunk](https://en.wikipedia.org/wiki/Striped_skunk) has a similar to the hog-nosed skunk brain structure, however striped skunk requires different amount of energy to process the data for some of the neurons. So the result for striped skunk would be processing `22` bits of data while spending `2215` energy. This thought process can be achieved by not using some of the neurons in the brain.\n\nAmong your test subjects you can also find [goldfish](https://en.wikipedia.org/wiki/Goldfish), [anaconda](https://en.wikipedia.org/wiki/Anaconda), [python](https://en.wikipedia.org/wiki/Pythonidae), [starfish](https://en.wikipedia.org/wiki/Starfish), [frog](https://en.wikipedia.org/wiki/Frog), and a few brains of [mice](https://en.wikipedia.org/wiki/Mouse) that we used for our previous experiments.\n",
+    "totalAttempts": 98,
+    "totalCompleted": 4,
+    "totalStars": 5,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Graphs",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

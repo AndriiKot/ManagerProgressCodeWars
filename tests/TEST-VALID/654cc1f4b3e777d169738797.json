@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654cc1f4b3e777d169738797",
+  "data": {
+    "id": "654cc1f4b3e777d169738797",
+    "name": "Factory Production Analysis",
+    "slug": "factory-production-analysis",
+    "category": "algorithms",
+    "publishedAt": "2023-11-09T13:23:42.060Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/654cc1f4b3e777d169738797",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-09T11:26:44.813Z",
+    "createdBy": {
+      "username": "vldnvsk",
+      "url": "https://www.codewars.com/users/vldnvsk"
+    },
+    "description": "## Overview\nAs an engineer at a small factory, you are responsible for the production of various items, ranging from grenades and laser turrets to solar panels and nuclear reactors.\n\n## Task\nYou have a `RecipeService` class that provides access to a comprehensive collection of recipes (`collection`)  recived as a constructor argument. Each recipe includes information about the production process for the corresponding product. However, the factory relies on natural resources, and it's crucial to account for the amount of resources needed for each product. Additionally, understanding the time required for production is essential.\n\nYour task is to implement the `totalRaw` method within the `RecipeService` class. This method takes the product ID (`id`) and the required amount of products as arguments. The method should then calculate and return the total time and natural resources needed to produce the specified quantity of the product.\nKeep in mind  the ```yield``` property, which describes the amount of the final product that will be obtained.\n\n<blockquote>\n    <i>Note1:</i> \"natural resources\" in the collection have null value:\n    <code>'iron-ore': null</code>\n</blockquote>\n<blockquote>\n    <i>Note2:</i> \n    if the amount  is not provided then it is assumed that only 1 is needed.\n</blockquote>\n\n## Collection interface\n```typescript\ncollection = {\n  // recipe id\n  [id: string]: {\n    time: number,\n    yield: number,\n    ingredients: [\n     { \n      id: string, // recipe id\n      amount: number \n     },\n    ],\n  } | null\n}\n```\n\n## Example\nAnalyse total raw for 2```copper-cable```\n```\n'copper-cable': {\n    time: 0.5,\n    yield: 2,\n    ingredients: [{ id: 'copper-plate', amount: 1 }],\n},\n```\nIn this scenario, to manufacture 2 cables, we necessitate 1 ```copper-plate```\n```\n'copper-plate': {\n    time: 3.5,\n    yield: 1,\n    ingredients: [{ id: 'copper-ore', amount: 1 }],\n  },\n```\nwhich, in turn, demands 1 ```copper-ore``` (considered a natural resource). Consequently, the total time expenditure is calculated as ```0.5 + 3.5 = 4```\n\n\nFor a more specific analysis pertaining to only 1 ```copper-cable```, the computation is refined. It signifies the requirement of 0.5 ```copper-ore``` and a time investment of ```(0.5 + 3.5) / 2 = 2```\n\n\n## Input\n```\nid: string, amount: number\n```\n\n## Output\nThe method should return the result in the following format:\n\n```JSON\n{\n  time: number,            // Total time required for production\n  raw: {                   // Natural resources needed, keyed by ID\n    [id:string]: number    // Amount of each natural resource required\n  }\n}\n```\nor\n\n```null``` \nif\n<ul>\n<li>the resource being sought is a natural resource</li>\n<li>there is no corresponding recipe in our collection</li>\n<li>requested amount less than or equal 0</li>\n</ul>",
+    "totalAttempts": 208,
+    "totalCompleted": 28,
+    "totalStars": 9,
+    "voteScore": 17,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

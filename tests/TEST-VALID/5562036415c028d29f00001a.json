@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5562036415c028d29f00001a",
+  "data": {
+    "id": "5562036415c028d29f00001a",
+    "name": "When's my birthday ?",
+    "slug": "whens-my-birthday",
+    "category": "reference",
+    "publishedAt": "2015-05-24T20:54:17.389Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/5562036415c028d29f00001a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-24T16:59:16.880Z",
+    "createdBy": {
+      "username": "ZozoFouchtra",
+      "url": "https://www.codewars.com/users/ZozoFouchtra"
+    },
+    "description": "Anastasia always forget her birthday ! She'd like to know when (which date) and when (in how many days) what age she'll be. . .\n\nShe also like to know same things about her friends (even if for some of them she doesn't know their year of birth).\n\nCan you help ?\n\n## The Job\nYou'll have to build a `Birthday` object to handle the birthday of a person:\n\n```javascript\nnew Birthday( name, day, month [, year] )\n```\n* `name` is a string,\n* `day`, `month`, `year` are integers\n  - `day` from 1 to 31,\n  - `month` from 1 (not 0) to 12\n  - `year` (if provided) over 1500\n  \n`Birthday` instances have 4 methods :\n\n```javascript\nBirthday#next() // -> returns date of \"next\" birthday\n  //...'date' is a Date instance\n  //!\\ if birthday is \"today\" return today date !\n  \nBirthday#age() // -> returns age of the person on next birthday\n  //...'age' is an integer\n  //!\\ if no year was provided to the constructor returns 'undefined'\n\nBirthday#days() // -> returns number of days until next birthday\n  //...if birthday is \"today\" number of days == 0 !\n  \nBirthday#toString() // -> returns a string of the form :\n  // \"Name was born on Www Mmm DD YYYY\", where :\n  // - Name is name of the person\n  // - Www is name of the day of the week (3 chars)\n  // - Mmm is name of the month (3 chars)\n  // - DD is the day of the month (2 digits)\n  // - YYYY is the year (4 digits) if provided to the constructor\n  // If no year was provided the string will be :\n  // \"Name was born on Mmm DD\"\n```\n\nFor the purpose of the tests \"today\" will be arbitrarily fixed and will change along the tests. You'll may (and probably you'll **have to**) use the var `TODAY` to get the currently \"today\" value.\n\n###  Examples\n\n```javascript\nvar kat = new Birthday(\"Katya\",2,5,1729);\n\nkat.toString()  // -> \"Katya was born on Mon May 02 1729\"\n\nTODAY = new Date(2015,6,1);\nkat.next()  // -> Mon May 02 2016 00:00:00 GMT+0200\nkat.age()   // -> 287 (woah!)\n\nTODAY = new Date(2015,3,23)\nkat.days() // -> 10\nTODAY = new Date(2015,4,1)\nkat.days() // -> 1\nTODAY = new Date(2015,4,2)\nkat.days() // -> 0\nkat.next() // -> Sat May 02 2015 00:00:00 GMT+0200\n```\n\n**Note** : You don't have to change `TODAY`, tests do it. `TODAY` should be used every time you would call `new Date()` (without argument) in normal conditions to get the date of the the day.",
+    "totalAttempts": 229,
+    "totalCompleted": 25,
+    "totalStars": 10,
+    "voteScore": 45,
+    "tags": [
+      "Date Time",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

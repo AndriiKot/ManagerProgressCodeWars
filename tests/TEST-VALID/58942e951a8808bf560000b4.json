@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58942e951a8808bf560000b4",
+  "data": {
+    "id": "58942e951a8808bf560000b4",
+    "name": "Simple handlebars engine #1",
+    "slug": "simple-handlebars-engine-number-1",
+    "category": "algorithms",
+    "publishedAt": "2017-02-04T05:20:53.468Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58942e951a8808bf560000b4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-03T07:17:41.099Z",
+    "createdBy": {
+      "username": "joelharkes",
+      "url": "https://www.codewars.com/users/joelharkes"
+    },
+    "description": "# Simple Handlebars engine #1\n\nIn this kata you will be writing a simplified version of a [handlebars render engine](http://handlebarsjs.com/).\n\nThis engine (your function) should turn a simple handlebars template with some data into a new generated string.\n\n## example\n\n```\nrender('hello {{name}}',{name: 'joel'}); //outputs: 'hello joel'\nrender('ping {{ deep.pong }}',{deep: {pong: 'joel')}); //outputs: 'ping joel'\n```\n \n \n ## Requirements\n \n This is a simple version of the kata. You don't have to worry about error handling or any conditions/code blocks, yet.\n \n * you need to have a Render function, accepting 2 parameters\n  * first paramters is a string: the handlebars template to render.\n  * second parameter is an object: the data to use for rendering the template\n * a single handlebar `{` should be shown in the output\n * a handlebar can be escaped by using a blackslash: `\\{{`\n * when data doesn't exists, it shouldn't render anything: `render('t {{t}}',{r:2})` => 't '\n * when invalid data-acces, also render nothing: `render('t {{t.t}}',{t:2})` => 't '\n * Handlebars defines the following bracket notation, which is used: `{{t.[key]}}`\n * Using `/` instead `of` . is deprecated in the spec, so it wont be tested: `{{t/key}}`\n * No html encoding of content is needed in this kata. (note that this is, though, the default behaviour for a double bracket expression in handlebars).  \n \n## Note from the creator\n\nYou can solve it by either replacing or 'compiling' the template. Note that they both have their downsides:\n\n* Replacing is a rather slow process, so running the same template multiple times will be generally slower than compiling\n* Compiling, while it is blazing fast to run, the drawbacks are that the compilation generally can take longer than a single run of replacing. Also Compiling dynamic templates will lead to the side effect of slowly building up on memory usage (since every compiled template == code that is loaded into memory)\n\nDon't worry, neither edge case is tested in this kata!\n\nGood luck!",
+    "totalAttempts": 160,
+    "totalCompleted": 17,
+    "totalStars": 5,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

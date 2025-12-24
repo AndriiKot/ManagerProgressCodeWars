@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5de2b8238c47250016ab5dee",
+  "data": {
+    "id": "5de2b8238c47250016ab5dee",
+    "name": "Equational reasoning with scanl",
+    "slug": "equational-reasoning-with-scanl",
+    "category": "reference",
+    "publishedAt": "2019-11-30T22:34:43.100Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5de2b8238c47250016ab5dee",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-11-30T18:42:43.949Z",
+    "createdBy": {
+      "username": "haspience",
+      "url": "https://www.codewars.com/users/haspience"
+    },
+    "description": "Using equations `scanl` can be defined as follows:\n\n```haskell\nrs !! 0     = s0\nrs !! (n+1) = rs !! n <+> xs !! n \n\n=>\n\nrs = scanl (<+>) s0 xs\n```\n\nWhat that means for us is that if we can express our problem in terms of those two equations we may as well rewrite it as `scanl`.\n\nHere is an example:\n```haskell\nfibs !! 0     = 0\nfibs !! 1     = 1\nfibs !! (n+1) = fibs !! n + fibs !! (n-1)\n\n  {- Substitution -}\nfibs = 0 : rs \nrs !! 0     = 1\nrs !! (n+1) = rs !! n + fibs !! n\n\n  {- Definition of scanl -}\nfibs = 0 : rs\nrs = scanl (+) 1 fibs\n\n  {- Substitution -}\nfibs = 0 : scanl (+) 1 fibs\n```\n\n<h3>Your task is to implement:</h3>\n\n1) The infinite series of the successive powers of two: \n\n`[1, 2, 4, 8, 16..]`\n\n2) Tribonacci numbers (similar to the Fibonacci numbers, but start with 3 predefined numbers): \n\n*Here you only need to use only one scanl. The second sum can be solved any other way*\n\n`[0, 0, 1, 1, 2, 4, 7, 13..]`\n\n3) [Pell numbers](https://en.wikipedia.org/wiki/Pell_number) (also similar to the Fibonacci numbers, but the previous number is summed twice instead): \n\n`[0, 1, 2, 5, 12, 29..]`\n\n*Note*: You should use provided function:\n```haskell\nscanl :: (Int -> Int -> Int) -> Int -> [Int] -> [Int]\n```",
+    "totalAttempts": 144,
+    "totalCompleted": 12,
+    "totalStars": 5,
+    "voteScore": 19,
+    "tags": [
+      "Recursion",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

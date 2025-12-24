@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c91f503ac8b333aa73120d4",
+  "data": {
+    "id": "5c91f503ac8b333aa73120d4",
+    "name": "Reactive programming: #4 Pipelining operators",
+    "slug": "reactive-programming-number-4-pipelining-operators",
+    "category": "reference",
+    "publishedAt": "2019-03-20T11:06:14.745Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c91f503ac8b333aa73120d4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-20T08:08:35.739Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the fourth part of the series on reactive programming.\n\nBefore facing your resolution, you must have completed the previous three katas:\n* [#1 Create function](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de)\n* [#2 Basic observables creation](https://www.codewars.com/kata/5c90276a03b42343cb32e9bf)\n* [#3 Premier operators](https://www.codewars.com/kata/5c914f2ae041fe000e8964ee)\n\nIn the previous kata we learned how to transform an observable using operators. In this we are going to create a pipe function that allows us to combine several operators.\n\nWith the current solution we can combine operators but the result is a bit ugly.\n\nLet's try, for example, to create an observable in a single instruction with the last test proposed in #3.\n\n```typescript\nconst sum$ = reduce((s, n) => s + n, 0)(map(n => n * 2)(filter(n => n % 2 !== 0)(of(1, 2, 3, 4, 5))));\n```\n\nWe could do nicer if we had a `pipe` function.\n\n```typescript\nconst sum$ = of(1, 2, 3, 4, 5).pipe(filter(n => n % 2 !== 0), map(n => n * 2), reduce((s, n) => s + n, 0));\n```\n\nBetter, isn't it?\n\nBut before we start we are going to define the `pipe` operator.\n\n```typescript\nfunction pipe<T, R>(\n  ...operators: Array<Operator<any, any>>\n): Operator<T, R> {\n  // Your code\n}\n```\n\nYes, `pipe` can be considered as an \"high order operator\" since it receives a list of operators and an observable of Ts and returns an observable of Rs to which the operators have been applied from left to right.\n\nNote that we have had to sacrifice part of the type-safe provided by TypeScript. By allowing a list of operators we had to use `<any, any>`. We would have liked to reinforce the type definition by specifying that operator types must match.\n\nWe could have done this if we knew exactly how many operators receive `pipe` operator. For example, if it only received two, the definition would have been type-safe in this way.\n\nIn the previous kata, we do not fully explain why operators should be currified. I think you can understand this now. If they were not, we could not combine them with the `pipe` operator.\n\n```typescript\nfunction pipe<T, R, S>(f: Operator<T, R>, g: Operator<R, S>): Operator<T, S> {\n  ...\n}\n```\n\nWe would have to overload the `pipe` definition for 2, 3, 4, ... operators, but we prefer not to do it this way.\n\nLet's start!\n\n# pipe operator\n\nYour task is to implement the `pipe` operator.\n\nHere you have some examples.\n\n```typescript\nconst example = pipe(map(val => val + 10))(of(1, 2, 3, 4, 5));\n// output: 11, 12, 13, 14, 15\nexample.subscribe({ onNext: val => coonsole.log(val) });\n```\n\n```typescript\nconst sum$ = pipe(\n  filter(n => n % 2 !== 0),\n  map(n => n * 2),\n  reduce((s, n) => s + n, 0)\n)(of(1, 2, 3, 4, 5));\n// output: 18\nsum$.subscribe({\n  onNext: val => console.log(val)\n});\n```\n\n# pipe method\n\nNow to make it even simpler, let's modify Observable type to allow pipelining.\n\n```typescript\ninterface Observable<T> {\n  subscribe: (o: Subscriber<T>) => Subscription;\n  pipe: <R>(...operators: Array<Operator<any, any>>) => Observable<R>;\n}\n```\n\nSo any observable must have a pipe function.\n\n```typescript\nconst source = create(observer => {\n  observer.next(1);\n  observer.next(2);\n}).pipe(filter(v => v === 2));\n\n// output: 2\nsource.subscribe({ onNext: v => (val = console.log(val) });\n```\n\n```typescript\nconst sum$ = of(1, 2, 3, 4, 5).pipe(\n  filter(n => n % 2 !== 0),\n  map(n => n * 2),\n  reduce((s, n) => s + n, 0)\n);\n// output: 18\nsum$.subscribe({\n  onNext: val => console.log(val)\n});\n```\n\n# take and tap operators\n\nWe are going to finish this kata by implementing a couple of simple and useful additional operators.\n\n## take\n\nEmit provided number of values before completing. The definition of the `take` operator is as follows.\n\n```typescript\nfunction take<T>(n: number): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n    // your code\n  }\n}\n```\n\n```typescript\nconst source = of(1, 2, 3, 4, 5).pipe(take(3));\n\n// output: 1, 2, 3\nsource.subscribe({\n  onNext: v => console.log(v)\n});\n```\n\n## tap\n\nTransparently perform actions or side-effects, such as logging. With the following definition.\n\n```typescript\nfunction tap<T>(f: (x: T) => void): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n  }\n}\n```\n\nTap receives a function that applies a side effect (such as logging, mutation, or testing) that leaves the value unchanged for the following pipeline operators.\n\nFor example:\n\n```typescript\n// output: 1, 2, 2, 4, 3, 6, 4, 8, 5, 10\nof(1, 2, 3, 4, 5)\n        .pipe(\n          tap(n => console.log(n)),\n          map(n => n * 2),\n          tap(n => console.log(n))\n        )\n        .subscribe({});\n```\n\nWhen you are finished, you can continue with [#5 Observable juggling](https://www.codewars.com/kata/5c92b57e48491c3f87c62c89)",
+    "totalAttempts": 14,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

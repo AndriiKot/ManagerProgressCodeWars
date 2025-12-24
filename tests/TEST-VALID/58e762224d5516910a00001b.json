@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58e762224d5516910a00001b",
+  "data": {
+    "id": "58e762224d5516910a00001b",
+    "name": "To compress: This looks like Huffman compression!",
+    "slug": "to-compress-this-looks-like-huffman-compression",
+    "category": "algorithms",
+    "publishedAt": "2017-04-10T17:10:28.746Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/58e762224d5516910a00001b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-04-07T09:55:46.629Z",
+    "createdBy": {
+      "username": "user9247539",
+      "url": "https://www.codewars.com/users/user9247539"
+    },
+    "description": "One of the most commonly known algorithms used for compression is the Huffman compression.\n\nHuffman compression makes use of a frequency table, from which a binary tree is set-up. By traversing this binary tree again, a binary code can be formed. As we all know, binary codes can be easily rewritten to ASCII chars. Compression is gained by sorting the frequency table where as the character with the highest frequency, is obviously far higher placed in the tree than characters with a lesser frequency.\n\nFor more information, please see: https://en.wikipedia.org/wiki/Huffman_coding\n\n\nYour task, if you choose to accept it, is to write a fully functional Huffman encoding / decoding program. This means that you (might) need to create three classes (other signatures are allowed of course!):\n\n<ul>\n<li> HuffmanFrequencyTable </li>\n<li> HuffmanNode </li>\n<li> HuffmanTree </li>\n</ul>\n\nThe basic signage of these classes has been provided, but may be changed by yourself for better readability and execution!\n\n<b> HuffmanFrequencyTable </b></br>\nThis class is meant to be simple, it should contain a datastructure that aids you as a programmer, but also a method called <i> Accept </i>  that will accept a given string and fill the choosen datastructure. Of course you may add a <i>ToString()</i> method to dump your frequency table. \n\n<i>Example:</i></br>\nConsider the following string:\n<ul><li><b><i>\"The quick brown bit jumps over the lazy byte\"</i></b></li></ul>\n</br>which should result into the following frequency table:</br>\n<style type=\"text/css\">\n.tg  {border-collapse:collapse;border-spacing:0;}\n.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}\n.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}\n.tg .tg-baqh{text-align:center;vertical-align:top}\n.tg .tg-yw4l{vertical-align:top}\n</style>\n<table class=\"tg\">\n  <tr>\n    <th class=\"tg-baqh\">T</th>\n    <th class=\"tg-yw4l\">q</th>\n    <th class=\"tg-yw4l\">c</th>\n    <th class=\"tg-yw4l\">k</th>\n    <th class=\"tg-yw4l\">w</th>\n    <th class=\"tg-yw4l\">n</th>\n    <th class=\"tg-yw4l\">j</th>\n    <th class=\"tg-yw4l\">m</th>\n    <th class=\"tg-yw4l\">p</th>\n    <th class=\"tg-yw4l\">s</th>\n    <th class=\"tg-yw4l\">v</th>\n    <th class=\"tg-yw4l\">l</th>\n    <th class=\"tg-yw4l\">a</th>\n    <th class=\"tg-yw4l\">z</th>\n    <th class=\"tg-yw4l\">h</th>\n    <th class=\"tg-yw4l\">u</th>\n    <th class=\"tg-yw4l\">i</th>\n    <th class=\"tg-yw4l\">r</th>\n    <th class=\"tg-yw4l\">o</th>\n    <th class=\"tg-yw4l\">y</th>\n    <th class=\"tg-yw4l\">b</th>\n    <th class=\"tg-yw4l\">t</th>\n    <th class=\"tg-yw4l\">e</th>\n    <th class=\"tg-yw4l\"> (whitespace)</th>\n  </tr>\n  <tr>\n    <th class=\"tg-baqh\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">1</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">2</th>\n    <th class=\"tg-yw4l\">3</th>\n    <th class=\"tg-yw4l\">3</th>\n    <th class=\"tg-yw4l\">4</th>\n    <th class=\"tg-yw4l\">8</th>\n  </tr>\n</table>\n</br>\n\n<b> HuffmanNode </b></br>\nThis class is also meant to be simple, it is meant to form the datastructure of forming a Huffman binary tree. As these Huffman trees consists of nodes, this class is the latter. Each node should at least be able to hold a <i>nullable</i> character, together with it's according frequency. But please also keep in mind that this node might also act as an internal storage node, connecting other nodes of course.\n\n<b> HuffmanTree </b></br>\nThis is the final class and the heart of our assignment here. The class itself will build a tree based upon the generated frequency table of the given input, which we consider first as a string. \nWhen the tree has been built up, we can use this tree to <b>encode</b> and <b>decode</b> the given input!</br> Signage of these methods: </br></br>\n\n<ul>\n<li><i>public BitArray Encode(string source)</i></br>\nThis method encodes a given string to a BitArray. Each bit here, represents either a left (0) or a right (1) path in the tree.  \n</li> \n<li><i>public string Decode(BitArray bits)</i></br>\nThis method decodes a given BitArray back to a string. You do not have to recreate a frequency table again, we'll use the old one, created upon encoding!\n</li>\n</ul>\n\nWith the earlier used example, your huffman encoder should encode (using the codepage: Encode.ASCII) </br></br>\n<b><i>\"The quick brown bit jumps over the lazy byte\"</i></b></br></br> to\n\n<b><i>\"???}?/?\\b?|5u??\u0003?uz>D\\\\b5\"</b></i></br></br>\nAs this is barely unreadable, we also might want to consider the following binary code (without the spaces of course):</br>\n11111010 01111001 01111111 11010110 \n11000000 00011010 11111100 11101000 \n10000111 01011111 01110001 01001101 \n10100011 10100001 00110111 10101010\n11001110 01011000 10011110 01010101\n10110001 10111110 10101111 11101000\n1100</br>\n\nWrapping up:\nWrite the encodeing and decoding functionality for the Huffman algorithm using (or adapting) the given classes. And above all, do not forget to have a bit of fun!\n\nThe solution will verify the frequency table that you've built, as well as the basic huffman encoded messages!\nPlease be aware that we'll introduce some random testing too!\n\nI do hope that you like this Kata and that you have had fun coding it. So do not forget to vote and rank this Kata please ;)",
+    "totalAttempts": 60,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms",
+      "Trees"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

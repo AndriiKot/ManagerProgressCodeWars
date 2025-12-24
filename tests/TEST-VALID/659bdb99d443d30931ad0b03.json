@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/659bdb99d443d30931ad0b03",
+  "data": {
+    "id": "659bdb99d443d30931ad0b03",
+    "name": "5 by 5 wordsearch",
+    "slug": "5-by-5-wordsearch",
+    "category": "games",
+    "publishedAt": "2024-01-08T12:16:29.900Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/659bdb99d443d30931ad0b03",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-08T11:25:13.800Z",
+    "createdBy": {
+      "username": "unp1ng46l3",
+      "url": "https://www.codewars.com/users/unp1ng46l3"
+    },
+    "description": "You will be given a 5 by 5 array of letters, as well as 4 words to find. You task is to locate all four of the words, and return a new 5x5 array marking their locations.\n\n### Instructions for marking the word's positions:\n\n* use `0` for a letter that is not part of a word, just there to fill space\n* for each letter in the word replace it with that word's index. (starting at one, not zero)\n* if two words overlap on a letter (they both use it), combine both indexes with lowest number first. Example, if hello (index 1) and heros (index 2) both share the `h`, mark that spot with `12`\n\nSo if you found a five letter word going straight across, if that word appeared first in the list, replace it with: `[1,1,1,1,1]` (that word's index)\n\nFor example, given the following:\n```\n[\n  [a,n,c,p,x],\n  [w,r,u,o,f],\n  [o,e,r,s,q],\n  [r,d,x,a,i],\n  [d,n,i,f,y]\n]\n```\n\nand\n\n```\n[\"word\", \"array\", \"find\", \"four\"]\n```\n\nthe output should be:\n```\n[\n  [2,0,0,0,0],\n  [1,24,4,4,4],\n  [1,0,2,0,0],\n  [1,0,0,2,0],\n  [13,3,3,3,2]\n]\n\n```\n\n### Other info\n* Words can be horizontal, vertical, and diagonal.\n* Word will only appear from top to bottom, bottom to top, or left to right, right to left. Your program should be able to find backwards words.\n* Words lengths will be 3 to 5 letters\n* All words will be lowercase\n",
+    "totalAttempts": 66,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

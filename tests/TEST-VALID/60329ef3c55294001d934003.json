@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60329ef3c55294001d934003",
+  "data": {
+    "id": "60329ef3c55294001d934003",
+    "name": "Baconian Cipher",
+    "slug": "baconian-cipher",
+    "category": "algorithms",
+    "publishedAt": "2021-02-21T18:27:15.054Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60329ef3c55294001d934003",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-21T17:57:07.564Z",
+    "createdBy": {
+      "username": "The-Kingfisher",
+      "url": "https://www.codewars.com/users/The-Kingfisher"
+    },
+    "description": "# Baconian Cipher\n\nIn this kata, you have to encode a string, by replacing each of its letters which can only be -`a` and `b`. Each letter in the original string becomes a 5-letter word in the bacon's cipher. \n\n### Reference Table\n```\nLetter |  Code | Binary       Letter |  Code | Binary\nA      | aaaaa | 00000        N      | abbaa | 01100\nB      | aaaab | 00001        O      | abbab | 01101\nC      | aaaba | 00010        P      | abbba | 01110\nD      | aaabb | 00011        Q      | abbbb | 01111\nE      | aabaa | 00100        R      | baaaa | 10000\nF      | aabab | 00101        S      | baaab | 10001\nG      | aabba | 00110        T      | baaba | 10010\nH      | aabbb | 00111        U, V   | baabb | 10011\nI, J   | abaaa | 01000        W      | babaa | 10100\nK      | abaab | 01001        X      | babab | 10101\nL      | ababa | 01010        Y      | babba | 10110\nM      | ababb | 01011        Z      | babbb | 10111\n```\n\nEach letter in the string given, should be encoded, and be spaced. Each letter should be spaced, once encoded. In simple terms, each letter of the original string is one word in bacon's cipher. Therefore, the encoded string must be spaced, relative to each letter in the original string.\n\nNo numbers, special characters, or foreign, unknown characters should be included in the encoded string. They must be removed.\n\ngiven strings can be uppercase, but all output should be returned as lowercase.\n\nsentences will be tested too.\n\n```python\nbaconian_cipher(\"encoded\") => \"aabaa abbaa aaaba abbab aaabb aabaa aaabb\"\nbaconian_cipher(\"more strings\") => \"ababb abbab baaaa aabaa baaab baaba baaaa abaaa abbaa aabba baaab\"\n```\n\n```python\nbaconian_cipher(\";somethi+#ng\") => \"baaab abbab ababb aabaa baaba aabbb abaaa abbaa aabba\"\nbaconian_cipher(\"123#$\") => \"\" # empty, since none are actualy alphabets\n```\n\n```python\nbaconian_cipher(\"This is a sentence\") => \"baaba aabbb abaaa baaab abaaa baaab aaaaa baaab aabaa abbaa baaba aabaa abbaa aaaba aabaa\"\n```\nHere's a link if you want to learn more:\n\nhttps://en.wikipedia.org/wiki/Bacon%27s_cipher\n",
+    "totalAttempts": 358,
+    "totalCompleted": 85,
+    "totalStars": 2,
+    "voteScore": 91,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Strings",
+      "Security",
+      "Ciphers",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

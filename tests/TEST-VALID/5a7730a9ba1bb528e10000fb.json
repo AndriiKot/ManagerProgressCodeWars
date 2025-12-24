@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a7730a9ba1bb528e10000fb",
+  "data": {
+    "id": "5a7730a9ba1bb528e10000fb",
+    "name": "Brent's Algorithm / Brent-Hashing",
+    "slug": "brents-algorithm-slash-brent-hashing",
+    "category": "algorithms",
+    "publishedAt": "2018-02-04T17:04:14.353Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5a7730a9ba1bb528e10000fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-04T16:11:21.830Z",
+    "createdBy": {
+      "username": "pointbazaar",
+      "url": "https://www.codewars.com/users/pointbazaar"
+    },
+    "description": "You are asked to implement brent's algorithm to fill a hash table.\nhttps://de.wikipedia.org/wiki/Brent-Hashing\n\nthe hash table has some size. we name it \"arr\" here, short for array\n\nyou'll get an int[] with values to insert into the table.\nyou will never get too many values.\nalpha=(values/places available) will be <= 1\n\n--------------------------\nhow brent works:\ninsertion of key k:\nstart with address i=h(k)\nif i is filled, look at\nb=i-h'(k) mod size and b'=i-h'(k') mod size where\nk'=arr[i]\n\nis b free, set k on b\nelse if b' is free, set k on i and k' on b'\n\notherwise try position k on i=b\n\n--------------------------\n\nh(x)=x mod size\nh'(x)= (x mod 7) mod size\n\nexample:\n\n[1,2,4]\n->\n[0][1][2][0][4][0][0][0][0][0][0]\n\nhint: java's modulus doesn't behave like it should. make it correct.\n\n",
+    "totalAttempts": 4,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/565228ffd7c4003b7100003c",
+  "data": {
+    "id": "565228ffd7c4003b7100003c",
+    "name": "Punnett Squares",
+    "slug": "punnett-squares",
+    "category": "reference",
+    "publishedAt": "2015-11-28T01:08:23.799Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/565228ffd7c4003b7100003c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-22T20:43:43.180Z",
+    "createdBy": {
+      "username": "Katbow",
+      "url": "https://www.codewars.com/users/Katbow"
+    },
+    "description": "In biology, a genotype is the genetic make up of an individual which determines a specific trait. There are three possible ways to describe a genotype:\n\n- Homozygous dominant. Represented by two upper case letters, e.g. BB.\n- Heterozygous. Represented by an upper and lower case letter, e.g. Bb.\n- Homozygous recessive. Represented by two lower case letters, e.g. bb.\n\nGiven the genotypes of each parent, a [Punnett square](https://en.wikipedia.org/wiki/Punnett_square) can show the probablilty of the child's genotype. While this is a useful tool, it can be tedious to draw many times and calculate the probability of each genotype. \n\nYour task is to write a function `punnettSquare(father, mother)`, where `father` and `mother` are genotypes, for example `punnettSquare(\"Bb\", \"BB\")`. It will return an object containing (string array for C#):\n\n- The Punnett square, including spaces and new lines for readability.\n- The probabilty for each genotype listed above (dominant, heterozygous, and recessive). This is written as a number representing a percent eg. 50 means 50%.\n\nRules for the Punnett Square\n\n- The square should always have the father genotype across the top of the table, and the mother genotype should be down the left side of the table.\n- The square should include spaces and new lines to ensure readability. The format is \"--B--b\\nB-BB-bB\\nb-Bb-bb\", where - represents a space.\n- The uppercase letter will always come before the lowercase letter in the square eg Bb instead of bB.\n\n\nExample:\n\n```javascript\npunnettSquare(\"Bb\", \"Bb\")\n```\nshould return\n\n```javascript\n{ punnett: \n\"  B  b\nB BB Bb\nb Bb bb\", \ndominantProb: 25,\nheterozygousProb: 50,\nrecessiveProb: 25 }\n```\nExample for C#:\n```csharp\nPunnettSquare(\"Bb\", \"BB\")\n```\nshould return\n```csharp\nstring[] {\"  B  b\\nB BB Bb\\nB BB Bb\", \"50\", \"50\", \"0\"};\n```\nIf both parents do not have exactly 2 letters, return false.\nFor C# it should return **null**. Any letters may be used for the genotypes.",
+    "totalAttempts": 138,
+    "totalCompleted": 22,
+    "totalStars": 7,
+    "voteScore": 27,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

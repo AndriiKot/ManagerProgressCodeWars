@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5705418c58b58f269c00193a",
+  "data": {
+    "id": "5705418c58b58f269c00193a",
+    "name": "Keep Info Up-To-Date",
+    "slug": "keep-info-up-to-date",
+    "category": "reference",
+    "publishedAt": "2016-04-06T19:28:34.992Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5705418c58b58f269c00193a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-04-06T17:04:13.314Z",
+    "createdBy": {
+      "username": "Chaddledee",
+      "url": "https://www.codewars.com/users/Chaddledee"
+    },
+    "description": "A company asks its employees to update their personal information once a year. They do this by submitting a log containing any changes to their personal information since the previous year. Logs are made in the following format:\n```javascript\n//first log\n{ name : 'Joe Bloggs',\naddress : '123 Fake Street',\nyear : 2007 }\n\n//second log\n{ name : 'Joe Doe',\nmarried : true,\nyear : 2008 }\n```\nThere is no limit on the amount of fields a log can have, nor the field names or values. The only field which is guaranteed to be in each log is the year the log was made, ```year```. If no information changes, a log does not have to be submitted for that year.\n\nWrite a function which takes a collection of logs (indeterminate in size, not necessarily in chronological order) and returns a log with the most up to date information for each field. The fields should be in order of their first chronological appearance in a log.\n\nFor the example logs above, the expected result would be the following object:\n```javascript\n{ name: 'Joe Doe',\naddress: '123 Fake Street',\nyear: 2008,\nmarried: true }\n```",
+    "totalAttempts": 236,
+    "totalCompleted": 26,
+    "totalStars": 6,
+    "voteScore": 45,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

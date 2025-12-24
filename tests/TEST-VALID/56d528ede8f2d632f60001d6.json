@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56d528ede8f2d632f60001d6",
+  "data": {
+    "id": "56d528ede8f2d632f60001d6",
+    "name": "Angular modules",
+    "slug": "angular-modules",
+    "category": "reference",
+    "publishedAt": "2016-03-01T10:34:13.578Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56d528ede8f2d632f60001d6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-01T05:30:22.161Z",
+    "createdBy": {
+      "username": "srcrustaceo",
+      "url": "https://www.codewars.com/users/srcrustaceo"
+    },
+    "description": "# ANGULAR MODULES INTRO\nA very common concept in Angular is to use modules, so that the code is organised and can be reused easily accross different apps.\nAn example of this is: \n\n- We define our main app module: \n`angular.module('app', [])`\n\n- We define another module with a service in it:\n```\nangular.module('profile', [])\n.service('Users', function(){...})\n```\n\n- Now the `Users` service is only available in the profile module, so in order to use it in our app, we inject it like: \n`angular.module('app', ['profile'])`\nThen we will be able to use it like this for example: \n```\nangular.module('app', ['profile'])\n.controller('appController', function(Users){\n  Users...  \n})\n```\n\nIn order to define a new module you need to pass an array as a second argument: `angular.module('profile', [])` \n\nIf the module is already defined and you want, for example, to build a controller, you wont pass such array in `angular.module('profile').controller('', function(){})`\n\nApart from the module definition, an angular app has to be bootstrapped. Usually this is done via the `ngApp` directive, but it can also be done with the `angular.bootstrap` function, which you will be defining as well. Normally it accept an element, modules, and config, but for this kata, just one module will be enough.\n\nPlease note that a module has to exist in order to be injected. For example, this should throw and error: \n\n`angular.module('app', ['profile'])`\n\nand this should work fine: \n\n```\nangular.module('app', ['profile']);\nangular.module('profile', []);\n```\n\n# YOUR TASK\n\n1. Define the module functionality so that it can define new modules and inject others.\n2. Add the bootstrap functionality to build up the angular.modules array\n\nLet's suppose that angular saves dependencies in a plain array. On the last example we'd have built:\n```\nangular.modules === ['app', 'profile'];\n```\n\nA more complex example will be: \n```\nangular.module('app', ['profile', 'home']);\nangular.module('profile', ['menu', 'forms']);\nangular.module('home', ['menu']);\nangular.module('menu', []);\nangular.module('forms', []);\nangular.bootstrap('app');\n```\n\nThe result should be: \n`angular.modules === ['app', 'profile', 'home', 'menu', 'forms']`",
+    "totalAttempts": 193,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Angular",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

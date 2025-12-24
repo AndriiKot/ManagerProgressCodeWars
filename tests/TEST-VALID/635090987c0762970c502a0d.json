@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/635090987c0762970c502a0d",
+  "data": {
+    "id": "635090987c0762970c502a0d",
+    "name": "Tic-Tac-Toe  Winning Possibilites ",
+    "slug": "tic-tac-toe-winning-possibilites",
+    "category": "games",
+    "publishedAt": "2022-10-20T01:27:53.169Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/635090987c0762970c502a0d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-20T00:04:40.877Z",
+    "createdBy": {
+      "username": "tiagofc19",
+      "url": "https://www.codewars.com/users/tiagofc19"
+    },
+    "description": "In this kata you will create ```win_counts(board,mark)``` which receives a 9 length list of strings with possible values: ```'','X','O'``` and a mark that could be ```'X'``` or ```'O'```. The elements display respect the following index order:\n\n```\n 0 | 1 | 2     \n---+---+---       \n 3 | 4 | 5    \n---+---+---     \n 6 | 7 | 8\n```\n\nThe main goal is to see if the mark given has any possibilities of winning based on the free spaces. The function should return the number of winning possibilities of that mark. \n\nFirst example:\n```\n   |   |      \n---+---+---       \n   |   |      \n---+---+---     \n   |   |  \n```\nIn an empty board, both marks have ```8``` possibilities of winning, 3 rows, 3 columns, 2 diagonals.\n```\n X |   |      \n---+---+---       \n   |   |      \n---+---+---     \n   |   |  \n```\nAfter the first play, ```'X'``` keeps ```8``` possibilities while ```'O'```lost 1 row, 1 column and 1 diagonal so it is left with ```5```.\n\nSecond Example:\n```\n O | O |      \n---+---+---       \n X |   |      \n---+---+---     \n   | X | X\n```\nIn this case, since ```'O'``` has one less mark than ```'X'```we know that it is his turn and he would probably win. However, since we are only looking for the empty spaces, in this board, we are considering ```4``` winning possibilities for ```'X'``` and ```2``` for ```'O'```.\n\nImportant!\n\nTic Tac Toe is a game where each player plays alternatively and ends when there is a winner or a draw. Thus, there are some combinations that would not be valid in a board. For example:\n\n```\n   |   |           X | O | X\n---+---+---       ---+---+---  \n   | O |     and   X | O | X\n---+---+---       ---+---+--- \n O |   |           X | O | O\n``` \n\nIn this cases the function must return the value ```-1```.\n\nAny valid finished game should return ```'0'``` for both marks since there is no more possibilities. The result of the game is already known.\n\nDon't forget to rate the kata :)\n\n\n\n\n\n",
+    "totalAttempts": 159,
+    "totalCompleted": 16,
+    "totalStars": 2,
+    "voteScore": 11,
+    "tags": [
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

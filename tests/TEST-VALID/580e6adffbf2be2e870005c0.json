@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580e6adffbf2be2e870005c0",
+  "data": {
+    "id": "580e6adffbf2be2e870005c0",
+    "name": "Create Your Own \"Promise.all()\"",
+    "slug": "create-your-own-promise-dot-all",
+    "category": "reference",
+    "publishedAt": "2016-10-25T01:58:05.740Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/580e6adffbf2be2e870005c0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-24T20:11:12.174Z",
+    "createdBy": {
+      "username": "gabrielkunkel",
+      "url": "https://www.codewars.com/users/gabrielkunkel"
+    },
+    "description": "According to Mozilla, \"The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved...\"\n\n# Your Task\nYour task is to declare a function called, \"all\", which works a lot like [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all).\n\nIt will accept any number of Promises as arguments and return an array of all of the resolved promises' values in the order in which they were entered as arguments.\n\nSo, you should be able to call it like this:\n\n``` javascript\nlet promise1 = new Promise(resolve => {\n  resolve(\"O\");\n});\n\nlet promise2 = new Promise(resolve => {\n  resolve(\"K\");\n});\n\nall(promise1, promise2).then(console.log) // logs [\"O\", \"K\"]\n```\n\n# Notes\n\n- Be honest. I've disabled Promise.all.\n- Make sure that everything resolves *in order* before the array of values is returned.",
+    "totalAttempts": 852,
+    "totalCompleted": 165,
+    "totalStars": 15,
+    "voteScore": 75,
+    "tags": [
+      "Promises",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

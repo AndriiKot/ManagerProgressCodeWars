@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59a6f0d3589d2a112700000e",
+  "data": {
+    "id": "59a6f0d3589d2a112700000e",
+    "name": "Implement Classes by using Functions",
+    "slug": "implement-classes-by-using-functions",
+    "category": "games",
+    "publishedAt": "2017-08-30T17:07:42.121Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59a6f0d3589d2a112700000e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-30T17:07:32.134Z",
+    "createdBy": {
+      "username": "NightyNight",
+      "url": "https://www.codewars.com/users/NightyNight"
+    },
+    "description": "## What are Classes in Python???\nWhat's Python?    \n\nIs Python really an object-oriented programming language just as people often said?  \n\nI'd like to say, it's surely an OOP language, but it's quite different with `C++` and `Java`. This kata shows a piece of evidence.  \n\nThe classes in Python can be simulated by other objects like functions, that's because the classes are just the closures who're managing the properties of the similar objects, and closures are objects in Python.  \nIn this kata, I suggested you to simulate classes by using functions only.  \nMoreover, it's not a good idea to use any `meta-property` like `__init__` to create our simulated class.  \nWe use a method named `_init_` as a constructor, and a property named `_mro_` as an instance of `Method Resolution Order`.\n\nHere is an example:\n```python\n@class_()\ndef cls1():\n    def _init_(self, v):\n        self.v = v\n    def add(self, v):\n        return self.v+v\n    return locals()\n```\nAnd we use `isinstance_` to check whether an object is the instance of simulated class, just as `__builtin__.isinstance`.\n```python\n>> inst1 = cls1(1)\n>> isinstance_(inst1, cls1)\n>> True\n```\nAlso, we use `type_` as `type`.\n```python\n>> type_(inst1) is cls1\n>> True\n```\n\nThe details of `isinstance_` and `type_` are supplied here.\n```python\ndef isinstance_(x, A):\n        return A in x._class_._mro_\n  \ndef type_(x):\n    return x._class_\n    \n```\n\nTo conclude, everything in Python is an unified object. The word `unified` suggests that there is no differece between any two in Python.\n\n\n\n",
+    "totalAttempts": 144,
+    "totalCompleted": 27,
+    "totalStars": 11,
+    "voteScore": 10,
+    "tags": [
+      "Metaprogramming",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

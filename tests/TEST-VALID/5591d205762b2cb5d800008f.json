@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5591d205762b2cb5d800008f",
+  "data": {
+    "id": "5591d205762b2cb5d800008f",
+    "name": "Matched delimiters, with bells and whistles",
+    "slug": "matched-delimiters-with-bells-and-whistles",
+    "category": "algorithms",
+    "publishedAt": "2015-06-29T23:18:12.632Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5591d205762b2cb5d800008f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-29T23:17:25.975Z",
+    "createdBy": {
+      "username": "hexafraction",
+      "url": "https://www.codewars.com/users/hexafraction"
+    },
+    "description": "Your goal here is to verify if a given string has appropriately matched delimiters, specified as a parameter.\n\n#Parameters:\n\n* A string, `input`, that contains the input to be parsed\n* A string, `left`, that lists the left delimiters.\n* A string, `right`, that lists the matching right delimiters, corresponding to `left` (same length, and same order)\n* A char, `quote`, that specifies a character that can be used to quote a string.\n* A char, `escape`, that specifies that the next character is escaped.\n\nFor example, `left` could be `({[<` while right is `)}]>`. Of course, they could contain any characters, appropriately paired, as long as there are no characters duplicated within or across them. It is also guaranteed that `quote` and `escape` are not contained in `left` or `right`.\n\n#Delimiter matching\n\nA string's delimiters are matched if each opening delimiter has a matching closing delimiter, and the contents of each opening-closing pair are themselves either the empty string, or an appropriately matched string.\n\nValid examples, assuming left is `([` and right is `)]`:\n```\nfoo\n(foo)\nf(oo)\n[(fs([s]s)aa)a]\n```\n\nInvalid examples, with same assumptions:\n```\nfoo)\n(foo\n(foo]\na(foo[bar)baz]z\n```\n\n#Quoting\n\nThe quotation character is used to both open and close a quote. Hence, there are no nested quotes. Within a quote, delimiters have no effect and are not counted for matching. All opening quotes must have a closing quote.\nHence, the following are valid assuming quote is `\"`, left is `([` and right is `)]`:\n```\n\"(\"\n(\"[\")\n(\"sf\")\n```\n\nThe following are invalid (same assumptions):\n```\n(\")\"\n\"a\ndsa\"\nssa\"asdga\n```\n\n#Escapes:\nThe character, passed as `escape`, can be used to ignore the next character. Two of this character in a row are a literal escape character. The following are valid assuming quote is `\"`, escape is `\\`, left is `([` and right is `)]`:\n```\n()\\)\n\"a\\\"a\"\n(a\\\"b)\\\"d\n```\n\nA dangling escape is invalid:\n\n    MatchedDelim.valid(\"abc*\", \"([\", \")]\", '#', '*') // false\n    \nA double-escape is valid:\n\n    MatchedDelim.valid(\"abc**\", \"([\", \")]\", '#', '*') // true\n\n#Performance\nStrings can be up to 125,000 characters long.\n",
+    "totalAttempts": 138,
+    "totalCompleted": 27,
+    "totalStars": 5,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

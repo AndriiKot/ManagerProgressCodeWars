@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/597a095b43cd2c367c00006b",
+  "data": {
+    "id": "597a095b43cd2c367c00006b",
+    "name": "Synchronous Promise",
+    "slug": "synchronous-promise",
+    "category": "reference",
+    "publishedAt": "2017-08-01T15:47:41.015Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/597a095b43cd2c367c00006b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-27T15:40:11.247Z",
+    "createdBy": {
+      "username": "jason.whitted",
+      "url": "https://www.codewars.com/users/jason.whitted"
+    },
+    "description": "# Synchronous Promise\n\nThe [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object by its very nature is asynchronous.  Let's flip that on its head!\n\nCreate a `SyncPromise` object.  This will be similar to a Promise, but with a couple differences.\n1. It will be synchronous only.\n2. It will have a `finally()` method to allow observation of the current status/value.\n\n## Constructor\nThe contructor should take a resolver function as an argument.\n\n```javascript\nconst promise = new SyncPromise((resolve, reject) => {\n  if (Date.now() % 2 === 1) {\n    reject('odd');\n  }\n  resolve('even');\n});\n```\n\nInitially the SyncPromise should have the status of `'Pending'` and the value of `undefined`.  Calling `resolve(value)` will update the value and set the status to `'Resolved'`.  Calling `reject(value)` will update the value and set the status to `'Rejected'`.  If an error is thrown it will be treated as calling `reject(error)`.  Only the first call to `resolve` or `reject` will update the value.  Subsequent calls to `resolve` or `reject` have no affect on the status or value.\n\n-----\n## `.then(onResolved)`\nThe `then()` method returns a `SyncPromise`.  If `then()` is called while in the 'Pending' status an error will be thrown.\n\n### Syntax\n```javascript\np.then(onResolved);\n\np.then(function(value) {\n  // fulfillment\n  return newValue;\n});\n```\n\n#### Parameters\n\n##### onResolved\nA Function called if the SyncPromise is currently 'Resolved'.  This function has one argument, the current value.  Executing this function has two possible results:\n- The function returns a value.  The SyncPromise's value is set to the result and the status remains 'Resolved'.\n- The function throws an error.  The SyncPromise's value is set to the error and the status is changed to 'Rejected'.\n\n-----\n## `.catch(onRejected)`\nThe `catch()` method returns a `SyncPromise`.  If `catch()` is called while in the 'Pending' status an error will be thrown.\n\n### Syntax\n```javascript\np.catch(onRejected);\n\np.catch(function(value) {\n  // rejection\n  return newValue;\n});\n```\n\n#### Parameters\n\n##### onRejected\nA Function called if the SyncPromise is currently 'Rejected'.  This function has one argument, the current value.  Executing this function has two possible results:\n- The function returns a value.  The SyncPromise's value is set to the result and the status is changed to 'Resolved'.\n- The function throws an error.  The SyncPromise's value is set to the error and the status remains 'Rejected'.\n\n-----\n## `.finally(onFinally)`\nThe `finally()` method returns a value.  Calling the `finally()` method does not change the status or value of the SyncPromise.\n\n### Syntax\n```javascript\np.finally(onFinally);\n\np.finally(function(state) {\n  state.status; // Current status: 'Pending', 'Resolved', or 'Rejected'\n  state.value; // Current value\n  return aValue;\n});\n```\n\n#### Parameters\n\n##### onFinally\nA Function called (regardless of SyncPromise status).  This function has one argument, the object containing the current status and value of the SyncPromise.  This `finally()` method returns the result of the onFinally function.",
+    "totalAttempts": 978,
+    "totalCompleted": 23,
+    "totalStars": 13,
+    "voteScore": 22,
+    "tags": [
+      "Promises",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

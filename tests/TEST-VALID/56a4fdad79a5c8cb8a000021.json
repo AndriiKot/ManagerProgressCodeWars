@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56a4fdad79a5c8cb8a000021",
+  "data": {
+    "id": "56a4fdad79a5c8cb8a000021",
+    "name": "Solving a Soma Cuboid",
+    "slug": "solving-a-soma-cuboid",
+    "category": "games",
+    "publishedAt": "2016-02-21T20:48:33.337Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/56a4fdad79a5c8cb8a000021",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-01-24T16:37:01.362Z",
+    "createdBy": {
+      "username": "Splendid",
+      "url": "https://www.codewars.com/users/Splendid"
+    },
+    "description": "A [Soma Cube](https://en.wikipedia.org/wiki/Soma_cube) is an assembly puzzle and was invented by Piet Hein in 1933. It consists of seven pieces, created by cutting a small (usually wooden) cube into 27 smaller cubes of equal size and then glueing three to four of them together to form seven [polycubes](https://en.wikipedia.org/wiki/Polycube). These pieces can then be combined into a cube (see example below) or into various other shapes.\n\n![Soma Cube Example](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Soma_cube_solution.svg/220px-Soma_cube_solution.svg.png)\n\n## Goal\n\nThere are 240 solutions to form a soma cube. The goal of this Kata is to find one of them. But to make things a bit more interesting, we will generalize the task. Instead of the Soma Cube, we will work with cuboids (so not necessarily cubes), which are split into `w` x `h` x `d` cubes of equal size. These cubes are then glued together into `n` pieces. The pieces usually have different shapes, but there might also be some having the same shape.\n\nFor the sake of complexity and runtime, rotation of pieces should *not* be considered in this Kata. In your solution all pieces are expected to have the same orientation as they were provided.\n\nYour task will be to assemble the pieces back into a shape equal to the the origial cuboid. Obviously there can't be any spatial overlap of pieces. There must be no \"holes\" in the cuboid and nothing protruding from it.\n\nIf multiple solutions exist, any of them may be returned.\n\n## Input\n\nYou will receive the dimensions `w, h, d` of the desired cuboid as input, together with a map / dictionary of the pieces, with the names of the pieces as keys and their shapes as values. The purpose of the names is to identify the pieces in your solution. The shapes are three-dimensional arrays of booleans, which represent a [cartesian grid](https://en.wikipedia.org/wiki/Regular_grid). Each boolean defines whether a [voxel](https://en.wikipedia.org/wiki/Voxel) contains a cube. For example the tripod-shaped piece from the original Some Cube (gray in the image above) could be defined like this:\n\n```csharp\nbool[,,] pieceP = {\n    { {true,  false}, {false, false} },\n    { {true,  true }, {true,  false} }\n};\n```\n\nThe pieces will be trimmed, i.e. their arrays have the minimal possible dimensions.\n\nWhen considering all provided pieces, the sum of the numbers of `true` values will always be `w * h * d` of the target cuboid, as each true represents one of the small cubes which the cuboid consisted of.\n\n## Output\n\nThe output of your function shall be a three-dimensional array of strings with dimensions `w`, `h` and `d`. It represents the assembled cuboid. Each string shall be the name of the piece occupying that voxel. Pieces must certainly retain their original shape and - as mentioned above - also their orientation.\n\nIf no solution exists, `null` shall be returned.\n\n## Example\n\nIn this example we use a cube of size 2 and two pieces.\n\n```csharp\nvar pieces = new Dictionary<string, bool[,,]>() {\n  { \"P\", new bool[,,] { { {true,  false}, {false, false} },\n                        { {true,  true }, {true,  false} } } },\n  { \"Q\", new bool[,,] { { {false, true }, {true,  true } },\n                        { {false, false}, {false, true } } } },\n};\nvar solution = Solve(2, 2, 2, pieces);\n```\n\nIn that case the only valid solution is as follows:\n\n```csharp\nstring[,,] expected = { { {\"P\", \"Q\"}, {\"Q\", \"Q\"} },\n                        { {\"P\", \"P\"}, {\"P\", \"Q\"} } };\n```",
+    "totalAttempts": 43,
+    "totalCompleted": 3,
+    "totalStars": 6,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles",
+      "Arrays",
+      "Algorithms",
+      "Geometry"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

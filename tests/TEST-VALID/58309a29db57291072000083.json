@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58309a29db57291072000083",
+  "data": {
+    "id": "58309a29db57291072000083",
+    "name": "Schedule a conference call",
+    "slug": "schedule-a-conference-call",
+    "category": "algorithms",
+    "publishedAt": "2016-11-20T17:29:21.391Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/58309a29db57291072000083",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-19T18:30:01.719Z",
+    "createdBy": {
+      "username": "ohmoses",
+      "url": "https://www.codewars.com/users/ohmoses"
+    },
+    "description": "A group of businesspeople from various timezones around the world need to schedule a conference call at a time of the day which works for everyone.\n\nFor each person, their business hours are **9 AM–5 PM** local time and their \"reasonable hours\" are **7 AM–9 PM** local time.\n\n### Arguments\n\n  * an array of time offsets from UTC (Coordinated Universal Time) (always multiples of 0.5), \n  * the length of the call (always a multiple of 0.5).\n\nFor example: input `[-2, 4.5], 1.5` means there are two people, one living in UTC-02:00 (behind) and one in UTC+04:30 (ahead). The first person's business hours are 11 AM–7 PM UTC, the second's 4:30 AM—12:30 PM UTC. Just enough overlap to fit the 1.5-hr long call in both of their business hours.\n\n### Return value\n  \nAn array of two elements: \n\n  * the starting time of the call in UTC in the 24-hr format,\n  * a flag:\n    * `0` if the *entire* call fits into everyone's business hours\n    * `1` if it fits at least into everyone's reasonable hours\n    * `2` otherwise\n    \nFor the example above, the output would be `[11, 0]`.\n\n### Rules\n\n* Fit the call entirely in everyone's business hours.\n  * If more than one solution is possible, pick the earliest one (in UTC).\n* If not possible:\n  * Maximize the number of people who are in their reasonable hours throughout the call.\n  * If more than one solution is possible, maximize the number of people in their *business* hours throughout the call.\n  * If more than one solution is still possible, pick the earliest one (in UTC).\n\nNote: if in the middle of the call someone's business hours end and, *at the same time*, someone else's start, we count that as 1 person being in their business hours throughout the call. But if there is a 30 minute gap, for example, then we obviously can't count that as \"1 person being in their business hours *throughout* the call.\" (Same for reasonable hours.)\n\nNote: UTC-12 === UTC+12; that is, we don't care about days of the week.",
+    "totalAttempts": 50,
+    "totalCompleted": 4,
+    "totalStars": 5,
+    "voteScore": 0,
+    "tags": [
+      "Date Time",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

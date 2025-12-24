@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a9cf894fd57773720000091",
+  "data": {
+    "id": "5a9cf894fd57773720000091",
+    "name": "Validate German phone numbers",
+    "slug": "validate-german-phone-numbers",
+    "category": "reference",
+    "publishedAt": "2018-03-05T08:05:19.625Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a9cf894fd57773720000091",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-05T07:58:12.982Z",
+    "createdBy": {
+      "username": "z3dm4n",
+      "url": "https://www.codewars.com/users/z3dm4n"
+    },
+    "description": "This Kata is inspired by [Splitting phone numbers into their separate parts](https://www.codewars.com/kata/regular-expressions-groups-splitting-phone-numbers-into-their-separate-parts).\n\nYou can write German phone numbers in one of the following ways:\n- +49 as country code prefix + area code w/o leading zero + the actual local phone number\n- 0049 as country code prefix + area code w/o leading zero + the actual local phone number\n- area code w/ leading zero + the actual local phone number\n- the actual local phone number (w/o area code)\n\nThe following conventions may apply:\n\n- area codes can be anything between 10 and 99999 with a leading zero.\n- local phone numbers can be anything between 100 and 999999.\n\nYour job is to validate either a given phone number is a valid phone number or not.\n\nFollowing numbers are considered valid German phone numbers:\n\n- +49 37322 123456\n- 0049 37322 123456\n- 037322 123456\n- 123456\n- +49 30 1234567\n- 0049 30 1234567\n- 030 1234567\n- 1234567\n\nInvalid German phone numbers:\n\n- 0049 030 1234567\n- 0049 037322 123456\n- +49 037322 123456\n- 37322 123456\n- 30 1234567\n- +49 030 1234567\n- 0001 34 567890\n- +01 34 567890\n- +12 04 567890\n- +12 034 567890\n- +12 34 067895\n- 034 067895\n- 001 567890\n- 098765\n\nReturn `True`, if the phone number is valid or return `False`, if it is invalid.\n\nGood luck!",
+    "totalAttempts": 60,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": -3,
+    "tags": [
+      "Fundamentals",
+      "Regular Expressions",
+      "Declarative Programming",
+      "Advanced Language Features",
+      "Programming Paradigms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

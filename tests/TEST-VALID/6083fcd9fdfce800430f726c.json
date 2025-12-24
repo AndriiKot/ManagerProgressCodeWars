@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6083fcd9fdfce800430f726c",
+  "data": {
+    "id": "6083fcd9fdfce800430f726c",
+    "name": "Minkowski lists",
+    "slug": "minkowski-lists",
+    "category": "reference",
+    "publishedAt": "2021-04-24T11:15:25.014Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6083fcd9fdfce800430f726c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-04-24T11:11:21.881Z",
+    "createdBy": {
+      "username": "Froloket",
+      "url": "https://www.codewars.com/users/Froloket"
+    },
+    "description": "Write a class called `MList`, that would act _mostly_ similar to a normal `list`, but:\n* when summed (`+`) with another list, would create a **sorted** `MList` instance of **unique** sums of each first list's elements with each other list's elements\n\n**Note:**\n* No complex/nested lists with integers would be used\n* Only `MList + [...]` would be tested (not vise-versa)\n* The class should not be mutated (i.e. changed in the process. Reference: https://medium.com/@meghamohan/mutable-and-immutable-side-of-python-c2145cf72747)\n* Addition should also return MList instance _(just a reminder)_\n* The idea came from / inspired by studying the **Minkowski addition** (https://en.wikipedia.org/wiki/Minkowski_addition) (only algebraic part is meant)\n\n### Examples\n```python\nMList([1, 2, 3]) + [4, 5] # --> [5, 6, 7, 8]\nMList([5, 2, 14]) + [0, 1] # --> [2, 3, 5, 6, 14, 15]\nMList([1, 0]) + [0, 1] + [1, 1] # --> [1, 2, 3]\n```\n\nGood luck!",
+    "totalAttempts": 236,
+    "totalCompleted": 40,
+    "totalStars": 1,
+    "voteScore": 48,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

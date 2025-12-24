@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64c79663dff2cb002afdcaf9",
+  "data": {
+    "id": "64c79663dff2cb002afdcaf9",
+    "name": "Weird Numbers",
+    "slug": "weird-numbers-1",
+    "category": "reference",
+    "publishedAt": "2023-07-31T11:23:46.196Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64c79663dff2cb002afdcaf9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-31T11:09:23.790Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "### Task\n- A **weird** number is a natural number that is abundant but **not semiperfect**. \n\n- An **abundant** number is a number for which the sum of its proper divisors is greater than the number itself. \n\n- A positive divisor of `n` which is different from `n` is called a **proper divisor**  of `n`. \n\n- A **semiperfect number** is a natural number `n` that is equal to the sum of all or some of its proper divisors.\n\n### Objective\nCreate a function that takes a number as an argument and returns:\n- If the number is prime and not abundant.\n- If the number is not abundant.\n- If the number is abundant but not weird.\n- If the number is weird.\n\n### Examples\n```\nweird(1) ➞ \"1 is not abundant because the sum of its proper divisors - no proper divisors - is 0.\"\n\nweird(2) ➞ \"2 is prime and not abundant.\"\n\nweird(9) ➞ \"9 is not abundant because the sum of its proper divisors 1, 3 is 4.\"\n\nweird(12) ➞ \"12 is abundant but not weird because it can be obtained from the sum of its proper divisors: 2, 4, 6.\"\n\nweird(70) ➞ \"70 is weird.\"\n```\n\n### Notes\n- The number will always be greater than 0.\n- If the number is abundant, print the proper divisors with which you get the number, always running through the divisors from the smallest to the biggest, covering all possible combinations from the smallest possible length to the biggest possible length.\n\n### Input Constraints\n- 1 <= n <= 10^5",
+    "totalAttempts": 30,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

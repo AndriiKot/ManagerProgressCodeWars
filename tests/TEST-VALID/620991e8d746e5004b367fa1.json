@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/620991e8d746e5004b367fa1",
+  "data": {
+    "id": "620991e8d746e5004b367fa1",
+    "name": "Tennis match scoring",
+    "slug": "tennis-match-scoring",
+    "category": "reference",
+    "publishedAt": "2022-02-13T23:37:03.398Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/620991e8d746e5004b367fa1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-02-13T23:19:04.238Z",
+    "createdBy": {
+      "username": "Hamish Hamilton-Smith",
+      "url": "https://www.codewars.com/users/Hamish%20Hamilton-Smith"
+    },
+    "description": "Two famous players are battling it out in the final of the codewars tennis world cup. Their names are represented by the characters ```A``` and ```B```.\n\nGiven a list of chars, ```l```, which follows the points scored in one set of a match,  where ```l.length >= 1```, calculate both player's score and return it in the appropriate notation. An instance of either player's character is a point for that player,  return your answer like this:\n\n```{A:[int games_won,int points_won],B:[int games_won,int points_won]}```\n\nWatch out for deuces and if the sequence ends on a unfinished deuce where no one has the advantage, set the points as ```40-40```, if a player has an advantage, use a one to indicate this in the points section, and use a zero for the opposing player.\n\nFor instance if a has an advantage: ```{\"A\":[0,1],\"B\":[0,0]}\n\nThe rules of tennis scoring:\n- First to 4 points wins the current game\n- Point 1 = 15, Point 2 = 30, Point 3 = 40\n\nExamples:\n\n```[A,A,B,A,B,A,B,B,A,B] -> {A:[1,15],B:[0,40]}```\n\n```[B,A,B,A,B,B,B,B,B,B,A] -> {A:[0,15],B:[2,0]}```\n\n",
+    "totalAttempts": 107,
+    "totalCompleted": 27,
+    "totalStars": 2,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

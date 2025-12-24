@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61f2c5d3f3073a00170a95f0",
+  "data": {
+    "id": "61f2c5d3f3073a00170a95f0",
+    "name": "Master Puppeteer ",
+    "slug": "master-puppeteer",
+    "category": "algorithms",
+    "publishedAt": "2022-02-12T22:25:08.679Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61f2c5d3f3073a00170a95f0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-27T16:18:27.087Z",
+    "createdBy": {
+      "username": "bholmes",
+      "url": "https://www.codewars.com/users/bholmes"
+    },
+    "description": "Everyone has their secrets!\n\nAmong `n` persons, the master puppeteer is somebody who, for all pairs of persons (`P_i`, `P_j`), knows at least one secret of `P_i` that `P_i` does not wish to disclose to `P_j`. Further, nobody (except maybe the master puppeteer himself) has knowledge of any secrets of the master puppeteer. \n\nSuch a situation can be encoded in a 3D Boolean matrix `mat`, where each entry `mat[x][y][z]` is\n- `1` (True), if `x` has knowledge of a secret of `y` that `y` attempts to hide from `z`\n- `0` (False), otherwise.\n\nGiven such a matrix, your task is to identify the master puppeteer (return corresponding index). The matrix will always be provided as a `numpy.ndarray` object. However, `numpy` is not required to solve this kata.\n\n---\n\nPlease take the following notes into consideration as they clarify any logical edge cases:\n- Only regard cases for `n > 3` as it only makes sense for a master puppeteer to exist in a group of at least three persons.\n- Any entries in `mat` where `x == y` or `y == z` are logically irrelevant and may hold a random value.\n- Do not worry about input validation. There will always be one master puppeteer identifiable.\n\n---\n\n### But wait: there is one more catch!\n\nHow fast can you solve this? Test cases will cover large enough `n` to put your algorithm's runtime to the test and it must be blazingly fast to pass all tests. If your solution times out, try to improve your algorithm's worst case runtime.\n\nFYI, the test situation is described below:\n\n- **Example**: 8 fixed tests for `3 <= n < 5`\n- **Easy**: 100 random tests for `5 <= n < 10`\n- **Medium**: 100 random tests for `10 <= n < 100`\n- **Hard / Performance**: 5 timed random tests for `400 <= n < 500`\n",
+    "totalAttempts": 198,
+    "totalCompleted": 9,
+    "totalStars": 3,
+    "voteScore": 19,
+    "tags": [
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

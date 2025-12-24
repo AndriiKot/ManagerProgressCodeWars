@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d0c2a317211500022ca3f6c",
+  "data": {
+    "id": "5d0c2a317211500022ca3f6c",
+    "name": "Folding Tiles Solver",
+    "slug": "folding-tiles-solver",
+    "category": "games",
+    "publishedAt": "2019-06-21T03:11:50.270Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d0c2a317211500022ca3f6c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-21T00:52:01.572Z",
+    "createdBy": {
+      "username": "docgunthrop",
+      "url": "https://www.codewars.com/users/docgunthrop"
+    },
+    "description": "<!--Folding Tiles Solver-->\n<p>This kata is inspired by a puzzle game for Android called <span style=\"color:#95c4ff\">Folding Blocks</span> by Popcore Games. (video displayed below)</p>\n\n<video controls=\"\" autoplay=\"autoplay\" loop=\"loop\"><source src=\"https://giant.gfycat.com/AcademicPlayfulFunnelweaverspider.webm\" type=\"video/webm\"></video>\n\n<h2 style='color:#f88'>Mechanics Overview</h2>\n<img src='https://i.imgur.com/qUPpZlt.png'/>\n<p>You are presented with a rectangular matrix (grid) containing some colored tiles <span style=\"color:#4d8\">[0]</span><br/>\nAll tiles of a given color form a single <span style=\"color:light-blue\">group</span>, even if some tiles are separate from others.<br/>\nA group can replicate by \"folding\" a copy of itself in a cardinal direction, namely up, down, left, or right. Refer to the reference image for additional clarity.<br/>\nYour goal is to write a function that returns a sequence of folds to completely fill a given grid with colored tiles <span style=\"color:#4d8\">[9]</span></p>\n\n<p><b>NOTE</b> that a fold can only occur if the positions of all the newly created cells are empty and remain within the confines of the grid.</p>\n\n<h2 style='color:#f88'>Input</h2>\nYour function will receive a single string as an argument. The string will consist of any combination of uppercase alphabetic letters, spaces, and newline characters. Their representations are as follows:\n<ul>\n<li>Each unique alphabetic letter represents its own unique color.</li>\n<li>Spaces represent an empty tile space in the grid</li>\n<li>Newline characters represent the delimiters between rows (and all rows are of equal length)</li>\n</ul>\n\n<h2 style='color:#f88'>Output</h2>\nIf a valid solution exists, your function should return a tuple comprised of strings. Each string should be two characters in length and must consist of only uppercase alphabetic letters. The 2nd character must be a directional letter from \"UDLR\" (for Up, Down, Left, and Right, respectively).\n\nIf there is no possible solution, return `null` or `None`.\n\n<h2 style='color:#f88'>Test Example</h2>\n<p>A graphic illustration of this test example is provided in the section <span style='color:#f88'>Mechanics Overview</span>, above. In our example solution, the first fold is given as <code>BL</code>, meaning that the group of tiles of color <code>B</code> will fold to the <code>Left</code>, resulting in frame <code>[1]</code> in the illustration above (the new tiles created from the fold are displayed with thick white borders)</p>\n\n```python\nexample = '\\n'.join((\n\t'AAA   ',\n\t' A    ',\n\t'   B B',\n\t'      ',\n\t'  C D ',\n\t'      '\n))\n\n# This is just one of multiple valid solutions\nsolver(example)# ('BL','BU','AR','AD','CR','CL','CD','DD','DR')\n```\n\n```javascript\nconst example = [\n\t'AAA   ',\n\t' A    ',\n\t'   B B',\n\t'      ',\n\t'  C D ',\n\t'      '\n].join('\\n');\n\n// This is just one of multiple valid solutions\nsolver(example)// ['BL','BU','AR','AD','CR','CL','CD','DD','DR']\n```\n\n<h2 style='color:#f88'>Additional Details</h2>\n\n- The maximum number of unique colors for any given test is `6`\n- The vertical and horizontal lengths of the grid are in the range: `2 <= length <= 12`\n- Test cases will have `0` or more possible solutions\n- Full Test Suite: `16` fixed tests and `46` random tests\n- Use Python 3+ for the Python translation\n<!-- - For JavaScript, many built-in prototypes are frozen, except `Array` -->\n- All inputs will be valid\n\n<p>If you enjoyed this kata, be sure to check out <a href='https://www.codewars.com/users/docgunthrop/authored' style='color:#9f9;text-decoration:none'>my other katas</a></p>",
+    "totalAttempts": 271,
+    "totalCompleted": 10,
+    "totalStars": 15,
+    "voteScore": 20,
+    "tags": [
+      "Algorithms",
+      "Performance",
+      "Game Solvers",
+      "Puzzles"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

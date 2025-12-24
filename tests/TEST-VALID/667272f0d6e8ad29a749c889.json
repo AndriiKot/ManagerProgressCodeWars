@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/667272f0d6e8ad29a749c889",
+  "data": {
+    "id": "667272f0d6e8ad29a749c889",
+    "name": "Folder tree",
+    "slug": "folder-tree",
+    "category": "reference",
+    "publishedAt": "2024-06-26T20:11:08.418Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/667272f0d6e8ad29a749c889",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-06-19T05:56:00.984Z",
+    "createdBy": {
+      "username": "Konstantin Modin",
+      "url": "https://www.codewars.com/users/Konstantin%20Modin"
+    },
+    "description": "<p>Your task is to implement a function that simulates the \"tree\" command in Linux. The \"tree\" command displays the folder structure of a given path in a tree-like format. We don't need all the functionality, just the tree itself. If you have never seen result of this command, here is example:</p>\n<pre>\nmy_folder\n├── documents\n│   ├── doc1.txt\n│   ├── doc2.txt\n│   └── new_docs\n│       └── new_doc1.txt\n└── scan.pdf\n</pre>\n<h2>Input</h2>\n<p>You will receive an object that represents the folder structure. Each key in the object is either a folder or a file. If the value of a key is an object then it represents a subfolder. If the value is null, it represents a file. Subfolder can be empty. Second argument that you receive is a string representing the name of the root folder. Root folder itself can be empty (in this case there is no any tree). All folders/files names will be in lowercase. Here is example input:</p>\n<pre>\nconst folderObject = {\n  documents: {\n    \"doc1.txt\": null,\n    \"doc2.txt\": null,\n    new_docs: { \"new_doc1.txt\": null },\n  },\n  \"scan.pdf\": null,\n};\n</pre>\n<h2>Output</h2>\n<p>Your function should return a string that shows folder structure. As a line separator use <code>\\n</code>. All folders/files on each level should be sorted alphabetically. You can use preloaded \"blocks\" to build up a tree: <code>T_SHAPE = \"├── \"</code>, <code>PIPE = \"│   \"</code>, <code>EMPTY = \"    \"</code>, <code>CORNER = \"└── \"</code>.</p>\n<h2>Happy coding!</h2>",
+    "totalAttempts": 38,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 22,
+    "tags": [
+      "Strings",
+      "Algorithms",
+      "Trees",
+      "Recursion"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

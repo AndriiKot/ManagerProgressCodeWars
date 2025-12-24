@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/51eead3461ccf7db04000017",
+  "data": {
+    "id": "51eead3461ccf7db04000017",
+    "name": "UriBuilder",
+    "slug": "uribuilder",
+    "category": "algorithms",
+    "publishedAt": "2013-07-23T17:02:47.534Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/51eead3461ccf7db04000017",
+    "rank": {
+      "id": -4,
+      "name": "4 kyu",
+      "color": "blue"
+    },
+    "createdAt": "2013-07-23T16:20:04.155Z",
+    "createdBy": {
+      "username": "jhoffner",
+      "url": "https://www.codewars.com/users/jhoffner"
+    },
+    "description": "Create a basic UriBuilder object that will be used specifically to build query params on an existing URI. It should support a params property and a build method. It will handle the URL having pre-existing params that need to be managed. The URL must be properly encoded (i.e. \"a b\" should be encoded as \"a%20b\")\n\nExamples of how the builder will be used:\n\n```javascript\n\nvar builder = new UriBuilder('http://www.codewars.com')\nbuilder.params.page = 1\nbuilder.params.language = 'javascript'\n\n// new builder instance to demonstrate pre-existing params.\nbuilder = new UriBuilder('http://www.codewars.com?page=1')\n\nbuilder.params.page = 2\n// should return 'http://www.codewars.com?page=2'\nbuilder.build()\n\n// if you delete params then they will disappear from the url string\ndelete builder.params.page\n\n// should return 'http://www.codewars.com'\nbuilder.build()\n\n```\n\n```coffeescript\n\nbuilder = new UriBuilder('http://www.codewars.com')\nbuilder.params.page = 1\nbuilder.params.language = 'javascript'\n\n# should return 'http://www.codewars.com?page=1&language=javascript'\nbuilder.build() \n\n# new builder instance to demonstrate pre-existing params.\nbuilder = new UriBuilder('http://www.codewars.com?page=1')\nbuilder.params.page = 2\n\n# should return 'http://www.codewars.com?page=2'\nbuilder.build()\n\n# if you delete params then they will disappear from the url string\ndelete builder.params.page\n\n# should return 'http://www.codewars.com'\nbuilder.build()\n\n```\n\n**Note:** For extra style points you can have your solution handle array values as query parameters, however there are no tests that explicitly test for them. ",
+    "totalAttempts": 14922,
+    "totalCompleted": 1710,
+    "totalStars": 110,
+    "voteScore": 171,
+    "tags": [
+      "Object-oriented Programming",
+      "Strings",
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

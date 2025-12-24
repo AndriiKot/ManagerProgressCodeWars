@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b59a841beb865c9550000b8",
+  "data": {
+    "id": "5b59a841beb865c9550000b8",
+    "name": "What Happened To My Object?",
+    "slug": "what-happened-to-my-object",
+    "category": "games",
+    "publishedAt": "2018-07-26T10:54:44.717Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b59a841beb865c9550000b8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-07-26T10:53:54.149Z",
+    "createdBy": {
+      "username": "ajLapid718",
+      "url": "https://www.codewars.com/users/ajLapid718"
+    },
+    "description": "Given an input called `obj`, the goal is to determine whether the object is or is not frozen, sealed, or extensible.\n\n**INPUT**: An object where the keys are letters from the English alphabet and the values are either letters from the English alphabet and/or positive integers.\n<br>\n**OUTPUT**: A boolean indicating whether or not the input object exists in a certain condition.\n\nThese are the three functions that need to be defined:\n\n```javascript\nfunction isFrozen(obj) {\n  // return true or false;\n};\n\nfunction isSealed(obj) {\n  // return true or false;\n};\n\nfunction isExtensible(obj) {\n  // return true or false;\n};\n```\n\nEXAMPLES:\n\n```javascript\nlet exampleObjOne = {a: 33, b: 44, c: 55};\nObject.freeze(exampleObjOne);\nisFrozen(obj) === true;\n\nlet exampleObjTwo = {a: 66, b: 77, c: 88};\nObject.seal(exampleObjTwo);\nisSealed(exampleObjTwo) === true;\n\nlet exampleObjThree = {a: 99, b: 110, c: 121};\nObject.preventExtensions(exampleObjThree)\nisExtensible(exampleObj) === false;\n\nlet exampleObjFour = {a: 132, b: 143, c: 154};\nisExtensible(exampleObjFour) === true;\nisFrozen(exampleObjFour) === false;\nisSealed(exampleObjFour) === false;\n\n```\n\nHINTS: \n\nIf an object is frozen, then:\n* we cannot create or add a new property to it\n* we can read from it\n* we cannot update a property on it\n* we cannot delete a property on it\n\nIf an object is sealed, then:\n* we cannot create or add a new property to it\n* we can read from it\n* we can update a property on it\n* we cannot delete a property on it\n\nIf an object is extensible, then:\n* we can create or add a new property to it\n* we can read from it\n* we can update a property on it\n* we can delete a property on it\n\nDETAILS:\n\nFor the purposes of this kata, the input object can only exist in one, single condition at a time. For example, if the input object is frozen, it is only frozen. It is not both sealed and frozen at the same time. It is just frozen. \n\nAlthough a frozen object is technically categorized as also being a sealed object in practice, the primary point of this kata is to investigate which restrictions are in effect and to isolate which specific method was called on the input object. This is all in the spirit of the title: What [Exactly] Happened To My Object?\n\n**NOTE**: The native `Object.isFrozen()`, `Object.isSealed()`, and `Object.isExtensible()` methods are disabled for this exercise, but please feel free to refer to the MDN Web Docs to reach a more thorough and more complete understanding of this kata.\n\nAll cases to consider for this kata are included in the Sample Tests Section, so please feel free to click \"Run Sample Tests\" as many times as necessary.\n\nHappy coding ^.^\n\nBy the way, please check out the other katas I've authored as well:\n* https://www.codewars.com/kata/most-consecutive-zeros-of-a-binary-number\n* https://www.codewars.com/kata/frequency-analysis-with-buckets/",
+    "totalAttempts": 159,
+    "totalCompleted": 18,
+    "totalStars": 3,
+    "voteScore": 30,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

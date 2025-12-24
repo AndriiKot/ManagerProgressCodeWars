@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63c7031bc7b21f003a6cb3a0",
+  "data": {
+    "id": "63c7031bc7b21f003a6cb3a0",
+    "name": "guessing game server",
+    "slug": "guessing-game-server",
+    "category": "reference",
+    "publishedAt": "2023-01-21T18:33:59.200Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63c7031bc7b21f003a6cb3a0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-01-17T20:20:43.892Z",
+    "createdBy": {
+      "username": "potzko",
+      "url": "https://www.codewars.com/users/potzko"
+    },
+    "description": "In this kata, you and a friend have created a guessing game where one person chooses a range of numbers and a specific number within that range, and the other person attempts to guess the number by making guesses and receiving feedback on whether each guess is too big, too small, or correct.   The goal of the game is to guess the correct number using the least amount of guesses neccessery.  \nto determine the least amount of necessary guesses note that the user can discard all the numbers under a guess if his guess was too small and all the numbers larger then the guess if the guess was too high. therefore the least amount of guesses is roughly \"the amount of times the range can be devided by two\" or accuratly 1 + floor(log2(amount of numbers in the range))  \n\n  \n\nAfter playing the game a few times, you decide to create a function that allows people to play the game over the internet. The function takes two arguments: a port and a game generator. The function creates a TCP port on the local host and binds it to the given port, and is able to connect to an arbitrary number of users.  \n\nWhen a user connects, the function uses the game generator to create variables for a game for that user. The game generator returns a tuple of three integers: the lower bound of the game, the upper bound of the game, and the correct number. For example, if the game is to find the number 17 between 10 and 100, the game generator will return (10, 100, 17). \n\n```python\ngame_gen = lambda(): (10,100,17)\nguessing_server(1234,game_gen)\n ```\n## When playing a game, the rules are as follows:  \nEach message between the client and the server (or vice versa) will end with the character '\\n'  \nWhen a user connects, the server will send them the lower bound and upper bound of their game in that order  \nThe user will then send a guess and the server will respond until the correct number is guessed, at which point  the server will send an additional message containing whether the user won or lost\n\n* When a user guesses a number N, the server will respond:  \n  1. \"your guess is too small\" if N is smaller than the target  \n  2. \"your guess is too big\" if N is larger than the target  \n  3. \"your guess is correct!\" if N is equal to the target  \n* When the user's guess is equal to the target, the game is finished and any other guesses the user may have sent are discarded the server will also send:  \n  1. \"win\" if the user used the same or fewer guesses as necessary  \n  2. \"lose\" if the user used more guesses than necessary  \n* When a game is finished, the server will close the connection to the relevant user      \n\nAdditionally, you should create a function named \"close\" that ends the execution of the server.    \n\n\nnotes and clarifications:\n* a guess can be above the bottom of the range or above the top, you will treat it as a normal guess\n* users each have their own independent game\n* users might disconnect before finishing a game\n* users may guess more then once in a single packet they may also guess in packets containing fractions of guesses\n* numbers are sent in their string representation\n* assume all chars sent other then \"\\n\" are numbers\n",
+    "totalAttempts": 126,
+    "totalCompleted": 10,
+    "totalStars": 5,
+    "voteScore": 13,
+    "tags": [
+      "Backend"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

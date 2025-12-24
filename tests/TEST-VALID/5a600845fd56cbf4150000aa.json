@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a600845fd56cbf4150000aa",
+  "data": {
+    "id": "5a600845fd56cbf4150000aa",
+    "name": "Automatic Repeat Request",
+    "slug": "automatic-repeat-request",
+    "category": "algorithms",
+    "publishedAt": "2018-01-18T02:36:58.358Z",
+    "approvedAt": null,
+    "languages": [
+      "groovy"
+    ],
+    "url": "https://www.codewars.com/kata/5a600845fd56cbf4150000aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-18T02:36:54.033Z",
+    "createdBy": {
+      "username": "romerojp",
+      "url": "https://www.codewars.com/users/romerojp"
+    },
+    "description": "[Automatic Repeat Request (ARQ)](https://en.wikipedia.org/wiki/Automatic_repeat_request) is a very simple error-control method for data transmission. It requires repeated transmission of packets, and reconstructs messages by replacing lost packets with copies of previously received packets.\n\nIn this kata, we will emulate ARQ with this function:\n\n```java\nstatic String plc(transmissions)\n```\n\nIt takes as a parameter a list of strings representing transmissions. Each string in the list will be guaranteed to contain characters representing bits, `1` or `0`, divided by spaces like so:\n\n```\n[\"01001011 01101111 11110100 00100101 11110100 01101001 00100010 01110010\",\n \"01110000 11101011 01100110 11101001 10110001 11000001 01111001 00011001\",\n \"10101011 10101101 10000110 11010101 01110111 10110111 10010010 10110010\",\n \"10010011 00101111 01111000 00110101 00010010 00101100 11011001 11111001\",\n \"01000001 01101111 01001000 01100001 01010111 01000001 01110010 01000011\"]\n``` \n\nThe function will implement ARQ and transform the reconstruction into a human-readable string.\n\nIn the example above, the output would be the string `'Codewars'`\n\nAssumptions:\n* Real ARQ is based in sending acknowledgements and calculating timeouts. These concepts are not used in this Kata.\n* In all test cases, the original message is guaranteed to be reconstructable with the provided retransmissions\n* No [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) or similar is sent with the provided retransmissions\n* White spaces are guaranteed to only appear as noted in the example above\n\n",
+    "totalAttempts": 6,
+    "totalCompleted": 4,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Strings",
+      "Bits"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

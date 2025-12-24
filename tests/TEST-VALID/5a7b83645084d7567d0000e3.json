@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a7b83645084d7567d0000e3",
+  "data": {
+    "id": "5a7b83645084d7567d0000e3",
+    "name": "Queens and Kings Stable Marriages",
+    "slug": "queens-and-kings-stable-marriages",
+    "category": "algorithms",
+    "publishedAt": "2018-02-08T23:51:28.582Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5a7b83645084d7567d0000e3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-07T22:53:24.651Z",
+    "createdBy": {
+      "username": "NotTuringComputableError",
+      "url": "https://www.codewars.com/users/NotTuringComputableError"
+    },
+    "description": "So, there is this land ruled by `n` queens and `n` kings, all single, hetereosexual and - most importantly - unrelated to each other.\n\nThere was a ball in which all the queens and kings met each other and mingled. Each queen made a list of all the kings, from the most desirable for marriage to the least, like the following:\n\n```\nQueen 0: [King 1, King 0, King 2]\nQueen 1: [King 2, King 1, King 0]\nQueen 2: [King 0, King 2, King 1]\n```\nMeaning <b>Queen 0's</b> favorite is <b>King 1</b>, second favorite is <b>King 0</b>, and least favorite is <b>King 2</b>.\n\n\nEvery king did a similar list about all the queens:\n\n```\nKing 0: [Queen 1, Queen 0, Queen 2]\nKing 1: [Queen 2, Queen 1, Queen 0]\nKing 2: [Queen 0, Queen 2, Queen 1]\n```\n\nYour task of course is to arrange marriages according to the preferences of your beloved queens and kings.\n\nBut <b>beware!</b> Such marriage arrangement should be stable: infidelity seriously threatens the wellbeing of the land. A marriage between a `Queen i` and `King j` is stable if and only if:\n   - There is not another marriage, say, between `Queen x` and `King y`. In which:\n   - `Queen i` prefers `King y` than her current husband (`King j`), <b> AND </b>\n   - `King y` prefers `Queen i` than her current wife (`Queen x`).\n   - To paraphrase, there is not another mutually preferred match.\n   \nIn the previous example, the following arrangement of marriages is stable:\n\n```\nQueen 0 <-> King 1\nQueen 1 <-> King 2\nQueen 2 <-> King 0\n```\n\nHowever the one below is not:\n\n```\nQueen 0 <-> King 2\nQueen 1 <-> King 1\nQueen 2 <-> King 0\n```\nSince `Queen 0` prefers `King 0` than her husband, and in turn, `King 0` prefers her than his wife, they are very prone to cheat their spouses!\n\n\n<h2>Input</h2>\n\nYou will get a `n x n` matrix of integers `queens`, encoding the list of preferences for each queen, and a similar matrix `kings` with the list of preferences for each king.\n\nOn the previous example, you would get a couple of matrices like these:\n\n```\nint[][] queens = {{0,1,2},\n\t\t\t\t{1,2,0},\n\t\t\t\t{2,0,1}};\nint[][] kings = {{0,1,2},\n\t\t\t\t{1,2,0},\n\t\t\t\t{2,0,1}};\n```\n\n<h2>Output</h2>\n\nAn array of `n` integer with a stable arrangement of marriages. On the `i`-th position of the array should be the number of the king that should marry the `i`-th queen.\n\n```\n{1,2,0}\n```\n\nIn case that more than one possible arrangement is stable, any solution will suffice.\n\n<h2>Some hints</h2>\n\n   - A simple google search will give you some ideas about stable marriages, <b>don't cheat though!</b>\n   - Be careful about your code efficiency\n",
+    "totalAttempts": 203,
+    "totalCompleted": 11,
+    "totalStars": 6,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

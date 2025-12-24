@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/638a0e2012eae9004a9ec177",
+  "data": {
+    "id": "638a0e2012eae9004a9ec177",
+    "name": "Chess Compression",
+    "slug": "chess-compression",
+    "category": "algorithms",
+    "publishedAt": "2023-11-13T13:42:26.743Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/638a0e2012eae9004a9ec177",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-02T14:39:28.946Z",
+    "createdBy": {
+      "username": "Z80A",
+      "url": "https://www.codewars.com/users/Z80A"
+    },
+    "description": "A chessboard configuration can be described using an 8x8 grid (array of 8 strings, each being 8 characters long):\n\n```\n[0] RNBQKBNR\n[1] PPPPPPPP\n[2] ........\n[3] ........\n[4] ........\n[5] ........\n[6] pppppppp\n[7] rnbqkbnr\n```\n\nThe case of the letter determines the player\n\n```\nPieces:\nP = Pawn\nR = Rook\nN = Knight\nB = Bishop\nQ = Queen\nK = King\n. = Empty square\n```\n\nFor simplicity, this can be reduced to a 64-character string:\n\n`RNBQKBNRPPPPPPPP........................................pppppppprnbqkbnr`\n\n```\n```\n\n__Write 2 functions__:\n\n_compress_\n\nCompress a chessboard configuration string into an array of bits (an array of numbers, each being 0 or 1)\n\n_deCompress_\n\ndecompress a bit array (that the compress function provides) and return the original 64-character chessboard configuration string\n\nA constant called _targetCompressionBitArraySize_ is also required\n- This is used when performing tests\n- It is also used to show how effective your method is as your submission will clearly show your level of compression\n- You determine the best compression method. It is possible to compress to 156 bits (maybe less)\n- The result of the compress function must *always* return the same size array of bits regardless of the input string\n\nIn the chess configuration string:\n- all 32 chess pieces will appear\n- all 32 empty squares will appear\n\nThe board configuration may not be one that is physically possible during a game (for the tests the board contents are simply shuffled - pieces are not legally moved)\n",
+    "totalAttempts": 48,
+    "totalCompleted": 9,
+    "totalStars": 2,
+    "voteScore": 1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

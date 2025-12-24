@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ce5df8dcb83dc0020d2bd8f",
+  "data": {
+    "id": "5ce5df8dcb83dc0020d2bd8f",
+    "name": "Pickle Bucket - The Journey Begins [Chapter 1] ",
+    "slug": "pickle-bucket-the-journey-begins-chapter-1",
+    "category": "algorithms",
+    "publishedAt": "2019-05-22T23:53:21.844Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "rust",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5ce5df8dcb83dc0020d2bd8f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-22T23:47:25.268Z",
+    "createdBy": {
+      "username": "booniepepper",
+      "url": "https://www.codewars.com/users/booniepepper"
+    },
+    "description": "# Pickle Bucket \\[Chapter 1]\n\n## *The Journey Begins*\n\n*This is part 1 in a (planned) series of challenges related to pickles and buckets thereof*\n\n# The Situation\n\nYou work for a popular sandwich company called Real Awesome 'Wiches (RAW). Due to rising prices in the pickle industry, RAW has begun a research project to produce its own pickles. \n\nNew pickling technology allows for RAW to create pickles one-at-a-time. Currently the pickles come in four flavors: \"Dill\", \"Kosher\", \"Spicy\", and \"Bread and Butter (BnB).\" Unfortunately, pickle production is not yet completely stable, sometimes we'll see a lot of pickles produced in a minute, sometimes we'll only see a few. Sometimes there will be more of one type of pickle, other times there will be more of a different type.\n\nTo start to understand the velocity of pickle production, you've been tasked creating a function to determine the average pickle creations.\n\n# Technical Details\n\nYou'll be provided a list of counts of pickles produced per minute. Something like this:\n\n**Input:** `[1, 2, 3, 4, 5, 60, 77]`\n\nThe counts come in ordered sets of 4 to represent each flavor: \"Dill\", \"Kosher\", \"Spicy\", and \"Bread and Butter (BnB).\"\n\nIn the example above, the subset of `[1, 2, 3, 4]` refers to 1 Dill pickle, 2 Kosher pickles, 3 Spicy pickles, and 4 BnB pickles. The same ordering applies to the next subset of `[5, 60, 77]` and refers to 5 Dill pickles, 60 Kosher pickles, 77 Spicy pickles, and 0 BnB pickles.\n\nSome rules to know for the input:\n\n* You won't need to keep track of the types of pickles, but you can if you want\n* If the list ends before completing a set of 4, it can be understood to mean 0 of any pickle types left off during that time period\n* Pickles will always be produced as whole, positive numbers\n\nThe output we want is a list of average counts of pickles per minute.\n\nContinuing the example input above of `[1, 2, 3, 4, 5, 60, 77]`, we produced 1 Dill pickle in one minute, and produced 5 Dill pickles in a second minute. This gives us an average of 3 Dill pickles per minute. Likewise we'd get 2 and 60 Koshers, for an average of 31 Kosher pickles, 3 and 77 Spicy pickles for an average of 40 Spicy pickles, and 4 and 0 BnB pickles for an average of 2 BnB pickles.\n\n**Output:** `[3, 31, 40, 2]`\n\nYour peer has suggested to first collect pickles in different buckets, and second to calculate the average. You can approach it any way you want, but the idea of pickles in buckets seems to stick in your mind...\n",
+    "totalAttempts": 82,
+    "totalCompleted": 23,
+    "totalStars": 2,
+    "voteScore": 24,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

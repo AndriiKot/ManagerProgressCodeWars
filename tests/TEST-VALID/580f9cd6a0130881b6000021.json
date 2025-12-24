@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580f9cd6a0130881b6000021",
+  "data": {
+    "id": "580f9cd6a0130881b6000021",
+    "name": "Crypto-currency Miner",
+    "slug": "crypto-currency-miner",
+    "category": "algorithms",
+    "publishedAt": "2016-10-25T17:56:38.482Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/580f9cd6a0130881b6000021",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-25T17:56:59.013Z",
+    "createdBy": {
+      "username": "njlr",
+      "url": "https://www.codewars.com/users/njlr"
+    },
+    "description": "Many crypto-currencies use a proof-of-work mechanism to validate blocks of transactions. This process is actually quite simple: everyone competes to solve a compuational puzzle, with the winner deciding which transactions get included and receiving a reward for their efforts. Then the process repeats for the next block. \n\nThe puzzle must be computationally hard to solve, but easy to verify. A great canidate for this is finding a partial hash collision. In this kata, we will implement a simple miner for SHA256. You need to complete the following functions: \n\n\n`ComputeHash` takes the content of a block (any `string`) and a nonce. It should append the nonce to the content, take the UTF-8 encoding and return a SHA-256 hash of that. \n\n\n`GetDifficulty` returns an estimate of how much work went into finding a hash. It is simply the number of leading zeros. \n\n\n`FindNonce` is the mining function. For a given block and target difficulty, it should find a nonce that ensures the resulting hash difficulty is at least the target. \n",
+    "totalAttempts": 47,
+    "totalCompleted": 23,
+    "totalStars": 5,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

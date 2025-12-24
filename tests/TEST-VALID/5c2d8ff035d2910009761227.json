@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c2d8ff035d2910009761227",
+  "data": {
+    "id": "5c2d8ff035d2910009761227",
+    "name": "IPv4 Network and Broadcast Addresses",
+    "slug": "ipv4-network-and-broadcast-addresses",
+    "category": "algorithms",
+    "publishedAt": "2019-01-03T04:33:24.404Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/5c2d8ff035d2910009761227",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-03T04:30:40.916Z",
+    "createdBy": {
+      "username": "ripnet",
+      "url": "https://www.codewars.com/users/ripnet"
+    },
+    "description": "You need to find the Network Address and Broadcast Address of an IPv4 address given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).\n\nThe format given is `<IPv4 Address>/<CIDR>`\n\nAn IPv4 address is a set of 4 bytes (octets) separated by periods. Each octet can only be the values `0-255`. Values padded with zeros up to 3 digits are acceptable (e.g `192.168.001.101`)\n\nThe number of `CIDR` is the count of leading `1` bits in the 32-bit subnet mask. As IPv4 addresses are only 32 bits long, values less than `0` or greater than `32` are not permissible.\n\nExample:\n\nInput: `192.168.1.100/24`\n\n_IP Address_: `192.168.1.100` and _Subnet Mask_: 24 bits or `255.255.255.0`\n\nThe subnet mask is a binary bitmask that denotes which bits in the IP address represent the network portion. The remaining bits are the host portion. \n\nThe network address is _all-zeros_ in the host portion of the address.\nThe broadcast address is _all-ones_ in the host portion of the address.\n\n```\n192.168.1.100   11000000 10101000 00000001 01100100\n255.255.255.0   11111111 11111111 11111111 00000000\n               |----------network---------|--host--|\n192.168.1.0     11000000 10101000 00000001 00000000 <- network\n192.168.1.255   11000000 10101000 00000001 11111111 <- broadcast\n```\n\nYour return value should be an array with two elements. The first element is a string containing the network address, and the second element is a string containing the broadcast address. If a bad IP address or CIDR value is given, return `false`.",
+    "totalAttempts": 217,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 1,
+    "tags": [
+      "Algorithms",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

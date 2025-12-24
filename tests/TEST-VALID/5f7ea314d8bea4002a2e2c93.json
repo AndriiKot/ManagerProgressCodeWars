@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f7ea314d8bea4002a2e2c93",
+  "data": {
+    "id": "5f7ea314d8bea4002a2e2c93",
+    "name": "Gary's Game - Under Fire ",
+    "slug": "garys-game-under-fire",
+    "category": "algorithms",
+    "publishedAt": "2020-10-08T23:18:34.725Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f7ea314d8bea4002a2e2c93",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-08T05:26:44.614Z",
+    "createdBy": {
+      "username": "ProcrasTech",
+      "url": "https://www.codewars.com/users/ProcrasTech"
+    },
+    "description": "# Gary's Game - Under Fire\n\nYour friend Gary is developing a shootergame and wants you to help him.<br> When the player is shot, a marker on his HUD should indicate the direction towards the enemy.<br> Since Gary uses an arrow that gets rotated to indicate that position, he needs you to find the angle (in deegrees) he has to rotate the arrow clockwise from its default rotation (pointing Upwards on the PlayerScreen).\n## Return the angle (with mod 360) needed to rotate the camera clockwise to face the enemy\n\n<a href='https://i.imgur.com/aoAYVwM.jpg'><img src='https://i.imgur.com/aoAYVwM.jpg' alt=\"Descriptive Doodle\" height=457 width=1070></a>\n\n\n\n### Examples:\n1.  \nPlayer looks Enemy in the eye --> 0 degrees\n```javascript\ngetArrowAngle([0,0],[1,0],[-1,0])==0\n```\n\n2.  \nPlayer faces directly Away from Enemy --> 180 degrees\n```javascript\ngetArrowAngle([0,0],[1,0],[1,0])==180\n```\n3.  \nEnemy is stuck inside Player (playerPos==enemyPos) ---> -1\n```javascript\ngetArrowAngle([0,0],[0,0],[-1,0])==-1\n```\n\n### Input:\n1.  \nGary can provide you with the following: The enemy position, the player position and the camera direction\n2.   \nThe Camera Direction will always be a normalized vector.\n3.  \nPlayer position and enemy position are x and y coordinates given to you as an array with x coming first. `[x,y]`\n4.  \nX and Y Coordinates can be positive and negative float\n\n### Notes:\n1.  \nYour result is evaluated with an errormargin of 0.9\n2.  \nSince this is his first game, players and enemies are restricted to the xy-plane.\n",
+    "totalAttempts": 116,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Mathematics",
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

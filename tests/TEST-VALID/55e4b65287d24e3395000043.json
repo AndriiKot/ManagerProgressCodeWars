@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55e4b65287d24e3395000043",
+  "data": {
+    "id": "55e4b65287d24e3395000043",
+    "name": "Lost In Time",
+    "slug": "lost-in-time",
+    "category": "algorithms",
+    "publishedAt": "2015-08-31T22:51:43.936Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/55e4b65287d24e3395000043",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-31T20:17:22.250Z",
+    "createdBy": {
+      "username": "kayahr",
+      "url": "https://www.codewars.com/users/kayahr"
+    },
+    "description": "Oh no! The [TARDIS](https://en.wikipedia.org/wiki/TARDIS) has been hit by a super-cosmic neutron blast while the [Doctor](https://en.wikipedia.org/wiki/Eleventh_Doctor), [Amy](https://en.wikipedia.org/wiki/Amy_Pond) and [Rory](https://en.wikipedia.org/wiki/Rory_Williams) were traveling to the famous planet Raxacoricofallapatorius (The sister planet of Klom). This blast generated a temporary time vortex bubble which pushed Amy out of the current time line.\n\nThe Doctor was able to locate her in space but not her exact point in time. He only knows she is somewhere between `12 April 79 AD` and `25 December 3210 AD`. To rescue her he and Rory must travel to the precise day where (or when) Amy is waiting for them.\n\nFortunately the Doctor still has his trusty Timey Wimey Detector which can scan for Amy's unique vortex energy signature. It goes `wibbly` when Amy is in the future and it goes `wobbly` when she is in the past or `wibbly-wobbly` when Amy is now and here.\n\nQuick! Time's ticking! Rory is really upset and is going to pull some dangerous looking levers on the commmand console if the Doctor doesn't find Rory's wife soon! You have a maximum of 25 tries to find Amy.\n\n## API\n\nYou can access two pre-defined objects: `tardis` and `detector` with the following API:\n\n    tardis.getCurrentTime(): Date;  \n    \nThis returns the current time as a [Date](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date) object.\n\n    tardis.timeTravel(time: Date);\n    \nCommands the TARDIS to travel to the given time (Specified as a Date object). You can only travel up to 25 times before Rory goes mad and tries to rescue Amy himself which may end in a disaster (Throws an exception in this case).\n    \n    detector.scan(): string;\n    \nReturns `wibbly` when Amy is in the future or `wobbly` when she is in the past or `wibbly-wobbly` when you hit the precise day and she is waiting for you just outside the door. The detector may explode (throws exception) when the TARDIS traveled to an invalid time.\n\n## Your mission\n   \nWrite a function called `rescueAmy` and use the provided Timey Wimey Detector to scan for Amy and command the TARDIS through time. Simply exit the function when you think you have reached the right time. The Doctor will then open the doors and look for Amy (Let's hope he doesn't find Daleks or Cybermen instead).",
+    "totalAttempts": 189,
+    "totalCompleted": 17,
+    "totalStars": 10,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

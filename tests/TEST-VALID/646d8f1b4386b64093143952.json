@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646d8f1b4386b64093143952",
+  "data": {
+    "id": "646d8f1b4386b64093143952",
+    "name": "Statically Resolved Type Parameters (SRTPs) on the high seas",
+    "slug": "statically-resolved-type-parameters-srtps-on-the-high-seas",
+    "category": "reference",
+    "publishedAt": "2023-05-24T04:15:21.952Z",
+    "approvedAt": null,
+    "languages": [
+      "fsharp"
+    ],
+    "url": "https://www.codewars.com/kata/646d8f1b4386b64093143952",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-24T04:14:19.590Z",
+    "createdBy": {
+      "username": "MaybeMonad",
+      "url": "https://www.codewars.com/users/MaybeMonad"
+    },
+    "description": "# Statically Resolved Type Parameters (SRTPs) on the high seas\n\nA statically resolved type parameter (SRTP) is a type parameter that is replaced with an actual type\nat compile time instead of at run time. Although there are limitations, this effectively allows us\nto write generic code for arbitrary types without the constraint of interfaces or reflection.\n\nTo get more familiar with writing statically resolved F#, we will be swashbuckling our way through\nraging seas on our way to uncover buried treasure. To get there, we will have to accomplish the following\ntasks:\n\n1. Find your ship\n2. Find the destination coordinates of the island\n3. Sail your ship to the island\n4. Find the 'X' that marks the spot\n5. Dig up the buried treasure\n\nAnd lucky for you, I've already written all the code you need to accomplish this! Congratulations!\nUnfortunately, I wrote the code in the same file as the tests... Which means you can't reference it.\nTo make things worse, I didn't use an interface or anything and the compiled function names are all\njumbled, so you can't use reflection! \n\nThat said, your submission _must_ be strongly-typed and accept the argument provided to it without\nmodifications to the tests. Of course, to accomplish the task given these constraints you will need\nto know how the argument type is defined. Below, you will find the skeleton of two types which you\nwill need to account for- don't worry about the internal data of the types, the member definitions are\nall you'll need to accomplish the challenge. Furthermore, a sample type definition has been included\nin the visible tests to allow the compiler to guide your work. \n\n\n```fsharp\n// The types you will need to use to find the treasure will conform to the following structure\n// These are only provided as a sample so that you can reference the member names and signatures\ntype Ship =\n    member _.SailTo : Position -> Ship = failwith \"Implementation unknown\"\n\ntype TreasureMap =\n    static member findShip : unit -> Ship = failwith \"Implementation unknown\"\n\n    static member findRouteToIsland : Ship -> Position = failwith \"Implementation unknown\"\n\n    static member findX : Ship -> PositionOfX option = failwith \"Implementation unknown\"\n\n    static member dig : PositionOfX option -> Treasure = failwith \"Implementation unknown\"\n```\n\n\n## Note\n\n- SRTPs typically require use of the `inline` keyword\n- SRTP functions must have an access level equal to or more restrictive than `internal`\n- Take care to remember that SRTP type parameters are represented in the form `^type-parameter`,\n  in contrast to the more common `'type-parameter` used for dynamically resolved type parameters\n    - As of .NET 7.0 the syntax `'type-parameter` is valid for both statically and dynamically\n      resolved type parameters (however, this kata was written for .NET 6.0)",
+    "totalAttempts": 2,
+    "totalCompleted": 3,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

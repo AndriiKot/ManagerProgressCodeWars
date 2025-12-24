@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5889e82d1ccb3cbec5000001",
+  "data": {
+    "id": "5889e82d1ccb3cbec5000001",
+    "name": "Rotational state populations (the Boltzmann distribution)",
+    "slug": "rotational-state-populations-the-boltzmann-distribution",
+    "category": "reference",
+    "publishedAt": "2017-01-26T19:47:48.889Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5889e82d1ccb3cbec5000001",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-26T12:14:37.669Z",
+    "createdBy": {
+      "username": "stok",
+      "url": "https://www.codewars.com/users/stok"
+    },
+    "description": "Quantum mechanics tells us that these molecules are only allowed to have certain amounts of rotational energy.\n\nWe know that the amount of rotational energy `E(J)` for a molecule in state J (where J is a label. Assume it's an integer >= 0) is given by\n\n`E(J) = B * J * (J + 1)`\n\nB is the rotational constant, which is specific to the molecular species.\n\nWe now consider an ensemble of molecules in a cell at a uniform temperature T. Let's try to answer the following questions: what percentage of my molecules are in state J = 0 (the ground state)? What about the first excited state J = 1? And J = 2? And so forth...How many states end up being populated?\n\nLuckily, we have an equation to help us. The Boltzmann distribution tells us that the ratio of populations `N_u / N_l` is given by:\n\n`N_u / N_l = exp(- dE / T)`\n\nwhere `N_u` is the number of molecules in some upper state `u`, and `N_l` is the number of molecules in the lower state `l` (u and l are particular states within the set of all possible J, i.e. 0 to inf. Note: u > l). `dE` is the energy difference between states u and l.\n\nUse this information to write a function that takes B and T as arguments and returns an array of precentages for the populated states, rounded to the nearest tenth of a percent.\n\nNotes (for the tests):\n\n* B > 0 (no negative energy weirdness)\n* u > l\n* J >= 0\n* T > 0 (so, in Kelvin)\n\nFor more info, there is a [wiki](https://en.wikiversity.org/wiki/Spectroscopy/Rotational_spectroscopy) on this subject. See section on Rotational energy level population.\n\nFor the physicists: \n\n* For this exercise, B is expressed in temperature units (to avoid dealing with kb, h...etc.)\n* Degeneracy is ignored (left for a subsequent kata...?).\n\n",
+    "totalAttempts": 117,
+    "totalCompleted": 18,
+    "totalStars": 5,
+    "voteScore": 23,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

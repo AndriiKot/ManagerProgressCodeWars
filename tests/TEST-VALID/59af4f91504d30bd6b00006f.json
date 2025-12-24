@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59af4f91504d30bd6b00006f",
+  "data": {
+    "id": "59af4f91504d30bd6b00006f",
+    "name": "Simulating Collective Behaviour with Linear Threshold Model",
+    "slug": "simulating-collective-behaviour-with-linear-threshold-model",
+    "category": "algorithms",
+    "publishedAt": "2017-09-07T21:26:29.731Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59af4f91504d30bd6b00006f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-06T01:29:53.966Z",
+    "createdBy": {
+      "username": "AlexandraBaier",
+      "url": "https://www.codewars.com/users/AlexandraBaier"
+    },
+    "description": "# Simulating Collective Behaviour with Linear Threshold Model\n\n\n## Introduction\nYour government has decided to ban Python.\nYou cannot allow that to happen and therefore decide to riot.\nOf course, before actually rioting you want to know whether you\nwill be successful and try to simulate the riot.\nGranovetter's Linear Threshold Model enables you to model\nthe collective behaviour of people in cases such as riots, technology adoptions\nand other similar phenomena.\n\nThe Linear Threshold Model is a network-based approach.\nEach person is represented as a node and if\ntwo people interact with each other, such as friends or coworkers, \nan edge between those nodes exists.\nA person can now belong either to the rioting group or not.\nInitially every person is not part of the rioters.\n\nHow do we now figure out who riots and who does not?\nAnd how do we simulate a behaviour in which more and more people start rioting?  \nTo solve these problems, we have to introduce an additional characteristic,\nwhich describes the behaviour of individuals. This the **threshold**.  \nThe threshold is a abstraction over all different traits a person has\nand describes how likely it is for that person to engage in the riot,\nbased on how many acquaintances (neighbors in the network) are rioting.\n\nLets go with our example:  \nYou draw out your network of acquaintances. You have two friends Alice and Bob,\nwho are also friends. Additionally, you have a coworker Eve, who neither Alice \nnor Bob know.  \nEnraged by the Python ban, you need no further motivation to riot.\nYour threshold is `0`. You are the initiator of the riot.\nTherefore you start to riot at time step `t=0`.  \nAt `t=1`, you can now start to influence other people.\nBob has a very low threshold of `0.4`.\nBecause he has only two neighbors, Alice and you, his ratio of rioting to total\nneighbors of `0.5` exceeds his threshold and he also starts to riot.\nAlice however also programs in Javascript and is harder to convince with a threshold\nof `0.8`. At time step `t=1` she only has one rioting neighbor,\nsince Bob only starts to actively participate in the next time step.\nYour coworker Eve cannot be convinced at all, since she doesn't like snakes. \nHer threshold is `1.1`.  \nAt `t=2`, both Bob and you are rioting. Therefore Alice's ratio of\nrioting to total neighbors is `1.0`, which exceeds her threshold.\nAlice will also start to actively participate in your riot after the end\nof this turn.  \nSince no one else can be convinced to participate in the following time step,\nyour simulation stops with 3 rioters and 1 non-rioter.\nApparently that is enough to convince your government to repeal the Python ban.\nCongratulations!\n\nYou can find this example network and thresholds in Example Test Cases,\nunder `example_network` and `example_thresholds`.\n\n## Task\nImplement the function `simulate_riot(network, thresholds)`, which\nsimulates a riot using the linear threshold model, until no new people start rioting.\n\nIn each iteration of the model, a person is added to the rioters,\nif their ratio of rioting to total neighbors is greater or equal to\ntheir threshold. So formally a person `i` starts to riot, if the following condition is true: `number_of_rioting_neighbors/total_number_of_neighbors >= threshold[i]`.\n\nIf a person starts rioting in iteration `t`, they are able\nto affect their neighbors in the following iteration `t+1`.\n\nAt iteration `0`, people with threshold `0` start rioting.\n\nThe function records and returns the set of rioters at each iteration,\nin which new people get added to the set of rioters.\nIf no changes in the number of rioters occur, the model stops\nand should return the recorded `history`.\n\n### Input\n`network` is an adjacency matrix (list of lists) of dimensions `N*N`,\nrepresenting an undirected, unweighted graph.\nIf `network[i][j]` equals `1` an edge between person `i` and `j` exists,\nif it equals `0` no edge between `i` and `j`.\nBecause the network is undirected, the matrix is symmetric.\nNo person can be adjacent to themselves, therefore `network[i][i] == 0` for\nall `i in range(N)`.\n\n`thresholds` is a list of floats with length `N`.\n`thresholds[i] >= 0` applies for all `i in range(N)`.\n`thresholds[i]` corresponds to the threshold of person `i`.\nThis threshold is the minimum ratio of rioting to total neighbors,\nat which person `i` also starts to riot.\n\n\n### Output\nLet `history` be the output of the function `simulate_riot(network, thresholds)`.\n`history` is a list of sets of integers.\nIt stores the set of rioting people after each iteration.\n`history[0]` contains the set of initial rioters,\nwhich are the people with threshold `0`.\nIf no person has a threshold of `0`, no one can start rioting and therefore\nthe empty list should be returned.\n`history` can have maximum length of `N` (number of people in network),\nsince the model stops iterating after no changes occur\nand only `N` changes can occur.\n\n## Some links\n\n* Original paper: [Granovetter (1978). Threshold Models of Collective Behaviour](https://sociology.stanford.edu/sites/default/files/publications/threshold_models_ajs_1978.pdf)\n* Check out my kata about friend-foe networks: [Detecting Factions in Friend-Foe Networks](https://www.codewars.com/kata/59ad6d8f4708a2d4d5000cf1)\n\nAny comments are appreciated.\n* Is the algorithm explanation understandable?\n* Are the provided test cases sufficient?\n",
+    "totalAttempts": 146,
+    "totalCompleted": 46,
+    "totalStars": 21,
+    "voteScore": 46,
+    "tags": [
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

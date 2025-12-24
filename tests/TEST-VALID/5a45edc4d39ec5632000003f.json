@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a45edc4d39ec5632000003f",
+  "data": {
+    "id": "5a45edc4d39ec5632000003f",
+    "name": "Insane Permutation Promenade (from AoC 2017 Day 16)",
+    "slug": "insane-permutation-promenade-from-aoc-2017-day-16",
+    "category": "algorithms",
+    "publishedAt": "2017-12-29T08:42:49.553Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a45edc4d39ec5632000003f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-29T07:24:53.112Z",
+    "createdBy": {
+      "username": "Bubbler",
+      "url": "https://www.codewars.com/users/Bubbler"
+    },
+    "description": "# Problem Description\n\n16 characters, named 'a' to 'p', are dancing in a line with some predefined steps.\n\nThere are three types of steps they may take:\n\n* Spin, written `sX`, makes `X` characters move from the end to the front (i.e. rotate to right).\n* Exchange, written `xA/B`, makes two characters at positions `A` and `B` swap places.\n* Partner, written `pA/B`, makes two characters named `A` and `B` swap places.\n\nHere are some examples with fewer characters:\n\n```\nInitial positions \"abcde\", Steps \"s3,x1/2,pa/c\"\n\nabcde << initial positions\ncdeab << after \"s3\" : spin 3\ncedab << after \"x1/2\" : swap positions 1 and 2; positions are zero-indexed as usual\naedcb << after \"pa/c\" : swap characters a and c\n```\n\nThe problem is that the characters are not dancing only once, but they dance indefinitely\nrepeating the given steps!\nYou must predict the positions of all characters after they dance `n` times with the given\nsteps `s`.\n\nSome more examples:\n\n```\nInitial positions \"abcde\", Steps \"s3,x1/2,pa/c\", n = 2\n\naedcb << after first round finished\ndcbae << after \"s3\" : spin 3\ndbcae << after \"x1/2\" : swap positions 1 and 2; positions are zero-indexed as usual\ndbace << after \"pa/c\" : swap characters a and c; two rounds finished\n```\n\n# Constraints\n\n`1 <= (number of steps) <= 10,000`\n\n`1 <= n <= 10 ** 9`\n\nAll inputs are valid. The format of `s` is strictly as above (comma-separated list, no whitespaces).\n\nThe initial positions are always a line of 16 characters `abc...p`.\n\nIf you have already solved this problem on AoC, you can freely reuse your code, and **I can almost guarantee it will fail** :P\n\n# Examples\n\n```python\npermutation_promenade('s3', 1) == 'nopabcdefghijklm'\npermutation_promenade('x1/2', 1) == 'acbdefghijklmnop'\npermutation_promenade('pa/c', 1) == 'cbadefghijklmnop'\n\npermutation_promenade('s3', 100) == 'efghijklmnopabcd'\npermutation_promenade('x1/2,x1/3', 100) == 'adbcefghijklmnop'\npermutation_promenade('pa/c,pc/f,pd/e', 100) == 'fbadecghijklmnop'\n```\n\n```javascript\npermutationPromenade('s3', 1) == 'nopabcdefghijklm'\npermutationPromenade('x1/2', 1) == 'acbdefghijklmnop'\npermutationPromenade('pa/c', 1) == 'cbadefghijklmnop'\n\npermutationPromenade('s3', 100) == 'efghijklmnopabcd'\npermutationPromenade('x1/2,x1/3', 100) == 'adbcefghijklmnop'\npermutationPromenade('pa/c,pc/f,pd/e', 100) == 'fbadecghijklmnop'\n```\n\n# Acknowledgement\n\nThis Kata was inspired by [Advent of Code 2017, Day 16](http://adventofcode.com/2017/day/16),\nwhich is essentially the same task without time limit.",
+    "totalAttempts": 245,
+    "totalCompleted": 32,
+    "totalStars": 9,
+    "voteScore": 38,
+    "tags": [
+      "Algorithms",
+      "Puzzles",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

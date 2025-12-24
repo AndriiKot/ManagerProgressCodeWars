@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63544ae7075de38e14771401",
+  "data": {
+    "id": "63544ae7075de38e14771401",
+    "name": "Matrix Transposing with Unfold",
+    "slug": "matrix-transposing-with-unfold",
+    "category": "reference",
+    "publishedAt": "2022-10-22T20:18:06.345Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/63544ae7075de38e14771401",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-22T19:56:23.071Z",
+    "createdBy": {
+      "username": "Reki",
+      "url": "https://www.codewars.com/users/Reki"
+    },
+    "description": "### Unfold\n\nTo transpose a list of lists, one might consider to use a normal fold to accumulate a new list by taking the heads from each row. While this works, you must then store the tails as state in your folding function, so that subsequent calls to head don't return the original head each time. Unlike fold, unfold tracks state for you. The first argument to unfold is a function of type `(b -> Maybe (a, b))`, where the first `b` is the initial or previous state and the `b` in the Maybe is the updated state. The `a` is the type of the each result. For transposing, that will be a list of the heads (the first column).\n\nNote the following:\n```haskell\nfoldr (:) [] // == id :: [a] -> [a]\nunfoldr uncons // == id :: [a] -> [a]\n```\n\n### Task\n\nWrite a function `unconsColumn` such that `unfoldr unconsColumn` tranposes a list of lists with arbitrary lengths without dropping any elements.",
+    "totalAttempts": 20,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Matrix"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

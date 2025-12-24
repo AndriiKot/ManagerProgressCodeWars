@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c76ff740ff3cc0001fd21ea",
+  "data": {
+    "id": "5c76ff740ff3cc0001fd21ea",
+    "name": "Count Empty Triangles in the Present",
+    "slug": "count-empty-triangles-in-the-present",
+    "category": "algorithms",
+    "publishedAt": "2019-02-27T21:21:56.576Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5c76ff740ff3cc0001fd21ea",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-27T21:22:18.974Z",
+    "createdBy": {
+      "username": "EAirPeter",
+      "url": "https://www.codewars.com/users/EAirPeter"
+    },
+    "description": "We call a triangle on XY-plane an empty triangle, if and only if:\n* All three vertices of the triangle are integer points,\n  which is to say their x and y coordinates are both integer.\n* Except for its three vertices, there is no integer point inside it or on the\n  edge of it.\n\nGiven two positive integer `N` and `M`, find the number of empty triangles in\nthe rectangular area with bottom-left corner `(0,0)` and top-right corner\n`(N,M)`.\n\n![](https://i.imgur.com/EXZ0wiJ.png)\n\nFor example: For `N = 1` and `M = 2`, there are 12 such triangles:\n```\n{(0,0),(1,0),(0,1)} {(0,0),(1,0),(1,1)} {(0,0),(1,1),(0,1)} {(1,1),(0,1),(1,0)}\n{(0,1),(1,1),(1,2)} {(0,1),(1,1),(0,2)} {(0,1),(1,2),(0,2)} {(1,2),(0,2),(1,1)}\n{(0,0),(1,1),(1,2)} {(1,0),(1,1),(0,2)} {(0,2),(0,1),(1,0)} {(1,2),(0,1),(0,0)}\n```\nBut the triangle `{(0,0),(1,1),(0,2)}` is not counted, because an integer\npoint `(0,1)` lies on one of its edges.\n\nSince the answer can be very large, you are only required to return the\noriginal answer modulo `P`, where `P = 1000000007`.\n\n(That is to say: if the number of empty triangles is `1000000100`,\nyou only need to return `93`)\n\nIt is guaranteed that:\n* `1 <= N,M <= 2000`\n\nHint:\n* You may want to make use of some mathematical theorems.\n* If you find this kata is too hard for you, you may try the [past][pst] one.\n* If you find this kata is too easy for you, you may try the [future][ftr] one.\n\nNote:\n* Past is the lowest difficulty in a game called Arcaea.\n* Present is the moderate difficulty in a game called Arcaea.\n* Future is the hardest difficulty in a game called Arcaea.\n\n[pst]: https://www.codewars.com/kata/count-empty-triangles-in-the-past\n[prs]: https://www.codewars.com/kata/count-empty-triangles-in-the-present\n[ftr]: https://www.codewars.com/kata/count-empty-triangles-in-the-future\n",
+    "totalAttempts": 167,
+    "totalCompleted": 16,
+    "totalStars": 0,
+    "voteScore": 19,
+    "tags": [
+      "Mathematics",
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62f9777fd67d0a001ff3668d",
+  "data": {
+    "id": "62f9777fd67d0a001ff3668d",
+    "name": "Find Parallel Perfect Fifths",
+    "slug": "find-parallel-perfect-fifths",
+    "category": "reference",
+    "publishedAt": "2022-08-14T23:52:59.447Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62f9777fd67d0a001ff3668d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-14T22:30:23.541Z",
+    "createdBy": {
+      "username": "Simple Rick",
+      "url": "https://www.codewars.com/users/Simple%20Rick"
+    },
+    "description": "This is a slightly more difficult variation of [Find Parallel Octaves](https://www.codewars.com/kata/62dabb2225ea8e00293da513) . If you find this Kata too difficult I recommended you start by solving that one.\n\n\nYou've sent your students home with an assignment for the weekend. Each student must compose a 4 part harmony consisting of *at least* 4 chords.\n\nOn Monday the four parts will be sung by a bass, tenor, alto and soprano. \n\nThe first note in each chord will be sung by the bass, the second by the tenor, the third by the alto, and the fourth by the soprano. \n\nFor this assignment a chord may consist of any 4 notes from the major scale.\n\nThe major scale has 7 notes:\n```\"do re mi fa sol la ti\"```\n\nExample:\n\nchordOne = ```'do re fa sol'```\n\n\nEach ```harmony``` consists of a number of chords:\n\n```\nharmony = [\n  'mi re mi fa' ,\n  'sol fa sol do' ,\n  'fa ti fa ti' ,\n  'fa do fa mi' , \n  ]\n  ```\n  \nWhen checking if one note is a Perfect Fifth of another we look 4 spots to the right of that note in the major scale:\n\n```\n1   2   3   4    5    6     7\ndo  re  mi  fa   sol  la    ti \n```\n\n```sol``` is a perfect fifth up from ```do```\n\nhowever, ```do``` is *not* a perfect fifth up from ```sol```\n\nWhen considering an interval you consider the lower pitch note against the higher pitched note, not the reverse.\nThe Bass will always sing lower than the Tenor, the Tenor will always sing lower than the Alto, and the Alto will always sing Lower than the Soprano. \n\n\n\nThe scale is cyclical so when looking for a fifth up from ```sol```, for example. It wraps back around to ```re```\n\n```ti``` is a perfect fiftth up from ```mi```,  and so on...\n\n\n\nA Parallel Perfect Fifth occurs when any two singers *move* from one chord to the next while staying an interval of a Perfect Fifth apart. \n\nFor example:\n```harmony = [\n'do re mi sol`\n'mi sol re ti'\n```\n\nThis harmony contains a Parallel Perfect Fifth. Because the Bass and Soprano are singing a Perfect Fifth apart on the first chord (```do``` and ```sol```) and when they *move* from chord 1 to chord 2 they maintain that distance of a Perfect Fifth and land on (```mi``` and ```ti```)\n\n\nAnother Example: \n\n```\nharmony = [\n'do re la do`\n'ti re la ti'\n\n```\n\nIn the above example; Though the Tenor and Alto are singing a Perfect Fifth apart on both the first and second chord (```re``` and ```la```) they did not *move* notes from one chord to the next. Therefor, this harmony does not contain any *Parallel* Perfect Fifths.\n\n```\nharmony = [\n'ti fa la do`\n'la mi la ti'\n\n```\n\nThis harmony does not contain any Parallel Perfect Fifths. \n\nIn the major scale the distance between the 7th degree ( ```ti```) and the 4th degree (```fa```) is a fifth, however it is a diminished fifth, not a *perfect* fifth. Therefor, it should be ignored when looking for Parallel Perfect Fifths. ```ti``` to ```fa``` is the only case in which the interval is a fifth and not a *Perfect* Fifth. \n\n\nSome of your students are over-zealous and will no doubt spend all weekend writing their harmony and will hand in assignments containing an absurd amount of chords. \n(99 of your students will turn in harmonies around 1000 to 50,000 chords long)\n\n\nTo save time, you would like to write a function that takes an argument ```harmony``` and returns ```'Pass'``` if the harmony does not contain any Parallel Perfect Fifths, and ```Fail``` if it does.\n\n\n\n\n\n  \n\n  ",
+    "totalAttempts": 207,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms",
+      "Fundamentals",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d612f5240d995000da6272b",
+  "data": {
+    "id": "5d612f5240d995000da6272b",
+    "name": "Spendings for the period",
+    "slug": "spendings-for-the-period",
+    "category": "reference",
+    "publishedAt": "2019-08-24T18:24:18.110Z",
+    "approvedAt": null,
+    "languages": [
+      "scala"
+    ],
+    "url": "https://www.codewars.com/kata/5d612f5240d995000da6272b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-24T12:36:34.778Z",
+    "createdBy": {
+      "username": "oybek",
+      "url": "https://www.codewars.com/users/oybek"
+    },
+    "description": "You are writing web-service for the bank.\n\nThere is an array in your database which contains spendings of the client.\n\n`spending[x]` is the amount of dollar spent on day `x` by the client.\n\nThe client of your bank often makes requests like:\n\n> Tell me how much have I spent in period from day `a` to day `b` (`a <= b`)\n\nYour web service takes array of spendings and array of requests (array of integer pairs)\nand have to return the array of replies to every request.\n\n---\n\n**For example:**\n\n```scala\nspending = [1, 2, 3, 0, 4, 50, 100]\nrequests = [(0, 1), (0, 0), (3, 6)]\n```\n\nThe answer should be: (comments here for explanation)\n\n```scala\nOn period from 0 to 1 you have spent 3 dollars   // spending[0] + spending[1]\nOn period from 0 to 0 you have spent 1 dollar    // spending[0]\nOn period from 3 to 6 you have spent 154 dollars // spending[3] + ... + spending[6]\n```\n\nIf there is no spendings during the period reply should be:\n\n```scala\nThere were no spendings from a to b\n```\n\nYour service has to be fast, cause there are a lot of requests.\n\n---\n\nAlso try to solve:\n\n- [Optimal sort](https://www.codewars.com/kata/5eb1767b3c435d001166d4c6)\n- [Stone pile](https://www.codewars.com/kata/5d49556a8f955d002e58e6eb)",
+    "totalAttempts": 125,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": -2,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

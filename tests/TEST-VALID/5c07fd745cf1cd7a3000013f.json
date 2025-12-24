@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c07fd745cf1cd7a3000013f",
+  "data": {
+    "id": "5c07fd745cf1cd7a3000013f",
+    "name": "Subnetting Hero",
+    "slug": "subnetting-hero",
+    "category": "reference",
+    "publishedAt": "2018-12-05T17:27:19.147Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5c07fd745cf1cd7a3000013f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-05T16:31:54.613Z",
+    "createdBy": {
+      "username": "user9240328",
+      "url": "https://www.codewars.com/users/user9240328"
+    },
+    "description": "### Prerequisite\n\nThis is a networking kata. If you are not familiar with \"subnetting\", check out the [wikipedia page](https://en.wikipedia.org/wiki/Subnetwork). Subnetting is the puzzle of breaking apart a *super*network into smaller *sub*networks. This kata considers only the subnetting of /24 or class-C networks, a common entry-level task for a network engineer.\n\n# Subnetting Hero\nYou work on a team of developers. Part of the job involves creating virtual networks to test distributed software. Each employee is given a /24 (255.255.255.0) address pool to develop with on the company network.\n\n## The problem\nAll of your co-workers slept through their networking classes in school. They are coming to you all day for help subnetting their address pools and you are starting to get lazy. You decide to write a program that subnets your co-workers /24 address pools automatically so you can get back to coding!\n\n## The solution\nWrite a function `subnet(sizes, net)` which takes a list of subnet sizes and a /24 network address. It should return a list of subnet addresses or 'Not enough space' depending on if it's possible to fit all the subnets into the address pool.\n\n- `sizes` = array of ints representing the size of each subnet required by co-worker\n- `net` = string representing co-workers /24 network address\n- return array of strings representing subnets. Your co-workers should be able to figure it out from here! :)\n\n## Examples\n```javascript\nsubnet([ 10, 10 ], '10.0.0.0/24')\n> [ '10.0.0.0/28', '10.0.0.16/28' ]\n```\nAbove, `subnet` selects /28 (255.255.255.240) subnet masks since /28 is the **smallest** that can hold 10 addresses.\n```javascript\nsubnet([ 40, 20, 20, 10, 4 ], '192.168.0.0/24')\n> [ '192.168.0.0/26',\n    '192.168.0.64/27',\n    '192.168.0.96/27',\n    '192.168.0.128/28',\n    '192.168.0.144/29' ]\n```\nRemember, each subnet has a host and broadcast address that are both reserved. In the above example, the subnet of size 4 gets assigned to `192.168.0.144/29`. A /30 which can fit 4 addresses will not work because 2 are actually reserved. Therefore the number of hosts that can fit in a subnet with mask `/N` is `(2 ^ (32 - N)) - 2`.\n```javascript\nsubnet([ 15, 15, 15, 15, 15, 15, 15, 15 ], '172.31.0.0/24');\n> [ '172.31.0.0/27',\n    '172.31.0.32/27',\n    '172.31.0.64/27',\n    '172.31.0.96/27',\n    '172.31.0.128/27',\n    '172.31.0.160/27',\n    '172.31.0.192/27',\n    '172.31.0.224/27' ]\n```\n\n## Notes\n- You will only be given /24 networks to subnet. (only the last octet is significant in this kata)\n- The subnet sizes don't always come in descending order\n- All strings representing network or subnet addresses should be of the form:\n```\n'10.0.0.0/25'\n'[IP]/[MASK]'\n```\n- In the case of a coworker giving you an empty list, `subnet` should return an empty list\n- If the subnets won't fit into a /24, throw an error. This error/exception is provided in the preloaded code.\n```javascript\nthrow new AllocationError('Not enough space')\n```\n```python\nraise AllocationError('Not enough space')\n```",
+    "totalAttempts": 132,
+    "totalCompleted": 9,
+    "totalStars": 6,
+    "voteScore": 10,
+    "tags": [
+      "Networks",
+      "Binary",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

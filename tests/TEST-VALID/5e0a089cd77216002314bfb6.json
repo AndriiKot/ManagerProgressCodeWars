@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e0a089cd77216002314bfb6",
+  "data": {
+    "id": "5e0a089cd77216002314bfb6",
+    "name": "Friends with Mangoes",
+    "slug": "friends-with-mangoes",
+    "category": "algorithms",
+    "publishedAt": "2019-12-30T16:25:22.658Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5e0a089cd77216002314bfb6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-30T14:24:28.201Z",
+    "createdBy": {
+      "username": "kgashok",
+      "url": "https://www.codewars.com/users/kgashok"
+    },
+    "description": "# Friends with Mangoes\n\nYou have infrequent mango cravings, which when triggered, requires you to consume mangoes at the earliest. In your weird society, it is a norm that people who grow mangoes in their homes and willing to share with you, have the letter `'m'` in their names. \n\nIn such society, you also have a set of friends who in turn have their own set of friends.\n\nWrite a function ```mango_friends``` in Python, ```mangoFriends``` in JavaScript, ```MangoFriends.generate``` method in Java   \n\nthat will return a list of all your friends ordered by \"closeness in relationship\" (explained below) to you whom you can reach out to satiate that mango craving. \n\nFor example, if `'adam'->'eden'->'mary'` and `'adam'->'maria'`, then the correct sequential order based on \"closeness\" will be `['maria', 'mary']` for `'adam'`. This is because `'maria'` is `'adam'`'s friend, while `'mary'` is a friend of a friend. \n\nThe function should accept two arguments: \n- Friend relationships represented as a list of tuples, for e.g. \n> `[('jane', 'adam'), ('tom', 'bob')]`\n- Name of the person who has the craving for mangoes \n\nIn **JavaScript**, relationships are represented as a list of lists. In **Java**, relationships are represented as an `ArrayList` containing `Map.Entry<String, String>` elements. \n\n**NOTE**: Even if the person craving mangoes has an 'm' in his name, he still has to seek out friends who will share mangoes with him. \n\nIf more than two persons have mangoes to share, then the function should return a list of names that contain their names in the correct sequential order. \n\nTo break the tie among friends that are equally \"close\", use the same ordering in which they appear in the `relations` tuple list. For example, if `'john' -> 'bm'` and `'john' -> 'am'` appear in that sequence, then the output should be `['bm', 'am']`.  \n\n## Examples \n\n```python\nmango_friends(\n    [('john', 'bm'), ('john', 'am')]\n    , 'john') => ['bm', 'am']\n\nmango_friends(\n  [('john', 'adam'), ('john', 'zach'), ('zach', 'bob')]\n  , adam') => []  \n\nmango_friends(\n  [('john', 'adam'), \n   ('john', 'zach'), \n   ('zach', 'bob'), \n   ('mary', 'susan'), \n   ('adam', 'mary')]\n  , 'john') => ['adam', 'mary'] \n\n```\n",
+    "totalAttempts": 333,
+    "totalCompleted": 25,
+    "totalStars": 2,
+    "voteScore": 19,
+    "tags": [
+      "Trees",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/653682b5a45a89101f9a4f35",
+  "data": {
+    "id": "653682b5a45a89101f9a4f35",
+    "name": "confusing class variable",
+    "slug": "confusing-class-variable",
+    "category": "bug_fixes",
+    "publishedAt": "2023-10-23T14:29:08.448Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/653682b5a45a89101f9a4f35",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-23T14:27:01.647Z",
+    "createdBy": {
+      "username": "trashy_incel",
+      "url": "https://www.codewars.com/users/trashy_incel"
+    },
+    "description": "I wrote a class `Class`, with a class variable `total_created` that is supposed to keep track of the numer of times the class was instantiated:\n\n```python\nclass Class:\n    total_created = 0\n\n    def __init__(self):\n        self.total_created += 1\n```\n\nexpected usage:\n```python\nClass.total_created    # 0\ninstance = Class()\nClass.total_created    # 1\ninstance.total_created # 1\n\nfor _ in range(9):\n  instance = Class()\n\nClass.total_created    # 10\ninstance.total_created # 10\n```\n\nBut the code does not work properly...\nCan you fix it ?",
+    "totalAttempts": 33,
+    "totalCompleted": 21,
+    "totalStars": 0,
+    "voteScore": 21,
+    "tags": [
+      "Refactoring",
+      "Debugging"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

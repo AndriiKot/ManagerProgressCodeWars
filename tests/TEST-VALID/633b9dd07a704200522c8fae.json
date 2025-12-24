@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/633b9dd07a704200522c8fae",
+  "data": {
+    "id": "633b9dd07a704200522c8fae",
+    "name": "Dictionary - SAFE finding a description",
+    "slug": "dictionary-safe-finding-a-description",
+    "category": "reference",
+    "publishedAt": "2022-10-04T02:44:35.785Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/633b9dd07a704200522c8fae",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-04T02:43:28.955Z",
+    "createdBy": {
+      "username": "Jejek",
+      "url": "https://www.codewars.com/users/Jejek"
+    },
+    "description": "Task description\n----------------\n\nSimple kata to safetly go thru arrays.\nBe aware of incorrect inputs.\n\nYou have to implement 2 functions: `findDescription` and `countWords`.\n\nfindDescription:\n----------------\nShould find given `word` in given `dictionary` and return it's description.\n~~~if:javascript\n`dictionary` is array which consist of:\n```javascript\n{\n    keys;\n    description;\n}\n`keys` will be [] of strings or nulls. Could be also `null`.\n`description` will be string or null.\n```\n~~~\n~~~if:typescript\n`dictionary` is array which consist of (preloaded) interface:\n```typescript\ninterface WordDescription {\n    keys: (string | null)[] | null;\n    description: string | null;\n}\n```\n~~~\nEach element in given array will be called: `entry` (our `dictionary entry`).\n\nExample entry:\n```typescript\n{\n    keys: ['home', 'house'];\n    description: 'Place where you live.';\n}\n```\n\n`keys` can have more than one entry (synonyms).\n\nMatching requested `word` to `keys` in our dictionary should be case insensitive.\n\nWhen there is no valid solution return empty string.\n\nCorruped entries:\n-----------------\nSometimes there can be `corrupted entry`, so you should make your solution bullet-proof safe.\n\n`Corruped entries` are when entry has no keys or has empty description.\n\nDepends on language (where `null` is assignable) `null` keys or `null` description should be also treated as corrupted.\n\nExample corruped entry:\n-----------------------\n```typescript\n{\n    keys: [];\n    description: null;\n}\n```\n\ncountWords\n----------\n\nYour goal is to count words in given `description`.\n`It's` (and such words) should be counted as `1`.\nSame goes for words like `son-in-law`.\nValid word has to have at least one letter.\nValid word can have `-` and `'` inside it, but such characters cannot be at start nor end of word.\nIf there is no valid words or input is empty - return 0.\n\nExamples:\n\n`\"Simple, short description for start.\"` should return `5`\n\n`\"\"` should return `0`.\n\n`\"1. ###\"` should return `0`.\n\nNote:\n-----\n* All valid descriptions will consist of single line only (no line breakes).\n* Provided dictionary will have at most 1 definition for given `word`.",
+    "totalAttempts": 267,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

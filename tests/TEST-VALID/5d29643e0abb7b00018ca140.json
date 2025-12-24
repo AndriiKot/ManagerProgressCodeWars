@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d29643e0abb7b00018ca140",
+  "data": {
+    "id": "5d29643e0abb7b00018ca140",
+    "name": "Exploit indirection to escalate permissions.",
+    "slug": "exploit-indirection-to-escalate-permissions",
+    "category": "reference",
+    "publishedAt": "2019-07-13T04:55:26.882Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5d29643e0abb7b00018ca140",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-13T04:55:47.284Z",
+    "createdBy": {
+      "username": "DasBrain",
+      "url": "https://www.codewars.com/users/DasBrain"
+    },
+    "description": "If you want to write Java code that does not compromise security when run with a security manager, you should not invoke `Method.invoke` on behalf of untrusted code:\n\nhttps://www.oracle.com/technetwork/java/seccodeguide-139067.html#9-10\n\nSo there is exactly such a privileged method in this kata: \n\n```java\npublic class MethodHelper {\n  public static Object invoke(Method m, Object target, Object... args) throws Throwable {\n    // will call m.invoke from a privileged class.\n  }\n}\n```\n\nand you have to disable the security manager by abusing `MethodHelper.invoke()`.\n\n",
+    "totalAttempts": 40,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

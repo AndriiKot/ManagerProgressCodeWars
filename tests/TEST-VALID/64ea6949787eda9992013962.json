@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64ea6949787eda9992013962",
+  "data": {
+    "id": "64ea6949787eda9992013962",
+    "name": "Ackermann function without recursion.",
+    "slug": "ackermann-function-without-recursion",
+    "category": "algorithms",
+    "publishedAt": "2023-08-26T21:08:45.482Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64ea6949787eda9992013962",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-26T21:06:17.071Z",
+    "createdBy": {
+      "username": "lavirlifiliol",
+      "url": "https://www.codewars.com/users/lavirlifiliol"
+    },
+    "description": "The Ackermann function is one of the first known functions that are not primitive recursive, defined as follows: \n```\nA(0, n) = n + 1\nA(m, 0) = A(m-1, 0+1)\nA(m, n) = A(m-1, A(m, n-1))\n```\n\nSince Python is Turing complete even without recursion, you can compute this function without any recursive calls. In this kata, you will do just that. As such, the call stack is limited to ~5 frames\n\nIn order to test more thoroughly than just the ~16 values that are computable in reasonable time, you will be passed non-int types. You will receive the zero for the given type, and all of the values you will be passed shall support the following protocol:\n\n```python\nclass AckermanArg(Protocol):\n    def __add__(self, other: Literal[1]) -> Self:\n        ...\n    def __sub__(self, other: Literal[1]) -> Self: \n        \"\"\"will fail the test if subtracting from zero\"\"\"\n    def __eq__(self, other: Literal[0] | Self) -> bool:\n        pass\n```\nIn other words, you can compare to 0 using m==0, and add/subtract the integer 1 using m+1/m-1\n\nMake sure you use the zero you are passed for the `A(m-1, 0+1)` call, tests will fail otherwise.",
+    "totalAttempts": 133,
+    "totalCompleted": 21,
+    "totalStars": 1,
+    "voteScore": 22,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

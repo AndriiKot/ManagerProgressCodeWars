@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b61aa2b51f0b33ae0000145",
+  "data": {
+    "id": "5b61aa2b51f0b33ae0000145",
+    "name": "Three Body Problem",
+    "slug": "three-body-problem",
+    "category": "algorithms",
+    "publishedAt": "2018-08-01T12:40:45.141Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b61aa2b51f0b33ae0000145",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-01T12:40:11.748Z",
+    "createdBy": {
+      "username": "Mo0dy",
+      "url": "https://www.codewars.com/users/Mo0dy"
+    },
+    "description": "# Three-body problem\n\nHello Everyone,\n\nThere is a famous problem in physics that can (only) be solved using Computers: The Three-body problem.\n\nIt is the problem of computing the trajectories of three bodies where their initial velocities, positions and masses are given.\nIn this Kata you will solve the problem in 2d (all masses are on the same plane). You will receive three scalars _m1_, _m2_ and _m3_ as well as six __lists__ (mathematical vectors) _v1_, _v2_, _v3_, _p1_, _p2_, _p3_ with two entries each describing the initial __masses__, __velocities__ and __positions__ of the three bodies respectively. You are expected to give the position of the FIRST mass after a total time __sim_time__ has passed. The result needs to be in __error range__ of +- 10 of the correct solution.\nThe position should be returned as a list with two entries.\n\n__Note__: time, positions, velocities and masses are all in \"Units\"\n\nAlso v, and p are vectors (lists):\n```\nvi = [vi_x, vi_y]\npi = [pi_x, pi_y]\nsolution = [p1_x, p1_y]\n```\n\nThese differential equations govern the system:\n\n```math\na1 = -G * m2 * (p1 - p2) / |p1 - p2|^3 - G * m3 * (p1 - p3) / |p1 - p3|^3,\n```\n\n```math\na2 = -G * m1 * (p2 - p1) / |p2 - p1|^3 - G * m3 * (p2 - p3) / |p2 - p3|^3,\n```\n```math\na3 = -G * m2 * (p3 - p2) / |p3 - p2|^3 - G * m1 * (p3 - p1) / |p3 - p1|^3\n```\n\nwhere _a1_ to _a3_ are the accelerations of the masses respectively and _G_ is the gravitational constant with \n```math\nG = 10000\n```\n\nNote that these are vector equations. This means every single equations describes both the x and y components of the acceleration (ai) and position (pi) vectors.\nNote that in this context the absolute of a 2d vector `v = (v_x, v_y)` is defined as follows:\n```math\n|v| = sqrt(v_x^2 + v_y^2)\n```\n\nIf your solution is slightly off the numerial error in your solution might be too great. Try decreasing the stepsize.\n\n\nThe wikipedia page describing the problem: https://en.wikipedia.org/wiki/Three-body_problem\n\nSpoiler:\nOne of the simplest numerical integrators: https://en.wikipedia.org/wiki/Euler_method\n\n__Note__: Only initial conditions that lead to differential equations in the region of stability of the euler-cauchy integrator will be tested.",
+    "totalAttempts": 140,
+    "totalCompleted": 19,
+    "totalStars": 5,
+    "voteScore": 22,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

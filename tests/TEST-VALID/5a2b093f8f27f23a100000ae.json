@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a2b093f8f27f23a100000ae",
+  "data": {
+    "id": "5a2b093f8f27f23a100000ae",
+    "name": "Calculator for expressions with fractions",
+    "slug": "calculator-for-expressions-with-fractions",
+    "category": "algorithms",
+    "publishedAt": "2017-12-08T22:52:50.559Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5a2b093f8f27f23a100000ae",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-12-08T21:50:56.248Z",
+    "createdBy": {
+      "username": "_mer_",
+      "url": "https://www.codewars.com/users/_mer_"
+    },
+    "description": "**Calculator for expressions with fractions**\n\nProgram a function that evaluates a  mathematical expression in a String which contains fractions:\n\n```( 1|2 + 1 ) * 1|6 / 3 + 5|16 ```\n\n*Expressions*      \nThe expression is composed of the four operations +, -, \\*, /,  (nested)\nparantheses and numbers.\nAll numbers in the expression are either a natural number or a a fraction.\nA fraction has a numerator and a denominator, both natural numbers. One or both of them can be negative.   \nAs doubles and floats are not needed for this Kata they are disabled.\n\n*Format of input and output*   \nFractions are notated with a '|' to separate numerator and denominator, so three quarters would be denoted as   \n```3|4 ```   \nSpaces can occur between numbers and operators but not within fractions or between numbers and their sign.\n\nThe return value is a string representation of the with the '|' as separator where\nthe fraction has to be reduced ( ```21|14 ``` is wrong ```3|2 ``` is correct).\nIf the fraction is negative, the sign **must** precede the numerator (```-3|2 ``` is correct, ```3|-2 ``` is wrong. Yes, negative denominator is valid *input* but\ninvalid *output*). If the resulting fraction corresponds to a natural number, just return the number. Have a look at the test cases for clarification if needed.\n\nIf there is the attempt to divide by zero (either by giving a zero-denominator or by dividing by a zero-valued number) an ArithmeticException has to be thrown.\n\nApart from that the tests will only be valid expressions. \n\nIf you solved the Kata <a href='https://www.codewars.com/kata/precise-fractions-pt-1-basics'>Precise fractions pt. 1 - basics</a> already your class *Fraction*  will come in handy. Just remove the toDecimal-Method as the Test Cases rejects Solutions with floats or\ndoubles\n",
+    "totalAttempts": 91,
+    "totalCompleted": 6,
+    "totalStars": 4,
+    "voteScore": 13,
+    "tags": [
+      "Object-oriented Programming",
+      "Strings",
+      "Mathematics",
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

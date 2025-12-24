@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d9e29c672841f000e6ec2c6",
+  "data": {
+    "id": "5d9e29c672841f000e6ec2c6",
+    "name": "Find The Poisoned Apple",
+    "slug": "find-the-poisoned-apple",
+    "category": "reference",
+    "publishedAt": "2019-10-09T18:43:27.519Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5d9e29c672841f000e6ec2c6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-09T18:41:10.662Z",
+    "createdBy": {
+      "username": "golionko",
+      "url": "https://www.codewars.com/users/golionko"
+    },
+    "description": "### Help the wicked witch!!\n\nGiven a binary tree, return the `id` of the branch containing THE ONLY poisoned apple.\n\nEach node has the following structure:\n\n```javascript\nNode {\n  id: int (>= 0)\n  poisoned: true/false\n  (optional) left: Node || null\n  (optional) right: Node || null\n}\n```\n```haskell\ndata Tree = Null\n          | Node { id :: Int\n                 , poisoned :: Bool\n                 , left :: Tree\n                 , right :: Tree\n                 }\n```\n\n```if:javascript\nAn empty left or right node either has a null value or is altogether missing from the object.  \nIf no poisoned apple is on the tree return `-1`.\n```\n```if:haskell\nIf no poisoned apple is on the tree return `Nothing`.  \nNote that `Apple.Preloaded.id` clashes with `Prelude.id` when unqualified ( and vice versa ). We apologise for the inconvenience.\n```",
+    "totalAttempts": 465,
+    "totalCompleted": 62,
+    "totalStars": 2,
+    "voteScore": 98,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

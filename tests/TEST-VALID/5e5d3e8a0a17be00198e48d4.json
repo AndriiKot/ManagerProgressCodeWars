@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e5d3e8a0a17be00198e48d4",
+  "data": {
+    "id": "5e5d3e8a0a17be00198e48d4",
+    "name": "return Bin_to_Hex()  if valid   else \"what??\"",
+    "slug": "return-bin-to-hex-if-valid-else-what",
+    "category": "reference",
+    "publishedAt": "2020-03-03T16:25:01.872Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e5d3e8a0a17be00198e48d4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-02T17:12:42.910Z",
+    "createdBy": {
+      "username": "eptaceps",
+      "url": "https://www.codewars.com/users/eptaceps"
+    },
+    "description": "You just obtained a file containing binary values, but hey! they consume memory!\n\nSolution ? ... no you can't delete the file D: <br>\nInstead, you are asked to convert these binaries into hexadecimals,\nto reduce the number of characters.\n<br>\n\n\n<h2>Task :</h2>\nIn this kata you will work with \n<a href=\"https://en.wikipedia.org/wiki/Nibble\"><b>nibbles</b></a>                         (groups of 4 binary digits), at each of which will correspond one <b>hex</b> digit.\n<br>\n<br>\n<font color = yellow>Input :</font>  -----> A list/array of integers <br>\n<font color = yellow>Output :</font> ---> A string (which content depends from Validation)\n\n<h3>Validation :</h3>\n<font color  = green>Valid input ----></font> return the corresponding <b>hex</b> values.\n\n<br>\ninput is <font color = green>valid</font> if :<br>\n<ul>\n  <li>it is not empty</li>\n  <li>contains only 0 and 1 values, as integers</li>\n  <li>its values can be grouped in groups of 4 (nibbles)</li>\n</ul>\n\nExample of valid input and related output:<br>\n`[1, 0, 1, 0, 0, 1, 1, 1] -> \"a7\"`\n<br>\n<br>\n<font color = red>Invalid input ---></font>  return \"what??\"\n<br>\nExample of invalid inputs and related outputs:<br>\n`[] -> \"what??\"`<br>\n`[1, 0, 0, 22, 12, \"au\"] -> \"what??\"`<br>\n`[1, 1, 1, 1, 0] -> \"what??\"`<br>\n\n<br>\n<h2>Additional explanations :</h2>\n<h3>Symbols :</h3>\nEach system of numeration has a certain group of symbols to express numbers \n\n`binary ------> 0, 1`\n<br>\n`decimal -----> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9`\n<br>\n`hexadecimal -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f`\n<br>\n\n<h3>Conversion :</h3>\n\nIt can be obtained with these steps : `bin -> (dec) -> hex`\n\nFor instance, given `1010 bin` :\n<ol>\n  <li>Express the digits by powers of two -> 1*2^3 + 0*2^2 + 1*2^1 + 0*2^0</li>\n  <li>Sum up ------------------------------------> 8 + 0 + 2 + 0 = 10 <b>dec</b></li>\n  <li>Convert to <b>hex</b> ---------------------------> 10 <b>dec</b> = a <b>hex</b></li>\n</ol>\n\nOther examples:<br>\n`1110 bin = e hex`<br>\n`0001 bin = 1 hex`<br>\n",
+    "totalAttempts": 152,
+    "totalCompleted": 20,
+    "totalStars": 0,
+    "voteScore": -11,
+    "tags": [
+      "Fundamentals",
+      "Arrays",
+      "Data Types",
+      "Strings",
+      "Control Flow",
+      "Basic Language Features",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

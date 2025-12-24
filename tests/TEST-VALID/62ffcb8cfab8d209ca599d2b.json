@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62ffcb8cfab8d209ca599d2b",
+  "data": {
+    "id": "62ffcb8cfab8d209ca599d2b",
+    "name": "s-array language",
+    "slug": "s-array-language",
+    "category": "games",
+    "publishedAt": "2022-08-21T10:31:12.360Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/62ffcb8cfab8d209ca599d2b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-19T17:42:36.158Z",
+    "createdBy": {
+      "username": "A-Z",
+      "url": "https://www.codewars.com/users/A-Z"
+    },
+    "description": "# S-Array language\n\n## Legend\n\nLet's imagine that we work in a company that processes data from a huge number of devices in your city. You have developed a platform that can give the user the ability to manage and even modify data flows. Since most of your customers are people who cannot be trusted, you have decided not to give direct access to your platform. You decide to develop a [domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language) that will allow you to limit the customer's features and prevent them from doing something destructive. So where did you keep in mind the idea that anonymous functions, variables and recursion should be excluded in your language, as malicious people can use them to waste memory or processor resources. You were also inspired by the implementation of other high-level languages ​​that implemented the concepts of [array programming](https://en.wikipedia.org/wiki/Array_programming) and [concatenative programming](https://en.wikipedia.org/wiki/Concatenative_programming_language).\n\nThe first thing you decided was the data types in your language, there will be only two types:\n\n- `integer`\n- `arrays`\n\nUnder the hood, of course, there is work with [streams](https://en.wikipedia.org/wiki/Stream_processing), which can sometimes be endless, but these details shouldn't worry customers.\n\nIn the next step, you have decided on the base concepts and statements:\n- data sources\n- functions that can process the data\n- the way these functions are composed\n- data sources are themselves functions\n\nIn the first version of the language, you ended up with the following pseudocode:\n\n```bash\nsource | func1 args | func2 | func3 args\n```\n\nYes, you were inspired by [`bash`](https://en.wikipedia.org/wiki/Bash_(Unix_shell)).\nNext, you defined the standard functions and partly classify them.\nYou tried to make the language intuitive and developers friendly, so the documentation consists only of functions and examples of their use.\nYou really hope it's enough.\n\n### Sources\n\nSources of data.\n\n__Since we cannot connect to real signals sources within the kata, all data sources work with predefined sequences. This is sufficient for our purposes.__\n\n#### `from X` - generate endless sequence of numbers from `X`\n\n```ruby\nfrom 1 | take 3\n# => [1,2,3]\n```\n\n```ruby\nfrom 3 | to 3\n# => [3]\n```\n\n#### `range X Y` - generate sequence of numbers from `X` to `Y`\n\n```ruby\nrange 1 3\n# => [1,2,3]\n```\n\n```ruby\nrange 3 3\n# => [3]\n```\n\n```ruby\nrange 3 1\n# => [3,2,1]\n```\n\n#### `repeat X` - generate endless sequence of `X`\n\n```ruby\nrepeat 3 | take 3\n# => [3,3,3]\n```\n\n#### `fib` - generate sequence of [fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number)\n\n```ruby\nfib | take 10\n# => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]\n```\n\n#### `array X1 X2 Xn` - generate sequence of numbers from arguments\n\n```ruby\narray 1 2 3 4 5 | take 3\n# -> [1,2,3]\n```\n\n#### `rand X` - generate sequence of random numbers between `0` and `X - 1`\n\n```ruby\nrand 3 | take 1000 | uniq | sort\n# => [0,1,2]\n\nrand 2 | take 1000 | uniq | sort\n# => [0,1]\n```\n\n### Filters\n\n#### `to X` - ends the sequence of numbers if found `X`\n\n```ruby\nfrom 1 | to 3\n# => [1,2,3]\n\nfrom 3 | to 3\n# => [3]\n```\n\n#### `take X` - take `X` numbers from sequence\n\n```ruby\narray 1 2 3 4 5 | take 3\n# => [1,2,3]\n```\n\n#### `drop X` - drop `X` numbers from sequence\n\n```ruby\narray 1 2 3 4 5 | drop 3\n# => [4,5]\n\narray 1 2 3 4 5 | drop 10\n# => []\n\narray 1 2 3 4 5 | drop 5\n# => []\n\narray 1 2 3 4 5 | drop 0\n# => [1,2,3,4,5]\n```\n\n#### `gt X` - selects numbers greater than `X`\n\n```ruby\narray 1 2 3 4 5 | gt 3\n# => [4,5]\n\narray 1 2 3 4 5 | gt 30\n# => []\n```\n\n#### `lt X` - selects numbers less than `X`\n\n```ruby\narray 1 2 3 4 5 | lt 3\n# => [1,2]\n\narray 1 2 3 4 5 | lt 30\n# => [1,2,3,4,5]\n```\n\n#### `gte X` - selects numbers greater or equal than `X`\n\n```ruby\narray 1 2 3 4 5 | gte 3\n# => [3,4,5]\n\narray 1 2 3 4 5 | gte 30\n# => []\n```\n\n#### `lte X` - selects numbers less or equal than `X`\n\n```ruby\narray 1 2 3 4 5 | lte 3\n# => [1,2,3]\n\narray 1 2 3 4 5 | lte 30\n# => [1,2,3,4,5]\n```\n\n#### `eq X` - selects numbers equal of `X`\n\n```ruby\narray 1 2 3 4 5 | eq 3\n# => [3]\n\narray 1 2 3 4 5 | eq 10\n# => []\n```\n\n#### `every X` - selects every `X` number\n\n```ruby\narray 1 2 3 4 5 6 | every 1\n# => [1,2,3,4,5,6]\n\narray 1 2 3 4 5 6 | every 2\n# => [1,3,5]\n\narray 1 2 3 4 5 6 | every 3\n# => [1,4]\n```\n\n#### `skip X` - skips `X` from sequence\n\n```ruby\narray 1 2 3 4 5 6 | skip 1\n# => [1,3,4,5,6]\n\narray 1 2 3 4 5 6 | skip 2\n# => [1,2,4,5,6]\n```\n\n#### `even` - selects only even numbers\n\n```ruby\narray 1 2 3 4 5 6 | even\n# => [2,4,6]\n```\n\n#### `odd` - selects only odd numbers\n\n```ruby\narray 1 2 3 4 5 6 | odd\n# => [1,3,5]\n```\n\n#### `prime` - selects only prime numbers\n\n```ruby\nrange 1 30 | prime\n# => [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n\nrange 10 30 | prime\n# => [11, 13, 17, 19, 23, 29]\n```\n\n#### `select X1 X2 .. Xn` - selects only `X` numbers\n\n```ruby\nrange 1 5 | select 3\n# => [3]\n\nrange 1 5 | select 0\n# => []\n\nrange 1 5 | select 1 2 3\n# => [1,2,3]\n\nrange 1 5 | select 1 2 3 100\n# => [1,2,3]\n```\n\n#### `reject X1 X2 ... Xn` - rejects `X` numbers\n\n```ruby\nrange 1 5 | reject 3\n# => [1,2,4,5]\n\nrange 1 5 | reject 0\n# => [1,2,3,4,5]\n\nrange 1 5 | reject 1 2 3\n# => [4,5]\n\nrange 1 5 | reject 1 2 3 100\n# => [4,5]\n```\n\n#### `reverse` - reverse sequence\n\n```ruby\narray 1 2 3 | reverse\n# => [3,2,1]\n```\n\n#### `sort` - sorts sequence\n\n```ruby\narray 1 2 3 | reverse | sort\n# => [1,2,3]\n```\n\n#### `uniq` - selects uniq numbers from sequence\n\n```ruby\narray 1 2 3 | uniq\n# => [1,2,3]\n\nrepeat 1 | take 10 | uniq\n# => [1]\n```\n\n#### `cycle` - make infinite repeat of input sequence\n\n```ruby\narray 1 2 3 | cycle | take 5\n# => [1,2,3,1,2]\n```\n\n### Transformers\n\nTransform input sequence.\n\n#### `div X` - divide of every number from sequence by `X`\n\n```ruby\nrange 1 5 | div 1\n# => [1, 2, 3, 4, 5]\n\nrange 1 5 | div 2\n# => [0, 1, 1, 2, 2]\n\nrange 1 5 | div 3\n# => [0, 0, 1, 1, 1]\n```\n\n#### `mod X` - return modulo of every number from sequence by `X`\n\n```ruby\nrange 1 5 | mod 1\n# => [0, 0, 0, 0, 0]\n\nrange 1 5 | mod 2\n# => [1, 0, 1, 0, 1]\n\nrange 1 5 | mod 3\n# => [1, 2, 0, 1, 2]\n```\n\n#### `fact` - return factorial of every number from sequence\n\n```ruby\nrange 1 5 | fact\n# => [1, 2, 6, 24, 120]\n```\n\n#### `abs` - return absolute value of every number from sequence\n\n```ruby\nrange -5 0 | abs\n# => [5, 4, 3, 2, 1, 0]\n\narray -1 -2 -3 | abs\n# => [1, 2, 3]\n```\n\n#### `inc` - increments every number from sequence\n\n```ruby\narray 1 2 3 | inc\n# => [2,3,4]\n\narray -1 -2 -3 | inc\n# => [0, -1, -2]\n```\n\n#### `dec` - decrements every number from sequence\n\n```ruby\narray 1 2 3 | dec\n# => [0,1,2]\n\narray -1 -2 -3 | dec\n# => [-2,-3,-4]\n```\n\n#### `add X` - adds `X` to every number from sequence\n\n```ruby\narray 1 2 3 | add 1\n# => [2,3,4]\n\narray -1 -2 -3 | add 1\n# => [0, -1, -2]\n\narray -1 -2 -3 | add 3\n# => [2, 1, 0]\n```\n\n#### `sub X` - subtracts `X` every number from sequence\n\n```ruby\narray 1 2 3 | sub 1\n# => [0,1,2]\n\narray 1 2 3 | sub -1\n# => [2,3,4]\n```\n\n#### `mul X` - multiplies every number from sequence to `X`\n\n```ruby\nmul 1 2 3 | mul 2\n# => [2,4,6]\n\nmul 1 2 3 | mul 3\n# => [3,6,9]\n```\n\n#### `pow X` - raises each number from sequence to the power of `X`\n\n```ruby\narray 1 2 3 | pow 2\n# => [1,4,9]\n\narray 1 2 3 | pow 3\n# => [1,8,27]\n```\n\n#### `replace X` - replaces every number in sequence by `X`\n\n```ruby\nrange 1 5 | replace 0\n# => [0, 0, 0, 0, 0]\n\nrange 1 5 | take 3 | replace 0\n# => [0, 0, 0]\n\nrange 1 5 | replace 0 | take 3 \n# => [0, 0, 0]\n```\n\n### Appenders\n\n#### `zip X1 X2 ... Xn` - zips input sequence with `X1 X2 ... Xn`\n\n```ruby\nrange 1 2 | zip 3 4\n# => [1, 3, 2, 4]\n\nrange 1 2 | zip 3 4 5 6\n# => [1, 3, 2, 4]\n\nrange 1 2 | zip 3\n# => [1, 3]\n\nrange 1 2 | zip\n# => []\n```\n\n#### `append X1 ... Xn` - appends `X1 ... Xn` to sequence\n\n```ruby\nrange 1 2 | append 3 4\n# => [1,2,3,4]\n```\n\n#### `concat X1 ... Xn` - alias for `append`\n\n```ruby\nrange 1 2 | concat 3 4\n# => [1,2,3,4]\n```\n\n#### `prepend` - prepends `X1 ... Xn` to sequence\n\n```ruby\nrange 1 3 | prepend 2 4\n# => [2,4,1,2,3]\n```\n\n### Reducers\n\n#### `sum` - sums all numbers from sequence\n\n```ruby\nrepeat 1 | take 3 | sum\n# => [3]\n```\n\n#### `max` - finds the maximum number from sequence\n\n```ruby\nrepeat 1 | take 3 | max\n# => [1]\n\narray 1 2 3 | max\n# => [3]\n```\n\n#### `min` - finds the minimum number from sequence\n\n```ruby\nrepeat 1 | take 3 | min\n# => [1]\n\narray 1 2 3 | min\n# => [1]\n```\n\n#### `first` - selects only first number from sequence\n\n```ruby\narray 1 2 3 | first\n# => [1]\n```\n\n#### `last` - selects only last number from sequence\n\n```ruby\narray 1 2 3 | last\n# => [3]\n```\n\n#### `nth X` - selects number from sequence with `X` position, starts from zero\n\n```ruby\narray 1 2 3 4 5 | nth 0\n# => [1]\n\narray 1 2 3 4 5 | nth 1\n# => [2]\n\narray 1 2 3 4 5 | nth 3\n# => [4]\n\narray 1 2 3 4 5 | nth -1\n# => [5]\n\narray 1 2 3 4 5 | gt 5 | nth 1\n# => []\n```\n\n#### `count` - returns size of sequence\n\n```ruby\narray 1 2 3 4 5 | count\n# => [5]\n```\n\n#### `minmax` - return minimmum and maximum numbers from sequence\n\n```ruby\nrepeat 1 | take 3 | minmax\n# => [1,1]\n\narray 1 2 3 | minmax\n# => [1,3]\n```\n\n### Function arguments\n\n__Each function has a different number of input parameters, the extra ones are simply ignored.__\n\n#### valid example\n\n```ruby\narray 1 2 3 | minmax\n# => [1,3]\n```\n\n#### invalid but working example\n\n```ruby\narray 1 2 3 | minmax 1 2 3\n# => [1,3]\n```\n\n### Error handling\n\n- For empty string must return empty array\n- For invalid function must raise error \"unsupported combinator: [FUNC NAME]\"\n\n## Targets:\n\n1. write prototype of this [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) without validation and types inferences\n2. pass all tests\n\n__Don't worry, all examples in the tests are valid__\n\nGood luck!",
+    "totalAttempts": 40,
+    "totalCompleted": 3,
+    "totalStars": 2,
+    "voteScore": 8,
+    "tags": [
+      "Arrays",
+      "Domain Specific Languages",
+      "Streams"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

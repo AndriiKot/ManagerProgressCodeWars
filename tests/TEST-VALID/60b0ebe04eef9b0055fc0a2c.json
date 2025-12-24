@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60b0ebe04eef9b0055fc0a2c",
+  "data": {
+    "id": "60b0ebe04eef9b0055fc0a2c",
+    "name": "De Bruijn Sequences - Generation (Part 2)",
+    "slug": "de-bruijn-sequences-generation-part-2",
+    "category": "reference",
+    "publishedAt": "2021-05-28T16:01:23.178Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/60b0ebe04eef9b0055fc0a2c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-28T13:10:56.537Z",
+    "createdBy": {
+      "username": "gschandan",
+      "url": "https://www.codewars.com/users/gschandan"
+    },
+    "description": "### Background:\n\nA \"de Bruijn sequence\" `B(k,n)` is a cyclical sequence where *every* possible length-`n` contiguous substring of an alphabet of size `k` occurs exactly once.\n\nA de Bruijn sequence on an alphabet of size `2`, e.g. `0`s and `1`s, consists of 2<sup>n</sup> `0`s and `1`s, such that every substring of length `n`  occurs once. This is a valid de Bruijn sequence `B(2,3)`:\n\n```\n00011101\n``` \n\nEach length `3` substring occurs once as a substring: starting from the leftmost `3` digits, moving a `3`-digit window right one digit at a time, and wrapping around, we have:\n\n```\n000, 001, 011, 111, 110, 101, 010 , 100\n```\n\n### Task:\n\nGiven an alphabet size `k`, and a length `n`, return the **lexicographically largest** valid de Bruijn sequence ( of length k<sup>n</sup> ) as a string.\n\n### Conditions:\n\nFor this kata, the alphabet size `k` will be between `2` and `8` ( inclusive ). The alphabet will consist of the digits `0 .. k-1`.  \nThe substring length `n` will be between `2` and `7` ( inclusive ).  \n\n### Required performance:\n\n`O(l)`, where `l` is the length of the output ( i.e. k<sup>n</sup> ).\n\n### Examples:\n\n`(3,2)` should return `\"221201100\"`.\n\nAll of the sequences `\"012022110\", \"001021122\", \"221201100\", \"221100201\"`  are valid de Bruijn sequences, but only `\"221201100\"` is the correct solution to this kata, as the lexicographically largest.\n  \n`(2,2)`  should return `\"1100\"`\n  \n`\"0011\", \"0110\", \"1100\", \"1001\"` are valid de Bruijn sequences, but `\"1100\"` is the lexicographically largest.",
+    "totalAttempts": 16,
+    "totalCompleted": 4,
+    "totalStars": 3,
+    "voteScore": 7,
+    "tags": [
+      "Combinatorics",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

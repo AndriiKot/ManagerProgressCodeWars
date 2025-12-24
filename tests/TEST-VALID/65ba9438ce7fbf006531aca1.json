@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65ba9438ce7fbf006531aca1",
+  "data": {
+    "id": "65ba9438ce7fbf006531aca1",
+    "name": "Ice Cream Shop",
+    "slug": "ice-cream-shop",
+    "category": "reference",
+    "publishedAt": "2024-01-31T18:44:51.265Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65ba9438ce7fbf006531aca1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-31T18:40:56.724Z",
+    "createdBy": {
+      "username": "themeowingsage",
+      "url": "https://www.codewars.com/users/themeowingsage"
+    },
+    "description": "Create a class for an Ice Cream Shop which should accept a dict of regular customers with the function handle_customers.\n\nThe method handle_customers will be given the params name or flavor or both.\n- If the name is given it should get the favorite flavor from the regular customer's dict and return \"hey, is it a `flavor from regulars dict`?\"\n- If the flavor is given but not the name then it is a newcomer and it should return \"Here's a `given flavor`!\"\n- the above should also be returned if both flavor and name are given\n\nThe dict should be something like this:\n```python\n  {\n    \"Pete\": \"chocolate\", \n    \"Sally\": \"raspberry-sherbet\"\n  }\n```\n\nHere are some examples:\n  ```python\n    shop = IceCreamShop({\"Pete\": \"chocolate\", \"Sally\": \"raspberry-sherbet\"})\n    shop.handle_customer(flavor=\"vanilla\") # -> \"Here's a vanilla!\"\n    shop.handle_customer(name=\"Pete\") # -> \"hey, is it a chocolate?\"\n    shop.handle_customer(name=\"Pete\", flavor=\"rocky-road\") # -> \"Here's a rocky-road!\"\n  ```\n\nMore examples are in the example tests.\n\nHappy Coding!",
+    "totalAttempts": 19,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Strings",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

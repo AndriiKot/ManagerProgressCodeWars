@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57fed94368d4775c320000c2",
+  "data": {
+    "id": "57fed94368d4775c320000c2",
+    "name": "Possible Triangles Formed with Available Iron Rods",
+    "slug": "possible-triangles-formed-with-available-iron-rods",
+    "category": "reference",
+    "publishedAt": "2016-10-17T02:09:22.907Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57fed94368d4775c320000c2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-13T00:45:55.651Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "We have an array that contains the length of many iron rods, ```available_rods```\nThe length of the rods are expressed in inches.\nWe have to form with them:\n\n- triangles that have at least one angle higher than 90° (rigth-angled triangles should be discarded)\n\n- the triangles should not have a side longer than a certain length, ```max_length```\n\n- the triangles should have an area that do not differ more than a certain percentage of relative difference, ```max_rel_diff``` in relative terms with a certain given area, ```est_area```,  value expressed in square feet. (1 in = 0.08333333 ft)\n\nLet's see an example:\n```\navailable_rods = [3, 11, 8, 5, 13, 10, 16, 21, 33] # rounded lengths in inches\nmax_length = 16 in # all the triangle sides should be under 16 inches\nest_area = 0.12 ft², the most suitable area value (for an specific need)\nmax_rel_diff = 40 % # all the relative difference with estimated area, est_area, have to be under 40%\n```\nThe relative difference is calculated as:\n```\nrel_differ = |area - est_area| / est_area * 100\n```\nWe list all the possible triangles ```[a, b, c] (a ≤ b < c)``` that have an angle higher than ```90°```, all its sides under the ```max_length``` and with a relative difference under ```max_rel_diff```\n```\nTriangles [a,b,c]  Biggest Angle(deg)      Area(in²)     Area(ft²)  rel_differ(%)\n[3, 10, 11]           101.54               14.6969        0.1021     14.95\n[3, 11, 13]           126.22               13.3112        0.0924     22.97\n[5, 8, 10]             97.90               19.8100        0.1376     14.64\n[5, 8, 11]            113.58               18.3303        0.1273      6.08\n[5, 10, 13]           116.10               22.4499        0.1559     29.92\n```\n\nWe need a function that receives the shown arguments in the following order:\n```\nsel_pieces(available_rods, max_length, est_area, rel_diff)\n```\nThe function will output the triangles sorted by the lowest value of ```rel_differ```.\n\nThe above case will be:\n```python\navailable_rods = [3, 11, 8, 5, 13, 10, 16, 21, 33]\nmax_length = 16\nest_area = 0.12\nmax_rel_diff = 40\nsel_pieces(available_rods, max_length, est_area, rel_diff) == [[5, 8, 11], [5, 8, 10], [3, 10, 11], [3, 11, 13], [5, 10, 13]]\n```\nIn case that there are no triangles that fulfill these properties, the function will output an empty array.\n```python\navailable_rods = [3, 11, 8, 5, 13, 10, 16, 21, 33]\nmax_length = 16\nest_area = 0.12\nmax_rel_diff = 5\nsel_pieces(available_rods, max_length, est_area, rel_diff) == []\n```\nFeatures of the tests:\n``` \nN (Number of tests) = 150\namount of available rods, l; 10 ≤ l ≤ 60\n5 in ≤ max_length ≤ 300 in\n0,0069 ft²≤ est_area ≤ 6.25 ft²\n5 % ≤ max_rel_differ ≤ 50 %\n```\nEnjoy it!!",
+    "totalAttempts": 483,
+    "totalCompleted": 7,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Algorithms",
+      "Mathematics",
+      "Geometry",
+      "Logic",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5530d0bc5668371329000027",
+  "data": {
+    "id": "5530d0bc5668371329000027",
+    "name": "Function Wrappers: Inline Testing",
+    "slug": "function-wrappers-inline-testing",
+    "category": "algorithms",
+    "publishedAt": "2015-04-17T14:04:54.319Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5530d0bc5668371329000027",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-17T09:22:04.209Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Test Driven Development (TDD) is all the rage these days, with many developers not writing a line of implementation before writing some tests. There are many frameworks to help you do this, but each has its own idiosyncrasies and set of commands for you to learn.\n\nWhat if you could just write your JavaScript tests... in JavaScript?\n\nLet's use comments to mark tests. If a statement has a triple-slash `///` comment after it (on the same line), that comment is used as a test marker. If the preceeding comment is truthy, the test passes. Otherwise it fails.\n```javascript\ntrue; /// test the `true` statement\n\"a\" === 7; /// test the `\"a\" === 7` statement\n```\n\nWe should note any tests that weren't actually run, too—we can use this to tell the user running the tests that there may be a problem with their testing code.\n```javascript\nif (false) { // unreachable\n  true; /// untested\n}\n```\n\nBut how should we log out the test results? Well, we could always just highlight the test comments in different colours depending on if it passed, failed, or wasn't tested. This would let the user see the full code that produced the test, and make it clear at a glance which tests passed and failed.\n\nLet's assume we're logging to HTML; that should make it super easy to style our tests. We'll use the following tags to decorate them:\n```html\n<span style=\"color:#0F0; font-weight:bold;\">/// passing test</span>\n<span style=\"color:#F00; font-weight:bold;\">/// failing test</span>\n<span style=\"color:#99F; font-weight:bold;\">/// untested test</span>\n```\nWhich would look like this:\n<span style=\"color:#0F0; font-weight:bold;\">/// passing test</span>\n<span style=\"color:#F00; font-weight:bold;\">/// failing test</span>\n<span style=\"color:#99F; font-weight:bold;\">/// untested test</span>\n\nOkay, so what should we actually return? We could just spit out the string of the tested code, but maybe we could use some more stats on how things went. \n\nLet's return an object. If it's coerced into a string, it should give the rendered tests. But let's give it some more properties:\n```javascript\nresult.detected; // the tests actually detected by our system\nresult.failed;   // the number of tests that failed\nresult.passed;   // the number of tests that passed\nresult.tested;   // the total number of tests that were actually tested\nresult.untested; // the number of tests that were NOT tested\n```\nAnd finally, a bit of error handling.\n```javascript\n// If an error was thrown by the testing code,\nresult.error; // this will hold the thrown error object\n```\nFor the sake of this kata, let's just let the user worry about how to show this data themselves.\n\nAnd the final piece of the puzzle... how should our function wrapper work?\n```javascript\nfunction test(code) { // a function is passed in\n  return /* a new function with the same signature */;\n}\n\n// we can then call it, .apply() it, or.call() it\n//   preserving the context and arguments down to the code itself\nvar testRenderer = test(function(seed) {\n  this.secret === \"context\"; /// true\n  seed === 10; /// true\n  true; /// test\n});\n\nvar result = testRenderer.call(\n  { secret: \"context\" }, // context\n  10 // seed argument\n); // returns the object with the stats and rendered test code\n\n(result + \"\"); // coerces the object into a string,\n               // giving us the rendered code and tests\n```\n\n\nSo our first examples will look like this:\n```javascript\ntest(function() {\n  true; /// test the `true` statement\n  \"a\" === 7; /// test the `\"a\" === 7` statement\n  \n  if (false) { // unreachable\n    true; /// untested\n  }\n});\n```\n\nonce rendered will look something like this:\n<pre style=\"margin:0; padding:0.5em; border:inset;\">\n  true; <span style=\"color:#0F0; font-weight:bold;\">/// test the `true` statement</span>\n  \"a\" === 7; <span style=\"color:#F00; font-weight:bold;\">/// test the `\"a\" === 7` statement</span>\n  if (false) { // unreachable\n    true; <span style=\"color:#99F; font-weight:bold;\">/// untested</span>\n  }\n</pre>\n\n(Note the spacing matches the original function's body _exactly_.)\n\nAnd our results object will look something like this:\n```javascript\nresult.detected === 3;\nresult.failed === 1;\nresult.passed === 1;\nresult.tested === 1;\nresult.untested === 1;\nresult.error === undefined; // or null\n```\n\nAnd if an error was thrown:\n```javascript\nvar result = test(function() {\n  non_existent_reference;\n})();\n\nresult.error instanceof ReferenceError; // === true\n```\n\nAll looks about right to me. Now all that's left is write it!\n\n### Notes\nFor this kata, I have kept the inputs _reasonably_ easy to handle. There is always a semicolon at the end of a statement, and there are no assignments being tested. This may or may not impact the way you implement the testing, but I thought I'd put it out there in case it helps you figure out how to do this.\n\nRegular comments (not starting with exactly 3 forward slashes `///`), multiline comments and strings should be accounted for. For example, the string `\"normal string /// should ignore this test\"` shouldn't create a test.",
+    "totalAttempts": 75,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

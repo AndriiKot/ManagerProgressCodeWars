@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55bb6493a0bf37798800004a",
+  "data": {
+    "id": "55bb6493a0bf37798800004a",
+    "name": "Prime Number Generator :Intermediate (with inputs) version",
+    "slug": "prime-number-generator-intermediate-with-inputs-version",
+    "category": "algorithms",
+    "publishedAt": "2015-07-31T18:01:14.225Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55bb6493a0bf37798800004a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-07-31T12:05:39.836Z",
+    "createdBy": {
+      "username": "DeanBrown",
+      "url": "https://www.codewars.com/users/DeanBrown"
+    },
+    "description": "Using ES2015 [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)<br>\nWrite a prime number generator.<br><br>\nJust Like in the kata [Prime Number Generator:Simple version](http://www.codewars.com/kata/55bacaaccf8b5eb992000086/train/javascript) <br><br>\nIt should return each prime number in order.<br>\nIt should start with 2 as the first prime number.<br>\nWithout timing out it should return up the 10,003rd prime.<br>\n\nUnlike the simple version it should also accept input to the [next](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next) function so that \n```javascript\nprimeGen.next(N).value //returns the Nth prime\n```\nAfter that it should return consecutive primes starting at N+1.<br>\n```javascript\nprimeGen.next(1).value;   // returns 2, the 1st prime\nprimeGen.next().value;    // returns 3, the 2nd prime\nprimeGen.next(100).value; // returns 541, the 100th prime\nprimeGen.next().value;    // returns ???, the 101st prime\n```\nif N is not a positive integer than it should behave as if it was called without an argument.",
+    "totalAttempts": 335,
+    "totalCompleted": 36,
+    "totalStars": 3,
+    "voteScore": 59,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

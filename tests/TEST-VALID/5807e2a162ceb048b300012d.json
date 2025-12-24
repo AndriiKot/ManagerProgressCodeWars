@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5807e2a162ceb048b300012d",
+  "data": {
+    "id": "5807e2a162ceb048b300012d",
+    "name": "Dependency check",
+    "slug": "dependency-check",
+    "category": "algorithms",
+    "publishedAt": "2016-10-19T21:28:56.934Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5807e2a162ceb048b300012d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-19T21:16:17.569Z",
+    "createdBy": {
+      "username": "ojundt",
+      "url": "https://www.codewars.com/users/ojundt"
+    },
+    "description": "Implement a method that checks if a dependency tree for compiling libraries can be fulfilled without ending in an endless cycle.\n\nExample: if library `a` depends on library `b` for compiling and library `b` depends on library `a`, none of them can be compiled because we are in an endless cycle `a > b > a > b > a ...`\n\nWe can model dependency trees with a hash like:\n```ruby\n{\n  a: :b,\n  b: [:c, :d]\n  c: :d\n}\n```\n\nEach entry represents a library (the key) and one or more libraries it depends on (the value). If a library is not mentioned in the hash, it does not have any dependencies. A library may depend on itself.",
+    "totalAttempts": 361,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Trees",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

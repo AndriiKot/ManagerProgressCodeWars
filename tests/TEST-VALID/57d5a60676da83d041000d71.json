@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57d5a60676da83d041000d71",
+  "data": {
+    "id": "57d5a60676da83d041000d71",
+    "name": "Merged header cells trouble",
+    "slug": "merged-header-cells-trouble",
+    "category": "algorithms",
+    "publishedAt": "2016-09-11T21:37:08.690Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57d5a60676da83d041000d71",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-11T18:44:22.798Z",
+    "createdBy": {
+      "username": "martinek",
+      "url": "https://www.codewars.com/users/martinek"
+    },
+    "description": "For parsing of spreadsheet files we are using very basic library. \nThis library reads the file and returns object with addresses as keys and values as values.\nFor merged cells, library returns address of top left sub-cell.\n\nFor example following table:\n\n<table cellpadding=\"1\" cellspacing=\"1\">\n    <tr>\n    \t<td colspan=\"2\" style=\"border: 1px solid white\">name</td>\n    \t<td colspan=\"2\" style=\"border: 1px solid white\">date</td>\n        <td rowspan=\"2\" style=\"border: 1px solid white\">country</td>\n    </tr>\n    <tr>\n    \t<td style=\"border: 1px solid white\">first</td>\n    \t<td style=\"border: 1px solid white\">last</td>\n    \t<td style=\"border: 1px solid white\">start</td>\n    \t<td style=\"border: 1px solid white\">end</td>\n    </tr>\n</table>\n\n\nwould be parsed to:\n\n```javascript\n{\n    'A1': 'name',\n    'C1': 'date',\n    'E1': 'country',\n    'A2': 'first',\n    'B2': 'last',\n    'C2': 'start',\n    'D2': 'end'\n}\n```\n\nFor further processing we require \"flatten\" headers in form of one-dimensional array of column names.\nColumn name is created by prefixing second row value with first row value (if present).\n\n```javascript\n[\n    'first name',\n    'last name',\n    'start date',\n    'end date',\n    'country'\n]\n```\n\nFor the purpose of this task, you can presume there will always be two rows and there will never be empty cell.\nAlso there will only be columns addressed from A to Z (so no AA, AB etc.).\n\nYour task is to write function `flatten` that will process parsed cells array into flattened column names array.\n\n---\n\nOne more example\n\n<table cellpadding=\"1\" cellspacing=\"1\">\n    <tr>\n        <td rowspan=\"2\" style=\"border: 1px solid white\">id</td>\n        <td colspan=\"3\" style=\"border: 1px solid white\">price</td>\n        <td rowspan=\"2\" style=\"border: 1px solid white\">sold</td>\n        <td colspan=\"2\" style=\"border: 1px solid white\">name</td>\n        <td colspan=\"2\" style=\"border: 1px solid white\">address</td>\n        <td colspan=\"3\" style=\"border: 1px solid white\">phone</td>\n    </tr>\n    <tr>\n        <td style=\"border: 1px solid white\">base</td>\n        <td style=\"border: 1px solid white\">vat</td>\n        <td style=\"border: 1px solid white\">total</td>\n        <td style=\"border: 1px solid white\">first</td>\n        <td style=\"border: 1px solid white\">last</td>\n        <td style=\"border: 1px solid white\">home</td>\n        <td style=\"border: 1px solid white\">email</td>\n        <td style=\"border: 1px solid white\">mobile</td>\n        <td style=\"border: 1px solid white\">home</td>\n        <td style=\"border: 1px solid white\">work</td>\n    </tr>\n</table>\n\n```javascript\n{\n    'A1': 'id',\n    'B1': 'price',\n    'E1': 'sold',\n    'F1': 'name',\n    'H1': 'address',\n    'J1': 'phone',\n    'B2': 'base',\n    'C2': 'vat',\n    'D2': 'total',\n    'F2': 'first',\n    'G2': 'last',\n    'H2': 'home',\n    'I2': 'email',\n    'J2': 'mobile',\n    'K2': 'home',\n    'L2': 'work'\n}\n```\n\nwould result in \n```javascript\n[\n    'id',\n    'base price',\n    'vat price',\n    'total price',\n    'sold',\n    'first name',\n    'last name',\n    'home address',\n    'email address',\n    'mobile phone',\n    'home phone',\n    'work phone',\n]\n```",
+    "totalAttempts": 367,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 49,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

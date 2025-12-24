@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57d1203395497e99120000c9",
+  "data": {
+    "id": "57d1203395497e99120000c9",
+    "name": "Car Door Roulette - Easy Version",
+    "slug": "car-door-roulette-easy-version",
+    "category": "reference",
+    "publishedAt": "2016-09-08T09:06:37.712Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/57d1203395497e99120000c9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-08T08:24:19.624Z",
+    "createdBy": {
+      "username": "PG1",
+      "url": "https://www.codewars.com/users/PG1"
+    },
+    "description": "Cycling in London is dangerous. It's also fun. You kind of have to balance the two.\n\nWhen riding alongside a line of parked cars, people often refer to those that ride too close as playing 'Car Door Roulette'. This is due to the fact that at any second a door could open and knock you off.\n\nIn this kata, you will be given a string, that represents the line of parked cars (each character is a car), and a value 'x' which represents your position along that string, as the cyclist.\n\n'\\\\' represents an open door of a car facing the same way you are going. This is most painful to hit.\n\n'/' represents an open door of a car facing you, this is less dangerous as you could, in theory, glance off it and be ok.\n\nYour job is to check whether there are any open doors on your ride, whether they knock you off, and how badly.\n\nYou need to account for the fact that people opening car doors don't leave them open, so an open door value only lasts for a set period of time (or number of steps along the line).\n\nIf you detect an open door '\\\\', check whether it is level wth you, or one or two steps ahead of you. If it is, unlucky! Return 'Crash, Bang, Ouch!'.\n\nAs an open door '/' is less dangerous, you only need to check if it is level with you, or 1 step ahead. If it is, return 'Knocked Off, Dust Yourself Down.'.\n\nIf neither occurs - you've made it! Return 'Plain Sailing!'.\n\nPlease note that despite the news making out otherwise, cycling accidents per head are low. With that in mind, many of the random tests will return 'Plain Sailing'. To make sure there can be no cheating there are 100 random tests.",
+    "totalAttempts": 996,
+    "totalCompleted": 100,
+    "totalStars": 6,
+    "voteScore": 90,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

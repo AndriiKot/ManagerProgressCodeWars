@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fb0c349ace07700122a2ffb",
+  "data": {
+    "id": "5fb0c349ace07700122a2ffb",
+    "name": "Gif Animation and Transparency",
+    "slug": "gif-animation-and-transparency",
+    "category": "algorithms",
+    "publishedAt": "2020-11-15T10:41:19.436Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5fb0c349ace07700122a2ffb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-11-15T05:57:29.556Z",
+    "createdBy": {
+      "username": "rsa",
+      "url": "https://www.codewars.com/users/rsa"
+    },
+    "description": "Animated Gif images are everywhere, why are they so small? ![](https://upload.wikimedia.org/wikipedia/commons/2/20/Newtons_cradle_animation_new.gif)\n\nAlthough each frame of the animation is stored using the [LZW compression](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) algorithm a second fact helps reduce the size of the resulting image: Transparency.\nFor each frame a palette index can be declared as a transparent color.\n\nFor this kata you will receive two frames of an animation sequence and your task will be to compare the size difference when compressing each frame individually and when using transparency.\n\nEach frame will be passed as a list of palette entries (256 possible entries, entry 255 will not be used in the image, since in this setup it is reserved for transparency). You don't need to take the palette into account when determinig the output size.\n``` python\n[[1, 1, 1, 15, 0 ...], [1, 2, 2, 15, ...]]\n```\nHere frame 1 start with three pixels with the color of palette entry 1, then palette entry 15, etc.\n\n## Compression:\nUse LZW Compression resulting in entries to be transmitted. These entries might be greater than 256, hence not fitting into one byte - still when determining the size, count them as one.\n\n1. Initialize an array (the dictonary) with 256 entries for the 256 possible palette entries\n1. Find the longest stream of input `w` which matches some entry in the dictionary\n1. output the index `w` that was found in the dictionary and remove it from input\n1. `w` followed by the next input will be the new input\n1. repeat with step 2\n\n### Example\n\n`lzw_compress(\"11111\")`\n- dictionary contains `[0, 1, 2, 3, ... , 255]`\n- input (w) is `1` which can be found in dictionary\n- new input: `w=11` (0x01, 0x01)\n- `w=11` cannot be found in dictionary\n  - add `w=11` at dictionary position 256\n  - output `1`\n- add the next input `1` to input, resulting in `w=11`\n- repeat until not finding `111` in dictionary\n  - add `111` at dictionary postition 257\n  - output 256 (`=11`)\n  \n``` python\nlzw_compress(1,1,1,1,1) -> [1, 256, 256]\nlzw_compress(1,1,1,1,1,1) -> [1, 256, 257]\nlzw_compress(1,2,3,4,5,6) -> [1, 2, 3, 4, 5, 6]\n```\n\nSo `[1,1,1,1,1]` results in 3 entries, `[1,1,1,1,1,1]` results in 3 entries as well, while `[1,2,3,4,5,6]` results in 6 entries.\n\nNote: Your input will always be of type: `List[int]`\n\n## Transparency\nIn this kata the last palette index is guaranteed to not be present in the input frames, so it can be used for transparency. When compressing the second frame in step 2, you can 'modify' the image, making sure the observed image stays the same, using the transparent palette index.\n\n## Step1\nCompress each of the two frames using LZW Compression, sum the sizes of the two frames, resulting in `size1`\n\n## Step2\nCompress frame 1 as in step1, but for the second frame use palette entry 255 which is the transparent color to possibly decrease the size of the second frame. Compress the new second frame (hopefully smaller due to transparency) using LZW, add it to compressed size of frame 1 resulting in `size2`\n\n## Return\nThe return value of your function will be ``size1 - size2``",
+    "totalAttempts": 32,
+    "totalCompleted": 9,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

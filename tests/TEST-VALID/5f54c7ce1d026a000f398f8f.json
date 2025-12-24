@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f54c7ce1d026a000f398f8f",
+  "data": {
+    "id": "5f54c7ce1d026a000f398f8f",
+    "name": "Functional JSON",
+    "slug": "functional-json",
+    "category": "algorithms",
+    "publishedAt": "2020-09-06T21:39:21.626Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f54c7ce1d026a000f398f8f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-09-06T11:28:14.966Z",
+    "createdBy": {
+      "username": "user7531853",
+      "url": "https://www.codewars.com/users/user7531853"
+    },
+    "description": "## Functional JSON\nYour task is to write an interpreter for the <a href=\"https://esolangs.org/wiki/Ajsone\">`Ajsone`</a> esoteric programming language.\n\n<a href=\"https://esolangs.org/wiki/Ajsone\">`Ajsone`</a> is an esoteric functional programming language which uses the JSON data format to represent **everything**: functions, variables, values, etc.\n\n**It's time to unleash real the power of JSON!**\n<hr>\n\nBefore looking at how the language works, here is a simple piece of code which computes the factorial of 5:\n```\n{\n  \"fact\": {\n    \"=if\": {\n      \"cond\": {\"=<=\": {\"in1\": \"=n\", \"in2\": 1}},\n      \"then\": 1,\n      \"else\": {\n        \"t\": {\"=-\": {\"in1\": \"=n\", \"in2\": 1}},\n        \"=*\": {\"in1\": \"=n\", \"in2\": {\"=fact\": {\"n\": \"=t\"}}}}\n    }\n  },\n  \"=fact\": {\"n\": 5}\n}\n```\n\n**Requirements for the interpreter:**\n - Should implement all the Built-Ins.\n - Should parse the JSON and return the result.\n - Should throw errors using `throw new Error()`.\n\n\n### Static Semantics\nMost JSON values have their usual data type. Strings which begin with the `=` character and JSON objects get special treatment (more info below).\n\nThese are the simple data types:\n - `string` -> Examples: \"Hello, World!\", \"just_another_string\".\n - `number` -> Examples: 12, 12.23, -1, 0.\n - `array` -> Examples: [\"foo\", \"bar\", 42].\n - `boolean` -> `true` or `false`.\n - `null` -> `null`.\n\nJSON key-value objects represent functions.\n \nJSON key-value objects which contain other key-value objects as values are nested functions. \n \nThe last key of a key-value object is the return value of the function. E.g. the following code assigns `1` to `x` and returns the value of `x`, i.e. returns `1`:\n```\n{\n  \"x\": 1\n}\n```\n \nEach function creates a new dynamic scope, which continues to live in the nested functions. In the following piece of code, `x` is assigned `1`, and `y` is just a temporary variable.\n\nThere is no explicit variable declaration, so the scope starts when a variable is first assigned.\n```\n{\n  \"x\": { \"y\": 1 }\n}\n```\n\nStrings which begin with `=` are evaluated (think of it as function application or variable de-reference depending of the context).\n\nThe following piece of code assigns `1` to `x` and then assigns the value of `x` to `y`.\n```\n{\n  \"x\": 1,\n  \"y\": \"=x\"\n}\n```\nAnd is equivalent to:\n```\n{\n  \"x\": 1,\n  \"y\": {\"=x\": null}\n}\n```\n**Note: since JSON keys must be unique within an object, `Ajsone` code feels like static single assignment (SSA).**\n\n### Dynamic Semantics\n There is no \"main\", the JSON tree represents the entire program, and the last expression is the result of the program.\n\nThe following program reads the declaration of `x` and `y` and returns the value of `z`. `z` overwrites `x` and returns the result of `y`, which ends up being `2`.\n\nThe following program returns `2`.\n```\n{\n  \"x\": 1,\n  \"y\": { \"foo\": \"=x\"},\n  \"z\": {\n    \"x\": 2,\n    \"_\": {\"bar\": \"=y\"}\n  }\n}\n```\n\nFunctions don't declare their inputs, they just read variable from the global scope. This means that parameters can be omitted. The following two pieces of code are (almost) equivalent:\n```\n{\n  \"arr\": [1, 2, 3],\n  \"=arr.len\": { \"arr\": \"=arr\" }\n}\n```\nand:\n\n```{\n  \"arr\": [1, 2, 3],\n  \"=arr.len\": {}\n}\n```\n\n### Built-ins\nThe language provides the following built-in functions. The argument types for each of these built-ins is checked at runtime.\n\n**Note each of these built-ins have to be called using the `=` sign like all other functions!**\n\n<table>\n  <thead>\n    <tr>\n      <th>Function name</th>\n      <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>if</td>\n      <td>Checks <code>cond</code> and returns <code>then</code> when true, <code>else</code> otherwise.</td>\n    </tr>\n    <tr>\n      <td>+, -, *, /</td>\n      <td>Usual math operators. Numerical parameters are expected in <code>in1</code> and <code>in2</code>.</td>\n    </tr>\n    <tr>\n      <td><, <=, >, >=, ==, !=</td>\n      <td>Usual comparator operators. Numerical parameters are expected in <code>in1</code> and <code>in2</code>.</td>\n    </tr>\n    <tr>\n      <td>&&, ||</td>\n      <td>Usual boolean operators. Boolean parameters are expected in <code>in1</code> and <code>in2</code>.</td>\n    </tr>\n    <tr>\n      <td>&, |</td>\n      <td>Usual binary operators. Numeric parameters are expected in <code>in1</code> and <code>in2</code>.</td>\n    </tr>\n    <tr>\n      <td>~</td>\n      <td>Bitwise NOT operator. Numeric parameter is expected in <code>in1</code>.</td>\n    </tr>\n    <tr>\n      <td>str.len</td>\n      <td>Returns the length of string <code>str</code>.</td>\n    </tr>\n    <tr>\n      <td>str.at</td>\n      <td>Returns the <code>offset</code><sup>th</sup> element of string <code>str</code>.</td>\n    </tr>\n    <tr>\n      <td>str.append</td>\n      <td>Returns a new string, which is the result of appending string <code>s1</code> to string <code>s2</code>.</td>\n    </tr>\n    <tr>\n      <td>arr.len</td>\n      <td>Returns the length of array <code>arr</code>.</td>\n    </tr>\n    <tr>\n      <td>arr.at</td>\n      <td>Returns the <code>offset</code><sup>th</sup> element of array <code>arr</code>.</td>\n    </tr>\n    <tr>\n      <td>arr.append</td>\n      <td>Returns a new array, which is the result of appending <code>e</code> to array <code>arr</code>.</td>\n    </tr>\n    <tr>\n      <td>arr.prepend</td>\n      <td>Returns a new array, which is the result of prepending <code>e</code> to array <code>arr</code>.</td>\n    </tr>\n  </tbody>\n</table>\n\n**The names written in `this formatting` is the names of the values passed to that function. For example `arr.at` takes to values: `offset` and `arr`**\n\n### I/O\nInput: A `string` containing the JSON.\n\nOutput: The program's result: a `string`, `number`, `boolean` etc. or throw an error.\n\n**Note that you have to parse the JSON string yourself, remember that the order of the keys in the object is important!**\n\n### Error handling\nYour interpreter must throw an error if:\n - An undefined/local scoped function is being called.\n - The offset passed to `str.at` is out of bounds.\n - The offset passed to `arr.at` is out of bounds.\n - The data passed to a function is the wrong type, e.g if a string is passed to `arr.len`.\n - If a function value is missing, for example if you try to call if without `cond`, `then` or `else`.\n \n **The built-ins can't be overridden, for example:**\n```\n{\n  \"if\": 1,\n  \"=if\": {}\n}\n```\nThat will throw an error, because if is missing some required arguments.\n \n**Note that only valid JSON data will be given to the interpreter!**\n\n### Good luck!\n\n**This is my first kata! Any feedback is highly appreciated :)**",
+    "totalAttempts": 238,
+    "totalCompleted": 6,
+    "totalStars": 14,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms",
+      "Esoteric Languages",
+      "Interpreters",
+      "Functional Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

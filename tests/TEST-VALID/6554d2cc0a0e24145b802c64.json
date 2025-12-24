@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6554d2cc0a0e24145b802c64",
+  "data": {
+    "id": "6554d2cc0a0e24145b802c64",
+    "name": "Balanced ternary",
+    "slug": "balanced-ternary",
+    "category": "reference",
+    "publishedAt": "2023-11-15T15:32:38.179Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6554d2cc0a0e24145b802c64",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-15T14:16:44.108Z",
+    "createdBy": {
+      "username": "pea18013",
+      "url": "https://www.codewars.com/users/pea18013"
+    },
+    "description": "# Background\nBalanced ternary is a ternary numeral system (i.e. base 3 with three digits) that uses a balanced signed-digit representation of the integers in which the digits have the values `-1`, `0`, and `1`. This stands in contrast to the standard (unbalanced) ternary system, in which digits have values `0`, `1` and `2`. The balanced ternary system can represent all integers without using a separate minus sign. In this kata, `T` represents `-1`, while `0` and `1` represent themselve. \n\nFor example:\n```\n10(bal3) == 1 * 3**1 + 0 * 3**0 == 3\nT1(bal3) == -1 * 3**1 + 1 * 3**0 == -2\n1T0(bal3) == 1 * 3**2 + (-1) * 3**1 + 0 * 3**0 == 6\n```\n\nClick [here](https://en.wikipedia.org/wiki/Balanced_ternary) to get more infomations of balanced ternary.\n# Task\nWrite a function `bal3()` that accepts an integer `n` and return its balanced ternary representation.\n\nFor example:\n```python\nbal3(3)  # Output: '10'\nbal3(5)  # Output: '1TT'\nbal3(-11)  # Output: 'TT1'\nbal3(-24)  # Output: 'T010'\n```\n\n# Input\n- The input must be an integer between `-10**20` and `10**20`.\n- No invalid inputs.\n\nThere are 200 random tests. Good luck and happy coding.",
+    "totalAttempts": 16,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

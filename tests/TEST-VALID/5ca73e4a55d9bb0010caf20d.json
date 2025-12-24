@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ca73e4a55d9bb0010caf20d",
+  "data": {
+    "id": "5ca73e4a55d9bb0010caf20d",
+    "name": "Find real path",
+    "slug": "find-real-path",
+    "category": "reference",
+    "publishedAt": "2019-04-05T13:35:29.740Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ca73e4a55d9bb0010caf20d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-04-05T11:38:50.317Z",
+    "createdBy": {
+      "username": "anwinged",
+      "url": "https://www.codewars.com/users/anwinged"
+    },
+    "description": "You should write function which find real path of file or directory accourding to given work directory.\nFunction behaviour should be same as a Linux `readpath` or `readlink` utils.\n\nRemember about:\n\n* `.` means the same directory\n* `..` means parent directory\n* parent of root is root (`/..` = `/`)\n* multiple slashes equal single slash\n* last slash must be preserved\n* workdir always starts with slash `/`\n* file path can be absolute (starts with slash `/`); in this case workdir is ignored\n\nDon't use `os.path` functions. This module is disabled.\n\nExamples:\n```\nreal_path('/usr', 'bin/') == '/usr/bin/'  # Preserve last slash\nreal_path('/usr', '/home/') == '/home/'   # Absolute path\nreal_path('/usr', '../file') == '/file'   # Parent directory\n```\n\nSee more in tast cases.\n",
+    "totalAttempts": 178,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Data Types"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

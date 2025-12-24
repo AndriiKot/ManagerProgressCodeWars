@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f0a511377032800281f048a",
+  "data": {
+    "id": "5f0a511377032800281f048a",
+    "name": "Finding a Circulation",
+    "slug": "finding-a-circulation",
+    "category": "algorithms",
+    "publishedAt": "2020-07-11T23:54:24.629Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f0a511377032800281f048a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-11T23:53:55.624Z",
+    "createdBy": {
+      "username": "ALowVerus",
+      "url": "https://www.codewars.com/users/ALowVerus"
+    },
+    "description": "You have been given a flow network, in the form of a number of points and a list of edges. Flow networks (https://en.wikipedia.org/wiki/Flow_network) are directed graphs where each edge has a maximum capacity. In this problem, every edge has not only a maximum capacity but also a minimum required flow. Your job is to generate some valid flow through a given network, or to determine definitively that no valid flow assignment exists. \n\nEach given edge has a start, an end, a minimum required flow, and a maximum possible flow. By way of example, a simple triangular network with identical edges of min flow 1 and max flow 2 might be given as follows:\n```\nnode_count = 3\nedges = [\n  (1, 2, 1, 2), \n  (2, 3, 1, 2),\n  (3, 1, 1, 2),\n]\n```\n\nThe above graph has 2 valid flow assignments: every edge might be assigned a flow of 1, or every edge might be assigned a flow of 2 (thus giving two valid assignments: `(1, 1, 1)` and `(2, 2, 2)`).\n- The assignment `[0, 0, 0]` is invalid, as every given edge would have an assigned flow below its minimum.\n- The assignment `[3, 3, 3]` is invalid, as every given edge would have an assigned flow above its maximum.\n- The assignment `[1, 1, 2]` is invalid, as node 1 would have 1 out-flow and 2 in-flow, while node 3 would have 2 out-flow but 1 in-flow. Such mismatches between in-flow and out-flow are invalid.\n\nTo complete this kata, write a function `generate_circulation(node_count, edges, verbose=False)` that generates a valid assignment of flow (a circulation) for any given set of edges. Your output format should look like:\n```\nif there_is_a_valid_assignment_of_weights:\n    return True, tuple([weight for weight in weights])\nelse:\n    return False, None\n```\nThus, the valid two solutions for the example problem are `(True, (1, 1, 1))` and `(True, (2, 2, 2))`.\n\n\n\nP.S: The final test cases are on 1024 nodes with 1536 edges with randomly-generated min/max values and start/end points. If you can imagine an edge case, it is tested. \nP.P.S: The reference solution runs in polynomial time. Checking all combinations of possible edge values will not work.\nP.P.P.S. It might be helpful for you to grab a whiteboard and draw some of the test cases out.\n\nTwo example problems with annotations are below.\n\n---\nBelow is a simple 3-edge problem, analogous to the one described above. Notice three edges: 1->2, 2->3, and 3->1. Above each edge are two numbers: the minimum flow and the maximum flow. To satisfy the problem, all nodes must have balanced in and out flow, and each edge must have an assigned flow between its min and max values.\n<div>\n  <img src=\"https://i.postimg.cc/GphCXk1s/106732283-664513787611290-2621044259439833204-n.jpg\n\">\n</div>\n\n---\nHere, a flow of 1 has been assigned to each edge. All nodes have 1 in-flow and 1 out-flow, and all edges have between their min and max values (inclusive).\n<div>\n  <img src=\"https://i.postimg.cc/XJr0b4qj/107085620-1161932034179381-8734727506324779904-n.jpg\">\n</div>\n\n---\nNow, let's move on to a harder problem, one with 4 nodes and 6 edges.\n<div>\n  <img src=\"https://i.postimg.cc/5t7MT6xK/107823089-888211055001389-3308421277525784348-n.jpg\">\n</div>\n\n---\nHere's a valid assignment.\n<div>\n  <img src=\"https://i.postimg.cc/76jrPdJg/107085620-267560214532626-5681090563380456220-n.jpg\">\n</div>\n\n---\nThis assignment is invalid because node 1 recieves 2 in-flow from node 3, but it donates 2 out-flow to node three and 1 out-flow to node 4. Thus, its in-flow (2) and out-flow (3) are unbalanced. Node 3 is similarly invalid.\n<div>\n<img src=\"https://i.postimg.cc/vT9F4h5C/108057746-299405701417207-5973363817155370072-n.jpg\">\n</div>\n\n---\nThis assignment is invalid because edge 1->3 has 0 flow assigned to it, but that edge requires at least 1 flow.\n<div>\n<img src=\"https://i.postimg.cc/xjbSpfBg/109004716-3105051922908120-3149247031811709716-n.jpg\">\n</div>\n\n---\nThis assignment is invalid because edge 3->1 has 4 flow assigned to it, but that edge can take at most 3 flow.\n<div>\n<img src=\"https://i.postimg.cc/3J5QsMTh/109740402-621885448439883-669907032140310917-n.jpg\">\n</div>\n\n---\nOther edge cases exist, and you will have to identify and deal with them to beat the kata.",
+    "totalAttempts": 81,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 4,
+    "tags": [
+      "Networks",
+      "Algorithms",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

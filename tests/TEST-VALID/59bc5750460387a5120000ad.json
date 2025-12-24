@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59bc5750460387a5120000ad",
+  "data": {
+    "id": "59bc5750460387a5120000ad",
+    "name": "Smart Contracts Introduction: GiftCoin",
+    "slug": "smart-contracts-introduction-giftcoin",
+    "category": "reference",
+    "publishedAt": "2017-09-15T22:42:35.011Z",
+    "approvedAt": null,
+    "languages": [
+      "solidity"
+    ],
+    "url": "https://www.codewars.com/kata/59bc5750460387a5120000ad",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-15T22:42:24.744Z",
+    "createdBy": {
+      "username": "dnolan",
+      "url": "https://www.codewars.com/users/dnolan"
+    },
+    "description": "Hey there! This challenge is an introduction to Ethereum Smart Contracts! If you're unfamiliar with Ethereum or the blockchain in general, the internet is loaded with good resources. The [Ethereum Whitepaper](https://github.com/ethereum/wiki/wiki/White-Paper) may be a good place to start to learn about both. Since the contract is written in Solidity, the [Solidity Documentation](https://solidity.readthedocs.io/en/develop/) is also an important resource. \n\nFor this challenge we're going to deploy a new currency to our blockchain! The contract has been already started for you. It contains a couple state variables: `owner` and `coins`. The `owner` variable is a hexidecimal address that will correspond to the address on the blockchain of the account who deployed the smart contract. The `coins` are a mapping of hexidecimal blockchain addresses to their corresponding amount of coins that they own. \n\n## Challenge \n\nYou'll need to complete the to `TODO`s in the code. \n\n1) Fill out the `sendGift` function. It should only send a gift if the account making the transaction has enough coins to cover the amount they plan to gift. Should have they have sufficient funds, the funds should be subtracted from that account and added to the beneficiary's account. Then we should broadcast the `GiftSent` event for logging purposes and so applications can respond to these events. \n\n2) Complete the `onlyOwner` modifier. It is a modifier meant for the `mintCoins` function, which should only be allowed to be called by the owner of the contract. We can't just let anyone create new gift coins! \n\nHappy Coding!\n\n",
+    "totalAttempts": 2711,
+    "totalCompleted": 248,
+    "totalStars": 36,
+    "voteScore": 93,
+    "tags": [
+      "Web3",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 3
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

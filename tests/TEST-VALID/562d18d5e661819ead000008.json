@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/562d18d5e661819ead000008",
+  "data": {
+    "id": "562d18d5e661819ead000008",
+    "name": "Playfair cipher",
+    "slug": "playfair-cipher",
+    "category": "algorithms",
+    "publishedAt": "2015-10-26T07:28:25.189Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/562d18d5e661819ead000008",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-25T18:00:53.526Z",
+    "createdBy": {
+      "username": "durfi",
+      "url": "https://www.codewars.com/users/durfi"
+    },
+    "description": "# About Playfair\n\nPlayfair is a digraph substitution cipher. It employs a 5x5 table of letters, like this one:\n```\nA B C D E\nF G H I K\nL M N O P\nQ R S T U\nV W X Y Z\n```\nSince there are 26 letters in the English alphabet, one letter has to be omitted. Typically, `J` is omitted and `I` takes it's place in the text that is to be encoded.\n\n# Encoding\n\nSay we want to encode the string `ENJOY THIS SECRET!`.\n\n## Step 1\n\nThe first step is is to omit any non-letter characters from the text and substitute J with I.\n\n```\nBefore: ENJOY THIS SECRET!\n After: ENIOYTHISSECRET\n```\n\n## Step 2\n\nTo continue we split the text into two-letter chunks (digraphs). For the next step to work, we need to separate any repeating characters **inside a chunk** with an `X` and append an `X` to the end if the text has an odd number of characters.\n\n```\nBefore: ENIOYTHISSECRET\n After: EN IO YT HI SX SE CR ET\n```\n\n## Step 3\n\nNext we encode every chunk with the table above using the following three rules:\n\n - **1)** If the two letters are in the same row of the table, replace each letter with the one on its right. The rightmost letter should be replaced with the leftmost.\n - **2)** If the two letters are in the same column, replace each letter with the one below it. The bottommost letter should be replaced with the topmost.\n - **3)** If the letters are neither in the same column or row, form a rectangle using the letters as its opposite corners. Replace each letter with the letter in the other corner on the same row (see example).\n\nExamples using the table above:\n\n - `GR => MW`: `G` and `R` are in the same column, so they are replaced with the letters below them.\n - `OP => PL`: `O` and `P` are in the same row, so they are replaced with the letter on their left. Since `P` is the rightmost letter, it is replaced with `L` (the leftmost letter in that row).\n - `YM => WO`: `Y` and `M` are not in the same row or column. The other two corners of the rectangle based on these letters are `O` and `W`. Both letters are replaced with the letter in their row.\n\nEmploying these rules on our text:\n\n```\nBefore: EN IO YT HI SX SE CR ET\n After: CP OT DY IK XC UC BS DU\n```\n\nWe encoded `ENJOY THIS SECRET!` as `CPOTDYIKXCUCBSDU`.\n\n# Decoding\n\nFor this kata, decoding means reversing the effect of **Step 3 only**.\n\n# Your task\n\nYour task is to create a class called `Playfair`. Define a constructor, which takes the table (array of rows) as its only argument. Define the methods `encode(cleartext)` and `decode(ciphertext)` so they work as defined above.\n\nExpect every input to be uppercase and output everything in uppercase.\n\nFor this kata, you don't have to worry about edge cases, like encoding `XXX CONTENT` or `THE MATRIX`.\n\nExample usage:\n\n```ruby\ntable = [\n  [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  [\"F\", \"G\", \"H\", \"I\", \"K\"],\n  [\"L\", \"M\", \"N\", \"O\", \"P\"],\n  [\"Q\", \"R\", \"S\", \"T\", \"U\"],\n  [\"V\", \"W\", \"X\", \"Y\", \"Z\"]]\npf = Playfair.new(table)\npf.encode(\"ENJOY THIS SECRET!\") # Should return \"CPOTDYIKXCUCBSDU\"\npf.decode(\"CPOTDYIKXCUCBSDU\")   # Should return \"ENIOYTHISXSECRET\"\n```\n",
+    "totalAttempts": 39,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 8,
+    "tags": [
+      "Ciphers",
+      "Cryptography",
+      "Security",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

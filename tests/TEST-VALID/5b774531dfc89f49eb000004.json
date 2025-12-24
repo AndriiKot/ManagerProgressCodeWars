@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b774531dfc89f49eb000004",
+  "data": {
+    "id": "5b774531dfc89f49eb000004",
+    "name": "Next Higher Value #3",
+    "slug": "next-higher-value-number-3",
+    "category": "reference",
+    "publishedAt": "2018-08-18T09:17:50.972Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b774531dfc89f49eb000004",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-17T21:59:13.381Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "We define the ```Factorial Digit Sum``` of an integer n, ```FDS(n)```, compound by the digits ```d1d2d3...dk```, ` as it follows:\n```\nFDS(n) = d1! + d2! + d3! + ....+ dk!\n```\nLet's calculate the value of this function for ```n = 3732```\nE.g.:\n```\nFDS(3732) = 3! + 7! + 3! + 2! = 1*2*3 + 1*2*3*4*5*6*7 + 1*2*3 + 1*2 = 6 + 5040 + 6 + 2 = 5054.\n```\nThe `Progressive Factorial Digit Sum` of a number `n`, `PFDS(n)`, is the sum of the `FDS()` of all the numbers that can be formed with n, from its very left digit to any of its other digits.\n\nThus, the value of `PFDS()` for the same number we have above is:\n```\nPFDS(3732) = FDS(3) + FDS(37) + FDS(373) + FDS(3732) = 6 + 5046 + 5052 + 5054 = 15158\n```\n\nThe task for this kata: given two certain integers `n` and `k`, is to find the closest integer to `n`, let's name it `nf`, that has one more digit than `n`, with identical **digital root(same sum of digits, DR)**, with its digits in non strict ascending order(see notes below) and with:\n```\nPFDS(nf) < floor(PFDS(n)/k) \n```\n\nLet's see an example:\n```\nn = 8970 # (DR = 24, with four digits)\nk = 15\n```\nThe numbers with five digits (one digit more than `8970`) with their sum of digits equals to `24` are in order in the first column, with their corresponding value of PFDS:\n```\nnums with DR = 24      PFDS(num)         PFDS(8970)\n11499                   1088721          1260001\n11589                    443889          1260001\n11679                    375129          1260001\n11688                    123129          1260001\n11778                     65529          1260001 <--- 65529 * 15 < 1260001\n```\n\nSo, `nf = 11778`\n\nIf the given number n cannot generate a number with one more digit or there is not a value, val, of PFDS such that: val < PFDS(num)/k, for a given value of k, too, the function will output `-1`.\n\nFeatures of the random tests:\n```\n1.000 <= n <= 10.000.000.000.000\n40 <= k <= 350\n```\nEnjoy it!\n\n# Notes\nAn integer with digits d1d2d3...dk has them in **non strict ascending order** when  `d1 <= d2 <= d3....<= dk`\n",
+    "totalAttempts": 72,
+    "totalCompleted": 16,
+    "totalStars": 1,
+    "voteScore": 40,
+    "tags": [
+      "Performance",
+      "Algorithms",
+      "Mathematics",
+      "Data Structures",
+      "Arrays",
+      "Recursion",
+      "Memoization",
+      "Dynamic Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

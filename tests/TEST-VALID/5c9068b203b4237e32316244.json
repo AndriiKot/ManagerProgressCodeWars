@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c9068b203b4237e32316244",
+  "data": {
+    "id": "5c9068b203b4237e32316244",
+    "name": "Kolakoski Sequence",
+    "slug": "kolakoski-sequence-1",
+    "category": "algorithms",
+    "publishedAt": "2019-03-19T04:44:23.755Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5c9068b203b4237e32316244",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-19T03:57:38.775Z",
+    "createdBy": {
+      "username": "haxifix",
+      "url": "https://www.codewars.com/users/haxifix"
+    },
+    "description": "In this Kata, you will be generating a Kolakoski sequence from a list of natural numbers.\n\nBefore we define a Kolakoski sequence, it is useful to define the concept of run-length encoding (RLE).  The RLE of a sequence is itself a sequence generated from length of runs of the same number from the original sequence.  Here is an example:\n\nOriginal Sequence: ```[ 1, 1, 2, 2, 2, 1, 3, 3, 3, 3, 2]```\n\nRun-length encoding: ```[ 2, 3, 1, 4, 1 ]```\n\nA Kolakoski sequence is defined as an infinite sequence of natural numbers (excluding zero); with the property that it is identical to it's run-length encoding.\n\nAn example:\n\nGiven the starting list ```[ 1, 3, 1, 2 ]``` we can generate the first ```n``` elements (in this example, n = 7) of the sequence.  \n\n```Note:``` You can ```ONLY``` use the numbers from the starting list and they ```MUST``` appear in the same order (the same number can repeat and we wrap around to the beginning of the list when we run out). \n\nThis means that in our example, the sequence ```MUST``` start with some number of ```1```'s, followed by some number of ```3```'s, followed by some number of ```1```'s, followed by some number of ```2```'s, followed by some number of ```1```'s (wrap around), etc.\n\nThese rules generate the sequence ```[ 1, 3, 3, 3, 1, 1, 1 ]```.  We can verify that this is indeed Kolakoski by comparing it to the RLE of the sequence: ```[ 1, 3, 3 ]```, which shows that they are identical (so far).\n\nNot every list of starting numbers is capable of generating a Kolakoski sequence.  Since the sequence is infinite, we will only be interested in whether or not the first ```n``` elements of the sequence are Kolakoski.  Hence, we either claim that a sequence is ```DEFINITELY NOT``` Kolakoski or is ```POSSIBLY``` Kolakoski.\n\nYour job is to implement the following functions:\n\n```generate_kolakoski(list, n)``` which takes a starting ```list``` of numbers and a positive integer ```n``` and returns the first ```n``` elements of the Kolakoski sequence generated from ```list```.\n\n```possibly_kolakoski(seq)``` which takes a sequence and returns ```false``` if it is NOT Kolakoski and ```true``` if it is so far.\n\nHave fun!",
+    "totalAttempts": 72,
+    "totalCompleted": 10,
+    "totalStars": 9,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

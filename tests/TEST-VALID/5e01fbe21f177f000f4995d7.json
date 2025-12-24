@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e01fbe21f177f000f4995d7",
+  "data": {
+    "id": "5e01fbe21f177f000f4995d7",
+    "name": "Rubiks cube CFOP algo : Cross",
+    "slug": "rubiks-cube-cfop-algo-cross",
+    "category": "games",
+    "publishedAt": "2019-12-26T11:18:52.744Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e01fbe21f177f000f4995d7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-24T11:52:02.562Z",
+    "createdBy": {
+      "username": "sgerodes",
+      "url": "https://www.codewars.com/users/sgerodes"
+    },
+    "description": "This Kata is a part of the Rubiks cube solving series: [Rubiks party](https://www.codewars.com/collections/rubiks-party)\n\nIf you dont understand Rubiks notations take a look at this Kata:\n[Rubiks Cube](https://www.codewars.com/kata/5b3bec086be5d8893000002e)\n\nWe will perform the first of the three steps of the CFOP algorithm of solving the cube.\n\nYou will be given a scrambled rubiks cube with the white face down facing D(own) (means the central piece of D is white) and blue facing L(eft).\n\nYou need to make a WHITE cross on the D(own) face of the cube.\nPlease note that the edge pieces should be aligned with the adjacent faces. The face aligment of the cube should not change (White down, Blue left)\n\nvalid cross:\n```\n      +-----+\n      |. . .|\n      |. y .|\n      |. . .|\n+-----+-----+-----+-----+\n|. . .|. . .|. . .|. . .|\n|. b .|. r .|. g .|. o .|\n|. b .|. r .|. g .|. o .|\n+-----+-----+-----+-----+\n      |. w .|\n      |w w w|\n      |. w .|\n      +-----+\n```\n\nNOT valid cross:\n```\n      +-----+\n      |. . .|\n      |. y .|\n      |. . .|\n+-----+-----+-----+-----+\n|. . .|. . .|. . .|. . .|\n|. b .|. r .|. g .|. o .|\n|. o .|. b .|. r .|. g .|\n+-----+-----+-----+-----+\n      |. w .|\n      |w w w|\n      |. w .|\n      +-----+\n```\n\n\nFor more imformation you can search the web for the step 1 of the CFOP algorithm.\n\ncreate the function `make_white_cross_on_B(state)`\n'state' is a string representation of the cube. More on that in the previous kata [Rubiks Cube](https://www.codewars.com/kata/5b3bec086be5d8893000002e).\n\nYou need to return a string representation of turn needed to perform to achive the cross. e.g. `U F2 f R' D`\n\nThis is the whole list of possible rotations that the cube can perform:\n```\nF R U L D B F' R' U' L' D' B' F2 R2 U2 L2 D2 B2\nM E S M' E' S' M2 E2 S2\nf r u l d b f' r' u' l' d' b' f2 r2 u2 l2 d2 b2\nX Y Z X' Y' Z' X2 Y2 Z2\n```\n\nIf things get too hard to visualise, use the function `state_representation(state)` to print the current state nicely.\n\nBest Solutions for the cross do not go over 8 moves (double moves like F2 count as one move). Can you achive this perfection?",
+    "totalAttempts": 72,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

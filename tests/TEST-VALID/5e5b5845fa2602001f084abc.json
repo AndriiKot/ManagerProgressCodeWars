@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e5b5845fa2602001f084abc",
+  "data": {
+    "id": "5e5b5845fa2602001f084abc",
+    "name": "Derpcode Interpreter",
+    "slug": "derpcode-interpreter",
+    "category": "algorithms",
+    "publishedAt": "2020-03-03T05:23:38.592Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5e5b5845fa2602001f084abc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-01T06:37:57.282Z",
+    "createdBy": {
+      "username": "beniolenio",
+      "url": "https://www.codewars.com/users/beniolenio"
+    },
+    "description": "<style type=\"text/css\">\n#butto {position: relative; text-align: center; border-radius:15px; border: none; padding:20px; color:white; text-decoration:none; background:#444444;}\n#butto:hover {text-shadow: 0px 0px 5px white; background:#202020; transition:all 0.4s; letter-spacing: 1px}\n#tah {border-radius: 10px; background: #555555; text-align: center;}\n\ntable td {border-bottom: 1px solid rgba(100, 100, 100, 0.25)}\n</style>\nCreate a function that interprets code in the esoteric language <strong>Derpcode</strong>\n\n<hr>\n<h1>The Language</h1>\n\nDerpcode has five commands (although for this kata, we will be using only four), although an expansion to achieve Turing-complete status is planned.\n\n<ul>\n<li>Each memory cell in derpcode can hold exactly one bit</li>\n<li>All cells initialize with a value of 0</li>\n<li>There are infinitely many cells in the positive direction.</li>\n<li>Each derpcode program starts with <code>derp a-derp.</code>.  This is to be ignored in terms of executing the code.</li>\n<li>A derpcode program is terminated by flipping the 0 cell, decrementing the pointer into the -1 cell, and executing the print command. The last line that will be executed of all derpcode programs is therefore <code>herp a-derp.</code>. <strong>(Make sure not to print a letter when this ending code executes)</strong></li>\n  <ul>\n    <ul>\n      <li type=\"square\">All programs tested for will end.  You do not have to worry about cases where this ending does not occur.</li>\n      <li>Make sure to end execution when this program ending occurs.</li>\n    </ul>\n  </ul>\n<li>For this kata, you will only be tested on raw derpcode.  You do not have to worry about non-command characters and words.</li>\n</ul>\n\n<br>\n<hr>\n<br>\n\n<table>\n<tr><th width=\"200\" id=\"tah\">Command</th><th id=\"tah\">Description</th></tr>\n<tr><td>herp</td><td>Flip the current bit.</td></tr>\n<tr><td>derp</td><td>Increment the pointer.</td></tr>\n<tr><td>a-derp</td><td>Decrement the pointer.</td></tr>\n<tr><td>.</td><td>Write the current bit and the next seven bits to stdout as an ASCII character.  This does not increase the position of the pointer.  The cell value that the pointer is at is the leading digit in the conversion to a character.</td></tr>\n</table>\n<br>\n<hr>\n<br>\n<br>\n<div align=\"center\">\n<a id=\"butto\" href=\"https://esolangs.org/wiki/Derpcode\" target=\"_blank\">Click Here to Learn More</a>\n<p style=\"font-size: 7px; text-align: right;\">Yes, I believe derpcode is meant to be as impractical as it is.</p>\n</div>",
+    "totalAttempts": 442,
+    "totalCompleted": 60,
+    "totalStars": 7,
+    "voteScore": 64,
+    "tags": [
+      "Esoteric Languages",
+      "Interpreters",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

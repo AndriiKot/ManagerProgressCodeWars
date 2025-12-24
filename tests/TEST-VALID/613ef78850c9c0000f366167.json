@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/613ef78850c9c0000f366167",
+  "data": {
+    "id": "613ef78850c9c0000f366167",
+    "name": "BitSplit",
+    "slug": "bitsplit",
+    "category": "algorithms",
+    "publishedAt": "2021-09-13T08:51:19.470Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/613ef78850c9c0000f366167",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-13T07:02:32.991Z",
+    "createdBy": {
+      "username": "RNOH",
+      "url": "https://www.codewars.com/users/RNOH"
+    },
+    "description": "BitSplit is a technique of splitting every high bit to 3 bits which consists of high, low and high bit, i.e. 1 -> BitSplit - > 101.\n\n\nNow after observing the output of this function it has been noticed that the bitlength increases dramatically for some values\n\nIn order to ensure that this does not happen, the 3 bits formed from a high bit is \"adjusted\" with the overlapping bits by performing an OR operation with each of the overlapping bits.\n\n\n**Examples**\n\n```\n1) Input =  9 \n\ndec         bin\n\n9           1 0 0 1 \n\nBitSplit  1 0 1 1 0 1     split 1st and 2nd high bit\n\n45        1 0 1 1 0 1     \n\nAnswer = 45\n\n2) Input =  12\n\ndec          bin\n\n12            1 1 0 0\n\nBitSplit    1 0 1 0 0       split 1st high bit\n            \n            0 1 0 1 0       split 2nd high bit\n\n30          1 1 1 1 0       OR Operation\n\nAnswer = 30\n\n\n3) Input = 21\n\ndec          bin\n\n21            1 0 1 0 1 \n\nBitSplit    1 0 1 0 0 0       split 1st high bit\n\n            0 0 1 0 1 0       split 2nd high bit\n            \n            0 0 0 0 1 0 1     split 3rd high bit\n\n85          1 0 1 0 1 0 1     OR  Operation \n\nAnswer = 85\n\n```\n**Note**\n\n* 0<=Input<10^7\n",
+    "totalAttempts": 45,
+    "totalCompleted": 19,
+    "totalStars": 0,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

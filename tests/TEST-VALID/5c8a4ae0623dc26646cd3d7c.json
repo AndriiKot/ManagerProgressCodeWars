@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c8a4ae0623dc26646cd3d7c",
+  "data": {
+    "id": "5c8a4ae0623dc26646cd3d7c",
+    "name": "Biathlon individual race time calculator",
+    "slug": "biathlon-individual-race-time-calculator",
+    "category": "algorithms",
+    "publishedAt": "2019-03-14T12:44:30.833Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c8a4ae0623dc26646cd3d7c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-14T12:36:48.701Z",
+    "createdBy": {
+      "username": "El-Loco-Pinguino",
+      "url": "https://www.codewars.com/users/El-Loco-Pinguino"
+    },
+    "description": "Biathlon is an amazing sport combining cross-country skiing and rifle shooting. If I asked you to give me a famous biathlete's name, you might give me Martin Fourcade (FRA), Johannes T. Boe (NOR), Laura Dahlmeier (GER), Dorothea Wierer (ITA) and plenty of others.\n\n**Individual race**\n\nThe individual race is the most challenging event. Biathletes run a distance of 20 Km (men) or 15 Km (women) and shoot 4 x 5 bullets. __Each missed shot gives a 60-second penalty__. The lowest time wins.\n\n**What you're asked to code**\n\nWe'd like to calculate real time according to skiing time and missed shots.\n\nThe function has 2 parameters:\n- Time in tenths of a second (e.g: 200 => 200 tenths of a second => 20 seconds) the biathlete needed to finish the race\n- Number of misses\n\nThe __time will always be valid__ whereas the __number of misses won't__. If there's a __negative number of misses__ or if it's __greater than 20__, return __false__.\n\nIn valid cases, __return the time with the format _MINUTES:SECONDS:TENTHS___. Do not convert minutes to hours if they are greater than 60.\n\n__If the number of seconds is lower than 10, add a zero before it__. (See example test cases #1 and #2: it should return 34:07:0 but not 34:7:0)\n\n**Example cases**\n\n- __individualResult(18670, 3)__ should return _34:07:0_ (race time of 31:07:0 + 3 minutes of penalty)\n- __individualResult(7364, 8)__ should return _20:16:4_ (race time of 12:16:4 + 8 minutes of penalty)\n- __individualResult(15000, 21)__ should return _false_ since the number of penalties is greater than 20\n- __individualResult(15000, -3)__ should return _false_ too since the number of penalties cannot be negative",
+    "totalAttempts": 136,
+    "totalCompleted": 52,
+    "totalStars": 2,
+    "voteScore": 57,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60524e5291f6450013488af5",
+  "data": {
+    "id": "60524e5291f6450013488af5",
+    "name": "Casino Roulette",
+    "slug": "casino-roulette",
+    "category": "reference",
+    "publishedAt": "2021-03-17T20:43:34.988Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60524e5291f6450013488af5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-17T18:45:38.151Z",
+    "createdBy": {
+      "username": "eladkap",
+      "url": "https://www.codewars.com/users/eladkap"
+    },
+    "description": "# Casino Roulette\n\nYour task is to calculate the total winnings in a single round of the game Roulette.\n\nRead more here: https://en.wikipedia.org/wiki/Roulette\n\n## The Game\nThere is a board with 37 numbers between 0 and 36.\nEach number has a color RED/BLACK\nThe board has also the following areas:\n- ODD - for odd numbers\n- EVEN - for even numbers (including zero)\n- BLACK - for black numbers\n- RED - for red numbers\n- LOW - (1-18)\n- HIGH (19-36)\n- 1st DOZEN (1-12)\n- 2nd DOZEN (13-24)\n- 3rd DOZEN (25-36)\n\nA player can place bets on any area he wants (a single number or any other area on the board)\n\nA croupier spins a wheel, then spins a little ball. The ball starts spinning around the wheel and finally stops on a slot with the winning number.\nThen the winnings are paid to the player who placed a successfull bets\n\n### NOTE\nThe rules of payouts are slightly different, so this is some new version of Roulette.\n\n## Payouts\nThe payouts are calcualte according to odds against winnings.\nx to 1 ratio means that for 1$ the player places he get paid x dollars\n\n- Any single number including 0 - 36 to 1\n- Any dozen - 3 to 1\n- ODD - 2 to 1\n- EVEN - 2 to 1\n- RED - 2 to 1\n- BLACK - 2 to 1\n- LOW - 2 to 1\n- HIGH - 2 to 1\n\n\n\nYour mission is to calculate the total winnings (if there are) with given bets on the board.\n\n## Player Choices on the Board\nAssume all choices are represented as strings besides numbers:\n- A single number (0, 1, ..., 36)\n- 'ODD'\n- 'EVEN'\n- '1st DOZEN'\n- '2nd DOZEN'\n- '3rd DOZEN'\n- 'HIGH'\n- 'LOW'\n\n## Blacks and Reds\nFor your code the variables REDS and BLACKS are lists of red and black numbers respectively.\n\n## Let's Write Code\nWrite a function with the following arguments:\n- Money of the player (integer value)\n- List of tuples representing the player's bets with his choices in the wheel\n  e.g. [(5, 17), (2, 'ODD'), (50, '1st DOZEN')]\n  Bets are always positive integers.\n- The winning number in the round (Always a number between 0 and 36)\n\nThe function should return one of the followings:\n- 'Not enough money.' (string) - when the total bets are bigger than the money\n- 'No winnings.' (string) - when the player has not won nothing (total winnings is zero)\n- A positive integer representing the total winnings\n- 'No bets' (string) - when bets list is empty\n\n## First Example\nMoney: 1000\nThe bets are: `[(1, 17), (5, 'HIGH'), (10, 'ODD'), (2, '1st DOZEN')]`\nWinning number: 17\n\nThe total winnings are:\nFor (1, 17) 17 was picked so the player is paid 1 * 36 = 36$\nFor (5, 'HIGH') - nothing because 17 is LOW\nFor (10, 'ODD') - 17 is odd so the player is paid 10 * 2 = 20$\nFor (2, '1st DOZEN') - nothing because 17 is in the 2nd dozen (13-24)\n\nTotal winning are: 36 + 20 = 56$\n\n\n## Second Example\nMoney: 2000\nThe bets are: `[(1000, 17), (500, 'HIGH'), (500, 'ODD'), (1, '1st DOZEN')]`\nWinning number: 17\n\nThe output should be \"Not enough money\" because the total bets are 2001 and money is 2000.\n\n## Third Example\nMoney: 3000\nThe bets are: `[(1000, 17), (500, 'LOW'), (500, 'ODD'), (1, '1st DOZEN')]`\nWinning number: 28\n\nThe output should be \"No winnings.\"\n\n## Fourth Example\nMoney: 1000\nThe bets are: `[]`\nWinning number: 28\n\nThe output should be \"No bets.\"\n",
+    "totalAttempts": 142,
+    "totalCompleted": 24,
+    "totalStars": 1,
+    "voteScore": 24,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 4
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5366ca84133ed419c800060a",
+  "data": {
+    "id": "5366ca84133ed419c800060a",
+    "name": "Count non-decreasing nodes in a binary tree",
+    "slug": "count-non-decreasing-nodes-in-a-binary-tree",
+    "category": "reference",
+    "publishedAt": "2014-05-04T23:20:21.515Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5366ca84133ed419c800060a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-04T23:17:24.310Z",
+    "createdBy": {
+      "username": "gudnm",
+      "url": "https://www.codewars.com/users/gudnm"
+    },
+    "description": "Write a function that takes a binary tree containing integers (either positive, negative, or zero) as its parameter and counts how many nodes can be traversed from root without any child node having smaller value than its parent. \n\nEach node including root is an object with following properties: value, left, and right. Last two are optional and are assumed null if omitted. All inputs are valid trees. For null tree the result should be 0.\n\nExample of a tree:\n\n```javascript\nvar tree = {\n  value: 1, \n  left: {\n    value: 3, \n    left: null, \n    right: {\n      value: 4, \n      left: null, \n      right: null\n    }\n  }, \n  right: {\n    value: 5, \n    left: {       // this node's value is smaller than its parent\n      value: 2,   // so it won't be counted\n      left: {     // none of its children will be counted either \n        value: 6, \n        left: null, \n        right: null\n      }, \n      right: null\n    }, \n    right: null\n  }\n}\n```\n\nOnly nodes with values 1, 3, 4 and 5 will be counted. The answer for the tree above is 4.",
+    "totalAttempts": 713,
+    "totalCompleted": 74,
+    "totalStars": 6,
+    "voteScore": 73,
+    "tags": [
+      "Data Structures",
+      "Binary Trees",
+      "Recursion",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

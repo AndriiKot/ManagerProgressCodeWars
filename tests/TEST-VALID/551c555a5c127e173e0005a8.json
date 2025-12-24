@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/551c555a5c127e173e0005a8",
+  "data": {
+    "id": "551c555a5c127e173e0005a8",
+    "name": "Old school texting",
+    "slug": "old-school-texting",
+    "category": "algorithms",
+    "publishedAt": "2015-04-02T13:33:24.936Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/551c555a5c127e173e0005a8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-01T20:30:18.946Z",
+    "createdBy": {
+      "username": "paragonHex",
+      "url": "https://www.codewars.com/users/paragonHex"
+    },
+    "description": "Old school texting\n==================\n\nRemember the time, when you were able to write text messages on your old phone with the speed rivaling the speed of light? (At least it felt like it. Am I the only one here, who hates typing on touchscreen?)\n\nWrite a function `numWriter()`, that simulates writing expressions on an old phone(they used to have buttons), by typing only numbers instead of letters, and using dictionaries.\n\nRules of thumb:\n---------------\nOne number goes in instead of one letter. A number can reference more letters, and every letter is referenced only by exactly one number.\n\nThe phone you will write this program for, has the following button layout:\n\n![Button layout](http://i.stack.imgur.com/WYOQu.png)\n\n\nArguments given\n---------------\n\n- `nums` string, the sequence to decode\n\n- `dict` array, containing the words the phone knows. You dont have to worry about upper or lowercase, each element of `dict` will be lowercased.\n\nWhat to return?\n---------------\n\nIf you find words in `dict`, that start with the letters you can get from `nums` (after doing your magic) return them as strings in an Array, sorted by their occurence in `dict`, and end it with the `nums`.\nIf you don't find any match, return the number passed in.\n\nTo shed some light, here are some examples:\n\n```javascript\nvar dict1 = ['a', 'aa','dd','gg'];\nvar dict2 = ['pay', 'may', 'say', 'fay', 'ray', 'saying'];\n\nnumWriter('',     dict1)  // returns []\nnumWriter('2',    dict1)  // returns ['a', 'aa', '2']\nnumWriter('22',   dict1)  // returns ['aa', '22']\nnumWriter('3',    dict1)  // returns ['dd', '3']\nnumWriter('5',    dict1)  // returns ['5']\nnumWriter('729',  dict2)  // returns ['pay','say','ray', 'saying', '729']\nnumWriter('7294', dict2)  // returns ['saying', '7294']\nnumWriter('632',  [])     // returns ['632']\n```\nHave fun!",
+    "totalAttempts": 142,
+    "totalCompleted": 29,
+    "totalStars": 7,
+    "voteScore": 55,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

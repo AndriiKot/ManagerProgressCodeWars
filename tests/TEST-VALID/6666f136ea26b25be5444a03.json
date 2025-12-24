@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6666f136ea26b25be5444a03",
+  "data": {
+    "id": "6666f136ea26b25be5444a03",
+    "name": "Finding concentration of the sample",
+    "slug": "finding-concentration-of-the-sample",
+    "category": "reference",
+    "publishedAt": "2024-06-10T12:59:45.619Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6666f136ea26b25be5444a03",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-06-10T12:27:34.170Z",
+    "createdBy": {
+      "username": "ttettted",
+      "url": "https://www.codewars.com/users/ttettted"
+    },
+    "description": "In this kata, we are chemistry technician, trying to measure the concentration of a coloured compound in a sample solution. \n\nConcentration is proportional to the absorbance of the solution. \nWe were given 2 standard points in the form of e.g. [2,2], [4,4]. Indicating 2 units concentration of this chemical will absorb 2 units of light and 4 units concentration of this chemical will absorb 4 units of light.\n\nAbsorbance of the sample will be measured in the form of e.g. 3, indicating 3 units of light is absorbed.\n\nyou will be required to make a code to calculate the concentration of the certain compound. (note that the answer will not be negative)\nIn the example, by forming a linear line of [2,2] and [4,4] and substitue 3 as the absorbance, the concentration will be 3.\n\nIn case you were not familiar with chemistry setting, you can just assume it is a quest to find the x coordinate of a point with given y coordinate on a straight line.\n\nCaution!!\nThere will be some cases where the answer cannot be determined, lets say if the 2 points are the same points, the line is a horizontal(where the y coordinate of both points are the same)  vertical line (x coordinate of both points are the same). In this case, having experimental error, we will output -1 as a sign of error as concentration will not be negative.\n\nBecareful not to mix up x-axis and y-axis. Happy coding!\n\nExample:\ninput[2,2],[4,4],3 output should be 3\ninput[1,6],[3,9],12 output should be 5\ninput[1,0],[3,0],0 as there is experimental error, output should be -1\n",
+    "totalAttempts": 93,
+    "totalCompleted": 17,
+    "totalStars": 0,
+    "voteScore": 8,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

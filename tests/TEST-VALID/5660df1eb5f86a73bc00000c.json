@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5660df1eb5f86a73bc00000c",
+  "data": {
+    "id": "5660df1eb5f86a73bc00000c",
+    "name": "A puzzle from a world of 5 bits",
+    "slug": "a-puzzle-from-a-world-of-5-bits",
+    "category": "algorithms",
+    "publishedAt": "2015-12-04T00:32:40.753Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "haskell",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5660df1eb5f86a73bc00000c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-04T00:32:30.385Z",
+    "createdBy": {
+      "username": "zellerede",
+      "url": "https://www.codewars.com/users/zellerede"
+    },
+    "description": "Imagine some extraordinary computers in a far far galaxy, which are based to compute not on two but **five** 'bits': `0, 1, 2, 3, 4` .\n\nIn such a computer, every register stores `n` extraterrestrial 'bits', so one such register can contain integers up to `5 ^ n` .  \nNegative numbers are represented analogously to Two's complement, i.e. `0` turns to the maximal representable number `44...4444` when decreased by `1` . E.g. `-14 = 44...4431` (with `n` digits). (For this kata, the actual cutoff between negative and positive numbers is irrelevant.)\n\nFor this kata we will let the size `n` of registers vary.\n\nAs mathematical operations are executed using single registers,  any potential overflow bits get lost. In practice, it means that only the last `n` 'bits' of the result are stored. For example, if `n = 2`, we get `12 * 12 == 44` on the register, because `12 * 12 = 144` holds even in number base `5`, and only the last `2` digits are kept. Similarly, `44 + 1 == 0` here.\n\nYour task is to write a function that returns the set of all register values `z` that satisfy `z * z == -1`, when the size of registers, `n` , is given.  \nThe expected result set contains the string representation of the solutions on `n` 'bits', i.e. with potential leading zeroes.",
+    "totalAttempts": 139,
+    "totalCompleted": 23,
+    "totalStars": 6,
+    "voteScore": 32,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

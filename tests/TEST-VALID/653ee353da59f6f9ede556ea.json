@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/653ee353da59f6f9ede556ea",
+  "data": {
+    "id": "653ee353da59f6f9ede556ea",
+    "name": "Universal array indexes",
+    "slug": "universal-array-indexes",
+    "category": "reference",
+    "publishedAt": "2023-10-30T00:56:07.870Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/653ee353da59f6f9ede556ea",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-29T22:57:23.401Z",
+    "createdBy": {
+      "username": "Alexandre888",
+      "url": "https://www.codewars.com/users/Alexandre888"
+    },
+    "description": "<h1>Task</h1>\n\nIn regular JavaScript, array indexes are very primitive and trivial — we can get array elements only by their strict ordinal number: from `$0$` to the last element number in the array. If the index is outside this range, we will get `undefined` instead of the element.\n\nYour task is to prevent getting `undefined` when using any integer as an index. Range of numbers: `$[-10^{15}, 10^{15}]$`.\n\n<span style=\"color:#b294bb;font-weight:900\">You cannot convert an array to an object in this kata</span>. The original array must remain an array. The `Array.isArray(array)` check must return `true`. All array methods and the `length` property must also remain.\n\n<h1>Examples</h1>\n\nPositive numbers that go beyond the number of elements in the array must go over the array again, creating a loop:\n\n```javascript\nlet array = [1, 2, 3];\n\narray[3];    // 1\narray[4];    // 2\narray[5];    // 3\narray[6];    // 1\narray[1050]; // 1\narray[7070]; // 3\n```\n\nNegative numbers represent selecting elements from the end of the array, in reverse order. Such indexes must also go through the array again, creating a loop:\n\n```javascript\nlet array = [1, 2, 3];\n\narray[-0];   // 1\n\narray[-1];   // 3\narray[-2];   // 2\narray[-3];   // 1\narray[-4];   // 3\narray[-101]; // 2\narray[-500]; // 2\n```\n\n<ins>**Good luck!**</ins>",
+    "totalAttempts": 188,
+    "totalCompleted": 25,
+    "totalStars": 5,
+    "voteScore": 43,
+    "tags": [
+      "Arrays",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

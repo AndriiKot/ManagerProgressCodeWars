@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d95e0daab4aad000eddeae6",
+  "data": {
+    "id": "5d95e0daab4aad000eddeae6",
+    "name": "The Scrambled Towers of Hanoi",
+    "slug": "the-scrambled-towers-of-hanoi",
+    "category": "games",
+    "publishedAt": "2019-10-04T06:34:07.709Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5d95e0daab4aad000eddeae6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-03T11:51:54.252Z",
+    "createdBy": {
+      "username": "Damo67",
+      "url": "https://www.codewars.com/users/Damo67"
+    },
+    "description": "The Tower of Hanoi is a simple problem.\n\nThere are 3 sticks each with some amount of disks of different sizes on it. \n\nTraditionally, all the disks start on the first stick, but that's too boring.\n\nThe goal is to move all the disks to the last stick, but there are some restrictions.\n\n\tYou may only move 1 disk from one stick to another stick each move.\n\n\tNo disk may sit above a disk smaller than it.\n\n\tYou may only move the top disk of a stick.\n\nThe function SolveHanoi will take in a Tuple  of Stacks. Each Stack represents 1 stick and will contain ints describing the size of the disks on it.\n\nIt will output a list of Tuples. Each Tuple will contain 2 ints that represent a move. The first element will represent which stick to grab the top disk from. The second element will represent which stick to place that disk on. The list will describe the simplest set of moves that will cause the towers to be solved. That is the least required amount of moves to move all of the disks to the last stick.\n\nFor Example if the Tuple ({3},{2,1},{4}) is passed in. This describes the state in which the disk of size 3 is on the first stick, the disks of size 1 and 2 are on the 2nd stick, and the disk of size 4 is on the last stick. \n\nClearly we can see that moving disk 3 from the first to the last stick. Then moving disk 1 from the second to the first stick. So that we can move disk 2 to from the second stick to the last stick. Finally moving disk 1 from the first stick to the last stick will cause the towers to become solved. It should also be fairly clear that this is the simplest solution.\n\nThis means the function should output {(1,3),(2,1),(2,3),(1,3)}\n\nYou may assume that each stack will be sorted, no number will be duplicated across any of the stacks, every int from 1 to N (the total number of disks) will be in one of the stacks, and nothing else will appear.\n\nGood luck with this, it is my first Kata, I hope you enjoy.\nDamo\n",
+    "totalAttempts": 38,
+    "totalCompleted": 3,
+    "totalStars": 6,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

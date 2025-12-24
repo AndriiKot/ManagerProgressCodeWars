@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/622a2f5a2494ab006a2c6139",
+  "data": {
+    "id": "622a2f5a2494ab006a2c6139",
+    "name": "Territorial Disputes",
+    "slug": "territorial-disputes",
+    "category": "algorithms",
+    "publishedAt": "2022-03-18T00:02:21.842Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/622a2f5a2494ab006a2c6139",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-03-10T17:03:22.629Z",
+    "createdBy": {
+      "username": "tonylicoding",
+      "url": "https://www.codewars.com/users/tonylicoding"
+    },
+    "description": "In a colonization attempt, some countries have claimed territory in the New World. Each piece of territory is continuous and can be reached by any other part of that territory by moving north, south, east, or west one unit some number of times without crossing into unclaimed land. A `.` symbol represents claimed territory while `#` represents unclaimed land. Each country rules its own piece of territory, which is separated from the others by unclaimed land. \n\nNow, the colonizers have come to term with a new agreement in hopes of gaining even more land. For each unit of unclaimed land, that unit will belong to the country with the closest **ORIGINAL** territory with the distance measured by [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry). If two (or more) countries tie, that piece of land will be counted as disputed territory for all countries involved. Otherwise, it will count as undisputed territory for the closest country. \n\nPlease determine the country with the largest undisputed territory. Then, return its amounts of undisputed territory and disputed territory (as an array (tuple in python) in the form `{undisputed, disputed}`.) If multiple tie for the largest undisputed, use the one with the larger disputed territory.\n\nNote: the distance from one unit of land to a territory is measured by finding the minimum Manhattan Distance from that unit of land to any unit of land in the territory.\n\n**Input Constraints**\n\nThe input will be given as a `char [][]` 2D array (or list in python) representing the map of the New World, and its width and height will both not exceed 1000 in java or 500 in python. \n\n<hr>\n\n**SAMPLE INPUT**\n```\n#..#.#\n...#.#\n.###..\n##....\n```\n\n**SAMPLE OUTPUT**\n```java\nnew int[] {12, 3}\n```\n```python\n(12, 3)\n```\n\n<hr>\n\n**Explaination:**\n\nConsider the territories as belonging to countries numbered 1, 2. Then, the map shall be equivalent to:\n```\n#11#2#\n111#2#\n1###22\n##2222\n```\nAfter claiming new territory, the map becomes like this with `D` representing disputed territory between countries 1 and 2.\n```\n111D22\n111D22\n11D222\n122222\n```\nHere, country 2 has the largest undisputed territory of 12 units while having a disputed territory of 3 units.\n\n<hr>\n\n**Debugging**\n\nThere is a display method in preloaded that can be accessed via \n```java\nPreloaded.display(grid);\n```\n```python\ndisplay(grid)\n```\nThis displays the grid and separates the characters by one space. \n\n**Please only use this line for smaller inputs - larger inputs clog up the buffer and can invalidate your solution**\n",
+    "totalAttempts": 318,
+    "totalCompleted": 13,
+    "totalStars": 8,
+    "voteScore": 27,
+    "tags": [
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

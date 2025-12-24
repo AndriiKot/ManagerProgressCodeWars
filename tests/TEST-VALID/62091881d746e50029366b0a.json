@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62091881d746e50029366b0a",
+  "data": {
+    "id": "62091881d746e50029366b0a",
+    "name": "UTF-8 aware string length",
+    "slug": "utf-8-aware-string-length",
+    "category": "reference",
+    "publishedAt": "2022-02-14T08:30:45.628Z",
+    "approvedAt": null,
+    "languages": [
+      "nasm"
+    ],
+    "url": "https://www.codewars.com/kata/62091881d746e50029366b0a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-02-13T14:41:05.359Z",
+    "createdBy": {
+      "username": "vasile_programează",
+      "url": "https://www.codewars.com/users/vasile_programeaz%C4%83"
+    },
+    "description": "UTF-8 is a variable length character encoding (see https://en.wikipedia.org/wiki/UTF-8)\n\nWhile UTF-8 is binary safe (in the sense that UTF-8 encoded strings never contain zeros) standard libc string functions do not work properly on UTF-8 input as they operate under the premise that one character spans exactly one byte.\n\nAs an example, `strlen(\"müde\")` returns 5 even though \"müde\" is comprised of 4 UTF-8 characters (m,ü,d,e).\n\nYour job is to write a UTF-8 aware string length function that returns the number of UTF-8 character code points contained in a UTF-8 encoded buffer.\n\n`uint32_t utf8_strlen(char *);`\n\nUTF-8 encodings that exceed 4 bytes are considered invalid input (as they are not currently mapped in the unicode standard) so your input will only consist of UTF-8 characters that can be encoded as 4 bytes or less.\n\nIf your function encounters invalid input (illegal UTF8, e.g. missing continuation bytes, etc) it must return zero.",
+    "totalAttempts": 12,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

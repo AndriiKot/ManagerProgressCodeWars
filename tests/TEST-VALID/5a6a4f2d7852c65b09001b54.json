@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a6a4f2d7852c65b09001b54",
+  "data": {
+    "id": "5a6a4f2d7852c65b09001b54",
+    "name": "Retirement Planning as a Service",
+    "slug": "retirement-planning-as-a-service",
+    "category": "reference",
+    "publishedAt": "2018-01-25T21:42:05.350Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a6a4f2d7852c65b09001b54",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-25T21:42:16.898Z",
+    "createdBy": {
+      "username": "austin.norby",
+      "url": "https://www.codewars.com/users/austin.norby"
+    },
+    "description": "You have just come up with a new startup idea, Retirement Planning as a Service (RPaaS). This idea will make you millions, but first you must develop your proprietary algorithm.\n\nUsing sophisticated data analytics and quantum theory (not really) you have reduced the computational effort of predicting the monthly returns on the stock market to a function called: \n\n```python \nmarket_rate_function(month, year)\n```\nThis function predicts the market every month of every year so your service can calculate the expected market growth for each month. (Note: this function does not actually predict the market and is my own attempt at an over-all increasing cyclic function, much like the U.S. Stock Market.) Luckily, the analysts finished the analysis for you and this function has been provided.\n\nSince this is a service, you need to generalize the results for everyone! One of your interns sketched up the Person class that you'll need.\n```python \nclass Person():\n    def __init__(todo):\n        #todo\n    @staticmethod    \n    def market_rate_function(month, year):\n        return 1.07*(year-1900)*math.sin(2*math.pi*month/11)*math.cos(2*math.pi*month/11)\n        \n    def can_retire(self, year):\n        #TODO return bool\n        \n    def retire_status(self, year):\n        if self.can_retire(year):\n            return self.name + \" can retire in \"+str(year)+\"!\"\n        else:\n            return self.name + \" cannot retire in \"+str(year)+\"...\"\n    \n```\n\nThe really important factors for calculating if someone can retire in a certain year is their name, age, planned withdrawl rate, and the lump sum available during retirement.\n\nEach individual will provide the required details and your algorithm will determine if they can retire in the specified year based on what the market will do over time. \n\nThe users must provide their names to receive unique service. (Note: name is only used during print statements at the end.)\n\nThe users must provide their age in order to calculate the likely number of years they will need to live on their retirement lump sum.\n\nIn order to maximize your accuracy for your service, you need to provide a conservative estimate of longevity for each individual; you don't want to tell someone they can retire when they really can't! You'll get sued! So you factor in a death age of 120 for each user. In other words, the money should last until they turn 120 given the monthly market fluctuations, yearly withdrawals at the withdrawal rate at the beginning of the year, and the difference in retirement age and conservative death age (120).\n\nThe lump sum is the expected amount of money the individual will have at the specified year and will be able to live off of for the rest of their life. One famous example of this is the 4% rule (https://www.investopedia.com/terms/f/four-percent-rule.asp). The 4% in this case is the withdrawal rate. Not every individual will want to use the 4% rule and therefore the service allows them to specify their own withdrawal rate.\n\nLastly, the year is the year the individual wishes to retire. The year they would like to retire should also affect the age used for calculations. If the individual is 47 now, and they want to retire in 2038 then the individual will be 47 + (2038 - 2018) = 67 and the calculations will need to be done with the new, retirement age. \n\nAll of this information together will allow our RPaaS startup to provide quick and easy answers to our customers about which year they can retire.\n\nEDIT: Make sure to check the discourse section if you are confused. Others have also been confused. The author holds himself responsible. The author is sorry :p\n",
+    "totalAttempts": 32,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

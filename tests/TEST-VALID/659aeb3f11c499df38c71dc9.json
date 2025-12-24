@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/659aeb3f11c499df38c71dc9",
+  "data": {
+    "id": "659aeb3f11c499df38c71dc9",
+    "name": "Dice Game - Five Thousand",
+    "slug": "dice-game-five-thousand",
+    "category": "algorithms",
+    "publishedAt": "2024-01-07T21:07:24.421Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/659aeb3f11c499df38c71dc9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-07T18:19:43.667Z",
+    "createdBy": {
+      "username": "JezzaHehn",
+      "url": "https://www.codewars.com/users/JezzaHehn"
+    },
+    "description": "This kata is based on a dice game called Five Thousand (also known by many other names including [Dice 10,000](https://en.wikipedia.org/wiki/Dice_10000))\n\nPlayers take turns rolling a set of six typical six-sided dice, and try to gain the most points cumulatively. The winner is the first person to 5000 points. For each turn a player takes, they will start by rolling all of the dice, and setting aside some amount of dice that have a point value, and rolling the remaining dice until they decide to stop rolling and save their points. If a player rolls dice and no points are scored in that roll, they \"bust\" and lose all their points for that round, and play continues to the next player. The hard part of the game is deciding when to stop rolling and keep the points.\n\nThe steps can be stated alternatively as follows:\n- Roll all six dice\n- Set aside at least one die that is worth points\n- Decide to \"stay\" and keep the accumulated points, or roll again with the remaining dice.\n- If all six dice have been used to score points, the player may continue rolling with a fresh set of six dice, at the risk of getting a \"bust\" with no scoring dice and losing all points from that round.\n\nYour task is to write a function roll_again(dice_num, prob_thresh) for a dice game. This function decides whether a player should roll the dice again based on the probability of scoring points with the current number of dice (dice_num) and their risk threshold (prob_thresh).\n\n`dice_num`: Number of dice the player can roll.\n`prob_thresh`: The maximum acceptable probability of scoring any points on the next roll. This value is between 0 and 1, where a higher value indicates a requirement for higher certainty of scoring. A value of 1.0 should always result in False as there is always a risk of busting.\n\nThe function returns True if the calculated probability of scoring in the next roll is strictly less than the prob_thresh, suggesting the player should roll again. Otherwise, it returns False.\n\nThere are many scoring variants of this game. Scoring rules are very simple for this kata:\n\n- Single ones (1) are worth 100 points.\n- Single fives (5) are worth 50 points.\n- Three of a kind are worth 100 times the number rolled, except for three ones which are worth 1000 points. These three must be rolled in the same roll.\n- All other dice have no value.\n\nLet's go through an example:\n\nPlayer 1 rolls all six dice and gets [2,3,4,4,5,6].\nThe only scoring die is the 5, so the player sets the 5 aside and continues rolling the other dice for more points.\nThe next roll is [1,1,1,3,6] which has triple 1s for a thousand points. Player keeps those 1s for a running total of 1050 points. \n\nNow the player has a tough decision. They can either keep those points and play passes to the next player, or they can try and keep rolling for more points. Player 1 is not feeling very lucky, so they decide on a probability threshold of 75%.\n\nSince there are only two dice left, the odds of getting points is relatively low: the only way to get points will be to roll a single 1 or a single 5. For one die the probability would be 1/3 but for two dice we'll need to figure out the complement. \n\nThere's a 2/3 chance on each die of rolling something that is neither a 1 nor a 5, so the probability for two dice that there are no 1s or 5s, would be (2/3)²; and since we want the complement we calculate 1-(2/3)² which is about 55.56%. \n\nFor this example our player's probability threshold is 75% or 0.75 and since the chance of getting points is lower than that, the function returns \"False\" and the player decides to keep their points, and play passes to the next player.\n\nA few more examples:\n\n---\n\nroll 6 dice: [1,1,1,3,4,6]\nkeep [1,1,1] (1000p), discard [3,4,6]\n\nchoose to re-roll 3 dice: [1,4,4]\nkeep [1] (100p, total 1100p), discard [4,4]\n\nchoose to re-roll 2 dice: [3,6]\nBust! All points from this round lost.\nZero points added to player's score.\nTurn passes to next player.\n\n---\n\nroll 6 dice: [2,3,4,4,6,6]\nBust! Zero points.\nTurn passes to next player.\n\n---\n\nroll 6 dice: [2,2,2,5,6,6]\nkeep [2,2,2,5] (200+50=250p), discard [6,6]\n\nPlayer feels it's too risky to re-roll, so adds 250p to their score.\nTurn passes to next player.\n\n---\n\nroll 6 dice: [2,5,5,5,6,6]\nkeep [5,5,5] (500p), discard [2,6,6]\n\nchoose to re-roll 3 dice: [1,1,1]\nkeep [1,1,1] (1000p, total 1500p)\n\nPlayer could stop here but chooses to continue by re-rolling everything...\nre-roll 6 dice: [2,2,3,3,5,6]\nkeep [5] (50p, total 1550p), discard [2,2,3,3,6]\n\nchoose to re-roll 5 dice: [4,4,4,5,6]\nkeep [4,4,4,5] (400+50=450p, total 2000p), discard [6]\n\nPlayer feels its way too risky to roll a single die at the risk of losing these 2000 points so the player stays. 2000 points are added to their total and turn passes to the next player.\n\n---\n\nGood luck!!!",
+    "totalAttempts": 56,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

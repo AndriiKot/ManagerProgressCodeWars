@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66a321018743a6750946cba9",
+  "data": {
+    "id": "66a321018743a6750946cba9",
+    "name": "Reverse Every K Nodes in a Linked List",
+    "slug": "reverse-every-k-nodes-in-a-linked-list",
+    "category": "algorithms",
+    "publishedAt": "2024-07-26T06:05:56.826Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66a321018743a6750946cba9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-26T04:07:29.630Z",
+    "createdBy": {
+      "username": "vo1d1",
+      "url": "https://www.codewars.com/users/vo1d1"
+    },
+    "description": "# Problem: Reverse Every K Nodes in a Linked List\n# Input:\n1. A singly linked list: This is a type of linked list where each node points to the next node in the sequence. Each node is an object that contains two properties: data and next. The data property holds the value of the node, and the next property points to the next node in the sequence. An example of a singly linked list is {data: 1, next: {data: 2, next: {data: 3, next: null}}}. In this example, each object represents a node in the linked list, and the next property represents the pointer from one node to the next. The null at the end signifies the end of the list.\n```\nfunction Node(data) {\n    this.data = data;\n    this.next = null;\n}\n```\nWith this Node function, you can create a linked list like this: new Node(1, new Node(2, new Node(3)))\n2. An integer k: This is the number of nodes to reverse at a time in the linked list.\n\n# Output:\nA singly linked list where every k nodes have been reversed. If the number of nodes in the linked list is not a multiple of k, then the remaining nodes are also reversed.\n\n# Functionality:\nWrite a function in JavaScript that takes a singly linked list and an integer k as input, and returns a new linked list that is the result of reversing every k nodes in the input linked list.\n\n# Example:\nIf the input linked list is\n```{data: 1, next: {data: 2, next: {data: 3, next: null}}} and k = 2, the output should be {data: 2, next: {data: 1, next: null}}```\nHere, the first two nodes\n```{data: 1, next: {data: 2, next: null}}```\nare reversed to become\n```{data: 2, next: {data: 1, next: null}}```\n\n# Note:\nThe linked list does not necessarily need to be constructed from a Node class. Any recursive object construct with data and next properties will suffice. The example tests will reflect this.\n- k will always be positive and greater than 0.\n- head will never be null so don't mind it.",
+    "totalAttempts": 27,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 5,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

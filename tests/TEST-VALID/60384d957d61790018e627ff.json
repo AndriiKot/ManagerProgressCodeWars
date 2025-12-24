@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60384d957d61790018e627ff",
+  "data": {
+    "id": "60384d957d61790018e627ff",
+    "name": "Candlestick Chart",
+    "slug": "candlestick-chart",
+    "category": "reference",
+    "publishedAt": "2021-02-27T23:50:45.073Z",
+    "approvedAt": null,
+    "languages": [
+      "sql"
+    ],
+    "url": "https://www.codewars.com/kata/60384d957d61790018e627ff",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-26T01:23:33.554Z",
+    "createdBy": {
+      "username": "rsaryev",
+      "url": "https://www.codewars.com/users/rsaryev"
+    },
+    "description": "Hi!  \nYou need to write SQL query for 5 minute candlestick chart for Intraday.\n\n[<a href=\"https://en.wikipedia.org/wiki/Candlestick_chart\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Candlestick_chart_scheme_01-en.svg/2560px-Candlestick_chart_scheme_01-en.svg.png\" width=\"250\" alt=\"\"/></a>](image.png)\n\n## Input\n### market_data\n~~~~sql\nCREATE TABLE market_data\n(\n    price      numeric,\n    createdAt  timestamp\n);\n\n ~~~~\n\n#### Example\n\nRows in the table for 1 trading day\n```\n+----------------+--------------------------+\n|price           |createdAt                 |\n+----------------+--------------------------+\n|11.2728020498136|2021-01-01 00:00:00.000000|\n|9.41117392685891|2021-01-01 00:01:00.000000|\n|9.92312078458682|2021-01-01 00:02:00.000000|\n|9.1424414472387 |2021-01-01 00:03:00.000000|\n|8.9221363628754 |2021-01-01 00:04:00.000000|\n|11.2749453064788|2021-01-01 00:05:00.000000|\n|11.2928440441844|2021-01-01 00:06:00.000000|\n...\n```\n## Output \nMust be order by `date` asc\n\n#### Example\n```\n+--------------------------+----------------+----------------+----------------+----------------+\n|date                      |open            |close           |high            |low             |\n+--------------------------+----------------+----------------+----------------+----------------+\n|2021-01-01 00:00:00.000000|11.2728020498136|11.2749453064788|11.2749453064788|8.9221363628754 |\n|2021-01-01 00:05:00.000000|11.2749453064788|10.7887252777765|11.2928440441844|8.77254646493638|\n|2021-01-01 00:10:00.000000|10.7887252777765|8.900243074681  |11.4055309409346|8.900243074681  |\n|2021-01-01 00:15:00.000000|8.900243074681  |9.69509642808362|11.0260860899827|8.89806920495255|\n|2021-01-01 00:20:00.000000|9.69509642808362|8.86863338521832|11.1783686466807|8.86863338521832|\n|2021-01-01 00:25:00.000000|8.86863338521832|10.2083466838747|10.6498426233299|8.86863338521832|\n|2021-01-01 00:30:00.000000|10.2083466838747|9.46371152314674|11.2227570474952|9.46371152314674|\n|2021-01-01 00:35:00.000000|9.46371152314674|10.5523666010627|10.7712448995649|9.00495925560391|\n|2021-01-01 00:40:00.000000|10.5523666010627|8.64966238997734|11.2679984946793|8.64966238997734|\n...\n```",
+    "totalAttempts": 245,
+    "totalCompleted": 24,
+    "totalStars": 7,
+    "voteScore": 20,
+    "tags": [
+      "SQL",
+      "Databases",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

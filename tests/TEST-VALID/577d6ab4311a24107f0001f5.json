@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/577d6ab4311a24107f0001f5",
+  "data": {
+    "id": "577d6ab4311a24107f0001f5",
+    "name": "Burrows-Wheeler transform I. Coding",
+    "slug": "burrows-wheeler-transform-i-coding",
+    "category": "algorithms",
+    "publishedAt": "2016-07-07T09:38:56.480Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/577d6ab4311a24107f0001f5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-06T20:31:48.504Z",
+    "createdBy": {
+      "username": "denesnori",
+      "url": "https://www.codewars.com/users/denesnori"
+    },
+    "description": "The Burrows-Wheeler transform (BWT) is useful for data compression.The algorithm tends to arrange runs of the same character together.  The BWT algorithm is used in bioinformatics and in the bzip3 data compression program.\n\n\nThe  algorithm:  \n1, append '|' at the end of the input text. (It is required to unequivocally reconstruct the string, otherwise you can only cyclicly reconstruct the input.),  \n2, get all possible cyclic permutations (cyclic rotations) of the text, store them in a transformation table,  \n3, sort the permutations (the rows) into lexicographic order,  \n4, take the last column as output. (The returned text should include the '|' character).  \n\nHint: note that Javascript's sort() method puts '|' after any letter of the alphabet.  \n\nExample:  \n\nInput:  \nananas  \n\nAppend '|' at the end of the string:  \nananas| \n\nAll cyclic rotations:  \nananas|   \n|ananas  \ns|anana  \nas|anan     \nnas|ana  \nanas|an  \nnanas|a  \n\nSorting all rows into lexicographic order then take the last column  \nananas|  \nanas|an \nas|anan   \nnanas|a   \nnas|ana  \ns|anana  \n|ananas\n\nOutput: last column  \n|nnaaas\n\nPlease note, that it is a coincidence that the first character of the returned text is '|'. You can't take this for granted.\n\nFor further information read <https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform>",
+    "totalAttempts": 59,
+    "totalCompleted": 34,
+    "totalStars": 0,
+    "voteScore": 45,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

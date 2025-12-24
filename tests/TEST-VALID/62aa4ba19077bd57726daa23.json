@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62aa4ba19077bd57726daa23",
+  "data": {
+    "id": "62aa4ba19077bd57726daa23",
+    "name": "Unordered pair #1: add two natural numbers",
+    "slug": "unordered-pair-number-1-add-two-natural-numbers",
+    "category": "reference",
+    "publishedAt": "2022-06-15T21:14:45.962Z",
+    "approvedAt": null,
+    "languages": [
+      "agda"
+    ],
+    "url": "https://www.codewars.com/kata/62aa4ba19077bd57726daa23",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-15T21:14:09.086Z",
+    "createdBy": {
+      "username": "ice1000",
+      "url": "https://www.codewars.com/users/ice1000"
+    },
+    "description": "In this Kata, you're given a higher inductive type:\n\n```agda\ndata UP (A : Type ℓ) : Type ℓ where\n  _,_ : A → A → UP A\n  comm : ∀ a b → (a , b) ≡ (b , a)\n```\n\nIt represents a pairing construction equipped with a line. Now, define `UPN-+ : UP ℕ → ℕ` such that `UPN-+ (a , b)` reduces to `a + b`.\n\n[Successor Kata](https://www.codewars.com/kata/62aa52da26b64d00606d33f7)\n",
+    "totalAttempts": 24,
+    "totalCompleted": 16,
+    "totalStars": 0,
+    "voteScore": 13,
+    "tags": [
+      "Theorem Proving",
+      "Functional Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/527406d347a81c5d290008fa",
+  "data": {
+    "id": "527406d347a81c5d290008fa",
+    "name": "League Standings",
+    "slug": "league-standings",
+    "category": "reference",
+    "publishedAt": "2013-11-01T21:25:06.654Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/527406d347a81c5d290008fa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-11-01T19:53:55.691Z",
+    "createdBy": {
+      "username": "eugene-bulkin",
+      "url": "https://www.codewars.com/users/eugene-bulkin"
+    },
+    "description": "# Problem Description\n\nSo you're a sports fan (if you're not, that's fine, too!) and you want to keep track of the standings of your favorite league, division, or what have you. Do you check the league website to find out? Of course not! You look at the schedule and write a program to format it all nicely for you, since you're such an enthusiastic programmer and all.\n\nThat's what we're gonna do here! Here we create a class called `League`, which does some basic standings calculations.\n\nWe call it like this:\n\n```javascript\nvar l = new League([\"A\", \"B\", \"C\", \"D\"])\n```\n```coffeescript\nl = new League [\"A\", \"B\", \"C\", \"D\"]\n```\n\nThat creates a new league object with the teams A, B, C and D. Now all we have to do is add games so the league can keep track of the standings! We can do it like so:\n\n```coffeescript\nl.addGame { name: \"A\", points: 10 }, { name: \"B\", points: 7 }\n```\n\nWhich adds a game to the league where team A beat team B 10-7. You may store this data however you wish!\n\nNext there is a `getRecord` method. Say team A has played 6 games, won 3, lost two, and tied one. Then `l.getRecord(\"A\") = [3,2,1]`.\n\nBut just getting the record isn't enough. We want to print out the standings! To make it a little easier first, we have a `rankings` method. Say team A has a record of `4-3`, B `2-5`, C `3-4`, and D `0-7`. Then `l.rankings() = [\"A\", \"C\", \"B\", \"D\"]`, an array with the names of teams from first to last.\n\nWhat do we do if two teams have the same number of wins? Since **we will assume round-robin**, each team will play each other time the same number of times, so everyone's total number of games will be equal. Then we go to a tiebreaker! The tiebreakers we will use are head-to-heads followed by point-differential. So say team A has played games with scores `6-7`, `14-10`, and `28-21` while B has played games with scores `7-6`, `10-14`, `15-14`. The first two games were between A and B (i.e. B beat A `7-6`, A beat B `14-10`). They both went `2-1`, so we look at head-to-heads. Since the teams played each other twice, but each won one and lost one, their head-to-head records are both `1-1`, so we must look at points differential. team A had a cumulative score of `48-38` while B had a cumulative score of `32-34`, so team A had a points differential of `+10` while team B had a points differential of `-2`, so A will be ahead of B in the rankings. The key here is that head-to-head record is more important than point differential, so we consider head-to-head first, and only if the head-to-head record is the same do we go to points differential. If everything is equal somehow, just sort them alphabetically (A-Z).\n\nFinally there is the goal, which is to print out standings. What we want is to print out a CSV (comma-separated) formatted output like so:\n\n```\nName,Record,Differential\nA,4-2,10\nB,3-3,8\nC,3-3,-3\nD,2-4,-15\n```\n\n# Caveats\nFirst, note that in the standings printout, there are no ties in the records. If there are no ties amongst the teams, simply drop that from the record printout. Only include ties if there are any; e.g. if A and B are 2-2-2 then put that out there, but otherwise leave the ties out.\n\nRemember that this is **round-robin**. That means every team plays each other team, and this happens the same number of times. In our case, each team played each other team twice. What does this mean? This means we are in a zero-sum situation. So the point differentials must all add up to zero (since for one team to score points, the other team must give them up), and there must be an equal number of overall wins and overall losses. So in the above example, the point differentials do total up to 0, and the total record is 8-8. If there were ties, it could be something like 7-7-2, but all that matters is that `# total wins = # total losses` for integrity. This is a great way to test! Assume that any test cases will add games with the round-robin format in mind.\n\nIf we try to get the record of a team or add a game between teams that are not in the league, throw an error! Note that if no games have been added, there should still be something when we look at the standings! Everyone just has a 0-0 record and a 0 point differential.\n\nYou will only be required to make the `addGame`, `getRecord`, `rankings` and `standings` methods. Auxiliary methods will most certainly be useful!",
+    "totalAttempts": 369,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 6,
+    "tags": [
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57c4a31f0a32cae2a800065b",
+  "data": {
+    "id": "57c4a31f0a32cae2a800065b",
+    "name": "Lambda Calculus Evaluator",
+    "slug": "lambda-calculus-evaluator",
+    "category": "algorithms",
+    "publishedAt": "2016-08-29T21:06:01.109Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57c4a31f0a32cae2a800065b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-08-29T21:03:28.298Z",
+    "createdBy": {
+      "username": "user5200009",
+      "url": "https://www.codewars.com/users/user5200009"
+    },
+    "description": "## Lambda Calculus Evaluator\nIn this Kata you will implement a [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) evaluator.\n\nYour evaluator will take an `Expression` and return a JavaScript `Value`\n\n```javascript\n// sample tests\nTest.expect(\n  evaluate(\n    setupEnv([['x', 1]]),\n    v('x')\n  ) === 1,\n  'x where x := 1; should return 1'\n)\n    \nTest.expect(\n  evaluate(\n    setupEnv([['y', 1]]),\n    a(l('x',v('x')), v('y'))\n  ) === 1,\n  '(λx.x) y where y := 1; should return 1'\n)\n\nTest.expect(\n  evaluate(\n    setupEnv([['z', 1]]),\n    a(l('x',v('z')),a(l('w',a(v('w'),v('w'))),l('w',a(v('w'),v('w'))))) \n  ) === 1,\n  '(λx.z) ((λw.ww) (λw.ww)) where z := 1; should return 1'\n)\n```\n\n### Evaluation Strategy\n\nLambda Calculus is not restricted to a specific [evaluation strategy](https://en.wikipedia.org/wiki/Evaluation_strategy), but this Kata will expect you to\n\n* employ a [non-strict](https://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_evaluation) strategy\n* be careful to [avoid capturing substitutions](https://en.wikipedia.org/wiki/Lambda_calculus#Capture-avoiding_substitutions)\n* be stack-safe – avoid stack overflow for large computations\n\nThere are tests to enforce you've done this correctly.\n\n---\n\n### Expression tokens\n\nThe **3 rules** of lambda calculus:\n\n* a **variable** `x`, is itself a lambda term\n* if `t` is a lambda term, and `x` is a variable, `(λx.t)` is a **lambda abstraction**\n* if `t` and `s` are lambda terms, then `(t s)` is a **lambda application**\n\nThese 3 rules are encoded in 3 **expression tokens** and provided as factories for you to use in your own tests\n\n* **variable** – `{type: 'variable', name: n}` – where `n` is any string\n* **lambda** – `{type: 'lambda', parameter: p, term: expr1}` – where `p` is any string and `expr1` is any other expression\n* **application** – `{type: 'application', closure: expr1, argument: expr2}` – where `expr1,expr2` are any valid expression tokens\n\nFor convenience and brevity, they are aliased as `v`, `l`, and `a` in the test suite.\n\n> **Important:** You are **not** writing an lambda calculus lexer/parser. Your evaluator is expected to evaluate **expression tokens**, not a lambda calculus expression in *string* form. The example tests should make this clear.\n\n\n---\n\n### Environment\n\nEach test will be run in an **environment**. In order for this Kata's testing suite to use environments compatible with your evaluator, you must provide a `setupEnv` function. Making this a function you implement allows you to choose an environment that best suits your evaluator.\n\n`setupEnv` expects an array of `[key,value]` pairs – similar to JavaScript's `Map` constructor\n\n```javascript\nevaluate(setupEnv([['x', 0], ['y', 1]]), variable('x')) // => 0\nevaluate(setupEnv([['x', 0], ['y', 1]]), variable('y')) // => 1\n```\n\n**Testing environment**\n\nThe testing environment will be populated with random values for `_a`, `_b`, `_c`, `_d`, `_e`, and `_f`. It is unknown to you which one of these is the *truth* value for the test assertion. These red herring values are here to deter hackers from trying to shortcut writing an actual evaluator.\n\n---\n\n### Help & Debugging\n\nI have provided an expression visualiser `expr2str` to assist you with debugging\n\n```javascript\nexpr2str(a(a(l('x',l('y',v('x'))),v('u')),v('v')))\n// => (((λx.(λy.x)) u) v)\n```\n",
+    "totalAttempts": 1071,
+    "totalCompleted": 16,
+    "totalStars": 12,
+    "voteScore": 14,
+    "tags": [
+      "Fundamentals",
+      "Interpreters",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

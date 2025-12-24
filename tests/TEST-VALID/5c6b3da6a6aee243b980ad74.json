@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c6b3da6a6aee243b980ad74",
+  "data": {
+    "id": "5c6b3da6a6aee243b980ad74",
+    "name": "Dummy Epoch - find the gap",
+    "slug": "dummy-epoch-find-the-gap",
+    "category": "reference",
+    "publishedAt": "2019-02-18T23:21:07.637Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c6b3da6a6aee243b980ad74",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-18T23:20:06.797Z",
+    "createdBy": {
+      "username": "liverpoologic",
+      "url": "https://www.codewars.com/users/liverpoologic"
+    },
+    "description": "# Dummy Epoch\n\nEpoch time is the way that computers store time/date stamps - usually a number of milliseconds since a certain moment (1 Jan 1970).\n\nIn this kata, we will build our own function to generate an epoch like timestamp generically (i.e. from any date).\n\nThe function should return the *number of completed units* between epoch start and the given date.\n\nYour function must take three arguments:\n1. date from which epoch starts (a string 'yyyy-mm-dd') where 'mm' is '01' for January\n2. unit of time which we are counting (a string 'q' for quarters, 'm' for months, 'w' for weeks or 'd' for days)\n3. date which we need to calculate epoch for\n\nThe function must support dates before 'epoch' (by returning negative numbers). Any date before epoch would be negative - so if epoch was 1/1/2019, then 31/12/2018 would be -1, and 31/11/2018 would be -2, and so on.\n\nMonths are defined as the period from the xth day of a month to the xth day of the next month. Quarters are defined as 3 months.\n\nFor example, if our start date was 2018-01-01, and our unit was months:\n```\n2018-01-01: 0\n2018-02-01: 1\n2017-12-29: -1\n```\n\nHINT: days and weeks are always the same amount of time. Months and quarters are not.",
+    "totalAttempts": 227,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": -3,
+    "tags": [
+      "Date Time",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

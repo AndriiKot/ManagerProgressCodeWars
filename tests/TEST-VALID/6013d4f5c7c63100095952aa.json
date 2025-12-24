@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6013d4f5c7c63100095952aa",
+  "data": {
+    "id": "6013d4f5c7c63100095952aa",
+    "name": "Evaluating Continued Fractions",
+    "slug": "evaluating-continued-fractions",
+    "category": "reference",
+    "publishedAt": "2021-01-29T09:27:23.668Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6013d4f5c7c63100095952aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-01-29T09:27:17.948Z",
+    "createdBy": {
+      "username": "CheeSenTan",
+      "url": "https://www.codewars.com/users/CheeSenTan"
+    },
+    "description": "## Problem\n\nGiven an integer array `arr` of size `n`, its continued fraction is the expression:\n\n```math\narr[0] + \\cfrac{1}{ arr[1] + \\cfrac{1}{ arr[2] + \\cfrac{1}{ \\ddots + \\cfrac{1}{arr[n-1]} } } }\n```\n\nFor example, if `arr = [3, 2, 4, 1]`, then it represents a continued fraction that has a value of `38/11 = 3.454545...`:\n\n```python\n3 + 1 / (2 + 1 / (4 + 1 / 1)) = 3 + 1 / (2 + 1 / 5) = 3 + 1 / (11 / 5) = 3 + 5 / 11 = 38 / 11\n^        ^        ^       ^\n```\n\nGiven an integer array `arr`, we want to write a function that calculates the value of its continued fraction:\n\n\n```python\ncf_value([0]) = 0.0\ncf_value([0, 0]) = None # dividing by 0\ncf_value([1, 2]) = 1.5\ncf_value([3, 2, 4, 1]) = 3.4545454545454546\n```",
+    "totalAttempts": 270,
+    "totalCompleted": 67,
+    "totalStars": 2,
+    "voteScore": 98,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

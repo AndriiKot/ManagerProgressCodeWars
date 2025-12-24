@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a25aedfade790031f1fb93",
+  "data": {
+    "id": "62a25aedfade790031f1fb93",
+    "name": "String = Vertex list",
+    "slug": "string-equals-vertex-list",
+    "category": "algorithms",
+    "publishedAt": "2022-06-09T21:51:57.973Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/62a25aedfade790031f1fb93",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-09T20:41:17.975Z",
+    "createdBy": {
+      "username": "Masterride05",
+      "url": "https://www.codewars.com/users/Masterride05"
+    },
+    "description": "Your task here is to create a program which parses a given string (presumably a 3D object) into an array of vertices.\n\nExample:\n\n```\nv 1.00 -1.00 -1.00\nv 1.00 1.00 -1.00\nv 1.00 -1.00 1.00\nv 1.00 1.00 1.00\nv -1.00 -1.00 -1.00\nv -1.00 1.00 -1.00\nv -1.00 -1.00 1.00\nv -1.00 1.00 1.00\nf 0/1/2\nf 2/3/0\nf 4/5/6\nf 6/7/0\n```\n\nThe layout is very similar to the layout of a standard *.obj* 3D model. \nThe proper output for this *string* is:\n```\n{\n  { 1.00, -1.00, -1.00 },\n  { 1.00,  1.00, -1.00 },\n  { 1.00, -1.00,  1.00 },\n  { 1.00, -1.00,  1.00 },\n  { 1.00,  1.00,  1.00 },\n  { 1.00, -1.00, -1.00 },\n  {-1.00, -1.00, -1.00 },\n  {-1.00,  1.00, -1.00 },\n  {-1.00, -1.00,  1.00 },\n  {-1.00, -1.00,  1.00 },\n  {-1.00,  1.00,  1.00 },\n  {-1.00, -1.00, -1.00 },\n}\n```\n\nThe indices, however, can have different lenghts every line, unlike an *obj* file. \nEven though the length is unknown, the indices are unsigned. Meaning they will never go under 0.\n\nOn the other hand, if the index exceeds the length of the vertices, there are no vertecies or there are no indices at all, you will return ``nullptr``.\n\nHow you parse the string is up to you.\n\nAs a last thing, you have to modify the value inside ``count`` with the amount of vertices inside your array.",
+    "totalAttempts": 22,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55d3b85c4f75aac5b500003c",
+  "data": {
+    "id": "55d3b85c4f75aac5b500003c",
+    "name": "Logic Calculator - Puzzles #3",
+    "slug": "logic-calculator-puzzles-number-3",
+    "category": "games",
+    "publishedAt": "2015-08-19T12:46:03.902Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55d3b85c4f75aac5b500003c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-18T22:57:35.008Z",
+    "createdBy": {
+      "username": "matt c",
+      "url": "https://www.codewars.com/users/matt%20c"
+    },
+    "description": "<h1>Logic Calculator - Puzzles #3</h1>\nLogic Calculator. You must replicate a system of switches by creating logic gates to do binary addition.\n\n<h2>Task</h2>\nYour task is to use the Calculator class given below to do binary calculations, try to use Logic Gates to solve this kata!\n\n<h2><strong>Note:</strong></h2>\n<p>\nI have removed the ```parseInt``` function to make this kata harder :)\n</p>\n\n<h2>Input</h2>\nWhen the Calculator class is initialized no parameters will be passed into the constructor.\nThe function that the test cases will call is the  function calculate, this will take 2 parameters; first and second.\n<list>\n  <ul>\n    <h4><strong>first</strong></h4>\n    <p>\n      the ```first``` parameter will be an     array with a maximum length of ```100``` containing booleans either true of false. These will represent binary numbers from Right to Left e.g. In binary 10, In this test [true, false]    </p>  \n  </ul>\n  <ul>\n    <h4><strong>second</strong></h4>\n    <p>\n    the ```second``` parameter will be another version of first an array of booleans representing the second number in an equation.    </p>\n  </ul>\n</list>\n\n<h2>Output</h2>\nYou must output the number as an array of booleans to represent the binary numbers.\n\n<h2>Logic Gates</h2>\n\nThere is a LogicGates Class which is preloaded in your solution usage are as follows:\n\n```javascript\nvar logicGates = new LogicGates();\n\nlogicGates.NOT(true) //== false\nlogicGates.OR(true, false) //== true\nlogicGates.XOR(true,false) //== true\nlogicGates.AND(true,true) //== true\nlogicGates.NAND(true,true) //== false\nlogicGates.FULLADDER(true,true,true) //== [true,true]\n\n```\n\n\n<p>\nTo solve this kata it is recommended to use logic gates. A LogicGate class will be added but the functions left empty.\n\nA breif overview of each Logic Gate:\nAll logic gates take booleans as parameters\n<list>\n  <ul>\n    <h4><strong>NOT Gate:</strong></h4>\n    <p>The NOT gate takes in one parameter and returns the inverse of the input. Truth Table: <table class=\"wikitable\" style=\"float:right;\">\n<td colspan=\"1\"><b>INPUT</b></td>\n<td><b>OUTPUT</b></td>\n</tr>\n<tr align=\"center\">\n<td><strong>A</strong></td>\n<td><strong>NOT A</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n</tr>\n</table></p>\n  </ul>\n  <ul>\n    <h4><strong>OR Gate:</strong></h4>\n    <p>The OR gate takes in two parameters and return true if either are passed in as true. Truth Table:<table class=\"wikitable\" style=\"float:right;\">\n<td colspan=\"2\"><b>INPUT</b></td>\n<td><b>OUTPUT</b></td>\n</tr>\n<tr align=\"center\">\n<td><strong>A</strong></td>\n<td><strong>B</strong></td>\n<td><strong>A OR B</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</table></p>\n  </ul>\n  <ul>\n    <h4><strong>XOR Gate:</strong></h4>\n    <p>The XOR gate takes in two parameters and return true if either but not both are passed in as true. Truth Table:<table class=\"wikitable\" style=\"float:right;\">\n<td colspan=\"2\"><b>INPUT</b></td>\n<td><b>OUTPUT</b></td>\n</tr>\n<tr align=\"center\">\n<td><strong>A</strong></td>\n<td><strong>B</strong></td>\n<td><strong>A XOR B</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>0</td>\n</tr>\n</table></p>\n  </ul>\n  <ul>\n    <h4><strong>AND Gate:</strong></h4>\n    <p>The AND gate takes in two parameters and return true if both are passed in as true. Truth Table:<table class=\"wikitable\" style=\"float:right;\">\n<td colspan=\"2\"><b>INPUT</b></td>\n<td><b>OUTPUT</b></td>\n</tr>\n<tr align=\"center\">\n<td><strong>A</strong></td>\n<td><strong>B</strong></td>\n<td><strong>A AND B</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</table></p>\n  </ul>\n  <ul>\n    <h4><strong>NAND Gate:</strong></h4>\n    <p>The NAND gate takes in two parameters and returns true if both are not passed in as true. Truth Table:<table class=\"wikitable\" style=\"float:right;\">\n<td colspan=\"2\"><b>INPUT</b></td>\n<td><b>OUTPUT</b></td>\n</tr>\n<tr align=\"center\">\n<td><strong>A</strong></td>\n<td><strong>B</strong></td>\n<td><strong>A AND B</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>0</td>\n</tr>\n</table></p>\n  </ul>\n  <ul>\n    <h4><strong>FULLADDER Gate:</strong></h4>\n    <p>The FULLADDER is a combination of XOR, OR and AND gates, This logic gate takes in three parameters A and B but also C also called the Carry and returns two outputs C out and S, C out is the Carry out and S is the Sum. Truth Table:<table class=\"wikitable\" style=\"float:right;\">\n<tr text-align:center;\">\n<td colspan=\"3\"><b>INPUT</b></td>\n<td colspan=\"2\"><b>OUTPUT</b></td>\n</tr>\n<tr text-align:center;\">\n<td><strong>A</strong></td>\n<td><strong>B</strong></td>\n<td><strong>C<small>in</small></strong></td>\n<td><strong>C<small>out</small></strong></td>\n<td><strong>S</strong></td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>0</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>0</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n</tr>\n<tr text-align:center;\">\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</table></p>\n  </ul>\n</list>\n</p>\n\n<h2>Example:</h2>\n<p>\n```calculate([true],[true, false])```\nWhich stands for ```1 + 2``` so the result would be 3 or for this kata ```[true, true]``` which represents ```11``` in binary.\n</p>\n\n<strong>Reference:</strong>\n<a href=\"https://en.wikipedia.org/wiki/Logic_gate\">Logic Gates!</a>",
+    "totalAttempts": 171,
+    "totalCompleted": 35,
+    "totalStars": 3,
+    "voteScore": 33,
+    "tags": [
+      "Puzzles",
+      "Logic",
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

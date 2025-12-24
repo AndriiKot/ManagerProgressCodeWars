@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/608f2eb7ae07890030c4bc63",
+  "data": {
+    "id": "608f2eb7ae07890030c4bc63",
+    "name": "Calculate Average of 5 Rubik's Cube Solves",
+    "slug": "calculate-average-of-5-rubiks-cube-solves",
+    "category": "reference",
+    "publishedAt": "2021-05-03T03:27:00.319Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/608f2eb7ae07890030c4bc63",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-02T22:59:03.690Z",
+    "createdBy": {
+      "username": "mjaydenkim",
+      "url": "https://www.codewars.com/users/mjaydenkim"
+    },
+    "description": "You are a new cuber (Rubik's Cube solver), and want to find out how cubing competitions measure results. After a little bit of Googling, you come upon [this page](https://www.worldcubeassociation.org/regulations/) of World Cube Association regulations, and find that, at cubing competitions, results are often calculated as averages of five solves. You also find some interesting rules that apply to averages at competitions, and you want to calculate averages at home with these rules to prepare and to acclimate yourself to the rules. However, you find it quite tedious to do so, so you decide to create a script to do it for you. Below are the regulations that you take into account when writing your script.\n\n> 9f1) All timed results under (or equal to) 10 minutes... are measured and truncated to the nearest hundredth of a second. All timed averages and means under <b>(or equal to)</b> 10 minutes are measured and rounded to the nearest hundredth of a second.\n\n> 9f2) All timed results, averages, and means over 10 minutes... are measured and rounded to the nearest second (e.g. x.49 becomes x, x.50 becomes x+1).\n\n> 9f4) The result of an attempt is recorded as DNF (Did Not Finish) if the attempt is disqualified or unsolved/unfinished.\n\n> 9f8) For \"Average of 5\" rounds, competitors are allotted 5 attempts. Of these 5 attempts, the best and worst attempts are removed, and the arithmetic mean of the remaining 3 attempts determines the competitor's ranking in the round.\n\n> 9f9) For \"Average of 5\" rounds, one DNF... is permitted to count as the competitor's worst result of the round. If a competitor has more than one DNF... result in the round, their average result for the round is DNF.\n\nThe completed function should take a list consisting of five floating-point numbers (in seconds) or strings labeled 'DNF' and return a singular average in the form of a floating point number, integer (also in seconds), or the string 'DNF', taking all of the above regulations into account. There are 500 random test cases, and numbers can go up to 4 decimal points and range from 5 to 1000. Good luck, and have fun!\n\nNote: For Python, I have preloaded a function called `real_round()` that rounds numbers to integers without banker's rounding (rounding x.50 to the nearest even integer instead of rounding it upwards, which the normal `round()` function does). It takes one input and outputs the input rounded to the nearest integer. This is to maintain accuracy in the calculation of averages and to comply with regulations. Please use this function in place of the `round()` function if you find yourself rounding floating point numbers to integers in this kata.\n\nExample Tests:\n```\n[9.72, 11.80, 9.73, 9.78, 8.48] => 9.74\n[9.725, 11.804, 9.733, 9.782, 8.481] => 9.74\n['DNF', 8.82, 9.59, 8.98, 'DNF'] => 'DNF'\n[606.84, 632.23, 567.10, 493.79, 'DNF'] => 602\n```\n\nP.S.: This is one of my first katas and my first one in quite a bit, so please feel free to open up discussions or let me know if I've missed something or should modify anything. Thank you all so much, and I hope you enjoy this kata!",
+    "totalAttempts": 171,
+    "totalCompleted": 14,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

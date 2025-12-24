@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/51fc3beb41ecc97ee20000c3",
+  "data": {
+    "id": "51fc3beb41ecc97ee20000c3",
+    "name": "Lazy Repeater",
+    "slug": "lazy-repeater",
+    "category": "algorithms",
+    "publishedAt": "2013-08-03T03:43:44.526Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript",
+      "csharp",
+      "python",
+      "rust",
+      "scala",
+      "typescript",
+      "cpp",
+      "lua",
+      "java",
+      "haskell",
+      "ocaml"
+    ],
+    "url": "https://www.codewars.com/kata/51fc3beb41ecc97ee20000c3",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-08-02T23:08:27.316Z",
+    "createdBy": {
+      "username": "nklein",
+      "url": "https://www.codewars.com/users/nklein"
+    },
+    "description": "The `makeLooper()` function (or `make_looper` in your language) takes a string (of non-zero length) as an argument.  It returns a function.  The function it returns will return successive characters of the string on successive invocations.  It will start back at the beginning of the string once it reaches the end.\n\nFor example:\n```javascript\nconst abc = makeLooper('abc');\nabc(); // should return 'a' on this first call\nabc(); // should return 'b' on this second call\nabc(); // should return 'c' on this third call\nabc(); // should return 'a' again on this fourth call\n```\n\n```coffeescript\nabc = makeLooper 'abc'\nabc() # should return 'a' on this first call\nabc() # should return 'b' on this second call\nabc() # should return 'c' on this third call\nabc() # should return 'a' again on this fourth call\n```\n\n```csharp\nFunc<char> abc = Kata.MakeLooper(\"abc\");\nabc(); // should return 'a' on this first call\nabc(); // should return 'b' on this second call\nabc(); // should return 'c' on this third call\nabc(); // should return 'a' again on this fourth call\n```\n\n```python\nabc = make_looper('abc')\nabc() # should return 'a' on this first call\nabc() # should return 'b' on this second call\nabc() # should return 'c' on this third call\nabc() # should return 'a' again on this fourth call\n```\n\n```rust\nlet mut abc = make_looper(\"abc\");\nabc(); // should return 'a' on this first call\nabc(); // should return 'b' on this second call\nabc(); // should return 'c' on this third call\nabc(); // should return 'a' again on this fourth call\n```\n\n```cpp\nauto abc = makeLooper(\"abc\");\nabc(); // should return 'a' on this first call\nabc(); // should return 'b' on this second call\nabc(); // should return 'c' on this third call\nabc(); // should return 'a' again on this fourth call\n```\n\n```lua\nlocal abc = make_looper \"abc\"\nabc() -- should return \"a\" on this first call\nabc() -- should return \"b\" on this second call\nabc() -- should return \"c\" on this third call\nabc() -- should return \"a\" again on this fourth call\n```\n\n```haskell\n>>> abc <- makeLooper \"abc\"\n>>> abc\n'a'\n>>> abc\n'b'\n>>> abc\n'c'\n>>> abc\n'a'\n```\n\n```java\nSupplier<Character> abc = Solution.makeLooper(\"abc\");\nabc.get(); // 'a'\nabc.get(); // 'b'\nabc.get(); // 'c'\nabc.get(); // 'a' (loops back to the first character after reaching the end)\n```\n\n```ocaml\nlet abc = make_looper \"abc\"\nabc () (* 'a' *)\nabc () (* 'b' *)\nabc () (* 'c' *)\nabc () (* 'a' (loops back to the first character after reaching the end) *)\n```\n\nDifferent loopers should not affect each other, so be wary of unmanaged global state.",
+    "totalAttempts": 28218,
+    "totalCompleted": 9159,
+    "totalStars": 215,
+    "voteScore": 585,
+    "tags": [
+      "Iterators",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

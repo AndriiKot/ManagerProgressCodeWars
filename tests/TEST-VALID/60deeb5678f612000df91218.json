@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60deeb5678f612000df91218",
+  "data": {
+    "id": "60deeb5678f612000df91218",
+    "name": "Decode a cipher",
+    "slug": "decode-a-cipher",
+    "category": "games",
+    "publishedAt": "2021-07-02T10:34:36.734Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60deeb5678f612000df91218",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-07-02T10:32:54.134Z",
+    "createdBy": {
+      "username": "Bartek Karwacki",
+      "url": "https://www.codewars.com/users/Bartek%20Karwacki"
+    },
+    "description": "<h1>Decode the cipher</h1>\n\nWhere\n```python\nencode = lambda a,b,c:(d:=0)or[(d:=(string.ascii_letters.index(e)+b+c)%(b*c)+d) for e in a]\n```\n\nCipher includes only ascii letters and\n```python\na = cipher\n3 <= len(a) <= 128\n8 <= b <= 256\n8 <= c <= 256\n```\n\nExample\n\n```python\ndecode([243, 445, 661, 878, 1104, 1302, 1518, 1720], 99, 99) \n-> TestCase\n```",
+    "totalAttempts": 51,
+    "totalCompleted": 17,
+    "totalStars": 2,
+    "voteScore": 16,
+    "tags": [
+      "Puzzles",
+      "Ciphers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

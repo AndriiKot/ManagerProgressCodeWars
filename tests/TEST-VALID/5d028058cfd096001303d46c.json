@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d028058cfd096001303d46c",
+  "data": {
+    "id": "5d028058cfd096001303d46c",
+    "name": "Shelve your trophies",
+    "slug": "shelve-your-trophies",
+    "category": "games",
+    "publishedAt": "2019-06-13T18:36:38.593Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d028058cfd096001303d46c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-06-13T16:56:56.969Z",
+    "createdBy": {
+      "username": "themanofcat",
+      "url": "https://www.codewars.com/users/themanofcat"
+    },
+    "description": "Being a very successful athlete, you have a bunch of trophies to put in your case (well done!); however, you're very particular about the organization of your trophies, so you give yourself a set of rules before you begin — but now you wonder, given a set of rules for your trophies, how many different ways can you shelve these trophies? \n\nThere are three types of rules you put for yourself: \n1. Two trophies cannot be on the same shelf\n2. Two trophies must be a distance n apart\n3. A trophy cannot be on a certain shelf\n\n\nYour method will be given 3 inputs:\n1. shelves: an integer number of shelves\n2. n_trophies: an integer number of trophies\n3. rules: a list of rules\n\nWhere the rules are strings which will be formatted as such:\n\n1. \"t1.x.t2\" means t1 cannot be on the same shelf as t2\n2. \"t1.n.t2\" where n is any integer means t1 must be n shelves away from t2 (n will always be less than the number of shelves)\n3. \"t.#.s\" means t cannot be on shelf s\n  \nFor example, a method call might look like\n```python\nshelves = 3\nn_trophies = 6\nrules = [\"3.x.5\", \"0.1.5\", \"4.#.2\"]\n\nn_shelves = shelve_trophies(shelves, n_trophies, rules) # should return 144\n```\nlimits:\n```\n2 <= shelves <= 5\n4 <= n_trophies <= 10 \nlen(rules) <= 7\n```\nOne final note: the shelvings are unordered — i.e. it doesn't matter how all the trophies are arranged on each shelf, it only matters what shelves they're on. Good luck!",
+    "totalAttempts": 226,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 2,
+    "tags": [
+      "Mathematics",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

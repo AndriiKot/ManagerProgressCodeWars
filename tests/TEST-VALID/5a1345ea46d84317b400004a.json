@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a1345ea46d84317b400004a",
+  "data": {
+    "id": "5a1345ea46d84317b400004a",
+    "name": "Functional programming in JS/TS -  Part 6: flatten & flatmap",
+    "slug": "functional-programming-in-js-slash-ts-part-6-flatten-and-flatmap",
+    "category": "reference",
+    "publishedAt": "2017-12-05T09:42:00.493Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5a1345ea46d84317b400004a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-20T21:15:22.681Z",
+    "createdBy": {
+      "username": "jchapuis",
+      "url": "https://www.codewars.com/users/jchapuis"
+    },
+    "description": "# Flatten\nSometimes, in addition to flat arrays, we need to work with arrays of arrays, for instance trees. In order to apply `filter()` and `map()` operations on such data structures, we first need to flatten them into a continuous list. \n\nIn this exercise we'll define a `flatten()` function that we can combine with `map()` and `filter()`, for instance to query trees. The `flatten()` function iterates over each sub-array in the array and collects the results in a new, flat array. Notice that the `flatten()` function expects **each item in the array to be itself an array**.\n\nUse this definition to implement the `getVideoIds()` function, which extracts video ids from a grouped list of movies into a flat array.\n\n# Flatmap\nIt turns out mapping and flattening are two operations that are very often used together. Implement a `flatMap()` function which combines both operations into one call. You can now choose to use this function instead of `map()` followed by `flatten()` for your `getVideoIds()` implementation, and see how it becomes even more compact.\n\n# Putting these operators into practice\nYou've managed to flatten a tree that's two levels deep, let's try for three! Instead of a single boxart url on each video, we have a collection of boxart objects, each with a different size and url. Create a query that selects `{id, title, boxart}` for every video in the list. This time though, the boxart property in the result will be the url of the boxart object with dimensions of 150x200px. Let's see if you can solve this problem with `map()`, `flatMap()`/`flatten()`, and `filter()` (and only those).\n\n***Important note***: *for the sake of this exercice, please refrain from using indexers. In other words, this is illegal:*\n\n`var itemInArray = videoCollection[0];`\n\n## Note: Attribution\nThis kata is part of a series on functional programming in JS/TS. This series is an adaptation of the *Functional Programming in Javascript* online exercises: http://reactivex.io/learnrx/ (Apache 2 license).",
+    "totalAttempts": 89,
+    "totalCompleted": 5,
+    "totalStars": 2,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Functional Programming",
+      "Declarative Programming",
+      "Programming Paradigms",
+      "Higher-order Functions",
+      "Functions",
+      "Control Flow",
+      "Basic Language Features"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

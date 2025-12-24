@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f99cd560851c0574fc0b70",
+  "data": {
+    "id": "64f99cd560851c0574fc0b70",
+    "name": "Ponzi games",
+    "slug": "ponzi-games",
+    "category": "reference",
+    "publishedAt": "2023-09-11T13:19:45.305Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64f99cd560851c0574fc0b70",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-07T09:50:13.658Z",
+    "createdBy": {
+      "username": "ffdevv",
+      "url": "https://www.codewars.com/users/ffdevv"
+    },
+    "description": "# Ponzi Game                                     \n\nIn this kata you'll have to implement a class that simulates different type of Ponzi schemes! But let's start from the basics first: what's a Ponzi scheme?\n\n## Definition\n> No Ponzi schemer tells anyone exactly how it works. \n> The purpose of a Ponzi scheme is to trick people, to take the money and run.\n>\n> _____ Mitchell Zuckoff\n\nOften explained as \"*to rob Paul to pay Peter*\" a Ponzi scheme is fundamentally a type of investment where, allured with good returns, investors are unaware that the main source of their income will be other investors' investment. There are no time limit, some [Ponzi schemes](https://en.wikipedia.org/wiki/Madoff_investment_scandal) can last decades. The one thing that will make the scheme to collapse is if the money outflow (withdrawals from investors) outpace the inflow so that there are no more investors money to pay for it.\n\nBefore digging into details here you can familiarize with some concepts you'll need to use\n\n### Glossary\n- **alpha**: the monthly performance that the Ponzi company will score investing its assets\n- **asset**: (the value representing) a financial product directly handled by the Ponzi company\n- **default**: the state of a Ponzi that has no more assets to pay its creditors at the moment of the withdrawal\n- **inflow**: the money being invested in the Ponzi\n- **liability**: (the value representing) a financial product that the Ponzi company owes to third parties (mainly the investors)\n- **outflow**: the money being withdrawn from the Ponzi\n- **roi**: the monthly earning percentage that the Ponzi company promise to its investors, compounded on a monthly basis\n\n## Implementation details\n> It's a proprietary strategy. I can't go into it in great detail.\n>\n> _____  Bernie Madoff\n\nYou need to implement the class `Ponzi` which will be instantiated to simulate the life cycle of a Ponzi scheme.\nYou can add any method or attribute that you need, but those listed and described in this section are mandatory and will be tested for.\n\n### Properties\nAll properties **should not be settable** directly into the instance.\n- `alpha`: the percentage of monthly alpha\n- `roi`: the percentage of monthly roi\n- `age`: the number of months the Ponzi has been running\n- `assets`: the amount of assets held at the time represented by the age (present time, if not defaulted already)\n- `liabilities`: the amount of liabilities at the time represented by the age (present time, if not defaulted already)\n- `tot_alpha`: the sum of all the computed alpha that have been added by the Ponzi capital management\n- `tot_interests`: the sum of all the computed interests that have been matured\n- `tot_inflow`: the sum of all the inflow since month 0\n- `tot_outflow`: the sum of all the outflow since month 0\n- `status`: a list or tuple with 2 items from the same instance `(assets, liabilities)`\n- `uncovered`: the amount of `liabilities` not covered by `assets`\n\n### Methods\n- At initialization time the `Ponzi` class will be provided with 2 positional arguments being `alpha` and `roi`.\n  - `alpha` and `roi` will be constant for the instance, i.e. won't change during the lifecycle of the scheme. \n  - if the scheme is not inherently a Ponzi (will earn at least or more than it needs to pay investors) the initialization should raise a proper error\n- `run_a_month` will be the method used to advance the lifecycle simulation of the ponzi scheme by 1 month. It must take 2 positional parameters being `inflow` and `outflow`\n  - the inflow is processed at the start of the month\n  - the outflow is processed at the end of the month\n  - the investors earn roi from the first month (as soon as they deposit into the scheme)\n  - the roi is automatically reinvested in the same scheme (compounded)\n  - the alpha is earned during the month, so that the inflow for that month will count\n  - if the scheme has not enough money to pay for the outflow it will try its best by:\n    - paying every asset it has until they're 0\n    - set its `default` state properly\n    - raise a `PonziImploded` error with the instance as arg\n  - if investors are trying to withdraw more than what they're titled for it should raise an `ExceedingLiabilities` error\n\n### On Rounding Convention\nExcept for `alpha` and `roi` provided at the initialization phase everything else should be `integers`. Since the actual computation for the monthly amount of alpha and roi would introduce floats, to keep consistency across solutions (and to not upset the test suite) you're provided with two methods from the `preloaded` package. `monthly_interests` and `monthly_alpha`: both take the same kind of parameters `(amount: int, percentage: float) -> int`. To provide the correct amount for the month is up to you, but using those functions will enforce that everything stays... integer.\n\n\n## Examples explained\n\n### Textbook Madoff style\nTextbook Ponzi won't touch the money coming from the investors, and will use the entire investement to pay for returns. This kind of Ponzi will be strongly favourable to early investors, which are technically able to withdraw their capital + the favourable returns before the scheme implodes.\n```python\nalpha = 0.0   # no operations on the investors money\nroi   = 0.008 # 0.8% per month as a return aka an advertised ~10% per year\np     = Ponzi(alpha, roi)\n\n# month 1\np.run_a_month(10_000, 0)\n# 10k of inflow and no outflow\nassert p.assets        == 10_000\nassert p.liabilities   == 10_080\nassert p.tot_interests == 80\nassert p.uncovered     == 80\nassert p.default       == False\n\n# month 2\np.run_a_month(0, 10_000)\n# 10k of outflow and no inflow\nassert p.assets        == 0\nassert p.liabilities   == 161\nassert p.tot_interests == 161\nassert p.uncovered     == 161\nassert p.default       == False\n\ntry:\n    # trying to withdraw more than it is due\n    p.run_a_month(0, 163)\nexcept Exception as e:\n    assert isinstance(e, ExceedingLiabilities)\n    \ntry:\n    # 162 = 161 + monthly_interests(161, roi)\n    p.run_a_month(0, 162)\nexcept Exception as e:\n    assert isinstance(e, PonziImploded)\n\nassert p.default   == True\nassert p.uncovered == 162\n```\n\n### Slow Rug style\nTypically the slow rug is used from a bad actor to steal investors money using them to buy some kind of bad thing that they own. The Ponzi company could buy shares from Dummy company with investors money as part of their investment strategy. If the team behind the Ponzi company is the same of the one of Dummy company they will basically slowly cash out from the Ponzi accounting for a negative alpha due to \"market turbulences\", \"volatility\", and other flavours of blablaish.\n```python\nalpha = -0.01   # every month the ponzi will lose 1% of its asset due to market turbulences\nroi   = 0.02    # 2% per month as a return aka an advertised ~27% per year\np     = Ponzi(alpha, roi)\n\n# month 1\np.run_a_month(10_000, 0)\n# 10k of inflow and no outflow\nassert p.assets        == 9_900  # 100 lost due to extreme volatility\nassert p.liabilities   == 10_200\nassert p.tot_interests == 200\nassert p.tot_alpha     == -100\nassert p.uncovered     == 300\nassert p.default       == False\n\n# month 2\np.run_a_month(0, 9_801) # account for 99 lost due to portfolio rebalancing\n# 10k of outflow and no inflow\nassert p.assets        == 0\nassert p.liabilities   == 603\nassert p.tot_interests == 404\nassert p.tot_alpha     == -199\nassert p.uncovered     == 603\nassert p.default       == False\n\ntry:\n    # trying to withdraw more than it is due\n    p.run_a_month(0, 616)\nexcept Exception as e:\n    assert isinstance(e, ExceedingLiabilities)\n    \ntry:\n    # 615 = 603 + monthly_interests(603, roi)\n    p.run_a_month(0, 615)\nexcept Exception as e:\n    assert isinstance(e, PonziImploded)\n\nassert p.default   == True\nassert p.uncovered == 615\n```\n\n### Risk Unloading style\nLet's say you've found a really risky investment (may even be another Ponzi scheme, but let's keep things simple). Typically more risk is equal more (expected) returns. You know that such a risk means that one day you could wake up with your investment gone and you're not so ok with that, even if you still feel attracted by those juicy returns. Luckily for you there is a solution: the Risk Unloading style of ponzi. You take big risks and trim results, de facto unloading the risks of the main investment on the ponzi investors.\n```python\nreal_alpha    = 0.02\nponzist_cut   = 0.01\nalpha = real_alpha - ponzist_cut # ie 0.01\nroi   = 0.03    # 3% per month as a return aka an advertised ~42% per year\np     = Ponzi(alpha, roi)\n\n# month 1\np.run_a_month(10_000, 0)\n# 10k of inflow and no outflow\nassert p.assets        == 10_100  # 10k invested in risky yield 200 per month but 100 is the ponzist cut\nassert p.liabilities   == 10_300\nassert p.tot_interests == 300\nassert p.tot_alpha     == 100\nassert p.uncovered     == 200\nassert p.default       == False\n\n# month 2\np.run_a_month(0, 10_201)\n# 10k of outflow and no inflow\nassert p.assets        == 0\nassert p.liabilities   == 408\nassert p.tot_interests == 609\nassert p.tot_alpha     == 201\nassert p.uncovered     == 408\nassert p.default       == False\n\ntry:\n    # trying to withdraw more than it is due\n    p.run_a_month(0, 421)\nexcept Exception as e:\n    assert isinstance(e, ExceedingLiabilities)\n    \ntry:\n    # 420 = 408 + monthly_interests(408, roi)\n    p.run_a_month(0, 420)\nexcept Exception as e:\n    assert isinstance(e, PonziImploded)\n\nassert p.default   == True\nassert p.uncovered == 420\n```\n",
+    "totalAttempts": 127,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

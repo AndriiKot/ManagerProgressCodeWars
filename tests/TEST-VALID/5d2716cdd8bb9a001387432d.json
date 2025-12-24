@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d2716cdd8bb9a001387432d",
+  "data": {
+    "id": "5d2716cdd8bb9a001387432d",
+    "name": "Oven Optimization 2",
+    "slug": "oven-optimization-2",
+    "category": "algorithms",
+    "publishedAt": "2019-07-11T11:14:03.066Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5d2716cdd8bb9a001387432d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-11T11:00:29.953Z",
+    "createdBy": {
+      "username": "RagnaRockPT",
+      "url": "https://www.codewars.com/users/RagnaRockPT"
+    },
+    "description": "You are a baker that works in multiple stores, each store has a diferent number of oven types, some have ovens with 10 trays, others with just 4 trays, others with ovens with 4 trays and 10 trays (there are ovens with 1 tray up to 30).\n\nThe problem is that your boss gives you the orders in trays, and its your job to find the best way to bake those trays leaving the minimum amount of trays empty.\n\nIf there are multiple ways to achieve a solution you should pick the one that uses the least number of oven batches.\n\nFor instance in a store with ovens of 10 trays and 4 trays if the boss orders 20 trays you could do it using 5 ovens of 4 trays or 2 ovens of 10, the boss expects you to use the 2 ovens of 10 since that will be quicker\n\nIn the function you have to create you pass in the number of trays ordered by your boss and and array with the diferent oven capacities in your current store.\n\nIn the example above, to know how to split 20 trays into 10 runners and 4 runners you should do OvenOptimizer.GetOvens(20, new [] { 10, 4});\n\nthe expected result is an array of integers [ 10, 10]\n\nThis is the same puzzle shown here https://www.codewars.com/kata/5d26004dc1e94c0029748e63 but with time constraints, so that generationg all possibilities is not possible.",
+    "totalAttempts": 38,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

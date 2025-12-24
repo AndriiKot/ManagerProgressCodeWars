@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cd5b3438b47bb0015923c09",
+  "data": {
+    "id": "5cd5b3438b47bb0015923c09",
+    "name": "Color by id",
+    "slug": "color-by-id",
+    "category": "algorithms",
+    "publishedAt": "2019-05-10T17:41:52.013Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5cd5b3438b47bb0015923c09",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-10T17:22:11.725Z",
+    "createdBy": {
+      "username": "reclue",
+      "url": "https://www.codewars.com/users/reclue"
+    },
+    "description": "## Description\n\nExists the class Color that stores the color value in RGBA format. Each parameter (red, green, blue, and alpha) determines the intensity of a color from 0 to 255.\n\n## Task\n\nYou need to write the function that takes an id and returns the class Color, whose values are generated in accordance with id.\n\n### Example:\n```c++\nuint32_t id = 2139062143;\nColor res = getColorByID(id);\nres == Color { 127, 127, 127, 127 }; // true\n```\n\n----\n\n### Class Color Example:\n```c++\nColor color1 { rgba };\nColor color2 { r, g, b, a };\n\ncolor1.getR(); \ncolor1.getG();\ncolor1.getB();\ncolor1.getA();\n\ncolor1.setR(r); \ncolor1.setG(g);\ncolor1.setB(b);\ncolor1.setA(a);\ncolor1.setRGBA(rgba);\ncolor1.setRGBA(r, g, b, a);\n\nbool res = color1 == color2;\n```\n\n```c++\nclass Color final {\nprivate:\n\tusing UCHAR = unsigned char;\n\nprivate:\n\tUCHAR r, g, b, a;\n\npublic:\n\tColor() = delete;\n\tColor(const Color& color);\n\tColor(const UCHAR& rgba);\n\tColor(const UCHAR& _r, const UCHAR& _g,\n\t\t  const UCHAR& _b, const UCHAR& _a);\n\t~Color() = default;\n\n\tbool operator==(const Color& rhs);\n\n\tUCHAR getR();\n\tUCHAR getG();\n\tUCHAR getB();\n\tUCHAR getA();\n\n\tvoid setR(const UCHAR& _r);\n\tvoid setG(const UCHAR& _g);\n\tvoid setB(const UCHAR& _b);\n\tvoid setA(const UCHAR& _a);\n\n\tvoid setRGBA(const UCHAR& rgba);\n\tvoid setRGBA(const UCHAR& _r, const UCHAR& _g,\n\t\t\t\t const UCHAR& _b, const UCHAR& _a);\n};\n```\n",
+    "totalAttempts": 15,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": 5,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

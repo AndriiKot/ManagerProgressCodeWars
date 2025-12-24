@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/560a7310869363d853000061",
+  "data": {
+    "id": "560a7310869363d853000061",
+    "name": "Your Mentors Film Library (Part 3)",
+    "slug": "your-mentors-film-library-part-3",
+    "category": "reference",
+    "publishedAt": "2015-09-29T11:16:32.842Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/560a7310869363d853000061",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-29T11:16:40.693Z",
+    "createdBy": {
+      "username": "rails-kung-foo",
+      "url": "https://www.codewars.com/users/rails-kung-foo"
+    },
+    "description": "The last task, after this your mentor shouldbe very happy.\n\n- The preloaded variable is @film_library.\n Here is a extract from the structure\n \n```ruby\n@film_library = {\n  spaceballs: {\n    tags: ['hilarious', 'parody', 'cult', 'classic', 'science fiction']\n  },\n  starship_troopers: {\n    tags: ['satire', 'science fiction', 'cult' ]\n  },\n\n```\n- Create 1 instance methods:\n  - ```search_movies_by_tags(str)``` Search movies by tag. Example: 'ugly' or 'ugly, crime'\n- Each method should be not longer than five lines of code. If you have more than five, think about your approach. You can put some stuff beneath the ```protected``` line (... methods to get all tags or movies or some presenter ).\n\n\nThe ```search_movies_by_tags(str)``` method has actually two functions:\n\n1. It takes one or more tags (seperated by coma) to find movies based on tags. A movie is selected if the tag(s) are present in the tags property of the movie. Example: If you search for sciFfi and cult, than starshiptroopers and spaceballs should be returned.\n\n2. If one tag from search query is not present in the tag list, than it returns suggested tag(s) and not movies. Example: If the search is ult, then the suggested tag is cult\n\nUse the test to get a clue.",
+    "totalAttempts": 132,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 3
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

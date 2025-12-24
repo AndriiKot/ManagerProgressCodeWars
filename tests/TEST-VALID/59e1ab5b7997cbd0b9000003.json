@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59e1ab5b7997cbd0b9000003",
+  "data": {
+    "id": "59e1ab5b7997cbd0b9000003",
+    "name": "THIS n' THAT",
+    "slug": "this-n-that",
+    "category": "reference",
+    "publishedAt": "2017-10-24T21:24:58.597Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59e1ab5b7997cbd0b9000003",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-10-14T06:14:51.323Z",
+    "createdBy": {
+      "username": "ScottRudiger",
+      "url": "https://www.codewars.com/users/ScottRudiger"
+    },
+    "description": "Note: This kata has nothing to do with JavaScript's keyword `this`.\n>```\nTHIS\n```\n`pronoun / ˈt͟his , t͟həs /`\n\n>A one-word response following another user's statement or question in an online forum or chat service, e.g., Slack; used to express intense agreement with said user's message--often preceded or replaced by a caret (`^`).\n>```\nFor example:\nThing1: I could really go for some pancakes right now.\nThing2: ^\n        THIS\n```\n>Other definitions: (https://www.urbandictionary.com/define.php?term=This)\n\n### --------------------------------\n## _**THIS**_\n\nWrite a function `THIS` that returns a string `n` levels of the following pattern, henceforth known as THIS:\n\n>THIS(1);\n```\nconsole.log(THIS(1)); // should appear as:\n^\nTHIS\n```\nTHIS(2);\n```\nconsole.log(THIS(2)); // should appear as:\n ^\n/ \\\nTHIS THIS\n```\nTHIS(10);\n```\nconsole.log(THIS(10)); // should appear as:\n         ^\n        / \\\n       /   \\\n      /     \\\n     /       \\\n    /         \\\n   /           \\\n  /             \\\n /               \\\n/                 \\\nTHIS THIS THIS THIS THIS THIS THIS THIS THIS THIS\n```\n\nBut to make it faster to express your enthusiasm for someone's message, calling `THIS` with no arguments should also return one level of THIS:\n```javascript\nTHIS() === THIS(1); // true```\n\nFurther, sometimes you may be so excited to express THIS that you may type something like `THIS('!@#$%^&*');`, in which case your function should also return one level of THIS.\n```javascript\nTHIS('!@#$%^&*'); === THIS(1); // true\n```\n\nIn fact, when `n` is anything other than a positive integer it should always return one level of THIS, *unless* JavaScript would otherwise throw an error:\n```javascript\nTHIS('') === THIS(1); // true\nTHIS(0) === THIS(1); // true\nTHIS(null) === THIS(1); // true\nTHIS(-1) === THIS(1); // true\n...\n// for most implementations this throws a RangeError as its result\n// would exceed the maximum string length (not tested for):\nTHIS(Number.MAX_SAFE_INTEGER); // RangeError\n...\n```\n### --------------------------------\n## _**Throw an Error**_\nHowever, your implementation should explicitly throw an `Error` when `n` is a positive number with any non-zero digits after the decimal separator; negative numbers are OK:\n```javascript\nTHIS(4.8); // Error | to avoid partial levels (e.g., THI)\nTHIS(-6.022) === THIS(1); // true\n```\n### --------------------------------\n## _**Flip THIS for THAT**_\n\n`THIS` also takes an optional second argument `THAT` that when passed any _**truthy**_ value, instead of pointing upwards like the THIS pattern, the return value should be flipped and point downwards, replacing `THIS` with `THAT` and `^` with `v`:\n\n>Note that `true` could also be replaced by any _**truthy**_ value; e.g., `1`.\n\n>THIS(1, true);\n```\nconsole.log(THIS(1, true)); // should appear as:\nTHAT\nv\n```\nTHIS(2, true);\n```\nconsole.log(THIS(2, true)); // should appear as:\nTHAT THAT\n\\ /\n v\n```\nTHIS(10, true);\n```\nconsole.log(THIS(10, true)); // should appear as:\nTHAT THAT THAT THAT THAT THAT THAT THAT THAT THAT\n\\                 /\n \\               /\n  \\             /\n   \\           /\n    \\         /\n     \\       /\n      \\     /\n       \\   /\n        \\ /\n         v\n```\n\n### --------------------------------\n## _**Looping Constraints**_\n\nFinally, as an additional constraint, your solution must contain no more than one `for * loop, while loop, forEach, map, reduce, reduceRight, find, findIndex, filter, some, or every`. Your code will be checked and an error will be thrown if it contains more than one of these.\n\n```\nMe: Have fun with the kata!\nYou: ^\n     THIS\nYou: LOLOL\n```",
+    "totalAttempts": 171,
+    "totalCompleted": 16,
+    "totalStars": 2,
+    "voteScore": 16,
+    "tags": [
+      "Strings",
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

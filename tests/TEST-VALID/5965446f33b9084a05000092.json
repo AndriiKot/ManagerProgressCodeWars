@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5965446f33b9084a05000092",
+  "data": {
+    "id": "5965446f33b9084a05000092",
+    "name": "Traffic Lights Series - Part 2",
+    "slug": "traffic-lights-series-part-2",
+    "category": "reference",
+    "publishedAt": "2017-07-11T21:35:09.220Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5965446f33b9084a05000092",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-11T21:34:39.526Z",
+    "createdBy": {
+      "username": "dibley1973",
+      "url": "https://www.codewars.com/users/dibley1973"
+    },
+    "description": "# Traffic Lights Series - Part 2\n\nIn this series we are going to model traffic lights. In part 1 we just modelled the interface and the logic encapsualted within the traffic light itself. In this part, _part 2_, we will build upon the code written for part 1 and look at starting to model the controller to control two traffic lights.\n\n## The Interface\nThe `ITrafficLightController` interface will have three methods.\n- `AddTrafficLight` will allow a traffic light to be added to the system\n- `Start` will start the system running the light sequence.\n- `Stop` will stop the system running the light sequence.\n\n## When should the lights be lit?\nThe lights should be lit as follows:\n\n- After adding _any_ traffic light to the system it should immediately be set to `Standby` and hence show a `Red` light only.\n- After adding two lights and starting the system (but not calling stop) the first light should change to `Red` and `Amber`. The second light should show `Red` only. \n- After adding two lights and starting the system and then stopping the system imediately both lights should immediately be set to `Standby` and hence show a `Red` light only.\n\n## The Tests\nMake the following tests pass...\n- GivenTrafficLightController_WhenOneLightIsAdded_ThenTheLightShouldShowRedLightOnly\n- GivenTrafficLightController_WhenANullLightIsAdded_ThenAnArgumentNullExceptionIsThrown\n- GivenTrafficLightController_WhenTwoLightsAreAdded_ThenBothLightsShouldShowRedLightOnly\n- GivenTrafficLightControllerWithTwoLightsAreAdded_WhenStarted_ThenFirstShouldShowRedAndAmber\n- GivenTrafficLightControllerWithTwoLightsAreAdded_WhenStarted_ThenSecondShouldShowRedOnly\n- GivenTrafficLightControllerWithTwoLightsAreAdded_WhenStartedAndThenStopped_BothShouldShowRedOnly\n \nand pass the tests from part 1...\n\n- GivenTrafficLight_ThenInterfaceIsImplemented\n- GivenTrafficLight_WhenInstatiated_ThenRedLightIsOn_AndOthersAreOff\n- GivenInstatiatedTrafficLight_WhenSetToAmberState_ThenAmberLightIsOn_AndOtherLightsAreOff\n- GivenInstatiatedTrafficLight_WhenSetToGreenState_ThenGreenLightIsOn_AndGreenIsOff\n- GivenInstatiatedTrafficLight_WhenSetToRedAmberState_ThenRedLightAndAmberLightIsOn_AndGreenIsOff\n- GivenInstatiatedTrafficLight_WhenSetToRedState_ThenRedLightLightIsOn_AndOthersAreOff\n\n## What's next?\nIn part 3 we will look at adding a further behaviour to the Traffic Light Controller.\n\nAll parts:\n- [Part 1](http://www.codewars.com/kata/59653de51f13e49374000145/)\n\n\n",
+    "totalAttempts": 45,
+    "totalCompleted": 26,
+    "totalStars": 2,
+    "voteScore": 10,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

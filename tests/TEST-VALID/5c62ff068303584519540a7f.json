@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c62ff068303584519540a7f",
+  "data": {
+    "id": "5c62ff068303584519540a7f",
+    "name": "Escape from the bear!",
+    "slug": "escape-from-the-bear",
+    "category": "reference",
+    "publishedAt": "2019-02-12T20:48:33.575Z",
+    "approvedAt": null,
+    "languages": [
+      "kotlin"
+    ],
+    "url": "https://www.codewars.com/kata/5c62ff068303584519540a7f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-12T17:14:46.711Z",
+    "createdBy": {
+      "username": "yujinred",
+      "url": "https://www.codewars.com/users/yujinred"
+    },
+    "description": "One day you made the terrible idea to going outside and hike a mountain. \nUnfortunately, you stumbled upon a giant bear and you need to escape FAST.\n\nYou are deep in the forest and you have no idea where is the exit. \nThankfully the trail is not cyclic and each path splits into only 2 directions (left and right). \nSome path might be blocked by rocks or fallen trees so you can only go in one direction. \nIf both path are blocked, then you're trapped in a dead end where the bear can catch you.\nHowever, sometimes \n\nThe mountain trail is modelled as following:\n```kotlin\nclass Trail(val type: String, var left: Trail?, var right: Trail?)\n```\nThe Trail can either be a \"crossroad\" or an \"exit\". \nA crossroad is basically a intersection that has 2 path left and right. (note that these path can be block and this is denoted by a null for left or right).\nAn exit is the goal to escape the bear.\nTHERE IS ONLY ONE EXIT.\n\nThankfully you bought your drone with you, however, you have to program it yourself. Please program the \n```kotlin\nfun findEscapeRoute(trail: Trail) : Unit\n```\nYour drone can do a scan of the area but it is up to you to find an escape route to the exit given a provided Trail.\nYour output will be directions in terms of \"l\" and \"r\" concatenated together to form a path to the exit.\nThere can only be one unique path for each trail.\n\nFor example, if I were to give you a trail like this:\n```\n└── crossroad\n    ├── crossroad\n    |   ├── NULL\n    |   └── crossroad\n    |       ├── exit\n    |       |   ├── NULL\n    |       |   └── NULL\n    |       └── NULL\n    └── crossroad\n        ├── NULL\n        └── NULL\n```\nthen your solution should be \n```\nlrl\n```\nsince you go left at the first crossroad, then right on the second crossroad, and left to reach the exit.",
+    "totalAttempts": 157,
+    "totalCompleted": 30,
+    "totalStars": 0,
+    "voteScore": 21,
+    "tags": [
+      "Fundamentals",
+      "Graph Theory"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ac63573d325ad8b26000101",
+  "data": {
+    "id": "5ac63573d325ad8b26000101",
+    "name": "Decode a message using the Polybius square",
+    "slug": "decode-a-message-using-the-polybius-square",
+    "category": "algorithms",
+    "publishedAt": "2018-04-08T19:41:08.133Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ac63573d325ad8b26000101",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-05T14:40:51.855Z",
+    "createdBy": {
+      "username": "sima-qian",
+      "url": "https://www.codewars.com/users/sima-qian"
+    },
+    "description": "The ancient Greek historian and scholar Polybius was the inventor of an early cryptographic technique: the Polybius square. Using the Polybius square, a message written using alphanumeric characters could be represented using a smaller set of symbols. In this case, the symbols are the numbers 1-6.\n\nThe typical form of the Polybius square that includes the letters A-Z and the numbers 0-9 is:\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **1** | A | B | C | D | E | F |\n| **2** | G | H | I | J | K | L |\n| **3** | M | N | O | P | Q | R |\n| **4** | S | T | U | V | W | X |\n| **5** | Y | Z | 0 | 1 | 2 | 3 |\n| **6** | 4 | 5 | 6 | 7 | 8 | 9 |\n\nUsing the Polybius square, the letter 'A' would be represented as '11', the letter 'B' as '12', and so on. Polybius designed this cipher to be used in fire signalling rather than to encrypt secret messages; indeed, once you know the technique it is trivial to decode any message.\n\nA progression has therefore been to shift the symbols in the table by a pre-arranged number, as is done in a Caesar's cipher. The Polybius square with a shift of 16 places would be:\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **1** | U | V | W | X | Y | Z |\n| **2** | 0 | 1 | 2 | 3 | 4 | 5 |\n| **3** | 6 | 7 | 8 | 9 | A | B |\n| **4** | C | D | E | F | G | H |\n| **5** | I | J | K | L | M | N |\n| **6** | O | P | Q | R | S | T |\n\nYour task is to build an algorithm that will, given a message encoded with a shifted Polybius square and the value of the shift, decode the message into plaintext.\n\nSome things to note:\n - the ciphertext will be provided in the format XX.XX.XX XX.XX, where 'XX' corresponds to a character, a period separates each character, and a space separates each word\n - if the ciphertext contains anything but numbers, periods and spaces, return ```null```\n - ignore any leading periods, and ignore consecutive periods between characters\n - if no ciphertext is passed in, return an empty string\n - if an illegal number (e.g 1, 17, 100, etc.) appears in the ciphertext, return ```null```\n - if the shift is not an integer between 0 and 35, return ```null```\n - the plaintext message should be returned in upper case and include any and all spaces in the ciphertext",
+    "totalAttempts": 258,
+    "totalCompleted": 16,
+    "totalStars": 3,
+    "voteScore": 24,
+    "tags": [
+      "Strings",
+      "Algorithms",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

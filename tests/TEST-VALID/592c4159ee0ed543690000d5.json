@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/592c4159ee0ed543690000d5",
+  "data": {
+    "id": "592c4159ee0ed543690000d5",
+    "name": "BASH commands: Wildcards III",
+    "slug": "bash-commands-wildcards-iii",
+    "category": "algorithms",
+    "publishedAt": "2017-05-30T19:25:21.585Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/592c4159ee0ed543690000d5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-05-29T15:42:18.023Z",
+    "createdBy": {
+      "username": "lilsweetcaligula",
+      "url": "https://www.codewars.com/users/lilsweetcaligula"
+    },
+    "description": "In BASH, when working with files, you can use the simple, yet very powerful feature, called the wildcards.\n\nThe most basic element of the BASH wildcards we will start with today, is the question mark `?` wildcard.\n\nIf you're familiar with regular expressions, it's very similar to the Regex's `.` behavior.\n\nIt works as follows. Assume you have a directory with the file names, as follows:\n```\n- img00.jpg\n- img01.jpg\n- img010.jpg\n- imgAAA.jpg\n- imgAAB.jpg\n```\n\nThen, `img0?.jpg`, will match the files `img00.jpg`, `img01.jpg`, `img010.jpg`. And `img???.jpg` will match `img010.jpg`, `imgAAA.jpg` and `imgAAB.jpg`.\n\nIn other words, `?` matches any character as long as there's any character in this given position. So `img00.jpg???????` will not match any files, neither will `img01??????`.\n\nThe task for this challenge is, given a string `pattern`, which may or may not have the `?` wildcard in it, and a NULL-pointer-terminated array (please, see below for details on NULL-pointer-terminated arrays) of files in the given directory as strings `filenames`, return a NULL-pointer-terminated dynamically-allocated array of the files that the string `pattern` matches.\n\nIf you have any questions regarding this problem's specification, please feel free to ask away in the Discussion section.\n\nP.S.\n\nA NULL-pointer-terminated dynamically-allocated array is an array, terminated by a NULL-pointer. For a better perspective, please consider this NULL-pointer-terminated array on stack:\n```\nconst char *names[] = {\n    \"Dennis\", \"Ken\", \"Gary\", \"Brian\", \"Linus\", \"Bill\", \n    NULL \n};\n```\n\nSame applies to the dynamically-allocated array.\n\nAn empty array, terminated with a NULL pointer would look like this:\n```\nconst char *empty[] = { NULL };\n```\n\nWe need this to simplify traversal and avoid namespace pollution (and, perhaps, extra confusion) with additional variable definitions and pointer passing to denote a given array's size.",
+    "totalAttempts": 96,
+    "totalCompleted": 24,
+    "totalStars": 2,
+    "voteScore": 42,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/564408d8cc886dc27b00006b",
+  "data": {
+    "id": "564408d8cc886dc27b00006b",
+    "name": "Aaaaaand theeeeeen",
+    "slug": "aaaaaand-theeeeeen",
+    "category": "algorithms",
+    "publishedAt": "2015-11-12T04:07:45.867Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/564408d8cc886dc27b00006b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-12T03:34:48.670Z",
+    "createdBy": {
+      "username": "joh_pot",
+      "url": "https://www.codewars.com/users/joh_pot"
+    },
+    "description": "Sometimes, we want to perform a whole range of actions on a piece of data.<br/>\nSay e.g we have an alphanumeric string, we want to extract all the digits from it, get all the prime numbers, double each of those numbers and then sum the result.<br/>\nThat entire workflow could look something like this (trivial example):\n```javascript\nfunction split(str){ return str.split('');}\nfunction isPrime(num) { //prime calc here -  return true|false };\nfunction filterPrime(...arr) { return arr.filter(isPrime);};\nfunction double(num) { return num * 2};\nfunction doubleArr(...arr) { return arr.map(double);};\nfunction sum(a,b){ return a + b;};\nfunction sumArray(...arr) { return arr.reduce(sum);}\n\nvar sum = sumArray(doubleArray(filterPrime(split('123abc4d56;;q78910'))));\n```\nAfter completing this kata, you will be able to rewrite that code to look like this:\n```javascript\nvar sum = split.then(filterPrime).then(doubleArray).then(sumArray)('123abc4d56;;q78910');\n```\n\nSee test cases for more examples.\n",
+    "totalAttempts": 275,
+    "totalCompleted": 22,
+    "totalStars": 10,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

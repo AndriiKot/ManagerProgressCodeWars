@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63224d9e4729940a990aad4d",
+  "data": {
+    "id": "63224d9e4729940a990aad4d",
+    "name": "Finding an Imaginary Perimeter for Impossible Triangles",
+    "slug": "finding-an-imaginary-perimeter-for-impossible-triangles",
+    "category": "reference",
+    "publishedAt": "2022-09-16T18:01:58.580Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63224d9e4729940a990aad4d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-14T21:54:38.776Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "\n_\"Those who can imagine anything, can create the impossible.\"_ Alan Turing \n\n<h2 style='color:#f88'>EXPLANATIONS</h2>\n\nWe have to find the triples of positive integers: ```a```, ```b``` and ```c``` that fulfil the following requirements:\n\n```a³= b ‧ c```    or    ```b³ = a ‧ c```\n\n```1 < a ≤ b ≤ c```\n\nLet´s call ```s``` the sum of these three integers:\n\n```s = a + b + c``` \n\nIt has been seen that for certain values of ```s``` there is a triple ```[a,b,c]``` that satisfy the condition given above. But there are some values of ```s```, that have more than one solution.\n\nLet's see some examples.\n\n<li><code style='color:#f88'>For s = 38, we have one solution:</code>\n\n```\ns = 38 ---> [2, 4, 32]\n```\n\n<li><code style='color:#f88'>For s = 255, two solutions:</code>\n\n```\ns = 255 ---> [3, 9, 243] and [15, 15, 225]\n```\n\n<li><code style='color:#f88'>For s = 12320, six solutions:</code>\n\n```\ns = 12320 ---> [110, 110, 12100], [154, 308, 11858], [240, 1280, 10800], [280, 2240, 9800], [308, 3388, 8624] and [330, 5940, 6050]\n```\n\n<li><code style='color:#f88'>For s = 779688 we have 12 different solutions</code>\n\n```\ns = 779688  ---> [312, 624, 778752], [882, 882, 777924], [1870, 8500, 769318], [2142, 12852, 764694], [2340, 16848, 760500], [2520, 21168, 756000], [3094, 40222, 736372], [3822, 80262, 695604], [4284, 119952, 655452], [4704, 172872, 602112], [5292, 345744, 428652] and [5304, 360672, 413712]\n```\n- There are some values of ```s``` that do not have a solution\n\n<h2 style='color:#f88'>THE TASK</h2>\n\nGiven an integer ```n```, we have to find the closest values of ```s``` to ```n``` and its corresponding triple or triples ```[a,  b,  c]```.\n\nSo, ```s``` may be higher or lower than ```n```.\n\nThe function should output a tuple with an structure similar to:\n\n```\n(s, [[a1,  b1,  c1], [a2,  b2,  c2],...,[ak,  bk,  ck]])\n```\n- The first element should be the sum of the integers \nof the triple, closest to the given value n.\n\n- The second element, a 2D array sorted by the first element of the triple. It should be for the values of a:\n```a1 < a2 < ....< ak```\n\n- Also, each triple should be sorted in increasing non strict way mode like: \n```ai ≤ bi ≤ ci```\n\n- A special case. Suppose that you found a value for ```s``` lower than ```n```, let´s name it ```s1```, ```s1 < n```.\nAnd you found another value of ```s```, higher than ```n```, let´s name ```s2```, ```s2 > n```. Both values are such that:\n```|s1 - n| = |s2 - n|``` You will select ```s2``` as a valid solution.\n\n\n- If the value of ```n``` coincides with a present value of s, the function should output a multidimensional array like: \n```[n, [triple1, triple2,..]]``` for cases with multiple solutions.\n\n- A multidimensional array like ```(n, [triple1])```, for cases with only one solution.\n\nThe above examples with additional ones are shown below to clarify the corresponding ouputs:\n```\nn (input)       result (output)\n10              (8, [[2, 2, 4]])\n40              (41,[[6, 8, 27]])\n255             (255, [[3, 9, 243], [15, 15, 225]])\n256             (255, [[3, 9, 243], [15, 15, 225]])\n257             (259, [[21, 49, 189]])\n258             (259, [[21, 49, 189]])\n259             (259, [[21, 49, 189]])\n12321           (12320, [[110, 110, 12100], [154, 308, 11858], [240, 1280, 10800], [280, 2240, 9800], [308, 3388, 8624], [330, 5940, 6050]])\n12322           (12323, [[64, 92, 12167]])\n779689          (779688, [[312, 624, 778752], [882, 882, 777924], [1870, 8500, 769318], [2142, 12852, 764694], [2340, 16848, 760500], [2520, 21168, 756000], [3094, 40222, 736372], [3822, 80262, 695604], [4284, 119952, 655452], [4704, 172872, 602112], [5292, 345744, 428652], [5304, 360672, 413712]])\n```\n\nHow do we relate the title of the kata with this task?\nYes, the integers of the triples cannot form triangles and the sum of their integers may be a \"perimeter\" only in our imagination.\n\n\n<h2 style='color:#f88'>THE TESTS</h2>\n\nIn order to solve this kata you will have to pass 500 tests and the range for ```n``` will be:\n\n- 10 ≤ n < 1 × 10<sup>6</sup>\n\nAs you can see, performance matters.\n\nHope that this contribution will help.\n\nFor all katas that are in Beta process we need your observations to improve it and correct eventual mistakes. I'm grateful to you all.\n\n\n\n",
+    "totalAttempts": 64,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": 20,
+    "tags": [
+      "Mathematics",
+      "Fundamentals",
+      "Data Structures",
+      "Performance",
+      "Memoization"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

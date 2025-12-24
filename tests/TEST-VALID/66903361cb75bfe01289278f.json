@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66903361cb75bfe01289278f",
+  "data": {
+    "id": "66903361cb75bfe01289278f",
+    "name": "Longest DNA Base Sequence with Complements",
+    "slug": "longest-dna-base-sequence-with-complements",
+    "category": "algorithms",
+    "publishedAt": "2024-07-11T22:07:42.078Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66903361cb75bfe01289278f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-11T19:32:49.746Z",
+    "createdBy": {
+      "username": "craciun-st",
+      "url": "https://www.codewars.com/users/craciun-st"
+    },
+    "description": "It is possible to bind together two single strands of DNA across a region of complementary nucleotide pairs (see the coral/pink shaded-region in the figure). The longer this sequence of matching nucleotide bases, the stronger the bond. (Mismatched base pairs, on the other hand, will tend to push the strands away from each other)\n\n![DNA Strands Figure](https://i.ibb.co/sghdpzX/dna-strands.webp)\n\n<small>\\* As a reminder, the (symmetric) complementarity relationship `~` for DNA is *guanine `~` citosine* **and** *thymine `~` adenosine*, or more succinctly:</small> \n```\nG ~ C and T ~ A\n```\n<br>\n\nYou are given two arrays of characters (or equivalently, two strings) `strand1` and `strand2` which encode the sequence of nucleotides in each of the DNA strands and are asked to find **the longest subsequence in `strand1`** which has a matching complement in `strand2`.\n\nExamples (`input => output`):\n```\n### As array of characters\nstrand1 = [G, A, T, A, C, A]; strand2 = [C, T, A, T, G, T] => [G, A, T, A, C, A]\n\nstrand1 = [A, T, G, C, A, A]; strand2 = [C, T, A] => [A, T]\n\nstrand1 = [A, C, A, A, G, C, T, T, A, G]; strand2 = [G, C, T, T, C, G, A, G, C, T] => [A, A, G, C, T]\n\n\n### As strings\nstrand1 = \"GATACA\"; strand2 = \"CTATGT\" => \"GATACA\"\n\nstrand1 = \"ATGCAA\"; strand2 = \"CTA\" => \"AT\"\n\nstrand1 = \"ACAAGCTTAG\"; strand2 = \"GCTTCGAGCT\" => \"AAGCT\"\n```\n(the longest equivalent subsequence in `strand2` can be obtained by taking the complement of the result. See for example [Complementary DNA kata](https://www.codewars.com/kata/554e4a2f232cdd87d9000038) )\n\n<br>\nNotes:\n\n- The strands may have different length and it is possible that the matching region is not located in the same part of each strand - e.g. tail of `strand1` may match the front of `strand2`\n- The arrays will never include characters outside the set `'T', 'G', 'C', 'A'` (all uppercase)\n- The array lengths will not exceed 100 (even though real-life DNA has way more elements than this)\n- If there is no matching complementary sequence, return an empty array/empty string (this includes the cases when the whole strand sequence is empty, i.e. no DNA)\n- If there is more than 1 region with the same maximum length, return any of the possible solutions",
+    "totalAttempts": 142,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c7141ac847c7c4af9331e96",
+  "data": {
+    "id": "5c7141ac847c7c4af9331e96",
+    "name": "Half Prices",
+    "slug": "half-prices",
+    "category": "algorithms",
+    "publishedAt": "2019-02-23T16:16:05.666Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c7141ac847c7c4af9331e96",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-02-23T12:50:53.110Z",
+    "createdBy": {
+      "username": "ploosu2",
+      "url": "https://www.codewars.com/users/ploosu2"
+    },
+    "description": "<h2>Half Prices</h2>\n\nYou probably know about <a href=\"https://en.wikipedia.org/wiki/Shortest_path_problem\">finding a shortest/cheapest path </a> in a directed, weighted graph.\n\nWell, in this kata you are given tickets that let you travel an edge at half-price. Use those tickets the best you can and return the minimum cost of a path from start to finish.\n\n![example graph with minimum path with 1 ticket](https://i.stack.imgur.com/531zD.png)\n\nMore elaborately, your task is to write the function\n\n```javascript\nhalfPrices(n, edges, r)\n```\n\nwhere\n\n- n: the number of vertices in the graph (they are undestood to be the numbers 0, 1,..., n-1)\n\n- edges: an array of the edges of the graph. Edge is given as array of 3 numbers: start vertex, end vertex and cost. The costs will always be positive even integers.\n\n- r: the number of tickets you are allowed to use (note: you don't need to necessarily use them all, if that gives a cheaper price). You can only use one ticket for one edge (that is, no 1/4-prices etc. Note: as the prices are even, you don't need to worry about floating point numbers, everything will always stay an integer.)\n\nThe starting vertex is 0 and target vertex n-1. In the tests there is always quaranteed to exist some path between them, so the result will always be finite.\n\n---\n\nPS. If you like, you can use an implementation of a PrioritySet which you have as preloaded. You can use it like this:\n\n```javascript\nvar s = new PrioritySet();\ns.push('a', 4);\ns.push('b', 5);\ns.push('c', -Infinity);\ns.push('d', 1);\n\ns.pop(); // --> 'b'\ns.reprioritize('c', 10); //element to reprioritize must be in the set, otherwise throws an error\ns.pop(); // --> 'c'\ns.remove('a'); //--> true\ns.pop(); // --> 'd'\ns.pop(); // --> null\n\ns.isEmpty(); // --> true\n\n```\n\nYou can also find the <a href=\"https://github.com/ploosu2/PrioritySet\">code from github</a> ",
+    "totalAttempts": 108,
+    "totalCompleted": 10,
+    "totalStars": 4,
+    "voteScore": 5,
+    "tags": [
+      "Graph Theory",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

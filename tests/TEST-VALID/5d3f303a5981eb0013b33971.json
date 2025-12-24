@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d3f303a5981eb0013b33971",
+  "data": {
+    "id": "5d3f303a5981eb0013b33971",
+    "name": "String to sequence to  list of sums",
+    "slug": "string-to-sequence-to-list-of-sums",
+    "category": "games",
+    "publishedAt": "2019-07-29T17:47:26.410Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d3f303a5981eb0013b33971",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-29T17:43:22.511Z",
+    "createdBy": {
+      "username": "pnaib",
+      "url": "https://www.codewars.com/users/pnaib"
+    },
+    "description": "Given a string of 3 digit numbers separated by whitespace(s), your task is to return a list of sums for each of these numbers in the string. Each of these 3 digit numbers represent a sequence with first, second and third digits representing the start, the end (which is also included) and the step of a sequence.\n\nConditions:\n1. If first digit < second digit, then step will be added consectively to generate the sequence.\nInput: ```s = \"293\"```, Output: ```[15]```\nFirst digit = 2, second digit = 9, step = 3 and the sequence will be [2, 5, 8]\n\nInput: ```s = \"-941\"```, Output: ```[-35]```\nFirst digit = -9, second digit = 4, step = 1 and the sequence will be [-9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4]\n\n2. If first digit > second digit, then step will be subracted consectively to generate the sequence.\nOne should be careful to when the first digit > second digit, the step will \nInput: ```s = \"702\"```, Output: ```[16]```\nFirst digit = 7, second digit = 0, step = 2 and the sequence will be [7, 5, 3, 1]\n\n3. If the step size > abs(1 digit - 2 digit), then return just first digit\nInput: ```s = \"127\"```, Output: ```[1]```\nFirst digit = 1, second digit = 2, step = 7 and the sequence will be [1]\n\n4. If the third digit = 0, then you have to return [0]\nInput: ```s = \"-990\"```, Output: ```[0]```\nFirst digit = -9, second digit = 9, step = 0\n\nOther example:\nInput: ```s = \"-941 -393 310 001 -990 -991\"```\nOutput: ```[-35, 15, 0, 0, 0, 0]```\n\n",
+    "totalAttempts": 117,
+    "totalCompleted": 13,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "Puzzles",
+      "Strings",
+      "Data Types",
+      "Sequences",
+      "Arrays",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

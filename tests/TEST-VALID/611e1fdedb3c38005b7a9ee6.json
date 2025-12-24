@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/611e1fdedb3c38005b7a9ee6",
+  "data": {
+    "id": "611e1fdedb3c38005b7a9ee6",
+    "name": "Simple Syllable Separator (SSS)",
+    "slug": "simple-syllable-separator-sss",
+    "category": "reference",
+    "publishedAt": "2021-08-19T09:22:14.893Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/611e1fdedb3c38005b7a9ee6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-08-19T09:09:50.310Z",
+    "createdBy": {
+      "username": "VladNotDev",
+      "url": "https://www.codewars.com/users/VladNotDev"
+    },
+    "description": "vowels = \"aeiou\"\n\nInput: is only a single word.\n\nThe goal of this kata is to separate all the syllables with '-' and return the separated string.\n\nTo separate syllables there are 2 rules:\n\n```\nThe rule is you should add '-' next to the consonant where the consonant is the next of a vowel character.\n  \n  'abort' - > 'ab-or-t',\n  \n  'baby' - > 'bab-y',\n  \n  'einstein' - > 'ein-stein'\n  \n```\n\n```\nAnother rule is if there are no next letter to the last syllable you should not add '-':\n\n  'bob' -> 'bob'\n  \n```\n\n\n\n----------------------------------------------------------------------------------------------\n\n```\nExample:\n\nInput: \"balloon\"\n\nOutput: \"bal-loon\" \n\nExplanation:\n  \n  bal-\n  \n  vowel is found: a\n  \n  after the vowel is l which is a consonant so we should add -\n  \n  loon\n  \n  vowel is found: o\n  \n  first o - after it is another o which is a vowel so we should just proceed until we found the next consonant\n  \n  second o - after the vowel is n which is a consonant but we should not add - because it is the last character\n```\n  \n\n  ",
+    "totalAttempts": 113,
+    "totalCompleted": 40,
+    "totalStars": 4,
+    "voteScore": 38,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

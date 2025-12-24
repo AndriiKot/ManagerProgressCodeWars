@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61407509f979cd000e2e7cf0",
+  "data": {
+    "id": "61407509f979cd000e2e7cf0",
+    "name": "Number of players for knockout/round-robin hybrid contest (hard mode)",
+    "slug": "number-of-players-for-knockout-slash-round-robin-hybrid-contest-hard-mode",
+    "category": "reference",
+    "publishedAt": "2021-09-14T14:36:22.232Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61407509f979cd000e2e7cf0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-14T10:10:18.108Z",
+    "createdBy": {
+      "username": "Ku3mi41",
+      "url": "https://www.codewars.com/users/Ku3mi41"
+    },
+    "description": "It's a harder version of [this kata](https://www.codewars.com/kata/613f13a48dfb5f0019bb3b0f), try to solve simple version for obtaining general idea what you need to find :)\n\nYou must organize contest, that contains two part, knockout and round-robin.\n\n# **Part 1**\n\nKnockout part goes until we get an odd number of players.\nIn each round players are paired up; each pair plays a game with the winning player advancing to the next round (no ties). This part continues as long as number of players is even. When we come to round with are an odd number of players we go to part 2.\n- Part 1 will be skipped, if starting quantity of players is odd\n- If Part 1 ends with 1 player then contest is considered over, we have a winner\n\n# **Part 2** \n\nRound-robin.\nEach participant plays every other participant once. The player with the most points is the winner.\n\nHow many players you must invite to participate in the contest for got N games to be played?\n\n-----\n# Input/Output\n\n`[input]` BigInt `n`\n\nA positive number\n\n`1 ≤ n ≤ 2 ^ 1024`\n\n`[output]` array of BigInt\n\nReturn array of all possible amounts of players. Array can be empty if requested number of games cannot be achieved by any one amount of players. Array must be sorted by ASC.\n\n-----\n# Examples\n\n**3 games**\n\n- We can invite 3 players. In this case part 1 will be skipped and contest start with part 2, where 3 games will played.\n - Or we can invite 4 players, then part 1 will be made with 3 games. 2 semi-finals, final and we got a winner. Part 2 need no to be played, because we got 1 player only (winner of part 1).\n\n**12 games**\n\n- We must invite 12 players. Contest start with Part 1, where will be played 6 + 3 games, than 3 more games will be played in Part 2. So the got 6 + 3 + 3 = 12 games.\n",
+    "totalAttempts": 85,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 11,
+    "tags": [
+      "Permutations",
+      "Mathematics",
+      "Combinatorics"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

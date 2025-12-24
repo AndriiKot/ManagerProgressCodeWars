@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e822a2d0ab7970017dd8ae8",
+  "data": {
+    "id": "5e822a2d0ab7970017dd8ae8",
+    "name": "Convert icacls.exe output to json string",
+    "slug": "convert-icacls-dot-exe-output-to-json-string",
+    "category": "reference",
+    "publishedAt": "2020-03-30T17:36:42.337Z",
+    "approvedAt": null,
+    "languages": [
+      "powershell"
+    ],
+    "url": "https://www.codewars.com/kata/5e822a2d0ab7970017dd8ae8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-03-30T17:19:41.568Z",
+    "createdBy": {
+      "username": "pgra",
+      "url": "https://www.codewars.com/users/pgra"
+    },
+    "description": "A colleague asked you for a function called `ConvertTo-iCaclsOutPutObj` to convert the output from icacls.exe to an json string. The function should have the path of the file or folder (`-Path`) and the output of the icacls.exe (`-iCaclsOutPut`) as input parameters. The return value should be a compressed json string in the format `{\"Path\":\"PATH\",\"ACL\":[\"PERMISSION1\",\"PERMISSION2\"]}`.\n\nExample of an icacls.exe output:\n```\nC:\\Temp NT AUTHORITY\\SYSTEM:(I)(OI)(CI)(F)\n        BUILTIN\\Administrators:(I)(OI)(CI)(F)\n        BUILTIN\\Users:(I)(OI)(CI)(RX)\n        BUILTIN\\Users:(I)(CI)(AD)\n        BUILTIN\\Users:(I)(CI)(WD)\n        CREATOR OWNER:(I)(OI)(CI)(IO)(F)\n\nSuccessfully processed 1 files; Failed processing 0 files\n```\n\nExample of the expected json string:\n```\n{\"Path\":\"C:\\\\Temp\",\"ACL\":[\"NT AUTHORITY\\\\SYSTEM:(I)(OI)(CI)(F)\",\"BUILTIN\\\\Administrators:(I)(OI)(CI)(F)\",\"BUILTIN\\\\Users:(I)(OI)(CI)(RX)\",\"BUILTIN\\\\Users:(I)(CI)(AD)\",\"BUILTIN\\\\Users:(I)(CI)(WD)\",\"CREATOR OWNER:(I)(OI)(CI)(IO)(F)\"]}\n```\n\\\n\\\n\\\n\\\n\\\n\\\n\\\nFull example:\n```powershell\n[System.String]$Path = 'C:\\Temp'\n[System.String]$iCaclsOutPut = icacls.exe $Path  | Out-String\n<#\n$iCaclsOutPut = @'\nC:\\Temp NT AUTHORITY\\SYSTEM:(I)(OI)(CI)(F)\n        BUILTIN\\Administrators:(I)(OI)(CI)(F)\n        BUILTIN\\Users:(I)(OI)(CI)(RX)\n        BUILTIN\\Users:(I)(CI)(AD)\n        BUILTIN\\Users:(I)(CI)(WD)\n        CREATOR OWNER:(I)(OI)(CI)(IO)(F)\n\nSuccessfully processed 1 files; Failed processing 0 files\n'@\n#>\n\nConvertTo-iCaclsOutPutObj -Path $Path -iCaclsOutPut $iCaclsOutPut\n<#\n{\"Path\":\"C:\\\\Temp\",\"ACL\":[\"NT AUTHORITY\\\\SYSTEM:(I)(OI)(CI)(F)\",\"BUILTIN\\\\Administrators:(I)(OI)(CI)(F)\",\"BUILTIN\\\\Users:(I)(OI)(CI)(RX)\",\"BUILTIN\\\\Users:(I)(CI)(AD)\",\"BUILTIN\\\\Users:(I)(CI)(WD)\",\"CREATOR OWNER:(I)(OI)(CI)(IO)(F)\"]}\n#>\n```",
+    "totalAttempts": 29,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "JSON",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

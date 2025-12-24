@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/601d5b914ff09e001ceb68b3",
+  "data": {
+    "id": "601d5b914ff09e001ceb68b3",
+    "name": "Robust hangman",
+    "slug": "robust-hangman",
+    "category": "reference",
+    "publishedAt": "2021-02-05T14:52:09.568Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/601d5b914ff09e001ceb68b3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-02-05T14:52:01.161Z",
+    "createdBy": {
+      "username": "davilla",
+      "url": "https://www.codewars.com/users/davilla"
+    },
+    "description": "Your task is to write a robust program that allows someone else to play the game of hangman. Your code will essentially be a service to host the game. The client will use a simple interface to make queries that your code then handles. You can assume there is only one player per game, but there may be multiple simultenous instances of the `Hangman` class you write, all independent of each other.\n\nHangman is a children's game where the goal is to guess the secret word or phrase, whose letters are initially hidden. For instance, suppose the secret phrase is \"Codewars Red\". Then initially, the board is `________ ___` and the player can pick any letter. If the first guess is `e` then the host reveals `___E____ _E_` in uppercase. Should `A` be chosen next, the host will reveal `___E_A__ _E_`. With a guess of `i` the board does not change. The player may then continue with `n`, `s`, `R`, and `T` per the example test.\n\nIf nothing is passed in, `Hangman.guess()` just returns the board. If a letter is guessed that does not appear in the puzzle, or that has already been guessed or revealed, then that counts as a strike. The number of strikes allowed is configurable. On the final strike, all of the missing letters are revealed in lowercase, for instance `codEwARS REd`. After the game ends, any additional choices passed in are ignored.\n\nAlthough the requirements are not strict, give some thought to handling other characters typically seen in text. The player certainly isn't expected to guess at punctuation, for instance, but it's up to you whether to consider it a strike if they do. Your code will be tested with edge cases like the underscore within a phrase, just to make sure it doesn't choke.\n\nBest of luck! `:~)`",
+    "totalAttempts": 280,
+    "totalCompleted": 24,
+    "totalStars": 2,
+    "voteScore": 48,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fdb28d8d781dc0022059cce",
+  "data": {
+    "id": "5fdb28d8d781dc0022059cce",
+    "name": "A+B=B+A? Prove it in using DataKinds!",
+    "slug": "a-plus-b-equals-b-plus-a-prove-it-in-using-datakinds",
+    "category": "algorithms",
+    "publishedAt": "2020-12-17T09:56:17.571Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5fdb28d8d781dc0022059cce",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-12-17T09:46:00.684Z",
+    "createdBy": {
+      "username": "ice1000",
+      "url": "https://www.codewars.com/users/ice1000"
+    },
+    "description": "Haskell has `DataKinds` extension, so we can actually do [this kata](https://www.codewars.com/kata/59db393bc1596bd2b700007f) on type level. Let's do it.\n\nProvided:\n\n```haskell\n-- | The natural numbers.\ndata Nat = Z | S Nat\n\n-- | Adds two natural numbers together.\ntype family   Add (n :: Nat) (m :: Nat) :: Nat\ntype instance Add Z m = m\ntype instance Add (S n) m = S (Add n m)\n\ndata EqN (a :: Nat) (b :: Nat) where\n  EqZ :: EqN Z Z\n  EqS :: EqN n m -> EqN (S n) (S m)\n```\n\nImplement this type family:\n\n```haskell\ntype family AddComm (n :: Nat) (m :: Nat) :: EqN (Add n m) (Add m n)\n```\n\nThe test case is generated via the following JavaScript code:\n\n```javascript\nvar list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]\nvar bla = (n) => n == 0 ? 'Z' : `(S ${bla(n-1)})`;\nlist.map(p =>\n  list.map(q =>\n`type family Test_${p}_${q} :: EqN ${bla(p+q)} ${bla(p+q)}\ntype instance Test_${p}_${q} = AddComm ${bla(p)} ${bla(q)}\n`).join('')).join('')\n```\n\nBeta process: I'm not sure if this can be hacked in some ways. If you found a way please raise an issue.\n",
+    "totalAttempts": 32,
+    "totalCompleted": 14,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Theorem Proving",
+      "Functional Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a6554fdb3bfa87960000039",
+  "data": {
+    "id": "5a6554fdb3bfa87960000039",
+    "name": "Relationship evaluator:  Who's your daddy!?",
+    "slug": "relationship-evaluator-whos-your-daddy",
+    "category": "algorithms",
+    "publishedAt": "2018-01-22T03:05:39.820Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a6554fdb3bfa87960000039",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-22T03:05:33.593Z",
+    "createdBy": {
+      "username": "AbanaClara",
+      "url": "https://www.codewars.com/users/AbanaClara"
+    },
+    "description": "Create a function that accepts two objects.\n\nEach object has three properties, `n`, `p` and `id` where:\n\n`n = The name of the person`\n\n`p = the id of this person's parent`\n\n`id = this person's own id.`\n\nYour function must evaluate the relationship of these two persons, returning\nan evaluation string afterwards.\n\nThe relationship is based on the `p` property, and as written above, it presents the parentID. Two objects\ncontaining the same parent is evaluated as siblings. If an object 1 has a parent that is the `id` property of object 2, that object 1 is a child of object 2. Two objects will not be related if these two criterias aren't met.\n\n******************\n******************\n******************\n\n**Below are the templates for the three possible scenarios**\n\n\nCase 1:\n\nPerson1: {n: 'echo', p: 1, id: 2}\n\nPerson2: {n: 'rook', p: 4, id: 3}\n\nOutput: \"echo and rook are not related!\"\n\n******************\n\nCase 2:\n\nPerson1: {n: 'ellie', p: 1, id: 2}\n\nPerson2: {n: 'joel', p: 0, id: 1}\n\nOutput: \"joel is ellie's parent!\"\n\n******************\n\nCase 3:\n\nPerson1: {n: 'zofia', p: 1, id: 3}\n\nPerson2: {name: 'ela', p: 1, id: 4}\n\nOutput: \"zofia and ela are siblings!\"",
+    "totalAttempts": 120,
+    "totalCompleted": 58,
+    "totalStars": 1,
+    "voteScore": 47,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

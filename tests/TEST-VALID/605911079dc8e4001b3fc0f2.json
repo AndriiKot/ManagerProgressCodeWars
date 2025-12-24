@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/605911079dc8e4001b3fc0f2",
+  "data": {
+    "id": "605911079dc8e4001b3fc0f2",
+    "name": "Let the machine learn to play cricket alone!",
+    "slug": "let-the-machine-learn-to-play-cricket-alone",
+    "category": "reference",
+    "publishedAt": "2021-03-22T21:50:57.925Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/605911079dc8e4001b3fc0f2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-22T21:49:59.965Z",
+    "createdBy": {
+      "username": "gyshn",
+      "url": "https://www.codewars.com/users/gyshn"
+    },
+    "description": "You're a junior developer of a robot manufacturing company. Because of your previous projects, your senior developer lets you to make the new robot to play cricket well.\nThe robot has learned how to play but he doesn't know about the values he should get. It is hard you to\nbe a part of millions of neural networks practically. So you try this make a program and run it himself \nto learn alone.\n\nThis is based on projectiles. The ball starts from the ground and has a projectile path.\n\nYou will have 5 arguments, which are with units,\n\n    * distanceToPlayer - the distance from batsman to fielder (metres)\n    * velocity         - the initial velocity of the ball (ms^-1)\n    * angle            - the initial angle of the ball (degrees)\n    * maxHeight        - the maximum height of fielder can jump (metres)\n    * boundaryDistance - the distance to the boundary line (metres)\n\nRules-\n  * if the ball bounce before the midpoint between batsman and the fielder - return 2 score\n  * else the ball bounce before the fielder - return 1 score\n  * the fielder can catch the ball between his feet and his max height, if he caught - return 0\n  * else the ball bounce before the boundary line - return 4 score\n  * else return 6 score\n  * if there is any argument error - return -1\n  \n  \n(assume the gravity as 9.8 ms^-2)\n\nArg errors-\n\n    * nothing can be 0 or negative\n    * boundaryDistance should greater than to distanceToPlayer\n    * the angle shouldn't be over 90(inclusive)",
+    "totalAttempts": 40,
+    "totalCompleted": 5,
+    "totalStars": 4,
+    "voteScore": 8,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

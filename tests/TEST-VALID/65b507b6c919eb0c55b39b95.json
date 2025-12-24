@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b507b6c919eb0c55b39b95",
+  "data": {
+    "id": "65b507b6c919eb0c55b39b95",
+    "name": "Hulot's Traffic",
+    "slug": "hulots-traffic",
+    "category": "algorithms",
+    "publishedAt": "2024-01-27T20:09:05.177Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65b507b6c919eb0c55b39b95",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-27T13:40:06.322Z",
+    "createdBy": {
+      "username": "dfhwze",
+      "url": "https://www.codewars.com/users/dfhwze"
+    },
+    "description": "## Story\n\nWhen <a href=\"https://en.wikipedia.org/wiki/Monsieur_Hulot\">Mr. Hulot</a> was a kid, he was intrigued by traffic and cars. Each monday evening, he would walk around in the city and stop at some crossroad. He would stay there for hours, observing the cars crossing the crossroad. This was his <a href=\"https://www.imdb.com/title/tt0069400/\">Trafic (1971)</a>.\n\n---\n\n## Task\n\n> Given a string of four chars, representing the directions of at most four cars at a crossroad, return a string of four chars, representing the next actions of those cars. \n\n### Input\n\nThe input is associated from left to right with cars at the north, east, south and west side of the crossroad. All cars drive towards the crossroad and are on the verge of crossing. The directions are in perspective of the lane the car is driving on. Possible directions are: <code>'S'</code> for driving straight, <code>'L'</code> for making a left turn, <code>'R'</code> for making a right turn, and <code>'_'</code> as an inidicator there is no car at the associated lane.\n\n#### Location of cars in input\n\n\n```\ninput:  'abcd'  -> 'a', 'b', 'c', and 'd' are placeholders for any valid char for a car \n\n     | . . |        \n     | . . |        \n-----  a .  -----   \n . . . . . b . .    \n . . d . . . . .    \n-----  . c  -----   \n     | . . |        \n     | . . |        \n```\n\n### Output\n\nThe output is associated with the same cars as the input. Possible actions are: any of the arrows <code>'↓↙←↖↑↗→↘'</code> for cars that decide to cross, <code>'x'</code> for cars that decide to wait (to give other cars priority), or <code>'_'</code> as an inidicator there is no car at the associated lane. Note than in contrast to the directions in the input, the arrows in the output are taken in perspective of the crossroad, not the car. This means for instance that <code>'→'</code> indicates a car driving west to east with direction <code>'S'</code>, and <code>'↓'</code> indicates a car driving north to south with direction <code>'S'</code>.\n\n\n### Example\n\n```\ninput:  'S_S_'\noutput: '↓_↑_'\n\nexplanation:\n\nThere are two cars, one coming from the north, driving straight, \nand one coming from the south, also driving straight. \nBoth cars can cross the crossroad conform the regulations.\n\n     | . . |        \n     | . . |        \n-----  ↓ .  -----   \n . . . . . . . .    \n . . . . . . . .    \n-----  . ↑  -----   \n     | . . |        \n     | . . |   \n```\n\n### Constraints\n\nTo prevent hardcoding, there is a code limit of <code>800</code> characters.\n\n---\n\n## Regulations\n\n- A crossroad consists of two roads, perpendicular to eachother. \n- A road consists of two lanes, each in opposite direction. \n- No road has priority over the other. \n- Cars drive on the right lane of a road. \n- Cars are allowed to drive straight, make a left or right turn. Making a U-turn is prohibited.\n- Cars need to cross if regulations stipulate they have priority, and need to wait for other cars to cross otherwise. \n- All crossroads and car drivers are/act conform the regulations. \n- Rules are explained below in order of priority. This ensures resolution of any possible conflict between two or more rules.\n\n---\n\n## Rules\n\nRules are split into two sections. One section when there are 1, 2 or 3 cars on the crossroad, and one when there are 4 cars.\n\n### Rules (1 - 3 cars)\n\n> A car is assumed to have priority, unless the rules specify otherwise.\n\n#### Car directly to the right\n\nA car needs to give priority to the car directly to its right, even if that car also has to give priority on its turn to other cars.\n\n```\ninput:  'SS__'            input:  'LRR_'\noutput: '↓x__'            output: '↘xx_'\n\n     | . . |                 | . . |\n     | . . |                 | . . |\n-----  ↓ .  -----       -----  ↘ .  -----\n . . . . . x . .         . . . . . x . .\n . . . . . . . .         . . . . . . . .\n-----  . .  -----       -----  . x  -----\n     | . . |                 | . . |\n     | . . |                 | . . |\n        \n```\n\n#### Car in opposite direction\n\n<i>This rule is only applicable to cars that haven't already given priority to other cars in the previous rule.</i>\n\nA car needs to give priority to the car coming from opposite direction only when a dangerous situation would occur otherwise. A dangerous situation would occur if the car indicates to make a left turn, while the opposite car does not indicate to make a left turn. \n\n```\ninput:  '_R_R'            input:  '_L_L'            input:  '_S_S' \noutput: '_↖_↘'            output: '_↙_↗'            output: '_←_→' \n\n     | . . |                 | . . |                 | . . |\n     | . . |                 | . . |                 | . . |\n-----  . .  -----       -----  . .  -----       -----  . .  -----\n . . . . . ↖ . .         . . . . . ↙ . .         . . . . . ← . .\n . . ↘ . . . . .         . . ↗ . . . . .         . . → . . . . .\n-----  . .  -----       -----  . .  -----       -----  . .  -----\n     | . . |                 | . . |                 | . . |\n     | . . |                 | . . |                 | . . |\n  \n  \ninput:  '_R_S'            input:  '_R_L'            input:  '_S_L' \noutput: '_↖_→'            output: '_↖_x'            output: '_←_x'\n\n     | . . |                 | . . |                 | . . |\n     | . . |                 | . . |                 | . . |\n-----  . .  -----       -----  . .  -----       -----  . .  -----\n . . . . . ↖ . .         . . . . . ↖ . .         . . . . . ← . .\n . . → . . . . .         . . x . . . . .         . . x . . . . .\n-----  . .  -----       -----  . .  -----       -----  . .  -----\n     | . . |                 | . . |                 | . . |\n     | . . |                 | . . |                 | . . |\n     \n```\n\n### Rules (4 cars)\n\n> A car is assumed to have <b>no</b> priority, unless the rules specify otherwise.\n\n#### Cars indicating to turn right\n\nAll cars indicating to turn right get priority.\n\n```\ninput:  'SSRL'            input:  'SRRL'\noutput: 'xx↗x'            output: 'x↖↗x'\n\n     | . . |                 | . . |\n     | . . |                 | . . |\n-----  x .  -----       -----  x .  -----\n . . . . . x . .         . . . . . ↖ . .\n . . x . . . . .         . . x . . . . .\n-----  . ↗  -----       -----  . ↗  -----\n     | . . |                 | . . |\n     | . . |                 | . . |\n        \n```\n\n#### Cars indicating to drive straight\n\n<i>This rule is only applicable if none of the cars have obtained priority in the previous rule.</i>\n\nAll cars indicating to drive straight get priority, on condition no dangerous situation would occur. A\ndangerous situation would occur if two or more cars that don't share the same road, indicate to drive\nstraight.\n\n```\ninput:  'SLSL'            input:  'LSLL'\noutput: '↓x↑x'            output: 'x←xx'\n\n     | . . |                 | . . |\n     | . . |                 | . . |\n-----  ↓ .  -----       -----  x .  -----\n . . . . . x . .         . . . . . ← . .\n . . x . . . . .         . . x . . . . .\n-----  . ↑  -----       -----  . x  -----\n     | . . |                 | . . |\n     | . . |                 | . . |\n        \n```\n\n#### Final tie-breaker\n\n<i>This rule is only applicable if none of the cars have obtained priority in any of the previous two rules.</i>\n\nThe car coming from the north gets priority as final tie-breaker.\n\n```\ninput:  'LLSS'            input:  'SLLS'\noutput: '↘xxx'            output: '↓xxx'\n\n     | . . |                 | . . |\n     | . . |                 | . . |\n-----  ↘ .  -----       -----  ↓ .  -----\n . . . . . x . .         . . . . . x . .\n . . x . . . . .         . . x . . . . .\n-----  . x  -----       -----  . x  -----\n     | . . |                 | . . |\n     | . . |                 | . . |\n        \n```\n\n---\n\n\nGood luck, have fun!\n\n",
+    "totalAttempts": 105,
+    "totalCompleted": 9,
+    "totalStars": 3,
+    "voteScore": 13,
+    "tags": [
+      "Algorithms",
+      "Fundamentals",
+      "Simulation"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

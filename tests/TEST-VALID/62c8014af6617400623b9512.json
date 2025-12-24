@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62c8014af6617400623b9512",
+  "data": {
+    "id": "62c8014af6617400623b9512",
+    "name": "100 prisoners riddle (Insidious guard)",
+    "slug": "100-prisoners-riddle-insidious-guard",
+    "category": "games",
+    "publishedAt": "2022-07-08T10:17:05.460Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/62c8014af6617400623b9512",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-08T10:04:58.300Z",
+    "createdBy": {
+      "username": "beyaz.frambuaz",
+      "url": "https://www.codewars.com/users/beyaz.frambuaz"
+    },
+    "description": "This kata is part of a series:\n- [100 prisoners riddle (Neutral guard)](https://www.codewars.com/kata/62c5c7d138f0cf002f577a15)\n- [100 prisoners riddle (Benevolent guard)](https://www.codewars.com/kata/62c74680c529230064eeabe0)\n- [100 prisoners riddle (Insidious guard)](https://www.codewars.com/kata/62c8014af6617400623b9512)\n\n# Background\nThis is a famous riddle, check out this [wiki](https://en.wikipedia.org/wiki/100_prisoners_problem) article or this neat [youtube](https://youtu.be/iSNsgj1OCLA) video if you are curious.\n\n100 death row prisoners numbered `0-99` are offered a chance to survive. There is a room with 100 boxes numbered `0-99`. Tickets with prisoners' numbers are placed randomly inside the boxes. In order to get pardon for all 100 prisoners each prisoner needs to enter the room and find their ticket in any `50` boxes of their choosing. If even one prisoner fails - they all fail. Prisoners can only communicate before they enter the room and leave the room in the same state as when they entered.\n\nSince the solution is publically available - it is merely a setup for this kata. The basic idea is that each prisoner has 1/2 chance for success, but all 100 prisoners would have a collective chance of each finding their ticket as (1/2)^100 which is not very optimistic. An optimal strategy is for each prisoner to \n1. find a box with their number on it\n2. if they find their ticket inside - they won and the search is over\n3. otherwise the box contains another prisoner's ticket and this number is used to repeat the steps until the prisoner finds their ticket or runs out of 50 attempts\n\nThis strategy ensures that when you start with your number you are guaranteed to be on the sequence that ends with that ticket. This simple strategy provides a 31.18% chanse for all prisoners to find their ticket.\n\n# Task\nHaving completed the [100 prisoners riddle (Neutral guard)](https://www.codewars.com/kata/62c5c7d138f0cf002f577a15) you learned the ropes and now you are wondering if you could tip the scales against the prisoners. The idea is intriguing and filling you with sense of power! After all, you are benevolent's guard evil twin! (see [100 prisoners riddle (Benevolent guard)](https://www.codewars.com/kata/62c74680c529230064eeabe0))\n\nYou are now in the shoes of an **insiduous** guard who is willing to take the risk and try to mess with prisoners. You know the arrangement of the tickets in the boxes. Given prisoners have a chance for success you can sneak in and swap two tickets to mess up their chances. You don't want to get caugth and will do nothing if you know the prisoners will fail regardless or if there is just no way to do enough damage in a single swap.\n### Input\nYou will get an array of 100 integers `0-99` placed in random order (e.g. `[43,0,98,44,..,32,1,77]`). Each integer will appear only once. There is no need for any validations.\n### Output\nReturn the same array with no changes if you know prisoners will fail either way. Otherwise, return a new arrangement that guarantees their failure with **only two ints swapped** (e.g. `[11,..,99] -> [99,..,11]`). If a single swap won't cause them to fail - return the initial array with no changes. ",
+    "totalAttempts": 14,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 12,
+    "tags": [
+      "Puzzles",
+      "Logic",
+      "Algorithms",
+      "Riddles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6153b7100f76ac004f59b94a",
+  "data": {
+    "id": "6153b7100f76ac004f59b94a",
+    "name": "Noisy Data Channel - Jungle Version",
+    "slug": "noisy-data-channel-jungle-version",
+    "category": "algorithms",
+    "publishedAt": "2021-09-29T02:13:33.219Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/6153b7100f76ac004f59b94a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-29T00:45:05.060Z",
+    "createdBy": {
+      "username": "MatrixNatrix",
+      "url": "https://www.codewars.com/users/MatrixNatrix"
+    },
+    "description": "# Description\n\nWe have a data channel over which we want to transmit strings of (8-bit) bytes.\nUnfortunately the data channel leads through the jungle, where monkeys do some\nmonkey stuff with your valuable data.\n\nYour task is to write a function `send([byte]) -> [byte]`\nas well as a function `receive([byte]) -> [byte]`.\n\n`receive(monkey(send(msg))) = msg` must be valid for all possible byte strings `msg`.\n\n## The `monkey` function\n\nI'm afraid to tell you, these monkeys are not trainable, they will do whatever\nthey want to do with your data.\n\nLuckily they are a bit too clumsy to do other things than:\n\n- Swap up to 1 Bit per byte (e.g. `monkey([0011 0010]) ↪︎ [0011 0110]`)\n- Reverse any bytes (e.g. `monkey([0011 0010]) ↪︎ [0100 1100]`)\n- Completely distort the order of every 4 byte chunk you send\n  (e.g. `monkey([1, 2, 3, 4, 5]) ↪︎ [4, 3, 2, 1, 5]`)\n  (but `monkey([1, 2, 3, 4, 5]) ↪︎ [1, 5, 4, 3, 2]` will **not** happen)\n\n### Example\n\n- `monkey([0100 0001, 0001 0000, 1111 1111]) = 0000 1000, 1101 1111, 1000 0000`\n\n## Bonus\n\nTry to minimize the data you transmit.\n",
+    "totalAttempts": 67,
+    "totalCompleted": 7,
+    "totalStars": 9,
+    "voteScore": 6,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

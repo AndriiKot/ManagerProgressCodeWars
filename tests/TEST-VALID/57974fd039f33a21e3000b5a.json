@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57974fd039f33a21e3000b5a",
+  "data": {
+    "id": "57974fd039f33a21e3000b5a",
+    "name": "Making music (sort of)",
+    "slug": "making-music-sort-of",
+    "category": "algorithms",
+    "publishedAt": "2016-07-26T11:56:32.589Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57974fd039f33a21e3000b5a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-26T11:56:00.859Z",
+    "createdBy": {
+      "username": "tbtommyb",
+      "url": "https://www.codewars.com/users/tbtommyb"
+    },
+    "description": "MIDI is a way of representing musical notes electronically. According to the MIDI specification, middle C (C5) is defined as note 60. As you ascend the scale upwards, each note's number also increases. For example, the A above middle C, which has a frequency of 440Hz and is used for tuning, has a MIDI value of 69. The lowest value (0) represents C0 and the highest value (127) represents G10.\n\nGiven an input representing musical notes as an array of objects containing the MIDI `value` and the note `length` in seconds, find the frequency of each note and create the appropriate sine wave. Your output should be an array of samples at 0.1s intervals (i.e. our sample rate is 10 times per second, or 10Hz). The samples should be string values to seven decimal places. You should output one single array with the samples from each note coming in the order of the input array. An example is below.\n\n```javascript\n[{value: 100, length: 0.5}, {value: 67, length: 1}]\n```\n The above example should output:\n\n```javascript\n[ '0.000000',\n '-0.9549495',\n  '0.5667977',\n  '0.6185342',\n  '-0.9339205',\n  '0.000000',\n  '0.9501665',\n  '0.5924155',\n  '-0.5808036',\n  '-0.9545385',\n  '-0.01433779',\n  '0.9455991',\n  '0.6039056',\n  '-0.5690723',\n  '-0.9587143' ]\n```\nThe sample rate of 10Hz is to keep the results length manageable. This means that a note of length 1 second will output 10 values, a note of 0.5 seconds 5 values, and so on. For example, you can see that the example above has returned an array of length 15. The first 5 values represent the first note and the 10 values following are from the second note. You can see that the samples from the second note begins on the sixth value (the `'0.000000'`).\n\nThrow an error if the MIDI input is invalid (see more [here](https://en.wikipedia.org/wiki/MIDI)).\n\nYou will need to consider how to convert a MIDI note to a frequency (hint: use the A note provided as a starting point and research how going up or down a note affects the frequency) and then how to create the sine wave.",
+    "totalAttempts": 71,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

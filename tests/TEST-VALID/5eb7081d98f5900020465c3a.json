@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb7081d98f5900020465c3a",
+  "data": {
+    "id": "5eb7081d98f5900020465c3a",
+    "name": "XOR Cypher",
+    "slug": "xor-cypher",
+    "category": "games",
+    "publishedAt": "2020-05-10T21:12:41.235Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5eb7081d98f5900020465c3a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-09T19:44:29.934Z",
+    "createdBy": {
+      "username": "tchai2",
+      "url": "https://www.codewars.com/users/tchai2"
+    },
+    "description": "You have found an encryption program and several encrypted messages.  \nYour mission :   \n\nWrite a `decode` function   \n* input : string encoded in base64\n* output : string  \n\nAnd decode the messages __without the key__.  \n\nAccording to your information, the messages were encrypted in May 2019 and contain only printable ASCII characters.  \n\n\n# Encryption program :\n```python\ndef xor_message(btxt, key = None):\n    import time\n    from itertools import cycle\n    from hashlib import md5\n    import base64\n    action_is_encode = True\n    if key is None: \n        key = int(time.time())\n    else :\n        btxt = base64.decodebytes(btxt) \n        action_is_encode = False\n    h_md5 = md5(bytes(str(key),'utf8')).digest()\n    xor_txt = bytes([a^b for a,b in zip(btxt, cycle(h_md5))])    \n    return (base64.encodebytes(xor_txt), key) if action_is_encode else xor_txt\n```\n\n\n\nGood luck",
+    "totalAttempts": 73,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

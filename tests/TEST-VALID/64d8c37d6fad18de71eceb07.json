@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64d8c37d6fad18de71eceb07",
+  "data": {
+    "id": "64d8c37d6fad18de71eceb07",
+    "name": "Last man standing (Performance version)",
+    "slug": "last-man-standing-performance-version",
+    "category": "algorithms",
+    "publishedAt": "2023-08-13T11:50:35.879Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64d8c37d6fad18de71eceb07",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-13T11:50:21.577Z",
+    "createdBy": {
+      "username": "avermakov",
+      "url": "https://www.codewars.com/users/avermakov"
+    },
+    "description": "This kata is the performance version of the [Last man standing](https://www.codewars.com/kata/567c26df18e9b1083a000049) kata. You may want to try solving that one first.\n\n## Object\n\nFind the last number between 1 and `n` (inclusive) that survives the elimination process.\n\n#### How It Works\n\nStart with the first number on the left then remove every other number moving right until you reach the the end, then from the numbers remaining start with the first number on the right and remove every other number moving left, repeat the process alternating between left and right until only one number remains which you return as the \"last man standing\"\n\n#### Input size\n`1 <= n <= 2⁵⁰ ⁰⁰⁰`.\n\n#### Example\n```\nGiven `n = 9`, our set of numbers is `1 2 3 4 5 6 7 8 9`.\n\nStart by removing from the left:    2   4   6   8\n                                  1   3   5   7   9\n\n\nThen from the right:                2       6\n                                        4       8\n\n\nThen the left again:                        6\n                                    2\n\n\nuntil we end with `6` as the last man standing\n```\n\n",
+    "totalAttempts": 97,
+    "totalCompleted": 10,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

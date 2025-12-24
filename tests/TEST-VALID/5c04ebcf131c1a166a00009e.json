@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c04ebcf131c1a166a00009e",
+  "data": {
+    "id": "5c04ebcf131c1a166a00009e",
+    "name": "Clean your shoes rack",
+    "slug": "clean-your-shoes-rack",
+    "category": "reference",
+    "publishedAt": "2018-12-13T12:21:22.132Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c04ebcf131c1a166a00009e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-03T08:39:43.277Z",
+    "createdBy": {
+      "username": "smolen",
+      "url": "https://www.codewars.com/users/smolen"
+    },
+    "description": "<h3>Back story</h3>\n\n\nYour beloved aunt will visit your house today.The aunt is a very pedant person, the thing she hates the most is the messed shoes rack.You love your aunt so you have decided to clean it before her visit.\n\n<h3>Shoes rack</h3>\n\nShoes rack is an array which contains arrays ( shelfs ).Each shelf contains spots for shoes and can differ in size (array length).The spot is an array of length 2.\n\n```javascript\nlet shoesRackExample = [\n [ [null, null], [null, null] ],\n [ [null, null], [null, null] ],[null, null] ]\n [ [null, null], [null, null] ],\n]\n```\n\n<h3>Shoe</h3>\n\nShoe is represented as a string (minimun length of 2).Shoe can be right or left, it is determined based on the last character of the string.String may ends on digit 1 or 2 which means respectively left and right shoe.If you cant determine \nif the shoe is left or right we consider it as a damanged one.Not damaged shoe is the one that contains only alpha numeric characters.\n\n```javascript\nlet leftShoe = 'Nike1',\n    rightShoe = 'Nike2',\n    leftBazaarShoe = 'judeSandal1',\n    damagedShoe = 'snicker',\n    damagedShoe2 = 'sni.cker2';\n\n```\n\n<h3>Cleaning proccess</h3>\n\nTo clean the shoes rack you have to do the following:\n\n<ul>\n <li>Remove shoes that are damaged</li>\n <li>Remove shoes that does not have a pair</li>\n <li>Removed shoe should be replaced with `null` value</li>\n <li>Make each shoe in correct place in shelf spot ( left shoe as first )</li>\n <li>Order of the pairs of shoes does not matter</li>\n</ul>\n",
+    "totalAttempts": 163,
+    "totalCompleted": 16,
+    "totalStars": 1,
+    "voteScore": 23,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

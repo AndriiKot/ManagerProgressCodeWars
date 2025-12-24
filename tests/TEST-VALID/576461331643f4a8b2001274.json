@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/576461331643f4a8b2001274",
+  "data": {
+    "id": "576461331643f4a8b2001274",
+    "name": "False coin",
+    "slug": "false-coin",
+    "category": "games",
+    "publishedAt": "2016-06-17T20:44:36.428Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/576461331643f4a8b2001274",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-17T20:44:35.151Z",
+    "createdBy": {
+      "username": "Ivana",
+      "url": "https://www.codewars.com/users/Ivana"
+    },
+    "description": "You have a balance weighing-machine and some coins, one of which is false - has a different weight than the real ones. Can you find the false coin in a limited amount of weighing acts?\n\n## Task\nYou have to write 4 functions:\n\n1) takes values of weighing acts and the amount of coins and constructs a starting value of type WS - any type, that you need to solve this task:\n```haskell\ninitState :: Int -> Int -> WS\ninitState tryCount coinCount = undefined\n```\n2) takes the curent WS and returns two lists of coin indices to weigh:\n```haskell\ntoWeighing :: WS -> ([Int], [Int])\n```\n3) takes the curent WS, two lists of weighed coins (given by the previous function) and the result of their weighing, and returns the new WS:\n```haskell\nupdateState :: WS -> ([Int], [Int]) -> Maybe Ordering -> WS\n```\n4) takes the curent WS and returns the 1-based index of the false coin:\n```haskell\ngetFalseCoin :: WS -> Int\n```\n\n## Notes\nWeighing function, used in tests, shown here:\n```haskell\nweighing :: ([Int], [Int]) -> Maybe Ordering\nweighing (l, r)\n    | ln /= ll + lr      = Nothing\n    | ll < lr            = Just LT\n    | ll > lr            = Just GT\n    | elem falseNumber l = Just $ if falseIsHeavier then GT else LT\n    | elem falseNumber r = Just $ if falseIsHeavier then LT else GT\n    | otherwise          = Just EQ\n\n    where [ll, lr, ln] = map length [l, r, nub $ l ++ r]\n```\nso you can see what result will be on arbitrary input data.\n\nIn all tests the amount of weighing acts > 1 and the amount of coins > 2. I did not add in the tests a very high amount of weighing acts, so the task is very simple in this sense, that you dont need (but may, of course) use any efficient data structures, such as Map, Set, etc. My solution uses only lists, and passes all tests.",
+    "totalAttempts": 154,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

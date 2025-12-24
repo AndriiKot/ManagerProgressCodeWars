@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5424acc17b79a3f013000159",
+  "data": {
+    "id": "5424acc17b79a3f013000159",
+    "name": "Deadlock Detection",
+    "slug": "deadlock-detection",
+    "category": "reference",
+    "publishedAt": "2014-09-26T05:26:50.245Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5424acc17b79a3f013000159",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-09-26T00:01:06.306Z",
+    "createdBy": {
+      "username": "moonfly",
+      "url": "https://www.codewars.com/users/moonfly"
+    },
+    "description": "Implement a new mutex class `DebugMutex` with the following two main metods:\n\n- `lock`: if a mutex is not acquired by anybody, acquire it; otherwise, wait until it is released by the current owner\n- `unlock`: release a mutex acquired by this thread; if some oter thread is waiting for it, let that thread acquire it\n\n`DebugMutex` should detect \"simple deadlock\" conditions. A \"simple deadlock\" is the following sequence:\n\n- Thread1 acquires Mutex1\n- Thread2 acquires Mutex2\n- Thread1 waits on Mutex2\n- Thread2 waits on Mutex1 -- *oops, they will never wake up, as they wait for each other*\n\nIn case when a \"simple deadock\" is detected, `DeadlockError` should be raised. `DeadlockError` should have the following attributes:\n\n- `threads`: array of Thread objects: the 2 threads participating in the deadlock\n- `mutexes`: array of DebugMutex objects: the 2 mutexes participating in the deadlock\n\nBelow is an illustration of the expected behavior:\n```\nmx1 = DebugMutex.new\nmx2 = DebugMutex.new\n\nmx1.lock\nthread2 = Thread.new do\n  mx2.lock\n  mx1.lock\nend\nsleep 0.1\n\nbegin\n  mx2.lock # should raise DeadlockError\nrescue DeadlockError => e\n  e.threads # => [Thread.current,thread2] in any order\n  e.mutexes # => [mx1,mx2] in any order\nend\n\n```",
+    "totalAttempts": 183,
+    "totalCompleted": 19,
+    "totalStars": 11,
+    "voteScore": 10,
+    "tags": [
+      "Threads",
+      "Concurrency",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

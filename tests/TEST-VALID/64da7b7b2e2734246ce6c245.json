@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64da7b7b2e2734246ce6c245",
+  "data": {
+    "id": "64da7b7b2e2734246ce6c245",
+    "name": "Handle large integer safely when parsing JSON string",
+    "slug": "handle-large-integer-safely-when-parsing-json-string",
+    "category": "reference",
+    "publishedAt": "2023-08-14T19:21:56.823Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64da7b7b2e2734246ce6c245",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-14T19:07:39.047Z",
+    "createdBy": {
+      "username": "nessgor",
+      "url": "https://www.codewars.com/users/nessgor"
+    },
+    "description": "Some web services decided to use big integer to represent an object ID. But the `JSON.parse` in javascript is lossy and does not handle big integer well.\n\nFor example:\n\n```\n{ \"id\": 12647164873584632874 }\n```\nwill be parsed as\n```\n{ \"id\": 12647164873584634000 }\n```\n\nBuild a parser `parser(str)` to:\n1. Takes a single argument `str`\n2. Returns the parsed javascript object\n3. Treats big integer as text\n4. Validates the input type. Throws a `TypeError` otherwise\n5. Validates if the input is a valid JSON representation of a javascript object. Throws an `Error` otherwise\n\nYou may assume:\n1. The big integer will __NOT__ be in e-notation. e.g. `3.125e7`\n2. Integer larger than or equal to 9000000000000000 is a `big integer`, for simplicity\n\n\n",
+    "totalAttempts": 77,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Strings",
+      "Big Integers"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

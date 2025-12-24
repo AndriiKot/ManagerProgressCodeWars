@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/654b8370473c8e000f4499dc",
+  "data": {
+    "id": "654b8370473c8e000f4499dc",
+    "name": "Where's Waldo?",
+    "slug": "wheres-waldo-1",
+    "category": "reference",
+    "publishedAt": "2023-11-08T12:48:23.885Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/654b8370473c8e000f4499dc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-08T12:47:44.625Z",
+    "createdBy": {
+      "username": "CodingManu",
+      "url": "https://www.codewars.com/users/CodingManu"
+    },
+    "description": "***Introduction:***\n```text\n\"Where's Waldo?\" is a British series of children's \npuzzle books created by English illustrator Martin Handford. \nThe books consist of a series of detailed double-page \nspread illustrations depicting dozens or more people \ndoing a variety of amusing things at a given location. \nReaders are challenged to find a character named Waldo hidden in the group.\n```\n\n<center><img width=\"70%\" src=\"https://www.paperflite.com/sites/default/files/inline-images/Where%27s%20Waldo_0.jpg\"></center>\n\n***Task:***\n\nYour task is to find Waldo in a given array of people and objects and return the nearest object.\n\n\n\n***Rules:***\n```text\n1. The input is a 2D array representing the scene with various people and objects.\n2. The array will contain both names of people and objects.\n3. Your goal is to find the position of \"Waldo\" in the array.\n4. Once you find Waldo, you need to determine the nearest object.\n5. You'll be provided with a list of possible objects that Waldo could stand next to.\n6. You should check the element to the left, right, above, and below Waldo's position. \n7. There will not be more than one object next to Waldo.\n8. If a valid object is found, return \"Waldo is next to the [object].\" where [object] is the name of the found element.\n9. If no valid object is found around Waldo, return \"Waldo is in the crowd.\"\n10. If \"Waldo\" is not in the array, return \"Can not find Waldo.\"\n```\n\n\n\n***Input:***\n```javascript\narray =  [[\"Wilhelm\", \"Waldo\", \"Cafe\", \"Car\"], \n[\"Park\", \"Robert\", \"Annabelle\", \"Maria\"],\n[\"Anna\", \"Lake\", \"Tim\", \"Tom\"],\n[\"Field\", \"Plant\", \"School\", \"Wilfred\"]]\n```\n                      \n\n***Result:***\n```javascript\n\"Waldo is next to the Cafe.\"\n```\n\n\nHere's the list of possible objects:\n```javascript\nobjects = [\"Tree\", \"House\", \"Car\", \"Park\", \"Lake\", \"Field\", \"Plant\", \"Bus\", \"Cafe\", \"Museum\", \"Beach\", \"School\", \"Bridge\", \"Supermarket\", \"Library\"];\n```\n",
+    "totalAttempts": 65,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": 6,
+    "tags": [
+      "Arrays",
+      "Games",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63422610b8d020001647dfb6",
+  "data": {
+    "id": "63422610b8d020001647dfb6",
+    "name": "Basic array operations - WoW Server",
+    "slug": "basic-array-operations-wow-server",
+    "category": "reference",
+    "publishedAt": "2022-10-09T01:38:36.942Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/63422610b8d020001647dfb6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-09T01:38:24.144Z",
+    "createdBy": {
+      "username": "Jejek",
+      "url": "https://www.codewars.com/users/Jejek"
+    },
+    "description": "Goal:\n-----\nYour goal is to implement really basic WoW Server.\n\nYou have to provide possibility of creation, storing, checking and filtering of new `Character`s + removing characters matching given parameters, you should achieve it by implementing methods of `WowServer`.\n\n\nWowServer should be able to:\n----------------------------\n* properly add single `Character` with given `Nickname`, `Class` and `ClassSpecialization`\n* add multiple characters\n* count characters matching filters (if all filters are set to `undefined`: return count of all existing characters)\n* check if character with given parameters (filters) already exists (if all filters are set to `undefined`: return true if there is any character)\n* find all matching characters for given filters (if all filters are set to `undefined`: return all existing characters)\n* return all characters which has been created\n* remove given `count` of characters matching filters. If `count` is `undefined`: remove only 1 character. If all filters are set to `undefined`: do NOT remove characters. If `count` is greater than count of matching characters: remove all matching ones and don't remove anything else.\n\nImplementation details:\n-----------------------\n\n* All methods comparing filters with `Nickname` should work as case-insensitive.\n\n* Methods: `count`, `exists`, `find` and `getAll` should operate on list of all characters which were added expect the ones which has been already removed.\n\n* All returned results (`find`, `getAll`) should be ordered by add order (therefore no reordering / sorting).\n\n* All removes should follow same rule. Removing first matching occurence(s) when ordering by `Character` creation (adding to server) order.\n\nE.g.\n\nIf we called:\n\n1. WoWServer.add(\"PlayerX\", Class.Warlock, ClassSpecialization.Destruction)\n2. WoWServer.add(\"Super nick\", Class.Warrior, ClassSpecialization.Arms)\n3. WoWServer.add(\"PlayerX\", Class.Mage, ClassSpecialization.FrostMage)\n4. WoWServer.removeFirst(\"PlayerX\")\n\nThen it should remove first player which matches nickname: `PlayerX`.\n\nWe had 2 entries matching this filter, so we have to decide which one to remove.\n\n`PlayerX Destruction Warlock` was added before `PlayerX FrostMage Mage`\nso we will remove `PlayerX Destruction Warlock`, because it was added (1) before the Mage (3).\n\n\nFilters are:\n------------\n* Nickname\n* Class\n* ClassSpecialization\n\n\nCharacter:\n----------\n\nCreated `Character` should match interface:\n```ts\ninterface Character {\n    nickname: string;\n    class: Class;\n    specialization: ClassSpecialization;\n}\n```\nwhich is already preloaded.\n\n\n`Class` and `ClassSpecialization` are also preloaded.\nHere is how they look like:\n\n```ts\n\nenum Class {\n    Mage,\n    Warlock,\n    Priest,\n\n    Rogue,\n    Monk,\n    Dh,\n    Druid,\n\n    Shaman,\n    Hunter,\n\n    Warrior,\n    Paladin,\n    Dk,\n}\n\nenum ClassSpecialization {\n    Fire,\n    FrostMage,\n    Arcane,\n\n    Destruction,\n    Affliction,\n    Demonology,\n\n    HolyPriest,\n    Discipline,\n    Shadow,\n\n    Assasin,\n    Subtely,\n    Outlaw,\n\n    Mistweaver,\n    Windwalker,\n    Brewmaster,\n\n    Havoc,\n    Vengeance,\n\n    Feral,\n    Guardian,\n    Balance,\n    RestoDruid,\n\n    Elemental,\n    Enh,\n    RestoShaman,\n\n    Marksman,\n    Survival,\n    BeastMaster,\n\n    Arms,\n    Fury,\n    ProtectionWarrior,\n\n    HolyPaladin,\n    ProtectionPaladin,\n    Retribution,\n\n    FrostDk,\n    Unholy,\n    Blood,\n}\n```\n\nGood luck!\n\nIf you have any troubles or feedback - please leave a comment.",
+    "totalAttempts": 88,
+    "totalCompleted": 9,
+    "totalStars": 4,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

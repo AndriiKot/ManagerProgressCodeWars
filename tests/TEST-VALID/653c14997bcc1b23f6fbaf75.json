@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/653c14997bcc1b23f6fbaf75",
+  "data": {
+    "id": "653c14997bcc1b23f6fbaf75",
+    "name": "Multiple Arguments Memoization",
+    "slug": "multiple-arguments-memoization",
+    "category": "algorithms",
+    "publishedAt": "2023-10-28T09:43:30.232Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/653c14997bcc1b23f6fbaf75",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-27T19:50:49.625Z",
+    "createdBy": {
+      "username": "maxsinyakov",
+      "url": "https://www.codewars.com/users/maxsinyakov"
+    },
+    "description": "Let's assume we have a slow pure function.\n\n```javascript\nfunction double(x) {\n  for(let i = 0; i < 1e9; i++);\n  return x * 2;\n}\n\ndouble(10) === 20 // but it takes ≈1s\n```\n\nYour task is to implement the `memo` decorator. This function accepts one argument `fn` and returns a new fuction which does the same work but doesn't compute a result for the same arguments twice.\n\n```javascript\nconst mDouble = memo(double);\n\nmDouble(1) === 2 // ≈1s\nmDouble(1) === 2 // ≈0.001s\nmDouble(3) === 6 // ≈1s\nmDouble(1) === 2 // ≈0.001s\nmDouble(3) === 6 // ≈0.001s\n```\n\nThe `fn` should work with any type and any length of function arguments. For example, the arguments can be numbers, bigints, arrays, objects or functions.\n\nSimilar katas:\n- [Reusable memoisation](https://www.codewars.com/kata/5b773b698adeaeb6b80000df) — a decorated function  is a function of one argument\n- [Function Cache](https://www.codewars.com/kata/525481903700c1a1ff0000e1) — a very similar kata, but it has weaker tests\n",
+    "totalAttempts": 151,
+    "totalCompleted": 16,
+    "totalStars": 5,
+    "voteScore": 20,
+    "tags": [
+      "Trees"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

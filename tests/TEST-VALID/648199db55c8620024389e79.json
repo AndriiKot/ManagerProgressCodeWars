@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/648199db55c8620024389e79",
+  "data": {
+    "id": "648199db55c8620024389e79",
+    "name": "Binary weekdays",
+    "slug": "binary-weekdays",
+    "category": "reference",
+    "publishedAt": "2023-06-08T12:10:43.286Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/648199db55c8620024389e79",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-06-08T09:05:31.531Z",
+    "createdBy": {
+      "username": "TeaFlex",
+      "url": "https://www.codewars.com/users/TeaFlex"
+    },
+    "description": "# Context\n\nIn the ISO week date system, the weekday number is a digit `d` going from 1 to 7 (1 being Monday, 2 Tuesday and so on).\nEach of these days can be portrayed as a bit in a binary word of length 7 where Monday is the LSB (least significant bit) and Saturday the MSB (most significant bit).\n\nFor example: `Monday -> 0b0000001`, `Thursday -> 0b0001000`, `Saturday -> 0b0100000`.\n\nKnowing this, we can thus store a set of weekdays in a single word:\n`Monday, Thursday, Saturday -> 0b0101001`.\n\n# Task\n\nIn this kata, you need to write two utility functions turning a list of weekday numbers into a 7-bit word and\nvice-versa. The output list order is descending and  each of its number is unique and between 1 and 7 (both included).\nInput list may be unordered.\n\nFor example: \n  - `[7, 6, 4, 1] => 0b1101001` for Monday, Thursday, Sunday and Saturday.\n  - `0b0010100 => [5, 3]` for Wednesday and Friday.\n\nBeware of invalid input. Your code should work even if bad data is given.\n\nFor example:\n - `[1, 1, 2, 4] => 0b0001011` in case of repetition.\n - `[8, 1, -555] => 0b0000001` ignoring \"out-of-bound\" numbers.\n - `0b11110000011 => [2, 1]` only considering first 7 bits.\n - `-25 => 0b1100111 => [7, 6, 3, 2, 1]` signed binaries need also to be considered.\n\nIn the case of this kata, used signed number representation is [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement).\n \nNote: in Python, any integer can be written in binary annotation as such: `0bxxxxxxx` (here on 7 bits).\n ",
+    "totalAttempts": 131,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 1,
+    "tags": [
+      "Binary"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

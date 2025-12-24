@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e93c0966ff431002fcfaf14",
+  "data": {
+    "id": "5e93c0966ff431002fcfaf14",
+    "name": "Object  Or Array of Objects from  String(Harder) ",
+    "slug": "object-or-array-of-objects-from-string-harder",
+    "category": "algorithms",
+    "publishedAt": "2020-04-13T02:11:53.558Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e93c0966ff431002fcfaf14",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-13T01:29:58.406Z",
+    "createdBy": {
+      "username": "spencerjibz",
+      "url": "https://www.codewars.com/users/spencerjibz"
+    },
+    "description": "## Object  Or Array of Objects from  String(Harder) \nIn this kata, your task is to create  a function that takes a *raw object string* (input) and convert to an *Object or an array of Objects* depending the input string.\n\n### Take into account that: \n\n- The input string  may contain  special characters  for example,if its email property eg. ``` \"{name:'james',email:'james@example.com'}\"```. \n- The input string may also contain numbers and these should return as numbers in the object.\n- If the input doesn't contain an Object return ```\"parameter not supported\"```\n-  If input string can contain spaces, this should be unchanged in the output.\n  ``` input: ```\n- if the raw string contains an empty object or array return ```\"parameter not supported\"```\n- You can't  use JSON.parse \n\n- Your  soluton return all the spaces in the input string as well.\n\n### Examples (Javascript only) <br>\n```javascript \ntoObject(\"{name:'spencer',age:22}\") //return {name:'spencer',age:23}\ntoObject(\"{name:'tom',email:'tom@example.com'}\") \n//return {name:'tom',email:'tom@example.com'}\ntoObject(\"[]\")  // parameter not supported\ntoObject(\"[{}]\") // parameter not supported\ntoObject(\"\") // parameter not supported\ntoObject(\"[{name:'James'},{name:'Tom'}]\") \n//return [{name:'james'},{name:'Tom'} ]\ntoObject(\"{name:'Lucas',comment:`Hi there my name is Lucas`}\")\n// return {name:'Lucas',comment:`Hi there my name is Lucas`}\n```\nYou can check more in the example test cases\n\n#### *Note:* \n- Object.prototype methods could help as well.\n- No Function consructor or eval method.\n- No JSON.parse method. ",
+    "totalAttempts": 17,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Regular Expressions",
+      "Declarative Programming",
+      "Advanced Language Features",
+      "Programming Paradigms",
+      "Fundamentals",
+      "Strings",
+      "Functional Programming",
+      "Logic",
+      "Data Types",
+      "Objects"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

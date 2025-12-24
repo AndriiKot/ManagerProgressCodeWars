@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53010107c7c0f45c4c000803",
+  "data": {
+    "id": "53010107c7c0f45c4c000803",
+    "name": "Conservative Property Proxy",
+    "slug": "conservative-property-proxy",
+    "category": "reference",
+    "publishedAt": "2014-02-17T00:08:50.717Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53010107c7c0f45c4c000803",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-16T18:18:47.937Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Sometimes a built-in API (such as WebGL) can have a lot of overhead. It has to jump through hoops, converting and re-converting values and passing it down the chain until it gets to the hardware for calculations or rendering. To get optimum performance from such APIs, you should only ever call a method, or set/get a proeprty, _once_. If the value would be set to the same value at a later time, that call should be skipped altogether. But how do we do such monitoring?\n\nThe answer is use a proxy object. Now, for something as complex as WebGL, you'd probably want to write something custom-made for the job. But for this excercise, all you have to do is write a function that takes a base object and returns a proxy one to use. When you would call a method or set/get a value from the base, you just need to call it from the proxy instead, and it'll handle the rest.\n\nAny method (function property) should have a proxy method that will only call the base method on the first call, or if the arguments have changed, _after_ the first call. If the call was bounced, the previously returned value (from the last time the method was called with those arguments) should be returned. It should also preserve context and arguments.\n\nEach _(non-method)_ property on the base object should have a corresponding property defined on the proxy object. When a script accesses the property to get its value, the value should be taken from the base object unless it has not changed since last time it was gotten. If it is to be set with some value, the new value should be set on the base object, only if it is different from last time it was set. If the property has not been gotten or set since the proxy has been made, it should always send the access through to the base object. (**NOTE:** You may only \"get\" a property a maximum of 1 time during the process of creating the proxy object. Also, remember that the base object's property may have getters and setters, itself.)\n\nIf property names have been passed in as arguments after the base object, only those properties should be _conservatively_ proxied, and all others should be _regular_ proxied (all sets, gets and calls should be forwarded through to the base object and returned as if the original had been called).\n\nIf no property names have been passed in, all properties should be conservatively proxied.\n\n**NOTE:** You need only worry about enumerable properties. But _all_ enumerable properties should be proxied one way or another.",
+    "totalAttempts": 301,
+    "totalCompleted": 21,
+    "totalStars": 7,
+    "voteScore": 26,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

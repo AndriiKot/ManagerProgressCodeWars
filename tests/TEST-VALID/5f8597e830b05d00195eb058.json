@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f8597e830b05d00195eb058",
+  "data": {
+    "id": "5f8597e830b05d00195eb058",
+    "name": "Naming the Book (Ver 2)",
+    "slug": "naming-the-book-ver-2",
+    "category": "algorithms",
+    "publishedAt": "2020-10-13T12:09:32.925Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5f8597e830b05d00195eb058",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-13T12:04:57.050Z",
+    "createdBy": {
+      "username": "Mivik",
+      "url": "https://www.codewars.com/users/Mivik"
+    },
+    "description": "A writer named Whirlwind Pigskin had finished a book about the hero's adventure, but he hadn't decided the name for it. After hours of thinking, he finally gave up and just randomly typed `n` characters on his keyboard which has `m` keys corresponding to `m` distinct characters. Whrilwind Pigskin glanced at this title and surprisedly found the hero's name contained in it. He was curious about this kind of phenomenon and he wanted you to tell him, if he types `n` characters on his keyboard in a **completely random** way to form his title, then what's the probability of the hero's name appearance in this title?\n\nNote that since Whirlwind Pigskin's keyboard may contain more than 256 kinds of characters, so the given hero's name is represented as a list of integers, instead of string.\n\n**For the sake of precision, you shouldn't return the probability as a double. Instead, you should return `(the probability modulo 998244353)`.** Formally, since the probability can always be represented as a rational number `p/q`, you need to return `(q^-1) * p % 998244353`, where `q^-1` represents the multiplicative inverse of `q` (modulo `998244353`). Note that `998244353` is a prime number.\n\nIf you don't know how to calculate the multiplicative inverse, see the thrid section of [this article](https://cp-algorithms.com/algebra/module-inverse.html).\n\nTest cases satisfy that `1 <= L <= n <= 5 * 10 ^ 5`, `1 <= m <= 10 ^ 8`, where `L` is the length of the hero's name. Also, all integers in `name` belong to `[1, m]`.\n\nIf you can still not understand this problem, you can check the explanation in sample tests.\n\nYou can check out another version of this kata [here](https://www.codewars.com/kata/5f8ae9cdffbbbf00166ecda8). The only difference is the input range, and in this problem the alphabet is **not** limited to lowercase english letters.\n\n#### Attention! Since many warriors have tried this kata but none of them passed, those who think his or her solution is absolutely correct could discuss with me on Telegram (@mivik233) or write down your thoughts in the discourse. Though my solution passed several edge cases checked by brute force program, none can guarantee the solution is completely correct, right?\n\n#### However, if you do get to the correct answer but exceeded the time limitation, then you may need to reconsider your approach. My solution only took 6 secs to pass all the tests, and the limitation of Codewars is 12 secs, which means that if you write a program with good enough algorithm, you code should pass all the test cases despite minor performance drawbacks.",
+    "totalAttempts": 25,
+    "totalCompleted": 4,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Mathematics",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

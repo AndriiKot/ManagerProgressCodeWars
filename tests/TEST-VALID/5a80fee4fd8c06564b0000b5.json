@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a80fee4fd8c06564b0000b5",
+  "data": {
+    "id": "5a80fee4fd8c06564b0000b5",
+    "name": "Custom Rounding Rule",
+    "slug": "custom-rounding-rule",
+    "category": "reference",
+    "publishedAt": "2018-02-12T04:40:12.013Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5a80fee4fd8c06564b0000b5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-12T02:41:41.313Z",
+    "createdBy": {
+      "username": "jonatansuriani",
+      "url": "https://www.codewars.com/users/jonatansuriani"
+    },
+    "description": "The goal is to create a generic `Round` function that must round decimal number based on a numerical precision and specific rule for rounding. \n\nThe round function shall accept the following parameters:\n - `number`: the decimal number to be rounded;\n - `precision`: the total number of significant decimal digits;\n - `roundUpAt`: the limiar for considering rounding. For instance, `5` means that `0,1,2,3,4` are **rounded down** and `5,6,7,8,9` and greater must be **rounded up**;\n\n## Example\n### Precision 0; Round Up At 5\n`Round (1, 0, 5) = 1`\n`Round (1.4, 0, 5) = 1`\n`Round (1.5, 0, 5) = 2`\n`Round (2, 0, 5) = 2`\n\n### Precision 0; Round Up At 4\n`Round (1, 0, 4) = 1`\n`Round (1.4, 0, 4) = 2`\n`Round (1.5, 0, 4) = 2`\n`Round (2, 0, 4) = 2`\n\nThere's a rule that **zeros** must never be rounded!",
+    "totalAttempts": 355,
+    "totalCompleted": 31,
+    "totalStars": 1,
+    "voteScore": 16,
+    "tags": [
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

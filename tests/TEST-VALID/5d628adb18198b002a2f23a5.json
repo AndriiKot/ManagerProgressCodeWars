@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d628adb18198b002a2f23a5",
+  "data": {
+    "id": "5d628adb18198b002a2f23a5",
+    "name": "The two troublesome ones",
+    "slug": "the-two-troublesome-ones",
+    "category": "algorithms",
+    "publishedAt": "2019-08-25T14:19:14.952Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5d628adb18198b002a2f23a5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-25T13:19:23.639Z",
+    "createdBy": {
+      "username": "alexmate",
+      "url": "https://www.codewars.com/users/alexmate"
+    },
+    "description": "For a given array of integer ones and zeros, like [0,1,1,0,0,1], the two troublesome ones are the leftmost one(on one-based index 2) and the rightmost one(on one-based index 6).\n\n# Task\n\nGiven an array `arr` of integer ones and zeroes, and an array `indexes` of one-based indexes(positive or negative), for each `index` in `indexes`, compute the two troublesome ones in `arr` after applying the change `arr[abs(index)] = 0 if index is negative or 1 if index is positive`.\nReturn a list of integer pairs.\n\nIf `arr` doesn't contain 1s, then the leftmost and the rightmost ones are at index -1.\n\n# Examples\n\nIf `arr=[0,1,1,0,0,1]` and `indexes=[1,-6, 5]` you should return a list of three  pairs `result=[[1, 6], [1, 3], [1, 5]]`.\n\nExplanation: After applying the change for the first element of `indexes`, the state of `arr` is [1,1,1,0,0,1], so the two troublesome ones are at indexes 1 and 6 thefore the pair [1, 6].\n\nAfter applying the change for the second element of `indexes`, the state of `arr` is [1,1,1,0,0,0], so the two troublesome ones are at indexes 1 and 3 thefore the pair [1, 3].\n\nAfter applying the change for the third element of `indexes`, the state of `arr` is [1,1,1,0,1,0], so the two troublesome ones are at indexes 1 and 5 thefore the pair [1, 5].\n\nAnother example: for `arr=[1,0,1,0]` and `indexes=[-2, -3, -1]` you should return `result=[[1, 3], [1, 1,], [-1, -1]]`.\n\n# Constraints\n\nIf n is length of `arr` and m is length of `indexes` then\n\n0 <= n, m <= 100 000\n\n# Notes\n\nIf length of `indexes` is zero, return empty list.",
+    "totalAttempts": 67,
+    "totalCompleted": 18,
+    "totalStars": 1,
+    "voteScore": 7,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55dcb65125295542240000bf",
+  "data": {
+    "id": "55dcb65125295542240000bf",
+    "name": "Filtering Cookie",
+    "slug": "filtering-cookie",
+    "category": "reference",
+    "publishedAt": "2015-08-25T18:42:19.896Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/55dcb65125295542240000bf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-25T18:39:13.174Z",
+    "createdBy": {
+      "username": "sunboshan",
+      "url": "https://www.codewars.com/users/sunboshan"
+    },
+    "description": "Given a cookie from a website login, we want to filter out only useful ones.\n\nHere's the cookie(I know it's freakinshly long):\n```\npxro=1; cccl=ClLW6Y9jyz75EHAjNNI1uxnIyRsdLxIMQRr4IpYxyj0afsAAwg3VDB2YpLIpmyL3ZGhBQ8/c7+M1V7k/KQbsdGTVNsKjs4F1u0ZX1kEqQWt792wxqULEETunXJntN7mQfnvqqIvn3ZSBapF4e/pdT3bHk2Qv6Ec4SoKkaCL5V6Vyta0DVhP9/nWNyVuJ7QSpdmcIEMfFfYTSbJzPI5uWdQSor/zF8HcGN0iHkQKA0jv+87XR/UR8bWbVqU6kCc9I+a7kH+vHgf/HPwZFOlmWTg9qAhUSGKSRoeosTLKgER2ZfMOoxIg7TLtEC4WC+Jevi4a; geo=US; optimizelyEndUserId=oeu1392912333165366r0.004795793443918228; optimizelyBuckets=%7B%7D; s_ria=Flash%2014%7C; s_vnum_n2_cn=3%7C1; s_vnum_n2_tw=3%7C1; xp_ci=3z4RC4TMzF4Bz4uqzBLjzyVBc06vK; s_vnum_n2_uk=43%7C1; accs=o; site=USA; POD=us~en; dssf=1; ds01_a=51cd2e99c96sdfe76a7a4eed058c1cf35630dc091499586bd8b9d8047b83e6fd7d47ca5fcfc36c0d6c73822da67278039bd269d5ee3e7f8234c0a21937fbd5a0e9270865126f600ca202e29df26a4129c6a614c8e18620a68bf6ab7ce076f0ffb15GZVX; s_orientation=%5B%5BB%5D%5D; s_orientationHeight=674; s_fid=1ED9F78957BC54_21-0F4FE39E703B3D43; dslang=US-EN; s_vnum_n2_us=19|5,4|2,3|1; s_cc=true; s_vi=[CS]v1|2AE1C4DB05012902-400001302000FFBE[CE];  ds01=A19B73A27F7E851DD026613A7ECCD163D6CCD2E83BCD287571400E548000BD63; cayminfo=VXFWQF2743714df1887997aa19388f240f60c0034e2a67c093c90de2d9367ccd3424634ded737a86c0bffd3cc47bc529f4733e0055f63fe0947dce1cde450e17350d6704b61b0fb4502ba9ad660d74118082ad959ede98850bb09d21b7c7402cb6510d03c1198c34881f67f5f717569647d98710c60da694cc8c72d310a8f84351c826a069f589d4e56bb20a372c4e098ae193de202932d05dc00e5d83bdb362980d54df1708ddea87347e2b3bcbcafb06eadf2276a7826b97db3be360b3c25e43db426e7b5836f11ee3f823e4daa8ec873718eaea775d70d09ace722406ba5e02b8b8728ce99f1d9f55e7e01cb14e877f4a68a5897230a763a9cc4e02df9aac9ee366ada27bb054eed11a137a88bd00c79e9389bc25a4ccf7a4d1683426cccbea143ae92cMVRYV2; ctitx=eyJleCI6IjIwMTUtOC0yNiAxOjI1OjI0IiwiaXAiOiIxNy4xNTQuMzEuMTk2IiwiY3AiOjMwMDYyMCwiZHMiOjI5OTE0OTE2NX0:rGAPjuylkhjbb5bt4CWu5UMAdK4; NSC_17ofu-jud-jud-mc=ffffffff12920b0645525d5f4f58455e445a4a426ab3; disow=1LndLsIadfhuSRbt1gNIDQKp0; tsniow=368123\n```\nPassing cookie name will get the `name=value;` pair as a string.\n\nExample:\n```\nfilter_cookie(cookie,\"pxro\") # \"pxro=1\"\nfilter_cookie(cookie,\"s_cc\", \"s_ria\") # \"s_cc=true;s_ria=Flash%2014%7C\"\nfilter_cookie(cookie, \"tsniow\", \"dssf\", \"POD\") # \"tsniow=368123;dssf=1;POD=us~en\"\n```\n\nThe cookie in the test case is same as above. ",
+    "totalAttempts": 110,
+    "totalCompleted": 44,
+    "totalStars": 0,
+    "voteScore": 55,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

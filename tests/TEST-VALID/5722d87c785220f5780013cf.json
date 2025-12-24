@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5722d87c785220f5780013cf",
+  "data": {
+    "id": "5722d87c785220f5780013cf",
+    "name": "IPv6 validator",
+    "slug": "ipv6-validator",
+    "category": "algorithms",
+    "publishedAt": "2016-04-29T03:44:11.805Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5722d87c785220f5780013cf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-04-29T03:43:56.497Z",
+    "createdBy": {
+      "username": "Andrei Galarza",
+      "url": "https://www.codewars.com/users/Andrei%20Galarza"
+    },
+    "description": "Write an algorithm that will identify valid [presentation of IPv6 addresses](https://en.wikipedia.org/wiki/IPv6_address#Presentation). Input to the function is guaranteed to be a single string. Note, that your task isn't to ensure, that \"*recommended* representation\" from that article is used. You should only check *validity*.\n\nIPv6 is basically written as 8 *blocks* separated by `:`.<br>\nEach *block* contains 1-4 hex digits, leading zeroes are allowed, but ain't obligatory.<br>\nOn top of that there are two extra variations, which can be applied *both*:\n\n- **one** run (length > 0) of consecutive zero-*blocks* can be replaced with `::`<br>\n  2001:0DB8<del>:0000:0000:0000:0000:</del>1428:57ab<br>\n  2001:0DB8<ins>::</ins>1428:57ab\n\n- last two *blocks* can be written in IPv4 format, so-called \"Dotted-quad notation\"<br>\n  2001:0DB8::<del>1428:57ab</del><br>\n  2001:0DB8::<ins>20.40.87.171</ins>\n\nExamples of valid inputs:\n\n    ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff // full\n    2001:0DB8:0000:0000:0000:0000:1428:57ab // full\n    2001:db8::1428:57ab   // shorten form\n    ::192.168.0.1         // last 2 blocks written in ipv4 format\n    ::1                   // 0-run can touch the edge\n    1::                   // 0-run can touch the edge\n    ::                    // address has all its bits set to 0\n\nExamples of invalid inputs:\n\n    2001::25de::cade      // two runs\n    192.168.0.1:ffff::    // ipv4 block not at the end\n    2001::0.1             // ipv4 block should have exactly 4 parts\n    2001::256.0.0.1       // invalid ipv4 value\n    2001::010.0.0.1       // leading zeroes in ipv4\n    0:0:0:0:0:0.0.0.1     // 5 + 2 != 8,\n    0:0:0:0:0:0:0:0.0.0.1 // 7 + 2 != 8,\n    2001:db8:0:0::0:0:0:0 // 0-run in the middle imply at least one block,\n                          // resulting in at least 9 blocks in total => invalid",
+    "totalAttempts": 513,
+    "totalCompleted": 16,
+    "totalStars": 8,
+    "voteScore": 5,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

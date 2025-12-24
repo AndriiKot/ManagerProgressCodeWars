@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60d47a843269f800063f67d0",
+  "data": {
+    "id": "60d47a843269f800063f67d0",
+    "name": "Typed Objects",
+    "slug": "typed-objects",
+    "category": "algorithms",
+    "publishedAt": "2021-06-24T15:35:27.774Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/60d47a843269f800063f67d0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-24T12:28:52.359Z",
+    "createdBy": {
+      "username": "pxladin",
+      "url": "https://www.codewars.com/users/pxladin"
+    },
+    "description": "You have a function that takes an object, which will have values that may be constructors, but can also be normal values.  \n\n**The complete list of possible constructors/values for the object is at the bottom.**\n\nThe object may look something like this:\n```javascript\n{\n  a: Array,\n  b: String,\n  c: null,\n  d: Set,\n  e: Int8Array,\n}\n```\n\nYour goal is basically:\n\nIf property `x` is reassigned with value `y` and the value of `x` is a constructor, the value of `x` should be an instance of the constructor containing `y`.  \nOtherwise `y` should be assigned normally.\n\nEvery time `x` is reassigned *again* with a new value `z`, it should be converted to the type of `x`'s current value (if the current value is `null` or `undefined` it should be assigned without converting).\n\nThe object also shouldn't allow new properties being added.\n\n**Bonus**: Try not to *completely* hardcode your solution. Not hardcoding it is what makes it challenging.\n\nHere's a code example of how your function should behave (this is also what the test example will check):\n```javascript\nconst typedObject = (object) => { /* Your solution */ };\n\nconst typed = typedObject({\n  a: Array,\n  b: String,\n  c: null,\n});\n\ntyped.a = 1;\ntyped.b = 1;\ntyped.c = 1;\n\n// Should throw an error.\ntyped.x = 1;\n\nconsole.log(typed); // -> { a: [1], b: \"1\", c: 1 }\n\n// The value 2 should be converted to an array, because 'a' is currently an array.\ntyped.a = 2;\n\nconsole.log(typed); // -> { a: [2], b: \"1\", c: 1 }\n```\n\n### List of possible constructors/values\n- null\n- Boolean \n- Number \n- BigInt \n- String \n- Set \n- Array \n- Int8Array\n- Uint8Array\n- Uint8ClampedArray\n- Int16Array\n- Uint16Array\n- Int32Array\n- Uint32Array\n- Float32Array\n- Float64Array",
+    "totalAttempts": 73,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

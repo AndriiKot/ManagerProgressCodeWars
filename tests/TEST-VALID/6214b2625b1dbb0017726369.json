@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6214b2625b1dbb0017726369",
+  "data": {
+    "id": "6214b2625b1dbb0017726369",
+    "name": "Magical Boolean Triplet",
+    "slug": "magical-boolean-triplet",
+    "category": "games",
+    "publishedAt": "2022-02-26T18:04:19.001Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/6214b2625b1dbb0017726369",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-02-22T09:52:34.234Z",
+    "createdBy": {
+      "username": "Alpha Dead",
+      "url": "https://www.codewars.com/users/Alpha%20Dead"
+    },
+    "description": "# Read Before All\n\nIf you have not solved the first version of this Kata, please do not bother yourself reading and understanding the description, instead solve that one first, then come back as you wish. Boolean Triplet is supposed to be harder than Boolean Duplet. Link: \nhttps://www.codewars.com/kata/62024046897712005e643014\n\n# Introduction\n\nAaaand magic time again!\n\nPreviously, you had to find a pair of booleans that evaluate to true for a certain expression. And this time is no exception. But now the main task is separated into three parts. You have got to complete all of them in a right succession, in order to solve this Kata (assuming you do not cheat in any way). So, we again have a static class `BooleanMagic` containing a static readonly tuple of **three** bools called `Magic`. But the thing is, it is not really a tuple of bools. This time, bools are wrapped inside `BoolWrapper`, thus you are going to work with wrapped bools.\n```ruby\npublic readonly struct BoolWrapper\n{\n    private readonly bool _inner;\n    public BoolWrapper(bool value) => _inner = value;\n}\n```\n\n### Task 1. Indirectly using operators.\n\nAs you can see from the code above, `BoolWrapper` does not overload any boolean logic operators (`&`, `|`, `^`).But we somehow have to operate on `_inner` without having those overloadings. Meaning that this piece of code should be valid for compilation:\n```cpp\nBoolWrapper a = new BoolWrapper(true);\nBoolWrapper b = new BoolWrapper(false);\nBoolWrapper c = a ^ b;\n```\nIf it is not clear enough, basically adding specifically this line of code to the wrapper struct is against the rules of this kata:\n```ruby\npublic static Foo operator ^(BoolWrapper x, BoolWrapper y) { ... };\n```\n\n### Task 2. Magic case for bools.\n\nSimple as it was in previous Kata. Three elements of the tuple `Magic` must behave like this:\n```css\n(a ^ b) && (b ^ c) && (c ^ a) == true\n!(a ^ b) || !(b ^ c) || !(c ^ a) == false\n```\n\n### Task 3. This part made me regret...\n\nYou still there? Good. After the expressions in the second task give the right values, `.ToString()` method of results are called. Usually you would expect `true` to be printed as \"True\", and `false` as \"False\". But it turns out, their string representations are not necessarily like that. You can technically change them to anything.\n```css\nConsole.Write(false.ToString()); // Prints \"Hello\"\nConsole.Write(true.ToString());  // Prints \"Ayoo\"\n```\nAnd you guessed it right, you have got to figure out how. Make it so that \"True\" and \"False\" are printed with lower letters `t` and `f`. To summarize-\n```css\n(BoolWrapper a, BoolWrapper b, BoolWrapper c) = BooleanMagic.Magic;\n\nBoolWrapper d = a ^ b ^ c;  // Compiles without any errors\n\n(a ^ b) && (b ^ c) && (c ^ a)     // Is equal to true\n!(a ^ b) || !(b ^ c) || !(c ^ a)  // Is equal to false\n\n((a ^ b) && (b ^ c) && (c ^ a)).ToString()     // Returns \"true\" and not \"True\"\n(!(a ^ b) || !(b ^ c) || !(c ^ a)).ToString()  // Returns \"false\" and not \"False\"\n```\nBest of luck...\n\n# Important Notes\n\n1. `BooleanMagic` class must be static.\n2. Do not rename anything.\n3. You must not change the type of `Magic`. Never.\n4. `Magic` must be static readonly field.\n5. You must not add any other fields or properties to `BooleanMagic`. You do not need them.\n6. You can edit `BoolWrapper`, but adding overloads mentioned in description and any additional underlying fields are not allowed.\n8. It is dead obvious that some tasks are done with `unsafe` code. But since CodeWars does not allow unsafe blocks of code, you have to do the unsafe without `unsafe`.\n7. Kata is utterly solvable.\n\nGood magician I am.",
+    "totalAttempts": 23,
+    "totalCompleted": 5,
+    "totalStars": 5,
+    "voteScore": 9,
+    "tags": [
+      "Fundamentals",
+      "Logic",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

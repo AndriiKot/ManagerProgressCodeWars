@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52893f4209e419cdd9000243",
+  "data": {
+    "id": "52893f4209e419cdd9000243",
+    "name": "Binary",
+    "slug": "binary",
+    "category": "algorithms",
+    "publishedAt": "2013-11-17T22:12:18.483Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/52893f4209e419cdd9000243",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-11-17T22:12:19.900Z",
+    "createdBy": {
+      "username": "bakula",
+      "url": "https://www.codewars.com/users/bakula"
+    },
+    "description": "You will complete the Binary class, which is simple helper class for converting numbers to binary representation.\n\nThe class is designed to take in a string  with decimal or hex value representation and return string in binary representation.\n\nThe following are some examples of how this class is used:\n\n\n```javascript\nvar val = new Binary(); \nval.toString() === '';\nval.isValid() === false;\nval.getBit() === false;\nval.getBit(0) === false;\n\nvar val = new Binary('11',1); \nval.toString() === '00001011';\nval.isValid() === true;\nval.getBit() === false;\nval.getBit(0) === 1;\nval.getBit(1) === 0;\n\nvar val = new Binary('FF',2); \nval.toString() === '11111111';\n\n\n```\n\nValue must be a decimal:  0-255 or hex  00-FF.\nIf value is out of scope  toString will return ''.\nIf value is out of scope  isValid will return false.\nIf value is out of scope  getBit  will return false .\nIf bitIndex  is out of scope getBit  it will return false. \n",
+    "totalAttempts": 735,
+    "totalCompleted": 39,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Binary",
+      "Bits"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

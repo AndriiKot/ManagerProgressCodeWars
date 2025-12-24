@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55f8db0596c6d9720400002e",
+  "data": {
+    "id": "55f8db0596c6d9720400002e",
+    "name": "Parse this function! - Puzzles #7",
+    "slug": "parse-this-function-puzzles-number-7",
+    "category": "reference",
+    "publishedAt": "2015-09-16T12:08:54.112Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/55f8db0596c6d9720400002e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-16T02:59:17.507Z",
+    "createdBy": {
+      "username": "matt c",
+      "url": "https://www.codewars.com/users/matt%20c"
+    },
+    "description": "# Parse this function! - Puzzles #7\n\nYou have spent days converting all your functions to the new ES2015 fat arrow functions but your boss is not pleased with this! You must now go back and replace all fat arrow functions (```(a, b) =>```) with the old function way (```function(a, b```)! Write the function to convert all fat arrow functions to use the old function standard! Good luck!\n\n\n## Task\n\nYour task is to create a function which can take fat arrow functions as strings and parse them to use the old way of functions. Then you must return a string representation of the function which will then be tested to ensure behavior is the same.\n\n\n## Expected Inputs\n\nYou will be expected to parse for the four types of functions Map, Filter, Sort and ofcourse Reduce :) Enjoy!\n\n\n## Examples\n```javascript\nInput: 'multiplyByIndex = function(arr){return arr.map((a,i)=>{return a*i})};'\n\nOutput: 'multiplyByIndex = function(arr){return arr.map(function(a,i){return a*i})};'\n\nInput: 'filterByType = function(arr,type){return arr.filter((a) => typeof a === typeof type )};'\n\nOutput: 'filterByType = function(arr,type){return arr.filter(fucntion(a){return typeof a === typeof type })};'\n\nInput: 'orderMyList = (arr) => arr.sort((a,b) => a < b )'\n\nOutput: 'orderMyList = function(arr){return arr.sort(function(a,b){ return a < b })'\n\nInput: 'funcMe = (arr)=>arr.map((a,i) => i + \": \" + a.sort((a,b) => a < b ) )'\n\nOutput: 'funcMe = function(arr){return arr.map((a,i) => i + \": \" + a.sort((a,b) => a < b ) )}'\n```",
+    "totalAttempts": 147,
+    "totalCompleted": 13,
+    "totalStars": 6,
+    "voteScore": 1,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

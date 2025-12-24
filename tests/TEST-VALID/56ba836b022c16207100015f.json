@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56ba836b022c16207100015f",
+  "data": {
+    "id": "56ba836b022c16207100015f",
+    "name": "Gateway payments redirect - Refactoring the code",
+    "slug": "gateway-payments-redirect-refactoring-the-code",
+    "category": "refactoring",
+    "publishedAt": "2016-02-10T10:32:58.293Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56ba836b022c16207100015f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-10T00:25:15.049Z",
+    "createdBy": {
+      "username": "luigimannoni",
+      "url": "https://www.codewars.com/users/luigimannoni"
+    },
+    "description": "You started working for a new company, the company mainly sells merchandise offline but they have an e-commerce website too for their domestic market.\n\nThe e-commerce platform is full of legacy, ancient code and it relies on a third party gateway for online payments, when an user clicks on the \"Buy\" button it redirects him/her to the payment system with a different URL.\n\nThe function accepts 2 string arguments, the first one is the domain of the server, while the second is the ID of the item. To simplify things back then the developer merged the item price with the item id separated by a dash `-`. \n\nThe URL is structured by different pieces, it will always be on a `https` protocol, it should contain an username and password separated by a colon `:`, the domain name followed by a trailing slash and as subsequently 3 query parameters `itemid`, `amount` and `codecurrency`.\nRemember the query parameters are separated by an ampersand `&` and the query values are separated from the query keys by an equal `=`.  \n\nSo given the following details:\n\n    Gateway payment Username: codewars\n    Gateway payment Password: myfancypassword\n    Gateway payment Domain: paymentserver.codewars.com\n    Item ID: 123456\n    Amount to pay: $100\n\nThe user should be redirected to:\n\n    https://codewars:myfancypassword@paymentserver.codewars.com/?itemid=123456&amount=100&codecurrency=USD\n\n\nYou had an interesting meeting about the e-commerce website, seems the marketing team wants to open up for the overseas market and start trading in different countries. \n\nIn conjuction to this the e-commerce core developer suggest some changes that might affect the functionality of the redirect function as well as the fact currently the redirects on the `server3` does not work at all (you might want to take a look and fix that).\n\nHe suggested it might be better to pass to the function two different objects with all the details of the server and of the item instead of simple strings as he feels the current solution is horribly wrong and you agree with him after looking at the code on the file and the general mess the previous developer did before leaving the job. \n\n\nThe objective of this kata is to teach you how to **understand other's people code**, their mistakes and how to make it more **small, elegant and efficient**. Remember about readability of your code as well as a consistent naming convention between variables and functions, you are coding for other developers, not for the machine only.\n\nAlso future-proofing is a **must** as well as backward compatibility, as you might want the code to be ready when the new e-commerce backend will be deployed.   ",
+    "totalAttempts": 256,
+    "totalCompleted": 14,
+    "totalStars": 5,
+    "voteScore": 17,
+    "tags": [
+      "Performance",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

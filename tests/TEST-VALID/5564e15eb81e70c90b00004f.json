@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5564e15eb81e70c90b00004f",
+  "data": {
+    "id": "5564e15eb81e70c90b00004f",
+    "name": "Jugs, Ewers, and  Buckets",
+    "slug": "jugs-ewers-and-buckets",
+    "category": "algorithms",
+    "publishedAt": "2015-05-30T07:38:39.137Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5564e15eb81e70c90b00004f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-05-26T21:10:54.993Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "### Background\n\nSensei [Giacomo](http://www.codewars.com/users/GiacomoSorbi) likes to drink lots of water to keep himself well hydrated and his brain functioning at peak performance!  But he likes to measure out exactly how much water he drinks in a day.\n\nHe has many different water vessels in his dojo, but very limited time to fill them up, so he needs some help with planning and filling one of his many jugs with the exact amount of water he wants to drink in a day.\n\nStrangely the sensei likes to know that the puzzle has a solution, but then he likes to solve the puzzle himself!\n\n### Rules\n\nEach container can either:\n\n* Be filled from any other container until either the first is empty or the second is full.\n* Be filled until full from the tap in his kitchen.\n\nDumping the contents of any container is **not** allowed, that would waste water, and Sensi Giacomo cannot condone waste!\n\n### Example\n\nIf Sensei Giacamo decided he needed to drink 11 litres of water today, and he found he had containers for 2, 3, 7, and 19 litres available, he'd like to know the minimum number moves it would take to get exactly 11 litres of water in one of his containers.\n\nIn this case it is possible:\n\n           | Containers |\n    Move   |  2 3 7 19  | Notes\n    ------------------------------------------------\n    Step 1 |  2 0 0  0  | Fill 2L\n    Step 2 |  2 0 0 19  | Fill 19L\n    Step 3 |  0 2 0 19  | Move all from 2L into 3L\n    Step 4 |  0 3 0 18  | Move 1L from 19L to 3L\n    Step 5 |  0 3 7 11  | Move 7L from 19L into 7L\n    \nThis sequence of five moves leaves 11L of water in the 19L container as required.    \n\n### Kata\n\nYou must aid Sensei Giacomo by completing the method `how_many_moves`, you are given a sequence containing the sizes of the water carriers, the number of litres required, and the maximum number of moves Giacomo is prepared to make that day.\n\nIf it possible to solve the problem in the number of moves available, then return the number of moves required, `5` in the above example.  If it is not possible, then return `-1`.\n\n#### Code example:\n```python\nhow_many_moves([2, 3, 7, 19], 11, 5) # => 5\nhow_many_moves([2, 3, 7, 19], 11, 4) # => -1\n```\n",
+    "totalAttempts": 305,
+    "totalCompleted": 11,
+    "totalStars": 10,
+    "voteScore": 15,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

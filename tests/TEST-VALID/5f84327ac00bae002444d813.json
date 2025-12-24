@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f84327ac00bae002444d813",
+  "data": {
+    "id": "5f84327ac00bae002444d813",
+    "name": "Matching Words in an Acronym",
+    "slug": "matching-words-in-an-acronym",
+    "category": "reference",
+    "publishedAt": "2020-10-13T00:50:52.004Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f84327ac00bae002444d813",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-12T10:39:54.196Z",
+    "createdBy": {
+      "username": "Rbaha07",
+      "url": "https://www.codewars.com/users/Rbaha07"
+    },
+    "description": "# Task\nYour task is to create a function called `match_words()`. It will take two parameters:\n- `acronym` - the acronym itself in uppercase as a string (e.g. `'LASER'`)\n- `words` - the words (all in title case) that the acronym stands for as an array (not in order)\n\nThe goal of the function is to return a dictionary which shows which letter stands for each word. \n\n## Example\nEach letter in `acronym` should be assigned a value.\n```python\nacronym = 'LASER'\nwords = ['Radiation','Stimulated','Light','Emission Of','Amplification By']\ndata = match_words(acronym,words)\n\n# The following is now true:\ndata = {'L': 'Light','A': 'Amplification By','S': 'Stimulated','E':'Emission Of','R':'Radiation'}\n```\n## Notes\n- The Input will only contain characters from the Latin/English alphabet.\n- If the input is an empty array and empty string, return an empty dictionary.\n- There will always be the same amount of values in `words` as there is letters in `acronym`.\n- `acronym` will not contain the same character more than once (This is to simplify the task).",
+    "totalAttempts": 266,
+    "totalCompleted": 171,
+    "totalStars": 5,
+    "voteScore": 146,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53ece04d26358de1d400010a",
+  "data": {
+    "id": "53ece04d26358de1d400010a",
+    "name": "Callback Set",
+    "slug": "callback-set",
+    "category": "reference",
+    "publishedAt": "2014-08-14T16:14:05.474Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53ece04d26358de1d400010a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-08-14T16:14:09.334Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "When you're trying to write non-blocking code, you often end up with a number of asyncronous calls you want to send off, when do something when they are all complete. For example, deleting a number of files, _then_ telling the user the operation is complete.\n\nYour task is to create a simple function that will help with all that.\n\n## CreateCallbackSet(callback, args...)\nThe function should accept an optional arguments, `callback`. If passed in, it should be set in the 'oncomplete' property of the returned object.\n\nIf more than 1 argument was passed in, the remaining arguments should be passed to the oncomplete callback when the set is complete.\n\nAn object should be returned with a number of properties:\n\n### instance.add(callback, args...)\nThe specified callback should be attached to the set. A new function should be returned for the caller to use as a callback for whatever async method they want to trigger. When the async method returns to this special callback, the original callback passed in should be called, with any arguments received from the async method passed along. It will also call intance.resolve() (see below).\n\nIf the callback passed in was not a function, an error should be thrown.\n\nIf further arguments were passed in to `.add()` when the callback was attached, these arguments should be added to the end of the arguments passed to the callback.\n\n### instance.count\nA number, starting at 0, indicating the number of added \"trigger\" callbacks that have not yet returned (been called). **This does _not_ include the original callback.**\n\n### instance.resolve()\nThe `instance.count` is decreased by 1. If count is now 0, `instance.oncomplete` is called, if it has been set. Then all properties on the instance object should be removed (set to a nully value, or deleted).\n\nWhen an added \"trigger\" callback has been called, `instance.resolve` is called automatically, after the callback has run.\n\n\n**NOTE:** `.add()` or `.resolve()` could be called by a callback, or even from outside the callbacks altogether. `.oncomplete` could be changed outside of calling the `CreateCallbackSet()` function. `.count` could be changed to a non-number value, or a non-positive value (in which case, anything goes; just don't throw an error). All of these will have to be taken into account.\n\nSome code examples:\n\n```javascript\nvar flow = \"[\";\n\nvar instance = CreateCallbackSet(function(end) {\n  flow += end;\n}, \"]\");\ninstance.count === 0;\n\nfunction step(val) {\n  flow += val;\n}\n\nvar _1 = instance.add(step, \"a\");\n  instance.count === 1;\nvar _2 = instance.add(step, \"b\");\n  instance.count === 2;\nvar _3 = instance.add(step, \"c\");\n  instance.count === 3;\nvar _4 = instance.add(step, \"d\");\n  instance.count === 4;\n\n_3();\n  /* automatically resolved */\n    instance.count === 3; flow === \"[c\";\n_1();\n  /* automatically resolved */\n    instance.count === 2; flow === \"[ca\";\n_2();\n  /* automatically resolved */\n    instance.count === 1; flow === \"[cab\";\n_4();\n  /* automatically resolved */\n    instance.count === 0; flow === \"[cabd\";\n  /* instance.oncomplete called */\n    flow === \"[cabd]\";\n\n// object nulled-out\n!instance.oncomplete && !instance.add && !instance.resolve && !instance.count;\n```\n\n\n\n",
+    "totalAttempts": 299,
+    "totalCompleted": 14,
+    "totalStars": 5,
+    "voteScore": 7,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

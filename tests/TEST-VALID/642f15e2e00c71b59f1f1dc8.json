@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/642f15e2e00c71b59f1f1dc8",
+  "data": {
+    "id": "642f15e2e00c71b59f1f1dc8",
+    "name": "Linear Movement Destination Solver",
+    "slug": "linear-movement-destination-solver",
+    "category": "algorithms",
+    "publishedAt": "2023-04-28T00:24:16.821Z",
+    "approvedAt": null,
+    "languages": [
+      "lua"
+    ],
+    "url": "https://www.codewars.com/kata/642f15e2e00c71b59f1f1dc8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-04-06T18:56:34.620Z",
+    "createdBy": {
+      "username": "Klelik",
+      "url": "https://www.codewars.com/users/Klelik"
+    },
+    "description": "## Premise\nYour friend is a BaD (Baggins and Dragons) fan. It's a game he's always loved, but has also always wanted to implement a small change in the way it was played. BaD is played on a grid, you can move across the grid only in four directions: up, down, left, and right. Your friend gets frustrated whenever he has to move diagonally, and has to take an indirect path to the square he wants to get to.\n\nHe would use the most direct path if it weren't for these two problems\n\n1. It is slow to calculate how far you can move in a direction by hand unless it's along an axis.\n2. It is slow to determine what the furthest point that you can move to is.\n\nTo make things easy on himself he has come to you (the uber programmer of awesome) for help.\n\nHe wants you to create a function where he can put in the space he is trying to move to, and get back the closest valid space to the destination or just the input if you can move to it.\n\n---\n\n# Task\nCreate a function that takes the x, y coordinates of a target space, and returns the same coordinates if you can move to it directly, or returns the coordinates of the space that gets you closest to the target space:\n\n:)\n\n## Parameters (x, y, moveSpeed, spaceSize)\n\n* int **x**: The x of the target space.\n* int **y**: The y of the target space.\n* int **moveSpeed**: The amount of feet the character can cover in a turn.\n* int **spaceSize**: The width and height of each square space.\n\n**\\-Crazy Note\\-** The moveSpeed or spaceSize may be omitted. If it is, then use the value it had in the last function call. If there has been no calls yet, then the default will be 30 for moveSpeed and 5 for spaceSize\n\n(:\n\n## Return: {x, y} and maybe another {x, y}\n- Return the destination square's x and y in a table like this {x,y} so that `t[1] = x` and `t[2] = y`\n\nIf `(distanceToSpace <= maxDistanceYouCanTravel)`  \nreturn the {x, y} unchanged. return them with `return {x,y}`\n\nElse  \nreturn the closest square to the desired destination with `return {x,y}`, so long as it is within the maxDistanceYouCanTravel. If there are two equally close squares within the maxDistanceYouCanTravel then return both of them. return them with `return {x,y}, {x2,y2}`\n\n\\*_\\*\n\n## Notes\nmoveSpeed and spaceSize will never be zero. But returning an error if it does happen is recommended for the solution.\n\nBy request, your friend has asked you to, whenever a moveSpeed or spaceSize is provided, save it, and whenever it is omitted, use the last saved value.\n\n\n---\n\n# Examples\n- `moveMaker(1,0,1,1) returns {1,0}, nil` because 1,0 is 1 space away and you can travel 1 foot and each space is 1 foot apart.\n- `moveMaker(-3,3, 6,2) returns {-2,2}, nil` the nil is a placeholder for if you need to return a second solution.\n- `moveMaker(-1,-2) returns {-1,-2}, nil` using the 6,2 from the last call to easily travel the 2.23606 distance to the target space.\n- `moveMaker(0,7, 30,5) returns {0,6}, nil` because you can travel 6 spaces with 30 feet of movement and spaces 5 feet tall, you can't reach (0,7), but among valid spaces, (0,6) is the closest so you return {0,6}\n- `moveMaker(5,5) returns {1,0}, {0,1}` with a moveSpeed and a spaceSize of 1, the maxDistanceYouCanTravel is 1, the only valid spaces in that range are {1,0}, {0,1}, {-1,0}, and {0,-1}. Finally, finding the closest valid space to the destination space gives {1,0} and {0,1} since they are equally far.\n- `moveMaker(-1,-3) returns {-1,-2}, {0,-3}`\n\nHere is an image to describe the next two function returns\n\n![Image for better mental picture][image]\n\nImage Key  \nGrey: the spaces that can be moved to  \nPurple: the space targeted by the first function call  \nYellow: the space targeted by the second function call  \nWhite: the solutions of the purple and yellow function calls  \n\nFunction 1: `moveMaker (-4,4, 24,6)`\n* Returns `{-3,2}, {-2,3}`\n* Visualized with the purple square and the two white squares next to it.\n* The purple square represents the target at (-4,4) and the two white squares next it are the solutions because they are the two closest valid squares to it. To be precise, they are exactly the same distance away from it.\n\nFunction 2: `moveMaker (5,1, 4,1)`\n* Returns `{4,0}, nil`\n* Visualized with the yellow square and the white square next to it.\n* The yellow square represents the target at (5,1) and the white square next it is the solution because it is the closest valid square to it.\n\nIf any gray space were the target, then it would also be the solution.\n\nAll solutions are on grey spaces\n## ( :Happy Coding: )\n\n[image]: data:image/*;base64,iVBORw0KGgoAAAANSUhEUgAAAbEAAAGLBAMAAAC7H7FJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPUExURQAAAEBAQOD/IP0A1f///1xnld0AAAFzSURBVHja7dqxDYAwDADBrMAKrMAK7D8TvUMRWQkJcF+6QDrJVE4pkiRJkiRJkiRJkiTN7Iglv7PFyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyKRkZ+xm93ITMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMmnc7s3eTzIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIysj/I9L6e3L2WbdxjZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZHKV7jap32yQkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRyeV63ISMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIxM7tT+MzIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMndqfeNyTUZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRib12lgyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIySZIkSZIkSZIkSZK0YhejaHKmYAmdDAAAAABJRU5ErkJggg==",
+    "totalAttempts": 32,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

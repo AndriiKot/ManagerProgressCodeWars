@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5783de3d850781c70e000ef4",
+  "data": {
+    "id": "5783de3d850781c70e000ef4",
+    "name": "Base 10 to any Base",
+    "slug": "base-10-to-any-base",
+    "category": "algorithms",
+    "publishedAt": "2016-07-11T17:58:27.990Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5783de3d850781c70e000ef4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-11T17:58:21.916Z",
+    "createdBy": {
+      "username": "davidhu2000",
+      "url": "https://www.codewars.com/users/davidhu2000"
+    },
+    "description": "The purpose of this kata is to convert a given number in base 10 to any base up to base 64. To standardize output, we will use the given order for all the bases. \n\n```\nbase64 = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/'\n```\nSo for n<sup>th</sup> base, we will take the first n values of the ```base64``` string representation.\n\nFor example:\n```\nbase20 = '0123456789ABCDEFGHIL' \n    or the first 20 characters from base64. \n```\nThe function takes two inputs ```(n, b)```, n is the number in base 10, and b is the base to be converted to. The result is a string. \n\nSo, a few examples to demonstrate what is expected of this kata,\n```ruby\nto_any_base(100, 2) => '1100100'\nto_any_base(100, 8) => '144'\nto_any_base(100,16) => '64'\nto_any_base(100,28) => '3G'\nto_any_base(100,60) => '1e'\n```\n```javascript\ntoAnyBase(100, 2) => '1100100'\ntoAnyBase(100, 8) => '144'\ntoAnyBase(100,16) => '64'\ntoAnyBase(100,28) => '3G'\ntoAnyBase(100,60) => '1e'\n```\nYou will return ```false``` for base 0. And before you start stressing out, base input will never be greater than 64. \n\nTo end this on a smart note... damn, I swear to god I had something for this.",
+    "totalAttempts": 140,
+    "totalCompleted": 29,
+    "totalStars": 4,
+    "voteScore": 23,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

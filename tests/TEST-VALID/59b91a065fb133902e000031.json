@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59b91a065fb133902e000031",
+  "data": {
+    "id": "59b91a065fb133902e000031",
+    "name": "Dungeons And Dragons 5th edition leveling utilities",
+    "slug": "dungeons-and-dragons-5th-edition-leveling-utilities",
+    "category": "games",
+    "publishedAt": "2017-09-14T04:20:33.675Z",
+    "approvedAt": null,
+    "languages": [
+      "clojure"
+    ],
+    "url": "https://www.codewars.com/kata/59b91a065fb133902e000031",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-13T11:44:07.866Z",
+    "createdBy": {
+      "username": "Nightpanda",
+      "url": "https://www.codewars.com/users/Nightpanda"
+    },
+    "description": "In the role playing game Dungeons and Dragons 5th edition, you play characters adventure and gain levels.\n\nThe system provides a number in experience points required to reach a certain level.\nThe required levels are given as a map:\n```clojure\n:1 0 :2 300 :3 900 :4 2700 :5 6500 :6 14000 :7 23000 :8 34000 :9 48000 :10 64000 :11 85000 :12 100000 :13 120000 :14 140000 :15 165000 :16 195000 :17 225000 :18 265000 :19 305000 :20 355000\n```\n\nCode three functions:\n1. Determine the current level of the character based on its current experience points.\n2. Determine the next level of a character based on its current experience points.\n3. Determine the experience left to advance to the next level.\n\nWhy three functions? You might see some synergy between the first two methods and the last one. These are all valid points you might be asking as a player.\n\nSpecial rules: \n1. The level should be returned as a keyword, so we can match it against the level requirement map if needed.\n2. Level 20 is a special case. Once you reach this max level, your experience until next level should return 0. And your next level should return the max level.\n\nTips:\nThe level requirements map is not ordered, maybe you might want it to be?\n\nHappy coding! ^_^ Enjoy my first kata.",
+    "totalAttempts": 49,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": 18,
+    "tags": [
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

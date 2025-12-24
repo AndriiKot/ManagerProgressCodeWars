@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58b4a09df08e31ed6f0000f6",
+  "data": {
+    "id": "58b4a09df08e31ed6f0000f6",
+    "name": "Generate keywords",
+    "slug": "generate-keywords",
+    "category": "reference",
+    "publishedAt": "2017-02-27T22:39:37.456Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/58b4a09df08e31ed6f0000f6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-27T21:56:45.777Z",
+    "createdBy": {
+      "username": "Ilyavovnenko",
+      "url": "https://www.codewars.com/users/Ilyavovnenko"
+    },
+    "description": "For our website, we need an algorithm that will automatically generate keywords based on the text on the page. Under the rules of SEO keywords should be separated by a comma and a space, and the line is not recommended to be more than 150 characters. Keywords should be returned so that the first are the most frequently used words in the text, then less used.\n\n<h1>Task:</h1>\nWrite a class <b>TextWork</b> that will generate keywords.\nIn this class you need two functions \"getKeyword\" and \"getShortText\"\n\n<b>getKeyword</b> - this function should return a keywords string must not be longer than 150 characters.\n\nExample \"getKeyword\":\n```\nstring - \"It is 22 years since he was first nominated for an Academy Award, as best supporting actor for the movie What’s Eating Gilbert Grape. Best actor named Leonardo DiCaprio.\";\nresult - \"best, actor\"\n```\n\n<b>Arguments:</b>\n<ul>\n  <li>String, $str - the text from which you want to get keywords;</li>\n</ul>\n\n=========================================================================\n\n<b>getShortText</b> - this function should return a keywords without: tags, $nbsp (change on \" \"), every last character is not a letter. After trimming of extra characters, the string must not be longer than the maximum transmitted charset value.\n\nExample \"getShortText\":\n```\nstring - \"best, actor, \";\nresult - \"best, actor\"\n```\n\n<b>Arguments:</b>\n<ul>\n  <li>String, $str - the text from which you want to get short text;</li>\n  <li>Integer, $max - the maximum length of the string to return from a function;</li>\n</ul>\n\n<b>Good luck!</b>\n\np.s. another my katas:\n\n* <a href=\"https://www.codewars.com/kata/58a369fa5b3daf464200006c\">How many e-mails we sent today?</a>\n\n* <a href=\"https://www.codewars.com/kata/58a0697ef636cac09c000014\">Yotube url</a>",
+    "totalAttempts": 257,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Strings",
+      "Arrays",
+      "Parsing",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

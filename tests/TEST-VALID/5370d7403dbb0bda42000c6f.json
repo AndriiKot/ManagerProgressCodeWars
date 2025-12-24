@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5370d7403dbb0bda42000c6f",
+  "data": {
+    "id": "5370d7403dbb0bda42000c6f",
+    "name": "Subnet Calculating",
+    "slug": "subnet-calculating",
+    "category": "algorithms",
+    "publishedAt": "2014-05-12T15:10:57.308Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5370d7403dbb0bda42000c6f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-05-12T14:14:24.974Z",
+    "createdBy": {
+      "username": "Vl4dimyr",
+      "url": "https://www.codewars.com/users/Vl4dimyr"
+    },
+    "description": "Hey, Ladies and Gents,\n\nin this Kata you have to calculate subnets based on 3 inputs:\n\n1. the **NetID** (or a IP in the network) which identifies the network.\n2. the **Subnetmask** which devides the IP in to network- and host-portion.\n3. a **number of hosts** I want you to address/subnet.\n\n<br>**Example:**\n```javascript\nvar subnets = calculateSubnets(\"192.168.0.0\", \"255.255.255.0\", 254);\n```\nthis returns an array which holds an array for every subnet with the **number of the subnet** starting at **0** and then followed by the **NetID**, **first usable IP**, **last usable IP**, **BroadcastID** and finally the **Subnetmask**.\n\n**Example:**\n```javascript\n//#,NetID        ,first IP     ,last IP        ,BroadcastID    ,Subnetmask\n[[0,\"192.168.0.0\",\"192.168.0.1\",\"192.168.0.254\",\"192.168.0.255\",\"255.255.255.0\"]]\n```\n\nYou have to check if the NetID is a NetID or an IP, the Subnetmask will be a valid Class B or Class C Subnetmask, the Number of Hosts will not always valid! If it is not possible to calculate subnets you should return an empty array.\n\n<br>\nIf you are new to Subnetting:\n\n- and if you are able to, use the \"CCNA Exploration 1: Network Fundamentals 4.0\" Chapter 6\n- if not, Google is you friend =P\n- or use some of this links:\n - http://en.wikipedia.org/wiki/Subnetwork\n - http://www.techopedia.com/6/28587/internet/8-steps-to-understanding-ip-subnetting\n - http://www.9tut.com/subnetting-tutorial\n\n<br>\nOk, i hope thats it, btw if there any mistakes in the text or anywhere else i'm not nativ English so please tell me, and this is my first Kata if you have suggestions or you found some errors tell me!",
+    "totalAttempts": 153,
+    "totalCompleted": 13,
+    "totalStars": 9,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Binary",
+      "Bits",
+      "Fundamentals",
+      "Mathematics",
+      "Parsing",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

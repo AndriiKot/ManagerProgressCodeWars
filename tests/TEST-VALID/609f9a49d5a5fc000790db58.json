@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/609f9a49d5a5fc000790db58",
+  "data": {
+    "id": "609f9a49d5a5fc000790db58",
+    "name": "Spanish DNI #1",
+    "slug": "spanish-dni-number-1",
+    "category": "algorithms",
+    "publishedAt": "2021-05-15T12:07:27.754Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/609f9a49d5a5fc000790db58",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-15T09:54:17.285Z",
+    "createdBy": {
+      "username": "daaaviid-03",
+      "url": "https://www.codewars.com/users/daaaviid-03"
+    },
+    "description": "**The first of a series**\n\nThe numbers in the Spanish DNI (Spanish national identity card) have characteristics to prevent identity fraud.\n\nThe DNI has this structure:\n\n    01234567L\n\nThere are two DNI parts: an 8 digit numerical prefix and a single letter suffix. The single letter suffix is directly related to DNI's numerical prefix. To determine the suffix, divide the numerical prefix by 23 and use the remainder as a key in the following lookup table.\n\n    0: T       7: F        14: Z       21: K\n    1: R       8: P        15: S       22: E\n    2: W       9: D        16: Q \n    3: A       10: X       17: V\n    4: G       11: B       18: H\n    5: M       12: N       19: L\n    6: Y       13: J       20: C\n\nSo knowing just the numerical prefix, the task is to determine the single letter DNI suffix and return a valid DNI.\n\n**Example**\n\n*Input:* 45923405?\n\n*Expected Output:* 45923405H\n\nAs *45923405 / 23 = 1996669.7826086956  =>*\n\n*45923405 - 1996669 * 23 = 18 =>*\n\n*18: H*\n\n*Resulting: 45923405H*",
+    "totalAttempts": 281,
+    "totalCompleted": 128,
+    "totalStars": 1,
+    "voteScore": 120,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

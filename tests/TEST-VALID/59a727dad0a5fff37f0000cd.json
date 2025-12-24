@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59a727dad0a5fff37f0000cd",
+  "data": {
+    "id": "59a727dad0a5fff37f0000cd",
+    "name": "Jackie's Game",
+    "slug": "jackies-game",
+    "category": "algorithms",
+    "publishedAt": "2017-08-31T07:27:23.105Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59a727dad0a5fff37f0000cd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-30T21:02:19.053Z",
+    "createdBy": {
+      "username": "EnigmaWasp",
+      "url": "https://www.codewars.com/users/EnigmaWasp"
+    },
+    "description": "# The Game\n\nJackie somehow found an array consisting of `n` integers. Looking at it, he came up with this task. Two players play the game on the array. Players walk by turns. The first player can choose for his move a sub-trip of a non-zero length with an odd sum of numbers and remove it from the array, after that the remaining parts are glued together into one array and the game continues. The second player can choose a subsegment of non-zero length with an even amount and delete it. Loses the one who can not make a move.\n\n# Task\n\nWho will win if both play optimally?\n\n# Example\n\nThe game start with `[3, 5, 2, 7, 2, 7, 9, 2, 8, 3, 7, 1, 9]`.\nThe first player chooses a subarray with an odd sum (`[2, 7, 9, 2, 8, 3]`) and removes it, leaving `[3, 5, 2, 7, 7, 1, 9]`.\nThe second player chooses a subarray with an even sum (`[5, 2, 7, 7, 1]`) and removes it, leaving `[3, 9]`.\nThe first player again chooses a subarray with an odd sum (`[9]`) and removes it, leaving `[3]`.\nNow there is no subarray with an even sum for the second player so he looses. First player wins.\n\n```cpp\nwho_wins({3, 5, 2, 7, 2, 7, 9, 2, 8, 3, 7, 1, 9}); // returns 1\n```\n```javascript\nwhoWins([3, 5, 2, 7, 2, 7, 9, 2, 8, 3, 7, 1, 9]); // returns 1\n```\n",
+    "totalAttempts": 138,
+    "totalCompleted": 15,
+    "totalStars": 0,
+    "voteScore": 16,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

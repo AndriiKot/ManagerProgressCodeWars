@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/55d10e059cbb0267ac0000ad",
+  "data": {
+    "id": "55d10e059cbb0267ac0000ad",
+    "name": "Crude Machinery and a Command Line Interface",
+    "slug": "crude-machinery-and-a-command-line-interface",
+    "category": "algorithms",
+    "publishedAt": "2015-08-16T23:01:57.859Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/55d10e059cbb0267ac0000ad",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-08-16T22:26:13.683Z",
+    "createdBy": {
+      "username": "oson",
+      "url": "https://www.codewars.com/users/oson"
+    },
+    "description": "# Introduction #\n\nYou are standing in front of a small steampunk machinery with two dials and gauges, a huge lever, a small keyboard, a green colored light bulb, a start button and an alarm siren.\nYou fiddle with it and find that the usage of this machine is rather crude but gives a very rewarding humming sound if\nactivated successfully.\n\nYou happily realize that it also has a digital input connector and you decide to do a program which can configure this machine according to some predefined command line arguments.\n\n# Task #\n\nYou need to implement the empty class ``CommandLineInterface``. As input for its initial ``parse()`` method you get a ``Machinery`` interface and a ``String`` with the command line arguments. All technical details are given in the Docs&Specs section below.\n\nThe goal is to successfully react to the input arguments, either by being able to configure and start the machine or by throwing an ``IllegalArgumentException`` if the argument String is malformed and the machine won't start.\n\nSome level of challenge comes through the cumbersome interface you have to work with. The parsed input values need to be transformed in order to be applied with the methods provided.\n\n# Docs & Specs #\n\nThe Machinery provides the following interface:\n\n```java\ninterface Machinery {\nInteger start() throws IllegalStateException  // starts the machine, if the configuration allows it. Or the siren deafens you.\nboolean didRun() // starts the machine and checks if it was configured correctly. Used for the tests.\nvoid maxLevelDialTuneTo(int value)  // tunes the dial labeled \"maxLevel\" to the set value.\nvoid minLevelDialTurnUp()  // turns the dial labeled \"minLevel\" up by one notch (+1).\nvoid minLevelDialTurnDown() // turns the \"minLevel\" dial down by one notch (-1).\nvoid enterUrl(String keyboardInput)  // uses the keyboard on the machine to enter an URL.\nvoid toggleSpeedModeLever()  // toggles the lever on the machine between the positions \"on\" and \"off\".\nString readSpeedModeIndicatorLight()  // checks the speed mode state. The bulb lits either \"green\" or \"off\".\nMap<String, String> readGauges()  // returns a copy of the current state. Valid keys to query the Map<> are: \"MinLevel\", \"MaxLevel\", \"Url\", \"SpeedModeLight\".\n}\n```\n\nThe command line arguments are given as a series of **switches** and zero or one **parameters** following that switch.\n\n```\nExample: -switch0 -switch1 param1 -switch2 \"param2\" -s3 param4 \n```\n\nSwitches can be prefixed with either ` - (dash)`, ` / (slash)` or ` -- (double dash)` but never mixed (However the other symbols might occur in the parameter values).\n\nSwitch names have a *long form* and an *abbreviation*, which are both valid input and should work equivalently. The valid names are:\n```\nminLevel, min, maxLevel, max, url, u, speedMode, s\n```\n\nEach switch or parameter is separated by a space.\n(For an extra challenge read: It is not mandatory that each element is separated by a space.)\n\nThe tuple of a switch and its optional parameter can *occur on any position*, meaning that for example \"minLevel\" is not guaranteed to be the first switch provided.\n\nSwitches and their respective parameter can occur zero, one or multiple times, unless they are specified as being *mandatory*, which requires them to be present at least once. If any switch occurs multiple times, the last one must be effective. For surplus parameters, only the first one must be effective.\n\nAny parameter can optionally occur quoted in either `\" (double quotes)` or `' (single quotes)`.\n\nAny unknown switches or unexpected parameters should be ignored.\n\nThe parameters of the switches follow these specifications:\n\n* **minLevel (min)** and **maxLevel (max):** optional switches with a mandatory integer parameter. Allowed values are in the range of -100 to +100. If not specified, the dials on the machineery should remain unchanged, but must be ensured not to be cranked too high or too low, which must be remedied by turning the dial back to the nearest allowed value.\n\n* **URL (u):** a wellformed URL representation as String, as defined in the java.net.URL JavaDoc. Note that an URL can contain symbols like dash, slash or double dashes in the path/filename part. Also a switch name can be part of a filename or hostname for example. This parameter is the only mandatory one in order to activate the machine.\n\n* **speedMode (s):** an optional switch with an optional String parameter. The values can be \"true\", \"false\" or being omitted, which must equal to \"true\".\n\nThe machine won't start if these constraints are not met and the siren will wail excruciatingly, which is represented by an ``IllegalStateException`` being thrown when calling ``Machinery.start()``.\n\n# Hints & \"Cheating\" #\n\n* You cannot modify the Map returned from readGauges() to change the machine's configuration, as the Map is a copy, not a reference.\n* You cannot extend Machinery, as it is a final class.\n* You cannot circumvent didRun() by reflection easily, which is used by the acceptance tests.\n* You do not need to use reflection to get a running solution.\n\n---\nGood luck! I hope you enjoy hacking away on this kata! :)\n---",
+    "totalAttempts": 455,
+    "totalCompleted": 8,
+    "totalStars": 5,
+    "voteScore": 5,
+    "tags": [
+      "Strings",
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5620ff7c5a045d448c000059",
+  "data": {
+    "id": "5620ff7c5a045d448c000059",
+    "name": "Triangulate a konvex polygon",
+    "slug": "triangulate-a-konvex-polygon",
+    "category": "reference",
+    "publishedAt": "2015-10-16T14:04:23.420Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5620ff7c5a045d448c000059",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-16T13:45:32.606Z",
+    "createdBy": {
+      "username": "Skratch",
+      "url": "https://www.codewars.com/users/Skratch"
+    },
+    "description": "A convex polygon is a polygon, in which all internal angles are less than or equal to 180°. Examples of convex polygons are rectangle, pentagon, hexagon, heptagon etc. Depending on the number of vertices, there are multiple ways to triangulate such a polygon with diagonals.\n\nVisualization:\nAssume that this is a rectangle:\n```\n __\n|  |\n|  |\n ¯¯\n```\nthen the possible triangulations are:\n```\n __     __\n|\\ |   | /|\n| \\|   |/ |\n ¯¯     ¯¯\n```\n\nIn this Kata, you will implement a function ```possible_triangulations(n)``` that returns the number of possible triangulations of a convex polygon with n vertices. If the number of vertices is less than 4, return 'Not a valid polygon'.\n\nExamples: For n=2, ```possible_triangulations(2)``` returns 2, as there are two ways to triangulate a rectangle. For n=5, ```possible_triangulations(5)``` returns 5\n\n<b> Notes/hints:</b>\n- The diagonals go from one vertex to any other and are not intersecting.\n- If you have problems solving this mathematical problem: this calculation is closely related to Catalan numbers.\n- As the solution will most likely be computationally complex, I limit the test cases to 1000 vertices.",
+    "totalAttempts": 199,
+    "totalCompleted": 55,
+    "totalStars": 5,
+    "voteScore": 53,
+    "tags": [
+      "Algorithms",
+      "Mathematics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

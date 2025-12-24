@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57545679fd30cc867b000e33",
+  "data": {
+    "id": "57545679fd30cc867b000e33",
+    "name": "Behavioural measures of a psychophysical threshold.",
+    "slug": "behavioural-measures-of-a-psychophysical-threshold",
+    "category": "algorithms",
+    "publishedAt": "2016-06-05T21:15:58.516Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57545679fd30cc867b000e33",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-05T16:42:33.645Z",
+    "createdBy": {
+      "username": "joeDiHare",
+      "url": "https://www.codewars.com/users/joeDiHare"
+    },
+    "description": "Behavioural scientists are often interested in <b>psychophysical thresholds.</b> These are values representative of the subject's best performance for a given task and stimulus. \n\nWith this Kata you'll need to create a function ```measure_threshold()``` which accepts 3 parameters (that define the modality of a simulated experiment, referred to as \"procedure\") and returns the expected threshold and the number of trials necessary to obtain the threshold.  \n\nThe simulated *task* in this Kata is <b>to find the softest level</b> (i.e., the \"threshold\") that an imaginary subject can hear. During the procedure, the level is decreased (making the task harder) if the subject correctly identifies the sound, whereas it is increased when the level is below the subject's threshold (thus, making the task easier). \nThe procedure will start with the level (```x```) set to a high value, larger than the subject's threshold (so that the subject can easily hear it). \nThe level is then decreased by a fixed step at each correct response given by the subject. Eventually, the sound level becomes comparable to the subject's threshold, and the subject will start making mistakes. A this point the <a href=\"https://en.wikipedia.org/wiki/File:Staircase_Transformed_Up_Down_English.png\">\"staircase\"</a> will fluatuate up and down around the threshold. Every point where the slope changes from \"up\" to \"down\", or viceversa, it's called \"reversal\". You will have to simulate the staircase for a number of trials, untill your procedure has stored ```nrev``` reversals.\n\nThe threshold is finally estimated as the average of the last ```av_rev``` reversals.\n\nThree functions will be already written for you:\n\n```\nfunction generate_subject_response(){return (x-Th)<0; }\n\nfunction make_harder(){ x = x - step;}\n\nfunction make_easier(){ x = x + step;}\n```\n(note use of global parameter: do create new variables with these names in your script!)\n\nYou will have to create the ```measure_threshold``` function:\n\nmeasure_threshold(rule, nrev, av_res){\n<ol>1. Each iteration is a new \"trial\" with an input level \"x\". For each trial call generate_subject_response()</ol>\n<ol>2. Decide if make_harder()  or  make_easier() the task, or none, depending on the \"rule\" (see below).</ol>\n<ol>3. Decide if \"x\" is a reversal, store.</ol>\n<ol>4. Stop when you have \"nrev\" reversals</ol>\n<ol>5. Compute the average of the last \"av_rev\" reversals</ol>\n<ol>6. return [average, trial.length]</ol>\n}\n\nHere are the three parameters:\n\n```RULE```: The \"rule\" you have to implement is of the form 'DxUy', where x and y are two integers > 0, such as \"D12U\".\nD12U is short for \"2-DOWN, 1-UP\", and it means that you need 2 correct responses to make_harder(), and 1 wrong response to make_easier(). This rule is implemented in behavioural science to reduce the probability of a chance response to be correct. For instance, with a 2-Down-1-Up procedure, one needs to give the correct response twice before the task can become harder.\nFor this Kata, we have not modelled chance responses, because a deterministic approach makes it possible to provide exact correct results. This means that the only difference that the parameter ```rule``` makes is the number of trials required to reach the desired number of reversals. In this Kata, there are only 4 possible ```rule```: 1D1U, 2D1U, 3D1U and 4D1U.\n\n```NREV```: \n```nrev``` is the number of reversals (e.g., 10). A reversal is defined as a point in the starcase where the slope goes from \"up\" to \"down\", or \"down\" to \"up\".\n\n```AV_REV```:\n```av_rev``` is how many last reversals you have to average to obtain the threshold. \n\n\nHere is an example of how your script should work:\n\n```\nvar rule='D2U1'; var nrev = 6; var av_res=4; step=1; \n(Th=10 and x=20 are generated internally and at random) \n\nconsole.log( measure_threshold(rule, nrev, av_res) )\n```\n> [ 9.5, 20 ]\n\nwhere 9.5 is the estimated threshold, and 20 is the number of trials.\n\nIf you were to have \"console.log(trial, x, reversals);\" within your script, the output would be:\n\n```\n1 19 []\n2 18 []\n3 17 []\n4 16 []\n5 15 []\n6 14 []\n7 13 []\n8 12 []\n9 11 []\n10 10 []\n11 9 []\n12 9 []\n13 10 [ 9 ]\n14 9 [ 9, 10 ]\n15 9 [ 9, 10 ]\n16 10 [ 9, 10, 9 ]\n17 9 [ 9, 10, 9, 10 ]\n18 9 [ 9, 10, 9, 10 ]\n19 10 [ 9, 10, 9, 10, 9 ]\n20 9 [ 9, 10, 9, 10, 9, 10 ]\n```\n\n\nMore about the procedure you are implementing: \nThe procedure you are trying to implement, has the following features:\n- mlutiple-alternative (only one answer is correct out of N alternatives)\n- forced-choice: user must select one of these even if he/she does not know the answer\n- adaptive: the task becomes harder the more correct answer the user scores, and vice versa \n- staircase: the signal increase/decreases by discrete amounts, shaping a \"staircase\"\n- X up, Y down, as explained in the \"rule\"\n\nNOTE THAT THIS SIMULATION IS DETERMINISTIC, with no noise, to make sure we all get the same answers. In reality, there is noise in both the behavioral response and the signals, which is when this sophisticated measure of threshold shows superior performance.\n\n*For more info: https://en.wikipedia.org/wiki/Psychophysics*\n\n*TEST CASES*\nThere are random test cases.\n",
+    "totalAttempts": 12,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

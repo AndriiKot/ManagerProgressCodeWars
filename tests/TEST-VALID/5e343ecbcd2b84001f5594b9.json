@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e343ecbcd2b84001f5594b9",
+  "data": {
+    "id": "5e343ecbcd2b84001f5594b9",
+    "name": "Validate FEN notation",
+    "slug": "validate-fen-notation",
+    "category": "algorithms",
+    "publishedAt": "2020-02-05T13:39:40.280Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e343ecbcd2b84001f5594b9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-31T14:50:51.469Z",
+    "createdBy": {
+      "username": "David Gildour",
+      "url": "https://www.codewars.com/users/David%20Gildour"
+    },
+    "description": "<h3>Intro</h3>\n\n<a href=\"https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation\">Forsyth-Edwards Notation</a> or FEN is a way to concisely represent the status of a chess game, including the board, current player, number of moves, etc. It is a string that consists of 6 fields separated by spaces:\n<ul>\n  <li>\n    Piece placement (from white's perspective), rank (or row) by rank (starting with rank 8 to 1), each rank represented by a string of piece symbols from the standard English notation (`P` - pawn, `N` - knight, etc.) with uppercase letters for white figures and lowercase for black. Empty squares are represented by numbers of consecutive empty squares. For example `2P1k2Q` means - two empty squares, a white pawn, one empty square, a black king, two empty squares and a white queen. Notice, that while probably never practical, the row notation `44`, `1232` or `53` is still a valid notation. Each rank is separated by `/`.\n  </li>\n  <li>\n    Active color, either `w` or `b` for white and black accordingly.\n  </li>\n  <li>\n    Castling availabilty - if no player can castle, it's `-`, otherwise it's any combination of `K` (for white's king-side castling), `Q` (for white's queen-side castling), `k` (similarly for black's) and/or `q`.\n  </li>\n  <li>\n    En passant target square - an optional possible square for pawn's <a href=\"https://en.wikipedia.org/wiki/En_passant\">en passant capturing</a> in algebraic notation. If any pawn has just made a two-square move, it is a position behind the said pawn. It's `-` if there's no en passant target. It is recorded whether there's an actual pawn to make a capture or not.\n  </li>\n  <li>\n    Number of halfmoves since the last capture or pawn move. It is used to determine if the <a href=\"https://en.wikipedia.org/wiki/Fifty-move_rule\">fifty-move rule</a> can be applied.\n  </li>\n  <li>\n    And finally a number of full moves. Starts with 1 and increments after every black's move.\n  </li>\n</ul>\n\nSo, for instance, the FEN for starting position is:<br />\n`rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1`\n\n<h3>Task</h3>\n\nYour task is to write a function called `validate_fen`, that takes a string with FEN notation and returns a boolean value `True` if the string is a valid FEN notatation and `False` otherwise. Here are the rules: \n\nObviously, the board has to be valid, and by valid we mean 8 rows with 8 squares each, with valid figures. Ignore the number and type of pieces present, as long as they're valid chess figures.  \n\nThe color has to be valid.\n\nThe castling options have to be valid. The order doesn't matter, but duplication of any symbol is forbidden, so `kKqQ`, `kqKQ` or `QqkK` are all valid, but `KKq` is not. You don't need to check if the pieces are actually on their starting squares.\n\nEn passant has to be valid - and by valid, we mean that it is only possible after the first move of every pawn. For simplicity's sake you don't have to check that there's actually a pawn that made that move, only that this target square is supposedly valid.\n\nAnd finally the moves have to be valid. We assume that fifty-moves rule has to be applied after 50 halfmoves, so any FEN with over 50 halfmoves is invalid. The number of fullmoves has to be greater than 1, but no upper limit. Also, the number of fullmoves implies the maximum number of halfmoves, so you need to check this as well.\n\nGood luck, and feel free to comment!\n\n<h3>Additional info</h3>\n\nFor your convenience there is a preloaded function `print_board` that takes a whole notation or just the board representation and prints it to the stdout in the following fashion:\n```\nrnbqkbnr\npppppppp\n........\n........\n........\n........\nPPPPPPPP\nRNBQKBNR\n```\nThe random tests will always produce a valid or invalid notation (with 50% chance), and the invalid cases will always have only one reason to be invalid, for instance a board with too many rows, and no more. The reason will be presented to you if the test fails.  \nIf you enjoyed this kata, you can check a <a href=\"https://www.codewars.com/kata/56876fd23475fa415e000031\">similar one</a> which, so to say, inspired me to write this one.\n",
+    "totalAttempts": 258,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 10,
+    "tags": [
+      "Strings",
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c1d0603eb9142df470000bb",
+  "data": {
+    "id": "5c1d0603eb9142df470000bb",
+    "name": "RegEx Like a Boss #3:  Different Number Formats",
+    "slug": "regex-like-a-boss-number-3-different-number-formats",
+    "category": "algorithms",
+    "publishedAt": "2018-12-22T08:50:24.262Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5c1d0603eb9142df470000bb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-21T15:25:55.795Z",
+    "createdBy": {
+      "username": "sgerodes",
+      "url": "https://www.codewars.com/users/sgerodes"
+    },
+    "description": "Create a Regular Expression that matches valid number in one of two well known formats (`d` is a placeholder for a decimal digit [0-9]):\n\n\n1. `,` is used to split the integer part in triplets and `.` denotes the start of the fractional part\n\n E.g. `d,ddd,ddd.ddddddd` \n\n2. A space is used to split the integer part in triplets and `,` denotes the start of the fractional part\n \n E.g. `d ddd ddd,ddddddd` \n \nEvery Number should be valid. Leading/trailing zeros are not allowed.\n\n\nMatching with `re.match()`\n\nShould match:\n\n```\n1\n12\n124\n1,024\n2,000,204\n3,000.6\n8,205,500.4672\n0.5\n36,000.57\n100,000\n5\n46\n10.4444444\n10.0000000002\n1 024\n9 999 352\n10,19836\n30 000,7302\n0,5\n47 372\n```\n\nShould NOT match\n```\n0 234\n01,124\n1 124.12\n.5\n1025\n1,5826,000\n,046\n100.\n2.2.2\n10,\n10,.5\n34 34\n3692 38\n36 047.\n47 .7\n0.0000\n123.456.789\n0 123\n023\n23 43\n123 456,789.01\n10.0000\n10.0000700\n\n```\nAn empty String should not match. Leading/trailing whitespaces and other whitespace characters are not allowed. Leading/trailing newlines are irrelevant (could be or not considered; no tests checking for those).\n____\n\nThis tools may help you:\n\n[Cheat sheet](https://www.rexegg.com/regex-quickstart.html)\n\n[Online tester](https://regex101.com/r/OJ9kDw/1)\n",
+    "totalAttempts": 99,
+    "totalCompleted": 36,
+    "totalStars": 6,
+    "voteScore": 27,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57e2fc2e9cb1192b24000191",
+  "data": {
+    "id": "57e2fc2e9cb1192b24000191",
+    "name": "Maya Number Converter",
+    "slug": "maya-number-converter",
+    "category": "algorithms",
+    "publishedAt": "2016-09-21T22:39:41.716Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57e2fc2e9cb1192b24000191",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-21T21:31:27.200Z",
+    "createdBy": {
+      "username": "Austin Haws",
+      "url": "https://www.codewars.com/users/Austin%20Haws"
+    },
+    "description": "Ancient Mayas loved the number 20! and why not?! Us humans have a natural afinity for counting to 20 since we have 20 digits.\n\nMayas subdivided each twenty by five (each hand/foot has 5 digits). This totally makes sense! And relatively, the metric system is a bunch of 10 limbed people with one digit on each limb. Just more proof that Cthulu has consumed our universe!\n\nWhen drawing Maya numbers, a set of 5 is represented as a bar. Above the bar are dots for the remaining \"ones\". When they reached twenty they would start another \"number\" above the first one which represented the next power of 20.\nHere are some examples using 'o' for dots and '-' for lines:\n```\n1:   o\n\n4:   oooo\n\n5:   -----\n\n6:   o\n     -----\n\n10:  -----\n     -----\n\n14:  oooo\n     -----\n     -----\n\n19:  oooo\n     -----\n     -----\n     -----\n```\n\nTwenty starts a new section raised to a power of 20. Mayas have a special symbol for zero which we will represent with some cool ascii art.\n```\n20)  o\n\n      --- \n     /   \\\n     \\   /\n      ---\n\n33:  o\n\n     ooo\n     -----\n     -----\n33 = 20 (top dot) + 13 (bottom dots and lines)\n```\n\nYour mission is to write two functions. One that converts to maya numbers and another that converts from maya numbers.\n\nA maya number is represented in an array. Each index of the array is a 20s power chunk of the maya number, highest power first. Each 20s power chunk is an array of strings representing dots or lines, not including blank lines. Each string is 5 characters long being right padded by spaces.\n\n```\n33: [['o    '], ['ooo  ', '-----', '-----']]\n```\n\nSee the example test cases for more examples.\n\nYou can use the preloaded MayaPieces object that contains the pieces.\n```\nconst MayaPieces = {\n  1: 'o    ',\n  2: 'oo   ',\n  3: 'ooo  ',\n  4: 'oooo ',\n  5: '-----',\n  chunkZero: ['  --- ', '/   \\\\', '\\\\   /', ' --- '].join('\\n')\n};\n```\n\nNumbers will be between 0 and 20^5 (3,200,000).\n\nHelpful Maya Numbers Link: http://gwydir.demon.co.uk/jo/numbers/maya/\nWikipedia page: https://en.wikipedia.org/wiki/Maya_numerals\n\n```\n                 _____                                            \n                _|[]_|_                                           \n              _/_/=|_\\_\\_    PRETTY HUH ?????                     \n            _/_ /==| _\\ _\\_                                       \n          _/__ /===|_ _\\ __\\_    WE SLAUGHTERED PEOPLE TO OUR GODS\n        _/_ _ /====| ___\\  __\\_                                   \n      _/ __ _/=====|_ ___\\ ___ \\_    COOL HUH                     \njjs _/ ___ _/======| ____ \\_  __ \\_                               \n```\nhttp://www.asciiartfarts.com/20101027.html",
+    "totalAttempts": 221,
+    "totalCompleted": 16,
+    "totalStars": 3,
+    "voteScore": 17,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

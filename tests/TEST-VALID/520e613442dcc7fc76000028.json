@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/520e613442dcc7fc76000028",
+  "data": {
+    "id": "520e613442dcc7fc76000028",
+    "name": "Unit-Test Inception",
+    "slug": "unit-test-inception",
+    "category": "algorithms",
+    "publishedAt": "2013-08-16T23:41:08.745Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/520e613442dcc7fc76000028",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2013-08-16T17:28:21.080Z",
+    "createdBy": {
+      "username": "lunitik",
+      "url": "https://www.codewars.com/users/lunitik"
+    },
+    "description": "##### The Task\nFor this kata you will be writing your own unit testing framework. Once you have created your custom framework you will then use it to test a pre-defined 'Animal' class.\n\nWhat API you use to define your testing framework is completely up to you. The only thing that is required is that when a test fails it throws a custom TestError class (which has already been defined for you). This is how the kata's own unit tests will know that your custom framework was able to determine that the code is invalid.\n\nFor example:\n```javascript\nthrow new TestError('Animal class is not defined');\n```\n```coffeescript\nthrow new TestError('Animal class is not defined')\n```\n```ruby\nraise TestError, 'Animal class is not defined'\n```\n\nOnce you have defined your custom framework, you will use it to test the Animal class. This is what the Animal class looks like when it works as expected:\n\n```javascript\nAnimal = (function(){\n  function Animal(name, age){\n    if (!name){\n      throw new RangeError('name cannot be empty or missing')  \n    }\n    \n    if (typeof(age) != 'number'){\n      throw new RangeError('age is not a number')\n    }\n      \n    if (age < 0){\n      throw new RangeError('age is less than zero')  \n    }\n    \n    this.name = name;\n    this.age = age;\n  }\n\n  // returns the difference in years between this animal and the animal passed in. \n  Animal.prototype.yearsApart = function(otherAnimal){\n    if (!otherAnimal){\n      throw new RangeError('otherAnimal is missing');\n    }\n      \n    return (otherAnimal.age > this.age) ? (otherAnimal.age - this.age) : (this.age - otherAnimal.age);\n  }\n  \n  return Animal;\n})();\n```\n\n##### How is this going to work?\n\nBoth your framework and testings skills will be put to the test here. The runTests method provided for you will be called multiple times. Each time it is called, the Animal class will have been redefined. Sometimes it will work correctly, sometimes it will have something wrong with its implementation. \n\nIts up to your testing framework and custom tests to make sure that the Animal class is working properly. Remember, if the Animal class is invalid you should throw a new TestError instance.\n\nFor example. On one pass of the runTests method be called, the Animal class may be defined like so:\n\n```javascript\nAnimal = (function(){\n  function Animal(name, age){\n    if (!name){\n      throw new RangeError('name cannot be empty or missing')  \n    }\n\n    if (age < 0){\n      throw new RangeError('age is less than zero')  \n    } \n    this.name = name;\n    this.age = age;\n  }\n\n  // returns the difference in years between this animal and the animal passed in. \n  Animal.prototype.yearsApart = function(otherAnimal){\n    if (!otherAnimal){\n      throw new RangeError('otherAnimal is missing');\n    }\n      \n    return (otherAnimal.age > this.age) ? (otherAnimal.age - this.age) : (this.age - otherAnimal.age);\n  }\n  \n  return Animal;\n})();\n```\n\nNotice it is missing the following code that was present in the working version:\n```javascript\nif (typeof(age) != 'number'){\n  throw new RangeError('age is not a number')\n}\n```\n\nWhen the proper Animal class is passed in everything should pass, but when an improperly implemented version, like the one directly above, is passed in there should be at least one failed test case. \n\nAs you are working on this, remember that you are being tested on your tests. Its basically Inception (a dream inside a dream). \n\n**NOTE:** Since Codewars uses the name 'Test'  for its own testing framework you should probably stay away from using that name for your class/namespace in your framework. ",
+    "totalAttempts": 1109,
+    "totalCompleted": 33,
+    "totalStars": 4,
+    "voteScore": 31,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

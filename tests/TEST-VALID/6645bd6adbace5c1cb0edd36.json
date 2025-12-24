@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6645bd6adbace5c1cb0edd36",
+  "data": {
+    "id": "6645bd6adbace5c1cb0edd36",
+    "name": "Charmander the Hero",
+    "slug": "charmander-the-hero",
+    "category": "reference",
+    "publishedAt": "2024-05-16T08:05:07.743Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/6645bd6adbace5c1cb0edd36",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-16T08:01:46.565Z",
+    "createdBy": {
+      "username": "ricardo.hr",
+      "url": "https://www.codewars.com/users/ricardo.hr"
+    },
+    "description": "## Charmander the Hero\n\nThe Team Rocket is chasing you, but Charmander is ready to take some hits and keep you safe for a while. Knowing that \n**Charmander has 100 HP** and that every attack deals damage to it equal to its power, calculate how many attacks Charmander can tank before fainting (Charmander has to have **HP > 0** after the hit for it to count towards the total).\n\n![Charmander](https://www.dexerto.com/cdn-cgi/image/width=1080,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/11/15/Pokemon-TCG-Charmander.jpg)\n\nBe aware that Charmander is a **Fire type pokemon**, so it has the following strengths and weaknesses:\n\n* **Weaknesses**:  `WATER`, `ROCK`, `GROUND`\n* **Strengths**: `STEEL`, `ICE`, `GRASS`, `BUG`, `FIRE`, `FAIRY`\n\n(*) Any other string will be considered as a **Neutral** type attack.\n\nIf Charmander is weak to the attacks's type, it will take twice as much damage **(x2)**, but if it's strong against it, it will take half the damage **(x0.5)**. If the attack is neutral, the loss of HP will be equal to the attack's power, without any modification **(x1)**.\n\nYou will receive **2 parameters** (`int`, `String`) indicating the power and type of the attack, and must return an `int` value indicating the number of hits of that kind that Charmander was able to take without fainting.\n\n#### Example:\n\n```\n50, \"WATER\" -> 0\n15, \"NORMAL\" -> 6\n10, \"GRASS\" -> 19\n```\n\n(*) In the tests cases, the power of the attack will always be higher than 0.\n",
+    "totalAttempts": 44,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

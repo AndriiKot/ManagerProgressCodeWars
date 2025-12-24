@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5679ac2430001a7afe000055",
+  "data": {
+    "id": "5679ac2430001a7afe000055",
+    "name": "Basic HTTP Response Class",
+    "slug": "basic-http-response-class",
+    "category": "algorithms",
+    "publishedAt": "2015-12-23T15:13:45.107Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5679ac2430001a7afe000055",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-22T20:01:41.218Z",
+    "createdBy": {
+      "username": "DiegoSalazar",
+      "url": "https://www.codewars.com/users/DiegoSalazar"
+    },
+    "description": "# Basic HTTP Response Class\n\nLet's build a `Response` class to encapsulate HTTP response information and logic for our fictional microframework Kwipper.\n\nYou will have to implement the predefined methods in order to pass the tests. Your class will be instantiated with a mock `Request` object.\n\n**The example tests are the specifications you need to follow to implement the Response class and pass this kata.**\n\n\nThe test environment will be preloaded with:\n\n```ruby\nrequire \"securerandom\"\n\n# Test mocks\nUser = Struct.new \"User\", :id, :name\nSession = Struct.new \"Session\", :user_id, :session_id\nRequest = Struct.new \"Request\", :cookies\n\n# Default values\nSESSION_COOKIE_NAME = \"kwipper_session\"\n\nresponse_factory = -> (attributes = {}) do\n  Response.new Request.new(attributes.fetch(:request_cookies, {}))\nend\n```\n\nFor the `set_status` and `to_http_response` methods to work, you have to create a `:symbol => [code, message]` hash so you can easily set both the http code and message with the given symbol.\n\nFor example:\n\n```ruby\nHTTP_STATUSES = { created: [201, \"Created\"] }\ncode, message = HTTP_STATUSES[:created]\n# code == 201\n# message == \"Created\"\n```\n\nThe tests expect you to support the following HTTP statuses:\n\n - :ok\n - :created\n - :not_found\n - :unauthorized\n \nThe messages should be the standard HTTP status message as given by [this wikipedia article](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).\n\nEverything else you need to know can be derived from the test cases.\n\nThis is a big kata but, you can do it. Believe in your self. [Rock and roll!](http://stream1.gifsoup.com/view6/2767947/thumbs-up-for-rock-and-roll-o.gif)",
+    "totalAttempts": 183,
+    "totalCompleted": 9,
+    "totalStars": 3,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

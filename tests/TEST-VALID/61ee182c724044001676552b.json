@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61ee182c724044001676552b",
+  "data": {
+    "id": "61ee182c724044001676552b",
+    "name": "WORDLE",
+    "slug": "wordle",
+    "category": "reference",
+    "publishedAt": "2022-01-24T04:55:17.459Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61ee182c724044001676552b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-24T03:08:28.610Z",
+    "createdBy": {
+      "username": "ecolban",
+      "url": "https://www.codewars.com/users/ecolban"
+    },
+    "description": "[WORDLE](https://www.powerlanguage.co.uk/wordle/) is a game where you have to guess a 5-letter word. You type in your guess, and the feedback you get tells you which letters are correct, which letters in your guess are in the hidden word but in the wrong place, and which letters are not in the hidden word.\n\n## Examples\n\nSay the hidden word is MOVIE.\n\n1. Let your first guess be WRACK. None of the letters in WRACK are in MOVIE. Let's represent each letter not in the hidden word by a dot, so the feedback is: `\".....\"`\n\n2. Let your second guess be HUMUS. The letter M is the only letter that is in the hidden word, but it's in the wrong place. Let's represent letters in the wrong place with lowercase, so the feedback is `\"..m..\"`\n\n3. Let the third guess be GLOOM. This time the feedback is `\"..o.m\"` or `\"...om\"` because only one O and the M is in movie and both are in the wrong places. \n\n4. Let the fourth guess be MONEY. M and O are in the correct places and E in an incorrect place. We represent letters in the correct place by uppercase, so the feedback is `\"MO.e.\"`.\n\n5. Finally you might guess the word and type MOVIE. The feedback is then `\"MOVIE\"`.\n\n## Challenge\n\nIn this kata, you must implement two functions (exact notation may depend on language):\n\n1. `get_feedback(guess, word)`, which must return the feedback as described above. For example, `get_feedback(\"MONEY\", \"MOVIE\")` shall return `\"MO.e.\"`, and `get_feedback(\"GLOOM\", \"MOVIE\")` shall return either `\"..o.m\"` or `\"...om\"`.\n\n2. `is_compatible(guess, feedback, word)`, which shall return `True` if `word` is a possible candidate for the hidden word given that the guess `guess` gives the feedback `feedback`. For example, `is_compatible(\"GLOOM\", \"..o.m\", \"MONEY\")` shall return `True`, whereas `is_compatible(\"GLOOM\", \"..o.m\", \"MELON\")` shall return `False` (because the feedback implies that there is no L in the hidden word). You may assume that the `(guess, feedback)` pair is valid.\n\nOnly capital letters from A to Z are used in `guess` and `word`.",
+    "totalAttempts": 183,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 20,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

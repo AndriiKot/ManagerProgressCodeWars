@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66a41f45cd43b1413046cdf4",
+  "data": {
+    "id": "66a41f45cd43b1413046cdf4",
+    "name": "JavaScript Built in Types: Arrays, Strings, Sets",
+    "slug": "javascript-built-in-types-arrays-strings-sets",
+    "category": "reference",
+    "publishedAt": "2024-07-28T03:09:08.288Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/66a41f45cd43b1413046cdf4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-26T22:12:21.166Z",
+    "createdBy": {
+      "username": "JavaScripts",
+      "url": "https://www.codewars.com/users/JavaScripts"
+    },
+    "description": "# JavaScript Built in Types: Arrays, Strings, Sets\n\nArrays in JavaScript are one of the most fundamental contructs. Arrays are an ordered collection of objects indexed by consecutive positive integers starting at Zero. Normal arrays in JavaScript are mutable. \n\nStrings on the other hand are immutable. They carry many of the same properties as arrays and it is often useful to think of them as arrays of characters.\n\nSets are a collection of unique objects where the key maps directly to its own value. While not accurate, it is often useful to think of sets as an array containing no duplicate values.\n\nIt is useful to know how to quickly convert between these data types. Conversions between these types often does change the contents in ways that can't be reversed but usually that is what we want.\n\n## Task\n\nIn this Kata you must define 6 functions. 2 for each object type. Each function converts one type to another.\n\n```\nArray.prototype.toSet //converts the array to a set\nArray.prototype.toStr //converts the array to a string\nSet.prototype.toArr //converts the set to an array\nSet.prototype.toStr //converts the set to a string\nString.prototype.toArr //converts the string to an array\nString.prototype.toSet //converts the string to a set\n```\n\nThe `.toStr` should concatenate values into a string with no delimeter so that `\"some text\".toArr().toStr();` returns back the original string value.\n\nWhen extending objects through their prototypes in this way, it is best to use `Object.setProperty` which will define the new properties as nonenumerable. If we just assign the properties using `=` then the properties are enumberable and will show up when looping over the objects in certain contexts like `for...in` loops.",
+    "totalAttempts": 19,
+    "totalCompleted": 16,
+    "totalStars": 0,
+    "voteScore": 6,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

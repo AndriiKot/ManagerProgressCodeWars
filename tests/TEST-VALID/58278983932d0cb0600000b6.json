@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58278983932d0cb0600000b6",
+  "data": {
+    "id": "58278983932d0cb0600000b6",
+    "name": "Multi Poly Coordinates",
+    "slug": "multi-poly-coordinates",
+    "category": "algorithms",
+    "publishedAt": "2016-11-12T21:39:42.807Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/58278983932d0cb0600000b6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-12T21:28:36.385Z",
+    "createdBy": {
+      "username": "ebreton",
+      "url": "https://www.codewars.com/users/ebreton"
+    },
+    "description": "Implement a ```Coordinates``` class that will be permissive enough\nto accept a 'human-formated' latitude or longitude and that will be generous\nenough to return well structured usable formats.\n\nHere is an example to set the context:\n\n```python\n$ paris_lat = Coordinates('N', 48, 51, 52.9776)\n$ paris_lat.coordinates\n('N', 48.0, 51.0, 52.9776)\n$ paris_lat.degrees\n48.864716\n$ paris_lat.radians\n0.85285018\n```\n\nYour class should accept:\n\n* an orientation in ```('S', 'N', 'E', 'W') ```\n* and any decimal for degrees, minutes and seconds\n\n```python\n    def __init__(self, orientation, degrees=0, minutes=0, seconds=0):\n        pass\n```\nIt should be clever enough to restructure those decimals in a proper valid way, e.g have seconds and minutes below 60. and decimals for the seconds only.\n\n```python\nsantiago_lat = Coordinates('S', degrees=33.459229)\ntest.assert_equals(santiago_lat.coordinates, ('S', 33.0, 27.0, 33.2244))\n```\n\nThe class could have the following properties to offer its different formats:\n\n```python\n    @property\n    def coordinates(self):\n        pass\n    @property\n    def seconds(self):      \n        pass\n    @property\n    def degrees(self):      \n        pass\n    @property\n    def radians(self):\n        pass\n```\n\nWhen decimal numbers are returned, they should be round to 8.",
+    "totalAttempts": 242,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 10,
+    "tags": [
+      "Puzzles",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

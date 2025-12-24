@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d25394d0e313e000dd36ead",
+  "data": {
+    "id": "5d25394d0e313e000dd36ead",
+    "name": "BF Interpreter",
+    "slug": "bf-interpreter",
+    "category": "algorithms",
+    "publishedAt": "2019-07-10T02:17:28.373Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d25394d0e313e000dd36ead",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-10T01:03:09.760Z",
+    "createdBy": {
+      "username": "ᛚᚨᚱᛊ ᚺᛖᚾᚱᛁᚲ",
+      "url": "https://www.codewars.com/users/%E1%9B%9A%E1%9A%A8%E1%9A%B1%E1%9B%8A%20%E1%9A%BA%E1%9B%96%E1%9A%BE%E1%9A%B1%E1%9B%81%E1%9A%B2"
+    },
+    "description": "# BR>INF+CK\n\nIn this Kata you will implement a simple BF interpreter. Feel free to implement any optimization technique you see fit.\n\n### Commands <sup>[[1](#ref1)]</sup>\n\n\n|Character|\tMeaning|\n|---------|--------|\n|<pre>></pre>|increment the data pointer (to point to the next cell to the right).|\n|<pre><</pre>|decrement the data pointer (to point to the next cell to the left).|\n|<pre>+</pre>|increment (increase by one) the byte at the data pointer.|\n|<pre>-</pre>|decrement (decrease by one) the byte at the data pointer.|\n|<pre>.</pre>|output the byte at the data pointer.|\n|<pre>,</pre>|accept one byte of input, storing its value in the byte at the data pointer.|\n|<pre>[</pre>|\tif the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.\n|<pre>]</pre>|\tif the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.\n\n### Caveats\n\n* The test codes contain non-syntactic characters (comments) which should be ignored.\n* The **input arguments** (read with `,`) will be provided as the byte string `args`.\n* The **output values** (written with `.`) shall be returned as a byte string.\n* The memory of each program should be constrained to bytes (values [0..255]), with modular underflow/overflow arithmetic (ie. 256 -> 0, -1 -> 255).\n* The test suite arguments are sometimes padded with a `0`-byte to ease implementation.\n\n### References\n\n<p id=\"ref1\">[1]: <a href=\"https://www.wikiwand.com/en/Brainfuck#/Commands\">Wikipedia: Brainfuck</a></p>",
+    "totalAttempts": 16,
+    "totalCompleted": 5,
+    "totalStars": 1,
+    "voteScore": -4,
+    "tags": [
+      "Algorithms",
+      "Interpreters",
+      "Logic"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

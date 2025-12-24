@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580f756d4d8fbd84f70000d0",
+  "data": {
+    "id": "580f756d4d8fbd84f70000d0",
+    "name": "Author Disambiguation: Signatures worth it",
+    "slug": "author-disambiguation-signatures-worth-it",
+    "category": "algorithms",
+    "publishedAt": "2016-10-25T16:02:10.493Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/580f756d4d8fbd84f70000d0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-25T15:08:29.734Z",
+    "createdBy": {
+      "username": "ebreton",
+      "url": "https://www.codewars.com/users/ebreton"
+    },
+    "description": "The objective is to disambiguate two *signatures*. A signature can be\r\n\r\n* a more-or-less-full name (i.e some combinaison of firstname, middle name and lastname)\r\n\t```\"Carlos Ray Norris\", \"Carlos Norris\", \"Carlos-Ray Norris\"```\r\n* with or without upper cases, accents and punctuation\r\n\t```\"carlos ray norris\", u\"Carlòs Ray Norris\", \"Carlos!\", \"Norris? carlos!\"```\r\n* a consequent number of corresponding initials (initials should be followed by a space, a dot or a dash)\r\n\t```\"C R Norris\", \"C-R N\", \"C.R N.\", \"Carlos-Ray N.\"```\r\n* a various mix of the above...\r\n* order of the mixed arguments shoult not matter\r\n\r\n\r\nThe function ```could_be``` is given two *signatures* and should return\r\n```True``` if they might belong to the same author. \r\n\r\nTherefore, all the given examples below should match:\r\n\r\n```python\r\ndef test_success():\r\n\tsynonyms = (\"Carlos Ray Norris\", \"Carlos Norris\", \"Carlos-Ray Norris\",\r\n\t\t\"carlos ray norris\", u\"Carlòs Ray Norris\", \"Carlos!\", \"Norris? Carlos!\", \r\n\t\t\"Carlos. Ray; Norris,\", \"Carlos:Ray Norris\",\r\n\t\t\"C N\", \"C-R N\", \"C.R N.\")\r\n\tfor (one, another) in permutations(synonyms, 2):\r\n\t\tassert could_be(one, another) # -> True\r\n```\r\n\r\nBeware that you could also match \"Chuck Norris\" with \"C Norris\" or \"C N\"\r\nbut not with \"Carlos Norris\". \r\n\r\nObviously (?) they are not the same person.\r\n\r\nWhen accents comes into the game, they will enter through UTF-8 unicodes.\r\n\r\nHere are few examples of signatures that do not match:\r\n\r\n```python\r\ndef test_ko():\r\n\tvarious = (\"Carlos Norris\", \"Carlos Ray\", \"Ray Norris\", \"Chuck\", \r\n\t\t\"Dave Norris\", \"L. N.\", \"C. Raymond Norris\", \"\")\r\n\tfor (one, another) in permutations(various, 2):\r\n\t\tassert not could_be(one, another) # -> False\r\n```\r\n\r\nAs an ending note, ```could_be``` should be symmetrical, i.e results for\r\n```could_be(A, B)``` must be identical to ```could_be(B, A)```\r\n\r\nYou might want to warm up with the two other puzzles from the serie \"Author Disambiguation\"\r\n\r\n* [To the point](https://www.codewars.com/kata/author-disambiguation-to-the-point), rather simple\r\n* [A name is a Name](https://www.codewars.com/kata/author-disambiguation-a-name-is-a-name), more permissive \r\n",
+    "totalAttempts": 166,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

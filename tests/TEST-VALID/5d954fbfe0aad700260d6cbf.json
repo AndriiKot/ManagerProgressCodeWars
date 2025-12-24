@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d954fbfe0aad700260d6cbf",
+  "data": {
+    "id": "5d954fbfe0aad700260d6cbf",
+    "name": "Deep Flattening an Array",
+    "slug": "deep-flattening-an-array",
+    "category": "reference",
+    "publishedAt": "2019-10-03T04:01:21.606Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d954fbfe0aad700260d6cbf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-03T01:32:47.602Z",
+    "createdBy": {
+      "username": "smartspot2",
+      "url": "https://www.codewars.com/users/smartspot2"
+    },
+    "description": "Given a nested array, you must return a flat array with all the elements in their original order.\n\nThe array can be of any nesting level, and does not have to be consistent. The arrays will only consist of nested lists, but the individual elements may be of different types.\n\nFor example,\n\n```python\n# Should return an empty list if given one\n>>> deep_flatten([])\n[]\n\n# Should return an already flattened array as is\n>>> deep_flatten([1, 2, 3])\n[1, 2, 3]\n\n# Should work with multiple nesting levels\n>>> deep_flatten([[1, 2], [3, 4, 5], [6, [7], [[8]]]])\n[1, 2, 3, 4, 5, 6, 7, 8]\n\n# Should work with multiple data types; empty lists should be ignored\n>>> deep_flatten([1, 2, ['9', [], []], None])\n[1, 2, '9', None]\n```",
+    "totalAttempts": 7,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

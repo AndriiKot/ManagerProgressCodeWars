@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a54348880eba8840600008f",
+  "data": {
+    "id": "5a54348880eba8840600008f",
+    "name": "Depot organization 1",
+    "slug": "depot-organization-1",
+    "category": "games",
+    "publishedAt": "2018-01-09T03:21:21.682Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a54348880eba8840600008f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-09T03:18:32.324Z",
+    "createdBy": {
+      "username": "Unihedron",
+      "url": "https://www.codewars.com/users/Unihedron"
+    },
+    "description": "In this puzzle, there are seven depots to arrange. Each depot is that of a hexagon, and their six walls (sides) are marked with a special type of material. We have to arrange the seven depots with one in the center and the other six surrounding it (in the shape of a bigger hexagon). However, every wall that is shared by two depots must have a matching material (letter) on the same side. The depots may be turned, but the order of the sides must be rotated along with it. For example, the depots (as a hexagon) can be rotated to turn from this orientation to the left to the right:\n\n![](https://user-images.githubusercontent.com/5595067/32763380-4cadec04-c93a-11e7-8d52-6884c9dea40a.png)\n\nThey may not be flipped as a mirror image.\n\nFor your reference, here is a visualization of a test case and its solution:\n\n**Puzzle:**\n\n    W T J G N D\n    X F W K C M\n    M N X T R W\n    B C V Q J G\n    M T S D V K\n    C F S G K B\n    G T R M W C\n\n**Solution:**\n\n    4K 1X 2R 6C 5G 0J 3C\n\n![](https://user-images.githubusercontent.com/5595067/32763805-ee635f64-c93c-11e7-9050-7996f726a882.png)\n\n(Problem based on: Hexagon Puzzle (Problem 24) from HP CodeWars 2017 NA)\n\n<div style=\"padding:8px;border-radius:1%;background:rgba(255,255,255,.08)\">\n\n<h2>Input</h2>\n\n<p>**Each of 7 strings: Six** capital <span style=\"background:rgba(180,120,180,.65);color:black;border-radius:5px;padding:1px 4px\">letters</span> seperated by spaces, marking the texture of the walls around depot <span style=\"background:rgba(120,180,120,.65);color:black;border-radius:5px;padding:1px 4px\">X</span> (**0**-indexed) in clockwise order.\n\n<h2>Output</h2>\n\n<p>The unique solution of **seven** pairs of two characters, a **number** of that of <span style=\"background:rgba(120,180,120,.65);color:black;border-radius:5px;padding:1px 4px\">depot index</span> and a <span style=\"background:rgba(180,120,180,.65);color:black;border-radius:5px;padding:1px 4px\">letter</span>. Out of the six possible orientations for the solution, print only the one for which the **center hexagon is oriented with its alphabetically lowest character pointed to the right**. The hexagon sequence must be printed left-to-right, top-to-bottom. The first hexagon in the input is the top left, and the last is the bottom right. After each <span style=\"background:rgba(120,180,120,.65);color:black;border-radius:5px;padding:1px 4px\">index</span>, the program must print the <span style=\"background:rgba(180,120,180,.65);color:black;border-radius:5px;padding:1px 4px\">letter</span> of the wall to the right. Join the seven values with spaces.</p>\n\n<p>See the example above the specifications for a visualization of this format.</p>\n\n<h2>Constraints</h2>\n\nThere will be a unique solution.</div>",
+    "totalAttempts": 57,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 12,
+    "tags": [
+      "Games",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

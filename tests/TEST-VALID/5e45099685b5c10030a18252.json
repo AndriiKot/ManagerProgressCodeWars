@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e45099685b5c10030a18252",
+  "data": {
+    "id": "5e45099685b5c10030a18252",
+    "name": "Creating a custom PHP stream wrapper",
+    "slug": "creating-a-custom-php-stream-wrapper",
+    "category": "algorithms",
+    "publishedAt": "2020-02-13T08:32:54.782Z",
+    "approvedAt": null,
+    "languages": [
+      "php"
+    ],
+    "url": "https://www.codewars.com/kata/5e45099685b5c10030a18252",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-13T08:32:22.239Z",
+    "createdBy": {
+      "username": "rubs33",
+      "url": "https://www.codewars.com/users/rubs33"
+    },
+    "description": "PHP allows you to create custom stream wrappers to handle custom streams with the native PHP functions like file_get_contents, file_put_contents, fopen, fwrite, fread, fputs, fgetc, etc.\n\nYour mission is to create a class \"EncodeStream\". It will be used to register a new stream wrapper called \"encode\". This new wrapper will be used to store/retrieve data from files, but using an encryption layer.\n\nAcceptance criteria:\n\n* The wrapper must recognize the path format \"encode://{SECRET}{PATH}\", for example \"encode://foo/path/to/real/file\" where \"foo\" is the secret used by the cypher (it will contain only letters) and \"/path/to/real/file\" is the path to the real file where the encrypted data will be stored.\n* It must use the openssl functions to encrypt/decrypt data and use the cipher \"rc4\" (empty iv and empty tag).\n* It must accept storing multiple chunks, for example multiple calls of `fwrite`. For each chunk of data to be added in the encrypted file, you must store the size of the encrypted chunk data using binary unsigned long values (32 bits, big endian byte order), followed by the encrypted chunk data.\n* When a number of bytes is requested for read from the stream (for example using `fread`), you should return a decrypted value with that number of bytes.\n* It must support these stream wrapper operations: open, close, read, write, eof and stat.\n\nExample:\nWhen you finish writing your class, this code must work:\n```\n// The line below will register your class as the stream wrapper for the protocol \"encode\"\nstream_wrapper_register('encode', 'EncodeStream');\n\n// Open a stream handler with the secret \"foo\" using the file \"/path/to/my/testfile\"\n$h1 = fopen('encode://foo/path/to/my/testfile', 'w');\n\n// The line below will encode \"First text\" with secret \"foo\", write the size of this encoded chunk\n// in the file \"/path/to/my/testfile\", write the encoded chunk in the real file.\nfwrite($h1, 'First text');\n\n// The libe below will encode the second chunk and write into the file (the same way as the line above)\nfwrite($h1, 'Second text');\n\nfclose($h1);\n\n// The script below should print \"First textSecond text\"\n$h2 = fopen('encode://foo/path/to/my/testfile', 'r');\nwhile (!feof($h2)) {\n    echo fread($h2, 10);\n}\nfclose($h2);\n```\n\nMore details about PHP's stream wrappers:\n\nhttps://www.php.net/manual/en/class.streamwrapper.php",
+    "totalAttempts": 28,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Streams",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

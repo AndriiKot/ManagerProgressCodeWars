@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ace7d5d4d9fd1061500005c",
+  "data": {
+    "id": "5ace7d5d4d9fd1061500005c",
+    "name": "Pizza Slicer",
+    "slug": "pizza-slicer",
+    "category": "algorithms",
+    "publishedAt": "2018-04-11T21:25:55.581Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ace7d5d4d9fd1061500005c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-11T21:25:50.103Z",
+    "createdBy": {
+      "username": "FilipH",
+      "url": "https://www.codewars.com/users/FilipH"
+    },
+    "description": "# The Pizza Slicer\n### Situation\nA few minutes ago I ordered 2 large spicy BBQ pizza's for my two kids and myself.  But I need to solve a common problem before the delivery guy arrives on my doorstep.  I need to find a simple but correct way to slice the pizza's in parts to avoid every discussion.\n\n### The simple solution is obvious\n2 pizza's divided by 3 people results in 2/3 of pizza per person.  But I dare you to divide 2 pizza's in 3 parts of 2/3 without making someone unhappy.  Obviously I'm clearly not satisfied with this solution; I need a method to slice the pizza's evenly.\n\nSomething like this:<br/>\n```\n2/3 = 4/6 = 3/6 + 1/6 = 1/2 + 1/6\n```\nEverybody get's 1/2 + 1/6 of all pizza's, which is easier to slice evenly.\n\n### Rules\nLet's generalize this in following challenge.\n\n###### Given:\n* <b>pizzas</b>: amount of pizza's (as non null, positive BigInteger, greater than zero)\n* <b>stomachs</b>: amount of stomachs to feed (also non null, positive BigInteger, greater than zero)\n* amount of stomachs is always greater than amount of pizza's  \n* <i>one person only has one stomach, let's exclude pizza eating cows having 4 stomachs!</i>\n\n###### When:\n* pizza's are sliced\n\n###### Then:\n* <b>slices</b>: an array (of BigInteger) is expected with distinct slices\n* <b>distinct</b>: the slices need to be different;  2/3 can also be sliced as 1/3 + 1/3, but this is not considered a valid solution.\n* <b>remarks</b>: multiple slicing patterns can be valid for one combination of pizza's and stomachs \n\n### Example\nFor the previous example this would result in following:\n```\nPizzaSlicer.slice(2 /*pizzas*/, 3 /*stomachs*/) => [ 2, 6 ]\n```\n",
+    "totalAttempts": 6,
+    "totalCompleted": 3,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

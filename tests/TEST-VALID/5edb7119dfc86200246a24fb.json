@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5edb7119dfc86200246a24fb",
+  "data": {
+    "id": "5edb7119dfc86200246a24fb",
+    "name": "Planning a city quarantine",
+    "slug": "planning-a-city-quarantine",
+    "category": "algorithms",
+    "publishedAt": "2020-06-06T14:31:31.198Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5edb7119dfc86200246a24fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-06T10:34:02.034Z",
+    "createdBy": {
+      "username": "dramforever",
+      "url": "https://www.codewars.com/users/dramforever"
+    },
+    "description": "(Note: This kata was created during the 2020 coronavirus pandemic. Huge shout out to the hardworking people who kept us real people as far from the real virus as possible, and also to those who kept working at real vital positions to ensure that the real society continues running.)\n\nYou're the Head of Center of Disease Control of Codewarstania and there's a coronavirus outbreak in the country. Many cities are reporting cases. You need to quarantine all the areas with known cases.\n\n---\n\nEvery Codewarstania city is organized into a rectangular grid of blocks with perpendicular streets. You know for each block whether there is a known case. You can build a barrier on any street segment to block it off. **You need to quarantine all blocks with known cases**, meaning that you need to make it impossible to go from a block with known cases to outside the city without crossing a barrier.\n\nAlso, you want to make sure make sure to build the **minimum number of barriers**, so that quarantine can be established as soon as possible.\n\n**Your task**: Each city's database provided you with a 2D boolean array (see example tests for exact format) representing blocks with true if there is a known case in it. You need to write a function that takes that array and return a quarantine plan, consisting of a boolean array of the same shape where true means that the corresponding block is part of the planned quarantined zone.\n\n## Some details on how this works\n\nHow do we quarantine with minimum number of barriers? In order to establish quarantine, of course all blocks with known cases needs to be in the quarantine zone. That would be a naive solution, and will work reasonably well. But sometimes the known cases form an area where the perimeter forms a complicated shape, and if you blindly follow the perimeter exactly you waste precious barriers. It might take less barriers to quarantine a slightly larger area with a simpler shape. See a simple example below.\n\nTherefore, to achieve the smallest number of barriers built, it may be required to enclose multiple areas and/or enclose blocks without known cases, and we need not not minimize number of enclosed blocks without known cases. Speed of quarantine and therefore minimum number of barriers is key here, and other things can be sorted out later.\n\nIf you can find the best extra blocks to add to the quarantine zone, and return a boolean array where both the known case blocks and extra blocks are set to true, you have a solution. How to do this systematically is another matter that you need to figure out...\n\n**Important note: You do not directly specify where barriers are built.** Instead, it is inferred from your quarantine zone plan. A barrier will be built on every street segment between a quarantined zone block and an unquarantined block, and also between a quarantined zone block and outside the city. Note that a block on the corner shares two street segments with outside the city, meaning that two barriers will be built if it needs to be blocked off from the outside.\n\n## Examples\n\nTextually we draw an 2D boolean array as a grid of ` ` or `X` where space means false and `X` means true.\n\n### Example 1\n\nFor this 2x3 area:\n\n```\nX X\n X\n```\n\nOne of the optimal quarantine plans is the following, taking 10 barriers. This is what your return value would look like textually:\n\n```\nXXX\n X\n```\n\nFrom this plan the **inferred** barriers look like the lines in the following:\n\n```\n ---\n|XXX|\n - -\n |X|\n  -\n```\n\nA naive quarantine plan is to not quarantine any extra blocks, giving the following. It takes 12 barriers, which is 2 more than minimum. So this would not be accepted as an answer.\n\n```\nX X\n X\n```\n\n### Example 2\n\nFor this 1x3 area:\n\n```\nX X\n```\n\nEither of the following two plans takes 8 barriers. They are both accepted.\n\n```\nXXX\n```\n\n```\nX X\n```\n\nFor more you can check the example tests.\n\n## Performance\n\nSome performance in the algorithm is required. In particular, choosing the right general approach is quite important. You won't need to do things like using all the tricks in the book to squeeze every last bit of processor juice though.\n\n```if:python\nFor Python, there are 10 6x6 tests, 5 10x10 tests, 3 20x30 tests.\n```\n\n## Extra info\n\nThe input and output array are printed compactly in the test log for efficiency. They are simply `1` for true and `0` for false, read row by row. For example for size `(2, 3)`, `101010` means this array:\n\n```\nX X\n X\n```\n\n~~~if:python\n\nThe following Python function will help you convert such a string into a boolean array. Use it like: `convert_input((2, 3), '101010')`. There's an example usage in the example tests too.\n\n```python\ndef convert_input(size, text):\n    rows, cols = size\n    assert rows * cols == len(text)\n    convert_row = lambda row: [ ch == '1' for ch in row ]\n    return [ convert_row(text[i * cols : (i + 1) * cols]) for i in range(rows) ]\n```\n\n~~~\n\nThe input and output are also drawn in the test logs to allow easier visual checking. The colors are:\n\n- White: Nothing\n- Black: Known case\n- Red: Known case not quarantined\n- Gray: No known case but quarantined\n- Blue line: barrier\n",
+    "totalAttempts": 383,
+    "totalCompleted": 7,
+    "totalStars": 6,
+    "voteScore": 12,
+    "tags": [
+      "Graph Theory",
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

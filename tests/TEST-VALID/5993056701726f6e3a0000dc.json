@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5993056701726f6e3a0000dc",
+  "data": {
+    "id": "5993056701726f6e3a0000dc",
+    "name": "实现一个特殊的 Function.prototype.bind",
+    "slug": "shi-xian-ge-te-shu-de-function-dot-prototype-dot-bind",
+    "category": "reference",
+    "publishedAt": "2019-07-24T05:36:11.359Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5993056701726f6e3a0000dc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-15T14:29:59.825Z",
+    "createdBy": {
+      "username": "binggg",
+      "url": "https://www.codewars.com/users/binggg"
+    },
+    "description": "ES5 标准的 Function.prototype.bind 方法会返回一个新的函数拷贝，当函数被调用的时候，将其this值设置为给定的this值，同时在参数列表之前先传递一个给定的参数序列\n\n语法：\n```\nfun.bind(thisArg[, arg1[, arg2[, ...]]])\n```\n\n标准的bind方法，再次对新函数拷贝调用bind并不能再次改变this的值。\n\n\n比如：\n\n```javascript\nfunction foo() {\n  return this.bar\n}\n\nfoo = foo.bind({ bar: 'bar1' })\nfoo() // bar1\n\nfoo = foo.bind({ bar: 'bar2' })\nfoo() // bar1\n```\n\n下面我们需要构造一个新的特殊的bind方法，覆盖 Function.prototype.bind 方法，要求如下：\n\n- 新的bind方法返回的函数拷贝需要支持再次改变this的指向\n- 新的bind方法需要像ES5标准的bind方法一样处理预设参数以及bind以后的动态参数\n\n输入代表给定的函数被覆盖为bind后的函数拷贝并执行\n\n输出代表函数拷贝的执行结果\n\n输入\n\n```\n(foo = foo.bind({ bar: 'bar1' }))()\n```\n\n输出\n\n```\n// bar1\n```\n\n输入 \n\n```\n(foo = foo.bind({ bar: 'bar2' }))()\n```\n\n\n输出\n\n```\n// bar2\n```\n\n\n\n\n",
+    "totalAttempts": 117,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Fundamentals",
+      "Functions",
+      "Control Flow",
+      "Basic Language Features"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

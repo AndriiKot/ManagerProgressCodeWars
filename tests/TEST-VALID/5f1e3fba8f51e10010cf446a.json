@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f1e3fba8f51e10010cf446a",
+  "data": {
+    "id": "5f1e3fba8f51e10010cf446a",
+    "name": "Create a REST API!",
+    "slug": "create-a-rest-api",
+    "category": "algorithms",
+    "publishedAt": "2020-07-30T02:08:48.006Z",
+    "approvedAt": "2022-07-29T07:45:13.037Z",
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f1e3fba8f51e10010cf446a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-27T02:45:14.907Z",
+    "createdBy": {
+      "username": "DevTony101",
+      "url": "https://www.codewars.com/users/DevTony101"
+    },
+    "approvedBy": {
+      "username": "el-f",
+      "url": "https://www.codewars.com/users/el-f"
+    },
+    "description": "In this kata you are going to mimic the behaviour of a backend framework by creating a `TestController` class.\n\nThe class can be constructed in any way you like as long as it meets the following criteria:\n\n- The class must have a constructor that receives an array of objects; the array will act as the data source from which the class will perform the operations, it can be empty or filled. The structure of the objects it's described below.\n\n- The class must have a `dispatch` method that receives an object containing the information about the request. The object will always have the same structure:\n\n```json\n{\n  payload: {\n    id: 1,\n    name: \"Ada\",\n    job: \"Programmer\"\n  },\n  query: \"?id=1\"|\"?name=Ada\"|\"?job=Programmer\",\n  method: \"GET\"|\"POST\"|\"PUT\"|\"DELETE\"\n}\n```\n\n`payload` is an object representing a person that can be either empty or filled. It holds the data that needs to be saved (in the case of a `POST` request), or updated (in the case of a `PUT` request).\n\n`query` is a query string. It will act as a filter (in the case of a `GET` request), or as a condition that needs to be fulfilled (in the case of a `PUT` or `DELETE` request)\n\n`method` is a string with the name of the **HTTP** method.\n\n- The `dispatch` method must return the proper response for each request in the form of a `response` object with the following structure:\n\n```json\n{\n  status: 200|201|202|400,\n  body: []\n}\n```\n\nIf it was a `GET` request, the method must return a status code of `200` alongside an array of objects that matches the criteria passed in the `query` property, if no element matched, return an empty array. If the query string is empty, however, return **ALL** the objects.\n\nIf it was a `DELETE` request, it must return the `response` object with a status code of `200` and an empty body array.\n\nIf it was a `POST` request, it must return the `response` object with a status code of `201` and the `payload` object attached to the body array.\n\nIf it was a `PUT` request, it must return the `response` object with a status code of `202` and the `payload` object attached to the body array.\n\n- If one of the following errors occurs, return the `response` object with a status of `400` (bad request) and an empty body array:\n\nA `DELETE` request was made but no element matched the criteria or the query string was empty.\n\nA `POST` or a `PUT` request was made but the `payload` object was empty.\n\nA `PUT` request was made but there is no item matching the id passed in the query or the `query` string was empty.\n\n### Constraints and Assumptions\n\n- Objects send in the `payload` property are always going to be valid\n- The `id` of each object (person) is unique\n- The test cases are made such that only one property is evaluated in the query string at a time",
+    "totalAttempts": 691,
+    "totalCompleted": 77,
+    "totalStars": 32,
+    "voteScore": 63,
+    "tags": [
+      "Algorithms",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

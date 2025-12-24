@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a7c7d2d4a6b34d4730000e5",
+  "data": {
+    "id": "5a7c7d2d4a6b34d4730000e5",
+    "name": "Run n times",
+    "slug": "run-n-times",
+    "category": "reference",
+    "publishedAt": "2018-02-08T16:43:26.197Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a7c7d2d4a6b34d4730000e5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-08T16:39:09.892Z",
+    "createdBy": {
+      "username": "bellentuck",
+      "url": "https://www.codewars.com/users/bellentuck"
+    },
+    "description": "Write a wrapper function `nTimes`. \n\nThe first argument to `nTimes` is another function. Part of our wrapper function's job is to execute this other \"interior\" function, taking in arguments for the interior function as necessary and returning the interior function's return value. \n\nThe second, optional argument to `nTimes` is the number of times our wrapper is to be able to run its interior function. The other part of one of our wrapper function instances' job is to check if the instance has been run more than n times. If so, the interior function should not be run again. This second argument should default to 1.\n\nHow this might play out:\n```\nvar interiorFunction = () => true;\nvar wrapper = nTimes(interiorFunction, 5);\n\nwrapper();  // returns true\nwrapper();  // returns true\nwrapper();  // returns true\nwrapper();  // returns true\nwrapper();  // returns true\nwrapper();  // returns undefined\nwrapper();  // returns undefined\n```\nAfter being called 5 times, the result of `wrapper` is no longer defined.",
+    "totalAttempts": 116,
+    "totalCompleted": 31,
+    "totalStars": 1,
+    "voteScore": 70,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

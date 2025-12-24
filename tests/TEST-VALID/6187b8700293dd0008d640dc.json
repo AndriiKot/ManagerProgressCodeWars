@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6187b8700293dd0008d640dc",
+  "data": {
+    "id": "6187b8700293dd0008d640dc",
+    "name": "Justice Always Wins",
+    "slug": "justice-always-wins",
+    "category": "reference",
+    "publishedAt": "2021-11-07T11:30:42.449Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6187b8700293dd0008d640dc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-07T11:28:49.190Z",
+    "createdBy": {
+      "username": "ZhumanRakhat",
+      "url": "https://www.codewars.com/users/ZhumanRakhat"
+    },
+    "description": "# Story\n\nOnce upon a time, there lived 5 sons, and under one sunny day they decided to walk and make purchases for the amount of 2200. The first son Rakhat bought himself a T-shirt for 500, the second son Almat bought himself sneakers for 850, the third son Bekzat bought himself shorts for 370, the fourth son Samat thought about his mother and bought her flowers for 320, the fifth Dias turned out to be smart and bought himself only a chocolate bar for 160.\nTo make it fair, everyone decided to divide the money evenly and those who spent more earned and gave it to those who did not spend. Also they decided that it makes no sense to be niggling, so they will round everything up to the nearest ten.\n\n# Task\n\nYou have to decide who owes whom, how much?\n\n# Format \n\n* Floating numbers are not considered in this task \n* If amount equal to 4 round up to 0, else if it equal to 5, then round up to 10.\n\n### Input: \n* object of any number of persons\n```javascript\n  {\n    Rakhat: 500,\n    Almat: 850,\n    Bekzat: 370,\n    Samat: 320,\n    Dias: 160\n  }\n```\n\n### Output: \n* Array of arrays, where first is the borrower of second for the third amount \n* Sort ascending order by amount\n```javascript\n  [\n    [ 'Bekzat', 'Almat', 10 ],\n    [ 'Bekzat', 'Rakhat', 60 ],\n    [ 'Samat', 'Almat', 120 ],\n    [ 'Dias', 'Almat', 280 ]\n  ]\n```",
+    "totalAttempts": 151,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

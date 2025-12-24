@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b9df6ba2ab67b975c00054b",
+  "data": {
+    "id": "5b9df6ba2ab67b975c00054b",
+    "name": "Maximum Overkill",
+    "slug": "maximum-overkill",
+    "category": "algorithms",
+    "publishedAt": "2018-09-16T10:00:03.146Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5b9df6ba2ab67b975c00054b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-09-16T06:22:50.525Z",
+    "createdBy": {
+      "username": "thquinn",
+      "url": "https://www.codewars.com/users/thquinn"
+    },
+    "description": "You are a powerful wizard with many enemies. Thinking themselves very clever, they have teamed up to storm your tower and put an end to your arcane research. They underestimate you! You have long prepared for this day, readying spells of elemental annihilation to stop them dead in their tracks. But merely \"dead\" is too good for these fools. You will use your spells to kill them so dead that none will dare oppose you ever again.\n\nWrite a function that returns the maximum possible **overkill damage**, given:\n\n*enemies*: an array of integers representing the health of each of your enemies, and<br>\n*spells*: an array of integers representing the damage that each of your spells deal\n\n* Each spell can be used at most once to deal its damage to a single enemy.\n* You **overkill** an enemy when a spell reduces its health below 0: using a 150-damage spell on a 100-health enemy will put its health to -50, which counts as 50 overkill damage.\n* You can't cast spells on enemies that are already dead, i.e. enemies with 0 or less health. Blowing up corpses isn't impressing anyone.\n* You are looking to maximize the summed overkill damage dealt to all enemies. If your enemies are left at 0, -10, and -99, your total overkill is 109.\n* **You must kill all enemies if possible. Return -1 if it is not possible.**\n* It isn't always necessary to use all of your spells.\n\nFor example: given [50, 100] for enemies and [50, 100, 100] for spells, you have a few options:\n* Deal 50 damage to the 50-health enemy and 100 damage to the 100-health enemy, killing them both exactly. This results in 0 overkill. Remember that the second 100-damage spell is unusable at this point because both enemies are already dead.\n* Deal 100 damage to the 50-health enemy and 100 to the 100. This puts one enemy at -50 and one at 0, a total of 50 overkill.\n* Deal 100 damage to the 50-health enemy and 50 to the 100, bringing it to 50 health, then finish it with the other 100-damage spell. That brings both enemies to -50 health, a total of 100 overkill.\n\nThus, ```overkill([50, 100], [50, 100, 100])``` should return ```100```. Check the test cases for more examples.",
+    "totalAttempts": 35,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

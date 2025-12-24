@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b447bddf771d0010b9c89c",
+  "data": {
+    "id": "65b447bddf771d0010b9c89c",
+    "name": "The 3d Printer",
+    "slug": "the-3d-printer",
+    "category": "games",
+    "publishedAt": "2024-01-27T00:04:34.390Z",
+    "approvedAt": null,
+    "languages": [
+      "go"
+    ],
+    "url": "https://www.codewars.com/kata/65b447bddf771d0010b9c89c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-27T00:01:01.891Z",
+    "createdBy": {
+      "username": "e->pi i",
+      "url": "https://www.codewars.com/users/e-%3Epi%20i"
+    },
+    "description": "You are given a list of points in 3D space that represent the coordinates of a 3D print. Each point is a tuple of three numbers (x, y, z). The first point is the starting position of the printer nozzle, and the last point is the ending position. The printer nozzle moves in a straight line from one point to the next, and the distance between two points is calculated by the Euclidean formula:\n```math \nd = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}\n```\nYou are also given the maximum speed of the printer nozzle in units per second. The speed of the nozzle is constant and equal to the maximum speed. If the time it takes to reach a distance is less than 1, the nozzle slows down to reach the point exactly in one second to achieve a more accurate and detailed print.\n\nWrite a function that takes the list of points and the maximum speed as inputs, and returns the total travel time of the printer nozzle in seconds as an output.\n```go\npoints := [][3]float64{{0,0,0}, {3,4,0}, {3,4,5},{9,12,5}}\nspeed := 5.0\nTravelTime(points, speed) // returns 4.0\n\n```\n\n```go\npoints := [][3]float64{{0, 0, 0}, {3, 4, 0}, {3, 4, 5}, {9, 12, 5}, {12,20,32}}\nspeed := 2.0\nTravelTime(points, speed) // returns 24.1598\n```\n",
+    "totalAttempts": 29,
+    "totalCompleted": 7,
+    "totalStars": 4,
+    "voteScore": 2,
+    "tags": [
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

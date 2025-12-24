@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5da9e6f828f2c3001154a6eb",
+  "data": {
+    "id": "5da9e6f828f2c3001154a6eb",
+    "name": "Multiline String Maker",
+    "slug": "multiline-string-maker",
+    "category": "reference",
+    "publishedAt": "2019-10-18T16:26:07.645Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5da9e6f828f2c3001154a6eb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-10-18T16:23:20.429Z",
+    "createdBy": {
+      "username": "jaybruce1998",
+      "url": "https://www.codewars.com/users/jaybruce1998"
+    },
+    "description": "On codewars, you will often have to create manual test cases that check if a String equals another String. Sometimes, these Strings have many special characters like double quotes, meaning it is difficult to make them yourself.\nFor example, if a String you wanted your user to output would be:\n\"\"\"\nthen your test case would need to have:\n```\nString expected=\"\\\"\\\"\\\"\";\n```\nSince doing this by hand is error-prone and tedious, let's make a program do it for us!\n\nGiven the name for a String and a String s, return a String that contains java code that would make a String with that name with the contents of s.\nFor example:\n\nInputs: name=\"catSound\", s=\"meow\"\nOutput: A String that is the literal text:\n```\nString catSound=\"meow\";\n```\n\nWhile this is trivial, doing strings with double quotes or special characters is hard. If the name is \"greetings\" and s is:\nHello\nGoodbye\nthen our code will need to make a String with:\n```\nString greetings=\"Hello\"+\"\\n\"\n+\"Goodbye\";\n```\nNotice how there is both the java version of a newline AND an actual newline for readability, as well as putting the newline in its own String for extra readability! Formatting is important here because we want our tool to actually be useful!",
+    "totalAttempts": 25,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5757c0606d632a1f9f001233",
+  "data": {
+    "id": "5757c0606d632a1f9f001233",
+    "name": "Train Timetables",
+    "slug": "train-timetables",
+    "category": "reference",
+    "publishedAt": "2016-06-09T05:26:55.997Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5757c0606d632a1f9f001233",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-08T06:51:12.799Z",
+    "createdBy": {
+      "username": "manonacodingmission",
+      "url": "https://www.codewars.com/users/manonacodingmission"
+    },
+    "description": "#Story\n\nYou are a railway engineer working on an inter-continental railway network.  Your boss has given you some new train timetables and asked you to complete the timetable arrival time at each station.\n\nBoss being the boss, he has given you only one day to complete the task (he expected you to finish by lunch time).\n\nYou task is to fill the timetable below.\n\nStation | Distance (km) | Max Speed (km/h) | Time\n--- | --- | --- | ---\n*A* | 65 | 610 | 07:55\n*B* | 76 | 513 | ??:??\n*C* | 73 | 508 | ??:??\netc. | etc. | etc.| etc.\n\n- *Station* = Station name\n- *Distance* = Distance to the next station (in kilometres)\n- *Max Speed* = Maximum speed that the train can travel at in this section of the track (in kilometres per hour)\n- *Time* = time of arrival at the station\n\n#Kata\n\nInstead of doing it by hand (and possibly with the help of a calculator), you decided to write a function to help you fill in the timetable. It's much faster ;)\n\nThe function should receive two parameters.  First parameter is an array of distance and max speed.  Second parameter is the departure time from the first station.\n\nFor example,\n\n```javascript\n([[65,610],[76,513],[73,508]],'07:55')\n```\n\nThe function should return the result as an array (starting from the departure time at the first station).  Time should be displayed in 24 hours format, round down to the nearest minute.  Ignore the seconds.\n\n```javascript\n['07:55','08:01','14:55', etc.]\n```\n\n#Rules\n\n- It takes 3 minutes and 2 km for the train to reach its top speed after departing from a station.  Assume the train will always travel at top speed whenever possible.\n- It takes 4 minutes and 2 km for the train to come to a complete stop at the next station.\n- The train stops for 5 minutes at each station.\n- Distance between two stations is at least 4 km.",
+    "totalAttempts": 160,
+    "totalCompleted": 21,
+    "totalStars": 4,
+    "voteScore": 19,
+    "tags": [
+      "Mathematics",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

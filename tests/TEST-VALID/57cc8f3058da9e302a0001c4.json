@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57cc8f3058da9e302a0001c4",
+  "data": {
+    "id": "57cc8f3058da9e302a0001c4",
+    "name": "No Loops 3 - Copy Within - Shortest Code Version",
+    "slug": "no-loops-3-copy-within-shortest-code-version",
+    "category": "reference",
+    "publishedAt": "2016-09-04T21:19:56.538Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57cc8f3058da9e302a0001c4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-04T21:16:32.815Z",
+    "createdBy": {
+      "username": "PG1",
+      "url": "https://www.codewars.com/users/PG1"
+    },
+    "description": "Maximum solution length = *** 51 characters***\n\nFor this kata you need to return the provided array, with the same length as provided, but with some of the values copied, and that copied section duplicated over another section. An example should help:\n\nYou will be given an array, a start and stop index for the 'copy', and an index to insert it to.\n\nFor example function copy(array, start, stop, place){}\n\nwhere:\n\narray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nstart = 5;\nstop = 8;\nplace = 2;\n\nIn this example, the copy bit begins at (and includes) index 5. So, the first value copied is 6. The copy stops at (and does not include) index 8, and so includes all values up to and including 8 (index 8 is '9' and is not included).\n\nThis means the copied element is [6, 7, 8];\n\nYou now have to put this copied element into the array at the index specified by 'place'. Note the copied bit also remains at it's original location, hence 'copy', not 'move'. When inserted, the copied elements overwrite others in the array so that the length does not increase.\n\nso in this example \n[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nbecomes:\n[1, 2, 6, 7, 8, 6, 7, 8, 9, 10];\n\n[1, 2, *(6, 7, 8)*, 6, 7, 8, 9, 10]; <- brackets for highlighting insertion only\n\nMakes sense? Give it a go... hint... there is an array method that is very helpful for this job. So for that reason, you aren't allowed to use loops... :D",
+    "totalAttempts": 218,
+    "totalCompleted": 56,
+    "totalStars": 2,
+    "voteScore": 62,
+    "tags": [
+      "Fundamentals",
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

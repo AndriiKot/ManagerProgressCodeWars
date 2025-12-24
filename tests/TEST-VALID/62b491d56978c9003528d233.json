@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62b491d56978c9003528d233",
+  "data": {
+    "id": "62b491d56978c9003528d233",
+    "name": "Stack King",
+    "slug": "stack-king",
+    "category": "algorithms",
+    "publishedAt": "2022-06-23T18:45:41.852Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62b491d56978c9003528d233",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-23T16:16:21.769Z",
+    "createdBy": {
+      "username": "Brainie",
+      "url": "https://www.codewars.com/users/Brainie"
+    },
+    "description": "## Stack King\n\nAre you still afraid of stack traces?\n\nI think most programmers were afraid of stack traces, until they found out how awesome they are! \\\nTo prove our mastery of stack traces, today we are going to create a stack trace which matchs some conditions!\n\n### The task\n\nYour task is to implement the function `buildStack(limit, validate)`. \\\nYou have to define functions that call each other. At some point, the resulting call stack must meet the following criteria:\n- The call stack must have the depth specified by the `limit` parameter.\n- All function names appearing in the call stack must be unique.\n\nWhen the execution of the functions you have defined reaches that point, your code should call `validate()`.\n\n`validate(true)` can be used for debugging, and will log the size of the call stack plus the names of all the functions in the call stack.\n\n### Important\n\nThe call stack cannot contain more than one call per function name.\\\nThis is to avoid recursion, since that would be too easy.\\\nNote that your solution might not use recursion, but still fail the tests if your functions don't have unique names.\n\nFollowing code is disallowed, since that would add two calls with the same function name to the call stack.\n\n```\nf() {\n  f();\n}\n```\n\n```\n(() => {\n  (() => {\n\n  })()\n})()\n```\n\n```\n[].map(arr => arr.map());\n```\n\n### What is the call stack?\n\nWhenever a function is calling another function, an item is added to the call stack.\nThe call stack tells us which functions was called, before the current function call.\nFor example, `a()` might call `b()` which might call `c()`.\n\nWhen calling `a()`, the call stack for `c()` will look like this: `['c', 'b', 'a']`.\n\n### Have fun :)\n",
+    "totalAttempts": 155,
+    "totalCompleted": 14,
+    "totalStars": 5,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms",
+      "Language Features",
+      "Stacks"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

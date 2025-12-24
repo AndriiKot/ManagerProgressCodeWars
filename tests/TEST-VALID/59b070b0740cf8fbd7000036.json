@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59b070b0740cf8fbd7000036",
+  "data": {
+    "id": "59b070b0740cf8fbd7000036",
+    "name": "Word Search Puzzle",
+    "slug": "word-search-puzzle",
+    "category": "algorithms",
+    "publishedAt": "2017-09-06T23:05:42.068Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59b070b0740cf8fbd7000036",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-06T22:03:29.077Z",
+    "createdBy": {
+      "username": "lpabst",
+      "url": "https://www.codewars.com/users/lpabst"
+    },
+    "description": "Jimmy is bad at word search puzzles, and wants to know if you can write a function to help him find the words more easily! Jimmy will provide the word search puzzle, and the word he wants you to find. Jimmy wants you to return the same word search puzzle, but with all of the target word's letters capitalized so that it is easier for him to find. For instance:\n\n```javascript\nvar puzzle = [\n  ['a', 't', 'c', 'd', 'x'],\n  ['c', 'r', 'f', 'd', 'h'],\n  ['a', 'a', 'b', 'd', 'g'],\n  ['c', 'r', 't', 'd', 'u'],\n  ['n', 'r', 'l', 'd', 'z'],\n];\nwordSearch(puzzle, 'cat');\n//Would return =>\n[ [ 'a', 't', 'c', 'd', 'x' ],\n  [ 'C', 'r', 'f', 'd', 'h' ],\n  [ 'a', 'A', 'b', 'd', 'g' ],\n  [ 'c', 'r', 'T', 'd', 'u' ],\n  [ 'n', 'r', 'l', 'd', 'z' ] ]\n//**************OR*******************\nvar puzzle = [\n  ['a', 't', 'c', 'd', 'x'],\n  ['t', 'r', 'f', 'd', 'h'],\n  ['a', 'a', 'b', 'd', 'g'],\n  ['c', 'r', 'c', 'd', 'u'],\n  ['n', 'r', 'l', 'd', 'z'],\n];\nwordSearch(puzzle, 'cat');\n//Would return =>\n[ [ 'a', 't', 'c', 'd', 'x' ],\n  [ 'T', 'r', 'f', 'd', 'h' ],\n  [ 'a', 'A', 'b', 'd', 'g' ],\n  [ 'c', 'r', 'C', 'd', 'u' ],\n  [ 'n', 'r', 'l', 'd', 'z' ] ]\n```\n\nJimmy gave us the wordSearch puzzle, along with the word 'cat'. We found the word for him, capitalized all of the letters in 'cat', then returned the array to Jimmy. This should work for all directions, up, down, left, right, and all diagonals.\n\nFor simplicity, you will always be given a 5x5 array and a 3 letter word as parameters. If the word isn't contained in the 2D array, return -1 to let Jimmy know that the word isn't there. For Instance:\n\n```javascript\nvar puzzle = [\n  ['a', 't', 'c', 'd', 'x'],\n  ['t', 'r', 'f', 'e', 'h'],\n  ['a', 'a', 'b', 'u', 'g'],\n  ['c', 'r', 'c', 'l', 'u'],\n  ['n', 'r', 'l', 'd', 'z'],\n];\nwordSearch(puzzle, 'run');\n//Would return =>\n-1\n```",
+    "totalAttempts": 175,
+    "totalCompleted": 15,
+    "totalStars": 5,
+    "voteScore": 13,
+    "tags": [
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

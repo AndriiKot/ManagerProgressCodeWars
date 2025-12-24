@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/559aefc44ab98cfbe2000086",
+  "data": {
+    "id": "559aefc44ab98cfbe2000086",
+    "name": "Transpose Pachelbel's 'Canon in D'",
+    "slug": "transpose-pachelbels-canon-in-d",
+    "category": "games",
+    "publishedAt": "2015-07-06T21:27:09.701Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/559aefc44ab98cfbe2000086",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-07-06T21:14:45.113Z",
+    "createdBy": {
+      "username": "alanbuchanan",
+      "url": "https://www.codewars.com/users/alanbuchanan"
+    },
+    "description": "In music, <a href=https://en.wikipedia.org/wiki/Transposition_(music)>transposition </a> is used to change the key of a piece into a different key, 'moving a collection of notes up or down in pitch by a constant interval'.\n\nYour task is to transpose the <a href=\"https://en.wikipedia.org/wiki/Chord_progression\">chord progression</a> of <a href=\"https://www.youtube.com/watch?v=hOA-2hl1Vbc\">J. Pachelbel's Canon in D</a> \ninto a given key.\n\nHere is the progression in the piece's original key of D major:\n<br><br>\n<code>\nD A Bm F#m G D G A\n</code>\n\nSo, your function should return the tranposed chord progression relative to the key.\n\nFor simplicity, we are only making use of major keys (as opposed to minor). We are making use of sharps (<code>#</code>) only. With this in mind, if a flattened note (eg <code>A♭</code>) is passed as an argument, the key must be <a href=\"https://en.wikipedia.org/wiki/Enharmonic\">enharmonically respelled</a>. For example, <code>A♭</code> = <code>G#</code>, <code>D♭</code> = <code>C#</code>, <code>G♭</code> = <code>F#</code>. Furthermore, we are simplifying all accidentals to singles; <strong>no double accidentals should be used</strong>.\n\n<hr>\n\nIf you don't know anything about music theory, all you really need for this exercise is knowledge of the chromatic scale, eg all the twelve evenly spaced notes within an octave on a piano:<br><br>\n\n<img src=\"http://musicnotation.org/wp-content/uploads/2013/03/diatonicTreble577.png\">\n\nNote that there is no <code>B#</code> or <code>E#</code>. If passed as the key, they should be enharmonically respelled; <code>B#</code> is <code>C</code> and <code>E#</code> is <code>F</code>.\n\nAn invalid key is anything passed that is not a musical note, or a musical note with anything more than a single accidental. Invalid keys should return an empty string <code>\"\"</code>.\n\nYou can listen to your result by <a href=\"http://www.drumbot.com/projects/key_chords/\">inputting your resultant chord progression here.</a> \n",
+    "totalAttempts": 197,
+    "totalCompleted": 28,
+    "totalStars": 4,
+    "voteScore": 29,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

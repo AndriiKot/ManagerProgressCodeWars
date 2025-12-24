@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/566159695e48e8ae83000007",
+  "data": {
+    "id": "566159695e48e8ae83000007",
+    "name": "Testing 'Food combinations'",
+    "slug": "testing-food-combinations",
+    "category": "reference",
+    "publishedAt": "2015-12-04T18:49:47.539Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/566159695e48e8ae83000007",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-12-04T09:14:17.612Z",
+    "createdBy": {
+      "username": "Insti",
+      "url": "https://www.codewars.com/users/Insti"
+    },
+    "description": "**I suggest you first complete the [Food combinations](http://www.codewars.com/kata/food-combinations) kata before attempting this one.**\n\nThe [Food combinations](http://www.codewars.com/kata/food-combinations)\nkata is basically a simple string manipulation kata.\nPick two elements from a list and put them into a string, but do something\ndifferent if there are zero or one items in the list.\n\nTo test this kata in real life, I would extract separate methods for chosing\nthe foods I liked best and formatting the output strings and unit test them all\nindividually.\n\nBut for this kata I did not want to impose constraints on the structure of the\nsolution code so we need to test against the output string, which makes testing\nthe result harder and requires testing more combinations of conditions. Particularly since we cannot know how or\nwhich items the solver will choose to use.\n\nYour task is to implement a method which implements test cases for the Food\ncombinations kata.  You will be given a method and an array of foods, and you\nshould run the method with the argument given and return an array of the tests\nwhich failed.\n\ne.g.  `test_food_combinations( input, method ) # returns array of the things that failed`\n\nThings to test for: `[ :input_array_modified, :does_not_look_correct, :foods_should_be_different, :capitalization_of_first_food, :capitalization_of_second_food, :first_food_not_in_list, :second_food_not_in_list ]`\n\n### Description of tests\n`:input_array_modified` - Check that the food array is not changed after the method returns.\n\n`:does_not_look_correct` - This checks that the output string matches the expected format in each of the 3 cases.  If this test fails, no further tests are checked.  Food capitalization and validity are NOT checked here, this is just checking the general format of the result string.  \nCorrect strings look like:\n```\n\"You know what's actually really good? Nothing!\"  \n\"You know what's actually really good? [food1] and more [food1].\"   \n\"You know what's actually really good? [food1] and [food2].\"\n```\n\n`:foods_should_be_different` - [food1] and [food2] should be differen in the string\n\n`:capitalization_of_first_food` - [food1] should be capitalized: 'Food1' in the string\n\n`:capitalization_of_second_food` - [food2] should not be capitlized 'food2' in the string\n\n`:first_food_not_in_list` - [food1] should be present the input food array (case insensitve)   \n\n`:second_food_not_in_list` - [food2] should be present in the input food array (case insensitve)\n\n###Example:\n```ruby\ndo_nothing = proc { \"\" }\ntest_food_combinations( ['beans','toast'], do_nothing ) # [:does_not_look_correct]\n\nmodifies_array = proc { |a| a.replace(['modified!']) }\ntest_food_combinations( [], modifies_array ) # [:input_array_modified, :does_not_look_correct]\n\nhardcoded = proc { \"You know what's actually really good? Beans and toast.\" } # This hardcoded solution works for the particular input array we're testing against.\ntest_food_combinations( ['beans','toast'], hardcoded ) # []\n\n```\n\n###Notes\nYou should list all the tests that fail.    \nOrder of the tests is not important.      \nSince we control the input we don't test for invalid input.    \nNot all tests apply to every input.    \nIdeally we'd also return some indicator of what the offending string values were that triggered the error, so we can provide helpful error messages, but it's enough to just return the type of error here.   \n\n",
+    "totalAttempts": 357,
+    "totalCompleted": 10,
+    "totalStars": 3,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

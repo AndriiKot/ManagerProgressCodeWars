@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53d51336c2c772aa43000724",
+  "data": {
+    "id": "53d51336c2c772aa43000724",
+    "name": "Moving element in an array",
+    "slug": "moving-element-in-an-array",
+    "category": "reference",
+    "publishedAt": "2014-07-27T14:59:52.041Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53d51336c2c772aa43000724",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-27T14:56:55.128Z",
+    "createdBy": {
+      "username": "IanWang",
+      "url": "https://www.codewars.com/users/IanWang"
+    },
+    "description": "Let's make a prototype function which can 'move' an element of an array, and then return the result as a new array.\n\nThe 'move' function accepts two parameters. _from_ and _to_. The former is the index of the element you want to reorder, the latter is the destination index of that element.\n\nThere are two conditions:\n\n1. If the array does not have the _from_ index, return 'no target'.\n\n2. If the destination index is beyond the length of array, append `undefined` values to the end of the array until it is large enough to perform the movement.\n\n\n```javascript\nvar arr = [\"a\", \"b\", \"c\"];\n\narr.move(0,2); // -> [\"b\", \"c\", \"a\"]\narr.move(2,0); // -> [\"c\", \"a\", \"b\"]\narr.move(1,5); // -> [\"a\", \"c\", undefined, undefined, undefined, \"b\"]\narr.move(5,1); // -> 'no target'\narr            // -> still [\"a\", \"b\", \"c\"]\n\n```",
+    "totalAttempts": 2081,
+    "totalCompleted": 85,
+    "totalStars": 14,
+    "voteScore": 59,
+    "tags": [
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

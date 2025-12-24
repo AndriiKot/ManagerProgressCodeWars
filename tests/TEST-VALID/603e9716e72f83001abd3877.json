@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/603e9716e72f83001abd3877",
+  "data": {
+    "id": "603e9716e72f83001abd3877",
+    "name": "Racing 2: Positions Gained",
+    "slug": "racing-2-positions-gained",
+    "category": "algorithms",
+    "publishedAt": "2021-03-02T21:08:12.201Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/603e9716e72f83001abd3877",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-02T19:50:46.369Z",
+    "createdBy": {
+      "username": "felixvanriessen",
+      "url": "https://www.codewars.com/users/felixvanriessen"
+    },
+    "description": "Given an array of <code>finishing positions</code> and the <code>number of racecars</code> that started the race, return an array with the positions gained or lost for each position.\n\nThe value of the numbers in the input array represent their starting positions, while their index represents their finish position.\n\nYour array must be made of strings representing the number of positions gained or lost such as <code>'+3'</code> or <code>'-1'</code>. If the finishing position is the same as the starting position, use <code>'+0'</code>.\n\nSometimes a car will crash and therefore not be included in the finishing positions. But you must represent each car that did not finish with <code>\"DNF\"</code> in your output array. Finishing ahead of a crashed car still counts as a position gained.\n\nIf the finishing position is the same as the starting position, return <code>\"Boring Race\"</code>, unless at least one crash has occurred. If none of the cars finished the race, return <code>\"What A Disaster!!\"</code>\n\n\n```\ne.g.\ninput: [3,2,1,5,4], 5\noutput: ['+2', '+0', '-2', '+1', '-1']\n\ninput: [2,1,5,4], 5\noutput: ['+1', '-1', '+2', '+0', 'DNF']\n\ninput: [1,2,3,4], 4\noutput: \"Boring Race\"\n\ninput: [1,2,3,4], 5\noutput: ['+0', '+0', '+0', '+0', 'DNF']\n```\n\n\nThe given <code>finishing positions</code> can either be empty or will otherwise include unique positive integers. The <code>number of racecars</code> will always be a positive integer greater than or equal to the length of the array.",
+    "totalAttempts": 185,
+    "totalCompleted": 31,
+    "totalStars": 0,
+    "voteScore": 44,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

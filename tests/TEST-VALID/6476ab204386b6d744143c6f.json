@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6476ab204386b6d744143c6f",
+  "data": {
+    "id": "6476ab204386b6d744143c6f",
+    "name": "Frog Peru-Peru is looking for a suitable apartment.",
+    "slug": "frog-peru-peru-is-looking-for-a-suitable-apartment",
+    "category": "reference",
+    "publishedAt": "2023-05-31T04:47:54.676Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6476ab204386b6d744143c6f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-31T02:04:16.517Z",
+    "createdBy": {
+      "username": "NekoMaster",
+      "url": "https://www.codewars.com/users/NekoMaster"
+    },
+    "description": "# Story\nPeru-Peru has decided to move to a big city and needs an apartment.\n<br>But not simple, but corresponding to his desires.\n<br>Turning to the real estate service, he was provided with a database with offers.\n<br>Having received it, Peru-Peru turned to you for help.\n\n# Input data\n`dict, dict`\n> 1 - dictionary with wishes. `{item: set}`\n>- **key**: `str` requirement in wish, **value**: `set` set of desired intersections\n\n> 2 - dictionary, where the main key **key** is the address of the apartment, and the **value** is a nested dictionary. `{address: dict}`\n>- In the nested dictionary, a **key**: some item of description, and **value**: set with clause conditions. `{item: set}`\n>- **structure identical to wish dictionary**\n\n# Output\nThe task is to return a `list` of addresses of apartments *whose requirements have the most **intersections*** with the wishes of Peru-Peru: `['address', 'address', ...]`\n<br>*If no matching apartments can be found*, **return**: `'Not found!'`\n\n# Additional Information\n- The *wishes dictionary* is always full, as is each item in the nested dictionary of the database.\n- The apartment must meet at least **4 conditions**.\n- If several apartments have overcome the threshold of 4 matches, then only those apartments whose matches *have the largest number and are equal to each other* are subject to return. Peru-Peru will select a suitable apartment from your list independently.\n- The **Agreement** and **Local establishments** clauses do not require full compliance. That is, only the intersection with the desires of Peru-Peru is important.\n\nThe form for filling out an offer for an apartment looks like this:\n>**Address**:\n>- 221b Baker street\n\n>**Items**: \n>- Floor - 5\n>- Status - Requires repair\n>- Agreement - Jacuzzi, Home cinema\n>- Nearest stops - 7\n>- Subway accessibility - True\n>- Local establishments - Hospital, Club, Bar\n\n```python\ndatabase = {'221b Baker street':\n                {'Floor': {5},\n                 'Status': {'Repair required'},\n                 'Agreement': {'Jacuzzi', 'Home cinema'},\n                 'Nearest stops': {7},\n                 'Subway accessibility': {True},\n                 'Local establishments': {'Hospital', 'Club', 'Bar'}\n                 }\n            }\n```\n- **Again, the structure of the nested dictionary with items is identical to the wish dictionary**",
+    "totalAttempts": 448,
+    "totalCompleted": 12,
+    "totalStars": 0,
+    "voteScore": 5,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6130d6dbf0f3b60021524ee5",
+  "data": {
+    "id": "6130d6dbf0f3b60021524ee5",
+    "name": "Function continuation",
+    "slug": "function-continuation",
+    "category": "algorithms",
+    "publishedAt": "2021-09-02T20:21:43.320Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/6130d6dbf0f3b60021524ee5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-02T13:51:23.255Z",
+    "createdBy": {
+      "username": "WarpedReality",
+      "url": "https://www.codewars.com/users/WarpedReality"
+    },
+    "description": "# Introduction\n\nFunctions with poles (typically divisions by zero) are not properly defined at their poles, but for some you can still assign a meaningful value, for example:\n```\nf(x) = x/x = 1\n=> f(0) = 1\n```\n\n# Your goal\n\nYour task is to write a function that takes a function and an argument, and then returns a value if it can be meaningfully assigned, and ```NaN``` otherwise.\n\nFor some cases, the function itself will return a finite number, then you can just pass it on. Otherwise you should check if the function converges to the same result when approached from the left and the right. Functions may converge to a ```signed infinity```, this is a valid answer. If the limits from either side differ, you should return NaN.\n\n# What will be tested\n\nWe do not differ between ```+0.0``` and ```-0.0```, even though in typical floating point math you can divide by it to get either positive or negative infinity. If the function has a pole at 0, you should not return different values for ```+0.0``` and ```-0.0```.\n\nYou can assume that no two poles are closer than ```10^-6``` to each other. You can also assume that all tested discontinuities (steps in function output) will be larger than that. You also will _not_ be asked to return a result at the border of the defined range of a function, e.g ```log(0)```.\n\nYour answers will be compared with an epsilon of ```10^-12``` (taken relative to the reference result for numbers >1). In the example test cases you will learn what the original function looks like if you fail a test. In the final test cases you will not get any info, only your result and the expected result.",
+    "totalAttempts": 358,
+    "totalCompleted": 11,
+    "totalStars": 2,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

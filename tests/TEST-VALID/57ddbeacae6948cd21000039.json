@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57ddbeacae6948cd21000039",
+  "data": {
+    "id": "57ddbeacae6948cd21000039",
+    "name": "Back to KinderGarten II : Where's Aïcha ?  (eeeasy)",
+    "slug": "back-to-kindergarten-ii-wheres-aicha-eeeasy",
+    "category": "reference",
+    "publishedAt": "2016-09-17T22:07:40.457Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57ddbeacae6948cd21000039",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-09-17T22:07:47.696Z",
+    "createdBy": {
+      "username": "ZozoFouchtra",
+      "url": "https://www.codewars.com/users/ZozoFouchtra"
+    },
+    "description": "So, [Odile](https://www.codewars.com/kata/back-to-kindergarten-eeeeeeasy) has printed the list of kids and pinned it to the wall. (<small>If you've not solved the previous \"Back to KinderGarten\" kata you may click on Odile, above</small>)\n\nBut ... What ?!? Why the hack is \"Aïcha\" sorted **after** \"Anas\" or \"Léo\" **after** \"Lucy\" ?\nIt seems \"extended characters\" (like `ï` or `é`) cause some problems. Odile needs to re-code her sorting function.\n\nBy the way, she thinks also about sorting kids with **same (first) name**. She decides to sorted them by Ages (youngest first).\n\n# Task\n\nAs previously, you should create 2 functions : `parseKidList` and `sortByNamesAndAges` (instead of *sortByNames* )\n\n* `parseKidList( csv )` : receives a \"csv-string\" representing a list of kids, each separated from other by a newline (\"`\\n`\") and composed of `Name,DateOfBirth,Gender`-values, separated by comma (\"`,`\")\n\n* `sortByNamesAndAges( kids )` : receives as argument the \"thing\" obtained with previous function and should return an array of \"kids\", sorted in ascending order by names, and ages if names are the same. \n  * A \"kid\" in the output list should be of the form \"**NAME (G) dd/mm/yyyy**\" ( *ie* **name** in uppercase, **gender** (m or f) in uppercase and between parenthesis, and **DoB** in dd/mm/yyyy format)\n  \n## Notes :\n* Tested extended characters are only \"`É, é, è, ë, ï or ù`\"\n* When kids should be sorted by age it means younger before older.\n\n## Examples\n```javascript\nvar kids = parseKidList( [\"Lucy,2/12/2012,f\\nLéo,1/1/2013,m\"] );\nparseByNamesAndAges( kids ) // -> [\"LÉO (M) 01/01/2013\", \"LUCY (F) 02/12/2012\"] because \"`Ï`\" is considered as a \"`I`\" and then before \"`U`\";\n\nkids = parseKidList( [\"Pat,2/12/2012,f\\nPat,1/1/2013,m\"] );\nparseByNamesAndAges( kids ) // -> [\"PAT (M) 01/01/2013\", \"PAT (F) 02/12/2012\"] because PAT the boy is younger (2013) than PAT the girl (2012)\n```\n\nSo back to work kids ! Odile needs your help !\n",
+    "totalAttempts": 89,
+    "totalCompleted": 20,
+    "totalStars": 1,
+    "voteScore": 38,
+    "tags": [
+      "Strings",
+      "Arrays",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

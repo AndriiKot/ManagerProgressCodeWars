@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60a267bd64a176003ebe4715",
+  "data": {
+    "id": "60a267bd64a176003ebe4715",
+    "name": "sorting via exchange of 2 elements",
+    "slug": "sorting-via-exchange-of-2-elements",
+    "category": "algorithms",
+    "publishedAt": "2021-05-18T15:26:15.137Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60a267bd64a176003ebe4715",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-05-17T12:55:25.869Z",
+    "createdBy": {
+      "username": "Marty3000",
+      "url": "https://www.codewars.com/users/Marty3000"
+    },
+    "description": "This Kata is based on Kata \"Simple Fun #148: Exchange Sort(myjinxin2015)\", but this time the input sequence is not restricted to 3 different elements, only.\n\n## Task\n\nSorting is one of the most basic computational devices used in Computer Science.\n\nGiven a sequence (length ≤ 5000) of values (duplicates allowed), your task is to find the minimum number of exchange operations necessary to make the sequence sorted.\n\nOne operation is the switching of 2 key values in the sequence.\n\n## Example\n\nFor sequence = [\"A\", \"A\", \"B\", \"B\", \"C\"], the result should be 0.\n\n```\nIt's already a sorted sequence.\n```\n\nFor sequence = [9, -2, 1, 1, 9, -2], the result should be 1.\n```\nWe can switching sequence[0] and sequence[5].\n```\n\nFor sequence = [1, 2, 3, 0], the result should be 3.\n```\nWe can:\n [1, 2, 3, 0] \n switching sequence[0] and sequence[3]\n --> [0, 2, 3, 1]\n switching sequence[1] and sequence[3]\n --> [0, 1, 3, 2]\n switching sequence[2] and sequence[3]\n --> [0, 1, 2, 3]\n```\n\nFor sequence = [8, 8, 3, 9, 9, 9, 8, 9, 3], the result should be 4.\n```\nWe can:\n [8, 8, 3, 9, 9, 9, 8, 9, 3] \n switching sequence[0] and sequence[3]\n --> [9, 8, 3, 8, 9, 9, 8, 9, 3]\n switching sequence[0] and sequence[8]\n --> [3, 8, 3, 8, 9, 9, 8, 9, 9]\n switching sequence[1] and sequence[2]\n --> [3, 3, 8, 8, 9, 9, 8, 9, 9]\n switching sequence[5] and sequence[7]\n --> [3, 3, 8, 8, 8, 9, 9, 9, 9] \nSo 4 is the minimum number of operations for the sequence to become sorted.\n```\n\n## Input/Output\n\n    [input] array sequence\n\nThe Sequence.\n\n    [output] an integer\n\nthe minimum number of operations needed to completly sort the input sequence.\n",
+    "totalAttempts": 109,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -2,
+    "tags": [
+      "Lists",
+      "Fundamentals",
+      "Algorithms",
+      "Sorting",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60cb26909c75d00025766aca",
+  "data": {
+    "id": "60cb26909c75d00025766aca",
+    "name": "Compress an array of numbers into an efficient Base 64 ",
+    "slug": "compress-an-array-of-numbers-into-an-efficient-base-64",
+    "category": "reference",
+    "publishedAt": "2021-06-17T10:42:46.498Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/60cb26909c75d00025766aca",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-06-17T10:40:16.322Z",
+    "createdBy": {
+      "username": "flibustier",
+      "url": "https://www.codewars.com/users/flibustier"
+    },
+    "description": "#### Context\n\nThe original use case was to send an array of numbers as a parameter in an URL, for example: `http://myapplication.io/?collection=[1,2,3,4,50,600…]`\n\nBut this was not an efficient way of doing this, because each digit will use a character (which used 8 or 16 bits), along with each comma separator and each bracket…\n\nA more efficient way is to transform the array in a [base 64](https://en.wikipedia.org/wiki/Base64#The_URL_applications) format\n\n#### Goal\n\nYour goal is to write the `encode` function.\n\nGiven the following input : `[1, 2, 3, 0, 2, 3, 1, 3, 2, 2, 3, 0, 0, 3, 1]`\n\nThe expected output will be a base 64 string : `BbLesN`\n\nThe first character of the output string is reserved for determining the encoding size of integers (here `B` is for 2 bits encoding, see explanation bellow)\n\n#### Algorithm\n\nThe input could be any array of positive integers of a maximum size of 32 bits. \n```if:java\n*Note: Treat `int` as an unsigned integer.*\n```\n\nThe first optimization is finding the smallest size for encoding each number from the input array.\n\nFor example, taking the following input `[1, 2, 3, 0, 2, 3, 1, 3, 2, 2, 3, 0, 0, 3, 1]`\n\nThe maximum number is `3`, so 2 bits are needed to encode each integer (as it could be `0`, `1`, `2`, or `3`)\n\nGiving that, the first Base 64 character of the output is the number of bits used for encoding each integer of the array.\n\nExample: `2 bits` => the output will begin with `B` character (starting at `A` character for 1 bit encoding, as we couldn’t do less).\n\nNext, each integer should be transform into binary (of encoding size) and then packed into 6 bits packet for creating a Base 64 symbol.\n\nExample: [1, 2, 3] => became `01 10 11` which is `b` in Base 64.\n\nResulting into `BbLesN` from the input `[1, 2, 3, 0, 2, 3, 1, 3, 2, 2, 3, 0, 0, 3, 1]`\n\n`B` for 2 bits encoding size and`bLesN` is the five chunks of our input (`[1, 2, 3], [0, 2, 3], [1, 3, 2], [2, 3, 0], [0, 3, 1]`)\n\n\n##### Ambiguous ending\n\nSome cases have an ambiguous ending, for example the output`Bw` could be the array `[3, 0, 0]` or `[3, 0]` or even `[3]`, as the encoding length is 2 (`B` character), we could store 3 numbers in the `w` character\n\nTo avoid this situation, we add a disambiguation character (`=`) at the end of the output in specific cases : \n\nIf the last 6 bits packet is not complete (for example we have only 4 bits on the 6 needed : `[0, 3]` => `00 11 …?`), and the space left is a multiple of our encoding size (like 2 bits remains and encoding size is 2; or 4 bits remains and encoding size is 2)  \nThen we need to complete the last packet with opposite bits of the last bit :\n- `[0, 3] => 00 11 *00* // last bit is 1, so we complete with 0`\n- `[1, 2] => 01 10 *11* // last bit is 0, so we complete with 1`\n\nAnd we need to add a disambiguation character (`=`) at the end of our output.\n\n`[1, 2, 3, 0, 1, 3, 2, 1, 2, 1, 0]` => `BbHmT=`\n\n> In other cases where your last packet isn’t complete, simply add zeros to complete it, they will be drop at decoding step\n\n\n\n\n",
+    "totalAttempts": 296,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 10,
+    "tags": [
+      "Binary",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

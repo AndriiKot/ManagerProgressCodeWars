@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/660eaf16fe0da4d2aeb4b4d0",
+  "data": {
+    "id": "660eaf16fe0da4d2aeb4b4d0",
+    "name": "Gaussian primes generation",
+    "slug": "gaussian-primes-generation",
+    "category": "algorithms",
+    "publishedAt": "2024-04-06T09:06:27.433Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/660eaf16fe0da4d2aeb4b4d0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-04T13:45:58.393Z",
+    "createdBy": {
+      "username": "topologoanatom",
+      "url": "https://www.codewars.com/users/topologoanatom"
+    },
+    "description": "Consider subset all complex numbers whose real and imaginary parts are integers. This subset is called Gaussian integers. They share some common propeties with an ordinary integers, namely:\n1) Gaussian integers are Euclidean domain, which means you can construct analougue of GCD algorithm;\n2) Every Gaussian integer can factored into product of primes, although those primes are complex.\n\nAs an ordinary complex numbers, Gaussian integers have norm function, that matches Gaussian integer with integer, and equals to product of Gaussian integer with it conjugate, which means :\n```C#\nN(a+bi) = (a+bi)*(a-bi) = a*a + b*b\n```\nYour task is to generate all Gaussian primes with norm up to given limit with few considerations : \n1) Primes should be given as list of tuples and be sorted in ascending order of their norm; \n2) Norm does not changes after multiplication by unit, hence add only one representative for each norm.\n\nExample : all Gaussian primes with norm less than 50 are\n```C#\n(1, 0), (3, 0), (2, 1), (7, 0), (11, 0), (3, 2), (1, 4), (19, 0), (23, 0), (2, 5), (31, 0), (1, 6), (4, 5), (43, 0), (47, 0)\n```\n2 + i, 2 - i, 1 - 2i... satisfy conditions, but choose only one of them.\n\nYour program should handle primes with norm up to 50 000 000. It makes sense to solve those katas first : [PG-13](https://www.codewars.com/kata/prime-streaming-pg-13) or [PG-17](https://www.codewars.com/kata/59122604e5bc240817000016)",
+    "totalAttempts": 4,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Performance",
+      "Mathematics",
+      "Algebra"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

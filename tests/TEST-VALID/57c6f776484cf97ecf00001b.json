@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57c6f776484cf97ecf00001b",
+  "data": {
+    "id": "57c6f776484cf97ecf00001b",
+    "name": "Dude E Free",
+    "slug": "dude-e-free",
+    "category": "reference",
+    "publishedAt": "2016-08-31T19:18:05.950Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57c6f776484cf97ecf00001b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-08-31T15:27:50.216Z",
+    "createdBy": {
+      "username": "jhancock",
+      "url": "https://www.codewars.com/users/jhancock"
+    },
+    "description": "You work at a duty-free shop on the border of the United States and Canada.\n\nCustomers can pay you with either US or Canadian currency.  You also offer to give them change in either currency.\n\nWrite a function which will return an array of strings representing the smallest possible combination of bills and coins to make change (from largest to smallest value)\n\nThe current exchange rates are as follows:\n\n    1 US dollar = 1.31 Canadian dollars\n    1 Canadian dollar = 0.76 US dollars\n    *** Note: when converting, always round down to the nearest cent\n\nThe available denominations are as follows:\n\n    United States\n\t    Hundred Dollar Bill\n      Fifty Dollar Bill\n\t    Twenty Dollar Bill\n\t    Ten Dollar Bill\n\t    Five Dollar Bill\n\t    One Dollar Bill\n\t    Quarter\n\t    Dime\n\t    Nickel\n\t    Penny\n\t\n    Canada\n\t    Hundred Dollar Bill\n\t    Fifty Dollar Bill\n\t    Twenty Dollar Bill\n\t    Ten Dollar Bill\n\t    Five Dollar Bill\n\t    Toonie\n\t    Loonie\n\t    Half Dollar\n\t    Quarter\n\t    Dime\n\t    Nickel\n      *** Toonie = $2, Loonie = $1\n      \nBecause Canada has phased out the penny, when giving change in Canadian dollars, use the following rules for rounding to the nickel:\n\n    Round Down\n      $1.01 or $1.02 -> $1.00\n      $1.06 or $1.07 -> $1.05\n    Round Up\n      $1.03 or $1.04 -> $1.05\n      $1.08 or $1.09 -> $1.10\n      \nNote: you still accept Canadian pennies, but you don't give them as change.\n      \nThe function should return null if any of the following conditions are met:\n\n    The amount paid is less than the price\n    The price or amount paid exceeds one million dollars\n    The price or amount paid is less than one cent\n    An invalid currency type is used as payment or requested as change\n    \nExample:\n\n    Customer buys $125.74 US dollars worth of merchandise.  \n    She gives you $200.00 (US dollars) and requests her change in Canadian dollars.\n    So, her change in US dollars would be $74.26\n    Converting that to Canadian dollars yields $97.28\n    Due to the phased out penny, her actual change is $97.30\n    That should be represented as follows:\n      [\"Fifty Dollar Bill\", \"Twenty Dollar Bill\", \"Twenty Dollar Bill\", \"Five Dollar Bill\", \"Toonie\", \"Quarter\", \"Nickel\"]\n\nAdditional note:  Javascript math makes me want to kill myself.  I'm hoping that I handled all of my floating point arithmetic stuff correctly.",
+    "totalAttempts": 279,
+    "totalCompleted": 16,
+    "totalStars": 5,
+    "voteScore": 20,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

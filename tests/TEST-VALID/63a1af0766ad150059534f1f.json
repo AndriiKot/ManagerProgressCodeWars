@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63a1af0766ad150059534f1f",
+  "data": {
+    "id": "63a1af0766ad150059534f1f",
+    "name": "Banana Press #2: Coffee Girl",
+    "slug": "banana-press-number-2-coffee-girl",
+    "category": "algorithms",
+    "publishedAt": "2022-12-20T13:03:20.038Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/63a1af0766ad150059534f1f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-12-20T12:48:07.372Z",
+    "createdBy": {
+      "username": "RachelBanana03",
+      "url": "https://www.codewars.com/users/RachelBanana03"
+    },
+    "description": "Oh, joy! Another exciting day as an assistant editor at Banana Press, censoring words on articles. How thrilling it is to sit at a desk all day, red pen in hand, crossing out banned words and replacing them with bunch of \"bananas\". It's a never-ending task, really. There's always another article to edit, another word to censor. It's a good thing there's a coffee shop nearby where you can buy yourself some coffee to keep you going, because this job is about as exciting as-\n\n\"Hey you, coffee girl! Buy me another banana mocha smoothie, the usual, you can just send it over to my desk,\" ...oh yeah, and you have that too, senior employees taking advantage of good innocent you to run errands for them. \"Sorry girl, if you are going over to StuffyBucks, can you get me a banana split latte too?\" And before you know it, you have received dozens of coffee orders.\n\nBuying the coffees is easy, the tricky part is to deliver them in the correct order. You have devised a shortest path to send the beverages to your exploitative colleagues and have sorted the coffee orders in a ``deliverList`` (an array of distinct integers). The barista at StuffyBucks is kind enough to put the coffees on a ``tray`` (a 2d array of NxM size) for you, all that's left now is to ``sort the coffees`` manually on the tray to ``match the deliverList``.\n\n\"Ouch!\" \n\nBut some of the coffees are piping hot! You don't want to spend too much time rearranging the coffees. \"Hmm... I can just rotate the tray to match the order. I can also ask my colleagues to pick the coffees from either left-to-right or right-to-left at my convenience (not both on the same tray because I want to keep the order clear),\" you think to yourself. \n\nWhat is the minimum number of swaps you can make to order the coffees on the tray according to your deliverList?\n\n<hr>\n\n## Task\n\nGiven a ``tray`` (a 2d array of integers) and a ``deliverList`` (an array of distinct integers), in which the integers in the tray match the integers in the deliverList but not sorted in the same way, create a function ``minCoffeeSwaps(tray, deliverList)`` which returns the minimum number of swaps required to order the tray according to the deliverList. Rotations and mirroring of the whole tray are allowed before any swapping.\n\n## Examples\n\nIn the first example, only one swap (3 and 7) is needed. The coffees are taken from left to right and the tray does not need to be rotated.\n\n```js\nconst tray = [\n    [1, 2, 7],\n    [4, 5, 6],\n    [3, 8, 9]\n];\n\nconst deliverList = [1,2,3,4,5,6,7,8,9];\n\nminCoffeeSwaps(tray, deliverList) // 1\n```\n\nIn the example below, no swaps are needed because we can simply rotate the tray 90 degrees clockwise and take the coffees from right to left.\n\n```js\nconst tray = [\n    [1, 4, 7],\n    [2, 5, 8],\n    [3, 6, 9]\n];\n\nconst deliverList = [1,2,3,4,5,6,7,8,9]\n```\n",
+    "totalAttempts": 142,
+    "totalCompleted": 8,
+    "totalStars": 3,
+    "voteScore": 16,
+    "tags": [
+      "Arrays",
+      "Sorting"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

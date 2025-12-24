@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ec44a499f23f600322cefb9",
+  "data": {
+    "id": "5ec44a499f23f600322cefb9",
+    "name": "Scrabble Word Generator",
+    "slug": "scrabble-word-generator",
+    "category": "reference",
+    "publishedAt": "2020-05-19T22:12:56.765Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ec44a499f23f600322cefb9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-19T21:06:17.940Z",
+    "createdBy": {
+      "username": "faizanraza",
+      "url": "https://www.codewars.com/users/faizanraza"
+    },
+    "description": "Scrabble is a word game in which two to four players score points by placing tiles, each bearing a single letter, onto a game board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns, and be included in a standard dictionary or lexicon.\n\nIn this kata you will make a program to assist scrabble players. It will take an input as a list of letters and then it will output a dictionary with all the possible scrabble approved words that can be formed from those letters along with their scores. It should be ordered in a descending fashion by the score the person gets if it plays that word (ignoring all the special tiles).\n\nThe score of a word is determined by adding up the scores of all its constituent letters. You have been given a dictionary `scores` mapping each letter to its respective score to aid your task.\n\nYou are also given a set named `wordset` which contains all of the scrabble approved words.\n\nExamine the following examples to understand the output:\n\n```python \nscrabble(['a','b']) → {'ba': 4, 'ab': 4}\nscrabble(['a','b','c']) → {'bac': 7, 'cab': 7, 'ba': 4, 'ab': 4}\nscrabble(['c','o','d','e']) → {'deco': 7, 'ecod': 7, 'coed': 7, 'code': 7, 'doc': 6, 'cod': 6, 'eco': 5, 'doe': 4, 'ode': 4, 'do': 3, 'od': 3, 'ed': 3, 'de': 3, 'oe': 2}\n```",
+    "totalAttempts": 118,
+    "totalCompleted": 35,
+    "totalStars": 2,
+    "voteScore": 37,
+    "tags": [
+      "Permutations",
+      "Strings",
+      "Recursion",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59ad6d8f4708a2d4d5000cf1",
+  "data": {
+    "id": "59ad6d8f4708a2d4d5000cf1",
+    "name": "Detecting Factions in Friend-Foe Networks",
+    "slug": "detecting-factions-in-friend-foe-networks",
+    "category": "algorithms",
+    "publishedAt": "2017-09-04T15:13:47.353Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59ad6d8f4708a2d4d5000cf1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-04T15:13:54.334Z",
+    "createdBy": {
+      "username": "AlexandraBaier",
+      "url": "https://www.codewars.com/users/AlexandraBaier"
+    },
+    "description": "# Detecting Faction in Friend-Foe Networks\n\n## Description\n\nFriend-Foe networks are weighted undirected graphs, which describe the friend-foe\nrelations between people, countries or other entities.\n\nAn edge between two nodes, such as two people, implies that they know each other.\nThe weight of the edge makes a statement about what the relation between the two nodes is.\nA weight of `1` indicates friendship, trust or an alliance,\nwhile a weight of `-1` indicates the opposite, for example hatred, mistrust or rivalry.\n\nEnmitiy between communities is an old phenomena. In today's world\nwe can observe these rivalries between communities of different games, operating systems\nor programming languages.\nPeople, who belong to the same communities are usually friends, while\nmembers of different rivaling communities are rivals or enemies most of the time.\n\nFor this task, we want to look at networks of gamers. Especially we want to look at networks\nof gamers, which play either `\"League of Legends\"` or `\"Dota 2\"`.\nIn these networks, gamers are represented as nodes and edges describe friend- or foeship between gamers.\nWe also have two factions: `\"League of Legends\"` and `\"Dota 2\"`.\n\n\n\n## Assumptions\n\nWe make the following assumptions about our network:\n\n* Playing `\"League of Legends\"` or `\"Dota 2\"` is mutually exclusive. A gamer can always only be part of one gaming community (faction).\n* Two gamers, who play the same game and know each other, have to be friends.\n* Two gamers, who play different games and know each other, have to be enemies.\n* Every gamer plays one of the games. There is no gamer who does not belong to one of the games.\n* We always know that the gamer identified with index `0` plays `\"League of Legends\"`.\n\n## Problem Statement\n\n### Task\nImplement the function `detect_factions(network)`. This function is given a friend-foe network\nand has to return a list, which assigns each gamer one of the two games.\n\n### Input\nThe function `detect_factions(network)` receives a friend-foe network `network` as input.\n\nFriend-Foe networks are generally weighted, undirected graphs.\nAdditionally all given graphs will be connected.\n\nA graphs is represented as adjacency matrix `network` with dimensions `N*N`, where `N` is the number\nof nodes in the network.\nThe cell `network[i][j]` represent the edge between node `i` and node `j`.\nIf the cell equals `0` no edge exists, if the cell equals `1` a friendship edge exist, and\nif the cell equals `-1` a foeship edge exists.\nBecause the network is undirected, the adjacency matrix is symmetric,\ntherefore `network[i][j] = network[j][i]` applies.\n\nNode `0` always belongs to `\"League of Legends\"`.\n\n### Output\nThe function `detect_factions(network)` should output a list of length `N`, where\n`N` is the number of nodes in the network.\nThe indexes of the list correspond to the indexes of the network.\nAt each position either the string `\"League of Legends\"` or `\"Dota 2\"` can be found.\nIf gamer `i` play `\"Dota 2\"`, then the list should have the value `\"Dota 2\"` at index `i`.\n\n## Hints\n\n* A graph traversal algorithm, such as breadth-first search or depth-first search, is useful.\n* This problem is a graph coloring problem with 2 colors.\n\nThis is my first Kata, so any comments would be appreciated.\n\n",
+    "totalAttempts": 192,
+    "totalCompleted": 25,
+    "totalStars": 8,
+    "voteScore": 35,
+    "tags": [
+      "Graph Theory",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

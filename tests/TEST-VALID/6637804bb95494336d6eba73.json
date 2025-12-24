@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6637804bb95494336d6eba73",
+  "data": {
+    "id": "6637804bb95494336d6eba73",
+    "name": "Maximum Rising Sequences in Card Shuffles",
+    "slug": "maximum-rising-sequences-in-card-shuffles",
+    "category": "games",
+    "publishedAt": "2024-05-05T13:18:19.955Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6637804bb95494336d6eba73",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-05T12:49:16.054Z",
+    "createdBy": {
+      "username": "Angel !",
+      "url": "https://www.codewars.com/users/Angel%20!"
+    },
+    "description": "# Problem Statement:\n\nYou are given a sequence of integers representing a card shuffle. A rising sequence is defined as a subsequence in the shuffle where each integer is strictly greater than the previous one. Your task is to find the number of first maximum rising sequences on the array that can be formed from the given card shuffle using every card.\n\nWrite a function **'firstMaxRisingSequences(cards)'** that takes in an array **'cards'** of integers representing the card shuffle and returns the number of first maximum rising sequences that can be formed using every card.\n\nThe first maximum rising sequence is the first rising sequence in the array that uses the maximum amount of elements after itself and always choose the first rising element. Ex.:  **[1, 4, 2, 5, 3, 6]** the first rising sequence **[1, 4]** but the first maximum rising sequence is **[1, 4, 5, 6]**, utilizing all the elements possible. The remaining elements **[2, 3]** can form first maximum rising sequences on their own, such as **[2, 5, 6]** and **[3, 6]** (Counter-example **[2, 3, 6]** is **not** a first rising sequence because its skips 5 so you cannot use 2,3 in one go, must always use the first), giving the total of first maximum rising sequences as 3.\n\n\nElements can be reused only if they appear after the first element of the subsequence and forms first rising sequences; the first element cannot be reused and should appear in only one sequence.\n\n# Function Signature:\n\n```javascript\n/**\n * Returns the number of first maximum rising sequences that can be formed from the given card shuffle.\n * @param {number[]} cards - An array of integers representing the card shuffle.\n * @returns {number} - The number of first maximum rising sequences.\n */\nfunction firstMaxRisingSequences(cards) {\n    // Your code here\n}\n```\n\n# Input:\n\n**'cards'** (0 ≤ cards.length ≤ 10^4) - An array of integers representing the card shuffle. Each integer in the array is unique.\n\n# Output:\n\nReturns an integer representing the number of first maximum rising sequences that can be formed from the given card shuffle.\n\n# Example:\n```javascript\nconsole.log(firstMaxRisingSequences([1, 4, 2, 5, 3, 6])); // Output: 3\n// Explanation: The rising sequences are [1, 4, 5, 6], [2, 5, 6], and [3,6].\n\nconsole.log(firstMaxRisingSequences([3, 2, 4, 1, 5, 6])); // Output: 3\n// Explanation: The rising sequences are [3, 4, 5, 6], [2, 4, 5, 6] and [1, 5, 6].\n\nconsole.log(firstMaxRisingSequences([3, 2, 6, 4, 5, 1])); // Output: 3\n// Explanation: The rising sequences are [3, 6], [2, 6] and [4, 5].\n\nconsole.log(firstMaxRisingSequences([1, 2, 3, 4, 5, 6])); // Output: 1\n// Explanation: The entire sequence itself is a rising sequence.\n```\n\n# Note:\n\n- A subsequence with one element cannot be considered a rising sequence.",
+    "totalAttempts": 222,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 19,
+    "tags": [
+      "Lists",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 3
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

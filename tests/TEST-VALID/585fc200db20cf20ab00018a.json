@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/585fc200db20cf20ab00018a",
+  "data": {
+    "id": "585fc200db20cf20ab00018a",
+    "name": "Maximum 2d subarray sum",
+    "slug": "maximum-2d-subarray-sum",
+    "category": "algorithms",
+    "publishedAt": "2016-12-25T14:56:40.003Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/585fc200db20cf20ab00018a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-12-25T12:56:32.282Z",
+    "createdBy": {
+      "username": "MaLiN2223",
+      "url": "https://www.codewars.com/users/MaLiN2223"
+    },
+    "description": "This is simillar to problem stated here https://www.codewars.com/kata/maximum-subarray-sum.\n\nYou need to find first maximum 2d subarray from 2d array. \n\nBy maximum I mean maximum by value.\nWhen two arrays have the same value you need to return first spotted.\n\nPlease remember to rate this kata, thanks ;)\n\nOutput should include (in right orderd):\n```python \n[\ntop_left_corner_x, top_left_corner_y, \nbottom_right_corner_x, bottom_right_corner_y,\nmax_sum\n]\n```\nIf array is all negative or empty return sum as 0.\nFor example:\n```python \nmax_sum([\n  [1, 2, -1, -4, -20],\n  [-8, -3, 4, 2, 1],\n  [3, 8, 10, 1, 3],\n  [-4, -1, 1, 7, -6]\n])\n== [1,1,3,3,29]\n``` \nNotes:\n\n1. Arrays are not always squares!\n2. You need to find FIRST array (closest to top left corner)\n3. All rows have the same length\n4. When array is empty/all negative I am checking only sum, in other words in my tests only last number is being checked\n```\nmax_sum([[-1],[-1]])[4] == 0 \n```\n5. BEWARE from now on there are random tests, O((nm)^2) or bigger solution might not pass. What am I testing in random tests? Here is pseudocode : \n```\nrepeat 50 times :\n    M = random from 1 to 100\n    N = random from 1 to 100\n    array = randomized array N x M\n    test array\n```\n",
+    "totalAttempts": 294,
+    "totalCompleted": 28,
+    "totalStars": 19,
+    "voteScore": 21,
+    "tags": [
+      "Algorithms",
+      "Dynamic Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

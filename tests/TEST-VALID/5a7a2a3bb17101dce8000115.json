@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a7a2a3bb17101dce8000115",
+  "data": {
+    "id": "5a7a2a3bb17101dce8000115",
+    "name": "Columnar Transposition Cipher Collisions",
+    "slug": "columnar-transposition-cipher-collisions",
+    "category": "games",
+    "publishedAt": "2018-02-06T22:22:21.287Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a7a2a3bb17101dce8000115",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-02-06T22:20:44.039Z",
+    "createdBy": {
+      "username": "W1ck3dTh1ngs",
+      "url": "https://www.codewars.com/users/W1ck3dTh1ngs"
+    },
+    "description": "# Columnar Transposition Cipher\nIn cryptography, a columnar transposition cipher is created, when the message is written out in rows of a fixed length, and then read out again column by column, and the columns are chosen in some scrambled order. Both the width of the rows and the permutation of the columns are usually defined by a keyword. For example, the keyword ZEBRAS is of length 6 (so the rows are of length 6), and the permutation is defined by the alphabetical order of the letters in the keyword. In this case, the order would be \"6 3 2 4 1 5\".\n\nFinally, the message is read off in columns, in the order specified by the keyword. For example, suppose we use the key \"ZEBRAS\" and the message \"WE ARE DISCOVERED. FLEE AT ONCE\". In a columnar transposition, we write this into the grid as follows:  \n```\nZ E B R A S\n6 3 2 4 1 5\nW E A R E D\nI S C O V E \nR E D F L E \nE A T O N C \nE\n```\nThis results in the following ciphertext: \"EVLNACDTESEAROFODEECWIREE\".\n\n## Collisions\nHowever, there are multiple keys which can provide the same ciphertext.\nBoth \"ZEBRAS\" and \"FCBDAE\" will produce the same ciphertext for any message for example.\n\nWrite a function that will accept the message, cipher, and a list of keys and return a list of keys from the input list that are all valid solutions for the message/cipher pair.\n\n**NOTE:**\n* Messages, and therefore ciphers, are given as uppercase strings with a length between 50 to 150 characters. They may contain letters and numbers only.\n* Keys are a list of up to 100, uppercase strings with a length between 3 and 10 of alphabetical characters. Characters within a key will not repeat.\n* Your function should return a list containing each valid key just as it was received. (i.e [\"ZEBRAS\", \"FCBDAE\"])",
+    "totalAttempts": 99,
+    "totalCompleted": 31,
+    "totalStars": 2,
+    "voteScore": 40,
+    "tags": [
+      "Ciphers",
+      "Cryptography",
+      "Strings",
+      "Matrix",
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

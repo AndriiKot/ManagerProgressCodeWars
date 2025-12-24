@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c0e4c0bb61282dca70000aa",
+  "data": {
+    "id": "5c0e4c0bb61282dca70000aa",
+    "name": "Implied Probability from Fractional Betting Odds",
+    "slug": "implied-probability-from-fractional-betting-odds",
+    "category": "algorithms",
+    "publishedAt": "2018-12-11T11:56:33.358Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5c0e4c0bb61282dca70000aa",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-10T11:20:43.895Z",
+    "createdBy": {
+      "username": "nicolajanemcd",
+      "url": "https://www.codewars.com/users/nicolajanemcd"
+    },
+    "description": "Betting odds are a great way to find out how likely an event is to happen, and most betting websites will offer you odds for sporting events as well as major political elections, or even who might be likely to win a reality show!\n\n---------------------------------------\n\nFRACTIONAL ODDS AND YOUR STAKE\n\nThere are many kinds of odds, including decimal and American, but the most popular in the UK is fractional odds. Let's say an event has odds of 1/5 to win. Well, this means that if you bet £1 (British Pound Sterling) and you win, you get back £1.20, meaning a 20 pence profit, i.e. you win back (1 / 5) * your stake. Simple enough right? But that only tells you how much money you'll win, we still need to work out how likely this event is to happen!\n\n---------------------------------------\n\nFRACTIONAL ODDS AND IMPLIED PROBABILITY\n\nWhat we really want to know for this kata is, what is the implied probability of an array of fractional betting odds? \n\nMany might look at odds of 1/5 and think the event is 20% likely to happen. But actually, it would be 83.3% likely to happen. \nSo how did we get here? The standard formula is:\n\ndenominator / (denominator + numerator) * 100\n\nIn this case, that would be:\n5 / (1 + 5) * 100.\n\n-----------------------------------------\n\nFor this challenge, you will be given some fractional odds, represented as an array of strings. Find out which odds have the highest implied probability, and return that probability as a percentage to 1 decimal place, e.g. \"83.3%\" for 1/5.\n\nThe result must be a string, and there should be no spaces between the number and the percentage sign. When rounding, 5 should be rounded up. Good luck!\n\n",
+    "totalAttempts": 145,
+    "totalCompleted": 62,
+    "totalStars": 1,
+    "voteScore": 45,
+    "tags": [
+      "Arrays",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

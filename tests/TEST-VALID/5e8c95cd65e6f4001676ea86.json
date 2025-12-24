@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e8c95cd65e6f4001676ea86",
+  "data": {
+    "id": "5e8c95cd65e6f4001676ea86",
+    "name": "Computer problem series #6: Autoformat code level 1",
+    "slug": "computer-problem-series-number-6-autoformat-code-level-1",
+    "category": "reference",
+    "publishedAt": "2020-04-08T20:24:33.650Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e8c95cd65e6f4001676ea86",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-04-07T15:01:33.393Z",
+    "createdBy": {
+      "username": "albertogcmr",
+      "url": "https://www.codewars.com/users/albertogcmr"
+    },
+    "description": "# Autoformat code level 1\r\n\r\nWe ave written a text in a programming language that uses brackets `{}`as a block separator, `\\n` as new line separator and ` ` as whitespace character. We want to be sure that the intentation is correct. \r\n\r\n## Input parameters: \r\n\r\n* *text*: Type string. \r\n* *spaces*: Type integer. `spaces > 0`. \r\n\r\n## Task: \r\n\r\nIf the *text* is inconsistent with opening and closing brackets, the function should return the message \"Syntax error\" as a string. I recommend this [kata](https://www.codewars.com/kata/52774a314c2333f0a7000688) for this particular case. \r\n\r\nThe function must correctly adjusts the indentation of every line of *text*. One indentation level must have as many whitespaces as *spaces* indicates, two levels must have double, and so on. \r\n\r\nYou should not modify the *text* given except for adding or removing whitespaces in the begining of a line following this rules: \r\n\r\n* Each line should have N times *spaces* of whitespaces at the begining. To calculate N you should take into consideration **only the previous lines**: where N = amount of opening brackets `{` minus the amount of closing brackets `}`. \r\n\r\n* If the actual line begins with zero or more whitespaces and an closing bracket `}`, this bracket, and only this first one, should be taken into account for the calculation of N by adding an additional closing bracket to the result.\r\n\r\n## Examples: \r\n\r\n### First Example\r\n\r\n#### Input\r\n\r\n```\r\ntext = \"var size = 5;\\n\\nfor(var i=0; i<size.lenght; i++){\\nfor(var j=0; j<size.lenght; j++){\\nconsole.log(i+j);\\n}\\n}\"\r\nspaces = 2\r\n```\r\n\r\n```\r\nvar size = 5;\r\n\r\nfor(var i=0; i<size.lenght; i++){\r\nfor(var j=0; j<size.lenght; j++){\r\nconsole.log(i+j);\r\n}\r\n}\r\n```\r\n\r\n#### Output\r\n\r\n```python\r\nresult = \"var size = 5;\\n\\nfor(var i=0; i<size.lenght; i++){\\n  for(var j=0; j<size.lenght; j++){\\n    console.log(i+j);\\n  }\\n}\"\r\n```\r\n\r\n```\r\nvar size = 5;\r\n\r\nfor(var i=0; i<size.lenght; i++){\r\n  for(var j=0; j<size.lenght; j++){\r\n    console.log(i+j);\r\n  }\r\n}\r\n```\r\n\r\n### Second Example\r\n\r\n#### Input\r\n\r\n```python\r\ntext = \"  var result = 0;\\n\\nfor(var i=0; i<size.lenght; i++){\\n        result = result + i;\\n}\\nif (result > 10){\\nconsole.log(result);\\n    }\"\r\nspaces = 4\r\n```\r\n\r\n```\r\n  var result = 0;\r\n\r\nfor(var i=0; i<size.lenght; i++){\r\n        result = result + i;\r\n}\r\nif (result > 10){\r\nconsole.log(result);\r\n    }\r\n```\r\n\r\n#### Output\r\n\r\n```python\r\nresult = \"var result = 0;\\n\\nfor(var i=0; i<size.lenght; i++){\\n    result = result + i;\\n}\\nif (result > 10){\\n    console.log(result);\\n}\"\r\n```\r\n\r\n```\r\nvar result = 0;\r\n\r\nfor(var i=0; i<size.lenght; i++){\r\n    result = result + i;\r\n}\r\nif (result > 10){\r\n    console.log(result);\r\n}\r\n```\r\n\r\n### Third Example.\r\n\r\n#### Input. \r\n\r\n```python\r\ntext = \"if (result > 10){\\nconsole.log(result);\"\r\nspaces = 4\r\n```\r\n\r\n```\r\nif (result > 10){\r\nconsole.log(result);\r\n```\r\n\r\n#### Output\r\n\r\n```python\r\nresult = \"Syntax error\"\r\n```",
+    "totalAttempts": 111,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

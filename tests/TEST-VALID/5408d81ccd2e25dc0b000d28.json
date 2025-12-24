@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5408d81ccd2e25dc0b000d28",
+  "data": {
+    "id": "5408d81ccd2e25dc0b000d28",
+    "name": "Physics - Mechanics - Atwood Machines in Series",
+    "slug": "physics-mechanics-atwood-machines-in-series",
+    "category": "algorithms",
+    "publishedAt": "2014-09-05T00:42:55.820Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript",
+      "coffeescript",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5408d81ccd2e25dc0b000d28",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-09-04T21:22:36.859Z",
+    "createdBy": {
+      "username": "user9935269",
+      "url": "https://www.codewars.com/users/user9935269"
+    },
+    "description": "![Atwood Machine](http://i.imgur.com/MWUHL7z.png)\n\nThe Atwood machine consists of a weightless, frictionless pully with two masses suspended from a weightless string at each end. One of these masses can be replaced by another Atwood machine, and again, and again...\n\nWrite a function that receives a list of 2 to 100 masses (kg) and returns the acceleration (m/s/s) of the first mass.\n\nQuick Physics Reference\n===\n\nIf you would like to test your Mechanics skills, this is all you need:\n\n- Force = Mass x Acceleration\n- Gravitational Force (N) = Mass (kg) x 9.80665 (m/s/s)\n- Tension Force is equal for objects on two ends of the same string\n- Find acceleration by combining all forces on an object\n- In a many-mass system, multiple masses can often be reduced to one \"effective\" mass\n- Solve the two-mass system first, then replace the second mass with a pulley (recurse)\n\nGood luck!\n\nComplete Physics Walkthrough\n===\n\nIf you would like substantial help, read on! We'll derive an equation that makes this kata (relatively) easy.\n\n> Skip to the bottom and grab the bold equation.\n\nThe many-mass system may look complicated, but the physics is actually very simple. A many-mass solution can be derived recursively from the two-mass solution. Below we will derive the two equations required to solve this kata - one that describes the acceleration of the first mass in a two-mass problem and another that reduces a many-mass problem to a two-mass problem.\n\nThe Two-Mass Problem\n---\n\nWe can solve for the acceleration of the first object using Newton's Second Law and two easy tricks that result from the two masses being connected.\n\nNewton's Second Law states that the acceleration of an object is equal to the total force on that object divided by the mass of that object:\n\n- `Acceleration = Total Force / Mass`\n\nWhat forces are exerted on an Atwood mass? Only tension and gravity. Each mass is pulled up by the tension in the rope and pulled down by its own weight:\n\n- `Force up = Tension`\n- `Force down = mass x g`\n- `Fu - Fd = T - m x g`\n\n**g** is 9.80665 m/s/s - the gravitational acceleration of any object at the Earth's surface. Although gravity pulls downward and we are treating the up direction as positive, this constant is not negative. The negative comes from subtracting the gravity term.\n\nApplying Newton's Second Law and ignoring multiplication signs yields the following:\n\n- `$a = (Fu - Fd) / m$`\n- `$a = (T - m g) / m$`\n- `$T = m (a + g)$`\n\nFor the two masses, this means:\n\n- `$T_1 = m_1 (a_1 + g)$`\n- `$T_2 = m_2 (a_2 + g)$`\n\nTo proceed, we use the first trick:\n\n- `$T_1 = T_2 = T$`\n\nThe string's tension is the same for both masses, because they are on either end of the same string. Therefore:\n\n- `$T = m_1 (a_1 + g)$`\n- `$T = m_2 (a_2 + g)$`\n- `$m_1 (a_1 + g) = m_2 (a_2 + g)$`\n- `$a_1 = (m_2 / m_1) (a_2 + g) - g$`\n\nThis is what we want to solve for, the acceleration of the first mass, but we don't know `$a_2$`! Are we stuck? No! It's time for the second trick:\n\n- `$a_1 = - a_2$`\n\nThe masses move with each other, as they are attached to a string with a fixed length. If one moves up, the other moves down by the exact same amount. This allows us to substitute `$a_1$` for `$a_2$`:\n\n- `$a_1 = (m_2 / m_1) (- a_1 + g) - g$`\n\nAfter rearranging terms, we obtain the following equation:\n\n- **`$a_1 = g \\dfrac{m_2 - m_1}{m_1 + m_2}$`**\n\nThe Many-Mass Problem\n---\n\nSo what do we do when the second mass is a pulley? Let's think about the forces on that lower pulley. The lower pulley is pulled upward by the tension of the string on the upper pulley, and the lower pulley is pulled downward by the tension of both strings supporting the masses. We said before that both masses are attached to the same string and are supported by the same tension, so the downward force on the lower pulley is equal to double the tension of its own string:\n\n- `Force up = Tension of Upper Pulley`\n- `Force down = 2 x Tension of Lower Pulley`\n\nCompare this to the forces on the upper pulley's mass, mass #1:\n\n- `$\\text{Force up} = \\text{Tension of Upper Pulley}$`\n- `$\\text{Force down} = m_1 \\cdot g$`\n\nAll we need to do, in order to treat the lower pulley like a mass, is to rephrase the tension of the lower pulley in terms of g so that:\n\n-  `Force down = Effecive Lower Pulley Mass x g`\n\nTo rephrase the tension of the lower pulley in terms of g, we look at the two-mass equations again and rephrase the tension in terms of the masses:\n\n- `$T = m_1 (a_1 + g)$`\n- `$a_1 = g (m_2 - m_1) / (m_1 + m_2)$`\n- `$T = m_1 (g (m_2 - m_1) / (m_1 + m_2) + g)$`\n- `$T = g (m_1 m_2 - m_1^2 + m_1^2 + m_1 m_2) / (m_1 + m_2)$`\n- `$T = 2 g m_1 m_2 / (m_1 + m_2)$`\n\nNow we can apply this tension equation to the tension of the lower pulley:\n\n- `$\\text{Force down} = 2 \\cdot \\text{Tension of Lower Pulley}$`\n- `$\\text{Force down} = \\dfrac{4 g m_2 m_3}{m_2 + m_3}$`\n- `$\\text{Force down} = \\text{Effecive Lower Pulley Mass} \\, \\cdot g$`\n- **`$\\text{Effective Lower Pulley Mass} = \\dfrac{4 m_2 m_3}{m_2 + m_3}$`**\n\nThis equation reduces the lower pulley to a simple mass and can be applied recursively to reduce a many-mass problem to a two-mass problem!",
+    "totalAttempts": 315,
+    "totalCompleted": 46,
+    "totalStars": 17,
+    "voteScore": 52,
+    "tags": [
+      "Physics",
+      "Recursion",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

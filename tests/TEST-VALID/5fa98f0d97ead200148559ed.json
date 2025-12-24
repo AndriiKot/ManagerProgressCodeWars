@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fa98f0d97ead200148559ed",
+  "data": {
+    "id": "5fa98f0d97ead200148559ed",
+    "name": "Find the biggest number in array",
+    "slug": "find-the-biggest-number-in-array",
+    "category": "algorithms",
+    "publishedAt": "2020-11-09T19:11:08.712Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5fa98f0d97ead200148559ed",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-11-09T18:48:45.836Z",
+    "createdBy": {
+      "username": "Puck",
+      "url": "https://www.codewars.com/users/Puck"
+    },
+    "description": "## Description\n\nIn function `maxNum` you will be given an integer `num` and a 2D array `opers`.\n* `num` represents the length of an array of integers\n* `opers[i]` represents operations that you need to peform on `num`.\n\n## Operations\n\n* `opers[i]` has always a length of 3 and contains only integers. \n* The first integer `opers[i][0]` represents the index of `num` where the operation will `start`.\n* The second integer `opers[i][1]` represents the index of `num` where the operation will `end`.\n* The third integer `opers[i][2]` represents the number that needs to be added to the values of `num` from `start` (inclusive) and `end` (inclusive).\n\n## Example\n\n```javascript\nmaxNum(9, [[2, 3, 4], [3, 6, 7]])\n\n// num at first is [0, 0, 0, 0, 0, 0, 0, 0, 0]\n// first operations on num is opers[0] therefore we have [0, 0, 4, 4, 0, 0, 0, 0, 0]\n// second operations on num is opers[1] therefore we have [0, 0, 4, 11, 7, 7, 7, 0, 0]\n\n// return value 11\n```\n\n## Assume\n\n* 3 <= num <= 3 * 10^5\n* 1 <= opers length <= 2 * 10^5\n* 0 <= opers[i][0] <= opers[i][1] < num\n* 0 <= opers[i][2] < 10^9\n",
+    "totalAttempts": 213,
+    "totalCompleted": 17,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Algorithms",
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

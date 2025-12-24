@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c1cc1b187817977c2000109",
+  "data": {
+    "id": "5c1cc1b187817977c2000109",
+    "name": "How to find a marriage partner",
+    "slug": "how-to-find-a-marriage-partner",
+    "category": "algorithms",
+    "publishedAt": "2018-12-22T12:13:47.742Z",
+    "approvedAt": null,
+    "languages": [
+      "scala",
+      "ruby",
+      "kotlin"
+    ],
+    "url": "https://www.codewars.com/kata/5c1cc1b187817977c2000109",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-12-21T10:34:25.563Z",
+    "createdBy": {
+      "username": "fredc",
+      "url": "https://www.codewars.com/users/fredc"
+    },
+    "description": "You want to get married so you decide two things. First, the maximum number of potential partners you will date. Secondly, you hate indecision so you will never say two partners are equal. Each partner you meet will get a unique ranking.\n\n## Input\nAn array/list of numbers. Each number represents the ranking of that potential marriage partner. The numbers are between 1 and 999. This lower the number the more desirable the candidate. The minimum list length is 3 (maximum length in tests is 40). Partners are ranked uniquely, you will not find 2 numbers the same. Bear in mind that you can’t simply choose the best by scanning the entire list. That is not how real life works.\n## Output\nThe output is an integer indicating the position of the chosen candidate. If you choose the first person in the list, the output is 1, 2nd person is 2, etc.\n## Process\nThe process for choosing a candidate is as follows:\n\n- You date the first 36.8 % of the candidates. You don't marry any of them. \n\n- As soon as you meet a candidate who is better than the best of that first group, that's the one you choose. The decision to accept or reject a candidate can be based only on the relative ranks of the candidates you have dated so far.\n\n- In this kata, round down to get the integer value indicating position in array.\n\n- In some cases the algorithm will take you through the entire list. You are then forced to marry the last candidate; i.e. you should return the last one.\n\n## Example\nAn example input:\n```scala\nArray(543, 418, 843, 847, 241, 932, 668, 103, 438)\n```\n```ruby\n[543, 418, 843, 847, 241, 932, 668, 103, 438]\n```\n```kotlin\narrayOf(543, 418, 843, 847, 888, 241, 932, 668, 103, 438)\n```\n- There are 9 potential partners (length of list), the first person has a value/score/ranking of 543.\n\n- The first 36.8% of candidates are 543, 418, 843. As mentioned above, round down.\n\n- The best choice in this selection has a rank of 418.\n\n- The candidate that is better than any in the first 3 has a rank of 241. \n\n- This is candidate number 5. The answer is thus 5.\n\n## Background\nWhy 36.8 %? The answer involves a number mathematicians call \"e\" – which, reduced to a fraction 1/e = 0.368 or 36.8 %. The above method has been widely studied. Johannes Kepler, 17th century astronomer, used a similar process to select his second wife. It also applies to selecting a secretary and generally making selections where there is an optimal time to stop and make a decision. There are several articles to be found, and Wikipedia.\n [wikipedia]‪(https://en.wikipedia.org/wiki/Secretary_problem) \n",
+    "totalAttempts": 82,
+    "totalCompleted": 14,
+    "totalStars": 2,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

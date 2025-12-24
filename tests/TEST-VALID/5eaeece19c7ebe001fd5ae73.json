@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eaeece19c7ebe001fd5ae73",
+  "data": {
+    "id": "5eaeece19c7ebe001fd5ae73",
+    "name": "Deduce interface id by EUI-64",
+    "slug": "deduce-interface-id-by-eui-64",
+    "category": "reference",
+    "publishedAt": "2020-05-03T17:20:45.998Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5eaeece19c7ebe001fd5ae73",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-03T16:10:09.211Z",
+    "createdBy": {
+      "username": "kaifeng",
+      "url": "https://www.codewars.com/users/kaifeng"
+    },
+    "description": "EUI-64 is a common method to generate an interface id for the local-link IPv6 addresses.\n\nAn Ethernet 48-bit MAC address is a combination of a 24-bit Organizational Unique Identifier (OUI) and a 24-bit device identifier, written in hexadecimal.\n\nThe modified EUI-64 takes 48-bit MAC address as input, insert `fffe` between the OUI and device identifier, then invert the U/L bit, which is the bit 1 of the highest byte of the MAC address.\n\nThe process would be:\n\n```\n00:50:3e:12:34:56         # sample mac address\n00:50:3e:ff:fe:12:34:56   # insert ff:fe\n02:50:3e:ff:fe:12:34:56   # invert bit 1 of the highest byte\n```\n\nNormally IPv6 address is represented in group of 16 bits (called hextet), so the final interface id should look like `0250:3eff:fe12:3456`.\n\nWrite a function which takes a string representation of a MAC address, and returns the interface id generated using the EUI-64 method.\n\n**Note**: all hexadecimal characters should be in lower case.",
+    "totalAttempts": 198,
+    "totalCompleted": 72,
+    "totalStars": 1,
+    "voteScore": 92,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

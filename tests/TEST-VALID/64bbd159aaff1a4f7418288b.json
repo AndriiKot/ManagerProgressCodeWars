@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64bbd159aaff1a4f7418288b",
+  "data": {
+    "id": "64bbd159aaff1a4f7418288b",
+    "name": "Chain Reaction  - Explosions",
+    "slug": "chain-reaction-explosions",
+    "category": "reference",
+    "publishedAt": "2023-07-30T12:27:56.191Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64bbd159aaff1a4f7418288b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-22T12:53:45.772Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "# Task\nIn this challenge you will be given a rectangular array representing a \"map\" with three types of spaces:\n- **\"+\" bombs:** When activated, their explosion activates any bombs directly above, below, left, or right of the \"+\" bomb.\n- **\"x\" bombs:** When activated, their explosion activates any bombs placed in any of the four diagonal directions next to the \"x\" bomb.\n- Empty spaces \"0\".\n\n# Consider the grid:\n\n```\n[\n  [\"+\", \"+\", \"0\", \"x\", \"x\", \"+\", \"0\"],\n  [\"0\", \"+\", \"+\", \"x\", \"0\", \"+\", \"x\"]\n]\n```\n\nIf the top left \"+\" bomb explodes, the resulting chain reaction will blow up bombs in the order given by the numbers below:\n\n```\n[\n  [\"1\", \"2\", \"0\", \"x\", \"6\", \"8\", \"0\"],\n  [\"0\", \"3\", \"4\", \"5\", \"0\", \"7\", \"8\"]\n]\n```\n\nNote that there are two 8's since two of the bombs explode at the same time. Also, note that one of the \"x\" bombs in the top row does not explode.\n\nWrite a function that determines if the chain reaction started when the *top left bomb* explodes destroys all bombs or not.\n\n### Examples\n```\nall_explode([\n  [\"+\", \"+\", \"+\", \"+\", \"+\", \"+\", \"x\"]\n]) ➞ True\n\nall_explode([\n  [\"+\", \"+\", \"+\", \"+\", \"+\", \"0\", \"x\"]\n]) ➞ False\n\nall_explode([\n  [\"+\", \"+\", \"0\", \"x\", \"x\", \"+\", \"0\"],\n  [\"0\", \"+\", \"+\", \"x\", \"0\", \"+\", \"x\"]\n]) ➞ False\n\nall_explode([\n  [\"x\", \"0\", \"0\"],\n  [\"0\", \"0\", \"0\"],\n  [\"0\", \"0\", \"x\"]\n]) ➞ False\n\nall_explode([\n  [\"x\", \"0\", \"x\"],\n  [\"0\", \"x\", \"0\"],\n  [\"x\", \"0\", \"x\"]\n]) ➞ True\n```\n\n### Notes\n- Both \"+\" and \"x\" bombs have an \"explosion range\" of 1.",
+    "totalAttempts": 158,
+    "totalCompleted": 23,
+    "totalStars": 3,
+    "voteScore": 25,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

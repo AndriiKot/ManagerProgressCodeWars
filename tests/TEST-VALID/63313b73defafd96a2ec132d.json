@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/63313b73defafd96a2ec132d",
+  "data": {
+    "id": "63313b73defafd96a2ec132d",
+    "name": "Simple Encryption",
+    "slug": "simple-encryption-1",
+    "category": "algorithms",
+    "publishedAt": "2022-09-26T05:44:22.111Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/63313b73defafd96a2ec132d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-09-26T05:41:07.469Z",
+    "createdBy": {
+      "username": "user5257673",
+      "url": "https://www.codewars.com/users/user5257673"
+    },
+    "description": "# Introduction\nAn English text needs to be encrypted using a simple encryption scheme. \n\n# Task\nFirst, the spaces are removed from the text. Let **L** be the length of this text. Then, characters are written into a grid, whose rows and columns have the following constraints:\n\nFor example, the sentence **\"if man was meant to stay on the ground god would have given us roots\"**, after removing spaces, is 54 characters long. The square root of 54 is between 7 and 8, so it is written in the form of a grid with 7 rows and 8 columns.\n\n```\nifmanwas\nmeanttos\ntayonthe\ngroundgo\ndwouldha\nvegivenu\nsroots\n```\n- Ensure that rows x column >= L\n- If multiple grids satisfy the above conditions, choose the one with the minimum area.\n\n```\nrows x columns >= L\n```\nThe encoded message is obtained by displaying the characters in a column, inserting a space, and then displaying the next column and inserting a space, and so on. For example, the encoded message for the above rectangle is:\n\n```\nimtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau\n```\n# Example\n```python\nencode('haveaniceday') ==> 'hae and via ecy'\n# have\n# anic\n# eday\n\nencode('feedthedog') ==> 'fto ehg ee dd'\nencode('chillout') ==> 'clu hlt io'\nencode('A Fool and His Money Are Soon Parted.') ==> 'Anoea FdnSr oHeot oiyoe lsAnd aMrP.'\n```\n\n# Notes\n- Return `''` if no input is given.\n- Input lenght can be upto **10^4**.",
+    "totalAttempts": 9,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Puzzles",
+      "Algorithms",
+      "Cryptography",
+      "Security",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

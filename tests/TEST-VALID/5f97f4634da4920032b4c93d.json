@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f97f4634da4920032b4c93d",
+  "data": {
+    "id": "5f97f4634da4920032b4c93d",
+    "name": "Picross - generate clues",
+    "slug": "picross-generate-clues",
+    "category": "algorithms",
+    "publishedAt": "2020-10-27T10:40:40.380Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5f97f4634da4920032b4c93d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-10-27T10:20:19.940Z",
+    "createdBy": {
+      "username": "BaliBalo",
+      "url": "https://www.codewars.com/users/BaliBalo"
+    },
+    "description": "Picross is a game in which a user must fill a grid according to numbers around it. The numbers around the grid (we'll call them \"clues\") indicate the size of the different uninterrupted sequences of filled blocks.\n\nFor example, if we indicate a filled block with █ and an empty block with ░, the row `█ █ ░ █` would have the clue `2 1`.\n\nAs a bigger example, here is a typical 5x5 Picross board representation, including clues and solution:\n```\n      1       2\n      2 2 1 2 2\n  2 2 █ █ ░ █ █\n  1 2 ░ █ ░ █ █\n    0 ░ ░ ░ ░ ░\n  1 1 █ ░ ░ ░ █\n1 1 1 █ ░ █ ░ █\n```\n\n## Goal\n\nIn this kata, you will need to write a function to generate the clues from a given completed board. You will name it `generateClues`. You will receive an instance of `PicrossBoard` as an argument and the function will have to return an instance of `PicrossClues` matching the provided board.\n\nThe classes `PicrossBoard` and `PicrossClues` have already been implemented, you do not need to touch them. Therefore, your function can simply use `return new PicrossClues(columnsData, rowsData)`. The way these two classes work is described more in details below.\n\n## Specifications\n\nThe classes you will have to work with are:\n\n#### PicrossBoard\n\nRepresents a game board state. The rows and columns are using a 0-based index (so the leftmost column is column 0, etc.). Rows are indexed from top to bottom and columns from left to right. The attributes of PicrossBoard instances that could be relevant for your function are:\n- Each cell has a value/state that can be either `PicrossBoard.FILLED` or `PicrossBoard.EMPTY`\n- `board.width` is the number of columns of this board\n- `board.height` is the number of rows of this board\n- `board.cell(columnIndex, rowIndex)` returns the state of the cell at the specified coordinates or `undefined` if the coordinates are out of bounds\n- `board.row(index)` returns an array of cell states representing the row at the specified index, or `undefined` if index is out of bounds\n- `board.column(index)` returns an array of cell states representing the column at the specified index or `undefined` if index is out of bounds\n- `board.rows` is an array of all the row arrays (equivalent to `[board.row(0), board.row(1), ...]`)\n- `board.columns` is an array of all the column arrays (equivalent to `[board.column(0), board.column(1), ...]`)\n\n### PicrossClues\n\nRepresents the clues on the side of a board. The constructor must be called with 2 arguments: `columns` and `rows` in this order. Both of these arguments should be arrays of arrays, indicating the set of block sizes in order for each successive column or row.\n\nFor example, to generate an instance representing the clues for the 5x5 example above, the following code could be used:\n```\nnew PicrossClues(\n    [ // columns\n        [1, 2],\n        [2],\n        [1],\n        [2],\n        [2, 2]\n    ],\n    [ // rows\n        [2, 2],\n        [1, 2],\n        [0],\n        [1, 1],\n        [1, 1, 1]\n    ]\n)\n```\n\n## Additional notes\n- All numbers are indicated left to right and top to bottom. Meaning for example that the first number of a column clue would indicate the size of the topmost set of blocks in that column, etc.\n- By convention, clues for empty rows and columns should be set as `[0]`",
+    "totalAttempts": 112,
+    "totalCompleted": 30,
+    "totalStars": 6,
+    "voteScore": 24,
+    "tags": [
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

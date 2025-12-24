@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580e684622e42d6a6c000148",
+  "data": {
+    "id": "580e684622e42d6a6c000148",
+    "name": "SQL: Aggregating up the hierarchy (Recursion)",
+    "slug": "sql-aggregating-up-the-hierarchy-recursion",
+    "category": "algorithms",
+    "publishedAt": "2016-10-25T12:03:12.717Z",
+    "approvedAt": null,
+    "languages": [
+      "sql"
+    ],
+    "url": "https://www.codewars.com/kata/580e684622e42d6a6c000148",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-24T20:00:06.197Z",
+    "createdBy": {
+      "username": "Miri",
+      "url": "https://www.codewars.com/users/Miri"
+    },
+    "description": "You are working in a company with a hierarchy of different departments. One day (April 1st 2016) the CEO asks you to build some kind of report about the number and salary of all employees who may leave the company in the new future to retire (at least 65 years old). But because he is the CEO he wants the numbers aggregated for the second highest department level. And for controlling reasons he also wants the managers (with ID and name) of those departments.\n\nSo this is your task:\n\nYou have two tables:\n\nCompany (<ul>\n  <li>Department_Id INT PRIMARY KEY,</li>\n  <li>Super_Department INT,</li>\n  <li>Manager INT</li>\n</ul>\n)\n\nEmployee (<ul>\n  <li>Id int PRIMARY KEY,</li>\n  <li>Name VARCHAR, </li>\n  <li>Birthdate DATE, </li>\n  <li>Salary DECIMAL(10,2),  </li>\n  <li>Department INT </li>\n</ul>\n)\n\nEmployee.Department is a reference to the Department_ID column of the Company table.<br/>\nCompany.Super_Department is also a reference to the Department_ID column of the Company table.<br/>\nCompany.Manager is a reference to the ID column of the Employee table.<br/>\n\nYour query should return a singe table with the following columns:\n<ul>\n  <li>Department_Id [INT]</li>\n  <li>Manager_Id [INT]</li>\n  <li>Manager [VARCHAR]</li>\n  <li>Salary_Total [FLOAT]</li>\n  <li>Employees_Total [INT]</li>\n</ul>\n\nThis table should contain only the level 2 departments (counting top down with the company management as 1), their managers with ID + Name and the aggregated salary and number of all employees older than 65 within these departments AND ALL subordinate departments. \n\nPlease sort the result by Department_Id ascending.\n\nImagine the following example:\n<ul>\n<li>Department 1 (company management) has 1 employee >= 65</li>\n<li>Department 2 (subordinate to 1) has 2 employees >= 65</li>\n<li>Department 3 (subordinate to 1) has 0 employee >= 65</li>\n<li>Department 4 (subordinate to 3) has 3 employees >= 65</li>\n<li>Department 5 (subordinate to 3) has 1 employees >= 65</li>\n</ul>\n\nSo for this example your query should return \n<ul>\n<li>Department 2: 2 employees >= 65 </li>\n<li>Department 3: 4 employees >= 65 </li>\n</ul>\n\nNote the following:\n<ul>\n  <li>The 'super_department' column of the Company table contains NULL for the top department (level 1).</li>\n  <li>The hierarchy is a tree (=> there is exactly one level 1 department), but it is neither balanced nor limited to the number of children a node may have.</li> \n  <li>Every department in the hierarchy can and will have employees (not only the lowest)</li>\n  <li>Don't forget: Like in the example above, there may be level 2 departments without any employees older 65 years. Don't throw away such records too hasty, because their subordinate departments may have some. Be careful where to place your filters. </li>\n  <li>The data is completely fictional and randomly generated. So don't assume any correlation between the age and the salary of the employees. It is also possible that the manager of a certain department doesn't work in the same department. That should make no difference for this task.</li>\n  <li>The CEO asks you on April 1st 2016 (2016-04-01), so please use this date for age calculations. Comparing with the current date may fail the test.</li>\n  <li>It may be enough to check just the year part of the birthdate to get the age. However, if you want to be sure, use the actual days and divide it by 365.</li>\n  <li>The managers names are generated each time you start a test, the rest should be fixed. </li>\n</ul>\n\nSome tips:\n<ul>\n  <li>The test company has a total of 100 employees (of any age). You may use this information to check what your current query does. If it returns a number greater than 100, you likely did something wrong.</li>\n  <li>The best approach to solve this task is recursion. There may be other ways, but this is the intended technique of this Kata. Learn to use and like Common Table Expressions ;) </li>\n</ul>\n\nHave fun! ",
+    "totalAttempts": 1129,
+    "totalCompleted": 48,
+    "totalStars": 7,
+    "voteScore": 69,
+    "tags": [
+      "SQL",
+      "Recursion",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

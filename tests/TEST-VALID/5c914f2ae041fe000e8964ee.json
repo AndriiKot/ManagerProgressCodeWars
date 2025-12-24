@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c914f2ae041fe000e8964ee",
+  "data": {
+    "id": "5c914f2ae041fe000e8964ee",
+    "name": "Reactive programming: #3 Premier operators",
+    "slug": "reactive-programming-number-3-premier-operators",
+    "category": "reference",
+    "publishedAt": "2019-03-20T00:23:45.383Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c914f2ae041fe000e8964ee",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-19T20:20:58.969Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "This is the third part of the series on reactive programming.\n\nBefore facing your resolution, you must have completed the previous two katas ([#1](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de), [#2](https://www.codewars.com/kata/5c90276a03b42343cb32e9bf)).\n\nThe real power of reactive programming comes from its operators. Operators are functions that allow transforming one observable into another.\n\nWe have at our disposal a lot of operators that allow us to adapt the observables to our needs. The rest of the katas in this serie, including the one that is starting, consists in implementing some of these operators.\n\nHere we will deal with the most basic operators known for their similarity to the functions used with lists: map, filter, reduce.\n\n# Operator definition\n\nThe first thing is to define the type of an operator. We have said that an operator is a transformation operation over an observable. Then its type will be trivial:\n\n```typescript\ntype Operator<T, R> = (o: Observable<T>) => Observable<R>;\n```\n\n# map operator\n\nApply projection with each value from source. Like `map` functions in arrays.\n\nYour job will be to implement the `map` function.\n\n```typescript\nexport function map<T, R>(f: (x: T) => R): Operator<T, R> {\n  return (observable: Observable<T>): Observable<R> => {\n    // Your job start here.\n  }\n}\n```\n\nNote that the `map` function receives a function from T to R and an observable of Ts and returns an observable of Rs.\n\nAlso note that the `map` function receives the second parameter, the observable of Ts, in a currified way. There are two practical reasons to do this. The first one will be explained below but the second explanation will have to be postponed until the next kata in which we will talk about the `pipe` function.\n\nWe have said that an operator is a transformation function of observables. But in order to transform the observable, most operators need some additional parameters. The problem is that these parameters differ from one operator to another. Some need a function, whose types are specific to each operator, others receive a number, others an observable, ...\n\nThis is the reason why if we include the additional parameters in the operator type, it would be very complicated if not impossible to generalize the definition of an operator valid for all of them.\n\nIf we currify what is common to all operators, the observable that they receive, we can define the operator type how we have done it above.\n\nTo be honest, we've done a bit of cheating, since the `map` function is no longer really an operator.\n\nNote that what the map function actually does is to return an operator once we have partially applied the transformation function from T to R. So we can say that the map function is a mapping operator factory ;)\n\nIn any case and for simplicity, we will continue saying that map is an operator.\n\nLet's start with practical work proposing some examples of what map should do.\n\n```typescript\n//emit (1,2,3,4,5)\nconst source = of(1, 2, 3, 4, 5);\n//add 10 to each value\nconst example = map(val => val + 10)(source);\n//output: 11,12,13,14,15\nconst subscribe = example.subscribe({ onNext: val => console.log(val) });\n```\n\n```typescript\n//emit ({name: 'Joe', age: 30}, {name: 'Frank', age: 20},{name: 'Ryan', age: 50})\nconst source = of(\n  { name: 'Joe', age: 30 },\n  { name: 'Frank', age: 20 },\n  { name: 'Ryan', age: 50 }\n);\n//grab each persons name, could also use pluck for this scenario\nconst example = map(({ name }) => name)(source);\n//output: \"Joe\",\"Frank\",\"Ryan\"\nconst subscribe = example.subscribe({ onNext: val => console.log(val) });\n```\n\n# filter operator\n\nEmit values that pass the provided condition. In this case, `filter` operator would be defined like this.\n\n```typescript\nexport function filter<T>(f: (x: T) => boolean): Operator<T, T> {\n  return (observable: Observable<T>): Observable<T> => {\n    // Put your code here\n  }\n}\n```\n\nI think the declaration is self-explanatory although we clarify it with some examples.\n\n```typescript\nconst source = of(1, 2, 3, 4, 5);\n//filter out non-even numbers\nconst example = filter(num => num % 2 === 0)(source);\n//output: \"Even number: 2\", \"Even number: 4\"\nconst subscribe = example.subscribe({onNext: val => console.log(`Even number: ${val}`)});\n```\n\n```typescript\n//emit ({name: 'Joe', age: 31}, {name: 'Bob', age:25})\nconst source = of({ name: 'Joe', age: 31 }, { name: 'Bob', age: 25 });\n//filter out people with age under 30\nconst example = filter(person => person.age >= 30)(source);\n//output: \"Over 30: Joe\"\nconst subscribe = example.subscribe({onNext: val => console.log(`Over 30: ${val.name}`)});\n```\n\n# reduce operator\n\nReduces the values from source observable to a single value that's emitted when the source completes. Just like [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=a)\n\nThe corresponding declaration will be\n\n```typescript\nexport function reduce<T, R>(f: (acc: R, x: T) => R, seed: R): Operator<T, R> {\n  return (observable: Observable<T>): Observable<R> => {\n    // Your code goes here\n  }\n}\n```\n\nAnd this is an example:\n\n```typescript\nconst source = of(1, 2, 3, 4);\nconst example = reduce((acc, val) => acc + val, 0)(source);\n//output: Sum: 10'\nconst subscribe = example.subscribe({onNext: val => console.log('Sum:', val)});\n```\n\nWhen you are finished, you can continue with [#4 Pipelining operators](https://www.codewars.com/kata/5c91f503ac8b333aa73120d4)",
+    "totalAttempts": 30,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 5,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

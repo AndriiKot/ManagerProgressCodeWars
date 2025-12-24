@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e09bdca73aa2c0025b26e97",
+  "data": {
+    "id": "5e09bdca73aa2c0025b26e97",
+    "name": "Vector Swizzling",
+    "slug": "vector-swizzling",
+    "category": "algorithms",
+    "publishedAt": "2019-12-30T09:57:13.769Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e09bdca73aa2c0025b26e97",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-12-30T09:05:14.803Z",
+    "createdBy": {
+      "username": "stellartux",
+      "url": "https://www.codewars.com/users/stellartux"
+    },
+    "description": "In GLSL, vector data types have a functionality called [*swizzling*](https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)#Swizzling). A vector is an array with length 2, 3 or 4. Swizzling allows the programmer to access elements of the vector using the following syntax.\n\n```\n// vector initialization\nvec4 col = vec4(0.1, 0.2, 0.3, 0.4);\n\n// a is a copy of col\nvec4 a = col.xyzw;\n\n// individual elements can be accessed, b is 0.1\nfloat b = col.x; \n\n// vectors can be accessed like arrays, c is 0.1\nfloat c = col[0];\n\n// elements can be reordered and repeated by swizzling, d is vec3(0.2, 0.1, 0.1)\nvec3 d = col.yxx;\n\n// swizzled elements can be set, d is now vec3(0.2, 0.6, 0.5)\nd.zy = vec2(0.5, 0.6);\n\n// elements can't be repeated when being set, d[0] is still 0.2\nd.xxx = vec3(0.7, 0.8, 0.9);\n\n// there are three different swizzle masks - xyzw, rgba and stpq are equivalent\nvec4 e = col.rgba;\nvec4 f = col.stpq;\n\n// swizzle masks can't be mixed, treat this like a normal property\nvec3 notSupported = col.wat;\n\n// swizzle masks must be 1 to 4 characters long, treat longer masks like normal properties\nvec8 alsoNotSupported = col.rrggbbaa;\n```\n\nLet's recreate this handy functionality.",
+    "totalAttempts": 160,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 14,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

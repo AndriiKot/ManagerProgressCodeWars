@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/586edbb935396dba5a0000f4",
+  "data": {
+    "id": "586edbb935396dba5a0000f4",
+    "name": "Magritte - Golconda",
+    "slug": "magritte-golconda",
+    "category": "reference",
+    "publishedAt": "2017-01-12T00:32:16.245Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/586edbb935396dba5a0000f4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-05T23:50:17.216Z",
+    "createdBy": {
+      "username": "mmalkavian",
+      "url": "https://www.codewars.com/users/mmalkavian"
+    },
+    "description": "** INTRO **\n\nIt's now time for art class in CodeWars.\n\n\n>Golconda (French: Golconde) is an oil painting on canvas by Belgian surrealist René Magritte, painted in 1953. It is usually housed at the Menil Collection in Houston, Texas.\n ([Wikipedia link](https://en.wikipedia.org/wiki/Golconda_%28Magritte%29))\n \nPerhaps Magritte was into programming.\n \n** Le Painting **\n\n<img src=\"http://tinyurl.com/gr9hs24\" alt=\"Golconda from Magritte\" style=\"width: 550px;\"/>\n\n** Le Kata **\n\nYour goal is to represent the men of the painting on screen.\n\nAs you can see there are 3 levels of men in perspective, let's call 1st level the closest, 2nd the middle and 3rd the farthest. Within a level they are regularly distanced to form a sort of rhombus (or an X with 4 at the 4 corners and 1 in the middle).\n\nThe 1st level man will be represented with `O` for the man's head and `A` for the man's body; it's the only one with 2 characters.\nThe 2nd and 3rd level men will be represented with `!` and `.` respectively.\nCheck the example at the end.\n\n\n** INPUT **\n\nProvided to you is a dictionary with all the main parameters.\n\nWhat you need to be aware of is that for representing a level of men you just need the coordinates of one (close to the top-left) and how distant (often) you want it to repeat. For better abstraction, try to handle negative numbers as well.\nYou will need to deal with perspective too.\n\nA parameters dictionary will be something like:\n```\nd = {\n\"1_men_x\": 2,        # the X coordinate for men in first level \n\"1_men_y\": 2,        # the Y coordinate for men in first level \n\"1_men_often\": 8,    # distance from next of first level men\n\n\"2_men_x\": 3,        # the X coordinate for men in second level (middle)\n\"2_men_y\": 1,        # the Y coordinate for men in second level\n\"2_men_often\": 6,    # distance from next of second level men\n\n\"3_men_x\": 0,        # the X coordinate for men in third level\n\"3_men_y\": 0,        # the Y coordinate for men in third level\n\"3_men_often\": 4,    # distance from next of third level men\n\n\"width\": 50,         # painting width in characters\n\"height\": 19         # painting height in characters\n}\n```\nCoordinates for 1st men refer to the head coordinates', not the body!\n\n** OFTEN PARAMETER **\n\nAbout the 3 `often` parameters - this distance is expressed with this example, let's suppose it equals 6: \n\n- the next man will be 6 lines distant vertically, \n- distant 6 \\* 2 (the double of `often` ) characters horizontally, \n- and the men in the middle of the X-shape will have an offset of half of both vertical and horizontal distances, therefore 3 lines vertically (6 / 2) and 6 characters horizontally ( 6 * 2 / 2); \n- the halves are approximated always as integer divisions.\n- [this is difficult to explain] given the fact you have an `often` parameter, the coordinates might not represent exactly the left-most or top-most man, or perhaps the man can just be out of the picture, this parameter is what count the most and use the remainder operation to keep track of them *on all sides*. Example: if a man is at `(20,20)` and will repeat with an `often` of 5, it's clearly not the top-left-most.\n\n** OUTPUT **\n\nWith the parameters shown in the previous dictionary (suppose `(0,0)` is the top-left corner, (`1,0` its right, `(0,1)` its down)), we have to get something like this:\n```\n.       .       .       .       .       .       . \n   !           !           !           !          \n  O .       .     O .       .     O .       .     \n  A               A               A               \n.       .!      .    !  .       .!      .    !  . \n                                                  \n    .     O .       .     O .       .     O .     \n   !      A    !          A!           !  A       \n.       .       .       .       .       .       . \n                                                  \n  O .    !  .     O .!      .    !O .       .!    \n  A               A               A               \n.       .       .       .       .       .       . \n   !           !           !           !          \n    .     O .       .     O .       .     O .     \n          A               A               A       \n.       .!      .    !  .       .!      .    !  . \n                                                  \n  O .       .     O .       .     O .       .     \n```\n3rd level man is at (0,0) and repeats every 4 vertically and 4\\*2 horizontally.\n\n** EXAMPLES **\n\n1.\n```\nd  = {\"1_men_x\":  3, \"1_men_y\":  2, \"1_men_often\": 10,\n\t  \"2_men_x\":  4, \"2_men_y\":  1, \"2_men_often\": 7,\n\t  \"3_men_x\":  2, \"3_men_y\":  0, \"3_men_often\": 5, \n      \"width\"  : 40, \"height\":  19}\n```\nResult:\n```\n  .         .         .         .       \n    !             !             !       \n   O   .         .     O   .         .  \n   A                   A                \n           !             !             !\n  .         .         .         .       \n                                        \n       .     O   .         .     O   .  \n    !        A    !             !A      \n                                        \n  .         .         .         .       \n           !             !             !\n   O   .         .     O   .         .  \n   A                   A                \n                                        \n  . !       .     !   .         !       \n                                        \n       .     O   .         .     O   .  \n           ! A           !       A     !\n```\n2.\n```\nd2 = { \"1_men_x\":  0, \"1_men_y\":  0, \"1_men_often\": 7,\n\t   \"2_men_x\":  1, \"2_men_y\":  1, \"2_men_often\": 5,\n\t   \"3_men_x\":  2, \"3_men_y\":  3, \"3_men_often\": 3, \n       \"width\"  : 20, \"height\":  15}\n```\nResult:\n```\nO .     .     O     \nA!   .     !  A  .  \n                    \n  .   !O.     . !   \n     . A   .     .  \n                    \n !.     .  !  .     \nO    .     .  O  .  \nA     !       A !   \n  .     .     .     \n     . O   .     .  \n !     A   !        \n  .     .     .     \n     .!    .    !.  \nO             O     \n```\n\n** HINTS **\n\n- Use a monospace font terminal to help you solving, it's going to be a coordinates-and-if nightmare.\n- remember there is no `\\n` at the end.",
+    "totalAttempts": 112,
+    "totalCompleted": 16,
+    "totalStars": 8,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

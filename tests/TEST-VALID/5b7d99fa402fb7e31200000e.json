@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b7d99fa402fb7e31200000e",
+  "data": {
+    "id": "5b7d99fa402fb7e31200000e",
+    "name": "Try and Give me 5 ",
+    "slug": "try-and-give-me-5",
+    "category": "games",
+    "publishedAt": "2019-01-12T14:11:35.583Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b7d99fa402fb7e31200000e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-08-22T17:14:35.172Z",
+    "createdBy": {
+      "username": "medenagan",
+      "url": "https://www.codewars.com/users/medenagan"
+    },
+    "description": "It's the 5th of May in Pentapolys and all folks there use to celebrate their National Day.\n\nEach year, a coding contest is launched after the royal parade.\n\nThis time, the Fifth Minister will ask all would-be players to build a function ```gimmefive() ```, which is passed a certain ```function fn()``` as its argument and it is supposed to return the same exact `fn` function.\n\n```javascript \nfunction gimmefive(fn) {\n  return fn;\n}\n```\n\nThe judges should be able to call ```gimmefive(anyFunctionJudgesLike)``` by passing a particular function they want to. Then, they expect to get 5 from invoking the returned function:\n\n```javascript\nconst mustGiveFive = gimmefive(() => \"lustra live the Queen!\");\nconst five = mustGiveFive();\nfive === 5; // must be true\n```\n\nNeedless to say, the solution has to respect the mentioned requirement for this task, which means the returned function must be the same as the one passed:\n\n```javascript\n// passing() and returned() ought to be the same function\nconst passing = () => 5;\nconst returned = gimmefive(passing);\n\n```\n\nSir V. — a trusted adviser of the Queen — has clarified that the elected function `anyFunctionJudgesLike` has a consistent behavior and it will not be changed throughout the celebration day.\n\nRemember that people out there are really sensitive about their culture of fiveness.\n\nSince this event is likely to get a high coverage on all Pentapolyan media, the National Security 5ervice \"recommended\" smoothing things out a little bit, as a way to let people have more fun and avoid any possible riot.\n\nIn an attempt to reassure all of her subjects, the Queen herself is due to deliver a speech solemnly assuring ```\"there shall be no hidden nor random tests on the mathematical aspects of the matter for today\"```.\n\nWhile revising the guidelines for this match, though, the appointed committee warned that some concern may arise from a rule under Section 125e, which states:\n\n```javascript\nconst e125 = `  In order to guarantee a fair game,\n              all players involved in a royal contest\n              launched for the National Day MUST NOT\n              manipulate any standard Function that might\n              provoke any side effects on other coders.\n\n                Transgressors will be prosecuted \n              under the law of the Reign of Pentapolys. `;\n```\n\nThis being said, it's 4.30 a.m. local time and in a few hours Pentapolys will celebrate the most important day of the year. All eyes are on the kingdom.\n\nAs you know, the Secretary of the Queen has just rung you up some minutes ago.\n\nHer Majesty needs YOU! What a pleasure must be.\n\n**You are now Her Majesty's First Official Coder in charge**, therefore you are *invited to supervise some of the challenges* after the parade.\n\nYeah, that probably means they want to smuggle any working code from you.\n\nShould the royal contest go wrong, deployed agents in plain clothes will submit your operating solution to save the celebration.\n\nBe honored, it's for the safety of the Fiveness!\n",
+    "totalAttempts": 97,
+    "totalCompleted": 9,
+    "totalStars": 1,
+    "voteScore": 2,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

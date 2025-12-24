@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d2cca8592a6f40019573db4",
+  "data": {
+    "id": "5d2cca8592a6f40019573db4",
+    "name": "Check for Allergies",
+    "slug": "check-for-allergies",
+    "category": "reference",
+    "publishedAt": "2019-07-15T18:54:53.366Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d2cca8592a6f40019573db4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-15T18:48:37.400Z",
+    "createdBy": {
+      "username": "ml8231",
+      "url": "https://www.codewars.com/users/ml8231"
+    },
+    "description": "## checkForAllergies\n\nYou receive a list of all the customers for a table in the restaurant. You need to check the array of customers to see if at least one of them has an allergy.\n\nIn this kata, a customer will be represented by an object with a `name` property and an `allergies` property, like below:\n```js\n{\n  name: 'Anat',\n  allergies: ['nuts']\n}\n```\nIf a customer **doesn't have an allergy**, then the `allergies` property value will be an empty array, like below:\n```js\n{\n  name: 'Harpreet',\n  allergies: []\n}\n```\n\n• The function `checkForAllergies` will take an array of customer objects.\n\n• If at least one of the customers in the array has an allergy then the `checkForAllergies` should return `true` overall. Otherwise, if none of the customers has an allergy, then `checkForAllergies` should return `false` overall. For example:\n\n```js\ncheckForAllergies([\n  { customer: 'Paul C', allergies: [] },\n  { customer: 'Wendy', allergies: [] },\n  { customer: 'Anat', allergies: [] }\n]); // should return false (noone has any allergies)\n```\n\n```js\ncheckForAllergies([\n  { customer: 'Hannah', allergies: [] },\n  { customer: 'Wendy', allergies: [] },\n  { customer: 'Paul C', allergies: [] },\n  { customer: 'Jonny', allergies: [] },\n  { customer: 'Harpreet', allergies: [ 'nuts' ] }\n]); // should return true (Harpreet has a nuts allergy)\n```",
+    "totalAttempts": 29,
+    "totalCompleted": 19,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

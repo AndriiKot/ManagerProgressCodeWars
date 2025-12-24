@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5611a112f296612fe300003c",
+  "data": {
+    "id": "5611a112f296612fe300003c",
+    "name": "Best GF (Guardian Force) junctions based on compatibility",
+    "slug": "best-gf-guardian-force-junctions-based-on-compatibility",
+    "category": "algorithms",
+    "publishedAt": "2015-10-04T22:07:55.862Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5611a112f296612fe300003c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-04T21:58:42.859Z",
+    "createdBy": {
+      "username": "sergio-bobillier",
+      "url": "https://www.codewars.com/users/sergio-bobillier"
+    },
+    "description": "In Final Fantasy VIII (a famous game by Squaresoft) there were powerful magical entities called GF (Guardian Force). By junctioning these entities the otherwise regular human characters would acquire special abilities and increased stats.\n\nOne of these special abilities was summoning the GF itself to the battle field to blast the enemies with a thunderbolt, a giant tidal wave or even a rain of cactus needles.\n\nCompatibility between the GF and the human character was measured with a numerical value between 0 and 1000, the higher the compatibility the less time the GF summoning will take.\n\nIn this kata you are asked to write a function: `best_juctions` to determine the best junctions for each character.\n\nThe function will receive two parameters, the first one is a matrix with 16 rows, one for each of the GF: Quezacotl, Shiva, Ifrit, Siren, Brothers, Diablos, Carbuncle, Leviathan, Pandemona, Cerberus, Alexander, Doomtrain, Bahamut, Cactuar, Tonberry and Eden (in that order). The matrix will also have 6 columns one for each of the six characters: Squall, Zell, Irvine, Quistis, Rinoa and Selphie (also in that order). The elements of the matrix will be the compatibility values for the Character - GF pair. For example:\n\n                 Squall    Zell    Irvine    Quistis    Rinoa    Selphie\n    Quezacotl    952       372     667       6          684      174\n    Shiva        378       253     321       254        686      300\n    Ifrit        396       872     35        376        755      865\n    Siren        962       832     766       467        104      135\n    Brothers     108       299     15        54         545      19\n    Diablos      808       46      793       419        452      202\n    Carbuncle    11        324     473       242        30       521\n    Leviathan    191       126     832       489        951      996\n    Pandemona    828       957     798       991        863      770\n    Cerberus     130       413     919       827        195      863\n    Alexander    701       119     114       491        994      165\n    Doomtrain    240       187     69        987        259      404\n    Bahamut      107       341     103       498        424      708\n    Cactuar      922       745     437       10         888      831\n    Tonberry     201       700     619       388        929      765\n    Eden         617       422     356       816        581      1000\n\nIn this case Squall has a compatibility of 952 with Quezacotl.\n\n__NOTE:__ The actual matrix won't include the character or GF names, only the values. In Ruby that would be:\n\n```ruby\ncompatibility = [\n    [952, 372, 667, 6, 684, 174],\n    [378, 253, 321, 254, 686, 300],\n    [396, 872, 35, 376, 755, 865],\n    [962, 832, 766, 467, 104, 135],\n    [108, 299, 15, 54, 545, 19],\n    [808, 46, 793, 419, 452, 202],\n    [11, 324, 473, 242, 30, 521],\n    [191, 126, 832, 489, 951, 996],\n    [828, 957, 798, 991, 863, 770],\n    [130, 413, 919, 827, 195, 863],\n    [701, 119, 114, 491, 994, 165],\n    [240, 187, 69, 987, 259, 404],\n    [107, 341, 103, 498, 424, 708],\n    [922, 745, 437, 10, 888, 831],\n    [201, 700, 619, 388, 929, 765],\n    [617, 422, 356, 816, 581, 1000]\n]\n```\n\nThe second parameter is an array with the characters currently in the party. In Final Fantasy VIII you play with only three characters at a time (keep in mind that the order in which the characters appear in the array is important. That means:\n\n```ruby\n[\"Squall\", \"Rinoa\", \"Selphie\"]\n```\n\nis not the same that\n\n```ruby\n[\"Rinoa\", \"Squall\", \"Selphie\"]\n```\n\nTo determine the best possible junction setup the function should try to pair each character with those GF for which the character has the highest compatibility value. But there are two conditions.\n\n1. The GF should be evenly split among the characters in the party, that means: with a party of three two of the characters should have 5 GF and the other should have 6.\n\n2. In case two characters have the same compatibility value with a given GF, that GF goes to the one that appears first in the compatibility matrix. Likewise, if a character has the same compatibility value with more than one GF the first GF should take priority over the later one.\n\nThe function should return a hash whose keys are the character names and whose values are arrays with the suggested GFs (sorted alphabetically) for that character, for example:\n\n```ruby\n{\n  \"Squall\" => [\"Cactuar\", \"Diablos\", \"Doomtrain\", \"Quezacotl\", \"Siren\"],\n  \"Rinoa\" => [\"Alexander\", \"Brothers\", \"Pandemona\", \"Shiva\", \"Tonberry\"],\n  \"Selphie\" => [\"Bahamut\", \"Carbuncle\", \"Cerberus\", \"Eden\", \"Ifrit\", \"Leviathan\"]\n}\n\n```\n\n__IMPORTANT__ Make sure to return the characters in the same order they appear in the party array and with the GFs sorted alphabetically or else the tests will fail. Also, note that each GF can only be junctioned to one character.\n\nTo ease the work of building the Hash you will have access to two constant arrays: `CHARACTERS` and `GF`, these arrays will contain the names in the same order that the compatibility matrix, so for example `CHARACTERS[0] = \"Squall\"`, `CHARACTERS[1] = \"Zell\"`, etc.\n\nFeeling nostalgic? ;)\n\nHave fun!\n",
+    "totalAttempts": 118,
+    "totalCompleted": 3,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Matrix",
+      "Sorting"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

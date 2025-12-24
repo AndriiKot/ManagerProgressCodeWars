@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57964a1b39f33a2a450003c5",
+  "data": {
+    "id": "57964a1b39f33a2a450003c5",
+    "name": "Strategy Pattern - Bird Behaviors",
+    "slug": "strategy-pattern-bird-behaviors",
+    "category": "reference",
+    "publishedAt": "2016-07-25T17:53:06.296Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/57964a1b39f33a2a450003c5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-25T17:19:23.807Z",
+    "createdBy": {
+      "username": "Klypyon",
+      "url": "https://www.codewars.com/users/Klypyon"
+    },
+    "description": "# Task\n\nGiven the concrete implementations of each duck on the right, redesign the classes and create new concrete behavior classes to fully take advantage of the Strategy Pattern and the Duck Class below.  You can use null in place of a behavior that should return null.\n\n### Duck Class\n```Csharp\npublic abstract class Duck\n{\n    public IQuackBehavior QuackBehavior { get; protected set; }\n    public IFlyBehavior FlyBehavior { get; protected set; }\n    \n    public Duck(IQuackBehavior, IFlyBehavior);\n    public virtual string Quack();  // QuackBehavior.Quack()\n    public virtual string Fly();    // FlyBehavior.Fly();\n}\n```\n\n### IQuackBehavior Interface\n```Csharp\npublic interface IQuackBehavior\n{\n    string Quack();\n}\n```\n\n### IFlyBehavior Interface\n```Csharp\npublic interface IFlyBehavior\n{\n    string Fly();\n}\n```\n---\n\n# Strategy Pattern\n\nThe **Strategy Pattern** defines a particular family of algorithms or implementations, encapsulating each one, and making them interchangeable.  This allows the algorithm to be dynamic and changed at runtime, swapping out functionality as needed and also making classes more flexible. \n\nAn initial approach may be to implement the behaviors as derived classes.  The strategy pattern is explicit in encapsulating these behaviors as interfaces using composition instead of inheritance, which follows the [Open/Closed Principle](https://en.wikipedia.org/wiki/Strategy_pattern#Strategy_and_open.2Fclosed_principle).\n\nTake for example a car class that requires different types of alarm, brake, and acceleration behaviors. If we were to use inheritance, we would run into several problems: behaviors must be declared in each new Car model; the work of managing these behaviors increases greatly as the number of models increases and has duplication; it is not easy to determine the exact nature of the behavior for each model without investigating the code in each.\n\n![```\n                              [   Car   ]\n                                Alarm()\n                                Brake()\n                              Accelerate()\n                                   ↑\n             ╔═══════════════════╬═══════════════════╗\n         [ Sedan ]             [ Tesla ]             [ Jalopy ]\n          Alarm()               Alarm()              HandBrake()\n       BrakeWithABS()        BrakeWithABS()           Clutch()\n        Accelerate()          InsaneMode()\n```](http://oi66.tinypic.com/2vsgk02.jpg)\n\nWe can improve the design and make it more flexible by interpreting each behavior (Acceleration, Brakes, and Alarm) as interfaces, which are encapsulated by the Car object.  Then, concrete implementations of the Car class (Sedan, Tesla, and Jalopy) will each use a concrete implementation of a behavior (BrakesWithABS, HandBrake, InsaneMode, etc.) that fits its model:\n\n![https://i.gyazo.com/fbed77a67cee3ec80e3ad6aa2e81cb94.png](https://i.gyazo.com/fbed77a67cee3ec80e3ad6aa2e81cb94.png)\n\n### Strategy UML\n![http://oi67.tinypic.com/2d2jhi0.jpg](http://oi67.tinypic.com/2d2jhi0.jpg)\n\n1. **[Strategy]** - Defines an interface that supports all common algorithms.  The [Context] uses this interface to call the algorithm defined by a [ConcreteStrategy]. \n2. **[ConcreteStrategy]** - Implements a specific algorithm using the [Strategy] interface. \n3. **[Context]** - Configured with a [ConcreteStrategy] object and maintans a reference to the [Strategy] object. May define an interface that lets [Strategy] access its data. \n\nIn the above example, each of the car models (*Tesla, Sedan, and Jalopy*) would be a **[Context]**, the different behaviors (*IBrakeBehavior, IAlarmBehavior, and IAccelBehavior*) would be the **[Strategy]** modules, and each concrete implementation of those interfaces (*BrakeWithABS, Clutch, InsaneMode, etc.*) would be a **[ConcreteStrategy]**.\n\n### Uses\nUse the Strategy pattern when: \n\n* Classes differ only in their behavior, which can be configured with one of many different behaviors.\n* A family of algorithms is needed for different use cases, such as efficiency or specific\n* An algorithm uses data clients shouldn't know about.  The Strategy pattern avoids exposing complex, algorithm-specific data structures. \n* A class defines many behaviors as conditional statements in its operations. Move these behaviors to their own Strategy classes. \n\n### Links\nFor more information on the Strategy Pattern, see: \n\n* https://en.wikipedia.org/wiki/Strategy_pattern\n* http://www.codeproject.com/Articles/776819/Strategy-Pattern-Csharp\n* http://www.dofactory.com/net/strategy-design-pattern",
+    "totalAttempts": 261,
+    "totalCompleted": 75,
+    "totalStars": 13,
+    "voteScore": 37,
+    "tags": [
+      "Design Patterns",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

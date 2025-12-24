@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54c6b5de791878e85b00077d",
+  "data": {
+    "id": "54c6b5de791878e85b00077d",
+    "name": "German Unicode Characters to ASCII Equivalents",
+    "slug": "german-unicode-characters-to-ascii-equivalents",
+    "category": "algorithms",
+    "publishedAt": "2015-01-26T21:48:18.876Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54c6b5de791878e85b00077d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-26T21:47:11.316Z",
+    "createdBy": {
+      "username": "posgarou",
+      "url": "https://www.codewars.com/users/posgarou"
+    },
+    "description": "# The Problem\n\nYou work for a German company that just bought some legacy components from the US.\n\nUnfortunately, these legacy components can only accept ASCII characters.  (Here is a [list of ASCII printable characters](http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters).)\n\nThis means that you will need to convert all non-ASCII German Unicode characters into their standard ASCII equivalent.\n\n# Your Job\n\nWrite a class (**GermanToAscii**) that will help in transcoding German-specific Unicode characters into their ASCII equivalent. The characters should be transcoded as follows:\n\n<table>\n  <thead>\n    <tr>\n      <td>Unicode Character</td>\n      <td>Unicode Value</td>\n      <td>ASCII Equivalent</td>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>ä</td>\n      <td>U+00E4</td>\n      <td>ae</td>\n    </tr>\n    <tr>\n      <td>ö</td>\n      <td>U+00F6</td>\n      <td>oe</td>\n    </tr>\n    <tr>\n      <td>ü</td>\n      <td>U+00FC</td>\n      <td>ue</td>\n    </tr>\n    <tr>\n      <td>Ä</td>\n      <td>U+00C4</td>\n      <td>Ae</td>\n    </tr>\n    <tr>\n      <td>Ö</td>\n      <td>U+00D6</td>\n      <td>Oe</td>\n    </tr>\n    <tr>\n      <td>Ü</td>\n      <td>U+00DC</td>\n      <td>Ue</td>\n    </tr>\n    <tr>\n      <td>ß</td>\n      <td>U+00DF</td>\n      <td>ss</td>\n    </tr>\n  </tbody>\n</table>\n\n# Requirements\n\nCreate a class **GermanToAscii** that will assist in translating according to the above table.\n\n## initialize(unknown)\n\nAlthough you are only tasked with translating umlauted characters, you cannot assume that the string will have no other non-ASCII characters.\n\n**initialize** should thus accept an **unknown** parameter that specifies how to respond to unknown non-ASCII characters (i.e., non-umlaut, non-ß):\n\n* **:ignore** Render an empty string in place of each non-ASCII character.  (E.g., 'crée' => 'cre'.)\n* **:leave** Leave non-ASCII characters as-is. (This will cause **String#encode** to raise an **Encoding::UndefinedConversionError**.)\n* **&lt;String&gt;** Replace unknown characters with the given string.  (E.g., if it is '?', then 'crée' => 'cr?e'.)\n\n**unknown** should default to a question mark ('?').\n\n## transcode_char_lambda(char)\n\nReturns a lambda that accepts a parameter **char** which:\n\n* converts the char, according to the rules above, if it is an umlaut-character or a ß.\n* otherwise, if **unknown** was set to **:leave**, returns the character; and if **unknown** was set to a replacement string, returns the replacement string.\n\nYou can assume that this lambda will only be called with length-1 strings consisting of a single non-ASCII character.\n\n## render(str)\n\nTranscode **str** as described above from UTF-8 to ASCII.\n\nYou can assume that **str** will be a String.\n\n(Note that it is not enough simply to change over the characters: the return value must respond to `#encoding` with `#<Encoding:US-ASCII>`.)\n\n# Tips\n\nAs far as I know, you cannot type Unicode characters directly into your code or test cases in CodeWars.  Instead, use the unicode code values listed above (e.g. \"\\u00e4\" for 'ä').\n\nYou will need to use **String#encode** (http://ruby-doc.org/core-2.0.0/String.html#method-i-encode).\n\nYou may also find it helpful to look at the **Encoding** class: http://ruby-doc.org/core-2.0.0/Encoding.html.",
+    "totalAttempts": 135,
+    "totalCompleted": 16,
+    "totalStars": 1,
+    "voteScore": 18,
+    "tags": [
+      "Unicode",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

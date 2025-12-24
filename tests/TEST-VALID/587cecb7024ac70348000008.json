@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/587cecb7024ac70348000008",
+  "data": {
+    "id": "587cecb7024ac70348000008",
+    "name": "Implement Array.prototype.forEach",
+    "slug": "implement-array-dot-prototype-dot-foreach",
+    "category": "reference",
+    "publishedAt": "2017-01-16T17:40:34.750Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/587cecb7024ac70348000008",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-16T15:54:31.862Z",
+    "createdBy": {
+      "username": "tbrisbout",
+      "url": "https://www.codewars.com/users/tbrisbout"
+    },
+    "description": "Reimplement `Array.prototype.forEach` in a standalone `_forEach(array, fn)` function.\n\nThe second argument is a function with the following signature:\n```javascript\nfunction(current, index, array) {}\n// We keep array as 3rd argument because it exists in the official signature\n```\n\n- Avoid using the existing `Array.prototype.forEach`\n- `array` may be `null`, `undefined`, or empty; `_forEach` should return `undefined` and not throw error in these cases\n\nExample:\n```javascript\n_forEach(['hello', 'code', 'wars'], function(current, index, array) {\n  console.log(current + ' is at index ' + index + ' in ' + array)\n})\n\n// This will output in console:\n// hello is at index 0 in hello,code,wars\n// code is at index 1 in hello,code,wars\n// wars is at index 2 in hello,code,wars\n```",
+    "totalAttempts": 804,
+    "totalCompleted": 160,
+    "totalStars": 2,
+    "voteScore": 133,
+    "tags": [
+      "Arrays",
+      "Functional Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

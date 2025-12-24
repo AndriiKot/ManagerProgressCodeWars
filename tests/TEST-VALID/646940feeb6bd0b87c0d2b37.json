@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646940feeb6bd0b87c0d2b37",
+  "data": {
+    "id": "646940feeb6bd0b87c0d2b37",
+    "name": "On-Call Scheduler",
+    "slug": "on-call-scheduler",
+    "category": "algorithms",
+    "publishedAt": "2023-05-23T13:21:18.957Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/646940feeb6bd0b87c0d2b37",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-20T21:51:58.977Z",
+    "createdBy": {
+      "username": "antonio.ruedas",
+      "url": "https://www.codewars.com/users/antonio.ruedas"
+    },
+    "description": "The manager of a team needs to organize the on-call schedule taking into account the vacations of each member and the following criteria:\n\n- If a member has vacation for a week, he will not be able to be on call that same week, neither the one before nor the one after.\n- The members have a pre-established initial order and they have to rotate respecting it. \n- If a member couldn't be on-call on his turn because of his vacation, the next available member would. \n- When a member is assigned on-call for a week, that member will move to the end of the rotation. \n\nImplement an algorithm that constructs an on-call calendar given a list of TeamMember records and an integer representing the number of weeks in the calendar. \n\n```\n    /**\n     * Record containing team member information.\n     * @param name The name of the member.\n     * @param order The order in the on-call schedule.\n     * @param vacationWeeks The vacation weeks represented as an integer from 1 to the number of weeks.\n     */\n    public record TeamMember(String name, int order, Set<Integer> vacationWeeks) {}\n```\n\nThe output object will be a map with the week number as key and the name of the assigned member as value. If it is impossible to allocate a member for a week, null will be set as value.\n\nExample:\n```\nINPUT = [\nTeamMember[name=Jesús, order=1, vacationWeeks=[5, 10]], \nTeamMember[name=Víctor H., order=2, vacationWeeks=[5, 6]], \nTeamMember[name=Antonio, order=3, vacationWeeks=[2, 4]], \nTeamMember[name=Víctor C., order=4, vacationWeeks=[2, 3]], \nTeamMember[name=David, order=5, vacationWeeks=[3, 7]], \nTeamMember[name=Cristina, order=6, vacationWeeks=[7, 9]], \nTeamMember[name=Robert, order=7, vacationWeeks=[4, 7]]\n]\n\nOUTPUT = {1=Jesús, 2=Víctor H., 3=Cristina, 4=Cristina, 5=Víctor C., 6=Antonio, 7=Jesús, 8=Víctor H., 9=David, 10=Robert}\n```",
+    "totalAttempts": 20,
+    "totalCompleted": 6,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

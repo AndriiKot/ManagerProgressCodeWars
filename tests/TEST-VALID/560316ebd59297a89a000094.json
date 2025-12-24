@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/560316ebd59297a89a000094",
+  "data": {
+    "id": "560316ebd59297a89a000094",
+    "name": "Time For Validation",
+    "slug": "time-for-validation",
+    "category": "algorithms",
+    "publishedAt": "2015-09-24T21:18:49.040Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/560316ebd59297a89a000094",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-09-23T21:17:31.164Z",
+    "createdBy": {
+      "username": "patrickwalkowicz",
+      "url": "https://www.codewars.com/users/patrickwalkowicz"
+    },
+    "description": "# What To Do\n\nWrite a function that will convert between 12 and 24-hour time formats (in both ways).\n\nThe function will take 2 parameters:\n\n* **output format** - a string value (`\"12\"` or `\"24\"`) specifying the output format\n* **time** - the time to be converted into `format` format\n\n# Valid input examples\n\n* 24-hour time format: `09:00` `9:59` `13:13` `23:28`\n\n* 12-hour time format:\n  * solution should handle both capital and lower-case letters): `03:15PM` `09:53am` `11:40pm` `09:35AM`\n  * Also should handle lack of 0 when not necessary: `6:30 == 06:30`\n\n\n## Output format\n\n* 12-hour format:\n  * strict hh:mm, capital letters only, eg. `09:30AM`, '13:59PM`\n* 24-hour format:\n  * `15:39`, `06:00`\n\n\n\nFunction should return `false` for invalid input. Also, when time format passed is equal to desired output format, function should still output a validated time, eg.\n```\noutput format = \"12\"\ntime = \"08:13AM\"\n// Should return \"08:13AM\"\n\noutput format = \"12\"\ntime = \"6:13AM\"\n// Should return \"06:13AM\"\n```",
+    "totalAttempts": 1064,
+    "totalCompleted": 55,
+    "totalStars": 9,
+    "voteScore": 85,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms",
+      "Date Time"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

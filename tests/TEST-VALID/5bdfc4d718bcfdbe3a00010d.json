@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bdfc4d718bcfdbe3a00010d",
+  "data": {
+    "id": "5bdfc4d718bcfdbe3a00010d",
+    "name": "The King lives! the Elvis operator",
+    "slug": "the-king-lives-the-elvis-operator-1",
+    "category": "reference",
+    "publishedAt": "2018-11-05T04:31:03.916Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/5bdfc4d718bcfdbe3a00010d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-05T04:19:35.953Z",
+    "createdBy": {
+      "username": "JohanWiltink",
+      "url": "https://www.codewars.com/users/JohanWiltink"
+    },
+    "description": "<img align=\"right\" src=\"https://m.media-amazon.com/images/M/MV5BMTY4ODU2NjA4MV5BMl5BanBnXkFtZTcwNDM2NDIzNw@@._V1_.jpg\"> In other programming languages,\n\n# The King lives!\n\nLet's add the [Elvis operator](https://en.wikipedia.org/wiki/Elvis_operator) to Haskell\n\n```haskell\n(?:) :: (\"SortOfBoolean\" a) => a -> a -> a\nleft ?: right | left      = left\n              | otherwise = right\n```\n\nIf `left` is `truthy`, we get `left`  \nIf `left` is `falsy`, we get `right`\n\n### Truthy and falsy values\n\nFalsy values are, for starters:\n\n* `False :: Bool`\n* `() :: ()`\n* `0 :: (Num a) => a`\n* `\"\" :: String`\n\nNon-falsy values are, well, truthy. You will need to define `(?:)` for _all of these types and their values_\n\nAll sorts of algebraic datatypes can also be truthy / falsy:\n\n* `[] :: [a]` is falsy; any non-empty list of `a` is truthy\n* `Nothing :: Maybe a` is falsy; any `Just a` is truthy\n* any `Left a :: Either a b` is falsy; any `Right b` is truthy\n* `(a,b)` is falsy iff `b` is falsy ( cf. `Functor`, same as `Maybe` and `Either` really )\n\nFrom `Data.Ord`:\n\n* `Down a` is falsy iff `a` is falsy. Order does not affect truthfulness ( or something )\n\nFrom `Data.Monoid`:\n\n* `Dual a` is falsy iff `a` is _truthy_ (!) This one might actually come in handy sometime  \n  ( We skip the rest of the `Monoid` wrappers; they don't really add anything )\n\nYou will _also_ need to define `(?:)` for all of _these_ types and their values\n\n### Non-strictness\n\nIn keeping with normal Haskell behaviour:\n\nin `left ?: right`, `right` must not be evaluated if `left` is truthy ( \"short-circuiting\" )  \nin `Just a`, `Left a` and `Right b`, `a` and `b` must not be evaluated  \nin `(a,b)`, `a` must not be evaluated  \nin general, avoid needlessly evaluating values  \n\n### Notes\n\n`Char` does not really have a falsy value ( `<NUL>` just does not compute ); there will be no tests with `Char` s  \nIn `Num`, `Int` `Integer` `Word` `Float` `Double` and the algebraic `Ratio` and `Complex` will be tested, but not `Int8` `Word8` and friends  \n\nThis kata started as a problem, not a solution. I have not looked deeply into `Functor` `Applicative` `Monad` `Foldable` and `Traversable` types and values ( yet ). There may be room for a sequel. Suggestions are welcome.",
+    "totalAttempts": 138,
+    "totalCompleted": 25,
+    "totalStars": 5,
+    "voteScore": 23,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

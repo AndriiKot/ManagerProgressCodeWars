@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/587ef906f297a6df7800005a",
+  "data": {
+    "id": "587ef906f297a6df7800005a",
+    "name": "Phone Number",
+    "slug": "phone-number",
+    "category": "algorithms",
+    "publishedAt": "2017-01-18T05:25:17.063Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/587ef906f297a6df7800005a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-18T05:11:34.453Z",
+    "createdBy": {
+      "username": "Lusina",
+      "url": "https://www.codewars.com/users/Lusina"
+    },
+    "description": "# Phone Number\n\nWrite a program that cleans up user-entered phone numbers so that they can be sent SMS messages.\n\nThe rules are as follows:\n\n- If the phone number is less than 10 digits assume that it is bad\n  number\n- If the phone number is 10 digits assume that it is good\n- If the phone number is 11 digits and the first number is 1, trim the 1\n  and use the last 10 digits\n- If the phone number is 11 digits and the first number is not 1, then\n  it is a bad number\n- If the phone number is more than 11 digits assume that it is a bad\n  number\n\nYou are provided with a class `Phone` which has following methods:\n\n1. number\nReturns the number that is initialized if the number is valid, following above rules\n\n``` python\nnumber = Phone(\"(123) 456-7890\").number\n\"1234567890\"\n```\n\nThis should return \"0000000000\" if the number is invalid.\n\n2. area_code\n\nReturns an area code from the number. The area code will be 3 digits\n\n``` python\nnumber = Phone(\"1234567890\")\nnumber.area_code()\n\"123\"\n```\nThis should be returned as a string.\n\n3. pretty\n\nReturns a neat format of the number with the area code in brackets.\n\n``` python\nnumber = Phone(\"1234567890\")\nnumber.pretty()\n\"(123) 456-7890\"\n```\n\n## Source\n\nEvent Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)\n",
+    "totalAttempts": 519,
+    "totalCompleted": 50,
+    "totalStars": 3,
+    "voteScore": 28,
+    "tags": [
+      "Regular Expressions",
+      "Strings",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 8,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

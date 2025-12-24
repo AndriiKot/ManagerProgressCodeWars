@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56c7259ca3a73eec43000c0b",
+  "data": {
+    "id": "56c7259ca3a73eec43000c0b",
+    "name": "Design Patterns: Observer Pattern for the runway status at an airport",
+    "slug": "design-patterns-observer-pattern-for-the-runway-status-at-an-airport",
+    "category": "algorithms",
+    "publishedAt": "2016-03-02T13:56:57.054Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/56c7259ca3a73eec43000c0b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-19T14:24:28.717Z",
+    "createdBy": {
+      "username": "lyckade",
+      "url": "https://www.codewars.com/users/lyckade"
+    },
+    "description": "This Kata gives you a very simple introduction to the observer design pattern. For a programmer it is very usefull to know about design patterns. Specially when you code not alone. When you are writing new code the knowledge about the design patterns helps you to name your classes and methods that other programmers can understand your code better. If you use or change existing code the different class names are taking to you.\n\nIn this task you are going to develop a simple app, which supplies status changes of different runways of an airport. That status is used by different clients inside the airport. So the air traffic controller or different ground services have to be informed if a runway is clear or not. The status is provided over the airport information system as a simple string.\n\nSo here are some conditions\n\n* The client needs to observe the status of a runway. To do that each client can subscribe to that runway. When the status of the subscribed runway changes the client will be informed about that event.\n* In our example airport we just have three runways. But your system should be flexible to support more runways.\n* There are different type of clients. \n  * The ground service just supports the status of one runway.\n  * The air traffic controll service supports three runways.\n  * All clients should be able to unsubscribe.\n  \nNow some theory:\nWe are going to use the observer pattern to create our airport system. Inside this patterns there are two different type of classes:\n\n* Subject (is sending messages)\n* Observer (is getting messages)\n\nMore information about the pattern: https://en.wikipedia.org/wiki/Observer_pattern\n\nThe subject in your case will be a class called AirportInformationSystem. We are going to implement the methods  subscribe, unsubscribe and updateRunwayStatus. When an observer subrsibes it will provide a callback function which will be called, when the status is updated.\n\nThe client objects will store the instance of the airport information system inside a variable. Over that reference the subscription is handled inside the class. The method onStatusChanged, which is used as callback function needs to be created with the double/fat arrow (=>).\n\n```coffeescript\nonStatusChange: (status) =>\n```\nOtherwise your code would not work.",
+    "totalAttempts": 81,
+    "totalCompleted": 10,
+    "totalStars": 7,
+    "voteScore": 8,
+    "tags": [
+      "Design Patterns",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

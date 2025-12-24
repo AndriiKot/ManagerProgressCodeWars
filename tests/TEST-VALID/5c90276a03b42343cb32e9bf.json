@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c90276a03b42343cb32e9bf",
+  "data": {
+    "id": "5c90276a03b42343cb32e9bf",
+    "name": "Reactive programming: #2 Basic observables creation",
+    "slug": "reactive-programming-number-2-basic-observables-creation",
+    "category": "reference",
+    "publishedAt": "2019-03-19T19:40:20.700Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c90276a03b42343cb32e9bf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-18T23:19:06.116Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "To do this kata you must have completed [#1](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de) part.\n\nIn this kata we will use the `create` function from [#1](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de) to create some interesting observables that, in turn, will serve us in the rest of the series kata.\n\nTo complete this kata you may have to improve the version you gave in kata [#1](https://www.codewars.com/kata/5c8f822533a2b7336aeee2de).\n\nLet's start.\n\n# of observable\n\nEmit variable amount of values in a sequence and then emits a `complete` notification.\n\n```typescript\ndeclare function of<T>(...xs: T[]): Observable<T>\n\nconst source = of(1, 2, 3, 4, 5);\n//output: 1,2,3,4,5,\"completed\"\nconst subscribe = source.subscribe({onNext: val => console.log(val), onComplete: () => console.log(\"completed\")});\n```\n\n# empty observable\n\nObservable that immediately completes.\n\n```typescript\ndeclare function empty<T>(): Observable<T>\n\n//output: 'Complete!'\nconst subscribe = empty().subscribe({\n  onNext: () => console.log('Next'),\n  onComplete: () => console.log('Complete!')\n});\n```\n\n# interval observable\n\nEmit numbers in sequence based on provided timeframe. Never complete!\n\n```typescript\ndeclare function interval(period: number): Observable<number>\n\n//emit value in sequence every 1 second\nconst source = interval(1000);\n//output: 0,1,2,3,4,5....\nconst subscribe = source.subscribe({onNext: val => console.log(val)});\n```\n\nCAUTION: Interval never completes, but Codewars does not finish running the tests if there are pending timers. To avoid timeouts you must unsubscribe from observable interval. See test section.\n\n\n# from event\n\nTurn event into observable sequence.\n\n```typescript\ndeclare funtion fromEvent = (\n  element: EventEmitter,\n  eventName: string\n): Observable<Event>\n\nclass MyEmitter extends EventEmitter {}\nconst myEmitter = new MyEmitter();\n//emit value in sequence every 1 second\nconst source = fromEvent(myEmitter, \"event\");\n\n// output: an event occurred\nconst subscribe = source.subscribe({onNext: val => console.log(val)});\n\nmyEmitter.emit('event', 'an event occurred');\n```\n\n[See](https://nodejs.org/api/events.html) Node EventEmitters docs.\n\n\nWhen you have finished, you can continue with [#3 Premier operators](https://www.codewars.com/kata/5c914f2ae041fe000e8964ee)",
+    "totalAttempts": 121,
+    "totalCompleted": 23,
+    "totalStars": 7,
+    "voteScore": 8,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

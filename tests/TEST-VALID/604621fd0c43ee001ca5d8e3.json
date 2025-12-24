@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/604621fd0c43ee001ca5d8e3",
+  "data": {
+    "id": "604621fd0c43ee001ca5d8e3",
+    "name": "Chalkboard math mistake (simple version)",
+    "slug": "chalkboard-math-mistake-simple-version",
+    "category": "algorithms",
+    "publishedAt": "2021-03-09T04:19:38.592Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/604621fd0c43ee001ca5d8e3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-08T13:09:17.953Z",
+    "createdBy": {
+      "username": "davilla",
+      "url": "https://www.codewars.com/users/davilla"
+    },
+    "description": "Imagine you see the equation `1/2=1/3+1/5` on a chalkboard and notice it's a mistake. Can you correct it by changing just one number?\n\nWhat about `3(1/2+1/8)=9/8`? The left-hand side uses implicit multiplication and totals `15/8` as written, but can you fix it instead by revising just one digit? In this example, it's also possible to correct it with a single alteration from addition to subtraction: `3(1/2-1/8)=9/8` is true.\n\nWhat about:\n```\n-(-7×9+4×-491)-4+34-47--7×39=(3+10-4--17-44×3)×-38+-17+153-3+68-267-1845\n```\nThe answer to this last problem changes one `+` to `×` _(times, not to be confused with the variable_ `x`_)_, which readjusts a middle grouping due to the order of operations:\n```\n-(-7×9+4×-491)-4×34-47--7×39=(3+10-4--17-44×3)×-38+-17+153-3+68-267-1845\n```\nThis kata will require you to find such corrections. It's not the easiest way, but you may choose to parse the mathematical expressions. These will use only the 4 elementary operations: addition, subtraction, multiplication, and division. You're also free to make use of more powerful libraries, just be careful not to allow other operations. Implicit multiplication like `2(-3)=-6` could also be a challenge.\n\nThe function `fix_equation` will be handed a string representing a math problem with some arithmetic error. Make a single correction to exactly one character of the string, such that the resulting expression is a true equality, using numbers and the 4 elemantary operations with valid syntax. Only the characters `0123456789+-×/()=` will ever be passed in or expected back. In particular, you do not need to worry about spaces, decimals, or mixed fractions.\n\nAlthough the input will be an incorrect equation where the values do not match, it will at least be syntactically correct. That is, it will be possible to parse and evaluate the initial string to reason about its validity. As such, you will never be required to change one of the parentheses, as doing so would leave them unbalanced.\n\nIn fact, each problem will have a solution that involves swapping either one digit for another, or one operator for another. There may be several solutions, including those involving other types of changes. Any single character modification whose result fits the criteria will be accepted. Still, it could be much easier to search for the mistake knowing that the following types of corrections will never be needed:\n\n* Changing a digit to a nondigit or vice versa\n```\n12+5=10-7     ➔  -2+5=10-7\n(6-3)×2=36    ➔  (6-3)12=36\n10-6=4(15)    ➔  10-6=4(1.)\n```\n* Leading a number with an extra zero\n```\n19+5=14       ➔  09+5=14\n```\n* Flipping negatives to a unary plus sign\n```\n(8)(-3+0)=24  ➔  (8)(+3+0)=24\n9=-3×-(4-7)   ➔  9=-3×+(4-7)\n```\n* Adding multiple equal signs\n```\n1+5=2×3+6     ➔  1+5=2×3=6\n(2+5+7)3=21   ➔  (2+5=7)3=21\n```\nTo be clear, although none of the above would be rejected (you can thank me later), each problem has a simpler or more obvious solution. You're welcome to try these out in the sample tests.\n\nBest of luck! `:~)`",
+    "totalAttempts": 142,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 19,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

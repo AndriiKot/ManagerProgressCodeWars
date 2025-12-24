@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e22b2b9f213800011c6207c",
+  "data": {
+    "id": "5e22b2b9f213800011c6207c",
+    "name": "Robot Vacuum Cleaner",
+    "slug": "robot-vacuum-cleaner",
+    "category": "algorithms",
+    "publishedAt": "2020-01-18T07:33:48.325Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5e22b2b9f213800011c6207c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-01-18T07:24:41.252Z",
+    "createdBy": {
+      "username": "sportshead",
+      "url": "https://www.codewars.com/users/sportshead"
+    },
+    "description": "# Description\nImagine you have a robot vacuum cleaner that cleans squares on a grid. You need to make a function that returns the total number of squares cleaned. ***Note: there is no limit on how much the robot cleans, the size of the grid is infinite.***\n\n## Input\nValid input will be of type string containing a sequence of either `U`, `D`, `L`, or `R` (Up, Down, Left, Right), or `null`. Invalid input (type is not string or null or not `'UDLR'` characters in string) is expected to throw a `TypeError`. Function should be **case-insensitive**.\n\nBe sure to remember that input **can and will be** optional in the tests. (`vacuum()`)\n\n### Valid input examples:\n- `'UDLR'`\n- `'UU'`\n- `'DDDLRLLRD'`\n- `'udlrllrd'`\n- `undefined` (`vacuum()`)\n\n### Invalid input examples:\n- `1234`\n- `'hello'`\n- `':)'`\n- `['U', 'D', 'L', 'R']`\n- `{1: 'U', 2: 'D', 3: 'L'}`\n- `['foo', 12, 'bar', {}, 'bazzz']`\n\n## Output\nTotal number of tiles cleaned, or error.\n\nIf the input is incorrect (wrong type or not `U`, `D`, `L`, or `R` in the string) throw a `TypeError`.\n\n# Examples\n\nRed numbers denote each move\n\n### `vacuum()`\n=> 1\n\n[Grid](https://i.imgur.com/rqGVseu.jpg)\n\n### `vacuum('U')`\n=> 2\n\n[Grid](https://i.imgur.com/9ypAMpj.jpg)\n\n### `vacuum('UDLL')`\n=> 4\n\n[Grid](https://i.imgur.com/KeraqPM.jpg)\n\n### `vacuum('DDUDLRLU')`\n=> 4\n\n[Grid](https://i.imgur.com/Q6l2h7m.jpg)\n\n### `vacuum('RRRRDDL')`\n=> 8\n\n[Grid](https://i.imgur.com/V1IkZOi.jpg)",
+    "totalAttempts": 121,
+    "totalCompleted": 24,
+    "totalStars": 0,
+    "voteScore": 30,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

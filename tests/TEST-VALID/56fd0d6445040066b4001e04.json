@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56fd0d6445040066b4001e04",
+  "data": {
+    "id": "56fd0d6445040066b4001e04",
+    "name": "Mahjong II: Is this complex set a winning set?",
+    "slug": "mahjong-ii-is-this-complex-set-a-winning-set",
+    "category": "algorithms",
+    "publishedAt": "2016-03-31T11:47:16.928Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/56fd0d6445040066b4001e04",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-31T11:43:32.999Z",
+    "createdBy": {
+      "username": "RedFog",
+      "url": "https://www.codewars.com/users/RedFog"
+    },
+    "description": "Mahjong is an ancient game in China, which spreads all over the world. But how can we check if a set of tiles is a winning set?\n\nTo simplify the question, we ignore the situation that it has chi-ed, pon-ed and kan-ed. (If you have finish the Kata named \"Mahjong I\", this Kata is an advanced version of it. In this Kata, there is not only one suit of the tiles.) You will get a string like \"111m222p333s44455z\" to describe a set of tiles. \"m\", \"p\" and \"s\" are 3 different suits including 9 tiles, but \"z\" is a suit only including 7. Your algorithm should return a boolean to tell if it's a winning set.\n\n```ruby\nwinning_set?('111m222p333s44455z') #-> true\nwinning_set?('11123456789999m') #-> true\nwinning_set?('11223m5566p77788s') #-> false\n```\ntips:  \nA set without chii, pon and kan will have exactly 14 tiles, and at most 4 of a kind.  \nmost of winning sets are like XXX-XXX-XXX-XXX-YY, in which XXX is ABC or AAA.  \n111m222p333s44455z -> 111m-222p-333s-444z-55z  \n11123456789999m -> 123m-456m-789m-999m-11m  \nThe suit 'z' doesn't have ABC. '123z' is invalid.  \nA special set of tiles is AABBCCDDEEFFGG means seven pairs, like 1122m4455p667788s. there should not be any same pairs in it (Japanese Mahjong rules).  \nAnother special set of tiles is 19m19p19s1234567z and another tile in it, like 199m19p19s1234567z.",
+    "totalAttempts": 36,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

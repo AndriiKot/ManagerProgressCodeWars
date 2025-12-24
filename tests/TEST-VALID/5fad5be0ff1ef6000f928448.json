@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5fad5be0ff1ef6000f928448",
+  "data": {
+    "id": "5fad5be0ff1ef6000f928448",
+    "name": "Basic Statement Coverage in Unit Testing",
+    "slug": "basic-statement-coverage-in-unit-testing",
+    "category": "reference",
+    "publishedAt": "2020-11-14T15:00:27.139Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "ruby",
+      "cpp",
+      "c",
+      "javascript",
+      "php",
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5fad5be0ff1ef6000f928448",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-11-12T15:59:28.347Z",
+    "createdBy": {
+      "username": "drchangliu",
+      "url": "https://www.codewars.com/users/drchangliu"
+    },
+    "description": "A function `count_ballot` like the following function needs to be tested in unit testing. You are requested to provide a test suite to test this function with 100% statement coverage. Full statement coverage means that every single statement in the unit-under-test is executed at least once. \n\nThis function is not correctly implemented. It needs to be thoroughly tested and revised. There are many different ways of testing, including whitebox testing (structure-based testing) and blackbox testing (specification-based testing), each with its own advantages and disadvantages. Statement coverage is a whitebox testing technique. Full statement coverage is not necessarily sufficient in many cases, but it is one way to guide the design of test suites and identify productive test cases.\n\nYour function should do all the calls to the `count_ballot()` function needed to obtain full statement coverage for this function as listed below.\n\nThe goal of your function is to achieve the highest statement covergage possible, not necessarily to actually test the count_ballot() function in the best way possible. In software testing, no such \"best way\" exists without an explicitly defined test criterion. In this case, what this function should do was not specified. Therefore, we can only apply a white-box code-based coverage criterion - statement coverage - in an attempt to cover all statements at least once. \n\nNote that to pass this kata, one only needs to achieve maximum statement coverage. The kata test code does not check if your code verifies the output of the function-under-test.\n\n# Python\n\n```python\ndef count_ballot(ballot): \n# Paramter ballot is a string that contains the name of the person that one voted for.\n    if \"trump\" in ballot.lower() and \"biden\" in ballot.lower():\n        return \"Invalid\"\n    elif \"trump\" in ballot.lower():\n        return \"Trump\"\n    elif \"biden\" in ballot.lower():\n        return \"Biden\"\n    elif \"green\" in ballot.lower():\n        return \"Green\"\n    else:\n        return \"None\"\n# Function lower() is to turn all letters to lower case so that \"Biden\" and \"biden\" can both be matched with the search string \"biden\", for example.\n```\n\n# Ruby\n```ruby\n# Paramter ballot is a string that contains the name of the person that one voted for.\ndef count_ballot(s)\n  if s.downcase.include? \"trump\" and s.downcase.include? \"biden\"\n    return \"Invalid\"\n  elsif s.downcase.include? \"trump\"\n    return \"Trump\"\n  elsif s.downcase.include? \"biden\"\n    return \"Biden\"\n  elsif s.downcase.include? \"green\"\n    return \"Green\"\n  else\n    return \"None\"\n  end\nend\n        \n# Function downcase() is to turn all letters to lower case so that \"Biden\" and \"biden\" can both be matched with the search string \"biden\", for example.\n```\n\n# C#\n```csharp\n// Parameter ballot is a string that contains a the name of the person that one vote for.\npublic string count_ballot(string ballot) {\n  ballot = ballot.ToLower();\n  if (ballot.Contains(\"trump\") && ballot.Contains(\"biden\")) {\n    return \"Invalid\";\n  } else if (ballot.Contains(\"trump\")) {\n    return \"Trump\";\n  } else if (ballot.Contains(\"biden\")) {\n    return \"Biden\";\n  } else if (ballot.Contains(\"green\")) {\n    return \"Green\";\n  } else {\n    return \"None\";\n  }\n}\n// Function ToLower() is to turn all letters to lower case so that \"Biden\" and \"biden\" can both be matched with the search string \"biden\", for example.\n```\n\n# C++\n```cpp\n// Paramter ballot is a string that contains the name of the person that one voted for.\nstd::string count_ballot(std::string s) {\n  s = str_tolower(s);\n  if (s.find(\"trump\") != std::string::npos && s.find(\"biden\") != std::string::npos) {\n    return \"Invalid\";\n  } else if (s.find(\"trump\") != std::string::npos) {\n    return \"Trump\";\n  } else if (s.find(\"biden\") != std::string::npos) {\n    return \"Biden\";\n  } else if (s.find(\"green\") != std::string::npos) {\n    return \"Green\";\n  } else {\n    return \"None\";\n  }\n}\n        \n// Function str_lower() is to turn all letters to lower case so that \"Biden\" and \"biden\" can both be matched with the search string \"biden\", for example.\n```",
+    "totalAttempts": 577,
+    "totalCompleted": 151,
+    "totalStars": 5,
+    "voteScore": 56,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

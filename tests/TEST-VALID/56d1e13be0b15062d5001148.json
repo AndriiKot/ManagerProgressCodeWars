@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56d1e13be0b15062d5001148",
+  "data": {
+    "id": "56d1e13be0b15062d5001148",
+    "name": "Game of Thrones : Wildlings are coming!",
+    "slug": "game-of-thrones-wildlings-are-coming",
+    "category": "reference",
+    "publishedAt": "2016-02-28T10:02:44.504Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56d1e13be0b15062d5001148",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-27T17:47:39.465Z",
+    "createdBy": {
+      "username": "P3zhman",
+      "url": "https://www.codewars.com/users/P3zhman"
+    },
+    "description": "You can see westeros map below( I have skipped some part of GOT for the sake of simplicity, for example Targaryens are resting in peace somewhere else and they're not in this game):</br>\n<img src=\"https://s-media-cache-ak0.pinimg.com/736x/4b/9e/28/4b9e28deb8efb26c5ecc32d90e20b672.jpg\" alt=\"Westeros Map\">\n\nWildlings attacked the wall, and knights watch is down (mainly because there is no John Snow)</br>\nAll the seven kingdom know that they are coming! So they have to form an alliance!</br>\nEvery kingdom have some number of troops, so if they agree to form the alliance they will send their troop to Stark lands to kill the wildlings. As you can see in the map, the houses that wildlings are going to take by geographical order is (this means that at first house Stark is taken, then Greyjoy and so on ):</br> \n<font color=\"yellow\">\n1.\tStark</br>\n2.\tArryn</br>\n3.\tGreyjoy</br>\n4.\tLannister</br>\n5.\tStannis</br>\n6.\tTyrell</br>\n7.\tMartell</br>\n</font>\nIf they do not agree to be in the alliance, they won’t send their troops to Stark landings and also they won’t let their below neighbors to send their troops as well (it means if Lannisters do not agree to be in the alliance, Stannis, house Tyrell and house Martell cannot send their troops, and their troops will stay at their land)</br>\n The wildlings are going to take all the seven kingdom, you have to write a function to know who is the winner!</br>\nYour function have some inputs like:</br>\n```python\ngame_of_thrones([\"Wildling:1000\",\n                 \"Stark:in:400\",\n                 \"Arryn:in:300\",\n                 \"Greyjoy:out:300\",\n                 \"Lannister:500\",\n                 \"Stannis:0\",\n                 \"Tyrell:200\",\n                 \"Martell:300\"])\n```\nThis means that we have 1000 wildlings, 400 Stark (\"in\" means they joined the alliance and \"out\" means they did not join the alliance).</br> Stark and Arryn joined the alliance but because Greyjoy did not agree, all the others cannot form an alliance and they're on their own.\n\n\n<font color=\"yellow\">Some rules:</font></br>\n1. Each wildling have 10 HP(health points) and each soldier have 5 HP.</br>\n2. Joining an alliance have a benefit and it's soldiers courage, if two houses join the alliance all their soldiers HPs will be +1 (6), if three houses join the alliance all their soldiers HPs will be +2 (7) and so on.</br>\n3. If wildlings conquered the seven kingdom you have to return \"Wildlings conquered the seven kingdom!\"</br>\n4. If houses stopped the wildlings, you have to return \"Wildlings were stopped at house Martell!\" (the house where they stopped)</br>\n5. If Stark did not want the alliance, all others cannot form alliance. (`Stark:out:100` so you don't see sth like `Stark:100` in test cases)\n\n\n<font color=\"yellow\">Example: </font></br>\nin the example above we have 1000 wildlings, so they have 10000 HPs total.</br>\n1) The first one to attack is Stark (but it's actually the Alliance), Stark and Arryn have a total 700 soldiers (with 6 HP each), meaning 4200 HPs total, so Wildlings will conquer Stark and Arryn houses with remaining of 5800 HPs.</br>\n2) The next step is to attack Greyjoy (with 300 soldeirs, each 5 HP, total 1500 HP), Greyjoy is down and wildlings are left with 4300 HPs.</br>\n3) The next house is Lannisters (500 soldiers each 5 HP, total 2500 HP), Lannisters are also defeated and wildlings are left with  1800 HPs. Stannis is also defeated because he got no soldiers.</br>\n4) The next one is Tyrell (200 soldiers each 5HP, total 1000 HPs). Tyrell is defeated and wildlings are left with 800 HPs.</br>\n5) The last house is Martell (300 soldiers each have 5 HPs, total 1500 HPs), so wildlings will be defeated at Martell!</br>\nThis is where you return \"Wildlings were stopped at house Martell!\"\n\n<font color=\"yellow\">Final things to consider:</font></br> what if in the example above all the Lannisters kill all the Wildlings (both leaving with 0 HPs) this is where you return \"Wildlings were stopped at house Lannister!\" and at last what if wildlings were stopped at Stark (if there's an alliance) you should return \"Alliance won!\"</br>\nhave fun :)",
+    "totalAttempts": 205,
+    "totalCompleted": 22,
+    "totalStars": 8,
+    "voteScore": 40,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

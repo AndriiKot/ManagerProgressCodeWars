@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ce7094b32d2c3001a114baf",
+  "data": {
+    "id": "5ce7094b32d2c3001a114baf",
+    "name": "Custom Observable class with map and filter operators support",
+    "slug": "custom-observable-class-with-map-and-filter-operators-support",
+    "category": "reference",
+    "publishedAt": "2019-05-23T20:58:28.652Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ce7094b32d2c3001a114baf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-23T20:57:48.173Z",
+    "createdBy": {
+      "username": "ViktorSoroka",
+      "url": "https://www.codewars.com/users/ViktorSoroka"
+    },
+    "description": "# Description\nYou might have heard about [RxJS](https://rxjs-dev.firebaseapp.com/) and [Observable](http://reactivex.io/documentation/observable.html) pattern. In the kata you have to create your own _Observable_ class. The implementation of _Observable_ expected in the kata is not canonical, but should not be a problem in order to get the idea how it is expected to be used in the kata(see the usage example and tests) which have to be able to support two operators `map` and `filter`. `map` and `filter` should only accept one argument which is function and behaves the same way like their counterparts in _Array_ prototype: [map](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map) and filter [filter](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). The only difference they will only deal with a value over time which is by asynchronous nature whereas in the case with `Array` ones it is synchronous. See code below:\n\n1)\n```\nvar mappedArrSync = [1, 2, 3].map((value) => value + 1)\nconsole.log(mappedArrSync) // [2, 3, 4]\n```\n`mappedArrSync` is alredy there and it is not expected to be changed (unless it is manually modified), `map` won't be called further.\n\n2)\n\n```\nconst mappedArrAsync = [];\nconst observable = new Observable()\n  .map(n => n + 1);\n\nconst observer = n => mappedArrAsync.push(n);\n\nobservable.subscribe(observer);\n\nobservable.notify(1);\nobservable.notify(2);\n\nsetTimeout(() => {\n  observable.notify(3);\n}, 1000);\n\nconsole.log(mappedArrAsync); // logs [2, 3]\n\nsetTimeout(() => {\n  console.log(mappedArrAsync); // logs [2, 3, 4]\n}, 2000);\n```\n`mappedArrAsync` is populeated over time and values are mapped through `map` method\n\n# Usage:\n1) Only _filter_ is used\n```\nconst observable = new Observable()\n  .filter(n => n > 2);\n\nconst observer = n => console.log(n);\n\nobservable.subscribe(observer);\n\n// will log 3 and 4\n[1, 2, 3, 4].map((n) => {\n  observable.notify(n);\n});\n```\n\n2) Only _map_ is used\n```\nconst observable = new Observable()\n  .map(n => n + 1);\n\nconst observer = n => console.log(n);\n\nobservable.subscribe(observer);\n\n// will log 2, 3, 4 and 5\n[1, 2, 3, 4].map((n) => {\n  observable.notify(n);\n});\n```\n\n3) Both _filter_ and _map_ are used\n```\nconst observable = new Observable()\n  .filter(n => n > 2) // first the values gets filtered\n  .map(n => n * 2); // and then mapped\n\nconst observer = n => console.log(n);\n\nobservable.subscribe(observer);\n\n// will log 6 and 8\n[1, 2, 3, 4].map((n) => {\n  observable.notify(n);\n});\n```\n\nIn the 3) example the data comes firstly through the filter\n`.filter(n => n > 2)`\nand then through `map`\n`.map(n => n * 2)`\nSo the value will be only emitted when both of them allow passing the data further. For example, if the value to be emitted is `1` it means it won't pass the `filter` (1 < 2) check so `map` won't event gets called.\n\nLast but not least: it is worth to mention that function order is important, so the solution should handle possible availability of multiple maps / filters which can occur in any order.",
+    "totalAttempts": 290,
+    "totalCompleted": 20,
+    "totalStars": 2,
+    "voteScore": 3,
+    "tags": [
+      "Fundamentals",
+      "Design Patterns",
+      "Design Principles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

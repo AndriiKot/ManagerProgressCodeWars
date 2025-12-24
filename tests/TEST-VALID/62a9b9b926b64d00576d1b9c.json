@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a9b9b926b64d00576d1b9c",
+  "data": {
+    "id": "62a9b9b926b64d00576d1b9c",
+    "name": "3 connection modes in content sharing app",
+    "slug": "3-connection-modes-in-content-sharing-app",
+    "category": "reference",
+    "publishedAt": "2022-06-15T18:50:41.529Z",
+    "approvedAt": null,
+    "languages": [
+      "go"
+    ],
+    "url": "https://www.codewars.com/kata/62a9b9b926b64d00576d1b9c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-15T10:51:37.530Z",
+    "createdBy": {
+      "username": "kuchaguangjie",
+      "url": "https://www.codewars.com/users/kuchaguangjie"
+    },
+    "description": "There is a content sharing app.  \nA user can create a content as `owner`, then others may connect to the content as `guest`.\n\nA content can be connected up to `N` clients concurrently.  \nEach client belongs to a user, a user may have multiple clients.\n\nAnd there are 3 modes to check the `N` limit:\n- 0 (multi): each user can connect to a content with multiple clients concurrently.\n- 1 (single refuse new): each user can only connect to a content with up to 1 client concurrently, a 2nd client of the user will be refused.\n- 2 (single kick out old): each user can only connect to a content with up to 1 client concurrently, the user's 2nd client will kick out the user's previous client first, and get connected.\n\nThere are several special design to make the app works reasonable:\n- The `owner` can always connect to it's own content, if not yet, even `N` is reached.  \n  Because the owner might need to maintain the content, (if you can't connect to your own content, that's weird, right?).  \n  That means there might be up to `N+1` connections, if the owner connects as the last user.\n- In mode `2 (single kick out old)`, since a user's 2nd client will kick out its old client first; thus should always allow the user's 2nd client to connect, (aka. no need to check the max `N` again for the 2nd client).\n- In mode `2 (single kick out old)`, `kick out` happens before check of `N` limit.\n\nThe content server knows:\n- The upper limit `N`.\n- The owner of each content.\n- Full list of connected clients for a content, and which user each client represents.\n\nWhen a client try to connect to a content, the server will call function `IsNeedCheckMaxConn(mode, isUserConnected, isOwner)` to decide whether need to check the `N` limit for this client, (true -> pass, false -> refuse).  \n\nThe task is to implement the function `IsNeedCheckMaxConn()`.\n\nTips:\n- There are 12 cases, you need to pass each of them.  \n  Think about each of the cases 1 by 1.  \n- In mode `1 (single refuse new)`, refuse happens first, if user already connected, before check max limit.\n\n(BTW: the solution & logic is taken from a real project where client & server are connected via websocket, the logic is tested, and works well so far.)",
+    "totalAttempts": 67,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [
+      "Logic",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

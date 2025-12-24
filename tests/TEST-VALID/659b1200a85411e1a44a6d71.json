@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/659b1200a85411e1a44a6d71",
+  "data": {
+    "id": "659b1200a85411e1a44a6d71",
+    "name": "Find backwards duplicates",
+    "slug": "find-backwards-duplicates",
+    "category": "reference",
+    "publishedAt": "2024-01-07T23:17:44.323Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/659b1200a85411e1a44a6d71",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-07T21:05:04.680Z",
+    "createdBy": {
+      "username": "angusG",
+      "url": "https://www.codewars.com/users/angusG"
+    },
+    "description": "# Find backwards duplicates (Semordnilaps)\n\nA Semordnilap is a word that spells another word when spelled in reverse. For example...\n\n- `dog` spelled backwards is `god`\n- `desserts` spelled backwards is `stressed`\n\n## The Task\n\nGiven a list of words, find all the semordnilap pairs and return them as a list of tuples.\n\nBoth the words in the pair should be returned in the list. For example if \"god\" and \"dog\" were found, they should both be returned in a tuple `(\"dog\", \"god\")`\n\nThe list of tuples returned should be ordered in alphabetical order i.e `[(\"flog\", \"golf\"), (\"gum\", \"mug\")]`\n\n\n## Examples\n\n```python\nsemordnilap([])                                         # returns []\nsemordnilap([\"hello\", \"world\"])                         # returns [] - as no semordnilaps are present\nsemordnilap([\"dog\", \"turtle\", \"god\", \"pillow\"])         # returns [(\"dog\", \"god\")]\nsemordnilap([\"gum\"])                                    # returns [] as it's matching word \"mug\" is NOT in the list\nsemordnilap([\"golf\", \"mug\", \"gum\", \"flog\"])             # returns [(\"flog\", \"golf\"), (\"gum\", \"mug\")]\n```\n\n## Notes\n\n- The list of words provided will always have unique items, i.e you don't need to worry about palindromes or duplicate words\n- All words will be lowercase, so all the words you return should also be lowercase",
+    "totalAttempts": 47,
+    "totalCompleted": 11,
+    "totalStars": 0,
+    "voteScore": 16,
+    "tags": [
+      "Strings",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

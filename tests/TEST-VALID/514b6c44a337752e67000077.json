@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/514b6c44a337752e67000077",
+  "data": {
+    "id": "514b6c44a337752e67000077",
+    "name": "Name Your Space",
+    "slug": "name-your-space",
+    "category": "algorithms",
+    "publishedAt": "2013-04-02T23:13:38.689Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/514b6c44a337752e67000077",
+    "rank": {
+      "id": -4,
+      "name": "4 kyu",
+      "color": "blue"
+    },
+    "createdAt": "2013-03-21T20:23:32.328Z",
+    "createdBy": {
+      "username": "adamin",
+      "url": "https://www.codewars.com/users/adamin"
+    },
+    "description": "Finish the namespace function so that it sets or gets the value at the path specified. The first argument should be the root object that the path belongs to. The 2nd argument is the path itself and the 3rd optional argument is the value to set at the path. \n\nIf a value is provided then the path will be set to that value. Any objects not present within the path will be created automatically in order for the path to be successfully set.\n\n```coffeescript\nstuff = {}\nnamespace(stuff, 'moreStuff.name', 'the stuff')\n# results in {moreStuff: {name: 'the stuff'}}\n```\n```javascript\nlet stuff = {}\nnamespace(stuff, 'moreStuff.name', 'the stuff')\n// results in {moreStuff: {name: 'the stuff'}}\n```\n\nIf no value is provided the the function will return the value at the path given. If the path is not valid/present then undefined will be returned. \n\n```coffeescript\nnamespace(stuff, 'moreStuff.name') # returns 'the stuff'\nnamesace(stuff, 'otherStuff.id') # returns undefined\n```\n```javascript\nnamespace(stuff, 'moreStuff.name') // returns 'the stuff'\nnamesace(stuff, 'otherStuff.id') // returns undefined\n```",
+    "totalAttempts": 25684,
+    "totalCompleted": 1705,
+    "totalStars": 100,
+    "voteScore": 151,
+    "tags": [
+      "Object-oriented Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 5,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

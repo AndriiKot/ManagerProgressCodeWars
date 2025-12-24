@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/580f5f96cdeba272ee000374",
+  "data": {
+    "id": "580f5f96cdeba272ee000374",
+    "name": "Lunar Bombing Run",
+    "slug": "lunar-bombing-run",
+    "category": "algorithms",
+    "publishedAt": "2016-10-26T09:15:23.332Z",
+    "approvedAt": null,
+    "languages": [
+      "php",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/580f5f96cdeba272ee000374",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-25T13:35:18.348Z",
+    "createdBy": {
+      "username": "ryancastle",
+      "url": "https://www.codewars.com/users/ryancastle"
+    },
+    "description": "NOTE: The examples in this description refer to the test data given for the example test case.\n\nIt's the year 3016, and the end of the world is near - but you can do something about it! The moon is about to enter our atomosphere and oblitorate all life on Earth. Fortunatly, as time has passed, a fault has opened up on the surface of the moon, which leads directly to the centre. Your goal is to decipher an encrypted set of coordinates (for the moon's fault), and calculate how many bombs you can drop into the gap as you fly past.\n\nYou are provided with the following encoded message (taken from test case):\n\n`KLOMFKNNK:G:OPKLFRPKL`\n\nFortunately, the encoded message has used a simple Caesar Cipher, using the current day in the month as the shift value.\n\nOn decoding the message, you should receive coordinates as follows:\n\n`(1253, 5612), (1441, 8612)`\n\nUsing these coordinates, you should calculate the distance between the two sides of the moon's crater. (limit to 10 decimal places [truncate, DON'T ROUND])\n\nOnce distance has been calculated, you are to find out the number of bombs needed to drop into this gap. You are provided with a `blast_radius`, which you should use as a divisor to the distance. (use the `floor` math function for this)\n\nYou are then to encode the message, using the same shift as earlier (the date), this time appending the bomb count to the message, as format shown below:\n\n`1253,5612 - 1441,8612 - BOMB_COUNT_HERE`\n\nYou should return the value as a string. If correctly done, you should return:\n\n`KLOMFKNNK:G:OPKLFRPKL:G:KOJ`\n\nGood luck. The fate of the earth lies in you.\n\nYou can assume that the difference in coordinates will always be an integer larger than 1\n\nYou don't need to worry about the coordinate being 4 characters in length if it's not 4 characters in length. (ie, `0001` is fine as `1`)\n\n\nReferences:\nhttp://wikipedia.org/wiki/caesar_cipher",
+    "totalAttempts": 49,
+    "totalCompleted": 5,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Ciphers",
+      "Cryptography"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

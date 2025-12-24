@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f3a6fc6ea57ff0014ca5391",
+  "data": {
+    "id": "5f3a6fc6ea57ff0014ca5391",
+    "name": "How many symbols must be on one card?",
+    "slug": "how-many-symbols-must-be-on-one-card",
+    "category": "algorithms",
+    "publishedAt": "2020-08-17T11:54:41.791Z",
+    "approvedAt": null,
+    "languages": [
+      "go",
+      "javascript",
+      "python",
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5f3a6fc6ea57ff0014ca5391",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-17T11:53:42.897Z",
+    "createdBy": {
+      "username": "pfedan",
+      "url": "https://www.codewars.com/users/pfedan"
+    },
+    "description": "# Introduction\nYou want do design a card game with ```n``` cards where on each card are ```s``` different symbols. Each card ```c_i``` always has one symbol in common with any other card ```c_j``` with ```i != j```. \n\nIt wouldn't be fun if the common symbol between any two cards is always the same.\n\n# Question\nYou wonder how many different symbols you have to put on one card, given that the game shall have ```n``` cards (with ```n > 3```). Find the _minimal_ number of symbols to use so that any 2 cards have _exactly one_ symbol in common. \n\n## Example\nIn case of ```n = 7``` cards, you would need 3 symbols on each card - consider the following matrix of cards and symbols:\n```\n              symbol\n        1  2  3  4  5  6  7 \n\t 1  X  X  -  -  X  -  -\n\t 2  X  -  X  -  -  X  -\n\t 3  X  -  -  X  -  -  X\ncard 4  -  -  X  X  X  -  -\n\t 5  -  -  -  -  X  X  X\n\t 6  -  X  X  -  -  -  X\n\t 7  -  X  -  X  -  X  -\n```\nNotice that any card only has one symbol in common with any other card.\n\n## Bad example:\nThe general case of the trivial solution shall not be valid (example with ```n = 4``` and ```s = 2```):\n```\n      symbol\n     1  2  3  4  5\nc_1  X  X  -  -  -\nc_2  X  -  X  -  -\nc_3  X  -  -  X  -\nc_4  X  -  -  -  X\n```\nThis solution is prohibited, as the common symbol between any pair of cards is always the same.\n\n# Task\nWrite a function \n```go \nCntDiffSymbols(n int)\n``` \n```javascript \ncntDiffSymbols(n)\n``` \n```typescript \ncntDiffSymbols(n: number)\n``` \n```python \ncnt_diff_symbols(n)\n``` \nthat returns the count of different symbols needed for ```n``` cards.",
+    "totalAttempts": 154,
+    "totalCompleted": 19,
+    "totalStars": 4,
+    "voteScore": 10,
+    "tags": [
+      "Permutations",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

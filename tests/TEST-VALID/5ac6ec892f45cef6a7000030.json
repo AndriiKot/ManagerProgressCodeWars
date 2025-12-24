@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ac6ec892f45cef6a7000030",
+  "data": {
+    "id": "5ac6ec892f45cef6a7000030",
+    "name": "Eulerian motion",
+    "slug": "eulerian-motion",
+    "category": "algorithms",
+    "publishedAt": "2018-04-06T03:45:08.471Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5ac6ec892f45cef6a7000030",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-06T03:42:01.667Z",
+    "createdBy": {
+      "username": "YOSYA",
+      "url": "https://www.codewars.com/users/YOSYA"
+    },
+    "description": "When the rocket flies, it is acted upon by the Euler motion, which changes the angular velocity and rotates the rocket. You need to calculate how it's changes.\nFor do this we have the dynamic Euler equation\n\n![alt](http://stu.alnam.ru/archive/arch.php?path=../htm/lect_teor_m2/files.book&file=teor_m2_18.files/image8.gif)\n\nand kinetic Euler equation\n![alt](http://konspekta.net/studopediaorg/baza4/747864720837.files/image731.png)\n\nAnd we got a start position: ```vector<double> Position={P0,Q0,R0,Fi0,Teta0,Psi0}```.\n\nYou need to integrate this systems at start position by Runge-Kutta 4th order \n\n![alt](http://old.exponenta.ru/soft/mathcad/stud20/images_1/06.gif)\n\nto have next position at setting step ```h```.\n\nInput data:\n```A```, ```B```, ```C```, ```Gx```, ```Gy```, ```Gz```, ```h``` and ```vector<double> Position={P0,Q0,R0,Fi0,Teta0,Psi0}```;\n\nOutput data:\n```vector<double> Result={P1,Q1,R1,Fi1,Teta1,Psi1}```;\n\nMark: ```Fi```, ```Teta```, ```Psi``` are given in degrees. You must convert to radians ```M_PI/180``` to make the calculation and in answer return to degree. And ```0<=Fi<360```, if ```Fi<0``` or ```Fi>=360``` you must ```+360``` or ```-360``` until ```Fi``` get to the range, the same is  ```Teta``` and ```Psi```. And the values are rounded to 3 decimal places\n",
+    "totalAttempts": 31,
+    "totalCompleted": 7,
+    "totalStars": 5,
+    "voteScore": 2,
+    "tags": [
+      "Algorithms",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

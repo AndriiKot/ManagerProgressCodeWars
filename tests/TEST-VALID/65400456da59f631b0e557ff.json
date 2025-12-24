@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65400456da59f631b0e557ff",
+  "data": {
+    "id": "65400456da59f631b0e557ff",
+    "name": "Write your own Promise implementation",
+    "slug": "write-your-own-promise-implementation",
+    "category": "reference",
+    "publishedAt": "2023-10-30T19:32:25.136Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/65400456da59f631b0e557ff",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-10-30T19:30:30.781Z",
+    "createdBy": {
+      "username": "mhassan1",
+      "url": "https://www.codewars.com/users/mhassan1"
+    },
+    "description": "Write your own [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementation (call it `Vow`), including the following:\n\n```javascript\n/**\n  A Vow is your own implementation of a Promise\n*/\nclass Vow {\n  /**\n    The Vow() constructor creates Vow objects.\n  */\n  constructor (executor) {}\n  \n  /**\n    The then() method of Vow instances takes up to two arguments: callback functions for the fulfilled and rejected cases of the Vow. It immediately returns an equivalent Vow object, allowing you to chain calls to other vow methods.\n  */\n  then (onFulfilled, onRejected) {}\n  \n  /**\n    The catch() method of Vow instances schedules a function to be called when the vow is rejected. It immediately returns an equivalent Vow object, allowing you to chain calls to other vow methods. It is a shortcut for Vow.prototype.then(undefined, onRejected).\n  */\n  catch (onRejected) {}\n}\n```\n\nFor example, all of these Vows resolve to `1`:\n```javascript\nnew Vow(resolve => resolve(1))\nnew Vow(resolve => resolve(new Vow(resolve => resolve(1))))\n\nnew Vow(resolve => resolve(1)).then(value => value)\nnew Vow(resolve => resolve(1)).then(value => new Vow(resolve => resolve(value)))\n\nnew Vow((resolve, reject) => reject()).then(undefined, () => 1)\nnew Vow((resolve, reject) => reject()).catch(() => 1)\nnew Vow((resolve, reject) => reject()).then().then().then().catch(() => 1)\n```\n\nAnd all of these Vows reject with `Error('uh oh')`:\n```javascript\nnew Vow((resolve, reject) => reject(Error('uh oh')))\nnew Vow(() => { throw Error('uh oh') })\nnew Vow(resolve => resolve(new Vow(reject => reject(Error('uh oh')))))\n\nnew Vow(resolve => resolve()).then(() => new Vow((resolve, reject) => reject(Error('uh oh'))))\nnew Vow(resolve => resolve()).then(() => { throw Error('uh oh') })\n```\n\n`Promise` and `require` won't work!",
+    "totalAttempts": 37,
+    "totalCompleted": 9,
+    "totalStars": 2,
+    "voteScore": 0,
+    "tags": [
+      "Promises",
+      "Asynchronous",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

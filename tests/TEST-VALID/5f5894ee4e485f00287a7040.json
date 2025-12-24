@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f5894ee4e485f00287a7040",
+  "data": {
+    "id": "5f5894ee4e485f00287a7040",
+    "name": "Tic-Tac-Toe Checker (Harder)",
+    "slug": "tic-tac-toe-checker-harder",
+    "category": "algorithms",
+    "publishedAt": "2020-09-09T18:25:32.010Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f5894ee4e485f00287a7040",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-09-09T08:40:15.052Z",
+    "createdBy": {
+      "username": "David Gildour",
+      "url": "https://www.codewars.com/users/David%20Gildour"
+    },
+    "description": "This kata serves as a more general case of <a href=\"https://www.codewars.com/kata/525caa5c1bf619d28c000335/python\">this one</a>. If you didn't - you probably should start with solving it first.\n\n<h3>Intro</h3>\n\nOK, checking for a state of the game in 3x3 Tic-Tac-Toe (TTT for short) is easy, but how about 4x4? 20x20? 100x100? 1000x1000? Obviously, there's a reason why TTT board is 3x3 - it's the perfect size for a quick, simple game; anything larger than that would change the game to a boring, ridiculously elongated and almost impossible to win caricature. But what does it matter to a computer?\n\n<h3>Task</h3>\n\nAs you probably guessed by now - the task of this kata is very similar to the original one, the only difference being the board size. The function should accept a single argument, `board`, which will be a NxN list (`3 <= N <= 1500`), like this one:\n```\n[[0, 0, 1],   # 0 - empty\n [0, 1, 2],   # 1 - X\n [2, 1, 0]]   # 2 - O\n```\nwhich represents a state of a TTT game, in the above case:\n```\n- - X\n- X O\nO X -\n```\nand return a single integer:\n- `-1` if the board is not yet finished (there are empty spots),\n- `1` if \"X\" won,\n- `2` if \"O\" won,\n- `0` if it's a cat's game (i.e. a draw) - no further moves are possible.\n\n<h3>Details</h3>\n\nWe will generalize the winning conditions to be the same for every size of the board, so: any full horizontal row of a single symbol, any full vertical row of a single symbol and any of the two diagonals full of a single symbol. For a standard 3x3 there are 8 winning states (3 horizontals, 3 verticals and 2 diagonals), and we can easily see that for a NxN game this number is 2*N+2.\n\nAs you may expect, the size of the board quickly disqualifies the simpler, iterative algorithms, so you probably need to be a little more creative to pass the tests.",
+    "totalAttempts": 136,
+    "totalCompleted": 29,
+    "totalStars": 7,
+    "voteScore": 18,
+    "tags": [
+      "Performance",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

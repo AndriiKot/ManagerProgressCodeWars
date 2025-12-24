@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5b35e5a655329226b800008f",
+  "data": {
+    "id": "5b35e5a655329226b800008f",
+    "name": "Stack Safe Recursion",
+    "slug": "stack-safe-recursion",
+    "category": "algorithms",
+    "publishedAt": "2018-06-29T08:02:31.119Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5b35e5a655329226b800008f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-06-29T07:54:15.172Z",
+    "createdBy": {
+      "username": "theonlydaryl",
+      "url": "https://www.codewars.com/users/theonlydaryl"
+    },
+    "description": "```javascript\nlet even = n => n === 0 ? true : odd(n-1);\nlet odd = n => n === 0 ? false : even(n-1);\n\nlet sumToN = (n, acc = 0) => n === 0 ? acc : sumToN(n-1, acc+n);\n```\n\nConsider the pair of mutually [tail-recursive](http://2ality.com/2015/06/tail-call-optimization.html#tail-recursive-functions) functions (```even``` and ```odd```) above. It naively determines if a non-negative integer is even or odd.\n\nIf most browsers' engines implemented tail call optimization, calls such as ```even(1000000)``` should take less than a second to run, but ```even(100000)``` already throws a stack error on Chrome.\n\nFor ```sumToN```, it calculates 1 + 2 + 3 + ... + N recursively and returns the result, but throws a stack error at N = 10000 on my browser.\n\nTo get around this, write a function `makeStackSafe` that takes in a tail-recursive function as an argument, and returns a stack safe version of it, meaning that calling it with high values might take a long time to compute, but will not result in an error. It has to support mutual tail-recursion as well.\n\nAs a hint, you may want to look up on trampolines.\n\nThe test cases will be the same as the example test cases, but with the inputs changed to prevent hardcoding: \n\nYour code should be optimised enough to not cause a timeout for inputs of n between 100 000 000 and 200 000 000.\n```javascript\nlet evenStackSafe = makeStackSafe(n => n === 0 ? true : oddStackSafe(n-1));\nlet oddStackSafe = makeStackSafe(n => n === 0 ? false : evenStackSafe(n-1));\nevenStackSafe(100000000) === true;; //Should not throw an error\nlet sumToNStackSafe = (n, acc = 0) => n === 0 ? acc : sumToNStackSafe(n-1, acc+n);\nsumToNStackSafe(100000000); //Should not throw an error\n```",
+    "totalAttempts": 146,
+    "totalCompleted": 11,
+    "totalStars": 6,
+    "voteScore": 8,
+    "tags": [
+      "Recursion",
+      "Stacks",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

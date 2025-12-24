@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6649a66880e8892f4c19fa92",
+  "data": {
+    "id": "6649a66880e8892f4c19fa92",
+    "name": "All absolute paths lead to Root",
+    "slug": "all-absolute-paths-lead-to-root",
+    "category": "reference",
+    "publishedAt": "2024-05-20T15:57:50.535Z",
+    "approvedAt": null,
+    "languages": [
+      "python",
+      "java",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6649a66880e8892f4c19fa92",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-19T07:12:40.696Z",
+    "createdBy": {
+      "username": "jpssj",
+      "url": "https://www.codewars.com/users/jpssj"
+    },
+    "description": "There can be an infinite number of them. When you have at least two directories in your filesystem, let's say the root of the filesystem and a home directory inside it (`/` and `/home`), you can have an infinity of __absolute paths__ leading to the root:\n```\n/\n/home/..\n/home/../home/..\n/home/../home/../home/..\n... and so on ...\n```\nAll of these absolute paths point to the root of the filesystem, which __canonical path__ is `/`.\n\nIn this kata, you'll have to find all absolute paths of a given length corresponding to the directory pointed by a given canonical path in a given filesystem, according to the rules and definitions specified in the next section.\n\n---\n\n## Rules and definitions\n\n- __[a path](https://en.wikipedia.org/wiki/Path_(computing))__ \"is a string of character used to uniquely identify a location in a directory structure\", composed by at least one __component__ and zero or more occurences of a __delimiting character__\n  - in this kata:\n    - a __component__ is a substring of a path that doesn't contain `/`\n      - except for the first component of a path, which is always `/` and corresponds to the root of the filesystem\n    - `/` is always the __delimiting character__\n      - except when it is the first character of a path\n    - a path never ends with `/` \n      - except when the path is the canonical path to the root `/`\n\n- __the absolute path__ : an absolute path is a path pointing to a directory in the filesystem _from the root of the filesystem_\n  - examples:\n    - `/` is an absolute path to the root of the filesystem\n    - `/home/apple/Documents` is an absolute path to the directory `Documents` of the user `apple`\n    - `/home/banana/Videos/Movies/claude_jutra` is an absolute path to the directory `claude_jutra` in the `Movies` directory in the `Videos` directory of the home directory of the user `banana`\n\n- __the parent directory__ : `..` (_2 dots component_) is a valid component of a path that points to the parent directory of the current directory\n  - the root `/` has no parent directory\n  - examples:\n    - `/home/..`: the last _2 dots component_ points to the parent directory of `/home`, which is `/`, the root of the filesystem\n    - `/home/banana/..`: the last _2 dots component_ points to the parent directory of `/home/banana`, which is `/home`\n\n- __the canonical path__ : the canonical path to a directory is _the shortest of all absolute paths_ leading to it\n  - a canonical path _doesn't contain a component pointing to the parent directory_\n    - examples:\n      - the absolute paths `/home/..` and `/home/../home/..` point to the root, which canonical path is `/`\n      - the absolute paths `/boot/../home/cherry` and `/boot/home/cherry/../cherry` point to the directory of the user cherry, which canonical path is `/home/cherry`\n\n- __the length of an absolute path__ : the length of an absolute path is its number of components\n  - examples:\n    - `/` has one component\n    - `/home` has two components: `/` and `home`\n    - `/home/../home` has four components: `/`, `home`, `..` and `home` again\n    \n## Example\n\nIn this filesystem:\n```\n └── /\n    ├── boot\n    ├── dev\n    ├── etc\n    └── home\n       ├── apple\n       │  ├── Documents\n       │  ├── Downloads\n       │  ├── Images\n       │  └── Videos\n       ├── banana\n       │  ├── Documents\n       │  ├── Downloads\n       │  ├── Images\n       │  └── Videos\n       └── cherry\n          ├── Documents\n          ├── Downloads\n          ├── Images\n          └── Videos\n```\nAll absolute paths of __length 5__ leading to the root, which canonical path is `/`, are:\n```\n/boot/../boot/..\n/boot/../dev/..\n/boot/../etc/..\n/boot/../home/..\n/dev/../boot/..\n/dev/../dev/..\n/dev/../etc/..\n/dev/../home/..\n/etc/../boot/..\n/etc/../dev/..\n/etc/../etc/..\n/etc/../home/..\n/home/../boot/..\n/home/../dev/..\n/home/../etc/..\n/home/../home/..\n/home/apple/../..\n/home/banana/../..\n/home/cherry/../..\n```\n\n\n## Input\n\n- __root__ : a tree data structure, the root of the filesystem\n  - each node in that tree is a directory and has the following fields:\n    - __name__ : a string of alphabetical characters or `/` if the node is the root\n    - __content__ : either the equivalent of `null` or a non-empty sequence of nodes, the directories in the current directory\n    - __parent__ : either the equivalent of `null` or the node which is the parent directory of the current directory\n- __to__ : a string, the _canonical path_ to some directory in the filesystem\n  - that directory will always exist\n- __length__ : an integer, the length of the _absolute paths_ corresponding to the the given _canonical path_\n  - there will always be at least one absolute path of the given length corresponding to the directory pointed by the given canonical path in the filesystem\n\n````if:python\nIn Python, the root of the filesystem is the following `Node` dataclass:\n```python\n@dataclass\nclass Node:\n    name    : str\n    content : Optional[list['Node']] = None\n    parent  : Optional['Node'] = None\n\n    def __hash__(self) -> int:\n        return hash(id(self))\n```\n````\n````if:java\nIn Java, the root of the filesystem is the following `Node` class:\n```java\npublic class Node{\n    public String name;\n    public Node parent;\n    public List<Node> content;\n}\n```\n````\n```if:javascript\nIn JavaScript, the root of the filesystem and each node are plain objects with the following fields:\n- `name` : a string\n- `content` : either `null` or an array of nodes\n- `parent` : either `null` or a node\n```\n## Output\n\n- a sequence of strings, representing all absolute paths of the given length leading to the directory pointed by the given canonical path\n\n## Errors and messages\n\n- __Input__ : a tree representation of the filesystem, from its root\n- __Actual__ : a lexicographically sorted list of your output\n- __Expected__ : a lexicographically sorted list of the expected sequence of absolute paths\n\n\n---\n\nHappy coding and may the given Root be with you.",
+    "totalAttempts": 38,
+    "totalCompleted": 9,
+    "totalStars": 4,
+    "voteScore": 12,
+    "tags": [
+      "Trees",
+      "Recursion"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

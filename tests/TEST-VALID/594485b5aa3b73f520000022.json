@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/594485b5aa3b73f520000022",
+  "data": {
+    "id": "594485b5aa3b73f520000022",
+    "name": "BASH commands: head",
+    "slug": "bash-commands-head",
+    "category": "algorithms",
+    "publishedAt": "2017-06-18T13:26:32.889Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/594485b5aa3b73f520000022",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-06-17T01:28:22.091Z",
+    "createdBy": {
+      "username": "lilsweetcaligula",
+      "url": "https://www.codewars.com/users/lilsweetcaligula"
+    },
+    "description": "Foreword:\n\nPlease, note, that this challenge requires you to return a string, allocated dynamically on the heap (i.e. with the help of `malloc`, `calloc`, `realloc`), even when an empty string is expected. The test code expects it and will free the result after testing. Please, use caution.\n\nDescription:\n\nIn this iteration of the BASH-esque challenges, we will implement our own small `head` utility. Though in our case we will be operating directly on strings, as opposed to files.\n\nSometimes, you may wish to check the log or merely see the first few lines in a large file, but you don't want the whole thing to be flushed onto your terminal screen, - you only need a few lines at the top. This is where the `head` utility comes in.\n\nThe `head` utility works as follows. In our case, it accepts a string of a flag and a literal integer value (positive, zero, or negative) _as its first argument_, i.e. `argv[0]`, which can be either `-c` or `-n`, followed by an integer literal, - _important_, - the flag and the integer literal may or may not be separated by whitespace. _The second argument_, i.e. `argv[1]`, will contain the actual text that our utility will be working with. \n\nThe `argc` argument will always be equal to `2` (since you will always get valid input) and thus serves a purely cosmetic purpose.\n\nFor example, given that we want to print out 3 lines of a text, our argument layout might look as follows:\n```\nargv[0] => -n 3\nargv[1] => \"One\\nTwo\\nThree\\nFour\"\n```\n\nHere, our utility should return a string of text:\n```\n\"One\\nTwo\\nThree\\n\"\n```\n\nPlease notice, how the last new line character is included. However, if the argument number was larger than the number of lines in the text, then we would just return the whole text (and if the whole thing does not end with a new line, we do _not_ append a new line).\n\nA negative integer value `x` means that all the lines but the last `x` should be printed:\n\n```\nargv[0] => -n -3\nargv[1] => \"One\\nTwo\\nThree\\nFour\"\n```\n\nShould result in a string of text:\n```\n\"One\\n\"\n```\n\nThe zero integer value means we should return an empty string:\n\n```\nargv[0] => -n 0\nargv[1] => \"One\\nTwo\\nThree\\nFour\"\n```\n\nResult:\n```\n\"\"\n```\n\nThe `c` flag is similar to the `n` flag, but works with characters (bytes):\n```\nargv[0] => -c 3\nargv[1] => \"One\\nTwo\\nThree\\nFour\"\n```\n\nHere, our utility should return:\n```\n\"One\"\n```\n\nLike with the `n` flag you can also use a negative integer value to print out all but the last `x` characters. _Please note, that the null-terminating character does not count._\n\n```\nargv[0] => -c -1\nargv[1] => \"One\"\n```\n\nHere, our utility should return:\n```\n\"On\"\n```\n\nThe zero value works as well, and like with the `n` flag, - should return an empty string.\n\nPlease make sure you null-terminate all the resulting strings!\n\nAfterword:\n\nNow you might be wondering, what's up with the weird declaration, why `argc` that here does pretty much nothing, and `argv`, and not, say, `flag` and `text`? Well, it's quite simple really - I just wanted to be annoying. :)\n\nPlease feel free to ask questions, make any suggestions, report bugs and leave feedback in the discussions. I'll be very grateful!\n",
+    "totalAttempts": 92,
+    "totalCompleted": 17,
+    "totalStars": 5,
+    "voteScore": 28,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 6,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

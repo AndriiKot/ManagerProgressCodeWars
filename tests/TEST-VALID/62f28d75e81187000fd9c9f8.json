@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62f28d75e81187000fd9c9f8",
+  "data": {
+    "id": "62f28d75e81187000fd9c9f8",
+    "name": "HTTP client by specification",
+    "slug": "http-client-by-specification",
+    "category": "reference",
+    "publishedAt": "2022-08-09T18:54:27.434Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/62f28d75e81187000fd9c9f8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-09T16:38:13.540Z",
+    "createdBy": {
+      "username": "A-Z",
+      "url": "https://www.codewars.com/users/A-Z"
+    },
+    "description": "Let's imagine that we work for a large company that integrates services around the world.\nIf you manually write each integration, then you can go crazy.\nAfter all, it's not productive at all.\nIdeally, each of our clients should provide a specification of their services based on which we can generate the HTTP clients we need on the fly.\n\nDeveloping a good specification is another difficult task, but I partially solved it for you. I tried to make it intuitive and self-explanatory.\n\nExample:\n\n```ruby\n{\n  \"host\" => \"example.com\",\n  \"schema\" => \"https\",\n  \"port\" => 443,\n  \"methods\" => {\n    \"version\" => {\n      \"path\" => \"version\",\n      \"verb\" => \"get\"\n    },\n  },\n  \"namespaces\" => {\n    \"toys\" => {\n      \"path\" => \"toys\",\n      \"methods\" => {\n        \"select\" => {\n          \"path\" => nil,\n          \"verb\" => \"get\",\n          \"params\" => {\n            \"name\" => \"?string\",\n            \"color\" => \"?string\",\n            \"cost\" => \"?integer\",\n            \"category\" => [\"cat\", \"dog\"]\n          }\n        }\n      }\n    },\n    \"photos\" => {\n      \"path\" => \"photos\",\n      \"methods\" => {\n        \"dir\" => {\n          \"path\" => \"\",\n          \"verb\" => \"get\",\n          \"params\" => {}\n        }\n      }\n    }\n  }\n}\n```\n\nOf course, each specification must contain a host address, a scheme, and a port.\nNext comes the description of the methods with part of path, http verb and list of parameters.\nParameters are a list of pairs `name` and `type`.\nParameters can be optional, they are marked with a \"?\" prefix.\nEnum parameters are a list of valid values.\nEnum parameters are always required.\n\nThe above example should generate a Class with the following API.\n\n```ruby\nspec = {\n  # ... service specification\n}\n\nclient_class = API::Client.generate(spec) do |url, verb, params|\n  logger.info \"#{verb} #{url} #{params}\"\n  # make real http request\nend\n\nclient.version\n# GET https://example.com/version nil\n\nclient.toys.select(name: \"ball\", category: \"cat\")\n# GET https://example.com/toys  {:name=>\"ball\", :category=>\"cat\"}\n\nclient.photos.dir\n# GET https://example.com/photos/ nil\n\nclient.toys.method(:select).parameters\n# => [[:opt, :params]]\n\nclient.toys.select(name: \"ball\", category: \"cat\", test: \"123\")\n# => RuntimeError (unknown param 'test')\n```\n\nSince I would not like to make a real HTTP request during the tests, I will inject Proc when generating a client, to which all the necessary parameters will be passed by instances of this class. This approach will allow us to conveniently write tests and, if necessary, modify the code for real tasks.\n\nNow your task is to write an HTTP client generator and pass all the tests. Be careful, when generating it is necessary to take into types and names of the parameters and their types. If the type does not match or the required parameter is not passed, then you need to throw an exception with the correct message.\n\nDo not worry, all the specifications in the tests are valid - additional validation is not needed.\n\nGood luck!\n\n",
+    "totalAttempts": 32,
+    "totalCompleted": 2,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Metaprogramming"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

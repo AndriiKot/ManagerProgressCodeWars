@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/530b5f8e4beff5e49c000754",
+  "data": {
+    "id": "530b5f8e4beff5e49c000754",
+    "name": "Simple BBCode Parser",
+    "slug": "simple-bbcode-parser",
+    "category": "algorithms",
+    "publishedAt": "2014-02-24T16:18:36.927Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/530b5f8e4beff5e49c000754",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-24T15:04:46.498Z",
+    "createdBy": {
+      "username": "Robik",
+      "url": "https://www.codewars.com/users/Robik"
+    },
+    "description": "Your company is creating a Bulletin Board software. It is decided that BBCode will be used as main format. Your job is to write simple BBCode parser prototype.\n\nFor those who don't know what BBCode is, here's wikipedia page: http://wikipedia.org/wiki/BBCode\n\nYour parser must:\n\n  * Escape HTML tags found in specified input.\n  * Not parse incomplete tags.\n  * Convert newlines to `<br />` tag.\n  * Accept list of tag names that should not be parsed.\n  \nNotes:\n\n * You don't have to care about invalid tag order.\n * Generated tags that don't have ending tag should have space before `/>` (otherwise tests will fail)\n   \n   e.g. `<br />`, `<img .. />`\n \nTags that have to be supported are:\n\n  * Basic text tags: `b i u s`\n  * Image tag: `img`\n  * Link tag(both variants): `url url=`\n\n\nExample calls:\n```coffeescript\nparseBBCode(\"[b][i]text[/b][/i]\") # should return \"<b><i>text</b></i>\"\nparseBBCode(\"[b][i]text[/b][/i]\", [\"i\"]) # should return \"<b>[i]text</b>[/i]\"\n```\n\nGood luck and have fun!",
+    "totalAttempts": 237,
+    "totalCompleted": 16,
+    "totalStars": 5,
+    "voteScore": 6,
+    "tags": [
+      "Strings",
+      "Parsing",
+      "Regular Expressions"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65c6b06451327ee7602a2142",
+  "data": {
+    "id": "65c6b06451327ee7602a2142",
+    "name": "Time Travel Extravaganza",
+    "slug": "time-travel-extravaganza",
+    "category": "algorithms",
+    "publishedAt": "2024-02-10T15:34:47.276Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65c6b06451327ee7602a2142",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-09T23:08:20.106Z",
+    "createdBy": {
+      "username": "bledding",
+      "url": "https://www.codewars.com/users/bledding"
+    },
+    "description": "Professor Montgomery is outraged by gas prices: travelling by car is just not affordable anymore! His feverish mind guesses that he could use his time machine to travel back in time, **change the outcome** of a few historical battles and hope that it somehow **lowers the gas price** in the present day. He scavenges his history book and finds about some pivotal conflicts through history, and their effect (positive or negative) on today's gas price.\n\n## The plan\nHere's the plan: Professor Montgomery can **travel back in time** to any of the beforementioned battles. Thanks to his vast arsenal of sci-fi weapons, it is guaranteed that he will change the outcome of the battle as predicted. Changing the outcome of a battle and then changing it again will simply restore it to its original state. From now on, we'll refer to any tampering with battles' outcomes as \"**alterations**\".\n\nAfter each alteration, Professor Montgomery returns to his laboratory in the present to recharge the time machine. However, he finds himself in a distinct **timeline** each time - a unique version of history where events may differ slightly or drastically because of the alteration.\n\nYou might see where this is going: by performing alterations, Professor Montgomery wants to make a timeline **where the gas price is the lowest**.\n\n## The catch\nYou might also see where the catch to this problem is: once an alteration is made, though it is guaranteed that events prior to the altered battle will remain unchanged, the same cannot be said about events after the alteration. Most likely, history **will play completely differently** in the new timeline from the year of the alteration onward! This means different battles may take place (not necessarily in the same years as the original timeline) with different effects on gas prices.\n\nThere is really no way to predict what the effects of an alteration may be. However, it is certain that two timelines where the outcome of every battle is the same are the same timeline (i.e. the same series of alterations leads to the same timeline, hence the same gas price).\n\n## History\nYou are given an instance `history`, implementing two methods.\n\n- The first method is `history.book()`, representing Professor Montgomery's history book. It returns a list of 2-ples, where each first position is the **year** a battle took place and each second position is the corresponding **amount** (positive or negative) by which gas prices changed as a direct consequence of the battle's outcome.\n\n- `history.change(y)`: performs an **alteration** in the specified year `y`. If the battle has already been altered, it reverts to its original state. An error is raised if no battle occurred in the given year.\n\n## Output\nThe solution should identify the timeline with the **lowest gas price** and return a list of the years where an alteration is required to achieve it, *in chronological order*.\n\nBecause changing the past always involves some risks, if multiple timelines share the minimum gas price, return the one that requires the **least amount of alterations**. It will never be the case that multiple timelines sharing the minimum gas price need the same number of alterations to be made.\n\n## Specifications\n- A battle always happens on year 0, and it's the first battle in chronological order.\n- Gas price starts from 0 and only changes according to the battles' outcomes.\n- Gas prices can't be negative.\n- **Gasoline wasn't invented until 1900**, so any battles before that year don't have a direct influence over gas prices (i.e. it is guaranteed that all battles taking place strictly before 1900, altered or not, change the gas price by 0).\n- While multiple battles may take place in the same year of different timelines, no two battles may take place in the same year of the same timeline.",
+    "totalAttempts": 111,
+    "totalCompleted": 8,
+    "totalStars": 6,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Binary Trees",
+      "Data Structures",
+      "Performance",
+      "Recursion"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

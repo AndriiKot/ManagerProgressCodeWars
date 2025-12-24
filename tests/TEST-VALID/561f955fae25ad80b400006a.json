@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/561f955fae25ad80b400006a",
+  "data": {
+    "id": "561f955fae25ad80b400006a",
+    "name": "Fold and Squash",
+    "slug": "fold-and-squash",
+    "category": "games",
+    "publishedAt": "2015-10-15T14:32:24.702Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/561f955fae25ad80b400006a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-15T12:00:31.528Z",
+    "createdBy": {
+      "username": "em-12",
+      "url": "https://www.codewars.com/users/em-12"
+    },
+    "description": "Based on the [Smale horseshoe map](https://en.wikipedia.org/wiki/Horseshoe_map).\n\n#### Summary\n\nReturn the number of cycles of the binary representation of an integer under the `fold and squash` mapping (defined below).\n\n#### Details\n\nThe `fold and squash` map is defined as the following transformation of a binary pattern:\n\n1. Take a binary pattern and split it in half (add a `0` to the beginning if there are an odd number of digits).\n```\n11001001 --> (1100, 1001)\n```\n\n2. Fold the first half back onto the second half as follows (remember that folding it back reverses the order):\n```\n0011\n1001\n```\n\n3. Squash the two parts together, with the upper digits occupying the place to the left of the lower digits, as follows:\n```\n01001011\n```\nAt the end of every iteration, you should have the same number of bits as you started with; in other words, do not remove leading zeros.\n\nThe **number of cycles** is defined as the number of iterations of this map that are required to return to the original binary representation. For example the number of cycles of `11001001` is `4`:\n```\nStart  bits: 11001001\nIteration 1: 01001011\nIteration 2: 01001101\nIteration 3: 01011001\nIteration 4: 11001001\n```\n\nWrite a function that takes an integer as an input and returns the number of cycles of the binary representation under this map.\n```\ncycles(201) -> 4\n```\n\nAll inputs will be positive integers.",
+    "totalAttempts": 180,
+    "totalCompleted": 17,
+    "totalStars": 3,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

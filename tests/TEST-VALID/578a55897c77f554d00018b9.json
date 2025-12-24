@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/578a55897c77f554d00018b9",
+  "data": {
+    "id": "578a55897c77f554d00018b9",
+    "name": "Party with aliens",
+    "slug": "party-with-aliens",
+    "category": "algorithms",
+    "publishedAt": "2016-08-02T12:53:17.016Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/578a55897c77f554d00018b9",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-07-16T15:40:57.814Z",
+    "createdBy": {
+      "username": "vetom",
+      "url": "https://www.codewars.com/users/vetom"
+    },
+    "description": "## Party with aliens\n\nKids are finally on vacatitons, since everybody is so happy with their grades, some folks are throwing parties next saturday and every kid is invited, there will be piñatas and candies! \n\nKids from the neighborhood love candies, so they decided to store their candies in a treasure chest in the park. They will be at the park at 15:30 to build the chest in 30 minutes. Hoping to fill their chest, kids will be going from a party to another collecting candies and everytime they will come back to the park to store the candies.\n\n\nThe problem is that there are some aliens around wanting to kidnap kids using fake candies, so they are trying to sneak into the parties to replace some candies with their special ones.\n\nWe need your skills to identify the aliens and kick them out off the parties. Here are some facts to help you:\n\nAbout aliens:\n\n+ They look like kids\n+ They don't know when a party starts or ends (real kids do)\n+ They can be in two places at once\n\nParties schedule:\n\n+ 21:00 - 23:59 @ Julio's\n+ 16:30 - 19:45 @ Jesus' \n+ 17:30 - 23:14 @ Olson's\n+ 19:00 - 23:35 @ Roberto's\n+ 20:10 - 23:30 @ Yoyi's\n+ 16:15 - 18:00 @ Alicia's\n\nTime that takes to walk from each party to the park:\n\n+ From Julio's party 6 mins\n+ From Jesus' party 3 mins\n+ From Olson's party 3 mins\n+ From Roberto's party 5 mins\n+ From Yoyi's party 4 mins\n+ From Alicia's party 4 mins\n\nNeighboorhood map:\n\n![alt text](http://i.imgur.com/vtXs2DA.png \"Party with aliens map\")\n\nKnowing the time that takes to walk from each party to the park, you'll be given the name of the kid, the place where he currently is, the time and how long he plans to stay in that party. It takes them five minutes to put the candies in the chest wich they always do after leaving a party and before going to the next one. The data will always be correct.\n\nExamples:\n- - -\n```javascript\nalienFinder([\n    {\n      name: \"Walter\",\n      party: \"Alicia's\",\n      time: \"16:20\",\n      staying: 20\n    },\n    {\n      name: \"Abby\",\n      party: \"Jesus'\",\n      time: \"16:35\",\n      staying: 50\n    },\n    {\n      name: \"Walter\",\n      party: \"Jesus'\",\n      time: \"17:10\",\n      staying: 20\n    }\n  ]) -> []\n\nalienFinder([\n  {\n    name: \"John\",\n    party: \"Julio's\",\n    time: \"14:00\",\n    staying: 30\n  },\n  {\n    name: \"Charles\",\n    party: \"Julio's\",\n    time: \"22:00\",\n    staying: 45\n  },\n  {\n    name: \"Julia\",\n    party: \"Julio's\",\n    time: \"21:30\",\n    staying: 20\n  }]) -> [\"John\"]\n  \nalienFinder([\n  {\n    name: \"Judith\",\n    party: \"Olson's\",\n    time: \"18:30\",\n    staying: 30\n  },\n  {\n    name: \"Steve\",\n    party: \"Roberto's\",\n    time: \"23:00\",\n    staying: 45\n  },\n  {\n    name: \"James\",\n    party: \"Julio's\",\n    time: \"21:30\",\n    staying: 20\n  },\n  {\n    name: \"Judith\",\n    party: \"Roberto's\",\n    time: \"19:20\",\n    staying: 20\n  },\n  {\n    name: \"James\",\n    party: \"Roberto's\",\n    time: \"22:05\",\n    staying: 20 \n  }]) -> [\"Steve\", \"James\"] or [\"James\", \"Steve\"] //(It doesn't matter the results order)\n  \n```\n",
+    "totalAttempts": 152,
+    "totalCompleted": 17,
+    "totalStars": 3,
+    "voteScore": 15,
+    "tags": [
+      "Puzzles",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

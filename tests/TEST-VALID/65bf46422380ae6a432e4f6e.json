@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65bf46422380ae6a432e4f6e",
+  "data": {
+    "id": "65bf46422380ae6a432e4f6e",
+    "name": "Dice Game Strategy - \"Five Thousand\"",
+    "slug": "dice-game-strategy-five-thousand",
+    "category": "algorithms",
+    "publishedAt": "2024-02-04T08:18:01.238Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65bf46422380ae6a432e4f6e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-04T08:09:38.836Z",
+    "createdBy": {
+      "username": "JezzaHehn",
+      "url": "https://www.codewars.com/users/JezzaHehn"
+    },
+    "description": "**Description**\n\nImplement a function to decide whether to roll again in a simplified version of the dice game \"Five Thousand\" aka [\"Ten Grand\"](https://en.wikipedia.org/wiki/Dice_10000)\n\nThe game is also known by the names [\"Greed\"](https://www.codewars.com/kata/5270d0d18625160ada0000e4) and [\"Zonk\"](https://www.codewars.com/kata/53837b8c94c170e55f000811) — for more kata (by other authors) related to this game, click those links.\n\nIn this game, players roll dice to accumulate points, aiming to be the first to reach 5,000 points. For the purposes of this simple kata, points are scored for... \n- single ones\n- single fives\n- three of a kind\n\nwith players risking their current turn's points with each additional roll. Your task is to write a function that helps a player decide whether to risk rolling again based on their current probability of scoring and their personal risk threshold.\n\n**Task**\n\nWrite a function called `roll_again(dice_num: int, prob_thresh: float) -> bool` that decides whether a player should roll the dice again. This decision is based on the number of dice left to roll, and the player's risk threshold.\n\n**Parameters**\n\n- dice_num (int): The number of dice being considered for re-roll. It represents how many dice you currently have in play.\n- prob_thresh (float): A probability threshold (between 0 and 1, inclusive) that determines the minimum probability of scoring required to consider rolling the dice again beneficial. This threshold is your risk tolerance for the decision.\n- Assume all input will be valid\n  - 1 <= dice_num <= 10\n  - 0 <= prob_thresh <= 1\n\n**Return**\n\nThe function returns True if the calculated probability of scoring is greater than the prob_thresh; otherwise, returns False. This boolean value advises whether rolling the dice again under the given conditions is statistically advantageous.\n\n**Scoring**\n\n- Single ones (1) are worth 100 points each.\n- Single fives (5) are worth 50 points each.\n- Three of a kind are worth 100 times the number rolled, except for three ones which are worth 1000 points. **These must be rolled in the same roll.**\n- All other combinations have no value.",
+    "totalAttempts": 52,
+    "totalCompleted": 10,
+    "totalStars": 1,
+    "voteScore": 1,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

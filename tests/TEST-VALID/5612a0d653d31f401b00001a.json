@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5612a0d653d31f401b00001a",
+  "data": {
+    "id": "5612a0d653d31f401b00001a",
+    "name": "Regular Expressions Engine",
+    "slug": "regular-expressions-engine",
+    "category": "algorithms",
+    "publishedAt": "2015-10-05T17:15:37.804Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5612a0d653d31f401b00001a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-10-05T16:09:59.253Z",
+    "createdBy": {
+      "username": "Freywar",
+      "url": "https://www.codewars.com/users/Freywar"
+    },
+    "description": "#Regular Expressions Engine\n\nIn this kata you have to reimplement JavaScript native RegExp class.\n\n##Regular expressions syntax (https://msdn.microsoft.com/en-us/library/ae5bf541(v=vs.90).aspx)\n\nRegular expression is a pattern of text which consist of simple and special characters.\n\n###Simple Characters\n\nAny character except special one which will be matched exactly.\n\n###Special Characters\n\n- ```\\<character>``` Turns special character to simple one and some of simple characters to special. Any other simple character preceded by ```\\``` still matches exactly.\n- - ```\\f \\n \\r \\t \\v \\\\``` Matches a form-feed, new line, carriage return, tab, vertical tab and backslash per se correspondingly.\n- - ```\\b``` Matches a word boundary, that is, the position between a word and a space.\n- - ```\\B``` Matches a nonword boundary.\n- - ```\\d``` Matches a digit character.\n- - ```\\D``` Matches a nondigit character.\n- - ```\\s``` Matches any white space character including space, tab, form-feed, and so on.\n- - ```\\S``` Matches any non-white space character.\n- - ```\\w``` Matches any word character including underscore.\n- - ```\\W``` Matches any nonword character.\n- - ```\\xNN``` Matches NN, where n is a hexadecimal ASCII value.\n- - ```\\uNNNN``` Matches NNNN, where n is a hexadecimal Unicode value.\n- - ```\\N``` Identifies either an octal escape value or a backreference. If \\n is preceded by at least n captured subexpressions(see below), n is a backreference. Otherwise, n is an octal escape value if n is an octal digit (0-7).\n- ```^``` Matches the position at the beginning of the input string. If the RegExp object's ```multiline``` property is set, ```^``` also matches the position following ```\\n``` or ```\\r```.\n- ```$``` Matches the position at the end of the input string. If the RegExp object's ```multiline``` property is set, ```$``` also matches the position preceding ```\\n``` or ```\\r```.\n- Quantifiers. Define number of repetitions of preceding character or subexpression.\n- - ```<character>*``` Matches zero or more times.\n- - ```<character>+``` Matches one or more times.\n- - ```<character>?``` Matches zero or one time.\n- - ```<character>{N}``` Matches exactly N times.\n- - ```<character>{N,}``` Matches at least N times.\n- - ```<character>{N,M}``` Matches at least N and at most M times.\n- ```<quantifier>?``` When this character immediately follows any of quantifiers, the matching pattern is non-greedy. A non-greedy pattern matches as little of the searched string as possible, whereas the default greedy pattern matches as much of the searched string as possible.\n- ```.``` Matches any single character except ```\\n```.\n- Subexpressions.\n- - ```(<pattern>)``` A subexpression that matches pattern and captures the match.\n- - ```(?:<pattern>)``` A subexpression that matches pattern but does not capture the match, that is, it is a non-capturing match that is not stored for possible later use.\n- - ```(?=<pattern>)``` A subexpression that performs a positive lookahead search, which matches the string at any point where a string matching pattern begins. This is a non-capturing match, that is, the match is not captured for possible later use. Lookaheads do not consume characters, that is, after a match occurs, the search for the next match begins immediately following the last match, not after the characters that comprised the lookahead.\n- - ```(?!<pattern>)``` A subexpression that performs a negative lookahead search, which matches the search string at any point where a string not matching pattern begins. This is a non-capturing match, that is, the match is not captured for possible later use. Lookaheads do not consume characters, that is, after a match occurs, the search for the next match begins immediately following the last match, not after the characters that comprised the lookahead.\n- ```<pattern1>|<pattern2>``` Matches either pattern1 or pattern2.\n- ```[<characters>]``` A character set. Matches any one of the enclosed characters. ```[<start character>-<end character>]``` makes a range which matches any character with code greater than start's code and lower than end's code. Ranges and sets can be combined. ```[^<characters>]``` matches any character not in set. ```\\b``` inside a set matches backslash character.\n\n##RegExp methods and properties\n\n### Constructor\n\n```new RegExp([pattern[,flags]]);```\n\n#### Pattern \n\nA string containing regular expression with syntax described above. Remember to escape all ```\\``` characters.\n\n#### Flags\n\nA string containing a set of flags in any order that set corresponding RegExp properties.\n\n- ```g``` - ```global```\n- ```m``` - ```multiline```\n- ```i``` - ```ignoreCase```\n\n### Properties\n\n- ```source``` String containing pattern as it was provided to constructor.\n- ```lastIndex``` Specifies index from where next search will be started.\n- ```global``` See ```exec``` method.\n- ```multiline``` See ```^``` and ```$``` in **Regular expressions syntax** section.\n- ```ignoreCase``` Specifies if RegExp matching should ignore case.\n\n### Methods\n\n- ```exec(str)``` Performs matching search on specified string. If matching substring is found returns an array containing substring and every stored subexpression. If nothing is found returns ```null```. If ```global``` flag is set to ```true``` and something is found stores last index of matching substring into ```lastIndex```, otherwise sets it to ```0```.\n- ```test(str)``` Performs simple check for any matches in specified string. Returns ```true``` or ```false```.\n- ```toString()``` Returns expression as a JavaScript RegExp literal.\n\n\n\n\n\n\n\n\n",
+    "totalAttempts": 425,
+    "totalCompleted": 17,
+    "totalStars": 13,
+    "voteScore": 8,
+    "tags": [
+      "Regular Expressions",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

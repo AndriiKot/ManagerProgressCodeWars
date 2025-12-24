@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59891e177f0876b0820000c4",
+  "data": {
+    "id": "59891e177f0876b0820000c4",
+    "name": "Jungerstein's Math Training Room: 5. Cat back",
+    "slug": "jungersteins-math-training-room-5-cat-back",
+    "category": "algorithms",
+    "publishedAt": "2017-08-08T03:54:45.901Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59891e177f0876b0820000c4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-08T02:12:39.825Z",
+    "createdBy": {
+      "username": "jungerstein",
+      "url": "https://www.codewars.com/users/jungerstein"
+    },
+    "description": "Jo-jo is a lonely man with a clever and eternally living cat. However, the cat feels Jo-jo is too lonely, and it decides to leave him; but it also hates to leave him forever. \n\nThen the cat decides to revisit Jo-jo according to the following fixed scheme. \n\n* It leaves on the _t_-th day of the week (1 to 7 inclusive). \n* Its first revisit with Jo-jo is _p_ days later. \n* The time span between revisits are in a geometric sequence. \n\nFor example  \n\n1. First revisit: _p_ days after its leaving. \n1. Second revisit: _p q_ days after the first revisit. \n1. Third revisit: _p q^2_ days after the second revisit, and so on. \n    \n    \nPlease calculate on which day of the week (still 1 to 7, inclusive) the cat\nrevisits Jo-jo for the _n_-th time. \n\nThe numbers _p_, _q_, _t_, _n_ are all positive integers. \nAs usual, _t_ is given as integer, \nbut **_p_, _q_, and _n_ are given in a string represented in decimal ways. The length of such strings are all divisible by 3, padded with\nleading zeros. ** (This format might be a hint, but also might be a misleading to the solution. )\n\nRestrictions: _t_ must be in [1, 2, 3, 4, 5, 6, 7]; the length of any string _p_, _q_, or _n_ is guaranteed not to exceed 10002. \nSince the strings are too long, _large random tests do not reveal their values in test messages. _\n\nWell, corner cases will also be tested, but all numbers are guaranteed to\nbe positive integers, and the strings are always in the described format. \n\nWarning\n=======\n\nNEVER even try to calculate the exact numbers involved. \nThe numbers are far too huge. \n\nYou have to find out the patterns to solve the problem. \n\nClarification\n=============\n\nThe time span is counted as difference of moments. For example, between\ntoday (the eighth of August) and tomorrow (the ninth) there is 1 day. \n\nExample Test\n============\n\n_p_ = '001', _q_ = '002', _t_ = 2, _n_ = '004'\n\n1. Today the cat leaves. It is Tuesday (well, for example; you can read it anyway you want, and it will not change your result). \n1. One day later, it will be the cat's first revisit -- Wednesday. \n1. Two days later, the second revisit -- Friday. \n1. _Four_ days later, the third revisit -- Tuesday. \n1. Eight days later, the fourth revisit -- Wednesday. \n\nSo please return 3 as integer. \n",
+    "totalAttempts": 95,
+    "totalCompleted": 6,
+    "totalStars": 3,
+    "voteScore": -1,
+    "tags": [
+      "Number Theory",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

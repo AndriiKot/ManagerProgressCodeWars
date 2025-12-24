@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56b8889bf188760f84000b90",
+  "data": {
+    "id": "56b8889bf188760f84000b90",
+    "name": "Find the Next Powers Higher than a Given Value  With Given Constraints",
+    "slug": "find-the-next-powers-higher-than-a-given-value-with-given-constraints",
+    "category": "reference",
+    "publishedAt": "2016-02-08T16:26:33.471Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/56b8889bf188760f84000b90",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-08T12:22:51.464Z",
+    "createdBy": {
+      "username": "raulbc777",
+      "url": "https://www.codewars.com/users/raulbc777"
+    },
+    "description": "We need a function ```find_next_pow()``` that may receive the following arguments:\n\n- ```val```, a positive integer value\n\n- ```pow_```, the value of an exponent that defines the function power()\n\n- ```am_factors```, the required amount of the smallest factors of ```val```, not including ```1``` (and ```val``` itself), that should have the perfect powers, too\n\n- ```k```, the wanted amount of the smallest perfect pow_ powers but higher than ```val```, that fulfill the above requirement.\n\nThe function will output a sorted list of length equals to ```k```, with the found values.\nSo, the order of arguments in the function and the output will be:\n```python\nfind_next_pow(val, pow_, am_factors, k) == [next_pow1, next_pow2, ...., next_powk] # val < next_pow1 < next_pow2 < ..... < next_powk\n```\n\nLet's see some examples:\n```python\nval = 1218\npow_ = 2\nam_factors = 4\nk = 3\nfind_next_pow(val, pow_, am_factors, k) == [1764, 7056, 15876]\n```\nExplanation:\n```\nfactors of 1218: 2, 3, 6, 7, 14, 21, 29, 42, 58, 87, 174, 203, 406, 609\n\nam_factors = 4 # So, we need the first 4 factors of 1218.\ncom_factors = [2, 3, 6 ,7]\n\nThe result, [1764, 7056, 15876], has three elements because k =3\n\nThe three terms are perfect squares as pow_ = 2.\n\nAll of them have [2, 3, 6, 7] as factors\n\nAnd 1218 < 1764 < 7056 < 15876.\n\nThese three perfect squares are the smallest posible perfect 2-powers (perfect square) higher than val = 1218, that have 2, 3, 6 and 7 as factors, the first four factors of 1218.\n```\n\nSpecial cases:\n\nIf ```val``` is a prime number, the function will return ```val is a prime number. No results```\n```python\nval = 997\npow_ = 3\nam_factors = 5\nk = 6\nfind_next_pow(val, pow_, am_factors, k) == \"val is a prime number. No results.\"\n```\n\nIf ```val``` is not a prime number but the number of factors is less than ```am_factors```, ```factors of val < am_factors)```, the function will return ```Not enough factors of the given value. No results.```\n```python\nval = 1994\npow_ = 2\nam_factors = 4\nk = 3\nfind_next_pow(val, pow_, am_factors, k) == \"Not enough factors of the given value. No results.\"\n```\nAssumptions: ```pow_```, ```am_factors``` and ```k``` will be always higher than ```1```.\n\n(Hint: See the prime factorization that a n-perfect power should have)\nHappy coding!!\n",
+    "totalAttempts": 195,
+    "totalCompleted": 12,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Algorithms",
+      "Mathematics",
+      "Logic",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

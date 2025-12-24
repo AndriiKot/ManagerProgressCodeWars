@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54cb08e89b30e87c35000b5d",
+  "data": {
+    "id": "54cb08e89b30e87c35000b5d",
+    "name": "TheWereSquirrel",
+    "slug": "theweresquirrel",
+    "category": "algorithms",
+    "publishedAt": "2015-01-30T04:30:55.325Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/54cb08e89b30e87c35000b5d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-30T04:30:32.658Z",
+    "createdBy": {
+      "username": "teddy-error",
+      "url": "https://www.codewars.com/users/teddy-error"
+    },
+    "description": "Every now and then, usually between eight and ten in the evening, Jacques finds himself transforming into a small furry rodent with a bushy tail.After two occasions where he woke up on a precariously thin branch in the crown of an oak, naked and disoriented, he has taken to locking the doors and windows of his room at night and putting a few walnuts on the floor to keep himself busy.\nThat takes care of the cat and oak problems. But Jacques still suffers from his condition. The irregular occurrences of the transformation make him suspect that they might be triggered by something. For a while, he believed that it happened only on days when he had touched trees. So he stopped touching trees entirely and even avoided going near them. But the problem persisted.\nSwitching to a more scientific approach, Jacques intends to start keeping a daily log of everything he did that day and whether he changed form. With this data he hopes to narrow down the conditions that trigger the transformations.\n\nWrite a function that takes *an array of* Jacques' journals represented as objects with two properties: a boolean squirrel (whether or not we transformed that night), and an array of events that Jacques partook in on that day.\n\n```javascript\njournals = []\nvar day1 = {\n  squirrel: false,\n  events: [\"work\", \"touched tree\", \"pizza\", \"running\",\"television\"]\n};\njournals.push(day1);\n```\nThe function should evaluate the array and return an object that contains the statistical correlation between the events and whether a squirrel tranformation took place. This will be represented in a number between -1 and 1 where zero correlation means the variables are not related, whereas a correlation of one indicates that the two are perfectly related—if you know one, you also know the other. (See example test cases for further clarification.)\n\nFor binary (Boolean) variables, the phi coefficient (ϕ) provides a good measure of correlation and is relatively easy to compute. To compute ϕ, we need a table n that contains the number of times the various combinations of the two variables were observed. For example, we could take the event of eating pizza and put that in a table like this:\n\n```\n# | Pizza? | Squirrel?\n-----------------------\n76 | False | False\n9  | True  | False\n4  | False | True\n1  | True  | True\n```\n\n\nϕ can be computed using the following formula, where n refers to the table:\n```\nϕ = \n  n11 * n00 - n10 * n01\n  ----------------\n  sqrt√(n1 * n0 * n1 * n0)\n```\nThe notation n01 indicates the number of measurements where the first variable (squirrelness) is false (0) and the second variable (pizza) is true (1). In this example, n01 is 9.\n\nThe value n1 refers to the sum of ALL measurements where the first variable is true, which is 5 in the example table. Likewise, n0 refers to the sum of the measurements where the second variable is false.\n\nSo for the pizza table, the part above the division line (the dividend) would be 1×76 - 4×9 = 40, and the part below it (the divisor) would be the square root of 5×85×10×80, or √340000. This comes out to ϕ ≈ 0.069, which is tiny. Eating pizza does not appear to have influence on the transformations.\n\nYour may represent this data in your function however you choose, as long as you return the correct value.",
+    "totalAttempts": 91,
+    "totalCompleted": 20,
+    "totalStars": 7,
+    "voteScore": 11,
+    "tags": [
+      "Data Structures",
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ad18aa1443b6cd2b5000031",
+  "data": {
+    "id": "5ad18aa1443b6cd2b5000031",
+    "name": "Hacking Elections",
+    "slug": "hacking-elections",
+    "category": "reference",
+    "publishedAt": "2018-04-15T01:18:44.997Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5ad18aa1443b6cd2b5000031",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-14T04:59:13.282Z",
+    "createdBy": {
+      "username": "daspreuße",
+      "url": "https://www.codewars.com/users/daspreu%C3%9Fe"
+    },
+    "description": "2016 was an election year for the US. Donald Trump got elected president. Some people might say that the system was hacked and Hillary was supposed to be president. This program will determine whether the system was hacked or not. \n\n**Some Rules**\n\nIf the predicted percentage of him getting president was a 17% or greater up from his actual percentage then the election would be hacked. No matter what if his percent chance was greater than or equal to 95% then the election would also be hacked. Same goes for Hillary Clinton. \nNote that other parties and independents are neglected.\n\n**Inputs and Outputs**\n\nInputed is one person's name (\"Hillary\" or \"Trump\"), their predicted voted percentage as an integer, and their true percentage. Outputed is the name of the victor and \" hacked\" if hacked and \" won fairly\" if not. There are no ties.\n\nNote : People can hack themselves possibly because of big ego.\n\n\n```\n\"Trump\",49,68 --> \"Trump hacked\" (>= 17% margin)\n\"Hillary\",0,4 --> \"Trump hacked\" (He won 96%. >= 95)\n\"Trump\",100,9 --> \"Hillary hacked\" (Hillary won by 91% margin between prediction)\n\"Hillary\",40,51 --> \"Hillary won fairly\" (Fair win. Only 11% difference)\n```",
+    "totalAttempts": 185,
+    "totalCompleted": 19,
+    "totalStars": 1,
+    "voteScore": 27,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

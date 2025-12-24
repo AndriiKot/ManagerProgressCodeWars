@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f702ff18692c0017ebc802",
+  "data": {
+    "id": "64f702ff18692c0017ebc802",
+    "name": "Array Reflection",
+    "slug": "array-reflection",
+    "category": "algorithms",
+    "publishedAt": "2023-09-05T12:00:39.527Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64f702ff18692c0017ebc802",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-05T10:29:19.295Z",
+    "createdBy": {
+      "username": "dfhwze",
+      "url": "https://www.codewars.com/users/dfhwze"
+    },
+    "description": "### Task\n  \nYou are given an array <code>arr</code>, an index <code>i</code> and optionally an index <code>j</code>.\n\nIf <code>j</code> is <b>undefined</b>, you should return an array where each of the elements is reflected around the element at position <code>i</code>.\n\nIf <code>j</code> is <b>defined</b>, you should return an array where each of the elements is reflected around the imaginary line between element at position <code>i</code> and element at position <code>j</code>.\n\n#### Details\n  \n- array <code>arr</code> contains at least 2 elements\n  - array elements are digits <code>0 - 9</code>, but could be anything really, as the content of the array is irrelevant to solve this kata\n  - duplicates are allowed\n- indices <code>i</code> and <code>j</code> (if defined) are integers, which can be positive, negative or zero\n  - zero and positive should be counted from left to right, with zero being the left-most element; on overflow, wrap around and continue from the left\n  - negative should be counted from right to left, with <code>-1</code> being the right-most element; on overflow, wrap around and continue from the right\n  - index <code>j</code> (if defined) can be either to the left or right of index <code>i</code>, but always has a minimum cyclic distance to <code>i</code> of <code>1</code>\n- note that using certain values of <code>i</code> and <code>j</code> results in generic algorithms such as reversing an array or swapping elements\n\n---\n\n### Algorithm\n\n#### Reflection around an element\n\nWhen reflecting around a point, the cyclic distances - respectively to the right and left - between any given point and the pivot point at index <code>i</code> are swapped. As an interesting edge case, a point that reflects around itself, remains at the same position, as the distance to itself is always zero.\n\n\n```\n\nExample: \"Reflection around the center element\"\n\narr: [0, 1, 2]\ni: 1\nreturn: [2, 1, 0]\n\npoint       before:        after:         distance:\n  \n0           0 -> 1         1 <- 0         1\n            1 <- 2 <- 0    0 -> 2 -> 1    2\n            \n1           1              1              0\n\n2           2 -> 0 -> 1    1 <- 0 <- 2    2\n            1 <- 2         2 -> 1         1\n\n```\n\n#### Reflection around the imaginary line between elements\n\nWhen reflecting around the imaginary line between 2 elements, the cyclic distances - respectively to the right and left - between any given point and the pivot line between index <code>i</code> and <code>j</code> are swapped.\n\n```\n\nExample: \"Reflection around the center imaginary line\"\n\narr: [0, 1, 2, 3]\ni: 1\nj: 2\nreturn: [3, 2, 1, 0]\n\npoint       before:                  after:                  distance:\n  \n0           0 -> 1 -> |              | <- 1 <- 0             2\n            | <- 2 <- 3 <- 0         0 -> 3 -> 2 -> |        3\n            \n1           1 -> |                   | <- 1                  1\n            | <- 2 <- 3 <- 0 <- 1    1 -> 0 -> 3 -> 2 -> |   4\n\n2           2 -> 3 -> 0 -> 1 -> |    | <- 1 <- 0 <- 3 <- 2   4\n            | <- 2                   2 -> |                  1\n            \n3           3 -> 0 -> 1 -> |         | <- 1 <- 0 <- 3        3\n            | <- 2 <- 3              3 -> 2 -> |             2\n\n```\n",
+    "totalAttempts": 32,
+    "totalCompleted": 8,
+    "totalStars": 2,
+    "voteScore": 12,
+    "tags": [
+      "Algorithms",
+      "Arrays",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

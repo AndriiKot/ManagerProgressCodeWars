@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583df416836753c32a000020",
+  "data": {
+    "id": "583df416836753c32a000020",
+    "name": "Find The Binary",
+    "slug": "find-the-binary",
+    "category": "reference",
+    "publishedAt": "2016-11-29T21:33:10.088Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/583df416836753c32a000020",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-29T21:33:24.671Z",
+    "createdBy": {
+      "username": "Blizzard25",
+      "url": "https://www.codewars.com/users/Blizzard25"
+    },
+    "description": "Create a function FindBinaryString(string segment, string xml, string binary) that passes in a binary string (binary), and returns a binary string expressing the desired segment (segment) after it has been manipulated according to a defined multiplier. The segment is defined in an XML string (xml). Each value has a size of 1 byte. If any of the elements/attributes in the XML are non-existent, or the binary does not contain both start and end segment values, return 0 as a 1 byte binary string.\n\nHere is an example of the process, along with the format of the xml string. Scaling is an element that contains final manipulation information. The outmult attribute of scaling is a multiplier to obtain the final segment prior to converting to binary, where x is a retrieved base 10 value from the original binary string. The segment has a start value and end value expressed in base 10 (again, in terms of the original binary string), and everything between those values is a part of the segment.\n\n            string xml = \n          @\"<scalings>\n              <scaling name=\"\"SegmentOne\"\" outmult=\"\"x*2\"\" />\n            </scalings>\n            <segments>\n              <segment name=\"\"SegmentOne\"\" scaling=\"\"SegmentOne\"\" start=\"\"2\"\" end=\"\"5\"\" />\n            </segments>\";\n            \n            string binary = \"00000001000000100000001100000100000001010000011000000111\";\n            \nSo for FindBinaryString(\"SegmentOne\", xml, binary), converting the binary to base 10 gives us [1,2,3,4,5,6,7]. The segment starts at 2 and ends at 5, so the segment is [2,3,4,5] (The segment will not necessarily be in numerical order though, this is just a simplified example). The outmult says to multiply the segment values by 2, which becomes [4,6,8,10]. The output will then be these values expressed as a binary string, with each value being 1 byte.",
+    "totalAttempts": 161,
+    "totalCompleted": 12,
+    "totalStars": 7,
+    "voteScore": 7,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

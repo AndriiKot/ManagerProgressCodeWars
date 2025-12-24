@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/583f427e18b81e05290001b6",
+  "data": {
+    "id": "583f427e18b81e05290001b6",
+    "name": "Dart quest - What hits do you need to make a perfect finish?",
+    "slug": "dart-quest-what-hits-do-you-need-to-make-a-perfect-finish",
+    "category": "algorithms",
+    "publishedAt": "2016-11-30T21:26:37.226Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/583f427e18b81e05290001b6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-30T21:19:58.733Z",
+    "createdBy": {
+      "username": "marcells",
+      "url": "https://www.codewars.com/users/marcells"
+    },
+    "description": "You're in a bar playing darts and thinking about how to beat your opponent in the fastest and most awesome way. But you're already way too drunk and can't figure it out. But hey, coding can be done at every drunk level. ;-)\n\nGiven is the Dartboard class:\n```\nclass DartBoard\n{\n  IEnumerable<int> PossibleNumbers { get; set; }\n  int Target { get; set; }\n    \n  public IEnumerable<IEnumerable<int>> Solve() { ... }\n}\n```\n\n# Rules:\n1. Return all possible lists of hits at the board to exactly reach the `Target` amount of points to finish.\n2. Don't return duplicate lists of hits.\n3. Each list of hits should be ordered from the biggest to the smallest hit.\n3. The lists of hits with higher hits at the beginning should come first.\n\n# Hints:\n- It's not about performance here. So you don't have to expect larger input values than in the examples below.\n- As an extra challenge, you can try to implement the solution without a single `if/else` or `switch/case`. Only one usage of the ternary operator (`?:`) is enough. Sharpen your LINQ skills.\n\n### Example 1:\n#### Given\n  - The board has the `PossibleNumbers`: `[2, 4, 5]`\n  - You are finished when you reach `Target` points: `10`\n\n#### Expected result\n  ```\n  [\n    [5, 5],\n    [4, 4, 2],\n    [4, 2, 2, 2]\n  ]\n  ```\n\n### Example 2:\n#### Given\n  - The board has the `PossibleNumbers`: `[16, 17, 23, 24, 30, 40]`\n  - You are finished when you reach `Target` points: `100`\n\n#### Expected result\n  ```\n  [\n    [40, 30, 30],\n    [30, 30, 24, 16],\n    [30, 30, 23, 17],\n    [30, 24, 23, 23],\n    [17, 17, 17, 17, 16, 16]\n  ]\n  ```\n\n# Happy coding! :-)",
+    "totalAttempts": 18,
+    "totalCompleted": 4,
+    "totalStars": 5,
+    "voteScore": -1,
+    "tags": [
+      "Permutations",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

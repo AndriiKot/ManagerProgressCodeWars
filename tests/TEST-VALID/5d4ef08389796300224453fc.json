@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d4ef08389796300224453fc",
+  "data": {
+    "id": "5d4ef08389796300224453fc",
+    "name": "Playing  with rectangles",
+    "slug": "playing-with-rectangles",
+    "category": "reference",
+    "publishedAt": "2019-08-12T15:50:58.728Z",
+    "approvedAt": null,
+    "languages": [
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5d4ef08389796300224453fc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-08-10T16:27:47.543Z",
+    "createdBy": {
+      "username": "Gianni65",
+      "url": "https://www.codewars.com/users/Gianni65"
+    },
+    "description": "We start with two structures already defined and preloaded, ```Point``` and ```Rectangle```:\n```rust\nstruct Point {\n    x: f64,\n    y: f64,\n}\n\nstruct Rectangle {\n    p1: Point,\n    p2: Point,\n}\n```\nYou must implement the trait ```PartialEq``` for ```Rectangle``` (for ```Point``` is already implemented). In this kata, we assume that two rectangles are equal if their lower-left and upper-right vertices are equal (they have the same coordinates).\n\nThen, you must implement the ```contains``` method. A rectangle contains another if its perimeter is outside the perimeter of the other.\n\nIf the two perimeters even only partially overlap, the method must return ```false```.\nHint:\n-----\nChanging the ```new``` method can make the solution easier.",
+    "totalAttempts": 21,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

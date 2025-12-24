@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5880c8e73d1647fdfc00004c",
+  "data": {
+    "id": "5880c8e73d1647fdfc00004c",
+    "name": "A Maybe Is An Option",
+    "slug": "a-maybe-is-an-option",
+    "category": "reference",
+    "publishedAt": "2017-01-19T14:11:10.809Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5880c8e73d1647fdfc00004c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-19T14:10:47.682Z",
+    "createdBy": {
+      "username": "dibley1973",
+      "url": "https://www.codewars.com/users/dibley1973"
+    },
+    "description": "## Mission\nThe aim of this kata is to create a data structure which can be used to help make your code cleaner and easier for others to anticipate the behaviour, when calling functions which are queries.\n\n## Problem\nOne of the problems with calling functions that are queries is often they are written so that they can return a NULL reference. For example the function below might return `NULL` if a customer does not exist for the `id` supplied.\n```cs\npublic Customer GetCustomerForId(int id) { ... }\n```\n\nThis means that any code that calls this function has to check the result for `NULL` before doing anything with the customer.\n\n```cs\nvar customer = GetCustomerForId(7);\nvar customerExists = customer != null;\nif (customerExists)\n{\n\t// So some shizzle with the customer...\n}\nelse\n{\n    // Maybe warn no customer was found?\n}\n\n```\nThis means your code may have to be littered with \"null-checks\". Now this is OK if carried out throughout but can lead to runtime errors if the null-checks are not made before accessing the object which was returned and the returned value was a null reference.\n\n\n## Solution\nWould it not be nice if the `GetCustomerForId(int id)` function made a \"promise\" to any calling code that it will *never* return a `NULL` reference and will *always* return a fully instantiated instance of an object.\nIn addition it would be useful if the calling code could ask if a customer was returned for the specified `id` or not. \n\nSo what we need is to design a structure which \"amplifies\" our `Customer` object and allows any calling code to understand that a `Customer` may or may not have been returned. This helps drive out cleaner, more understandable code.\n\nIn functional programs these structures are often called \"Options\", in other languages they are often called \"Maybe\"s.\n\nThe solution you will create for this Kata will be a structure that amplifies a `Customer` object and allows calling code to be more robust and perform any necessary preliminary checks without a risk of a null reference exception. \n\nThe structure will need to have the following public members to compile with the tests.\n\n* Default parameterless constructor - Used when the structure does not have an instance of a `Customer`\n* Parametrised constructor which takes an instantiated `Customer` for when a `Customer` is present, and throws a `ArgumentNullException` if a null reference is supplied instead.\n* `public bool HasCustomer { get; }` Indicates whether a `Customer` is present or not.\n* `public Customer Customer` returns a reference to the `Customer` if one is present or throws an `InvalidOperationException` with the message of \"No customer present. Please consider calling 'HasCustomer' to check for presence first\" if not.\n\nThe structure will also have to implement the `IEnumerable<Customer>` interface and provide the following members:\n \n* `public IEnumerator<T> GetEnumerator()`\n* ` IEnumerator IEnumerable.GetEnumerator()` \nThis allows for one or zero iterations over the object depending upon if the object holds a 'Customer' reference, or a `null` reference.\n\nA class called `Kata` is provided with stub members which all initially throw an 'NotImplementedException'. \n\nGood luck.",
+    "totalAttempts": 60,
+    "totalCompleted": 27,
+    "totalStars": 2,
+    "voteScore": 42,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

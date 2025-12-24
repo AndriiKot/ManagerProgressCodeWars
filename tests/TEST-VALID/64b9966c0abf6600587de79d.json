@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64b9966c0abf6600587de79d",
+  "data": {
+    "id": "64b9966c0abf6600587de79d",
+    "name": "Minimum Cost Non Decreasing Array",
+    "slug": "minimum-cost-non-decreasing-array",
+    "category": "algorithms",
+    "publishedAt": "2023-07-20T21:05:17.231Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64b9966c0abf6600587de79d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-20T20:17:48.862Z",
+    "createdBy": {
+      "username": "GinOwO",
+      "url": "https://www.codewars.com/users/GinOwO"
+    },
+    "description": "You are given an array of length n containing ***positive*** integers. You can perfom an operation on the array in which you can **combine two adjacent elements** of the array by adding them. One operation adds one cost. Your task is to find the minimum number of such operations(possibly zero) required to create a non-decreasing array. \n\nNote: A non-decreasing array arr of length n, is an array such that ```arr[i]<=arr[i+1]``` for all i=0 to i=n-2. For example ```[2, 3, 3, 5]``` is non-decreasing whereas ```[3, 2, 5]``` is not.\n\nIt can be proven that a non decreasing array can always be formed.\n\nYou may modify the input array if you wish to do so.\n\nConstraints:\n~~~if:cpp\n```\nNumber of random tests = 300\n1 <= n <= 100000\n1 <= arr[i] <= 1e9\n```\n~~~\n\n~~~if:python\n```\nNumber of random tests = 200\n1 <= n <= 30000\n1 <= arr[i] <= 1e9\n```\n~~~\n\nExample:\n```\n1) arr = [3, 2, 2, 1, 1]\nHere we the only non decreasing array is [3, 2+2+1+1] = [3, 7] meaning 3 operations so return 3.\n\n2) arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nHere the array is already non decreasing so we do not need to do anything and return 0.\n\n3) arr = [3, 2, 2, 1, 1, 5, 2, 2, 1, 1]\nHere the optimal non decreasing array which can be formed is [3, 2+2+1, 1+5, 2+2+1+1] = [3, 5, 6, 6] with a total of 6 operations, hence return 6.\n```",
+    "totalAttempts": 142,
+    "totalCompleted": 7,
+    "totalStars": 5,
+    "voteScore": -1,
+    "tags": [
+      "Algorithms",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

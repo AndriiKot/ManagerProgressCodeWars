@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5733555a1eb838006a001f0c",
+  "data": {
+    "id": "5733555a1eb838006a001f0c",
+    "name": "Pine's Orange Tree",
+    "slug": "pines-orange-tree",
+    "category": "reference",
+    "publishedAt": "2016-05-11T17:42:40.319Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5733555a1eb838006a001f0c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-05-11T15:52:58.766Z",
+    "createdBy": {
+      "username": "srMarquinho",
+      "url": "https://www.codewars.com/users/srMarquinho"
+    },
+    "description": "Orange Tree\n===========\n\n>Make an OrangeTree class that has a `height` method that returns its height and a `one_year_passes` method that, when called, ages the tree one year. \n>\n>Each year the tree grows 0.4 meters taller, and after 25 years the tree should die. \n>\n>For the first 5 years, it should not produce fruit, but in its sixth year it should, and older trees produce more each year than younger trees... (at a rate of `height * 15 - 25` per year)\n>\n>And, of course, you should be able to `count_the_oranges` (which returns the number of oranges on the tree) and `pick_an_orange` (which reduces the `@orange_count` by 1 and returns a string telling you how delicious the orange was, or else it just tells you that there are no more oranges to pick this year). \n>\n>Make sure any oranges you don’t pick one year fall off before the next year.\n>\n\n####******* In order to pass test cases, follow the below rates of growth, orange production and age of death:\n- The OrangeTree grows by 0.4 meters per year (rounded to one decimal place).\n- It produces no oranges in its first 5 years.\n- Starting in its sixth year, the tree produces oranges at a rate of (`height * 15 - 25`) per year.\n- The tree dies after 25 years.\n- Also, follow the output in the example below.\n##### Example:\n\n```ruby\not = OrangeTree.new\n 23.times {ot.one_year_passes}    #in this case, the tree is 23 years old!\n \not.one_year_passes    #live tree returns:\n\"This year your tree grew to 9.6m tall, and produced 119 oranges.\" \n\not.count_the_oranges    #live tree returns:\n119 \n\not.height    #live tree returns:\n9.6 \n\not.one_year_passes    #live tree returns:\n\"This year your tree grew to 10.0m tall, and produced 125 oranges.\"\n\not.one_year_passes    #dead tree returns:\n\"Oh, no! The tree is too old, and has died. :(\"\n\not.one_year_passes    #dead tree for longer than a year returns:\n\"A year later, the tree is still dead. :(\"\n\not.height    #dead tree returns:\n\"A dead tree is not very tall. :(\"\n\not.count_the_oranges    #dead tree returns:\n\"A dead tree has no oranges. :(\"\n\not.pick_an_orange    #dead tree returns:\n\"A dead tree has nothing to pick. :(\"\n\n```\nHave fun!\n\n##Based, inspired and stolen with love from [\"Learn to Program\", by Chris Pine](https://pine.fm/LearnToProgram/ \"Learn to Program\")",
+    "totalAttempts": 120,
+    "totalCompleted": 13,
+    "totalStars": 2,
+    "voteScore": 1,
+    "tags": [
+      "Trees",
+      "Fundamentals",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/552c0b1e324dc0d4450000b3",
+  "data": {
+    "id": "552c0b1e324dc0d4450000b3",
+    "name": "Polynomial coefficients",
+    "slug": "polynomial-coefficients",
+    "category": "algorithms",
+    "publishedAt": "2015-04-13T19:43:18.770Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/552c0b1e324dc0d4450000b3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-13T18:29:52.173Z",
+    "createdBy": {
+      "username": "TwistedSim",
+      "url": "https://www.codewars.com/users/TwistedSim"
+    },
+    "description": "<b>Description:</b>\n\n\nFind the polynomial coefficients which have the given roots.\n\n\n<b>Theory:</b>\n\nEvery polynomial can be express by a multiplication of binomial like that:\n\np(x) = K * (x - r<sub>0</sub>)(x - r<sub>1</sub>)(x - r<sub>2</sub>)...(x - r<sub>n</sub>)\n\nIn our case, to simpify a little bit, K will always be equal to unity.\n\nIf we multiply every binomial together, we will get the following form:\n\np(x) = x<sup>n</sup> + c<sub>1</sub> \\* x<sup>n-1</sup> + c<sub>2</sub> \\* x<sup>n-2</sup> + ... + c<sub>n-1</sub> \\* x<sup>1</sup> + c<sub>n</sub>\n\nWe can now express the coefficients vector with:\n\nc = [ c<sub>1</sub>, c<sub>2</sub>, ..., c<sub>n-1</sub>, c<sub>n</sub> ]\nwhere each c<sub>i</sub> is the coefficient in front of the power of x. We will use for convention that the coefficient must appear in DECREASING power of x (see next example)\n\n<b>Example</b>\n\np(x) = (x - 1)(x - 2)(x - 3)(x - 4)\n\n    roots = [1, 2, 3, 4]\n\nTo start, we can multiply the 2 first binomial:\n\np<sub>1</sub>(x) = (x - 1)(x - 2) = x<sup>2</sup> -3x + 2\n\nWe can now multiply the 3rd binomial with p<sub>1</sub>(x):\n\np<sub>2</sub>(x) = (x<sup>2</sup>-3x + 2)(x - 3) = x<sup>3</sup> - 6x<sup>2</sup> + 11x - 6\n\nFinally, we multiply the last binomial with p<sub>2</sub>(x):\n\np<sub>3</sub>(x) = (x<sup>3</sup> - 6x<sup>2</sup> + 11x - 6)(x - 4) = x<sup>4</sup> - 10x<sup>3</sup> + 35x<sup>2</sup> -50x + 24\n\nThe final coefficients are: [1 -10 35 -50 24]\n\n    polyCoeffs([1, 2, 3, 4])\n    c = [1 -10 35 -50 24]\n     \n<b>Parameters</b>\n\nInput:\n\nroots: A list of roots in the form: [r<sub>0</sub>, r<sub>1</sub>, r<sub>2</sub>, ..., r<sub>n</sub>]\n\nOutput:\n\nc: A list with the polynomial coefficients in descending order with respect to the exponent power (Refer to example section to see the formating)\n",
+    "totalAttempts": 275,
+    "totalCompleted": 30,
+    "totalStars": 5,
+    "voteScore": 35,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

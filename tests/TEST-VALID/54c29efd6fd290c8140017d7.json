@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54c29efd6fd290c8140017d7",
+  "data": {
+    "id": "54c29efd6fd290c8140017d7",
+    "name": "The ugly truth about reduce",
+    "slug": "the-ugly-truth-about-reduce",
+    "category": "reference",
+    "publishedAt": "2015-01-23T22:27:12.864Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/54c29efd6fd290c8140017d7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-01-23T19:20:29.794Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "With the emergence of ES5, JavaScript stepped in the direction of being more functional with new methods of handling arrays: `reduce`, `reduceRight`, `map`, `filter`, `some`, `every`, etc.\n\nBut `reduce` and `reduceRight` methods do not behave in the same way in JavaScript than in other functional languages like Haskell and Scala.\n \nAt first, you might think that the behavior is the same.\n\nFor example, this is the implementation of the sum of the elements of an array in JavaScript and Haskell:\n\n```javascript\n// JavaScript\nfunction sum(x, y) {\n  return x + y;\n}\n\n[1, 2, 3].reduce(sum, 0); // 6 \n[1, 2, 3].reduceRight(sum, 0); //6\n```\n\n```javascript\n-- Haskell\nfoldl (+) 0 [1, 2, 3] -- 6 <- foldl correspons to reduce\nfoldr (+) 0 [1, 2, 3] -- 6 <- foldr correspons to reduceRight\n```\n\nBut strange things start to happen if we change the reducing function:\n\n```javascript\n// JavaScript\nfunction minus(x, y) {\n  return x - y;\n}\n\n[1, 2, 3].reduce(minus, 0); // -6 \n[1, 2, 3].reduceRight(minus, 0); //-6\n```\n\n```javascript\n-- Haskell\nfoldl (-) 0 [1, 2, 3] -- -6\nfoldr (-) 0 [1, 2, 3] -- 2\n```\n\nWhy `reduceRight` and `foldr` produce different results?\n\nThere are two reasons for it:\n\n- The first cause has little importance. In JavaScript, the `reduce` and `reduceRight` methods pass the parameters to the reducing function in the same order:\n\n\n```javascript\nreduce(fn(acc, value), init) -> result; // acc is the value accumulated in previous steps | value is the actual value to process\nreduceRight(fn(acc, value), init) -> result; //both functions receive the same parameters in the same order\n```\n\nBy contrast, in Haskell the values are swapped:\n\n```haskell\nfoldl :: (a -> b -> a) -> a -> [b] -> a\nfoldr :: (b -> a -> a) -> a -> [b] -> a\n```\n\nIn Haskell, the reduction function  of `foldr` receives `fn(value, acc)`, and foldl receives `fn(acc, value)`.\n\nThis is not a big deal because it has an easy solution:\n\n```javascript\n[1,2,3].reduceRight(function(acc, value) {return value - acc}, 0); // 2\n```\n\nNote that we have reversed the order of subtraction. Instead of subtracting `acc - value`, we subtracted `value - acc`.\n\n- The second reason is much more important since it has to do with the very meaning of the `reduce` function.\n\nHere are the definitions of both functions in JavaScript:\n\nThe [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) method applies a function against an accumulator and each value of the array (from left-to-right) has to reduce it to a single value.\n\nThe [reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight) method applies a function against an accumulator and each value of the array (from right-to-left) has to reduce it to a single value.\n\nThat is, that the only difference between the two functions is if you start at the beginning or the end.\n\nNow let's see how behave these functions in Haskell:\n\n<img src=\"http://upload.wikimedia.org/wikipedia/commons/5/5a/Left-fold-transformation.png\" style=\"background-color: #ddd\"/>\n\n<img src=\"http://upload.wikimedia.org/wikipedia/commons/3/3e/Right-fold-transformation.png\" style=\"background-color: #ddd\"/>\n\nThe first thing to consider is that in Haskell functions are recursive while in JavaScript are iterative.\n\nAnd what does it matter? We will see in the [third part](http://www.codewars.com/kata/54c2d10ffb7da04f04000bca) of this kata.\n\nLet's see how is done the sum of the elements of an array with `foldl` and `foldr` functions:\n\n```haskell\nfoldl (+) 0 [1, 2, 3] -- sum (sum (sum 0 1) 2) 3) -> sum (sum 1 2) 3) -> sum 3 3 -> 6\nfoldr (+) 0 [1, 2, 3] -- sum 1 (sum 2 (sum 3 0) ) ) -> sum 1 (sum 2 3 ) ) -> sum 1 5 -> 6\n```\n\nBoth functions have interesting properties.\n\n`foldl` is [tail recursive](http://en.wikipedia.org/wiki/Tail_call).\nIn contrast, `foldr` could be use for [lazy](http://en.wikipedia.org/wiki/Lazy_evaluation) and [non-strict evaluation](http://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_evaluation).\n\nNote: The `foldr` implementation of this kata does not allow any of these features. In the [third part](http://www.codewars.com/kata/54c2d10ffb7da04f04000bca) we will deal with non-strict evaluation.\n\nAs JavaScript does not support any of these interesting properties, the implementation of these functions is more efficient in an iterative way. The cost of recursively traverse an array would have been prohibitive. This is the ugly truth that references kata's title: JavaScript lacks adequate support for functional programming :'(\n\nOk. Hands on!\n\nYour job is to implement the `foldr` function to achieve the same behavior as in Haskell.\n\n```javascript\nfunction foldr( arr, fn(/* value, acc*/), initValue )\n```\n\nThe implementation has to be recursive and it can not use native array methods.\n\nSo:\n\n```javascript\nvar arr = [1, 2, 3, 4, 5];\n\nfoldr(arr, sum, 0); // 15\nfoldr(arr, minus, 0); // 3\n```\nYou have to implement `map`, `some` and `filter` native array functions:\n\n```javascript\nfunction isPair(n) {\n  return n % 2 === 0;\n}\n\nfunction isOdd(n) {\n  return !isPair(n);\n}\n\nmap(arr, isPair); // [false, true, false, true, false]\nsome(arr, isPair); // true\nfilter(arr, isPair); // [2, 4]\n```\n\nBesides, you have to implement `take` and `takeWhile` functions:\n\n```javascript\ntake(arr, 3); // [1, 2, 3] -> take returns the nth elements of the array\ntakeWhile(arr, isOdd); // [1] -> takeWhile returns elements while the passed function returns true with each array element\n```\n\nImportant: All implementations must use the `foldr` function.",
+    "totalAttempts": 2281,
+    "totalCompleted": 63,
+    "totalStars": 25,
+    "voteScore": 75,
+    "tags": [
+      "Functional Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

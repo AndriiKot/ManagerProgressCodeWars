@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/57f65eec6730511aad00017f",
+  "data": {
+    "id": "57f65eec6730511aad00017f",
+    "name": "Combinations",
+    "slug": "combinations-1",
+    "category": "algorithms",
+    "publishedAt": "2016-10-07T09:29:26.859Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/57f65eec6730511aad00017f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-10-06T14:25:48.076Z",
+    "createdBy": {
+      "username": "JohanWiltink",
+      "url": "https://www.codewars.com/users/JohanWiltink"
+    },
+    "description": "# Combinations\n\nMaking a combination is selecting items from a collection, where the order of the items does not matter. ( This kata assumes all items in the collection are different. )\n\nImagine drawing a poker hand: `5` cards from a deck of `52` cards. All cards are different, and the order of the cards in the hand does not matter. ( The order of the cards in the deck does not matter either. The total number of different possibilities BTW is `52 * 51 * 50 * 49 * 48 / 5 / 4 / 3 / 2 / 1 ( = 52! / 47! / 5! )`. Full testing with drawing from a full deck of cards would therefore possibly overstress CodeWars a little. )\n\n# Task\n\nImplement an `Array` method `.combinations(n)` that returns a ( possibly empty ) `Aray` of all possible unique combinations of `n` items from an `Array`.\n\nIt should throw an `Error` when an invalid number `n` is specified; inputs should not be modified; the output should be a new `Array`.\n\n# Examples\n\n```\n[ 0, 1 ].combinations(0) => [ [ ] ]\n[ 0, 1 ].combinations(1) => [ [ 0 ], [ 1 ] ]\n[ 0, 1 ].combinations(2) => [ [ 0, 1 ] ]\n[ 0, 1 ].combinations(3) => [ ]\n[ 0, 1 ].combinations(π) => Error()\n\n[ \"♠A\", \"♠K\" .., \"♣3\", \"♣2\" ].combinations(5) => [ [\"♥A\",\"♥K\",\"♥Q\",\"♥J\",\"♥10\"] .. and 2 598 959 other hands ]\n```\n\n# Input validation\n\nThis being a class method, the array input will always be a valid array ( possibly of length `0` ). For this kata, assume all elements are different.\n\nValid inputs for `n` are non-negative integers. Tests will include invalid values for `n`.\n\n# Testing failures\n\nIf you are seeing stray `[Function]` elements in test failure messages, look into [enumerability](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). The bare presence of these elements is not the cause of any failures though.\n\n# Preloaded\n\nIn the `Preloaded` section, `sorted` is defined, that sorts the output from the `.combinations()` method. This is used in the default `Example Tests` as well as in the `Submit Tests`, so the order of the array elements or the array element elements does not matter, as matters not the order of the items in the collection or in the combinations.",
+    "totalAttempts": 186,
+    "totalCompleted": 22,
+    "totalStars": 6,
+    "voteScore": 17,
+    "tags": [
+      "Arrays",
+      "Permutations",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

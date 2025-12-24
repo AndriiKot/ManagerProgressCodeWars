@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6130dc9a6adb86002b18b6fb",
+  "data": {
+    "id": "6130dc9a6adb86002b18b6fb",
+    "name": "Convert to arrow function and back",
+    "slug": "convert-to-arrow-function-and-back",
+    "category": "algorithms",
+    "publishedAt": "2021-09-02T16:54:48.446Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/6130dc9a6adb86002b18b6fb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-09-02T14:15:54.579Z",
+    "createdBy": {
+      "username": "user9307760",
+      "url": "https://www.codewars.com/users/user9307760"
+    },
+    "description": "In JavaScript (ES6 and above) an arrow function expression is a syntactically compact alternative to a regular function expression.\n\nCreate a function that takes a string representing a function and converts between an arrow function and a regular function\n\n- If the input is a regular function, return an equivalent arrow function.\n- If the input is a arrow function, return an equivalent regular function.\n\nFor those of you who don't know what arrow function looks like this is it : \n\n```\nFuncName = (parameters) => {\n  // Your JS code\n}\n```\n\nTYPES :\n---\n\n- IN JS functions can be anonymous so :\n    - ```\n    () => {}\n    ```\n    This is real. \n    The alternate version is so :\n    ```\n    function () {} \n    ```\n- Also JS has fair bit of leniency regarding whitespace so \n    - ```\n    const a = (b) => {} // is same as \n    const a=(b)=>{} // or even\n    const a = ( b ) => { } //...\n    ```\n    Again same is real regarding the code part of it so : \n    ```\n    const a = (b) => {\n      console.log(\"I'm lost\")\n    } // is same as \n    const a=(b)=>{console.log(\"I'm lost\")}\n    ```\n- Of course the semi-colon exists and some people use it while others don't. \n    - ```\n    function () {\n      let me_be_ = 'asleep';\n    } // just imagine it without the semi-colon\n    ```\n- You obviously can not forget about declarations, namely : \n    - ```const, let, var```\n      or the fact that it's absent \n    For our purposes if a named function is converted to arrow function always use const.\n    But when converting arrow to named it could have any one of the 4 (`const, var, let` or no declaration)\n- Also don't forget in JS functions can be named a bunch of things, and names could end being very weird (to say the least). For this Kata all names that could are valid in JS are valid in this one as well.\n- JS obviously supports more than one command per function so you will obviously be doing that as well\n- The whitespace rule is that you must output it exactly the way it was put in so if there were spaces between when doing regular function `(space , para )` in arrow function it will be same spaces (YOU MAY NOT REMOVE THEM).\n- The declaration and every part save body is saved to template for arrow to normal : \n    - ```\n    const mae = (a)=>{}\n    const mae=(a)=>{}\n    mae=(a)=>{}\n    mae = ( a ) => {} \n    // will all yield : \n    function mae() {} \n    function () {} // .... if anonymous function\n    ```\nFor examples look up the example test cases\n\n\nNOTE : thanks to a fellow programmer for giving the idea and inspiration :)",
+    "totalAttempts": 79,
+    "totalCompleted": 4,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

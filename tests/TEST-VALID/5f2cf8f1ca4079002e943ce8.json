@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f2cf8f1ca4079002e943ce8",
+  "data": {
+    "id": "5f2cf8f1ca4079002e943ce8",
+    "name": "Peaches and Avocados",
+    "slug": "peaches-and-avocados",
+    "category": "reference",
+    "publishedAt": "2020-08-07T08:29:26.691Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f2cf8f1ca4079002e943ce8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-08-07T06:47:13.451Z",
+    "createdBy": {
+      "username": "H3XoRuSH",
+      "url": "https://www.codewars.com/users/H3XoRuSH"
+    },
+    "description": "### Problem Statement\n\n> JUST NOW: Papapito's latest album \"Boom Pow\" had sold a million copies\n\nYou are a big fan of Papapito! He has the style, looks, voice, manners - everything a man or a woman wants. As a big fan, you went to a merchandise store to buy some of his merchandise.\n\nUnfortunately, the nearest store was **CLOSED**!\n\nWith no hesitation, you bought a ticket at the train station and went to the next nearest store.\n\n![image](https://s3.amazonaws.com/hr-challenge-images/0/1478272533-2514e7d229-ppap.png)\n\nAs you stroll through the store, shown above are the two things that really caught your attention: the peach pen and the avocado pen. The peach pen is priced at ```p_price``` pesos while the avocado pen is priced at ```a_price``` pesos. You wanted to buy those two as many as you can while buying at least one of each.\n\nCurrently, you have ```m``` pesos, and you have to decide how many of each pen you should buy to maximize your spending while buying at least one of each pen and can still buy a ticket worth ```t``` pesos to go back home.\n\n### Task\nFormally, given integers ```p_price, a_price, t, m``` where:\n > * ```p_price``` - price of each peach pen\n > * ```a_price``` - price of each avocado pen\n > * ```t``` - price of train ticket\n > * ```m``` - the current money you have\n\nDefine the function ```max_spend``` that returns the maximum amount of money you can spend in buying at least one of each pen such that you can still buy a ticket to go back home, and returns ```-1``` if it's impossible to buy at least one of each pen or if you can't go back home (before buying or even after buying).\n\n### Constraints\n > * 1 <= ```p_price, a_price, t``` <= 100\n > * 1 <=  ```m``` <= 1000\n \n### Examples\n> * If ```p_price, a_price, t, m``` = `[10, 11, 1, 100]`, you can buy one peach pen and eight avocado pen, costing 98 pesos (1 * 10 + 8 * 11 = 98). You are left with 2 pesos and still can buy a ticket to go back home.\n> * If ```p_price, a_price, t, m``` = `[10, 11, 3, 100]`, you can buy two peach pen and seven avocado pen, costing 97 pesos (2 * 10 + 7 * 11 = 97). You are left with 3 pesos and still can buy a ticket to go back home.\n> * If ```p_price, a_price, t, m``` = `[2, 3, 1, 5]`, you can buy one of each pen, costing 5 pesos (2 + 3 = 5) but if you buy, you can't go back home due to lack of funds. So, this case is impossible.\n> * If ```p_price, a_price, t, m``` = `[1, 1, 5, 4]`, you can't buy a ticket to go home. So, this case is impossible.",
+    "totalAttempts": 213,
+    "totalCompleted": 26,
+    "totalStars": 2,
+    "voteScore": 32,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

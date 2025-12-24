@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61a8c32b619df60027c0b54a",
+  "data": {
+    "id": "61a8c32b619df60027c0b54a",
+    "name": "Simple API",
+    "slug": "simple-api",
+    "category": "reference",
+    "publishedAt": "2021-12-11T04:02:34.270Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61a8c32b619df60027c0b54a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-02T12:59:23.991Z",
+    "createdBy": {
+      "username": "user6720290",
+      "url": "https://www.codewars.com/users/user6720290"
+    },
+    "description": "Your task is to implement a simple API class. Your class will be responsible for handling registration and logins for a web application.\n\nYour class will be passed two arguments to its constructor, ```client_id``` and ```client_secret```.\n\n```client_id``` is the public identifier of your application, and is an 8 character hex string.\n\n```client_secret``` is the secret key to your application, and is a 16 character hex string.\n\n\nBoth ```client_id``` and ```client_secret``` will need to be known by users to authenticate with your application.\n\nYour class will distribute ```access_tokens``` to users who successfully authenticate with your application, and these tokens last exactly```3600``` seconds. To determine if a particular ```access_token``` has expired, your class will need to maintain an internal clock.\n\n\nTo that end, you will need to implement the ```simulate``` method:\n\n```simulate``` accepts a single argument, ```seconds```, that will increment the internal clock of your API, and will be used to determine if any of the ```access_tokens``` that have been distributed so far have expired. ```seconds``` will always be a positive integer. Assume that your internal clock initialises to 0, and only increments when the ```simulate``` method is called.\n\n\n\nYou also need to implement ```receive_authentication_request```. This method will receive a single argument, ```authentication_request```. ```authentication_request``` will be a dictionary containing the following fields:\n\n    {\n        client_id: The public identifier of your application.\n        client_secret: The secret key of your application.\n    }\n\nIf the ```client_id``` and ```client_secret``` in the request match the ```client_id``` and ```client_secret``` passed to your API's constructor, your method should return an ```access_token```, which must be a ```32 character hex string```. If neither the ```client_id``` nor the ```client_secret``` match, return an empty string ```\"\"```.\n\n\nAny ```access_token``` your API distributes lasts at most ```3600``` seconds.\n\nThe hex strings received by the constructor, in addition to the ```access_token``` returned by the ```receive_authentication_request``` method, are case sensitive.\n\nThe third method to implement is```receive_registration_request```.\n\nThis method will receive a single argument, ```registration_request```. ```registration_request``` will be a dictionary containing the following fields:\n\n    {\n        access_token: A 32 character long hex string.\n        username: The username selected by the user.\n        password: The password selected by the user.\n    }\n\nYou will need to perform some validation against the fields in ```registration_request```.\n\n```access_token``` should be a valid token. By valid, it must be a token that was returned by the ```receive_authentication_request``` method within the last```3600``` seconds.\n\n```username``` must be a strictly alphanumeric string, between 8-12 characters in length (both inclusive).\n\n```password``` must be a strictly alphanumeric string, between 8-15 characters in length (both inclusive), and include at least:\n```\n- One upper case letter.\n- One lower case letter.\n- One number.\n```\n\nIf any of the input validations fail, or ```username``` has already been successfully created in a previous registration request, your method should return ```False```. Otherwise, return ```True```.\n\n\nThe fourth and final method you need to implement is ```login```. ```login``` takes two arguments, ```username``` and ```password```. If the ```username```/```password``` combination has been successfully created, your method should return ```True```. Otherwise, it should return ```False```.\n\n\nNote:\n- All input will be valid:\n  - Only dictionaries, with the keys outlined in the description, will be passed to both ```receive_authentication_request``` and ```receive_registration_request```. You only need to worry about the values.\n  - Your ```simulate``` method will always be passed a positive integer.\n- A hex string is simply a string containing characters in ```'0123456789ABCDEFabcdef'```.",
+    "totalAttempts": 208,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

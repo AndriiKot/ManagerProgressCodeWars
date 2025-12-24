@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61939bc0d066690026006ca5",
+  "data": {
+    "id": "61939bc0d066690026006ca5",
+    "name": "Newton's Method",
+    "slug": "newtons-method",
+    "category": "algorithms",
+    "publishedAt": "2021-11-16T14:02:38.269Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61939bc0d066690026006ca5",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-11-16T11:53:36.292Z",
+    "createdBy": {
+      "username": "The_Paradox",
+      "url": "https://www.codewars.com/users/The_Paradox"
+    },
+    "description": "<!DOCTYPE html>\n<html class=\"dark\", lang=\"en\">\n  <head>\n    <h1>Instructions</h1>\n    <p>\n      You will recieve an input of the form <code>\"a<sub>n</sub>x<sup>n</sup>+a<sub>n−1</sub>x<sup>n−1</sup>+...+a<sub>2</sub>x<sup>2</sup>+a<sub>1</sub>x+a<sub>0</sub>\"</code>, as well as a point <code>x</code> and your job is to return the value at which x converges, if any, as a result of Newton's Method, if the solution diverges, return None. You stop the iteration after 512 iterations. if your final solution is such that, <code>|f(x)|   &#8804; 0.01</code>, return your solution, otherwise, return None.\n      \n      input = \"x^3-x^2+80x+1600\", -9\n      output = -9.20191\n\n      If the roots are a specific value, there is no need to fromat 5 decimal places,\n      but they should have at least 1 decimal, for example,\n\n      input = \"2x-3\", 1\n      output = 1.5\n\n      input = \"x^2+80x+1600\", -10\n      output = -40.0\n\n      input = \"\", 2\n      output = None\n  </head><br/>\n  \n\n  <body>\n    <h1>Newton's Method</h1>\n    <p>If your not familiar with calculus, Newton's method is an iterative process use to find the roots of a polynomial equation. The formula of which being,</p>\n    <code>x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>)&frasl;f′(x<sub>n</sub>)</code>\n    <p>More on Newton's Method here: <a href=\"https://calcworkshop.com/derivatives/newtons-method/\" target=\"_blank\">https://calcworkshop.com/derivatives/newtons-method/</a></p><br/>\n    <h1>Tests</h1>\n    <p>You will be given 6 simple tests, 50 fixed tests and 75 random test cases</p><br/>\n    <h1>Beta</h1>\n    <p>Currently in Beta, please provide more feedback in discourse and sugestions. I also don't know how perfect my answers are so please verify with me the validity of        \tsome tests.</p>\n    <p>Enjoy ;)</p>\n  </body>\n</html>",
+    "totalAttempts": 347,
+    "totalCompleted": 21,
+    "totalStars": 2,
+    "voteScore": 15,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

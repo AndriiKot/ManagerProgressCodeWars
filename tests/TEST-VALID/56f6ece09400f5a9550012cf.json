@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56f6ece09400f5a9550012cf",
+  "data": {
+    "id": "56f6ece09400f5a9550012cf",
+    "name": "7 Wonders Science Scorer",
+    "slug": "7-wonders-science-scorer",
+    "category": "algorithms",
+    "publishedAt": "2016-03-27T05:22:03.054Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/56f6ece09400f5a9550012cf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-26T20:11:12.084Z",
+    "createdBy": {
+      "username": "GrantMorton",
+      "url": "https://www.codewars.com/users/GrantMorton"
+    },
+    "description": "In the board game 7 Wonders one of the ways to get victory points is through aquiring science buildings.\nEach science building you acquire has one of the following 3 symbols on it:\n\n* Compass (C)\n* Gear (G)\n* Tablet (T)\n\n\nEach distinct set of a Compass, a gear, and a tablet scores 7 points.\nIn addition to this, for each symbol you score the square of the number of buildings you have of that symbol. \n     \n    For example, if you have 4 compasses, 3 gears, and 2 tablets you would have 2 sets and your score \n    would be calculated as follows:\n        Compass     - Gear      - Tablet    -> 7 pts\n        Compass     - Gear      - Tablet    -> 7 pts\n        Compass     - Gear          |\n        Compass         |           |\n            |           |           |\n        16 pts        9 pts       4 pts\n     The total would therefore be: 7 + 7 + 16 + 9 + 4 = 43 pts\n      \nIn addition to the above, some science buildings have a 'wild' symbol (W) instead. At the end the game the wild symbol counts as whichever symbol (C,G, or T) would maximise the score.\n     \n     For example, if you acquire a gear, a tablet and a wild symbol, you would let the wild symbol \n     count as a compass to complete the set and score 10 points:\n        Gear        - Tablet    = Wild (Compass) -> 7 pts\n          |             |           |\n         1 pt          1 pt        1 pt\n     \nTo complete this kata you need to calculate the maximum score given a set of symbols, which are represented by a string of characters.\nFor example, 3 cogs, 2 gears, a tablet, and a wild would be represented by \"CCCGGTW\". \n\nYou can assume the input to be uppercase and can ignore the possibility of any other symbols in the string. The symbols can be specified in any order. \nThe solution should allow for any number of symbols (including any number of wild symbols).",
+    "totalAttempts": 314,
+    "totalCompleted": 26,
+    "totalStars": 5,
+    "voteScore": 31,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

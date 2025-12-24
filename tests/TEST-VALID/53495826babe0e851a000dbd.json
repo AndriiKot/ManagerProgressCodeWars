@@ -1,0 +1,72 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53495826babe0e851a000dbd",
+  "data": {
+    "id": "53495826babe0e851a000dbd",
+    "name": "Marching armies",
+    "slug": "marching-armies",
+    "category": "algorithms",
+    "publishedAt": "2014-04-12T20:59:03.683Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53495826babe0e851a000dbd",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-04-12T15:13:42.143Z",
+    "createdBy": {
+      "username": "TheEnemy42",
+      "url": "https://www.codewars.com/users/TheEnemy42"
+    },
+    "description": "Picture yourself a fantasy themed map of a kingdom. The kingdom is divided into a number of provinces. Armies travel in real time across the map between the provinces. What we need is a function that can calculate the position of an army based on how far the army has travelled (called marching in this context).\n\nFor example if the army has marched half of the needed time, the calculated position must be halfway between the positions of the two provinces.\n\nAn army can also be standing still in a province, in which case its position is the same as the province's. If it is marching, it will always travel in a straight line between two provinces. Note that provinces can be anywhere relative to each other (so it is possible to march in the negative direction of the axis).\n\nFour different objects are available, below are listed their interfaces:\n\n```javascript\nPosition: // Example of anonymous position object\n// Coordinates must be integers (round off when nessesary)\n{\n  x : 100,\n  y: 200;\n}\n```\n\n```javascript\nPlayer:\n{\n  isMarching() // Returns boolean to whether it has an active order\n  getProvince() // Returns the latest province it was standing in\n  getOrder() // Returns an active order if there is one\n  setPosition(position) // Updates the player's current position with the given position object. Returns true if successful, false if not\n}\n```\n\n```javascript\nProvince:\n{\n  getPosition() // Returns position object\n}\n```\n\n```javascript\nOrder:\n{\n  getOrigin() // Returns province start\n  getDestination() // Returns province end\n  getDepartTime() // Returns Date object of departure time\n  getArrivalTime() // Returns Date object of arrival time\n  \n}\n```\n\nLastly, updateTime delivered as input is a Date object and will always be after an order's depart time.",
+    "totalAttempts": 268,
+    "totalCompleted": 18,
+    "totalStars": 4,
+    "voteScore": 27,
+    "tags": [
+      "Geometry",
+      "Mathematics",
+      "Logic",
+      "Object-oriented Programming",
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

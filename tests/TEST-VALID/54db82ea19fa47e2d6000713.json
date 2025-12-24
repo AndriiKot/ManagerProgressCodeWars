@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54db82ea19fa47e2d6000713",
+  "data": {
+    "id": "54db82ea19fa47e2d6000713",
+    "name": "Precise fractions pt. 2 - conversion",
+    "slug": "precise-fractions-pt-2-conversion",
+    "category": "algorithms",
+    "publishedAt": "2015-02-14T23:50:22.274Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/54db82ea19fa47e2d6000713",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-02-11T16:27:22.418Z",
+    "createdBy": {
+      "username": "user6626213",
+      "url": "https://www.codewars.com/users/user6626213"
+    },
+    "description": "This kata is part two of precise fractions series (see pt. 1: http://www.codewars.com/kata/precise-fractions-pt-1-basics).\n\nThis time, all we need is methods for converting fractions from common to decimal and vice versa.\n\nYour goal is to implement class ```Fraction``` with two static methods:\n\n - ```toDecimal(fraction)``` - takes string with common fraction representation and returns decimal representation of the same value,\n - ```fromDecimal(fraction)``` - does the opposite. Must return common fraction in normalised form (e.g. ```2/4``` would be shortened to ```1/2```).\n \nIn both cases, common fractions always will have form:\n\n```[ WHOLES ] [ NUMERATOR / DENOMINATOR ]```\n\nwhich means, both wholes and fractional part will be present only if needed, and if both are present, they will be separated by a single space character; eg.:\n\n```\n1\n1/2\n1 1/2\n```\n\nIn both cases, decimal fractions always will have form:\n\n```WHOLES [ . [ DECIMAL ] [ ( REPEATING ) ] ]```\n\nwhich means that decimal part is present only if needed, and if there is repeating part of the decimal part, it will be enclosed in parentheses; eg.:\n\n```\n1\n1.5\n0.(3)\n0.123(4)\n```\n\nThe conversion is the main goal here, so there will be no \"tricky\" input, such as invalid strings, non-string value, or even negative numbers - just don't worry about such validation.",
+    "totalAttempts": 549,
+    "totalCompleted": 22,
+    "totalStars": 5,
+    "voteScore": 47,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

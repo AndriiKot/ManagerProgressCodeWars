@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53c5719a6a74ce4e7d00058b",
+  "data": {
+    "id": "53c5719a6a74ce4e7d00058b",
+    "name": "RangeSet",
+    "slug": "rangeset",
+    "category": "algorithms",
+    "publishedAt": "2014-07-31T12:30:00.512Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53c5719a6a74ce4e7d00058b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-15T18:23:22.234Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "Write a RangeSet class (constructor function) that you can add ranges of numbers to, subtract ranges of numbers from, and test numbers against.\n\n> Note: A \"range\" is an object with two properties:\n> - `from` is the lowest number within the range.\n> - `to` is the highest number within the range.\n\n> The values may be equal. All \"number\" values are integers. All `from` and `to` values should be considered inclusive (the range [5, 10] includes the numbers 5 and 10).\n\n# new RangeSet(from, to)\nCreates a new object with the methods below.\n\nIf provided, adds a range using the `from` and `to` arguments.\n\nFor all function calls in this kata, `from` will always be less than or equal to `to`.\n\n\n## instance.ranges\nAn array holding any number of range objects, in any order.\n\n## instance.add(from, to)\nAdds a new range to the set. If it overlaps or meets existing ranges, this new range should be merged with them.\n\n```javascript\nvar r = new RangeSet();\nr.add(1, 2); r.add(8, 9);\nr.ranges == [1, 2] [8, 9] // 1 2 . . . . . 8 9\n\nr.add(4, 6);              // . . . 4 5 6 . . .\n// new range overlaps existing; merge\n// merged:                   1 2 . 4 5 6 . 8 9\nr.ranges == [1, 2] [4, 6] [8, 9]\n\nr.add(7, 7);              // . . . . . . 7 . .\n// meets existing range; merge\n// merged:                   1 2 . 4 5 6 7 8 9\nr.ranges == [1, 2] [4, 9]\n```\n\n## instance.subtract(from, to)\nRemoves the specified range of numbers from the existing ranges.\n\n```javascript\nvar r = new RangeSet();\nr.add(1, 9);\nr.ranges == [1, 9]        // 1 2 3 4 5 6 7 8 9\n\nr.subtract(8, 9);         // . . . . . . . 8 9\n// numbers removed           1 2 3 4 5 6 7 . .\nr.ranges == [1, 7]\n```\n\n## instance.test(number)\nReturns `true` if the number is within one of the existing ranges. Returns `false` if not.\n",
+    "totalAttempts": 443,
+    "totalCompleted": 20,
+    "totalStars": 5,
+    "voteScore": 26,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

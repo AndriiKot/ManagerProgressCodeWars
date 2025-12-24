@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5bf19c580934aa1cdb000210",
+  "data": {
+    "id": "5bf19c580934aa1cdb000210",
+    "name": "Forking Knights ",
+    "slug": "forking-knights",
+    "category": "reference",
+    "publishedAt": "2018-11-18T21:31:00.455Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5bf19c580934aa1cdb000210",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-11-18T17:07:36.234Z",
+    "createdBy": {
+      "username": "k14",
+      "url": "https://www.codewars.com/users/k14"
+    },
+    "description": "# Chess Forks\nIn chess, a fork is a tactical move where a single piece of a player attacks two opponent pieces (or pawns), making it difficult for the opponent to defend both pieces simultaneously (see e.g. https://en.wikipedia.org/wiki/Fork_(chess).\n\nA fork by a knight is sometimes difficult to see because of the unusual way knights are moving on the chessborad: it moves two squares horizontally and one square vertically, or two squares vertically and one square horizontally. Moreover, unlike other chess pieces, it cannot be blocked by pieces on its path (it simply \"jumps\" over them, see https://en.wikipedia.org/wiki/Knight_(chess)).\n\n# Your task\nYour task is to write a function/method that finds all possible knight forks coming from a given position. The initial position is given to the constructor (as a two-dimensional char array), then the method receives a string denoting the player whose turn it is (\"white\" or \"black\") and you have to return as a set of strings all the possible moves of knights of that color that are leading to fork positions.\n\n### Technical details:\n\n___The board:___\n\n*Please note that the board is not restricted to a standard size chess board.* The board is received by the constructor is a `m x m` array of characters (with `m` from 3 to 25) where pieces are coded in the following manner:\n\n* `'K'` - King\n* `'Q'` - Queen\n* `'R'` - Rook\n* `'B'` - Bishop\n* `'N'` - Knight\n* `'P'` - Pawn\n* `' '` - empty square\n\nThe board may contain any number of any pieces. Uppercase are for white pieces, lowercase are for black pieces.\n\n___Strings formatting:___\n\nThe moves leading to a fork position that are found should be returned in a set of strings, in algebraic chess notation:\n\n`N[source position]['-' or 'x'][target position]`\n\nFor instance, if it is white's turn and white has a knight on `d4` which can fork two opponent pieces by moving to the empty square `c6`, your result should include the string `Nd4-c6`. If the knight takes an opponent piece on c6 , the string should be `Nd4xc6`. The letter denoting the piece (here `N` for knight) is always uppercase.\n\nThe notation for positions on the board is lowercase letters starting with 'a' from left to right and numbers (starting from 1) from bottom to top of the board (see https://en.wikipedia.org/wiki/Chess_notation). \n\nExample from wikipedia (note: the array position 0,0 is the upper left corner):\n\n\n![alt text](https://upload.wikimedia.org/wikipedia/commons/b/b6/SCD_algebraic_notation.svg \"chess notation\")\n\n### Simplification:  \nCheck is not taken into account: if by moving a knight, the king of the same color ends up in check, this is still considered as a possible move for the purpose of this kata.\n\nAll arrays are valid.\n\nPlease have a look at the test cases for examples.\n\nHave fun!",
+    "totalAttempts": 55,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 13,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

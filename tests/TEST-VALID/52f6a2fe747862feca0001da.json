@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/52f6a2fe747862feca0001da",
+  "data": {
+    "id": "52f6a2fe747862feca0001da",
+    "name": "Nth Order Bezier Curves",
+    "slug": "nth-order-bezier-curves",
+    "category": "algorithms",
+    "publishedAt": "2014-02-08T22:21:13.339Z",
+    "approvedAt": null,
+    "languages": [
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/52f6a2fe747862feca0001da",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-02-08T21:34:54.621Z",
+    "createdBy": {
+      "username": "osuushi",
+      "url": "https://www.codewars.com/users/osuushi"
+    },
+    "description": "Your task is to write a function which implements one-dimensional nth-order Bezier curves for arbitrary n.\n\nA first order (or linear) Bezier curve is simply linear interpolation (lerp) between two values. For example `lerp(1,2, .2)` would return `1.2`, `lerp(10, 20, .5)` would return `15`, and so on.\n\nA second order (or quadratic) Bezier curve is constructed out of first order curves, like this\n\n    quad(a,b,c,t) = lerp( lerp(a, b, t), lerp(b, c, t), t)\n\nHigher order curves are constructed by continuing this pattern.\n\nUsing this information, your must complete the function `bez(v, t)`, where `v` is an array of numbers with at least two elements, and `t` is the parameter for the curve, a number between 0 and 1.\n\nThe order of the curve should be `v.length - 1`, so for two values, you should do linear interpolation, for three, you should do quadratic, and so on.\n\nNumeric stability isn't a requirement for this kata, so solutions only need to be correct to three decimal places. The `approx` function is provided for use in your test fixtures for this purpose.",
+    "totalAttempts": 32,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 8,
+    "tags": [
+      "Mathematics",
+      "Recursion",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

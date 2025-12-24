@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5592e2f038f7c1dde700003b",
+  "data": {
+    "id": "5592e2f038f7c1dde700003b",
+    "name": "All I need's a platform, man!",
+    "slug": "all-i-needs-a-platform-man",
+    "category": "algorithms",
+    "publishedAt": "2015-06-30T18:41:52.338Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5592e2f038f7c1dde700003b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-06-30T18:41:55.821Z",
+    "createdBy": {
+      "username": "Adamantish",
+      "url": "https://www.codewars.com/users/Adamantish"
+    },
+    "description": "<h2>Problem</h2>\nYou are in charge of services for National Rail. You want to maximise station utilisation so you've been trying to fiddle with the timetables. However, when you shift the times of just one train the timings for all the stations change and now one station doesn't have enough platforms! Either the timetable needs changing or a station needs expanding. This sounds like a job for a computer!\n\n<h2>Your Mission</h2>\nWrite this crucial part of the new planning software: A function with maximum efficiency because it will be called thousands, maybe millions of times a day. \n\nThis function will take a single station's timetable for the day as a variable named 'timetable' and return the number of required platforms. 'timetable' is guaranteed to be an unsorted 2D array. Each item in the outer array is a single train providing an arrival and departure time. e.g.\n```\n[\n  [720,722],\n  [720,722],\n  [722,725]\n]\n```\n\nJust to avoid type conversions, timings are listed as minutes since midnight.<br><i>e.g. 1am = 60, 11:59pm = 1439 (the highest possible)</i>\n\nAssume that trains occupy the platform for the whole minute i.e. a train leaving at 722 and another one arriving at 722 both need a separate platform - they overlap. Assume timetable will always be a 2d array with valid departure and arrival times.\n\nYour function should return an integer of the number of station platforms required to accomodate the timetable. \n\n<h3>And now a tweak or a rewrite...</h3>\nThe thing is, this level of detailed information is only essential for planning occasional station expansions. In the everyday work of the function will be to validate <i>timetables</i> we only need to know if there are enough platforms. If we find it's too busy in the morning we don't need to find out how bad it is in the evening. The timetabling software will be used every day to validate 100s of station timetables at once so it needs to be fast. Use the optional argument called platformLimit. If it's provided and the timetable exceeds the platform number <b>return false</b> instead of an integer. If you find the required number and it's ok, return it as usual (you might as well seeing as you had to finish the computation)\n\nTry to optimise your function for performance both with and without the optional argument. Taken to the maximum, that might require two very different approaches but you can decide how far you want to push yourself.",
+    "totalAttempts": 86,
+    "totalCompleted": 14,
+    "totalStars": 3,
+    "voteScore": 3,
+    "tags": [
+      "Scheduling",
+      "Arrays",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

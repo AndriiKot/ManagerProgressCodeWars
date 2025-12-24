@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64a6cc5b23a4c5207626485c",
+  "data": {
+    "id": "64a6cc5b23a4c5207626485c",
+    "name": "Prove without Truth Tables",
+    "slug": "prove-without-truth-tables",
+    "category": "games",
+    "publishedAt": "2023-07-06T14:18:35.461Z",
+    "approvedAt": null,
+    "languages": [
+      "haskell"
+    ],
+    "url": "https://www.codewars.com/kata/64a6cc5b23a4c5207626485c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-07-06T14:14:52.110Z",
+    "createdBy": {
+      "username": "Trouble-Truffle",
+      "url": "https://www.codewars.com/users/Trouble-Truffle"
+    },
+    "description": "You are to prove the following equivalence:\n`(p ∨ q) ⇒ r ≡ (p ⇒ r) ∧ (q ⇒ r)`\n```haskell\nproof :: Bool p -> Bool q -> Bool r -> (p || q) ==> r === (p ==> r) && (q ==> r)\n```\n\nWithout using Pattern Matching. The solution requires the use of a custom `Bool b` GADT wherin its constructors are made private. Instead you must rewrite either `(p ∨ q) ⇒ r` or `(p ⇒ r) ∧ (p ⇒ r)` into the other via application of boolean logic laws.\n\nThe types to be used are:\n```haskell\nimport qualified Prelude as P\n\n-- The constructors are not exported by Preloaded\ndata Bool :: (P.Bool -> Type) where\n  True :: Bool 'P.True\n  False :: Bool 'P.False\n\n-- Alias with lower precedence is defined merely to allow\n-- x || q && p === x || q && q\n-- as opposed to\n-- (x || q && p) :~: (x || q && q)\ninfix 1 ===\ntype (===) = (:~:)\n\n-- Equivalent to conditionals\ntype a ==> b = Not a || b\n```\n\nThe following definitions are provided:\n```haskell \nnot :: Bool b -> Bool (Not b)\n(|||) :: Bool p -> Bool q -> Bool (p || q)\n(&&&) :: Bool p -> Bool q -> Bool (p && q)\n\norCommutative :: Bool p -> Bool q -> p || q === q || p\norAssociative :: Bool p -> Bool q -> Bool r -> p || (q || r) === (p || q) || r\n\nandAssociative :: Bool p -> Bool q -> Bool r -> p && (q && r) === (p && q) && r\nandCommutative :: Bool p -> Bool q -> p && q === q && p\n\norDistribAndR :: Bool p -> Bool q -> Bool r -> (p || q) && (p || r) === p || (q && r)\nandDistribOrR :: Bool p -> Bool q -> Bool r -> (p && q) || (p && r) === p && (q || r)\n\nnotOrIsAnd :: Bool p -> Bool q -> Not (p || q) === Not p && Not q\nnotAndIsOr :: Bool p -> Bool q -> Not (p && q) === Not p || Not q\n\nnotInvolutive :: Bool x -> Not (Not x) === x\n\nandSameNeutral :: Bool x -> x && x === x\nandTrueNeutral :: Bool p -> p && 'True === p\n\norSameNeutral :: Bool p -> p || p === p \norFalseNeutral :: Bool p -> p || 'False === p\n\norSameRightNeutral :: Bool p -> Bool q -> p || (p && q) === p \norTrueTrue :: Bool p -> p || 'True === 'True\n```\n*(yes, most of them were just copied from the Idris2 `Data.Bool` module)*",
+    "totalAttempts": 21,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 23,
+    "tags": [
+      "Theorem Proving"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

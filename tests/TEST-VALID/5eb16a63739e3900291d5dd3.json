@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb16a63739e3900291d5dd3",
+  "data": {
+    "id": "5eb16a63739e3900291d5dd3",
+    "name": "Matrix Calculator",
+    "slug": "matrix-calculator",
+    "category": "algorithms",
+    "publishedAt": "2020-05-05T15:17:17.100Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5eb16a63739e3900291d5dd3",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-05T13:30:11.966Z",
+    "createdBy": {
+      "username": "mhimmel",
+      "url": "https://www.codewars.com/users/mhimmel"
+    },
+    "description": "You have an `$n\\times n$` matrix `$A = (a_{ij})_{i, j}$` whose entries are integers modulo `$10^9 + 8$` and a nonnegative integer `$k$`. You would like to calculate `$A^k$` using a special calculator.\n\nThe calculator can be programmed to calculate matrices `$A_0, A_1, A_2, \\ldots$` one by one. Initially, `$A_0 = I_n$` (where `$I_n$` is the `$n\\times n$` identity matrix) and `$A_1 = A$`. The (`$0$`-based) `$i$`-th line of your program can do one of three things:\n\n* set `$A_{i+2} = c\\cdot A_j$` for some `$ 0\\leq c \\lt 10^9+8$`, `$0\\leq j\\lt i + 2$` or\n* set `$A_{i+2} = A_j\\cdot A_k$` for some `$0\\leq j, k\\lt i + 2$` or\n* set `$A_{i+2} = A_j+A_k$` for some `$0\\leq j, k\\lt i + 2$`.\n\nThe output of the program is the matrix calculated by the final line of your program. Can you find a program that calculates `$A^k$`? The program should consist of at most `$42$` lines of code. It is possible to prove that there is always a program that is short enough. If there are multiple correct programs that are at most `$42$` lines long, return any of them. You do **not** have to find the shortest possible program.\n\n# Constraints\n\n* `$1\\leq n\\leq 10$`\n* `$0\\leq k\\leq 10^{18}$`\n* `$0\\leq a_{ij} \\lt 10^9 + 8$`\n\n# Output format\n\nReturn a vector `v` of `tuple<int, int, int>` with at most `$42$` elements. The following must hold for `v[i]`:\n\n* to set `$A_{i+2} = c \\cdot A_j$`, the first entry should be `0`, the second entry should be equal to `c` and the third entry should be equal to `j`,\n* to set `$A_{i+2} = A_j \\cdot A_k$`, the first entry should be `1`, the second entry should be equal to `j` and the third entry should be equal to `k`,\n* to set `$A_{i+2} = A_j + A_k$`, the first entry should be `2`, the second entry should be equal to `j` and the third entry should be equal to `k`.\n\nIn all three cases, make sure that `$0\\leq c\\lt 10^9+8$` and `$0\\leq j, k \\lt i + 2$`. Your solution is considered correct if `$A_{m + 1} = A^k$`, where `$m$` is the number of elements of `v`.\n\n# Examples\n\n## Example 1\n\nConsider the case `$A = \\begin{pmatrix} 2 \\quad 0 \\\\ 0 \\quad 2\\end{pmatrix}$` and `$k = 30$`. Since `$2^{30} \\bmod 10^9 + 8 = 73741816$`, we have `$A^k = \\begin{pmatrix} 73741816\\quad 0 \\\\ 0 \\quad 73741816\\end{pmatrix}$`.\n\nOne possible answer in this case is the program consisting of a single instruction represented by the vector `{ make_tuple(0, 73741816, 0) }`. Executing this program sets\n\n```math\nA_2 = 73741816\\cdot A_0 = 73741816\\cdot I_2 = 73741816\\cdot \\begin{pmatrix} 1 & 0 \\\\ 0 & 1\\end{pmatrix} = \\begin{pmatrix} 73741816& 0 \\\\ 0 & 73741816\\end{pmatrix} = A^k\n```\nas required.\n\n## Example 2\n\nConsider the case `$A = \\begin{pmatrix} 1\\quad 2\\\\3\\quad 4\\end{pmatrix}$` and `$k = 3$`.\n\nOne possible answer in this case is the program represented by the vector `{ make_tuple(1, 1, 1), make_tuple(1, 1, 2) }`. Indeed, executing this program sets\n\n```math\nA_2 = A_1 \\cdot A_1 = A \\cdot A = A^2\\\\\nA_3 = A_1 \\cdot A_2 = A \\cdot A^2 = A^3\n```\nas required.",
+    "totalAttempts": 79,
+    "totalCompleted": 9,
+    "totalStars": 6,
+    "voteScore": 8,
+    "tags": [
+      "Mathematics",
+      "Algorithms",
+      "Linear Algebra",
+      "Matrix"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5259510fc76e59579e0009d4",
+  "data": {
+    "id": "5259510fc76e59579e0009d4",
+    "name": "Did you mean ...?",
+    "slug": "did-you-mean-dot-dot-dot",
+    "category": "algorithms",
+    "publishedAt": "2013-10-13T23:35:43.475Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "java",
+      "python",
+      "ruby",
+      "csharp",
+      "haskell",
+      "rust"
+    ],
+    "url": "https://www.codewars.com/kata/5259510fc76e59579e0009d4",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-10-12T13:39:27.644Z",
+    "createdBy": {
+      "username": "BattleRattle",
+      "url": "https://www.codewars.com/users/BattleRattle"
+    },
+    "description": "I'm sure, you know Google's \"Did you mean ...?\", when you entered a search term and mistyped a word. In this kata we want to implement something similar.\n\nYou'll get an entered term (lowercase string) and an array of known words (also lowercase strings). Your task is to find out, which word from the dictionary is most similar to the entered one. The similarity is described by the minimum number of letters you have to add, remove or replace in order to get from the entered word to one of the dictionary. The lower the number of required changes, the higher the similarity between each two words.\n\nSame words are obviously the most similar ones. A word that needs one letter to be changed is more similar to another word that needs 2 (or more) letters to be changed. E.g. the mistyped term `berr` is more similar to `beer` (1 letter to be replaced) than to `barrel` (3 letters to be changed in total).\n\n```if-not:haskell\nExtend the dictionary in a way, that it is able to return you the most similar word from the list of known words.\n```\n\nCode Examples:\n\n```python\nfruits = Dictionary(['cherry', 'pineapple', 'melon', 'strawberry', 'raspberry'])\nfruits.find_most_similar('strawbery') # must return \"strawberry\"\nfruits.find_most_similar('berry') # must return \"cherry\"\n\nthings = Dictionary(['stars', 'mars', 'wars', 'codec', 'codewars'])\nthings.find_most_similar('coddwars') # must return \"codewars\"\n\nlanguages = Dictionary(['javascript', 'java', 'ruby', 'php', 'python', 'coffeescript'])\nlanguages.find_most_similar('heaven') # must return \"java\"\nlanguages.find_most_similar('javascript') # must return \"javascript\" (identical words are obviously the most similar)\n```\n```javascript\nfruits = new Dictionary(['cherry', 'pineapple', 'melon', 'strawberry', 'raspberry']);\nfruits.findMostSimilar('strawbery'); // must return \"strawberry\"\nfruits.findMostSimilar('berry'); // must return \"cherry\"\n\nthings = new Dictionary(['stars', 'mars', 'wars', 'codec', 'codewars']);\nthings.findMostSimilar('coddwars'); // must return \"codewars\"\n\nlanguages = new Dictionary(['javascript', 'java', 'ruby', 'php', 'python', 'coffeescript']);\nlanguages.findMostSimilar('heaven'); // must return \"java\"\nlanguages.findMostSimilar('javascript'); // must return \"javascript\" (identical words are obviously the most similar)\n```\n```java\nDictionary fruits = new Dictionary(new String[]{\"cherry\", \"pineapple\", \"melon\", \"strawberry\", \"raspberry\"});\n\nfruits.findMostSimilar(\"strawbery\"); // must return \"strawberry\"\nfruits.findMostSimilar(\"berry\"); // must return \"cherry\"\n\nDictionary things = new Dictionary(new String[]{\"stars\", \"mars\", \"wars\", \"codec\", \"codewars\"});\nthings.findMostSimilar(\"coddwars\"); // must return \"codewars\"\n\nDictionary languages = new Dictionary(new String[]{\"javascript\", \"java\", \"ruby\", \"php\", \"python\", \"coffeescript\"});\nlanguages.findMostSimilar(\"heaven\"); // must return \"java\"\nlanguages.findMostSimilar(\"javascript\"); // must return \"javascript\" (identical words are obviously the most similar)\n```\n```csharp\nvar fruits = new Kata(new List<string> { \"cherry\", \"pineapple\", \"melon\", \"strawberry\", \"raspberry\" });\nfruits.FindMostSimilar(\"strawbery\"); // must return \"strawberry\"\nfruits.FindMostSimilar(\"berry\"); // must return \"cherry\"\n\nthings = new Dictionary(new List<string> { \"stars\", \"mars\", \"wars\", \"codec\", \"codewars\" });\nthings.FindMostSimilar(\"coddwars\"); // must return \"codewars\"\n\nlanguages = new Dictionary(new List<string> { \"javascript\", \"java\", \"ruby\", \"php\", \"python\", \"coffeescript\" });\nlanguages.FindMostSimilar(\"heaven\"); // must return \"java\"\nlanguages.FindMostSimilar(\"javascript\"); // must return \"javascript\" (identical words are obviously the most similar)\n```\n```haskell\nfruits = findMostSimilar [\"cherry\", \"pineapple\", \"melon\", \"strawberry\", \"raspberry\"]\nfruits \"strawbery\" -- must return \"strawberry\"\nfruits \"berry\" -- must return \"cherry\"\n\nthings = findMostSimilar [\"stars\", \"mars\", \"wars\", \"codec\", \"codewars\"]\nthings \"coddwars\" -- must return \"codewars\"\n\nlanguages = findMostSimilar [\"coffeescript\", \"haskell\", \"java\", \"javascript\", \"php\", \"python\", \"ruby\"]\nlanguages \"heaven\" -- must return \"java\"\nlanguages \"javascript\" -- must return \"javascript\" (identical words are obviously the most similar)\n```\n```rust\nlet words = vec![\n    \"cherry\", \"peach\", \"pineapple\", \"melon\", \"strawberry\",\n    \"raspberry\", \"apple\", \"coconut\", \"banana\",\n];\nlet fruits = Dictionary::new(&words);\nfruits.find_most_similar(\"strawberry\"); // must return \"strawberry\"\nfruits.find_most_similar(\"berry\"); // must return \"cherry\"\n\nlet words = vec![\n    \"javascript\", \"java\", \"ruby\", \"php\", \"python\",\n    \"coffeescript\", \"c\", \"cpp\", \"brainfuck\", \"rust\",\n];\nlet langs = Dictionary::new(&words);\nlangs.find_most_similar(\"heaven\"); // must return \"java\"\nlangs.find_most_similar(\"trust\"); // must return \"rust\"\n\nlet words = vec![\"stars\", \"mars\", \"wars\", \"codec\", \"codewars\"];\nlet things = Dictionary::new(&words);\nthings.find_most_similar(\"coddwars\"); // must return \"codewars\n```\n\nI know, many of you would disagree that java is more similar to heaven than all the other ones, but in this kata it is ;)\n\nAdditional notes:\n\n* there is always exactly one possible correct solution",
+    "totalAttempts": 65552,
+    "totalCompleted": 4883,
+    "totalStars": 1025,
+    "voteScore": 531,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 4
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

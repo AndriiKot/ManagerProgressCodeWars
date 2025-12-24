@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64fff0a23ee33838cdc4292d",
+  "data": {
+    "id": "64fff0a23ee33838cdc4292d",
+    "name": "Middle Square Weyl Sequence PRNG",
+    "slug": "middle-square-weyl-sequence-prng",
+    "category": "reference",
+    "publishedAt": "2023-09-12T05:46:07.671Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/64fff0a23ee33838cdc4292d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-12T05:01:22.794Z",
+    "createdBy": {
+      "username": "saudiGuy",
+      "url": "https://www.codewars.com/users/saudiGuy"
+    },
+    "description": "The middle-square method is a method of generating pseudorandom numbers. In practice, it's not a good method, since its period is usually very short and it has some severe weaknesses. The defects associated with the original middle-square generator can be rectified by running the middle square with a [Weyl sequence](https://en.wikipedia.org/wiki/Weyl_sequence), which prevents convergence to zero.\n\n**Task**\n\nWrite a function `msws(seed, n)` that can generate the n-th random 16-bit long number. The implementation should result in fast performance.\n\n**Algorithm**:\n\n- raise r to the power of 2\n- update weyl number by adding marsaglia\n- add weyl to r\n- drop 8 bits from the right, extract 16 bits from the right to get new random r\n\n```\nmarsaglia = 362437\nr, weyl = seed, 0\n\n# repeat n times to get n-th random number r:\nr = r ** 2\nweyl = (weyl + marsaglia) % 2 ** 32\nr = (r + weyl) % 2 ** 32\nr = (r // 2 ** 8) % 2 ** 16\n```\n**Examples**\n![xx](https://i.imgur.com/01ijrKM.png)\n\n**Notes**\n- 0 <= seed, n <= 2^32\n- _Hint: a compiled program can run up to 200 times faster than a mathematically identical script in the Python interpreter._",
+    "totalAttempts": 51,
+    "totalCompleted": 13,
+    "totalStars": 6,
+    "voteScore": 16,
+    "tags": [
+      "Performance"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

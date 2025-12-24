@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/563ba37e1f518cf5d2000032",
+  "data": {
+    "id": "563ba37e1f518cf5d2000032",
+    "name": "Sharpen up",
+    "slug": "sharpen-up",
+    "category": "reference",
+    "publishedAt": "2015-11-27T15:34:44.252Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "python",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/563ba37e1f518cf5d2000032",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-11-05T18:44:14.551Z",
+    "createdBy": {
+      "username": "tu6619",
+      "url": "https://www.codewars.com/users/tu6619"
+    },
+    "description": "In music on the planet nubulax, there are eight notes in each octave of a scale. This is how they look on a piano as 'white notes':\n\n                   \"G\" \"A\" \"B\" \"C\" \"D\" \"E\" \"F\" \"G\"\n\nEach DIFFERENT note has it's own SHARP (#).\n\nSharps must be ordered to any scale in the following pattern:\n\n                    F# C# G# D# A# E# B#\n\nIt's possible to work out which sharps are in a major scale from its root (the first note of the scale) using these three steps:\n\n- Decide which is the first note of your scale (e.g. E).\n- On a piano, find the note immediately below the root (in this case D).\n- Using the sharp pattern, count up to (and including) D.\n\nThe above example shows that E major has 4 sharps: F#, C#, G#, D#.\n\nDesign a function that takes any root note and returns the corresponding number of sharps in an array.\n\n````\n\"E\" --> should return [\"F#\", \"C#\", \"G#\", \"D#\"]\n````\nThe exception to this rule is C major, which has no sharps at all. If root C is entered, the function should return \"no sharps\".\n````\n\"C\" --> should return \"no sharps\"\n````\nThe function should return \"undefined note\" if the taken object is anything other than one of the the seven capitalised 'white notes' on the piano.\n`````\n\"fkuy8\" --> should return \"undefined note\"\n`````\n",
+    "totalAttempts": 219,
+    "totalCompleted": 101,
+    "totalStars": 5,
+    "voteScore": 138,
+    "tags": [
+      "Fundamentals",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56b4d1550d8f5375f5000021",
+  "data": {
+    "id": "56b4d1550d8f5375f5000021",
+    "name": "functions waterfall!",
+    "slug": "functions-waterfall",
+    "category": "reference",
+    "publishedAt": "2016-02-06T20:08:01.410Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56b4d1550d8f5375f5000021",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-02-05T16:44:05.856Z",
+    "createdBy": {
+      "username": "gperales",
+      "url": "https://www.codewars.com/users/gperales"
+    },
+    "description": "# Waterfall: Avoiding the callback hell\n\nCreate a function which receives 2 parameters, an **array of tasks**, and an optional **callback**.\n\nThe function should run the `tasks` array of functions in series, each passing their results to the next in the array. However, if any of the tasks passes an error to its own `callback`, the next function is not executed, and the main `callback` is called immediately with the error.\n\n### Arguments\n\n- `tasks`: An array of functions to run. Each `function( result1, result2, .. resultN, callback )` is passed the results ( if any - `N` may be `0` ) from the previous function ( if any ), and a callback it must call on completion. This callback has the same signature as the main callback.\n\n- `callback( error, result1, result2, .. resultN )`: An _optional_ callback to run once all the functions have completed. The last task should pass its results to this callback, if present.\n\nNote that the first function is not passed any result values, only a callback; subsequent functions can have other numbers of arguments. The callback is always the _last_ argument.  \nAligning the number of arguments of the next function with the number of results from the previous function is up to the caller of your waterfall function ( i.e., the test suite ).",
+    "totalAttempts": 155,
+    "totalCompleted": 15,
+    "totalStars": 3,
+    "voteScore": 7,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

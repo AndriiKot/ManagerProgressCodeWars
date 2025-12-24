@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5523d69ec8f5025540000b47",
+  "data": {
+    "id": "5523d69ec8f5025540000b47",
+    "name": "The Enigma Machine - Part 2: A Rotor",
+    "slug": "the-enigma-machine-part-2-a-rotor",
+    "category": "algorithms",
+    "publishedAt": "2015-04-07T14:26:34.256Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5523d69ec8f5025540000b47",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-07T13:07:42.662Z",
+    "createdBy": {
+      "username": "ChristianECooper",
+      "url": "https://www.codewars.com/users/ChristianECooper"
+    },
+    "description": "In this series of Kata, we will be implementing a software version of the [Enigma Machine](http://en.wikipedia.org/wiki/Enigma_machine).\r\n\r\nThe Enigma Machine was a message enciphering/deciphering machine used during the Second World War for disguising the content of military communications. [Alan Turing](http://en.wikipedia.org/wiki/Alan_Turing) - the father of computing - formulated and developed concepts that are the basis of all computers in use today, he did this in response to the vital need to break those military communications. Turing and his colleagues at [Bletchley Park](http://en.wikipedia.org/wiki/Bletchley_Park) are generally recognised as being responsible for shortening WWII by two years and saving an estimated 22 Million lives.\r\n\r\nThe Enigma Machine consisted of a number of parts: Keyboard for input, rotors and plugboard for enciphering, and lampboard for output.\r\n\r\nWe will simulate input and output with strings, and build the rotors, plugboard and mechanism that used them in software. As we progress the code will become more complex, so you are advised to attempt them in order.\r\n\r\nStep 1: The [Plugboard kata](http://www.codewars.com/kata/5523b97ac8f5025c45000900)\r\n\r\nStep 2: A [Rotor (Wikipedia)](http://en.wikipedia.org/wiki/Enigma_rotor_details)\r\n\r\nIn this Kata, you must implement a single rotor. \r\n\r\n### Physical Description\r\nA rotor is a disk with 26 inputs on one side and 26 outputs on the other side, one for each character of the latin alphabet.  The rotor has internal wiring connecting every input to an output.  There is a dot next to a one of the input/output pairs, you are to assume this is next to the rotor input we will label 'A'.  Around the edge of the rotor there is ring with the letters A-Z which can be rotated so that any letter can be rotated to align with the dot, the ring would be set in position prior to the rotor being inserted into the mechanism.  Once the rotors were in the mechanism, a small window over the edge of each rotor would display a single letter from the ring.  Finally at one or more positions around the rotor there are notches used by the rotor advancing mechanism.\r\n\r\n### Nomenclature\r\nFor the sake of clarity we will denote:\r\n\r\n* a ring character with *r*, \r\n* a rotor input with *i*,\r\n* a rotor output with *o*,\r\n* a rotational position of the rotor with *p* and,\r\n* a rotor notch position with *n*.\r\n\r\n### Ring Effects\r\nIf we consider the arbitrary mapping of just one input to one output: *i*A (next to the dot) to *o*N when the ring was in position *r*A.  Then as the **ring** is relocated and the rotor is moved to keep *p*A in view you would see the connectivity between input and output appearing to change like so:\r\n\r\n|Ring Position|Rotor Position|Mechanism Input|Rotor Input|Rotor Output|Mechanism Output|Notes|\r\n|:--:|:---:|:---:|:----:|:----:|:----:|:---|\r\n|*r*A|*p*A|A|*i*A|*o*N|N||\r\n|*r*Z|*p*A|B|*i*B|*o*O|O||\r\n|*r*Y|*p*A|C|*i*C|*o*P|P||\r\n|...|...|...|...|...|...||\r\n|*r*C|*p*A|Y|*i*Y|*o*L|L||\r\n|*r*B|*p*A|Z|*i*Z|*o*M|M||\r\n|*r*A|*p*A|A|*i*A|*o*N|N|After 26 turns we are back to the first position.|\r\n\r\n### Rotation & Effects\r\nDuring usage, the mechanism would rotate the right-most rotor with every letter enciphered.  Rotation occurs before enciphering.  The other rotors would only rotate as dictated by the rotor to their immediate right. This is the purpose of the rotor notches.  When the mechanism encountered a notch on a rotor, on the next rotation of the notched rotor it would also rotate the rotor to its left too.\r\n\r\nExample:\r\n\r\n**Note**: We are observing the rotor's visible ring letter, not the enciphered output of the rotor\r\n\r\nIf we assume that **all** rotors have a notch in position *n*Z and the ring is in position *r*A, then the sequence we would expect to see as we encode several letters would be:\r\n\r\n|State|Rotor 1-2-3|Notes|\r\n|-----|---||\r\n|Start|A-A-Y||\r\n|After 1st encode|A-A-Z|Rotor 3 rotates into a position with a notch|\r\n|After 2nd encode|A-B-A|Rotors 2 & 3 rotate|\r\n|After 3rd encode|A-B-B|Rotor 3 rotates|\r\n\r\nAs you can see, as we move from step 2 to step 3, both rotors 2 and 3 rotate, while for all other steps, only rotor 3 rotated. This behaviour carries on to the next rotor as applicable:\r\n\r\n|State|Rotor 1-2-3|Notes|\r\n|-----|---||\r\n|Start|A-Z-Y|Rotor 2 is in a position with a notch|\r\n|After 1st encode|A-Z-Z|Rotor 3 rotates into a position with a notch|\r\n|After 2nd encode|B-A-A|Rotors 1, 2 & 3 rotate|\r\n|After 3rd encode|B-A-B|Rotor 3 rotates|\r\n\r\n### Note\r\nWhile in the actual usage of the original Enigma Machine, punctuation was encoded as words transmitted in the stream, in your code any input character that is not in the range A-Z should be returned unchanged and should not affect the internal state of the machine.\r\n\r\n### Kata\r\nThe `Rotor` class you will implement should:\r\n\r\n1. Provide a contructor taking:\r\n* Rotor name,\r\n* List of 26 outputs, one for each input letter A-Z as a string,\r\n* List of notch positions as a string,\r\n* The letter on the ring next to the rotor's dot,\r\n* The visible letter on the ring when inserted into the mechanism.\r\n\r\n2.&nbsp;Validate all inputs are legitimate. Raise an exception if any inputs are invalid.\r\n\r\n3.&nbsp;Implement the method `process` to translate an input from the given mechanism position to the character associated with the mechanism output position, simulate rotation of the rotor, and return the enciphered letter and a boolean value to indicate a notch has been encountered.\r\n\r\n---\r\n\r\nPython Example:\r\n\r\n    rotorI = Rotor(\"I\", \"EKMFLGDQVZNTOWYHXUSPAIBRCJ\", \"Q\", \"Z\", \"O\")\r\n    print rotorI.process(\"A\", True)\r\n    print rotorI.process(\"B\", True)\r\n    print rotorI.process(\"C\", True)\r\n    print rotorI.process(\".\", True)\r\n    print rotorI.process(\"D\", True)\r\n    print rotorI.process(\"E\", True)\r\n    print rotorI.process(\"F\", True)\r\n\r\nExpected output:\r\n\r\n    ('H', True)\r\n    ('B', False)\r\n    ('I', False)\r\n    ('.', False)\r\n    ('I', False)\r\n    ('I', False)\r\n    ('J', False)\r\n",
+    "totalAttempts": 500,
+    "totalCompleted": 21,
+    "totalStars": 35,
+    "voteScore": 11,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 4
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

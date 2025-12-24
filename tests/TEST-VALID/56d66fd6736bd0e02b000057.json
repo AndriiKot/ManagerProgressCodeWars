@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/56d66fd6736bd0e02b000057",
+  "data": {
+    "id": "56d66fd6736bd0e02b000057",
+    "name": "Crazy  programmer 04: Elephant and fridge",
+    "slug": "crazy-programmer-04-elephant-and-fridge",
+    "category": "games",
+    "publishedAt": "2016-03-03T08:04:04.628Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/56d66fd6736bd0e02b000057",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-03-02T04:45:10.988Z",
+    "createdBy": {
+      "username": "myjinxin2015",
+      "url": "https://www.codewars.com/users/myjinxin2015"
+    },
+    "description": "Story is too long, if someone doesn't want to read the story, just take a look at this simple version of the kata description:\n```\ngive a number:volume, an array:infridge, a number elephant\ntake out some numbers, then put in a number elephant\nlet sum of infridge equals volume.\nneed return an Object:{needstep:?, out:[?,?,?]}\nout is a list of which number need take out(Ascending), needstep=out.length+3\n```\nStory start:\n\nHey, young man, very glad to see you again in the madhouse, thank you for giving me a lot of help last time. But I am very curious, why do you always come to this crazy place, is it my charm to attract you?\n\nBut this is not important, it is important to let you know the latest research results of my.\n\nFirst of all, a simple question: put an elephant into the fridge requires several steps?\n\nVery difficult? I tell you, very simple, 3 steps:\n\n1.open the fridge door   2.put in the elephant   3.close the door\n\nWhat? You say I have no refrigerator so big? This is not important, the world is so big, there must be a fridge to put down an elephant.\n\nThen, another problem: put a rabbit in the fridge requires several steps?\n\nNo, no, wrong answer, not 3 steps, but 4:\n\n1.open the fridge door  2.take out the elephant  3.put the rabbits in  4.close the door\n\nBecause the fridge is filled with elephants, so we need to take out the elephant.\n\nI want to write a function to calculate the elephant into the fridge needs steps. This is a world-class math problem, We can solve it with this function\n\nThe function should be like this:\n```\nTask: put an elephant into the fridge, let the refrigerator just be stuffed with.\n\nParameter 1:  volume       a positive integer \nit is the volume of the fridge\n\nparameter 2:  infridge     a positive integer array of 0-10 elements\nsomething in the fridge, it is a volume list of them\n(we are not interested in their name, \nwe only need to know how much of their volume)\n\nparameter 3:  elephant     a positive integer\nthe volume of the elephant\n\nYou need to return:   an object\nincluding: 1.the total number of steps needed\n           2.volume list (need to take out)\nlike this: {needstep:?, out:[?,?,?]}\n\nan example:   howManyStep(14,[1,2,3,7],7)\nsteps:\n1.open the fridge door   2.take out (1)  3.take out (2)\n4.take out (3)   5.put in the elephant   6.close the door\nso, needstep=6   out=[1,2,3] and then infridge=[7,7]==volume:14\nfunction should return {needstep:6, out:[1,2,3]}\n\nanother example: howManyStep(12,[1,2,3,5],7)\nsteps:\n1.open the fridge door   2.take out (1)  3.take out (5)\n4.put in the elephant    5.close the door\nso, needstep=5   out=[1,5] and then infridge=[2,3,7]==volume:12\nshould return {needstep:5, out:[1,5]}\n\nWe need to calculate the minimum number of steps, so the above example\ndoes not return {needstep:6, out:[1,2,3]}\nalthough this answer can also put the fridge full\n```\nAdditional tips:<br>\n1. In order to facilitate the calculation, ```out``` array should be arranged from small to large.<br>\n2. If there is more than one answer with same steps, compare the first element in the array ```out```,Choose the small one.If the first element is equal, comparison of the second, and so on..<br>\n3. If there is no suitable solution, you should return null, such as these:<br>\n```\nhowManyStep(15,[],8)\nhowManyStep(15,[1,2],8)\nhowManyStep(15,[1,2],16)\nhowManyStep(129,[6,17,4,5,15],89)\n```\nThese all should return null<br>\n\nNow, can you help me to write this function? because my private health assistant (madhouse's doctor, note by author) just give me eat some sleeping pills, it's hardly keep my eyes open. Zzz...\n\n\nCrazy  programmer series:<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.codewars.com/kata/56d3c1eb3323a88d0a000305\">Crazy programmer 01: find SuperMan</a><br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.codewars.com/kata/56d4eebedf52109fd90019ca\">Crazy programmer 02: Insert advertising code</a><br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.codewars.com/kata/56d52f9901936c8d55000224\">Crazy programmer 03: Must  praise</a><br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"http://www.codewars.com/kata/56d66fd6736bd0e02b000057\">Crazy  programmer 04: Elephant and fridge</a>",
+    "totalAttempts": 12,
+    "totalCompleted": 4,
+    "totalStars": 4,
+    "voteScore": 12,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

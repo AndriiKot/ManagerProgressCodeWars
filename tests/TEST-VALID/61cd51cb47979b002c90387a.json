@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61cd51cb47979b002c90387a",
+  "data": {
+    "id": "61cd51cb47979b002c90387a",
+    "name": "Brackets can be made valid?",
+    "slug": "brackets-can-be-made-valid",
+    "category": "reference",
+    "publishedAt": "2021-12-30T06:30:57.404Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/61cd51cb47979b002c90387a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-30T06:29:31.569Z",
+    "createdBy": {
+      "username": "rodrigo ruan",
+      "url": "https://www.codewars.com/users/rodrigo%20ruan"
+    },
+    "description": "You must determine if a given expression's bracketing can be made valid by flipping them in-place.\n\nAn expression has a valid bracketing when all the parentheses (), square brackets [], curly braces {} are correctly paired and nested.\nYou can flip a bracketing element in-place by replacing it with its counterpart.\n\nThere can be brackets in strings and you have to ignore them. That means, ignore everything that is in quotes \"ignore (this)\".\n\nValid example:\n```\nconst sum = )a,b( => }return a + b{ → const sum = (a,b) => {return a+b}\n\n})[(}{(]){ → {([({})])}\n\nconst hello = () => word!\"}()[]]]{{]]][)\" → const hello = () => word!\n```\n\nInvalid example:\n```\nconst sum = {a,b) => [return a+b)\n\n{({)(()}{[[}]\n\nconst hello(\")\" => word!\"}()[]]]{{]]][)\" → const hello( => word!\n```\n\nTest: 10000 test cases with strings of 500 maximum length\n\n\n\n",
+    "totalAttempts": 191,
+    "totalCompleted": 13,
+    "totalStars": 2,
+    "voteScore": 2,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

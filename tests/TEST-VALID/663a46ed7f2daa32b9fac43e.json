@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/663a46ed7f2daa32b9fac43e",
+  "data": {
+    "id": "663a46ed7f2daa32b9fac43e",
+    "name": "Lighting Deepams for Karthikai",
+    "slug": "lighting-deepams-for-karthikai",
+    "category": "reference",
+    "publishedAt": "2024-05-07T16:36:42.362Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/663a46ed7f2daa32b9fac43e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-05-07T15:21:17.929Z",
+    "createdBy": {
+      "username": "themeowingsage",
+      "url": "https://www.codewars.com/users/themeowingsage"
+    },
+    "description": "This kata is for the EPIC Challenge 2024\n\n# Background\nToday is Karthikai and this year you plan to give your mom and grandmother rest by keeping track of all the deepams. You already got your hardware ready thanks to your friend, now you have to create a class for the hardware.\n\n# Task\nYour friend made your job a bit tricky, because you have to return strings instead of booleans.\n\nYour class should contain at least these **6 methods**: `light(deepam_id)`, `light_all()`, `unlight(deepam_id)`, `unlight_all()`, `__str__()` and `__init__()`\n\n`__init__(deepams: int): -> None` will be given the number deepams\n\n`light(deepam_id: int): -> None` should light the *deepam_id*-th deepam (1-indexed)\n\n`light_all(): -> None` should light the all the deepams\n\n`unlight(deepam_id: int): -> None` should unlight the *deepam_id*-th deepam (1-indexed)\n\n`unlight_all(): -> None` should unlight all the deepams \n\n`__str__(): -> str` should return a **string** with all the deepams\n\n[Click here if you don't know what `__str__` is](https://realpython.com/lessons/how-and-when-use-str/)\n\n**Note: All those methods (other than `__str__()` itself) should make changes for `__str__()`.**\n\n**So, when the class object is converted to a `str` it should return all the deepams**\n\n\n`()` is the fire and `(__)` is the clay pot with fire and wick in it\n\nA lit deepam is:\n```\n ()\n(__)\n```\nAn unlit deepam is:\n```\n\n(__)\n```\nYou have to place each deepam horizontally with **3 spaces** between the flames, **1 space** between the base of the deepam and there should be a **trailing space**.\n\nEven if there is no flames there should be the spaces, the space of where the flame should stand and the trailing space.\n\nSo, If there is no flames there should be (for 3 deepams):\n\n`x = 3 deepams`\n\n`x - 1 * 3` for the spaces between\n\n`x * 2` for the flames\n\n`1` starting space\n\n`1` trailing space\n\n\n# Examples\n```\n>>> k = Karthikai(3)\n>>> str(k)\n              \n(__) (__) (__)\n\n>>> k.light(deepam_id=1)\n>>> str(k)\n ()           \n(__) (__) (__)\n\n>>> k.light_all()\n>>> str(k)\n ()   ()   () \n(__) (__) (__)\n\n>>> k.unlight(deepam_id=2)\n>>> str(k)\n ()        () \n(__) (__) (__)\n\n>>> k.unlight_all()\n>>> str(k)\n              \n(__) (__) (__)\n```\n\n# Constraints\n`1 <= deepams, deepam_id <= 50`\n\n\n# FAQ\n## What is Karthikai?\n[Karthikai](https://en.wikipedia.org/wiki/Karthika_Deepam) is a Hindu festival which involves lighting deepams at night all around the house.\n\n## What is a Deepam?\nA [Deepam](https://en.wikipedia.org/wiki/Diya_(lamp)), also known as a Diya, is an oil lamp with a wick.\n\n# Credits\nThanks to:\n\n`@hobosvky` - for helping me make the tests better\n\n`@Kacarott` - for giving me the way to make up the idea\n\n`@RealKenshiro`, `@Voile`, `@KayleighWasTaken` and `@dfhwze` - for giving me feedback\n\nlastly, `@MedNoob`, `@VDSurChauffe`, `@ejini战神` and `@Madjosz` - for supporting me ",
+    "totalAttempts": 96,
+    "totalCompleted": 29,
+    "totalStars": 1,
+    "voteScore": 48,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

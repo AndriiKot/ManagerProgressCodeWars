@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d27b58d4e1f73001c0bfa36",
+  "data": {
+    "id": "5d27b58d4e1f73001c0bfa36",
+    "name": "Mystery function",
+    "slug": "mystery-function-1",
+    "category": "bug_fixes",
+    "publishedAt": "2019-07-11T22:59:20.536Z",
+    "approvedAt": null,
+    "languages": [
+      "php",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5d27b58d4e1f73001c0bfa36",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-11T22:17:50.154Z",
+    "createdBy": {
+      "username": "jkalasz",
+      "url": "https://www.codewars.com/users/jkalasz"
+    },
+    "description": "You were assigned to very old and huge project.\nThere is a function and nobody knows what it is used for.\nThere are 500 lines of code in that function. Authors of that spaghetti code reject phone calls. \n\nThe application still works and you task is check what that function do.\nIntercept all arguments passed to that function and return it as string.\n\nFor example if function is called like that:\n```\nmysteryFunction('text argument');\n```\nyou should return this argument value:\n```\n\"text argument\"\n```\n\nWhen more arguments is passed:\n```\nmysteryFunction('arg1', 'arg2', 3);\n```\n return it as text list separated with comma:\n```\n\"arg1, arg2, 3\"\n```\n\nArrays can be passed:\n```\nmysteryFunction(['a', 'b', 'c']);\n```\noutput:\n```\n'[\"a\",\"b\",\"c\"]'\n```\n\nObjects (printed in same order as specified in the object):\n```php\nmysteryFunction((object) [\"someField\" => 123, \"someOtherField\" => 456]);\n```\n```javascript\nmysteryFunction({someField: 123, someOtherField: 456});\n```\noutput:\n```\n'{\"someField\":123,\"someOtherField\":456}'\n```\n[HINT!!!]\n```if:php\nWith objects and arrays you shouldn't parse or iterate input manually. Try to use the force of builtin PHP functions. \n```\n```if:javascript\nWith objects and arrays you shouldn't parse or iterate input manually. Try to use the force of builtin JavaScript functions. \n```\n\nYou have few Example Test Cases. Act quickly, we must know what is happening in that part of system.",
+    "totalAttempts": 48,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -5,
+    "tags": [
+      "Puzzles",
+      "Debugging"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

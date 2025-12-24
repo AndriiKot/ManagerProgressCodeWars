@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59f705d8a01431489c00005d",
+  "data": {
+    "id": "59f705d8a01431489c00005d",
+    "name": "Scuba Diving Safety: Oxygen Toxicity",
+    "slug": "scuba-diving-safety-oxygen-toxicity",
+    "category": "reference",
+    "publishedAt": "2017-11-01T11:12:14.285Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59f705d8a01431489c00005d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-10-30T10:58:32.758Z",
+    "createdBy": {
+      "username": "vlbee",
+      "url": "https://www.codewars.com/users/vlbee"
+    },
+    "description": "One of the dangers of scuba diving is Oxygen Toxicity (https://en.wikipedia.org/wiki/Oxygen_toxicity).\n\nOxygen slowly poisons us as the atmospheric pressure (measured in bars) increases the deeper we dive, so safe diving means limiting our exposure time to toxic pressures of air.\n\n## Your task:\n\nAs a Scuba Instructor you must determine if the proposed dive plan given as maximum \"depth\" (meters), \"time\" (minutes), and \"percent\" (ratio of Oxygen in the scuba tank air mix) is safe or dangerous. \n\nFor each test, return as a string one of the below:\n\n```\"SAFE. You are X minutes under the time limit.\"```\n\n```\"UNSAFE. You are X minutes over the time limit.\"```\n\n```\"MAX OPERATING DEPTH REACHED. Replan your dive.\"```\n\nSafe exposure time limits for increased Oxygen partial pressures is provided as a preloaded chart declared as a constant: \"o2ExposureTimeLimit\".\n\nFor example ```diveSafe(14, 320, 21)```should retun ``` 'SAFE. You are 400 minutes under the time limit.'``` because the Oxygen partial pressure is 0.504 which gives you 720 safe diving minutes on the O2 Exposure Time Limit chart. You should play it safe and always round to the higher partial pressure listed. \n\n## Information for your calculations - \n\nAssume all dives are performed at sea level. There is 1 bar total atmospheric pressure at sea level and the air is 21% oxygen - this equates to an oxygen partial pressure of 0.21 bar at sea level. \n\nFor every 10 meters deep we dive, the atmospheric pressure increases by 1 bar.\n\nOxygen partial pressure increases in direct proportion to bars of atmospheric pressure, so at 2 bars of atmospheric pressure the partial pressure of Oxygen is 0.42 bar, etc. \n\nSafe time limits for breathing air decreases as the oxygen partial pressure increases, up to an agreed scuba diving safe maximum partial pressure of 1.4 bar. Different breathing air mixes in a scuba tank with varying percentages of Oxygen will have different \"Maximum Operating Depth\"  as a result. \n\n",
+    "totalAttempts": 182,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 9,
+    "tags": [
+      "Physics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

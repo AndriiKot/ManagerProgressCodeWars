@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60153f824fc0f800080f7f02",
+  "data": {
+    "id": "60153f824fc0f800080f7f02",
+    "name": "Guess a secret prime number through the yield/send mechanism",
+    "slug": "guess-a-secret-prime-number-through-the-yield-slash-send-mechanism",
+    "category": "algorithms",
+    "publishedAt": "2021-01-30T13:48:12.696Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60153f824fc0f800080f7f02",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-01-30T11:14:10.984Z",
+    "createdBy": {
+      "username": "drchangliu",
+      "url": "https://www.codewars.com/users/drchangliu"
+    },
+    "description": "An ape named Gimmy has a prime number in his mind. He challenges you to guess what it is. He will call your `guess_my_prime_number()` repeatedly until you guess it right. The repeated guesses should be returned using `yield`. If you guessed wrong, a clue will be sent to you using `send()`. The clue `too big` means your guess was too big; `too small` means it's too small. Here's the code that the Ape will use to send the clue to you:\n```\n# The Ape's code\ngen = guess_my_prime_number()\nguess = next(gen)\nwhile guess != secret_prime :\n    if not is_prime(guess):\n        guess = gen.send(\"prime!\")   # send no clue if the guess was not a prime number\n    elif guess < p:\n        guess = gen.send(\"too big\")  \n    else:\n        guess = gen.send(\"too small\")\n```\nIn response to the clue that you recieve using `yield`, you can change your guess accordingly using code like this:\n```\n# Your code\nclue = yield my_guess\nif clue == \"too small\" :\n    my_guess += 1   # If the previous guess was too small, now I need to guess a larger number\nelif clue == \"too big\":\n    my_guess -= 1\nelif clue == \"prime!\":\n    do_something  # The previous guess was not a prime number and the ape didn't offer a clue.\n```\n\nApe Gimmy knows only prime numbers. If your guess is not a prime number, he will have no clue and send you `prime!`.\n\nApe Gimmy blinks from time to time. Whenever he blinks, he comes up with a different prime number in his mind. When that happens, he will send you a clue \"blink!\". \n\nIf you guessed it right, a new round will start, again with a fresh call to your `guess_my_prime_number()`. \n\nApe Gimmy has a big brain and prime numbers in his mind can be almost as large as 2<sup>100</sup>.\n\n",
+    "totalAttempts": 137,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

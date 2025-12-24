@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53bf0bf9e251dde94d0001a4",
+  "data": {
+    "id": "53bf0bf9e251dde94d0001a4",
+    "name": "Sherlock in bookstore",
+    "slug": "sherlock-in-bookstore",
+    "category": "reference",
+    "publishedAt": "2014-07-15T22:02:34.526Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/53bf0bf9e251dde94d0001a4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-07-10T21:56:09.257Z",
+    "createdBy": {
+      "username": "hagi",
+      "url": "https://www.codewars.com/users/hagi"
+    },
+    "description": "You are building software for internet shop with books about Sherlock Holmes. The main reason people buy in your shop are coupons they found on the Internet.\n\nWrite a function to calculate the order value after applying coupon. Order value should not be negative and should be rounded to two decimal points. \n\nThe coupon can have percent discount when its value is fraction (i.e. > -1) or amount discount $1, $40, etc. Valid coupons have negative values.\n\nThe coupon can define which product it is related to, and only this product (if in order) can be discounted.\n\nExamples:\n```ruby\ncoupon_1 = { value: -0.2 } # => 20% on whole order\ncoupon_2 = { value: -7 } # => order total value lowered by 7$ or whatever currency you like\ncoupon_3 = { value: -0.1, product: :signs_of_four }  # => 10% for product :signs_of_four\n```\n\nAn order is just a hashmap where keys are products and values are their prices.\n\n```ruby\norder = {\n    signs_of_four: 10,\n    adventures: 13\n}\n```\n\nExamples of results:\n```ruby\napply_coupon(coupon_1, order) # => 18.4\napply_coupon(coupon_2, order) # => 16\napply_coupon(coupon_3, order) # => 22\n```",
+    "totalAttempts": 592,
+    "totalCompleted": 23,
+    "totalStars": 2,
+    "voteScore": 25,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

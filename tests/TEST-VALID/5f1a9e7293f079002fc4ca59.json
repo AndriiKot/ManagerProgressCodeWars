@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f1a9e7293f079002fc4ca59",
+  "data": {
+    "id": "5f1a9e7293f079002fc4ca59",
+    "name": "Substring Near Match",
+    "slug": "substring-near-match",
+    "category": "algorithms",
+    "publishedAt": "2020-07-24T10:33:22.526Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f1a9e7293f079002fc4ca59",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-24T08:40:18.496Z",
+    "createdBy": {
+      "username": "StephenDonovan1",
+      "url": "https://www.codewars.com/users/StephenDonovan1"
+    },
+    "description": "The task for this kata is to find near matches of a substring in a longer text. For this kata, we will consider five types of near matches:\n\n- **Exact Match:** This one's pretty straightforward, it's just the string itself.<br>Example: \"Dwight\" => \"Dwight\"\n- **Transpositions:** Two letters are swapped in the substring.<br>Example: \"Dwight\" => \"Dwihgt\" or \"wDight\"\n- **Double Letters:** Exactly one letter in the original substring is repeated one more time than usual.<br>Example: \"Dwight\" => \"Dwwight\". Note that this also includes cases like \"all\" => \"alll\".\n- **Single-Letter Exclusions:** One letter is missing from the substring, but all of the remaining letters are still in the proper order. <br>Examples: \"Dwight\" => \"Dwigt\", \"all\" => \"al\" (but not \"a\")\n- **Miscapitalization:** Any variation of the capitalization of the original string or any other near match.<br>Example: \"Dwight\" => \"DWight\", \"DWIHGT\", \"dwght\", \"dwIIghT\", etc\n\nExamples of substrings which are **not** near matches of \"Dwight\": \"Dwghit\", \"Dwig\", \"ight\", \"Dwhtgi\", \"Dwight2\", \"Dwigghht\", \"Dwighttt\"\n\nIn addition to this all non-alphanumerical symbols except spaces should be ignored. This may cause some other substrings to become matches such as \"Dwight\" => \"D.wi,ght!\"\n\n(Note: although you ignore the other symbols for matching purposes, they should still appear in the match data.)\n\nThe first string passed to the function will be the substring to search for, and the second will be the text to search through. For safety, we require that the substring must be at least two characters long, otherwise raise a ValueError.\n\nThe return value for the function will be a dictionary which maps line numbers in the text (starting with line 1) to a list of the \"near matches\" found on that line. If there are no matches, return an empty dictionary.\n<hr>\nExamples: <br>\n<code>inp = \"Dwight Eisenhower<br>\nis my second favorite dwight<br>\nafter Dight from The Office. -Dwight<br>\nThis line has no matches\"<br><br>\nnear_matches(\"Dwight\", inp) = {1: [\"Dwight\"], 2: [\"dwight\"], 3: [\"Dight\", \"-Dwight\"]}<br><br>\nnear_matches(\"Dwight\", \"This line has no matches\") = {} <br>\nnear_matches(\"a\", \"This should raise an error\") --> ValueError\n</code>\n<hr>\n\nTechnicalities and details:\n- Your code will only be tested with ASCII characters.\n- Make sure to consider both Windows and Unix-style string termination: \"\\r\\n\" vs \"\\n\"\n- The near matches must come in the same order in the lists as they were in the original string.\n- You don't have to worry about near matches stretching across multiple lines, and the substring will always only have one line.\n- The substring will always be one word, and it will be completely alphanumerical - no punctuation or special symbols\n\n<hr>\n\nFun fact: if this wasn't obvious from the examples, this kata was actually inspired by an episode of The Office where Michael's secret screenplay is read, and it's speculated that he tried to search and replace Dwight's name out of it but failed because it was mispelled as \"Dwigt\" in one spot.<br>If you're interested, the episode in question is Season 2, Episode 7: The Client.",
+    "totalAttempts": 167,
+    "totalCompleted": 15,
+    "totalStars": 2,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62f8719b13360f17f26d5de0",
+  "data": {
+    "id": "62f8719b13360f17f26d5de0",
+    "name": "Products of Characters and Anagrams!",
+    "slug": "products-of-characters-and-anagrams",
+    "category": "reference",
+    "publishedAt": "2022-08-14T06:03:57.189Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/62f8719b13360f17f26d5de0",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-14T03:52:59.324Z",
+    "createdBy": {
+      "username": "404_beef",
+      "url": "https://www.codewars.com/users/404_beef"
+    },
+    "description": "Given an array of characters take the numerical position in the alphabet of each letter and return the product of all positions. You also need to return an anagrammed word containing all of the characters in the array, but it needs to be the word that comes first alphabetically out of all longest possible options. \n\nMake sure you calculate the product of all character positions <ins>**before**</ins> assembling them to a valid word.\n\nIf the word you return <ins>does not contain all letters in the array and is not the first alphabetically out of all max length possibilities</ins>, you will not pass. You must account for random testing using letters that do <ins>**not**</ins> form a valid English word. If the letters cannot be combined into a word, return `\"\"` and the product before letter shuffling.\n```python\nmyList = ['b','q','g']\nreturn \"\", 238\n``` \n\nIf this problem were not on codewars you could have a plethora of solutions for validating a word's existence in the English language. However, the few modules I tried (enchant, nltk) when developing this challenge do not work on this website. In light of that, I suggest you use the very straightforward API for [Anagramica](http://www.anagramica.com/api) to help with this problem. There are other options available to you, this is just the one I used.\n\n## Example\n```python\nmyArray = ['a','b','t']\n```\nwould be \"1 x 2 x 20\" and the product would be \"40\" \n\nThe two possible words from this 3 letter scramble are:\n- \"tab\" and \"bat\"\n\nSince bat comes first alphabetically and contains all of the letters in the array, that would be the correct word to submit alongside your characters' positional product.\n\n```python\nreturn \"bat\", 40\n```\n\nFor simplicity's sake and to stay below codewars' execution timeout of 12000ms, you will not receive an array with <ins>more</ins> than 5 characters or <ins>less</ins> than 3 characters.",
+    "totalAttempts": 41,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

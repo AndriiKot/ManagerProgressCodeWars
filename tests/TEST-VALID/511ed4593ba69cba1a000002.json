@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/511ed4593ba69cba1a000002",
+  "data": {
+    "id": "511ed4593ba69cba1a000002",
+    "name": "Wrapped Function",
+    "slug": "wrapped-function",
+    "category": "reference",
+    "publishedAt": "2013-04-02T22:21:23.919Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/511ed4593ba69cba1a000002",
+    "rank": {
+      "id": -5,
+      "name": "5 kyu",
+      "color": "yellow"
+    },
+    "createdAt": "2013-02-16T00:35:37.199Z",
+    "createdBy": {
+      "username": "jhoffner",
+      "url": "https://www.codewars.com/users/jhoffner"
+    },
+    "description": "Extend the `Function` prototype with a method `wrap()` that allows you to wrap an existing function. \nThe method should behave like this:\n\n```javascript\nfunction speak(name){\n   return \"Hello \" + name;\n}\n\nconst wrapper = speak.wrap(function(original, yourName, myName){\n   const greeting = original(yourName);\n   return greeting + \", my name is \" + myName;\n});\n\nwrapper(\"Mary\", \"Kate\");\n-->\n\"Hello Mary, my name is Kate\"\n```\n\n``` coffeescript\nspeak = (name) ->\n  \"Hello \" + name\n\nspeak = speak.wrap((original, yourName, myName) ->\n  greeting = original(yourName)\n  greeting + \", my name is \" + myName\n)\n\ngreeting = speak(\"Mary\", \"Kate\")\n# \"Hello Mary, my name is Kate\"\n```\n\n",
+    "totalAttempts": 20015,
+    "totalCompleted": 1733,
+    "totalStars": 178,
+    "voteScore": 122,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

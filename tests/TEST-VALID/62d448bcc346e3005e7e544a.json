@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62d448bcc346e3005e7e544a",
+  "data": {
+    "id": "62d448bcc346e3005e7e544a",
+    "name": "indexOf polyfill",
+    "slug": "indexof-polyfill",
+    "category": "algorithms",
+    "publishedAt": "2022-07-17T17:41:01.651Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/62d448bcc346e3005e7e544a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-17T17:37:00.604Z",
+    "createdBy": {
+      "username": "Murka007",
+      "url": "https://www.codewars.com/users/Murka007"
+    },
+    "description": "# indexOf polyfill\n\nYour task is to write `String.prototype.indexOf` polyfill\n\nIt must be a regular function, which does not use built-in methods\n\n```javascript\nindexOf(\"hello world\", \"world\"); // 6\nindexOf(\"tiger\", \"tigers\");      // -1\n```\n\n### You're not allowed to use:\n- Additional libraries\n- indexOf, search, match, matchAll, exec\n\n### Edge cases:\n- `string` argument always will be of type string\n- `searchValue` can be a string, number, array, boolean or some method\n  - It should be converted to string\n- `startIndex` always number\n- keep `startIndex` in `>= 0 && <= string.length`\n- Be careful with types to primitive, for example\n  - `true + \"\"` equals `'true'`\n  - `-Infinity + \"\"` equals `'-Infinity'`\n  - `Date + \"\"` will be converted into `'function Date() { [native code] }'`",
+    "totalAttempts": 359,
+    "totalCompleted": 20,
+    "totalStars": 0,
+    "voteScore": 10,
+    "tags": [
+      "Strings",
+      "Fundamentals",
+      "Language Features"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

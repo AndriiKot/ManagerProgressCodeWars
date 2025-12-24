@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62a475bde656d500452d78a6",
+  "data": {
+    "id": "62a475bde656d500452d78a6",
+    "name": "Verified Irregular Chessboard Area",
+    "slug": "verified-irregular-chessboard-area",
+    "category": "games",
+    "publishedAt": "2022-06-11T12:00:32.253Z",
+    "approvedAt": null,
+    "languages": [
+      "coq"
+    ],
+    "url": "https://www.codewars.com/kata/62a475bde656d500452d78a6",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-06-11T11:00:13.943Z",
+    "createdBy": {
+      "username": "donaldsebleung",
+      "url": "https://www.codewars.com/users/donaldsebleung"
+    },
+    "description": "_This is the verified version of [Find the total white and black areas in a strange chessboard](https://www.codewars.com/kata/6262f9f7afc4729d8f5bef48)._\n\nAn eccentric chessboard maker likes to create irregular N x N chessboards that look like this:\n\n![Irregular chessboard](https://i.imgur.com/2jcCAna.png)\n\nWe denote the heights of each row in the chessboard as `rs` and the widths of each column in the chessboard as `cs`, so in this case we have:\n\n```coq\nDefinition rs := [1; 8; 4; 5; 2].\nDefinition cs := [3; 1; 2; 7; 1].\n```\n\nNow we want to calculate the total white area `n` and total black area `m` of this chessboard and return it as a tuple `(n, m)`. For example, the total white area here is 146 and the total black area is 134. How do we calculate it, and how do we do so efficiently?\n\nFirst, let's look at a naïve solution that calculates each area individually and sums them up, taking into account whether it is a white or black rectangle. Here's a way to implement it recursively:\n\n1. Calculate the areas for the first row, where the leftmost rectangle is white and the colors alternate\n1. Discard the first row, flip the colors in the remaining chessboard, calculate its areas, flip the colors back and add them to the areas for the first row\n\n```coq\nFixpoint partition_areas_of_row (r : nat) (cs : list nat) : nat * nat :=\n  match cs with\n  | [] => (0, 0)\n  | [c] => (r * c, 0)\n  | c :: c' :: cs' =>\n      let (n, m) := partition_areas_of_row r cs' in\n        (r * c + n, r * c' + m)\n  end.\n\nFixpoint partition_areas_naive (rs cs : list nat) : nat * nat :=\n  match rs with\n  | [] => (0, 0)\n  | r :: rs'' =>\n      let (cs', rs') := partition_areas_naive rs'' cs in\n        let (n, m) := partition_areas_of_row r cs in\n          (n + rs', m + cs')\n  end.\n```\n\nAnd here's a performant solution that calculates the same thing:\n\n1. Denote and compute the total width of all white rectangles in the first row as `w1`\n1. Denote and compute the total width of all black rectangles in the first row as `w2`\n1. Denote and compute the total height of all white rectangles in the first column as `h1`\n1. Denote and compute the total height of all black rectangles in the first column as `h2`\n1. Combine the rectangles into two large white rectangles of areas `h1 * w1` and `h2 * w2` respectively, and two large black rectangles of areas `h1 * w2` and `h2 * w1` respectively. Then the total white and black areas become apparent\n\n```coq\nFixpoint partition_columns (row : list nat) : nat * nat :=\n  match row with\n  | [] => (0, 0)\n  | [n] => (n, 0)\n  | n :: m :: row' =>\n      let (n', m') := partition_columns row' in\n        (n + n', m + m')\n  end.\n\nDefinition partition_areas_efficient (rs cs : list nat) : nat * nat :=\n  let (h1, h2) := partition_columns rs in\n    let (w1, w2) := partition_columns cs in\n      (h1 * w1 + h2 * w2, h1 * w2 + h2 * w1).\n```\n\nProve that both approaches yield the same result.\n\n## Preloaded\n\n```coq\nRequire Import List.\nImport ListNotations.\n\nFixpoint partition_areas_of_row (r : nat) (cs : list nat) : nat * nat :=\n  match cs with\n  | [] => (0, 0)\n  | [c] => (r * c, 0)\n  | c :: c' :: cs' =>\n      let (n, m) := partition_areas_of_row r cs' in\n        (r * c + n, r * c' + m)\n  end.\n\nFixpoint partition_areas_naive (rs cs : list nat) : nat * nat :=\n  match rs with\n  | [] => (0, 0)\n  | r :: rs'' =>\n      let (cs', rs') := partition_areas_naive rs'' cs in\n        let (n, m) := partition_areas_of_row r cs in\n          (n + rs', m + cs')\n  end.\n\nFixpoint partition_columns (row : list nat) : nat * nat :=\n  match row with\n  | [] => (0, 0)\n  | [n] => (n, 0)\n  | n :: m :: row' =>\n      let (n', m') := partition_columns row' in\n        (n + n', m + m')\n  end.\n\nDefinition partition_areas_efficient (rs cs : list nat) : nat * nat :=\n  let (h1, h2) := partition_columns rs in\n    let (w1, w2) := partition_columns cs in\n      (h1 * w1 + h2 * w2, h1 * w2 + h2 * w1).\n```",
+    "totalAttempts": 10,
+    "totalCompleted": 6,
+    "totalStars": 1,
+    "voteScore": 12,
+    "tags": [
+      "Theorem Proving",
+      "Fundamentals",
+      "Algorithms",
+      "Puzzles",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58820ac243ca047e68000012",
+  "data": {
+    "id": "58820ac243ca047e68000012",
+    "name": "Parsing & Automata - Matching Bracket Lists & Context-Free Grammars",
+    "slug": "parsing-and-automata-matching-bracket-lists-and-context-free-grammars",
+    "category": "algorithms",
+    "publishedAt": "2017-01-20T13:05:32.196Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/58820ac243ca047e68000012",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-20T13:04:03.286Z",
+    "createdBy": {
+      "username": "VermillionAzure",
+      "url": "https://www.codewars.com/users/VermillionAzure"
+    },
+    "description": "# Context\n\n**Context-free grammars** are relatively common for computer programming languages. This is because they are relatively simple to parse while having more expressive power than regular languages, which have a hard time with expressing \"nesting\" or recursive grammars.\n\nFor context-free grammars, the **Backus-Naur Form (BNF)** notation is often used to describe them. BNF notation consists of a list of rules. There also exist \"Extended\" and \"Augmented\" forms of BNF -- this challenge will specify the grammar of the language to test strings against in **EBNF (Extended Backus-Naur Form)**.\n\n\n\n# Extended Backus-Naur Form for the grammar\n\nAssume that the alphabet or set of allowed symbols for the grammar are the 256 values of ASCII characters. Then, the grammar can be specified in EBNF as such:\n\n    Grammar \t\t= { Brackets } ;\n    Brackets\t\t= '(' , { Brackets } , ')' ;\n    \n    \n    \n# Examples of Accepted/Rejected Strings\n\nThe grammar is simple: it accepts either:\n\n- The empty string : `\"\"`\n- A list of one or more matching square brackets, nested to any level : `\"[][[]][][][[[]]]\"`\n\nThe grammar will reject non-matching square brackets, as well as any other strings that contain ANY other characters (including ANY TYPE of whitespace):\n\n- Strings with ANY TYPE of whitespace: `\" \\t\\n\"`\n- Strings with non-matching square brackets: `\"[]]\"` , `\"[\"` , `\"[[[[[[]]\"`\n- Strings with alpha or numeric characters: `\"[hello world]\"`\n\n\n\n# General Hints\n\nIt is recommended that you use character-by-character parsing, as there are only two valid terminal characters.\n\nTwo common and easily implementable methods are:\n\n- Recursive descent parsing (as a LL(1) parser)\n- Simulated pushdown automata (with a symbol stack)\n\n\n\n# Language-Specific Hints\n\n- C++\n\t- Using `std::istream&` can be helpful for doing character-by-character parsing.\n  - The use of exceptions (e.g. `std::runtime_error`) can be particularly helpful here for signaling rejections from an arbitrary nesting depth back to the top-level rule.",
+    "totalAttempts": 160,
+    "totalCompleted": 42,
+    "totalStars": 4,
+    "voteScore": 26,
+    "tags": [
+      "Parsing",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

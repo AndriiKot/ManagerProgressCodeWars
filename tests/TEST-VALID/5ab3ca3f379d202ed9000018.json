@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ab3ca3f379d202ed9000018",
+  "data": {
+    "id": "5ab3ca3f379d202ed9000018",
+    "name": "Max sum of k differences in array",
+    "slug": "max-sum-of-k-differences-in-array",
+    "category": "algorithms",
+    "publishedAt": "2018-03-22T16:13:59.286Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ab3ca3f379d202ed9000018",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-03-22T15:22:39.076Z",
+    "createdBy": {
+      "username": "vertighel",
+      "url": "https://www.codewars.com/users/vertighel"
+    },
+    "description": "You are given an integer `k > 0`, and an array `A` of integers of length >= 2*k.\n\nYour goal is to find a strictly increasing sequence of k pairs of indices `a_i, b_i`, i.e.: `0 <= a_1 < b_1 < ... < a_k < b_k <= length(A)`, such that the sum of the differences `(A[b_i] - A[a_i]), i = 1...k`, is maximized. You should then return the value of this sum.\n\nSo for example, for k=2 and length(A) >= 7, the sequence ((0,3),(4,6)) is OK (strictly increasing), but ((0,4),(3,6)) or ((3,0),(6,4)) is NOT OK (not strictly increasing).\n\nArray length will be up to 1.000.000, and k up to 200.\n\n```\nExamples:\n\nInput: k = 1, A = {1, 2, 4, 3}\nOutput: 3\nExplanation: \n- required: k = 1 pair of indices 0 <= a_1 < b_1 <= 3\n- greatest possible sum is 4 - 1 = 3  for indices a_1 = 0, b_1 = 2 \n  (no other admissible combination gives a greater result)\n\nInput: k = 2, A = {1, 2, 4, 3}\nOutput: 0\nExplanation: \n- required: k = 2 pairs of indices 0 <= a_1 < b_1 < a_2 < b_2 <= 3\n- greatest possible sum is (2 - 1) + (3 - 4) = 0 \n  for indices a_1 = 0, b_1 = 1, a_2 = 2, b_2 = 3\n\nInput: k = 3, A = {1, 2, 9, 8, 7, 11, 13, 7, 6, 4, 12, 2}\nOutput: 22\nExplanation: \n- required: k = 3 pairs of indices 0 <= a_1 < b_1 < a_2 < b_2 < a_3 < b_3 <= 11\n- greatest possible sum is 22 = (9 - 1) + (13 - 7) + (12 - 4) \n  for indices: a_1 = 0, b_1 = 2, a_2 = 4, b_2 = 6, a_3 = 9, b_3 = 10\n```",
+    "totalAttempts": 31,
+    "totalCompleted": 6,
+    "totalStars": 5,
+    "voteScore": 10,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

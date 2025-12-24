@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5401a398b591ae333f00082d",
+  "data": {
+    "id": "5401a398b591ae333f00082d",
+    "name": "Boggle solver",
+    "slug": "boggle-solver",
+    "category": "algorithms",
+    "publishedAt": "2014-08-30T10:19:54.319Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5401a398b591ae333f00082d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-08-30T10:12:40.335Z",
+    "createdBy": {
+      "username": "Golmote",
+      "url": "https://www.codewars.com/users/Golmote"
+    },
+    "description": "Boggle is a word game where, given a grid of letters, you have to find as many words as you can, the longer words the better. In this kata, you will build a Boggle solver.\n\n```javascript\nfunction boggleSolver(grid, dict) {\n    // Return the list of all words found on grid\n}\n```\n\nThe `boggleSolver` function will take two parameters :\n\n* The grid, represented as a 4x4 array of uppercased letters, e.g :\n```javascript\n    [['H','U','N','S'],\n     ['N','B','I','E'],\n     ['E','A','M','L'],\n     ['T','S','S','O']]\n```\n* The dictionary of known words, as an array of uppercased words, e.g :\n```javascript\n    [\"AAH\",\"AAHED\",\"AAHING\",\"AAHS\",\"AARDVARK\",\"AARDVARKS\",...,\"ZYMURGY\",\"ZYZZYVA\",\"ZYZZYVAS\"]]\n```\n\n\nThe `boggleSolver` function must return an array of all found words, sorted alphabetically by length descending.\n\nWords are built using adjacent letters on the grid (vertically, horizontally or diagonally) and each letter must only be used once.\n\nFor example, using the grid given previously, the result should be something like\n```javascript\n[\"BAILSMEN\", \"SNUBNESS\", \"BATSMEN\", ..., \"TAN\", \"TEA\", \"TEN\"]\n```",
+    "totalAttempts": 396,
+    "totalCompleted": 38,
+    "totalStars": 11,
+    "voteScore": 66,
+    "tags": [
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

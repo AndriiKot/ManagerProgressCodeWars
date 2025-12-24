@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5977ac971e250aa8b70000b4",
+  "data": {
+    "id": "5977ac971e250aa8b70000b4",
+    "name": " Kevin Mitnick's Challenge  - Vigenere cipher & Rot-n",
+    "slug": "kevin-mitnicks-challenge-vigenere-cipher-and-rot-n",
+    "category": "algorithms",
+    "publishedAt": "2017-07-25T21:14:34.066Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5977ac971e250aa8b70000b4",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-25T20:39:51.312Z",
+    "createdBy": {
+      "username": "cristiane.hdo",
+      "url": "https://www.codewars.com/users/cristiane.hdo"
+    },
+    "description": "Introd.:\nKevin Mitnick  was the one of the most elusive computer break-in artist in history.  He accessed computers and networks at the world's biggest companies and have written some books about his adventures and tramas. In the book, Ghost in the wires, you can find a cryptogram at the begin of each chapter which is a question and the response for this question you can find inside the chapter. Once you find the answer you’ll use it to solve the next one. \nInspired by this book I create a cryptogram to protect my personal e-mails and, as my best friend, you know the keyword and I hope you can decrypt it and read it as soon as you receive it.\n\nMixing a Vigenère cipher and a Rot-n this algorithm rotate each letter of the phrase backwards a fixed amout of places (rot-n where n is the keyword length) and based on a keyword (Vigenère cipher). \n\nEx:\n```\nkey: \"abcd\"\nphrase: \"hjiycuz-ti nl fsz ihr\"\n\na: 0\nb: 1\nc: 2\nd: 3\n\nkeyword length = 4\n\nthen:\n\n\nh - 4 = d\nj - 5 = e\ni - 6 = c\ny - 7 = r\nc - 4 = y\nu - 5 = p\nz - 6 = t\n \nt - 7 = m\ni - 4 = e\n\nn - 5 = i\nl - 6 = f\n\nf - 7 = y\ns - 4 = o\nz - 5 = u\n\ni - 6 = c\nh - 7 = a\nr - 4 = n\n\nMessage: \"decrypt-me if you can\"\n```\nTask.:\nYou’ll receive 2 strings, the first one is the keyword ([a-z] only) and the second one is encrypted text. Your task is to return the text decrypted. \nYou must to respect cases and keep special characters, spaces, numbers and punctuation. \n\n",
+    "totalAttempts": 266,
+    "totalCompleted": 19,
+    "totalStars": 7,
+    "voteScore": 14,
+    "tags": [
+      "Ciphers",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

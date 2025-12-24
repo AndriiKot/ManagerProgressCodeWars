@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60f90cb18b940b0028efb29d",
+  "data": {
+    "id": "60f90cb18b940b0028efb29d",
+    "name": "ADC data formatting",
+    "slug": "adc-data-formatting",
+    "category": "reference",
+    "publishedAt": "2021-07-22T10:44:18.023Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/60f90cb18b940b0028efb29d",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-07-22T06:14:09.310Z",
+    "createdBy": {
+      "username": "VeronicaBionicle",
+      "url": "https://www.codewars.com/users/VeronicaBionicle"
+    },
+    "description": "You going to make some voltmeters and use different analog-digital converters (ADCs) to measure voltage.\nYou have different models of ADCs with resolution 6...16 bits and reference voltages 0-12 V.\n\nThe conversion result is stored in 2 bytes: most significant and least significant byte (if resolution is 8 or less bits, msbyte = 0):\n```C\n|X|X|X|X|X|X|X|X| |X|X|X|X|X|X|X|X|\n      msbyte           lsbyte        \n```\nYou want to make a function that takes result of conversion (2 data bytes - msbyte, lsbyte), reference voltage (vref) and resolution of ADC and returns measured voltage. Something like this:\n```C\ncode_to_voltage(2, 255, 5, 12) => 0.936\n``` \n*Some explanations:*\nFor example, 3-bit ADC has 2^3 = 8 voltage 'levels' it can measure.\nThe digital codes of this levels will be 000, 001, 010 ... 111 in binary form. \n\nIf reference voltage (vref) is 5 V, ADC can measure voltage in range 0...5 V with step 5/8 V = 0.625 V.\n\nIf measured voltage is 2.5 V (the half of vref), the data in lsbyte = 100_2 = 4_10.\n![conversion](https://www.edn.com/wp-content/uploads/media-1050787-c0306-figure1.gif)\n\n",
+    "totalAttempts": 50,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 5,
+    "tags": [
+      "Binary",
+      "Fundamentals",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 4,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

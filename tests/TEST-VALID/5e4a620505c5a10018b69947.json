@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5e4a620505c5a10018b69947",
+  "data": {
+    "id": "5e4a620505c5a10018b69947",
+    "name": "Silent poison",
+    "slug": "silent-poison",
+    "category": "algorithms",
+    "publishedAt": "2020-02-17T13:55:33.330Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5e4a620505c5a10018b69947",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-02-17T09:51:01.332Z",
+    "createdBy": {
+      "username": "David Gildour",
+      "url": "https://www.codewars.com/users/David%20Gildour"
+    },
+    "description": "<h3>Intro</h3>\n\n\"Slay the Spire\" is a deck-building rogue-like dungeon crawler with turn-based combat and an enormous replay value. I strongly suggest you to <a href=\"https://store.steampowered.com/app/646570/Slay_the_Spire/\">check it out</a>, because it's fun as hell! Knowledge of this game is not mandatory to solve this kata.\n\nYou will assume the role of one of the game's characters - the Silent. She is an agile assassin skilled in deception, defeating enemies with her knives and poison. You decided to build your deck around the Silent-unique mechanic that is poison - at the end of each turn, every enemy with stacks of poison loses their HP equal to this number and reduces the number of stacks by one.\n\n<h3>Task</h3>\n\nYou, having a card called \"Noxious Fumes\", that after it's played applies `x` stacks of poison to every enemy at the start of each turn, wonder how many turns will it take to defeat all enemies using nothing but this passive ability. In addition, you have one card called \"Catalyst\", that, when played on an enemy, doubles their current poison stacks, but you can play it only once. However, some enemies may have an effect called `artifact`, that negates every first `y` debuffs applied to them (yes, poison counts as the debuff). We assume that you play \"Noxious Fumes\" immediately after the combat starts and are able to play \"Catalyst\" at any turn.\n\nYou need to write a function called `poison` that takes two arguments - a list of tuples in format `(hp, artifact)`, that represents your enemies, and a number of poison stacks applied at the start of every turn - and returns the minimum number of turns needed to defeat all the enemies.\n\nLet's take a look at an example:\n```\nenemies         >> (20, 3) (60, 0) (120, 0) # as per - 20 hp, 3 artifacts, etc.\npoison_per_turn >> 3\n\n-----+------------+------------+------------\nTURN |      E1    |     E2     |     E3\n-----+------------+------------+------------\n  0  | (20, 3, 0) | (60, 0, 0) | (120, 0, 0) \n                                             # the format is (hp, artifacts left, current poison stacks)\n                                             # this is the \"zero\" turn, before any poison applied\n-----+------------+------------+------------\n  1  | (20, 2, 0) | (60, 0, 3) | (120, 0, 3)\n                                             # the first turn in which the poison is applied - the enemies\n                                             # will lose the hp at the end of it, the first enemy loses the\n                                             # first artifact\n-----+------------+------------+------------\n  2  | (20, 1, 0) | (57, 0, 5) | (117, 0, 5)\n                                             # the enemies with poison lost their health, while reducing the\n                                             # the poison stacks by one, so at the start of this turn they have \n                                             # 3 - 1 + 3 = 5\n-----+------------+------------+------------\n  3  | (20, 0, 0) | (52, 0, 7) | (112, 0, 7)\n-----+------------+------------+------------\n  4  | (20, 0, 3) | (45, 0, 9) | (105, 0, 9)\n                                             # the enemy with artifacts lost them all, so from now on he is\n                                             # receiving poison as well\n-----+------------+------------+------------\n  5  | (17, 0, 5) | (36, 0, 11)| (96, 0, 11+11c)\n                                             # we decide to play the \"Catalyst\" on the third enemy on this turn\n                                             # doubling his poison from 11 to 22.\n-----+------------+------------+------------\n  6  | (12, 0, 7) | (25, 0, 13)| (74, 0, 24)\n-----+------------+------------+------------\n  7  | (5,  0, 9) | (12, 0, 15)| (50, 0, 26)\n-----+------------+------------+------------\n  8  |    DEAD    |    DEAD    | (24, 0, 28)\n-----+------------+------------+------------\n  9  |    DEAD    |    DEAD    |     DEAD\n-----+------------+------------+------------\n```\nSo, to represent this with our function:\n```python\npoison([(20, 3), (60, 0), (120, 0)], 3) == 8\n```\nBecause at the end of the 8th turn, all the enemies are dead. Notice, that there may be many ways to achieve the same result, playing the \"Catalyst\" on different turns/enemies.\n\n<h3>Notes</h3>\n\nIn a real game, you'd have to play the \"Noxious Fumes\" on you first turn, so the minimum number of turns would be at least 2, but here we are only counting the turns after playing \"Noxious Fumes\", because it is irrelevant for computations.  \nThe inputs will always be valid - no empty lists, no enemies with hp or artifact less than zero, and poison stacks per turn will also be always greater than 0.  \nRandom tests ranges (all inclusive):\n```\ncases: 100\nenemies: 1-5\nhp: 10-500\nppt: 1-10\nartifacts: 1-10 with 25% chance for an enemy to have this effect\n```\nRandom tests will also provide a suggested solution upon failure in a format: `\"Catalyst\" should be played on turn {n} on an enemy no. {k}.`. However, this may not be the only solution.\n\nIf you enjoyed this kata, please rate it, and if you found something that bothered you, leave a comment so I can improve it.",
+    "totalAttempts": 55,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

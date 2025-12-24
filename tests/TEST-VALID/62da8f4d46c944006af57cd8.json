@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/62da8f4d46c944006af57cd8",
+  "data": {
+    "id": "62da8f4d46c944006af57cd8",
+    "name": "Fancy bool #1: Bool as a higher inductive type",
+    "slug": "fancy-bool-number-1-bool-as-a-higher-inductive-type",
+    "category": "algorithms",
+    "publishedAt": "2022-07-22T11:53:10.217Z",
+    "approvedAt": null,
+    "languages": [
+      "agda"
+    ],
+    "url": "https://www.codewars.com/kata/62da8f4d46c944006af57cd8",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-07-22T11:51:41.781Z",
+    "createdBy": {
+      "username": "ice1000",
+      "url": "https://www.codewars.com/users/ice1000"
+    },
+    "description": "Here's a fancy definition of `Bool`:\n\n```agda\ndata Niltok : Set where\n  true : Niltok\n  not : Niltok → Niltok\n  mod2 : ∀ n → n ≡ not (not n)\n```\n\nDefine the `not` for this `Bool` type as a function, called `invert`, such that:\n\n+ `invert true = not true` holds definitionally\n+ `invert (not true) = true` holds propositionally",
+    "totalAttempts": 14,
+    "totalCompleted": 12,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Theorem Proving",
+      "Functional Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

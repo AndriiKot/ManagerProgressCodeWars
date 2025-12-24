@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c52d0babb637932dba58f42",
+  "data": {
+    "id": "5c52d0babb637932dba58f42",
+    "name": "Extrahieren von (Teil-)Arrays",
+    "slug": "extrahieren-von-teil-arrays",
+    "category": "reference",
+    "publishedAt": "2019-01-31T10:44:47.014Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5c52d0babb637932dba58f42",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-31T10:40:58.589Z",
+    "createdBy": {
+      "username": "user6634517",
+      "url": "https://www.codewars.com/users/user6634517"
+    },
+    "description": "Numpy Subarray Extraction\n==\nHier sollst du eine Funktion schreiben, die ein 6x6 Array in vier 3x3 Arrays aufteilt.\nDie Funktion bekommt also ein (beliebiges) 6x6 Array als Input und soll `ein Array, welches vier 3x3 Arrays` beinhaltet zurückgeben (Eine Liste oder ein Tupel sind als äußeres Array auch akzeptabel)\n\nDas folgende Beispiel veranschaulicht die Aufgabe:\n\nDie folgende Matrix veranschaulicht ein 6x6 Array:\n00 01 02 03 04 05  \n06 07 08 09 10 11  \n12 13 14 15 16 17  \n18 19 20 21 22 23  \n24 25 26 27 28 29  \n30 31 32 33 34 35\n\nAus diesem Array wollen wir die jetzt gezeigten 4 Sektoren herausbekommen:\n<pre>\n00  01  02  |  03  04  05  \n06  07  08  |  09  10  11  \n12  13  14  |  15  16  17  \n+++++++++++++++++++++++++    \n18  19  20  |  21  22  23  \n24  25  26  |  27  28  29  \n30  31  32  |  33  34  35\n</pre>\n\nDas zurückgegebene Array soll die 4 Sektoren in Reihenfolge entsprechend der Indizes beinhalten:\n<pre>\nq0 | q1  \n+++++  \nq2 | q3\n\n</pre>\n<details open><summary>Die Lösung zum gezeigten Beispiel siehst du hier:</summary>\n\n<pre>\n[\n    [[ 0  1  2]\n    [ 6  7  8]\n    [12 13 14]]\n\n    [[ 3  4  5]\n    [ 9 10 11]\n    [15 16 17]]\n    \n    [[18 19 20]\n    [24 25 26]\n    [30 31 32]]\n\n    [[21 22 23]\n    [27 28 29]\n    [33 34 35]]\n]\n</pre>\n\n`Bitte beachte, dass die Werte nur in diesem Beispiel aufsteigend sind und du dich darauf nicht verlassen darfst. (In den Tests werden zufällig generierte Zahlen verwendet).`\n</details>",
+    "totalAttempts": 37,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 2,
+    "tags": [
+      "NumPy",
+      "Arrays"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

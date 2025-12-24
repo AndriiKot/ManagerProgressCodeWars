@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/646d29de6a6c902ac23972db",
+  "data": {
+    "id": "646d29de6a6c902ac23972db",
+    "name": "Find all possible  character ships",
+    "slug": "find-all-possible-character-ships",
+    "category": "games",
+    "publishedAt": "2023-05-23T21:13:19.664Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/646d29de6a6c902ac23972db",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-23T21:02:22.636Z",
+    "createdBy": {
+      "username": "jacklyle",
+      "url": "https://www.codewars.com/users/jacklyle"
+    },
+    "description": "# Find All Possible Ships\n\nI have a friend who is really into shipping characters from TV shows. \n\nTo \"ship\" means to pair two characters, especially from a TV or film franchise, that you would really like to see in a romantic relationship.\n\nHe wants to be able to find all the possible ships so that he doesn't miss out on any.\n\nMany friends use my ship finding algorithm; some want only \"straight ships\" -- that is, heterosexual pairs -- and some are okay with including LGBTQ ships, or pairs containing two males or two females.  \n\nI need you to make a ship finding algorithm for my friends. \n\nIt will be passed two arguments: \n- A dictionary containing two keys, \"Males\" and \"Females\", whose values will each be strings containing names separated by commas\n- A boolean value called lgbtqAllowed that signifies whether the user wants LGBTQ ships to be included\n\nAs output, it should return an array containing all possible pairs as strings.\nIf lgbtqAllowed is true, return all possible ships, including straight pairs.\nIf it is false, return only straight pairs.\n\nFans love to come up with creative names for their favorite pairs, but you won't need to. Each returned pair should be a string with the character names separated by a hypen. \n\n### Edge Cases\n\nThere are two possible edge cases you need to be aware of: \n\n- there are not enough people for any pair\n\n- there are not enough people for a straight pair in the case that lgbtqAllowed is false\n\nIf either of these is true, simply return an empty array.\n\n#### Important information\n- The results should be alphabetically sorted by name; my friends are very strongly insistent on this. So, the tests will fail if the result array is not sorted properly\n\n- Each result pair must be distinct. For the purposes of this kata, \"A-B\" and \"B-A\" count as the same ship. Duplicates must not be present in the result array\n\n- You need to be aware of empty strings or empty values. These should not be included.\n\nFollowing are examples:\n\n```\n ////lgbtqAllowed is true\n findAllPossibleShips({Males: \"Cole,Alex\", Females: \"Abby\"}, true)\n //should return [ \"Alex-Abby\",\"Cole-Abby\", \"Cole-Alex\"]\n\n  ///lgbtqAllowed is false\n  findAllPossibleShips({Males: \"Cole,Alex\", Females: \"Abby\"}, false)\n //should return [\"Alex-Abby\", \"Cole-Abby\"]\n\nfindAllPossibleShips({Males: \"Cole,,Alex\", Females: \"Abby\"}, false)\n //should return [\"Alex-Abby\", \"Cole-Abby\"]\n\n```\n",
+    "totalAttempts": 138,
+    "totalCompleted": 8,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

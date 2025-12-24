@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5886677b9a08e2f9c90000c7",
+  "data": {
+    "id": "5886677b9a08e2f9c90000c7",
+    "name": "Calculate Monthly Mortgage Payment",
+    "slug": "calculate-monthly-mortgage-payment",
+    "category": "algorithms",
+    "publishedAt": "2017-01-23T21:34:36.548Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp",
+      "python",
+      "javascript",
+      "coffeescript",
+      "ruby",
+      "cpp",
+      "crystal"
+    ],
+    "url": "https://www.codewars.com/kata/5886677b9a08e2f9c90000c7",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-01-23T20:28:43.325Z",
+    "createdBy": {
+      "username": "Dana",
+      "url": "https://www.codewars.com/users/Dana"
+    },
+    "description": "Calculate the monthly mortgage payment given the principal loan amount <code>P<sub>0</sub></code>, the amortization period `a` and the *yearly* interest percentage `i`.\n\nUse this formula:\n```math\nc=\\dfrac{r * P_0}{1 - (1 + r)^{-N}}\n```\n\n- `N` can be found by multiplying the number of payments each year by the amortization period\n- `r` can be found by dividing the yearly interest rate by the number of payments each year (remember `i` is a percentage but `r` should be a decimal)\n\nSince we're talking money, your answer should be rounded to 2 decimal places.\n\nBelow is an example for weekly payments (52wks/year):\n\n- P<sub>0</sub> = $400000\n\n- a = 25 years\n\n- i = 3.5%\n\n- r = i / 52 / 100\n\n- N = a * 52\n\n- c = $461.79",
+    "totalAttempts": 783,
+    "totalCompleted": 191,
+    "totalStars": 8,
+    "voteScore": 157,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

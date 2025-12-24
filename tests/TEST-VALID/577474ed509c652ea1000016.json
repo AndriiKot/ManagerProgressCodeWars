@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/577474ed509c652ea1000016",
+  "data": {
+    "id": "577474ed509c652ea1000016",
+    "name": "Miller-Rabin Primality Test",
+    "slug": "miller-rabin-primality-test",
+    "category": "algorithms",
+    "publishedAt": "2016-06-30T01:28:10.147Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/577474ed509c652ea1000016",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-06-30T01:25:01.964Z",
+    "createdBy": {
+      "username": "Intermsof2",
+      "url": "https://www.codewars.com/users/Intermsof2"
+    },
+    "description": "You may wish to complete this kata as a prerequisite: https://www.codewars.com/kata/52fe629e48970ad2bd0007e6 \n\nTask: Write a function that accepts a number, and a times parameter that randomly chooses values to be tested in the Miller Rabin test. If the tests pass for the number of times specified, the function returns True, otherwise, it returns False.\n\nA Miller-Rabin (Miller 1976; Rabin 1980) primality test is a version of the Fermat test that cannot be fooled by Carmichael numbers.\n\nThe Fermat test for testing the primality of n, in short, involves choosing a random number \"b\" such that b < n, and seeing if (b^n % n) == (a % n). Repeatedly choosing more random numbers for this test increases the certainty that n is prime.\n\nThe Fermat's test has a draw back, in that there are certain numbers, called Carmichael numbers, that passes the Fermat test but is not prime.\n\nThe Miller-Rabin is an alternative version that remedies this draw back.\n\nIn the Miller-Rabin test for testing the primality of n, we choose a random number \"b\" such that b < n, and test whether (b^(n-1) % n) == 1.\n\nIn addition, we also test whether there are any b^(2^x) < b^(n - 1), where x is any positive integer 1,2,3,4,5 ..., such that b^(2^x) % n  ==  1, but b^(2^(x-1)) % n  !=  1. This is called a \"non-trivial square root' of 1.\n\nThis non trivial square root part is a bit complicated, so lets illustrate it with an example. If we were testing whether 1105 is a prime, we would do this :\n\n```python\n1. choose a random number less than 1105. (Let's choose 118)\n2. perform the standard test of whether 118 ^ 1104 % 1105 == 1 (which evaluates to true)\n3. for x = 1, test if 118^(2^x) % n == 1. This simplifies to 13924 % 1105, which is 664 != 1\n4. for x = 2 test if 118^(2^x) % n == 1. This simplifies to 193877776 % 561, which is 1. \nSo we see if 118^(2^(x - 1)), which is 118^(2^1), which we just tested in step 3, and it's 664. \nTherefore, we have found a non-trivial square root of 1, and we conclude 1105 is not prime.\n```\n\nSee excercise 1.28 here and read the whole 1.2.6 section for more detail if you are stuck: https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.6\n\nNote: Numbers up to 200 digits will be tested. With my solution, it takes around 3.7 seconds to complete. So if your solution is significantly inefficient, it will not go through because of the maximum time allowed. Also, if you are using tail recursion, the 200 digit cases will probably exceed the maximum call stack size. Try using an iterative process instead.\n",
+    "totalAttempts": 139,
+    "totalCompleted": 16,
+    "totalStars": 4,
+    "voteScore": 11,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

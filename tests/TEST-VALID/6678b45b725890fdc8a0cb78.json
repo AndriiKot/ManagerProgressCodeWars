@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6678b45b725890fdc8a0cb78",
+  "data": {
+    "id": "6678b45b725890fdc8a0cb78",
+    "name": "Witty LZWizardry: Magical Compression Adventures!",
+    "slug": "witty-lzwizardry-magical-compression-adventures",
+    "category": "algorithms",
+    "publishedAt": "2024-06-23T23:48:52.327Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/6678b45b725890fdc8a0cb78",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-06-23T23:48:43.859Z",
+    "createdBy": {
+      "username": "aaronrojas_",
+      "url": "https://www.codewars.com/users/aaronrojas_"
+    },
+    "description": "**LZW Compression**\n\nThe task is to implement a function `LWZCompress` that performs LZW compression on a given string. LZW (Lempel-Ziv-Welch) compression is a widely-used algorithm for lossless data compression. It works by replacing sequences of characters with codes, where each new sequence encountered is assigned a unique code.\n\nThere is more info: https://en.wikipedia.org/wiki/Lempel-Ziv-Welch\n\n**Task:**\n\nWrite a function `LWZCompress` that takes a string as input and returns its compressed form using the LZW compression algorithm.\n\n**Details:**\n\nGiven a string `uncompressed`:\n\n- If `uncompressed` is null or empty, the function should return an empty list `[]`.\n- Implement the LZW compression algorithm to replace sequences of characters with codes.\n- Return a list of integers representing the compressed data.\n\n**Examples:**\n\nFor the input \"TOBEORNOTTOBEORTOBEORNOT\", the expected output is `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 262, 257]`.\n- Here, sequences like \"TO\", \"BE\", \"OR\", \"NOT\" are replaced by their respective codes.\n\nFor the input \"ABCDEF\", where no sequences are repeated, the output should be `[65, 66, 67, 68, 69, 70]`.\n- Each character is represented by its ASCII value.\n\nFor null input or empty string \"\", the output should be `[]`.\n\n**Notes:**\n\n- The function should not use external libraries or functions that perform similar tasks.\n- Consider efficiency in terms of time and space complexity, especially for large inputs.\n\nThis implementation should accurately compress the input string using the LZW algorithm and return the corresponding list of integer codes.",
+    "totalAttempts": 11,
+    "totalCompleted": 3,
+    "totalStars": 0,
+    "voteScore": -1,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

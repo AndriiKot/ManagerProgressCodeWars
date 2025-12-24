@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53232260e4d01bc61f0006e1",
+  "data": {
+    "id": "53232260e4d01bc61f0006e1",
+    "name": "Time Conversion: 12s and 24s",
+    "slug": "time-conversion-12s-and-24s",
+    "category": "reference",
+    "publishedAt": "2014-03-14T21:47:01.074Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "coffeescript"
+    ],
+    "url": "https://www.codewars.com/kata/53232260e4d01bc61f0006e1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-03-14T15:38:08.376Z",
+    "createdBy": {
+      "username": "colbydauph",
+      "url": "https://www.codewars.com/users/colbydauph"
+    },
+    "description": "Complete the functions _12to24 and _24to12 to convert time between 12 hour, and 24 hour notations.\n\nFor the purpose of this kata, the following formats will be used for both input and output:\n\n-- --\n\n12 hour notation:\n<br>\n`[h]h:mm[:ss] pp`\n\n- `[h]h`  - Between one and two digits representing the hour. e.g. '2', '02', '11'\n- `mm`    - Two digits representing the minutes. e.g. '02', '14'\n- `[ss]`  - Two [optional] digits representing the seconds. e.g. '08', '36', '59'\n- `pp`    - A two character representation of the period (either 'am' or 'pm').\n-  `:`    - A colon separates each existing numeric group\n\n\nExamples: `1:24 pm`, `12:59 AM`, `04:01pm`, `07:10:15 pm`, `11:00:00AM`.\n\nNote: The maximum valid time in this notation is `12:59:59` regardless of period.\n\n\nMore information about 12 hour time can be found <a href='http://en.wikipedia.org/wiki/12-hour_clock'>here</a>.\n\n-- --\n\n24 hour notation:\n<br>\n`hh:mm[:ss]`\n\n- `hh`    - Two digits representing the hour. e.g. '02', '11', '23'\n- `mm`    - Two digits representing the minutes. e.g. '06', '29'\n- `[ss]`  - Two [optional] digits representing the seconds. e.g. '08', '36', '59'\n-  `:`    - A colon separates each numeric group\n\nExamples: `00:00`, `02:13:14`, `01:05`, `19:26`.\n\nNote: The maximum valid time in this notation is `23:59:59`.\n<br>\nNote: Midnight is occasionally displayed as `24:00:00`. For the sake of consistency, in this kata we will use the more common `00:00:00`.\n\n\nMore information about 24 hour time can be found <a href='http://en.wikipedia.org/wiki/24-hour_clock'>here</a>.\n\n-- --\n\nThe test cases for this kata are in three formats:\n\n\n- `Valid Strings` A random number of randomly generated time strings known to be valid will be tested against both conversion functions.\n- `Invalid Strings` A random selection of time strings known to be invalid will be tested against both conversion functions. (These should all throw 'error').\n- `Format Preservation` A random number of randomly generated time strings will be converted to their opposite format, converted back to their original format, and tested against the orginal.\n\n-- --\n\nNotes:\n\n- Invalid inputs must always throw 'error'.\n- Spacing and case may vary in your inputs, but both will be disregarded in the official tests. String.prototype.normalize has been provided to handle this if you wish to use it.",
+    "totalAttempts": 2095,
+    "totalCompleted": 55,
+    "totalStars": 13,
+    "voteScore": 54,
+    "tags": [
+      "Strings",
+      "Date Time",
+      "Regular Expressions",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

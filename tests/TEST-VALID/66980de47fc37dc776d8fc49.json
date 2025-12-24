@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66980de47fc37dc776d8fc49",
+  "data": {
+    "id": "66980de47fc37dc776d8fc49",
+    "name": "Mountain of Gold: Arrangement Problem",
+    "slug": "mountain-of-gold-arrangement-problem",
+    "category": "algorithms",
+    "publishedAt": "2024-07-17T18:31:29.500Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/66980de47fc37dc776d8fc49",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-07-17T18:31:00.422Z",
+    "createdBy": {
+      "username": "amalkrishnan43216",
+      "url": "https://www.codewars.com/users/amalkrishnan43216"
+    },
+    "description": "A pilgrim receives the task of arranging 'n' gold coins into a specified sequence. He has to \nfirst stack a tenth of the coins. Then he is required to build stacks that have 1/2th the \nnumber of coins in the first stack towards the east. If there are remaining coins, he has \nto create a final stack with it. If he is unable to divide the coins to its 10th or 1/2th, then\nhe should create a stack with just one coin.\n\nWrite a function that takes an integer value ```n``` where ```n>0``` and returns a list with sub-lists\ncontaining 1s where ```count(1)=n``` arranged in the following way: \n```\nlist_1:[count(1)=greater(floor(1/10*n),1)]\nlist_2:[count(1)=greater(floor(length(list_1)/2),1)]\nlist_x:[count(1)=greater(floor(length(list_1)/2),1)]\nlist_last:[count(1)=remaining 1s]\n```\n\n``` \n        Arrangement for n=101                                        \n1                                       \n1                                       \n1                                       \n1                                       \n1                                       \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   \n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  1\n```\n\nExamples:\n```\n  arrange_mountain(30)==>[[1, 1, 1], [1], [1], [1], [1], [1], \n  [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], [1], \n  [1], [1], [1], [1], [1], [1], [1], [1], [1], [1]]\n  ```\n```\n  arrange_mountain(100)==>[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1], \n  [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], \n  [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1],\n  [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1],\n  [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], \n  [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]\n```\n",
+    "totalAttempts": 109,
+    "totalCompleted": 20,
+    "totalStars": 0,
+    "voteScore": 10,
+    "tags": [
+      "Fundamentals",
+      "Data Structures",
+      "Lists"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

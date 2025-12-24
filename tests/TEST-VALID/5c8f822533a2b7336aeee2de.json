@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c8f822533a2b7336aeee2de",
+  "data": {
+    "id": "5c8f822533a2b7336aeee2de",
+    "name": "Reactive programming: #1 Create function",
+    "slug": "reactive-programming-number-1-create-function",
+    "category": "reference",
+    "publishedAt": "2019-03-19T02:08:07.281Z",
+    "approvedAt": null,
+    "languages": [
+      "typescript"
+    ],
+    "url": "https://www.codewars.com/kata/5c8f822533a2b7336aeee2de",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-03-18T11:33:57.945Z",
+    "createdBy": {
+      "username": "surtich",
+      "url": "https://www.codewars.com/users/surtich"
+    },
+    "description": "These kata series aim to show the possibilities of reactive programming.\n\nFor this we are going to implement part of the functionality of the magnificent [RxJS](https://www.learnrxjs.io/) library.\n\nIn this first part we have no choice but to start with a theoretical part but in the next katas the theoretical part will be minimal.\n\nFirst things first:\n\n# What reactive programming is?\n\nIf the functional programming is the programming with pure functions, the reactive programming would be the programming with observables.\n\n## What is an observable?\n\nAn observable is a powerful pattern that enables non-deterministic and lazy push computations.\n\nLet's clarify each of the terms.\n\n* Non-deterministic\n\n By this we mean that observables can return multiple values in contrast to functions that only return a single value. An `EventEmitter` would be in this sense as an observable since it emits several values, while a promise would be like a function by issuing a single value.\n\n* Lazy\n\n Lazy means that observables do not emit until there is a subscription. Oservables resemble functions since they do not perform any computation until they are invoked.\n\n* Push\n\n In Pull systems, the Consumer determines when it receives data from the data Producer. The Producer itself is unaware of when the data will be delivered to the Consumer.\n \n In Push systems, the Producer determines when to send data to the Consumer. The Consumer is unaware of when it will receive that data.\n \n Every JavaScript Function is a Pull system. The function is a Producer of data, and the code that calls the function is consuming it by \"pulling\" out a single return value from its call.\n \n Promises, EventEmitters and Observables are types of Push systems. In both (Producer) delivers a resolved value to registered callbacks (Consumers), but unlike functions, they determine precisely when that value is \"pushed\" to callbacks.\n \nIn a practical way, we could say that an observable is a push function with zero arguments that emits values over time and to which we can apply transformation functions, such as mapping, filtering or reducing.\n \n Ok, enough of theory. Let's start!\n \n # Observable creation\n \n ## create function\n \n Your task is implement the `create` function defined as follows:\n \n ```javascript\n declare function create<T>(f: (o: Observer<T>) => void): Observable<T>;\n \n interface Observer<T> {\n  next: (value: T) => void;\n  complete: () => void;\n}\n\ninterface Observable<T> {\n  subscribe: (o: Subscriber<T>) => Subscription;\n}\n\ninterface Subscriber<T> {\n  onNext?: (value: T) => void;\n  onComplete?: () => void;\n}\n\ninterface Subscription {\n  unsubscribe: () => void;\n}\n```\n\n* `create` function receives a function, which will receive an `observer`, and returns an `observable`.\n\n*  A `observer` is a collection of callbacks, `next` and `complete`, who knows how to listen to values delivered by the `observable`. When the observer \"sees\" a new value, it calls the `next` method and when it \"knows\" that there will be no more values it calls `complete`.\n\n* The `observable` returned by `create` is an object with a `subscribe` function. Remember that `observable` is lazy and does not do any work until someone subscribes to it.\n\n* The `subscribe` function receives a `subscription`. This object has two keys, `onNext` and `onComplete`. They are invoked when the `observer` calls `next` and `complete` respectively.\n\n* RxJS library can manage errors that we omitted in this kata for simplicity.\n\nLet's see it with an example.\n\n```javascript\nconst observable = create(function (observer) {\n  observer.next(1);\n  observer.next(2);\n  observer.next(3);\n  setTimeout(() => {\n    observer.next(4);\n    observer.complete();\n    observer.next(5); // observable is completed. 5 is never emitted.\n  }, 1000);\n});\n\nconsole.log('just before subscribe');\nobservable.subscribe({\n  onNext: x => console.log('got value ' + x),\n  onComplete: () => console.log('done'),\n});\nconsole.log('just after subscribe');\n```\n\n```\njust before subscribe\ngot value 1\ngot value 2\ngot value 3\njust after subscribe\n#after one second\ngot value 4\ndone\n```\n\nNote that the first three calls to `next` are synchronous and the fourth is asynchronous. The calls after completing are omitted.\n\nIf you subscribe multiple times, the `observable` sends all the values to each `subscriber`:\n\n```javascript\nconst observable = create(function(observer) {\n  observer.next(1);\n  observer.next(2);\n  observer.complete();\n});\n\nobservable.subscribe({\n  onNext: x => console.log(\"from first subscriber got value \" + x)\n});\n\nobservable.subscribe({\n  onNext: x => console.log(\"from second subscriber got value \" + x)\n});\n```\n\n```\nfrom first subscriber got value 1\nfrom first subscriber got value 2\nfrom second subscriber got value 1\nfrom second subscriber got value 2\n```\n\nThe result would be the same even if the subscription is asynchronous.\n\n```typescript\nobservable.subscribe({\n  onNext: x => console.log(\"from first subscriber got value \" + x)\n});\n\nsetTimeout(() => {\n  observable.subscribe({\n    onNext: x => console.log(\"from second subscriber got value \" + x)\n  });\n});\n```\n\nAs soon as you unsubscribe you stop receiving notifications:\n \n```javascript\nconst observable = create(function(observer) {\n  observer.next(1);\n  observer.next(2);\n  setTimeout(() => {\n    observer.next(3);\n  }, 1000);\n});\n\nconst subscription = observable.subscribe({\n  onNext: x => console.log(\"got value \" + x),\n  onComplete: () => console.log(\"done\")\n});\n\nsetTimeout(() => {\n  subscription.unsubscribe();\n}, 500);\n```\n\n```\ngot value 1\ngot value 2\n```\n \nThis is all. You must implement the `create` function. The tests can guide you.\n\nWhen you are finished, you can continue with [#2 Basic observables creation](https://www.codewars.com/kata/5c90276a03b42343cb32e9bf)",
+    "totalAttempts": 321,
+    "totalCompleted": 58,
+    "totalStars": 27,
+    "voteScore": 38,
+    "tags": [
+      "Reactive Programming",
+      "RxJS",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

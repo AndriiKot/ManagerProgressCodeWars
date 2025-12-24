@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c3fc9ff815d8d000f00cb63",
+  "data": {
+    "id": "5c3fc9ff815d8d000f00cb63",
+    "name": "War Card Game",
+    "slug": "war-card-game",
+    "category": "algorithms",
+    "publishedAt": "2019-01-17T23:36:41.351Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5c3fc9ff815d8d000f00cb63",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-17T00:19:11.728Z",
+    "createdBy": {
+      "username": "user3254461",
+      "url": "https://www.codewars.com/users/user3254461"
+    },
+    "description": "# The game\nThe War card game is a game with 2 players where each card is assigned a value. (Note the Jokers are removed)\n\n* ```  \"A\" = 1, \"2\" = 2, ... \"10\" = 10, \"J\" = 11, \"Q\" = 12, \"K\" = 13 ```\n* The cards have the same value, no matter the suit so it won't be specified in the strings.\n      \nThe players split the cards so they both have a pile of 26 cards and they start the first turn.\n\nDuring a turn, both players simultaniously take the top card of their pile without looking and place it in front of them. The winner is the one with the highest value (Exept Ace that beats King for some reason) the winner takes back both his own card and his opponent's card and put them at the bottom of their pile. \n* (For this kata, we will assume the player always put their own card back before the opponent's).\n```ruby\n[\"3\",\"Q\"][\"6\",\"K\"] => [\"Q\"][\"K\",\"6\",\"3\"] # 6 > 3 So last pile puts both card on the bottom of his pile, putting his own card first.\n[\"A\",\"5\"][\"K\",\"3\"] => [\"5\",\"A\",\"K\"][\"3\"] # 1 > 13 (Don't forget Ace beats King!) (Yes, it's weird.)\n```\n\nAlso if the cards played during a turn have the same value, a \"War\" starts! During a war, both player puts cards until one player put the card that started the war, in which case the player wins the war and take all the cards played during the war\n* (If both player put the card that started the war at the same time, the war is considered a draw and both player take back their own cards) \n* (Also, for the kata, we will asume the player that wins take the cards in the order that they are on the table and that the player takes his \"war pile\" first) \n* (Also also, if a player runs out of cards, the other one automaticly wins the war, and the game.)\n```ruby\n# A normal War\n[\"7\",\"6\",\"7\",\"8\"]        [\"7\",\"K\",\"J\",\"7\"] # 7 = 7; War starts!\n[\"6\",\"7\",\"8\"]   [\"7\"][\"7\"]   [\"K\",\"J\",\"7\"] # No new \"7\" so just add the cards to the \"War piles\".\n[\"7\",\"8\"]   [\"7\",\"6\"][\"7\",\"K\"]   [\"J\",\"7\"] # There is a \"7\"!\n[\"8\"]   [\"7\",\"6\",\"7\"][\"7\",\"K\",\"J\"]   [\"7\"] # Since they put the cards at the same time, last pile also lose \"J\"\n[\"8\",\"7\",\"6\",\"7\",\"7\",\"K\",\"J\"]        [\"7\"] # The winner of the war take back all the card in the war piles, taking back his pile first.\n# A war that end in a draw\n[\"3\",\"5\",\"3\",\"9\"]         [\"3\",\"Q\",\"3\",\"J\"] # 3 = 3; War starts!\n[\"5\",\"3\",\"9\"]   [\"3\"][\"3\"]    [\"Q\",\"3\",\"J\"] # No new \"3\" so just add the cards to the \"War piles\".\n[\"3\",\"9\"]   [\"3\",\"5\"][\"3\",\"Q\"]    [\"3\",\"J\"] # Both player got another \"3\" at the same time, so they will both take back their own pile.\n[\"9\"]   [\"3\",\"5\",\"3\"][\"3\",\"Q\",\"3\"]    [\"J\"] # Remember to put the war ending cards in the piles too!\n[\"9\",\"3\",\"5\",\"3\"]         [\"J\",\"3\",\"Q\",\"3\"] # In the end, they just took back all of their cards.\n# A war where someone runs out of cards\n[\"5\",\"8\",\"5\"]        [\"5\",\"9\"] # 5 = 5; War starts!\n[\"5\",\"8\"]   [\"5\"][\"5\"]   [\"9\"] # No new \"5\" so just add the cards to the \"War piles\".\n[\"5\"]   [\"5\",\"8\"][\"5\",\"9\"]  [] # Last pile run out, so first pile wins the war.\n```\n* Note the case where both piles run out is impossible. (You can't have both pile run out without playing another card like the one that started the war since there are 4 of them in a real game.)\n\nWhen a player has all the cards, they win!\n# Task\nYour task is to create a function```winner?``` that takes the piles of both players and return which one wins.\n* return \"First\"  if first pile wins,  return \"Last\"  if last pile wins.\n* The piles are labeled \"first\" and \"last\" so you know which one is First/Last.\n* For the kata, we will consider that the beggining of the array is the top of the pile.\n# Good luck, and have fun!\n\n",
+    "totalAttempts": 53,
+    "totalCompleted": 2,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Games",
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

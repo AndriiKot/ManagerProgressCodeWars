@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5adaebc232d79e85f3000149",
+  "data": {
+    "id": "5adaebc232d79e85f3000149",
+    "name": "Twins Swap Even Odd",
+    "slug": "twins-swap-even-odd",
+    "category": "algorithms",
+    "publishedAt": "2018-04-21T07:47:19.546Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5adaebc232d79e85f3000149",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-21T07:44:02.774Z",
+    "createdBy": {
+      "username": "juank704",
+      "url": "https://www.codewars.com/users/juank704"
+    },
+    "description": "Two strings, a and b, are said to be twins only if they can be made equivalent by performing some number of operations on one or both strings. There are two possible operations:\n\nSwapEven: Swap a character at an even-numbered index with a character at another even-numbered index.\n\nSwapOdd: Swap a character at an odd-numbered index with a character at another odd-numbered index.\n\nFor example, a = \"abcd\" and b = \"cdab\" are twins because we can make them equivalent by performing operations. Alternatively, a = \"abcd\" and b = \"bcda\" are not twins (operations do not move characters between odd and even indices), and neither are a = \"abc\" and b = \"ab\" (no amount of operations will insert a c into string b).\n\n\nAn array of n strings named a.\nAn array of n strings named b.\nThe function must return an array of strings where each index i (0 ≤ i < n) contains the string \"Yes\" if a(i) and b(i) are twins or the string \"No\" if they are not.\n\nConstraints:\na(i) and b(i) are not guaranteed to have the same length.\nStrings a(i) and b(i) contain lowercase letters only (i.e., a through z).\n\n\nExplanation:\nGiven a = [\"cdab\", \"dcba\"] and b = [\"abcd\", \"abcd\"], we process each element like so:\n\na0 = \"cdab\" and b0 = \"abcd\": We store Yes in index 0 of the return array because a0 = \"cdab\" → \"adcb\" → \"abcd\" = b0.\na1 = \"dcba\" and b1 = \"abcd\": We store No in index 1 of the return array because no amount of operations will move a character from an odd index to an even index, so the two strings will never be equal.\nWe then return the array [\"Yes\", \"No\"] as our answer.\n\nFor example:\n\nSample Input:\n------------\n\ncdab\ndcba\n////\nabcd\nabcd\n\nSample Output:\n-------------\nYes\nNo",
+    "totalAttempts": 173,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

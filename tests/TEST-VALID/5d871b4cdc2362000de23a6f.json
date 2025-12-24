@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d871b4cdc2362000de23a6f",
+  "data": {
+    "id": "5d871b4cdc2362000de23a6f",
+    "name": "Parse the Reporting Week",
+    "slug": "parse-the-reporting-week",
+    "category": "reference",
+    "publishedAt": "2019-09-22T07:35:25.951Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5d871b4cdc2362000de23a6f",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-09-22T06:57:16.617Z",
+    "createdBy": {
+      "username": "chillerno1",
+      "url": "https://www.codewars.com/users/chillerno1"
+    },
+    "description": "At Billing Pty Ltd our system records invoices with a datetime in this format: `2019-06-03 15:03:59` (yyyy-mm-dd HH:MM:SS).\n\nManagement has asked us to report the volume of invoices processed weekly. Luckily our reporting system can do this, but we first need to convert the invoice date string into a __*date value*__ which represents the reporting week it falls into.\n\n**Your Task**: Given a date string, return the reporting week (as date) it falls into.\n\n**An important note**: the Billing Pty Ltd __*reporting week*__ refers to __*week ending*__ and runs from __Friday to Thursday__. \n\nIf an invoice date is `2019-06-03 15:03:59`, it will fall in reporting week ending `2019-06-06` (Thursday). \n\n```\n# Examples:\n\n>>> get_reporting_date('2019-06-03 15:03:59') --> datetime.date(2019, 6, 6)\n>>> get_reporting_date('2016-03-07 22:43:18') --> datetime.date(2016, 3, 10)\n```\n\n**Date inputs will always be valid.**",
+    "totalAttempts": 203,
+    "totalCompleted": 32,
+    "totalStars": 4,
+    "voteScore": 12,
+    "tags": [
+      "Fundamentals",
+      "Date Time"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

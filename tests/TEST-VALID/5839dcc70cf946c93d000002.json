@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5839dcc70cf946c93d000002",
+  "data": {
+    "id": "5839dcc70cf946c93d000002",
+    "name": "Foxes and rabbits",
+    "slug": "foxes-and-rabbits",
+    "category": "reference",
+    "publishedAt": "2016-11-26T19:06:58.210Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5839dcc70cf946c93d000002",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2016-11-26T19:04:40.095Z",
+    "createdBy": {
+      "username": "mbeevor",
+      "url": "https://www.codewars.com/users/mbeevor"
+    },
+    "description": "The year is Year 0. \n\nYou have a field, with a number of rabbits and foxes in it.\n\nIn the spring of each coming year the rabbit population will double in size.\nAlso, the fox population will increase in size by 50%. This should be to a whole number, decimals should be floored.\nOver the Summer each fox will eat one rabbit, or all of them if there are less rabbits than foxes.\nDuring Autumn, hunters will kill 20 foxes, or all of them if there are less than 20.\n\n\n\nYou will make a function that takes in the initial number of foxes and rabbits.\n\nThe function will run until either:\n\n the population of foxes and rabbits exceeds 1000,\n in which case it will return\n\n\t\"The population is out of control. Year X\"\n\n or there are no more rabbits\n \n\t\"All rabbits were eaten. Year X\"\n\n or there are no more foxes\n \n\t\"Foxes hunted to extinction. Year X\"\n\nThe X should be replaced with the correct year number.\n\n\nIf the initial amount of foxes or rabbits is less than 0, or the total is over 1000, Year X will be year 0.\n\n\n\nEXAMPLE\n\nYear 0 \n\nInitial amounts\n\n\t101 foxes, 101 rabbits.\n\nYear 1\n\nFox population increases by 50% and rabbit population doubles.\n\n\t  151 foxes, 202 rabbits\n\nEach fox eats one rabbit\n\n    51 rabbits\n\n20 foxes are hunted\n\n    131 foxes\n    \nThere are still foxes and rabbits, and less than 1000 animals in total, so we progress to the next year.\n\nYear 2\n\nFox population increases by 50% and rabbit population doubles.\n\n    196 foxes, 102 rabbits\n\nEach fox eats one rabbit...\n \n\t\"All rabbits were eaten. Year 2\"\n\n\n",
+    "totalAttempts": 422,
+    "totalCompleted": 27,
+    "totalStars": 6,
+    "voteScore": 34,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

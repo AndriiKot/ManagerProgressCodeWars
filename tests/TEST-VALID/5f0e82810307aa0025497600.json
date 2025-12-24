@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5f0e82810307aa0025497600",
+  "data": {
+    "id": "5f0e82810307aa0025497600",
+    "name": "Approximating a higher-order differential equation using Euler's method",
+    "slug": "approximating-a-higher-order-differential-equation-using-eulers-method",
+    "category": "algorithms",
+    "publishedAt": "2020-07-15T06:19:41.304Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5f0e82810307aa0025497600",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-07-15T04:13:54.069Z",
+    "createdBy": {
+      "username": "StephenDonovan1",
+      "url": "https://www.codewars.com/users/StephenDonovan1"
+    },
+    "description": "If you've taken calculus, you may have heard of Euler's numerical method of solving first-order ordinary differential equations.\n\nYou may also know that any higher-order ODE can be converted into an equivalent system of first-order ODEs, all of which can then be approximated with Euler's method. In this way we can extend Euler's method to any higher-order ODE.\n\nYour task in this kata is to implement this version of Euler's method for an arbitrary ordinary differential equation. Implement the function <code>euler_sol(fun, order, step, num_steps, *initial)</code> which will return the approximation of the final y-value as a float, where:\n\n<code>fun</code> represents the equation in the form [highest order derivative of y] = fun(x, derivatives of y). fun takes in an x-value and a list containing all of the lower-order derivatives and returns the value of the highest-order derivative at that point.\n\n<code>order</code> represents the order of the equation, which is the same as the order of the highest-order derivative on the left-hand side and should always be a strictly positive integer.\n\n<code>step</code> represents the step size which you will increment x by on each step.\n\n<code>num_steps</code> represents the number of steps to carry out Euler's method for. This should always be a strictly positive integer.\n\n<code>initial</code> represents the initial conditions of the function, always starting from the value of the function itself and then going up to the n-1-th derivative. These values are measured at x = 0, and the number of initial conditions should always equal the order of the equation.\n\nIf your program is passed any values outside of the specified ranges, it should raise a ValueError. None of the tests will involve passing in incorrect types for values.\n\nThere will be tests where fun is not defined over the whole domain, so at certain steps it might be impossible to compute: if this occurs, also raise a ValueError.\n\nYour solution will be tested against the expected values for Euler's method to a relative margin of 1e-9. Bear in mind this is measured against the expected result from the method, not the actual solution: the error from the actual solution is often much higher.\n\nHere's a wikipedia page on Euler's method if you need it: https://en.wikipedia.org/wiki/Euler_method#:~:text=In%20mathematics%20and%20computational%20science,with%20a%20given%20initial%20value.\n\n<hr>\nExample: Small second-order case: <br>\n<code>Approximate y\" = -y, y(0) = 1, y'(0) = 0 with step size h = 0.31416 and 5 steps.<br>\n(The exact solution is y = cos(x), and our final x is about pi/2, so this should be about 0) <br><br>\nStep 1: x = 0, y = 1, y' = 0 <br>\ny\" at this step: y\"= -y = -1 <br><br>\nNext x = x + h = 0 + 0.31416 = 0.31416<br>\nNext y = y + y'*h = 1 + 0*h = 1<br>\nNext y' = y' + (y')'*h = 0 + (-1)*0.31416 = -0.31416 <br><br>\nStep 2: x = 0.31416, y = 1, y' = -0.31416 <br>\ny\" at this step: y\" = -y = -1 <br><br>\nNext x = x + h = 0.31416 + 0.31416 = 0.62832 <br>\nNext y = y + y'*h = 1 - 0.31416*0.31416 = 0.90130 (truncated to 5 dp here, don't do this in the code) <br>\nNext y' = y' + y\"*h = -0.31416 - 1*0.31416 = -0.62832 <br><br>\nStep 3: x = 0.62832, y = 0.90130, y' = -0.62832<br>\ny\" at this step: y\" = -y = -0.90130 <br><br>\nNext x = x + h = 0.62832 + 0.31416 = 0.94248<br>\nNext y = y + y'*h = 0.90130 - 0.62832*0.31416 = 0.70391<br>\nNext y' = y' + y\"*h = -0.62832 - 0.90310*0.31416 = -0.91204<br><br>\nStep 4: x = 0.94248, y = 0.70391, y' = -0.91204<br>\ny\" at this step: y\" = -y = -0.70391<br><br>\nNext x = x + h = 0.94248 + 0.31416 = 1.25564\nNext y = y + y'*h = 0.70391 - 0.91204*0.31416 = 0.41738<br>\nNext y' = y' + y\"*h = -0.91204 + -0.70391*0.31416 = -1.13318<br><br>\nStep 5: x = 1.25564, y = 0.41738, y' = -1.13318<br>\nFinal x = x + h = 1.25564 + 0.31416 = 1.5698<br>\nFinal y = 0.41738 + -1.13318*0.31416 = 0.06138</code>",
+    "totalAttempts": 145,
+    "totalCompleted": 23,
+    "totalStars": 4,
+    "voteScore": 11,
+    "tags": [
+      "Mathematics",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

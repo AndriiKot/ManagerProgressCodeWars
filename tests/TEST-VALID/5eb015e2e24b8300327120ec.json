@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5eb015e2e24b8300327120ec",
+  "data": {
+    "id": "5eb015e2e24b8300327120ec",
+    "name": "Scoring HTML Test Question",
+    "slug": "scoring-html-test-question",
+    "category": "algorithms",
+    "publishedAt": "2020-05-05T14:18:03.077Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5eb015e2e24b8300327120ec",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-04T13:17:22.356Z",
+    "createdBy": {
+      "username": "Admiraal",
+      "url": "https://www.codewars.com/users/Admiraal"
+    },
+    "description": "<style>.markdown code{margin-top: 0; margin-bottom: 0; padding-top:0; padding-bottom:0} blockquote td:first-child{width:12ch}</style>\n\n\n# Question\nComputer Science students need to answer the following question on their test:\n\n> With the following lines one can create a valid HTML file. Write down the correct order of line numbers in which one can create a [valid HTML file](https://www.w3.org/TR/html52/introduction.html#a-quick-introduction-to-html) using all lines numbers below.\n>\n>| Line number | HTML |\n| --| --|\n| 1 | `<head>` |\n| 2 | `</head>` |\n| 3 | `<html lang=\"en\">` |\n| 4 | `<meta charset=\"utf-8\">` |\n| 5 | `<!DOCTYPE html>` |\n| 6 | `</html>` |\n| 7 | `<title>Test</title>` |\n| 8 | `<h1>A Header</h1>` |\n| 9 | `<p>This is a paragraph!</p>` |\n| 10 | `<body>` |\n| 11 | `</body>` |\n\n\n\n# Grading\n\nIt is our task to grade this question:\n\nBullets to check:\n1. Add 1 point if `<!DOCTYPE html>` is the first in the answer.\n2. Add 1 point if the begin tag of `html` is previous to its endtag in the answer.\n3. Add 1 point if the begin tag of `head` is previous to its endtag in the answer.\n4. Add 1 point if the begin tag of `body` is previous to its endtag in the answer.\n\n\nIf bullet 3 is true: \n- Add another 1 point if `<meta charset=\"utf-8\">` is in the `head` element \n<br>(i.e. `<head>` should be previous to `<meta charset=\"utf-8\">` which is then previous to `</head>`)\n- Add another 1 point if `<title>Test</title>` is in the `head` element\n\nIf bullet 4 is true:\n- Add another 1 point if `<h1>A Header</h1>` is in the `body` element\n- Add another 1 point if `<p>This is a paragraph!</p>` is in the `body` element\n   \nIf bullets 2 & 3 are true:\n- Add another 1 point if the `head` begin- and endtag are in the `html` element\n      \n   \nIf bullets 2 & 4 are true:\n- Add another 1 point if the `body` begin- and endtag are in the `html` element \n\n\nAdd one final extra point if all 10 points above are obtained and if the `head` endtag is previous to the `body` begintag.\n\n---\n\n\n# Input\nThe input will be a `Tuple` containing a single student's answer which will be a *permutation* of all 11 HTML line numbers in the above question.\n\n---\n\n# Output \nReturn the amount of points the student should get for its answer.\n\n---\n\n# Examples\n\nThis is a completely valid example:\n\n`(5, 3, 1, 7, 4, 2, 10, 8, 9, 11, 6)` should return `11`\n\n<br>\n\nThis example only gets points for bullets 1, 2, 3 and 4:\n\n`(5, 3, 1, 6, 10, 2, 11, 8, 9, 7, 4)` should return `4`\n\n\n\n\n\n\n\n ",
+    "totalAttempts": 78,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Fundamentals",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

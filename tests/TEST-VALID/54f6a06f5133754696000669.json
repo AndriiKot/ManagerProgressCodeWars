@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/54f6a06f5133754696000669",
+  "data": {
+    "id": "54f6a06f5133754696000669",
+    "name": "Abstract Model Magic",
+    "slug": "abstract-model-magic",
+    "category": "refactoring",
+    "publishedAt": "2015-03-04T06:04:39.711Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript",
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/54f6a06f5133754696000669",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-03-04T06:04:31.984Z",
+    "createdBy": {
+      "username": "nrgarg",
+      "url": "https://www.codewars.com/users/nrgarg"
+    },
+    "description": "# All properties are now methods\n```javascript\n//in js\n//normally we do this\nvar myObject = new SomeObject({ name: 'hello' });\nmyObject.name // returns 'hello';\nmyObject.name = 'WORLD';\nmyObject.name // returns 'WORLD';\n\n\n// but what if we made it all look like methods instead?\nmyObject.name() // returns 'hello';\nmyObject.name('WORLD');\nmyObject.name() // returns 'WORLD';\n```\n```ruby\n#in ruby\n#normally we do this \nmyObject = SomeObject.new({name: 'hello'})\nmyObject.name # returns 'hello'\nmyObject.name = 'WORLD'\nmyObject.name # returns 'WORLD'\n\n# but what if we made it all look like methods instead?\nmyObject.name # returns 'helloo'\nmyObject.name 'WORLD'\nmyObject.name # returns 'WORLD'\n```\n\n## Task\n* Complete the MagicModel constructor/class\n* Object expects to be initialized with the **name** property. i.e.\n\t* js\n  \t* new MagicModel({ name: ... });\n\t* ruby \n\t\t* MagicModel.new({name: ... })\n\n* Only methods/functions i.e. no attributes holding data, no instance variables being passed around.\n* DO NOT make a **name** prototype/class method.\n\n## Details\n* **register** takes arguments - **attribute, value**\n\t* This method is what allows us to create the \"properties\" for our particular object\n- Ensure the **init** data is an object.\n\n### Why not create a \"name\" prototype/class method?\nThe properties of a newly created instance are *unique* to that instance. The exercise is to maintain that uniqueness, but surround the access to that property in a *method*. If you want shared data between all of your instances, then it makes sense to put it on the prototype/class. However, that is not the goal here. ",
+    "totalAttempts": 524,
+    "totalCompleted": 33,
+    "totalStars": 6,
+    "voteScore": 41,
+    "tags": [
+      "Functional Programming",
+      "Refactoring"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 2
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ae7836d68e64497c700006b",
+  "data": {
+    "id": "5ae7836d68e64497c700006b",
+    "name": "Price War",
+    "slug": "price-war",
+    "category": "reference",
+    "publishedAt": "2018-04-30T22:05:13.993Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/5ae7836d68e64497c700006b",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-04-30T20:58:22.070Z",
+    "createdBy": {
+      "username": "FilipH",
+      "url": "https://www.codewars.com/users/FilipH"
+    },
+    "description": "### Price War\n\n#### Goal\n- the goal of this kata is to <strong><em>optimize your revenue</em></strong> in a given market of supply and demand\n- <strong><em>customers</em></strong> have a desired quantity they want to buy for a given maximum price\n- <strong><em>suppliers</em></strong> have a maximum capacity they can deliver for a given price \n- <strong><em>your goal</em></strong> is to set the optimal price for a given capacity to maximize your total revenue\n\n#### Params\n- <strong><em>demand</em></strong> = array of [quantity, max_price]\n- <strong><em>supply</em></strong> = array of [max_capacity, price]\n- <strong><em>your capacity</em></strong> = max_capacity\n- return the <strong><em>optimal price</em></strong> to maximize your revenue\n\n#### Example\n- <strong><em>demand</em></strong> = [ [500, 15.00], [500, 14.50] ]\n- <strong><em>supply</em></strong> = [ [850, 14.85], [750, 14.75] ]\n- <strong><em>your capacity</em></strong> = 650\n- based on the rules below the demand gets fulfilled in the original sequence [ [500, 15.00], [500, 14.50] ]\n- the suppliers are used up from lowest to highest price [ [750, 14.75], [850, 14.85] ]\n- suppose you would set your price to 14.74\n  - this would result in supply sequence [ [650, 14.74], [750, 14.75], [850, 14.85] ]\n  - and gives you a revenue of 14.74 * 500 = 7370, since the second buyer does'nt go over 14.50\n- if you set a price higher then 14.74, you can't sell anything and your revenue is zero because the second buyer does'nt allow prices above 14.50\n- on the other hand if you set 14.50 as price both buyers will be satisfied\n  - this would result in supply sequence [ [650, 14.50], [750, 14.75], [850, 14.85] ]\n  - and gives you a revenue of 14.50 * (500 + 150) = 9425    \n- so your <strong><em>optimal price</em></strong> in this case = 14.50\n\n#### Rules\n- only one product is available on the market\n- the demand market is supplied in sequence of appearance\n- customers don't pay more then their maximum price<br/>\n  (so only suppliers with sell-price <= maximum-price can sell to a customer) \n- supply is used up from lowest to highest price<br>\n  (the lowest supply price is used first until it's capacity is used up, then the next, etc...)\n- all prices have the same currency and are scaled to 2 decimals\n- quantities and capacities are also scaled to maximum 2 decimals\n- all suppliers need to have a different price\n- your maximum production capacity is given\n- your revenue is the quantity sold of your capacity multiplied by your price \n- if nothing can be sold then return price 0\n- in case more then one price gives the same optimal revenue, then return the price that needs the least capacity to achieve the same revenue\n\n#### More Examples\n\n###### Example 1 - supply > demand\n- demand = [ [1100, 25.13], [1000, 23.10], [888, 19.19], [3000, 11.8] ]\n- supply = [ [5000, 17], [2000, 16] ]\n- capacity = 500\n- => optimal price = 16.99\n\n###### Example 2 - demand > supply\n- demand = [ [100, 20.00], [50, 30.00], [300, 5.00], [5000, 25.00] ]\n- supply = [ [1000, 27], [500, 16] ]\n- capacity = 250\n- => optimal price = 25.00\n\n###### Example 3 - more profit when not using up capacity\n- demand = [ [1000, 10.00], [1000, 11.00], [1000, 4.80], [400, 12.00] ]\n- supply = [ [1500, 4.75], [1500, 4.75] ]\n- capacity = 900\n- => optimal price = 12.00\n\n###### Example 4 - no competition\n- demand: [ [1000, 12.50] ]\n- supply: [ ]\n- capacity: 10000\n- => optimal price: 12.50\n\n#### good luck!!!",
+    "totalAttempts": 14,
+    "totalCompleted": 3,
+    "totalStars": 2,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals",
+      "Algorithms",
+      "Mathematics",
+      "Games"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

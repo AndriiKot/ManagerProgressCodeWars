@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/60515b599da73d0037c4c375",
+  "data": {
+    "id": "60515b599da73d0037c4c375",
+    "name": "Carbon Dating",
+    "slug": "carbon-dating",
+    "category": "reference",
+    "publishedAt": "2021-03-17T03:50:40.072Z",
+    "approvedAt": null,
+    "languages": [
+      "java",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/60515b599da73d0037c4c375",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-03-17T01:28:57.425Z",
+    "createdBy": {
+      "username": "NoSoCo",
+      "url": "https://www.codewars.com/users/NoSoCo"
+    },
+    "description": "<b>Background</b>\n---\nWe all remember those stupid carbon half-life problems we were given in math class. They always seemed to be the hardest questions in my opinion. No? Just me? Very well :(. Anyways, Carbon dating is actually very useful, especially in the field of archaeology. It allows researchers to learn the ages of archaeological artifacts that were once living. It gives us insight into how old life on Earth actually is, and that's pretty neat!\n\n<b>Question</b>\n---\nGiven the initial amount of grams ```g``` and the years ```y```, calculate the amount of <sup>14</sup>C remaining in a sample. One note that should be helpful on your journey is knowing that the half-life of <sup>14</sup>C is 5700 years. <b>it must be rounded to two decimals places.</b>\n\n<b>Example</b>\n---\n```Java\ndating(20, 10320) -> 5.70\n```\nFirst, you must find the formula of decay for <sup>14</sup>C when its half-life is 5700 years. The equation below shows you the general model for exponential decay.\n\n<i>N</i>(<i>t</i>) = <i>N</i><sub>0</sub><i>e</i><sup><i>kt</i></sup>\n\n```t``` being time, ```N0``` being initial mass, and ```k``` being the rate of decay (which is what you really need from this equation. hint hint).\n\nOnce you find that equation, just plug in the numbers given to you and solve! One thing to note is that for the half life of carbon-14, I used 5,700 years (Yes, I know it's 5,730, but I rounded it to make it a tad bit easier for ya.)\n\n",
+    "totalAttempts": 214,
+    "totalCompleted": 45,
+    "totalStars": 2,
+    "voteScore": 30,
+    "tags": [
+      "Mathematics",
+      "Statistics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

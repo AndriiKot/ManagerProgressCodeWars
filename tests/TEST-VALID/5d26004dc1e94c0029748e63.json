@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5d26004dc1e94c0029748e63",
+  "data": {
+    "id": "5d26004dc1e94c0029748e63",
+    "name": "Oven Optimization",
+    "slug": "oven-optimization",
+    "category": "algorithms",
+    "publishedAt": "2019-07-10T15:32:04.336Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5d26004dc1e94c0029748e63",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-07-10T15:12:13.485Z",
+    "createdBy": {
+      "username": "RagnaRockPT",
+      "url": "https://www.codewars.com/users/RagnaRockPT"
+    },
+    "description": "You are a baker that works in multiple stores, each store has a diferent number of oven types,\nsome have ovens with 10 trays, others with just 4 trays, others with ovens with 4 trays and 10 trays, etc.\n\nThe problem is that your boss gives you the orders in trays, and its your job to find the best way to bake those trays leaving the minimum amount of trays empty.\n\nIf there are multiple ways to achieve a solution you should pick the one that uses the least number of oven batches.\n\nFor instance in a store with ovens of 10 trays and 4 trays if the boss orders 20 trays you could do it using 5 ovens of 4 trays or 2 ovens of 10, the boss expects you to use the 2 ovens of 10 since that will be quicker\n\nIn the function you have to create you pass in the number of trays ordered by your boss and and array with the diferent oven capacities in your current store.\n\nIn the example above, to know how to split 20 trays into 10 runners and 4 runners you should do OvenOptimizer.GetOvens(20, new [] { 10, 4});\n\nthe expected result is an array of integers [ 10, 10] \n",
+    "totalAttempts": 33,
+    "totalCompleted": 8,
+    "totalStars": 1,
+    "voteScore": -2,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

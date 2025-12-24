@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/58980a398927f7c65d00001e",
+  "data": {
+    "id": "58980a398927f7c65d00001e",
+    "name": "Password Validate and Hash",
+    "slug": "password-validate-and-hash",
+    "category": "reference",
+    "publishedAt": "2017-02-06T05:36:59.983Z",
+    "approvedAt": null,
+    "languages": [
+      "elixir"
+    ],
+    "url": "https://www.codewars.com/kata/58980a398927f7c65d00001e",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-02-06T05:31:37.112Z",
+    "createdBy": {
+      "username": "ryanwinchester",
+      "url": "https://www.codewars.com/users/ryanwinchester"
+    },
+    "description": "## Instructions\n\nMake a method `validate_and_hash(password, password_confirm)` that validates a password and hashes it.\n\nReturns:\n\n- `{:error, reason}`\n- `{:ok, password_hash}`\n\n### Validations and error messages:\n\n- Password and confirmation must match `{:error, \"mismatch\"}`\n- Must be at least 8 characters long `{:error, \"too short\"}`\n- [Jaro distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) from any of the top 25 common passwords must be less than 0.8 `{:error, \"common password\"}`\n- Can't contain 3 or more consecutive numbers `{:error, \"too many consecutive numbers\"}`\n- Can't contain 3 or more repeated characters `{:error, \"too many repeated characters\"}`\n\nTop 25 most common passwords:\n\n```\n123456, password, 12345678, qwerty, 12345, 123456789, football, 1234, 1234567,\nbaseball, welcome, 1234567890, abc123, 111111, 1qaz2wsx, dragon, master, monkey,\nletmein, login, princess, qwertyuiop, solo, passw0rd, starwars\n```\n\n### Success:\n\n`{:ok, password_hash}`\n\nPassword hash should be the hex digest (base16) of a sha256 hashed password.\n\n#### Notes:\n\n- Don't actually use sha for real passwords. Use a *key derivation function* instead (like bcrypt).",
+    "totalAttempts": 31,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 6,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

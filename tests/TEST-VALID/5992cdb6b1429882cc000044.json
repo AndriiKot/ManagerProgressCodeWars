@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5992cdb6b1429882cc000044",
+  "data": {
+    "id": "5992cdb6b1429882cc000044",
+    "name": "Member Detection",
+    "slug": "member-detection",
+    "category": "reference",
+    "publishedAt": "2017-08-15T10:37:58.478Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/5992cdb6b1429882cc000044",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-15T10:32:23.303Z",
+    "createdBy": {
+      "username": "sv90",
+      "url": "https://www.codewars.com/users/sv90"
+    },
+    "description": "# Introduction\n\nA common task in programming is to find an element from some data set. To do this, the C++ STL provides us with the algorithm `std::find`. It works in O(n) and works well with `std::vector`, `std::deque` and `std::list`. \nIt also works with `std::set`. But since the data in `std::set` is usually stored as a binary search tree we should be able to do better than O(n) and so `std::set` has a member function that does a binary search in O(log(n)).\n\n# Your Task\n\nYour task is to write a generic find-function that makes the decision wether to use the find-algorithm or a find-member-function. Your function should also work with non-standard containers as long as they provide a find function taking only a key value as an argument. \nThis means that overloading is not a sufficient solution.\n\n### Notes:\n - The test cases will use this `find` function as if the member function was called. E.g. for `std::string` the test cases expect an integer value instead of an iterator. If done right this won't be an additional difficulty for the solution.\n - I implemented a [flat_set](http://www.boost.org/doc/libs/1_64_0/doc/html/container/non_standard_containers.html#container.non_standard_containers.flat_xxx) container where I omitted the `begin`/`end` member functions. So this test case will only compile if done right.",
+    "totalAttempts": 258,
+    "totalCompleted": 27,
+    "totalStars": 15,
+    "voteScore": 43,
+    "tags": [
+      "Metaprogramming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

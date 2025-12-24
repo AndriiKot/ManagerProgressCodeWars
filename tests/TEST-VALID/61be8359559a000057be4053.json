@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61be8359559a000057be4053",
+  "data": {
+    "id": "61be8359559a000057be4053",
+    "name": "The Poisoned Champagne",
+    "slug": "the-poisoned-champagne",
+    "category": "games",
+    "publishedAt": "2021-12-19T03:06:28.229Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/61be8359559a000057be4053",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2021-12-19T00:56:57.191Z",
+    "createdBy": {
+      "username": "mjs375",
+      "url": "https://www.codewars.com/users/mjs375"
+    },
+    "description": "A Prince has `n` bottles of champagne *(up to `100,000`)*, and is throwing a Party on New Year's Eve. It is currently 11am on Dec 31, 12 hours until the Party starts! But, a Traitor has just been caught and has gleefully admitted to poisoning *just one* bottle of champagne in the Prince's cellars, but won't tell which one. \n<br><br>\nThe Prince needs to discover exactly which bottle of champagne is poisoned so he can still serve all his bottles of champagne tonight at midnight. He has a few lab rats he can, er, nobly sacrifice in order to ascertain the correct bottle. But, he only has a certain number of lab rats, proportional to the `n` bottles of champagne he currently has: log-base2 of `n`, to be exact. The bottles of champagne are labeled `0` to `n`, *inclusive*. You must also label your rats with numbers, starting from `0`.\n---\n- **What you know:**\n  - The poison is 100% lethal. Even the tiniest sip will kill a lab rat.\n  - Each lab rat can sip as many bottles as they wish, *and* each bottle can be sampled by as many rats as you wish. (*They're just rats, there'll be plenty left over for the guests*.)\n  - The poison takes exactly 12 hours to kill, so you only have *one shot* to run your test and have your lab rats sample bottles. The poisoned rats will die at 11pm, leaving you just an hour to remove the poisoned bottle and pour the rest for the guests.\n- **What you need to do:**\n  - In `poison_tester()`, you'll be given 1 `bottle` of champagne at a time, labeled by its number in the cellar: up to `n`, the total number of bottles.\n  - Determine how many lab rats the Prince has based on `n`: `log2(n)`.\n  -`return` the `id` of the rat(s) that taste sample `bottle` in that round. The return should be a `list` of `int`s, e.g. `[0,1,4]`. *Trying to cheat and make up more lab rats will fail the test!*\n- **How to solve it:**\n  - In `guess_bottle()`, which will be called a single time, after all the bottles of champagne have been sampled, you must return the **label** of the poisoned champagne bottle (type `int`, e.g. `54`).\n  - You can solve this given `dead`, which is the list of rats poisoned and found dead at 11pm, just before the Party. Deduce the identity of the `poisoned_bottle` based on the strategy you come up with given your limited rat-sources...\n- **Preloaded:**\n  - `from math import log2, ceil`",
+    "totalAttempts": 29,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 1,
+    "tags": [
+      "Puzzles"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

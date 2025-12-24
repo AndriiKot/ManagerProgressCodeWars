@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65478b20b3e7774debf67eca",
+  "data": {
+    "id": "65478b20b3e7774debf67eca",
+    "name": "Polygonal Numbers",
+    "slug": "polygonal-numbers",
+    "category": "algorithms",
+    "publishedAt": "2023-11-06T19:16:23.217Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/65478b20b3e7774debf67eca",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-11-05T12:31:28.975Z",
+    "createdBy": {
+      "username": "ainsleyCrawford",
+      "url": "https://www.codewars.com/users/ainsleyCrawford"
+    },
+    "description": "## Challenge\nA number of equally spaced points that can be arranged to form a regular polygon is termed *polygonal*. Your solution will accept two arguments:\n1. `string shape`, which will always be \"**triangle**\", \"**square**\", \"**pentagon**\" or \"**hexagon**\";\n2. and `int n`.\n\nReturn the *nth* number of the requested *shape*. For instance, `Polygon.IterateShape(\"triangle\", 3)` must return the third triangular number: 6. (For the sake of this exercise, the first number of each shape is 1.)\n\nIf `n == 0`, return 0.\n\nIf `n < 0`, return -1.\n\nIf `n > -1` but `shape` is not equal to one of the four accepted strings, return -2.\n## Triangular Numbers\n    1         3           6             10              15                21                  28\n    O         O O         O O O         O O O O         O O O O O         O O O O O O         O O O O O O O\n               O           O O           O O O           O O O O           O O O O O           O O O O O O\n                            O             O O             O O O             O O O O             O O O O O\n                                           O               O O               O O O               O O O O\n                                                            O                 O O                 O O O\n                                                                               O                   O O\n                                                                                                    O\nIf a particular number of equally spaced dots can form an equilateral triangle, that number may be called triangular.\n## Square Numbers\n    1        4          9            16             25               36                 49\n    O        O O        O O O        O O O O        O O O O O        O O O O O O        O O O O O O O\n             O O        O O O        O O O O        O O O O O        O O O O O O        O O O O O O O\n                        O O O        O O O O        O O O O O        O O O O O O        O O O O O O O\n                                     O O O O        O O O O O        O O O O O O        O O O O O O O\n                                                    O O O O O        O O O O O O        O O O O O O O\n                                                                     O O O O O O        O O O O O O O\n                                                                                        O O O O O O O\nA number of equally spaced dots that may form a square is a square number.\n## Pentagonal Numbers\n    1       5             12               22                   35                      51\n    O         O O           O O O             O O O O               O O O O O                O O O O O O\n             O   O         O O   O           O O O   O             O O O O   O              O O O O O   O\n               O          O   O   O         O O   O   O           O O O   O   O            O O O O   O   O\n                            O   O          O   O   O   O         O O   O   O   O          O O O   O   O   O\n                              O              O   O   O          O   O   O   O   O        O O   O   O   O   O\n                                               O   O              O   O   O   O         O   O   O   O   O   O\n                                                 O                  O   O   O             O   O   O   O   O\n                                                                      O   O                 O   O   O   O\n                                                                        O                     O   O   O\n                                                                                                O   O\n                                                                                                  O\nA pentagonal number is to a pentagon that which a triangular number and a square number are to a triangle and a square, respectively. Unlike the first two concepts, a visual representation of a pentagonal number cannot be rotationally symmetrical. In the above diagram the leftmost vertex is shared.\n## Hexagonal Numbers\n    1        6              15                   28                         45\n    O          O O              O O O                  O O O O                      O O O O O\n             O     O          O       O              O         O                  O           O\n               O O          O   O O     O          O   O O O     O              O   O O O O     O\n                              O     O O          O   O       O     O          O   O         O     O\n                                O O O              O   O O     O O          O   O   O O O     O     O\n                                                     O     O O O              O   O       O     O O\n                                                       O O O O                  O   O O     O O O\n                                                                                  O     O O O O\n                                                                                    O O O O O\nBeginning with 1, every other [triangular number](#triangular-numbers) is a hexagonal number. The above illustrates that a hexagonal number is one in which that number of dots form the outline(s) of regular hexagons where all hexagons share a single vertex. In the above diagram the bottom-left vertex is shared.\n\n|n              |1              |2              |3              |4              |5              |6              |7              |\n|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|\n|Triangles      |1              |3              |**6**          |10             |**15**         |21             |**28**         |\n|Hexagons       |1              |**6**          |**15**         |**28**         |45             |66             |91             |\n\n*Table 1: A visual aid to deduce the relationship between triangular and hexagonal numbers with respect to n.*",
+    "totalAttempts": 34,
+    "totalCompleted": 10,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

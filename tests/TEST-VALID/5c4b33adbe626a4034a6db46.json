@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5c4b33adbe626a4034a6db46",
+  "data": {
+    "id": "5c4b33adbe626a4034a6db46",
+    "name": "Punch in - Punch out",
+    "slug": "punch-in-punch-out",
+    "category": "algorithms",
+    "publishedAt": "2019-01-25T16:08:50.277Z",
+    "approvedAt": null,
+    "languages": [
+      "ruby"
+    ],
+    "url": "https://www.codewars.com/kata/5c4b33adbe626a4034a6db46",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-01-25T16:05:01.803Z",
+    "createdBy": {
+      "username": "stefaniascarpellini",
+      "url": "https://www.codewars.com/users/stefaniascarpellini"
+    },
+    "description": "You are an employee of a company.\nYou must work 8 hours a day, 5 days a week for a total of 40 hours/week.\nIf you enter later or you must go out earlier you need to make up for lost hours within current week.\nLunch time is inserted by default as 1 hour if and only if there are exactly 2 work punches, but you can use your badge if you want to change the lunch time.\n\nE.g. \n* supposing you enter 8.30 and you go out at 17:25, the amount of total worked hours is 7.55 (8:30 --> 17:25 = 7.55h (considering 1 hour for lunch time)\n* supposing you enter 8.30, your lunch is between 13.00 and 13.30 and you go out at 17.30, the amount of total worked hours is 8.30 and you have a surplus of 30 minutes (8:30 --> 13:00, 13:30 --> 17:30 = 8.30h)\n\nYou have to write a function ```work_summary``` which takes an array of all records of the week grouped by day and return a message structured as follow:\n* the work permit hours if the total worked hours for the week are less than 40 (```You have to make up X hour(s) Y minutes(s)```)\n* ```You made exactly 40 hours``` if you made exactly 40 hours and only if there are no other messages\n* the surplus hours if the total worked hours for the week are greater than or equal to 40 (```You are a good employee! +X hour(s) Y minutes```)\n* the employer warning if there are some anomalies\n  * ```You missed to swipe your badge``` if you have forgotten to swipe your card and your punches are odd on way in/out. In this case the last range with the missing swipe out is not considered (8:30 --> 13:00, 13:30 --> ? = 4.30h; 8:30 -->  ? = 0.0h) \n  * ```You missed a day``` if you missed a day\n  * ```Ops! You must pass 5 working days``` if the total count of the input days is different form 5\n\nE.g. \n\n```\nbadges = [['8:30', '17:30'], #Monday\n          ['9:30', '18:00'], #Tuesday\n          ['8:30', '13:30', '14:00', '17:30'], #Wednesday\n          ['8:00', '17:00'], #Thursday \n          ['8:30', '13:00', '15:00', '17:30']] #Friday\nwork_summary(badges) will return 'You have to make up 1.0 hour'\n```\n\nRemember:\n* you have no badge limits. You can go outside and punch out/in everytime you want\n* consider a time precision to the minute\n* You must return a human readable list (concatenated by the word \"and\") if there is more than one error.\nThe order of the errors must be in order of importance, that is \"missing day\", \"odd swipes\", \"time to make up\" and finally \"surplus hours\"\n* In a \"missed day\" or in an \"odd swipe day\" don't consider the surplus time or the time to make up, but consider 8 hours by default\n* \nE.g. \n\n```\nbadges = [[], #Monday\n          ['9:30'], #Tuesday\n          ['8:30', '13:30', '14:00', '17:30'], #Wednesday\n          ['8:00', '17:00'], #Thursday \n          ['8:30', '13:00', '15:00', '17:30']] #Friday\nwork_summary(badges) will return 'You missed a day and You missed to swipe your badge and You have to make up 30 minutes'\n```\n* The only \"blocking\" message that must be output alone is the ```Ops! You must pass 5 working days```",
+    "totalAttempts": 45,
+    "totalCompleted": 7,
+    "totalStars": 1,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

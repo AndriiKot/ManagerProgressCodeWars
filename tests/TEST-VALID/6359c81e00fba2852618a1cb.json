@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6359c81e00fba2852618a1cb",
+  "data": {
+    "id": "6359c81e00fba2852618a1cb",
+    "name": "V-table alteration at runtime",
+    "slug": "v-table-alteration-at-runtime",
+    "category": "reference",
+    "publishedAt": "2022-10-26T23:53:14.686Z",
+    "approvedAt": null,
+    "languages": [
+      "cpp"
+    ],
+    "url": "https://www.codewars.com/kata/6359c81e00fba2852618a1cb",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-10-26T23:51:58.356Z",
+    "createdBy": {
+      "username": "healytpk",
+      "url": "https://www.codewars.com/users/healytpk"
+    },
+    "description": "In object-orientated programming, classes contain member functions which can be declared 'virtual'. The ability to decide at runtime which virtual method should be invoked on any given object is termed 'polymorphism'.\n\nPolymorphism is achieved by means of a 'Virtual Method Table', or v-table for short. Each object of a class contains the memory address of the v-table for the class. There is only one v-table for each class. If there are 11 objects in existence of the same class, all 11 objects contain the address of the same v-table. See more info on v-tables: https://shaharmike.com/cpp/vtable-part1/\n\nGiven a base class and two derived classes as follows:\n\n```\nclass SerialNumber {\nprotected:\n    long long unsigned num;\n\npublic:\n    virtual void Print(void) = 0;\n};\n\nclass DecimalSerialNumber : public SerialNumber {\npublic:\n    void Print(void) override;\n};\n\nstruct HexadecimalSerialNumber : public SerialNumber {\npublic:\n    void Print(void) override;\n};\n```\n\nWrite a function called 'Alter_VTables' which alters the v-tables of the two classes:\n- DecimalSerialNumber\n- HexadecimalSerialNumber\n\nso that the former will print in hexadecimal, and the latter will print in decimal. Specifically, you must locate the two v-tables in RAM, then find in each v-table the address of the 'Print' method. Once found, swap the two addresses.\n\nOn most operating systems, v-tables are stored in pages of memory which are readonly, and so a function is provided to you to change the permissions for the page of memory containing the v-tables:\n```\nvoid Set_Memory_Writeable(void*);\n```\n\nHint to get you going:\n- The pointer to the v-table is located at the very start of the object",
+    "totalAttempts": 19,
+    "totalCompleted": 12,
+    "totalStars": 3,
+    "voteScore": 22,
+    "tags": [
+      "Language Features",
+      "Object-oriented Programming"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

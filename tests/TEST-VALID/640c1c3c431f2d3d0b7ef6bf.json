@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/640c1c3c431f2d3d0b7ef6bf",
+  "data": {
+    "id": "640c1c3c431f2d3d0b7ef6bf",
+    "name": "Apartment building elevator",
+    "slug": "apartment-building-elevator",
+    "category": "algorithms",
+    "publishedAt": "2023-03-11T15:03:05.358Z",
+    "approvedAt": null,
+    "languages": [
+      "php",
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/640c1c3c431f2d3d0b7ef6bf",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-03-11T06:14:20.687Z",
+    "createdBy": {
+      "username": "szymat",
+      "url": "https://www.codewars.com/users/szymat"
+    },
+    "description": "You just finished installing elevator in your apartment building and need to write software for it.\nThe apartment has N,M floors, numbered from N to M. The elevator has a button panel with buttons for each floor.\nN and M can be negative numbers.\nOn each floor there is a button panel with buttons for going UP and DOWN.\n\nThe elevator can be in one of the following states:\n- When the elevator is IDLE, it can be called by pressing a button on any floor.\n- When the elevator is going UP, it can be called by pressing a button on any floor above the current floor.\n- When the elevator is going DOWN, it can be called by pressing a button on any floor below the current floor.\n\nWhen the elevator is called, it will stop at the floor and open the doors.\nThe elevator will then close the doors and continue in the same direction.\n\n\nMethod move() will be called with the following parameters:\n - `steps` - number of steps to simulate (each step is 0.5 - meaning someone can press the button while elevator is in 1.5 floor)\n - `commands` - list of commands to simulate `array<string|null>`\nIf list of commands is empty, the elevator will be idle.\n \nInput for the elevator is a list of commands, each command is a string with the following format:\n- `null` - no button was pressed\n- `<floor>` - button was pressed in the elevator\n- `<floor> <direction> <destination>` - button was pressed on the floor with given intention to go to destination floor (will be pressed when person enters the elevator)\nThere are no invalid inputs except floor number which can be any number.\n\n### Example\n\nGiven input:\n```\nelevator = new Elevator(-1, 5, 0);\noutput = elevator.move(18, [\n    null,\n    '3',\n    null,\n    '2 DOWN -1',\n]);\n```\n\nElevator starting from 0 should go to floor 3 (ignoring 2), then 2, then -1.\n\nWill produce:\n```\nIdle\nPressed button in elevator to go UP to 3 floor\nGoing up: 0.5\nGoing up: 1\nPressed button DOWN on 2 floor (then to -1)\nGoing up: 1.5\nGoing up: 2\nIgnore on floor: 2, different direction\nGoing up: 2.5\nGoing up: 3\nDoors open: 3\nGoing down: 2.5\nGoing down: 2\nDoors open: 2\nPressed button in elevator to go DOWN to -1 floor\nGoing down: 1.5\nGoing down: 1\nGoing down: 0.5\nGoing down: 0\nGoing down: -0.5\nGoing down: -1\nDoors open: -1\n```\n\n---\n\n### Invalid inputs\nUpon pressing wrong button (below lowest floor or above highest) in the elevator the output should stop with message: `Invalid floor number: X`.\n\n- `<floor>` command should result when button is pressed,\n- `<floor> <direction> <destination>` command should give when button is pressed not when command is given.\n- there are no other options, direction will be always UP/DOWN or null for other command types\n\n\nExample for `<floor>` command: \n```\nelevator = new Elevator(0, 5, 0);\noutput = elevator->move(13, [\n    null,\n    '6',\n    null,\n    '1'\n]);\n```\nshould result in:\n\n```\nIdle\nInvalid floor number: 6\n\n```\n\nExample for `<floor> <direction> <destination>` command:\n```\nelevator = new Elevator(0, 5, 0);\noutput = elevator->move(13, [\n    null,\n    '3',\n    null,\n    '2 UP 6',\n]);\n```\nshould result in:\n```\nIdle\nPressed button in elevator to go UP to 3 floor\nGoing up: 0.5\nGoing up: 1\nPressed button UP on 2 floor (then to 6)\nGoing up: 1.5\nGoing up: 2\nInvalid floor number: 6\n\n```\n\n\nWhen inserting invalid command like `2 DOWN 6` or `4 UP 2` output should stop on that command.\n\nExample:\n```\nelevator = new Elevator(0, 5, 0);\noutput = elevator->move(13, [\n    null,\n    '3',\n    null,\n    '2 DOWN 6',\n]);\n```\nshould result in:\n```\nIdle\nPressed button in elevator to go UP to 3 floor\nGoing up: 0.5\nGoing up: 1\nInvalid direction DOWN to 6 floor\n\n```\n\n",
+    "totalAttempts": 115,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 3,
+    "tags": [
+      "State Machines",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

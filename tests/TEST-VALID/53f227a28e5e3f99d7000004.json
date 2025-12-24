@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/53f227a28e5e3f99d7000004",
+  "data": {
+    "id": "53f227a28e5e3f99d7000004",
+    "name": "Warnsdorff's Knights",
+    "slug": "warnsdorffs-knights",
+    "category": "algorithms",
+    "publishedAt": "2014-08-18T22:30:42.149Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/53f227a28e5e3f99d7000004",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2014-08-18T16:19:47.315Z",
+    "createdBy": {
+      "username": "tslater2006",
+      "url": "https://www.codewars.com/users/tslater2006"
+    },
+    "description": "The goal of this kata is to provide a function that generates a Knight's Tour on an chess board of a given size (between 6x6 and 14x14), the board will ALWAYS be square.\n\nA Knight's Tour is a sequence of moves that allows a single Knight to move about the board, visiting each space once and only once (that is, never hitting the same space twice). The starting location of the knight can be arbitrary.\n\nThere exists many ways of solving the Knight's Tour problem, the one we will focus on is called the [Warnsdorff Heuristic](http://en.wikipedia.org/wiki/Knight%27s_tour#Warnsdorff.27s_algorithm).\n\nIn what follows, a 'valid move' is defined to be a move that obeys the movement restrictions of the Knight, and that it would place the Knight on an unvisited cell.\n\n\nThe heuristic can be summarized as follows.\n\n* From Knights current location, select all cells that can be reached by a valid move\n* Determine how many valid moves each of these cells has (be sure to not count the current cell)\n* Move to the cell with the lowest number of valid moves\n* In the event of a tie between possible moves, choose one at random\n\nThe Problem:\n\nImplement the function Warnsdorff.GenerateTour(x,y,size) such that a valid array of X,Y locations is returned that represents the Knights Tour. \n\nThe parameters passed to GenerateTour determine the following:\n\n* Starting X location for the Knight - zero based.\n* Statring Y location for the Knight - zero based.\n* size of the chess board - between 6 and 14.\n\nThe returned result would look similar to this:\n\n``` [[0,0],[1,2],[3,3],...] ```\n\nDuring testing, there will be a globally available method isValidTour() which will take the results of GenerateTour, along with the size of the board. This method will return a boolean value based on the validity of the tour.\n\n\nPlease note that due to the random nature of the tie breakers you may need to submit your result more than once to pass all of the tests.\n\n",
+    "totalAttempts": 162,
+    "totalCompleted": 22,
+    "totalStars": 7,
+    "voteScore": 24,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

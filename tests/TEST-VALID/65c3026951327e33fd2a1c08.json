@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65c3026951327e33fd2a1c08",
+  "data": {
+    "id": "65c3026951327e33fd2a1c08",
+    "name": "Villager Scams!",
+    "slug": "villager-scams",
+    "category": "reference",
+    "publishedAt": "2024-02-08T00:49:21.228Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/65c3026951327e33fd2a1c08",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-02-07T04:09:13.864Z",
+    "createdBy": {
+      "username": "miggycoder",
+      "url": "https://www.codewars.com/users/miggycoder"
+    },
+    "description": "Based off Minecraft!\n\nStory:\n\nAfter a long day of mining and gathering resources, you found a village when you were walking home! You decided to trade with the villagers there. You pull out a few of your emeralds and a group of villagers form. You tell them all to get into a line and you trade with them one by one. But oh no! A villager gave you a fake plastic sword instead of a diamond one! You payed a lot of emeralds for that diamond sword just to get a plastic one!? You got mad so your going to be checking if the villagers trade offers are \"Great!\", \"Average\", or \"Scam\" depending on the table below and their offered emeralds!\n\nTrading Pool:\n\n```\nBread - 2 emeralds\nDiamond Sword - 8 emeralds\nIron - 4 emeralds\nObsidian - 3 emeralds\nWood - 1 emerald\nStone Pickaxe - 4 emeralds\nPig - 2 emeralds\n```\n\nTask:\n\nGiven an string as one of the items in the trading pool above and an integer representing the amount of emeralds that you need to pay to the villager for that item. You have to decipher if this deal is \"Great!\", \"Avearge\", or \"Scam\"\n\nThe deal is great when the item is cheaper in emeralds than the normal emerald price listed in the trading pool.\n\nExample:\n```\nInput String = \"Diamond Sword\"\nInput Emeralds/Integer = 6\n\nSince the normal price for \"Diamond Sword\" in trading pool is 8 emeralds, return \"Great!\" as the villager is offering 6 emeralds instead of the average 8.\n```\n\nThe deal is average when the item's price of emeralds is the same in the trading pool.\n\nExample:\n```\nInput String = \"Obsidian\"\nInput Emeralds/Integer = 3\n\nThis should return \"Average\" as the villager is offering 3 emeralds, the same price listed in the trading pool.\n```\n\nLastly, the deal is a scam when the item's price is greater than the price listed in the trading pool.\n\nExample:\n```\nInput String = \"Bread\"\nInput Emeralds/Integer = 7\n\nReturns \"Scam\" as the villager is offering bread at 7 emeralds which is significantly higher than the usual price listed in the trading pool.\n```\n\nNote: You will always get a string as an item from the trading pool and the amount of emeralds offered randomly be set at range from 0 to 12 emeralds. You will never recieve an empty string because why would a villager offer nothing for emeralds?",
+    "totalAttempts": 27,
+    "totalCompleted": 13,
+    "totalStars": 1,
+    "voteScore": -1,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

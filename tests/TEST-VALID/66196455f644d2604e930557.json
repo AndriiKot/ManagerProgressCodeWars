@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/66196455f644d2604e930557",
+  "data": {
+    "id": "66196455f644d2604e930557",
+    "name": "Punctuate the statement correctly",
+    "slug": "punctuate-the-statement-correctly",
+    "category": "reference",
+    "publishedAt": "2024-04-13T18:53:52.969Z",
+    "approvedAt": null,
+    "languages": [
+      "go"
+    ],
+    "url": "https://www.codewars.com/kata/66196455f644d2604e930557",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-12T16:41:57.391Z",
+    "createdBy": {
+      "username": "Teddy2020",
+      "url": "https://www.codewars.com/users/Teddy2020"
+    },
+    "description": "Given a sentence correct it in that :\n\nEvery instance of the punctuations ., ,, !, ?, : and ; should be close to the previous word and with space apart from the next one. \n\n    (Ex: \"I was sitting over there ,and then BAMM !!\" -> \"I was sitting over there, and then BAMM!!\").\n\nExcept if there are groups of punctuation like:  ...  or   !?. In this case the program should format the text as in the following example: \n \n     (EX:\"I was thinking ... You were right\" -> \"I was thinking... You were right\".)\n\n The punctuation mark ' will always be found with another instance of it and they should be placed to the right and left of the word in the middle of them, without any spaces. \n \n    (Ex: \"I am exactly how they describe me: ' awesome '\" -> \"I am exactly how they describe me: 'awesome'\")\n    \n  If there are more than one word between the two ' ' marks, the program should place the marks next to the corresponding words \n  \n    (Ex: \"As Elton John said: ' I am the most well-known Viking Warrior in the world '\" -> \"As Elton John said: 'I am the most well-known Viking Warrior in the world'\")\n\nEvery instance of a should be turned into an if the next word begins with a vowel (a, e, i, o, u).\n\n       (Ex: \"There it was. A amazing rock!\" -> \"There it was. An amazing rock!\").\n       \nRemove any extra spaces between words or punctuation\n\n          (Ex:\"Today is    a nice day     .\"->\"Today is a nice day.\"\n          \nNB:Empty strings should return empty string          ",
+    "totalAttempts": 118,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -4,
+    "tags": [
+      "Strings",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

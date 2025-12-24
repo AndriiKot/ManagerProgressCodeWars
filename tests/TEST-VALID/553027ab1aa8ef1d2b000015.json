@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/553027ab1aa8ef1d2b000015",
+  "data": {
+    "id": "553027ab1aa8ef1d2b000015",
+    "name": "Function Wrapper: Nullity",
+    "slug": "function-wrapper-nullity",
+    "category": "reference",
+    "publishedAt": "2015-04-16T22:06:13.786Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/553027ab1aa8ef1d2b000015",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2015-04-16T21:20:43.849Z",
+    "createdBy": {
+      "username": "wthit56",
+      "url": "https://www.codewars.com/users/wthit56"
+    },
+    "description": "It is a common process to check if a property exists. But it can be pretty annoying if you have to check a few properties deep, and don't quite know if each property in the chain is actually there.\n\n```javascript\nfunction() {\n  if (obj) { /* straightforward enough */ }\n  if (obj.prop[\"sub-prop\"]) { /*\n    if obj or obj.prop doesn't exist,\n    an error will be thrown\n  */ }\n}\n```\n\nIdeally, we want to check each stage one by one and make sure the property exists _before_ trying the next level down. Your job is to write a wrap function that takes a function and returns a new one, with all the same code, with some added features.\n\nWe want to be able to put `\"a.b['c']?\"` in our code, and have it be re-written to something that does all those checks, without us having to write the whole thing out every time. Note that the string must end with a question mark, to show that it's a special, \"nullity\" string.\n\nSo the code above could be written like so:\n```javascript\nfunction() {\n  if (\"obj?\") { /* obj isn't undefined or null */ }\n  if (\"obj.prop['sub-prop']?\") { /* obj isn't undefined or null, neither is obj.prop, or obj.prop['sub-prop'] */ }\n}\n```\n\n## NOTES\nWhatever code goes in place of those nullity strings should just produce a true or false value.\n\nThere's only 1 actual test in this kata, which is printed out for you to look at anyway, so use it to figure out how you want to do things, if you like...\n\nI have made it so that there aren't any awkward or complex edge cases to worry about. In a real-life product, your code might have to be a bit more robust, but as an exercise to show what can be done, I've made things a little easier on you. Have fun~! ;P",
+    "totalAttempts": 208,
+    "totalCompleted": 11,
+    "totalStars": 3,
+    "voteScore": 1,
+    "tags": [],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

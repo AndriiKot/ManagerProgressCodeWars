@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64e8be6cf1294f42fb435d07",
+  "data": {
+    "id": "64e8be6cf1294f42fb435d07",
+    "name": "Maximize the sum",
+    "slug": "maximize-the-sum",
+    "category": "algorithms",
+    "publishedAt": "2023-08-25T14:45:29.141Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/64e8be6cf1294f42fb435d07",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-08-25T14:45:00.214Z",
+    "createdBy": {
+      "username": "slimedog",
+      "url": "https://www.codewars.com/users/slimedog"
+    },
+    "description": "\nYou are given:\n\n```\nint[] position\n    where\n        0 < position.length <= 10^6\n        forall i: 0 < position[i] <= 10^6\nint[] values\n    where \n        values.length == position.length\n        forall i: 0 < values[i] <= 100\nint d\n    where\n        0 < d <= Integer.MAX_VALUE\n```\n\n\nYour task:\n```\nFind a subset of indices S s.t:\nSum(i in S, values[i]) is maximized\nand\nforall i,j in S: (i != j) ==> |position[i] - position[j]| > d\n```\n\nReturn the maximum value of `Sum(i in S, values[i])`\n\nAfter the fixed tests, there are two suites of random input testing:\n\nThe first one is on array lengths up to `10`. The second one is on array lengths up to `10^6`\n\n",
+    "totalAttempts": 167,
+    "totalCompleted": 7,
+    "totalStars": 2,
+    "voteScore": -1,
+    "tags": [
+      "Dynamic Programming",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

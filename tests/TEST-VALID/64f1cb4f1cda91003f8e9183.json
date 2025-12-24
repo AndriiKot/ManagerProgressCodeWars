@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/64f1cb4f1cda91003f8e9183",
+  "data": {
+    "id": "64f1cb4f1cda91003f8e9183",
+    "name": "String Interpolation",
+    "slug": "string-interpolation",
+    "category": "reference",
+    "publishedAt": "2023-09-01T11:41:41.732Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/64f1cb4f1cda91003f8e9183",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-09-01T11:30:24.024Z",
+    "createdBy": {
+      "username": "MaanooAk",
+      "url": "https://www.codewars.com/users/MaanooAk"
+    },
+    "description": "Implement the function `render(template, values)` which takes a template string interpolates the embedded expressions. Each expression is wrapped in `{{brackets}}` and can be:\n\n- Name of passed value (in the `values` object)\n- Global variable name\n- Literal value\n\nIf an expression can be evaluated as more than one, the priority follows the order of the above list (= values > global > literal). If the expression cannot be evaluted is considered as an undefined value.\n\n```javascript\nvar name = \"Katia\";\nrender(\"{{name}} is a name with {{count}} letters\", { count: name.length });\n// > Katia is a name with 5 letters\n```\n\nUndefined values are ignored, but null values are printed.",
+    "totalAttempts": 80,
+    "totalCompleted": 11,
+    "totalStars": 1,
+    "voteScore": 0,
+    "tags": [
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

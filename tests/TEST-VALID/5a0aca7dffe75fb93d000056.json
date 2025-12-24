@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a0aca7dffe75fb93d000056",
+  "data": {
+    "id": "5a0aca7dffe75fb93d000056",
+    "name": "Boolean array generator",
+    "slug": "boolean-array-generator",
+    "category": "reference",
+    "publishedAt": "2017-11-14T10:57:07.982Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5a0aca7dffe75fb93d000056",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-11-14T10:50:38.523Z",
+    "createdBy": {
+      "username": "mubli",
+      "url": "https://www.codewars.com/users/mubli"
+    },
+    "description": "Create a generator that yields lists of a given length, composed of 1's and 0's, sorted by number of 1's, so that the first list is all 1's and the last list all 0's. Secondly, the lists should be sorted by the position of 1's. For ```length = 3``` the generator should yield:\n```\n[1, 1, 1]\n[1, 1, 0]\n[1, 0, 1]\n[0, 1, 1]\n[1, 0, 0]\n[0, 1, 0]\n[0, 0, 1]\n[0, 0, 0]\n```\nGiven a list of lists the following would sort it in the requested fashion:\n```python\nlst.sorted(reverse=True)\nlst.sorted(key=lambda x: sum(x), reverse=True)\n```\nHowever, creating a list of lists would defeat the purpose of using a generator. ",
+    "totalAttempts": 177,
+    "totalCompleted": 28,
+    "totalStars": 4,
+    "voteScore": 28,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

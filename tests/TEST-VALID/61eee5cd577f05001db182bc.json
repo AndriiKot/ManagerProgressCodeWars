@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/61eee5cd577f05001db182bc",
+  "data": {
+    "id": "61eee5cd577f05001db182bc",
+    "name": "Get the method reference from the lambda",
+    "slug": "get-the-method-reference-from-the-lambda",
+    "category": "reference",
+    "publishedAt": "2022-01-24T17:45:53.317Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/61eee5cd577f05001db182bc",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-01-24T17:45:49.614Z",
+    "createdBy": {
+      "username": "Madjosz",
+      "url": "https://www.codewars.com/users/Madjosz"
+    },
+    "description": "Together with the Stream-API Java 8 introduced **Method Reference Expressions** [(see §15.13 of the Java language specification)][0] to provide a convenient way of passing method references to functions and avoid creating anonymous classes like it was done before e.g. with UI event handlers.\n\nThe problem is that the lambda object created from the method reference seems to have lost all information about the class and method it was created from. You'll have to find a way to get this information somehow.\n\n[0]: https://docs.oracle.com/javase/specs/jls/se17/html/jls-15.html#jls-15.13\n\n# Task\n\nGiven a lambda which was created by a method reference (e.g. `String::length`) determine the name of the class and method and return just that string which you would need in the code to recreate this method reference. Methods which are bound to instances should only return the general reference to the class method (see example 3).\n\n# Input\n\n* a method reference created by a method reference expression. For the scope of this Kata we will limit the methods to be of type `Function<T, R>` with one parameter. This means the method is either a parameterless instance method like `String.length()`, a one-parameter method bound to an instance like `\"a,b,c\".equals(Object)`, or a static method with one argument like `Objects.requireNonNull(Object)`. Constructors will not be tested.\n\n# Output\n\n* a String for the method reference like it would appear in Java source code. Only the simple name of the class is needed, no package names or outer class names.\n\n# Examples\n\n* `String::length` should return `\"String::length\"`\n* `Objects::requireNonNull` should return `\"Objects::requireNonNull\"`\n* `\"abc\"::equals` should return `\"String::equals\"`\n* `OuterClass.InnerClass::method` should return `\"InnerClass::method\"`",
+    "totalAttempts": 209,
+    "totalCompleted": 7,
+    "totalStars": 4,
+    "voteScore": 6,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

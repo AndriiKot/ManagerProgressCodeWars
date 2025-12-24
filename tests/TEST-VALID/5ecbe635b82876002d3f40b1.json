@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ecbe635b82876002d3f40b1",
+  "data": {
+    "id": "5ecbe635b82876002d3f40b1",
+    "name": "Aloy - Hunter & Machine animals world #1",
+    "slug": "aloy-hunter-and-machine-animals-world-number-1",
+    "category": "reference",
+    "publishedAt": "2020-05-25T15:40:10.267Z",
+    "approvedAt": null,
+    "languages": [
+      "csharp"
+    ],
+    "url": "https://www.codewars.com/kata/5ecbe635b82876002d3f40b1",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-05-25T15:37:25.670Z",
+    "createdBy": {
+      "username": "Mewriick",
+      "url": "https://www.codewars.com/users/Mewriick"
+    },
+    "description": "# Aloy Kata\n\nWelcome in beautiful world of machines and hunters. We will Step by Step, Kata by Kata bring this world into code life.\nFirst you have to implement Hunters, Machines and basic stuff.\n\n## Hunter\nOur huntress called **Aloy** is very good equipped for traveling along in the wild alone\n\n### Backpack\n* Default (minimal) size is 50 and maximum size is 120 and is empty\n* **AddResource** Should store **Resource** only when is space in backpack (be carefull every resource required differnet number of slots)\n* Every **Resource** is stackable, number of size of stack is defined by **Rarity**. VerRare = 1, Rare = 5, Common = 50\n* If resource is not found **default** value is returned\n\n### Quiver\n* Contains space for all differnet **AmmoType**\n* Default (minimal) size is 15 and maximum size is 50 for all ammo types (each ammo type hase own slot with size), and contains 10 **HunterArrows** and 5 **FireArrows**\n* **AddArrows** should store maximal amout **Arrows** which can be stored (be carefull every arrow type required differnt number of slots)\n* **LoadArrow** should return **default** value when is no more arrows\n* **HunterArrow** require 1 slot, **FireArrow** require 2 slots, **FreezeArrow** require 4 slots\n\n### Hunter weapons\n* Every weapon by default should be very rare\n\n### Spear weapon\n* Default damage is 100\n* Immedietally can be used for attack\n* Ammo is not required\n* After first attack next attack can be done only every second call\n\n### Bow weapon\n* Default damage is 40\n* Cannot be used immedietally for attack\n* Needs ammo\n* For attack requires **IAmmo** without ammot **Attack** cannot bet performed\n\n## Aloy (our huntress)\n* Aloy is normal human so she needs Head, Body, Arms, Legs\n* Aloy default health is 350\n* Aloy by default has not weapon in use\n* Aloy by default can craft *HunterArrow*, *FireArror*\n* Aloy can change arrow types only when she is using **Bow** otherwise throw **InvalidOperationException** \n* When Aloy **UseBow** for the first time she use **HunterArrow** otherwise she use last arrow type which she used. When alloy has not arrows of current type **InvalidOperationException** is raised\n* Aloy can **Attack** only when she has weapon in hands\n* Aloy can craft ammo. After sucessfull creation, ammo should be stored into quiver and resources removed from backpack. For successfull crafting Aloy must have all resources.\n* Aloy can attack with her **Bow** only when arrow is loaded from quiver and attached to **Bow**. \n* When Aloy is short of arrows (mean 0 of current type) she try craft current ammo type, if current ammo cannot be crafted Aloy automatically switch to next ammo type (order asc by enum value)\n\tfor which has arrows. If Alloy has no more arrows of any type she try craft some arrows of type (order asc by enum value).\n* When Aloy cannot craft any ammo type, she use her Spear for attacking\n* Aloy can loot only killed machines otherwise **InvalidOperationException** is raised\n* When Aloy store looted resources she try put into backpak most rare and valuable things, and stack resources which has already in backpack\n* When Aloy is hitted by machine health is decreased (empty hitted component name mean that animal miss his attack)\n\n## Damage calculation (very basic first step)\n* If Aloy is observed with some **IBattleObserver** the **Attack** method will raise **OnHunterAttacking** event\n* If Aloy is not observed the **TakeHit** method of animal is called\n* Both scenarios can be executed only if weapon is ready for attacking (e.g. you have loaded arrow for bow)\n* **DamageHitCalculation** call the **TakeHit** method of animal with computed damage\n* This time will be computation very easy, if the machine has lower or equal than 25 % of his maximal health additional 10 damage is added\n\n## Machine animals\n\n* Every machine is composed with **BodyPatrs** and **BodyRemovableComponent**. Every component has **BodyPartType**.\n* Every machine should have all required non removable parts for the living (Head, Minimal 2 legs, Body)\n* If machine has 4 legs appropriate body parts exists (**RearLegs, FrontLegs**)\n* Default amount of health is 1500 and also cannot be negative otherwise exception is raised\n* Every  **BodyRemovableComponent** cannot be composed with any **BodyComponent** operations throws **InvalidOperationException**\n* If you try to attach removable component by **AddComponent**, the body part must exists otherwise **InvalidOperationException** is raised\n* Every machine can only have 3 removable components for each body part otherwise **InvalidOperationException** is raised\n* Every machine can be hitted by hunter. Some of the components can be removed from the animal after few shots. Also appropriate amount of \nhealth is decreased. If component name is not exists or is empty it means that hunter miss his shot.\n* Only components that are attached into machine can be looted by huntress.\n* If you try to remove component which is not removable **InvalidOperationException** is raised\n* If machine is dead **TakeHit** method no not change anything\n\nEvery method which has return value **bool** should correctly return positive result if opertaion is sucessful otherwise negative result.\nEvery constructor should validate parameters and throws appropriate exception **ArgumentException**\nWhole classes **Aloy**, **MachineAnimal**, **DamageHitCalculation** will be tested",
+    "totalAttempts": 5,
+    "totalCompleted": 3,
+    "totalStars": 4,
+    "voteScore": -2,
+    "tags": [
+      "Object-oriented Programming",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 7,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6459aa9aedc6d8004b348a16",
+  "data": {
+    "id": "6459aa9aedc6d8004b348a16",
+    "name": "Balancing Chemical Equations",
+    "slug": "balancing-chemical-equations-1",
+    "category": "algorithms",
+    "publishedAt": "2023-05-09T08:58:37.622Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6459aa9aedc6d8004b348a16",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2023-05-09T02:06:18.748Z",
+    "createdBy": {
+      "username": "hexolio",
+      "url": "https://www.codewars.com/users/hexolio"
+    },
+    "description": "In this kata, you'll be automating the process of balancing chemical equations.\n\nAn equation is balanced if there's the same number of each type of atom on both sides. Your job is to write a function that takes in an unbalanced equation and returns the balanced version of the equation, i.e. with coefficients inserted immediately before the molecular symbols where necessary. For example, for an input of **C₅H₁₂ + O₂ -> CO₂ + H₂O**, the output should be **C₅H₁₂ + 8O₂ -> 5CO₂ + 6H₂O**. All input equations will be of this form, with an \"arrow operator\" (->) separating the reactants and products.\n\nIf you slept through chemistry classes, [here's](https://www.chemteam.info/Equations/Balance-Equation.html) a good resource that demonstrates how to balance equations. If you just need a quick refresher, here's a short guide to chemical symbols and equations, and how they'll be used in this kata:\n\n* An element symbol is a single capital letter sometimes followed by a single lower-case letter (e.g. H or Na). In molecule symbols, the number of atoms of each element in the molecule is indicated by subscript numbers that follow each element symbol. These numbers are omitted if they are 1, e.g. **CO₂** contains 1 carbon atom and 2 oxygen atoms.\n\n* To balance equations, coefficients are placed directly in front of each molecule to indicate how many of those molecules are used up (on the left side) or produced (on the right side) each time the reaction occurs. The coefficients are chosen such that the same number of each type of atom appears on both sides. The coefficient is omitted if it is 1, like for the first molecule of **C₅H₁₂ + 8O₂ -> 5CO₂ + 6H₂O**.\n\n* The sum of the coefficients should be minimal, so **8Al + 3Fe₂O₄ -> 6Fe + 4Al₂O₃** is valid but **80Al + 30Fe₂O₄ -> 60Fe + 40Al₂O₃** is not.\n\n* Parentheses around part (or all) of a molecular symbol indicate groups of atoms that are repeated in the molecule, e.g. **Zn(NO₃)₂** contains 1 **Zn** atom, 2 **N** atoms, and 6 **O** atoms.\n\n* Square brackets are also used to indicate groups of atoms. They're used slightly differently to parentheses by chemists, but can be treated similarly for the purpose of balancing, with the exception that a molecule might contain only one copy of the group in square brackets, in which case the subscript number after the closing bracket is omitted, as in **K₃[Fe(SCN)₆]**.\n\n* Parentheses may occur inside square brackets, but not vice versa.\n\n\nA few notes about the tests in this kata:\n\n* Some of the test equations are chemically or physically impossible (such as alchemy: **Pb -> Au**), and so will be impossible to balance. In these cases, your function should return \"No solution\".\n\n* There may be more than one way to balance some equations (such as **C₈H₁₀ + O₂ -> C₆H₅OH + CO₂ + H₂O**), with potentially infinite possible ratios between the molecules. These can only be balanced with chemical knowledge about the shape of the molecules and which parts stay together during the reaction. In these cases, your function should return \"Multiple solutions\".\n\n* In the random tests, there will be elements that only aliens have discovered (i.e. not in the known periodic table). Fortunately, the aliens use exactly the same notation as us.\n\n\nFor reference, the Unicode subscript digits used in the input equations (and required in the output equations) are: `₀₁₂₃₄₅₆₇₈₉`",
+    "totalAttempts": 189,
+    "totalCompleted": 6,
+    "totalStars": 15,
+    "voteScore": 4,
+    "tags": [
+      "Algorithms",
+      "Strings"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/65b8600db51541d2e24ed569",
+  "data": {
+    "id": "65b8600db51541d2e24ed569",
+    "name": "Explain the Algebraic Chess Notation!",
+    "slug": "explain-the-algebraic-chess-notation",
+    "category": "reference",
+    "publishedAt": "2024-01-30T21:42:59.608Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/65b8600db51541d2e24ed569",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-01-30T02:33:49.943Z",
+    "createdBy": {
+      "username": "Abiyasash3565",
+      "url": "https://www.codewars.com/users/Abiyasash3565"
+    },
+    "description": "I wanted to remind you about a chess-related matter that you might find interesting. Specifically, here is a coding challenge that requires you to explain the chess notation given to you. Although it might appear to be an easy task, it can be quite tricky.\n\nHere's how Algebraic Chess Notation works:\n\n1. Write the letter of the piece making the move. The letters for each piece are as follows: \n\n- K: King\n- Q: Queen\n- R: Rook\n- B: Bishop\n- N: Knight (Note: N is used for Knight, not K, to avoid confusion with the King)\n\n2. If it's a pawn making the move, don't use a letter. Instead, write the starting square of the pawn. For example, if a pawn on e2 moves to e4, you would write \"e4\".\n\n3. Add an \"x\" if the move involves a capture. For example, if a bishop on b5 captures a knight on c6, you would write \"Bxc6\".\n\n4. Write the square the piece is moving to. For example, if a knight moves to square g6, you would write \"Ng6\".\n\n5. If the move gives check, add a \"+\" symbol. If the move gives checkmate, add a \"#\" symbol.\n\nHere's an example: if a white bishop captures a black pawn on square e5 and gives checkmate, you would write \"Bxe5#\".\n\nIn case you still don't understand, you can find more information about it by clicking on the following link: https://en.wikipedia.org/wiki/Algebraic_notation_(chess)\n\nThe format you should use to explain the notation should be as follows: \"(piece) moved to (position),\" based on the given notation. If there is a capture involved, you should include the following: \"(piece) moved to (position) and captured.\" \n\nIf the move involves a check or a checkmate, you should also mention it accordingly:\n\n- (piece) moved to (position) and captured, check.\n- (piece) moved to (position) and captured, checkmate.\n\nHere's an example to illustrate the format:\n\n```java\nString chessNotation = \"Bxh3#\";\nreturn \"Bishop moved to h3 and captured, checkmate.\";\n```\n\nPlease note that there won't be any stalemate positions or similar complicated scenarios. Additionally, you won't encounter statements like Rfxd8#, where the rook is specifically stated as on the f file, because both rooks can move there.\n\nI hope this information is helpful to you. If you have any questions, please don't hesitate to ask.\n\nGood luck!",
+    "totalAttempts": 76,
+    "totalCompleted": 7,
+    "totalStars": 0,
+    "voteScore": -3,
+    "tags": [],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

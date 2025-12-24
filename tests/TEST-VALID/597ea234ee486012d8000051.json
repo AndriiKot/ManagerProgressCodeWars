@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/597ea234ee486012d8000051",
+  "data": {
+    "id": "597ea234ee486012d8000051",
+    "name": "Complete Spirals",
+    "slug": "complete-spirals",
+    "category": "algorithms",
+    "publishedAt": "2017-08-02T02:00:26.372Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/597ea234ee486012d8000051",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-07-31T03:21:24.718Z",
+    "createdBy": {
+      "username": "oa998",
+      "url": "https://www.codewars.com/users/oa998"
+    },
+    "description": ">    Concept:\nGiven any positive integer, n, determine if you can form a complete spiral.\n\nStarting form the number 1 count upwards and fill a 2 dimensional array from the center forming a counter-clockwise spiral. The array cannot have duplicates or numbers outside the range of 1 to n.  The 2d array / matrix you use to hold the spiral must be completely filled or it is not a complete spiral. \n\nExamples:\n\n    n = 4:       \n            [  [4 ,  3]               //complete spiral\n               [1 ,  2]  ]\n    \n    \n    n = 9:      \n            [  [5 ,  4 ,  3]          //complete spiral\n               [6 ,  1 ,  2]\n               [7 ,  8 ,  9]  ]\n                \n    n = 12:     \n            [  [5 ,  4 ,  3 , 12]     //complete spiral\n               [6 ,  1 ,  2 , 11]\n               [7 ,  8 ,  9 , 10]  ]\n                \n    n = 14:     \n            [ [ ? ,  ? , 14 , 13]     //incomplete because the some cells \n              [ 5 ,  4 ,  3 , 12]       of the 2d array are not storing\n              [ 6 ,  1 ,  2 , 11]       values between 1 and n\n              [ 7 ,  8 ,  9 , 10]  ]\n                \n                \n>    Task:\nCreate a method, spiralIndexOf, that takes two parameters, n and value. The n parameter is the maximum number in your spiral. Some of these spirals will be very large, so don't return the whole spiral.  Prove your spiral is correct by providing the index of the second parameter, value, within your spiral.  Return an int[] with the row and column location of the given value.  If the value of n does not create a complete spiral, return null instead.\n\n\nExamples:\n\n    n = 16 , value = 6:     \n\n           [ [16 , 15 , 14 , 13]       spiralIndexOf(16,6) = new int[]{ 2, 0 }\n             [ 5 ,  4 ,  3 , 12]       //because the location of 6 is [2][0] in the spiral\n             [ 6 ,  1 ,  2 , 11]       \n             [ 7 ,  8 ,  9 , 10] ]\n             \n    n = 10 , value = 6:    \n           [ [ 5 ,  4 ,  3 ,  ?]       spiralIndexOf(10,6) = null\n             [ 6 ,  1 ,  2 ,  ?]       //because a spiral of size 10 does not fill the matrix\n             [ 7 ,  8 ,  9 , 10] ]\n\n",
+    "totalAttempts": 125,
+    "totalCompleted": 13,
+    "totalStars": 4,
+    "voteScore": 14,
+    "tags": [
+      "Matrix",
+      "Algorithms"
+    ],
+    "contributorsWanted": false,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

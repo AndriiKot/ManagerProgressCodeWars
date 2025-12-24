@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/6304e7e6d8324c00358ade8c",
+  "data": {
+    "id": "6304e7e6d8324c00358ade8c",
+    "name": "Play Chinese MahJong ,  Win the Game,  Get the Money!",
+    "slug": "play-chinese-mahjong-win-the-game-get-the-money",
+    "category": "games",
+    "publishedAt": "2022-08-24T07:24:57.621Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/6304e7e6d8324c00358ade8c",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2022-08-23T14:44:54.036Z",
+    "createdBy": {
+      "username": "Forth-power",
+      "url": "https://www.codewars.com/users/Forth-power"
+    },
+    "description": "<h1>BackGround</h1>\n<p>\nIf you've ever been to China, you may have noticed that local people, especially the elderly, like to play a special game called MahJong, and sometimes people bet on it.\n</p>\n<img src=\"https://ts1.cn.mm.bing.net/th/id/R-C.fd75a390136ad635dd05dca3f65d463c?rik=kfN85OFdsytvBQ&amp;pid=ImgRaw&amp;r=0\" alt=\"MahJong\" >\n<p>\nWhen the game starts, people are supposed to take turns rearranging their \"cards\" (in fact, they look like tiles rather than cards), and if one's tiles fit the winning pattern, then one wins, or \"hoos\" (胡了, hú le ).</p>\n<hr/>\n<h1>Tiles</h1>\n<p>\nThere are 34 kinds of tiles in total:.\n</p>\n<h4>English:</h4>\n<p>1 million, 2 million, 3 million, ... 9 million<p>\n\n<p>sparrow, &nbsp; 2 worms, &nbsp; 3 worms, &nbsp; ... 9 worms &nbsp;(also bamboo)</p><cite> (1 worm is replaced by sparrow) </cite> \n\n<p> 1 pancake, &nbsp; 2 pancakes, &nbsp; 3 pancakes, &nbsp; ... 9 pancakes &nbsp;(also circle)</p>\n\n<p> Cardinal tiles : east, &nbsp; south, &nbsp; west,&nbsp; north</p>  <p> Honor tiles:middle, &nbsp; rich, &nbsp; blank.</p>\n<cite> you can also called \"middle, rich and blank\" as \"Red Dragon, Green Dragon and White Dragon\" </cite> \n<h4>Chinese:</h4>\n<p>1万，2万，3万，... 9万</p>\n<p>鸟，2条，3条， ... 9条 (也叫索)</p> <cite> (没有1条，换成了鸟) </cite> \n<p>1饼，2饼，3饼，... 9饼 (也叫筒)</p>\n<p> 东 西 南 北 中 发 白 </p>\n<br/>\n<h1>Groups: </h1>\n<p> Straight, 顺子: Three of the continous tiles. </p><cite>example: 4 pancakes, 5 pancakes, 6 pancakes. Obviously, honor tiles and cardinal tiles can't make up a Straight.</cite> \n<p> Triplet, 刻子: three of the same tiles </p><cite>example: rich, rich, rich.</cite> \n<p> Pair, 眼: two of the same tiles </p><cite>example: middle, middle</cite>\n<hr/>\n<h1>Task: </h1>\n<p>write a function, check if certain pattern fits winning pattern. </p>\n<p>A winning pattern should have 14 tiles.</p>\n<h4> normal winning pattern : </h4>\n<p>the number of triplets and the number of straight should add up to FOUR, and remaining two tiles should be a pair.</p> \n<p>\nexamples:\n</p>\n<div class = 'example'>\n(鸟，2条，3条)，(东，东，东)，(南，南，南)，(1饼，2饼，3饼)，(发，发)<br/>\n(sparrow， 2 worms， 3 worms)， (east， east， east)， (south， south， south)， (1 pancake， 2 pancakes， 3 pancakes)， (rich， rich) \n<br/><cite>2 straights, 2 triplets, 1 pair.</cite><br/>\n(鸟，2条，3条)，(7条，8条，9条)，(4条，5条，6条)，(1饼，2饼，3饼)，(东，东)<br/>\n(sparrow， 2 worms， 3 worms)， (7 worms， 8 worms， 9 worms)， (4 worms， 5 worms， 6 worms)， (1 pancake， 2 pancakes， 3 pancakes)， (east， east) \n<br/><cite>there's no need to have trplets and straight at same time.</cite>\n<br/>\n鸟，东，东，2条，3条，南，1饼，2饼，东，南，南，3饼，发，发<br/>\nsparrow， east， east， 2 worms， 3 worms， east， 2 pancakes， south， south， south， 3 pancakes， rich， rich， 1 pancake\n<br/><cite>If you rearange the set above, you can find that it's the same as first one. Your function should pass this pattern.</cite>\n</div>\n<hr/>\n\n<h4> unusual winning pattern - seven pairs,&nbsp; 七对子 </h4>\n<p>example:</p>\n<div class = 'example'>东，东，南，南，北，北，1万，1万，7饼，7饼，鸟，鸟，东，东<br/>\neast，east，south，south，north，north，1 million，1 million，7 pancakes，7 pancakes，sparrow，sparrow，east，east\n</div>\n\n<h4> unusual winning pattern - independence,&nbsp; 全不靠 </h4>\n<p>Each tile is belong to&nbsp;&nbsp; {east，south，west，north，middle，rich， blank} and &nbsp;&nbsp;(1，4，7)(million)， (2，5，8)(pancakes), (3,6,9)(worm)<br/>\nTHE MILLION，PANCAKES，AND WORM IN PARENTHESES ABOVE ARE INTERCHANGABLE! <br/>example:</p>\n<div class = 'example'>鸟和4条，2,5,8饼，3,6,9万，东，南，北，中，发，白<br/>\nsparrow and 4 worms，2,5,8 pancakes，3,6,9 million，east，south，north，middle，rich，blank\n</div>\n<cite>In actual case, it will be wrote seperately.Just to make it look more compact.</cite>\n\n<h4> unusual winning pattern - thirteen orphans,&nbsp; 十三幺 </h4>\n<p> east，south，north，west，middle，rich，blank，1 million，9 million，1 pancakes，9 pancakes，sparrow，9 worms，random tiles above.<br/>  example:</p>\n<div class = 'example'>东，南，西，北，中，发，白，1万，9万，1饼，9饼，鸟，9条，(白，上面任意一个)\n<br/>\neast，south，west，north，middle，rich，blank，1 million，9 million，1 pancake，9 pancakes，sparrow，9 worms，(blank， random above)\n</div>\n<cite>PS:All test points will be shuffled</cite>\n\n<p>The function receives a string and returns a boolean, to check if the tiles fit the winning pattern.</p>\n\n<p>\nAll test points will be in Chinese. If you think Chinese chracters are difficult to type, I preload some characters for you.\n</p>\n<hr/>\n<h1>Preloaded</h1>\n<p>\nmillion&nbsp; = &nbsp;['1万'，&nbsp; ...... &nbsp;&nbsp;'9万']<br/>\npancake&nbsp; =&nbsp; ['1饼'，&nbsp; ......&nbsp;&nbsp; '9饼']<br/>\nworm&nbsp; = &nbsp;['鸟'， &nbsp;'2条'，&nbsp;......&nbsp;&nbsp;  &nbsp;'9条']<br/>\neast，&nbsp; west，&nbsp; south，&nbsp; north&nbsp; = &nbsp;'东'，&nbsp;'南'，&nbsp;'西'，&nbsp;'北'<br/>\nmiddle，&nbsp; rich，&nbsp; blank&nbsp; =&nbsp; '中'，&nbsp;'发'，&nbsp;'白'<br/>\nalll&nbsp; =  &nbsp;[all tiles, a list]<br/>\n<cite>alll: three 'l's , to avoid overwriting the built-in function 'all' </cite><br/>\ncoordinate&nbsp; =  &nbsp;['东'，'南'，'西'，'北']<br/>\nunit&nbsp; = &nbsp;['万'，'饼'，'条']<br/>\nhonor &nbsp;= &nbsp;['中'，'发'，'白']<br/>\nthirteen &nbsp;=&nbsp; ['东'，'南'，'西'，'北'，'中'，'发'，'白'，'1万'，'9万'，'1饼'，'9饼'，'1条'，'9条']\n</p>\n<hr/>\n<h1>Notice</h1>\n<h4>PLEASE RATE AND RANK THE KATA IF YOU SOLVED IT, TO HELP IT GET OUT OF BETA. THANKS!</h4>\n<h4>Translations are welcome!</h4>\n<style>\ncite {\n\tcolor:#888;\n}\n.example {\n    border-radius: 10px;\n    background-color: #222;\n    padding :5px;\n    color:#eee\n}\ncite:hover{\n  color: inherit;\n}\n</style>\n\n\n",
+    "totalAttempts": 67,
+    "totalCompleted": 8,
+    "totalStars": 4,
+    "voteScore": 12,
+    "tags": [
+      "Games",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

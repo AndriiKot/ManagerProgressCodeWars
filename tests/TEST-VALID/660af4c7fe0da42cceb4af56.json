@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/660af4c7fe0da42cceb4af56",
+  "data": {
+    "id": "660af4c7fe0da42cceb4af56",
+    "name": "¡Arrest the cardiac!",
+    "slug": "arrest-the-cardiac",
+    "category": "reference",
+    "publishedAt": "2024-04-01T21:15:06.077Z",
+    "approvedAt": null,
+    "languages": [
+      "java"
+    ],
+    "url": "https://www.codewars.com/kata/660af4c7fe0da42cceb4af56",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2024-04-01T17:54:15.172Z",
+    "createdBy": {
+      "username": "El Luck",
+      "url": "https://www.codewars.com/users/El%20Luck"
+    },
+    "description": "# Problem\nA runner has an old, intelligent watch with a GPS that doesn't work, furthermore heart rate monitor is detected only at the start of the run. So the runner asks you to build a program that calculates the distance traveled using his initial heart rate and gives you the next instructions:\n//HR = Heart rate.\n\n-To calculate maximum HR (MHR) advises you the next formula:\nMHR = 220 - age.\n\n-He clarifies that the program should start counting distances at the beginning of the run, time that is exactly when the watch gives the initial heart rate, and finishes when HR reaches 90% of MHR.\n\nAlso he comments that you must consider the next heart rate intervals:\n\n80% MHR >= Anaerobic.\n60% MHR >= Aerobic.\n20% MHR >= Soft.\n\nSince depending on the interval in which the runner's heart rate is, each second increases their heart rate by a certain amount, it asks you to use the following constants:\n\nAnaerobic (0.5 HR/s)\nAerobic (0.25 HR/s)\nSoft (0.125 HR/s)\n\n//NOTE: Keep in mind unit measures.\n// Distance is always positive and must be rounded.\n\nThe task\nCreate a program that calculates the distance traveled given a initial heart rate, considering HR intervals, previously mentioned, obtaining the amount of time before reaching 90% of MHR.\n\nint age = age of the runner.\nint InitialHR = initial heart rate.\ndouble speed = constant speed of the runner.\n\nExample:\n\n```\ngetDistance(20,80,5)\n\n//2600\n\n// Maximum heart rate and percentages\n// RCM = 220 - 20.\n// 200 = 100%\n// 180 = 90%\n// 160 = 80%\n// 120 = 60%\n// 80 = 40%\n// 40 = 20%\n\n// Corresponding intervals\n// 180 - 160 = Interval Anaerobic.\n// 160 - 120 = Interval Aerobic.\n// 120 - 40 = Interval Soft.\n\n// Getting time.\n// Interval Soft = 120 - 80 = 40 / 0.125(Constant Soft) = 320 s\n// Interval Aerobic = 160 - 120 = 40 / 0.25(Constant Aerobic) = 160 s\n// Interval Anaerobic = 180 - 160 = 20 / 0.5(Constant Anaerobic) = 40 s\n\n// total distance = 520 * 5 (speed) = 2600.\n```\n//PD: This is my first kata, i hope you'll like it!\n//PD: please, leave a comment if there's something to improve.",
+    "totalAttempts": 94,
+    "totalCompleted": 9,
+    "totalStars": 0,
+    "voteScore": 0,
+    "tags": [
+      "Algorithms",
+      "Mathematics"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

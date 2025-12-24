@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59cd0dc423daccc2a7000171",
+  "data": {
+    "id": "59cd0dc423daccc2a7000171",
+    "name": "Dunkirk",
+    "slug": "dunkirk",
+    "category": "algorithms",
+    "publishedAt": "2017-10-05T14:33:16.780Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/59cd0dc423daccc2a7000171",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-09-28T14:57:08.012Z",
+    "createdBy": {
+      "username": "bartbruneel",
+      "url": "https://www.codewars.com/users/bartbruneel"
+    },
+    "description": "It's the  30th of May, 1940. Operation Dynamo is in full force. A few days before, you've responded to a call on the radio and sailed your  agile and speedy boat to the beaches of Dunkirk to help evacuate the soldiers trapped there. Now, you're  on your way back to the homeland. The soldiers are relieved,  looking forward to the sweet embrace of their family and lovers.  Suddenly, a squadron  of  Messerschmitts  appears on the horizon...\n\nIn  this kata you need two write a function  that takes in two parameters. The first is the list  of directions  you steer your  boat to. The sea around you is presented as  20*20 grid . You start in the middle of the grid, so on position  [9,9].  The  list of directions  is  in the following format .\n\n```javascript\ndirList=[\"L\",\"U\",\"R\",\"D\"]\n```\nwhere L is left, R right, U up and D down.  You travel at a speed of one distance unit per time unit and start at time=0. So after one time unit you will be on position  [9,8], after two time units on position  [8,8] and so forth.\n\nThe squadron of airplanes is not uniform and is represented in the following format, which is the second parameter of the function.\n\n```javascript\nairList=[[0,100,[1,1]],[5,200,[2,1]]\n```\nIn this list the first airplane  drops his bombs  after zero time units on a height of 100 meters and on position [1,1]. The second airplane drops his bombs after 5 time units at a height of 200 meters and on the position [2,1].  Because  of the height the bomb will take a certain amount of time to reach sealevel. This amount of time can be calculated  as the square root of  (2*h)/9.8 . Ofcourse the bomb cannnot explode before it reaches sealevel so you will have to round up  to  the nearest integer. \n\n\nYour function returns  two outcomes. If your boat is on the same position as a bomb the moment it reaches sealevel and explodes you and the soldiers  unfortunately do not  make it back and the function returns the string \"For queen and country!\" If you are lucky and you are not blown to smithereens, the function returns  \"I can see the white cliffs of Dover, lads!\".\n\n\nIf the list of directions runs out before all the bombs have exploded your boat remains in the same place until all the bombs have exploded and you rely on the grace of God.\n",
+    "totalAttempts": 138,
+    "totalCompleted": 24,
+    "totalStars": 0,
+    "voteScore": 31,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 2,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

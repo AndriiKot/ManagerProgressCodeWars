@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5ee17ff3c28ec6001f371b61",
+  "data": {
+    "id": "5ee17ff3c28ec6001f371b61",
+    "name": "Coping with NP-Hardness #4: 3-Recoloring",
+    "slug": "coping-with-np-hardness-number-4-3-recoloring",
+    "category": "reference",
+    "publishedAt": "2020-06-11T03:13:33.207Z",
+    "approvedAt": null,
+    "languages": [
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/5ee17ff3c28ec6001f371b61",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2020-06-11T00:50:59.139Z",
+    "createdBy": {
+      "username": "ALowVerus",
+      "url": "https://www.codewars.com/users/ALowVerus"
+    },
+    "description": "Recolor a set of given nodes such that no node is the color that it was in the original graph, and also so that no node is adjacent to a neighbor of its new color. For details, see here: https://en.wikipedia.org/wiki/Graph_coloring\n\nBy way of example, you could be given:\n```\nadj = {\n  0: {1, 2},\n  1: {0, 2},\n  2: {0, 1},\n}\ncolors = {\n  0: 'G',\n  1: 'G',\n  2: 'B',\n}\n```\n\nIn the above example, the results `{0: 'R', 1: 'B', 2: 'G'}` or `{0: 'B', 1: 'R', 2: 'G'}` will be accepted. In each answer, no same-colored nodes touch each other, and each node has indeed been colored something other than its original value.\n\nFor many of the randomly-generated runs, recoloring will be impossible. If so, return `None`. If, however, a recoloring does indeed exist, return a dictionary with integers as keys and 'R', 'G', or 'B' as values, as described above.\n\nIn the largest testing section, you will be given 80 randomized runs of 100 nodes and 110 edges.\n\n## Kata in this Series\n\n1. [Coping with NP-Hardness #1: 2-SAT](https://www.codewars.com/kata/5edeaf45029c1f0018f26fa0)\n2. [Coping with NP-Hardness #2: Max Weight Independent Set of a Tree](https://www.codewars.com/kata/5edfad4b32ebb000355347d2)\n3. [Coping with NP-Hardness #3: Finding the Minimum Hamiltonian Cycle](https://www.codewars.com/kata/5ee12f0a5c357700329a6f8d)\n4. **Coping with NP-Hardness #4: 3-Recoloring**",
+    "totalAttempts": 85,
+    "totalCompleted": 5,
+    "totalStars": 0,
+    "voteScore": 4,
+    "tags": [
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 0,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

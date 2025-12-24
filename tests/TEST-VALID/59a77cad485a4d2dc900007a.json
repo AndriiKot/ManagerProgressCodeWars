@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/59a77cad485a4d2dc900007a",
+  "data": {
+    "id": "59a77cad485a4d2dc900007a",
+    "name": "Confidence Intervals",
+    "slug": "confidence-intervals",
+    "category": "reference",
+    "publishedAt": "2017-08-31T04:37:45.429Z",
+    "approvedAt": null,
+    "languages": [
+      "r",
+      "python"
+    ],
+    "url": "https://www.codewars.com/kata/59a77cad485a4d2dc900007a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2017-08-31T03:04:13.851Z",
+    "createdBy": {
+      "username": "mentalplex",
+      "url": "https://www.codewars.com/users/mentalplex"
+    },
+    "description": "## Beta Kata\nThank you for trying this beta kata. Once you've completed it, please rate how satisfied you are with this kata and rank it. Katas can only get out of beta if they are rated very satisfied. If you don't give it a very satisfied rating, share your reasons for keeping the kata in beta in a comment as a suggestion or issue. Once the suggestion or issue is resolved, please re-rate as very satisfied. Note that a kata that is _too easy_ or _too hard_ should not be given a lower satisfaction rating, but given a kyu ranking that matches the kata's difficulty.\n\n## Task\nGiven an array or vector of sample of measurements, `sam`, taken from some population, and a confidence level, `p`, such that `0 < p < 1`, return an interval about the mean of this sample that you would expect to contain `p`proportion of sample means if you were to take a large number of samples from the same population. Express that interval as a 2 element vector or array (see language examples for the form). **ROUND YOUR RESULT SO THAT EACH ELEMENT HAS NO MORE THAN 4 DIGITS TO THE RIGHT OF THE DECIMAL.**\n\nA [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval Wikipedia) is often used as a way of quantifying the level of uncertainty associated with a given estimate. You can interpret a confidence interval as the interval that will contain `p`proportion of occurences of a random variable (for example, a sample mean).\n\nHelpful facts:\n1. [How to calculate a confidence interval](https://en.wikipedia.org/wiki/Confidence_interval#Basic_steps Wikipedia)\n2. Everything you need to calculate the confidence interval can be extracted from the two arguments `sam`and `p` or from r base functions. \n3. You do not know the population standard deviation, so you have to use a t score rather than a z score, and you have to use the sample standard deviation (s) instead of the population standard deviation (\\sigma).\n4. Be careful when finding the correct t score for a given confidence interval. There are functions that will find this for you, but you have to think carefully about what p value to pass to them. \n\n\nEXAMPLES:\n```r\nconfidence(20:30, 0.95) => [1] 22.7719 27.2281\nconfidence(20:30, 0.60) => [1] 24.1209 25.8791\nconfidence(4:5, 0.99) => [1] -27.3284  36.3284\nconfidence(seq.int(0, 100, by = 20), 0.99) => [1] -11.592 111.592\nconfidence(rep(10, times = 2), 0.9999) => [1] 10 10\n```\n```python\nconfidence([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], 0.95) => [22.7719, 27.2281]\nconfidence([20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30], 0.60) => [24.1209, 25.8791]\nconfidence([4, 5], 0.99) => [-27.3284, 36.3284]\nconfidence(list(range(0, 101, 20)), 0.99) => [-11.592, 111.592]\nconfidence([10, 10], 0.9999) => [10.0, 10.0]\n```",
+    "totalAttempts": 194,
+    "totalCompleted": 50,
+    "totalStars": 8,
+    "voteScore": 54,
+    "tags": [
+      "Mathematics",
+      "Statistics",
+      "Fundamentals"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

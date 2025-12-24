@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5cd955d0a695ae0025f8ea6a",
+  "data": {
+    "id": "5cd955d0a695ae0025f8ea6a",
+    "name": "Berg and the Bloom filters",
+    "slug": "berg-and-the-bloom-filters",
+    "category": "algorithms",
+    "publishedAt": "2019-05-15T16:29:21.435Z",
+    "approvedAt": null,
+    "languages": [
+      "c"
+    ],
+    "url": "https://www.codewars.com/kata/5cd955d0a695ae0025f8ea6a",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2019-05-13T11:32:32.820Z",
+    "createdBy": {
+      "username": "aradenac",
+      "url": "https://www.codewars.com/users/aradenac"
+    },
+    "description": "# Context\n\nBerg is a far-from-passionate librarian. The fact that each time someone needs a book he has to get off his chair and walk along the shelves to search the book (wether it exists or not) with the given name and bring it back to the desk does not help. \n\nMoreover, merciless children recently took advantage of his situation, asking him non-existent books just so he has to move his lazy-ass off his chair as often as possible !\n\nAs the magnificent altruistic space-efficient probabilistic data structures expert that you are, you will offer the guy some rest.\n\n# Bloom filters in a (tiny) nutshell\n\nA Bloom filter is a probabilistic structure (vector of bits) that tells the presence of a message with a percentage of false positives but zero false negatives.\nIt means the filter sometimes returns 'yes' for a message required whether its not registered. On the other hand, the filter will return 'no' with hundred percent accuracy if the message is not registered.\n\nIn our application, it has two operations :\n- register message : taking in input the name of a book, hashing it k times, which indicate k offsets in the vector of bits to set to 1.\n- check message    : taking in input the name of a book, hashing it k times, which indicate k offsets to check in the vector. If all bits are 1s : the function returns true (book is probably present), and false otherwise (book is not present). \n\nHere is a diagram for the registration operation. Checking is analog, replace the 'set bit' by a 'check bit' :\n\n```\n                                      bloom filter\n                                      (bit  vector)\n                                         +-+\n                            set bit at   |.|\n                  +-------+ offset hash1 +-+\n              +---+hash 1 +------------> |1|\n              |   +-------+              +-+\n              |                          |0|\n              |   +-------+              +-+\n              +---+hash 2 +------------> |1|\n+--------+    |   +-------+              +-+\n|message +----+     ...                  | |\n+--------+    |                          |.|\n              |   +-------+              |.|\n              +---+hash k +------------> |.|\n                  +-------+              | |\n                                         +-+\n\n```\n\nUnderstand a 'message' as a book title here.\n\n# Your task\nImplement a Bloom filter with its programming interface so our friend Berg can register the book names, then if someone ask for a book he just have to check the Bloom filter without having to move.\n\nImplement the functions : bf_register, bf_check, and bf_hash_string (needed by the two previous).\n\nYou can assume that :\n- parameters to the functions are valids,\n- memory for the bloom filter is allocated,\n- the memory of the filter is adressable by an uint8_t*, but you have to handle the memory bitwise.\n\n# Validation\nBerg will use your solution to register some books, then search for a lot of books names asked, registered or not. As you can imagine, each false positive result of the filter forces Berg to walk though the library searching an inexisting book. So take care of reducing the false positive rate, otherwise he might reject your solution as well !\n\n# Meet Berg\n```\n          &&&&&&&&&%                                                                                  \n     &&&&&&&&&&&&&&&&&&&      /--------------------------------------------------\\\n   &&&&&&&&&&&&&&&&&&&&&&&    |  Thanks to help me out through this Kata,        |  \n  &&&&&&&&&&&&&&&&(    .&&&   |  I hope you'll enjoy it :)                       |   \n &&&&&&&&&&/            ,&&   |  But be quick, those kids are unbearable !       |   \n &&&                     &&&  /_................................................./   \n &&,=&%&&&&#&--&&&&&&%==,&&&                                                                        \n &&  |  o   %  &    ° |   *&                                                                           \n &    \\____/    \\____/    &                                                                       \n  &                       &                                                                           \n   ,*&     =====        &                                                                             \n      &%             &&                                                                               \n         && % &% &%                                                                                   \n```",
+    "totalAttempts": 443,
+    "totalCompleted": 15,
+    "totalStars": 5,
+    "voteScore": 16,
+    "tags": [
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 3,
+      "suggestions": 1
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}

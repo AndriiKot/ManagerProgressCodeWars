@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "url": "https://www.codewars.com/api/v1/code-challenges/5a4bac77d39ec55f340000f2",
+  "data": {
+    "id": "5a4bac77d39ec55f340000f2",
+    "name": "Min-Width Detection",
+    "slug": "min-width-detection",
+    "category": "algorithms",
+    "publishedAt": "2018-01-03T12:33:01.965Z",
+    "approvedAt": null,
+    "languages": [
+      "javascript"
+    ],
+    "url": "https://www.codewars.com/kata/5a4bac77d39ec55f340000f2",
+    "rank": {
+      "id": null,
+      "name": null,
+      "color": null
+    },
+    "createdAt": "2018-01-02T15:59:51.491Z",
+    "createdBy": {
+      "username": "janrembold",
+      "url": "https://www.codewars.com/users/janrembold"
+    },
+    "description": "In this kata you have to detect the correct item configured within a CSS3 media query-like configuration.\nSee [Using media queries](https://developer.mozilla.org/de/docs/Web/CSS/Media_Queries/Using_media_queries) for further informations.\n\nThe function `detectItem(config, width)` takes a configuration (array of objects) as first parameter and the given width (number) as second parameter. \n\nThe correct output is the detected `item` value or `0` if no query fits for the given width. \n\n```javascript\n// simple configuration\nconst config = [\n  { item: 1, min: 100 }, // like @media (min-width: 100px) { ... }\n  { item: 2, min: 300 }, // like @media (min-width: 300px) { ... }\n  { item: 3, min: 600 }  // like @media (min-width: 600px) { ... }\n];\n```\nThe configuration objects property `item` is a simple unique identifier and always > 0. The `min` property is a positive integer value. \n\nThe config above has following correct outputs:\n* `<99` => 0\n* `100 - 299` => 1\n* `300 - 599` => 2\n* `>600` => 3\n\n\n## Additional informations\n* Configuration migth be an empty array\n* Configuration object always has an `item` and `min` property\n* The `width` parameter might be an integer or float number value",
+    "totalAttempts": 372,
+    "totalCompleted": 26,
+    "totalStars": 0,
+    "voteScore": 39,
+    "tags": [
+      "Sorting",
+      "Algorithms"
+    ],
+    "contributorsWanted": true,
+    "unresolved": {
+      "issues": 1,
+      "suggestions": 0
+    }
+  },
+  "error": null,
+  "isValid": false,
+  "validationErrors": [
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "rank.id",
+      "message": "Expected integer, got object (not integer)"
+    },
+    {
+      "path": "rank.name",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "rank.color",
+      "message": "Expected type 'string', got 'object'"
+    },
+    {
+      "path": "approvedBy",
+      "message": "Required field 'approvedBy' is missing"
+    },
+    {
+      "path": "approvedAt",
+      "message": "Expected type 'string', got 'object'"
+    }
+  ]
+}
