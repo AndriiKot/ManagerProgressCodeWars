@@ -1,15 +1,13 @@
 'use strict';
 
 import { USER_NAME, FRIENDS } from '#config';
-import { CodewarsAPI } from '#api';
 import { sqlite } from '#db';
 import { deepFreezeArray, checkUsersLimit, withTimeout } from '#utils';
-import { buildGlobalCache } from '#cache';
 import { bootstrapTestDatabase } from './bootstrapTestDatabase.js';
 import { getUserProfile, createUserService } from '#services';
+import { logger } from '#utils';
 
-
-console.log('⚠️ Running in test mode, database: test_database.sqlite');
+logger.info('⚠️ Running in test mode, database: test_database.sqlite');
 
 (async () => {
   const usersToCheck = deepFreezeArray([USER_NAME, ...FRIENDS]);
@@ -32,23 +30,23 @@ console.log('⚠️ Running in test mode, database: test_database.sqlite');
       );
 
       if (!success) {
-        console.warn(`Failed to fetch profile for ${username}:`, error);
+        logger.warn('Failed to fetch profile for', { username, error });
         continue;
       }
  
       if (!isValid) {
-        console.warn(`Respons data is not valid for ${username}: `, validationErrors);
+        logger.warn('Respons data is not valid for',{ username, validationErrors });
         continue;
       }
 
-      console.log(`User profile ${username} data is valid!`);
+      logger.info('User profile data is valid!', { username });
 
       try {
         const userId = await saveFullUser(profileData);
         await saveAuthoredChallenges(userId, { username });
         await savePages(userId, { username });
       } catch (err) {
-        console.error(`Failed to save data for ${username}`, err);
+        logger.error(`Failed to save data for `, { username, errors: err?.messages });
       }           
   }
 })();
