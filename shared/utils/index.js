@@ -8,3 +8,4 @@ export { runLimited } from './runLimited.js';
 export { checkUsersLimit } from './checkUsersLimit.js';
 export { withTimeout } from './withTimeout.js';
 export { createSafeApiCall } from './createSafeApiCall.js';
+export { logger } from './logger.js';
