@@ -1,7 +1,7 @@
 'use strict';
 
 import { sqlite } from '#db';
-import { CHALLENGES_DIR, DB_SCHEMAS, DB_FILE } from '#config';
+import { CHALLENGES_RANKED, DB_SCHEMAS, DB_FILE } from '#config';
 import { logger } from '#utils';
 
 const { seedChallenges, insertChallengeSync, prepareDatabase } = sqlite;
@@ -27,7 +27,7 @@ export const bootstrapDatabase = () => {
     count = row?.c ?? 0;
   } catch {
     logger.warn(
-      "Table 'counts' or column 'total_challenges' does not exist yet, assuming 0 challenges."
+      "Table 'counts' or column 'total_challenges' does not exist yet, assuming 0 challenges.",
     );
     count = 0;
   }
@@ -37,7 +37,7 @@ export const bootstrapDatabase = () => {
   if (!hasChallenges) {
     try {
       logger.info('Seeding challenges', {
-        directory: CHALLENGES_DIR,
+        directory: CHALLENGES_RANKED,
       });
       seedChallenges(db, CHALLENGES_DIR, insertChallengeSync);
     } catch (err) {

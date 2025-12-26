@@ -2,7 +2,7 @@
 
 import { join } from 'node:path';
 import { sqlite } from '#db';
-import { CHALLENGES_DIR, DB_SCHEMAS } from '#config';
+import { CHALLENGES_RANKED, DB_SCHEMAS } from '#config';
 import { logger } from '#utils';
 
 const { seedChallenges, insertChallengeSync, prepareDatabase } = sqlite;
@@ -29,7 +29,7 @@ export const bootstrapTestDatabase = (filename = 'test.sqlite') => {
     count = row?.c ?? 0;
   } catch {
     logger.warn(
-      "Table 'counts' or column 'total_challenges' does not exist yet, assuming 0 challenges."
+      "Table 'counts' or column 'total_challenges' does not exist yet, assuming 0 challenges.",
     );
     count = 0;
   }
@@ -38,8 +38,8 @@ export const bootstrapTestDatabase = (filename = 'test.sqlite') => {
 
   if (!hasChallenges) {
     try {
-      logger.info('Seeding test challenges', { directory: CHALLENGES_DIR });
-      seedChallenges(db, CHALLENGES_DIR, insertChallengeSync);
+      logger.info('Seeding test challenges', { directory: CHALLENGES_RANKED });
+      seedChallenges(db, CHALLENGES_RANKED, insertChallengeSync);
     } catch (err) {
       logger.error('Failed to seed test challenges', {
         error: err?.message,

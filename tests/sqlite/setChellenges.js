@@ -3,19 +3,22 @@ import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 
 import { sqlite } from '#db';
-import { CHALLENGES_DIR } from '#config';
+import { CHALLENGES_RANKED } from '#config';
 
 const { insertChallengeSync } = sqlite;
 const db = new DatabaseSync('database-test.sqlite');
 
-if (!fs.existsSync(CHALLENGES_DIR) || !fs.statSync(CHALLENGES_DIR).isDirectory()) {
-  throw new Error(`Directory not found: ${CHALLENGES_DIR}`);
+if (
+  !fs.existsSync(CHALLENGES_RANKED) ||
+  !fs.statSync(CHALLENGES_RANKED).isDirectory()
+) {
+  throw new Error(`Directory not found: ${CHALLENGES_RANKED}`);
 }
 
-const files = fs.readdirSync(CHALLENGES_DIR);
+const files = fs.readdirSync(CHALLENGES_RANKED);
 
 files.forEach((file) => {
-  const fullPath = join(CHALLENGES_DIR, file);
+  const fullPath = join(CHALLENGES_RANKED, file);
   if (!fs.statSync(fullPath).isFile()) return;
 
   let content;
