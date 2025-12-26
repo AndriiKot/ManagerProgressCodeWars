@@ -1,6 +1,8 @@
-import { existsSync } from "node:fs";
-import { sqlite } from "#db";
-import { CHALLENGES_DIR, DB_SCHEMAS, DB_FILE } from "#config";
+'use strict';
+
+import { sqlite } from '#db';
+import { CHALLENGES_DIR, DB_SCHEMAS, DB_FILE } from '#config';
+import { logger } from '#utils';
 
 const { seedChallenges, insertChallengeSync, prepareDatabase } = sqlite;
 
@@ -10,18 +12,21 @@ export const bootstrapDatabase = () => {
   try {
     db = prepareDatabase(DB_FILE, DB_SCHEMAS);
   } catch (err) {
-    console.error("Failed to prepare database:", err);
+    logger.error('Failed to prepare database', {
+      file: DB_FILE,
+      error: err?.message,
+    });
     return null;
   }
 
   let count = 0;
   try {
     const row = db
-      .prepare("SELECT total_challenges AS c FROM counts LIMIT 1")
+      .prepare('SELECT total_challenges AS c FROM counts LIMIT 1')
       .get();
     count = row?.c ?? 0;
-  } catch (err) {
-    console.warn(
+  } catch {
+    logger.warn(
       "Table 'counts' or column 'total_challenges' does not exist yet, assuming 0 challenges."
     );
     count = 0;
@@ -31,15 +36,21 @@ export const bootstrapDatabase = () => {
 
   if (!hasChallenges) {
     try {
-      console.log("Seeding challenges…");
+      logger.info('Seeding challenges', {
+        directory: CHALLENGES_DIR,
+      });
       seedChallenges(db, CHALLENGES_DIR, insertChallengeSync);
     } catch (err) {
-      console.error("Failed to seed challenges:", err);
+      logger.error('Failed to seed challenges', {
+        error: err?.message,
+      });
     }
   } else {
-    console.log(`Skipping seed — ${count} challenges already exist`);
+    logger.info('Skipping seed', {
+      count,
+      database: 'main',
+    });
   }
 
   return db;
 };
-
