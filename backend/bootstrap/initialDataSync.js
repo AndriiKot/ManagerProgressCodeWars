@@ -5,7 +5,6 @@ import { CodewarsAPI } from '#api';
 import { userProfileSchema, validateWithRankCheck } from '#schemas';
 import { sqlite } from '#db';
 import { deepFreezeArray, checkUsersLimit, withTimeout } from '#utils';
-import { buildGlobalCache } from '#cache';
 import { createUserService } from '#services';
 import { logger } from '#utils';
 
@@ -20,7 +19,6 @@ export const initialDataSync = async () => {
   checkUsersLimit(usersToCheck);
 
   const db = bootstrapDatabase();
-  const cache = await buildGlobalCache(db);
 
   const userService = createUserService(db, sqlite);
   const { saveFullUser, saveAuthoredChallenges, savePages } = userService;
