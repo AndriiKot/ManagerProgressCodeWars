@@ -2,7 +2,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateApiResource } from './validateApiResource.js';
+import { validateApiResource } from '#contracts';
 
 test('returns valid result when API succeeds and validation passes', async () => {
   const apiFn = async () => ({

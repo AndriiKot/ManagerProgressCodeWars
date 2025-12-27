@@ -1,20 +1,26 @@
 'use strict';
 
+import { deepFreeze } from '#utils';
+
+const contract = ({ success, url = null, data = null, error = null, isValid = true, validationErrors = null }) => {
+  return deepFreeze({ success, url, data, error, isValid, validationErrors });
+};
+
 export const validateApiResource = async ({
   apiFn,
   apiArgs = [],
   schema,
-  validateFn = null,   
+  validateFn = null,
   options = { strict: true, recursive: true },
 }) => {
   const result = await apiFn(...apiArgs);
 
   if (!result.success) {
-    return {
+    return contract({
       ...result,
       isValid: false,
-      validationErrors: ["API request failed"],
-    };
+      validationErrors: ['API request failed'],
+    });
   }
 
   let validation;
@@ -28,16 +34,16 @@ export const validateApiResource = async ({
   }
 
   if (!validation.isValid) {
-    return {
+    return contract({
       ...result,
       isValid: false,
       validationErrors: validation.errors,
-    };
+    });
   }
 
-  return {
+  return contract({
     ...result,
     isValid: true,
     validationErrors: null,
-  };
+  });
 };

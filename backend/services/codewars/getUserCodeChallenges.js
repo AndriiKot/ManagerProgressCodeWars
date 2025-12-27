@@ -1,6 +1,6 @@
 'use strict';
 
-import { validateApiResource } from './validateApiResource.js';
+import { validateApiResource } from '#contracts';
 import { validateSchema, userCodeChallengesSchema } from '#schemas';
 import { CodewarsAPI } from '#api';
 
