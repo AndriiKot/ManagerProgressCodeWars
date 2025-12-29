@@ -1,9 +1,30 @@
 {
   "name": "manager-progress-codewars",
-  "version": "0.0.1",
-  "private": true,
-  "main": "backend/index.js",
+  "version": "0.1.0",
+  "description": "Automates Codewars progress: sync solved katas into git repository",
   "type": "module",
+
+  "bin": {
+    "codewars-bot": "./bin/cli.js"
+  },
+
+  "main": "./backend/index.js",
+
+  "exports": {
+    ".": "./backend/index.js"
+  },
+
+  "files": [
+    "bin",
+    "backend",
+    "shared",
+    "config.js"
+  ],
+
+  "engines": {
+    "node": ">=18"
+  },
+
   "imports": {
     "#config": "./config.js",
     "#bootstrap": "./backend/bootstrap/index.js",
@@ -19,6 +40,7 @@
     "#hash": "./backend/services/hash/index.js",
     "#helpers": "./backend/helpers/index.js"
   },
+
   "scripts": {
     "start": "node backend/index.js",
     "test": "node --test"
