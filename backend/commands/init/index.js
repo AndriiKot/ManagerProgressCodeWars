@@ -1,9 +1,11 @@
 'use strict';
 
+import { createBotDir } from './createBotDir.js';
+
 export const init = async() => {
   const root = process.cwd();
 
-  console.log(root);
+  createBotDir(root);
 
   console.log("✅ Codewars bot initialized");
 }
