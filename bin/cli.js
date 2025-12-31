@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { scaffoldProject as init } from "#commands";
+import { init } from "#commands";
 
 const [, , command] = process.argv;
 
