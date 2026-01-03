@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
-import { init } from "#commands";
+import { init, sync } from "#commands";
 
 const [, , command] = process.argv;
 
 switch (command) {
   case "init":
     await init();
+    break;
+  
+  case "sync":
+    await sync();
     break;
 
   default:
