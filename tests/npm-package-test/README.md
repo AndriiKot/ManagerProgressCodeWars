@@ -1,3 +1,0 @@
-#Hello
-
-User: AndriiKot
